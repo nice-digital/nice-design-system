@@ -1,6 +1,6 @@
 # NICE.Bootstrap v2
 
-Welcome to NICE Bootstrap v2.
+Welcome to NICE Bootstrap v2
 
 ## Prerequisites
 
