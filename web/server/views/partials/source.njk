@@ -1,0 +1,14 @@
+{#
+	Used by "source extension".
+#}
+
+<div class="example">
+	<div class="example__code">
+		<h4 class="example__label">{{ heading if heading else "Source" }}</h4>
+		<pre><code {% if lang %}class="language-{{lang}}"{% endif %}>{{body|normalise_indentation}}</code></pre>
+		{% if expandedBody %}
+			{# TODO
+			<pre><code {% if lang %}class="language-{{lang}}"{% endif %}>{{expandedBody|normalise_indentation}}</code></pre>#}
+		{% endif %}
+	</div>
+</div>

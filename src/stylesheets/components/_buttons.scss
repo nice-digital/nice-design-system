@@ -1,0 +1,54 @@
+$button-colour: #11779b;
+
+/// Button mixin
+/// @example Button style
+/// 	.btn {
+/// 		@include button(#ccc);
+/// 	}
+@mixin button($colour: $button-colour) {
+	// Colour
+	background-color: $colour;
+	border: 0;
+	cursor: pointer;
+	display: inline-block;
+
+	// Size and shape
+	//@include inline-block;
+	padding: .526315em .789473em .263157em; // 10px 15px 5px
+	position: relative;
+	//@include border-radius(0);
+
+	// Interaction
+
+	&:hover,
+	&:focus {
+		background-color: darken($colour, 5%);
+	}
+
+	// Disabled button styles
+	&.disabled,
+	&[disabled='disabled'],
+	&[disabled] {
+		opacity: 0.5;
+
+		&:hover {
+			background-color: $colour;
+			cursor: default;
+		}
+	}
+}
+
+.btn {
+	@include button ($button-colour);
+	vertical-align: top;
+
+	&--primary {
+		background-color: green;
+	}
+}
+
+// Fix unwanted button padding in Firefox
+.btn::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}

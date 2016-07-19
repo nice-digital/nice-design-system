@@ -1,0 +1,66 @@
+{# CSS Selectors #}
+{% if item.context.type == "css" %}
+
+	CSS Selector: {{ item.context.name }}
+
+
+{# Placeholders #}
+{% elif item.context.type == "placeholder" %}
+
+	<div class="item__code-wrapper">
+		<pre class="item__code  item__code--togglable  language-scss"
+			data-current-state="collapsed"
+			data-expanded="%{{ item.context.name }} { {{ item.context.code }} }"
+			data-collapsed="%{{ item.context.name }} { }">
+			<code>%{{ item.context.name }} {}</code>
+		</pre>
+	</div>
+
+
+{# Variables #}
+{% elif item.context.type == "variable" %}
+
+	{% source "scss" -%}
+		${{ item.context.name|safe }}: {{ item.context.value|safe }};
+	{%- endsource %}
+
+	{# Display a colour square for colour variables #}
+	{% if item.resolvedValue|is_color == true %}
+		<span class="color-preview--block" style="background: {{ item.resolvedValue }};" title="{{ item.resolvedValue }}">
+			${{ item.context.name|safe }}
+		</span>
+	{% endif %}
+
+
+{# Functions and mixins #}
+{% else %}
+
+	{% set parameters_string = '' %}
+	{% for parameter in item.parameter %}
+		{% set value = '$' + parameter.name %}
+
+		{% if parameter.default %}
+			{% set value = value + ': ' + parameter.default %}
+		{% endif %}
+
+		{% if parameter.type|lower == "arglist" %}
+			{% set value = value + '...' %}
+		{% endif %}
+
+		{% if loop.first %}
+			{% set parameters_string = value %}
+		{% else %}
+			{% set parameters_string = parameters_string + ', ' + value %}
+		{% endif %}
+	{% endfor %}
+
+	{% set signature = '@' + item.context.type + ' ' + item.context.name + '(' + parameters_string + ')' %}
+
+	{# Output the source, with an expanded version #}
+	{% source "scss" -%}
+		{{ signature }} { ... }
+	{%- expanded -%}
+		{{ signature }} { {{ item.context.code }} }
+	{%- endsource %}
+
+{% endif %}

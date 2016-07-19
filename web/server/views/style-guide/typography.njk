@@ -1,0 +1,107 @@
+{% extends "../layouts/_sidebar.njk" %}
+{% set title = "Typography" %}
+
+{% block sidebar %}
+
+	<h2>Typography</h2>
+
+	<ul>
+		<li><a href="#headings">Headings</a></li>
+		<li><a href="#quotations">Quotations</a></li>
+	</ul>
+
+{% endblock %}
+
+
+{% block main %}
+
+	<h1>Typography</h1>
+
+
+	{% example -%}
+		<p><a href="#" class="btn">Default button</a></p>
+		<p><a href="#" class="btn btn--primary">Primary button</a></p>
+		<p><a href="#" class="btn btn--secondary">Subtle secondary</a></p>
+		<p><a href="#" class="btn btn--outline">Outline button</a></p>
+	{%- endexample %}
+
+	<section id="headings">
+		<h2>Headings</h2>
+
+		<ul>
+			<li>use Lato Light (200)</li>
+			<li>use sentence case for headings</li>
+			<li>use headings consistently to create a clear hierarchy</li>
+		</ul>
+
+		{% example -%}
+			<h1>Heading 1</h1>
+			<h2>Heading 2</h2>
+			<h3>Heading 3</h3>
+			<h4>Heading 4</h4>
+			<h5>Heading 5</h5>
+			<h6>Heading 6</h6>
+		{%- endexample %}
+	</section>
+
+
+	<section id="quotations">
+		<h2>Quotations</h2>
+
+		<ul>
+			<li>use a citation where possible</li>
+		</ul>
+
+		<h3>Simple block quotation</h3>
+
+		{% example "html" -%}
+			<blockquote>
+				<p>In 2015, 74% of staff rated NICE as a good place to work.</p>
+			</blockquote>
+		{%- endexample %}
+
+		<h3>Block quotation w/ citation</h3>
+
+		{% example "html" -%}
+			<blockquote>
+				<p>Older people using home care services have a home care plan that identifies how their personal priorities and outcomes will be met.</p>
+				<footer>
+					- <cite><a href="https://www.nice.org.uk/guidance/qs123">Home care for older people, NICE quality standard</a></cite>
+				</footer>
+			</blockquote>
+		{%- endexample %}
+
+		<h3>Block quotation w/ citation</h3>
+
+		{% example "html" -%}
+			<blockquote>
+				<p>We do the right work in the right way at NICE. We mix content, dev, design and research at the start to solve user problems.  We produce things quickly, get data and refine. </p>
+				<footer>
+					<cite><strong>Dafydd</strong> - Content Team</cite>
+				</footer>
+			</blockquote>
+		{%- endexample %}
+
+		<h3>Quotation within a grid</h3>
+
+		<p>Quotations can be nested within grids, for example alongside an image:</p>
+
+		{% example "html" -%}
+			<div class="grid">
+				<div class="grid__item one-half palm--one-whole">
+					<img src="//placehold.it/640x360" alt="A placeholder" />
+				</div>
+				<div class="grid__item one-half palm--one-whole">
+					<blockquote>
+						<p>This is a quotation inside a grid</p>
+						<footer>
+							<cite>With a source</cite>
+						</footer>
+					</blockquote>
+				</div>
+			</div>
+		{%- endexample %}
+
+	</section>
+
+{% endblock %}

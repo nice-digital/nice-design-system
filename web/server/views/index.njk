@@ -1,0 +1,56 @@
+{% extends "layouts/_layout.njk" %}
+{% set title = "NICE Bootstrap v2" %}
+
+{% block body %}
+
+	<div>
+		<div class="container">
+			<ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+				<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a href="#">
+						NICE
+					</a>
+				</li>
+				<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a href="#">
+						Something
+					</a>
+				</li>
+				<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					Current page
+				</li>
+			</ol>
+		</div>
+	</div>
+
+	<div class="container">
+		<h1>Welcome to NICE Experience</h1>
+		<h2>Modern, semantic &amp; accessible</h2>
+
+		<div class="grid">
+			<div class="grid__item one-third">
+				<h3>What is it?</h3>
+				<p>
+					It's a modern replacement for <a href="http://nhsevidence.github.io/NICE.Bootstrap/" target="_blank">NICE.Bootstrap</a> and <a href="http://mattonfoot.github.io/NICE.UI/" target="_blank">NICE.UI</a> with improved tooling and documentation, allowing consistent and rapid prototyping for NICE online services and web applications.
+				</p>
+			</div>
+			<div class="grid__item one-third">
+				<h3>Not just another UI kit&hellip;</h3>
+				<p>
+					We haven't re-invented the wheel.
+					We've used our experience and borrowed &amp; adapted the best bits from <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> and GOV.UK's <a href="https://github.com/alphagov/govuk_frontend_toolkit" target="_blank">Front End Toolkit</a> &amp; <a href="http://govuk-elements.herokuapp.com/" target="_blank">Elements</a>.
+				</p>
+			</div>
+			<div class="grid__item one-third">
+				<h3>Getting started</h3>
+				<p>
+					We've made it easy to extend and add to, and equally easy to integrate it into your application.
+				</p>
+				<a href="#" class="btn">Get started</a>
+			</div>
+		</div>
+
+	</div>
+
+{% endblock %}
+

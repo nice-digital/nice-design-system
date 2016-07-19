@@ -1,0 +1,63 @@
+@charset 'utf-8';
+
+// Bootstrap
+@import 'bootstrap';
+
+// Components
+@import 'components/example';
+
+// Other
+
+.container {
+	margin: auto;
+	max-width: 1200px;
+	width: 90%;
+}
+
+img {
+	max-width: 100%;
+}
+
+/// An example function for SASS Doc
+/// @param {Number} $some-number A number
+/// @param {Number} $another-number Another number
+/// @return {Number} A calculated return value
+@function my-calculation-function($some-number, $another-number){
+  @return $some-number + $another-number
+}
+
+
+/// This is a mixin with content
+/// @param {Colour} $a-value A colour that needs passing in, with a default value
+/// @content The content of this mixin
+/// @deprecated Deprecation related message
+/// @example scss - Use the colour/content mixin
+///   @include my-colour-and-content-mixin(#fff) {
+///   	color: red;
+///   }
+@mixin my-colour-and-content-mixin($a-value: #000){
+	@content;
+}
+
+
+/// Orange tints
+/// @group Colors
+/// @author Ian Routledge
+/// @see http://stackoverflow.com/a/28766704/486434
+/// @type Map
+/// @prop {Color} lightest [#ffe5ca]
+/// @prop {Color} lighter [#f5b180]
+/// @prop {Color} light [#e77636]
+/// @prop {Color} default [#e13400] Base orange value
+/// @prop {Color} dark [#711f03]
+/// @prop {Color} darker [#581902]
+/// @prop {Color} darkest [#391102]
+$orange: (
+  lightest: #ffe5ca,
+  lighter: #f5b180,
+  light: #e77636,
+  default: #e13400,
+  dark: #711f03,
+  darker: #581902,
+  darkest: #391102,
+);

@@ -1,0 +1,27 @@
+////
+/// @group helpers
+////
+
+/// Return ems from a pixel value
+/// This assumes a base of 19px
+/// @link https://github.com/alphagov/govuk_elements/blob/master/public/sass/elements/_helpers.scss#L12 em function in GOV.UK's elements
+/// @param {Number} $px - The pixel value to convert
+/// @param {Number} $base [19] - The base pixel value
+@function em($px, $base: 19) {
+	@return ($px / $base) + em;
+}
+
+
+/// Hide, but not for screenreaders
+/// @link https://github.com/alphagov/govuk_elements/blob/master/public/sass/elements/_helpers.scss#L31
+.visually-hidden,
+.visuallyhidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}

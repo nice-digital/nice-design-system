@@ -1,0 +1,38 @@
+{% extends "../layouts/_sidebar.njk" %}
+{% set title = "SASS" %}
+
+{% block sidebar %}
+
+	<a href="/sass/docs">SASS Docs</a>
+
+	<nav role="nav">
+		<ul>
+			<li><a href="#syntax">Syntax/formatting</a></li>
+			<li><a href="#naming">Naming</a></li>
+			<li><a href="#comments">Comments</a></li>
+		</ul>
+	</nav>
+
+{% endblock %}
+
+
+{% block main %}
+
+	<h1>SASS</h1>
+
+	<section id="syntax">
+		<h2>Syntax &amp; formatting</h2>
+	</section>
+
+	<section id="naming">
+		<h2>Naming</h2>
+	</section>
+
+	<section id="comments">
+		<h2>Comments</h2>
+
+		<a href="/sass/docs" class="btn">SASS Documentation</a>
+
+	</section>
+
+{% endblock %}

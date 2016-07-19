@@ -1,0 +1,19 @@
+{% extends "../layouts/_sidebar.njk" %}
+{% set title = "JavaScript Documentation" %}
+
+{% block sidebar %}
+	JS Sidebar
+{% endblock %}
+
+
+{% block main %}
+
+
+{% for item in data %}
+
+	<h2>{{item.name}}</h2>
+	<h3>Type: {{item.kind}}</h3>
+
+{% endfor %}
+
+{% endblock %}

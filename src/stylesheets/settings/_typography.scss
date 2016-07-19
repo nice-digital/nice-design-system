@@ -1,0 +1,22 @@
+
+/// Sans font families
+$sans-font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$serif-font-family: Georgia, 'Times New Roman', Times, serif;
+$mono-font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;
+
+
+// Rules
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $dark-grey;
+	font-family: $sans-font-family;
+	font-weight: 200;
+	line-height: 24px;
+	margin: 12px 0;
+	text-rendering: optimizelegibility;
+}

@@ -1,0 +1,25 @@
+{% extends "layouts/_layout.njk" %}
+
+{% block body %}
+
+	<div class="container">
+		<div class="grid">
+
+			{# Sidebar #}
+			<aside class="grid__item one-whole lap--one-third desk--one-quarter" role="complementary">
+				{% block sidebar %}
+					Default sidebar content
+				{% endblock %}
+			</aside>
+
+			{# Main container #}
+			<article class="grid__item one-whole lap--two-thirds desk--three-quarters" role="main">
+				{% block main %}
+					Default body content
+				{% endblock %}
+			</article>
+
+		</div>
+	</div>
+
+{% endblock %}

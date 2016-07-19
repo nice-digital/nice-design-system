@@ -1,0 +1,42 @@
+.example {
+	border: 1px solid #ddd;
+	margin: 16px 0;
+
+	&__label {
+		background-color: #fff;
+		border-bottom: 1px solid #ddd;
+		border-right: 1px solid #ddd;
+		color: #333;
+		font-weight: bold;
+		font-size: 10px;
+		left: 0;
+		line-height: 1;
+		margin: 0;
+		padding: 4px;
+		position: absolute;
+		text-transform: uppercase;
+		top: 0;
+
+		&--dark {
+			background-color: #f7f7f9;
+		}
+	}
+
+	&__body {
+		border-bottom: 1px solid #e1e1e8;
+		margin: 0;
+		padding: 8px;
+		position: relative;
+	}
+
+	&__code {
+		background-color: #f7f7f9;
+		margin: 0;
+		padding: 24px 8px 8px 8px;
+		position: relative;
+
+		pre {
+			margin: 0;
+		}
+	}
+}

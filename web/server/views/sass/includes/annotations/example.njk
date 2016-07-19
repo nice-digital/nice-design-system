@@ -1,0 +1,19 @@
+{# Describes a use case for the documented item, with a given language and description if specified #}
+
+{% macro renderExample(body, lang, heading = "Example") %}
+	{# Use our already defined source rendering partial #}
+	{% include "partials/source.njk" %}
+{% endmacro %}
+
+
+{% if item.example.length > 0 %}
+	{% for example in item.example %}
+		{% if example.description %}
+			<h4>Example: {{ example.description|striptags }}</h4>
+		{% else %}
+			<h4>Example</h4>
+		{% endif %}
+
+		{{ renderExample(example.code, example.type) }}
+	{% endfor %}
+{% endif %}
