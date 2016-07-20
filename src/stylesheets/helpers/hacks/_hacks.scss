@@ -1,0 +1,16 @@
+
+
+
+/// Class to make element visible only when printing
+.visible-print {
+	display: none !important;
+}
+
+@media print {
+	.visible-print {
+		display: inherit !important;
+	}
+	.hidden-print {
+		display: none !important;
+	}
+}

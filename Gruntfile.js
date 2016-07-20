@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 
 	require("load-grunt-tasks")(grunt);
 	require("load-grunt-config")(grunt, {
-		configPath: path.join(process.cwd(), ".grunt"),
+		configPath: path.join(process.cwd(), ".grunt-tasks"),
 		pkg: grunt.file.readJSON("package.json")
 	});
 

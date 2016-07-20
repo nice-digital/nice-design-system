@@ -4,6 +4,22 @@ $sans-font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $serif-font-family: Georgia, 'Times New Roman', Times, serif;
 $mono-font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;
 
+body {
+	background: $white;
+	color: $dark-grey;
+}
+
+
+a {
+	color: $dark-blue;
+
+
+	&:focus {
+		outline: thin dotted #333;
+    	outline: 5px auto -webkit-focus-ring-color;
+    	outline-offset: -2px;
+	}
+}
 
 // Rules
 
