@@ -1,0 +1,36 @@
+////
+/// @group Typography
+////
+
+%list {
+	font-feature-settings: 'kern', 'onum', 'liga';
+	margin-left: 2rem;
+	padding: 0;
+}
+
+ul, ol {
+	@extend %list;
+}
+
+.list {
+	@extend %list;
+
+	&--featured {
+		list-style: none outside;
+
+		li,
+		&__list-item {
+			position: relative;
+
+			&:before {
+				color: get-colour(orange);
+				content: '\2022';
+				font-size: 150%;
+				left: -1.5rem;
+				position: absolute;
+				top: 0;
+			}
+		}
+
+	}
+}

@@ -4,6 +4,12 @@
 
 @include default-box-sixing;
 
+/// The default focus style used for elements like anchors and buttons
+/// @output the default focus styles ie background colour and outline
+@mixin default-focus-style {
+	outline: 3px solid get-colour(orange);
+}
+
 html {
 	@include root-size;
 }
@@ -13,7 +19,7 @@ body {
 	color: get-colour(grey, mid-dark);
 	font-family: font-family(sans);
 	font-style: normal;
-	line-height: 2rem;
+	line-height: 1.6rem;
 	overflow-x: hidden;
 	text-rendering: optimizelegibility;
 }
@@ -24,11 +30,11 @@ html {
 }
 
 a {
-	color: get-colour(blue);
+	color: get-colour(blue, light);
 	text-decoration: none;
 
 	&:visited {
-		color: get-colour(blue, dark);
+		color: get-colour(blue);
 	}
 
 	&:hover {
@@ -37,51 +43,12 @@ a {
 	}
 
 	&:focus {
+		@include default-focus-style;
 		background-color: get-colour(orange);
-		outline: 3px solid get-colour(orange);
 	}
 }
 
 p {
-	@include nice-font($scale: 0);
+	@include nice-font($scale: 0, $line-height: 1.6);
 	font-feature-settings: 'kern', 'onum', 'liga';
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0;
-}
-
-h1,
-.h1 {
-	@include h1;
-}
-
-h2,
-.h2 {
-	@include h2;
-}
-
-h3,
-.h3 {
-	@include h3;
-}
-
-h4,
-.h4 {
-	@include h4;
-}
-
-h5,
-.h5 {
-	@include h5;
-}
-
-h6,
-.h6 {
-	@include h6;
 }

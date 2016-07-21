@@ -4,7 +4,6 @@
 @import 'settings/modular-scale';
 @import 'settings/colours';
 @import 'settings/variables';
-@import 'settings/typography';
 
 // Vendor
 @import 'vendor/normalize';
@@ -16,10 +15,12 @@
 
 // Helpers
 @import 'helpers/helpers';
-@import 'helpers/typography';
+
+// Typography
+@import 'typography/typography';
 
 // Components
-@import 'components/typography';
+@import 'components/panel';
 @import 'components/tables';
 @import 'components/buttons';
 @import 'components/footer';

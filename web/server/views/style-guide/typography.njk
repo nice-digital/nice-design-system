@@ -8,6 +8,8 @@
 	<ul>
 		<li><a href="#intro">Intro</a></li>
 		<li><a href="#headings">Headings</a></li>
+		<li><a href="#links">Links</a></li>
+		<li><a href="#lists">Lists</a></li>
 		<li><a href="#buttons">Buttons</a></li>
 		<li><a href="#quotations">Quotations</a></li>
 	</ul>
@@ -24,7 +26,7 @@
 
 		<ul>
 			<li>Use semantic typographic elements</li>
-			<li>Use <code>rel="external"</code> for external links</li>
+			<li>Use a semantic typographic structure and hierarchy</li>
 		</ul>
 
 		{% example -%}
@@ -66,14 +68,63 @@
 		{%- endexample %}
 	</section>
 
+	<section id="links">
+
+		<h2>Links</h2>
+
+		<ul>
+			<li>Use <code>rel="external"</code> for external links</li>
+		</ul>
+
+		{% example -%}
+			<p><a href="#">A link on its own</a></p>
+			<p>This is some text with <a href="#">a link inside it</a>.</p>
+		{%- endexample %}
+
+	</section>
+
+	<section id="lists">
+
+		<h2>Lists</h2>
+
+		<h3>Default lists</h3>
+
+		{% example -%}
+			<p>Here is a list:</p>
+			<ul>
+				<li>Item 1</li>
+				<li>Item 2</li>
+				<li><a href="#">Item 3</a></li>
+			</ul>
+		{%- endexample %}
+
+		<h3>Featured lists</h3>
+
+		<ul>
+			<li>Use featured lists when you want more impact</li>
+			<li>Try to stick to a maximum of 4 items in a featured list</li>
+		</ul>
+
+		{% example -%}
+			<p>Here is a featured list:</p>
+			<ul class="list list--featured">
+				<li>Item 1</li>
+				<li>Item 2</li>
+				<li>Item 3</li>
+			</ul>
+		{%- endexample %}
+
+	</section>
+
 	<section id="buttons">
 		<h2>Buttons</h2>
 
 		{% example -%}
-			<p><a href="#" class="btn">Default button</a></p>
-			<p><a href="#" class="btn btn--primary">Primary button</a></p>
-			<p><a href="#" class="btn btn--secondary">Subtle secondary</a></p>
-			<p><a href="#" class="btn btn--outline">Outline button</a></p>
+			<div class="panel panel--dark">
+				<p><button type="button" class="btn">Default button</button></p>
+				<p><a href="#" class="btn btn--primary">Primary button</a></p>
+			</div>
+			<p><button type="button" class="btn btn--secondary">Subtle secondary</button></p>
 		{%- endexample %}
 	</section>
 

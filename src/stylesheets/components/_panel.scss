@@ -1,0 +1,9 @@
+.panel {
+	background: get-colour(grey, light);
+	padding: 1em;
+
+	&--dark {
+		background: get-colour(grey, dark);
+		color: $white;
+	}
+}

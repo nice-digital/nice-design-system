@@ -1,28 +1,62 @@
 $button-colour: #11779b;
 
-/// Button mixin
-/// @example Button style
-/// 	.btn {
-/// 		@include button(#ccc);
-/// 	}
-@mixin button($colour: $button-colour) {
-	// Colour
-	background-color: $colour;
-	border: 0;
-	cursor: pointer;
-	display: inline-block;
-
-	// Size and shape
-	//@include inline-block;
-	padding: .526315em .789473em .263157em; // 10px 15px 5px
-	position: relative;
-	//@include border-radius(0);
-
-	// Interaction
+@mixin coloured-btn($bg-colour, $text-colour, $hover-colour: "", $hover-text-colour: "") {
+	background: $bg-colour;
+	border-color: $text-colour;
+	color: $text-colour;
 
 	&:hover,
 	&:focus {
-		background-color: darken($colour, 5%);
+		@if $hover-colour = "" {
+			text-decoration: underline;
+		} @else {
+			background-color: $hover-colour;
+		}
+		@if $hover-text-colour = "" {
+			color: $text-colour;
+		} @else {
+			color: $hover-text-colour;
+		}
+	}
+
+	&.disabled,
+	&[disabled='disabled'],
+	&[disabled] {
+		&:hover {
+			background-color: $bg-colour;
+			cursor: default;
+		}
+	}
+}
+
+.btn {
+	@include remove-moz-focus-inner;
+	appearance: none;
+	background: get-colour(blue);
+	border: 0;
+	border-radius: 0;
+	color: $white;
+	cursor: pointer;
+	display: inline-block;
+	padding: .5em .75em .5em;
+	position: relative;
+	text-decoration: none;
+	vertical-align: top;
+
+	&:hover,
+	&:focus,
+	&:active {
+		background: get-colour(grey, dark);
+		color: $white;
+		text-decoration: none;
+	}
+
+	&:focus {
+		@include default-focus-style;
+	}
+
+	&:visited {
+		color: #fff;
 	}
 
 	// Disabled button styles
@@ -32,23 +66,38 @@ $button-colour: #11779b;
 		opacity: .5;
 
 		&:hover {
-			background-color: $colour;
 			cursor: default;
 		}
 	}
-}
-
-.btn {
-	@include button ($button-colour);
-	vertical-align: top;
 
 	&--primary {
-		background-color: green;
-	}
-}
+		background: get-colour(green, light);
+		border: 1px solid $white;
+		color: $white;
 
-// Fix unwanted button padding in Firefox
-.btn::-moz-focus-inner {
-	border: 0;
-	padding: 0;
+		&:hover {
+			text-decoration: underline;
+		}
+
+		&:hover,
+		&:focus {
+			background: get-colour(green, light);
+		}
+	}
+
+	&--secondary {
+		background: get-colour(grey);
+		color: get-colour(grey, dark);
+
+		&:hover {
+			background: get-colour(grey);
+			color: get-colour(grey, dark);
+			text-decoration: underline;
+		}
+
+		&:active {
+			background: get-colour(grey, dark);
+			color: get-colour(grey);
+		}
+	}
 }
