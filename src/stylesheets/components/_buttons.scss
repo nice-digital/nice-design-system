@@ -29,7 +29,7 @@ $button-colour: #11779b;
 	&.disabled,
 	&[disabled='disabled'],
 	&[disabled] {
-		opacity: 0.5;
+		opacity: .5;
 
 		&:hover {
 			background-color: $colour;

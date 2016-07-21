@@ -1,0 +1,70 @@
+////
+/// @group Typography
+////
+
+html {
+	@include root-size;
+}
+
+body {
+	background: $white;
+	color: $dark-grey;
+	font-family: font-family(sans);
+	font-style: normal;
+	line-height: 2rem;
+	text-rendering: optimizelegibility;
+}
+
+a {
+	color: $dark-blue;
+
+	&:focus {
+		outline: thin dotted $dark-grey;
+		outline: 5px auto -webkit-focus-ring-color;
+		outline-offset: -2px;
+	}
+}
+
+p {
+	@include nice-font;
+	font-feature-settings: 'kern', 'onum', 'liga';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
+h1,
+.h1 {
+	@include h1;
+}
+
+h2,
+.h2 {
+	@include h2;
+}
+
+h3,
+.h3 {
+	@include h3;
+}
+
+h4,
+.h4 {
+	@include h4;
+}
+
+h5,
+.h5 {
+	@include h5;
+}
+
+h6,
+.h6 {
+	@include h6;
+}

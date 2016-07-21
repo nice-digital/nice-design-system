@@ -15,7 +15,8 @@
 		"undefined": "Ungrouped",
 		"general": "General",
 		"colors": "Colours",
-		"helpers": "Helpers"
+		"helpers": "Helpers",
+		"typography": "Typography"
 	},
 	"package": "./package.json",
 	"theme": "./src/stylesheets/sassdoc-nice-theme"

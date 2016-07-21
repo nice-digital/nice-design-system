@@ -1,38 +1,38 @@
+////
+/// @group Typography
+////
 
-/// Sans font families
-$sans-font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$serif-font-family: Georgia, 'Times New Roman', Times, serif;
-$mono-font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;
+/// The font families in use
+/// @prop {String} sans [Lato, Helvetica Neue, Helvetica, Arial, sans-serif] The sans-serif font stack
+$font-families: (
+	sans: '"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif',
+	serif: 'Georgia, "Times New Roman", Times, serif',
+	mono: 'Monaco, Menlo, Consolas, "Courier New", monospace'
+);
 
-body {
-	background: $white;
-	color: $dark-grey;
-}
+/// Base font size
+$base-font-size: 16;
 
+/// Cap height
+$cap-height: .68;
 
-a {
-	color: $dark-blue;
+// TODO: Change the ratio over breakpoints
+$ms-ratio: get-ratio(minor-third);
 
-
-	&:focus {
-		outline: thin dotted #333;
-    	outline: 5px auto -webkit-focus-ring-color;
-    	outline-offset: -2px;
-	}
-}
-
-// Rules
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	color: $dark-grey;
-	font-family: $sans-font-family;
-	font-weight: 200;
-	line-height: 24px;
-	margin: 12px 0;
-	text-rendering: optimizelegibility;
-}
+/// A map of named font sizes to their corresponding modular scale factor
+/// @prop {Integer} h1 [6] Heading 1
+/// @prop {Integer} h2 [5] Heading 2
+/// @prop {Integer} h3 [4] Heading 3
+/// @prop {Integer} h4 [3] Heading 4
+/// @prop {Integer} h5 [2] Heading 5
+/// @prop {Integer} h6 [1] Heading 6
+/// @prop {Integer} p [0] Paragraph
+$named-font-sizes: (
+	h1: 6,
+	h2: 5,
+	h3: 4,
+	h4: 3,
+	h5: 2,
+	h6: 1,
+	p: 0
+);

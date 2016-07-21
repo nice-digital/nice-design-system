@@ -1,18 +1,25 @@
 @charset 'utf-8';
 
+// Settings
+@import 'settings/modular-scale';
+@import 'settings/colours';
+@import 'settings/variables';
+@import 'settings/typography';
+
 // Vendor
 @import 'vendor/normalize';
+@import 'vendor/scut';
+@import 'vendor/math';
+@import 'vendor/is';
+@import 'vendor/mq';
 @import 'vendor/csswizardry-grids';
-//@import 'vendor/sassline-base';
-
-// Settings
-@import 'settings/colours';
-@import 'settings/typography';
 
 // Helpers
 @import 'helpers/helpers';
+@import 'helpers/typography';
 
 // Components
+@import 'components/typography';
 @import 'components/tables';
 @import 'components/buttons';
 @import 'components/footer';
