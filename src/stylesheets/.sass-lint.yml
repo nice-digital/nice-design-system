@@ -54,10 +54,7 @@ rules:
     - max-depth: 2
   no-attribute-selectors: 0
   no-color-keywords: 0
-  no-color-literals:
-    - allow-map-identifiers: true
-    - allow-rgba: false
-    - allow-variable-identifiers: true
+  no-color-literals: 0
   no-combinators: 1
   no-css-comments: 1
   no-debug: 0

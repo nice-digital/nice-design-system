@@ -2,31 +2,48 @@
 /// @group Typography
 ////
 
+@include default-box-sixing;
+
 html {
 	@include root-size;
 }
 
 body {
 	background: $white;
-	color: $dark-grey;
+	color: get-colour(grey, mid-dark);
 	font-family: font-family(sans);
 	font-style: normal;
 	line-height: 2rem;
+	overflow-x: hidden;
 	text-rendering: optimizelegibility;
 }
 
+body,
+html {
+	height: 100%;
+}
+
 a {
-	color: $dark-blue;
+	color: get-colour(blue);
+	text-decoration: none;
+
+	&:visited {
+		color: get-colour(blue, dark);
+	}
+
+	&:hover {
+		color: get-colour(blue, dark);
+		text-decoration: underline;
+	}
 
 	&:focus {
-		outline: thin dotted $dark-grey;
-		outline: 5px auto -webkit-focus-ring-color;
-		outline-offset: -2px;
+		background-color: get-colour(orange);
+		outline: 3px solid get-colour(orange);
 	}
 }
 
 p {
-	@include nice-font;
+	@include nice-font($scale: 0);
 	font-feature-settings: 'kern', 'onum', 'liga';
 }
 

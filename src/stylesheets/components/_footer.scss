@@ -1,6 +1,6 @@
 /// Site footer
 ///
 .footer {
-	background: $dark-grey;
+	background: get-color(grey, dark);
 	color: $white;
 }

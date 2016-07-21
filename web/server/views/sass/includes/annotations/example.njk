@@ -9,9 +9,9 @@
 {% if item.example.length > 0 %}
 	{% for example in item.example %}
 		{% if example.description %}
-			<h4>Example: {{ example.description|striptags }}</h4>
+			<h5>Example: {{ example.description|striptags }}</h5>
 		{% else %}
-			<h4>Example</h4>
+			<h5>Example</h5>
 		{% endif %}
 
 		{{ renderExample(example.code, example.type) }}

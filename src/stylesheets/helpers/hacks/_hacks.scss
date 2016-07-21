@@ -14,3 +14,15 @@
 		display: none !important;
 	}
 }
+
+/// Resets `box-sizing` to `border-box`
+/// @link https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+@mixin default-box-sixing {
+	html {
+		box-sizing: border-box;
+	}
+	*, *:before, *:after {
+		box-sizing: inherit;
+	}
+}
+

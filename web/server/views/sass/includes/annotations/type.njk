@@ -1,11 +1,13 @@
 {% if item.type %}
-  <h3 class="item__sub-heading">Type</h3>
+	<div class="grid__item one-whole tablet--one-half desktop--one-third">
+		<h5>Type</h5>
 
-  <p>
-  {% if item.type == "*" %}
-    Any
-  {% else %}
-    <code>{{ item.type | display_as_type }}</code>
-  {% endif %}
-  </p>
+		<p>
+			{% if item.type == "*" %}
+				Any
+			{% else %}
+				<code>{{ item.type | display_as_type }}</code>
+			{% endif %}
+		</p>
+	</div>
 {% endif %}

@@ -6,7 +6,9 @@
 	<h2>Typography</h2>
 
 	<ul>
+		<li><a href="#intro">Intro</a></li>
 		<li><a href="#headings">Headings</a></li>
+		<li><a href="#buttons">Buttons</a></li>
 		<li><a href="#quotations">Quotations</a></li>
 	</ul>
 
@@ -17,13 +19,33 @@
 
 	<h1>Typography</h1>
 
+	<section id="intro">
+		<h2>Intro</h2>
 
-	{% example -%}
-		<p><a href="#" class="btn">Default button</a></p>
-		<p><a href="#" class="btn btn--primary">Primary button</a></p>
-		<p><a href="#" class="btn btn--secondary">Subtle secondary</a></p>
-		<p><a href="#" class="btn btn--outline">Outline button</a></p>
-	{%- endexample %}
+		<ul>
+			<li>Use semantic typographic elements</li>
+			<li>Use <code>rel="external"</code> for external links</li>
+		</ul>
+
+		{% example -%}
+			<h1>Heading 1</h1>
+			<h2>Heading 2</h2>
+			<p>Lorem <strong>ipsum</strong> dolor sit amet, <em>consectetur</em> adipiscing elit. Proin pretium, tortor non rhoncus rhoncus 12<sup>th</sup>, libero turpis varius felis, sit amet rutrum massa dolor id velit. Etiam dignissim lacus <a href="#">vitae lacinia</a> vulputate.</p>
+			<h3>Heading 3</h3>
+			<p>Here is a list of some things:</p>
+			<ul>
+				<li>The first thing</li>
+				<li>And another</li>
+				<li>Last thing</li>
+			</ul>
+			<h2>And an ordered list of things</h2>
+			<ol>
+				<li>The first thing</li>
+				<li>And another</li>
+				<li>Last thing</li>
+			</ol>
+		{%- endexample %}
+	</section>
 
 	<section id="headings">
 		<h2>Headings</h2>
@@ -41,6 +63,17 @@
 			<h4>Heading 4</h4>
 			<h5>Heading 5</h5>
 			<h6>Heading 6</h6>
+		{%- endexample %}
+	</section>
+
+	<section id="buttons">
+		<h2>Buttons</h2>
+
+		{% example -%}
+			<p><a href="#" class="btn">Default button</a></p>
+			<p><a href="#" class="btn btn--primary">Primary button</a></p>
+			<p><a href="#" class="btn btn--secondary">Subtle secondary</a></p>
+			<p><a href="#" class="btn btn--outline">Outline button</a></p>
 		{%- endexample %}
 	</section>
 

@@ -1,18 +1,16 @@
-{% set title_displayed = false %}
-{% for see in item.see %}
+{% if item.see.length > 1 %}
+	<div class="grid__item one-whole tablet--one-half desktop--one-third">
+		<h5>See</h5>
 
-  {% if (display.access.indexOf(see.access) != -1) and not (not display.alias and see.alias) %}
-    {% if not title_displayed %}
-      {% set title_displayed = true %}
-      <h3 class="item__sub-heading">See</h3>
-      <ul class="list-unstyled">
-    {% endif %}
-
-    <li><span class="item__cross-type">[{{ see.context.type }}]</span> <a href="#{{ see.context.type }}-{{ see.context.name }}"><code>{{ see.context.name }}</code></a></li>
-  {% endif %}
-
-{% endfor %}
-
-{% if title_displayed %}
-</ul>
+		<ul>
+			{% for see in item.see %}
+				<li>
+					[{{ see.context.type }}]
+					<a href="#{{ see.context.type }}-{{ see.context.name }}">
+						<code>{{ see.context.name }}</code>
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
 {% endif %}

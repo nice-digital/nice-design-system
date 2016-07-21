@@ -5,8 +5,8 @@
 /// Gets a font family from the `$font-families` map, given a name
 /// @param {String} $stack The stack name e.g. sans, serif or mono
 @function font-family($stack) {
-    $result: map-get($font-families, $stack);
-    @return unquote($result);
+	$result: map-get($font-families, $stack);
+	@return unquote($result);
 }
 
 /// Gets the integer root size, in px, for the given
@@ -21,6 +21,7 @@
 /// Uses the $nice-breakpoints map to add a set of mobile
 /// first media queries.
 /// @see $nice-breakpoints
+/// @output Root font-size and media queries
 /// @example
 /// 	html {
 /// 		@include root-size;
@@ -63,8 +64,8 @@
 
 /// Nice font.
 /// Uses 'Advanced baseline magic' from SASS Line
-/// Taken from https://github.com/jakegiltsoff/sassline/blob/master/assets/sass/sassline-base/_mixins.scss
-/// In turn based on https://gist.github.com/razwan/10662500
+/// @link https://github.com/jakegiltsoff/sassline/blob/master/assets/sass/sassline-base/_mixins.scss Taken from SASS Line
+/// @link https://gist.github.com/razwan/10662500 Based on razwan's gist
 @mixin nice-font($scale: 0, $line-height: 2, $below: 2) {
 	$root-size: $base-font-size;
 	$font-size: get-font-size($scale);
@@ -79,24 +80,30 @@
 
 @mixin h1 {
 	@include nice-font(h1, $line-height: 3, $below: 1);
+	font-weight: normal;
 }
 
 @mixin h2 {
 	@include nice-font(h2, $line-height: 3, $below: 1);
+	font-weight: normal;
 }
 
 @mixin h3 {
 	@include nice-font(h3, $line-height: 3, $below: 1);
+	font-weight: normal;
 }
 
 @mixin h4 {
-	@include nice-font(h4, $line-height: 2, $below: 0);
+	@include nice-font(h4, $line-height: 2, $below: 1);
+	font-weight: normal;
 }
 
 @mixin h5 {
 	@include nice-font(h5, $line-height: 2, $below: 0);
+	font-weight: bold;
 }
 
 @mixin h6 {
 	@include nice-font(h6, $line-height: 2, $below: 0);
+	font-weight: bold;
 }

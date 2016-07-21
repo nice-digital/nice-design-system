@@ -1,12 +1,14 @@
 {# Describes the usage of @content Sass directive in the documented mixin #}
 
 {% if 'content'|in(item) %}
-	<h3 class="item__sub-heading">Content</h3>
+	<div class="grid__item one-whole tablet--one-half desktop--one-third">
+		<h5>Content</h5>
 
-	<p>
-		This mixin allows extra content to be passed (through the <code>@content</code> directive).
-		{% if item.content != "" %}
-			Role: {{ item.content }}
-		{% endif %}
-	</p>
+		<p>
+			This mixin allows extra content to be passed (through the <code>@content</code> directive).
+			{% if item.content != "" %}
+				Role: {{ item.content }}
+			{% endif %}
+		</p>
+	</div>
 {% endif %}

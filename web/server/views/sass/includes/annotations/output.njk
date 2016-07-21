@@ -1,4 +1,6 @@
 {% if item.output %}
-  <h3 class="item__sub-heading">Output</h3>
-  <div class="item__description">{{ item.output|safe }}</div>
+	<div class="grid__item one-whole tablet--one-half desktop--one-third">
+		<h5>Output</h5>
+		<div class="item__description">{{ item.output|safe }}</div>
+	</div>
 {% endif %}
