@@ -20,5 +20,11 @@ module.exports = {
 		options: {
 			spawn: false
 		}
+	},
+	public: {
+		files: ["./dist/stylesheets/**/*.css", "./dist/javascripts/**/*.js", "./web/server/views/**/*.njk"],
+		options: {
+			livereload: true
+		}
 	}
 }

@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 	r("lint", ["sasslint", "eslint"]);
 	r("docs", ["sassdoc", "documentation"]);
 	r("build", ["sass", "webpack"]);
-	r("serve", ["express", "open", "watch"]);
+	r("serve", ["express", "open", "parallel:watch"]);
 
 	r("default", ["lint", "docs", "build", "serve"]);
 };
