@@ -1,0 +1,26 @@
+.swatch {
+	border-radius: 999px;
+	display: block;
+	float: left;
+	height: 100px;
+	line-height: 100px;
+	margin: 0 8px 8px;
+    text-align: center;
+	width: 100px;
+
+	@each $name, $palette in $palettes {
+
+		@each $key, $hex in $palette {
+			&--#{$name}-#{$key} {
+				background: $hex;
+
+				&:after {
+					color: invert($hex);
+					content: '#{$hex}';
+					// TODO: Change colour based on hex
+				}
+			}
+		}
+	}
+
+}

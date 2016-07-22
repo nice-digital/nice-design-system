@@ -3,16 +3,7 @@
 
 {% block sidebar %}
 
-	<h2>Typography</h2>
-
-	<ul>
-		<li><a href="#intro">Intro</a></li>
-		<li><a href="#headings">Headings</a></li>
-		<li><a href="#links">Links</a></li>
-		<li><a href="#lists">Lists</a></li>
-		<li><a href="#buttons">Buttons</a></li>
-		<li><a href="#quotations">Quotations</a></li>
-	</ul>
+	{% include "partials/style-guide-nav.njk" %}
 
 {% endblock %}
 
@@ -20,6 +11,16 @@
 {% block main %}
 
 	<h1>Typography</h1>
+
+	<nav>
+		<ul>
+			<li><a href="#intro">Intro</a></li>
+			<li><a href="#headings">Headings</a></li>
+			<li><a href="#links">Links</a></li>
+			<li><a href="#lists">Lists</a></li>
+			<li><a href="#quotations">Quotations</a></li>
+		</ul>
+	</nav>
 
 	<section id="intro">
 		<h2>Intro</h2>
@@ -115,25 +116,6 @@
 		{%- endexample %}
 
 	</section>
-
-	<section id="buttons">
-		<h2>Buttons</h2>
-
-		{% example -%}
-			<div class="panel panel--dark">
-				<p><button type="button" class="btn">Default button</button></p>
-				<p><a href="#" class="btn btn--primary">Primary button</a></p>
-				<p><button type="button" class="btn btn--primary btn--lg">Primary button, large</button></p>
-			</div>
-			<p><button type="button" class="btn btn--secondary">Subtle secondary</button></p>
-			<p><button type="button" class="btn btn--lg">Default button, large</button></p>
-			<p>
-				<button type="button" class="btn">Default button</button>
-				<button type="button" class="btn btn--secondary">Subtle secondary</button>
-			</p>
-		{%- endexample %}
-	</section>
-
 
 	<section id="quotations">
 		<h2>Quotations</h2>

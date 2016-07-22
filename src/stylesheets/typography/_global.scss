@@ -48,7 +48,7 @@ a {
 	}
 }
 
-p {
+p, .p {
 	@include nice-font($scale: 0, $line-height: 1.6);
 	font-feature-settings: 'kern', 'onum', 'liga';
 }

@@ -1,0 +1,85 @@
+{% extends "../layouts/_sidebar.njk" %}
+{% set title = "Buttons" %}
+
+{% block sidebar %}
+
+	{% include "partials/style-guide-nav.njk" %}
+
+{% endblock %}
+
+
+{% block main %}
+
+	<h1>Buttons</h1>
+
+	<nav>
+		<ul>
+			<li><a href="#styles">Styles</a></li>
+			<li><a href="#sizes">Sizes</a></li>
+			<li><a href="#groups">Groups</a></li>
+		</ul>
+	</nav>
+
+	<section id="styles">
+		<h2>Button styles</h2>
+
+		<ul>
+			<li>Buttons can be <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code> or <code>&lt;input&gt;</code></li>
+			<li>Use BEM mofifiers for different types</li>
+		</ul>
+
+		{% example -%}
+			<div class="panel panel--dark">
+				<p><button type="button" class="btn">Default button</button></p>
+				<p><a href="#" class="btn btn--primary">Primary button</a></p>
+				<p><input type="button" class="btn btn--secondary" value="Subtle secondary" /></p>
+			</div>
+		{%- endexample %}
+	</section>
+
+	<section id="sizes">
+		<h2>Sizes</h2>
+
+		<ul>
+			<li>Use BEM modifiers for sizes</li>
+			<li>Size and type modifiers can be combined</li>
+		</ul>
+
+		{% example -%}
+			<div class="grid">
+				<div class="grid__item one-half">
+					<p><button type="button" class="btn btn--xs">Large button</button></p>
+					<p><button type="button" class="btn btn--sm">Large button</button></p>
+					<p><button type="button" class="btn">Default button</button></p>
+					<p><button type="button" class="btn btn--lg">Large button</button></p>
+					<p><button type="button" class="btn btn--xl">XL button</button></p>
+				</div>
+				<div class="grid__item one-half">
+					<p><button type="button" class="btn btn--secondary btn--xs">Large button</button></p>
+					<p><button type="button" class="btn btn--secondary btn--sm">Large button</button></p>
+					<p><button type="button" class="btn btn--secondary">Default button</button></p>
+					<p><button type="button" class="btn btn--secondary btn--lg">Large button</button></p>
+					<p><button type="button" class="btn btn--secondary btn--xl">XL button</button></p>
+				</div>
+			</div>
+		{%- endexample %}
+	</section>
+
+	<section id="groups">
+		<h2>Groups</h2>
+
+		<ul>
+			<li>Buttons can be grouped together</li>
+			<li>Typically a default/primary and a secondary</li>
+			<li>Don't group more than 3 buttons</li>
+		</ul>
+
+		{% example -%}
+			<p>
+				<button type="button" class="btn">Primary action</button>
+				<button type="button" class="btn btn--secondary">Secondary action</button>
+			</p>
+		{%- endexample %}
+	</section>
+
+{% endblock %}

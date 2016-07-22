@@ -8,7 +8,40 @@ h3,
 h4,
 h5,
 h6 {
+	clear: both;
 	margin: 0;
+}
+
+.heading {
+	clear: both;
+
+	&--primary {
+		@include h1;
+	}
+
+	&--secondary {
+		@include h2;
+	}
+
+	&--tertiary {
+		@include h3;
+	}
+
+	&--quaternary {
+		@include h4;
+	}
+
+	&--quinary {
+		@include h5;
+	}
+
+	&--senary {
+		@include h6;
+	}
+
+	&--separator {
+		border-bottom: 1px solid get-colour(grey);
+	}
 }
 
 h1,

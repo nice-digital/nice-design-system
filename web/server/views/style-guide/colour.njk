@@ -1,0 +1,48 @@
+{% extends "../layouts/_sidebar.njk" %}
+{% set title = "Colour" %}
+
+{% block sidebar %}
+
+	{% include "partials/style-guide-nav.njk" %}
+
+{% endblock %}
+
+
+{% block main %}
+
+	<h1>Colours</h1>
+
+	<nav>
+		<ul>
+			<li><a href="#usage">Usage</a></li>
+			<li><a href="#palette">Palettes</a></li>
+		</ul>
+	</nav>
+
+	<section id="usage">
+		<h2>Usage</h2>
+
+	</section>
+
+
+	<section id="groups">
+		<h2>Palettes</h2>
+
+		<h3>Oranges</h3>
+
+		<div class="swatch swatch--orange-base"></div>
+
+		<h3>Blues</h3>
+
+		<div class="swatch swatch--blue-x-light"></div>
+		<div class="swatch swatch--blue-light"></div>
+		<div class="swatch swatch--blue-base"></div>
+		<div class="swatch swatch--blue-dark"></div>
+
+		<h3>Purples</h3>
+
+		<div class="swatch swatch--purple-base"></div>
+
+	</section>
+
+{% endblock %}
