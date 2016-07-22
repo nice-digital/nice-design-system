@@ -1,9 +1,7 @@
 {% extends "../layouts/_sidebar.njk" %}
-{% set title = "Components" %}
+{% set title = "Breadcrumbs" %}
 
 {% block sidebar %}
-
-	<h2>Components</h2>
 
 	<ul>
 		<li><a href="#breadcrumbs">Breadcrumbs</a></li>
@@ -14,11 +12,9 @@
 
 {% block main %}
 
-	<h1>Components</h1>
+	<h1>Breadcrumbs</h1>
 
 	<section id="breadcrumbs">
-		<h2>Breadcrumbs</h2>
-
 		{% example -%}
 			<ol class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
 				<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="#">NICE</a></li>
