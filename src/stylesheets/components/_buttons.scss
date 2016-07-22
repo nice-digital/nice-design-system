@@ -38,6 +38,7 @@ $button-colour: #11779b;
 	color: $white;
 	cursor: pointer;
 	display: inline-block;
+	margin: 0 em(4) 0 0;
 	padding: em(6) em(10);
 	position: relative;
 	text-decoration: none;
@@ -68,6 +69,11 @@ $button-colour: #11779b;
 		&:hover {
 			cursor: default;
 		}
+	}
+
+	&--lg {
+		font-size: 135%;
+		padding: em(12) em(20);
 	}
 
 	&--primary {
