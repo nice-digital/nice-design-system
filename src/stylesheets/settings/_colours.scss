@@ -161,7 +161,7 @@ $tones: (
 			@return call($function, $base-colour, $args...);
 		}
 
-		@error "Invalid `$tone`: #{$tone}. Must be one of $tones.";
+		@error 'Invalid `$tone`: #{$tone}. Must be one of $tones.';
 	}
 
 	@error 'Palette #{$palette} could not be found';

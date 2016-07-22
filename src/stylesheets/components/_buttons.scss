@@ -30,7 +30,7 @@ $button-colour: #11779b;
 }
 
 .btn {
-	@include remove-moz-focus-inner;
+	@include remove-mz-focus-inner;
 	appearance: none;
 	background: get-colour(blue);
 	border: 0;
