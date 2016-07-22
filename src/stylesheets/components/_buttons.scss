@@ -1,18 +1,18 @@
 $button-colour: #11779b;
 
-@mixin coloured-btn($bg-colour, $text-colour, $hover-colour: "", $hover-text-colour: "") {
+@mixin coloured-btn($bg-colour, $text-colour, $hover-colour: '', $hover-text-colour: '') {
 	background: $bg-colour;
 	border-color: $text-colour;
 	color: $text-colour;
 
 	&:hover,
 	&:focus {
-		@if $hover-colour = "" {
+		@if $hover-colour = '' {
 			text-decoration: underline;
 		} @else {
 			background-color: $hover-colour;
 		}
-		@if $hover-text-colour = "" {
+		@if $hover-text-colour = '' {
 			color: $text-colour;
 		} @else {
 			color: $hover-text-colour;
@@ -30,7 +30,7 @@ $button-colour: #11779b;
 }
 
 .btn {
-	@include remove-moz-focus-inner;
+	@include remove-mz-focus-inner;
 	appearance: none;
 	background: get-colour(blue);
 	border: 0;
@@ -39,7 +39,7 @@ $button-colour: #11779b;
 	cursor: pointer;
 	display: inline-block;
 	margin: 0 em(4) 0 0;
-	padding: .5em .75em .5em;
+	padding: em(6) em(10);
 	position: relative;
 	text-decoration: none;
 	vertical-align: top;

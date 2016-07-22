@@ -27,7 +27,7 @@
 }
 
 /// Fix unwanted button padding in Firefox
-@mixin remove-moz-focus-inner {
+@mixin remove-mz-focus-inner {
 	&:moz-focus-inner {
 		border: 0;
 		padding: 0;

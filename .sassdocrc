@@ -19,7 +19,8 @@
 		"general": "General",
 		"colors": "Colours",
 		"helpers": "Helpers",
-		"typography": "Typography"
+		"typography": "Typography",
+		"components": "Components"
 	},
 	"package": "./package.json",
 	"theme": "./src/stylesheets/sassdoc-nice-theme"
