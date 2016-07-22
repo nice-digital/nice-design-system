@@ -1,69 +1,50 @@
-// Phase banner usage:
-//
-// .phase-banner {
-//    @include phase-banner($state: beta);
-// }
+////
+/// @group components
+////
 
-@mixin phase-banner($state: alpha) {
-	padding: 10px 0 8px;
+/// A phase banner includes a tag and a label and is designed
+/// to designate that a service is in alpha or beta
+.phase-banner {
+	border-bottom: 1px solid get-colour(grey);
+	display: table;
+	margin: 0;
+	padding: em(4) 0;
+	width: 100%;
 
-	/*@include media(tablet) {
-		padding-bottom: 10px;
-	}*/
-
-	//border-bottom: 1px solid $border-colour;
-
-	p {
-		display: table;
-		margin: 0;
-		//color: $banner-text-colour;
-		//@include core-16;
-	}
-
-	.phase-tag {
-		@include phase-tag($state);
-	}
-
-	span {
+	&__tag {
 		display: table-cell;
-		vertical-align: baseline;
+		padding: 0 em(8) 0;
+	}
+
+	&__label {
+		display: table-cell;
+		line-height: 1.25;
+		vertical-align: middle;
+		width: 100%;
 	}
 }
 
-// Phase tag usage:
-//
-// Alpha
-// .phase-tag {
-//    @include phase-tag;
-// }
-//
-// Beta
-// .phase-tag {
-//    @include phase-tag(beta);
-// }
-
-@mixin phase-tag($state: alpha) {
-	//@include inline-block;
-	//@include bold-16($line-height: 20 / 16);
+/// A coloured block to designate a service being in alpha or beta. Can be
+/// used on its own but usually used within a `.phase-banner`.
+/// @see .phase-banner
+.phase-tag {
+	background-color: get-colour(grey, dark);
 	color: $white;
+	display: inline-block;
+	font-weight: 700;
 	letter-spacing: 1px;
-	margin: 0 8px 0 0;
-	padding: 2px 5px 0;
+	padding: 0 .3rem;
 	text-decoration: none;
 	text-transform: uppercase;
+	vertical-align: middle;
 
-	@if $state == alpha {
+	&--alpha {
 		background-color: $alpha-colour;
-	} @else if $state == beta {
-		background-color: $beta-colour;
+		color: $white;
 	}
-}
 
-
-.phase-banner-alpha {
-	@include phase-banner($state: alpha);
-}
-
-.phase-banner-beta {
-	@include phase-banner($state: beta);
+	&--beta {
+		background-color: $beta-colour;
+		color: $white;
+	}
 }
