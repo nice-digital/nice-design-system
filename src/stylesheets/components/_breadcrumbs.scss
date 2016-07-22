@@ -1,37 +1,24 @@
-/// Breadcrumbs
-/// @group General
-.breadcrumb {
+.breadcrumbs {
 	list-style: none;
 	padding: 0;
-	//margin: 0 0 @baseLineHeight;
+	margin: 0;
 
-	li {
-		padding-left: 0;
-		//display: inline-block;
-		//.ie7-inline-block();
+	&__crumb {
+		display: inline-block;
 
-		.divider {
-			padding: 0 5px;
-			//color: @grayDarker;
+		&.active {
+			color: get-colour(grey);
 		}
-	}
 
-	li:before {
-		display: none;
-	}
-
-	a {
-		//color: @grayDark;
-
-		&:hover,
-		&:active ,
-		&:focus {
-			//color: @grayDarker;
-			text-decoration: none;
+		&::after {
+			content: ">";
+			margin: 0 10px;
+			font-weight: bold;
+			font-size: em(25);
 		}
-	}
 
-	.active {
-		//color: @gray;
+		&:last-of-type::after {
+			display: none;
+		}
 	}
 }
