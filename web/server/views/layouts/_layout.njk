@@ -53,16 +53,17 @@
 		</div>
 	{% endif %}
 
-	<header>
-		<nav role="nav">
-			<ul>
-				<li><a href="/">NICE Experience</a></li>
-				<li><a href="/style-guide/">Style guide</a></li>
-				<li><a href="/sass/">SASS</a></li>
-				<li><a href="/javascript/">JavaScript</a></li>
+	<nav class="navbar" role="nav">
+		<div class="navbar__inner">
+			<a class="navbar__inner__brand"></a>
+			<ul class="navbar__inner__nav">
+				<li class="navbar__inner__nav__item navbar__inner__nav__item--active"><a href="/">NICE Experience</a></li>
+				<li class="navbar__inner__nav__item"><a href="/style-guide/">Style guide</a></li>
+				<li class="navbar__inner__nav__item"><a href="/sass/">SASS</a></li>
+				<li class="navbar__inner__nav__item"><a href="/javascript/">JavaScript</a></li>
 			</ul>
-		</nav>
-	</header>
+		</div>
+	</nav>
 
 	{% block body %}
 		This is the default body content
