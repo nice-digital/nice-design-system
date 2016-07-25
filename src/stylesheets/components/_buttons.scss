@@ -1,36 +1,7 @@
-$button-colour: #11779b;
-
-@mixin coloured-btn($bg-colour, $text-colour, $hover-colour: '', $hover-text-colour: '') {
-	background: $bg-colour;
-	border-color: $text-colour;
-	color: $text-colour;
-
-	&:hover,
-	&:focus {
-		@if $hover-colour = '' {
-			text-decoration: underline;
-		} @else {
-			background-color: $hover-colour;
-		}
-		@if $hover-text-colour = '' {
-			color: $text-colour;
-		} @else {
-			color: $hover-text-colour;
-		}
-	}
-
-	&.disabled,
-	&[disabled='disabled'],
-	&[disabled] {
-		&:hover {
-			background-color: $bg-colour;
-			cursor: default;
-		}
-	}
-}
 
 .btn {
 	@include remove-mz-focus-inner;
+	@include nice-font-size(0, 2.5);
 	appearance: none;
 	background: get-colour(blue);
 	border: 0;
@@ -39,7 +10,7 @@ $button-colour: #11779b;
 	cursor: pointer;
 	display: inline-block;
 	margin: 0 em(4) 0 0;
-	padding: em(6) em(10);
+	padding: 0 em(12);
 	position: relative;
 	text-decoration: none;
 	vertical-align: top;
@@ -71,9 +42,24 @@ $button-colour: #11779b;
 		}
 	}
 
+	&--xs {
+		@include nice-font-size(-2, 1.5);
+		padding: 0 em(12);
+	}
+
+	&--sm {
+		@include nice-font-size(-1);
+		padding: 0 em(12);
+	}
+
 	&--lg {
-		font-size: 135%;
-		padding: em(12) em(20);
+		@include nice-font-size(1, 3);
+		padding: 0 em(16);
+	}
+
+	&--xl {
+		@include nice-font-size(2, 4);
+		padding: 0 em(20);
 	}
 
 	&--primary {
