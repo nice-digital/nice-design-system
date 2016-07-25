@@ -1,14 +1,5 @@
-{% extends "../layouts/_sidebar.njk" %}
+{% extends "./_style-guide-layout.njk" %}
 {% set title = "Breadcrumbs" %}
-
-{% block sidebar %}
-
-	<ul>
-		<li>Use <code>class="active"</code> for current page</li>
-	</ul>
-
-{% endblock %}
-
 
 {% block main %}
 
@@ -17,7 +8,7 @@
 	<section id="breadcrumbs">
 
 		<ul>
-			<li>Use a semantic typographic structure and hierarchy</li>
+			<li>Use <code>class="active"</code> for current page</li>
 		</ul>
 
 		{% example -%}

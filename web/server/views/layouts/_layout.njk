@@ -26,17 +26,6 @@
 		</p>
 	</div>
 
-	<header>
-		<nav role="nav">
-			<ul>
-				<li><a href="/">NICE Experience</a></li>
-				<li><a href="/style-guide/">Style guide</a></li>
-				<li><a href="/sass/">SASS</a></li>
-				<li><a href="/javascript/">JavaScript</a></li>
-			</ul>
-		</nav>
-	</header>
-
 	{% if breadcrumbs %}
 		<div class="container">
 			<ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
@@ -63,6 +52,17 @@
 			</ol>
 		</div>
 	{% endif %}
+
+	<header>
+		<nav role="nav">
+			<ul>
+				<li><a href="/">NICE Experience</a></li>
+				<li><a href="/style-guide/">Style guide</a></li>
+				<li><a href="/sass/">SASS</a></li>
+				<li><a href="/javascript/">JavaScript</a></li>
+			</ul>
+		</nav>
+	</header>
 
 	{% block body %}
 		This is the default body content
