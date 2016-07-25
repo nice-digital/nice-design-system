@@ -1,0 +1,73 @@
+{% extends "./_style-guide-layout.njk" %}
+{% set title = "Alpha and beta" %}
+
+{% block main %}
+
+	<h1>Alpha &amp; beta phases</h1>
+
+	<nav>
+		<ul>
+			<li><a href="#phase-tag">Phase tag</a></li>
+			<li><a href="#phase-banner">Phase banner</a></li>
+		</ul>
+	</nav>
+
+	<section id="phase-tag">
+		<h2>Phase tag</h2>
+
+		{% example -%}
+			<p>
+				Phase tags can be used on their own like this:
+				<strong class="phase-tag phase-tag--alpha">ALPHA</strong>
+			</p>
+			<p>
+				Or anywhere else, e.g. a list
+			</p>
+			<ul>
+				<li>
+					An alpha service <strong class="phase-tag phase-tag--alpha">ALPHA</strong>
+				</li>
+				<li>
+					A beta service <strong class="phase-tag phase-tag--beta">BETA</strong>
+				</li>
+			</ul>
+
+		{%- endexample %}
+	</section>
+
+	<section id="phase-banner">
+		<h2>Phase banner</h2>
+
+		<ul>
+			<li>Phase banners combine phase tags into a layout</li>
+			<li>Phase banners should be prominent at the top a service</li>
+		</ul>
+
+		<h3>Alpha</h3>
+
+		{% example -%}
+			<p class="phase-banner">
+				<span class="phase-banner__tag">
+					<strong class="phase-tag phase-tag--alpha">ALPHA</strong>
+				</span>
+				<span class="phase-banner__label">
+					NICE Experience is in development. This means there it isn't feature complete and there will be issues. Find any? Please, let us know!
+				</span>
+			</p>
+		{%- endexample %}
+
+		<h3>Beta</h3>
+
+		{% example -%}
+			<p class="phase-banner">
+				<span class="phase-banner__tag">
+					<strong class="phase-tag phase-tag--beta">BETA</strong>
+				</span>
+				<span class="phase-banner__label">
+					HDAS2 is in Beta
+				</span>
+			</p>
+		{%- endexample %}
+	</section>
+
+{% endblock %}
