@@ -10,13 +10,13 @@
 			color: get-colour(grey);
 		}
 
-		&::after {
+		&::before {
 			content: ">";
 			margin: 0 10px;
 			font-weight: bold;
 		}
 
-		&:last-of-type::after {
+		&:first-of-type::before {
 			display: none;
 		}
 	}
