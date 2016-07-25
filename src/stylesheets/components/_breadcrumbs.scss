@@ -6,7 +6,7 @@
 	&__crumb {
 		display: inline-block;
 
-		&.active {
+		&--active {
 			color: get-colour(grey);
 		}
 
