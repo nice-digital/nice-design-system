@@ -51,4 +51,14 @@ a {
 p, .p {
 	@include nice-font($scale: 0, $line-height: 1.6);
 	font-feature-settings: 'kern', 'onum', 'liga';
+
+	&.lead {
+		@include nice-font($scale: 1, $line-height: 2);
+
+		&:first-letter {
+			@include nice-font-size($scale: 7, $line-height: 4);
+			float: left;
+			padding: scut-em(0 2px 0 0);
+		}
+	}
 }
