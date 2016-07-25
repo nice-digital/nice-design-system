@@ -12,26 +12,6 @@
 
 {% block body %}
 
-	<div>
-		<div class="container">
-			<ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
-				<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-					<a href="#">
-						NICE
-					</a>
-				</li>
-				<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-					<a href="#">
-						Something
-					</a>
-				</li>
-				<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-					Current page
-				</li>
-			</ol>
-		</div>
-	</div>
-
 	<div class="container">
 		<h1>Welcome to NICE Experience</h1>
 		<h2 class="p">Your source for creating beautiful, consistent experiences across NICE</h2>
@@ -81,6 +61,16 @@
 			{{ item("Colour", "/sass/colour", "Colour contrast, Sass variables, colour palettes") }}
 
 			{{ item("Documentation", "/sass/docs", "Auto-generated SASS code documentation") }}
+
+		</div>
+
+		<h3 class="heading heading--separator">JavaScript</h3>
+
+		<div class="grid">
+
+			{{ item("Syntax", "/javascript/syntax", "Syntax, formatting, conventions and code structure") }}
+
+			{{ item("Documentation", "/javascript/docs", "Auto-generated JS code documentation") }}
 
 		</div>
 

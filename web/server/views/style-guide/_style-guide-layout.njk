@@ -1,0 +1,17 @@
+{% extends "../layouts/_sidebar.njk" %}
+{% set breadcrumbs = [{ title: "Style guide", href: "/style-guide/" }, { title: title }] %}
+{% set title = title + " | Style guide" %}
+
+{% block sidebar %}
+
+	<nav>
+		<ul>
+			<li><a href="/style-guide/">Style guide</a></li>
+			<li><a href="/style-guide/grid">Grid</a></li>
+			<li><a href="/style-guide/typography">Typography</a></li>
+			<li><a href="/style-guide/buttons">Buttons</a></li>
+			<li><a href="/style-guide/colour">Colour</a></li>
+		</ul>
+	</nav>
+
+{% endblock %}

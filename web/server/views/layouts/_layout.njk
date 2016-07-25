@@ -37,6 +37,33 @@
 		</nav>
 	</header>
 
+	{% if breadcrumbs %}
+		<div class="container">
+			<ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+				<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a href="/">
+						NICE Experience
+					</a>
+				</li>
+				{% for crumb in breadcrumbs %}
+					{% if crumb %}
+						{% if crumb.href %}
+							<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+								<a href="{{ crumb.href }}">
+									{{ crumb.title }}
+								</a>
+							</li>
+						{% else %}
+							<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+								{{ crumb.title }}
+							</li>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</ol>
+		</div>
+	{% endif %}
+
 	{% block body %}
 		This is the default body content
 	{% endblock %}

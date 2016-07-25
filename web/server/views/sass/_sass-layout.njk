@@ -1,0 +1,15 @@
+{% extends "../layouts/_sidebar.njk" %}
+{% set breadcrumbs = [{ title: "SASS", href: "/sass/" }, { title: title }] %}
+{% set title = title + " | SASS" %}
+
+{% block sidebar %}
+
+	<nav>
+		<ul>
+			<li><a href="/sass/">SASS</a></li>
+			<li><a href="/sass/docs">Documentation</a></li>
+		</ul>
+	</nav>
+
+{% endblock %}
+
