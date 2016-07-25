@@ -1,16 +1,42 @@
-{% extends "./_style-guide-layout.njk" %}
+{% extends "../layouts/_sidebar.njk" %}
 {% set title = "Breadcrumbs" %}
+
+{% block sidebar %}
+
+	<ul>
+		<li>Use <code>class="active"</code> for current page</li>
+	</ul>
+
+{% endblock %}
+
 
 {% block main %}
 
 	<h1>Breadcrumbs</h1>
 
 	<section id="breadcrumbs">
+
+		<ul>
+			<li>Use a semantic typographic structure and hierarchy</li>
+		</ul>
+
+		{% example -%}
+			<ol class="breadcrumbs">
+				<li class="breadcrumbs__crumb"><a href="#">Home</a></li>
+				<li class="breadcrumbs__crumb"><a href="#">Nice Guidance</a></li>
+				<li class="breadcrumbs__crumb active">Conditions and diseases</li>
+			</ol>
+		{%- endexample %}
+
+		<h2>Breadcrumbs with schema microdata</h2>
+
+		<p>Used to improve the web by creating a structured data markup schema supported by major search engines. On-page markup helps search engines understand the information on web pages and provide richer search results.</p>
+
 		{% example -%}
 			<ol class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
-				<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="#">NICE</a></li>
-				<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="#">Something</a></li>
-				<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">Current page</li>
+				<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="#">Home</a></li>
+				<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="#">Nice Guidance</a></li>
+				<li class="breadcrumbs__crumb active" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">Population groups</li>
 			</ol>
 		{%- endexample %}
 	</section>
