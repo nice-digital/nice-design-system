@@ -1,0 +1,56 @@
+////
+/// @group components
+////
+
+/// Tabbed navigational structure
+.tabs {
+
+	/// The list of tabs
+	&__list {
+		list-style: none;
+		margin: 0;
+		overflow: hidden;
+		padding: 0;
+	}
+
+	///
+	&__tab {
+		float: left;
+
+		a {
+			display: block;
+			line-height: 4rem;
+			margin: 0;
+			padding: 0 1rem;
+		}
+
+		&--active {
+			background: get-colour(grey, light);
+		}
+
+		a {
+			&:hover {
+				background: get-colour(grey);
+			}
+		}
+	}
+
+	/// The tab content containing the tab panels
+	&__content {
+		background: get-colour(grey, light);
+		padding: 1rem;
+	}
+
+	/// An individual tab content pane
+	&__pane {
+
+		// Assume tabs will stack if no JS is available
+		.js & {
+			display: none;
+
+			&--active {
+				display: block;
+			}
+		}
+	}
+}

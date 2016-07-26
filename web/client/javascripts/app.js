@@ -1,12 +1,9 @@
-import test from "departments";
-import tabs from "tabs";
+//import tab from "tabs";
+import $ from "jquery";
+import pluginAutoLoader from "plugin-autoloader";
 
-console.log("tabs", tabs);
+$().ready(function() {
 
-console.log("test", test);
-
-function sum(a: number, b: number): number {
-	return a + b;
-}
-
-sum(1, 2);
+	// Load any plugins automatically
+	pluginAutoLoader.findPlugins();
+});
