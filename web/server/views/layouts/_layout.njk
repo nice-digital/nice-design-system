@@ -1,3 +1,5 @@
+{% set topLevelNavigation = [{ title: "Nice Experience", href: "/" }, { title: "Style guide", href: "/style-guide/" }, { title: "SASS", href: "/sass/" }, { title: "JavaScript", href: "/javascript/"}] %}
+
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
@@ -57,12 +59,19 @@
 
 	<nav class="navbar" role="nav">
 		<div class="navbar__inner">
-			<a class="navbar__inner__brand"></a>
-			<ul class="navbar__inner__nav">
-				<li class="navbar__inner__nav__item navbar__inner__nav__item--active"><a href="/">NICE Experience</a></li>
-				<li class="navbar__inner__nav__item"><a href="/style-guide/">Style guide</a></li>
-				<li class="navbar__inner__nav__item"><a href="/sass/">SASS</a></li>
-				<li class="navbar__inner__nav__item"><a href="/javascript/">JavaScript</a></li>
+			<a class="navbar__brand"></a>
+			<ul class="navbar__nav">
+				{% for section in topLevelNavigation %}
+					{% if section %}
+						{% if section.href == breadcrumbs[0].href %}
+							<li class="navbar__item navbar__item--active"><a href="{{ section.href }}">{{ section.title }}</a></li>
+						{% elif not breadcrumbs and section.href == "/" %}
+							<li class="navbar__item navbar__item--active"><a href="{{ section.href }}">{{ section.title }}</a></li>
+						{% else %}
+							<li class="navbar__item"><a href="{{ section.href }}">{{ section.title }}</a></li>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
 			</ul>
 		</div>
 	</nav>
