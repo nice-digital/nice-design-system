@@ -1,0 +1,26 @@
+{% extends "../layouts/_sidebar.njk" %}
+{% set breadcrumbs = [{ title: "Components", href: "/components/" }, { title: title }] %}
+{% set title = title + " | Components" %}
+
+{% block sidebar %}
+
+	<nav>
+		<h5>
+			<a href="/style-guide/">Style guide</a>
+		</h5>
+		<ul>
+			<li><a href="/style-guide/grid">Grid</a></li>
+			<li><a href="/style-guide/typography">Typography</a></li>
+			<li><a href="/style-guide/buttons">Buttons</a></li>
+			<li><a href="/style-guide/colour">Colour</a></li>
+		</ul>
+		<h5>
+			<a href="/style-guide/">UI Components</a>
+		</h5>
+		<ul>
+			<li><a href="/style-guide/breadcrumbs">Breadcrumbs</a></li>
+			<li><a href="/style-guide/alpha-beta">Alpha/beta</a></li>
+		</ul>
+	</nav>
+
+{% endblock %}
