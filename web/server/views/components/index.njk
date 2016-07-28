@@ -1,0 +1,35 @@
+{% extends "./_components-layout.njk" %}
+{% set title = "Components" %}
+
+{% macro item(title, href, description) %}
+	<div class="grid__item one-whole tablet--one-third desktop--one-quarter">
+		<h4><a href="{{ href }}">{{ title }}</a></h4>
+		<p>
+			{{ description }}
+		</p>
+	</div>
+{% endmacro %}
+
+{% block body %}
+
+	<div class="container">
+		<h1>NICE Components</h1>
+
+		<p class="lede">
+			This guide shows how to make your service look consistent with the rest of NICE.
+		</p>
+
+		<div class="grid">
+
+			{{ item("Breadcrumbs", "/components/breadcrumbs", "Secondary navigation scheme that reveals the user's location") }}
+
+			{{ item("Tabs", "/components/tabs", "Content is separated into different panes, with only one pane viewable at a time.") }}
+
+			{{ item("Alpha/beta", "/components/alpha-beta", "Phase tags and banner to denote alpha and beta services.") }}
+
+			{{ item("Navigation", "/components/navigation", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.") }}
+
+		</div>
+	</div>
+
+{% endblock %}

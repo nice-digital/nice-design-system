@@ -1,6 +1,15 @@
 {% extends "./_style-guide-layout.njk" %}
 {% set title = "Style guide" %}
 
+{% macro item(title, href, description) %}
+	<div class="grid__item one-whole tablet--one-third desktop--one-quarter">
+		<h4><a href="{{ href }}">{{ title }}</a></h4>
+		<p>
+			{{ description }}
+		</p>
+	</div>
+{% endmacro %}
+
 {% block body %}
 
 	<div class="container">
@@ -9,6 +18,18 @@
 		<p class="lede">
 			This guide shows how to make your service look consistent with the rest of NICE.
 		</p>
+
+		<div class="grid">
+
+			{{ item("Layout", "/style-guide/layout", "Containers, grid and layouts") }}
+
+			{{ item("Typography", "/style-guide/typography", "Headings, paragraphs, featured text, quotations, lists, links") }}
+
+			{{ item("Buttons", "/style-guide/buttons", "Button text, button blocks") }}
+
+			{{ item("Colour", "/style-guide/colour", "Colour contrast, SASS variables, colour palettes") }}
+
+		</div>
 	</div>
 
 {% endblock %}

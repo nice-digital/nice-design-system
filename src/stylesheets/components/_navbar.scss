@@ -1,6 +1,8 @@
 .navbar {
 	background-color: get-colour(grey);
 
+	@extend .nav;
+
 	&__inner {
 		@extend .container;
 		overflow: hidden;
@@ -8,20 +10,13 @@
 
 	&__brand {}
 	&__nav {
-			list-style: none;
-			padding: 0;
-			margin: 0;
-	}
-
-	&__item {
-		display: inline-block;
-
-		a {
-			display: block;
-			padding: 20px 15px;
-		}
-		&--active {
-			border-bottom: 5px solid get-colour(orange);
+		.active {
+			a {
+				&::after {
+					display: block;
+					background-color: get-colour(orange);
+				}
+			}
 		}
 	}
 }
