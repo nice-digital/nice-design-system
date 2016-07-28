@@ -1,4 +1,4 @@
-{% set topLevelNavigation = [{ title: "Nice Experience", href: "/" }, { title: "Style guide", href: "/style-guide/" }, { title: "SASS", href: "/sass/" }, { title: "JavaScript", href: "/javascript/"}] %}
+{% set topLevelNavigation = [{ title: "Nice Experience", href: "/" }, { title: "Style Guide", href: "/style-guide/" }, { title: "Components", href: "/components/" }, { title: "SASS", href: "/sass/" }, { title: "JavaScript", href: "/javascript/"}] %}
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
@@ -18,9 +18,27 @@
 	<link href="//fonts.googleapis.com/css?family=Lato:200normal,200italic,300normal,300italic,400normal,400italic,700normal,700italic,900normal,900italic" rel="stylesheet" type="text/css">
 </head>
 <body>
+	<nav class="navbar navbar--nice-top-level" role="nav">
+		<div class="navbar__inner">
+			<a class="navbar__brand"></a>
+			<ul class="navbar__nav">
+				{% for section in topLevelNavigation %}
+					{% if section %}
+						{% if section.href == breadcrumbs[0].href %}
+							<li class="active"><a href="{{ section.href }}">{{ section.title }}</a></li>
+						{% elif not breadcrumbs and section.href == "/" %}
+							<li class="active"><a href="{{ section.href }}">{{ section.title }}</a></li>
+						{% else %}
+							<li><a href="{{ section.href }}">{{ section.title }}</a></li>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</ul>
+		</div>
+	</nav>
 
 	<div class="container">
-		<p class="phase-banner">
+		<p class="phase-banner phase-banner--nice-development">
 			<span class="phase-banner__tag">
 				<strong class="phase-tag phase-tag--alpha">ALPHA</strong>
 			</span>
@@ -57,24 +75,6 @@
 		</div>
 	{% endif %}
 
-	<nav class="navbar" role="nav">
-		<div class="navbar__inner">
-			<a class="navbar__brand"></a>
-			<ul class="navbar__nav">
-				{% for section in topLevelNavigation %}
-					{% if section %}
-						{% if section.href == breadcrumbs[0].href %}
-							<li class="navbar__item navbar__item--active"><a href="{{ section.href }}">{{ section.title }}</a></li>
-						{% elif not breadcrumbs and section.href == "/" %}
-							<li class="navbar__item navbar__item--active"><a href="{{ section.href }}">{{ section.title }}</a></li>
-						{% else %}
-							<li class="navbar__item"><a href="{{ section.href }}">{{ section.title }}</a></li>
-						{% endif %}
-					{% endif %}
-				{% endfor %}
-			</ul>
-		</div>
-	</nav>
 
 	{% block body %}
 		This is the default body content
