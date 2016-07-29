@@ -1,5 +1,6 @@
-{% extends "./_components-layout.njk" %}
+{% extends "../layouts/_sidebar.njk" %}
 {% set title = "Components" %}
+{% set breadcrumbs = [{ title: title }] %}
 
 {% macro item(title, href, description) %}
 	<div class="grid__item one-whole tablet--one-third desktop--one-quarter">

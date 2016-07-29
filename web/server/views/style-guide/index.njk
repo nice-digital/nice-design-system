@@ -1,5 +1,6 @@
-{% extends "./_style-guide-layout.njk" %}
-{% set title = "Style guide" %}
+{% extends "../layouts/_sidebar.njk" %}
+{% set title = "Style Guide" %}
+{% set breadcrumbs = [{ title: title }] %}
 
 {% macro item(title, href, description) %}
 	<div class="grid__item one-whole tablet--one-third desktop--one-quarter">

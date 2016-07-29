@@ -7,16 +7,15 @@
 
 	<nav>
 		<ul>
-			<li><a href="#intro">Intro</a></li>
 			<li><a href="#headings">Headings</a></li>
 			<li><a href="#paragraphs">Paragraphs</a></li>
+			<li><a href="#quotations">Quotations</a></li>
 			<li><a href="#links">Links</a></li>
 			<li><a href="#lists">Lists</a></li>
-			<li><a href="#quotations">Quotations</a></li>
 		</ul>
 	</nav>
 
-	<section id="intro">
+	<!--<section id="intro">
 		<h2>Intro</h2>
 
 		<ul>
@@ -42,7 +41,7 @@
 				<li>Last thing</li>
 			</ol>
 		{%- endexample %}
-	</section>
+	</section>-->
 
 	<section id="headings">
 		<h2>Headings</h2>
@@ -54,12 +53,12 @@
 		</ul>
 
 		{% example -%}
-			<h1>Heading 1</h1>
-			<h2>Heading 2</h2>
-			<h3>Heading 3</h3>
-			<h4>Heading 4</h4>
-			<h5>Heading 5</h5>
-			<h6>Heading 6</h6>
+			<h1>This is the heading1</h1>
+			<h2>This is the heading2</h2>
+			<h3>This is the heading3</h3>
+			<h4>This is the heading4</h4>
+			<h5>This is the heading5</h5>
+			<h6>This is the heading6</h6>
 		{%- endexample %}
 	</section>
 
@@ -84,54 +83,6 @@
 		{%- endexample %}
 	</section>
 
-	<section id="links">
-
-		<h2>Links</h2>
-
-		<ul>
-			<li>Use <code>rel="external"</code> for external links</li>
-		</ul>
-
-		{% example -%}
-			<p><a href="#">A link on its own</a></p>
-			<p>This is some text with <a href="#">a link inside it</a>.</p>
-		{%- endexample %}
-
-	</section>
-
-	<section id="lists">
-
-		<h2>Lists</h2>
-
-		<h3>Default lists</h3>
-
-		{% example -%}
-			<p>Here is a list:</p>
-			<ul>
-				<li>Item 1</li>
-				<li>Item 2</li>
-				<li><a href="#">Item 3</a></li>
-			</ul>
-		{%- endexample %}
-
-		<h3>Featured lists</h3>
-
-		<ul>
-			<li>Use featured lists when you want more impact</li>
-			<li>Try to stick to a maximum of 4 items in a featured list</li>
-		</ul>
-
-		{% example -%}
-			<p>Here is a featured list:</p>
-			<ul class="list list--featured">
-				<li>Item 1</li>
-				<li>Item 2</li>
-				<li>Item 3</li>
-			</ul>
-		{%- endexample %}
-
-	</section>
-
 	<section id="quotations">
 		<h2>Quotations</h2>
 
@@ -151,17 +102,6 @@
 
 		{% example "html" -%}
 			<blockquote class="quote">
-				<p>Older people using home care services have a home care plan that identifies how their personal priorities and outcomes will be met.</p>
-				<footer>
-					- <cite><a href="https://www.nice.org.uk/guidance/qs123">Home care for older people, NICE quality standard</a></cite>
-				</footer>
-			</blockquote>
-		{%- endexample %}
-
-		<h3>Block quotation w/ citation</h3>
-
-		{% example "html" -%}
-			<blockquote class="quote">
 				<p>We do the right work in the right way at NICE. We mix content, dev, design and research at the start to solve user problems.  We produce things quickly, get data and refine. </p>
 				<footer>
 					<cite><strong>Dafydd</strong> - Content Team</cite>
@@ -169,7 +109,7 @@
 			</blockquote>
 		{%- endexample %}
 
-		<h3>Quotation within a grid</h3>
+		<!--<h3>Quotation within a grid</h3>
 
 		<p>Quotations can be nested within grids, for example alongside an image:</p>
 
@@ -187,6 +127,60 @@
 					</blockquote>
 				</div>
 			</div>
+		{%- endexample %}-->
+
+	</section>
+
+	<section id="links">
+
+		<h2>Links</h2>
+
+		<ul>
+			<li>Use <code>rel="external"</code> for external links</li>
+		</ul>
+
+		{% example -%}
+			<p><a href="#">A link on its own</a></p>
+			<p>This is some text with <a href="#" rel="external">an external link inside it</a>.</p>
+		{%- endexample %}
+
+	</section>
+
+	<section id="lists">
+
+		<h2>Lists</h2>
+
+		<h3>Default lists</h3>
+
+		{% example -%}
+			<p>This is an unordered list:</p>
+			<ul>
+				<li>Item 1</li>
+				<li>Item 2</li>
+				<li><a href="#">Item 3</a></li>
+			</ul>
+			<p>This is an ordered list:</p>
+			<ol>
+				<li><a href="#">Item 1</a></li>
+				<li>Item 2</li>
+				<li>Item 3</li>
+			</ul>
+		{%- endexample %}
+
+		<h3>Featured lists</h3>
+
+		<ul>
+			<li>Use featured lists when you want more impact</li>
+			<li>Try to stick to a maximum of 4 items in a featured list</li>
+		</ul>
+
+		{% example -%}
+			<p>This is a featured list:</p>
+			<ul class="list list--featured">
+				<li>Item 1</li>
+				<li>Item 2</li>
+				<li>Item 3</li>
+			</ul>
 		{%- endexample %}
 
 	</section>
