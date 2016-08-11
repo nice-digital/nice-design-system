@@ -18,6 +18,11 @@
 	<link href="//fonts.googleapis.com/css?family=Lato:200normal,200italic,300normal,300italic,400normal,400italic,700normal,700italic,900normal,900italic" rel="stylesheet" type="text/css">
 </head>
 <body>
+
+	<div class="skip-links">
+		<a href="#content" class="skip-links__link">Skip to main content</a>
+	</div>
+
 	<nav class="navbar navbar--nice-top-level" role="nav">
 		<div class="navbar__inner">
 			<a class="navbar__brand"></a>
@@ -75,10 +80,11 @@
 		</div>
 	{% endif %}
 
-
-	{% block body %}
-		This is the default body content
-	{% endblock %}
+	<div id="content">
+		{% block body %}
+			This is the default body content
+		{% endblock %}
+	</div>
 
 	<footer class="footer">
 		<nav>
