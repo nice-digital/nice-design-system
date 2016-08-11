@@ -3,9 +3,12 @@
 
 {% macro item(title, href, description) %}
 	<div class="grid__item one-whole tablet--one-third desktop--one-quarter">
-		<h4><a href="{{ href }}">{{ title }}</a></h4>
+		<h5>{{ title }}</h5>
 		<p>
 			{{ description }}
+		</p>
+		<p>
+			<a class="btn btn--secondary" href="{{ href }}">Read about {{ title }}</a>
 		</p>
 	</div>
 {% endmacro %}
@@ -14,7 +17,10 @@
 
 	<div class="container">
 		<h1>Welcome to NICE Experience</h1>
-		<h2 class="p">Your source for creating beautiful, consistent experiences across NICE</h2>
+		<h2 class="p">
+			Your source for creating beautiful, consistent experiences across NICE.
+			<a href="/about/">Read more about NICE Experience</a>
+		</h2>
 
 		<h3 class="heading heading--separator">Style Guide</h3>
 

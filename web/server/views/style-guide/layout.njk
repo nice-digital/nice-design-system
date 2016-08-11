@@ -1,0 +1,76 @@
+{% extends "./_style-guide-layout.njk" %}
+{% set title = "Layout" %}
+
+{% block main %}
+
+	<h1>Layout</h1>
+
+	<nav>
+		<ul>
+			<li><a href="#containers">Containers</a></li>
+			<li><a href="#grid">Grid</a></li>
+		</ul>
+	</nav>
+
+	<section id="containers">
+		<h2>Containers</h2>
+	</section>
+
+	<section id="grid">
+		<h2>Grid</h2>
+
+		<div class="grid grid--example">
+			<div class="grid__item one-half">
+				1/2
+			</div>
+			<div class="grid__item one-half">
+				1/2
+			</div>
+		</div>
+
+		<div class="grid grid--example">
+			<div class="grid__item one-half">1/2</div>
+			<div class="grid__item one-quarter">1/4</div>
+			<div class="grid__item one-quarter">1/4</div>
+		</div>
+
+		<div class="grid grid--example">
+			<div class="grid__item one-third">1/3</div>
+			<div class="grid__item one-third">1/3</div>
+			<div class="grid__item one-third">1/3</div>
+		</div>
+
+		<div class="grid grid--example">
+			<div class="grid__item one-third">1/3</div>
+			<div class="grid__item two-thirds">2/3</div>
+		</div>
+
+		<div class="grid grid--example">
+			<div class="grid__item two-thirds">2/3</div>
+			<div class="grid__item one-third">1/3</div>
+		</div>
+
+		<div class="grid grid--example">
+			<div class="grid__item one-quarter">1/4</div>
+			<div class="grid__item one-quarter">1/4</div>
+			<div class="grid__item one-quarter">1/4</div>
+			<div class="grid__item one-quarter">1/4</div>
+		</div>
+
+		<div class="grid grid--example">
+			<div class="grid__item one-fifth">1/5</div>
+			<div class="grid__item one-fifth">1/5</div>
+			<div class="grid__item one-fifth">1/5</div>
+			<div class="grid__item one-fifth">1/5</div>
+			<div class="grid__item one-fifth">1/5</div>
+		</div>
+
+		<div class="grid grid--example">
+			<div class="grid__item two-fifths">2/5</div>
+			<div class="grid__item one-fifth">1/5</div>
+			<div class="grid__item two-fifths">2/5</div>
+		</div>
+
+	</section>
+
+{% endblock %}

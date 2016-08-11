@@ -94,5 +94,9 @@
 			background: get-colour(grey, dark);
 			color: get-colour(grey);
 		}
+
+		&:visited {
+			color: get-colour(grey, dark);
+		}
 	}
 }
