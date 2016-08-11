@@ -31,15 +31,14 @@ html {
 
 a {
 	color: get-colour(blue, light);
-	text-decoration: none;
+	text-decoration: underline;
 
 	&:visited {
-		color: get-colour(blue);
+		color: get-colour(purple);
 	}
 
 	&:hover {
-		color: get-colour(blue, dark);
-		text-decoration: underline;
+		color: get-colour(blue, light);
 	}
 
 	&:focus {

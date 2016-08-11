@@ -4,13 +4,13 @@
 
 .skip-links {
 	&__link {
+		left: -9999em;
 		margin: scut-em(0 0 0 16px);
 		position: absolute;
-		left: -9999em;
 
 		&:focus {
 			left: 0;
-    		z-index: 1;
+			z-index: 1;
 		}
 	}
 }
