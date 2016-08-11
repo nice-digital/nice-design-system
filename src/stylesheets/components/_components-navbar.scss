@@ -1,20 +1,18 @@
 .navbar {
-	background-color: get-colour(grey);
-
 	@extend .nav;
+	background-color: get-colour(grey);
 
 	&__inner {
 		@extend .container;
 		overflow: hidden;
 	}
 
-	&__brand {}
 	&__nav {
 		.active {
 			a {
 				&::after {
-					display: block;
 					background-color: get-colour(orange);
+					display: block;
 				}
 			}
 		}

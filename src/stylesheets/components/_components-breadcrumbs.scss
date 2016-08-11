@@ -4,8 +4,8 @@
 
 .breadcrumbs {
 	list-style: none;
-	padding: scut-em(12 0);
 	margin: 0;
+	padding: scut-em(12 0);
 
 	&__crumb {
 		display: inline-block;
@@ -15,9 +15,9 @@
 		}
 
 		&::before {
-			content: ">";
-			margin: 0 10px;
+			content: get-glyph(greater-than);
 			font-weight: bold;
+			margin: 0 10px;
 		}
 
 		&:first-of-type::before {

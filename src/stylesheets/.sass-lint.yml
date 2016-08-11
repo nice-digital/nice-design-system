@@ -51,7 +51,9 @@ rules:
     - convention: hyphenatedlowercase
   mixins-before-declarations: 1
   nesting-depth:
-    - max-depth: 3
+    - 1
+    -
+      max-depth: 3
   no-attribute-selectors: 0
   no-color-keywords: 0
   no-color-literals: 0

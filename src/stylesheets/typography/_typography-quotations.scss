@@ -1,11 +1,15 @@
+////
+/// @group Typography
+////
+
 /// Blockquote style
 .quote {
 	@include nice-font-size(2);
 	font-weight: 300;
 
-	&:before {
+	&::before {
 		color: get-colour(orange, light);
-		content: '\201C';
+		content: get-glyph(left-double-quotation-mark);
 		display: inline-block;
 		font-family: Arial;
 		font-size: 6rem;
@@ -19,7 +23,8 @@
 		padding-top: 0;
 	}
 
-	footer, cite {
+	footer,
+	cite {
 		@include nice-font-size(0);
 		font-style: normal;
 	}

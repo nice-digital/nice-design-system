@@ -1,5 +1,6 @@
-
-
+////
+/// @group hacks
+////
 
 /// Class to make element visible only when printing
 .visible-print {
@@ -27,8 +28,9 @@
 }
 
 /// Fix unwanted button padding in Firefox
+/// @link http://stackoverflow.com/a/5518143/486434 Stack Overflow answer
 @mixin remove-mz-focus-inner {
-	&:moz-focus-inner {
+	&::-moz-focus-inner {
 		border: 0;
 		padding: 0;
 	}

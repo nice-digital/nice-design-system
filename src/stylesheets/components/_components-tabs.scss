@@ -22,16 +22,14 @@
 			line-height: 4rem;
 			margin: 0;
 			padding: 0 1rem;
+
+			&:hover {
+				background: get-colour(grey);
+			}
 		}
 
 		&--active {
 			background: get-colour(grey, light);
-		}
-
-		a {
-			&:hover {
-				background: get-colour(grey);
-			}
 		}
 	}
 
