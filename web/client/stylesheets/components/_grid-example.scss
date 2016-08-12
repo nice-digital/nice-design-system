@@ -3,8 +3,8 @@
 		margin-bottom: 1em;
 
 		.grid__item {
-			background: get-colour(grey, light);
-			border: 5px solid get-colour(grey);
+			background: get-colour(grey, x-light);
+			border: 5px solid $border-colour;
 			padding-top: 1em;
 			padding-bottom: 1em;
 		}

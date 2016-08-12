@@ -73,6 +73,9 @@ $colour-base-blue: #2f577a;
 /// The base colour for pink
 $colour-base-pink: #d53880;
 
+/// The base colour for green
+$colour-base-green: #5cb85c;
+
 /// Purple colour palette
 /// @prop {Color} base [$colour-base-purple] Base purple colour
 $palette-purple: (
@@ -96,11 +99,11 @@ $palette-grey: (
 
 /// Green colour palette
 /// @prop {Color} light [#1a9908] Light green, used for primary buttons
-/// @prop {Color} base [#5cb85c] Base green
+/// @prop {Color} base [$colour-base-green] Base green
 /// @prop {Color} dark [#449d44] Dark green
 $palette-green: (
 	light: #1a9908,
-	base: #5cb85c,
+	base: $colour-base-green,
 	dark: #449d44
 );
 
@@ -200,7 +203,7 @@ $link-hover-colour: get-colour(blue, x-light);			// Link hover
 $link-visited-colour: get-colour(purple);				// Link visited
 // TEXT
 $focus-colour: get-colour(orange);						// Focus colour
-$text-colour: get-colour(grey, mid-dark);				// Standard text colour
+$text-colour: get-colour(grey, dark);					// Standard text colour
 // $secondary-text-colour: $grey-1;						// Section headers, help text etc.
 $border-colour: get-colour(grey, light);				// Borders, seperators, rules, keylines etc.
 // $panel-colour: $grey-3;								// Related links panel, page footer etc.

@@ -80,7 +80,7 @@
 
 @mixin h1 {
 	@include nice-font(h1, $line-height: 3, $below: 1);
-	font-weight: normal;
+	font-weight: bold;
 }
 
 @mixin h2 {
