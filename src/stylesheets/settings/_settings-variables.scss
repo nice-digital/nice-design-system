@@ -44,18 +44,36 @@ $mq-breakpoints: get-mq-breakpoints();
 
 //## Wizardry
 
+// @function get-wizardry-breakpoints() {
+// 	$list: ();
+// 	@for $i from 2 through $num-nice-breakpoints {
+// 		$prev-brkpnt: nth($nice-breakpoints, $i - 1);
+// 		$prev-brkpnt-key: nth($prev-brkpnt, 1);
+// 		$prev-brkpnt-width: map-get(nth($prev-brkpnt, 2), width) + 1px;
+// 		$prev-brkpnt-width: mq-px2em($prev-brkpnt-width);
+
+// 		$brkpnt: nth($nice-breakpoints, $i);
+// 		$brkpnt-key: nth($brkpnt, 1);
+
+// 		$new: '#{$brkpnt-key}' '(min-width: #{$prev-brkpnt-width})';
+
+// 		$list: append($list, $new);
+// 	}
+
+// 	@return $list;
+// }
 @function get-wizardry-breakpoints() {
 	$list: ();
-	@for $i from 2 through $num-nice-breakpoints {
-		$prev-brkpnt: nth($nice-breakpoints, $i - 1);
-		$prev-brkpnt-key: nth($prev-brkpnt, 1);
-		$prev-brkpnt-width: map-get(nth($prev-brkpnt, 2), width) + 1px;
-		$prev-brkpnt-width: mq-px2em($prev-brkpnt-width);
+	@for $i from 1 through $num-nice-breakpoints {
+		$brkpnt: nth($nice-breakpoints, $i);
+		$brkpnt-key: nth($brkpnt, 1);
+		$brkpnt-width: map-get(nth($brkpnt, 2), width);
+		$brkpnt-width: mq-px2em($brkpnt-width);
 
 		$brkpnt: nth($nice-breakpoints, $i);
 		$brkpnt-key: nth($brkpnt, 1);
 
-		$new: '#{$brkpnt-key}' '(min-width: #{$prev-brkpnt-width})';
+		$new: '#{$brkpnt-key}' '(min-width: #{$brkpnt-width})';
 
 		$list: append($list, $new);
 	}
@@ -65,7 +83,7 @@ $mq-breakpoints: get-mq-breakpoints();
 
 @function get-wizardry-widths() {
 	$list: ();
-	@for $i from 2 through $num-nice-breakpoints {
+	@for $i from 1 through $num-nice-breakpoints {
 		$brkpnt: nth($nice-breakpoints, $i);
 		$brkpnt-key: nth($brkpnt, 1);
 		$list: append($list, '#{$brkpnt-key}');

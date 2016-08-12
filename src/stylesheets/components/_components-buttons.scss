@@ -21,7 +21,7 @@
 	&:hover,
 	&:focus,
 	&:active {
-		background: get-colour(grey, dark);
+		background: get-colour(grey);
 		color: $white;
 		text-decoration: none;
 	}
@@ -42,6 +42,19 @@
 
 		&:hover {
 			cursor: default;
+		}
+	}
+
+	// External links have an icon
+	&[rel='external'] {
+		&::after {
+			color: $white;
+		}
+
+		&:hover {
+			&::after {
+				color: $white;
+			}
 		}
 	}
 
@@ -81,18 +94,35 @@
 	}
 
 	&--secondary {
-		background: get-colour(grey);
+		background: get-colour(grey, x-light);
 		color: get-colour(grey, dark);
 
-		&:hover {
-			background: get-colour(grey);
+		&[rel='external'] {
+			&::after {
+				color: get-colour(grey, dark);
+			}
+
+			&:hover {
+				&::after {
+					color: get-colour(grey, dark);
+				}
+			}
+		}
+
+		&:hover,
+		&:focus {
+			background: get-colour(grey, light);
 			color: get-colour(grey, dark);
 			text-decoration: underline;
 		}
 
 		&:active {
-			background: get-colour(grey, dark);
-			color: get-colour(grey);
+			background: get-colour(grey, light);
+			color: get-colour(grey, dark);
+		}
+
+		&:visited {
+			color: get-colour(grey, dark);
 		}
 	}
 }

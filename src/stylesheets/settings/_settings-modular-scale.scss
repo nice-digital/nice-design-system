@@ -36,7 +36,14 @@ $scales: (
 	minor-second: 16 / 15
 );
 
-
+/// Gets a module scale ratio with the given name. Looks
+/// inside the $scales map to find a ratio.
+/// @param $scale The name of the scale
+/// @returns {Number} The numeric scale ratio for the given name
 @function get-ratio($scale) {
-	@return map-get($scales, $scale);
+	@if map-has-key($scales, $scale) {
+		@return map-get($scales, $scale);
+	} @else {
+		@error 'Scale with name #{$scale} could not be found in the $scales map';
+	}
 }

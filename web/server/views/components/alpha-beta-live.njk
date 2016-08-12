@@ -3,7 +3,7 @@
 
 {% block main %}
 
-	<h1>Alpha &amp; beta phases</h1>
+	<h1>Alpha, beta &amp; live phases</h1>
 
 	<nav>
 		<ul>
@@ -29,6 +29,9 @@
 				</li>
 				<li>
 					A beta service <strong class="phase-tag phase-tag--beta">BETA</strong>
+				</li>
+				<li>
+					A live service <strong class="phase-tag phase-tag--live">LIVE</strong>
 				</li>
 			</ul>
 
@@ -65,6 +68,19 @@
 				</span>
 				<span class="phase-banner__label">
 					HDAS2 is in Beta
+				</span>
+			</p>
+		{%- endexample %}
+
+		<h3>Live</h3>
+
+		{% example -%}
+			<p class="phase-banner">
+				<span class="phase-banner__tag">
+					<strong class="phase-tag phase-tag--live">LIVE</strong>
+				</span>
+				<span class="phase-banner__label">
+					Pathways is a Live Service
 				</span>
 			</p>
 		{%- endexample %}

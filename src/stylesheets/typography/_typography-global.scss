@@ -7,7 +7,7 @@
 /// The default focus style used for elements like anchors and buttons
 /// @output the default focus styles ie background colour and outline
 @mixin default-focus-style {
-	outline: 3px solid get-colour(orange);
+	outline: 3px solid $focus-colour;
 }
 
 html {
@@ -15,8 +15,8 @@ html {
 }
 
 body {
-	background: $white;
-	color: get-colour(grey, mid-dark);
+	background: $page-colour;
+	color: $text-colour;
 	font-family: font-family(sans);
 	font-style: normal;
 	line-height: 1.6rem;
@@ -30,25 +30,37 @@ html {
 }
 
 a {
-	color: get-colour(blue, light);
-	text-decoration: none;
+	color: $link-colour;
+	text-decoration: underline;
 
 	&:visited {
-		color: get-colour(blue);
+		color: $link-visited-colour;
 	}
 
 	&:hover {
-		color: get-colour(blue, dark);
-		text-decoration: underline;
+		color: $link-hover-colour;
 	}
 
 	&:focus {
 		@include default-focus-style;
-		background-color: get-colour(orange);
+		background-color: $focus-colour;
+	}
+
+	// Add icon to external links
+	&[rel='external'] {
+		&::after {
+			color: $link-colour;
+			content: get-glyph(punc-space, box-box);
+		}
+
+		&:hover::after {
+			color: $link-hover-colour;
+		}
 	}
 }
 
-p, .p {
+p,
+.p {
 	@include nice-font($scale: 0, $line-height: 1.6);
 	font-feature-settings: 'kern', 'onum', 'liga';
 
@@ -61,4 +73,10 @@ p, .p {
 			padding: scut-em(0 2px 0 0);
 		}
 	}
+}
+
+code {
+	background: get-colour(grey, x-light);
+	font-family: font-family(mono);
+	padding: scut-em(4);
 }

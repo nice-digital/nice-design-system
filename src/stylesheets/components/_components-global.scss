@@ -1,0 +1,17 @@
+////
+/// @group components
+////
+
+%container {
+	margin: auto;
+	max-width: 1170px;
+	width: 96%;
+}
+
+.container {
+	@extend %container;
+}
+
+img {
+	max-width: 100%;
+}

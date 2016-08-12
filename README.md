@@ -11,8 +11,8 @@ Welcome to NICE Bootstrap v2
 
 | Folder | Description |
 | ---- | ----------- |
-| .grunt | Grunt task configs loaded in from Gruntfile.js |
-| src | SASS and JS source |
+| .grunt-tasks | Grunt task configs loaded in from Gruntfile.js |
+| src | SASS and JS source (plus other assets) |
 | web | Web app for the style guide |
 
 ## Running tasks
@@ -27,7 +27,7 @@ Before you run any tasks, you'll have to run the following from the command line
 | Task | Description |
 | ---- | ----------- |
 | `grunt`      | Default. Lints, builds everything and spins up an express server and a watch task for changes |
-| `grunt lint` | Lints SASS and JS |
+| `grunt lint` | Lints SASS (sasslint) and JS (eslint) |
 | `grunt docs` | Generates documentation JSON files for SASS and JS |
 | `grunt build` | Builds everything needed |
 

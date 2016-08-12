@@ -30,13 +30,17 @@
 	}
 
 	&__code {
-		background-color: #f7f7f9;
 		margin: 0;
-		padding: 24px 8px 8px 8px;
 		position: relative;
 
 		pre {
 			margin: 0;
+			max-height: 200px;
+			overflow: auto;
+
+			code {
+				padding-top: scut-em(24);
+			}
 		}
 	}
 }

@@ -1,0 +1,31 @@
+////
+/// @group components
+////
+
+.breadcrumbs {
+	list-style: none;
+	margin: 0;
+	padding: scut-em(12 0);
+
+	&__crumb {
+		display: inline-block;
+
+		&::before {
+			color: get-colour(grey);
+			content: get-glyph(greater-than);
+			margin: scut-em(0 10);
+		}
+
+		&:first-of-type::before {
+			display: none;
+		}
+
+		&--active {
+			color: $text-colour;
+		}
+
+		a {
+			color: $text-colour;
+		}
+	}
+}

@@ -1,16 +1,18 @@
 @charset 'utf-8';
 
-// Settings
-@import 'settings/modular-scale';
-@import 'settings/colours';
-@import 'settings/variables';
+// Reset
+@import 'vendor/normalize';
 
 // Vendor
-@import 'vendor/normalize';
-@import 'vendor/scut';
-@import 'vendor/math';
-@import 'vendor/is';
-@import 'vendor/mq';
+@import 'vendor/scut',
+'vendor/math',
+'vendor/is',
+'vendor/mq';
+
+// Settings
+@import 'settings/settings';
+
+// Grid system
 @import 'vendor/csswizardry-grids';
 
 // Helpers
@@ -20,14 +22,4 @@
 @import 'typography/typography';
 
 // Components
-@import 'components/global';
-@import 'components/panel';
-@import 'components/tables';
-@import 'components/buttons';
-@import 'components/footer';
-@import 'components/phase';
-@import 'components/navbar';
-@import 'components/nav';
-@import 'components/breadcrumbs';
-@import 'components/tables';
-@import 'components/tabs';
+@import 'components/components';

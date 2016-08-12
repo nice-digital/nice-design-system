@@ -3,9 +3,12 @@
 
 {% macro item(title, href, description) %}
 	<div class="grid__item one-whole tablet--one-third desktop--one-quarter">
-		<h4><a href="{{ href }}">{{ title }}</a></h4>
+		<h4 class="h6">{{ title }}</h4>
 		<p>
 			{{ description }}
+		</p>
+		<p>
+			<a class="btn btn--secondary" href="{{ href }}">Read about {{ title }}</a>
 		</p>
 	</div>
 {% endmacro %}
@@ -14,7 +17,15 @@
 
 	<div class="container">
 		<h1>Welcome to NICE Experience</h1>
-		<h2 class="p">Your source for creating beautiful, consistent experiences across NICE</h2>
+		<h2 class="p">
+			Your source for creating beautiful, consistent experiences across NICE.
+			<a href="/about/">Read more about NICE Experience</a>
+		</h2>
+
+		<p>
+			<a class="btn btn--primary" href="/about/installation">Install</a>
+			<a class="btn btn--secondary" target="_blank" rel="external" href="https://github.com/nhsevidence/NICE.Bootstrap2">View on GitHub</a>
+		</p>
 
 		<h3 class="heading heading--separator">Style Guide</h3>
 
@@ -43,7 +54,7 @@
 
 				{{ item("Tabs", "/components/tabs", "Content is separated into different panes, with only one pane viewable at a time.") }}
 
-				{{ item("Alpha/beta", "/components/alpha-beta", "Phase tags and banner to denote alpha and beta services") }}
+				{{ item("Alpha/beta", "/components/alpha-beta-live", "Phase tags and banner to denote alpha and beta services") }}
 
 				{{ item("Navigation", "/components/navigation", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.") }}
 
@@ -52,7 +63,7 @@
 
 		<h3 class="heading heading--separator">SASS</h3>
 
-		<p>We use SASS as our CSS pre-processor</p>
+		<p>We use <a href="http://sass-lang.com/" target="_blank" rel="external">SASS</a> as our <a href="https://github.com/showcases/css-preprocessors" target="_blank" rel="external">CSS pre-processor</a> as it's mature, got a great feature set and <a href="https://github.com/sass/libsass" target="_blank" rel="external">libsass</a> is super quick.</p>
 
 		<div class="grid">
 

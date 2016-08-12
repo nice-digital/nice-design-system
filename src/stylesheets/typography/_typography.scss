@@ -2,9 +2,9 @@
 /// @group Typography
 ////
 
-@import 'settings';
-@import 'typography-helpers';
-@import 'global';
-@import 'headings';
-@import 'lists';
-@import 'quotations';
+@import 'typography-settings',
+'typography-helpers',
+'typography-global',
+'typography-headings',
+'typography-lists',
+'typography-quotations';

@@ -20,7 +20,8 @@
 		"colors": "Colours",
 		"helpers": "Helpers",
 		"typography": "Typography",
-		"components": "Components"
+		"components": "Components",
+		"hacks": "Hacks"
 	},
 	"package": "./package.json",
 	"theme": "./src/stylesheets/sassdoc-nice-theme"

@@ -22,22 +22,20 @@
 			line-height: 4rem;
 			margin: 0;
 			padding: 0 1rem;
+
+			&:hover {
+				background: get-colour(grey, x-light);
+			}
 		}
 
 		&--active {
-			background: get-colour(grey, light);
-		}
-
-		a {
-			&:hover {
-				background: get-colour(grey);
-			}
+			background: get-colour(grey, x-light);
 		}
 	}
 
 	/// The tab content containing the tab panels
 	&__content {
-		background: get-colour(grey, light);
+		background: get-colour(grey, x-light);
 		padding: 1rem;
 	}
 

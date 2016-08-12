@@ -1,15 +1,19 @@
 {
+	"build_systems":
+	[
+	],
 	"folders":
 	[
 		{
-			"path": "./",
-			"folder_exclude_patterns": ["dist", "node_modules"]
+			"folder_exclude_patterns":
+			[
+				"dist",
+				"node_modules"
+			],
+			"path": "."
 		}
 	],
 	"settings":
 	{
-	},
-	"build_systems":
-	[
-	]
+	}
 }

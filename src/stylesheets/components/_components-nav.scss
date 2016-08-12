@@ -1,28 +1,43 @@
+////
+/// @group components
+////
+
 .nav {
 	ul {
 		list-style: none;
-		padding: 0;
 		margin: 0;
+		padding: 0;
 
 		li {
 			display: inline-block;
+		}
 
-			a {
-				display: block;
-				padding: 20px 15px;
-				position: relative;
-				text-decoration: none;
+		a {
+			color: $text-colour;
+			display: block;
+			padding: 20px 15px;
+			position: relative;
+			text-decoration: none;
 
+			&:hover {
+				background-color: get-colour(grey, light);
+			}
+
+			&:active {
 				&::after {
-					position: absolute;
-					bottom: 0;
-					left: 0;
-					content: '';
-					width: 100%;
-					height: 5px;
-					background-color: get-colour(blue);
-					display: none;
+					display: block;
 				}
+			}
+
+			&::after {
+				background-color: get-colour(blue);
+				bottom: 0;
+				content: '';
+				display: none;
+				height: 5px;
+				left: 0;
+				position: absolute;
+				width: 100%;
 			}
 		}
 	}
@@ -40,8 +55,8 @@
 	&__pills {
 		.active {
 			a {
-				color: $white;
 				background-color: get-colour(blue, x-light);
+				color: $white;
 			}
 		}
 	}

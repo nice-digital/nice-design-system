@@ -1,0 +1,15 @@
+////
+/// @group components
+////
+
+/// A panel is a container for visually separating content.
+/// Often used within a sidebar.
+.panel {
+	background: get-colour(grey, x-light);
+	padding: 1em;
+
+	&--dark {
+		background: get-colour(grey, mid-dark);
+		color: $white;
+	}
+}

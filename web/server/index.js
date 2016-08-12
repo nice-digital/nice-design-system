@@ -34,6 +34,11 @@ for(var name in filters) {
 require("./nunjucks/example-extension")(env);
 require("./nunjucks/source-extension")(env);
 
+app.use(function (req, res, next) {
+	res.locals.req = req;
+	next();
+});
+
 // Serve favicon with caching
 app.use(favicon(path.join( __dirname, "./../../src/assets/favicon.ico")));
 

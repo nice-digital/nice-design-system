@@ -1,5 +1,3 @@
-{% set topLevelNavigation = [{ title: "NICE Experience", href: "/" }, { title: "Style Guide", href: "/style-guide/" }, { title: "Components", href: "/components/" }, { title: "SASS", href: "/sass/" }, { title: "JavaScript", href: "/javascript/"}] %}
-
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
@@ -18,21 +16,38 @@
 	<link href="//fonts.googleapis.com/css?family=Lato:200normal,200italic,300normal,300italic,400normal,400italic,700normal,700italic,900normal,900italic" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<nav class="navbar navbar--nice-top-level" role="nav">
+
+	<div class="skip-links">
+		<a href="#content" class="skip-links__link">Skip to main content</a>
+	</div>
+
+	<nav class="navbar navbar--nice-top-level" role="navigation">
 		<div class="navbar__inner">
 			<a class="navbar__brand"></a>
 			<ul class="navbar__nav">
-				{% for section in topLevelNavigation %}
-					{% if section %}
-						{% if section.href == breadcrumbs[0].href %}
-							<li class="active"><a href="{{ section.href }}">{{ section.title }}</a></li>
-						{% elif not breadcrumbs and section.href == "/" %}
-							<li class="active"><a href="{{ section.href }}">{{ section.title }}</a></li>
-						{% else %}
-							<li><a href="{{ section.href }}">{{ section.title }}</a></li>
-						{% endif %}
+
+				{% macro navItem(href, title) %}
+					{% if (href == "/" and req.path == "/" and req.baseUrl == "") or (href != "/" and req.originalUrl.startsWith(href)) %}
+						<li class="active">
+							<a href="{{ href }}">
+								{{ title }}
+							</a>
+						</li>
+					{% else %}
+						<li>
+							<a href="{{ href }}">
+								{{ title }}
+							</a>
+						</li>
 					{% endif %}
-				{% endfor %}
+				{% endmacro %}
+
+				{{ navItem('/', 'NICE Experience') }}
+				{{ navItem('/style-guide/', 'Style Guide') }}
+				{{ navItem('/components/', 'Components') }}
+				{{ navItem('/sass/', 'SASS') }}
+				{{ navItem('/javascript/', 'JavaScript') }}
+				{{ navItem('/about/', 'About') }}
 			</ul>
 		</div>
 	</nav>
@@ -43,7 +58,7 @@
 				<strong class="phase-tag phase-tag--alpha">ALPHA</strong>
 			</span>
 			<span class="phase-banner__label">
-				NICE Experience is in development. This means it is not feature complete and there may be issues. Find any? Please, let us know!
+				NICE Experience is in development. This means it is not feature complete and there may be issues. Find any? Please, <a href="https://www.nice.org.uk/leave-feedback" target="_blank">let us know</a>!
 			</span>
 		</p>
 	</div>
@@ -75,12 +90,13 @@
 		</div>
 	{% endif %}
 
+	<div id="content">
+		{% block body %}
+			This is the default body content
+		{% endblock %}
+	</div>
 
-	{% block body %}
-		This is the default body content
-	{% endblock %}
-
-	<footer class="footer">
+	<footer class="footer" role="contentinfo">
 		<nav>
 			<ul>
 				<li><a href="">NICE Experience</a></li>
