@@ -7,7 +7,7 @@
 /// The default focus style used for elements like anchors and buttons
 /// @output the default focus styles ie background colour and outline
 @mixin default-focus-style {
-	outline: 3px solid get-colour(orange);
+	outline: 3px solid $focus-colour;
 }
 
 html {
@@ -15,8 +15,8 @@ html {
 }
 
 body {
-	background: $white;
-	color: get-colour(grey, mid-dark);
+	background: $page-colour;
+	color: $body-text-colour;
 	font-family: font-family(sans);
 	font-style: normal;
 	line-height: 1.6rem;
@@ -30,20 +30,20 @@ html {
 }
 
 a {
-	color: get-colour(blue, light);
+	color: $link-colour;
 	text-decoration: underline;
 
 	&:visited {
-		color: get-colour(purple);
+		color: $link-visited-colour;
 	}
 
 	&:hover {
-		color: get-colour(blue, light);
+		color: $link-hover-colour;
 	}
 
 	&:focus {
 		@include default-focus-style;
-		background-color: get-colour(orange);
+		background-color: $focus-colour;
 	}
 }
 

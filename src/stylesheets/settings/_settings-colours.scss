@@ -192,19 +192,20 @@ $palettes: (
 
 
 // Semantic colour names
-// $link-colour: $govuk-blue;
+$link-colour: get-colour(blue, light);
+$link-hover-colour: get-colour(blue, x-light);
 // $link-active-colour: $light-blue;
-// $link-hover-colour: $light-blue;
-// $link-visited-colour: #4c2c92;
+$link-visited-colour: get-colour(purple);
 // $button-colour: #00823b;
-// $focus-colour: $yellow;
+$focus-colour: get-colour(orange);
 // $text-colour: $black;				// Standard text colour
 // $secondary-text-colour: $grey-1;		// Section headers, help text etc.
 // $border-colour: $grey-2;				// Borders, seperators, rules, keylines etc.
 // $panel-colour: $grey-3;				// Related links panel, page footer etc.
 // $canvas-colour: $grey-4;				// Page background
 // $highlight-colour: $grey-4;			// Table stripes etc.
-// $page-colour: $white;				// The page
+$page-colour: $white;				// The page
+$body-text-colour: get-colour(grey, mid-dark);
 // $discovery-colour: $fuschia;			// Discovery badges and banners
 $alpha-colour: get-colour(pink);				// Alpha badges and banners
 $beta-colour: get-colour(orange);				// Beta badges and banners

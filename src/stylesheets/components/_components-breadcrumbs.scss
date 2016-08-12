@@ -10,18 +10,22 @@
 	&__crumb {
 		display: inline-block;
 
-		&--active {
-			color: get-colour(grey);
-		}
-
 		&::before {
+			color: get-colour(grey);
 			content: get-glyph(greater-than);
-			font-weight: bold;
-			margin: 0 10px;
+			margin: scut-em(0 10);
 		}
 
 		&:first-of-type::before {
 			display: none;
+		}
+
+		&--active {
+			color: $body-text-colour;
+		}
+
+		a {
+			color: $body-text-colour;
 		}
 	}
 }
