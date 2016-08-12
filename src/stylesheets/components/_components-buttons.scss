@@ -97,6 +97,18 @@
 		background: get-colour(grey, x-light);
 		color: get-colour(grey, dark);
 
+		&[rel='external'] {
+			&::after {
+				color: get-colour(grey, dark);
+			}
+
+			&:hover {
+				&::after {
+					color: get-colour(grey, dark);
+				}
+			}
+		}
+
 		&:hover,
 		&:focus {
 			background: get-colour(grey, light);
