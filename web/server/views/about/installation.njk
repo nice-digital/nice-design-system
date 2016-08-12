@@ -1,0 +1,77 @@
+{% extends "./_about-layout.njk" %}
+{% set title = "Installation" %}
+
+{% block body %}
+
+	<div class="container">
+		<h1>Installation</h1>
+
+		<nav role="navigation">
+			<ul>
+				<li><a href="#cdn">CDN</a></li>
+				<li><a href="#git">Git</a></li>
+				<li><a href="#zip">ZIP</a></li>
+				<li><a href="#npm">NPM</a></li>
+				<li><a href="#bower">Bower</a></li>
+				<li><a href="#meteor">Meteor</a></li>
+			</ul>
+		</nav>
+
+		<section id="cdn">
+			<h2>Use the CDN directly</h2>
+
+			<ul>
+				<li>Useful for rapid prototyping</li>
+				<li>Not recommended for production setups</li>
+				<li>Uses compiles CSS so loses the benefit of SASS</li>
+				<li>You get everything: you can't pick and choose <em>just</em> what you need</li>
+			</ul>
+
+			<p>
+				{% source "html" -%}
+					<link rel="stylesheet" href="todo" type="text/css" media="screen" charset="utf-8">
+					<script src="//todo"></script>
+				{%- endsource %}
+			</p>
+		</section>
+
+		<section id="git">
+			<h2>Git clone latest</h2>
+			<p>
+				{% source -%}
+					git clone https://github.com/nhsevidence/NICE.Bootstrap2.git
+				{%- endsource %}
+			</p>
+		</section>
+
+		<section id="zip">
+			<h2>Download latest ZIP</h2>
+			<p>
+				<a href="https://github.com/nhsevidence/NICE.Bootstrap2/archive/master.zip" class="btn">Download latest ZIP</a>
+			</p>
+		</section>
+
+		<section id="npm">
+			<h2>NPM install</h2>
+			<p>
+				NPM support is coming soon &hellip;
+			</p>
+		</section>
+
+		<section id="bower">
+			<h2>Bower install</h2>
+			<p>
+				Bower support is coming soon &hellip;
+			</p>
+		</section>
+
+		<section id="meteor">
+			<h2>Meteor install</h2>
+			<p>
+				Meteor support is coming soon &hellip;
+			</p>
+		</section>
+
+	</div>
+
+{% endblock %}
