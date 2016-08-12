@@ -45,6 +45,21 @@ a {
 		@include default-focus-style;
 		background-color: $focus-colour;
 	}
+
+	// Add icon to external links
+	&[rel='external'] {
+		&::after {
+			color: $link-colour;
+			content: get-glyph(ne-arrow);
+		    display: inline-block;
+	        position: relative;
+    		top: -.5em;
+		}
+
+		&:hover::after {
+			color: $link-hover-colour;
+		}
+	}
 }
 
 p,
