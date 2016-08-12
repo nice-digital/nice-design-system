@@ -7,7 +7,7 @@
 	background-color: get-colour(grey, x-light);
 
 	&__inner {
-		@extend .container;
+		@extend %container;
 		overflow: hidden;
 	}
 

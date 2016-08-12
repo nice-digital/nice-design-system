@@ -45,6 +45,19 @@
 		}
 	}
 
+	// External links have an icon
+	&[rel='external'] {
+		&::after {
+			color: $white;
+		}
+
+		&:hover {
+			&::after {
+				color: $white;
+			}
+		}
+	}
+
 	&--xs {
 		@include nice-font-size(-2, 1.5);
 		padding: 0 em(12);

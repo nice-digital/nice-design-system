@@ -10,23 +10,34 @@
 
 		li {
 			display: inline-block;
+		}
 
-			a {
-				display: block;
-				padding: 20px 15px;
-				position: relative;
-				text-decoration: none;
+		a {
+			color: $text-colour;
+			display: block;
+			padding: 20px 15px;
+			position: relative;
+			text-decoration: none;
 
+			&:hover {
+				background-color: get-colour(grey, light);
+			}
+
+			&:active {
 				&::after {
-					background-color: get-colour(blue);
-					bottom: 0;
-					content: '';
-					display: none;
-					height: 5px;
-					left: 0;
-					position: absolute;
-					width: 100%;
+					display: block;
 				}
+			}
+
+			&::after {
+				background-color: get-colour(blue);
+				bottom: 0;
+				content: '';
+				display: none;
+				height: 5px;
+				left: 0;
+				position: absolute;
+				width: 100%;
 			}
 		}
 	}
