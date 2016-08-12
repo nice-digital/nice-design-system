@@ -50,10 +50,7 @@ a {
 	&[rel='external'] {
 		&::after {
 			color: $link-colour;
-			content: get-glyph(ne-arrow);
-		    display: inline-block;
-	        position: relative;
-    		top: -.5em;
+			content: get-glyph(punc-space, box-box);
 		}
 
 		&:hover::after {
