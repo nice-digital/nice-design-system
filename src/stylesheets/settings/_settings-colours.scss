@@ -56,7 +56,7 @@ $black: #000;
 $white: #fff;
 
 /// The base colour for grey
-$colour-base-grey: #e5e7ea;
+$colour-base-grey: #777;
 
 /// The base colour for orange
 $colour-base-orange: #f5b805;
@@ -85,11 +85,13 @@ $palette-purple: (
 /// @prop {Color} base [$colour-base-grey] Mid-light grey
 /// @prop {Color} dark [#262626] Dark grey
 $palette-grey: (
-	light: #efefef,
-	mid-light: #dfe0e2,
+	x-light: #ddd,
+	light: #bbb,
+	mid-light: #999,
 	base: $colour-base-grey,
-	mid-dark: #4a4a4a,
-	dark: #262626
+	mid-dark: #555,
+	dark: #333,
+	x-dark: #111
 );
 
 /// Green colour palette

@@ -4,7 +4,7 @@
 
 .navbar {
 	@extend .nav;
-	background-color: get-colour(grey);
+	background-color: get-colour(grey, x-light);
 
 	&__inner {
 		@extend .container;

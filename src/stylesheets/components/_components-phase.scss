@@ -5,7 +5,7 @@
 /// A phase banner includes a tag and a label and is designed
 /// to designate that a service is in alpha or beta
 .phase-banner {
-	border-bottom: 1px solid get-colour(grey);
+	border-bottom: 1px solid get-colour(grey, light);
 	display: table;
 	margin: 0 0 em(24);
 	padding: em(4) 0;
@@ -28,7 +28,7 @@
 /// used on its own but usually used within a `.phase-banner`.
 /// @see .phase-banner
 .phase-tag {
-	background-color: get-colour(grey, dark);
+	background-color: get-colour(grey, mid-dark);
 	color: $white;
 	display: inline-block;
 	font-weight: 700;

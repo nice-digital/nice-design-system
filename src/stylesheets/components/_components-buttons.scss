@@ -21,7 +21,7 @@
 	&:hover,
 	&:focus,
 	&:active {
-		background: get-colour(grey, dark);
+		background: get-colour(grey);
 		color: $white;
 		text-decoration: none;
 	}
@@ -81,18 +81,19 @@
 	}
 
 	&--secondary {
-		background: get-colour(grey);
+		background: get-colour(grey, x-light);
 		color: get-colour(grey, dark);
 
-		&:hover {
-			background: get-colour(grey);
+		&:hover,
+		&:focus {
+			background: get-colour(grey, light);
 			color: get-colour(grey, dark);
 			text-decoration: underline;
 		}
 
 		&:active {
-			background: get-colour(grey, dark);
-			color: get-colour(grey);
+			background: get-colour(grey, light);
+			color: get-colour(grey, dark);
 		}
 
 		&:visited {
