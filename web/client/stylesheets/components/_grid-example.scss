@@ -1,12 +1,7 @@
-.grid {
-	&--example {
-		margin-bottom: 1em;
-
-		.grid__item {
-			background: get-colour(grey, x-light);
-			border: 5px solid $border-colour;
-			padding-top: 1em;
-			padding-bottom: 1em;
-		}
-	}
+.grid-example-item {
+	background: get-colour(grey, x-light);
+	border: 5px solid $border-colour;
+	margin-bottom: .5em;
+	padding: .5em;
+	text-align: center;
 }

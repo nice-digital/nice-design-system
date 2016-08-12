@@ -74,3 +74,9 @@ p,
 		}
 	}
 }
+
+code {
+	background: get-colour(grey, x-light);
+	font-family: font-family(mono);
+	padding: scut-em(4);
+}
