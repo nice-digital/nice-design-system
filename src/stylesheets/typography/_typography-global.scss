@@ -7,76 +7,76 @@
 /// The default focus style used for elements like anchors and buttons
 /// @output the default focus styles ie background colour and outline
 @mixin default-focus-style {
-	outline: 3px solid $focus-colour;
+  outline: 3px solid $focus-colour;
 }
 
 html {
-	@include root-size;
+  @include root-size;
 }
 
 body {
-	background: $page-colour;
-	color: $text-colour;
-	font-family: font-family(sans);
-	font-style: normal;
-	line-height: 1.6rem;
-	overflow-x: hidden;
-	text-rendering: optimizelegibility;
+  background: $page-colour;
+  color: $text-colour;
+  font-family: font-family(sans);
+  font-style: normal;
+  line-height: 1.6rem;
+  overflow-x: hidden;
+  text-rendering: optimizelegibility;
 }
 
 body,
 html {
-	height: 100%;
+  height: 100%;
 }
 
 a {
-	color: $link-colour;
-	text-decoration: underline;
+  color: $link-colour;
+  text-decoration: underline;
 
-	&:visited {
-		color: $link-visited-colour;
-	}
+  &:visited {
+    color: $link-visited-colour;
+  }
 
-	&:hover {
-		color: $link-hover-colour;
-	}
+  &:hover {
+    color: $link-hover-colour;
+  }
 
-	&:focus {
-		@include default-focus-style;
-		background-color: $focus-colour;
-	}
+  &:focus {
+    @include default-focus-style;
+    background-color: $focus-colour;
+  }
 
-	// Add icon to external links
-	&[rel='external'] {
-		&::after {
-			color: $link-colour;
-			content: get-glyph(punc-space, box-box);
-		}
+  // Add icon to external links
+  &[rel='external'] {
+    &::after {
+      color: $link-colour;
+      content: get-glyph(punc-space, box-box);
+    }
 
-		&:hover::after {
-			color: $link-hover-colour;
-		}
-	}
+    &:hover::after {
+      color: $link-hover-colour;
+    }
+  }
 }
 
 p,
 .p {
-	@include nice-font($scale: 0, $line-height: 1.6);
-	font-feature-settings: 'kern', 'onum', 'liga';
+  @include nice-font($scale: 0, $line-height: 1.6);
+  font-feature-settings: 'kern', 'onum', 'liga';
 
-	&.lead {
-		@include nice-font($scale: 1, $line-height: 2);
+  &.lead {
+    @include nice-font($scale: 1, $line-height: 2);
 
-		&:first-letter {
-			@include nice-font-size($scale: 7, $line-height: 4);
-			float: left;
-			padding: scut-em(0 2px 0 0);
-		}
-	}
+    &:first-letter {
+      @include nice-font-size($scale: 7, $line-height: 4);
+      float: left;
+      padding: scut-em(0 2px 0 0);
+    }
+  }
 }
 
 code {
-	background: get-colour(grey, x-light);
-	font-family: font-family(mono);
-	padding: scut-em(4);
+  background: get-colour(grey, x-light);
+  font-family: font-family(mono);
+  padding: scut-em(4);
 }

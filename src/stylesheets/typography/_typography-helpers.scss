@@ -5,16 +5,16 @@
 /// Gets a font family from the `$font-families` map, given a name
 /// @param {String} $stack The stack name e.g. sans, serif or mono
 @function font-family($stack) {
-	$result: map-get($font-families, $stack);
-	@return unquote($result);
+  $result: map-get($font-families, $stack);
+  @return unquote($result);
 }
 
 /// Gets the integer root size, in px, for the given
 /// breakpoint.
 @function get-root-size($index) {
-	$brkpnt: nth($nice-breakpoints, $index);
-	$values: nth($brkpnt, 2);
-	@return map-get($values, root-size);
+  $brkpnt: nth($nice-breakpoints, $index);
+  $values: nth($brkpnt, 2);
+  @return map-get($values, root-size);
 }
 
 /// Gets the root font size as a percentage.
@@ -23,43 +23,43 @@
 /// @see $nice-breakpoints
 /// @output Root font-size and media queries
 /// @example
-/// 	html {
-/// 		@include root-size;
-/// 	}
+///   html {
+///     @include root-size;
+///   }
 @mixin root-size {
-	font-size: get-root-size(1) / $base-font-size * 100%;
+  font-size: get-root-size(1) / $base-font-size * 100%;
 
-	@for $i from 2 through $num-nice-breakpoints {
-		$brkpnt: nth($nice-breakpoints, $i);
-		$brkpnt-key: nth($brkpnt, 1);
+  @for $i from 2 through $num-nice-breakpoints {
+    $brkpnt: nth($nice-breakpoints, $i);
+    $brkpnt-key: nth($brkpnt, 1);
 
-		@include mq($from: $brkpnt-key) {
-			font-size: get-root-size($i) / 16 * 100%;
-		}
-	}
+    @include mq($from: $brkpnt-key) {
+      font-size: get-root-size($i) / 16 * 100%;
+    }
+  }
 }
 
 
 /// Gets a numeric font size (in px) from a given scale factor.
 @function get-font-size($scale: 0) {
 
-	@if map-has-key($named-font-sizes, $scale) {
-		$scale-int: map-get($named-font-sizes, $scale);
-		@return $base-font-size * power($ms-ratio, $scale-int);
-	}
-	@elseif is-integer($scale) {
-		@return $base-font-size * power($ms-ratio, $scale);
-	}
+  @if map-has-key($named-font-sizes, $scale) {
+    $scale-int: map-get($named-font-sizes, $scale);
+    @return $base-font-size * power($ms-ratio, $scale-int);
+  }
+  @elseif is-integer($scale) {
+    @return $base-font-size * power($ms-ratio, $scale);
+  }
 
-	@error '$scale must either be an integer or exist as a named font size';
+  @error '$scale must either be an integer or exist as a named font size';
 }
 
 @mixin nice-font-size($scale: 0, $line-height: 2) {
-	$font-size: get-font-size($scale);
-	font-size: #{$font-size / $base-font-size}rem;
-	@if $line-height != 0 {
-		line-height: #{$line-height}rem;
-	}
+  $font-size: get-font-size($scale);
+  font-size: #{$font-size / $base-font-size}rem;
+  @if $line-height != 0 {
+    line-height: #{$line-height}rem;
+  }
 }
 
 /// Nice font.
@@ -67,43 +67,43 @@
 /// @link https://github.com/jakegiltsoff/sassline/blob/master/assets/sass/sassline-base/_mixins.scss Taken from SASS Line
 /// @link https://gist.github.com/razwan/10662500 Based on razwan's gist
 @mixin nice-font($scale: 0, $line-height: 2, $below: 2) {
-	$root-size: $base-font-size;
-	$font-size: get-font-size($scale);
-	$baseline-push: #{$below - (($font-size / 2 * (($line-height * $root-size / $font-size) - $cap-height)) / $root-size + .00001)};
-	$baseline-shift: #{($font-size / 2 * (($line-height * $root-size / $font-size) - $cap-height)) / $root-size + .00001};
+  $root-size: $base-font-size;
+  $font-size: get-font-size($scale);
+  $baseline-push: #{$below - (($font-size / 2 * (($line-height * $root-size / $font-size) - $cap-height)) / $root-size + .00001)};
+  $baseline-shift: #{($font-size / 2 * (($line-height * $root-size / $font-size) - $cap-height)) / $root-size + .00001};
 
-	@include nice-font-size($scale, $line-height);
-	margin-bottom: #{$baseline-push}rem;
-	margin-top: 0;
-	padding-top: #{$baseline-shift}rem;
+  @include nice-font-size($scale, $line-height);
+  margin-bottom: #{$baseline-push}rem;
+  margin-top: 0;
+  padding-top: #{$baseline-shift}rem;
 }
 
 @mixin h1 {
-	@include nice-font(h1, $line-height: 3, $below: 1);
-	font-weight: bold;
+  @include nice-font(h1, $line-height: 3, $below: 1);
+  font-weight: bold;
 }
 
 @mixin h2 {
-	@include nice-font(h2, $line-height: 3, $below: 1);
-	font-weight: normal;
+  @include nice-font(h2, $line-height: 3, $below: 1);
+  font-weight: normal;
 }
 
 @mixin h3 {
-	@include nice-font(h3, $line-height: 3, $below: 1);
-	font-weight: normal;
+  @include nice-font(h3, $line-height: 3, $below: 1);
+  font-weight: normal;
 }
 
 @mixin h4 {
-	@include nice-font(h4, $line-height: 2, $below: 1);
-	font-weight: normal;
+  @include nice-font(h4, $line-height: 2, $below: 1);
+  font-weight: normal;
 }
 
 @mixin h5 {
-	@include nice-font(h5, $line-height: 2, $below: 0);
-	font-weight: bold;
+  @include nice-font(h5, $line-height: 2, $below: 0);
+  font-weight: bold;
 }
 
 @mixin h6 {
-	@include nice-font(h6, $line-height: 2, $below: 0);
-	font-weight: bold;
+  @include nice-font(h6, $line-height: 2, $below: 0);
+  font-weight: bold;
 }

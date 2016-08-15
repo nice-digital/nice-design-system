@@ -12,7 +12,7 @@
 /// @param {Number} $px - The pixel value to convert
 /// @param {Number} $base [$base-font-size] - The base pixel value
 @function em($px, $base: $base-font-size) {
-	@return ($px / $base) + em;
+  @return ($px / $base) + em;
 }
 
 
@@ -20,12 +20,12 @@
 /// @link https://github.com/alphagov/govuk_elements/blob/master/public/sass/elements/_helpers.scss#L31
 .visually-hidden,
 .visuallyhidden {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }

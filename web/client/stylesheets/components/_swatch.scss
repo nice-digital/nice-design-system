@@ -1,36 +1,36 @@
 .swatch {
-	border-radius: 999px;
-	display: none;
-	float: left;
-	height: 100px;
-	line-height: 100px;
-	margin: 0 8px 28px;
-	position: relative;
-    text-align: center;
-	width: 100px;
+  border-radius: 999px;
+  display: none;
+  float: left;
+  height: 100px;
+  line-height: 100px;
+  margin: 0 8px 28px;
+  position: relative;
+  text-align: center;
+  width: 100px;
 
-	@each $name, $palette in $palettes {
+  @each $name, $palette in $palettes {
 
-		@each $key, $hex in $palette {
-			&--#{$name}-#{$key} {
-				background: $hex;
-				display: block;
+    @each $key, $hex in $palette {
+      &--#{$name}-#{$key} {
+        background: $hex;
+        display: block;
 
-				&:before {
-					content: '#{$name}-#{$key}';
-					left: 0;
-					line-height: 1;
-					position: absolute;
-					top: 100%;
-					width: 100%;
-				}
+        &:before {
+          content: '#{$name}-#{$key}';
+          left: 0;
+          line-height: 1;
+          position: absolute;
+          top: 100%;
+          width: 100%;
+        }
 
-				&:after {
-					color: invert($hex);
-					content: '#{$hex}';
-				}
-			}
-		}
-	}
+        &:after {
+          color: invert($hex);
+          content: '#{$hex}';
+        }
+      }
+    }
+  }
 
 }

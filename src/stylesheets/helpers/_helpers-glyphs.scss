@@ -18,17 +18,17 @@
 /// @prop {String} box-box [029C9] Double box (⧉)
 /// @prop {String} punc-space [02008] Punctuation space (small, width of a comma)
 $glyphs: (
-	bullet: '2022',
-	quotation-mark: '0022',
-	greater-than: '003e',
-	less-than: '003c',
-	copyright: '00a9',
-	left-double-quotation-mark: '201C',
-	ne-double-arrow: '021D7',
-	up-tee-arrow: '021A5',
-	box-box: '029C9',
-	punc-space: '02008'
-	// Add more entity codes here as and when they're needed
+  bullet: '2022',
+  quotation-mark: '0022',
+  greater-than: '003e',
+  less-than: '003c',
+  copyright: '00a9',
+  left-double-quotation-mark: '201C',
+  ne-double-arrow: '021D7',
+  up-tee-arrow: '021A5',
+  box-box: '029C9',
+  punc-space: '02008'
+  // Add more entity codes here as and when they're needed
 );
 
 /// Gets a glyph code, or several, (character entity reference) from the
@@ -38,36 +38,36 @@ $glyphs: (
 /// @returns {string} The character entity reference code(s) as a string, e.g. '\201C' or '\02008\029C9'
 /// @see $glyphs
 /// @example Single glyph
-/// 	.rule {
-/// 		content: get-glyph(greater-than);
-/// 	}
+///   .rule {
+///     content: get-glyph(greater-than);
+///   }
 /// @example Multiple glyphs together
-/// 	.rule {
-/// 		content: get-glyph(punc-space, box-box);
-/// 	}
+///   .rule {
+///     content: get-glyph(punc-space, box-box);
+///   }
 @function get-glyph($names...) {
-	$codes: '';
+  $codes: '';
 
-	@each $name in $names {
-		@if map-has-key($glyphs, $name) {
-			$code: map-get($glyphs, $name);
-			$codes: $codes + '\\#{$code}';
-		} @else {
-			@error 'Glyph with name #{$name} could not be found in the $glyphs map';
-		}
-	}
+  @each $name in $names {
+    @if map-has-key($glyphs, $name) {
+      $code: map-get($glyphs, $name);
+      $codes: $codes + '\\#{$code}';
+    } @else {
+      @error 'Glyph with name #{$name} could not be found in the $glyphs map';
+    }
+  }
 
-	@return unquote('\'#{$codes}\'');
+  @return unquote('\'#{$codes}\'');
 }
 
 // Output a BEM style glyph selector for each glyph in the map.
 // E.g. .glyph.glyph--bullet { content: '\2022'; }
 .glyph {
-	@each $key, $value in $glyphs {
-		&--#{$key} {
-			&::before {
-				content: unquote('\'\\#{$value}\'');
-			}
-		}
-	}
+  @each $key, $value in $glyphs {
+    &--#{$key} {
+      &::before {
+        content: unquote('\'\\#{$value}\'');
+      }
+    }
+  }
 }

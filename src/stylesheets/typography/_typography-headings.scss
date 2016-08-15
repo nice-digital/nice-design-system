@@ -8,68 +8,68 @@ h3,
 h4,
 h5,
 h6 {
-	clear: both;
-	margin: 0;
+  clear: both;
+  margin: 0;
 }
 
 .heading {
-	clear: both;
+  clear: both;
 
-	&--primary {
-		@include h1;
-	}
+  &--primary {
+    @include h1;
+  }
 
-	&--secondary {
-		@include h2;
-	}
+  &--secondary {
+    @include h2;
+  }
 
-	&--tertiary {
-		@include h3;
-	}
+  &--tertiary {
+    @include h3;
+  }
 
-	&--quaternary {
-		@include h4;
-	}
+  &--quaternary {
+    @include h4;
+  }
 
-	&--quinary {
-		@include h5;
-	}
+  &--quinary {
+    @include h5;
+  }
 
-	&--senary {
-		@include h6;
-	}
+  &--senary {
+    @include h6;
+  }
 
-	&--separator {
-		border-bottom: 1px solid $border-colour;
-	}
+  &--separator {
+    border-bottom: 1px solid $border-colour;
+  }
 }
 
 h1,
 .h1 {
-	@include h1;
+  @include h1;
 }
 
 h2,
 .h2 {
-	@include h2;
+  @include h2;
 }
 
 h3,
 .h3 {
-	@include h3;
+  @include h3;
 }
 
 h4,
 .h4 {
-	@include h4;
+  @include h4;
 }
 
 h5,
 .h5 {
-	@include h5;
+  @include h5;
 }
 
 h6,
 .h6 {
-	@include h6;
+  @include h6;
 }

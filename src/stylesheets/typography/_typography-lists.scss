@@ -3,35 +3,35 @@
 ////
 
 %list {
-	font-feature-settings: 'kern', 'onum', 'liga';
-	margin-left: 2rem;
-	padding: 0;
+  font-feature-settings: 'kern', 'onum', 'liga';
+  margin-left: 2rem;
+  padding: 0;
 }
 
 ul,
 ol {
-	@extend %list;
+  @extend %list;
 }
 
 .list {
-	@extend %list;
+  @extend %list;
 
-	&--featured {
-		list-style: none outside;
+  &--featured {
+    list-style: none outside;
 
-		li,
-		&__list-item {
-			position: relative;
+    li,
+    &__list-item {
+      position: relative;
 
-			&:before {
-				color: get-colour(orange);
-				content: get-glyph(bullet);
-				font-size: 150%;
-				left: -1.5rem;
-				position: absolute;
-				top: 0;
-			}
-		}
+      &:before {
+        color: get-colour(orange);
+        content: get-glyph(bullet);
+        font-size: 150%;
+        left: -1.5rem;
+        position: absolute;
+        top: 0;
+      }
+    }
 
-	}
+  }
 }

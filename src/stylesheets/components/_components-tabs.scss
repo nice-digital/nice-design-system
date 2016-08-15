@@ -5,50 +5,50 @@
 /// Tabbed navigational structure
 .tabs {
 
-	/// The list of tabs
-	&__list {
-		list-style: none;
-		margin: 0;
-		overflow: hidden;
-		padding: 0;
-	}
+  /// The list of tabs
+  &__list {
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+  }
 
-	///
-	&__tab {
-		float: left;
+  ///
+  &__tab {
+    float: left;
 
-		a {
-			display: block;
-			line-height: 4rem;
-			margin: 0;
-			padding: 0 1rem;
+    a {
+      display: block;
+      line-height: 4rem;
+      margin: 0;
+      padding: 0 1rem;
 
-			&:hover {
-				background: get-colour(grey, x-light);
-			}
-		}
+      &:hover {
+        background: get-colour(grey, x-light);
+      }
+    }
 
-		&--active {
-			background: get-colour(grey, x-light);
-		}
-	}
+    &--active {
+      background: get-colour(grey, x-light);
+    }
+  }
 
-	/// The tab content containing the tab panels
-	&__content {
-		background: get-colour(grey, x-light);
-		padding: 1rem;
-	}
+  /// The tab content containing the tab panels
+  &__content {
+    background: get-colour(grey, x-light);
+    padding: 1rem;
+  }
 
-	/// An individual tab content pane
-	&__pane {
+  /// An individual tab content pane
+  &__pane {
 
-		// Assume tabs will stack if no JS is available
-		.js & {
-			display: none;
+    // Assume tabs will stack if no JS is available
+    .js & {
+      display: none;
 
-			&--active {
-				display: block;
-			}
-		}
-	}
+      &--active {
+        display: block;
+      }
+    }
+  }
 }

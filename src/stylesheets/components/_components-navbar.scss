@@ -3,22 +3,22 @@
 ////
 
 .navbar {
-	@extend .nav;
-	background-color: get-colour(grey, x-light);
+  @extend .nav;
+  background-color: get-colour(grey, x-light);
 
-	&__inner {
-		@extend %container;
-		overflow: hidden;
-	}
+  &__inner {
+    @extend %container;
+    overflow: hidden;
+  }
 
-	&__nav {
-		.active {
-			a {
-				&::after {
-					background-color: get-colour(orange);
-					display: block;
-				}
-			}
-		}
-	}
+  &__nav {
+    .active {
+      a {
+        &::after {
+          background-color: get-colour(orange);
+          display: block;
+        }
+      }
+    }
+  }
 }

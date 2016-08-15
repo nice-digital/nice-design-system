@@ -4,28 +4,28 @@
 
 /// Blockquote style
 .quote {
-	@include nice-font-size(2);
-	font-weight: 300;
+  @include nice-font-size(2);
+  font-weight: 300;
 
-	&::before {
-		color: get-colour(orange, light);
-		content: get-glyph(left-double-quotation-mark);
-		display: inline-block;
-		font-family: Arial;
-		font-size: 6rem;
-		font-weight: bold;
-		line-height: 0;
-		vertical-align: bottom;
-	}
+  &::before {
+    color: get-colour(orange, light);
+    content: get-glyph(left-double-quotation-mark);
+    display: inline-block;
+    font-family: Arial;
+    font-size: 6rem;
+    font-weight: bold;
+    line-height: 0;
+    vertical-align: bottom;
+  }
 
-	p {
-		font-size: inherit;
-		padding-top: 0;
-	}
+  p {
+    font-size: inherit;
+    padding-top: 0;
+  }
 
-	footer,
-	cite {
-		@include nice-font-size(0);
-		font-style: normal;
-	}
+  footer,
+  cite {
+    @include nice-font-size(0);
+    font-style: normal;
+  }
 }

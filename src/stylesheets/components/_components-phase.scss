@@ -5,51 +5,51 @@
 /// A phase banner includes a tag and a label and is designed
 /// to designate that a service is in alpha or beta
 .phase-banner {
-	border-bottom: 1px solid $border-colour;
-	display: table;
-	margin: 0 0 em(24);
-	padding: em(4) 0;
-	width: 100%;
+  border-bottom: 1px solid $border-colour;
+  display: table;
+  margin: 0 0 em(24);
+  padding: em(4) 0;
+  width: 100%;
 
-	&__tag {
-		display: table-cell;
-		padding: 0 em(8) 0 0;
-	}
+  &__tag {
+    display: table-cell;
+    padding: 0 em(8) 0 0;
+  }
 
-	&__label {
-		display: table-cell;
-		line-height: 1.25;
-		vertical-align: middle;
-		width: 100%;
-	}
+  &__label {
+    display: table-cell;
+    line-height: 1.25;
+    vertical-align: middle;
+    width: 100%;
+  }
 }
 
 /// A coloured block to designate a service being in alpha or beta. Can be
 /// used on its own but usually used within a `.phase-banner`.
 /// @see .phase-banner
 .phase-tag {
-	background-color: get-colour(grey, mid-dark);
-	color: $white;
-	display: inline-block;
-	font-weight: 700;
-	letter-spacing: 1px;
-	padding: 0 .3rem;
-	text-decoration: none;
-	text-transform: uppercase;
-	vertical-align: middle;
+  background-color: get-colour(grey, mid-dark);
+  color: $white;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 0 .3rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: middle;
 
-	&--alpha {
-		background-color: $alpha-colour;
-		color: $white;
-	}
+  &--alpha {
+    background-color: $alpha-colour;
+    color: $white;
+  }
 
-	&--beta {
-		background-color: $beta-colour;
-		color: $white;
-	}
+  &--beta {
+    background-color: $beta-colour;
+    color: $white;
+  }
 
-	&--live {
-		background-color: $live-colour;
-		color: $white;
-	}
+  &--live {
+    background-color: $live-colour;
+    color: $white;
+  }
 }

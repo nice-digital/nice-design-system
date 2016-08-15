@@ -1,0 +1,59 @@
+{% extends "./_sass-layout.njk" %}
+{% set title = "SASS Code Standards" %}
+
+{% block main %}
+
+	<h1>SASS Code Standards</h1>
+
+	<nav role="navigation">
+		<ul>
+			<li><a href="#syntax">Syntax/formatting</a></li>
+			<li><a href="#naming">Naming</a></li>
+			<li><a href="#comments">Comments</a></li>
+		</ul>
+	</nav>
+
+	<p class="lead">
+		We follow the coding standards rules from the brilliant <a href="http://codeguide.co/#css" target="_blank" rel="external">Code Guide by @mdo</a> (which in turn was heavily inspired by <a href="https://github.com/necolas/idiomatic-css" target="_blank" rel="external">Idiomatic CSS</a> and the <a href="http://github.com/styleguide" target="_blank" rel="external">GitHub Styleguide</a>) with a few exceptions as described below.
+	</p>
+
+	<p>
+		We use <a href="https://github.com/sasstools/sass-lint" target="_blank" rel="external">SASS Lint</a> for SASS code linting and enforcement of syntax consistency. See our <code>.sass-lint.yml</code> for a detailed view.
+	</p>
+
+	<section id="syntax">
+		<h2>Syntax &amp; formatting</h2>
+		<p>
+			The following are exceptions or additions to @mdo's Code Style:
+		</p>
+
+		<ul>
+			<li>
+				Use tabs for indentation.
+				<br/>
+				Our <a href="http://editorconfig.org/" target="_blank" rel="external">.editorconfig</a> helps with this and our .sass-lint.yml enforces this with the <em>indentation</em> rule.
+			</li>
+			<li>
+
+			</li>
+		</ul>
+
+	</section>
+
+	<section id="naming">
+		<h2>BEM and naming</h2>
+
+		<p>
+			We follow the <a href="http://codeguide.co/#css-classes" target="_blank" rel="external">class naming rules</a> and <a href="http://codeguide.co/#css-classes" target="_blank" rel="external">class naming rules</a>
+		</p>
+
+	</section>
+
+	<section id="comments">
+		<h2>Comments</h2>
+
+		<a href="/sass/docs" class="btn">SASS Documentation</a>
+
+	</section>
+
+{% endblock %}

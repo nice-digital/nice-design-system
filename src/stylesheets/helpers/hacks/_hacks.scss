@@ -4,34 +4,34 @@
 
 /// Class to make element visible only when printing
 .visible-print {
-	display: none !important;
+  display: none !important;
 }
 
 @media print {
-	.visible-print {
-		display: inherit !important;
-	}
-	.hidden-print {
-		display: none !important;
-	}
+  .visible-print {
+    display: inherit !important;
+  }
+  .hidden-print {
+    display: none !important;
+  }
 }
 
 /// Resets `box-sizing` to `border-box`
 /// @link https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 @mixin default-box-sixing {
-	html {
-		box-sizing: border-box;
-	}
-	*, *:before, *:after {
-		box-sizing: inherit;
-	}
+  html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
 }
 
 /// Fix unwanted button padding in Firefox
 /// @link http://stackoverflow.com/a/5518143/486434 Stack Overflow answer
 @mixin remove-mz-focus-inner {
-	&::-moz-focus-inner {
-		border: 0;
-		padding: 0;
-	}
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
 }

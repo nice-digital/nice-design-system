@@ -3,15 +3,15 @@
 ////
 
 %container {
-	margin: auto;
-	max-width: 1170px;
-	width: 96%;
+  margin: auto;
+  max-width: 1170px;
+  width: 96%;
 }
 
 .container {
-	@extend %container;
+  @extend %container;
 }
 
 img {
-	max-width: 100%;
+  max-width: 100%;
 }

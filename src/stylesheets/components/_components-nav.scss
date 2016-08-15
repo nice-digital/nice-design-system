@@ -3,94 +3,94 @@
 ////
 
 .nav {
-	ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-		li {
-			display: inline-block;
-		}
+    li {
+      display: inline-block;
+    }
 
-		a {
-			color: $text-colour;
-			display: block;
-			padding: 20px 15px;
-			position: relative;
-			text-decoration: none;
+    a {
+      color: $text-colour;
+      display: block;
+      padding: 20px 15px;
+      position: relative;
+      text-decoration: none;
 
-			&:hover {
-				background-color: get-colour(grey, light);
-			}
+      &:hover {
+        background-color: get-colour(grey, light);
+      }
 
-			&:active {
-				&::after {
-					display: block;
-				}
-			}
+      &:active {
+        &::after {
+          display: block;
+        }
+      }
 
-			&::after {
-				background-color: get-colour(blue);
-				bottom: 0;
-				content: '';
-				display: none;
-				height: 5px;
-				left: 0;
-				position: absolute;
-				width: 100%;
-			}
-		}
-	}
+      &::after {
+        background-color: get-colour(blue);
+        bottom: 0;
+        content: '';
+        display: none;
+        height: 5px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+    }
+  }
 
-	&__tabs {
-		.active {
-			a {
-				&::after {
-					display: block;
-				}
-			}
-		}
-	}
+  &__tabs {
+    .active {
+      a {
+        &::after {
+          display: block;
+        }
+      }
+    }
+  }
 
-	&__pills {
-		.active {
-			a {
-				background-color: get-colour(blue, x-light);
-				color: $white;
-			}
-		}
-	}
+  &__pills {
+    .active {
+      a {
+        background-color: get-colour(blue, x-light);
+        color: $white;
+      }
+    }
+  }
 
-	&__tabs,
-	&__pills {
-		&--justified {
-			li {
-				text-align: center;
-			}
+  &__tabs,
+  &__pills {
+    &--justified {
+      li {
+        text-align: center;
+      }
 
-			/// one item
-			li:first-child:nth-last-child(1) {
-				width: 100%;
-			}
+      /// one item
+      li:first-child:nth-last-child(1) {
+        width: 100%;
+      }
 
-			/// two items
-			li:first-child:nth-last-child(2),
-			li:first-child:nth-last-child(2) ~ li {
-				width: 50%;
-			}
+      /// two items
+      li:first-child:nth-last-child(2),
+      li:first-child:nth-last-child(2) ~ li {
+        width: 50%;
+      }
 
-			/// three items
-			li:first-child:nth-last-child(3),
-			li:first-child:nth-last-child(3) ~ li {
-				width: 33.3333%;
-			}
+      /// three items
+      li:first-child:nth-last-child(3),
+      li:first-child:nth-last-child(3) ~ li {
+        width: 33.3333%;
+      }
 
-			/// four items
-			li:first-child:nth-last-child(4),
-			li:first-child:nth-last-child(4) ~ li {
-				width: 25%;
-			}
-		}
-	}
+      /// four items
+      li:first-child:nth-last-child(4),
+      li:first-child:nth-last-child(4) ~ li {
+        width: 25%;
+      }
+    }
+  }
 
 }

@@ -8,9 +8,9 @@
 /// @prop {Font stack} mono [Monaco, Menlo, Consolas, "Courier New", monospace] The monospace font stack
 /// @see font-family
 $font-families: (
-	sans: '"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif',
-	serif: 'Georgia, "Times New Roman", Times, serif',
-	mono: 'Monaco, Menlo, Consolas, "Courier New", monospace'
+  sans: '"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif',
+  serif: 'Georgia, "Times New Roman", Times, serif',
+  mono: 'Monaco, Menlo, Consolas, "Courier New", monospace'
 );
 
 /// Base font size, in pixels
@@ -31,11 +31,11 @@ $ms-ratio: get-ratio(minor-third);
 /// @prop {Integer} h6 [1] Heading 6
 /// @prop {Integer} p [0] Paragraph
 $named-font-sizes: (
-	h1: 6,
-	h2: 5,
-	h3: 4,
-	h4: 3,
-	h5: 2,
-	h6: 1,
-	p: 0
+  h1: 6,
+  h2: 5,
+  h3: 4,
+  h4: 3,
+  h5: 2,
+  h6: 1,
+  p: 0
 );

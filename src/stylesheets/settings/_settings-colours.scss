@@ -5,31 +5,31 @@
 /// Possible tones that can be used for colour mapping
 /// @see get-colour
 $tones: (
-	x-dark: (
-		function: darken,
-		args: 30%
-	),
-	dark: (
-		function: darken,
-		args: 20%
-	),
-	mid-dark: (
-		function: darken,
-		args: 10%
-	),
-	base,
-	mid-light: (
-		function: lighten,
-		args: 10%
-	),
-	light: (
-		function: lighten,
-		args: 20%
-	),
-	x-light: (
-		function: lighten,
-		args: 30%
-	)
+  x-dark: (
+    function: darken,
+    args: 30%
+  ),
+  dark: (
+    function: darken,
+    args: 20%
+  ),
+  mid-dark: (
+    function: darken,
+    args: 10%
+  ),
+  base,
+  mid-light: (
+    function: lighten,
+    args: 10%
+  ),
+  light: (
+    function: lighten,
+    args: 20%
+  ),
+  x-light: (
+    function: lighten,
+    args: 30%
+  )
 );
 
 /// Applies a tone to the given colour
@@ -37,18 +37,18 @@ $tones: (
 /// @param $tone [Map] The tone, one of the values from the $tones map
 /// @returns {Colour} The toned colour
 @function apply-tone($colour, $tone) {
-	@if map-has-key($tones, $tone) {
-		$this-tone: map-get($tones, $tone);
-		$function: map-get($this-tone, function);
+  @if map-has-key($tones, $tone) {
+    $this-tone: map-get($tones, $tone);
+    $function: map-get($this-tone, function);
 
-		$args: ();
-		@if map-get($this-tone, args) {
-			$args: join($args, map-get($this-tone, args));
-		}
-		@return call($function, $colour, $args...);
-	}
+    $args: ();
+    @if map-get($this-tone, args) {
+      $args: join($args, map-get($this-tone, args));
+    }
+    @return call($function, $colour, $args...);
+  }
 
-	@error 'Invalid `$tone`: #{$tone}. Must be one of $tones.';
+  @error 'Invalid `$tone`: #{$tone}. Must be one of $tones.';
 }
 
 // Extremes
@@ -79,7 +79,7 @@ $colour-base-green: #5cb85c;
 /// Purple colour palette
 /// @prop {Color} base [$colour-base-purple] Base purple colour
 $palette-purple: (
-	base: $colour-base-purple
+  base: $colour-base-purple
 );
 
 /// Grey colour palette
@@ -88,13 +88,13 @@ $palette-purple: (
 /// @prop {Color} base [$colour-base-grey] Mid-light grey
 /// @prop {Color} dark [#262626] Dark grey
 $palette-grey: (
-	x-light: #ddd,
-	light: #bbb,
-	mid-light: #999,
-	base: $colour-base-grey,
-	mid-dark: #555,
-	dark: #333,
-	x-dark: #111
+  x-light: #ddd,
+  light: #bbb,
+  mid-light: #999,
+  base: $colour-base-grey,
+  mid-dark: #555,
+  dark: #333,
+  x-dark: #111
 );
 
 /// Green colour palette
@@ -102,9 +102,9 @@ $palette-grey: (
 /// @prop {Color} base [$colour-base-green] Base green
 /// @prop {Color} dark [#449d44] Dark green
 $palette-green: (
-	light: #138a00,
-	base: $colour-base-green,
-	dark: #449d44
+  light: #138a00,
+  base: $colour-base-green,
+  dark: #449d44
 );
 
 /// Blue colour palette
@@ -113,39 +113,39 @@ $palette-green: (
 /// @prop {Color} base [$colour-base-blue] Base blue
 /// @prop {Color} dark [#264965] Dark blue
 $palette-blue: (
-	x-light: #66c2ff,
-	light: #1167b7,
-	base: $colour-base-blue,
-	dark: #264965
+  x-light: #66c2ff,
+  light: #1167b7,
+  base: $colour-base-blue,
+  dark: #264965
 );
 
 /// Orange palette
 /// @prop {Color} base [$colour-base-orange] Base orange
 $palette-orange: (
-	base: $colour-base-orange,
-	mid-dark: apply-tone($colour-base-orange, mid-dark),
-	dark: apply-tone($colour-base-orange, dark),
-	x-dark: apply-tone($colour-base-orange, x-dark)
+  base: $colour-base-orange,
+  mid-dark: apply-tone($colour-base-orange, mid-dark),
+  dark: apply-tone($colour-base-orange, dark),
+  x-dark: apply-tone($colour-base-orange, x-dark)
 );
 
 /// Red palette
 /// @prop {Color} base [$colour-base-red] Base red
 $palette-red: (
-	x-light: #faa,
-	light: #ff8080,
-	mid-light: #f55,
-	base: $colour-base-red,
-	mid-dark: #d40000,
-	dark: #a00,
-	x-dark: #800000
+  x-light: #faa,
+  light: #ff8080,
+  mid-light: #f55,
+  base: $colour-base-red,
+  mid-dark: #d40000,
+  dark: #a00,
+  x-dark: #800000
 );
 
 /// Pink palette
 /// @prop {Color} light [#fef7f7] Light pink
 /// @prop {Color} base [$colour-base-pink] Base pink
 $palette-pink: (
-	light: #fef7f7,
-	base: $colour-base-pink
+  light: #fef7f7,
+  base: $colour-base-pink
 );
 
 /// A map of colour name -> palette.
@@ -159,13 +159,13 @@ $palette-pink: (
 /// @prop {Map} red [$palette-red] Red colour palette
 /// @prop {Map} pink [$palette-pink] Pink colour palette
 $palettes: (
-	purple: $palette-purple,
-	grey: $palette-grey,
-	green: $palette-green,
-	blue: $palette-blue,
-	orange: $palette-orange,
-	red: $palette-red,
-	pink: $palette-pink
+  purple: $palette-purple,
+  grey: $palette-grey,
+  green: $palette-green,
+  blue: $palette-blue,
+  orange: $palette-orange,
+  red: $palette-red,
+  pink: $palette-pink
 );
 
 /// Gets a colour value from a given name and optional tone.
@@ -178,42 +178,42 @@ $palettes: (
 /// @link http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/ Colour map structure inspired from Erskine Design
 /// @link https://www.sitepoint.com/managing-color-values-with-sass/ Function borrowed from SitePoint
 @function get-colour($palette, $tone: 'base') {
-	@if map-has-key($palettes, $palette) {
+  @if map-has-key($palettes, $palette) {
 
-		$colour: map-get($palettes, $palette);
+    $colour: map-get($palettes, $palette);
 
-		@if map-has-key($colour, $tone) {
-			@return map-get($colour, $tone);
-		}
+    @if map-has-key($colour, $tone) {
+      @return map-get($colour, $tone);
+    }
 
-		@warn 'Tone #{$tone} could not be found in colour #{$palette}. Auto-toning instead';
-		@return apply-tone(map-get($colour, base), $tone);
-	}
+    @warn 'Tone #{$tone} could not be found in colour #{$palette}. Auto-toning instead';
+    @return apply-tone(map-get($colour, base), $tone);
+  }
 
-	@error 'Palette #{$palette} could not be found';
+  @error 'Palette #{$palette} could not be found';
 }
 
 
 // Semantic colour names
-$page-colour: $white;									// The page bg
+$page-colour: $white;                 // The page bg
 // LINKS
-$link-colour: get-colour(blue, light);					// Default link
-$link-hover-colour: get-colour(blue, x-light);			// Link hover
+$link-colour: get-colour(blue, light);          // Default link
+$link-hover-colour: get-colour(blue, x-light);      // Link hover
 // $link-active-colour: $light-blue;
-$link-visited-colour: get-colour(purple);				// Link visited
+$link-visited-colour: get-colour(purple);       // Link visited
 // TEXT
-$focus-colour: get-colour(orange);						// Focus colour
-$text-colour: get-colour(grey, dark);					// Standard text colour
-// $secondary-text-colour: $grey-1;						// Section headers, help text etc.
-$border-colour: get-colour(grey, light);				// Borders, seperators, rules, keylines etc.
-// $panel-colour: $grey-3;								// Related links panel, page footer etc.
-// $highlight-colour: $grey-4;							// Table stripes etc.
+$focus-colour: get-colour(orange);            // Focus colour
+$text-colour: get-colour(grey, dark);         // Standard text colour
+// $secondary-text-colour: $grey-1;           // Section headers, help text etc.
+$border-colour: get-colour(grey, light);        // Borders, seperators, rules, keylines etc.
+// $panel-colour: $grey-3;                // Related links panel, page footer etc.
+// $highlight-colour: $grey-4;              // Table stripes etc.
 // PHASES
-$alpha-colour: get-colour(pink);						// Alpha badges and banners
-$beta-colour: get-colour(orange);						// Beta badges and banners
-$live-colour: get-colour(green);						// Live badges and banners
+$alpha-colour: get-colour(pink);            // Alpha badges and banners
+$beta-colour: get-colour(orange);           // Beta badges and banners
+$live-colour: get-colour(green);            // Live badges and banners
 // ALERTS
-$error-colour: get-colour(red);							// Error text and border colour
-$error-background-colour: get-colour(red, x-light);		// Error background colour
+$error-colour: get-colour(red);             // Error text and border colour
+$error-background-colour: get-colour(red, x-light);   // Error background colour
 // SUB-BRANDS
 $bnf-purple: $colour-base-purple;

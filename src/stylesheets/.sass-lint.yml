@@ -44,7 +44,7 @@ rules:
     - style: lowercase
   indentation:
     - 1
-    - size: tab
+    - size: 2
   leading-zero: 1
   mixin-name-format:
     - allow-leading-underscore: true

@@ -17,23 +17,23 @@
 /// @prop {Number} major-second[1.125]
 /// @prop {Number} minor-second[1.066666667]
 $scales: (
-	golden: 1.618034,
-	double-octave: 4 / 1,
-	major-twelfth: 3 / 1,
-	major-eleventh: 8 / 3,
-	major-tenth: 5 / 2,
-	octave: 2 / 1,
-	major-seventh: 15 / 8,
-	minor-seventh: 16 / 9,
-	major-sixth: 5 / 3,
-	minor-sixth: 8 / 5,
-	fifth: 3 / 2,
-	augmented-fourth: sqrt(2) / 1,
-	fourth: 4 / 3,
-	major-third: 5 / 4,
-	minor-third: 6 / 5,
-	major-second: 9 / 8,
-	minor-second: 16 / 15
+  golden: 1.618034,
+  double-octave: 4 / 1,
+  major-twelfth: 3 / 1,
+  major-eleventh: 8 / 3,
+  major-tenth: 5 / 2,
+  octave: 2 / 1,
+  major-seventh: 15 / 8,
+  minor-seventh: 16 / 9,
+  major-sixth: 5 / 3,
+  minor-sixth: 8 / 5,
+  fifth: 3 / 2,
+  augmented-fourth: sqrt(2) / 1,
+  fourth: 4 / 3,
+  major-third: 5 / 4,
+  minor-third: 6 / 5,
+  major-second: 9 / 8,
+  minor-second: 16 / 15
 );
 
 /// Gets a module scale ratio with the given name. Looks
@@ -41,9 +41,9 @@ $scales: (
 /// @param $scale The name of the scale
 /// @returns {Number} The numeric scale ratio for the given name
 @function get-ratio($scale) {
-	@if map-has-key($scales, $scale) {
-		@return map-get($scales, $scale);
-	} @else {
-		@error 'Scale with name #{$scale} could not be found in the $scales map';
-	}
+  @if map-has-key($scales, $scale) {
+    @return map-get($scales, $scale);
+  } @else {
+    @error 'Scale with name #{$scale} could not be found in the $scales map';
+  }
 }

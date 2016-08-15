@@ -3,29 +3,29 @@
 ////
 
 .breadcrumbs {
-	list-style: none;
-	margin: 0;
-	padding: scut-em(12 0);
+  list-style: none;
+  margin: 0;
+  padding: scut-em(12 0);
 
-	&__crumb {
-		display: inline-block;
+  &__crumb {
+    display: inline-block;
 
-		&::before {
-			color: get-colour(grey);
-			content: get-glyph(greater-than);
-			margin: scut-em(0 10);
-		}
+    &::before {
+      color: get-colour(grey);
+      content: get-glyph(greater-than);
+      margin: scut-em(0 10);
+    }
 
-		&:first-of-type::before {
-			display: none;
-		}
+    &:first-of-type::before {
+      display: none;
+    }
 
-		&--active {
-			color: $text-colour;
-		}
+    &--active {
+      color: $text-colour;
+    }
 
-		a {
-			color: $text-colour;
-		}
-	}
+    a {
+      color: $text-colour;
+    }
+  }
 }

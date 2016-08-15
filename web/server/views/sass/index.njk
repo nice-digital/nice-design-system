@@ -1,31 +1,40 @@
-{% extends "./_sass-layout.njk" %}
+{% extends "../layouts/_layout.njk" %}
 {% set title = "SASS" %}
+{% set breadcrumbs = [{ title: title }] %}
 
-{% block main %}
+{% block body %}
 
-	<h1>SASS</h1>
+	<div class="container">
+		<h1>SASS <small>(&amp; CSS)</small></h1>
 
-	<nav role="navigation">
-		<ul>
-			<li><a href="#syntax">Syntax/formatting</a></li>
-			<li><a href="#naming">Naming</a></li>
-			<li><a href="#comments">Comments</a></li>
-		</ul>
-	</nav>
+		<p>
+			We use <a href="http://sass-lang.com/" target="_blank" rel="external">SASS</a> as our <a href="https://github.com/showcases/css-preprocessors" target="_blank" rel="external">CSS pre-processor</a> as it's mature, got a great feature set and <a href="https://github.com/sass/libsass" target="_blank" rel="external">libsass</a> is super quick.
+		</p>
 
-	<section id="syntax">
-		<h2>Syntax &amp; formatting</h2>
-	</section>
+		<blockquote class="quote">
+			<p>Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
+			<footer>
+				- <cite><a href="http://sass-lang.com/" target="_blank" rel="external">sass-lang.com</a></cite>
+			</footer>
+		</blockquote>
 
-	<section id="naming">
-		<h2>Naming</h2>
-	</section>
+		<div class="grid">
 
-	<section id="comments">
-		<h2>Comments</h2>
+			<div class="grid__item one-whole tablet--one-third desktop--one-quarter">
+				<h4><a href="/sass/code-standards">Code standards</a></h4>
+				<p>
+					SASS code standards, naming conventions etc
+				</p>
+			</div>
 
-		<a href="/sass/docs" class="btn">SASS Documentation</a>
+			<div class="grid__item one-whole tablet--one-third desktop--one-quarter">
+				<h4><a href="/sass/docs">Documentation</a></h4>
+				<p>
+					Auto-generated SASS documentation from our SASSDoc comments
+				</p>
+			</div>
 
-	</section>
+		</div>
+	</div>
 
 {% endblock %}
