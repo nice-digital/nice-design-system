@@ -1,0 +1,158 @@
+{% extends "./_about-layout.njk" %}
+{% set title = "Roadmap" %}
+
+{% block body %}
+
+	<div class="container">
+		<h1>Roadmap</h1>
+
+		<nav role="navigation">
+			<ul>
+				<li><a href="#short-term">Short term</a></li>
+				<li><a href="#medium-term">Medium term</a></li>
+				<li><a href="#long-term">Long term</a></li>
+			</ul>
+		</nav>
+
+		<p>
+			We've split our roadmap into short, medium and long term and by components, content, code and build. This is subject to change and will be updated on a regular basis.
+		</p>
+
+		<section id="short-term">
+			<h2 class="heading--separator">Short term</h2>
+
+			<div class="grid">
+				<div class="grid__item one-whole palm--one-half tablet--one-third desktop--one-quarter">
+					<h3 class="h5">Components</h3>
+					<ul>
+						<li>Typography</li>
+						<li>Grid</li>
+						<li>Buttons</li>
+						<li>Breadcrumbs</li>
+						<li>Alpha/beta banners</li>
+						<li>Navigation</li>
+					</ul>
+				</div>
+				<div class="grid__item one-whole palm--one-half tablet--one-third desktop--one-quarter">
+					<h3 class="h5">Content</h3>
+					<ul>
+						<li>Colour documentation</li>
+						<li>Grid examples</li>
+						<li>SASS coding standards</li>
+						<li>SASSDoc generated pages</li>
+					</ul>
+				</div>
+				<div class="grid__item one-whole palm--one-half tablet--one-third desktop--one-quarter">
+					<h3 class="h5">Code</h3>
+					<ul>
+						<li>SASS Doc generation</li>
+						<li>SASS and JS linting</li>
+						<li>Finalise JavaScript implementation</li>
+						<li>JS unit tests</li>
+						<li><a href="http://bbc-news.github.io/wraith/" target="_blank" rel="external">Wraith</a> usage</li>
+					</ul>
+				</div>
+				<div class="grid__item one-whole palm--one-half tablet--one-third desktop--one-quarter">
+					<h3 class="h5">Build</h3>
+					<ul>
+						<li>Grunt build process</li>
+						<li>Live reload</li>
+						<li>Automated deployments</li>
+						<li>Alpha site</li>
+						<li>Mingle cards</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section id="medium-term">
+			<h2 class="heading--separator">Medium term</h2>
+
+			<div class="grid">
+				<div class="grid__item one-whole palm--one-half tablet--one-third desktop--one-quarter">
+					<h3 class="h5">Components</h3>
+					<ul>
+						<li>Button loading states</li>
+						<li>Tables</li>
+						<li>Tabs</li>
+						<li>Panels</li>
+						<li>Footer</li>
+						<li>Forms &amp; validation</li>
+						<li>Search boxes</li>
+						<li>Responsive embed</li>
+					</ul>
+				</div>
+				<div class="grid__item one-whole palm--one-half tablet--one-third desktop--one-quarter">
+					<h3 class="h5">Content</h3>
+					<ul>
+						<li>Page layout examples/templates</li>
+						<li>JavaScript &amp; ES6 coding standards</li>
+						<li>Accessibility test scripts</li>
+						<li><a href="http://documentation.js.org/" target="_blank" rel="external">JS Documentation</a> page generation</li>
+					</ul>
+				</div>
+				<div class="grid__item one-whole palm--one-half tablet--one-third desktop--one-quarter">
+					<h3 class="h5">Code</h3>
+					<ul>
+						<li>Transition/animation guidelines</li>
+						<li>GTM &amp; GA implementation</li>
+						<li>Webfont (from SVGs)</li>
+						<li>Copy to clipboard for code examples</li>
+						<li>JS <a href="https://flowtype.org/" target="_blank" rel="external">Flow type annotations</a></li>
+					</ul>
+				</div>
+				<div class="grid__item one-whole palm--one-half tablet--one-third desktop--one-quarter">
+					<h3 class="h5">Build</h3>
+					<ul>
+						<li>NPM Scripts (option to use <a href="https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/" target="_blank" rel="external">NPM as build tool</a>)</li>
+						<li>NPM Package</li>
+						<li>CDN Deployment</li>
+						<li>Beta site</li>
+						<li>Docker</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section id="long-term">
+			<h2 class="heading--separator">Longer term</h2>
+
+			<div class="grid">
+				<div class="grid__item one-whole palm--one-half tablet--one-third desktop--one-quarter">
+					<h3 class="h5">Components</h3>
+					<ul>
+						<li>Page hero</li>
+						<li>Ajax loaders</li>
+						<li>Alerts</li>
+						<li>Pagination</li>
+					</ul>
+				</div>
+				<div class="grid__item one-whole palm--one-half tablet--one-third desktop--one-quarter">
+					<h3 class="h5">Content</h3>
+					<ul>
+						<li>General development principles</li>
+						<li>Wider content style guide e.g. tone of voice, <a href="http://styleguide.mailchimp.com/grammar-and-mechanics/" target="_blank" rel="external">grammar &amp; mechanics</a></li>
+					</ul>
+				</div>
+				<div class="grid__item one-whole palm--one-half tablet--one-third desktop--one-quarter">
+					<h3 class="h5">Code</h3>
+					<ul>
+						<li><a href="https://github.com/mattonfoot/NICE.TopHat" target="_blank" rel="external">TopHat</a> refresh</li>
+						<li>Responsive emails</li>
+					</ul>
+				</div>
+				<div class="grid__item one-whole palm--one-half tablet--one-third desktop--one-quarter">
+					<h3 class="h5">Build</h3>
+					<ul>
+						<li>Live site</li>
+						<li>Yeoman generator</li>
+						<li>Meteor package</li>
+						<li>Bower package</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+	</div>
+
+{% endblock %}
