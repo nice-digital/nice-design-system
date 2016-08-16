@@ -6,7 +6,7 @@
 		<div class="grid">
 
 			{# Sidebar #}
-			<aside class="grid__item one-whole tablet--one-third desktop--one-quarter" role="complementary">
+			<aside class="grid__item one-whole tablet--one-third desktop--one-fifth" role="complementary">
 				{% block sidebar %}
 
 					<nav>
@@ -42,13 +42,20 @@
 						<ul>
 							<li><a href="/javascript/docs">Documentation</a></li>
 						</ul>
+						<h5>
+							<a href="/about/">About</a>
+						</h5>
+						<ul>
+							<li><a href="/about/roadmap">Roadmap</a></li>
+							<li><a href="/about/installation">Installation</a></li>
+						</ul>
 					</nav>
 
 				{% endblock %}
 			</aside>
 
 			{# Main container #}
-			<article class="grid__item one-whole tablet--two-thirds desktop--three-quarters" role="main">
+			<article class="grid__item one-whole tablet--two-thirds desktop--four-fifths" role="main">
 				{% block main %}
 					Default body content
 				{% endblock %}
