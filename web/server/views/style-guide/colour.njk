@@ -8,17 +8,76 @@
 	<nav>
 		<ul>
 			<li><a href="#usage">Usage</a></li>
-			<li><a href="#palette">Palettes</a></li>
+			<li><a href="#palettes">Palettes</a></li>
 		</ul>
 	</nav>
 
 	<section id="usage">
 		<h2>Usage</h2>
 
+		<h3>Colour contrast</h3>
+
+		<p>
+			Make sure the colours usage complies with at least the <a href="https://www.w3.org/TR/WCAG/#visual-audio-contrast" target="_blank" rel="external">WCAG 2.0 AA colour guidelines</a> (Guideline 1.4 - Distinguishable: Make it easier for users to see and hear content including separating foreground from background.)
+		</p>
+
+		<p>
+			This includes use of colour (<a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-without-color" target="_blank" rel="external">1.4.1</a>) and contrast (<a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-contrast" target="_blank" rel="external">1.4.3</a> and <a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast7" target="_blank" rel="external">1.4.6</a>). There are various tools out there for contrast, for example <a href="http://leaverou.github.io/contrast-ratio/" target="_blank" rel="external">Lea Verou's Contrast Ratio</a> or <a href="https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en" target="_blank" rel="external">Accessibility Developer Tools extension for Chrome</a>.
+		</p>
+
+		<h3>SASS</h3>
+
+		<p>
+			Detailed explanation of the SASS variables, functions and mixins can be found in the <a href="/sass/docs">SASS Docs</a> section.
+			There are 3 types of colours defined within our SASS:
+		</p>
+		<ul>
+			<li>
+				<h4 class="h6">Base colour variables</h4>
+				<p>
+					e.g. <code>$colour-base-grey</code>
+					<br/>
+					These are the 'middle' for each colour and form the basis for each palette below.
+				</p>
+			</li>
+			<li>
+				<h4 class="h6">Palettes/colour maps</h4>
+				<p>
+					e.g. <code>$palette-red</code>
+					<br/>
+					These are SASS maps and consist of tone variations of a single colour. The possible tones are xx-dark, x-dark, dark, mid-dark, base, mid-light, light, x-light, xx-light. Usage of this is via the <code>get-colour($palette, $tone: 'base')</code> function.
+				</p>
+			</li>
+			<li>
+				<h4 class="h6">Semantic colour variables</h4>
+				<p>
+					e.g. <code>$colour-link</code>
+					<br/>
+					Named variables, with meaning of their usage but without any implication of the actual colour.
+				</p>
+			</li>
+		</ul>
+
+		{% source "css", "SASS colour usage example" -%}
+			$colour-text: get-colour(grey, dark);
+			.something {
+				background: $colour-page;
+				colour: $colour-text;
+
+				&__else {
+					background: get-colour(red, dark);
+					colour: get-colour(green, x-light);
+				}
+			}
+		{%- endsource %}
 	</section>
 
-	<section id="groups">
+	<section id="palettes">
 		<h2>Palettes</h2>
+
+		<p>
+			The following are colour palettes defined within our SASS. Think <em>very</em> hard about introducing a colour not defined below.
+		</p>
 
 		<h3>Greys</h3>
 

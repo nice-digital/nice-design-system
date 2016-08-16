@@ -5,6 +5,10 @@
 /// Possible tones that can be used for colour mapping
 /// @see get-colour
 $tones: (
+  xx-dark: (
+    function: darken,
+    args: 40%
+  ),
   x-dark: (
     function: darken,
     args: 30%
@@ -29,6 +33,10 @@ $tones: (
   x-light: (
     function: lighten,
     args: 30%
+  ),
+  xx-light: (
+    function: lighten,
+    args: 40%
   )
 );
 
@@ -58,35 +66,32 @@ $white: #fff;
 /// The base colour for grey
 $colour-base-grey: #777;
 
-/// The base colour for orange
-$colour-base-orange: #f5b805;
-
-/// The base colour for red
-$colour-base-red: #f00;
-
-/// The base colour for purple
-$colour-base-purple: #82176f;
-
 /// The base colour for blue
 $colour-base-blue: #2f577a;
+
+/// The base colour for green
+$colour-base-green: #4caf50;
+
+/// The base colour for orange
+$colour-base-orange: #f5b805;
 
 /// The base colour for pink
 $colour-base-pink: #d53880;
 
-/// The base colour for green
-$colour-base-green: #5cb85c;
+/// The base colour for purple
+$colour-base-purple: #82176f;
 
-/// Purple colour palette
-/// @prop {Color} base [$colour-base-purple] Base purple colour
-$palette-purple: (
-  base: $colour-base-purple
-);
+/// The base colour for red
+$colour-base-red: #f00;
 
 /// Grey colour palette
-/// @prop {Color} light [#efefef] Light grey
-/// @prop {Color} mid-light [#dfe0e2] Mid-light grey
-/// @prop {Color} base [$colour-base-grey] Mid-light grey
-/// @prop {Color} dark [#262626] Dark grey
+/// @prop {Color} x-light [#ddd] Extra ight grey
+/// @prop {Color} light [#bbb] Light grey
+/// @prop {Color} mid-light [#999] Mid-light grey
+/// @prop {Color} base [$colour-base-grey] Base grey
+/// @prop {Color} mid-dark [#555] Mid-dark grey
+/// @prop {Color} dark [#333] Dark grey
+/// @prop {Color} x-dark [#111] Extra dark grey
 $palette-grey: (
   x-light: #ddd,
   light: #bbb,
@@ -95,16 +100,6 @@ $palette-grey: (
   mid-dark: #555,
   dark: #333,
   x-dark: #111
-);
-
-/// Green colour palette
-/// @prop {Color} light [#1a9908] Light green, used for primary buttons
-/// @prop {Color} base [$colour-base-green] Base green
-/// @prop {Color} dark [#449d44] Dark green
-$palette-green: (
-  light: #138a00,
-  base: $colour-base-green,
-  dark: #449d44
 );
 
 /// Blue colour palette
@@ -119,25 +114,32 @@ $palette-blue: (
   dark: #264965
 );
 
+/// Green colour palette
+/// @prop {Color} xx-light [#c8e6c9] Extra extra light green
+/// @prop {Color} x-light [#a5d6a7] Extra light green
+/// @prop {Color} light [#81c784] Light green
+/// @prop {Color} mid-light [#66bb6a] Mid-light green
+/// @prop {Color} base [$colour-base-green] Base green
+/// @prop {Color} mid-dark [#43a047] Mid-dark green
+/// @prop {Color} dark [#388e3c] Dark green
+/// @prop {Color} x-dark [#2e7d32] Extra dark green
+/// @prop {Color} xx-dark [#1b5e20] Extra extra dark green
+$palette-green: (
+  xx-light: #c8e6c9,
+  x-light: #a5d6a7,
+  light: #81c784,
+  mid-light: #66bb6a,
+  base: $colour-base-green,
+  mid-dark: #43a047,
+  dark: #388e3c,
+  x-dark: #2e7d32,
+  xx-dark: #1b5e20
+);
+
 /// Orange palette
 /// @prop {Color} base [$colour-base-orange] Base orange
 $palette-orange: (
-  base: $colour-base-orange,
-  mid-dark: apply-tone($colour-base-orange, mid-dark),
-  dark: apply-tone($colour-base-orange, dark),
-  x-dark: apply-tone($colour-base-orange, x-dark)
-);
-
-/// Red palette
-/// @prop {Color} base [$colour-base-red] Base red
-$palette-red: (
-  x-light: #faa,
-  light: #ff8080,
-  mid-light: #f55,
-  base: $colour-base-red,
-  mid-dark: #d40000,
-  dark: #a00,
-  x-dark: #800000
+  base: $colour-base-orange
 );
 
 /// Pink palette
@@ -146,6 +148,30 @@ $palette-red: (
 $palette-pink: (
   light: #fef7f7,
   base: $colour-base-pink
+);
+
+/// Purple colour palette
+/// @prop {Color} base [$colour-base-purple] Base purple colour
+$palette-purple: (
+  base: $colour-base-purple
+);
+
+/// Red palette
+/// @prop {Color} x-light [#faa] Extra light red
+/// @prop {Color} light [#ff8080] Light red
+/// @prop {Color} mid-light [#f55] Mid-light red
+/// @prop {Color} base [$colour-base-red] Base red
+/// @prop {Color} mid-dark [#d40000] Mid-dark red
+/// @prop {Color} dark [#a00] Dark red
+/// @prop {Color} x-dark [#800000] Extra dark red
+$palette-red: (
+  x-light: #faa,
+  light: #ff8080,
+  mid-light: #f55,
+  base: $colour-base-red,
+  mid-dark: #d40000,
+  dark: #a00,
+  x-dark: #800000
 );
 
 /// A map of colour name -> palette.

@@ -1,5 +1,5 @@
 .swatch {
-  border-radius: 999px;
+  border-radius: 0 999px 999px 999px;
   display: none;
   float: left;
   height: 100px;
@@ -17,16 +17,17 @@
         display: block;
 
         &:before {
-          content: '#{$name}-#{$key}';
+          content: '#{$name}, #{$key}';
           left: 0;
           line-height: 1;
           position: absolute;
-          top: 100%;
+          top: 105%;
           width: 100%;
         }
 
         &:after {
-          color: invert($hex);
+          // Use contrasting colour for the text to get a 4.5:1 colour contrast for AA
+          color: text-contrast($hex);
           content: '#{$hex}';
         }
       }

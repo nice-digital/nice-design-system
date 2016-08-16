@@ -58,6 +58,11 @@
     }
   }
 
+  &--xxs {
+    @include nice-font-size(-3, 1.5);
+    padding: 0 em(10);
+  }
+
   &--xs {
     @include nice-font-size(-2, 1.5);
     padding: 0 em(12);
@@ -78,8 +83,13 @@
     padding: 0 em(20);
   }
 
+  &--xxl {
+    @include nice-font-size(3, 4);
+    padding: 0 em(24);
+  }
+
   &--primary {
-    background: get-colour(green, light);
+    background: get-colour(green, x-dark);
     border: 1px solid $white;
     color: $white;
 
@@ -89,7 +99,7 @@
 
     &:hover,
     &:focus {
-      background: get-colour(green, light);
+      background: get-colour(green, xx-dark);
     }
   }
 
