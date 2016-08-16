@@ -29,16 +29,34 @@
 
 		<ul>
 			<li>
-				<h3 class="h5">Declaration order</h3>
+				<h3 class="h6">Declaration order</h3>
 				<p>Use this ordering of property declarations:</p>
 				<ol>
-					<li>Extends</li>
-					<li>Mixins</li>
-					<li>Style declarations (in alphabetical order)</li>
+					<li>
+						Extends
+						<br/>
+						<small>
+							(enforced with <code>extends-before-declarations</code> &amp; <code>extends-before-mixins</code> rules)
+						</small>
+					</li>
+					<li>
+						Mixins
+						<br/>
+						<small>
+							(enforced with <code>extends-before-mixins</code> &amp; <code>mixins-before-declarations</code> rule)
+						</small>
+					</li>
+					<li>
+						Style declarations
+						<br/>
+						<small>
+							(in alphabetical order - enforced by <code>property-sort-order</code> rule)
+						</small>
+					</li>
 				</ol>
 			</li>
 			<li>
-				<h3 class="h5">Prefixed properties</h3>
+				<h3 class="h6">Prefixed properties</h3>
 				<p>We encourage writing CSS as close to the W3C spec as possible which means not including vendor prefixes in our source. If these are needed for legacy browser support then we encourage use of tools like <a href="https://github.com/postcss/autoprefixer">PostCSS Autoprefixer</a>.</p>
 			</li>
 		</ul>
@@ -49,9 +67,9 @@
 		<h2>BEM and naming</h2>
 
 		<blockquote class="quote">
-			<p>There are only two hard problems in Computer Science: cache invalidation and naming things</p>
+			<p>There are 2 hard problems in computer science: cache invalidation, naming things, and off-by-1 errors.</p>
 			<footer>
-				- <cite>Phil Karlton</cite>
+				- <cite>Phil Karlton &amp; <a href="https://twitter.com/secretGeek/status/7269997868" target="_blank" rel="external">Leon Bambrick</a></cite>
 			</footer>
 		</blockquote>
 
@@ -70,6 +88,18 @@
 			<li>It helps in building scalable stylesheets</li>
 		</ul>
 
+		<h3>Variable naming</h3>
+
+		<p>
+			Variable names should follow the <a href="http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-name-your-sass-variables-modularly/" target="_blank" rel="external">general-to-specific approach</a> as suggested on <a href="http://sass-lang.com/styleguide/code" target="_blank" rel="external">SASS's Code Style Guide</a>.
+		</p>
+
+		{% source "scss", "Variable naming example" -%}
+			$color-link;
+			$color-link-dark;
+			$color-link-light;
+		{%- endsource %}
+
 	</section>
 
 	<section id="comments">
@@ -79,9 +109,7 @@
 			The other difference from @mdo's Code Guide is comment style. We use <a href="http://sassdoc.com/" target="_blank" rel="external">SassDoc</a> to auto-generate documentation from our comments, so we use <a href="http://sassdoc.com/annotations/" target="_blank" rel="external">SassDoc annotations</a> and <a href="http://sassdoc.com/file-level-annotations/" target="_blank" rel="external">file-level annotations</a>
 		</p>
 
-		<h3 class="h5">SassDoc example</h3>
-
-		{% source "scss" -%}
+		{% source "scss", "SassDoc annotation example" -%}
 			/// This is the description of a mixin
 			/// @param {Number} $some-vale A value that gets passed in
 			@mixin($some-value) {
