@@ -8,7 +8,7 @@
 	<nav role="navigation">
 		<ul>
 			<li><a href="#syntax">Syntax/formatting</a></li>
-			<li><a href="#naming">Naming</a></li>
+			<li><a href="#naming"><abbr title="Block Element Modifier">BEM</abbr> &amp; Naming</a></li>
 			<li><a href="#comments">Comments</a></li>
 		</ul>
 	</nav>
@@ -29,12 +29,17 @@
 
 		<ul>
 			<li>
-				Use tabs for indentation.
-				<br/>
-				Our <a href="http://editorconfig.org/" target="_blank" rel="external">.editorconfig</a> helps with this and our .sass-lint.yml enforces this with the <em>indentation</em> rule.
+				<h3 class="h5">Declaration order</h3>
+				<p>Use this ordering of property declarations:</p>
+				<ol>
+					<li>Extends</li>
+					<li>Mixins</li>
+					<li>Style declarations (in alphabetical order)</li>
+				</ol>
 			</li>
 			<li>
-
+				<h3 class="h5">Prefixed properties</h3>
+				<p>We encourage writing CSS as close to the W3C spec as possible which means not including vendor prefixes in our source. If these are needed for legacy browser support then we encourage use of tools like <a href="https://github.com/postcss/autoprefixer">PostCSS Autoprefixer</a>.</p>
 			</li>
 		</ul>
 
@@ -43,16 +48,48 @@
 	<section id="naming">
 		<h2>BEM and naming</h2>
 
+		<blockquote class="quote">
+			<p>There are only two hard problems in Computer Science: cache invalidation and naming things</p>
+			<footer>
+				- <cite>Phil Karlton</cite>
+			</footer>
+		</blockquote>
+
 		<p>
-			We follow the <a href="http://codeguide.co/#css-classes" target="_blank" rel="external">class naming rules</a> and <a href="http://codeguide.co/#css-classes" target="_blank" rel="external">class naming rules</a>
+			We follow the <a href="http://codeguide.co/#css-classes" target="_blank" rel="external">class naming rules</a> (and selector rules) from @mdo. However, it's about CSS/SASS in general and doesn't include anything specifc about <a href="http://getbem.com/introduction/" target="_blank" rel="external">BEM</a>.
 		</p>
+
+		<p>
+			We encourage use of BEM because (from <a href="https://github.com/airbnb/css#oocss-and-bem" target="_blank" rel="external">Airbnb's CSS / Sass Styleguide</a>):
+		</p>
+
+		<ul>
+			<li>It helps create clear, strict relationships between CSS and HTML</li>
+			<li>It helps us create reusable, composable components</li>
+			<li>It allows for less nesting and lower specificity</li>
+			<li>It helps in building scalable stylesheets</li>
+		</ul>
 
 	</section>
 
 	<section id="comments">
 		<h2>Comments</h2>
 
-		<a href="/sass/docs" class="btn">SASS Documentation</a>
+		<p>
+			The other difference from @mdo's Code Guide is comment style. We use <a href="http://sassdoc.com/" target="_blank" rel="external">SassDoc</a> to auto-generate documentation from our comments, so we use <a href="http://sassdoc.com/annotations/" target="_blank" rel="external">SassDoc annotations</a> and <a href="http://sassdoc.com/file-level-annotations/" target="_blank" rel="external">file-level annotations</a>
+		</p>
+
+		<h3 class="h5">SassDoc example</h3>
+
+		{% source "scss" -%}
+			/// This is the description of a mixin
+			/// @param {Number} $some-vale A value that gets passed in
+			@mixin($some-value) {
+				// Do something
+			}
+		{%- endsource %}
+
+		<a href="/sass/docs" class="btn btn--primary">SASS Documentation</a>
 
 	</section>
 
