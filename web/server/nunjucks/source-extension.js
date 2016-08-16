@@ -7,7 +7,7 @@ var _ = require("lodash"),
 /// It outputs HTML encoded version of the markup for displaying as an example code.
 ///
 /// @example <caption>Example usage</caption>
-/// 	{% source "scss" -%}
+/// 	{% source "scss", "This is a heading" -%}
 /// 		$purple: #82176f;
 /// 	{%- endsource %}
 function SourceExtension() {
@@ -21,8 +21,12 @@ function SourceExtension() {
 		// as the second arg is required if there are no parentheses
 		var args = parser.parseSignature(null, true);
 
-		// Workaround - see https://github.com/mozilla/nunjucks/issues/158
+		// Workaround if there are no args - see https://github.com/mozilla/nunjucks/issues/158
 		if (args.children.length == 0)
+			args.addChild(new nodes.Literal(0, 0, ""));
+
+		// Heading is optional - so need to add an empty node if it's not there
+		if (args.children.length == 1)
 			args.addChild(new nodes.Literal(0, 0, ""));
 
 		parser.advanceAfterBlockEnd(tok.value);
@@ -43,12 +47,13 @@ function SourceExtension() {
 		return new nodes.CallExtension(this, "run", args, [body, expandedBody]);
 	};
 
-	this.run = function(context, language, body, expandedBody) {
+	this.run = function(context, language, heading, body, expandedBody) {
 
 		var data = {
 			body: body(),
 			expandedBody: _.isFunction(expandedBody) ? expandedBody() : null,
-			lang: language || ""
+			lang: language || "",
+			heading: heading
 		};
 
 		return new nunjucks.runtime.SafeString(nunjucks.render("partials/source.njk", data));
