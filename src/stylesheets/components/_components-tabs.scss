@@ -24,18 +24,18 @@
       padding: 0 1rem;
 
       &:hover {
-        background: get-colour(grey, x-light);
+        background: $colour-panel;
       }
     }
 
     &--active {
-      background: get-colour(grey, x-light);
+      background: $colour-panel;
     }
   }
 
   /// The tab content containing the tab panels
   &__content {
-    background: get-colour(grey, x-light);
+    background: $colour-panel;
     padding: 1rem;
   }
 

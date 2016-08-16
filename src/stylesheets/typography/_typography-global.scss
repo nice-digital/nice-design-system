@@ -7,7 +7,7 @@
 /// The default focus style used for elements like anchors and buttons
 /// @output the default focus styles ie background colour and outline
 @mixin default-focus-style {
-  outline: 3px solid $focus-colour;
+  outline: 3px solid $colour-focus;
 }
 
 html {
@@ -15,8 +15,8 @@ html {
 }
 
 body {
-  background: $page-colour;
-  color: $text-colour;
+  background: $colour-page;
+  color: $colour-text;
   font-family: font-family(sans);
   font-style: normal;
   line-height: 1.6rem;
@@ -30,31 +30,31 @@ html {
 }
 
 a {
-  color: $link-colour;
+  color: $colour-link;
   text-decoration: underline;
 
   &:visited {
-    color: $link-visited-colour;
+    color: $colour-link-visited;
   }
 
   &:hover {
-    color: $link-hover-colour;
+    color: $colour-link-hover;
   }
 
   &:focus {
     @include default-focus-style;
-    background-color: $focus-colour;
+    background-color: $colour-focus;
   }
 
   // Add icon to external links
   &[rel='external'] {
     &::after {
-      color: $link-colour;
+      color: $colour-link;
       content: get-glyph(punc-space, box-box);
     }
 
     &:hover::after {
-      color: $link-hover-colour;
+      color: $colour-link-hover;
     }
   }
 }

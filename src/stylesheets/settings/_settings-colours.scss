@@ -186,34 +186,44 @@ $palettes: (
       @return map-get($colour, $tone);
     }
 
-    @warn 'Tone #{$tone} could not be found in colour #{$palette}. Auto-toning instead';
+    @warn 'Tone `#{$tone}` could not be found in colour `#{$palette}`. Auto-toning instead';
     @return apply-tone(map-get($colour, base), $tone);
   }
 
-  @error 'Palette #{$palette} could not be found';
+  @error 'Palette `#{$palette}` could not be found';
 }
 
 
-// Semantic colour names
-$page-colour: $white;                 // The page bg
-// LINKS
-$link-colour: get-colour(blue, light);          // Default link
-$link-hover-colour: get-colour(blue, x-light);      // Link hover
+// SEMANTIC COLOUR NAMES
+
+/// Page background colour
+$colour-page: $white;
+/// Link text colour
+$colour-link: get-colour(blue, light);
+/// Link hover colour
+$colour-link-hover: get-colour(blue, x-light);
+/// Link visited colour
+$colour-link-visited: get-colour(purple);
 // $link-active-colour: $light-blue;
-$link-visited-colour: get-colour(purple);       // Link visited
-// TEXT
-$focus-colour: get-colour(orange);            // Focus colour
-$text-colour: get-colour(grey, dark);         // Standard text colour
-// $secondary-text-colour: $grey-1;           // Section headers, help text etc.
-$border-colour: get-colour(grey, light);        // Borders, seperators, rules, keylines etc.
-// $panel-colour: $grey-3;                // Related links panel, page footer etc.
-// $highlight-colour: $grey-4;              // Table stripes etc.
-// PHASES
-$alpha-colour: get-colour(pink);            // Alpha badges and banners
-$beta-colour: get-colour(orange);           // Beta badges and banners
-$live-colour: get-colour(green);            // Live badges and banners
-// ALERTS
-$error-colour: get-colour(red);             // Error text and border colour
-$error-background-colour: get-colour(red, x-light);   // Error background colour
-// SUB-BRANDS
-$bnf-purple: $colour-base-purple;
+/// Focus colour
+$colour-focus: get-colour(orange);
+/// Standard text colour
+$colour-text: get-colour(grey, dark);
+/// Borders, seperators, rules, keylines etc.
+$colour-border: get-colour(grey, light);
+// Panels, tabs etc
+$colour-panel: get-colour(grey, x-light);
+// Table stripes etc.
+// $highlight-colour: $grey-4;
+/// Alpha badges and banners
+$colour-alpha: get-colour(pink);
+/// Beta badges and banners
+$colour-beta: get-colour(orange);
+/// Live badges and banners
+$colour-live: get-colour(green);
+/// Error text and border colour
+$colour-error: get-colour(red);
+/// Error background colour
+$colour-error-background: get-colour(pink, x-light);
+/// BNF brand colour
+$colour-bnf: $colour-base-purple;

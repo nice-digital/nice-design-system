@@ -7,7 +7,7 @@
 
 // Tables
 // ==========================================================================
-$border-colour: #ccc;
+$colour-border: #ccc;
 
 table {
   border-collapse: collapse;
@@ -17,7 +17,7 @@ table {
   th,
   td {
     //@include core-19;
-    border-bottom: 1px solid $border-colour;
+    border-bottom: 1px solid $colour-border;
     color: $black;
     padding: em(12, 19) em(20, 19) em(9, 19) 0;
     text-align: left;
