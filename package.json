@@ -1,8 +1,9 @@
 {
-  "name": "NICE.Bootstrap",
+  "name": "NICE.Bootstrap2",
   "version": "1.0.0",
-  "description": "",
-  "main": "server/index.js",
+  "description": "Your source for creating beautiful, consistent experiences across NICE",
+  "repository": "https://github.com/nhsevidence/NICE.Bootstrap2",
+  "main": "web/server/index.js",
   "scripts": {
     "start": "grunt",
     "build:webpack": "webpack -d --progress --colors",
@@ -11,8 +12,8 @@
     "lint": "grunt lint",
     "serve": "set PORT=54321&& node server"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "NICE Digital Services",
+  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.10.4",
     "babel-loader": "^6.2.4",
@@ -38,6 +39,7 @@
     "babel-eslint": "^6.1.0",
     "babel-plugin-transform-flow-strip-types": "^6.8.0",
     "chroma-js": "^1.1.1",
+    "compression": "^1.6.2",
     "eslint": "^3.0.0",
     "eslint-loader": "^1.4.0",
     "eslint-plugin-flowtype": "^2.3.0",

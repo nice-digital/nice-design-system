@@ -1,11 +1,12 @@
 /*eslint-env node*/
-var express = require("express"),
-	path = require("path"),
-	fs = require("fs"),
-	_ = require("lodash"),
-	nunjucks = require("nunjucks"),
+var _ = require("lodash"),
+	compression = require("compression"),
+	errors = require("node-common-errors"),
+	express = require("express"),
 	favicon = require("serve-favicon"),
-	errors = require("node-common-errors");
+	fs = require("fs"),
+	nunjucks = require("nunjucks"),
+	path = require("path");
 
 var filters = require("./nunjucks/filters");
 
@@ -33,6 +34,8 @@ for(var name in filters) {
 // Extensions
 require("./nunjucks/example-extension")(env);
 require("./nunjucks/source-extension")(env);
+
+app.use(compression());
 
 app.use(function (req, res, next) {
 	res.locals.req = req;
