@@ -4,7 +4,7 @@
 
 .btn {
   @include remove-mz-focus-inner;
-  @include nice-font-size(0, 2.5);
+  @include font-size(0, 2.5);
   appearance: none;
   background: get-colour(blue);
   border: 0;
@@ -59,32 +59,32 @@
   }
 
   &--xxs {
-    @include nice-font-size(-3, 1.5);
+    @include font-size(-3, 1.5);
     padding: 0 em(10);
   }
 
   &--xs {
-    @include nice-font-size(-2, 1.5);
+    @include font-size(-2, 1.5);
     padding: 0 em(12);
   }
 
   &--sm {
-    @include nice-font-size(-1);
+    @include font-size(-1);
     padding: 0 em(12);
   }
 
   &--lg {
-    @include nice-font-size(1, 3);
+    @include font-size(1, 3);
     padding: 0 em(16);
   }
 
   &--xl {
-    @include nice-font-size(2, 4);
+    @include font-size(2, 4);
     padding: 0 em(20);
   }
 
   &--xxl {
-    @include nice-font-size(3, 4);
+    @include font-size(3, 4);
     padding: 0 em(24);
   }
 

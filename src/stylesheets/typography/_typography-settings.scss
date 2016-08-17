@@ -19,9 +19,6 @@ $base-font-size: 16;
 /// Cap height
 $cap-height: .68;
 
-// TODO: Change the ratio over breakpoints
-$ms-ratio: get-ratio(minor-third);
-
 /// A map of named font sizes to their corresponding modular scale factor
 /// @prop {Integer} h1 [6] Heading 1
 /// @prop {Integer} h2 [5] Heading 2

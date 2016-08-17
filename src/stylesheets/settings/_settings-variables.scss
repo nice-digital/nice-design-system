@@ -1,98 +1,61 @@
 /// A map of break point name to settings.
+/// The break points are mobile first, min-width.
+/// I.e. palm: 480px equates to (min-width: 30em)
 /// Settings is a list of:
 ///   - width
 ///   - root font size
 $nice-breakpoints: (
+  mobile: (
+    root-size: 12,
+    ms-ratio: get-ratio(minor-third)
+  ),
   palm: (
-    width: 480px,
-    root-size: 12
+    width: 440px,
+    root-size: 13,
+    ms-ratio: get-ratio(minor-third)
   ),
   tablet: (
-    width: 768px,
-    root-size: 13
+    width: 720px,
+    root-size: 14,
+    ms-ratio: get-ratio(minor-third)
   ),
   desktop: (
-    width: 980px,
-    root-size: 14
+    width: 960px,
+    root-size: 15,
+    ms-ratio: get-ratio(minor-third)
   ),
   wide: (
-    width: 1300px,
-    root-size: 15
+    width: 1200px,
+    root-size: 16,
+    ms-ratio: get-ratio(minor-third)
   )
 );
 
-/// The total number of breakpoints defined
-$num-nice-breakpoints: length($nice-breakpoints);
-
-
-//## MQ
-
-/// Function to get breakpoints in the format needed
-/// for the MQ library.
-@function get-mq-breakpoints() {
-  $map: ();
-  @each $key, $value in $nice-breakpoints {
-    $new: ($key: map-get($value, width));
-    $map: map-merge($map, $new);
+// A map of breakpoints (name: px) required for SASS MQ
+$mq-breakpoints: ();
+@each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
+  @if map-has-key($brkpnt-value, width) {
+    $new: ($brkpnt-key: map-get($brkpnt-value, width));
+    $mq-breakpoints: map-merge($mq-breakpoints, $new);
   }
-  @return $map;
 }
 
-/// A map of breakpoints (name: px) required for SASS MQ
-$mq-breakpoints: get-mq-breakpoints();
+// Override default wizardry grids breakpoints
+$breakpoints: ();
+@each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
+  @if map-has-key($brkpnt-value, width) {
+    $brkpnt-width: mq-px2em(map-get($brkpnt-value, width));
 
-
-//## Wizardry
-
-// @function get-wizardry-breakpoints() {
-//  $list: ();
-//  @for $i from 2 through $num-nice-breakpoints {
-//    $prev-brkpnt: nth($nice-breakpoints, $i - 1);
-//    $prev-brkpnt-key: nth($prev-brkpnt, 1);
-//    $prev-brkpnt-width: map-get(nth($prev-brkpnt, 2), width) + 1px;
-//    $prev-brkpnt-width: mq-px2em($prev-brkpnt-width);
-
-//    $brkpnt: nth($nice-breakpoints, $i);
-//    $brkpnt-key: nth($brkpnt, 1);
-
-//    $new: '#{$brkpnt-key}' '(min-width: #{$prev-brkpnt-width})';
-
-//    $list: append($list, $new);
-//  }
-
-//  @return $list;
-// }
-@function get-wizardry-breakpoints() {
-  $list: ();
-  @for $i from 1 through $num-nice-breakpoints {
-    $brkpnt: nth($nice-breakpoints, $i);
-    $brkpnt-key: nth($brkpnt, 1);
-    $brkpnt-width: map-get(nth($brkpnt, 2), width);
-    $brkpnt-width: mq-px2em($brkpnt-width);
-
-    $brkpnt: nth($nice-breakpoints, $i);
-    $brkpnt-key: nth($brkpnt, 1);
-
-    $new: '#{$brkpnt-key}' '(min-width: #{$brkpnt-width})';
-
-    $list: append($list, $new);
+    $breakpoints: append($breakpoints, '#{$brkpnt-key}' '(min-width: #{$brkpnt-width})');
   }
-
-  @return $list;
 }
 
-@function get-wizardry-widths() {
-  $list: ();
-  @for $i from 1 through $num-nice-breakpoints {
-    $brkpnt: nth($nice-breakpoints, $i);
-    $brkpnt-key: nth($brkpnt, 1);
-    $list: append($list, '#{$brkpnt-key}');
+// Override other wizardry variables
+$breakpoint-has-widths: ();
+@each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
+  @if map-has-key($brkpnt-value, width) {
+    $breakpoint-has-widths: append($breakpoint-has-widths, '#{$brkpnt-key}');
   }
-  @return $list;
 }
-
-$breakpoints: get-wizardry-breakpoints();
-
-$breakpoint-has-widths: get-wizardry-widths();
-$breakpoint-has-push: get-wizardry-widths();
-$breakpoint-has-pull: get-wizardry-widths();
+$breakpoint-has-push: $breakpoint-has-widths;
+$breakpoint-has-pull: $breakpoint-has-widths;
