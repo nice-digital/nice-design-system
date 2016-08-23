@@ -10,7 +10,7 @@
     "dist:webpack": "NODE_ENV=production webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "grunt lint",
-    "serve": "set PORT=54321&& node server"
+    "serve": "set PORT=54321&& node web/server"
   },
   "author": "NICE Digital Services",
   "license": "MIT",
@@ -46,11 +46,12 @@
     "extend": "^3.0.0",
     "favicon": "0.0.2",
     "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
     "grunt-documentation": "^1.2.0",
     "grunt-eslint": "^19.0.0",
     "grunt-jsdoc": "^2.1.0",
     "grunt-modernizr": "^1.0.2",
-    "grunt-sass": "^1.2.0",
+    "grunt-sass": "^1.2.1",
     "grunt-sassdoc": "^2.0.2",
     "grunt-webpack": "^1.0.11",
     "html-minifier": "^3.0.1",

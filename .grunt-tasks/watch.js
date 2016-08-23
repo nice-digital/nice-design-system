@@ -18,7 +18,8 @@ module.exports = {
 		files: ["./web/server/**/*.js"],
 		tasks: ["express"],
 		options: {
-			spawn: false
+			spawn: false,
+			atBegin: true
 		}
 	},
 	public: {
