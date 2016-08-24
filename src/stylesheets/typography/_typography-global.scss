@@ -67,10 +67,13 @@ p,
   &.lead {
     @include font($scale: 1, $line-height: 2);
 
-    &:first-letter {
-      @include font-size($scale: 7, $line-height: 4);
-      float: left;
-      padding: scut-em(0 2px 0 0);
+    // TODO: Drop cap needs some work
+    &--drop-cap {
+      &:first-letter {
+        @include font-size($scale: 7, $line-height: 4);
+        float: left;
+        padding: scut-em(0 2px 0 0);
+      }
     }
   }
 }
@@ -79,4 +82,8 @@ code {
   background: get-colour(grey, x-light);
   font-family: font-family(mono);
   padding: scut-em(4);
+
+  pre & {
+    background: transparent;
+  }
 }

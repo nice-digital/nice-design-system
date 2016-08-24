@@ -15,50 +15,33 @@
 		</ul>
 	</nav>
 
-	<!--<section id="intro">
-		<h2>Intro</h2>
+	<p>
+		NICE has published a style guide for writing as a corporate document on the NICE website that tells you NICE's standard way to express concepts, spell words and format phrases. This should be followed where possible.
+	</p>
 
-		<ul>
-			<li>Use semantic typographic elements</li>
-			<li>Use a semantic typographic structure and hierarchy</li>
-		</ul>
-
-		{% example -%}
-			<h1>Heading 1</h1>
-			<h2>Heading 2</h2>
-			<p>Lorem <strong>ipsum</strong> dolor sit amet, <em>consectetur</em> adipiscing elit. Proin pretium, tortor non rhoncus rhoncus 12<sup>th</sup>, libero turpis varius felis, sit amet rutrum massa dolor id velit. Etiam dignissim lacus <a href="#">vitae lacinia</a> vulputate.</p>
-			<h3>Heading 3</h3>
-			<p>Here is a list of some things:</p>
-			<ul>
-				<li>The first thing</li>
-				<li>And another</li>
-				<li>Last thing</li>
-			</ul>
-			<h2>And an ordered list of things</h2>
-			<ol>
-				<li>The first thing</li>
-				<li>And another</li>
-				<li>Last thing</li>
-			</ol>
-		{%- endexample %}
-	</section>-->
+	<p>
+		<a href="https://www.nice.org.uk/corporate/ecd1/" target="_blank" rel="external" class="btn btn--primary">
+			NICE style guide
+		</a>
+	</p>
 
 	<section id="headings">
 		<h2>Headings</h2>
 
 		<ul>
-			<li>use Lato Light (200)</li>
+			<li>use Lato Bold (700)</li>
 			<li>use sentence case for headings</li>
 			<li>use headings consistently to create a clear hierarchy</li>
+			<li>don't skip headings; use classes like <code>.h1, .h2</code>etc or mixins like <code>@include h1</code> etc if you need a visual difference in heading</li>
 		</ul>
 
 		{% example -%}
-			<h1>This is the heading1</h1>
-			<h2>This is the heading2</h2>
-			<h3>This is the heading3</h3>
-			<h4>This is the heading4</h4>
-			<h5>This is the heading5</h5>
-			<h6>This is the heading6</h6>
+			<h1>How quickly daft jumping zebras vex</h1>
+			<h2>The five boxing wizards jump quickly</h2>
+			<h3>Pack my box with five dozen liquor jugs</h3>
+			<h4>The quick brown fox jumps over the lazy dog</h4>
+			<h5>Amazingly few discotheques provide jukeboxes</h5>
+			<h6>Whenever the black fox jumped the squirrel gazed suspiciously</h6>
 		{%- endexample %}
 	</section>
 
@@ -150,6 +133,10 @@
 
 		<h2>Lists</h2>
 
+		<p>
+			Follow the <a href="https://www.nice.org.uk/corporate/ecd1/chapter/punctuation-and-bullet-points#bullet-points" target="_blank" rel="external">bullet points guide lines</a> on the NICE style guide.
+		</p>
+
 		<h3>Default lists</h3>
 
 		{% example -%}
@@ -161,7 +148,7 @@
 			</ul>
 			<p>This is an ordered list:</p>
 			<ol>
-				<li><a href="#">Item 1</a></li>
+				<li><a href="#" target="_blank" rel="external">Item 1</a></li>
 				<li>Item 2</li>
 				<li>Item 3</li>
 			</ul>

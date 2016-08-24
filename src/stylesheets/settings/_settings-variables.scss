@@ -7,27 +7,27 @@
 $nice-breakpoints: (
   mobile: (
     root-size: 12,
-    ms-ratio: get-ratio(minor-third)
+    ms-ratio: get-ratio(major-second)
   ),
   palm: (
     width: 440px,
     root-size: 13,
-    ms-ratio: get-ratio(minor-third)
+    ms-ratio: get-ratio(major-second)
   ),
   tablet: (
     width: 720px,
     root-size: 14,
-    ms-ratio: get-ratio(minor-third)
+    ms-ratio: get-ratio(major-second)
   ),
   desktop: (
     width: 960px,
     root-size: 15,
-    ms-ratio: get-ratio(minor-third)
+    ms-ratio: get-ratio(major-second)
   ),
   wide: (
     width: 1200px,
     root-size: 16,
-    ms-ratio: get-ratio(minor-third)
+    ms-ratio: get-ratio(major-second)
   )
 );
 
