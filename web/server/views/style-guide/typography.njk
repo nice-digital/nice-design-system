@@ -16,7 +16,7 @@
 	</nav>
 
 	<p>
-		NICE has published a style guide for writing as a corporate document on the NICE website that tells you NICE's standard way to express concepts, spell words and format phrases. This should be followed where possible.
+		NICE has published a style guide for writing as a corporate document on the NICE website that tells you NICE's standard way to express concepts, spell words and format phrases. This should be followed wherever possible when writing content for NICE:
 	</p>
 
 	<p>
@@ -32,7 +32,7 @@
 			<li>use Lato Bold (700)</li>
 			<li>use sentence case for headings</li>
 			<li>use headings consistently to create a clear hierarchy</li>
-			<li>don't skip headings; use classes like <code>.h1, .h2</code>etc or mixins like <code>@include h1</code> etc if you need a visual difference in heading</li>
+			<li>don't skip headings; use classes like <code>.h1, .h2</code> etc or mixins like <code>@include h1</code> etc if you need a visual difference in heading</li>
 		</ul>
 
 		{% example -%}
@@ -49,19 +49,20 @@
 		<h2>Paragraphs</h2>
 
 		<ul>
-			<li>use <code>class="lead"</code> for leading, important paragraphs</li>
-			<li>stick to 10 words per line as a guide</li>
+			<li>stick to 10 words or 70 characters per line as a guide</li>
+			<li>use <code>class="lead"</code> for leading, important, introductory paragraphs</li>
+			<li>use 1 lead per page</li>
 		</ul>
 
 		{% example -%}
+			<p class="lead lead--drop-cap">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nibh augue, pulvinar nec condimentum in, vulputate a ipsum. Nulla facilisi. Sed et ex id nulla consequat bibendum nec quis nisi. Sed fermentum nisi nec velit finibus.
+			</p>
 			<p class="lead">
-				Curabitur dapibus risus at sem fermentum rhoncus sit amet vitae lectus. Morbi molestie, tortor et ultrices eleifend, nisi velit suscipit sem, et pulvinar nunc sapien sit amet risus. Donec pretium consequat mauris, quis ullamcorper massa pretium nec. Etiam porta arcu nunc, vel pharetra velit elementum at.
+				Curabitur dapibus risus at sem fermentum rhoncus sit amet vitae lectus. Morbi molestie, tortor et ultrices eleifend, nisi velit suscipit sem, et pulvinar nunc sapien sit amet risus.
 			</p>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nibh augue, pulvinar nec condimentum in, vulputate a ipsum. Nulla facilisi. Sed et ex id nulla consequat bibendum nec quis nisi. Sed fermentum nisi nec velit finibus luctus. Ut felis turpis, facilisis quis leo vitae, porta mattis urna. Pellentesque at sollicitudin justo.
-			</p>
-			<p>
-				Donec tincidunt pretium mi, sit amet mattis leo auctor quis. In hac habitasse platea dictumst. Maecenas condimentum fringilla arcu eu convallis. Maecenas varius, orci ut fringilla varius, nibh felis sodales nunc, id ornare urna ex et urna. Donec commodo vestibulum bibendum. Donec in odio erat. Proin dapibus fermentum arcu, et volutpat ligula ultrices viverra.
+				Donec tincidunt pretium mi, sit amet mattis leo auctor quis. In hac habitasse platea dictumst. Maecenas condimentum fringilla arcu eu convallis. Maecenas varius, orci ut fringilla varius, nibh felis sodales nunc, id ornare urna ex et urna.
 			</p>
 		{%- endexample %}
 	</section>
@@ -119,12 +120,15 @@
 		<h2>Links</h2>
 
 		<ul>
-			<li>Use <code>rel="external"</code> for external links</li>
+			<li>links should follow the same sizing as containing copy</li>
+			<li>use underline and colour to maximise <a href="http://www.jnd.org/dn.mss/affordances_and.html" target="_blank" rel="external">perceived affordance</a></li>
+			<li>use <code>rel="external"</code>, <code>rel="next"</code> and <code>rel="previous"</code> where applicable</li>
+			<li>visually distinguish external links</li>
 		</ul>
 
 		{% example -%}
 			<p><a href="#">A link on its own</a></p>
-			<p>This is some text with <a href="#" rel="external">an external link inside it</a>.</p>
+			<p>This is some text with <a href="#" rel="external">an external link</a> inside it.</p>
 		{%- endexample %}
 
 	</section>
@@ -133,9 +137,14 @@
 
 		<h2>Lists</h2>
 
-		<p>
-			Follow the <a href="https://www.nice.org.uk/corporate/ecd1/chapter/punctuation-and-bullet-points#bullet-points" target="_blank" rel="external">bullet points guide lines</a> on the NICE style guide.
-		</p>
+		<ul>
+			<li>
+				follow the <a href="https://www.nice.org.uk/corporate/ecd1/chapter/punctuation-and-bullet-points#bullet-points" target="_blank" rel="external">bullet points guide lines</a> on the NICE style guide.
+			</li>
+			<li>
+				use unordered or ordered lists appropriately to semantically define content
+			</li>
+		</ul>
 
 		<h3>Default lists</h3>
 
@@ -157,8 +166,9 @@
 		<h3>Featured lists</h3>
 
 		<ul>
-			<li>Use featured lists when you want more impact</li>
-			<li>Try to stick to a maximum of 4 items in a featured list</li>
+			<li>use featured lists when you want more impact</li>
+			<li>limit to just 1 or 2 per page for impact</li>
+			<li>try to stick to a maximum of 4 items in a featured list.</li>
 		</ul>
 
 		{% example -%}

@@ -70,8 +70,9 @@ p,
     // TODO: Drop cap needs some work
     &--drop-cap {
       &:first-letter {
-        @include font-size($scale: 7, $line-height: 4);
+        @include font-size($scale: 11, $line-height: 4);
         float: left;
+        font-weight: 300;
         padding: scut-em(0 2px 0 0);
       }
     }
