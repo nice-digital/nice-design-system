@@ -1,18 +1,29 @@
 var eslint = require("./eslint");
 
-
 module.exports = {
 	sass: {
 		files: ["./src/stylesheets/**/*.scss", "./web/client/stylesheets/**/*.scss"],
-		tasks: ["sasslint", "sass", "sassdoc"]
-	},
-	eslint: {
-		files: eslint.target,
-		tasks: ["eslint"]
+		tasks: ["sass", "newer:sasslint", "sassdoc"],
+		options: {
+			// Speed up watch task:
+			spawn: false
+		}
 	},
 	jsbuild: {
 		files: ["./src/javascripts/**/*.js", "./web/client/javascripts/**/*.js"],
-		tasks: ["webpack"]
+		tasks: ["webpack"],
+		options: {
+			// Speed up watch task:
+			spawn: false
+		}
+	},
+	eslint: {
+		files: eslint.target.src,
+		tasks: ["newer:eslint"],
+		options: {
+			// Speed up watch task:
+			spawn: false
+		}
 	},
 	express: {
 		files: ["./web/server/**/*.js"],
@@ -28,4 +39,4 @@ module.exports = {
 			livereload: true
 		}
 	}
-}
+};

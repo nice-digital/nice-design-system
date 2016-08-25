@@ -1,7 +1,7 @@
 /*eslint-env browser */
 import $ from "jquery";
 
-const NAME = "tabs";
+const NAME: string = "tabs";
 
 const ClassName = {
 	Tabs: ".tabs",

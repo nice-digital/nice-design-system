@@ -9,4 +9,4 @@ module.exports = {
 			config: "./src/javascripts/.jsdoc.json"
 		}
 	}
-}
+};

@@ -8,4 +8,4 @@ module.exports = {
 			"./dist/stylesheets/main.css": "./web/client/stylesheets/main.scss"
 		}
 	}
-}
+};

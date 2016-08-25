@@ -1,5 +1,4 @@
-var _ = require("lodash"),
-	nunjucks = require("nunjucks");
+var nunjucks = require("nunjucks");
 
 /// A custom tag for showing a code example.
 /// @see {@link https://mozilla.github.io/nunjucks/api.html#custom-tags)
@@ -16,7 +15,7 @@ var _ = require("lodash"),
 function ExampleExtension() {
 	this.tags = ["example"];
 
-	this.parse = function(parser, nodes, lexer) {
+	this.parse = function(parser, nodes) {
 		// get the tag token
 		var tok = parser.nextToken();
 

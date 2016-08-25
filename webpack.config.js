@@ -3,7 +3,6 @@
 
 var WebpackNotifierPlugin = require("webpack-notifier");
 var webpack = require("webpack");
-var path = require("path");
 
 var isProduction = (process.env.NODE_ENV === "production");
 
@@ -17,8 +16,7 @@ var plugins = [
 	})
 ];
 
-
-if(isProduction) {
+ if(isProduction) {
 	plugins.push(
 		new webpack.DefinePlugin({
 			"process.env": {
@@ -30,26 +28,29 @@ if(isProduction) {
 
 module.exports = [{
 	name: "js",
-	entry: ["babel-polyfill", "./web/client/javascripts/app"],
+	entry: [/*"babel-polyfill", */"./web/client/javascripts/app"],
 	output: {
 		path: "./dist/javascripts",
-		filename: "app.bundle.js"
+		filename: "app.bundle.js",
+		sourceMapFilename: "app.bundle.map"
 	},
 	module: {
-		preLoaders: [{
+		/*preLoaders: [{
 			test: /\.js$/,
 			loader: "eslint",
 			exclude: /(node_modules|bower_components)/
-		}],
+		}],*/
 		loaders: [{
 			test: /\.js$/,
 			loaders: ["babel-loader"],
 			exclude: /(node_modules|bower_components)/
 		}]
 	},
+	externals: { jquery: "jQuery" },
 	resolve: {
 		root: ["./web/client/javascripts/", "./src/javascripts/"]
 	},
+	devtool: "#source-map",
 	plugins: plugins,
 	eslint: {
 		ignorePath: "./src/javascripts/.eslintignore",

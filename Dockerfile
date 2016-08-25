@@ -1,6 +1,6 @@
 # Define from what image we want to build from
 # Comes with Node.js and NPM already installed
-FROM node:6.4
+FROM mhart/alpine-node:6.4
 
 ENV PORT=80
 
@@ -15,11 +15,14 @@ WORKDIR /app
 # Copy just the package.json so we can npm install
 COPY package.json /app
 
-# Install grunt CLI globally
-RUN npm i -g grunt-cli
+# Install build tools for e.g. node-sass
+RUN apk add --no-cache make gcc g++ python
+
+# Install grunt CLI globally and node-gyp for building
+RUN npm i -g grunt-cli node-gyp
 
 # Install app dependencies
-RUN npm i
+RUN npm install
 
 # Copy application source into the docker image
 COPY . /app

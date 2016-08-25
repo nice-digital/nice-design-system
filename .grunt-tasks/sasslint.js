@@ -3,4 +3,4 @@ module.exports = {
 	options: {
 		configFile: "./src/stylesheets/.sass-lint.yml",
 	}
-}
+};

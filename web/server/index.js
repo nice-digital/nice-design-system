@@ -1,10 +1,8 @@
 /*eslint-env node*/
-var _ = require("lodash"),
-	compression = require("compression"),
+var compression = require("compression"),
 	errors = require("node-common-errors"),
 	express = require("express"),
 	favicon = require("serve-favicon"),
-	fs = require("fs"),
 	nunjucks = require("nunjucks"),
 	path = require("path");
 
@@ -55,9 +53,11 @@ app.use(require("./controllers"));
 
 
 // Error routes
+/*eslint-disable no-unused-vars*/
 app.use(function (req, res, next) {
 	throw new errors.NotFound("Page not found.");
 });
+/*eslint-disable no-unused-vars*/
 app.use(function (err, req, res, next) {
 	if (err instanceof errors.NotFound) {
 		res.status(404).render("404", { error: err });

@@ -3,9 +3,9 @@
 	"passPerPreset": true,
 	"plugins": [
 		["typecheck", {
-      		"disable": { "production": true }
-    	}],
-    	"syntax-flow",
+			"disable": { "production": true }
+		}],
+		"syntax-flow",
 		"transform-flow-strip-types"
 	]
 }
