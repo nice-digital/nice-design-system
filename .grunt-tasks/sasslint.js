@@ -1,5 +1,7 @@
 module.exports = {
-	target: "./src/stylesheets/**/*.scss",
+	target: {
+		src: ["./src/stylesheets/**/*.scss", "./web/client/stylesheets/**/*.scss"]
+	},
 	options: {
 		configFile: "./src/stylesheets/.sass-lint.yml",
 	}
