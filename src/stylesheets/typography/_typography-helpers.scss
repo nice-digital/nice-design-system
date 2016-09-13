@@ -142,33 +142,3 @@
     }
   }
 }
-
-@mixin h1 {
-  @include font(h1, $line-height: 3, $below: 1);
-  font-weight: 700;
-}
-
-@mixin h2 {
-  @include font(h2, $line-height: 3, $below: 1);
-  font-weight: 700;
-}
-
-@mixin h3 {
-  @include font(h3, $line-height: 3, $below: 1);
-  font-weight: 700;
-}
-
-@mixin h4 {
-  @include font(h4, $line-height: 2, $below: 1);
-  font-weight: 700;
-}
-
-@mixin h5 {
-  @include font(h5, $line-height: 2, $below: 0);
-  font-weight: 700;
-}
-
-@mixin h6 {
-  @include font(h6, $line-height: 2, $below: 0);
-  font-weight: 700;
-}

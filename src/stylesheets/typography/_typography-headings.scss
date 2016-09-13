@@ -7,69 +7,95 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.heading {
   clear: both;
   margin: 0;
 }
 
+/// Heading, BEM style.
+/// Modifiers:
+///   - separator: Border below
 .heading {
-  clear: both;
-
-  &--primary {
-    @include h1;
-  }
-
-  &--secondary {
-    @include h2;
-  }
-
-  &--tertiary {
-    @include h3;
-  }
-
-  &--quaternary {
-    @include h4;
-  }
-
-  &--quinary {
-    @include h5;
-  }
-
-  &--senary {
-    @include h6;
-  }
-
   &--separator {
     border-bottom: 1px solid $colour-border;
   }
 }
 
+/// Primary heading. Used for h1 tag but can be used directly
+/// for semantic classes for visual styling.
+@mixin h1 {
+  @include font(h1, $line-height: 3, $below: 1);
+  font-weight: 700;
+}
+
+/// Secondary heading. Used for h2 tag but can be used directly
+/// for semantic classes for visual styling.
+@mixin h2 {
+  @include font(h2, $line-height: 2.5, $below: 1);
+  font-weight: 700;
+}
+
+/// Tertiary heading. Used for h3 tag but can be used directly
+/// for semantic classes for visual styling.
+@mixin h3 {
+  @include font(h3, $line-height: 2.25, $below: 1);
+  font-weight: 700;
+}
+
+/// Fourth level heading. Used for h4 tag but can be used directly
+/// for semantic classes for visual styling.
+@mixin h4 {
+  @include font(h4, $line-height: 2, $below: 1);
+  font-weight: 700;
+}
+
+/// Fifth level heading. Used for h5 tag but can be used directly
+/// for semantic classes for visual styling.
+@mixin h5 {
+  @include font(h5, $line-height: 1.8, $below: 0);
+  font-weight: 700;
+}
+
+/// Sixth level heading. Used for h6 tag but can be used directly
+/// for semantic classes for visual styling.
+@mixin h6 {
+  @include font(h6, $line-height: 1.6, $below: 0);
+  font-weight: 700;
+}
+
 h1,
-.h1 {
+.h1,
+.heading--primary {
   @include h1;
 }
 
 h2,
-.h2 {
+.h2,
+.heading--secondary {
   @include h2;
 }
 
 h3,
-.h3 {
+.h3,
+.heading--tertiary {
   @include h3;
 }
 
 h4,
-.h4 {
+.h4,
+.heading--quaternary {
   @include h4;
 }
 
 h5,
-.h5 {
+.h5,
+.heading--quinary {
   @include h5;
 }
 
 h6,
-.h6 {
+.h6,
+.heading--senary {
   @include h6;
 }
