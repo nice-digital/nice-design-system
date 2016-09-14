@@ -9,6 +9,7 @@ Welcome to NICE Experience. Your source for creating beautiful, consistent exper
 - [Prerequisites](#prerequisites)
 - [Development](#development)
   - [Option 1: Docker](#option-1-docker)
+    - [Troubleshooting](#docker-troubleshooting)
   - [Option 2: Grunt](#option-2-grunt)
     - [Grunt](#grunt)
     - [NPM](#npm)
@@ -41,12 +42,18 @@ You can either run the app directly on your machine with Node OR via Docker if y
 OR
 
 - [Docker](https://docs.docker.com/)
+- Docker's dependencies e.g. VirtualBox
 
 ## Development
 
 You can either run the app in development through [Docker](#option-1-docker) or via [Grunt](#option-2-grunt) (via Node) directly on your machine.
 
 ### Option 1: Docker
+
+Before running Docker commands, you will need to make sure of 2 things:
+
+- If running Docker through VirtualBox, your source code must be in your Users directory. VB only shares the users directory by default. Or you can add your code directory manually via the VB GUI.
+- Enable sharing your C drive (or whichever drive you code is in) via the Docker GUI.
 
 If you have Docker installed, then running:
 
@@ -60,6 +67,7 @@ from a shell is enough to:
    - *12345* (mapped to 54321 inside) for the web app
    - *35729* for livereload
 4. run `grunt watch` inside the container
+5. opens http://localhost:12345 on the host to browse to the web app
 
 This means you can run the solution without having to get the correct version Node, install global grunt etc. It will be slow the first time as it downloads the image and gets dependencies but Docker caches everything so will be quicker on subsequent runs.
 
@@ -68,6 +76,12 @@ Once the Docker container is running you can treat it like any other Docker cont
 `winpty docker exec -it experience ash`
 
 to attach a command prompt. Not use of *ash* not *bash* as we're using Alpine.
+
+#### Docker troubleshooting
+
+**A valid Gruntfile could not be found**
+
+Is your source code shared with VB? Is your C drive shared with Docker? Have a look at https://blogs.msdn.microsoft.com/stevelasker/2016/06/14/configuring-docker-for-windows-volumes/ if you're still struggling with credentials for shared folders on Windows.
 
 ### Option 2: Grunt
 
