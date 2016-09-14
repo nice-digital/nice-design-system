@@ -2,9 +2,21 @@
 
 Welcome to NICE Experience. Your source for creating beautiful, consistent experiences across NICE.
 
+## Table of contents
+
+- [What is it?](#what-is-it)
+- [Project structure](#project-structure)
+- [Prerequisites](#prerequisites)
+- [Development](#development)
+  - [Option 1: Docker](#option-1-docker)
+  - [Option 2: Grunt](#option-2-grunt)
+    - [Grunt](#grunt)
+    - [NPM](#npm)
+    - [Node](#node)
+
 ## What is it?
 
-NICE experience is a replacement for [NICE.Bootstrap](https://github.com/nhsevidence/NICE.Bootstrap/). It's a front-end toolkit and guidelines for rapidly building modern, accessible web apps that are consistent with the NICE brand.
+NICE Experience is a replacement for [NICE.Bootstrap](https://github.com/nhsevidence/NICE.Bootstrap/). It's a front-end toolkit and guidelines for rapidly building modern, accessible web apps that are consistent with the NICE brand.
 
 ## Project structure
 
@@ -30,9 +42,9 @@ OR
 
 - [Docker](https://docs.docker.com/)
 
-## Running tasks
+## Development
 
-You can either run the app through [Docker](#option-1-docker) or via [Grunt](#option-2-grunt) (via Node) directly on your machine.
+You can either run the app in development through [Docker](#option-1-docker) or via [Grunt](#option-2-grunt) (via Node) directly on your machine.
 
 ### Option 1: Docker
 
