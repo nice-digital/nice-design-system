@@ -57,11 +57,21 @@ from a shell is enough to:
 1. build our custom image (named 'experience') if it hasn't been built already
 2. share a volume of the app's code for development
 3. run the container (named 'experience'), exposing necessary ports
+   - *12345* (mapped to 54321 inside) for the web app
+   - *35729* for livereload
 4. run `grunt watch` inside the container
 
 This means you can run the solution without having to get the correct version Node, install global grunt etc. It will be slow the first time as it downloads the image and gets dependencies but Docker caches everything so will be quicker on subsequent runs.
 
+Once the Docker container is running you can treat it like any other Docker container, e.g.
+
+`winpty docker exec -it experience ash`
+
+to attach a command prompt. Not use of *ash* not *bash* as we're using Alpine.
+
 ### Option 2: Grunt
+
+If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide.
 
 We use Grunt as a task runner to build assets etc so a dependency on Node. Once built, you can run the app itself via Node directly if you want, but the easiest thing is just simply running `grunt` from the command line.
 
