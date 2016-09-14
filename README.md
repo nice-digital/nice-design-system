@@ -10,15 +10,15 @@ NICE experience is a replacement for [NICE.Bootstrap](https://github.com/nhsevid
 
 | Folder | Description |
 | ---- | ----------- |
-| .github | [Github templates folder](https://help.github.com/articles/helping-people-contribute-to-your-project/) |
+| [.github](.github) | [Github templates folder](https://help.github.com/articles/helping-people-contribute-to-your-project/) |
 | [.grunt-tasks](.grunt-tasks) | Grunt task configs loaded in from Gruntfile.js |
-| [src](.src) | The main source of Experience |
-| - src/assets | Common static assets |
-| - src/javascripts | Main Experience JS + JSDoc config and ESLint config |
-| - src/stylesheets | Main Experience SASS + SASS Lint config + SASS Doc custom theme |
-| web | Web app for the style guide |
-| - web/client | Client side assets required for the website itself |
-| - web/server | Server scripts for the website itself. /web/server/index.js is the entry point. |
+| [src](src) | The main source of Experience |
+| - [src/assets](src/assets) | Common static assets |
+| - [src/javascripts](src/javascripts) | Main Experience JS + [JSDoc config](src/javascripts/.jsdoc.json) and [ESLint config](src/javascripts/.eslintrc.json) |
+| - [src/stylesheets](src/stylesheets) | Main Experience SASS + [SASS Lint config](src/stylesheets/.sass-lint.yml) + [SASS Doc custom theme](src/stylesheets/sassdoc-nice-theme.js) |
+| [web](web) | Web app for the style guide |
+| - [web/client](web/client) | Client side assets required for the website itself |
+| - [web/server](web/server) | Server scripts for the website itself. [/web/server/index.js](web/server/index.js) is the entry point. |
 
 ## Prerequisites
 
