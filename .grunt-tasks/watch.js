@@ -3,7 +3,7 @@ var eslint = require("./eslint");
 module.exports = {
 	sass: {
 		files: ["./src/stylesheets/**/*.scss", "./web/client/stylesheets/**/*.scss"],
-		tasks: ["sass", "newer:sasslint", "sassdoc"],
+		tasks: ["sass:dev", "newer:sasslint", "sassdoc"],
 		options: {
 			// Speed up watch task:
 			spawn: false

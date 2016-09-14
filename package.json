@@ -1,8 +1,20 @@
 {
-  "name": "NICE.Bootstrap2",
+  "name": "experience",
   "version": "1.0.0",
   "description": "Your source for creating beautiful, consistent experiences across NICE",
-  "repository": "https://github.com/nhsevidence/NICE.Bootstrap2",
+  "keywords": [
+    "css",
+    "sass",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "framework",
+    "web"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nhsevidence/NICE-Experience.git"
+  },
   "main": "web/server/index.js",
   "scripts": {
     "start": "grunt",
@@ -10,9 +22,13 @@
     "dist:webpack": "NODE_ENV=production webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "grunt lint",
-    "serve": "set PORT=54321&& node web/server"
+    "serve": "set PORT=54321&& node web/server",
+    "prepublish": "grunt publish"
   },
-  "author": "NICE Digital Services",
+  "author": "NICE Digital Services (https://github.com/nhsevidence/nice-experience/graphs/contributors)",
+  "contributors": [
+    "Ian Routledge (http://ediblecode.com)"
+  ],
   "license": "MIT",
   "devDependencies": {
     "grunt-contrib-watch": "^1.0.0",
@@ -63,5 +79,12 @@
     "sassdoc-extras": "^2.4.1",
     "serve-favicon": "^2.3.0",
     "webpack": "^1.13.1"
-  }
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "files": [
+    "dist",
+    "src"
+  ]
 }

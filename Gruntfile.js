@@ -11,12 +11,23 @@ module.exports = function(grunt) {
 
 	var r = grunt.registerTask;
 
+	// Lint both SASS and JS
 	r("lint", ["sasslint", "eslint"]);
+
+	// Generate documentation form comments in SASS and JS
 	r("docs", ["sassdoc", "documentation"]);
-	r("build", ["modernizr", "sass", "webpack"]);
+
+	// Build in dev mode
+	r("build", ["modernizr", "sass:dev", "webpack"]);
+
+	// Serve the app and watch for changes
 	r("serve", ["express"/*, "open"*/, "parallel:watch"]);
 
-	r("dist", ["docs", "build"]);
+	// For deploying the web app. Builds minified SASS/JS
+	r("dist", ["sass:dist", "webpack"]);
+
+	// For building before publishing to NPM etc
+	r("publish", ["sass:publish", "sass:publishMin", "webpack"]);
 
 	r("default", ["lint", "docs", "build", "serve"]);
 };
