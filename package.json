@@ -57,6 +57,7 @@
     "favicon": "0.0.2",
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.0.0",
     "grunt-documentation": "^1.2.0",
     "grunt-eslint": "^19.0.0",
     "grunt-jsdoc": "^2.1.0",

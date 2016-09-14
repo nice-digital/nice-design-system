@@ -24,10 +24,10 @@ module.exports = function(grunt) {
 	r("serve", ["express"/*, "open"*/, "parallel:watch"]);
 
 	// For deploying the web app. Builds minified SASS/JS
-	r("dist", ["sass:dist", "webpack"]);
+	r("dist", ["clean", "sass:dist", "webpack"]);
 
 	// For building before publishing to NPM etc
-	r("publish", ["sass:publish", "sass:publishMin", "webpack"]);
+	r("publish", ["clean", "sass:publish", "sass:publishMin", "webpack"]);
 
 	r("default", ["lint", "docs", "build", "serve"]);
 };
