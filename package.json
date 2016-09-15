@@ -23,7 +23,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "grunt lint",
     "serve": "set PORT=54321&& node web/server",
-    "prepublish": "grunt publish"
+    "prepublish": "grunt prepublish"
   },
   "author": "NICE Digital Services (https://github.com/nhsevidence/nice-experience/graphs/contributors)",
   "contributors": [

@@ -106,7 +106,7 @@ Before you run any tasks, you'll have to run the following from the command line
 | `grunt`      | Default. Lints, builds everything in parallel and runs an express server and a watch task for dev changes. |
 | `grunt lint` | Lints SASS (sasslint) and JS (eslint) |
 | `grunt dist` | Builds documentation, modernizr, CSS and JS in production mode (minified etc). Fro deploying the web app itself. |
-| `grunt publish` | Builds minified code for publishing to NPM etc |
+| `grunt prepublish` | Builds minified code for publishing to NPM etc |
 
 #### NPM
 

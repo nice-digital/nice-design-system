@@ -27,7 +27,7 @@ module.exports = grunt => {
 	r("dist", ["env:dist", "clean", "sass:dist", "webpack:dist"]);
 
 	// For building before publishing to NPM etc
-	r("publish", ["env:dist", "clean", "sass:publish", "sass:publishMin", "webpack:dist"]);
+	r("prepublish", ["env:dist", "clean", "sass:publish", "sass:publishMin", "webpack:dist"]);
 
 	r("default", ["lint", "concurrent:default", "watch"]);
 };
