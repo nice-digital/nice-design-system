@@ -17,17 +17,14 @@ module.exports = function(grunt) {
 	// Generate documentation form comments in SASS and JS
 	r("docs", ["sassdoc", "documentation"]);
 
-	// Build in dev mode
-	r("build", ["modernizr", "sass:dev", "webpack"]);
-
-	// Serve the app and watch for changes
-	r("serve", ["express"/*, "open"*/, "parallel:watch"]);
+	// Serve the app and open in a browser
+	r("serve", ["express", "open"]);
 
 	// For deploying the web app. Builds minified SASS/JS
-	r("dist", ["clean", "sass:dist", "webpack"]);
+	r("dist", ["env:dist", "clean", "sass:dist", "webpack:dist"]);
 
 	// For building before publishing to NPM etc
-	r("publish", ["clean", "sass:publish", "sass:publishMin", "webpack"]);
+	r("publish", ["env:dist", "clean", "sass:publish", "sass:publishMin", "webpack:dist"]);
 
-	r("default", ["lint", "docs", "build", "serve"]);
+	r("default", ["lint", "parallel:default", "watch"]);
 };

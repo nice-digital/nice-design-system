@@ -4,6 +4,11 @@
     "es6": true,
     "commonjs": true
   },
+  "globals": {
+  	"process": false,
+  	"$": false,
+  	"PRODUCTION": false
+  },
   "extends": "eslint:recommended",
   "parser": "babel-eslint",
   "plugins": [

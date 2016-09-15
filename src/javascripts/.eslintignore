@@ -2,4 +2,4 @@
 # See http://eslint.org/docs/user-guide/configuring#ignoring-files-and-directories
 
 dist/*
-!.grunt-tasks/*
+!.grunt-tasks*

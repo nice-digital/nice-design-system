@@ -1,5 +1,5 @@
 .swatch {
-  border-radius: 0 999px 999px 999px;
+  border-radius: 0 999px 999px;
   display: none;
   float: left;
   height: 100px;
@@ -12,7 +12,9 @@
   @each $name, $palette in $palettes {
 
     @each $key, $hex in $palette {
-      &--#{$name}-#{$key} {
+      $selector: '#{$name}-#{$key}';
+
+      &--#{$selector} {
         background: $hex;
         display: block;
 

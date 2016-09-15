@@ -103,12 +103,10 @@ Before you run any tasks, you'll have to run the following from the command line
 
 | Task | Description |
 | ---- | ----------- |
-| `grunt`      | Default. Lints, builds everything and runs an express server and a watch task for dev changes. |
-| `grunt build` | Builds a custom modernizr package, CSS and JS. Usually not used directly. |
-| `grunt serve` | Runs an express app and watches for changes |
+| `grunt`      | Default. Lints, builds everything in parallel and runs an express server and a watch task for dev changes. |
 | `grunt lint` | Lints SASS (sasslint) and JS (eslint) |
-| `grunt docs` | Generates documentation JSON files for SASS and JS |
-| `grunt dist` | Builds documentation, modernizr, CSS and JS in production mode (minified etc). |
+| `grunt dist` | Builds documentation, modernizr, CSS and JS in production mode (minified etc). Fro deploying the web app itself. |
+| `grunt publish` | Builds minified code for publishing to NPM etc |
 
 #### NPM
 

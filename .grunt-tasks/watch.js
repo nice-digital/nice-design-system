@@ -11,7 +11,7 @@ module.exports = {
 	},
 	jsbuild: {
 		files: ["./src/javascripts/**/*.js", "./web/client/javascripts/**/*.js"],
-		tasks: ["webpack"],
+		tasks: ["webpack:dev"],
 		options: {
 			// Speed up watch task:
 			spawn: false

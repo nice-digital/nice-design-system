@@ -1,3 +1,5 @@
 module.exports = {
-	default: require("./../webpack.config.js")
+	dev: require("./../webpack.config.js"),
+
+	dist: require("./../webpack.production.config.js")
 };

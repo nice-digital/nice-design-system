@@ -25,7 +25,7 @@ module.exports = {
 			outputStyle: "compressed"
 		},
 		files: {
-			"./dist/stylesheets/main.css": "./web/client/stylesheets/main.scss"
+			"./dist/stylesheets/app.css": "./web/client/stylesheets/app.scss"
 		}
 	},
 	dev: {
@@ -34,7 +34,7 @@ module.exports = {
 			includePaths: ["./src/stylesheets"]
 		},
 		files: {
-			"./dist/stylesheets/main.css": "./web/client/stylesheets/main.scss"
+			"./dist/stylesheets/app.css": "./web/client/stylesheets/app.scss"
 		}
 	}
 };

@@ -18,8 +18,8 @@
   "main": "web/server/index.js",
   "scripts": {
     "start": "grunt",
-    "build:webpack": "webpack -d --progress --colors",
-    "dist:webpack": "NODE_ENV=production webpack -p",
+    "webpack:dev": "SET \"NODE_ENV=development\" && webpack --progress --colors --display-error-details",
+    "webpack:dist": "SET \"NODE_ENV=production\" && webpack --config ./webpack.production.config.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "grunt lint",
     "serve": "set PORT=54321&& node web/server",
@@ -33,7 +33,7 @@
   "devDependencies": {
     "grunt-contrib-watch": "^1.0.0",
     "grunt-express-server": "^0.5.3",
-    "grunt-open": "^0.2.3"
+    "grunt-open": "^0.2.3",
     "webpack-dev-server": "^1.15.2",
     "webpack-notifier": "^1.4.1"
   },
@@ -59,6 +59,7 @@
     "grunt-cli": "^1.2.0",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-documentation": "^1.2.0",
+    "grunt-env": "^0.4.4",
     "grunt-eslint": "^19.0.0",
     "grunt-jsdoc": "^2.1.0",
     "grunt-modernizr": "^1.0.2",
@@ -79,7 +80,7 @@
     "nunjucks": "^2.5.2",
     "sassdoc-extras": "^2.4.1",
     "serve-favicon": "^2.3.0",
-    "webpack": "^1.13.1",
+    "webpack": "^1.13.2"
   },
   "engines": {
     "node": ">=4"

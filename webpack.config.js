@@ -4,42 +4,39 @@
 var WebpackNotifierPlugin = require("webpack-notifier");
 var webpack = require("webpack");
 
-var isProduction = (process.env.NODE_ENV === "production");
-
 var plugins = [
 	// Notify on success/error
-	new WebpackNotifierPlugin({title: "NICE Bootstrap build"}),
-
-	// Magic globals for environment gating e.g. if (__PRODUCTION__) { }
+	new WebpackNotifierPlugin({title: "NICE Experience"}),
 	new webpack.DefinePlugin({
-		PRODUCTION: isProduction
+		PRODUCTION: false
+	}),
+	new webpack.DefinePlugin({
+		"process.env": {
+			NODE_ENV: JSON.stringify("development")
+		}
+	}),
+	new webpack.ProvidePlugin({
+		$: "jquery"
+	}),
+	new webpack.optimize.UglifyJsPlugin({
+		minimize: false,
+		mangle: false,
+		compress: false,
+		output: {
+			beautify: true
+		}
 	})
 ];
 
- if(isProduction) {
-	plugins.push(
-		new webpack.DefinePlugin({
-			"process.env": {
-				NODE_ENV: JSON.stringify("production")
-			}
-		})
-	);
-}
-
-module.exports = [{
-	name: "js",
+module.exports = {
+	name: "app",
 	entry: [/*"babel-polyfill", */"./web/client/javascripts/app"],
 	output: {
 		path: "./dist/javascripts",
-		filename: "app.bundle.js",
-		sourceMapFilename: "app.bundle.map"
+		filename: "app.js",
+		sourceMapFilename: "app.map"
 	},
 	module: {
-		/*preLoaders: [{
-			test: /\.js$/,
-			loader: "eslint",
-			exclude: /(node_modules|bower_components)/
-		}],*/
 		loaders: [{
 			test: /\.js$/,
 			loaders: ["babel-loader"],
@@ -48,7 +45,7 @@ module.exports = [{
 	},
 	externals: { jquery: "jQuery" },
 	resolve: {
-		root: ["./web/client/javascripts/", "./src/javascripts/"]
+		modulesDirectories: ["./web/client/javascripts/", "./src/javascripts/"]
 	},
 	devtool: "#source-map",
 	plugins: plugins,
@@ -56,4 +53,4 @@ module.exports = [{
 		ignorePath: "./src/javascripts/.eslintignore",
 		configFile: "./src/javascripts/.eslintrc.json"
 	}
-}];
+};

@@ -4,6 +4,7 @@ module.exports = {
 			"./src/javascripts/**/*.js",
 			"./Gruntfile.js",
 			"./webpack.config.js",
+			"./webpack.production.config.js",
 			"./.grunt-tasks/**/*.js",
 			"./web/server/**/*.js",
 			"./web/client/**/*.js"
