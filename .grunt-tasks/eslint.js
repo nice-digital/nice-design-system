@@ -1,18 +1,18 @@
 module.exports = {
 	target: {
 		src: [
-			"./src/javascripts/**/*.js",
-			"./Gruntfile.js",
-			"./webpack.config.js",
-			"./webpack.production.config.js",
-			"./.grunt-tasks/**/*.js",
-			"./web/server/**/*.js",
-			"./web/client/**/*.js"
+			"src/javascripts/**/*.js",
+			"Gruntfile.js",
+			"webpack.config.js",
+			"webpack.production.config.js",
+			".grunt-tasks/**/*.js",
+			"web/server/**/*.js",
+			"web/client/**/*.js"
 		]
 	},
 	options: {
-		ignorePath: "./src/javascripts/.eslintignore",
-		configFile: "./src/javascripts/.eslintrc.json",
+		ignorePath: "src/javascripts/.eslintignore",
+		configFile: "src/javascripts/.eslintrc.json",
 		quiet: false
 	}
 };
