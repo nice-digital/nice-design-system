@@ -156,11 +156,11 @@ Not recommended for production, but useful for quick prototypes, the npm package
 ```html
 <!-- Font from Google & compiled/minified CSS -->
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700" rel="stylesheet">
-<link rel="stylesheet" href="/node_modules/experience/dist/stylesheets/experience.min.css">
+<link rel="stylesheet" href="/node_modules/nice-experience/dist/stylesheets/experience.min.css">
 
 <!-- jQuery from CDN & compiled/minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="/node_modules/experience/dist/javascripts/experience.min.js"></script>
+<script src="/node_modules/nice-experience/dist/javascripts/experience.min.js"></script>
 ```
 
 #### Source (npm)
