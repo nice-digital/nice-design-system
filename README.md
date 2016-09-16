@@ -12,8 +12,20 @@ Welcome to NICE Experience. Your source for creating beautiful, consistent exper
     - [Troubleshooting](#docker-troubleshooting)
   - [Option 2: Grunt](#option-2-grunt)
     - [Grunt](#grunt)
-    - [NPM](#npm)
+    - [npm](#npm)
     - [Node](#node)
+- [Installation](#installation)
+  - [CDN](#cdn)
+  - [Install with npm](#install-with-npm)
+    - [Precompiled (npm)](#precompiled-npm)
+    - [Source (npm)](#source-npm)
+  - [Install with Bower](#install-with-bower)
+- [JavaScript](#javascript)
+  - [JS Compilation](#js-compilation)
+  - [Flow type](#flow-type)
+  - [ESLint](#eslint)
+  - [Auto plugin loader](#auto-plugin-loader)
+  - [JS Comments](#js-comments)
 
 ## What is it?
 
@@ -37,7 +49,7 @@ NICE Experience is a replacement for [NICE.Bootstrap](https://github.com/nhsevid
 
 You can either run the app directly on your machine with Node OR via Docker if you prefer. So, pre-requisites are:
 
-- [Node 6+](https://nodejs.org/en/download/) (with NPM 3.9)
+- [Node 6+](https://nodejs.org/en/download/) (with npm 3.9)
 
 OR
 
@@ -92,7 +104,7 @@ We use Grunt as a task runner to build assets etc so a dependency on Node. Once 
 If you want to run the app directly on your machine you can do so, but you'll need:
 
 - Node 6+
-- NPM 3.9+
+- npm 3.9+
 
 Before you run any tasks, you'll have to run the following from the command line to install dependencies:
 
@@ -106,11 +118,11 @@ Before you run any tasks, you'll have to run the following from the command line
 | `grunt`      | Default. Lints, builds everything in parallel and runs an express server and a watch task for dev changes. |
 | `grunt lint` | Lints SASS (sasslint) and JS (eslint) |
 | `grunt dist` | Builds documentation, modernizr, CSS and JS in production mode (minified etc). Fro deploying the web app itself. |
-| `grunt prepublish` | Builds minified code for publishing to NPM etc |
+| `grunt prepublish` | Builds minified code for publishing to npm etc |
 
-#### NPM
+#### npm
 
-There are a set of NPM scripts within package.json, for convenience. However, it's recommended to just use [Grunt](#grunt).
+There are a set of npm scripts within package.json, for convenience. However, it's recommended to just use [Grunt](#grunt).
 
 | Task | Description |
 | ---- | ----------- |
@@ -122,3 +134,127 @@ There are a set of NPM scripts within package.json, for convenience. However, it
 #### Node
 
 Once the app (CSS/JS etc) has been built, the express app can be run via Node directly e.g. `node web/server`. This isn't recommended for development - use Grunt instead.
+
+## Installation
+
+### NICE CDN
+
+TODO
+
+### Install with npm
+
+NICE Experience is released as a package on npm for convenience, but is designed to be used as a client side module, rather than server side.
+
+`npm install nice-experience`
+
+Then...
+
+#### Precompiled (npm)
+
+Not recommended for production, but useful for quick prototypes, the npm package includes a dist folder with precompiled assets you can reference directly:
+
+```html
+<!-- Font from Google & compiled/minified CSS -->
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700" rel="stylesheet">
+<link rel="stylesheet" href="/node_modules/experience/dist/stylesheets/experience.min.css">
+
+<!-- jQuery from CDN & compiled/minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="/node_modules/experience/dist/javascripts/experience.min.js"></script>
+```
+
+#### Source (npm)
+
+The npm package contains the source code as well as the precompiled assets.
+
+### Install with Bower
+
+TODO
+
+# JavaScript
+
+Our JavaScript is written in ES6 with [Flow type annotations](#flow-type) so needs to be [compiled/bundled](#js-compilation). We recommend requiring the modules you need as and when you need them to avoid bloat - the below examples demonstrate this:
+
+```JavaScript
+var el = document.querySelector(".a-selector");
+
+// Recommended: import a module directly
+import Tabs from "tabs";
+var tabs = new Tabs(el);
+
+// Import a named export from experience
+import { Tabs } from "experience";
+var tabs = new Tabs(el);
+
+// Import via experience module
+import experience from "experience";
+var tabs = new experience.Tabs(el);
+
+// Requiring - named module
+var Tabs = require("tabs").default;
+var tabs = new Tabs(el);
+
+// Requiring - via experience module
+var experience = require("experience");
+var tabs = new experience.Tabs(el);
+
+// Not recommended - global namespace usage
+var tabs = new NICE.experience.Tabs(el);
+
+// Use the jquery plugin version
+$(".a-selector").tabs();
+```
+
+## JS Compilation
+
+Our source JS needs to be compiled, transpiled and packed for several reasons:
+
+- [Flow type annotations](#flow-type)
+- [ES6 (ECMAScript 2015)](https://github.com/lukehoban/es6features)
+- Our JS is written in modules and should be combined and minified
+- Apps using Experience should ideally use the source, rather than using the pre-compiled version
+
+We use and recommend [Webpack](https://webpack.github.io/) with [Babel](https://babeljs.io/) and their respective plugins for packing and transpiling our JavaScript.
+
+See our [webpack.config.js](webpack.config.js) and our [.babelrc](.babelrc) for an example of compilation of ES6 with Flow type annotations.
+
+TODO: Webpack/require/browserify - path to source code for compilation.
+
+## Flow type
+
+We use [Flow type annotations](https://flowtype.org/) in our JavaScript because:
+
+- annotations are opt-in, so allows adding them gradually
+- no learning a new like TypeScript/CoffeeScript
+- support for IDE integration
+- easily transforms to normal JavaScript
+- catches common type related static bugs
+- used with [Babel Typecheck](https://github.com/codemix/babel-plugin-typecheck) allows runtime type checking
+
+We encourage use of runtime type checking with Babel Typecheck during development. See our [.bablerc](.babelrc) for an example. Note: it disables them in production, as long as `NODE_ENV=production` is set when compiling production JS.
+
+A runtime error would look like: *Uncaught TypeError: Value of argument "num" violates contract. Expected: number Got: string*.
+
+## ESLint
+
+We have a set of ES Lint rules for linting our JS. See our [.eslintrc.json](src/javascripts/.eslintrc.json) for our ruleset. It uses [babel-eslint](https://github.com/babel/babel-eslint) as the parser and uses a [flowtype plugin](eslint-plugin-flowtype) because of our [Flow type annotations](#flow-type). You should use a [watch task](.grunt-tasks/watch.js) to lint as you work.
+
+## Auto plugin loader
+
+Our modules are written as ES6 classes within modules so can be used directly, but for convenience are also wrapped in jQuery plugins. We then have a [plugin loader module](src/javascripts/plugin-autoloader.js) that automatically:
+
+- requires all plugin modules
+- looks for any `[data-nice-plugin]` instances
+- applies the named plugin to each
+
+The pre-compiled version of experience automatically includes the plugin auto loader. So you can do:
+
+```html
+<div class="tabs" data-nice-plugin="tabs">
+</div>
+<script src="experience.min.js"></script>
+```
+
+## JS Comments
+
+We use [documentationjs](http://documentation.js.org/) to generate documentation for our library code, so any comments shoudl follow a [JSDoc style](https://github.com/documentationjs/documentation/blob/master/docs/GETTING_STARTED.md) syntax.

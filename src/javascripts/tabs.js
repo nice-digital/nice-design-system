@@ -1,4 +1,10 @@
 /*eslint-env browser */
+
+/**
+ * @module A test module
+ * Tabs
+ */
+
 import $ from "jquery";
 
 const NAME: string = "tabs";
@@ -11,9 +17,14 @@ const ClassName = {
 	TabPaneActive: "tabs__pane--active"
 };
 
-class Tab {
 
-	constructor(element: HTMLElement) {
+/**
+ * @class Tabs
+ * Tabs description here
+ */
+export default class Tabs {
+
+	constructor(element: number) {
 		this._element = element;
 		this._bindEvents();
 		this.activate(0);
@@ -50,14 +61,8 @@ class Tab {
 	}
 
 	static _jQueryInterface(config: mixed) {
-		return this.each(() => new Tab(this[0]));
+		return this.each(() => new Tabs(this[0]));
 	}
 }
 
-$.fn[NAME] = Tab._jQueryInterface;
-
-/**
- * @module A test module
- * Tabs
- */
-export default Tab;
+$.fn[NAME] = Tabs._jQueryInterface;
