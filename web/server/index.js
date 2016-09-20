@@ -35,6 +35,11 @@ require("./nunjucks/source-extension")(env);
 
 app.use(compression());
 
+app.use(function(req, res, next) {
+	res.header("X-UA-Compatible", "IE=edge");
+	next();
+});
+
 app.use(function (req, res, next) {
 	res.locals.req = req;
 	next();
