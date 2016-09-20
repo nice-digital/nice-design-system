@@ -93,6 +93,11 @@ export function trackEvent(category: string,
 		return sendDataLayerEvent(category, action, label, value, callback);
 
 	// TODO: Implement GA Classic & Universal
+	if(trackingLibrary() == Universal)
+		throw new Error("Universal analytics not implemented yet");
+
+	if(trackingLibrary() == Classic)
+		throw new Error("Classic analytics not implemented yet");
 
 	// If no tracking library is available then reject the promise straight away.
 	return new Promise((resolve, reject) => {
