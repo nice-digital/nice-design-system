@@ -10,13 +10,13 @@
   &__crumb {
     display: inline-block;
 
-    &::before {
+    &:before {
       color: get-colour(grey);
       content: get-glyph(greater-than);
       margin: scut-em(0 10);
     }
 
-    &:first-of-type::before {
+    &:first-child:before {
       display: none;
     }
 
