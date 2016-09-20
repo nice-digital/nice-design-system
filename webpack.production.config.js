@@ -1,7 +1,8 @@
 /// <binding ProjectOpened="Watch - Development" />
 /*eslint-env node*/
 
-var webpack = require("webpack");
+var _ = require("lodash"),
+	webpack = require("webpack");
 
 var appConfig = require("./webpack.config.js");
 
@@ -17,6 +18,7 @@ var prodPlugins = [
 			except: ["$super", "$", "exports", "require"]
 		}
 	}),
+	new webpack.BannerPlugin("/*!\n Experience\n */\n", { raw: true }),
 	new webpack.optimize.AggressiveMergingPlugin(),
 	new webpack.DefinePlugin({
 		PRODUCTION: true
@@ -31,10 +33,8 @@ var prodPlugins = [
 	})
 ];
 
-appConfig.plugins = prodPlugins;
-
 module.exports = [
-	appConfig,
+	_.extend({}, appConfig, { debug: false, plugins: prodPlugins } ),
 	{
 		name: "experience",
 		entry: ["./src/javascripts/experience"],
@@ -49,6 +49,7 @@ module.exports = [
 		},
 		externals: appConfig.externals,
 		devtool: "#cheap-module-source-map",
+		debug: false,
 		eslint: appConfig.eslint,
 		plugins: prodPlugins
 	}

@@ -1,5 +1,27 @@
-module.exports = {
-	dev: require("./../webpack.config.js"),
+var _ = require("lodash"),
+	webpack = require("webpack");
 
-	dist: require("./../webpack.production.config.js")
+var webpackConfig = require("./../webpack.config.js"),
+	webpackProdConfig = require("./../webpack.production.config.js");
+
+module.exports = {
+
+	dev: _.extend({}, webpackConfig, {
+		stats: {
+			colors: true,
+			modules: true,
+			reasons: false,
+			errorDetails: true
+		},
+		debug: true
+	}),
+
+	dist: _.extend({}, webpackProdConfig, {
+		stats: {
+			colors: true,
+			modules: false,
+			reasons: false,
+			errorDetails: true
+		}
+	}),
 };
