@@ -6,8 +6,7 @@
  */
 
 import $ from "jquery";
-
-const NAME: string = "tabs";
+import pluginizr from "pluginizr";
 
 const ClassName = {
 	Tabs: ".tabs",
@@ -24,14 +23,29 @@ const ClassName = {
  */
 export default class Tabs {
 
-	constructor(element: number) {
-		this._element = element;
+	static defaults() {
+		return {
+			test: true
+		};
+	}
+
+	constructor(element, options) {
+		this.el = element;
+		this.$el = $(element);
+
+		this.options = $.extend({}, Tabs.defaults, options);
+
 		this._bindEvents();
 		this.activate(0);
 	}
 
+	getCurrentIndex() {
+		// TODO
+		return 99;
+	}
+
 	/// Activates a tab with the given index
-	/// @param {number} index The index of the tab to activate
+	/// @param {integer} index The index of the tab to activate
 	activate(index: number) {
 		// TODO: Look with the closest Tabs collection
 		$(`.${ClassName.Tab}`)
@@ -53,16 +67,12 @@ export default class Tabs {
 	// PRIVATE
 
 	_bindEvents() {
-		$(this._element).on("click", `.${ClassName.Tab} a`, e => {
+		this.$el.on("click", `.${ClassName.Tab} a`, e => {
 			var index = $(e.currentTarget).parent().index();
 			this.activate(index);
 			e.preventDefault();
 		});
 	}
-
-	static _jQueryInterface(config: mixed) {
-		return this.each(() => new Tabs(this[0]));
-	}
 }
 
-$.fn[NAME] = Tabs._jQueryInterface;
+pluginizr("tabs", Tabs);
