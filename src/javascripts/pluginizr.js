@@ -20,6 +20,8 @@ export default (pluginName: string, Plugin) => {
 		if (options === undefined || typeof options === "object") {
 			return this.each((i, el) => {
 
+				// TODO: Merge options with data-* attributes
+
 				// Create an instance of the plugin and cache it
 				if (!$.data(el, dataName)) {
 					$.data(el, dataName, new Plugin(el, options));
