@@ -29,7 +29,7 @@
 
 	<!-- Google Tag Manager -->
     <noscript>
-        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-M55QTQ"
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-MDNG92"
                 height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
     <script>
@@ -40,7 +40,7 @@
             }); var f = d.getElementsByTagName(s)[0],
                     j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
                         '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-M55QTQ');</script>
+        })(window, document, 'script', 'dataLayer', 'GTM-MDNG92');</script>
 	<!-- End Google Tag Manager -->
 
 	<div class="skip-links">
@@ -49,7 +49,6 @@
 
 	<nav class="navbar navbar--nice-top-level" role="navigation">
 		<div class="navbar__inner">
-			<a class="navbar__brand"></a>
 			<ul class="navbar__nav">
 
 				{% macro navItem(href, title) %}
@@ -73,7 +72,7 @@
 				{{ navItem('/components/', 'Components') }}
 				{{ navItem('/sass/', 'SASS') }}
 				{{ navItem('/javascript/', 'JavaScript') }}
-				{{ navItem('/about/', 'About') }}
+				{{ navItem('/about/', 'About NICE Experience') }}
 			</ul>
 		</div>
 	</nav>
@@ -132,7 +131,12 @@
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="//cdn.nice.org.uk/V3/Scripts/nice/NICE.TopHat.dev.js"></script>
-	<script src="/javascripts/app.js"></script>
+	<!--[if !IE]><!-->
+		<script src="/javascripts/app.js"></script>
+	<!--<![endif]-->
+	<!--[if IE]>
+		<script src="/javascripts/app.oldie.js"></script>
+	<![endif]-->
 
 	{# HLJS doesn't support IE8 #}
 	<!--[if gt IE 8]>

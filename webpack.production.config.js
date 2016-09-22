@@ -1,12 +1,30 @@
 /// <binding ProjectOpened="Watch - Development" />
 /*eslint-env node*/
 
-var _ = require("lodash"),
-	webpack = require("webpack");
+const _ = require("lodash"),
+	webpack = require("webpack"),
+	StringReplacePlugin = require("string-replace-webpack-plugin");
 
-var appConfig = require("./webpack.config.js");
+const pkg = require("./package.json"),
+	banner = _.template(pkg.config.banner)({ version: pkg.version, year: new Date().getYear() + 1900 });
 
-var prodPlugins = [
+const webpackConfig = require("./webpack.config.js");
+
+const appConfig = _.find(webpackConfig, { name: "app" }),
+	appIEConfig = _.find(webpackConfig, { name: "app-oldie" });
+
+const prodPlugins = [
+	new webpack.DefinePlugin({
+		PRODUCTION: true
+	}),
+	new webpack.DefinePlugin({
+		"process.env": {
+			NODE_ENV: JSON.stringify("production")
+		}
+	}),
+	new webpack.ProvidePlugin({
+		$: "jquery"
+	}),
 	new webpack.optimize.OccurrenceOrderPlugin(true),
 	new webpack.optimize.DedupePlugin(),
 	new webpack.optimize.UglifyJsPlugin({
@@ -18,23 +36,21 @@ var prodPlugins = [
 			except: ["$super", "$", "exports", "require"]
 		}
 	}),
-	new webpack.BannerPlugin("/*!\n Experience\n */\n", { raw: true }),
 	new webpack.optimize.AggressiveMergingPlugin(),
-	new webpack.DefinePlugin({
-		PRODUCTION: true
-	}),
-	new webpack.DefinePlugin({
-		"process.env": {
-			NODE_ENV: JSON.stringify("production")
-		}
-	}),
-	new webpack.ProvidePlugin({
-		$: "jquery"
-	})
+	new StringReplacePlugin(),
+	new webpack.BannerPlugin(`/*!\n${banner}\n*/\n`, { raw: true })
 ];
 
+const prodStats = {
+	colors: true,
+	modules: false,
+	reasons: false,
+	errorDetails: true
+};
+
 module.exports = [
-	_.extend({}, appConfig, { debug: false, plugins: prodPlugins } ),
+	_.extend({}, appConfig, { debug: false, plugins: prodPlugins, stats: prodStats } ),
+	_.extend({}, appIEConfig, { debug: false, plugins: prodPlugins, stats: prodStats } ),
 	{
 		name: "experience",
 		entry: ["./src/javascripts/experience"],
@@ -48,9 +64,10 @@ module.exports = [
 			modulesDirectories: ["./src/javascripts/"]
 		},
 		externals: appConfig.externals,
-		devtool: "#cheap-module-source-map",
+		devtool: "#source-map",
 		debug: false,
 		eslint: appConfig.eslint,
-		plugins: prodPlugins
+		plugins: prodPlugins,
+		stats: prodStats
 	}
 ];

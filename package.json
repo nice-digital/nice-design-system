@@ -9,7 +9,9 @@
     "responsive",
     "front-end",
     "framework",
-    "web"
+    "web",
+    "nice",
+    "nhs"
   ],
   "repository": {
     "type": "git",
@@ -25,6 +27,10 @@
     "lint": "grunt lint",
     "serve": "set PORT=54321&& node web/server",
     "prepublish": "grunt prepublish"
+  },
+  "config": {
+  	"//": "Banner is used for prepending to compiled JS and CSS",
+  	"banner": "NICE Experience ${ version }\n© Copyright NICE 2015-${ year }\nLicensed under MIT (https://github.com/nhsevidence/nice-experience/blob/master/LICENSE)"
   },
   "author": "NICE Digital Services (https://github.com/nhsevidence/nice-experience/graphs/contributors)",
   "contributors": [

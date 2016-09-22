@@ -6,22 +6,7 @@ var webpackConfig = require("./../webpack.config.js"),
 
 module.exports = {
 
-	dev: _.extend({}, webpackConfig, {
-		stats: {
-			colors: true,
-			modules: true,
-			reasons: false,
-			errorDetails: true
-		},
-		debug: true
-	}),
+	dev: webpackConfig,
 
-	dist: _.extend({}, webpackProdConfig, {
-		stats: {
-			colors: true,
-			modules: false,
-			reasons: false,
-			errorDetails: true
-		}
-	}),
+	dist: webpackProdConfig,
 };

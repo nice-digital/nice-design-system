@@ -5,6 +5,7 @@ Welcome to NICE Experience. Your source for creating beautiful, consistent exper
 ## Table of contents
 
 - [What is it?](#what-is-it)
+- [Browser support](#browser-support)
 - [Project structure](#project-structure)
 - [Prerequisites](#prerequisites)
 - [Development](#development)
@@ -29,7 +30,34 @@ Welcome to NICE Experience. Your source for creating beautiful, consistent exper
 
 ## What is it?
 
-NICE Experience is a replacement for [NICE.Bootstrap](https://github.com/nhsevidence/NICE.Bootstrap/). It's a front-end toolkit and guidelines for rapidly building modern, accessible web apps that are consistent with the NICE brand.
+NICE Experience is a replacement for [NICE.Bootstrap](https://github.com/nhsevidence/NICE.Bootstrap/). It's a front-end toolkit and guidelines for rapidly building modern, accessible web apps that are consistent with the NICE brand guidelines.
+
+## Browser support
+
+| IE/Edge | Chrome | Firefox | Safari | Safari (iOS) | Android | 
+| ------- | ------ | ------- | ------ | ------------ | ------- |
+| ![Internet Explorer](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.2.0/internet-explorer/internet-explorer_48x48.png) | ![Chrome](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.2.0/chrome/chrome_48x48.png) | ![Firefox](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.2.0/firefox/firefox_48x48.png) | ![Safari](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.2.0/safari/safari_48x48.png) | ![Safari (iOS)](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.2.0/safari-ios/safari-ios_48x48.png) | ![Android](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.2.0/android/android_48x48.png) |
+| 8+ | 52+ | 47+ | Latest | Latest | Latest |
+
+And all other modern browsers
+
+We support IE8 because of our audience - traffic to nice.org.uk as of 22/09/2016:
+
+- 15.80% - IE11
+- 5.08% - IE8
+- 2.61% - IE9
+- 1.78% - IE10
+- 0.56% - IE7
+
+To support older IE we have separate builds of our JS and CSS.
+
+## Accessibility
+
+Experience has been built with accessibility in mind and is built to conform to WCAG 2.0 AA.
+
+If you are building an application with Experience, please keep the same level of conformance.
+
+See https://www.nice.org.uk/accessibility for more information.
 
 ## Project structure
 
@@ -54,7 +82,7 @@ You can either run the app directly on your machine with Node OR via Docker if y
 OR
 
 - [Docker](https://docs.docker.com/)
-- Docker's dependencies e.g. VirtualBox
+- Docker's dependencies e.g. [VirtualBox](https://www.virtualbox.org/)
 
 ## Development
 
@@ -133,7 +161,7 @@ There are a set of npm scripts within package.json, for convenience. However, it
 
 #### Node
 
-Once the app (CSS/JS etc) has been built, the express app can be run via Node directly e.g. `node web/server`. This isn't recommended for development - use Grunt instead.
+Once the app (CSS/JS etc) has been built, the express app can be run via Node directly e.g. `node web/server`. This isn't really useful for development as it just runs on port 3000, doesn't build assets, watch for changes etc - use `grunt` instead for deveopment.
 
 ## Installation
 
