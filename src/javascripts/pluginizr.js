@@ -13,7 +13,7 @@ export default (pluginName: string, Plugin) => {
 
 	$.fn[pluginName] = function(options) {
 
-		var args = arguments;
+		const args = arguments;
 
 		// TODO: Destory plugin by removing the data
 
@@ -35,32 +35,26 @@ export default (pluginName: string, Plugin) => {
 			const methodName = options,
 				methodArgs = Array.prototype.slice.call(args, 1);
 
-			console.log("keys", Object.keys(Plugin.prototype));
-			console.log("prototype", (Plugin.prototype));
-			for(var k in Plugin.prototype){
-				console.log(k, Plugin.prototype[k]);
-			}
+			// Ideally we would use Object.getOwnPropertyNames(Plugin.prototype); to get
+			// true 'getters' but to support IE8 we can't do this. So we relay on a naming
+			// convention of getters start "get" e.g. getCurrentIndex();
 
-			// Find getters
-			var propNames = Object.getOwnPropertyNames(Plugin.prototype);
-			var getters = propNames.filter(propName => {
-				var result =  Object.getOwnPropertyDescriptor(Plugin.prototype, propName);
-				return !!result.get;
-			});
-
-			// No arguments means *might* mean it"s a getter property.
-			// Getters break chainability
-			if (methodArgs.length == 0 && $.inArray(methodName, getters) != -1) {
+			// No arguments and starting with 'get' means a getter which breaks chainability
+			if (methodArgs.length == 0 && /^get.+$/.test(methodName)) {
+				if(this.length > 1) {
+					$.error(`Cannot call a getter '${ methodName }' on a collection of elements`);
+					return;
+				}
 				var instance = $.data(this[0], dataName);
-				return instance[methodName];
+				return instance[methodName].apply(instance);
 			} else {
-				console.log("method");
-
 				// Invoke the speficied method on each selected element
 				return this.each(function() {
 					var instance = $.data(this, dataName);
 					if (instance instanceof Plugin && typeof instance[methodName] === "function") {
 						instance[methodName].apply(instance, methodArgs);
+					} else {
+						$.error(`Method '${ methodName }' could not be found`);
 					}
 				});
 			}
