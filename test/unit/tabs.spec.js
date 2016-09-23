@@ -3,6 +3,18 @@
 const should = require("should"),
 	jsdom = require("jsdom");
 
+const KeyCodes = {
+	Enter: 13,
+	Space: 32,
+	End: 35,
+	Home: 36,
+	LeftArrow: 37,
+	UpArrow: 38,
+	RightArrow: 39,
+	DownArrow: 40
+};
+
+
 describe("Tabs", function() {
 
 	var $,
@@ -76,39 +88,19 @@ describe("Tabs", function() {
 			$tabs[0].should.equal($el[0], "collection contains element");
 		});
 
-		it("tab can be activated by index", function() {
+		it("getter can be called", function() {
+			var $el = $(tabsHTML).tabs();
+			($el.tabs("getCurrentIndex")).should.equal(0);
+		});
+
+		it("method can be called", function() {
 			var $el = $(tabsHTML).tabs();
 			$el.tabs("activate", 1);
 			($el.tabs("getCurrentIndex")).should.equal(1);
 		});
-
-		it("last tab can be activated", function() {
-			var $el = $(tabsHTML).tabs();
-			$el.tabs("last");
-			($el.tabs("getCurrentIndex")).should.equal(2);
-		});
-
-		it("first tab can be activated", function() {
-			var $el = $(tabsHTML).tabs();
-			$el.tabs("last").tabs("first");
-			($el.tabs("getCurrentIndex")).should.equal(0);
-		});
-
-		it("next tab can be activated", function() {
-			var $el = $(tabsHTML).tabs();
-			$el.tabs("next");
-			($el.tabs("getCurrentIndex")).should.equal(1);
-		});
-
-		it("previous tab can be activated", function() {
-			var $el = $(tabsHTML).tabs();
-			$el.tabs("last").tabs("previous");
-			($el.tabs("getCurrentIndex")).should.equal(1);
-		});
 	});
 
-
-	describe("Tabs", function() {
+	describe("Initialization", function() {
 
 		it("have defaults", function() {
 			Tabs.should.have.property("defaults");
@@ -117,6 +109,10 @@ describe("Tabs", function() {
 		it("throw without element", function() {
 			should.throws(() => new Tabs);
 		});
+
+	});
+
+	describe("Tab selection", function() {
 
 		it("first tab selected by default", function() {
 			var $el = $(tabsHTML);
@@ -130,29 +126,111 @@ describe("Tabs", function() {
 			t.activate(1);
 			t.getCurrentIndex().should.equal(1);
 		});
+
+		it("last tab can be activated", function() {
+			var $el = $(tabsHTML);
+			var t = new Tabs($el);
+			t.last();
+			(t.getCurrentIndex()).should.equal(2);
+		});
+
+		it("first tab can be activated", function() {
+			var $el = $(tabsHTML);
+			var t = new Tabs($el);
+			t.last();
+			t.first();
+			(t.getCurrentIndex()).should.equal(0);
+		});
+
+		it("next tab can be activated", function() {
+			var $el = $(tabsHTML);
+			var t = new Tabs($el);
+			t.next();
+			(t.getCurrentIndex()).should.equal(1);
+		});
+
+		it("next tab activates first from last", function() {
+			var $el = $(tabsHTML);
+			var t = new Tabs($el);
+			t.last();
+			t.next();
+			(t.getCurrentIndex()).should.equal(0);
+		});
+
+		it("previous tab can be activated", function() {
+			var $el = $(tabsHTML);
+			var t = new Tabs($el);
+			t.last();
+			t.previous();
+			(t.getCurrentIndex()).should.equal(1);
+		});
+
+		it("previous tab activates last from first", function() {
+			var $el = $(tabsHTML);
+			var t = new Tabs($el);
+			t.previous();
+			(t.getCurrentIndex()).should.equal(2);
+		});
 	});
 
 
 	describe("Accessibility", function() {
 
-		it("active tab is aria-expanded", function() {
-			var $tabs = $(tabsHTML);
-			$tabs.tabs();
-			$("[role='tab']:eq(0)", $tabs).attr("aria-expanded").should.equal("true");
-			$("[role='tab']:eq(0)", $tabs).attr("aria-selected").should.equal("true");
+		it("active tab is aria-selected", function() {
+			var $el = $(tabsHTML);
+			var t = new Tabs($el);
+			$("[role='tab']:eq(0)", $el).attr("aria-expanded").should.equal("true");
+			$("[role='tab']:eq(0)", $el).attr("aria-selected").should.equal("true");
 		});
 
-		it("inactive tabs are not aria-expanded", function() {
-			var $tabs = $(tabsHTML);
-			$tabs.tabs();
-			$("[role='tab']:gt(0)", $tabs).attr("aria-expanded").should.equal("false");
-			$("[role='tab']:gt(0)", $tabs).attr("aria-selected").should.equal("false");
+		it("inactive tabs are not aria-selected", function() {
+			var $el = $(tabsHTML);
+			var t = new Tabs($el);
+			$("[role='tab']:gt(0)", $el).attr("aria-expanded").should.equal("false");
+			$("[role='tab']:gt(0)", $el).attr("aria-selected").should.equal("false");
 		});
 
 	});
 
-	describe("Keyboard", function() {
+	describe("Keyboard control", function() {
 
+		it("left/up keydown on tab selects previous tab", function() {
+			var $el = $(tabsHTML);
+			var t = new Tabs($el);
+
+			t.getCurrentIndex().should.equal(0);
+
+			$("[role='tab']:eq(0)", $el)
+				.focus()
+				.trigger($.Event("keydown", { which: KeyCodes.LeftArrow } ));
+
+			t.getCurrentIndex().should.equal(2);
+
+			$("[role='tab']:eq(2)", $el)
+				.focus()
+				.trigger($.Event("keydown", { which: KeyCodes.UpArrow } ));
+
+			t.getCurrentIndex().should.equal(1);
+		});
+
+		it("down/right keydown on tab selects next tab", function() {
+			var $el = $(tabsHTML);
+			var t = new Tabs($el);
+
+			t.getCurrentIndex().should.equal(0);
+
+			$("[role='tab']:eq(0)", $el)
+				.focus()
+				.trigger($.Event("keydown", { which: KeyCodes.RightArrow } ));
+
+			t.getCurrentIndex().should.equal(1);
+
+			$("[role='tab']:eq(1)", $el)
+				.focus()
+				.trigger($.Event("keydown", { which: KeyCodes.DownArrow } ));
+
+			t.getCurrentIndex().should.equal(2);
+		});
 
 	});
 });

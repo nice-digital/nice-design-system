@@ -16,10 +16,20 @@
 	<section id="basics">
 		<h2>Basics</h2>
 
+		<ul>
+			<li>ARIA attributes are applied via JS</li>
+			<li>Keyboard controls are enabled:
+				<ul>
+					<li>Left/up and down/right changes the selected tab</li>
+					<li>Home/end moves to first/last tab</li>
+				</ul>
+			</li>
+		</ul>
+
 		{% set tabsContent = [
 			{
 				title: "Tab one",
-				content: "<h2>Tab one content</h2><p>This is the content for tab 1</p>"
+				content: "<h2>Tab one content</h2><p>This is the content for tab 1<a href=\"#\">A link</a></p>"
 			},
 			{
 				title: "Tab two",

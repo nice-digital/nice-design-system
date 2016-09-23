@@ -29,7 +29,7 @@ const KeyCodes = {
 
 // Generate unique id amongst tabs
 // See http://stackoverflow.com/a/20302361
-var uid = function (i) {
+const uid = function (i) {
 	return function () {
 		return "tabs-" + (++i);
 	};
@@ -38,7 +38,8 @@ var uid = function (i) {
 
 /**
  * @class Tabs
- * Tabs description here
+ * Follows W3 design for tab panels with aria attributes.
+ * @link https://www.w3.org/TR/2013/WD-wai-aria-practices-20130307/#tabpanel
  */
 export default class Tabs {
 
@@ -72,7 +73,7 @@ export default class Tabs {
 		});
 
 		this._bindEvents();
-		this.activate(0);
+		this.activate(0, false);
 	}
 
 	/// Gets the 0-based index of the currently selected tab
@@ -85,8 +86,10 @@ export default class Tabs {
 
 	/// Activates a tab with the given index
 	/// @param {integer} index The index of the tab to activate
-	activate(index: number) {
-		this._getTabs()
+	/// @param {boolean} focus Whether to give focus to the active tab btn
+	activate(index: number, focus:?boolean = true) {
+		var $selectedTabBtn =
+			this._getTabs()
 			.removeClass(this.options.tabActiveClass)
 			.find(`.${ this.options.tabButtonClass }`)
 				.attr("aria-expanded", false)
@@ -95,9 +98,12 @@ export default class Tabs {
 			.eq(index)
 			.addClass(this.options.tabActiveClass)
 			.find(`.${ this.options.tabButtonClass }`)
-				.focus()
 				.attr("aria-expanded", true)
 				.attr("aria-selected", true);
+
+		if(focus === true) {
+			$selectedTabBtn.focus();
+		}
 
 		this._getTabPanes()
 			.removeClass(this.options.tabPaneActiveClass)
@@ -107,18 +113,22 @@ export default class Tabs {
 			.attr("aria-hidden", false);
 	}
 
-	/// Activates the next tab
+	/// Activates the next tab, or the first we're at the end
 	next() {
 		var currentIndex = this.getCurrentIndex();
-		if(currentIndex < this._getTabs().length - 1) {
+		if(currentIndex === this._getTabs().length - 1) {
+			this.first();
+		} else {
 			this.activate(currentIndex + 1);
 		}
 	}
 
-	/// Activates the previous tab
-	previous() {
+	/// Activates the previous tab, or the last tab if we're at the start
+	previous(loop) {
 		var currentIndex = this.getCurrentIndex();
-		if(currentIndex > 0) {
+		if(currentIndex === 0) {
+			this.last();
+		} else {
 			this.activate(currentIndex - 1);
 		}
 	}
@@ -153,6 +163,17 @@ export default class Tabs {
 				.closest(`.${ this.options.tabClass }`)
 				.index();
 			this.activate(index);
+		});
+
+		// Focus the current tab btn on a ctrl+up or ctrl+left when in a tab pane
+		this.$el.on("keydown", `.${ this.options.tabPaneClass }`, e => {
+			if($.inArray(e.which, [KeyCodes.UpArrow, KeyCodes.LeftArrow]) > -1 && e.ctrlKey) {
+				e.preventDefault();
+				e.stopPropagation();
+
+				var tabId = $(e.currentTarget).attr("aria-labelledby");
+				$(`#${ tabId }`).focus();
+			}
 		});
 
 		// Enable keyboard control of the tabs
