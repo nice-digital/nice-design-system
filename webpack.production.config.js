@@ -22,9 +22,6 @@ const prodPlugins = [
 			NODE_ENV: JSON.stringify("production")
 		}
 	}),
-	new webpack.ProvidePlugin({
-		$: "jquery"
-	}),
 	new webpack.optimize.OccurrenceOrderPlugin(true),
 	new webpack.optimize.DedupePlugin(),
 	new webpack.optimize.UglifyJsPlugin({

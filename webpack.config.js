@@ -20,9 +20,6 @@ const plugins = [
 			NODE_ENV: JSON.stringify("development")
 		}
 	}),
-	new webpack.ProvidePlugin({
-		$: "jquery"
-	}),
 	new webpack.BannerPlugin(`/*!\n${banner}\n*/\n`, { raw: true }),
 	new StringReplacePlugin()
 ];
