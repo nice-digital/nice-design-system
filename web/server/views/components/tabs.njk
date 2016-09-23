@@ -1,6 +1,8 @@
 {% extends "./_components-layout.njk" %}
 {% set title = "Tabs" %}
 
+{% from "../partials/components/tabs.njk" import tabs %}
+
 {% block main %}
 
 	<h1>Tabs</h1>
@@ -14,42 +16,22 @@
 	<section id="basics">
 		<h2>Basics</h2>
 
+		{% set tabsContent = [
+			{
+				title: "Tab one",
+				content: "<h2>Tab one content</h2><p>This is the content for tab 1</p>"
+			},
+			{
+				title: "Tab two",
+				content: "<h2>Tab two content</h2><p>This is the content for tab 2</p>"
+			},
+			{
+				title: "Tab three",
+				content: "<h2>Tab three content</h2><p>This is the content for tab 3</p>"
+			}] %}
+
 		{% example -%}
-			<div class="tabs" data-nice-plugin="tabs">
-				<nav>
-					<ul class="tabs__list" role="tablist">
-						<li class="tabs__tab tabs__tab--active" role="presentation">
-							<a id="tab-1" href="#tab-1-content" role="tab" aria-controls="tab-1-content" aria-expanded="false">
-								Tab 1
-							</a>
-						</li>
-						<li class="tabs__tab" role="presentation">
-							<a id="tab-2" href="#tab-2-content" role="tab" aria-controls="tab-2-content" aria-expanded="false">
-								Tab 2
-							</a>
-						</li>
-						<li class="tabs__tab" role="presentation">
-							<a id="tab-3" href="#tab-3-content" role="tab" aria-controls="tab-3-content" aria-expanded="false">
-								Tab 3
-							</a>
-						</li>
-					</ul>
-				</nav>
-				<div class="tabs__content">
-					<div id="tab-1-content" class="tabs__pane tabs__pane--active" role="tabpanel" aria-labelledby="tab1">
-						<h2>First tab</h2>
-						<p>This is the content for tab 1</p>
-					</div>
-					<div id="tab-2-content" class="tabs__pane" role="tabpanel" aria-labelledby="tab2">
-						<h2>Second tab</h2>
-						<p>This is the content for tab 2</p>
-					</div>
-					<div id="tab-3-content" class="tabs__pane" role="tabpanel" aria-labelledby="tab3">
-						<h2>Third tab</h2>
-						<p>This is the content for tab 3</p>
-					</div>
-				</div>
-			</div>
+			{{ tabs(tabsContent) }}
 		{%- endexample %}
 	</section>
 

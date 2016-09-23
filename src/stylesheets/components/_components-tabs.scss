@@ -13,22 +13,26 @@
     padding: 0;
   }
 
-  ///
+  //
   &__tab {
     float: left;
 
-    a {
-      display: block;
-      line-height: 4rem;
-      margin: 0;
-      padding: 0 1rem;
-
-      &:hover {
-        background: $colour-panel;
-      }
+    &--active .tabs__tab-btn {
+      background: $colour-panel;
     }
+  }
 
-    &--active {
+  // The button/link for the tab itself
+  &__tab-btn {
+    background: 0;
+    border: 0;
+    cursor: pointer;
+    display: block;
+    line-height: 4rem;
+    margin: 0;
+    padding: 0 1rem;
+
+    &:hover {
       background: $colour-panel;
     }
   }
