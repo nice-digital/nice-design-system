@@ -23,6 +23,8 @@ module.exports = grunt => {
 	// Generate documentation form comments in SASS and JS
 	r("docs", ["sassdoc", "documentation"]);
 
+	r("test", ["mochaTest"]);
+
 	// For deploying the web app. Builds minified SASS/JS
 	r("dist", ["env:dist", "clean", "sass:dist", "webpack:dist"]);
 

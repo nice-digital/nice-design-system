@@ -144,7 +144,8 @@ Before you run any tasks, you'll have to run the following from the command line
 | Task | Description |
 | ---- | ----------- |
 | `grunt`      | Default. Lints, builds everything in parallel and runs an express server and a watch task for dev changes. |
-| `grunt lint` | Lints SASS (sasslint) and JS (eslint) |
+| `grunt lint` | Lints SASS and JS |
+| `grunt test` | Runs JS tests |
 | `grunt dist` | Builds documentation, modernizr, CSS and JS in production mode (minified etc). Fro deploying the web app itself. |
 | `grunt prepublish` | Builds minified code for publishing to npm etc |
 
@@ -154,10 +155,11 @@ There are a set of npm scripts within package.json, for convenience. However, it
 
 | Task | Description |
 | ---- | ----------- |
-| `npm start`     | Simply runs `grunt` under the hood |
-| `npm test`      | TODO |
-| `npm run lint`  | Lints SASS and JS (uses `grunt lint` under the hood) |
-| `npm run serve` | Spins up an express server through Node directly (NOT via Grunt) on port *54321* |
+| `npm start`           | Simply runs `grunt` under the hood |
+| `npm test`            | Runs JS tests |
+| `npm run test:watch`  | Runs JS test tests and watches for changes. Useful to run in development alongside grunt. |
+| `npm run lint`        | Lints SASS and JS (uses `grunt lint` under the hood) |
+| `npm run serve`       | Spins up an express server through Node directly (NOT via Grunt) on port *54321* |
 
 #### Node
 

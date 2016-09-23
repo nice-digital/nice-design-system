@@ -23,14 +23,15 @@
     "start": "grunt",
     "webpack:dev": "SET \"NODE_ENV=development\" && webpack --progress --colors --display-error-details",
     "webpack:dist": "SET \"NODE_ENV=production\" && webpack --config ./webpack.production.config.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha test/**/*.spec.js --require babel-core/register",
+    "test:watch": "mocha test/**/*.spec.js --require babel-core/register --reporter min --watch",
     "lint": "grunt lint",
     "serve": "set PORT=54321&& node web/server",
     "prepublish": "grunt prepublish"
   },
   "config": {
-  	"//": "Banner is used for prepending to compiled JS and CSS",
-  	"banner": "NICE Experience ${ version }\n© Copyright NICE 2015-${ year }\nLicensed under MIT (https://github.com/nhsevidence/nice-experience/blob/master/LICENSE)"
+    "//": "Banner is used for prepending to compiled JS and CSS",
+    "banner": "NICE Experience ${ version }\n© Copyright NICE 2015-${ year }\nLicensed under MIT (https://github.com/nhsevidence/nice-experience/blob/master/LICENSE)"
   },
   "author": "NICE Digital Services (https://github.com/nhsevidence/nice-experience/graphs/contributors)",
   "contributors": [
@@ -72,6 +73,7 @@
     "grunt-env": "^0.4.4",
     "grunt-eslint": "^19.0.0",
     "grunt-jsdoc": "^2.1.0",
+    "grunt-mocha-test": "^0.13.2",
     "grunt-modernizr": "^1.0.2",
     "grunt-newer": "^1.2.0",
     "grunt-sass": "^1.2.1",
@@ -82,14 +84,17 @@
     "jit-grunt": "^0.10.0",
     "jquery": "^3.1.0",
     "jsdoc-babel": "^0.2.1",
+    "jsdom": "^9.5.0",
     "load-grunt-config": "^0.19.2",
     "load-grunt-tasks": "^3.5.0",
     "lodash": "^4.13.1",
+    "mocha": "^3.0.2",
     "node-common-errors": "^0.4.0",
     "node-sass": "^3.10.0",
     "nunjucks": "^2.5.2",
     "sassdoc-extras": "^2.4.1",
     "serve-favicon": "^2.3.0",
+    "should": "^11.1.0",
     "string-replace-webpack-plugin": "0.0.3",
     "webpack": "^1.13.2"
   },

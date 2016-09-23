@@ -7,7 +7,8 @@ module.exports = {
 			"webpack.production.config.js",
 			".grunt-tasks/**/*.js",
 			"web/server/**/*.js",
-			"web/client/**/*.js"
+			"web/client/**/*.js",
+			"test/**/*.js"
 		]
 	},
 	options: {
