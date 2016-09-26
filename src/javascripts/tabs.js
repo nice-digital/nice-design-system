@@ -7,6 +7,7 @@
 
 import $ from "jquery";
 import pluginizr from "./pluginizr";
+import delegateEvents from "./delegate-events";
 
 const Defaults = {
 	tabClass: "tabs__tab",
@@ -56,7 +57,7 @@ export default class Tabs {
 
 		this.options = $.extend({}, Tabs.defaults(), options);
 
-		// Generate random ids for tabs and panes
+		// Generate random ids for tabs and panes, for use with aria attributes
 		this._getTabs().each((i, el) => {
 			var tabId = uid(),
 				paneId = uid();
@@ -72,8 +73,17 @@ export default class Tabs {
 
 		});
 
-		this._bindEvents();
+		delegateEvents(this);
+
 		this.activate(0, false);
+	}
+
+	events() {
+		return {
+			[`click .${ this.options.tabButtonClass }`]: "_handleTabBtnClick",
+			[`keydown .${ this.options.tabButtonClass }`]: "_handleTabBtnKeydown",
+			[`keydown .${ this.options.tabPaneClass }`]: "_handlePaneKeydown"
+		};
 	}
 
 	/// Gets the 0-based index of the currently selected tab
@@ -155,72 +165,71 @@ export default class Tabs {
 		return $(`.${ this.options.tabPaneClass }`, this.$el);
 	}
 
-	_bindEvents() {
-		this.$el.on("click", `.${ this.options.tabButtonClass }`, e => {
-			e.preventDefault();
+	// Handle clicking on a tab
+	_handleTabBtnClick(e) {
+		e.preventDefault();
 
-			var index = $(e.currentTarget)
-				.closest(`.${ this.options.tabClass }`)
-				.index();
-			this.activate(index);
-		});
+		var index = $(e.currentTarget)
+			.closest(`.${ this.options.tabClass }`)
+			.index();
+		this.activate(index);
+	}
 
-		// Focus the current tab btn on a ctrl+up or ctrl+left when in a tab pane
-		this.$el.on("keydown", `.${ this.options.tabPaneClass }`, e => {
-			if($.inArray(e.which, [KeyCodes.UpArrow, KeyCodes.LeftArrow]) > -1 && e.ctrlKey) {
+	// Enable keyboard control of the tabs
+	_handleTabBtnKeydown(e) {
+		switch(e.which)
+		{
+			// Go backwards one tab
+			case KeyCodes.LeftArrow:
+			case KeyCodes.UpArrow:
 				e.preventDefault();
 				e.stopPropagation();
+				this.previous();
+				break;
 
-				var tabId = $(e.currentTarget).attr("aria-labelledby");
-				$(`#${ tabId }`).focus();
-			}
-		});
+			// Go forward one tab
+			case KeyCodes.RightArrow:
+			case KeyCodes.DownArrow:
+				e.preventDefault();
+				e.stopPropagation();
+				this.next();
+				break;
 
-		// Enable keyboard control of the tabs
-		this.$el.on("keydown", `.${ this.options.tabButtonClass }`, e => {
-			switch(e.which)
-			{
-				// Go backwards one tab
-				case KeyCodes.LeftArrow:
-				case KeyCodes.UpArrow:
-					e.preventDefault();
-					e.stopPropagation();
-					this.previous();
-					break;
+			// Go to the first tab
+			case KeyCodes.Home:
+				e.preventDefault();
+				e.stopPropagation();
+				this.first();
+				break;
 
-				// Go forward one tab
-				case KeyCodes.RightArrow:
-				case KeyCodes.DownArrow:
-					e.preventDefault();
-					e.stopPropagation();
-					this.next();
-					break;
+			// Go to the last tab
+			case KeyCodes.End:
+				e.preventDefault();
+				e.stopPropagation();
+				this.last();
+				break;
 
-				// Go to the first tab
-				case KeyCodes.Home:
-					e.preventDefault();
-					e.stopPropagation();
-					this.first();
-					break;
+			// Go to the focussed tab
+			case KeyCodes.Enter:
+			case KeyCodes.Space:
+				e.preventDefault();
+				e.stopPropagation();
+				this.activate($(e.currentTarget).closest(`.${ this.options.tabClass }`).index());
+				break;
+			default:
+				break;
+		}
+	}
 
-				// Go to the last tab
-				case KeyCodes.End:
-					e.preventDefault();
-					e.stopPropagation();
-					this.last();
-					break;
+	// Focus the current tab btn on a ctrl+up or ctrl+left when in a tab pane
+	_handlePaneKeydown(e) {
+		if($.inArray(e.which, [KeyCodes.UpArrow, KeyCodes.LeftArrow]) > -1 && e.ctrlKey) {
+			e.preventDefault();
+			e.stopPropagation();
 
-				// Go to the focussed tab
-				case KeyCodes.Enter:
-				case KeyCodes.Space:
-					e.preventDefault();
-					e.stopPropagation();
-					this.activate($(e.currentTarget).closest(`.${ this.options.tabClass }`).index());
-					break;
-				default:
-					break;
-			}
-		});
+			var tabId = $(e.currentTarget).attr("aria-labelledby");
+			$(`#${ tabId }`).focus();
+		}
 	}
 }
 
