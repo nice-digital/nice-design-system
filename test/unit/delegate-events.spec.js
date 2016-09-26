@@ -5,6 +5,28 @@ const delegateEvents = require("../../src/javascripts/delegate-events.js").defau
 
 describe("Delegate events", function() {
 
+	it("throws when function not found", function() {
+
+		var spy = sinon.spy($, "error");
+
+		class Test {
+			constructor() {
+				delegateEvents(this);
+			}
+			events() {
+				return {
+					"click .inner": "notfound"
+				};
+			}
+		}
+
+		(() => {
+			var test = new Test();
+		}).should.throw();
+
+		spy.should.be.calledOnce;
+	});
+
 	it("should call function", function() {
 
 		var spy = sinon.spy();

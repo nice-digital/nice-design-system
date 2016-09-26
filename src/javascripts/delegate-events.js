@@ -42,7 +42,7 @@ export default function delegateEvents(instance) {
 			method = instance[method];
 
 		if (!method) {
-			$.warn("Method could not be found");
+			$.error("Method could not be found");
 			continue;
 		}
 
