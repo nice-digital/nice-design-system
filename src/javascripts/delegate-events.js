@@ -33,11 +33,9 @@ var delegateEventSplitter = /^(\S+)\s*(.*)$/;
 export default function delegateEvents(instance) {
 	if(!instance) {
 		$.error("Instance must be non-null");
-		return;
 	}
 	if(!instance.events || typeof instance.events !== "function") {
 		$.error("Instance must be non-null");
-		return;
 	}
 
 	var events = instance.events();
@@ -53,7 +51,6 @@ export default function delegateEvents(instance) {
 
 		if (!method) {
 			$.error("Method could not be found");
-			continue;
 		}
 
 		var match = key.match(delegateEventSplitter);

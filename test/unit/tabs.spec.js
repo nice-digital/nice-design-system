@@ -1,4 +1,5 @@
 /* eslint-env node, mocha, jquery */
+/* global sinon */
 
 const KeyCodes = {
 	Enter: 13,
@@ -17,6 +18,15 @@ describe("Tabs", function() {
 
 	before(function () {
 		Tabs = require("../../src/javascripts/tabs.js").default;
+	});
+
+	var sandbox;
+	beforeEach(function () {
+		sandbox = sinon.sandbox.create();
+	});
+
+	afterEach(function () {
+		sandbox.restore();
 	});
 
 	var tabsHTML = `
@@ -214,89 +224,52 @@ describe("Tabs", function() {
 
 	describe("Keyboard control", function() {
 
-		it("left/up keydown on tab selects previous tab", function() {
-			var $el = $(tabsHTML);
-			var t = new Tabs($el);
-
-			t.getCurrentIndex().should.equal(0);
-
-			$("[role='tab']:eq(0)", $el)
-				.focus()
-				.trigger($.Event("keydown", { which: KeyCodes.LeftArrow } ));
-
-			t.getCurrentIndex().should.equal(2);
-
-			$("[role='tab']:eq(2)", $el)
-				.focus()
-				.trigger($.Event("keydown", { which: KeyCodes.UpArrow } ));
-
-			t.getCurrentIndex().should.equal(1);
-		});
-
-		it("down/right keydown on tab selects next tab", function() {
-			var $el = $(tabsHTML);
-			var t = new Tabs($el);
-
-			t.getCurrentIndex().should.equal(0);
+		// Test helper for repetitive key testing
+		function testKey(which, methodName) {
+			let $el = $(tabsHTML),
+				method = sandbox.spy(new Tabs($el), methodName);
 
 			$("[role='tab']:eq(0)", $el)
 				.focus()
-				.trigger($.Event("keydown", { which: KeyCodes.RightArrow } ));
+				.trigger($.Event("keydown", { which: which } ));
 
-			t.getCurrentIndex().should.equal(1);
+			method.should.be.calledOnce;
+		}
 
-			$("[role='tab']:eq(1)", $el)
-				.focus()
-				.trigger($.Event("keydown", { which: KeyCodes.DownArrow } ));
-
-			t.getCurrentIndex().should.equal(2);
+		it("left keydown on tab calls previous", function() {
+			testKey(KeyCodes.LeftArrow, "previous");
 		});
 
-		it("end keydown on tab selects last tab", function() {
-			var $el = $(tabsHTML);
-			var t = new Tabs($el);
-
-			t.getCurrentIndex().should.equal(0);
-
-			$("[role='tab']:eq(0)", $el)
-				.focus()
-				.trigger($.Event("keydown", { which: KeyCodes.End } ));
-
-			t.getCurrentIndex().should.equal(2);
+		it("up keydown on tab calls previous", function() {
+			testKey(KeyCodes.UpArrow, "previous");
 		});
 
-		it("home keydown on tab selects last tab", function() {
-			var $el = $(tabsHTML);
-			var t = new Tabs($el);
+		it("right keydown on tab calls next", function() {
+			testKey(KeyCodes.RightArrow, "next");
+		});
 
-			t.last();
+		it("down keydown on tab calls next", function() {
+			testKey(KeyCodes.DownArrow, "next");
+		});
 
-			t.getCurrentIndex().should.equal(2);
+		it("end keydown on tab calls last", function() {
+			testKey(KeyCodes.End, "last");
+		});
 
-			$("[role='tab']:eq(2)", $el)
-				.focus()
-				.trigger($.Event("keydown", { which: KeyCodes.Home } ));
-
-			t.getCurrentIndex().should.equal(0);
+		it("home keydown on tab calls first", function() {
+			testKey(KeyCodes.Home, "first");
 		});
 
 		it("enter/space keydown on selects focussed tab", function() {
-			var $el = $(tabsHTML);
-			var t = new Tabs($el);
 
-			t.getCurrentIndex().should.equal(0);
+			let $el = $(tabsHTML),
+				activate = sandbox.spy(new Tabs($el), "activate");
 
 			$("[role='tab']:eq(1)", $el)
 				.focus()
 				.trigger($.Event("keydown", { which: KeyCodes.Space } ));
 
-			t.getCurrentIndex().should.equal(1);
-
-			$("[role='tab']:eq(2)", $el)
-				.focus()
-				.trigger($.Event("keydown", { which: KeyCodes.Enter } ));
-
-			t.getCurrentIndex().should.equal(2);
+			activate.withArgs(1).should.be.calledOnce;
 		});
 
 	});
