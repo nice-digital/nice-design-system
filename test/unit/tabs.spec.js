@@ -1,6 +1,4 @@
-/* eslint-env node, mocha */
-
-const should = require("should");
+/* eslint-env node, mocha, jquery */
 
 const KeyCodes = {
 	Enter: 13,
@@ -15,9 +13,11 @@ const KeyCodes = {
 
 describe("Tabs", function() {
 
-	var $,
-		document,
-		Tabs;
+	var Tabs;
+
+	before(function () {
+		Tabs = require("../../src/javascripts/tabs.js").default;
+	});
 
 	var tabsHTML = `
 		<div class="tabs" data-nice-plugin="tabs">
@@ -57,17 +57,10 @@ describe("Tabs", function() {
 		</div>
 	`;
 
-	before(function () {
-		document = global.document;
-		$ = global.$;
-
-		Tabs = require("../../src/javascripts/tabs.js").default;
-	});
-
 	describe("jQuery integration", function() {
 
 		it("defined on jquery object", function() {
-			$(document).tabs.should.be.ok();
+			$(document).tabs.should.be.ok;
 		});
 
 		it("have defaults", function() {
@@ -102,8 +95,10 @@ describe("Tabs", function() {
 			Tabs.should.have.property("defaults");
 		});
 
-		it("throw without element", function() {
-			should.throws(() => new Tabs);
+		it("throw error without element", function() {
+			(() => {
+				new Tabs;
+			}).should.throw(Error);
 		});
 
 	});
