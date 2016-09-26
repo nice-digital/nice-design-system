@@ -87,7 +87,7 @@ export default class Tabs {
 	/// Activates a tab with the given index
 	/// @param {integer} index The index of the tab to activate
 	/// @param {boolean} focus Whether to give focus to the active tab btn
-	activate(index: number, focus:?boolean = true) {
+	activate(index: number, focus: ?boolean = true) {
 		var $selectedTabBtn =
 			this._getTabs()
 			.removeClass(this.options.tabActiveClass)
@@ -124,7 +124,7 @@ export default class Tabs {
 	}
 
 	/// Activates the previous tab, or the last tab if we're at the start
-	previous(loop) {
+	previous() {
 		var currentIndex = this.getCurrentIndex();
 		if(currentIndex === 0) {
 			this.last();

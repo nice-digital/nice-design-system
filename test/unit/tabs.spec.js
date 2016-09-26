@@ -174,14 +174,14 @@ describe("Tabs", function() {
 
 		it("active tab is aria-selected", function() {
 			var $el = $(tabsHTML);
-			var t = new Tabs($el);
+			new Tabs($el);
 			$("[role='tab']:eq(0)", $el).attr("aria-expanded").should.equal("true");
 			$("[role='tab']:eq(0)", $el).attr("aria-selected").should.equal("true");
 		});
 
 		it("inactive tabs are not aria-selected", function() {
 			var $el = $(tabsHTML);
-			var t = new Tabs($el);
+			new Tabs($el);
 			$("[role='tab']:gt(0)", $el).attr("aria-expanded").should.equal("false");
 			$("[role='tab']:gt(0)", $el).attr("aria-selected").should.equal("false");
 		});
@@ -245,7 +245,7 @@ describe("Tabs", function() {
 			var $el = $(tabsHTML);
 			var t = new Tabs($el);
 
-			t.last()
+			t.last();
 
 			t.getCurrentIndex().should.equal(2);
 
