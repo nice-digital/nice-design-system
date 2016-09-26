@@ -5,10 +5,13 @@ const delegateEvents = require("../../src/javascripts/delegate-events.js").defau
 
 describe("Delegate events", function() {
 
+	it("throws when no instance", function() {
+		(() => {
+			delegateEvents();
+		}).should.throw();
+	});
+
 	it("throws when function not found", function() {
-
-		var spy = sinon.spy($, "error");
-
 		class Test {
 			constructor() {
 				delegateEvents(this);
@@ -21,13 +24,11 @@ describe("Delegate events", function() {
 		}
 
 		(() => {
-			var test = new Test();
+			new Test();
 		}).should.throw();
-
-		spy.should.be.calledOnce;
 	});
 
-	it("should call function", function() {
+	it("should call function with context", function() {
 
 		var spy = sinon.spy();
 
@@ -46,10 +47,10 @@ describe("Delegate events", function() {
 		var test = new Test();
 		test.$el.find(".inner").trigger("click");
 
-		spy.should.be.calledOnce;
+		spy.should.be.calledOnce.and.be.calledOn(test);
 	});
 
-	it("should call method", function() {
+	it("should call named instance method with context", function() {
 
 		class Test {
 			constructor() {
@@ -61,8 +62,7 @@ describe("Delegate events", function() {
 					"click .inner": "_handler"
 				};
 			}
-			_handler() {
-			}
+			_handler() { }
 		}
 
 		var spy = sinon.spy(Test.prototype, "_handler");
@@ -70,7 +70,7 @@ describe("Delegate events", function() {
 		var test = new Test();
 		test.$el.find(".inner").trigger("click");
 
-		spy.should.be.calledOnce;
+		spy.should.be.calledOnce.and.be.calledOn(test);
 	});
 
 });

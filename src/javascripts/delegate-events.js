@@ -29,6 +29,14 @@ var delegateEventSplitter = /^(\S+)\s*(.*)$/;
  * @return {Object}          The instance
  */
 export default function delegateEvents(instance) {
+	if(!instance) {
+		$.error("Instance must be non-null");
+		return;
+	}
+	if(!instance.events || typeof instance.events !== "function") {
+		$.error("Instance must be non-null");
+		return;
+	}
 
 	var events = instance.events();
 
