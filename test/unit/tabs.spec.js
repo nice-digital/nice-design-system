@@ -14,7 +14,6 @@ const KeyCodes = {
 	DownArrow: 40
 };
 
-
 describe("Tabs", function() {
 
 	var $,
@@ -228,6 +227,53 @@ describe("Tabs", function() {
 			$("[role='tab']:eq(1)", $el)
 				.focus()
 				.trigger($.Event("keydown", { which: KeyCodes.DownArrow } ));
+
+			t.getCurrentIndex().should.equal(2);
+		});
+
+		it("end keydown on tab selects last tab", function() {
+			var $el = $(tabsHTML);
+			var t = new Tabs($el);
+
+			t.getCurrentIndex().should.equal(0);
+
+			$("[role='tab']:eq(0)", $el)
+				.focus()
+				.trigger($.Event("keydown", { which: KeyCodes.End } ));
+
+			t.getCurrentIndex().should.equal(2);
+		});
+
+		it("home keydown on tab selects last tab", function() {
+			var $el = $(tabsHTML);
+			var t = new Tabs($el);
+
+			t.last()
+
+			t.getCurrentIndex().should.equal(2);
+
+			$("[role='tab']:eq(2)", $el)
+				.focus()
+				.trigger($.Event("keydown", { which: KeyCodes.Home } ));
+
+			t.getCurrentIndex().should.equal(0);
+		});
+
+		it("enter/space keydown on selects focussed tab", function() {
+			var $el = $(tabsHTML);
+			var t = new Tabs($el);
+
+			t.getCurrentIndex().should.equal(0);
+
+			$("[role='tab']:eq(1)", $el)
+				.focus()
+				.trigger($.Event("keydown", { which: KeyCodes.Space } ));
+
+			t.getCurrentIndex().should.equal(1);
+
+			$("[role='tab']:eq(2)", $el)
+				.focus()
+				.trigger($.Event("keydown", { which: KeyCodes.Enter } ));
 
 			t.getCurrentIndex().should.equal(2);
 		});

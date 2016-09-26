@@ -15,6 +15,7 @@ Welcome to NICE Experience. Your source for creating beautiful, consistent exper
     - [Grunt](#grunt)
     - [npm](#npm)
     - [Node](#node)
+- [Test](#tests)
 - [Installation](#installation)
   - [CDN](#cdn)
   - [Install with npm](#install-with-npm)
@@ -157,13 +158,17 @@ There are a set of npm scripts within package.json, for convenience. However, it
 | ---- | ----------- |
 | `npm start`           | Simply runs `grunt` under the hood |
 | `npm test`            | Runs JS tests |
-| `npm run test:watch`  | Runs JS test tests and watches for changes. Useful to run in development alongside grunt. |
+| `npm run test:watch`  | Runs JS test tests (with [min reporter](https://github.com/mochajs/mocha/blob/master/lib/reporters/min.js)) and watches for changes. Useful to run in development alongside grunt. |
 | `npm run lint`        | Lints SASS and JS (uses `grunt lint` under the hood) |
 | `npm run serve`       | Spins up an express server through Node directly (NOT via Grunt) on port *54321* |
 
 #### Node
 
 Once the app (CSS/JS etc) has been built, the express app can be run via Node directly e.g. `node web/server`. This isn't really useful for development as it just runs on port 3000, doesn't build assets, watch for changes etc - use `grunt` instead for deveopment.
+
+## Tests
+
+We use [Mocha](http://mochajs.org/) for our JS testing, see the [test folder](test/) for more information.
 
 ## Installation
 
