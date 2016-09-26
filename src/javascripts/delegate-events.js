@@ -27,6 +27,8 @@ var delegateEventSplitter = /^(\S+)\s*(.*)$/;
  *
  * @param  {Object} instance An instance of an object
  * @return {Object}          The instance
+ * @throws {Error} If instance isn't truthy
+ * @throws {Error} If instance events isn't a function
  */
 export default function delegateEvents(instance) {
 	if(!instance) {

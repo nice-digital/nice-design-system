@@ -41,7 +41,7 @@ describe("Tabs", function() {
 				</ul>
 			</nav>
 			<div class="tabs__content">
-				<div lass="tabs__pane" role="tabpanel">
+				<div class="tabs__pane" role="tabpanel">
 					<h2>First tab</h2>
 					<p>This is the content for tab 1</p>
 				</div>
@@ -77,9 +77,16 @@ describe("Tabs", function() {
 			$tabs[0].should.equal($el[0], "collection contains element");
 		});
 
-		it("getter can be called", function() {
+		it("get method can be called", function() {
 			var $el = $(tabsHTML).tabs();
 			($el.tabs("getCurrentIndex")).should.equal(0);
+		});
+
+		it("get method throws with multiple elements", function() {
+			var $el = $(tabsHTML).add($(tabsHTML)).tabs();
+			(() => {
+				$el.tabs("getCurrentIndex");
+			}).should.throw();
 		});
 
 		it("method can be called", function() {
@@ -167,6 +174,18 @@ describe("Tabs", function() {
 
 	describe("Accessibility", function() {
 
+		it("tab has generated aria-controls matching its panel's id", function() {
+			var $el = $(tabsHTML);
+			new Tabs($el);
+			$("[role='tab']:eq(0)", $el).attr("aria-controls").should.equal($("[role='tabpanel']:eq(0)", $el).attr("id"));
+		});
+
+		it("tab panel has generated aria-labelledby matching its tabs's id", function() {
+			var $el = $(tabsHTML);
+			new Tabs($el);
+			$("[role='tab']:eq(0)", $el).attr("id").should.equal($("[role='tabpanel']:eq(0)", $el).attr("aria-labelledby"));
+		});
+
 		it("active tab is aria-selected", function() {
 			var $el = $(tabsHTML);
 			new Tabs($el);
@@ -179,6 +198,16 @@ describe("Tabs", function() {
 			new Tabs($el);
 			$("[role='tab']:gt(0)", $el).attr("aria-expanded").should.equal("false");
 			$("[role='tab']:gt(0)", $el).attr("aria-selected").should.equal("false");
+		});
+
+		it("inactive tab panels are not aria-hidden", function() {
+			var $el = $(tabsHTML);
+			var tabs = new Tabs($el);
+			$("[role='tabpanel']:eq(0)", $el).attr("aria-hidden").should.equal("false");
+			$("[role='tabpanel']:gt(0)", $el).attr("aria-hidden").should.equal("true");
+			tabs.next();
+			$("[role='tabpanel']:eq(1)", $el).attr("aria-hidden").should.equal("false");
+			$("[role='tabpanel']:not(:eq(1))", $el).attr("aria-hidden").should.equal("true");
 		});
 
 	});
