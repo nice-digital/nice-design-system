@@ -1,7 +1,6 @@
 /* eslint-env node, mocha */
 
-const should = require("should"),
-	jsdom = require("jsdom");
+const should = require("should");
 
 const KeyCodes = {
 	Enter: 13,
@@ -59,13 +58,11 @@ describe("Tabs", function() {
 	`;
 
 	before(function () {
-		document = global.document = jsdom.jsdom("<html><head></head><body></body></html>");
-		global.window = document.defaultView;
-		$ = global.jQuery = global.$ = require("jquery");
+		document = global.document;
+		$ = global.$;
 
 		Tabs = require("../../src/javascripts/tabs.js").default;
 	});
-
 
 	describe("jQuery integration", function() {
 

@@ -23,9 +23,9 @@
     "start": "grunt",
     "webpack:dev": "SET \"NODE_ENV=development\" && webpack --progress --colors --display-error-details",
     "webpack:dist": "SET \"NODE_ENV=production\" && webpack --config ./webpack.production.config.js",
-    "test": "mocha test/**/*.spec.js --require babel-core/register",
-    "test:coverage": "node ./node_modules/istanbul/lib/cli cover node_modules/mocha/bin/_mocha -- --compilers js:babel-register --recursive test",
-    "test:watch": "mocha test/**/*.spec.js --require babel-core/register --reporter min --watch",
+    "test": "mocha test/**/*.spec.js --require babel-core/register test/_setup.js",
+    "test:watch": "mocha test/**/*.spec.js --require babel-core/register test/_setup.js --reporter min --watch",
+    "test:coverage": "node ./node_modules/istanbul/lib/cli cover node_modules/mocha/bin/_mocha -- --compilers js:babel-register --require test/_setup.js test/**/*.spec.js",
     "lint": "grunt lint",
     "serve": "set PORT=54321&& node web/server",
     "prepublish": "grunt prepublish"

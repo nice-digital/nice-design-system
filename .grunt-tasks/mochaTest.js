@@ -1,8 +1,8 @@
 module.exports = {
 	test : {
-		src: ["test/**/*.js"],
+		src: ["test/**/*.spec.js"],
 		options: {
-			require: "babel-core/register"
+			require: ["babel-core/register", "./test/_setup.js"]
 		}
 	}
 };
