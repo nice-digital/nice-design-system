@@ -15,10 +15,10 @@
 	<link href="//fonts.googleapis.com/css?family=Lato:200normal,200italic,300normal,300italic,400normal,400italic,700normal,700italic,900normal,900italic" rel="stylesheet" type="text/css">
 
 	{# HLJS doesn't support IE8 #}
-	<!--[if gt IE 8]>
+	<!--[if gte IE 9 | !IE ]><!-->
 		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/default.min.css">
 		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/github.min.css">
-	<![endif]-->
+	<!--<![endif]-->
 
 	<!--[if lt IE 9]>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -139,11 +139,11 @@
 	<![endif]-->
 
 	{# HLJS doesn't support IE8 #}
-	<!--[if gt IE 8]>
+	<!--[if gte IE 9 | !IE ]><!-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/languages/scss.min.js"></script>
 		<script>hljs.initHighlightingOnLoad();</script>
-	<![endif]-->
+	<!--<![endif]-->
 
 	<script>
 		if(typeof console !== "undefined" && console.info) {
