@@ -3,8 +3,8 @@
 Welcome to NICE Experience. Your source for creating beautiful, consistent experiences across NICE.
 
   [![License](https://img.shields.io/github/license/nhsevidence/nice-experience.svg)](https://github.com/nhsevidence/NICE-Experience/blob/master/LICENSE)
-  [![Dependencies](https://img.shields.io/david/nhsevidence/nice-experience.svg)](https://npmjs.org/package/nice-experience)
-  [![Dev dependencies](https://img.shields.io/david/dev/nhsevidence/nice-experience.svg)](https://npmjs.org/package/nice-experience)
+  [![Dependencies](https://img.shields.io/david/nhsevidence/nice-experience.svg)](https://david-dm.org/nhsevidence/nice-experience)
+  [![Dev dependencies](https://img.shields.io/david/dev/nhsevidence/nice-experience.svg)](https://david-dm.org/nhsevidence/nice-experience?type=dev)
 
 ## Table of contents
 
