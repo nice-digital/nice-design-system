@@ -94,7 +94,7 @@
 			Variable names should follow the <a href="http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-name-your-sass-variables-modularly/" target="_blank" rel="external">general-to-specific approach</a> as suggested on <a href="http://sass-lang.com/styleguide/code" target="_blank" rel="external">SASS's Code Style Guide</a>.
 		</p>
 
-		{% source "css", "Variable naming example" -%}
+		{% source "scss", "Variable naming example" -%}
 			$color-link;
 			$color-link-dark;
 			$color-link-light;
@@ -109,7 +109,7 @@
 			The other difference from @mdo's Code Guide is comment style. We use <a href="http://sassdoc.com/" target="_blank" rel="external">SassDoc</a> to auto-generate documentation from our comments, so we use <a href="http://sassdoc.com/annotations/" target="_blank" rel="external">SassDoc annotations</a> and <a href="http://sassdoc.com/file-level-annotations/" target="_blank" rel="external">file-level annotations</a>
 		</p>
 
-		{% source "css", "SassDoc annotation example" -%}
+		{% source "scss", "SassDoc annotation example" -%}
 			/// This is the description of a mixin
 			/// @param {Number} $some-vale A value that gets passed in
 			@mixin($some-value) {
