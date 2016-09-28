@@ -11,8 +11,8 @@
     display: inline-block;
 
     &:before {
+      @include nice-icon(angle-right);
       color: get-colour(grey);
-      content: get-glyph(greater-than);
       margin: scut-em(0 10);
     }
 

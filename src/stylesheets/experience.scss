@@ -23,3 +23,8 @@
 
 // Components
 @import 'components/components';
+
+
+.icon-test {
+  @include nice-icon(prescribing);
+}
