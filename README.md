@@ -163,6 +163,7 @@ There are a set of npm scripts within package.json, for convenience. However, it
 | `npm start`           | Simply runs `grunt` under the hood |
 | `npm test`            | Runs JS tests |
 | `npm run test:watch`  | Runs JS test tests (with [min reporter](https://github.com/mochajs/mocha/blob/master/lib/reporters/min.js)) and watches for changes. Useful to run in development alongside grunt. |
+| `npm run test:coverage`  | Runs JS test tests and generates a coverage report with [Istanbul](https://istanbul.js.org/) into the *coverage* folder |
 | `npm run lint`        | Lints SASS and JS (uses `grunt lint` under the hood) |
 | `npm run serve`       | Spins up an express server through Node directly (NOT via Grunt) on port *54321* |
 
