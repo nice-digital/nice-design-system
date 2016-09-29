@@ -1,7 +1,7 @@
 import $ from "jquery";
-import pluginAutoLoader from "plugin-autoloader";
+import experience from "experience";
 
-$().ready(function() {
+$(document).ready(function() {
 	// Load any plugins automatically
-	pluginAutoLoader.findPlugins();
+	$(document).experience();
 });

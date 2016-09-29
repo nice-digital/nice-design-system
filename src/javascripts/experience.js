@@ -3,10 +3,9 @@ import pluginAutoLoader from "plugin-autoloader";
 import Tabs from "tabs";
 import Tracker from "tracker";
 
-$().ready(function() {
-	// Load any plugins automatically
-	pluginAutoLoader.findPlugins();
-});
+$.fn.experience = function() {
+	pluginAutoLoader.findPlugins(this);
+};
 
 let experience = {
 	Tabs: Tabs,

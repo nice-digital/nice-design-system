@@ -167,4 +167,4 @@ export default class Tracker {
 }
 
 // Turn the tracker into a jQuery plugin
-pluginizr("track", Tracker);
+pluginizr("tracker", Tracker);
