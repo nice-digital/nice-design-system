@@ -35,7 +35,7 @@ export default {
 				let $el = $(el);
 
 				if(!PRODUCTION) { // Store the path we required it from, for debugging
-					$el.data("require-path", plugin.key)
+					$el.data("require-path", plugin.key);
 				}
 
 				// TODO: Convert plugin data-attributes into options object
