@@ -1,16 +1,7 @@
 /* eslint-env node, mocha, jquery */
 /* global sinon */
 
-const KeyCodes = {
-	Enter: 13,
-	Space: 32,
-	End: 35,
-	Home: 36,
-	LeftArrow: 37,
-	UpArrow: 38,
-	RightArrow: 39,
-	DownArrow: 40
-};
+const keycode = require("keycode");
 
 describe("Tabs", function() {
 
@@ -225,51 +216,63 @@ describe("Tabs", function() {
 	describe("Keyboard control", function() {
 
 		// Test helper for repetitive key testing
-		function testKey(which, methodName) {
+		function testKey(keyName, methodName) {
 			let $el = $(tabsHTML),
 				method = sandbox.spy(new Tabs($el), methodName);
 
 			$("[role='tab']:eq(0)", $el)
 				.focus()
-				.trigger($.Event("keydown", { which: which } ));
+				.trigger($.Event("keydown", { which: keycode(keyName) } ));
 
 			method.should.be.calledOnce;
 		}
 
 		it("left keydown on tab calls previous", function() {
-			testKey(KeyCodes.LeftArrow, "previous");
+			testKey("left", "previous");
 		});
 
 		it("up keydown on tab calls previous", function() {
-			testKey(KeyCodes.UpArrow, "previous");
+			testKey("up", "previous");
 		});
 
 		it("right keydown on tab calls next", function() {
-			testKey(KeyCodes.RightArrow, "next");
+			testKey("right", "next");
 		});
 
 		it("down keydown on tab calls next", function() {
-			testKey(KeyCodes.DownArrow, "next");
+			testKey("down", "next");
 		});
 
 		it("end keydown on tab calls last", function() {
-			testKey(KeyCodes.End, "last");
+			testKey("end", "last");
 		});
 
 		it("home keydown on tab calls first", function() {
-			testKey(KeyCodes.Home, "first");
+			testKey("home", "first");
 		});
 
-		it("enter/space keydown on selects focussed tab", function() {
+		it("space keydown selects focussed tab", function() {
 
 			let $el = $(tabsHTML),
 				activate = sandbox.spy(new Tabs($el), "activate");
 
 			$("[role='tab']:eq(1)", $el)
 				.focus()
-				.trigger($.Event("keydown", { which: KeyCodes.Space } ));
+				.trigger($.Event("keydown", { which: keycode("space") } ));
 
 			activate.withArgs(1).should.be.calledOnce;
+		});
+
+		it("enter keydown selects focussed tab", function() {
+
+			let $el = $(tabsHTML),
+				activate = sandbox.spy(new Tabs($el), "activate");
+
+			$("[role='tab']:eq(2)", $el)
+				.focus()
+				.trigger($.Event("keydown", { which: keycode("enter") } ));
+
+			activate.withArgs(2).should.be.calledOnce;
 		});
 
 	});

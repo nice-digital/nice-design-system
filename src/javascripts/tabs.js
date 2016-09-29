@@ -6,6 +6,7 @@
  */
 
 import $ from "jquery";
+import keycode from "keycode";
 import pluginizr from "./pluginizr";
 import delegateEvents from "./delegate-events";
 
@@ -15,17 +16,6 @@ const Defaults = {
 	tabButtonClass: "tabs__tab-btn",
 	tabPaneClass: "tabs__pane",
 	tabPaneActiveClass: "tabs__pane--active"
-};
-
-const KeyCodes = {
-	Enter: 13,
-	Space: 32,
-	End: 35,
-	Home: 36,
-	LeftArrow: 37,
-	UpArrow: 38,
-	RightArrow: 39,
-	DownArrow: 40
 };
 
 // Generate unique id amongst tabs
@@ -177,41 +167,41 @@ export default class Tabs {
 
 	// Enable keyboard control of the tabs
 	_handleTabBtnKeydown(e) {
-		switch(e.which)
+		switch(keycode(e.which))
 		{
 			// Go backwards one tab
-			case KeyCodes.LeftArrow:
-			case KeyCodes.UpArrow:
+			case "left":
+			case "up":
 				e.preventDefault();
 				e.stopPropagation();
 				this.previous();
 				break;
 
 			// Go forward one tab
-			case KeyCodes.RightArrow:
-			case KeyCodes.DownArrow:
+			case "right":
+			case "down":
 				e.preventDefault();
 				e.stopPropagation();
 				this.next();
 				break;
 
 			// Go to the first tab
-			case KeyCodes.Home:
+			case "home":
 				e.preventDefault();
 				e.stopPropagation();
 				this.first();
 				break;
 
 			// Go to the last tab
-			case KeyCodes.End:
+			case "end":
 				e.preventDefault();
 				e.stopPropagation();
 				this.last();
 				break;
 
 			// Go to the focussed tab
-			case KeyCodes.Enter:
-			case KeyCodes.Space:
+			case "enter":
+			case "space":
 				e.preventDefault();
 				e.stopPropagation();
 				this.activate($(e.currentTarget).closest(`.${ this.options.tabClass }`).index());
@@ -223,7 +213,7 @@ export default class Tabs {
 
 	// Focus the current tab btn on a ctrl+up or ctrl+left when in a tab pane
 	_handlePaneKeydown(e) {
-		if($.inArray(e.which, [KeyCodes.UpArrow, KeyCodes.LeftArrow]) > -1 && e.ctrlKey) {
+		if($.inArray(keycode(e.which), ["up", "left"]) > -1 && e.ctrlKey) {
 			e.preventDefault();
 			e.stopPropagation();
 
