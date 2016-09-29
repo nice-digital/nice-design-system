@@ -239,7 +239,7 @@ var experience = require("experience");
 var tabs = new experience.Tabs(el);
 
 // Not recommended - global namespace usage
-var tabs = new NICE.experience.Tabs(el);
+var tabs = new NICE.Experience.Tabs(el);
 
 // Use the jquery plugin version
 $(".a-selector").tabs();

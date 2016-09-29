@@ -7,17 +7,17 @@ $.fn.experience = function() {
 	pluginAutoLoader.findPlugins(this);
 };
 
-let experience = {
+let Experience = {
 	Tabs: Tabs,
 	Tracker: Tracker
 };
 
 // Export to global namespace for precompiled usage
 window.NICE = window.NICE || {};
-window.NICE.experience = experience;
+window.NICE.Experience = Experience;
 
 export {
-	experience as default,
+	Experience as default,
 	// Individual modules
 	Tabs,
 	Tracker
