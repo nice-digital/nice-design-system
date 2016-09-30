@@ -8,27 +8,37 @@
 	<section id="breadcrumbs">
 
 		<ul>
-			<li>Use <code>class="breadcrumbs__crumb--active"</code> for current page</li>
+			<li>Use a <code>nav</code> element</li>
+			<li>Use <code>aria-label</code> to describe the breadcrumbs</li>
+			<li>Use <code>visually-hidden</code> to only show the 'you are here' label to screen readers.</li>
+			<li>Use <a href="http://schema.org/BreadcrumbList" target="_blank" rel="external">schema.org</a> microdata</li>
 		</ul>
 
 		{% example "html" -%}
-			<ol class="breadcrumbs">
-				<li class="breadcrumbs__crumb"><a href="#">Home</a></li>
-				<li class="breadcrumbs__crumb"><a href="#">Nice Guidance</a></li>
-				<li class="breadcrumbs__crumb breadcrumbs__crumb--active">Conditions and diseases</li>
-			</ol>
-		{%- endexample %}
-
-		<h2>Breadcrumbs with schema microdata</h2>
-
-		<p>Used to improve the web by creating a structured data markup schema supported by major search engines. On-page markup helps search engines understand the information on web pages and provide richer search results.</p>
-
-		{% example "html" -%}
-			<ol class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
-				<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="#">Home</a></li>
-				<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="#">Nice Guidance</a></li>
-				<li class="breadcrumbs__crumb breadcrumbs__crumb--active" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">Population groups</li>
-			</ol>
+			<nav aria-label="Breadcrumbs" role="navigation">
+				<h2 class="visually-hidden" id="breadcrumb-label">
+					You are here:
+				</h2>
+				<ol class="breadcrumbs" aria-labelledby="breadcrumb-label" itemscope itemtype="http://schema.org/BreadcrumbList">
+					<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a href="/" itemprop="name">
+							Home
+						</a>
+						<meta itemprop="position" content="1">
+					</li>
+					<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a href="/guidance" itemprop="name">
+							NICE Guidance
+						</a>
+						<meta itemprop="position" content="2">
+					</li>
+					<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">			<span itemprop="name">
+							Population groups
+						</span>
+						<meta itemprop="position" content="3">
+					</li>
+				</ol>
+			</nav>
 		{%- endexample %}
 	</section>
 

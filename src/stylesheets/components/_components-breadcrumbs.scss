@@ -2,6 +2,7 @@
 /// @group components
 ////
 
+// See https://www.w3.org/WAI/WCAG20/Techniques/working-examples/G65/ex3.html
 .breadcrumbs {
   list-style: none;
   margin: 0;
@@ -18,10 +19,6 @@
 
     &:first-child:before {
       display: none;
-    }
-
-    &--active {
-      color: $colour-text;
     }
 
     a {

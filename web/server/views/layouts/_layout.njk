@@ -90,28 +90,38 @@
 
 	{% if breadcrumbs %}
 		<div class="container">
-			<ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
-				<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-					<a href="/">
-						NICE Experience
-					</a>
-				</li>
-				{% for crumb in breadcrumbs %}
-					{% if crumb %}
-						{% if crumb.href %}
-							<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-								<a href="{{ crumb.href }}">
-									{{ crumb.title }}
-								</a>
-							</li>
-						{% else %}
-							<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-								{{ crumb.title }}
-							</li>
+			<nav aria-label="Breadcrumbs" role="navigation">
+				<h2 class="visually-hidden" id="breadcrumb-label">
+					You are here:
+				</h2>
+				<ol class="breadcrumbs" aria-labelledby="breadcrumb-label" itemscope itemtype="http://schema.org/BreadcrumbList">
+					<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a href="/" itemprop="name">
+							NICE Experience
+						</a>
+						<meta itemprop="position" content="1">
+					</li>
+					{% for crumb in breadcrumbs %}
+						{% if crumb %}
+							{% if crumb.href %}
+								<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+									<a href="{{ crumb.href }}" itemprop="name">
+										{{ crumb.title }}
+									</a>
+									<meta itemprop="position" content="{{ loop.index + 1 }}">
+								</li>
+							{% else %}
+								<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+									<span itemprop="name">
+										{{ crumb.title }}
+									</span>
+									<meta itemprop="position" content="{{ loop.index + 1 }}">
+								</li>
+							{% endif %}
 						{% endif %}
-					{% endif %}
-				{% endfor %}
-			</ol>
+					{% endfor %}
+				</ol>
+			</nav>
 		</div>
 	{% endif %}
 
