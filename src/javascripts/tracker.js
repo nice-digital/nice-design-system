@@ -4,18 +4,21 @@
  */
 
 import $ from "jquery";
-import pluginizr from "pluginizr";
+import pluginizr from "./pluginizr";
+import eventr from "./eventr";
 
-const defaultTrackSelectors = [
-	"a[data-track]",
-	"button[data-track]",
-	"[type='submit'][data-track]",
-	"[type='reset'][data-track]",
-	"[type='image'][data-track]",
-	"[data-track] a",
-	"[data-track] button",
-	".tophat a"
-];
+const Defaults = {
+	trackSelectors: [
+		"a[data-track]",
+		"button[data-track]",
+		"[type='submit'][data-track]",
+		"[type='reset'][data-track]",
+		"[type='image'][data-track]",
+		"[data-track] a",
+		"[data-track] button",
+		".tophat a"
+	]
+};
 
 const TagManager = "TagManager",
 	Classic = "Classic",
@@ -26,7 +29,7 @@ function trackingLibrary(): string {
 	if(window.dataLayer && typeof window.dataLayer.push === "function")
 		return TagManager;
 
-	if(typeof window.ga === "function")
+	if (window._gaq && typeof window._gaq.push === "function")
 		return Classic;
 
 	if(typeof window.ga === "function")
@@ -46,125 +49,203 @@ function trackingLibrary(): string {
  * @param {string} message An optional error message if it fails
  */
 
+/**
+ * Tracks an event to the current loaded analytics services (either GTM/GA/UA)
+ * @param  {string} category        The name you supply for the group of objects you want to track.
+ * @param  {string} action        	A string that is uniquely paired with each category, and commonly used to define the type of user interaction for the web object.
+ * @param  {string} label        	An optional string to provide additional dimensions to the event data.
+ * @param  {integer} value       	An optional integer that you can use to provide numerical data about the user event.
+ * @param  {hitCallback} callback 	A function to callback
+ * @param  {boolean} nonInteraction Specified an event as a non-interaction event. Note: non-interaction can"t be set via the datalayer in GTM
+ * @return {Promise}				A promise that resolves when the track has successfully finished
+ * @example
+ * 	import Tracker from "tracker";
+ * 	Tracker.trackEvent("ct", "actn", "lbl").then(() => {
+ * 		console.log("tracked");
+ * 	}).catch(err => {
+ * 		console.log("Error tracking " + err);
+ * 	};
+ */
+export function sendEvent(category: string,
+	action: string,
+	label: ?string = "",
+	value: ?number,
+	callback: ?() => void = null,
+	nonInteraction: boolean = false): Promise {
+
+	if(trackingLibrary() == TagManager)
+		return sendDataLayerEvent(category, action, label, value, callback);
+	else if(trackingLibrary() == Universal)
+		return sendUniversalEvent(category, action, label, value, callback, nonInteraction);
+	else if(trackingLibrary() == Classic)
+		return sendClassicEvent(category, action, label, value, callback, nonInteraction);
+
+	// If no tracking library is available then reject the promise straight away.
+	return new Promise((resolve, reject) => {
+		const msg = "No tracking library available";
+
+		if(typeof callback === "function")
+			callback(msg);
+
+		return reject(msg);
+	});
+}
+
+/**
+ * Sends an event to the GTM data layer
+ * @param  {String} category 	Category
+ * @param  {String} action 		Action
+ * @param  {String} label 		Label
+ * @param  {Int} values			Value
+ * @param  {Function} callback 	Callback
+ * @return {Promise}			A promise resolved when the track has fired
+ */
+export function sendDataLayerEvent(category: string,
+	action: string,
+	label: ?string = "",
+	value: ?number = null,
+	callback: ?() => void = null): Promise {
+
+	if(trackingLibrary() !== TagManager) {
+		return new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
+			const msg = "Google Tag Manager is not available";
+			if(typeof callback === "function")
+				callback(msg);
+			reject(msg);
+		});
+	}
+
+	const data = {
+		event: "GAevent",
+		eventCategory: category,
+		eventAction: action,
+		eventLabel: label
+	};
+
+	if (value)
+		data.eventValue = value;
+
+	return new Promise(resolve => {
+		data.eventCallback = function() {
+			if(typeof callback === "function")
+				callback();
+			resolve();
+		};
+
+		window.dataLayer.push(data);
+	});
+}
+
+/**
+ * Sends an event to the Universal Analytics
+ * @param  {String} category 	Category
+ * @param  {String} action 		Action
+ * @param  {String} label 		Label
+ * @param  {Int} values			Value
+ * @param  {Function} callback 	Callback
+ * @return {Promise}			A promise resolved when the track has fired
+ */
+export function sendUniversalEvent(category: string,
+	action: string,
+	label: ?string = "",
+	value: ?number = null,
+	callback: ?() => void = null): Promise {
+
+	if(trackingLibrary() !== Universal) {
+		return new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
+			const msg = "Universal Analytics is not available";
+			if(typeof callback === "function")
+				callback(msg);
+			reject(msg);
+		});
+	}
+
+	return new Promise((resolve) => {
+		var cb = () => {
+			if(typeof callback === "function")
+				callback();
+			resolve();
+		};
+
+		window.ga("send", {
+			hitType: "event",
+			eventCategory: category,
+			eventAction: action,
+			eventLabel: label,
+			eventValue: value,
+			hitCallback: cb
+		});
+	});
+}
+
+
+
+export function sendClassicEvent(category: string,
+	action: string,
+	label: ?string = "",
+	value: ?number = null,
+	callback: ?() => void = null): Promise {
+
+	if(trackingLibrary() !== Classic) {
+		return new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
+			const msg = "Classic Analytics is not available";
+			if(typeof callback === "function")
+				callback(msg);
+			reject(msg);
+		});
+	}
+
+	return new Promise((resolve) => {
+		var cb = () => {
+			if(typeof callback === "function")
+				callback();
+			resolve();
+		};
+
+		window._gaq.push(["_set", "hitCallback", cb]);
+		window._gaq.push(["_trackEvent", category, action, label, value]);
+	});
+}
+
 /// @class Tracker
 /// Base on the old NICE.EventTracking.js.
 /// @link //cdn.nice.org.uk/V3/Scripts/nice/NICE.EventTracking.js
 export default class Tracker {
 
+	static defaults() {
+		return Defaults;
+	}
+
 	constructor(element, options) {
 		this.el = element;
 		this.$el = $(element);
 
-		this.options = $.extend({}, Tracker.defaults, options);
+		this.options = $.extend({}, Tracker.defaults(), options);
 
-		this._bindEvents();
+		this.delegate();
 	}
 
-	_bindEvents() {
-		this.$el.on("click", e => {
-
-			// TODO: Track click event
-			console.log("TODO: Track click event");
-		});
-	}
-
-	/// Default options for tracker
-	static defaults() {
+	events() {
 		return {
-			test: true
+			[`click .${ this.options.trackSelectors }`]: "_handleTrack"
 		};
 	}
 
-	/**
-	 * Tracks an event to the current loaded analytics services (either GTM/GA/UA)
-	 * @param  {string} category        The name you supply for the group of objects you want to track.
-	 * @param  {string} action        	A string that is uniquely paired with each category, and commonly used to define the type of user interaction for the web object.
-	 * @param  {string} label        	An optional string to provide additional dimensions to the event data.
-	 * @param  {integer} value       	An optional integer that you can use to provide numerical data about the user event.
-	 * @param  {hitCallback} callback 	A function to callback
-	 * @param  {boolean} nonInteraction Specified an event as a non-interaction event. Note: non-interaction can't be set via the datalayer in GTM
-	 * @return {Promise}				A promise that resolves when the track has successfully finished
-	 * @example
-	 * 	import Tracker from "tracker";
-	 * 	Tracker.trackEvent("ct", "actn", "lbl").then(() => {
-	 * 		console.log("tracked");
-	 * 	}).catch(err => {
-	 * 		console.log("Error tracking " + err);
-	 * 	};
-	 */
-	static trackEvent(category: string,
-		action: string,
-		label: ?string = "",
-		value: ?number,
-		callback: ?() => void = null,
-		nonInteraction: boolean = false): Promise {
+	_handleTrack(e) {
+		var $el = $(e.currentTarget);
 
-		if(trackingLibrary() == TagManager)
-			return Tracker.sendDataLayerEvent(category, action, label, value, callback);
+		let cat = $el.data("track-category"),
+			action = $el.data("track-action"),
+			label = $el.data("track-label"),
+			value = $el.data("track-value");
 
-		// TODO: Implement GA Classic & Universal
-		if(trackingLibrary() == Universal)
-			throw new Error("Universal analytics not implemented yet");
-
-		if(trackingLibrary() == Classic)
-			throw new Error("Classic analytics not implemented yet");
-
-		// If no tracking library is available then reject the promise straight away.
-		return new Promise((resolve, reject) => {
-			const msg = "No tracking library available";
-
-			if(typeof callback === "function")
-				callback(msg);
-
-			return reject(msg);
-		});
-	}
-
-	/**
-	 * Sends an event to the GTM data layer
-	 * @param  {[type]} category: string        [description]
-	 * @param  {[type]} action:   string        [description]
-	 * @param  {String} label:    ?string       [description]
-	 * @param  {[type]} value:    ?number       [description]
-	 * @param  {[type]} callback: ?(            [description]
-	 * @return {[type]}           [description]
-	 */
-	static sendDataLayerEvent(category: string,
-		action: string,
-		label: ?string = "",
-		value: ?number = null,
-		callback: ?() => void = null): Promise {
-
-		if(trackingLibrary() !== TagManager) {
-			return new Promise((resolve, reject) => {
-				const msg = "Google Tag Manager is not available";
-				if(typeof callback === "function")
-					callback(msg);
-				resolve(msg);
-			});
-		}
-
-		const data = {
-			event: "GAevent",
-			eventCategory: category,
-			eventAction: action,
-			eventLabel: label
-		};
-
-		if (value)
-			data.eventValue = value;
-
-		return new Promise(resolve => {
-			data.eventCallback = function() {
-				if(typeof callback === "function")
-					callback();
-				resolve();
-			};
-
-			window.dataLayer.push(data);
-		});
+		sendEvent(cat, action, label, value);
 	}
 }
+Tracker.sendEvent = sendEvent;
+Tracker.sendDataLayerEvent = sendDataLayerEvent;
+Tracker.sendUniversalEvent = sendUniversalEvent;
+Tracker.sendClassicEvent = sendClassicEvent;
 
-// Turn the tracker into a jQuery plugin
+eventr(Tracker);
 pluginizr("tracker", Tracker);
