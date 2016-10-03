@@ -1,7 +1,7 @@
 import $ from "jquery";
-import pluginAutoLoader from "plugin-autoloader";
-import Tabs from "tabs";
-import Tracker from "tracker";
+import pluginAutoLoader from "./plugin-autoloader";
+import Tabs from "./tabs";
+import Tracker from "./tracker";
 
 $.fn.experience = function() {
 	pluginAutoLoader.findPlugins(this);
