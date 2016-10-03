@@ -3,6 +3,7 @@ module.exports = {
 		src: ["./src/stylesheets/**/*.scss", "./web/client/stylesheets/**/*.scss"]
 	},
 	options: {
-		configFile: "./src/stylesheets/.sass-lint.yml"
+		configFile: "./src/stylesheets/.sass-lint.yml",
+		formatter: "table"
 	}
 };

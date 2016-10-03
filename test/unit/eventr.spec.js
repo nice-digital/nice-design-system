@@ -1,5 +1,5 @@
 /* eslint-env node, mocha, jquery */
-/* global sinon */
+/* global sinon, should */
 
 const eventr = require("../../src/javascripts/eventr.js").default,
 	delegate = require("../../src/javascripts/eventr.js").delegate,

@@ -1,6 +1,17 @@
+var moment = require("moment"),
+	grunt = require("grunt");
+
 var eslint = require("./eslint");
 
 module.exports = {
+	options: {
+		dateFormat: function(time) {
+			grunt.log.writeln();
+			grunt.log.writeln(`Finished watch task in ${ time }s (${ moment().format("h:mm:ss a") })`);
+			grunt.log.writeln("Waiting...");
+			grunt.log.writeln();
+		}
+	},
 	sass: {
 		files: ["./src/stylesheets/**/*.scss", "./web/client/stylesheets/**/*.scss"],
 		tasks: ["sass:dev", "newer:sasslint", "sassdoc"],

@@ -1,8 +1,9 @@
 /*eslint-env node*/
-var path = require("path");
+const path = require("path"),
+	chalk = require("chalk");
 
 module.exports = grunt => {
-	require("time-grunt")(grunt);
+	//require("time-grunt")(grunt);
 
 	require("load-grunt-config")(grunt, {
 		configPath: path.join(process.cwd(), ".grunt-tasks"),
@@ -14,6 +15,15 @@ module.exports = grunt => {
 			}
 		}
 	});
+
+	grunt.log.header = (msg) => {
+		if(/^Running \"newer.*/.test(msg)) return;
+
+		let taskName = msg.match(/"(.*)"/)[1];
+		grunt.log.writeln();
+		grunt.log.writeln(chalk.magenta("TASK: " + taskName));
+		grunt.log.writeln();
+	};
 
 	var r = grunt.registerTask;
 
