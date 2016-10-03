@@ -8,7 +8,7 @@
 import $ from "jquery";
 import keycode from "keycode";
 import pluginizr from "./pluginizr";
-import delegateEvents from "./delegate-events";
+import eventr from "./eventr";
 
 const Defaults = {
 	tabClass: "tabs__tab",
@@ -63,7 +63,7 @@ export default class Tabs {
 
 		});
 
-		delegateEvents(this);
+		this.delegate();
 
 		this.activate(0, false);
 	}
@@ -223,4 +223,5 @@ export default class Tabs {
 	}
 }
 
+eventr(Tabs);
 pluginizr("tabs", Tabs);
