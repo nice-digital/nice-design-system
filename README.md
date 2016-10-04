@@ -2,9 +2,9 @@
 
 Welcome to NICE Experience. Your source for creating beautiful, consistent experiences across NICE.
 
-  [![License](https://img.shields.io/github/license/nhsevidence/nice-experience.svg)](https://github.com/nhsevidence/NICE-Experience/blob/master/LICENSE)
-  [![Dependencies](https://img.shields.io/david/nhsevidence/nice-experience.svg)](https://david-dm.org/nhsevidence/nice-experience)
-  [![Dev dependencies](https://img.shields.io/david/dev/nhsevidence/nice-experience.svg)](https://david-dm.org/nhsevidence/nice-experience?type=dev)
+	[![License](https://img.shields.io/github/license/nhsevidence/nice-experience.svg)](https://github.com/nhsevidence/NICE-Experience/blob/master/LICENSE)
+	[![Dependencies](https://img.shields.io/david/nhsevidence/nice-experience.svg)](https://david-dm.org/nhsevidence/nice-experience)
+	[![Dev dependencies](https://img.shields.io/david/dev/nhsevidence/nice-experience.svg)](https://david-dm.org/nhsevidence/nice-experience?type=dev)
 
 ## Table of contents
 
@@ -13,25 +13,25 @@ Welcome to NICE Experience. Your source for creating beautiful, consistent exper
 - [Project structure](#project-structure)
 - [Prerequisites](#prerequisites)
 - [Development](#development)
-  - [Option 1: Docker](#option-1-docker)
-    - [Troubleshooting](#docker-troubleshooting)
-  - [Option 2: Grunt](#option-2-grunt)
-    - [Grunt](#grunt)
-    - [npm](#npm)
-    - [Node](#node)
+	- [Option 1: Docker](#option-1-docker)
+		- [Troubleshooting](#docker-troubleshooting)
+	- [Option 2: Grunt](#option-2-npm-grunt)
+		- [Grunt](#grunt)
+		- [npm](#npm)
+		- [Node](#node)
 - [Test](#tests)
 - [Installation](#installation)
-  - [CDN](#cdn)
-  - [Install with npm](#install-with-npm)
-    - [Precompiled (npm)](#precompiled-npm)
-    - [Source (npm)](#source-npm)
-  - [Install with Bower](#install-with-bower)
+	- [CDN](#cdn)
+	- [Install with npm](#install-with-npm)
+		- [Precompiled (npm)](#precompiled-npm)
+		- [Source (npm)](#source-npm)
+	- [Install with Bower](#install-with-bower)
 - [JavaScript](#javascript)
-  - [JS Compilation](#js-compilation)
-  - [Flow type](#flow-type)
-  - [ESLint](#eslint)
-  - [Auto plugin loader](#auto-plugin-loader)
-  - [JS Comments](#js-comments)
+	- [JS Compilation](#js-compilation)
+	- [Flow type](#flow-type)
+	- [ESLint](#eslint)
+	- [Auto plugin loader](#auto-plugin-loader)
+	- [JS Comments](#js-comments)
 
 ## What is it?
 
@@ -109,8 +109,8 @@ from a shell is enough to:
 1. build our custom image (named 'experience') if it hasn't been built already
 2. share a volume of the app's code for development
 3. run the container (named 'experience'), exposing necessary ports
-   - *12345* (mapped to 54321 inside) for the web app
-   - *35729* for livereload
+	 - *12345* (mapped to 54321 inside) for the web app
+	 - *35729* for livereload
 4. run `grunt watch` inside the container
 5. opens http://localhost:12345 on the host to browse to the web app
 
@@ -128,16 +128,21 @@ to attach a command prompt. Not use of *ash* not *bash* as we're using Alpine.
 
 Is your source code shared with VB? Is your C drive shared with Docker? Have a look at https://blogs.msdn.microsoft.com/stevelasker/2016/06/14/configuring-docker-for-windows-volumes/ if you're still struggling with credentials for shared folders on Windows.
 
-### Option 2: Grunt
+### Option 2: npm/Grunt
 
-If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide.
+	TL;DR:
+		1. `npm i -g grunt-cli`
+		2. `npm i`
+		3. `npm start`
 
-We use Grunt as a task runner to build assets etc so a dependency on Node. Once built, you can run the app itself via Node directly if you want, but the easiest thing is just simply running `grunt` from the command line.
+If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide first.
 
-If you want to run the app directly on your machine you can do so, but you'll need:
+If you want to run the app directly (via Grunt/npm) on your machine you can do so, but you'll need:
 
 - Node 6+
 - npm 3.9+
+
+We use Grunt as a task runner to build assets etc so have a dependency on Node. Run `npm start` from the command line which will build the required assets (JS/CSS/web fonts) and serve the app.
 
 Before you run any tasks, you'll have to run the following from the command line to install dependencies:
 
@@ -148,7 +153,7 @@ Before you run any tasks, you'll have to run the following from the command line
 
 | Task | Description |
 | ---- | ----------- |
-| `grunt`      | Default. Lints, builds everything in parallel and runs an express server and a watch task for dev changes. |
+| `grunt`      | Default. Lints, builds everything in parallel and runs an express server and a watch task for dev changes. Prefer to use `npm start` instead. |
 | `grunt lint` | Lints SASS and JS |
 | `grunt test` | Runs JS tests |
 | `grunt dist` | Builds documentation, modernizr, CSS and JS in production mode (minified etc). Fro deploying the web app itself. |
@@ -156,7 +161,7 @@ Before you run any tasks, you'll have to run the following from the command line
 
 #### npm
 
-There are a set of npm scripts within package.json, for convenience. However, it's recommended to just use [Grunt](#grunt).
+Run `npm start` and `npm run test:watch` for development.
 
 | Task | Description |
 | ---- | ----------- |
@@ -169,11 +174,22 @@ There are a set of npm scripts within package.json, for convenience. However, it
 
 #### Node
 
-Once the app (CSS/JS etc) has been built, the express app can be run via Node directly e.g. `node web/server`. This isn't really useful for development as it just runs on port 3000, doesn't build assets, watch for changes etc - use `grunt` instead for deveopment.
+Once the app (CSS/JS etc) has been built, the express app can be run via Node directly e.g. `node web/server`. This isn't really useful for development as it just runs on port 3000, doesn't build assets, watch for changes etc - use `npm start` instead for deveopment. Running the web app directly via node is useful for production environments where the assets have already been built by a build server and we just need to serve the app.
 
 ## Tests
 
-We use [Mocha](http://mochajs.org/) for our JS testing, see the [test folder](test/) for more information.
+* `npm test`
+* `npm run test:watch`
+* `npm run test:coverage`
+
+We use the following tools for running front-end unit tests:
+
+* [Mocha](http://mochajs.org/) as our test framework
+* [Chai](http://chaijs.com/) and [Should](http://chaijs.com/guide/styles/#should) for assertions
+* [Sinon](http://sinonjs.org/) for spies, stubs and mocks
+* [Istanbul](http://gotwarlost.github.io/istanbul/) for coverage reports
+
+See the [test folder](test/).
 
 ## Installation
 
