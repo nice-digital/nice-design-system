@@ -1,14 +1,34 @@
 /* eslint-env node, mocha, jquery */
 /* global sinon */
 
-const keycode = require("keycode");
+const keycode = require("keycode"),
+	path = require("path"),
+	fs = require("fs"),
+	nunjucks = require("nunjucks");
+
+const testHelpers = require("../test-helpers");
 
 describe("Tabs", function() {
 
-	var Tabs;
+	var Tabs,
+		tabsHTML;
 
 	before(function () {
 		Tabs = require("../../src/javascripts/tabs.js").default;
+
+		tabsHTML = testHelpers.renderComponent("tabs", [
+		{
+			title: "Tab one",
+			content: "<h2>Tab one content</h2><p>This is the content for tab 1<a href=\"#\">A link</a></p>"
+		},
+		{
+			title: "Tab two",
+			content: "<h2>Tab two content</h2><p>This is the content for tab 2</p>"
+		},
+		{
+			title: "Tab three",
+			content: "<h2>Tab three content</h2><p>This is the content for tab 3</p>"
+		}]);
 	});
 
 	var sandbox;
@@ -19,44 +39,6 @@ describe("Tabs", function() {
 	afterEach(function () {
 		sandbox.restore();
 	});
-
-	var tabsHTML = `
-		<div class="tabs" data-nice-plugin="tabs">
-			<nav>
-				<ul class="tabs__list" role="tablist">
-					<li class="tabs__tab" role="presentation">
-						<button class="tabs__tab-btn" type="button" role="tab">
-							Tab 1
-						</button>
-					</li>
-					<li class="tabs__tab" role="presentation">
-						<button  class="tabs__tab-btn"type="button" role="tab">
-							Tab 2
-						</abutton>
-					</li>
-					<li class="tabs__tab" role="presentation">
-						<button class="tabs__tab-btn" type="button" role="tab">
-							Tab 3
-						</abutton>
-					</li>
-				</ul>
-			</nav>
-			<div class="tabs__content">
-				<div class="tabs__pane" role="tabpanel">
-					<h2>First tab</h2>
-					<p>This is the content for tab 1</p>
-				</div>
-				<div class="tabs__pane" role="tabpanel">
-					<h2>Second tab</h2>
-					<p>This is the content for tab 2</p>
-				</div>
-				<div class="tabs__pane" role="tabpanel">
-					<h2>Third tab</h2>
-					<p>This is the content for tab 3</p>
-				</div>
-			</div>
-		</div>
-	`;
 
 	describe("jQuery integration", function() {
 
