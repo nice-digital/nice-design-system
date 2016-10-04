@@ -21,14 +21,17 @@
   "browser": "src/javascripts",
   "scripts": {
     "start": "grunt --color",
+    "prepublish": "grunt prepublish",
+    "serve": "set PORT=54321&& node web/server --color",
+    "// JAVASCRIPT": "",
     "webpack:dev": "SET \"NODE_ENV=development\" && webpack --progress --colors --display-error-details",
     "webpack:dist": "SET \"NODE_ENV=production\" && webpack --config ./webpack.production.config.js",
+    "// TESTS": "",
     "test": "mocha test/**/*.spec.js --require babel-core/register --require mocha-clean --require test/_setup.js --color",
     "test:watch": "mocha test/**/*.spec.js --require babel-core/register --require mocha-clean --require test/_setup.js --reporter min --watch --color",
     "test:coverage": "node ./node_modules/istanbul/lib/cli cover node_modules/mocha/bin/_mocha -- --compilers js:babel-register --require mocha-clean --require test/_setup.js test/**/*.spec.js --color",
-    "lint": "grunt lint --color",
-    "serve": "set PORT=54321&& node web/server --color",
-    "prepublish": "grunt prepublish"
+    "// LINTING": "",
+    "lint": "grunt lint --color"
   },
   "config": {
     "//": "Banner is used for prepending to compiled JS and CSS",
