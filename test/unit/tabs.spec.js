@@ -99,8 +99,8 @@ describe("Tabs", function() {
 
 	describe("Initialization", function() {
 
-		it("have defaults", function() {
-			Tabs.should.have.property("defaults");
+		it("have defaults function", function() {
+			Tabs.should.have.property("defaults").that.is.a("function");
 		});
 
 		it("throw error without element", function() {
