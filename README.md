@@ -15,7 +15,7 @@ Welcome to NICE Experience. Your source for creating beautiful, consistent exper
 - [Development](#development)
 	- [Option 1: Docker](#option-1-docker)
 		- [Troubleshooting](#docker-troubleshooting)
-	- [Option 2: Grunt](#option-2-npm-grunt)
+	- [Option 2: npm/Grunt](#option-2-npmgrunt)
 		- [Grunt](#grunt)
 		- [npm](#npm)
 		- [Node](#node)
