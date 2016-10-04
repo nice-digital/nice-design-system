@@ -1,8 +1,8 @@
 module.exports = {
-	test : {
+	test: {
 		src: ["test/**/*.spec.js"],
 		options: {
-			require: ["babel-core/register", "./test/_setup.js"]
+			require: ["babel-core/register", "mocha-clean", "./test/_setup.js"]
 		}
 	}
 };
