@@ -48,9 +48,21 @@ describe("Delegate events", function() {
 			};
 			delegate(test);
 
-			test.$el.find(".inner").trigger("click");
+			$(".inner", test.$el).trigger("click");
+		});
 
-			spy.should.be.calledOnce.and.be.calledOn(test);
+		it("bound events maintain existing namespaced", function() {
+			let spy = sinon.spy(function(e) {
+				e.handleObj.namespace.should.equal("delegateEvents.testns");
+			});
+
+			let test = {
+				$el: $("<div><div class='inner' /></div>"),
+				events: () => ({ "click.testns .inner": spy })
+			};
+			delegate(test);
+
+			$(".inner", test.$el).trigger("click");
 		});
 
 		it("should call callback with instance as context", function() {
