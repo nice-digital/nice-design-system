@@ -178,7 +178,7 @@ Once the app (CSS/JS etc) has been built, the express app can be run via Node di
 
 ## Tests
 
-	See the [test](test) folder.
+	See the [test](test/) folder.
 
 ## Installation
 
