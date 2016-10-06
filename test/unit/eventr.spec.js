@@ -1,10 +1,7 @@
 /* eslint-env node, mocha, jquery */
 /* global sinon, should */
 
-const eventr = require("../../src/javascripts/eventr.js").default,
-	delegate = require("../../src/javascripts/eventr.js").delegate,
-	undelegate = require("../../src/javascripts/eventr.js").undelegate;
-
+import eventr, { delegate, undelegate } from "../../src/javascripts/eventr";
 
 describe("Delegate events", function() {
 
@@ -38,42 +35,43 @@ describe("Delegate events", function() {
 		});
 
 		it("bound events are namespaced", function() {
-			let spy = sinon.spy(function(e) {
-				e.handleObj.namespace.should.equal("delegateEvents");
-			});
+			let spy = sinon.spy(),
+				test = {
+					$el: $("<div><div class='inner' /></div>"),
+					events: () => ({ "click .inner": spy })
+				};
 
-			let test = {
-				$el: $("<div><div class='inner' /></div>"),
-				events: () => ({ "click .inner": spy })
-			};
 			delegate(test);
-
 			$(".inner", test.$el).trigger("click");
+
+			spy.should.be.calledOnce;
+			spy.firstCall.args.length.should.equal(1);
+			spy.firstCall.args[0].handleObj.namespace.should.equal("delegateEvents")
 		});
 
 		it("bound events maintain existing namespaced", function() {
-			let spy = sinon.spy(function(e) {
-				e.handleObj.namespace.should.equal("delegateEvents.testns");
-			});
+			let spy = sinon.spy(),
+				test = {
+					$el: $("<div><div class='inner' /></div>"),
+					events: () => ({ "click.testns .inner": spy })
+				};
 
-			let test = {
-				$el: $("<div><div class='inner' /></div>"),
-				events: () => ({ "click.testns .inner": spy })
-			};
 			delegate(test);
-
 			$(".inner", test.$el).trigger("click");
+
+			spy.should.be.calledOnce;
+			spy.firstCall.args.length.should.equal(1);
+			spy.firstCall.args[0].handleObj.namespace.should.equal("delegateEvents.testns")
 		});
 
 		it("should call callback with instance as context", function() {
-			let spy = sinon.spy();
+			let spy = sinon.spy(),
+				test = {
+					$el: $("<div><div class='inner' /></div>"),
+					events: () => ({ "click .inner": spy })
+				};
 
-			let test = {
-				$el: $("<div><div class='inner' /></div>"),
-				events: () => ({ "click .inner": spy })
-			};
 			delegate(test);
-
 			test.$el.find(".inner").trigger("click");
 
 			spy.should.be.calledOnce.and.be.calledOn(test);
@@ -81,15 +79,14 @@ describe("Delegate events", function() {
 
 		it("should call named instance method callback", function() {
 
-			let spy = sinon.spy();
+			let spy = sinon.spy(),
+				test = {
+					$el: $("<div><div class='inner' /></div>"),
+					events: () => ({ "click .inner": "_handler" }),
+					_handler: spy
+				};
 
-			let test = {
-				$el: $("<div><div class='inner' /></div>"),
-				events: () => ({ "click .inner": "_handler" }),
-				_handler: spy
-			};
 			delegate(test);
-
 			test.$el.find(".inner").trigger("click");
 
 			spy.should.be.calledOnce.and.be.calledOn(test);
@@ -119,7 +116,7 @@ describe("Delegate events", function() {
 			delegate(test);
 			test.$el.on("TEST", () => {});
 
-			function getEventKeys() {
+			let getEventKeys = () => {
 				return Object.keys($._data(test.$el[0], "events"));
 			}
 
@@ -135,7 +132,7 @@ describe("Delegate events", function() {
 	describe("Mixin", function() {
 
 		it("Should be a function", function() {
-			eventr.should.be.a.function;
+			eventr.should.exist.and.be.a.function;
 		});
 
 		it("Should have shortcuts to raw functions", function() {
@@ -145,11 +142,7 @@ describe("Delegate events", function() {
 
 		it("Applies methods to prototype", function() {
 
-			class Test {
-				constructor() {
-					this.delegate();
-				}
-			}
+			class Test { }
 
 			should.not.exist(Test.prototype.delegate);
 			should.not.exist(Test.prototype.undelegate);

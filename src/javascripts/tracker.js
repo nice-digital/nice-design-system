@@ -25,7 +25,7 @@ const TagManager = "TagManager",
 	Universal = "Universal";
 
 // Gets the name of tracking library available
-function trackingLibrary(): string {
+export function trackingLibrary(): string {
 	if(window.dataLayer && typeof window.dataLayer.push === "function")
 		return TagManager;
 
@@ -34,10 +34,6 @@ function trackingLibrary(): string {
 
 	if(typeof window.ga === "function")
 		return Universal;
-
-	if(!PRODUCTION) {
-		$.warn("No tracking library found");
-	}
 
 	return "";
 }
@@ -61,9 +57,9 @@ function trackingLibrary(): string {
  * @example
  * 	import Tracker from "tracker";
  * 	Tracker.trackEvent("ct", "actn", "lbl").then(() => {
- * 		console.log("tracked");
+ * 		// tracked
  * 	}).catch(err => {
- * 		console.log("Error tracking " + err);
+ * 		// Error tracking
  * 	};
  */
 export function sendEvent(category: string,
@@ -80,15 +76,11 @@ export function sendEvent(category: string,
 	else if(trackingLibrary() == Classic)
 		return sendClassicEvent(category, action, label, value, callback, nonInteraction);
 
-	// If no tracking library is available then reject the promise straight away.
-	return new Promise((resolve, reject) => {
-		const msg = "No tracking library available";
-
-		if(typeof callback === "function")
-			callback(msg);
-
-		return reject(msg);
-	});
+	const msg = "No tracking library available",
+		err = new Error(msg);
+	if(typeof callback === "function")
+		callback(err);
+	return Promise.reject(err);
 }
 
 /**
@@ -116,7 +108,7 @@ export function sendDataLayerEvent(category: string,
 	}
 
 	const data = {
-		event: "GAevent",
+		event: "event",
 		eventCategory: category,
 		eventAction: action,
 		eventLabel: label
@@ -126,7 +118,7 @@ export function sendDataLayerEvent(category: string,
 		data.eventValue = value;
 
 	return new Promise(resolve => {
-		data.eventCallback = function() {
+		data.eventCallback = () => {
 			if(typeof callback === "function")
 				callback();
 			resolve();
@@ -160,7 +152,7 @@ export function sendUniversalEvent(category: string,
 		});
 	}
 
-	return new Promise((resolve) => {
+	return new Promise(resolve => {
 		var cb = () => {
 			if(typeof callback === "function")
 				callback();
@@ -195,7 +187,7 @@ export function sendClassicEvent(category: string,
 		});
 	}
 
-	return new Promise((resolve) => {
+	return new Promise(resolve => {
 		var cb = () => {
 			if(typeof callback === "function")
 				callback();
@@ -217,6 +209,9 @@ export default class Tracker {
 	}
 
 	constructor(element, options) {
+		if(!element)
+			throw new Error("Element must be non-null");
+
 		this.el = element;
 		this.$el = $(element);
 
@@ -227,16 +222,16 @@ export default class Tracker {
 
 	events() {
 		return {
-			[`click .${ this.options.trackSelectors }`]: "_handleTrack"
+			[`click.tracker ${ this.options.trackSelectors.join(",") }`]: "_handleTrack"
 		};
 	}
 
 	_handleTrack(e) {
 		var $el = $(e.currentTarget);
 
-		let cat = $el.data("track-category"),
-			action = $el.data("track-action"),
-			label = $el.data("track-label"),
+		let cat = $el.data("track-category") || "",
+			action = $el.data("track-action") || "",
+			label = $el.data("track-label") || "",
 			value = $el.data("track-value");
 
 		sendEvent(cat, action, label, value);
