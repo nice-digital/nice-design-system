@@ -178,18 +178,7 @@ Once the app (CSS/JS etc) has been built, the express app can be run via Node di
 
 ## Tests
 
-* `npm test`
-* `npm run test:watch`
-* `npm run test:coverage`
-
-We use the following tools for running front-end unit tests:
-
-* [Mocha](http://mochajs.org/) as our test framework
-* [Chai](http://chaijs.com/) and [Should](http://chaijs.com/guide/styles/#should) for assertions
-* [Sinon](http://sinonjs.org/) for spies, stubs and mocks
-* [Istanbul](http://gotwarlost.github.io/istanbul/) for coverage reports
-
-See the [test folder](test/).
+	See the [test](test) folder.
 
 ## Installation
 
