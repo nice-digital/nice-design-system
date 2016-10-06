@@ -51,7 +51,7 @@ Our source JS needs to be compiled, transpiled and packed for several reasons:
 
 We use and recommend [Webpack](https://webpack.github.io/) with [Babel](https://babeljs.io/) and their respective plugins for packing and transpiling our JavaScript.
 
-See our [webpack.config.js](webpack.config.js) and our [.babelrc](.babelrc) for an example of compilation of ES6 with Flow type annotations.
+See our [webpack.config.js](webpack.config.js) and our [.babelrc](./.babelrc) for an example of compilation of ES6 with Flow type annotations.
 
 TODO: Webpack/require/browserify - path to source code for compilation.
 
