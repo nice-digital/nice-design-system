@@ -19,7 +19,7 @@
 {# Variables #}
 {% elif item.context.type == "variable" %}
 
-	{% source "scss" -%}
+	{% source "scss", '$' + item.context.name -%}
 		${{ item.context.name|safe }}: {{ item.context.value|safe }};
 	{%- endsource %}
 
@@ -56,7 +56,7 @@
 	{% set signature = '@' + item.context.type + ' ' + item.context.name + '(' + parameters_string + ')' %}
 
 	{# Output the source, with an expanded version #}
-	{% source "scss" -%}
+	{% source "scss", item.context.type + ' ' + item.context.name + ' source' -%}
 		{{ signature }} { ... }
 	{%- expanded -%}
 		{{ signature }} { {{ item.context.code }} }

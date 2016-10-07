@@ -1,46 +1,42 @@
 {% extends "./_sass-layout.njk" %}
-{% set title = "SASS Documentation" %}
-
-{% block sidebar %}
-	{% include "sass/includes/partials/sidebar.njk" %}
-{% endblock %}
-
+{% set title = "Documentation" %}
 
 {% block main %}
 
 	<h1>SASS Documentation</h1>
 
-	{# Loop over the groups #}
-	{% for group_name, group in byGroupAndType %}
-		<section>
-			<h2 id="{{ group_name }}">
-				{{ groups[group_name] }}
-			</h2>
-
-			{# Loop over the types #}
-			{% for type, items in group %}
-
-				{# If items to be displayed in type #}
-				{% if items.length > 0 %}
-					<section id="{{ group_name }}-{{ type }}">
-						<h3>
-							{% if type == "css" %}
-								{# Special case for CSS selectors #}
-								Selectors
-							{% else %}
-								{{ type | pluralize | capitalize }}
-							{% endif %}
-						</h3>
-
-						{# Loop over the items #}
-						{% for item in items %}
-							{% include "sass/includes/partials/item.njk" %}
-						{% endfor %}
-					</section>
-				{% endif %}
-			{% endfor %}
-
-		</section>
-	{% endfor %}
+	<div class="grid">
+		{# Loop over the groups #}
+		{% for group in groups %}
+			<div class="grid__item one-whole tablet--one-third desktop--one-quarter">
+				<h2 class="h4">
+					<a href="/sass/docs/{{ group.id }}">
+						{{ group.name }}
+					</a>
+				</h2>
+				<p>
+					{% for type_name, count in group.types %}
+						{{ count }}
+						{% if type_name === "variable" %}
+							variables
+						{% elif type_name === "css" %}
+							selectors
+						{% elif type_name === "function" %}
+							functions
+						{% elif type_name === "mixin" %}
+							mixins
+						{% else %}
+							others
+						{% endif %}
+						{% if loop.revindex0 === 1 %}
+							&amp;
+						{% elif not loop.last %}
+							,
+						{% endif %}
+					{% endfor %}
+				</p>
+			</div>
+		{% endfor %}
+	</div>
 
 {% endblock %}

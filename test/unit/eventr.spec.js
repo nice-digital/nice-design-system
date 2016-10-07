@@ -46,7 +46,7 @@ describe("Delegate events", function() {
 
 			spy.should.be.calledOnce;
 			spy.firstCall.args.length.should.equal(1);
-			spy.firstCall.args[0].handleObj.namespace.should.equal("delegateEvents")
+			spy.firstCall.args[0].handleObj.namespace.should.equal("delegateEvents");
 		});
 
 		it("bound events maintain existing namespaced", function() {
@@ -61,7 +61,7 @@ describe("Delegate events", function() {
 
 			spy.should.be.calledOnce;
 			spy.firstCall.args.length.should.equal(1);
-			spy.firstCall.args[0].handleObj.namespace.should.equal("delegateEvents.testns")
+			spy.firstCall.args[0].handleObj.namespace.should.equal("delegateEvents.testns");
 		});
 
 		it("should call callback with instance as context", function() {
@@ -118,7 +118,7 @@ describe("Delegate events", function() {
 
 			let getEventKeys = () => {
 				return Object.keys($._data(test.$el[0], "events"));
-			}
+			};
 
 			getEventKeys().length.should.equal(2);
 

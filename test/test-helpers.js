@@ -1,3 +1,5 @@
+/* eslint-env node, mocha */
+
 /**
  * @module  Test helpers
  * A suite of test helpers and utility methods
