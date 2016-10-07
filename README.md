@@ -201,7 +201,9 @@ Then...
 
 #### Precompiled (npm)
 
-Not recommended for production, but useful for quick prototypes, the npm package includes a dist folder with precompiled assets you can reference directly:
+Not recommended for production, but useful for quick prototypes, the npm package includes a dist folder with precompiled assets.
+
+You can reference directly if you have the correct permissions:
 
 ```html
 <!-- Font from Google & compiled/minified CSS -->
@@ -212,6 +214,21 @@ Not recommended for production, but useful for quick prototypes, the npm package
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="/node_modules/nice-experience/dist/javascripts/experience.min.js"></script>
 ```
+
+OR if you're using express you can use the dist folder as a static directory:
+
+```javascript
+app.use(express.static(__dirname + "/node_modules/nice-experience/dist/"));
+```
+
+and then reference it from your HTML as:
+
+```html
+<link rel="stylesheet" href="/stylesheets/experience.min.css" type="text/css" media="screen" charset="utf-8">
+<script src="/javascripts/experience.min.js"></script>
+```
+
+OR you can use a copy command (with Grunt or similar) to copy the compiled assets out of the *node_modules* folder to somewhere where you can serve them.
 
 #### Source (npm)
 

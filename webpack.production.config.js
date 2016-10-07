@@ -58,7 +58,7 @@ module.exports = [
 		},
 		module: appConfig.module,
 		resolve: {
-			modulesDirectories: ["./src/javascripts/"]
+			modulesDirectories: ["./src/javascripts/", "./node_modules/"]
 		},
 		externals: appConfig.externals,
 		devtool: "#source-map",
