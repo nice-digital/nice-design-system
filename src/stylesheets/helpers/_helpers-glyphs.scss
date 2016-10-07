@@ -3,8 +3,8 @@
 ////
 
 /// A map of glyph name to code (character entity reference).
-/// Avoids things like content: '\201C' throughout SASS. Use the
-/// get-glyph function.
+/// Avoids things like content: '\201C' throughout SASS.
+/// Usual usage is via the `get-glyph` function.
 /// @see get-glyph
 /// @link https://css-tricks.com/snippets/html/glyphs/
 /// @prop {String} bullet [2022] Bullet (•)
@@ -32,7 +32,7 @@ $glyphs: (
 );
 
 /// Gets a glyph code, or several, (character entity reference) from the
-/// $glyphs map, matching the given $names. Usually used with the content
+/// `$glyphs` map, matching the given `$names`. Usually used with the content
 /// property for psuedo elements, to avoid use of magic character reference strings.
 /// @param {argList} $names The name(s) of the glyph(s) to get
 /// @returns {string} The character entity reference code(s) as a string, e.g. '\201C' or '\02008\029C9'
