@@ -85,7 +85,8 @@ $colour-base-purple: #82176f;
 $colour-base-red: #f00;
 
 /// Grey colour palette
-/// @prop {Color} x-light [#ddd] Extra ight grey
+/// @prop {Color} xx-light [#eee] Extra, extra light grey
+/// @prop {Color} x-light [#ddd] Extra light grey
 /// @prop {Color} light [#bbb] Light grey
 /// @prop {Color} mid-light [#999] Mid-light grey
 /// @prop {Color} base [$colour-base-grey] Base grey
@@ -93,6 +94,7 @@ $colour-base-red: #f00;
 /// @prop {Color} dark [#333] Dark grey
 /// @prop {Color} x-dark [#111] Extra dark grey
 $palette-grey: (
+  xx-light: #eee,
   x-light: #ddd,
   light: #bbb,
   mid-light: #999,
