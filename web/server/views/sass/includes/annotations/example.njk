@@ -1,11 +1,5 @@
 {# Describes a use case for the documented item, with a given language and description if specified #}
 
-{% macro renderExample(body, lang, heading = "Example") %}
-	{# Use our already defined source rendering partial #}
-	{% include "partials/source.njk" %}
-{% endmacro %}
-
-
 {% if item.example.length > 0 %}
 	{% for example in item.example %}
 		{% if example.description %}
@@ -14,8 +8,14 @@
 			<h5>Example</h5>
 		{% endif %}
 
-		{% source "scss", example.description | striptags -%}
-			{{ example.code }}
-		{%- endsource -%}
+		{% if example.type === "html" %}
+			{% example "html" -%}
+				{{ example.code | safe }}
+			{%- endexample -%}
+		{% else %}
+			{% source example.type, example.description | striptags -%}
+				{{ example.code | safe }}
+			{%- endsource -%}
+		{% endif %}
 	{% endfor %}
 {% endif %}
