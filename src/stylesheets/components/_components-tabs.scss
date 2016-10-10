@@ -3,9 +3,40 @@
 ////
 
 /// Tabbed navigational structure
+///
+/// Elements:
+///   - `__list`    The containing list of tabs
+///   - `__tab`     An individual tab
+///   - `__tab-btn` A button within a tab
+///   - `__content` The tabs content - container for the
+///   - `__pane`    An individual tab pane
+///
+/// @example html
+///   <div class="tabs" data-tabs>
+///     <ul class="tabs__list" role="tablist">
+///       <li class="tabs__tab" role="presentation">
+///         <button class="tabs__tab-btn" type="button" role="tab">
+///           Tab 1
+///         </button>
+///       </li>
+///       <li class="tabs__tab" role="presentation">
+///         <button class="tabs__tab-btn" type="button" role="tab">
+///           Tab 2
+///         </button>
+///       </li>
+///     </ul>
+///     <div class="tabs__content">
+///       <div class="tabs__pane" role="tabpanel">
+///         Tab content 1
+///       </div>
+///       <div class="tabs__pane" role="tabpanel">
+///         Tab content 2
+///       </div>
+///     </div>
+///   </div>
 .tabs {
 
-  /// The list of tabs
+  // The list of tabs
   &__list {
     list-style: none;
     margin: 0;
@@ -37,13 +68,13 @@
     }
   }
 
-  /// The tab content containing the tab panels
+  // The tab content containing the tab panels
   &__content {
     background: $colour-panel;
     padding: 1rem;
   }
 
-  /// An individual tab content pane
+  // An individual tab content pane
   &__pane {
 
     // Assume tabs will stack if no JS is available

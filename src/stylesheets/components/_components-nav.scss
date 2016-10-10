@@ -68,24 +68,24 @@
         text-align: center;
       }
 
-      /// one item
+      // one item
       li:first-child:nth-last-child(1) {
         width: 100%;
       }
 
-      /// two items
+      // two items
       li:first-child:nth-last-child(2),
       li:first-child:nth-last-child(2) ~ li {
         width: 50%;
       }
 
-      /// three items
+      // three items
       li:first-child:nth-last-child(3),
       li:first-child:nth-last-child(3) ~ li {
         width: 33.3333%;
       }
 
-      /// four items
+      // four items
       li:first-child:nth-last-child(4),
       li:first-child:nth-last-child(4) ~ li {
         width: 25%;
