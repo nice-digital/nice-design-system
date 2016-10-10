@@ -21,7 +21,7 @@
 </h4>
 
 <small>
-	From: <a href="https://github.com/nhsevidence/NICE-Experience/tree/master/src/stylesheets/{{ item.file.path }}" rel="external" target="_blank">{{ item.file.name }}</a>
+	From: <a href="https://github.com/nhsevidence/NICE-Experience/tree/master/src/stylesheets/{{ item.file.path }}#L{{ item.context.line.start }}-L{{ item.context.line.end }}" rel="external" target="_blank">{{ item.file.name }}</a>
 </small>
 
 {% if item.description %}
