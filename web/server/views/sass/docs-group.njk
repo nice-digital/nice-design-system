@@ -1,0 +1,36 @@
+{% extends "./_sass-layout.njk" %}
+{% set title = groupName %}
+{% set breadcrumbs = [{ title: "SASS", href: "/sass/" }, { title: "Documentation", href: "/sass/docs" }, { title: title }] %}
+
+{% block sidebar %}
+	{% include "sass/includes/partials/sidebar.njk" %}
+{% endblock %}
+
+{% block main %}
+
+	<h1>{{ groupName }}</h1>
+
+	{# Loop over the types #}
+	{% for type, items in byType %}
+
+		{# If items to be displayed in type #}
+		{% if items.length > 0 %}
+			<section id="{{ type }}">
+				<h2>
+					{% if type == "css" %}
+						{# Special case for CSS selectors #}
+						Selectors
+					{% else %}
+						{{ type | pluralize | capitalize }}
+					{% endif %}
+				</h2>
+
+				{# Loop over the items #}
+				{% for item in items %}
+					{% include "sass/includes/partials/item.njk" %}
+				{% endfor %}
+			</section>
+		{% endif %}
+	{% endfor %}
+
+{% endblock %}

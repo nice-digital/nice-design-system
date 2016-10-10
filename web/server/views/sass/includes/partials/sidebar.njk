@@ -1,50 +1,39 @@
 {# See https://github.com/SassDoc/sassdoc-theme-default/blob/master/views/includes/partials/sidebar.html.swig #}
 
-{# Loop over the groups #}
-{% for group_name, group in byGroupAndType %}
+{# Loop over the types #}
+{% for type, items in byType %}
 
-	<h3>
-		<a href="#{{ group_name }}">
-			{{ groups[group_name] }}
-		</a>
-	</h3>
+	{# If items to be displayed in type #}
+	{% if items.length > 0 %}
 
-	{# Loop over the types #}
-	{% for type, items in group %}
+		<h4>
+			<a href="#{{ type }}">
+				{% if type == "css" %}
+					{# Special case for CSS selectors #}
+					Selectors
+				{% else %}
+					{{ type | pluralize | capitalize }}
+				{% endif %}
+			</a>
+		</h4>
 
-		{# If items to be displayed in type #}
-		{% if items.length > 0 %}
+		{# Loop over the items #}
+		{% for item in items %}
+			{% if loop.first %}<ul>{% endif %}
 
-			<h4>
-				<a href="#{{ group_name }}-{{ type }}">
-					{% if type == "css" %}
-						{# Special case for CSS selectors #}
-						Selectors
-					{% else %}
-						{{ type | pluralize | capitalize }}
+			<li>
+				<a href="#{{ item.context.type }}-{{ item.context.name }}">
+					{% if item.context.type == "variable" %}${% endif %}{{ item.context.name }}
+					{% if item.access[0] == "private" %}
+						<small>(private)</small>
+					{% endif %}
+					{% if item.property.length > 0 %}
+						<small>(map)</small>
 					{% endif %}
 				</a>
-			</h4>
+			</li>
 
-			{# Loop over the items #}
-			{% for item in items %}
-				{% if loop.first %}<ul>{% endif %}
-
-				<li>
-					<a href="#{{ group_name }}-{{ item.context.type }}-{{ item.context.name }}">
-						{% if item.context.type == "variable" %}${% endif %}{{ item.context.name }}
-						{% if item.access[0] == "private" %}
-							<small>(private)</small>
-						{% endif %}
-						{% if item.property.length > 0 %}
-							<small>(map)</small>
-						{% endif %}
-					</a>
-				</li>
-
-				{% if loop.last %}</ul>{% endif %}
-			{% endfor %}
-		{% endif %}
-	{% endfor %}
-
+			{% if loop.last %}</ul>{% endif %}
+		{% endfor %}
+	{% endif %}
 {% endfor %}

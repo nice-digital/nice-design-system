@@ -111,36 +111,50 @@ export default class Tabs {
 			.eq(index)
 			.addClass(this.options.tabPaneActiveClass)
 			.attr("aria-hidden", false);
+
+		return this.getCurrentIndex();
 	}
 
-	/// Activates the next tab, or the first we're at the end
+	/**
+	 * Activates the next tab, or the first we're at the end
+	 * @return {Integer} The current index
+	 */
 	next() {
 		var currentIndex = this.getCurrentIndex();
 		if(currentIndex === this._getTabs().length - 1) {
-			this.first();
+			return this.first();
 		} else {
-			this.activate(currentIndex + 1);
+			return this.activate(currentIndex + 1);
 		}
 	}
 
-	/// Activates the previous tab, or the last tab if we're at the start
+	/**
+	 * Activates the previous tab, or the last tab if we're at the start
+	 * @return {Integer} The current index
+	 */
 	previous() {
 		var currentIndex = this.getCurrentIndex();
 		if(currentIndex === 0) {
-			this.last();
+			return this.last();
 		} else {
-			this.activate(currentIndex - 1);
+			return this.activate(currentIndex - 1);
 		}
 	}
 
-	/// Activates the first tab
+	/**
+	 * Activates the first tab
+	 * @return {Integer} The current index
+	 */
 	first() {
-		this.activate(0);
+		return this.activate(0);
 	}
 
-	/// Activates the last tab
+	/**
+	 * Activates the last tab
+	 * @return {Integer} The current index
+	 */
 	last() {
-		this.activate(this._getTabs().length - 1);
+		return this.activate(this._getTabs().length - 1);
 	}
 
 	// PRIVATE

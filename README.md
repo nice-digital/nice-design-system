@@ -19,6 +19,9 @@ Welcome to NICE Experience. Your source for creating beautiful, consistent exper
 		- [Grunt](#grunt)
 		- [npm](#npm)
 		- [Node](#node)
+	- [JavaScript](#javascript)
+	- [SASS](#sass)
+	- [Icons](#icons)
 - [Test](#tests)
 - [Installation](#installation)
 	- [CDN](#cdn)
@@ -26,12 +29,6 @@ Welcome to NICE Experience. Your source for creating beautiful, consistent exper
 		- [Precompiled (npm)](#precompiled-npm)
 		- [Source (npm)](#source-npm)
 	- [Install with Bower](#install-with-bower)
-- [JavaScript](#javascript)
-	- [JS Compilation](#js-compilation)
-	- [Flow type](#flow-type)
-	- [ESLint](#eslint)
-	- [Auto plugin loader](#auto-plugin-loader)
-	- [JS Comments](#js-comments)
 
 ## What is it?
 
@@ -176,20 +173,17 @@ Run `npm start` and `npm run test:watch` for development.
 
 Once the app (CSS/JS etc) has been built, the express app can be run via Node directly e.g. `node web/server`. This isn't really useful for development as it just runs on port 3000, doesn't build assets, watch for changes etc - use `npm start` instead for deveopment. Running the web app directly via node is useful for production environments where the assets have already been built by a build server and we just need to serve the app.
 
+### JavaScript
+
+See the [javascript](src/javascripts) folder for more information.
+
+### SASS
+
+See the [stylesheets](src/stylesheets) folder for more information.
+
 ## Tests
 
-* `npm test`
-* `npm run test:watch`
-* `npm run test:coverage`
-
-We use the following tools for running front-end unit tests:
-
-* [Mocha](http://mochajs.org/) as our test framework
-* [Chai](http://chaijs.com/) and [Should](http://chaijs.com/guide/styles/#should) for assertions
-* [Sinon](http://sinonjs.org/) for spies, stubs and mocks
-* [Istanbul](http://gotwarlost.github.io/istanbul/) for coverage reports
-
-See the [test folder](test/).
+See the [test](test) folder for more information.
 
 ## Installation
 
@@ -207,7 +201,9 @@ Then...
 
 #### Precompiled (npm)
 
-Not recommended for production, but useful for quick prototypes, the npm package includes a dist folder with precompiled assets you can reference directly:
+Not recommended for production, but useful for quick prototypes, the npm package includes a dist folder with precompiled assets.
+
+You can reference directly if you have the correct permissions:
 
 ```html
 <!-- Font from Google & compiled/minified CSS -->
@@ -219,6 +215,21 @@ Not recommended for production, but useful for quick prototypes, the npm package
 <script src="/node_modules/nice-experience/dist/javascripts/experience.min.js"></script>
 ```
 
+OR if you're using express you can use the dist folder as a static directory:
+
+```javascript
+app.use(express.static(__dirname + "/node_modules/nice-experience/dist/"));
+```
+
+and then reference it from your HTML as:
+
+```html
+<link rel="stylesheet" href="/stylesheets/experience.min.css" type="text/css" media="screen" charset="utf-8">
+<script src="/javascripts/experience.min.js"></script>
+```
+
+OR you can use a copy command (with Grunt or similar) to copy the compiled assets out of the *node_modules* folder to somewhere where you can serve them.
+
 #### Source (npm)
 
 The npm package contains the source code as well as the precompiled assets.
@@ -226,92 +237,3 @@ The npm package contains the source code as well as the precompiled assets.
 ### Install with Bower
 
 TODO
-
-# JavaScript
-
-Our JavaScript is written in ES6 with [Flow type annotations](#flow-type) so needs to be [compiled/bundled](#js-compilation). We recommend requiring the modules you need as and when you need them to avoid bloat - the below examples demonstrate this:
-
-```JavaScript
-var el = document.querySelector(".a-selector");
-
-// Recommended: import a module directly
-import Tabs from "tabs";
-var tabs = new Tabs(el);
-
-// Import a named export from experience
-import { Tabs } from "experience";
-var tabs = new Tabs(el);
-
-// Import via experience module
-import experience from "experience";
-var tabs = new experience.Tabs(el);
-
-// Requiring - named module
-var Tabs = require("tabs").default;
-var tabs = new Tabs(el);
-
-// Requiring - via experience module
-var experience = require("experience");
-var tabs = new experience.Tabs(el);
-
-// Not recommended - global namespace usage
-var tabs = new NICE.Experience.Tabs(el);
-
-// Use the jquery plugin version
-$(".a-selector").tabs();
-```
-
-## JS Compilation
-
-Our source JS needs to be compiled, transpiled and packed for several reasons:
-
-- [Flow type annotations](#flow-type)
-- [ES6 (ECMAScript 2015)](https://github.com/lukehoban/es6features)
-- Our JS is written in modules and should be combined and minified
-- Apps using Experience should ideally use the source, rather than using the pre-compiled version
-
-We use and recommend [Webpack](https://webpack.github.io/) with [Babel](https://babeljs.io/) and their respective plugins for packing and transpiling our JavaScript.
-
-See our [webpack.config.js](webpack.config.js) and our [.babelrc](.babelrc) for an example of compilation of ES6 with Flow type annotations.
-
-TODO: Webpack/require/browserify - path to source code for compilation.
-
-## Flow type
-
-We use [Flow type annotations](https://flowtype.org/) in our JavaScript because:
-
-- annotations are opt-in, so allows adding them gradually
-- no learning a new like TypeScript/CoffeeScript
-- support for IDE integration
-- easily transforms to normal JavaScript
-- catches common type related static bugs
-- used with [Babel Typecheck](https://github.com/codemix/babel-plugin-typecheck) allows runtime type checking
-
-We encourage use of runtime type checking with Babel Typecheck during development. See our [.bablerc](.babelrc) for an example. Note: it disables them in production, as long as `NODE_ENV=production` is set when compiling production JS.
-
-A runtime error would look like: *Uncaught TypeError: Value of argument "num" violates contract. Expected: number Got: string*.
-
-## ESLint
-
-We have a set of ES Lint rules for linting our JS. See our [.eslintrc.json](src/javascripts/.eslintrc.json) for our ruleset. It uses [babel-eslint](https://github.com/babel/babel-eslint) as the parser and uses a [flowtype plugin](eslint-plugin-flowtype) because of our [Flow type annotations](#flow-type). You should use a [watch task](.grunt-tasks/watch.js) to lint as you work.
-
-## Auto plugin loader
-
-Our modules are written as ES6 classes within modules so can be used directly, but for convenience are also wrapped in jQuery plugins. We then have a [plugin loader module](src/javascripts/plugin-autoloader.js) that automatically:
-
-- requires all plugin modules
-- looks for any `[data-nice-plugin]` instances
-- applies the named plugin to each
-
-The pre-compiled version of experience automatically includes the plugin auto loader. So you can do:
-
-```html
-<div class="tabs" data-nice-plugin="tabs">
-</div>
-<script src="experience.min.js"></script>
-```
-
-## JS Comments
-
-We use [documentationjs](http://documentation.js.org/) to generate documentation for our library code, so any comments shoudl follow a [JSDoc style](https://github.com/documentationjs/documentation/blob/master/docs/GETTING_STARTED.md) syntax.
-
