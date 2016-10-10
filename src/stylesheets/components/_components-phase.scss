@@ -3,7 +3,14 @@
 ////
 
 /// A phase banner includes a tag and a label and is designed
-/// to designate that a service is in alpha or beta
+/// to designate that a service is in alpha or beta.
+/// Usually contains a `.phase-tag`.
+///
+/// BEM elements:
+///   - `__tag`   The tag itself
+///   - `__label` The label explaining
+///
+/// @see .phase-tag
 .phase-banner {
   border-bottom: 1px solid $colour-border;
   display: table;
@@ -26,6 +33,15 @@
 
 /// A coloured block to designate a service being in alpha or beta. Can be
 /// used on its own but usually used within a `.phase-banner`.
+///
+/// BEM modifiers:
+///   - `--alpha` Alpha
+///   - `--beta`  Beta
+///   - `--live`  Live
+///
+/// @todo Distinguish private beta/public beta
+/// @todo Do we also need a discover phase colour?
+///
 /// @see .phase-banner
 .phase-tag {
   background-color: get-colour(grey, mid-dark);

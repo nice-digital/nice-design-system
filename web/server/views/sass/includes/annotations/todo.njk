@@ -1,10 +1,10 @@
 {% if item.todo.length > 0 %}
 	<div class="grid__item one-whole tablet--one-half desktop--one-third">
-		<h5>TODO's</h5>
+		<h5>TODO</h5>
 
 		<ul>
 			{% for todo in item.todo %}
-				<li>{{ todo|safe }}</li>
+				<li>{{ todo | striptags }}</li>
 			{% endfor %}
 		</ul>
 	</div>

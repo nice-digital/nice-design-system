@@ -4,12 +4,14 @@
 
 /// Tabbed navigational structure
 ///
-/// Elements:
+/// BEM elements:
 ///   - `__list`    The containing list of tabs
 ///   - `__tab`     An individual tab
 ///   - `__tab-btn` A button within a tab
 ///   - `__content` The tabs content - container for the
 ///   - `__pane`    An individual tab pane
+///
+/// @todo Tabs on mobile devices
 ///
 /// @example html
 ///   <div class="tabs" data-tabs>

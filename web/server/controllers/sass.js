@@ -45,7 +45,8 @@ router.get("/docs/:section", function(req, res, next) {
 			groupId: req.params.section,
 			groupName: group,
 			items: items,
-			byType: data.byGroupAndType[req.params.section]
+			byType: data.byGroupAndType[req.params.section],
+			display: data.display
 		};
 		res.render("sass/docs-group", pageData);
 	}
