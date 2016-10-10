@@ -1,0 +1,43 @@
+$susy: (
+  columns: 12,
+  gutters: .25,
+  gutter-position: inside,
+);
+
+@mixin grid-items($item-count: 12, $prefix: item) {
+  $prefix: '.#{$prefix}';
+
+  #{$prefix} {
+    @for $i from 1 to ($item-count + 1) {
+      $suffix: '-#{$i}';
+
+      &#{$suffix} {
+        $span-request: $i of $item-count;
+
+        @include span($span-request);
+      }
+    }
+  }
+}
+
+.container {
+  @include container(60em);
+
+  .row {
+    &::before {
+      display: table;
+      content: " ";
+    }
+    &::after {
+      display: table;
+      content: " ";
+      clear: both;
+    }
+
+    @include grid-items(12, col-xs);
+
+    /*@include susy-breakpoint(720px) {
+      background-color: red;
+    }*/
+  }
+}
