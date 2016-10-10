@@ -1,0 +1,33 @@
+{% extends "./_components-layout.njk" %}
+{% set title = "Maintain ratio" %}
+
+{% block main %}
+
+	<h1>Maintain ratio</h1>
+
+	<ul>
+		<li>Used for enforcing an aspect ratio for iframes, videos etc</li>
+		<li>Use modifiers for different ratios</li>
+	</ul>
+
+	<p>
+		<a class="btn" href="/sass/docs/components#css-.maintain-ratio">SASS docs for maintain ratio</a>
+	</p>
+
+	<h2>Basic usage - 16x9</h2>
+
+	{% example "html" -%}
+		<div class="maintain-ratio maintain-ratio--16-9">
+			<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+		</div>
+	{%- endexample %}
+
+	<h3>Custom - with BEM element</h3>
+
+	{% example "html" -%}
+		<div class="maintain-ratio maintain-ratio--4-3">
+			<img class="maintain-ratio__item" src="http://placehold.it/400x300" alt="An example of an image with a ratio of 4:3" />
+		</div>
+	{%- endexample %}
+
+{% endblock %}

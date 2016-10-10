@@ -80,11 +80,17 @@ p,
 }
 
 code {
-  background: get-colour(grey, x-light);
+  background: get-colour(grey, xx-light);
+  border: 1px solid get-colour(grey, x-light);
+  border-radius: 2px;
+  display: inline-block;
   font-family: font-family(mono);
-  padding: scut-em(4);
+  margin: scut-em(0 0 2);
+  padding: scut-em(0 4);
 
   pre & {
     background: transparent;
+    border: 0;
+    margin: 0;
   }
 }
