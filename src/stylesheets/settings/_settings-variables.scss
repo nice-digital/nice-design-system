@@ -5,26 +5,26 @@
 ///   - width
 ///   - root font size
 $nice-breakpoints: (
-  mobile: (
+  xs: (
     root-size: 12,
     ms-ratio: get-ratio(major-second)
   ),
-  palm: (
+  sm: (
     width: 440px,
     root-size: 13,
     ms-ratio: get-ratio(major-second)
   ),
-  tablet: (
+  md: (
     width: 720px,
     root-size: 14,
     ms-ratio: get-ratio(major-second)
   ),
-  desktop: (
+  lg: (
     width: 960px,
     root-size: 15,
     ms-ratio: get-ratio(major-second)
   ),
-  wide: (
+  xl: (
     width: 1200px,
     root-size: 16,
     ms-ratio: get-ratio(major-second)
@@ -41,21 +41,21 @@ $mq-breakpoints: ();
 }
 
 // Override default wizardry grids breakpoints
-$breakpoints: ();
-@each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
-  @if map-has-key($brkpnt-value, width) {
-    $brkpnt-width: mq-px2em(map-get($brkpnt-value, width));
+// $breakpoints: ();
+// @each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
+//   @if map-has-key($brkpnt-value, width) {
+//     $brkpnt-width: mq-px2em(map-get($brkpnt-value, width));
 
-    $breakpoints: append($breakpoints, '#{$brkpnt-key}' '(min-width: #{$brkpnt-width})');
-  }
-}
+//     $breakpoints: append($breakpoints, '#{$brkpnt-key}' '(min-width: #{$brkpnt-width})');
+//   }
+// }
 
-// Override other wizardry variables
-$breakpoint-has-widths: ();
-@each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
-  @if map-has-key($brkpnt-value, width) {
-    $breakpoint-has-widths: append($breakpoint-has-widths, '#{$brkpnt-key}');
-  }
-}
-$breakpoint-has-push: $breakpoint-has-widths;
-$breakpoint-has-pull: $breakpoint-has-widths;
+// // Override other wizardry variables
+// $breakpoint-has-widths: ();
+// @each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
+//   @if map-has-key($brkpnt-value, width) {
+//     $breakpoint-has-widths: append($breakpoint-has-widths, '#{$brkpnt-key}');
+//   }
+// }
+// $breakpoint-has-push: $breakpoint-has-widths;
+// $breakpoint-has-pull: $breakpoint-has-widths;

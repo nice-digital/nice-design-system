@@ -1,0 +1,76 @@
+$susy: (
+  //container: auto,
+  columns: 12,
+  global-box-sizing: border-box,
+  gutters: .25,
+  gutter-position: before,
+);
+
+@mixin grid-items($item-count: 12, $prefix: item) {
+  $prefix: '.#{$prefix}';
+
+  #{$prefix} {
+    @for $i from 1 to ($item-count + 1) {
+      $suffix: '-#{$i}';
+
+      &#{$suffix} {
+        $span-request: $i of $item-count;
+
+        @include span($span-request);
+      }
+    }
+  }
+}
+
+.grid {
+  @include container();
+}
+
+@each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
+  @if map-has-key($brkpnt-value, width) == false {
+
+    @for $i from 1 through 12 {
+        .col-#{ $i } {
+          @include span($i of 12);
+        }
+    }
+
+  } @else {
+
+    $from: map-get($brkpnt-value, width);
+
+
+    //$new: ($brkpnt-key: map-get($brkpnt-value, width));
+    //$mq-breakpoints: map-merge($mq-breakpoints, $new);
+    //
+    @include mq($from: $from) {
+      @for $i from 1 through 12 {
+          .col-#{ $brkpnt-key }-#{ $i } {
+            @include span($i of 12);
+          }
+      }
+    }
+  }
+}
+
+.container {
+  @include container(60em);
+
+  .row {
+    &::before {
+      display: table;
+      content: " ";
+    }
+    &::after {
+      display: table;
+      content: " ";
+      clear: both;
+    }
+
+    @include grid-items(12, col-xs);
+
+    /*@include susy-breakpoint(720px) {
+      background-color: red;
+    }*/
+  }
+}
