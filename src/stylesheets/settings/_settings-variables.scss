@@ -9,24 +9,29 @@ $nice-breakpoints: (
     root-size: 12,
     ms-ratio: get-ratio(major-second)
   ),
-  palm: (
+  xs: (
     width: 440px,
     root-size: 13,
     ms-ratio: get-ratio(major-second)
   ),
-  tablet: (
+  sm: (
     width: 720px,
     root-size: 14,
     ms-ratio: get-ratio(major-second)
   ),
-  desktop: (
+  md: (
     width: 960px,
     root-size: 15,
     ms-ratio: get-ratio(major-second)
   ),
-  wide: (
+  lg: (
     width: 1200px,
     root-size: 16,
+    ms-ratio: get-ratio(major-second)
+  ),
+  xl: (
+    width: 1600px,
+    root-size: 17,
     ms-ratio: get-ratio(major-second)
   )
 );
@@ -34,28 +39,8 @@ $nice-breakpoints: (
 // A map of breakpoints (name: px) required for SASS MQ
 $mq-breakpoints: ();
 @each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
-  @if map-has-key($brkpnt-value, width) {
-    $new: ($brkpnt-key: map-get($brkpnt-value, width));
-    $mq-breakpoints: map-merge($mq-breakpoints, $new);
+  $width: map-get($brkpnt-value, width);
+  @if $width {
+    $mq-breakpoints: map-merge($mq-breakpoints, ($brkpnt-key: $width));
   }
 }
-
-// Override default wizardry grids breakpoints
-$breakpoints: ();
-@each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
-  @if map-has-key($brkpnt-value, width) {
-    $brkpnt-width: mq-px2em(map-get($brkpnt-value, width));
-
-    $breakpoints: append($breakpoints, '#{$brkpnt-key}' '(min-width: #{$brkpnt-width})');
-  }
-}
-
-// Override other wizardry variables
-$breakpoint-has-widths: ();
-@each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
-  @if map-has-key($brkpnt-value, width) {
-    $breakpoint-has-widths: append($breakpoint-has-widths, '#{$brkpnt-key}');
-  }
-}
-$breakpoint-has-push: $breakpoint-has-widths;
-$breakpoint-has-pull: $breakpoint-has-widths;

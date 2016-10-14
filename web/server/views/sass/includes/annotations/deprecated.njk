@@ -1,8 +1,10 @@
 {# Defines if the documented item is deprecated #}
 
 {% if 'deprecated' | in(item) %}
-	<p>
-		<strong>Deprecated!</strong>
-		{{ item.deprecated|safe }}
-	</p>
+	<div data-g="12 md:6 lg:4">
+		<p>
+			<strong>Deprecated!</strong>
+			{{ item.deprecated|safe }}
+		</p>
+	</div>
 {% endif %}

@@ -10,9 +10,9 @@
 			<li><a href="#containers">Containers</a></li>
 			<li><a href="#basics">Basic grid</a></li>
 			<li><a href="#nested">Nested grids</a></li>
-			<li><a href="#nested">Responsive grids</a></li>
-			<li><a href="#nested">Semantic classes</a></li>
+			<li><a href="#responsive">Responsive grids</a></li>
 			<li><a href="#features">Other grid features</a></li>
+			<li><a href="#semantic">Semantic classes</a></li>
 		</ul>
 	</nav>
 
@@ -39,14 +39,17 @@
 		<h2>Basic grid</h2>
 
 		<ul>
-			<li>We use <a href="http://csswizardry.com/csswizardry-grids/" target="_blank" rel="external">csswizardry-grids</a> with some different breakpoints (see <a href="#responsive">responsive section</a> below)</li>
+			<li>12 column grid</li>
+			<li>Use the <code>data-g</code> attribute to specify column widths</li>
+			<li>E.g. <code>data-g="6"</code> 6 of 12 columns</li>
+			<li>Alternatively use more 'human' names like <code>data-g="one-half"</code> or <code>data-g="two-fifths"</code></li>
 		</ul>
 
 		<h3>Whole</h3>
 
 		{% example "html" -%}
 			<div class="grid">
-				<div class="grid__item one-whole"><div class="grid-example-item">1 whole</div></div>
+				<div data-g="one-whole"><div class="grid-example-item">1 whole</div></div>
 			</div>
 		{%- endexample %}
 
@@ -54,8 +57,8 @@
 
 		{% example "html" -%}
 			<div class="grid">
-				<div class="grid__item one-half"><div class="grid-example-item">1/2</div></div>
-				<div class="grid__item one-half"><div class="grid-example-item">1/2</div></div>
+				<div data-g="6"><div class="grid-example-item">1/2</div></div>
+				<div data-g="one-half"><div class="grid-example-item">1/2</div></div>
 			</div>
 		{%- endexample %}
 
@@ -63,8 +66,8 @@
 
 		{% example "html" -%}
 			<div class="grid">
-				<div class="grid__item one-third"><div class="grid-example-item">1/3</div></div>
-				<div class="grid__item two-thirds"><div class="grid-example-item">2/3</div></div>
+				<div data-g="4"><div class="grid-example-item">1/3</div></div>
+				<div data-g="two-thirds"><div class="grid-example-item">2/3</div></div>
 			</div>
 		{%- endexample %}
 
@@ -72,17 +75,17 @@
 
 		{% example "html" -%}
 			<div class="grid">
-				<div class="grid__item one-quarter"><div class="grid-example-item">1/4</div></div>
-				<div class="grid__item one-quarter"><div class="grid-example-item">1/4</div></div>
-				<div class="grid__item one-quarter"><div class="grid-example-item">1/4</div></div>
-				<div class="grid__item one-quarter"><div class="grid-example-item">1/4</div></div>
+				<div data-g="3"><div class="grid-example-item">1/4</div></div>
+				<div data-g="3"><div class="grid-example-item">1/4</div></div>
+				<div data-g="3"><div class="grid-example-item">1/4</div></div>
+				<div data-g="3"><div class="grid-example-item">1/4</div></div>
 
-				<div class="grid__item one-quarter"><div class="grid-example-item">1/4</div></div>
-				<div class="grid__item one-quarter"><div class="grid-example-item">1/4</div></div>
-				<div class="grid__item two-quarters"><div class="grid-example-item">2/4</div></div>
+				<div data-g="one-quarter"><div class="grid-example-item">1/4</div></div>
+				<div data-g="one-quarter"><div class="grid-example-item">1/4</div></div>
+				<div data-g="two-quarters"><div class="grid-example-item">2/4</div></div>
 
-				<div class="grid__item one-quarter"><div class="grid-example-item">1/4</div></div>
-				<div class="grid__item three-quarters"><div class="grid-example-item">3/4</div></div>
+				<div data-g="one-quarter"><div class="grid-example-item">1/4</div></div>
+				<div data-g="three-quarters"><div class="grid-example-item">3/4</div></div>
 			</div>
 		{%- endexample %}
 
@@ -90,112 +93,15 @@
 
 		{% example "html" -%}
 			<div class="grid">
-				<div class="grid__item one-fifth"><div class="grid-example-item">1/5</div></div>
-				<div class="grid__item two-fifths"><div class="grid-example-item">2/5</div></div>
-				<div class="grid__item two-fifths"><div class="grid-example-item">2/5</div></div>
+				<div data-g="one-fifth"><div class="grid-example-item">1/5</div></div>
+				<div data-g="two-fifths"><div class="grid-example-item">2/5</div></div>
+				<div data-g="two-fifths"><div class="grid-example-item">2/5</div></div>
 
-				<div class="grid__item two-fifths"><div class="grid-example-item">2/5</div></div>
-				<div class="grid__item three-fifths"><div class="grid-example-item">3/5</div></div>
+				<div data-g="two-fifths"><div class="grid-example-item">2/5</div></div>
+				<div data-g="three-fifths"><div class="grid-example-item">3/5</div></div>
 
-				<div class="grid__item one-fifth"><div class="grid-example-item">1/5</div></div>
-				<div class="grid__item four-fifths"><div class="grid-example-item">4/5</div></div>
-			</div>
-		{%- endexample %}
-
-		<h3>Sixths</h3>
-
-		{% example "html" -%}
-			<div class="grid">
-				<div class="grid__item one-sixth"><div class="grid-example-item">1/6</div></div>
-				<div class="grid__item two-sixths"><div class="grid-example-item">2/6</div></div>
-				<div class="grid__item three-sixths"><div class="grid-example-item">3/6</div></div>
-
-				<div class="grid__item two-sixths"><div class="grid-example-item">2/6</div></div>
-				<div class="grid__item four-sixths"><div class="grid-example-item">4/6</div></div>
-
-				<div class="grid__item one-sixth"><div class="grid-example-item">1/6</div></div>
-				<div class="grid__item five-sixths"><div class="grid-example-item">5/6</div></div>
-			</div>
-		{%- endexample %}
-
-		<h3>Eighths</h3>
-
-		{% example "html" -%}
-			<div class="grid">
-				<div class="grid__item one-eighth"><div class="grid-example-item">1/8</div></div>
-				<div class="grid__item two-eighths"><div class="grid-example-item">2/8</div></div>
-				<div class="grid__item two-eighths"><div class="grid-example-item">2/8</div></div>
-				<div class="grid__item three-eighths"><div class="grid-example-item">3/8</div></div>
-
-				<div class="grid__item one-eighth"><div class="grid-example-item">1/8</div></div>
-				<div class="grid__item one-eighth"><div class="grid-example-item">1/8</div></div>
-				<div class="grid__item two-eighths"><div class="grid-example-item">2/8</div></div>
-				<div class="grid__item four-eighths"><div class="grid-example-item">4/8</div></div>
-
-				<div class="grid__item three-eighths"><div class="grid-example-item">3/8</div></div>
-				<div class="grid__item five-eighths"><div class="grid-example-item">5/8</div></div>
-
-				<div class="grid__item two-eighths"><div class="grid-example-item">2/8</div></div>
-				<div class="grid__item six-eighths"><div class="grid-example-item">6/8</div></div>
-
-				<div class="grid__item one-eighth"><div class="grid-example-item">1/8</div></div>
-				<div class="grid__item seven-eighths"><div class="grid-example-item">7/8</div></div>
-			</div>
-		{%- endexample %}
-
-		<h3>Tenths</h3>
-
-		{% example "html" -%}
-			<div class="grid">
-				<div class="grid__item one-tenth"><div class="grid-example-item">1/10</div></div>
-				<div class="grid__item two-tenths"><div class="grid-example-item">2/10</div></div>
-				<div class="grid__item three-tenths"><div class="grid-example-item">3/10</div></div>
-				<div class="grid__item four-tenths"><div class="grid-example-item">4/10</div></div>
-
-				<div class="grid__item five-tenths"><div class="grid-example-item">5/10</div></div>
-				<div class="grid__item five-tenths"><div class="grid-example-item">5/10</div></div>
-
-				<div class="grid__item four-tenths"><div class="grid-example-item">4/10</div></div>
-				<div class="grid__item six-tenths"><div class="grid-example-item">6/10</div></div>
-
-				<div class="grid__item three-tenths"><div class="grid-example-item">3/10</div></div>
-				<div class="grid__item seven-tenths"><div class="grid-example-item">7/10</div></div>
-
-				<div class="grid__item two-tenths"><div class="grid-example-item">2/10</div></div>
-				<div class="grid__item eight-tenths"><div class="grid-example-item">8/10</div></div>
-
-				<div class="grid__item one-tenth"><div class="grid-example-item">1/10</div></div>
-				<div class="grid__item nine-tenths"><div class="grid-example-item">9/10</div></div>
-			</div>
-		{%- endexample %}
-
-		<h3>Twelfths</h3>
-
-		{% example "html" -%}
-			<div class="grid">
-				<div class="grid__item one-twelfth"><div class="grid-example-item">1/12</div></div>
-				<div class="grid__item two-twelfths"><div class="grid-example-item">2/12</div></div>
-				<div class="grid__item two-twelfths"><div class="grid-example-item">2/12</div></div>
-				<div class="grid__item three-twelfths"><div class="grid-example-item">3/12</div></div>
-				<div class="grid__item four-twelfths"><div class="grid-example-item">4/12</div></div>
-
-				<div class="grid__item six-twelfths"><div class="grid-example-item">6/12</div></div>
-				<div class="grid__item six-twelfths"><div class="grid-example-item">6/12</div></div>
-
-				<div class="grid__item five-twelfths"><div class="grid-example-item">5/12</div></div>
-				<div class="grid__item seven-twelfths"><div class="grid-example-item">7/12</div></div>
-
-				<div class="grid__item four-twelfths"><div class="grid-example-item">4/12</div></div>
-				<div class="grid__item eight-twelfths"><div class="grid-example-item">8/12</div></div>
-
-				<div class="grid__item three-twelfths"><div class="grid-example-item">3/12</div></div>
-				<div class="grid__item nine-twelfths"><div class="grid-example-item">9/12</div></div>
-
-				<div class="grid__item two-twelfths"><div class="grid-example-item">2/12</div></div>
-				<div class="grid__item ten-twelfths"><div class="grid-example-item">10/12</div></div>
-
-				<div class="grid__item one-twelfth"><div class="grid-example-item">1/12</div></div>
-				<div class="grid__item eleven-twelfths"><div class="grid-example-item">11/12</div></div>
+				<div data-g="one-fifth"><div class="grid-example-item">1/5</div></div>
+				<div data-g="four-fifths"><div class="grid-example-item">4/5</div></div>
 			</div>
 		{%- endexample %}
 
@@ -210,27 +116,37 @@
 
 		{% example "html" -%}
 			<div class="grid">
-				<div class="grid__item one-half">
+				<div data-g="one-half">
 					<div class="grid-example-item">
 						<div>1/2</div>
 						<div class="grid">
-							<div class="grid__item one-half">
+							<div data-g="one-half">
 								<div class="grid-example-item">1/2</div>
 							</div>
-							<div class="grid__item one-half">
-								<div class="grid-example-item">1/2</div>
+							<div data-g="one-half">
+								<div class="grid-example-item">
+									<div>1/2</div>
+									<div class="grid">
+										<div data-g="one-half">
+											<div class="grid-example-item">1/2</div>
+										</div>
+										<div data-g="one-half">
+											<div class="grid-example-item">1/2</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="grid__item one-half">
+				<div data-g="one-half">
 					<div class="grid-example-item">
 						<div>1/2</div>
 						<div class="grid">
-							<div class="grid__item one-half">
+							<div data-g="one-half">
 								<div class="grid-example-item">1/2</div>
 							</div>
-							<div class="grid__item one-half">
+							<div data-g="one-half">
 								<div class="grid-example-item">1/2</div>
 							</div>
 						</div>
@@ -246,25 +162,25 @@
 
 		<ul>
 			<li>Grids are mobile first</li>
-			<li>Use <code>palm--</code>, <code>tablet--</code>, <code>desktop--</code> and <code>wide--</code> modifiers</li>
+			<li>Use <code>xs:</code>, <code>sm:</code>, <code>md:</code>, <code>lg:</code> and <code>xl:</code> for different screen size</li>
 		</ul>
 
 		{% example "html" -%}
 			<div class="grid">
-				<div class="grid__item one-whole palm--one-half tablet--one-third desktop--one-quarter wide--one-fifth">
-					<div class="grid-example-item"></div>
+				<div data-g="12 sm:6 md:4 lg:one-third">
+					<div class="grid-example-item">*</div>
 				</div>
-				<div class="grid__item one-whole palm--one-half tablet--one-third desktop--one-quarter wide--one-fifth">
-					<div class="grid-example-item"></div>
+				<div data-g="12 sm:6 md:4 lg:one-third">
+					<div class="grid-example-item">*</div>
 				</div>
-				<div class="grid__item one-whole palm--one-half tablet--one-third desktop--one-quarter wide--one-fifth">
-					<div class="grid-example-item"></div>
+				<div data-g="12 sm:6 md:4 lg:one-third">
+					<div class="grid-example-item">*</div>
 				</div>
-				<div class="grid__item one-whole palm--one-half tablet--one-third desktop--one-quarter wide--one-fifth">
-					<div class="grid-example-item"></div>
+				<div data-g="12 sm:6 md:4 lg:one-third">
+					<div class="grid-example-item">*</div>
 				</div>
-				<div class="grid__item one-whole palm--one-half tablet--one-third desktop--one-quarter wide--one-fifth">
-					<div class="grid-example-item"></div>
+				<div data-g="12 sm:6 md:4 lg:one-third">
+					<div class="grid-example-item">*</div>
 				</div>
 			</div>
 		{%- endexample %}
@@ -274,10 +190,7 @@
 	<section id="features">
 		<h2>Other grid features</h2>
 
-		<ul>
-			<li>Other grid features from Wizardry are also available</li>
-			<li>Includes <code>.grid--rev</code>, <code>.grid--full</code>, <code>.grid--right</code>, <code>.grid--center</code>, <code>.grid--middle</code>, <code>.grid--bottom</code>, <code>.grid--narrow</code> and <code>.grid--wide</code></li>
-		</ul>
+		<p>Use BEM modifiers for grids features:</p>
 
 		<h3>Reversed</h3>
 
@@ -285,32 +198,47 @@
 
 		{% example "html" -%}
 			<div class="grid grid--rev">
-				<div class="grid__item one-half">
+				<div data-g="one-half">
 					<div class="grid-example-item">first in the source</div>
 				</div>
-				<div class="grid__item one-half">
+				<div data-g="one-half">
 					<div class="grid-example-item">second in the source</div>
 				</div>
 			</div>
 		{%- endexample %}
 
-		<h3>Full (gutterlesss)</h3>
+		<h3>Gutterlesss</h3>
 
-		<p>Remove the gutter between grid items with the <code>.grid--full</code> modifier</p>
+		<p>Remove the gutter between grid items with the <code>.grid--gutterless</code> modifier</p>
 
 		{% example "html" -%}
-			<div class="grid grid--full">
-				<div class="grid__item one-quarter">
+			<div class="grid grid--gutterless">
+				<div data-g="one-quarter">
 					<div class="grid-example-item">full</div>
 				</div>
-				<div class="grid__item one-quarter">
+				<div data-g="one-quarter">
 					<div class="grid-example-item">full</div>
 				</div>
-				<div class="grid__item one-quarter">
+				<div data-g="one-quarter">
 					<div class="grid-example-item">full</div>
 				</div>
-				<div class="grid__item one-quarter">
+				<div data-g="one-quarter">
 					<div class="grid-example-item">full</div>
+				</div>
+			</div>
+		{%- endexample %}
+
+		<h3>Right</h3>
+
+		<p>Right aligned grids with the <code>.grid--right</code> modifier</p>
+
+		{% example "html" -%}
+			<div class="grid grid--right">
+				<div data-g="one-quarter">
+					<div class="grid-example-item">right</div>
+				</div>
+				<div data-g="one-quarter">
+					<div class="grid-example-item">right</div>
 				</div>
 			</div>
 		{%- endexample %}
@@ -321,11 +249,107 @@
 
 		{% example "html" -%}
 			<div class="grid grid--center">
-				<div class="grid__item one-quarter">
+				<div data-g="one-quarter">
 					<div class="grid-example-item">centered</div>
 				</div>
-				<div class="grid__item one-quarter">
+				<div data-g="one-quarter">
 					<div class="grid-example-item">centered</div>
+				</div>
+			</div>
+		{%- endexample %}
+
+		<h3>Push/pull</h3>
+
+		<p>Pull grid items left with <code>pull:X</code> or push them right with <code>push:X</code></p>
+
+		{% example "html" -%}
+			<div class="grid grid--center">
+				<div data-g="3 pull:1">
+					<div class="grid-example-item">pull</div>
+				</div>
+				<div data-g="3 push:1">
+					<div class="grid-example-item">push</div>
+				</div>
+			</div>
+		{%- endexample %}
+
+		<p>Or push/pull on certain screen sizes:</p>
+
+		{% example "html" -%}
+			<div class="grid grid--center">
+				<div data-g="6 md:3 md:pull:1">
+					<div class="grid-example-item">pull from md</div>
+				</div>
+				<div data-g="6 md:3 md:push:1">
+					<div class="grid-example-item">push from md</div>
+				</div>
+			</div>
+		{%- endexample %}
+
+		<h3>Middle</h3>
+
+		<p>Vertically align grid items to the middle with the <code>.grid--middle</code> modifier</p>
+
+		{% example "html" -%}
+			<div class="grid grid--middle">
+				<div data-g="6">
+					<div class="grid-example-item">deep<br/>grid</div>
+				</div>
+				<div data-g="6">
+					<div class="grid-example-item">middle</div>
+				</div>
+			</div>
+		{%- endexample %}
+
+		<h3>Bottom</h3>
+
+		<p>Vertically align grid items to the bottom with the <code>.grid--bottom</code> modifier</p>
+
+		{% example "html" -%}
+			<div class="grid grid--bottom">
+				<div data-g="6">
+					<div class="grid-example-item">deep<br/>grid</div>
+				</div>
+				<div data-g="6">
+					<div class="grid-example-item">bottom</div>
+				</div>
+			</div>
+		{%- endexample %}
+
+		<h3>Debug</h3>
+
+		<p>Debug grids in development with an outline with the <code>.grid--debug</code> modifier</p>
+
+		{% example "html" -%}
+			<div class="grid grid--debug">
+				<div data-g="6">
+					<div class="grid-example-item">debug</div>
+				</div>
+				<div data-g="6">
+					<div class="grid-example-item">debug</div>
+				</div>
+			</div>
+		{%- endexample %}
+
+		<p>Or debug all grids in an ancestor with the <code>.debug-grid</code> class (apply to the body to debug all grids):</p>
+
+		{% example "html" -%}
+			<div class="debug-grid">
+				<div class="grid">
+					<div data-g="6">
+						<div class="grid-example-item">debug</div>
+					</div>
+					<div data-g="6">
+						<div class="grid-example-item">debug</div>
+					</div>
+				</div>
+				<div class="grid grid--center">
+					<div data-g="3">
+						<div class="grid-example-item">debug</div>
+					</div>
+					<div data-g="3">
+						<div class="grid-example-item">debug</div>
+					</div>
 				</div>
 			</div>
 		{%- endexample %}

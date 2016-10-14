@@ -21,6 +21,7 @@
   "browser": "src/javascripts",
   "scripts": {
     "start": "grunt --color",
+    "stop": "killall -SIGINT Experience",
     "prepublish": "grunt prepublish",
     "serve": "set PORT=54321&& node web/server --color",
     "// JAVASCRIPT": "",

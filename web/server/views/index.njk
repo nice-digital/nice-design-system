@@ -2,7 +2,7 @@
 {% set title = "NICE Bootstrap v2" %}
 
 {% macro item(title, href, description) %}
-	<div class="grid__item one-whole tablet--one-third desktop--one-quarter">
+	<div data-g="12 xs:6 sm:4 md:3">
 		<h4 class="h6">{{ title }}</h4>
 		<p>
 			{{ description }}
@@ -16,6 +16,7 @@
 {% block body %}
 
 	<div class="container">
+
 		<h1>Welcome to NICE Experience</h1>
 		<h2 class="p">
 			Your source for creating beautiful, consistent experiences across NICE.

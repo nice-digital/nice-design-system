@@ -11,6 +11,8 @@ var filters = require("./nunjucks/filters");
 var PORT = process.env.PORT || 3000;
 var app = express();
 
+process.title = "Experience";
+
 // Express
 app.set("port", PORT);
 app.set("views", path.join( __dirname, "/views") );

@@ -1,0 +1,194 @@
+////
+/// @group grid
+////
+
+/// Grid mixin for applying to custom classes when creating a custom component
+/// and creating 'semantic' (sensible) class names.
+///
+/// @param {boolean} $reverse [false] Whether the grid items flow the opposite way to their natural source order
+/// @param {boolean} $gutterless [false] Whether the grid has no spacing
+/// @param {boolean} $right [false] Whether to render items from the right instead of the left
+/// @param {boolean} $center [false] Whether the grid's items are centrally aligned horizontally
+/// @param {boolean} $debug [false] Whether to put a highlight round the grid for debugging
+/// @require {mixin} grid-reverse
+/// @require {mixin} grid-gutterless
+/// @require {mixin} grid-right
+/// @require {mixin} grid-center
+/// @require {mixin} grid-debug
+/// @example scss SCSS usage
+///   .test {
+///     @include grid;
+///
+///     @include element('item') {
+///       @include grid-item;
+///       background: red;
+///       width: 100%;
+///     }
+///
+///     @include mq($from: md) {
+///       @include element('item') {
+///         background: green;
+///         width: percentage(3 / 12);
+///       }
+///     }
+///   }
+/// @example html HTML usage
+///   <div class="test">
+///     <div class="test__item">item</div>
+///   </div>
+@mixin grid($reverse: false, $gutterless: false, $right: false, $center: false, $debug: false) {
+  letter-spacing: -.31em;
+  list-style: none;
+  margin: 0;
+  margin-left: -$grid-gutter;
+  padding: 0;
+  word-spacing: -.43em;
+
+  @if $reverse {
+    @include grid-reverse;
+  }
+
+  @if $gutterless {
+    @include grid-gutterless;
+  }
+
+  @if $right {
+    @include grid-right;
+  }
+
+  @if $center {
+    @include grid-center;
+  }
+
+  @if $debug {
+    @include grid-debug;
+  }
+}
+
+/// Reversed grids allow you to structure your source in the opposite order to how
+/// your rendered layout will appear
+@mixin grid-reverse {
+  direction: rtl;
+  text-align: left;
+}
+
+/// Gutterless grids have all the properties of regular grids, minus any spacing
+/// @see grid-item-gutterless
+@mixin grid-gutterless {
+  margin-left: 0;
+}
+
+/// Align the entire grid to the right
+@mixin grid-right {
+  text-align: right;
+}
+
+/// Centered grids align grid items centrally without needing to use push or pull classes
+@mixin grid-center {
+  text-align: center;
+}
+
+/// Debug a grid by putting a highlight round it
+/// @see grid-item-debug
+@mixin grid-debug {
+  outline: 4px dashed red;
+}
+
+/// Grid item
+/// @param {boolean} $gutterless [false] Whether the grid has no spacing
+/// @param {boolean} $middle [false] Whether the grid item is vertically aligned to the middle
+/// @param {boolean} $bottom [false] Whether the grid item is vertically aligned to the bottom
+/// @param {boolean} $debug [false] Whether to put a highlight round the grid item for debugging
+/// @param {map} $breakpoints [null] A map of breakpoints and the width/parameters for the grid item
+/// @require {mixin} grid-item-gutterless
+/// @require {mixin} grid-item-middle
+/// @require {mixin} grid-item-bottom
+/// @require {mixin} grid-item-debug
+/// @require mq <https://github.com/sass-mq/sass-mq>
+/// @example scss
+///   .test {
+///     width: 100%;
+///     @include grid-item($breakpoints: ( md: ( width: 50%, push: 25% ), lg: 20% ));
+///   }
+@mixin grid-item($gutterless: false, $middle: false, $bottom: false, $debug: false, $breakpoints: null) {
+  @include border-box;
+  direction: ltr;
+  display: inline-block;
+  letter-spacing: normal;
+  padding-left: $grid-gutter;
+  position: relative;
+  text-align: left;
+  vertical-align: top;
+  width: 100%;
+  word-spacing: normal;
+
+  @if $gutterless {
+    @include grid-item-gutterless;
+  }
+
+  @if $middle {
+    @include grid-item-middle;
+  }
+
+  @if $bottom {
+    @include grid-item-bottom;
+  }
+
+  // Output any breakpoint overrides passed in via the map
+  @if $breakpoints {
+    @each $breakpoint-key, $values in $breakpoints {
+
+      @if is-percentage($values) {
+        @include mq($from: $breakpoint-key) {
+          width: $values;
+        }
+      } @else {
+
+        $width: map-get($values, width);
+        $push: map-get($values, push);
+        $pull: map-get($values, pull);
+
+        @if $push and not is-percentage($push) {
+          @error 'Expected push to be a percentage but found `#{$push}`';
+        }
+
+        @if $pull and not is-percentage($pull) {
+          @error 'Expected pull to be a percentage but found `#{$pull}`';
+        }
+
+        @include mq($from: $breakpoint-key) {
+          width: $width;
+
+          @if $push {
+            left: $push;
+          }
+
+          @if $pull {
+            right: $pull;
+          }
+        }
+      }
+    }
+  }
+}
+
+/// Gutterless grids have all the properties of regular grids, minus any spacing.
+@mixin grid-item-gutterless {
+  padding-left: 0;
+}
+
+/// Align grid cell vertically to the middle
+@mixin grid-item-middle {
+  vertical-align: middle;
+}
+
+/// Align grid cell vertically to the bottom
+@mixin grid-item-bottom {
+  vertical-align: bottom;
+}
+
+/// Debug a grid item by putting a highlight round it
+/// @see grid-debug
+@mixin grid-item-debug {
+  outline: 2px dashed blue;
+}
