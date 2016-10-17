@@ -11,7 +11,8 @@
 }
 
 html {
-  @include root-size;
+  //@include root-size;
+  font-size: 100%;
 }
 
 body {

@@ -36,10 +36,10 @@ module.exports = grunt => {
 	r("test", ["mochaTest"]);
 
 	// For deploying the web app. Builds minified SASS/JS
-	r("dist", ["env:dist", "clean", "sass:dist", "webpack:dist"]);
+	r("dist", ["env:dist", "clean", "sass:dist", "postcss", "webpack:dist"]);
 
 	// For building before publishing to NPM etc
-	r("prepublish", ["env:dist", "clean", "sass:publish", "sass:publishMin", "webpack:dist"]);
+	r("prepublish", ["env:dist", "clean", "sass:publish", "postcss", "sass:publishMin", "webpack:dist"]);
 
 	r("default", ["env:dev", "lint", "test", "concurrent:default", "watch"]);
 };
