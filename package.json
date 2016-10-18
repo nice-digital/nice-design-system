@@ -51,6 +51,7 @@
     "webpack-notifier": "^1.4.1"
   },
   "dependencies": {
+    "autoprefixer": "^6.5.1",
     "babel-core": "^6.10.4",
     "babel-eslint": "^7.0.0",
     "babel-loader": "^6.2.4",
@@ -84,6 +85,7 @@
     "grunt-mocha-test": "^0.13.2",
     "grunt-modernizr": "^1.0.2",
     "grunt-newer": "^1.2.0",
+    "grunt-postcss": "^0.8.0",
     "grunt-sass": "^1.2.1",
     "grunt-sass-lint": "^0.2.0",
     "grunt-sassdoc": "^2.0.2",
@@ -105,6 +107,7 @@
     "node-common-errors": "^0.4.0",
     "node-sass": "^3.10.0",
     "nunjucks": "^2.5.2",
+    "pixrem": "^3.0.2",
     "sassdoc-extras": "^2.4.1",
     "serve-favicon": "^2.3.0",
     "sinon": "^1.17.6",

@@ -15,7 +15,7 @@ module.exports = {
 	},
 	sass: {
 		files: sasslint.target.src,
-		tasks: ["sass:dev", "newer:sasslint", "sassdoc"],
+		tasks: ["sass:dev", "postcss", "newer:sasslint", "sassdoc"],
 		options: {
 			spawn: false
 		}

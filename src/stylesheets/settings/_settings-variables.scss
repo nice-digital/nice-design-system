@@ -6,27 +6,27 @@
 ///   - root font size
 $nice-breakpoints: (
   mobile: (
-    root-size: 12,
+    root-size: 14,
     ms-ratio: get-ratio(major-second)
   ),
   xs: (
     width: 440px,
-    root-size: 13,
+    root-size: 14,
     ms-ratio: get-ratio(major-second)
   ),
   sm: (
     width: 720px,
-    root-size: 14,
+    root-size: 16,
     ms-ratio: get-ratio(major-second)
   ),
   md: (
     width: 960px,
-    root-size: 15,
+    root-size: 16,
     ms-ratio: get-ratio(major-second)
   ),
   lg: (
     width: 1200px,
-    root-size: 16,
+    root-size: 17,
     ms-ratio: get-ratio(major-second)
   ),
   xl: (

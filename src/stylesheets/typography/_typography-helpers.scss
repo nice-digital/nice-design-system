@@ -27,20 +27,20 @@
 ///       font-size: 81.25%;
 ///     }
 ///   }
-@mixin root-size {
-  @each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
-    $root-size: map-get($brkpnt-value, root-size);
-    $font-size-pc: $root-size / $base-font-size * 100%;
+// @mixin root-size {
+//   @each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
+//     $root-size: map-get($brkpnt-value, root-size);
+//     $font-size-pc: $root-size / $base-font-size * 100%;
 
-    @if map-has-key($brkpnt-value, width) {
-      @include mq($from: $brkpnt-key) {
-        font-size: $font-size-pc;
-      }
-    } @else {
-      font-size: $font-size-pc;
-    }
-  }
-}
+//     @if map-has-key($brkpnt-value, width) {
+//       @include mq($from: $brkpnt-key) {
+//         font-size: $font-size-pc;
+//       }
+//     } @else {
+//       font-size: $font-size-pc;
+//     }
+//   }
+// }
 
 
 /// Gets a numeric font size (in px) from a given scale multiplier and breakpoint.
