@@ -27,6 +27,13 @@
   }
 }
 
+/// Cross browser border box
+@mixin border-box {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 /// Fix unwanted button padding in Firefox
 /// @link http://stackoverflow.com/a/5518143/486434 Stack Overflow answer
 @mixin remove-mz-focus-inner {

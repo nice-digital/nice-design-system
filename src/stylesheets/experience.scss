@@ -13,10 +13,13 @@
 @import 'settings/settings';
 
 // Grid system
-@import 'vendor/csswizardry-grids';
+//@import 'vendor/csswizardry-grids';
 
 // Helpers
 @import 'helpers/helpers';
+
+// Grid system
+@import 'grid/grid';
 
 // Typography
 @import 'typography/typography';

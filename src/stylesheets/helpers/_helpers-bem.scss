@@ -1,0 +1,37 @@
+////
+/// @group helpers
+////
+
+/// Block Element
+/// @access public
+/// @param {String} $element - Element's name
+/// @link https://css-tricks.com/snippets/sass/bem-mixins/
+@mixin element($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+/// Block Modifier
+/// @access public
+/// @param {String} $modifier - Modifier's name
+/// @link https://css-tricks.com/snippets/sass/bem-mixins/
+@mixin modifier($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+/// @alias element
+@mixin e($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+/// @alias modifier
+@mixin m($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}

@@ -3,7 +3,7 @@
 {% set breadcrumbs = [{ title: title }] %}
 
 {% macro item(title, href, description) %}
-	<div class="grid__item one-whole tablet--one-third desktop--one-quarter">
+	<div data-g="12 xs:6 sm:4 md:3">
 		<h4><a href="{{ href }}">{{ title }}</a></h4>
 		<p>
 			{{ description }}
@@ -16,7 +16,7 @@
 	<div class="container">
 		<h1>UI Components</h1>
 
-		<p class="lede">
+		<p class="lead">
 			Further reusable design patterns for creating NICE digital services
 		</p>
 

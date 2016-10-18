@@ -1,0 +1,134 @@
+////
+/// @group grid
+////
+
+/*!
+ * Grid borrowed from https://github.com/csswizardry/csswizardry-grids
+ * with a different API over the top
+ */
+
+@import 'grid-settings',
+'grid-helpers',
+'grid-human';
+
+
+
+@mixin generate-grid-classes($breakpoint: null) {
+  $prefix: if($breakpoint, $breakpoint + ':', '');
+
+  // Width classes
+  @for $index from 1 through 12 {
+    [data-g~='#{ $prefix }#{ $index }'] {
+      width: percentage($index / 12);
+    }
+  }
+
+  // Push/ pull classes
+  @for $index from 0 through 12 {
+    [data-g~='#{ $prefix }push:#{ $index }'] {
+      left: percentage($index / 12);
+    }
+
+    [data-g~='#{ $prefix }pull:#{ $index }'] {
+      right: percentage($index / 12);
+    }
+  }
+
+  // Human class names like  one-whole
+  @include human-grid-names($prefix);
+}
+
+/// Grid item default selector.
+/// Use within a `.grid`.
+/// Use the value of the data attribute to specify the grid item widths
+/// mobile first. E.g "n w:n" where *n* is the number of columns and *w*
+/// is the name of the breakpoint.
+///
+/// @example html HTML usage
+///   <div class="grid">
+///     <div data-g="12 xs:6 md:4 lg:one-quarter xl:2">Grid item</div>
+///     <div data-g="12 xs:6 md:4 lg:one-quarter xl:2">Grid item</div>
+///     <div data-g="12 xs:6 md:4 lg:one-quarter xl:2">Grid item</div>
+///     <div data-g="12 xs:6 md:4 lg:one-quarter xl:2">Grid item</div>
+///   </div>
+[data-g] {
+  @include grid-item;
+}
+
+/// Grid class for the grid wrapper. Expects direct children to be `[data-g]`
+/// grid items. Use modifiers to affect grid behaviour as shown below:
+///
+/// Modifiers:
+///   - `rev` - Reverses the grid direction from natural source order
+///   - `gutterless` - Removes spacing and gutters from the grid
+///   - `right` - Right aligned grid items
+///   - `center` - Horizontally center aligned grid items
+///   - `middle` - Vertically middle aligned grid items
+///   - `bottom` - Bottom aligned grid items
+///
+/// @example html
+///   <div class="grid">
+///     <div data-g="12 xs:6 md:4 lg:3 xl:2">Grid item</div>
+///   </div>
+.grid {
+  @include grid;
+
+  @include modifier('rev') {
+    @include grid-reverse;
+  }
+
+  @include modifier('gutterless') {
+    @include grid-gutterless;
+
+    [data-g] {
+      @include grid-item-gutterless;
+    }
+  }
+
+  @include modifier('right') {
+    @include grid-right;
+  }
+
+  @include modifier('center') {
+    @include grid-center;
+  }
+
+  @include modifier('middle') {
+    [data-g] {
+      @include grid-item-middle;
+    }
+  }
+
+  @include modifier('bottom') {
+    [data-g] {
+      @include grid-item-bottom;
+    }
+  }
+
+  @include modifier('debug') {
+    @include grid-debug;
+
+    [data-g] {
+      @include grid-item-debug;
+    }
+  }
+
+  // Add debug grid to body to show an outline on all grids
+  .debug-grid & {
+    @include grid-debug;
+
+    [data-g] {
+      @include grid-item-debug;
+    }
+  }
+
+  @include generate-grid-classes;
+
+  @each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
+    @if map-has-key($brkpnt-value, width) {
+      @include mq($from: $brkpnt-key) {
+        @include generate-grid-classes($brkpnt-key);
+      }
+    }
+  }
+}
