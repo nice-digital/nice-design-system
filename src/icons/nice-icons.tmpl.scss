@@ -13,12 +13,15 @@
 // See https://css-tricks.com/snippets/css/using-font-face/#article-header-id-0
 // for cross-browser font face rule
 %>
+
+$${ fontBaseName }-no-cache: random(999999999);
+
 @font-face {
   font-family: "${ fontFamilyName }";
   font-style: normal;
   font-weight: normal;
-  src: ${ fontSrc1 };
-  src: ${ fontSrc2 };
+  src: ${ fontSrc1.replace(new RegExp(hash + "\"", "g"), "\" + $" + fontBaseName + "-no-cache") };
+  src: ${ fontSrc2.replace(new RegExp(hash + "\"", "g"), "\" + $" + fontBaseName + "-no-cache").replace(new RegExp(hash + "#", "g"), "\" + $" + fontBaseName + "-no-cache + \"#") };
 }
 
 // Map of icon name to codepoint
