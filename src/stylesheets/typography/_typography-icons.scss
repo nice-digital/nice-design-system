@@ -7,17 +7,16 @@
   font-family: "NICE Icons";
   font-style: normal;
   font-weight: normal;
-  src: url("/fonts/nice-icons.eot?7e395f578042349a790adc34eb09493e");
+  src: url("/fonts/nice-icons.eot?9b3f8121e406c368d33661536b86edc4");
   src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"),
-		url("/fonts/nice-icons.woff2?7e395f578042349a790adc34eb09493e") format("woff2"),
-		url("/fonts/nice-icons.woff?7e395f578042349a790adc34eb09493e") format("woff"),
-		url("/fonts/nice-icons.ttf?7e395f578042349a790adc34eb09493e") format("truetype"),
-		url("/fonts/nice-icons.svg?7e395f578042349a790adc34eb09493e#typography-icons") format("svg");
+		url("/fonts/nice-icons.woff2?9b3f8121e406c368d33661536b86edc4") format("woff2"),
+		url("/fonts/nice-icons.woff?9b3f8121e406c368d33661536b86edc4") format("woff"),
+		url("/fonts/nice-icons.ttf?9b3f8121e406c368d33661536b86edc4") format("truetype"),
+		url("/fonts/nice-icons.svg?9b3f8121e406c368d33661536b86edc4#typography-icons") format("svg");
 }
 
 // Map of icon name to codepoint
 $nice-icons: (
-
   adjust: "f101",
   angle-down: "f102",
   angle-left: "f103",
@@ -95,8 +94,8 @@ $nice-icons: (
   twitter: "f14b",
   uptake: "f14c",
   user: "f14d",
-  warning: "f14e",
-);
+  warning: "f14e"
+) !default;
 
 @mixin icon-base {
   display: inline-block;
@@ -138,317 +137,9 @@ $nice-icons: (
     display: block;
   }
 
-  
-  &--adjust:before {
-    content: nice-icon(adjust);
+  @each $icon, $code in $nice-icons {
+    &--#{ $icon }:before {
+      content: nice-icon($icon);
+    }
   }
-  
-  &--angle-down:before {
-    content: nice-icon(angle-down);
-  }
-  
-  &--angle-left:before {
-    content: nice-icon(angle-left);
-  }
-  
-  &--angle-right:before {
-    content: nice-icon(angle-right);
-  }
-  
-  &--angle-up:before {
-    content: nice-icon(angle-up);
-  }
-  
-  &--apps:before {
-    content: nice-icon(apps);
-  }
-  
-  &--bookmark:before {
-    content: nice-icon(bookmark);
-  }
-  
-  &--calendar:before {
-    content: nice-icon(calendar);
-  }
-  
-  &--capsule:before {
-    content: nice-icon(capsule);
-  }
-  
-  &--caret-down:before {
-    content: nice-icon(caret-down);
-  }
-  
-  &--caret-left:before {
-    content: nice-icon(caret-left);
-  }
-  
-  &--caret-right:before {
-    content: nice-icon(caret-right);
-  }
-  
-  &--caret-up:before {
-    content: nice-icon(caret-up);
-  }
-  
-  &--chevron-down:before {
-    content: nice-icon(chevron-down);
-  }
-  
-  &--chevron-left:before {
-    content: nice-icon(chevron-left);
-  }
-  
-  &--chevron-right:before {
-    content: nice-icon(chevron-right);
-  }
-  
-  &--chevron-up:before {
-    content: nice-icon(chevron-up);
-  }
-  
-  &--circle-blank:before {
-    content: nice-icon(circle-blank);
-  }
-  
-  &--circle:before {
-    content: nice-icon(circle);
-  }
-  
-  &--cloud-download:before {
-    content: nice-icon(cloud-download);
-  }
-  
-  &--cloud-upload:before {
-    content: nice-icon(cloud-upload);
-  }
-  
-  &--double-angle-down:before {
-    content: nice-icon(double-angle-down);
-  }
-  
-  &--double-angle-left:before {
-    content: nice-icon(double-angle-left);
-  }
-  
-  &--double-angle-right:before {
-    content: nice-icon(double-angle-right);
-  }
-  
-  &--double-angle-up:before {
-    content: nice-icon(double-angle-up);
-  }
-  
-  &--download:before {
-    content: nice-icon(download);
-  }
-  
-  &--email-closed:before {
-    content: nice-icon(email-closed);
-  }
-  
-  &--email-open:before {
-    content: nice-icon(email-open);
-  }
-  
-  &--evidence:before {
-    content: nice-icon(evidence);
-  }
-  
-  &--facebook:before {
-    content: nice-icon(facebook);
-  }
-  
-  &--file-blank:before {
-    content: nice-icon(file-blank);
-  }
-  
-  &--file-text:before {
-    content: nice-icon(file-text);
-  }
-  
-  &--file:before {
-    content: nice-icon(file);
-  }
-  
-  &--filter:before {
-    content: nice-icon(filter);
-  }
-  
-  &--fullscreen:before {
-    content: nice-icon(fullscreen);
-  }
-  
-  &--google-plus:before {
-    content: nice-icon(google-plus);
-  }
-  
-  &--group:before {
-    content: nice-icon(group);
-  }
-  
-  &--guidance:before {
-    content: nice-icon(guidance);
-  }
-  
-  &--guideline:before {
-    content: nice-icon(guideline);
-  }
-  
-  &--hamburger:before {
-    content: nice-icon(hamburger);
-  }
-  
-  &--infoforpublic:before {
-    content: nice-icon(infoforpublic);
-  }
-  
-  &--information:before {
-    content: nice-icon(information);
-  }
-  
-  &--lines:before {
-    content: nice-icon(lines);
-  }
-  
-  &--linkedin:before {
-    content: nice-icon(linkedin);
-  }
-  
-  &--logo-name:before {
-    content: nice-icon(logo-name);
-  }
-  
-  &--logo:before {
-    content: nice-icon(logo);
-  }
-  
-  &--minus:before {
-    content: nice-icon(minus);
-  }
-  
-  &--news:before {
-    content: nice-icon(news);
-  }
-  
-  &--next:before {
-    content: nice-icon(next);
-  }
-  
-  &--ok:before {
-    content: nice-icon(ok);
-  }
-  
-  &--pathways-node:before {
-    content: nice-icon(pathways-node);
-  }
-  
-  &--pathways:before {
-    content: nice-icon(pathways);
-  }
-  
-  &--play:before {
-    content: nice-icon(play);
-  }
-  
-  &--plus-circle:before {
-    content: nice-icon(plus-circle);
-  }
-  
-  &--plus:before {
-    content: nice-icon(plus);
-  }
-  
-  &--podcast:before {
-    content: nice-icon(podcast);
-  }
-  
-  &--prescribing:before {
-    content: nice-icon(prescribing);
-  }
-  
-  &--previous:before {
-    content: nice-icon(previous);
-  }
-  
-  &--print:before {
-    content: nice-icon(print);
-  }
-  
-  &--quote-left:before {
-    content: nice-icon(quote-left);
-  }
-  
-  &--quote-right:before {
-    content: nice-icon(quote-right);
-  }
-  
-  &--readnews:before {
-    content: nice-icon(readnews);
-  }
-  
-  &--remove:before {
-    content: nice-icon(remove);
-  }
-  
-  &--search:before {
-    content: nice-icon(search);
-  }
-  
-  &--share:before {
-    content: nice-icon(share);
-  }
-  
-  &--sort-down:before {
-    content: nice-icon(sort-down);
-  }
-  
-  &--sort-up:before {
-    content: nice-icon(sort-up);
-  }
-  
-  &--sort:before {
-    content: nice-icon(sort);
-  }
-  
-  &--spinner:before {
-    content: nice-icon(spinner);
-  }
-  
-  &--standards:before {
-    content: nice-icon(standards);
-  }
-  
-  &--stop:before {
-    content: nice-icon(stop);
-  }
-  
-  &--support:before {
-    content: nice-icon(support);
-  }
-  
-  &--syndication:before {
-    content: nice-icon(syndication);
-  }
-  
-  &--trash:before {
-    content: nice-icon(trash);
-  }
-  
-  &--twitter:before {
-    content: nice-icon(twitter);
-  }
-  
-  &--uptake:before {
-    content: nice-icon(uptake);
-  }
-  
-  &--user:before {
-    content: nice-icon(user);
-  }
-  
-  &--warning:before {
-    content: nice-icon(warning);
-  }
-  
 }

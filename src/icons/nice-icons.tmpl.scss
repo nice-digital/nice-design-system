@@ -23,9 +23,9 @@
 
 // Map of icon name to codepoint
 $nice-icons: (
-<% _.forEach(glyphs, function(glyph, index) { %>
-  ${ glyph }: "${ codepoints[index] }",<% }); %>
-);
+  <% _.forEach(glyphs, function(glyph, index) { %>${ glyph }: "${ codepoints[index] }"<% if (index < glyphs.length - 1) { %>,
+  <% } %><% }); %>
+) !default;
 
 @mixin icon-base {
   display: inline-block;
@@ -67,9 +67,9 @@ $nice-icons: (
     display: block;
   }
 
-  <% _.forEach(glyphs, function(glyph, index) { %>
-  &--${ glyph }:before {
-    content: nice-icon(${ glyph });
+  @each $icon, $code in $nice-icons {
+    &--#{ $icon }:before {
+      content: nice-icon($icon);
+    }
   }
-  <% }); %>
 }
