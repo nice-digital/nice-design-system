@@ -2,6 +2,10 @@
 /// @group hacks
 ////
 
+@mixin important($property, $style) {
+  #{ $property }: #{ $style } !important;
+}
+
 /// Class to make element visible only when printing
 .visible-print {
   display: none !important;

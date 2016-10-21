@@ -1,0 +1,230 @@
+////
+/// @group helpers
+////
+
+
+//## Mixins
+
+/// Portrait media query
+@mixin portrait {
+  @media screen and (orientation: portrait) {
+    @content;
+  }
+}
+
+/// Landscape media query
+@mixin landscape {
+  @media screen and (orientation: landscape) {
+    @content;
+  }
+}
+
+/// Makes an element visually hidden, but still accessible to keyboards and assistive devices.
+@mixin invisible {
+  @include important(position, absolute);
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  overflow: hidden;
+  width: 1px;
+}
+
+/// Reverses the CSS output created by the `invisible()` mixin.
+@mixin invisible-off {
+  @include important(static, absolute);
+  clip: auto;
+  height: auto;
+  overflow: visible;
+  width: auto;
+}
+
+
+//## Generic hide/show
+
+/// Display none.
+/// Note the use of `!important` for overriding styles.
+.hide {
+  @include important(display, none);
+}
+
+/// Displays an element as block by default.
+/// Or use modifiers to display inline/inline-block.
+///
+/// Modifiers:
+///   - `inline`
+///   - `inline-block`
+.show {
+  display: block;
+
+  @include m(inline) {
+    display: inline;
+  }
+
+  @include m(inline-block) {
+    display: inline-block;
+  }
+}
+
+/// Visible
+.visible {
+  visibility: visible;
+}
+
+/// Visibility hidden
+.invisible {
+  visibility: hidden;
+}
+
+
+//## Orientation
+
+/// Landscape and portrait display
+.show-landscape,
+.hide-portrait {
+  @include important(display, block);
+
+  @include landscape {
+    @include important(display, block);
+  }
+
+  @include portrait {
+    @include important(display, none);
+  }
+}
+
+/// Landscape and portrait display
+.hide-landscape,
+.show-portrait {
+  @include important(display, none);
+
+  @include landscape {
+    @include important(display, none);
+  }
+
+  @include portrait {
+    @include important(display, block);
+  }
+}
+
+//## Breakpoints show
+
+// Outuput the following for each break point:
+//  - .hide-only-*
+//  - .hide-until-*
+//  - .hide-from-*
+//  - .show-only-*
+//  - .show-from-*
+//  - .show-until-*
+
+$hide-selectors: ();
+$block-selectors: ();
+$inline-selectors: ();
+$inline-block-selectors: ();
+@each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
+  $width: map-get($brkpnt-value, width);
+  @if $width {
+    $hide-selectors: append($hide-selectors, ".hide-until-#{ $brkpnt-key }", comma);
+    $hide-selectors: append($hide-selectors, ".hide-until-#{ $brkpnt-key }--i", comma);
+    $hide-selectors: append($hide-selectors, ".hide-until-#{ $brkpnt-key }--ib", comma);
+    $hide-selectors: append($hide-selectors, ".show-only-#{ $brkpnt-key }", comma);
+    $hide-selectors: append($hide-selectors, ".show-from-#{ $brkpnt-key }", comma);
+    $block-selectors: append($block-selectors, ".show-until-#{ $brkpnt-key }", comma);
+    $inline-selectors: append($inline-selectors, ".show-until-#{ $brkpnt-key }--i", comma);
+    $inline-block-selectors: append($inline-block-selectors, ".show-until-#{ $brkpnt-key }--ib", comma);
+  }
+}
+
+#{ $hide-selectors } {
+  @include important(display, none);
+}
+
+#{ $block-selectors } {
+  @include important(display, block);
+}
+
+#{ $inline-selectors } {
+  @include important(display, inline);
+}
+
+#{ $inline-block-selectors } {
+  @include important(display, inline-block);
+}
+
+
+@for $i from 2 through length($nice-breakpoints) {
+  $iterator: nth($nice-breakpoints, $i);
+  $brkpnt-key: nth($iterator, 1);
+  $brkpnt-value: nth($iterator, 2);
+
+  @if $i < length($nice-breakpoints) {
+    $next: nth($nice-breakpoints, $i + 1);
+    $next-brkpnt-key: nth($next, 1);
+
+    @include mq($from: $brkpnt-key, $until: $next-brkpnt-key) {
+      .hide-only-#{ $brkpnt-key } {
+        @include important(display, none);
+      }
+    }
+  }
+
+  @include mq($from: $brkpnt-key) {
+    @if $i > 2 {
+      $prev: nth($nice-breakpoints, $i - 1);
+      $prev-brkpnt-key: nth($prev, 1);
+
+      .show-only-#{ $prev-brkpnt-key },
+      .show-only-#{ $prev-brkpnt-key }--i,
+      .show-only-#{ $prev-brkpnt-key }--ib {
+        @include important(display, none);
+      }
+    }
+
+    .show-until-#{ $brkpnt-key },
+    .show-until-#{ $brkpnt-key }--i,
+    .show-until-#{ $brkpnt-key }--ib,
+    .hide-from-#{ $brkpnt-key } {
+      @include important(display, none);
+    }
+
+    .show-only-#{ $brkpnt-key },
+    .show-from-#{ $brkpnt-key },
+    .hide-until-#{ $brkpnt-key } {
+      @include important(display, block);
+    }
+
+    .show-only-#{ $brkpnt-key }--i,
+    .show-from-#{ $brkpnt-key }--i,
+    .hide-until-#{ $brkpnt-key }--i {
+      @include important(display, inline);
+    }
+
+    .show-only-#{ $brkpnt-key }--ib,
+    .show-from-#{ $brkpnt-key }--ib,
+    .hide-until-#{ $brkpnt-key }--ib {
+      @include important(display, inline-block);
+    }
+
+    @if $i == length($nice-breakpoints) {
+      .hide-only-#{ $brkpnt-key } {
+        @include important(display, none);
+      }
+    }
+  }
+}
+
+
+//## Accessibility
+.show-sr,
+.show-focus,
+.visually-hidden,
+.visuallyhidden {
+  @include invisible;
+}
+
+
+//## Focus
+.show-focus {
+  &:active,
+  &:focus {
+    @include invisible-off;
+  }
+}

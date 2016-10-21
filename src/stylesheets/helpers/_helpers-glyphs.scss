@@ -60,8 +60,8 @@ $glyphs: (
   @return unquote('\'#{$codes}\'');
 }
 
-// Output a BEM style glyph selector for each glyph in the map.
-// E.g. .glyph.glyph--bullet { content: '\2022'; }
+/// Output a BEM style glyph selector for each glyph in the map.
+/// E.g. .glyph.glyph--bullet { content: '\2022'; }
 .glyph {
   @each $key, $value in $glyphs {
     &--#{$key} {

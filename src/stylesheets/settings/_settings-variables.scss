@@ -44,3 +44,8 @@ $mq-breakpoints: ();
     $mq-breakpoints: map-merge($mq-breakpoints, ($brkpnt-key: $width));
   }
 }
+
+/// Whether to output a default set of generic print styles for things
+/// like avoiding page breaks after headings etc. If you disabled this,
+/// be sure to add your own print styles.
+$output-default-print-styles: true !default;

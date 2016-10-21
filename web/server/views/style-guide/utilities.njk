@@ -1,0 +1,48 @@
+{% extends "./_style-guide-layout.njk" %}
+{% set title = "Utilities" %}
+
+{% block main %}
+
+	<h1>Utilities</h1>
+
+	<nav>
+		<ul>
+			<li><a href="#visibility">Visibility</a></li>
+			<li><a href="#responsive">Responsive helpers</a></li>
+			<li><a href="#groups">Groups</a></li>
+		</ul>
+	</nav>
+
+	<section id="visibility">
+		<h2>Visibility</h2>
+
+		<ul>
+			<li>Use <code>.show</code> and <code>.hide</code></li>
+			<li>Use <code>.invisibile</code> and <code>.visibile</code></li>
+			<li>Use <code>[aria-hidden="true"]</code> to hide from screenreaders</li>
+			<li>Use <code>.show-sr</code> to show for screenreaders</li>
+		</ul>
+	</section>
+
+	<section id="responsive">
+		<h2>Responsive helpers</h2>
+
+		<p>
+			Use the following classes to manage visibility for each of the breakpoints.
+			For example <code>.hide-until-lg</code> would hide an element from smaller devices and show it
+			from sreen widths 'lg' and up.
+		</p>
+
+		<ul>
+			<li><code>.hide-only-*</code> - hides an element for the specified breakpoint only</li>
+			<li><code>.hide-from-*</code> - hides for the specified breakpoint and above</li>
+			<li><code>.hide-until-*</code> - hides from 0px wide up until the breakpoint, and displays it as <code>block</code> above</li>
+			<li><code>.hide-until-*--i</code> - hides from 0px wide up until the breakpoint, and displays it as <code>inline</code> above</li>
+			<li><code>.hide-until-*--ib</code> - hides from 0px wide up until the breakpoint, and displays it as <code>inline-block</code> above</li>
+			<li><code>.show-only-*</code> - hides</li>
+			<li><code>.show-from-*</code></li>
+			<li><code>.show-until-*</code></li>
+		</ul>
+	</section>
+
+{% endblock %}
