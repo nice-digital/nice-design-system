@@ -2,26 +2,26 @@
 /// @group helpers
 ////
 
-.visible-print-block,
-.visible-print-inline,
-.visible-print-inline-block {
+.show-print,
+.show-print--i,
+.show-print-ib {
   @include important(display, none);
 }
 
 @media print {
-  .visible-print-block {
+  .show-print {
     @include important(display, block);
   }
 
-  .visible-print-inline {
+  .show-print--i {
     @include important(display, inline);
   }
 
-  .visible-print-inline-block {
+  .show-print--ib {
     @include important(display, inline-block);
   }
 
-  .hidden-print {
+  .hide-print {
     @include important(display, none);
   }
 }

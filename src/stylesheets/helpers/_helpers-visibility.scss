@@ -47,19 +47,19 @@
 }
 
 /// Displays an element as block by default.
-/// Or use modifiers to display inline/inline-block.
+/// Or use modifiers to display inline/inline-block:
 ///
 /// Modifiers:
-///   - `inline`
-///   - `inline-block`
+///   - `i`
+///   - `ib`
 .show {
   display: block;
 
-  @include m(inline) {
+  @include m(i) {
     display: inline;
   }
 
-  @include m(inline-block) {
+  @include m(ib) {
     display: inline-block;
   }
 }
@@ -122,11 +122,19 @@ $inline-block-selectors: ();
 @each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
   $width: map-get($brkpnt-value, width);
   @if $width {
+    // Hide until
     $hide-selectors: append($hide-selectors, ".hide-until-#{ $brkpnt-key }", comma);
     $hide-selectors: append($hide-selectors, ".hide-until-#{ $brkpnt-key }--i", comma);
     $hide-selectors: append($hide-selectors, ".hide-until-#{ $brkpnt-key }--ib", comma);
+    // Show only
     $hide-selectors: append($hide-selectors, ".show-only-#{ $brkpnt-key }", comma);
+    $hide-selectors: append($hide-selectors, ".show-only-#{ $brkpnt-key }--i", comma);
+    $hide-selectors: append($hide-selectors, ".show-only-#{ $brkpnt-key }--ib", comma);
+    // Show from
     $hide-selectors: append($hide-selectors, ".show-from-#{ $brkpnt-key }", comma);
+    $hide-selectors: append($hide-selectors, ".show-from-#{ $brkpnt-key }--i", comma);
+    $hide-selectors: append($hide-selectors, ".show-from-#{ $brkpnt-key }--ib", comma);
+    // Show until
     $block-selectors: append($block-selectors, ".show-until-#{ $brkpnt-key }", comma);
     $inline-selectors: append($inline-selectors, ".show-until-#{ $brkpnt-key }--i", comma);
     $inline-block-selectors: append($inline-block-selectors, ".show-until-#{ $brkpnt-key }--ib", comma);
@@ -213,10 +221,8 @@ $inline-block-selectors: ();
 
 
 //## Accessibility
-.show-sr,
 .show-focus,
-.visually-hidden,
-.visuallyhidden {
+.visually-hidden {
   @include invisible;
 }
 

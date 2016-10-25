@@ -8,30 +8,66 @@
 	<nav>
 		<ul>
 			<li><a href="#visibility">Visibility</a></li>
+			<li><a href="#orientation">Orientation</a></li>
 			<li><a href="#responsive">Responsive helpers</a></li>
-			<li><a href="#groups">Groups</a></li>
+			<li><a href="#accessibility">Accessibility</a></li>
+			<li><a href="#print">Print</a></li>
 		</ul>
 	</nav>
 
 	<section id="visibility">
 		<h2>Visibility</h2>
 
+		<p>
+			Use the following selectors for visibility:
+		</p>
+
 		<ul>
-			<li>Use <code>.show</code> and <code>.hide</code></li>
-			<li>Use <code>.invisibile</code> and <code>.visibile</code></li>
-			<li>Use <code>[aria-hidden="true"]</code> to hide from screenreaders</li>
-			<li>Use <code>.show-sr</code> to show for screenreaders</li>
+			<li><code>.show</code> and <code>.hide</code> to toggle between display block/none</li>
+			<li>or <code>.show--i</code> or <code>.show--ib</code> for inline/inline-block respectively</li>
+			<li><code>.invisibile</code> and <code>.visibile</code> to toggle between visibility hidden/visible</li>
 		</ul>
+
+		<p>
+			Also see the <a href="#accessibility">accessibility section</a> for showing/hiding content for screenreaders
+		</p>
+
+	</section>
+
+	<section id="orientation">
+		<h2>Orientation</h2>
+
+		<p>
+			Use the following selectors for visibility on different orientations:
+		</p>
+
+		<ul>
+			<li><code>.show-landscape</code></li>
+			<li><code>.hide-landscape</code></li>
+			<li><code>.show-portrait</code></li>
+			<li><code>.hide-portrait</code></li>
+		</ul>
+
+		<h3>Orientation example</h3>
+
+		{% example "html" -%}
+			<p class="show-landscape">
+				This is visible only on <strong>landscape</strong> orientations
+			</p>
+			<p class="show-portrait">
+				This is visible only on <strong>portrait</strong> orientations
+			</p>
+		{%- endexample %}
 	</section>
 
 	<section id="responsive">
 		<h2>Responsive helpers</h2>
 
 		<p>
-			Use the following classes to manage visibility for each of the breakpoints.
-			For example <code>.hide-until-lg</code> would hide an element from smaller devices and show it
-			from sreen widths 'lg' and up.
+			Use the following classes to manage visibility across breakpoints. If you're writing a custom component, consider using media queries to achieve this, rather than using these classes.
 		</p>
+
+		<h3>Hiding by screen width</h3>
 
 		<ul>
 			<li><code>.hide-only-*</code> - hides an element for the specified breakpoint only</li>
@@ -39,10 +75,93 @@
 			<li><code>.hide-until-*</code> - hides from 0px wide up until the breakpoint, and displays it as <code>block</code> above</li>
 			<li><code>.hide-until-*--i</code> - hides from 0px wide up until the breakpoint, and displays it as <code>inline</code> above</li>
 			<li><code>.hide-until-*--ib</code> - hides from 0px wide up until the breakpoint, and displays it as <code>inline-block</code> above</li>
-			<li><code>.show-only-*</code> - hides</li>
-			<li><code>.show-from-*</code></li>
-			<li><code>.show-until-*</code></li>
 		</ul>
+
+		<h4>Hiding example</h4>
+
+		{% example "html" -%}
+			<p class="hide-until-md--ib">
+				This is hidden until 'md' breakpoint and up, where it is displayed as inline-block
+			</p>
+			<p class="hide-from-md">
+				This is hidden from 'md' breakpoint and up
+			</p>
+			<p class="hide-only-md">
+				This is hidden only on the 'md' breakpoint
+			</p>
+		{%- endexample %}
+
+		<h3>Showing by screen width</h3>
+
+		<ul>
+			<li><code>.show-only-*</code> - hides an element by default, then displays it as <code>block</code> only for the specififed breakpoint</li>
+			<li><code>.show-only-*--i</code> - hides an element by default, then displays it as <code>inline</code> only for the specififed breakpoint</li>
+			<li><code>.show-only-*--ib</code> - hides an element by default, then displays it as <code>inline-block</code> only for the specififed breakpoint</li>
+			<li><code>.show-from-*</code> - hides on element by defaults, then displays it as <code>block</code> from the specified breakpoint and up</li>
+			<li><code>.show-from-*--i</code> - hides on element by defaults, then displays it as <code>inline</code> from the specified breakpoint and up</li>
+			<li><code>.show-from-*--ib</code> - hides on element by defaults, then displays it as <code>inline-block</code> from the specified breakpoint and up</li>
+			<li><code>.show-until-*</code> - hides an element above the specified breakpoint</li>
+		</ul>
+
+		<h4>Showing example</h4>
+
+		{% example "html" -%}
+			<p class="show-until-md">
+				This is visible up until 'md' breakpoint
+			</p>
+			<p class="show-from-md--ib">
+				This is only visible from the 'md' breakpoint, and is inline-block
+			</p>
+			<p class="show-only-md--i">
+				<br/>This is visible only on the 'md' breakpoint, as inline
+			</p>
+		{%- endexample %}
+	</section>
+
+	<section id="accessibility">
+
+		<h2>Accessibility</h2>
+
+		<h3>Hide visually <small>(but show for screenreaders)</small></h3>
+
+		<p>
+			Use <code>.visually-hidden</code> to show for screenreaders, but hide visually.
+			Useful for extra explanations to screenreaders to give context.
+		</p>
+
+		<h3>Hide from screenreaders <small>(but show visually)</small></h3>
+
+		<p>
+			Use <code>aria-hidden="true"</code> to hide content from screenreaders but show it visually.
+			Useful for purely visual elements (e.g. icons) that don't have any meaningful, semantic content.
+		</p>
+
+		<h3>Show on focus</h3>
+
+		<p>
+			Use <code>.show-on-focus</code> to create elements that appear visually only when focussed. Useful for skiplinks.
+		</p>
+
+	</section>
+
+	<section id="print">
+
+		<h2>Print</h2>
+
+		<p>
+			Use the following classes to show things only for print:
+		</p>
+
+		<ul>
+			<li><code>.show-print</code></li>
+			<li><code>.show-print--i</code></li>
+			<li><code>.show-print--ib</code></li>
+		</ul>
+
+		<p>
+			Or alternatively use <code>.hide-print</code> to hide elements from displaying on print.
+		</p>
+
 	</section>
 
 {% endblock %}
