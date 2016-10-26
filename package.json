@@ -1,6 +1,6 @@
 {
   "name": "nice-experience",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "Your source for creating beautiful, consistent experiences across NICE",
   "keywords": [
     "css",
@@ -48,9 +48,7 @@
     "grunt-express-server": "^0.5.3",
     "time-grunt": "^1.4.0",
     "webpack-dev-server": "^1.16.1",
-    "webpack-notifier": "^1.4.1"
-  },
-  "dependencies": {
+    "webpack-notifier": "^1.4.1",
     "autoprefixer": "^6.5.1",
     "babel-core": "^6.10.4",
     "babel-eslint": "^7.0.0",
@@ -94,10 +92,8 @@
     "html-minifier": "^3.1.0",
     "istanbul": "^1.1.0-alpha.1",
     "jit-grunt": "^0.10.0",
-    "jquery": "^3.1.1",
     "jsdoc-babel": "^0.2.1",
     "jsdom": "^9.5.0",
-    "keycode": "^2.1.7",
     "load-grunt-config": "^0.19.2",
     "load-grunt-tasks": "^3.5.0",
     "lodash": "^4.16.2",
@@ -114,6 +110,10 @@
     "sinon-chai": "^2.8.0",
     "string-replace-webpack-plugin": "0.0.3",
     "webpack": "^1.13.2"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "keycode": "^2.1.7"
   },
   "engines": {
     "node": ">=4"
