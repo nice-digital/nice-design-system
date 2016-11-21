@@ -15,14 +15,14 @@ module.exports = {
 	},
 	sass: {
 		files: sasslint.target.src,
-		tasks: ["sass:dev", "postcss", "newer:sasslint", "sassdoc"],
+		tasks: ["sass:dev", "postcss", "newer:sasslint"],
 		options: {
 			spawn: false
 		}
 	},
 	jsbuild: {
-		files: ["src/javascripts/**/*.js", "web/client/javascripts/**/*.js"],
-		tasks: ["webpack:dev"],
+		files: ["src/**/*.js", "!src/components/**/*.test.js"],
+		tasks: ["webpack"],
 		options: {
 			spawn: false
 		}
@@ -32,20 +32,6 @@ module.exports = {
 		tasks: ["newer:eslint"],
 		options: {
 			spawn: false
-		}
-	},
-	express: {
-		files: ["web/server/**/*.js"],
-		tasks: ["express"],
-		options: {
-			spawn: false,
-			atBegin: true
-		}
-	},
-	public: {
-		files: ["dist/**/*.*", "web/server/views/**/*.njk"],
-		options: {
-			livereload: true
 		}
 	}
 };

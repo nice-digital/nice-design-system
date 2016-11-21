@@ -3,8 +3,8 @@
 
 import keycode from "keycode";
 
-import Tabs from "../../src/javascripts/tabs";
-import testHelpers from "../test-helpers";
+import Tabs from "./tabs";
+import testHelpers from "../../../test/test-helpers";
 
 describe("Tabs", function() {
 

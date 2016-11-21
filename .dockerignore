@@ -1,8 +1,0 @@
-.dockerignore
-.editorconfig
-.sublime-project
-.sublime-project.sublime-workspace
-dist
-node_modules
-docker-dev.sh
-readme.md

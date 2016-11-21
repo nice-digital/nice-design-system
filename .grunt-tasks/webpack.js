@@ -1,9 +1,5 @@
-var webpackConfig = require("./../webpack.config.js"),
-	webpackProdConfig = require("./../webpack.production.config.js");
+var webpackConfig = require("./../webpack.config.js");
 
 module.exports = {
-
-	dev: webpackConfig,
-
-	dist: webpackProdConfig,
+	build: webpackConfig
 };

@@ -67,11 +67,9 @@ See https://www.nice.org.uk/accessibility for more information.
 | [.grunt-tasks](.grunt-tasks) | Grunt task configs loaded in from Gruntfile.js |
 | [src](src) | The main source of Experience |
 | - [src/assets](src/assets) | Common static assets |
+| - [src/icons](src/icons) | SVG icon font source |
 | - [src/javascripts](src/javascripts) | Main Experience JS + [JSDoc config](src/javascripts/.jsdoc.json) and [ESLint config](src/javascripts/.eslintrc.json) |
 | - [src/stylesheets](src/stylesheets) | Main Experience SASS + [SASS Lint config](src/stylesheets/.sass-lint.yml) + [SASS Doc custom theme](src/stylesheets/sassdoc-nice-theme.js) |
-| [web](web) | Web app for the style guide |
-| - [web/client](web/client) | Client side assets required for the website itself |
-| - [web/server](web/server) | Server scripts for the website itself. [/web/server/index.js](web/server/index.js) is the entry point. |
 
 ## Prerequisites
 

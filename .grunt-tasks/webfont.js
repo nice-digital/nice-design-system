@@ -1,6 +1,6 @@
 module.exports = {
 	icons: {
-		src: "./src/icons/*.svg",
+		src: "src/icons/*.svg",
 		dest: "dist/fonts",
 		destScss: "src/stylesheets/typography",
 		options: {

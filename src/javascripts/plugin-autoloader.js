@@ -2,10 +2,12 @@ import $ from "jquery";
 
 // Regex to find the name of a module from its path.
 // E.g, "./experience.js" find "experience" from the matched group
-const ModuleNameRegex = /^\.\/(.*).js$/i;
+// E.g, "/tabs/tabs.js" find "tabs" from the matched group
+const ModuleNameRegex = /([^\/.]*)\.js$/i;
 
-// Load all modules from this directory automatically, see http://stackoverflow.com/a/31770875/486434
-let localRequire = require.context("./", true, /^(.*\.(js$))[^.]*$/igm);
+// Load all component modules from this directory automatically, see http://stackoverflow.com/a/31770875/486434
+// But exclude test files http://stackoverflow.com/a/30372240
+let localRequire = require.context("./../components/", true, /^((?!test\.).)*\.js$/igm);
 
 // Constructs a module object - parses a key (path) into a module name
 let getModuleObj =

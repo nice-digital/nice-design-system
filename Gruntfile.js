@@ -3,7 +3,10 @@ const path = require("path"),
 	chalk = require("chalk");
 
 module.exports = grunt => {
-	//require("time-grunt")(grunt);
+
+	if(grunt.option("timing")) {
+		require("time-grunt")(grunt);
+	}
 
 	require("load-grunt-config")(grunt, {
 		configPath: path.join(process.cwd(), ".grunt-tasks"),
@@ -11,7 +14,8 @@ module.exports = grunt => {
 		jitGrunt: {
 			staticMappings: {
 				sasslint: "grunt-sass-lint",
-				express: "grunt-express-server"
+				express: "grunt-express-server",
+				cssmin: "grunt-contrib-cssmin"
 			}
 		}
 	});
@@ -30,16 +34,11 @@ module.exports = grunt => {
 	// Lint both SASS and JS
 	r("lint", ["sasslint", "eslint"]);
 
-	// Generate documentation form comments in SASS and JS
-	r("docs", ["sassdoc", "documentation"]);
-
+	// Run JS unit tests
 	r("test", ["mochaTest"]);
 
-	// For deploying the web app. Builds minified SASS/JS
-	r("dist", ["env:dist", "clean", "sass:dist", "postcss", "webpack:dist"]);
-
 	// For building before publishing to NPM etc
-	r("prepublish", ["env:dist", "clean", "sass:publish", "postcss", "sass:publishMin", "webpack:dist"]);
+	r("prepublish", ["env:dist", "clean", "lint", "test", "webfont", "sass", "postcss", "cssmin", "webpack"]);
 
-	r("default", ["env:dev", "lint", "test", "concurrent:default", "watch"]);
+	r("default", ["env:dev", "clean", "lint", "test", "webfont", "sass:dev", "postcss", "webpack", "watch"]);
 };

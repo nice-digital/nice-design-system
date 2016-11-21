@@ -17,7 +17,7 @@ const fs = require("fs"),
  * @return {String}      The rendered component
  */
 function renderComponent(name, data) {
-	var template = fs.readFileSync(path.join(__dirname, "../web/server/views/partials/components/" + name + ".njk"), "utf8");
+	var template = fs.readFileSync(path.join(__dirname, `../src/components/${ name }/${ name }.njk`), "utf8");
 	return nunjucks.renderString(`${ template}{{ ${ name }(content) }}"`, { content: data });
 }
 

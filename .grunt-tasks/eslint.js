@@ -1,14 +1,12 @@
 module.exports = {
 	target: {
 		src: [
-			"src/javascripts/**/*.js",
+			"src/**/*.js",
 			"Gruntfile.js",
 			"webpack.config.js",
-			"webpack.production.config.js",
 			".grunt-tasks/**/*.js",
-			"web/server/**/*.js",
-			"web/client/javascripts/**/*.js",
-			"test/**/*.js"
+			"test/**/*.js",
+			"!src/icons/nice-icons.tmpl.js"
 		]
 	},
 	options: {

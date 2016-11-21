@@ -1,6 +1,6 @@
 import $ from "jquery";
 import pluginAutoLoader from "./plugin-autoloader";
-import Tabs from "./tabs";
+import Tabs from "./../components/tabs/tabs.js";
 import Tracker from "./tracker";
 
 $.fn.experience = function() {
