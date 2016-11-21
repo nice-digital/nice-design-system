@@ -104,10 +104,9 @@ Before you run any tasks, you'll have to run the following from the command line
 
 | Task | Description |
 | ---- | ----------- |
-| `grunt`      | Default. Lints, builds everything in parallel and runs an express server and a watch task for dev changes. Prefer to use `npm start` instead. |
+| `grunt`      | Default. Lints, builds everything and run a watch task for dev changes. Prefer to use `npm start` instead. |
 | `grunt lint` | Lints SASS and JS |
 | `grunt test` | Runs JS tests |
-| `grunt dist` | Builds documentation, modernizr, CSS and JS in production mode (minified etc). For deploying the web app itself. |
 | `grunt prepublish` | Builds minified code for publishing to npm etc |
 
 #### npm
