@@ -64,6 +64,7 @@ p,
 .p {
   @include font($scale: 0, $line-height: 1.6);
   font-feature-settings: 'kern', 'onum', 'liga';
+  font-weight: normal;
 
   &.lead {
     @include font($scale: 1, $line-height: 2);
