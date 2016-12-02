@@ -1,6 +1,6 @@
 # NICE Experience
 
-Welcome to NICE Experience. Your source for creating beautiful, consistent experiences across NICE.
+Welcome to NICE Experience. Your source for creating beautiful, consistent experiences across NICE. See https://github.com/nhsevidence/NICE-brand-site for the Brand Site repository.
 
 [![License](https://img.shields.io/github/license/nhsevidence/nice-experience.svg)](https://github.com/nhsevidence/NICE-Experience/blob/master/LICENSE)
 [![Dependencies](https://img.shields.io/david/nhsevidence/nice-experience.svg)](https://david-dm.org/nhsevidence/nice-experience)
