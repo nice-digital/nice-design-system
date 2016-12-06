@@ -8,8 +8,35 @@
   width: 96%;
 }
 
+/// Container. Used as a wrapper around sections within a page.
+/// Modifiers:
+///   - --narrow - Narrower version of the container
+///   - --full - Full width rather than maximum width
+///   - --panel - Adds a background colour
+///
+/// @example
+///   <div class="container container--panel container--full">
+///     <div class="grid">
+///     </div>
+///   </div>
 .container {
   @extend %container;
+
+  &--narrow {
+    max-width: 1000px;
+  }
+
+  &--full {
+    max-width: 100%;
+    padding: 0 2%;
+    width: auto;
+  }
+
+  &--panel {
+    background: get-colour(grey, xx-light);
+    padding: 0 2%;
+    width: auto;
+  }
 }
 
 img {
