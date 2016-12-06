@@ -124,10 +124,12 @@
 
   @include generate-grid-classes;
 
-  @each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
-    @if map-has-key($brkpnt-value, width) {
-      @include mq($from: $brkpnt-key) {
-        @include generate-grid-classes($brkpnt-key);
+  @if $nice-responsive {
+    @each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
+      @if map-has-key($brkpnt-value, width) {
+        @include mq($from: $brkpnt-key) {
+          @include generate-grid-classes($brkpnt-key);
+        }
       }
     }
   }
