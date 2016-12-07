@@ -54,6 +54,11 @@
   text-transform: uppercase;
   vertical-align: middle;
 
+  @media print {
+    @include important(background, $black);
+    @include important(color, $white);
+  }
+
   &--alpha {
     background-color: $colour-alpha;
     color: $white;

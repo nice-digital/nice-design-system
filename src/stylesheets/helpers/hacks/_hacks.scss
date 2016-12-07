@@ -6,20 +6,6 @@
   #{ $property }: #{ $style } !important;
 }
 
-/// Class to make element visible only when printing
-.visible-print {
-  display: none !important;
-}
-
-@media print {
-  .visible-print {
-    display: inherit !important;
-  }
-  .hidden-print {
-    display: none !important;
-  }
-}
-
 /// Resets `box-sizing` to `border-box`
 /// @link https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 @mixin default-box-sixing {
