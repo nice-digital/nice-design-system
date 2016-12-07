@@ -4,6 +4,7 @@
 
 // See https://www.w3.org/WAI/WCAG20/Techniques/working-examples/G65/ex3.html
 .breadcrumbs {
+  @include font-size(0);
   list-style: none;
   margin: 0;
   padding: scut-em(12 0);
