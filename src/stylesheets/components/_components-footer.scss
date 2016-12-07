@@ -2,13 +2,12 @@
 /// @group components
 ////
 
-
 /// Site footer
-///
 .site-footer {
   @include font-size(-1);
   background: get-colour(grey, dark);
   color: $white;
+  margin-top: scut-em(32px);
   padding: scut-em(32px 0);
 
   a {
