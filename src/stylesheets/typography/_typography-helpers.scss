@@ -9,38 +9,38 @@
   @return unquote($result);
 }
 
-/// Gets the root font size as a percentage.
-/// Uses the $nice-breakpoints map to add a set of mobile
-/// first media queries.
-/// @see $nice-breakpoints
-/// @output Root font-size for the HTML element (in %) and associate media queries
-/// @example
-///   html {
-///     @include root-size;
-///   }
-///   outputs:
-///   html {
-///     font-size: 75%;
-///   }
-///   @media (min-width: 27.5em) {
-///     html {
-///       font-size: 81.25%;
-///     }
-///   }
-// @mixin root-size {
-//   @each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
-//     $root-size: map-get($brkpnt-value, root-size);
-//     $font-size-pc: $root-size / $base-font-size * 100%;
-
-//     @if map-has-key($brkpnt-value, width) {
-//       @include mq($from: $brkpnt-key) {
-//         font-size: $font-size-pc;
-//       }
-//     } @else {
-//       font-size: $font-size-pc;
+// Gets the root font size as a percentage.
+// Uses the $nice-breakpoints map to add a set of mobile
+// first media queries.
+// @see $nice-breakpoints
+// @output Root font-size for the HTML element (in %) and associate media queries
+// @example
+//   html {
+//     @include root-size;
+//   }
+//   outputs:
+//   html {
+//     font-size: 75%;
+//   }
+//   @media (min-width: 27.5em) {
+//     html {
+//       font-size: 81.25%;
 //     }
 //   }
-// }
+@mixin root-size {
+  @each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
+    $root-size: map-get($brkpnt-value, root-size);
+    $font-size-pc: $root-size / $base-font-size * 100%;
+
+    @if map-has-key($brkpnt-value, width) {
+      @include mq($from: $brkpnt-key) {
+        font-size: $font-size-pc;
+      }
+    } @else {
+      font-size: $font-size-pc;
+    }
+  }
+}
 
 
 /// Gets a numeric font size (in px) from a given scale multiplier and breakpoint.
@@ -55,7 +55,7 @@
 
   $brkpnt-value: map-get($nice-breakpoints, $brkpnt-key);
   $root-size: map-get($brkpnt-value, root-size);
-  //$root-size: $base-font-size;
+  $root-size: $base-font-size;
   $ms-ratio: map-get($brkpnt-value, ms-ratio);
 
   @if map-has-key($named-font-sizes, $scale) {
@@ -81,18 +81,24 @@
 ///     @include font-size(h1);
 ///   }
 @mixin font-size($scale: 0, $line-height: 2) {
+
+  $prev-ratio: null;
+
   @each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
 
+    $ratio: map-get($brkpnt-value, ms-ratio);
     $font-size: get-font-size($scale, $brkpnt-key);
     //$root-size: map-get($brkpnt-value, root-size);
     $root-size: $base-font-size;
     $font-size-rem: #{$font-size / $root-size}rem;
 
     @if map-has-key($brkpnt-value, width) {
-      @include mq($from: $brkpnt-key) {
-        font-size: $font-size-rem;
-        @if $line-height != 0 {
-          line-height: #{$line-height}rem;
+      @if($prev-ratio != $ratio) {
+        @include mq($from: $brkpnt-key) {
+          font-size: $font-size-rem;
+          @if $line-height != 0 {
+            line-height: #{$line-height}rem;
+          }
         }
       }
     } @else {
@@ -101,6 +107,7 @@
         line-height: #{$line-height}rem;
       }
     }
+    $prev-ratio: $ratio;
   }
 }
 
@@ -109,9 +116,10 @@
 /// @link https://github.com/jakegiltsoff/sassline/blob/master/assets/sass/sassline-base/_mixins.scss Taken from SASS Line
 /// @link https://gist.github.com/razwan/10662500 In turn based on razwan's gist
 @mixin font($scale: 0, $line-height: 2, $below: 2) {
-
+  $prev-ratio: 0;
   @each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
 
+    $ratio: map-get($brkpnt-value, ms-ratio);
     //$root-size: map-get($brkpnt-value, root-size);
     $root-size: $base-font-size;
     $font-size: get-font-size($scale, $brkpnt-key);
@@ -124,12 +132,14 @@
 
     @if map-has-key($brkpnt-value, width) {
       @include mq($from: $brkpnt-key) {
-        font-size: $font-size-rem;
-        @if $line-height != 0 {
-          line-height: #{$line-height}rem;
+        @if($prev-ratio != $ratio) {
+          font-size: $font-size-rem;
+          @if $line-height != 0 {
+            line-height: #{$line-height}rem;
+          }
+          margin-bottom: #{$baseline-push}rem;
+          padding-top: #{$baseline-shift}rem;
         }
-        margin-bottom: #{$baseline-push}rem;
-        padding-top: #{$baseline-shift}rem;
       }
     } @else {
       font-size: $font-size-rem;
@@ -140,5 +150,6 @@
       margin-top: 0;
       padding-top: #{$baseline-shift}rem;
     }
+    $prev-ratio: $ratio;
   }
 }

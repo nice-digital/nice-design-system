@@ -10,17 +10,17 @@ $nice-breakpoints: (
     ms-ratio: get-ratio(major-second)
   ),
   xs: (
-    width: 440px,
+    width: 400px,
     root-size: 15,
     ms-ratio: get-ratio(major-second)
   ),
   sm: (
-    width: 720px,
+    width: 600px,
     root-size: 16,
     ms-ratio: get-ratio(major-second)
   ),
   md: (
-    width: 960px,
+    width: 900px,
     root-size: 17,
     ms-ratio: get-ratio(major-second)
   ),
@@ -50,4 +50,7 @@ $mq-breakpoints: ();
 /// be sure to add your own print styles.
 $output-default-print-styles: true !default;
 
+/// Whether the site is responsive. Setting to false will disable
+/// generation of the responsie grid selectors.
+/// True by default.
 $nice-responsive: true !default;
