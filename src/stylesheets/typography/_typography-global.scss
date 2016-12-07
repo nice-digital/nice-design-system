@@ -11,8 +11,7 @@
 }
 
 html {
-  //@include root-size;
-  font-size: 100%;
+  @include root-size;
 }
 
 body {
@@ -85,6 +84,7 @@ code {
   background: get-colour(grey, xx-light);
   border: 1px solid get-colour(grey, x-light);
   border-radius: 2px;
+  color: get-colour(red, dark);
   display: inline-block;
   font-family: font-family(mono);
   margin: scut-em(0 0 2);
@@ -95,4 +95,17 @@ code {
     border: 0;
     margin: 0;
   }
+}
+
+/// Mark
+mark,
+.mark {
+  padding: scut-em(4);
+  background-color: #fff999;
+}
+
+/// Small
+small,
+.small {
+  font-size: 85%;
 }
