@@ -55,11 +55,11 @@
 .show {
   display: block;
 
-  @include m(i) {
+  &--i {
     display: inline;
   }
 
-  @include m(ib) {
+  &--ib {
     display: inline-block;
   }
 }
@@ -123,21 +123,21 @@ $inline-block-selectors: ();
   $width: map-get($brkpnt-value, width);
   @if $width {
     // Hide until
-    $hide-selectors: append($hide-selectors, ".hide-until-#{ $brkpnt-key }", comma);
-    $hide-selectors: append($hide-selectors, ".hide-until-#{ $brkpnt-key }--i", comma);
-    $hide-selectors: append($hide-selectors, ".hide-until-#{ $brkpnt-key }--ib", comma);
+    $hide-selectors: append($hide-selectors, '.hide-until-#{ $brkpnt-key }', comma);
+    $hide-selectors: append($hide-selectors, '.hide-until-#{ $brkpnt-key }--i', comma);
+    $hide-selectors: append($hide-selectors, '.hide-until-#{ $brkpnt-key }--ib', comma);
     // Show only
-    $hide-selectors: append($hide-selectors, ".show-only-#{ $brkpnt-key }", comma);
-    $hide-selectors: append($hide-selectors, ".show-only-#{ $brkpnt-key }--i", comma);
-    $hide-selectors: append($hide-selectors, ".show-only-#{ $brkpnt-key }--ib", comma);
+    $hide-selectors: append($hide-selectors, '.show-only-#{ $brkpnt-key }', comma);
+    $hide-selectors: append($hide-selectors, '.show-only-#{ $brkpnt-key }--i', comma);
+    $hide-selectors: append($hide-selectors, '.show-only-#{ $brkpnt-key }--ib', comma);
     // Show from
-    $hide-selectors: append($hide-selectors, ".show-from-#{ $brkpnt-key }", comma);
-    $hide-selectors: append($hide-selectors, ".show-from-#{ $brkpnt-key }--i", comma);
-    $hide-selectors: append($hide-selectors, ".show-from-#{ $brkpnt-key }--ib", comma);
+    $hide-selectors: append($hide-selectors, '.show-from-#{ $brkpnt-key }', comma);
+    $hide-selectors: append($hide-selectors, '.show-from-#{ $brkpnt-key }--i', comma);
+    $hide-selectors: append($hide-selectors, '.show-from-#{ $brkpnt-key }--ib', comma);
     // Show until
-    $block-selectors: append($block-selectors, ".show-until-#{ $brkpnt-key }", comma);
-    $inline-selectors: append($inline-selectors, ".show-until-#{ $brkpnt-key }--i", comma);
-    $inline-block-selectors: append($inline-block-selectors, ".show-until-#{ $brkpnt-key }--ib", comma);
+    $block-selectors: append($block-selectors, '.show-until-#{ $brkpnt-key }', comma);
+    $inline-selectors: append($inline-selectors, '.show-until-#{ $brkpnt-key }--i', comma);
+    $inline-block-selectors: append($inline-block-selectors, '.show-until-#{ $brkpnt-key }--ib', comma);
   }
 }
 

@@ -32,6 +32,8 @@
 // Source: https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css
 @if $output-default-print-styles {
   @media print {
+    // sass-lint:disable no-qualifying-elements
+    // sass-lint:disable no-universal-selectors
 
     * {
       @include important(text-shadow, none);
@@ -55,18 +57,18 @@
     }
 
     a[href]:after {
-      content: " (" attr(href) ")";
+      content: ' (' attr(href) ')';
     }
 
     abbr[title]:after {
-      content: " (" attr(title) ")";
+      content: ' (' attr(title) ')';
     }
 
     // Don't show links for images, or javascript/internal links
     .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-      content: "";
+    a[href^='javascript:']:after,
+    a[href^='#']:after {
+      content: '';
     }
 
     pre,
@@ -85,11 +87,11 @@
     }
 
     img {
-      max-width: 100% !important;
+      @include important(max-width, 100%);
     }
 
     @page {
-      margin: 0.5cm;
+      margin: .5cm;
     }
 
     p,

@@ -146,7 +146,7 @@
     .icon {
       @include font-size(6);
       display: block;
-      margin: 0 auto scut-em(4px) auto;
+      margin: 0 auto scut-em(4px);
 
       // The following is needed for IE8 to go centrally aligned
       &:before {
@@ -189,7 +189,8 @@
     padding: scut-em(0 4);
     text-decoration: none;
 
-    &:focus, &:active {
+    &:focus,
+    &:active {
       color: $black;
     }
   }
@@ -201,9 +202,6 @@
     list-style: none;
     margin: 0;
     padding: 0;
-  }
-
-  &__item {
   }
 
   a {

@@ -74,7 +74,7 @@
     "grunt-newer": "^1.2.0",
     "grunt-postcss": "^0.8.0",
     "grunt-sass": "^1.2.1",
-    "grunt-sass-lint": "^0.2.0",
+    "grunt-sass-lint": "^0.2.2",
     "grunt-webfont": "^1.6.0",
     "grunt-webpack": "^1.0.11",
     "istanbul": "^1.1.0-alpha.1",
