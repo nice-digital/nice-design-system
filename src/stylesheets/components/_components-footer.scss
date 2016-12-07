@@ -10,6 +10,10 @@
   margin-top: scut-em(32px);
   padding: scut-em(32px 0);
 
+  @media print {
+    display: none;
+  }
+
   a {
     color: $white;
 

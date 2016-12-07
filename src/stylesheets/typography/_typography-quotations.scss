@@ -16,6 +16,10 @@
     font-weight: bold;
     line-height: 0;
     vertical-align: bottom;
+
+    @media print {
+      color: $black;
+    }
   }
 
   p {

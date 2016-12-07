@@ -6,6 +6,10 @@
   @extend .nav;
   background-color: get-colour(grey, x-light);
 
+  @media print {
+    display: none;
+  }
+
   &__inner {
     @extend %container;
     overflow: hidden;
