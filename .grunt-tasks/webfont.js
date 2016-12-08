@@ -7,7 +7,7 @@ module.exports = {
 			autoHint: false,
 			customOutputs: [
 				{
-					template: "src/icons/nice-icons.tmpl.js",
+					template: "src/icons/.nice-icons.tmpl.js",
 					dest: "dist/docs/fonts/nice-icons.json"
 				}
 			],
@@ -21,7 +21,7 @@ module.exports = {
 			optimize: false,
 			relativeFontPath: "/fonts",
 			stylesheet: "scss",
-			template: "src/icons/nice-icons.tmpl.scss",
+			template: "src/icons/.nice-icons.tmpl.scss",
 			types: "eot,woff2,woff,ttf,svg"
 		}
 	}
