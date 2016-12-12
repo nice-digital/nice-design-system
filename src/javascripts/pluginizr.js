@@ -1,12 +1,44 @@
 import $ from "jquery";
 
+// List of registered plugins, as { name, pluginClass }
+const plugins = [];
+
 /**
- * Turns a given class into a jQuery plugin
+ * Gets a list of registered plugins.
+ *
+ * @return {Array} The list of registered plugins. The array item consists of a name (string) property pluginClass property.
+ */
+export function getPlugins() {
+	return plugins;
+}
+
+/**
+ * Turns a given class into a jQuery plugin.
+ * Proxies methods on the class via jQuery plugin style invocation (see example).
  * @param  {string} pluginName	The name of the plugin
  * @param  {Class} plugin 		The class of the plugin itself
  * @link http://www.acuriousanimal.com/2013/01/15/things-i-learned-creating-a-jquery-plugin-part-i.html
+ * @example
+ * 	import pluginizr from "pluginizr";
+ * 	public class Test {
+ * 		constructor(element, options) {
+ * 		}
+ * 		aMethod(arg1) {
+ *
+ * 		}
+ * 		getValue() {
+ * 			return true;
+ * 		}
+ * 	}
+ * 	pluginizr("test", Test);
+ *
+ * 	// Class Test is now available as a plugin:
+ * 	$(".selector").test();
+ * 	$(".selector").test("aMethod", 99);
+ * 	var value = $(".selector").test("getValue");
  */
 export default (pluginName: string, Plugin) => {
+	plugins.push({ name: pluginName, pluginClass: Plugin }); // Store this registered plugin
 
 	const dataName = `__${pluginName}`,
 		old = $.fn[pluginName];
@@ -19,9 +51,6 @@ export default (pluginName: string, Plugin) => {
 
 		if (options === undefined || typeof options === "object") {
 			return this.each((i, el) => {
-
-				// TODO: Merge options with data-* attributes
-
 				// Create an instance of the plugin and cache it
 				if (!$.data(el, dataName)) {
 					$.data(el, dataName, new Plugin(el, options));

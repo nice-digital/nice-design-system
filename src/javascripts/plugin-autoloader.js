@@ -1,13 +1,10 @@
 import $ from "jquery";
+import { getPlugins } from "pluginizr";
 
 // Regex to find the name of a module from its path.
 // E.g, "./experience.js" find "experience" from the matched group
 // E.g, "/tabs/tabs.js" find "tabs" from the matched group
 const ModuleNameRegex = /([^\/.]*)\.js$/i;
-
-// Load all component modules from this directory automatically, see http://stackoverflow.com/a/31770875/486434
-// But exclude test files http://stackoverflow.com/a/30372240
-let localRequire = require.context("./../components/", true, /^((?!test\.).)*\.js$/igm);
 
 // Constructs a module object - parses a key (path) into a module name
 let getModuleObj =
@@ -15,33 +12,54 @@ let getModuleObj =
 
 // Require and return a module
 let requireModule =
-	(module) => {
+	(module, localRequire) => {
 		localRequire(module.key);
 		return module;
 	};
 
-// Build a list from which to auto-load
-let keys =
+/// Load all plugins from the given require context.
+/// @example
+/// 	import * as pluginAutoLoader from "plugin-autoloader";
+/// 	pluginAutoLoader.load(require.context("./", true, /\.js$/));
+export function load(localRequire) {
+	// Build a list from which to auto-load
 	localRequire.keys()
-	.filter(k => k !== "./experience.js") // Ignore experience as it's our entry point so treated differently
-	.map(getModuleObj)
-	.map(requireModule)
-	.filter(m => m.name in $.fn); // Now the module is loaded, only care about ones that are a plugin
+		.filter(k => k !== "./experience.js") // Ignore experience as it's our entry point so treated differently
+		.map(getModuleObj)
+		.map((module) => requireModule(module, localRequire))
+		.filter(m => m.name in $.fn); // Now the module is loaded, only care about ones that are a plugin
+}
+
+// Load all component modules from this directory automatically, see http://stackoverflow.com/a/31770875/486434
+// But exclude test files http://stackoverflow.com/a/30372240
+load(require.context("./../components/", true, /^((?!test\.).)*\.js$/igm));
+load(require.context("./", true, /^((?!test\.).)*\.js$/igm));
 
 /// Auto plugin loader.
 /// Useful for JIT loading of plugins
 export default {
 	findPlugins: ($context: $) => {
-		keys.forEach(plugin => { // Load any plugins automatically
+		getPlugins().forEach(plugin => { // Load any plugins automatically
 			$(`[data-${ plugin.name }]`, $context || $(document)).each((i, el) => {
-				let $el = $(el);
 
-				if(!PRODUCTION) { // Store the path we required it from, for debugging
-					$el.data("require-path", plugin.key);
-				}
+				var $el = $(el),
+					options;
 
-				// TODO: Convert plugin data-attributes into options object
-				$el[plugin.name]();
+				// Convert plugin data-attributes into options object
+				// e.g. data-plugin-test="true" data-plugin-something-else="1" becomes:
+				// { test: true, somethingElse: 1 }
+				[].forEach.call(el.attributes, function(attr) {
+
+					var match = attr.name.match(new RegExp(`^data-(${ plugin.name }-.+)`))
+					if (match && match.length === 2) {
+						var attrName = $.camelCase(match[1]),
+							propName = $.camelCase(match[1].replace(`${ plugin.name }-`, ""));
+						options = options || {};
+						options[propName] = $el.data(attrName); // Use jquery's data because it parses types
+					}
+				});
+
+				$(el)[plugin.name](options);
 			});
 		});
 	}
