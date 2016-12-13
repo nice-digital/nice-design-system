@@ -19,7 +19,7 @@ export function getPlugins() {
  * @param  {Class} plugin 		The class of the plugin itself
  * @link http://www.acuriousanimal.com/2013/01/15/things-i-learned-creating-a-jquery-plugin-part-i.html
  * @example
- * 	import pluginizr from "pluginizr";
+ * 	import { pluginizr } from "nice-experience";
  * 	public class Test {
  * 		constructor(element, options) {
  * 		}

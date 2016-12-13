@@ -2,23 +2,43 @@ import $ from "jquery";
 import pluginAutoLoader from "./plugin-autoloader";
 import Tabs from "./../components/tabs/tabs.js";
 import Tracker from "./tracker";
+import pluginizr from "./pluginizr";
+import eventr from "./eventr";
 
-$.fn.experience = function() {
-	pluginAutoLoader.findPlugins(this);
+let experience = {
+	init: (el: $) => {
+
+		// Load all component modules from this directory automatically, see http://stackoverflow.com/a/31770875/486434
+		// But exclude test files http://stackoverflow.com/a/30372240
+		pluginAutoLoader.load(require.context("./../components/", true, /^((?!test\.).)*\.js$/igm));
+		pluginAutoLoader.load(require.context("./", true, /^((?!test\.).)*\.js$/igm));
+
+		pluginAutoLoader.findPlugins(el);
+	},
+	// Components
+	Tabs: Tabs,
+	Tracker: Tracker,
+	// Utils
+	pluginAutoLoader: pluginAutoLoader,
+	pluginizr: pluginizr,
+	eventr: eventr
 };
 
-let Experience = {
-	Tabs: Tabs,
-	Tracker: Tracker
+$.fn.experience = function() {
+	experience.init(this);
 };
 
 // Export to global namespace for precompiled usage
 window.NICE = window.NICE || {};
-window.NICE.Experience = Experience;
+window.NICE.experience = experience;
 
 export {
-	Experience as default,
-	// Individual modules
+	experience as default,
+	// Components
 	Tabs,
-	Tracker
+	Tracker,
+	// Utils
+	pluginAutoLoader,
+	pluginizr,
+	eventr
 };
