@@ -179,8 +179,9 @@ describe("Tracker", function() {
 
 		it("handles click on tracked child", function() {
 			let spy = sandbox.spy(Tracker.prototype, "_handleTrack"),
-				$el = $("<div><a data-track></a></div>"),
-				tracker = new Tracker($el[0]);
+				$el = $("<div><a data-track></a></div>");
+
+			new Tracker($el[0]);
 
 			$("a", $el).click();
 
@@ -189,8 +190,9 @@ describe("Tracker", function() {
 
 		it("handled click event is namespaced", function() {
 			let spy = sandbox.spy(Tracker.prototype, "_handleTrack"),
-				$el = $("<div><a data-track></a></div>"),
-				tracker = new Tracker($el[0]);
+				$el = $("<div><a data-track></a></div>");
+
+			new Tracker($el[0]);
 
 			$("a", $el).click();
 

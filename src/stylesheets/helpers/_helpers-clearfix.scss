@@ -4,15 +4,15 @@
 
 /// Clearfix mixin
 /// @since 0.1.0
-@mixin clearfix() {
+@mixin clearfix {
   &:before,
   &:after {
-      content: ' ';
-      display: table;
+    content: ' ';
+    display: table;
   }
 
   &:after {
-      clear: both;
+    clear: both;
   }
 }
 

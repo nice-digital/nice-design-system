@@ -50,7 +50,7 @@
   &__tab {
     float: left;
 
-    &--active .tabs__tab-btn {
+    &--active .tabs__tab-btn { // sass-lint:disable-line no-combinators
       background: $colour-panel;
     }
   }

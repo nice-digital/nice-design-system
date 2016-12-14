@@ -21,7 +21,7 @@ $tones: (
     function: darken,
     args: 10%
   ),
-  base,
+  base: (),
   mid-light: (
     function: lighten,
     args: 10%
