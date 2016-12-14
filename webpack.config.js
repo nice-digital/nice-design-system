@@ -18,7 +18,9 @@ const baseConfig = {
 		umdNamedDefine: true
 	},
 	resolve: {
-		root: ["./src/javascripts/", "./node_modules/"]
+		root: ["./src/javascripts/"],
+		modulesDirectories: ["node_modules"],
+		extensions: ["", ".js"]
 	},
 	externals: { jquery: "jQuery" },
 	devtool: "#source-map",
