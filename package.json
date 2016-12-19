@@ -1,6 +1,6 @@
 {
   "name": "nice-experience",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Your source for creating beautiful, consistent experiences across NICE",
   "keywords": [
     "css",
@@ -73,6 +73,7 @@
     "grunt-modernizr": "^1.0.2",
     "grunt-newer": "^1.2.0",
     "grunt-postcss": "^0.8.0",
+    "grunt-release": "^0.14.0",
     "grunt-sass": "^2.0.0",
     "grunt-sass-lint": "^0.2.2",
     "grunt-webfont": "^1.6.0",
