@@ -14,8 +14,8 @@ Welcome to NICE Experience. Your source for creating beautiful, consistent exper
 - [Prerequisites](#prerequisites)
 - [Development](#development)
 	- [npm/Grunt](#npmgrunt)
-		- [Grunt](#grunt)
 		- [npm](#npm)
+		- [Grunt](#grunt)
 		- [Node](#node)
 	- [JavaScript](#javascript)
 	- [SASS](#sass)
@@ -100,15 +100,6 @@ Before you run any tasks, you'll have to run the following from the command line
 - `npm i -g grunt-cli`
 - `npm i`
 
-#### Grunt
-
-| Task | Description |
-| ---- | ----------- |
-| `grunt`      | Default. Lints, builds everything and run a watch task for dev changes. Prefer to use `npm start` instead. |
-| `grunt lint` | Lints SASS and JS |
-| `grunt test` | Runs JS tests |
-| `grunt prepublish` | Builds minified code for publishing to npm etc |
-
 #### npm
 
 Run `npm start` and `npm run test:watch` for development.
@@ -120,6 +111,11 @@ Run `npm start` and `npm run test:watch` for development.
 | `npm run test:watch`  | Runs JS test tests (with [min reporter](https://github.com/mochajs/mocha/blob/master/lib/reporters/min.js)) and watches for changes. Useful to run in development alongside grunt. |
 | `npm run test:coverage`  | Runs JS test tests and generates a coverage report with [Istanbul](https://istanbul.js.org/) into the *coverage* folder |
 | `npm run lint`        | Lints SASS and JS (uses `grunt lint` under the hood) |
+| `npm run release`        | Releases a new version as a git tag, release and npm release. |
+
+#### Grunt
+
+Some of the npm scripts use Grunt tasks under the hood. These Grunt tasks (and aliases) can be run directly e.g. `grunt lint`. However, we recommend using the npm scripts themselves.
 
 #### Node
 
