@@ -35,7 +35,7 @@
   },
   "config": {
     "//": "Banner is used for prepending to compiled JS and CSS",
-    "banner": "NICE Experience ${ version }\n© Copyright NICE 2015-${ year }\nLicensed under MIT (https://github.com/nhsevidence/nice-experience/blob/master/LICENSE)"
+    "banner": "NICE Experience ${ version } | ${ date }\n© Copyright NICE 2015-${ year }\nLicensed under MIT (https://github.com/nhsevidence/nice-experience/blob/master/LICENSE)"
   },
   "author": "NICE Digital Services (https://github.com/nhsevidence/nice-experience/graphs/contributors)",
   "contributors": [
@@ -92,6 +92,7 @@
     "node-common-errors": "^0.4.0",
     "nunjucks": "^3.0.0",
     "pixrem": "^3.0.2",
+    "postcss-banner": "^3.0.0",
     "sinon": "^1.17.6",
     "sinon-chai": "^2.8.0",
     "string-replace-webpack-plugin": "0.0.4",

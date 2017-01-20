@@ -2,11 +2,12 @@
 /*eslint-env node*/
 
 const _ = require("lodash"),
+	moment = require("moment"),
 	webpack = require("webpack"),
 	StringReplacePlugin = require("string-replace-webpack-plugin");
 
 const pkg = require("./package.json"),
-	banner = _.template(pkg.config.banner)({ version: pkg.version, year: new Date().getYear() + 1900 }),
+	banner = _.template(pkg.config.banner)({ version: pkg.version, date: moment().format("YYYY-MM-DD"), year: moment().format("YYYY") }),
 	bannerPlugin = new webpack.BannerPlugin(`/*!\n${banner}\n*/\n`, { raw: true });
 
 const baseConfig = {
