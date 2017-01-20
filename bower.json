@@ -1,0 +1,33 @@
+{
+  "name": "nice-experience",
+  "description": "Your source for creating beautiful, consistent experiences across NICE",
+  "main": "src/javascripts/experience.js",
+  "authors": [
+    "NICE Digital Services (https://www.nice.org.uk/)",
+    "Ian Routledge (http://ediblecode.com)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "sass",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "framework",
+    "web",
+    "nice",
+    "nhs"
+  ],
+  "homepage": "https://github.com/nhsevidence/NICE-Experience",
+  "ignore": [
+    "**/.*",
+    "!src/**/.*",
+    "**/.md",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    ".github",
+    ".grunt-tasks"
+  ]
+}
