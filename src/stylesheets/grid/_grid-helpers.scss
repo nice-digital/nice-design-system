@@ -36,6 +36,7 @@
 ///   <div class="test">
 ///     <div class="test__item">item</div>
 ///   </div>
+/// @since 0.1.0
 @mixin grid($reverse: false, $gutterless: false, $right: false, $center: false, $debug: false) {
   letter-spacing: -.31em;
   list-style: none;
@@ -67,6 +68,7 @@
 
 /// Reversed grids allow you to structure your source in the opposite order to how
 /// your rendered layout will appear
+/// @since 0.1.0
 @mixin grid-reverse {
   direction: rtl;
   text-align: left;
@@ -74,22 +76,26 @@
 
 /// Gutterless grids have all the properties of regular grids, minus any spacing
 /// @see grid-item-gutterless
+/// @since 0.1.0
 @mixin grid-gutterless {
   margin-left: 0;
 }
 
 /// Align the entire grid to the right
+/// @since 0.1.0
 @mixin grid-right {
   text-align: right;
 }
 
 /// Centered grids align grid items centrally without needing to use push or pull classes
+/// @since 0.1.0
 @mixin grid-center {
   text-align: center;
 }
 
 /// Debug a grid by putting a highlight round it
 /// @see grid-item-debug
+/// @since 0.1.0
 @mixin grid-debug {
   outline: 4px dashed red;
 }
@@ -110,6 +116,7 @@
 ///     width: 100%;
 ///     @include grid-item($breakpoints: ( md: ( width: 50%, push: 25% ), lg: 20% ));
 ///   }
+/// @since 0.1.0
 @mixin grid-item($gutterless: false, $middle: false, $bottom: false, $debug: false, $breakpoints: null) {
   @include border-box;
   direction: ltr;
@@ -173,22 +180,26 @@
 }
 
 /// Gutterless grids have all the properties of regular grids, minus any spacing.
+/// @since 0.1.0
 @mixin grid-item-gutterless {
   padding-left: 0;
 }
 
 /// Align grid cell vertically to the middle
+/// @since 0.1.0
 @mixin grid-item-middle {
   vertical-align: middle;
 }
 
 /// Align grid cell vertically to the bottom
+/// @since 0.1.0
 @mixin grid-item-bottom {
   vertical-align: bottom;
 }
 
 /// Debug a grid item by putting a highlight round it
 /// @see grid-debug
+/// @since 0.1.0
 @mixin grid-item-debug {
   outline: 2px dashed blue;
 }

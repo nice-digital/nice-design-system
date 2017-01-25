@@ -17,6 +17,7 @@
 /// @prop {String} up-tee-arrow [021A5] Up tee (bar) arrow (↥)
 /// @prop {String} box-box [029C9] Double box (⧉)
 /// @prop {String} punc-space [02008] Punctuation space (small, width of a comma)
+/// @since 0.1.0
 $glyphs: (
   bullet: '2022',
   quotation-mark: '0022',
@@ -37,6 +38,7 @@ $glyphs: (
 /// @param {argList} $names The name(s) of the glyph(s) to get
 /// @returns {string} The character entity reference code(s) as a string, e.g. '\201C' or '\02008\029C9'
 /// @see $glyphs
+/// @since 0.1.0
 /// @example Single glyph
 ///   .rule {
 ///     content: get-glyph(greater-than);
@@ -62,6 +64,7 @@ $glyphs: (
 
 /// Output a BEM style glyph selector for each glyph in the map.
 /// E.g. .glyph.glyph--bullet { content: '\2022'; }
+/// @since 0.1.0
 .glyph {
   @each $key, $value in $glyphs {
     &--#{$key} {

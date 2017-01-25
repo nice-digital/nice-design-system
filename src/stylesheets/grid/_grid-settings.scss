@@ -2,5 +2,6 @@
 /// @group grid
 ////
 
-// The width of the spacing between grid items
-$nice-grid-gutter: scut-em(24px) !default;
+/// The width of the spacing between grid items
+/// @since 0.1.0
+$nice-grid-gutter: em(24px) !default;

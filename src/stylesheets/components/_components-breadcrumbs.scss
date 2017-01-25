@@ -2,12 +2,14 @@
 /// @group components
 ////
 
-// See https://www.w3.org/WAI/WCAG20/Techniques/working-examples/G65/ex3.html
+/// breadcrumbs
+/// See https://www.w3.org/WAI/WCAG20/Techniques/working-examples/G65/ex3.html
+/// @since 0.1.0
 .breadcrumbs {
   @include font-size(0);
   list-style: none;
   margin: 0;
-  padding: scut-em(12 0);
+  padding: em(12 0);
 
   &__crumb {
     display: inline-block;
@@ -15,7 +17,7 @@
     &:before {
       @include nice-icon(angle-right);
       color: $colour-grey-1;
-      margin: scut-em(0 10);
+      margin: em(0 10);
     }
 
     &:first-child:before {

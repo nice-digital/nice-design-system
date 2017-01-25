@@ -2,7 +2,8 @@
 /// @group helpers
 ////
 
-@import 'hacks/hacks',
+@import 'helpers-utils',
+'hacks/hacks',
 'helpers-lists',
 'helpers-glyphs',
 'helpers-bem',
@@ -10,12 +11,3 @@
 'helpers-visibility',
 'helpers-clearfix',
 'helpers-text';
-
-/// Return ems from a pixel value
-/// This assumes a base of `$base-font-size`
-/// @link https://github.com/alphagov/govuk_elements/blob/master/public/sass/elements/_helpers.scss#L4-L8 em function in GOV.UK's elements
-/// @param {Number} $px - The pixel value to convert
-/// @param {Number} $base [$base-font-size] - The base pixel value
-@function em($px, $base: $base-font-size) {
-  @return ($px / $base) + em;
-}

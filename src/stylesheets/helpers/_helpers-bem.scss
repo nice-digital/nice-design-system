@@ -6,6 +6,7 @@
 /// @access public
 /// @param {String} $element - Element's name
 /// @link https://css-tricks.com/snippets/sass/bem-mixins/
+/// @since 0.1.0
 @mixin element($element) {
   &__#{$element} {
     @content;
@@ -16,6 +17,7 @@
 /// @access public
 /// @param {String} $modifier - Modifier's name
 /// @link https://css-tricks.com/snippets/sass/bem-mixins/
+/// @since 0.1.0
 @mixin modifier($modifier) {
   &--#{$modifier} {
     @content;
@@ -23,6 +25,7 @@
 }
 
 /// @alias element
+/// @since 0.1.0
 @mixin e($element) {
   &__#{$element} {
     @content;
@@ -30,6 +33,7 @@
 }
 
 /// @alias modifier
+/// @since 0.1.0
 @mixin m($modifier) {
   &--#{$modifier} {
     @content;

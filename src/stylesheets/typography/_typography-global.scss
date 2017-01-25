@@ -6,6 +6,7 @@
 
 /// The default focus style used for elements like anchors and buttons
 /// @output the default focus styles ie background colour and outline
+/// @since 0.1.0
 @mixin default-focus-style {
   outline: 3px solid $colour-focus;
 }
@@ -69,7 +70,7 @@ p,
         @include font-size($scale: 11, $line-height: 4);
         float: left;
         font-weight: 300;
-        padding: scut-em(0 2px 0 0);
+        padding: em(0 2px 0 0);
       }
     }
   }
@@ -82,8 +83,8 @@ code {
   color: $colour-text;
   display: inline-block;
   font-family: font-family(mono);
-  margin: scut-em(0 0 2);
-  padding: scut-em(0 4);
+  margin: em(0 0 2);
+  padding: em(0 4);
 
   pre & {
     background: transparent;
@@ -96,7 +97,7 @@ code {
 mark,
 .mark {
   background-color: #fff999;
-  padding: scut-em(4);
+  padding: em(4);
 }
 
 /// Small

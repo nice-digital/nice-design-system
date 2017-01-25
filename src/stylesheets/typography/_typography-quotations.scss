@@ -3,6 +3,7 @@
 ////
 
 /// Blockquote style
+/// @since 0.1.0
 .quote {
   @include font-size($scale: h4);
   font-weight: 300;

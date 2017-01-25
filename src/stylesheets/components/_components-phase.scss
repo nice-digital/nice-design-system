@@ -11,6 +11,7 @@
 ///   - `__label` The label explaining
 ///
 /// @see .phase-tag
+/// @since 0.1.0
 .phase-banner {
   border-bottom: 1px solid $colour-border;
   display: table;
@@ -43,6 +44,7 @@
 /// @todo Do we also need a discover phase colour?
 ///
 /// @see .phase-banner
+/// @since 0.1.0
 .phase-tag {
   background-color: $colour-grey-1;
   color: $colour-nice-white;

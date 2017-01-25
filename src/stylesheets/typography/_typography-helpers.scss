@@ -4,6 +4,7 @@
 
 /// Gets a font family from the `$font-families` map, given a name
 /// @param {String} $stack The stack name e.g. sans, serif or mono
+/// @since 0.1.0
 @function font-family($stack) {
   $result: map-get($font-families, $stack);
   @return unquote($result);
@@ -27,6 +28,7 @@
 //       font-size: 81.25%;
 //     }
 //   }
+/// @since 0.1.0
 @mixin root-size {
   @each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
     $root-size: map-get($brkpnt-value, root-size);
@@ -51,6 +53,7 @@
 ///   $font-size: get-font-size(2, desktop)
 /// @example
 ///   $font-size: get-font-size(h1, tablet)
+/// @since 0.1.0
 @function get-font-size($scale, $brkpnt-key) {
 
   $brkpnt-value: map-get($nice-breakpoints, $brkpnt-key);
@@ -80,6 +83,7 @@
 ///   .test {
 ///     @include font-size(h1);
 ///   }
+/// @since 0.1.0
 @mixin font-size($scale: 0, $line-height: 2) {
 
   $prev-ratio: null;
@@ -115,6 +119,7 @@
 /// Heavily inspired by 'Advanced baseline magic' from SASS Line
 /// @link https://github.com/jakegiltsoff/sassline/blob/master/assets/sass/sassline-base/_mixins.scss Taken from SASS Line
 /// @link https://gist.github.com/razwan/10662500 In turn based on razwan's gist
+/// @since 0.1.0
 @mixin font($scale: 0, $line-height: 2, $below: 2) {
   $prev-ratio: 0;
   @each $brkpnt-key, $brkpnt-value in $nice-breakpoints {

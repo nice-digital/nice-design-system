@@ -7,16 +7,15 @@
 /// @prop {Font stack} serif [Georgia, "Times New Roman", Times, serif] The serif font stack
 /// @prop {Font stack} mono [Monaco, Menlo, Consolas, "Courier New", monospace] The monospace font stack
 /// @see font-family
+/// @since 0.1.0
 $font-families: (
   sans: '"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif',
   serif: 'Georgia, "Times New Roman", Times, serif',
   mono: 'Monaco, Menlo, Consolas, "Courier New", monospace'
 );
 
-/// Base font size, in pixels
-$base-font-size: 16;
-
 /// Cap height
+/// @since 0.1.0
 $cap-height: .68;
 
 /// A map of named font sizes to their corresponding modular scale factor
@@ -27,6 +26,7 @@ $cap-height: .68;
 /// @prop {Integer} h5 [2] Heading 5
 /// @prop {Integer} h6 [1] Heading 6
 /// @prop {Integer} p [0] Paragraph
+/// @since 0.1.0
 $named-font-sizes: (
   h1: 6,
   h2: 5,

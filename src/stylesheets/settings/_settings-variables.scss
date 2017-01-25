@@ -1,3 +1,7 @@
+
+/// Base font size, in pixels
+$base-font-size: 16 !default;
+
 /// A map of break point name to settings.
 /// The break points are mobile first, min-width.
 /// I.e. palm: 480px equates to (min-width: 30em)
@@ -48,9 +52,11 @@ $mq-breakpoints: ();
 /// Whether to output a default set of generic print styles for things
 /// like avoiding page breaks after headings etc. If you disabled this,
 /// be sure to add your own print styles.
+/// @since 0.1.0
 $output-default-print-styles: true !default;
 
 /// Whether the site is responsive. Setting to false will disable
 /// generation of the responsie grid selectors.
 /// True by default.
+/// @since 0.1.0
 $nice-responsive: true !default;
