@@ -76,10 +76,10 @@ p,
 }
 
 code {
-  background: get-colour(grey, xx-light);
-  border: 1px solid get-colour(grey, x-light);
+  background: $colour-grey-3;
+  border: 1px solid $colour-grey-2;
   border-radius: 2px;
-  color: get-colour(red, dark);
+  color: $colour-text;
   display: inline-block;
   font-family: font-family(mono);
   margin: scut-em(0 0 2);

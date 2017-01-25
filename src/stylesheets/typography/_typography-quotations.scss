@@ -7,8 +7,8 @@
   @include font-size($scale: h4);
   font-weight: 300;
 
-  &::before {
-    color: get-colour(orange, light);
+  &:before {
+    color: $colour-nice-teal;
     content: get-glyph(left-double-quotation-mark);
     display: inline-block;
     font-family: Arial;
@@ -18,7 +18,7 @@
     vertical-align: bottom;
 
     @media print {
-      color: $black;
+      color: $colour-true-black;
     }
   }
 

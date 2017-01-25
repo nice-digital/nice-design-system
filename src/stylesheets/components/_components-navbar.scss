@@ -4,7 +4,7 @@
 
 .navbar {
   @extend .nav;
-  background-color: get-colour(grey, x-light);
+  background-color: $colour-grey-3;
 
   @media print {
     display: none;
@@ -18,8 +18,8 @@
   &__nav {
     .active {
       a {
-        &::after {
-          background-color: get-colour(orange);
+        &:after {
+          background-color: $colour-nice-teal;
           display: block;
         }
       }

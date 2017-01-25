@@ -34,7 +34,7 @@
   }
 
   &--panel {
-    background: get-colour(grey, xx-light);
+    background: $colour-panel;
     padding: 0 2%;
     width: auto;
   }

@@ -9,7 +9,7 @@
   padding: 1em;
 
   &--dark {
-    background: get-colour(grey, mid-dark);
-    color: $white;
+    background: $colour-panel-dark;
+    color: $colour-nice-white;
   }
 }

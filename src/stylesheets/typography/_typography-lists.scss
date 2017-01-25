@@ -24,7 +24,7 @@ ol {
       position: relative;
 
       &:before {
-        color: get-colour(orange);
+        color: $colour-nice-teal;
         content: get-glyph(bullet);
         font-size: 150%;
         left: -1.5rem;
@@ -32,7 +32,7 @@ ol {
         top: 0;
 
         @media print {
-          color: $black;
+          color: $colour-true-black;
         }
       }
     }

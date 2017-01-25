@@ -20,7 +20,7 @@
       text-decoration: none;
 
       &:hover {
-        background-color: get-colour(grey, light);
+        background-color: $colour-panel;
       }
 
       &:active {
@@ -29,8 +29,8 @@
         }
       }
 
-      &::after {
-        background-color: get-colour(blue);
+      &:after {
+        background-color: $colour-text;
         bottom: 0;
         content: '';
         display: none;
@@ -41,56 +41,4 @@
       }
     }
   }
-
-  &__tabs {
-    .active {
-      a {
-        &::after {
-          display: block;
-        }
-      }
-    }
-  }
-
-  &__pills {
-    .active {
-      a {
-        background-color: get-colour(blue, x-light);
-        color: $white;
-      }
-    }
-  }
-
-  &__tabs,
-  &__pills {
-    &--justified {
-      li {
-        text-align: center;
-      }
-
-      // one item
-      li:first-child:nth-last-child(1) {
-        width: 100%;
-      }
-
-      // two items
-      li:first-child:nth-last-child(2),
-      li:first-child:nth-last-child(2) ~ li {
-        width: 50%;
-      }
-
-      // three items
-      li:first-child:nth-last-child(3),
-      li:first-child:nth-last-child(3) ~ li {
-        width: 33.3333%;
-      }
-
-      // four items
-      li:first-child:nth-last-child(4),
-      li:first-child:nth-last-child(4) ~ li {
-        width: 25%;
-      }
-    }
-  }
-
 }

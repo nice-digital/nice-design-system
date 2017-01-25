@@ -44,8 +44,8 @@
 ///
 /// @see .phase-banner
 .phase-tag {
-  background-color: get-colour(grey, mid-dark);
-  color: $white;
+  background-color: $colour-grey-1;
+  color: $colour-nice-white;
   display: inline-block;
   font-weight: 700;
   letter-spacing: 1px;
@@ -55,22 +55,22 @@
   vertical-align: middle;
 
   @media print {
-    @include important(background, $black);
-    @include important(color, $white);
+    @include important(background, $colour-true-black);
+    @include important(color, $colour-true-white);
   }
 
   &--alpha {
     background-color: $colour-alpha;
-    color: $white;
+    color: $colour-nice-white;
   }
 
   &--beta {
     background-color: $colour-beta;
-    color: $white;
+    color: $colour-nice-white;
   }
 
   &--live {
     background-color: $colour-live;
-    color: $white;
+    color: $colour-nice-white;
   }
 }

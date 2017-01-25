@@ -14,7 +14,7 @@
 
     &:before {
       @include nice-icon(angle-right);
-      color: get-colour(grey);
+      color: $colour-grey-1;
       margin: scut-em(0 10);
     }
 

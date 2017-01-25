@@ -38,7 +38,7 @@
 
     * {
       @include important(text-shadow, none);
-      @include important(color, $black); // Black prints faster: h5bp.com/s
+      @include important(color, $colour-true-black); // Black prints faster: h5bp.com/s
       @include important(background, transparent);
       @include important(box-shadow, none);
     }

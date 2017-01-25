@@ -2,256 +2,103 @@
 /// @group colors
 ////
 
-/// Possible tones that can be used for colour mapping
-/// @see get-colour
-$tones: (
-  xx-dark: (
-    function: darken,
-    args: 40%
-  ),
-  x-dark: (
-    function: darken,
-    args: 30%
-  ),
-  dark: (
-    function: darken,
-    args: 20%
-  ),
-  mid-dark: (
-    function: darken,
-    args: 10%
-  ),
-  base: (),
-  mid-light: (
-    function: lighten,
-    args: 10%
-  ),
-  light: (
-    function: lighten,
-    args: 20%
-  ),
-  x-light: (
-    function: lighten,
-    args: 30%
-  ),
-  xx-light: (
-    function: lighten,
-    args: 40%
-  )
-);
+/// True black, used for print styles
+$colour-true-black: #000;
 
-/// Applies a tone to the given colour
-/// @param $colour [Colour] The colour to which to apply the tone
-/// @param $tone [Map] The tone, one of the values from the $tones map
-/// @returns {Colour} The toned colour
-@function apply-tone($colour, $tone) {
-  @if map-has-key($tones, $tone) {
-    $this-tone: map-get($tones, $tone);
-    $function: map-get($this-tone, function);
+/// True white, used for print styles
+$colour-true-white: #fff;
 
-    $args: ();
-    @if map-get($this-tone, args) {
-      $args: join($args, map-get($this-tone, args));
-    }
-    @return call($function, $colour, $args...);
-  }
+// PRIMARY PALETTE
 
-  @error 'Invalid `$tone`: #{$tone}. Must be one of $tones.';
-}
+/// NICE Black. Part of the primary palette.
+$colour-nice-black: #222;
 
-// Extremes
-$black: #000;
-$white: #fff;
+/// NICE White. Part of the primary palette
+$colour-nice-white: #fff;
 
-/// The base colour for grey
-$colour-base-grey: #777;
+/// NICE Teal. Part of the primary palette.
+/// First choice of colour for supporting
+$colour-nice-teal: #004650;
 
-/// The base colour for blue
-$colour-base-blue: #2f577a;
+// SECONDARY PALETTE
 
-/// The base colour for green
-$colour-base-green: #4caf50;
+/// Purple. Part of the secondary palette. Purple should be used sparingly and only used as a
+/// panel background to highlight a particular section of content,
+/// in which case font colour must be pure white (NICE White) to make text legible.
+$colour-purple: #451551;
 
-/// The base colour for orange
-$colour-base-orange: #f5b805;
+/// Cool Teal. Part of the secondary palette.
+$colour-cool-teal: #00506a;
 
-/// The base colour for pink
-$colour-base-pink: #d5367f;
+/// Rich Black. Part of the secondary palette.
+$colour-rich-black: #0e0e0e;
 
-/// The base colour for purple
-$colour-base-purple: #82176f;
+/// Dark Grey. Part of the secondary palette.
+$colour-dark-grey: #393939;
 
-/// The base colour for red
-$colour-base-red: #f00;
+/// Grey 1. Part of the secondary palette.
+$colour-grey-1: #adadad;
 
-/// Grey colour palette
-/// @prop {Color} xx-light [#eee] Extra, extra light grey
-/// @prop {Color} x-light [#ddd] Extra light grey
-/// @prop {Color} light [#bbb] Light grey
-/// @prop {Color} mid-light [#999] Mid-light grey
-/// @prop {Color} base [$colour-base-grey] Base grey
-/// @prop {Color} mid-dark [#555] Mid-dark grey
-/// @prop {Color} dark [#333] Dark grey
-/// @prop {Color} x-dark [#111] Extra dark grey
-$palette-grey: (
-  xx-light: #eee,
-  x-light: #ddd,
-  light: #bbb,
-  mid-light: #999,
-  base: $colour-base-grey,
-  mid-dark: #555,
-  dark: #333,
-  x-dark: #111
-);
+/// Grey 2. Part of the secondary palette.
+$colour-grey-2: #d6d6d6;
 
-/// Blue colour palette
-/// @prop {Color} x-light [#66c2ff] Extra-light blue
-/// @prop {Color} light [#1167b7] Light blue
-/// @prop {Color} base [$colour-base-blue] Base blue
-/// @prop {Color} dark [#264965] Dark blue
-$palette-blue: (
-  x-light: #66c2ff,
-  light: #1167b7,
-  base: $colour-base-blue,
-  dark: #264965
-);
+/// Grey 3. Part of the secondary palette.
+$colour-grey-3: #e9e9e9;
 
-/// Green colour palette
-/// @prop {Color} xx-light [#c8e6c9] Extra extra light green
-/// @prop {Color} x-light [#a5d6a7] Extra light green
-/// @prop {Color} light [#81c784] Light green
-/// @prop {Color} mid-light [#66bb6a] Mid-light green
-/// @prop {Color} base [$colour-base-green] Base green
-/// @prop {Color} mid-dark [#43a047] Mid-dark green
-/// @prop {Color} dark [#388e3c] Dark green
-/// @prop {Color} x-dark [#2e7d32] Extra dark green
-/// @prop {Color} xx-dark [#1b5e20] Extra extra dark green
-$palette-green: (
-  xx-light: #c8e6c9,
-  x-light: #a5d6a7,
-  light: #81c784,
-  mid-light: #66bb6a,
-  base: $colour-base-green,
-  mid-dark: #43a047,
-  dark: #388e3c,
-  x-dark: #2e7d32,
-  xx-dark: #1b5e20
-);
+// TERTIARY PALETTE
 
-/// Orange palette
-/// @prop {Color} base [$colour-base-orange] Base orange
-$palette-orange: (
-  base: $colour-base-orange
-);
+/// Blue 1. Part of the tertiary palette.
+$colour-blue-1: #233746;
 
-/// Pink palette
-/// @prop {Color} light [#fef7f7] Light pink
-/// @prop {Color} base [$colour-base-pink] Base pink
-$palette-pink: (
-  light: #fef7f7,
-  base: $colour-base-pink
-);
+/// Blue 2. Part of the tertiary palette.
+$colour-blue-2: #314c60;
 
-/// Purple colour palette
-/// @prop {Color} base [$colour-base-purple] Base purple colour
-$palette-purple: (
-  base: $colour-base-purple
-);
+/// Blue 3. Part of the tertiary palette.
+$colour-blue-3: #517489;
 
-/// Red palette
-/// @prop {Color} x-light [#faa] Extra light red
-/// @prop {Color} light [#ff8080] Light red
-/// @prop {Color} mid-light [#f55] Mid-light red
-/// @prop {Color} base [$colour-base-red] Base red
-/// @prop {Color} mid-dark [#d40000] Mid-dark red
-/// @prop {Color} dark [#a00] Dark red
-/// @prop {Color} x-dark [#800000] Extra dark red
-$palette-red: (
-  x-light: #faa,
-  light: #ff8080,
-  mid-light: #f55,
-  base: $colour-base-red,
-  mid-dark: #d40000,
-  dark: #a00,
-  x-dark: #800000
-);
+/// Ice Teal. Part of the tertiary palette.
+$colour-ice-teal: #a2bdc1;
 
-/// A map of colour name -> palette.
-/// The keys are used to get a colour via the `get-colour` function.
-/// @see get-colour
-/// @prop {Map} purple [$palette-purple] Purple colour palette
-/// @prop {Map} grey [$palette-grey] Grey colour palette
-/// @prop {Map} green [$palette-green] Green colour palette
-/// @prop {Map} blue [$palette-blue] Blue colour palette
-/// @prop {Map} orange [$palette-orange] Orange colour palette
-/// @prop {Map} red [$palette-red] Red colour palette
-/// @prop {Map} pink [$palette-pink] Pink colour palette
-$palettes: (
-  purple: $palette-purple,
-  grey: $palette-grey,
-  green: $palette-green,
-  blue: $palette-blue,
-  orange: $palette-orange,
-  red: $palette-red,
-  pink: $palette-pink
-);
+/// Teal 1. Part of the tertiary palette.
+$colour-teal-1: #4f7d83;
 
-/// Gets a colour value from a given name and optional tone.
-/// If the tone variant isn't explicitly declared in the `$palettes` map
-/// then the function from the `$tones` is used as a fallback.
-/// @param {String} $palette The colour palette to get, e.g. red
-/// @param {String} $tone The optional tone variant, one of the `$tones` values
-/// @see $tones
-/// @see $palettes
-/// @link http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/ Colour map structure inspired from Erskine Design
-/// @link https://www.sitepoint.com/managing-color-values-with-sass/ Function borrowed from SitePoint
-@function get-colour($palette, $tone: 'base') {
-  @if map-has-key($palettes, $palette) {
+/// Teal 2. Part of the tertiary palette.
+$colour-teal-2: #18646e;
 
-    $colour: map-get($palettes, $palette);
-
-    @if map-has-key($colour, $tone) {
-      @return map-get($colour, $tone);
-    }
-
-    @warn 'Tone `#{$tone}` could not be found in colour `#{$palette}`. Auto-toning instead';
-    @return apply-tone(map-get($colour, base), $tone);
-  }
-
-  @error 'Palette `#{$palette}` could not be found';
-}
-
+/// Teal 3. Part of the tertiary palette.
+$colour-teal-3: #15434a;
 
 // SEMANTIC COLOUR NAMES
 
 /// Page background colour
-$colour-page: $white;
+$colour-page: $colour-nice-white;
 /// Link text colour
-$colour-link: get-colour(blue, light);
+$colour-link: #005ea5;
 /// Link hover colour
-$colour-link-hover: get-colour(blue, x-light);
+$colour-link-hover: #2b8cc4;
 /// Link visited colour
-$colour-link-visited: get-colour(purple);
-// $link-active-colour: $light-blue;
+$colour-link-visited: #4c2c92;
+/// Link active colour
+$colour-link-active: #2b8cc4;
 /// Focus colour
-$colour-focus: get-colour(orange);
+$colour-focus: #ffbf47;
 /// Standard text colour
-$colour-text: get-colour(grey, dark);
+$colour-text: $colour-rich-black;
 /// Borders, seperators, rules, keylines etc.
-$colour-border: get-colour(grey, light);
+$colour-border: $colour-grey-1;
 // Panels, tabs etc
-$colour-panel: get-colour(grey, x-light);
-// Table stripes etc.
-// $highlight-colour: $grey-4;
+$colour-panel: $colour-grey-3;
+// Dark panels
+$colour-panel-dark: $colour-dark-grey;
+/// Discovery agile lifecycle phase
+$colour-discovery: #b8008e;
 /// Alpha badges and banners
-$colour-alpha: get-colour(pink);
+$colour-alpha: #d53880;
 /// Beta badges and banners
-$colour-beta: get-colour(orange);
+$colour-beta: #f47738;
 /// Live badges and banners
-$colour-live: get-colour(green);
+$colour-live: #70a747;
 /// Error text and border colour
-$colour-error: get-colour(red);
+$colour-error: #df3034;
 /// Error background colour
-$colour-error-background: get-colour(pink, x-light);
-/// BNF brand colour
-$colour-bnf: $colour-base-purple;
+$colour-error-background: #fef7f7;

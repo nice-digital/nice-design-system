@@ -5,8 +5,8 @@
 /// Site footer
 .site-footer {
   @include font-size(-1);
-  background: get-colour(grey, dark);
-  color: $white;
+  background: $colour-dark-grey;
+  color: $colour-nice-white;
   margin-top: scut-em(32px);
   padding: scut-em(32px 0);
 
@@ -15,7 +15,7 @@
   }
 
   a {
-    color: $white;
+    color: $colour-nice-white;
 
     &:focus {
       color: #000;
@@ -96,25 +96,25 @@
   }
 
   &__item {
-    border-bottom: 1px solid get-colour(grey);
+    border-bottom: 1px solid $colour-grey-1;
 
     &:first-child {
-      border-top: 1px solid get-colour(grey);
+      border-top: 1px solid $colour-grey-1;
     }
 
     a {
       @include font-size(-1, 1.3);
-      color: get-colour(grey, light);
+      color: $colour-grey-3;
       display: block;
       padding: scut-em(8 0);
       text-decoration: none;
 
       &:hover {
-        color: $white;
+        color: $colour-nice-white;
       }
 
       &:focus {
-        color: $black;
+        color: $colour-text;
       }
     }
 
@@ -191,7 +191,7 @@
 
     &:focus,
     &:active {
-      color: $black;
+      color: $colour-text;
     }
   }
 }
@@ -215,7 +215,7 @@
     }
 
     &__item {
-      border-left: 1px solid $white;
+      border-left: 1px solid $colour-nice-white;
       display: inline-block;
       line-height: 1;
 
