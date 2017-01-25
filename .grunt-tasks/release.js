@@ -9,7 +9,6 @@ module.exports = {
 			apiRoot: "https://api.github.com",
 			repo: "nhsevidence/NICE-experience",
 			accessTokenVar: "GITHUB_ACCESS_TOKEN"
-		},
-		additionalFiles: [/*"bower.json"*/]
+		}
 	}
 };
