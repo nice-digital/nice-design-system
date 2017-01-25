@@ -55,6 +55,10 @@ $mq-breakpoints: ();
 /// @since 0.1.0
 $output-default-print-styles: true !default;
 
+/// Whether to output the classes for the UTF-8 glyphs.
+/// @since 0.2.0
+$output-glyph-classes: false !default;
+
 /// Whether the site is responsive. Setting to false will disable
 /// generation of the responsie grid selectors.
 /// True by default.
