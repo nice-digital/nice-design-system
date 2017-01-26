@@ -2,7 +2,7 @@
 /// @group helpers
 ////
 
-/// Clearfix mixin
+/// Make an element adapt its height to fit floated children, and clear floats in both directions.
 /// @since 0.1.0
 @mixin clearfix {
   &:before,
