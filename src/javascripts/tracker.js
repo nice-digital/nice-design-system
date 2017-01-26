@@ -3,7 +3,6 @@
  * For tracking and analytics
  */
 
-import $ from "jquery";
 import pluginizr from "./pluginizr";
 import eventr from "./eventr";
 

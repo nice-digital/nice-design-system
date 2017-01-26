@@ -1,4 +1,3 @@
-import $ from "jquery";
 import { getPlugins } from "./pluginizr";
 
 // Regex to find the name of a module from its path.

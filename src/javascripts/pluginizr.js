@@ -1,5 +1,3 @@
-import $ from "jquery";
-
 // List of registered plugins, as { name, pluginClass }
 const plugins = [];
 
@@ -38,6 +36,7 @@ export function getPlugins() {
  * 	var value = $(".selector").test("getValue");
  */
 export default (pluginName: string, Plugin) => {
+
 	plugins.push({ name: pluginName, pluginClass: Plugin }); // Store this registered plugin
 
 	const dataName = `__${pluginName}`,
