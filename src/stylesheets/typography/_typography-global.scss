@@ -12,7 +12,27 @@
 }
 
 html {
-  @include root-size;
+  font-size: percentage($nice-mobile-root-size / $nice-base-font-size);
+
+  @include mq($from: xs) {
+    font-size: percentage($nice-breakpoint-xs-root-size / $nice-base-font-size);
+  }
+
+  @include mq($from: sm) {
+    font-size: percentage($nice-breakpoint-sm-root-size / $nice-base-font-size);
+  }
+
+  @include mq($from: md) {
+    font-size: percentage($nice-breakpoint-md-root-size / $nice-base-font-size);
+  }
+
+  @include mq($from: lg) {
+    font-size: percentage($nice-breakpoint-lg-root-size / $nice-base-font-size);
+  }
+
+  @include mq($from: xl) {
+    font-size: percentage($nice-breakpoint-xl-root-size / $nice-base-font-size);
+  }
 }
 
 body {

@@ -2,74 +2,39 @@
 /// @group Typography
 ////
 
-/// Gets a font family from the `$font-families` map, given a name
+/// Gets a font family from the `$nice-font-families` map, given a name
 /// @param {String} $stack The stack name e.g. sans, serif or mono
 /// @since 0.1.0
 @function font-family($stack) {
-  $result: map-get($font-families, $stack);
+  $result: map-get($nice-font-families, $stack);
   @return unquote($result);
 }
 
-// Gets the root font size as a percentage.
-// Uses the $nice-breakpoints map to add a set of mobile
-// first media queries.
-// @see $nice-breakpoints
-// @output Root font-size for the HTML element (in %) and associate media queries
-// @example
-//   html {
-//     @include root-size;
-//   }
-//   outputs:
-//   html {
-//     font-size: 75%;
-//   }
-//   @media (min-width: 27.5em) {
-//     html {
-//       font-size: 81.25%;
-//     }
-//   }
-/// @since 0.1.0
-@mixin root-size {
-  @each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
-    $root-size: map-get($brkpnt-value, root-size);
-    $font-size-pc: $root-size / $base-font-size * 100%;
-
-    @if map-has-key($brkpnt-value, width) {
-      @include mq($from: $brkpnt-key) {
-        font-size: $font-size-pc;
-      }
-    } @else {
-      font-size: $font-size-pc;
-    }
-  }
-}
-
-
-/// Gets a numeric font size (in px) from a given scale multiplier and breakpoint.
-/// Usually not used directly - the font-size or font mixin is usually used instead.
+/// Gets a numeric scale
 /// @param $scale {Integer|Name} The integer ratio or named font-size.
-/// @param $brkpnt-key {Name} The name of the breakpoint e.g. tablet
-/// @example
-///   $font-size: get-font-size(2, desktop)
-/// @example
-///   $font-size: get-font-size(h1, tablet)
-/// @since 0.1.0
-@function get-font-size($scale, $brkpnt-key) {
-
-  $brkpnt-value: map-get($nice-breakpoints, $brkpnt-key);
-  $root-size: map-get($brkpnt-value, root-size);
-  $root-size: $base-font-size;
-  $ms-ratio: map-get($brkpnt-value, ms-ratio);
-
+@function get-scale-integer($scale) {
   @if map-has-key($named-font-sizes, $scale) {
-    $scale-int: map-get($named-font-sizes, $scale);
-    @return $root-size * power($ms-ratio, $scale-int);
+    @return map-get($named-font-sizes, $scale);
   }
   @elseif is-integer($scale) {
-    @return $root-size * power($ms-ratio, $scale);
+    @return $scale;
   }
 
   @error '`$scale` must either be an integer or exist as a named font size in `$named-font-sizes`';
+}
+
+
+/// Gets a numeric font size (in px) from a given scale multiplier.
+/// Usually not used directly - the font-size or font mixin is usually used instead.
+/// @param $scale {Integer|Name} The integer ratio or named font-size.
+/// @return {Number} Numeric font size (in px)
+/// @example
+///   $font-size: get-font-size(2)
+/// @example
+///   $font-size: get-font-size(h1)
+/// @since 0.1.0
+@function get-font-size($scale) {
+  @return $nice-base-font-size * power($nice-type-ratio, get-scale-integer($scale));
 }
 
 /// Applies font size and line-height for the given scale.
@@ -85,76 +50,28 @@
 ///   }
 /// @since 0.1.0
 @mixin font-size($scale: 0, $line-height: 2) {
+  $font-size: get-font-size($scale);
 
-  $prev-ratio: null;
-
-  @each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
-
-    $ratio: map-get($brkpnt-value, ms-ratio);
-    $font-size: get-font-size($scale, $brkpnt-key);
-    //$root-size: map-get($brkpnt-value, root-size);
-    $root-size: $base-font-size;
-    $font-size-rem: #{$font-size / $root-size}rem;
-
-    @if map-has-key($brkpnt-value, width) {
-      @if($prev-ratio != $ratio) {
-        @include mq($from: $brkpnt-key) {
-          font-size: $font-size-rem;
-          @if $line-height != 0 {
-            line-height: #{$line-height}rem;
-          }
-        }
-      }
-    } @else {
-      font-size: $font-size-rem;
-      @if $line-height != 0 {
-        line-height: #{$line-height}rem;
-      }
-    }
-    $prev-ratio: $ratio;
+  font-size: rem($font-size);
+  @if $line-height != 0 {
+    line-height: #{$line-height}rem;
   }
 }
 
 /// Nice font.
-/// Heavily inspired by 'Advanced baseline magic' from SASS Line
-/// @link https://github.com/jakegiltsoff/sassline/blob/master/assets/sass/sassline-base/_mixins.scss Taken from SASS Line
-/// @link https://gist.github.com/razwan/10662500 In turn based on razwan's gist
+/// @param $scale {Integer|Name} The integer ratio or named font-size.
+/// @param $line-height {Number} The line-height
 /// @since 0.1.0
-@mixin font($scale: 0, $line-height: 2, $below: 2) {
-  $prev-ratio: 0;
-  @each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
+@mixin font($scale: 0, $line-height: 2) {
+  $font-size: get-font-size($scale);
 
-    $ratio: map-get($brkpnt-value, ms-ratio);
-    //$root-size: map-get($brkpnt-value, root-size);
-    $root-size: $base-font-size;
-    $font-size: get-font-size($scale, $brkpnt-key);
-    $font-size-rem: #{$font-size / $root-size}rem;
-    $baseline-push: #{$below - (($font-size / 2 * (($line-height * $root-size / $font-size) - $cap-height)) / $root-size + .00001)};
-    $baseline-shift: ($font-size / 2 * (($line-height * $root-size / $font-size) - $cap-height)) / $root-size + .00001;
-    @if $baseline-shift < 0 {
-      $baseline-shift: 0;
-    }
-
-    @if map-has-key($brkpnt-value, width) {
-      @include mq($from: $brkpnt-key) {
-        @if($prev-ratio != $ratio) {
-          font-size: $font-size-rem;
-          @if $line-height != 0 {
-            line-height: #{$line-height}rem;
-          }
-          margin-bottom: #{$baseline-push}rem;
-          padding-top: #{$baseline-shift}rem;
-        }
-      }
-    } @else {
-      font-size: $font-size-rem;
-      @if $line-height != 0 {
-        line-height: #{$line-height}rem;
-      }
-      margin-bottom: #{$baseline-push}rem;
-      margin-top: 0;
-      padding-top: #{$baseline-shift}rem;
-    }
-    $prev-ratio: $ratio;
+  font-size: rem($font-size);
+  @if $line-height != 0 {
+    line-height: #{$line-height}rem;
   }
+
+  $margin-default: $nice-base-font-size * .666;
+  $margin-bottom: $margin-default * power($nice-type-ratio, get-scale-integer($scale));
+  margin-bottom: rem($margin-bottom);
+  margin-top: 0;
 }

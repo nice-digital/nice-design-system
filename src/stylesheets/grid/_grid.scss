@@ -7,8 +7,7 @@
  * with a different API over the top
  */
 
-@import 'grid-settings',
-'grid-helpers',
+@import 'grid-helpers',
 'grid-human';
 
 
@@ -125,11 +124,9 @@
   @include generate-grid-classes;
 
   @if $nice-responsive {
-    @each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
-      @if map-has-key($brkpnt-value, width) {
-        @include mq($from: $brkpnt-key) {
-          @include generate-grid-classes($brkpnt-key);
-        }
+    @each $brkpnt-key, $brkpnt-value in $mq-breakpoints {
+      @include mq($from: $brkpnt-key) {
+        @include generate-grid-classes($brkpnt-key);
       }
     }
   }

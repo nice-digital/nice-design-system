@@ -119,26 +119,23 @@ $hide-selectors: ();
 $block-selectors: ();
 $inline-selectors: ();
 $inline-block-selectors: ();
-@each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
-  $width: map-get($brkpnt-value, width);
-  @if $width {
-    // Hide until
-    $hide-selectors: append($hide-selectors, '.hide-until-#{ $brkpnt-key }', comma);
-    $hide-selectors: append($hide-selectors, '.hide-until-#{ $brkpnt-key }--i', comma);
-    $hide-selectors: append($hide-selectors, '.hide-until-#{ $brkpnt-key }--ib', comma);
-    // Show only
-    $hide-selectors: append($hide-selectors, '.show-only-#{ $brkpnt-key }', comma);
-    $hide-selectors: append($hide-selectors, '.show-only-#{ $brkpnt-key }--i', comma);
-    $hide-selectors: append($hide-selectors, '.show-only-#{ $brkpnt-key }--ib', comma);
-    // Show from
-    $hide-selectors: append($hide-selectors, '.show-from-#{ $brkpnt-key }', comma);
-    $hide-selectors: append($hide-selectors, '.show-from-#{ $brkpnt-key }--i', comma);
-    $hide-selectors: append($hide-selectors, '.show-from-#{ $brkpnt-key }--ib', comma);
-    // Show until
-    $block-selectors: append($block-selectors, '.show-until-#{ $brkpnt-key }', comma);
-    $inline-selectors: append($inline-selectors, '.show-until-#{ $brkpnt-key }--i', comma);
-    $inline-block-selectors: append($inline-block-selectors, '.show-until-#{ $brkpnt-key }--ib', comma);
-  }
+@each $brkpnt-key, $brkpnt-value in $mq-breakpoints {
+  // Hide until
+  $hide-selectors: append($hide-selectors, '.hide-until-#{ $brkpnt-key }', comma);
+  $hide-selectors: append($hide-selectors, '.hide-until-#{ $brkpnt-key }--i', comma);
+  $hide-selectors: append($hide-selectors, '.hide-until-#{ $brkpnt-key }--ib', comma);
+  // Show only
+  $hide-selectors: append($hide-selectors, '.show-only-#{ $brkpnt-key }', comma);
+  $hide-selectors: append($hide-selectors, '.show-only-#{ $brkpnt-key }--i', comma);
+  $hide-selectors: append($hide-selectors, '.show-only-#{ $brkpnt-key }--ib', comma);
+  // Show from
+  $hide-selectors: append($hide-selectors, '.show-from-#{ $brkpnt-key }', comma);
+  $hide-selectors: append($hide-selectors, '.show-from-#{ $brkpnt-key }--i', comma);
+  $hide-selectors: append($hide-selectors, '.show-from-#{ $brkpnt-key }--ib', comma);
+  // Show until
+  $block-selectors: append($block-selectors, '.show-until-#{ $brkpnt-key }', comma);
+  $inline-selectors: append($inline-selectors, '.show-until-#{ $brkpnt-key }--i', comma);
+  $inline-block-selectors: append($inline-block-selectors, '.show-until-#{ $brkpnt-key }--ib', comma);
 }
 
 #{ $hide-selectors } {
@@ -158,13 +155,13 @@ $inline-block-selectors: ();
 }
 
 
-@for $i from 2 through length($nice-breakpoints) {
-  $iterator: nth($nice-breakpoints, $i);
+@for $i from 1 through length($mq-breakpoints) {
+  $iterator: nth($mq-breakpoints, $i);
   $brkpnt-key: nth($iterator, 1);
   $brkpnt-value: nth($iterator, 2);
 
-  @if $i < length($nice-breakpoints) {
-    $next: nth($nice-breakpoints, $i + 1);
+  @if $i < length($mq-breakpoints) {
+    $next: nth($mq-breakpoints, $i + 1);
     $next-brkpnt-key: nth($next, 1);
 
     @include mq($from: $brkpnt-key, $until: $next-brkpnt-key) {
@@ -176,7 +173,7 @@ $inline-block-selectors: ();
 
   @include mq($from: $brkpnt-key) {
     @if $i > 2 {
-      $prev: nth($nice-breakpoints, $i - 1);
+      $prev: nth($mq-breakpoints, $i - 1);
       $prev-brkpnt-key: nth($prev, 1);
 
       .show-only-#{ $prev-brkpnt-key },
@@ -211,7 +208,7 @@ $inline-block-selectors: ();
       @include important(display, inline-block);
     }
 
-    @if $i == length($nice-breakpoints) {
+    @if $i == length($mq-breakpoints) {
       .hide-only-#{ $brkpnt-key } {
         @include important(display, none);
       }

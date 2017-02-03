@@ -18,7 +18,7 @@
 /// @prop {String} box-box [029C9] Double box (⧉)
 /// @prop {String} punc-space [02008] Punctuation space (small, width of a comma)
 /// @since 0.1.0
-$glyphs: (
+$nice-glyphs: (
   bullet: '2022',
   quotation-mark: '0022',
   greater-than: '003e',
@@ -30,14 +30,14 @@ $glyphs: (
   box-box: '029C9',
   punc-space: '02008'
   // Add more entity codes here as and when they're needed
-);
+) !default;
 
 /// Gets a glyph code, or several, (character entity reference) from the
-/// `$glyphs` map, matching the given `$names`. Usually used with the content
+/// `$nice-glyphs` map, matching the given `$names`. Usually used with the content
 /// property for psuedo elements, to avoid use of magic character reference strings.
 /// @param {argList} $names The name(s) of the glyph(s) to get
 /// @returns {string} The character entity reference code(s) as a string, e.g. '\201C' or '\02008\029C9'
-/// @see $glyphs
+/// @see $nice-glyphs
 /// @since 0.1.0
 /// @example Single glyph
 ///   .rule {
@@ -51,23 +51,23 @@ $glyphs: (
   $codes: '';
 
   @each $name in $names {
-    @if map-has-key($glyphs, $name) {
-      $code: map-get($glyphs, $name);
+    @if map-has-key($nice-glyphs, $name) {
+      $code: map-get($nice-glyphs, $name);
       $codes: $codes + '\\#{$code}';
     } @else {
-      @error 'Glyph with name #{$name} could not be found in the $glyphs map';
+      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';
     }
   }
 
   @return unquote('\'#{$codes}\'');
 }
 
-@if $output-glyph-classes {
+@if $nice-output-glyph-classes {
   /// Output a BEM style glyph selector for each glyph in the map.
   /// E.g. .glyph.glyph--bullet { content: '\2022'; }
   /// @since 0.1.0
   .glyph {
-    @each $key, $value in $glyphs {
+    @each $key, $value in $nice-glyphs {
       &--#{$key} {
         &::before {
           content: unquote('\'\\#{$value}\'');

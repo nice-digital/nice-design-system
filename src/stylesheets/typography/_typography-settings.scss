@@ -2,18 +2,6 @@
 /// @group Typography
 ////
 
-/// The font families in use across NICE.
-/// @prop {Font stack} sans [Lato, Helvetica Neue, Helvetica, Arial, sans-serif] The sans-serif font stack
-/// @prop {Font stack} serif [Georgia, "Times New Roman", Times, serif] The serif font stack
-/// @prop {Font stack} mono [Monaco, Menlo, Consolas, "Courier New", monospace] The monospace font stack
-/// @see font-family
-/// @since 0.1.0
-$font-families: (
-  sans: '"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif',
-  serif: 'Georgia, "Times New Roman", Times, serif',
-  mono: 'Monaco, Menlo, Consolas, "Courier New", monospace'
-);
-
 /// Cap height
 /// @since 0.1.0
 $cap-height: .68;

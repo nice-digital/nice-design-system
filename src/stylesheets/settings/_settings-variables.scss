@@ -1,66 +1,74 @@
 
 /// Base font size, in pixels
-$base-font-size: 16 !default;
+$nice-base-font-size: 16 !default;
 
-/// A map of break point name to settings.
-/// The break points are mobile first, min-width.
-/// I.e. palm: 480px equates to (min-width: 30em)
-/// Settings is a list of:
-///   - width
-///   - root font size
-$nice-breakpoints: (
-  mobile: (
-    root-size: 14,
-    ms-ratio: get-ratio(major-second)
-  ),
-  xs: (
-    width: 400px,
-    root-size: 15,
-    ms-ratio: get-ratio(major-second)
-  ),
-  sm: (
-    width: 600px,
-    root-size: 16,
-    ms-ratio: get-ratio(major-second)
-  ),
-  md: (
-    width: 900px,
-    root-size: 17,
-    ms-ratio: get-ratio(major-second)
-  ),
-  lg: (
-    width: 1200px,
-    root-size: 17,
-    ms-ratio: get-ratio(major-second)
-  ),
-  xl: (
-    width: 1600px,
-    root-size: 17,
-    ms-ratio: get-ratio(major-second)
-  )
-);
+/// The width of the spacing between grid items
+/// @since 0.1.0
+$nice-grid-gutter: 1.5em !default;
 
-// A map of breakpoints (name: px) required for SASS MQ
-$mq-breakpoints: ();
-@each $brkpnt-key, $brkpnt-value in $nice-breakpoints {
-  $width: map-get($brkpnt-value, width);
-  @if $width {
-    $mq-breakpoints: map-merge($mq-breakpoints, ($brkpnt-key: $width));
-  }
-}
+$nice-font-family-sans: '"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif' !default;
+$nice-font-family-serif: 'Georgia, "Times New Roman", Times, serif' !default;
+$nice-font-family-mono: 'Monaco, Menlo, Consolas, "Courier New", monospace' !default;
+
+/// The font families in use across NICE.
+/// @prop {Font stack} sans [Lato, Helvetica Neue, Helvetica, Arial, sans-serif] The sans-serif font stack
+/// @prop {Font stack} serif [Georgia, "Times New Roman", Times, serif] The serif font stack
+/// @prop {Font stack} mono [Monaco, Menlo, Consolas, "Courier New", monospace] The monospace font stack
+/// @see font-family
+/// @since 0.1.0
+$nice-font-families: (
+  sans: $nice-font-family-sans,
+  serif: $nice-font-family-serif,
+  mono: $nice-font-family-mono
+) !default;
+
+/// The modular scale ratio to use for typography
+$nice-type-ratio: get-ratio(major-second) !default;
+
+$nice-breakpoint-xs: 400px !default;
+$nice-breakpoint-sm: 600px !default;
+$nice-breakpoint-md: 900px !default;
+$nice-breakpoint-lg: 1200px !default;
+$nice-breakpoint-xl: 1600px !default;
+
+$nice-mobile-root-size: 14 !default;
+$nice-breakpoint-xs-root-size: 15 !default;
+$nice-breakpoint-sm-root-size: 16 !default;
+$nice-breakpoint-md-root-size: 17 !default;
+$nice-breakpoint-lg-root-size: 17 !default;
+$nice-breakpoint-xl-root-size: 17 !default;
 
 /// Whether to output a default set of generic print styles for things
 /// like avoiding page breaks after headings etc. If you disabled this,
 /// be sure to add your own print styles.
 /// @since 0.1.0
-$output-default-print-styles: true !default;
+$nice-output-default-print-styles: true !default;
 
 /// Whether to output the classes for the UTF-8 glyphs.
 /// @since 0.2.0
-$output-glyph-classes: false !default;
+$nice-output-glyph-classes: false !default;
 
 /// Whether the site is responsive. Setting to false will disable
 /// generation of the responsie grid selectors.
 /// True by default.
 /// @since 0.1.0
 $nice-responsive: true !default;
+
+
+// SASS MQ OVERRIDES
+
+// A map of breakpoints (name: px) required for SASS MQ
+$mq-breakpoints: (
+  xs: $nice-breakpoint-xs,
+  sm: $nice-breakpoint-sm,
+  md: $nice-breakpoint-md,
+  lg: $nice-breakpoint-lg,
+  xl: $nice-breakpoint-xl
+);
+
+// Base font size
+$mq-base-font-size: $nice-base-font-size * 1px;
+
+$mq-static-breakpoint: lg;
+
+$mq-responsive: $nice-responsive;

@@ -30,7 +30,7 @@
 // Printing
 // -------------------------
 // Source: https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css
-@if $output-default-print-styles {
+@if $nice-output-default-print-styles {
   @media print {
     // sass-lint:disable no-qualifying-elements
     // sass-lint:disable no-universal-selectors
