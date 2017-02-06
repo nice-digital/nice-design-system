@@ -3,7 +3,6 @@
 'components-panel',
 'components-tables',
 'components-buttons',
-'components-footer',
 'components-phase',
 'components-maintain-ratio',
 'components-navbar',
@@ -11,4 +10,5 @@
 'components-breadcrumbs',
 'components-tables';
 
-@import '../components/tabs/tabs';
+@import '../components/tabs/tabs',
+'../components/footer/footer';
