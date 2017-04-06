@@ -40,7 +40,7 @@ body {
   color: $colour-text;
   font-family: font-family(sans);
   font-style: normal;
-  line-height: 1.6rem;
+  line-height: rem($nice-base-line-height);
   overflow-x: hidden;
   text-rendering: optimizelegibility;
 }
@@ -77,17 +77,17 @@ a {
 
 p,
 .p {
-  @include font($scale: 0, $line-height: 1.6);
+  @include font($scale: 0);
   font-feature-settings: 'kern', 'onum', 'liga';
   font-weight: normal;
 
   &.lead {
-    @include font($scale: 1, $line-height: 2);
+    @include font($scale: 1);
 
     // TODO: Drop cap needs some work
     &--drop-cap {
       &:first-letter {
-        @include font-size($scale: 11, $line-height: 4);
+        @include font-size($scale: 11);
         float: left;
         font-weight: 300;
         padding: em(0 2px 0 0);

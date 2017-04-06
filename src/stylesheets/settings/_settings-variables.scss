@@ -1,13 +1,29 @@
+/// Baseline, in pixels
+/// @since 0.2.0
+$nice-baseline: 4 !default;
 
 /// Base font size, in pixels
-$nice-base-font-size: 16 !default;
+/// @since 0.2.0
+$nice-base-font-size: $nice-baseline * 4 !default;
+
+/// Base line height, in pixels
+/// @since 0.2.0
+$nice-base-line-height: $nice-baseline * 6 !default;
 
 /// The width of the spacing between grid items
-/// @since 0.1.0
+/// @since 0.2.0
 $nice-grid-gutter: 1.5em !default;
 
+/// Sans-serif font stack
+/// @since 0.2.0
 $nice-font-family-sans: '"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif' !default;
+
+/// Serif font stack
+/// @since 0.2.0
 $nice-font-family-serif: 'Georgia, "Times New Roman", Times, serif' !default;
+
+/// Mono font stack
+/// @since 0.2.0
 $nice-font-family-mono: 'Monaco, Menlo, Consolas, "Courier New", monospace' !default;
 
 /// The font families in use across NICE.
@@ -15,7 +31,7 @@ $nice-font-family-mono: 'Monaco, Menlo, Consolas, "Courier New", monospace' !def
 /// @prop {Font stack} serif [Georgia, "Times New Roman", Times, serif] The serif font stack
 /// @prop {Font stack} mono [Monaco, Menlo, Consolas, "Courier New", monospace] The monospace font stack
 /// @see font-family
-/// @since 0.1.0
+/// @since 0.2.0
 $nice-font-families: (
   sans: $nice-font-family-sans,
   serif: $nice-font-family-serif,
@@ -23,25 +39,52 @@ $nice-font-families: (
 ) !default;
 
 /// The modular scale ratio to use for typography
-$nice-type-ratio: get-ratio(major-second) !default;
+/// @since 0.2.0
+$nice-type-ratio: get-ratio(fourth) !default;
 
+/// Extra small break point
+/// @since 0.2.0
 $nice-breakpoint-xs: 400px !default;
+
+/// 'Small' break point. Roughly portrait tablets.
+/// @since 0.2.0
 $nice-breakpoint-sm: 600px !default;
+
+/// 'Medium' break point. Roughly landscape tablets.
+/// @since 0.2.0
 $nice-breakpoint-md: 900px !default;
+
+/// 'Large' break point. Roughly 'dektops'.
+/// @since 0.2.0
 $nice-breakpoint-lg: 1200px !default;
+
+/// 'Extra large' break point for wide screens
+/// @since 0.2.0
 $nice-breakpoint-xl: 1600px !default;
 
-$nice-mobile-root-size: 14 !default;
-$nice-breakpoint-xs-root-size: 15 !default;
+/// The default root font size in pixels
+/// @since 0.2.0
+$nice-mobile-root-size: 16 !default;
+
+/// @since 0.2.0
+$nice-breakpoint-xs-root-size: 16 !default;
+
+/// @since 0.2.0
 $nice-breakpoint-sm-root-size: 16 !default;
-$nice-breakpoint-md-root-size: 17 !default;
-$nice-breakpoint-lg-root-size: 17 !default;
-$nice-breakpoint-xl-root-size: 17 !default;
+
+/// @since 0.2.0
+$nice-breakpoint-md-root-size: 18 !default;
+
+/// @since 0.2.0
+$nice-breakpoint-lg-root-size: 18 !default;
+
+/// @since 0.2.0
+$nice-breakpoint-xl-root-size: 18 !default;
 
 /// Whether to output a default set of generic print styles for things
 /// like avoiding page breaks after headings etc. If you disabled this,
 /// be sure to add your own print styles.
-/// @since 0.1.0
+/// @since 0.2.0
 $nice-output-default-print-styles: true !default;
 
 /// Whether to output the classes for the UTF-8 glyphs.
@@ -51,7 +94,7 @@ $nice-output-glyph-classes: false !default;
 /// Whether the site is responsive. Setting to false will disable
 /// generation of the responsie grid selectors.
 /// True by default.
-/// @since 0.1.0
+/// @since 0.2.0
 $nice-responsive: true !default;
 
 

@@ -2,10 +2,6 @@
 /// @group Typography
 ////
 
-/// Cap height
-/// @since 0.1.0
-$cap-height: .68;
-
 /// A map of named font sizes to their corresponding modular scale factor
 /// @prop {Integer} h1 [6] Heading 1
 /// @prop {Integer} h2 [5] Heading 2
@@ -16,11 +12,11 @@ $cap-height: .68;
 /// @prop {Integer} p [0] Paragraph
 /// @since 0.1.0
 $named-font-sizes: (
-  h1: 6,
-  h2: 5,
-  h3: 4,
-  h4: 3,
-  h5: 2,
-  h6: 1,
+  h1: 3,
+  h2: 2,
+  h3: 1,
+  h4: 0,
+  h5: 0,
+  h6: 0,
   p: 0
 );

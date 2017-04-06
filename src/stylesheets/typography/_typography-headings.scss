@@ -26,48 +26,48 @@ h6,
 /// for semantic classes for visual styling.
 /// @since 0.1.0
 @mixin h1 {
-  @include font(h1, $line-height: 3);
-  font-weight: 700;
+  @include font(h1);
+  font-weight: 900;
 }
 
 /// Secondary heading. Used for h2 tag but can be used directly
 /// for semantic classes for visual styling.
 /// @since 0.1.0
 @mixin h2 {
-  @include font(h2, $line-height: 2.5);
-  font-weight: 700;
+  @include font(h2);
+  font-weight: 900;
 }
 
 /// Tertiary heading. Used for h3 tag but can be used directly
 /// for semantic classes for visual styling.
 /// @since 0.1.0
 @mixin h3 {
-  @include font(h3, $line-height: 2.25);
-  font-weight: 700;
+  @include font(h3);
+  font-weight: 900;
 }
 
 /// Fourth level heading. Used for h4 tag but can be used directly
 /// for semantic classes for visual styling.
 /// @since 0.1.0
 @mixin h4 {
-  @include font(h4, $line-height: 2);
-  font-weight: 700;
+  @include font(h4);
+  font-weight: 900;
 }
 
 /// Fifth level heading. Used for h5 tag but can be used directly
 /// for semantic classes for visual styling.
 /// @since 0.1.0
 @mixin h5 {
-  @include font(h5, $line-height: 1.8);
-  font-weight: 700;
+  @include font(h5);
+  font-weight: 900;
 }
 
 /// Sixth level heading. Used for h6 tag but can be used directly
 /// for semantic classes for visual styling.
 /// @since 0.1.0
 @mixin h6 {
-  @include font(h6, $line-height: 1.6);
-  font-weight: 700;
+  @include font(h6);
+  font-weight: 900;
 }
 
 h1,

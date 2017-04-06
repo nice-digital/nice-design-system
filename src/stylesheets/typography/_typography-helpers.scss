@@ -12,6 +12,7 @@
 
 /// Gets a numeric scale
 /// @param $scale {Integer|Name} The integer ratio or named font-size.
+/// @since 0.1.0
 @function get-scale-integer($scale) {
   @if map-has-key($named-font-sizes, $scale) {
     @return map-get($named-font-sizes, $scale);
@@ -37,9 +38,21 @@
   @return $nice-base-font-size * power($nice-type-ratio, get-scale-integer($scale));
 }
 
+/// Gets a numeric line height (in px) from a given scale multiplier.
+/// Usually not used directly - the font-size or font mixin is usually used instead.
+/// @param $scale {Integer|Name} The integer ratio or named font-size.
+/// @return {Number} Numeric line-height (in px)
+/// @example
+///   $line-height: get-line-height(2)
+/// @example
+///   $line-height: get-line-height(h1)
+/// @since 0.1.0
+@function get-line-height($scale) {
+  @return $nice-base-line-height + $nice-baseline * 2 * get-scale-integer($scale);
+}
+
 /// Applies font size and line-height for the given scale.
 /// @param $scale {Integer|Name} The integer ratio or named font-size.
-/// @param $line-height {Number} The line-height
 /// @example
 ///   .test {
 ///     @include font-size(-2);
@@ -49,29 +62,30 @@
 ///     @include font-size(h1);
 ///   }
 /// @since 0.1.0
-@mixin font-size($scale: 0, $line-height: 2) {
+@mixin font-size($scale: 0) {
   $font-size: get-font-size($scale);
+  $line-height: get-line-height($scale);
 
   font-size: rem($font-size);
-  @if $line-height != 0 {
-    line-height: #{$line-height}rem;
-  }
+  line-height: rem($line-height);
 }
 
-/// Nice font.
+/// Nice font: includes font size, line height, and margins.
 /// @param $scale {Integer|Name} The integer ratio or named font-size.
-/// @param $line-height {Number} The line-height
+/// @example
+///   .test {
+///     @include font(3);
+///   }
+/// @example
+///   .test {
+///     @include font(h1);
+///   }
 /// @since 0.1.0
-@mixin font($scale: 0, $line-height: 2) {
-  $font-size: get-font-size($scale);
+@mixin font($scale) {
+  @include font-size($scale);
 
-  font-size: rem($font-size);
-  @if $line-height != 0 {
-    line-height: #{$line-height}rem;
-  }
+  $line-height: get-line-height($scale);
 
-  $margin-default: $nice-base-font-size * .666;
-  $margin-bottom: $margin-default * power($nice-type-ratio, get-scale-integer($scale));
-  margin-bottom: rem($margin-bottom);
-  margin-top: 0;
+  margin-bottom: rem($nice-base-font-size);
+  margin-top: rem(max($nice-base-font-size, $line-height / 2));
 }
