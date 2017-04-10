@@ -33,7 +33,7 @@
     text-decoration: none;
 
     .icon {
-      @include font-size(9);
+      font-size: rem(48px);
     }
   }
 

@@ -35,7 +35,11 @@
 ///   $font-size: get-font-size(h1)
 /// @since 0.1.0
 @function get-font-size($scale) {
-  @return $nice-base-font-size * power($nice-type-ratio, get-scale-integer($scale));
+  $scale-integer: get-scale-integer($scale);
+  $font-map: map-get($font-sizes, $scale-integer);
+  @debug $scale-integer;
+  @debug $font-map;
+  @return map-get($font-map, fs);
 }
 
 /// Gets a numeric line height (in px) from a given scale multiplier.
@@ -48,7 +52,9 @@
 ///   $line-height: get-line-height(h1)
 /// @since 0.1.0
 @function get-line-height($scale) {
-  @return $nice-base-line-height + $nice-baseline * 2 * get-scale-integer($scale);
+  $scale-integer: get-scale-integer($scale);
+  $font-map: map-get($font-sizes, $scale-integer);
+  @return map-get($font-map, lh);
 }
 
 /// Applies font size and line-height for the given scale.
@@ -84,8 +90,10 @@
 @mixin font($scale) {
   @include font-size($scale);
 
-  $line-height: get-line-height($scale);
+  $scale-integer: get-scale-integer($scale);
+  $font-map: map-get($font-sizes, $scale-integer);
 
-  margin-bottom: rem($nice-base-font-size);
-  margin-top: rem(max($nice-base-font-size, $line-height / 2));
+  font-weight: map-get($font-map, fw);
+  margin-bottom: rem(map-get($font-map, mb));
+  margin-top: rem(map-get($font-map, mt));
 }

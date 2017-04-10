@@ -12,11 +12,80 @@
 /// @prop {Integer} p [0] Paragraph
 /// @since 0.1.0
 $named-font-sizes: (
-  h1: 3,
-  h2: 2,
-  h3: 1,
-  h4: 0,
-  h5: 0,
-  h6: 0,
+  h1: 7,
+  h2: 6,
+  h3: 5,
+  h4: 4,
+  h5: 3,
+  h6: 2,
+  lead: 1,
   p: 0
+);
+
+/// Numeric font sizes
+/// @since 0.2.0
+$font-sizes: (
+  -1: (
+    fs: 14,
+    lh: 4 * 5,
+    fw: 400,
+    mb: $spacing-medium,
+    mt: $spacing-medium
+  ),
+  0: (
+    fs: 4 * 4,
+    lh: 4 * 6,
+    fw: 400,
+    mb: $spacing-medium,
+    mt: $spacing-medium
+  ),
+  1: (
+    fs: 4 * 5,
+    lh: 4 * 7,
+    fw: 400,
+    mb: $spacing-medium,
+    mt: $spacing-medium
+  ),
+  2: (
+    fs: 3 * 5,
+    lh: 4 * 5,
+    fw: 700,
+    mb: $spacing-medium,
+    mt: $spacing-large
+  ),
+  3: (
+    fs: 4 * 4,
+    lh: 4 * 5,
+    fw: 700,
+    mb: $spacing-medium,
+    mt: $spacing-large
+  ),
+  4: (
+    fs: 4 * 5,
+    lh: 4 * 7,
+    fw: 700,
+    mb: $spacing-medium,
+    mt: $spacing-large
+  ),
+  5: (
+    fs: 4 * 6,
+    lh: 4 * 8,
+    fw: 700,
+    mb: $spacing-medium,
+    mt: $spacing-large
+  ),
+  6: (
+    fs: 4 * 9,
+    lh: 4 * 11,
+    fw: 700,
+    mb: $spacing-medium,
+    mt: $spacing-large
+  ),
+  7: (
+    fs: 4 * 11,
+    lh: 4 * 12,
+    fw: 900,
+    mb: $spacing-medium,
+    mt: 0,
+  )
 );

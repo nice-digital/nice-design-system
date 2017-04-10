@@ -14,8 +14,8 @@
   color: $colour-nice-white;
   cursor: pointer;
   display: inline-block;
-  margin: 0 em(4) 0 0;
-  padding: 0 em(12);
+  margin: em(0 $spacing-x-small 0 0);
+  padding: em($spacing-x-small $spacing-medium);
   position: relative;
   text-decoration: none;
   vertical-align: top;

@@ -87,7 +87,7 @@ p,
     // TODO: Drop cap needs some work
     &--drop-cap {
       &:first-letter {
-        @include font-size($scale: 11);
+        font-size: 200%;
         float: left;
         font-weight: 300;
         padding: em(0 2px 0 0);
