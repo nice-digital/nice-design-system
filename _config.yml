@@ -18,7 +18,7 @@ source:           .
 destination:      _gh_pages
 host:             0.0.0.0
 port:             9001
-baseurl:          /nice-experience
+baseurl:          /NICE-Experience
 url:              https://nhsevidence.github.io
 exclude:
 - Gemfile
