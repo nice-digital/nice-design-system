@@ -7,7 +7,7 @@ title: Colour
 
 The NICE colour palette is also described on the [brand guidelines](https://www.nice.org.uk/brand/colour-palette){:target="_blank"}. Use these guidelines to determine the best way to apply the NICE colour palette.
 
-## Corporate palette
+## Corporate colour palette
 
 ### Primary palette
 
