@@ -7,6 +7,18 @@
     @include grid-item;
     margin-bottom: em(24);
 
+     // Text
+    &--nice-black:before { background: $colour-nice-black; }
+    &--nice-white:before { background: $colour-nice-white; }
+
+    // Links
+    &--nice-link:before { background: $colour-nice-link; }
+    &--nice-linkhover:before { background: $colour-nice-linkhover; }
+    &--nice-linkvisited:before { background: $colour-nice-linkvisited; }
+    &--nice-linkfocus:before { background: $colour-nice-linkfocus; }
+    &--nice-linkactive:before { background: $colour-nice-linkactive; }
+    
+    
     // Primary
     &--nice-black:before { background: $colour-nice-black; }
     &--nice-white:before { background: $colour-nice-white; }
