@@ -1,0 +1,10 @@
+<div class="example">
+	<div class="example__body">
+		<h4 class="example__label example__label--dark">Example</h4>
+		{{ include.body }}
+	</div>
+	<div class="example__code">
+		<h4 class="example__label">Source</h4>
+		<pre><code {% if include.lang %}class="language-{{ include.lang }}"{% endif %}>{{ include.body | xml_escape }}</code></pre>
+	</div>
+</div>

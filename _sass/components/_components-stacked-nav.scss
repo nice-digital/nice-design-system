@@ -1,0 +1,34 @@
+////
+/// @group components
+////
+
+/// Stacked navigational structure
+.stacked-nav {
+  @include font-size(-1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  a {
+    color: $colour-text;
+    text-decoration: none;
+  }
+
+  @include e('item') {
+    @include m('active') {
+      font-weight: bold;
+    }
+  }
+
+  @include e('sub-list') {
+    display: none;
+    font-weight: normal;
+    list-style: none;
+    margin: 0;
+    padding: em(0 0 0 24px);
+
+    @include m('active') {
+      display: block;
+    }
+  }
+}

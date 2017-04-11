@@ -1,0 +1,54 @@
+////
+/// @group components
+////
+
+/// Stacked navigational structure
+.in-page-nav {
+  @include font-size(-1);
+
+  a {
+    color: $colour-text;
+    display: block;
+    text-decoration: none;
+  }
+
+  @include m('fixed') {
+    position: fixed;
+    top: 0;
+  }
+
+  @include e('title') {
+    @include font-size(1);
+  }
+
+  @include e('list') {
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+
+    @include m('level-2') {
+      height: 0;
+
+      a {
+        padding-left: em(24);
+      }
+    }
+
+    @include m('active') {
+      height: auto;
+    }
+  }
+
+  @include e('item') {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include m('active') {
+      > a { // sass-lint:disable-line no-combinators
+        font-weight: bold;
+      }
+    }
+  }
+}

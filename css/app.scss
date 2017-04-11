@@ -1,0 +1,20 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+@charset 'utf-8';
+
+// NICE overrides
+$nice-font-base-path: '/nice-experience/fonts/';
+
+// Experience
+@import 'experience';
+
+// Vendor
+@import 'vendor/highlight.js/default',
+'vendor/highlight.js/github';
+
+// Components
+@import 'components/components';
+

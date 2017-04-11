@@ -1,41 +1,21 @@
 {
-  "name": "nice-experience",
-  "description": "Your source for creating beautiful, consistent experiences across NICE",
-  "main": [
-    "src/javascripts/experience.js",
-    "src/stylesheets/experience.scss"
-  ],
-  "moduleType": "es6",
-  "authors": [
-    "NICE Digital Services (https://www.nice.org.uk/)",
-    "Ian Routledge (http://ediblecode.com)"
-  ],
-  "license": "MIT",
-  "keywords": [
-    "css",
-    "sass",
-    "mobile-first",
-    "responsive",
-    "front-end",
-    "framework",
-    "web",
-    "nice",
-    "nhs"
-  ],
+  "name": "nice-experience-site",
   "homepage": "https://github.com/nhsevidence/NICE-Experience",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/nhsevidence/NICE-Experience.git"
-  },
+  "authors": [
+    "ediblecode <ian.routledge@nice.org.uk>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
   "ignore": [
     "**/.*",
-    "!src/**/.*",
-    "**/.md",
     "node_modules",
     "bower_components",
     "test",
-    "tests",
-    ".github",
-    ".grunt-tasks"
-  ]
+    "tests"
+  ],
+  "dependencies": {
+    "nice-experience": "^0.2.1"
+  }
 }

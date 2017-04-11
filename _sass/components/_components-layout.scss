@@ -1,0 +1,81 @@
+/// Page layout with:
+///   - sidebar nav (always present)
+///   - main body content
+///   - optional in page nav column
+.page {
+  @include grid;
+
+  &__sidebar {
+    @include grid-item;
+
+    @media print {
+      display: none;
+    }
+  }
+
+  &__main {
+    @include grid-item;
+
+    @media print {
+      width: 100%;
+    }
+  }
+
+  &__inpagenav {
+    @include grid-item;
+    display: none;
+
+    @media print {
+      display: none;
+    }
+  }
+
+  @include mq($from: md) {
+    &__sidebar {
+      width: 20%;
+    }
+
+    &__main {
+      width: 80%;
+
+      .js & {
+        width: 60%;
+      }
+    }
+
+    &__inpagenav {
+      display: inline-block;
+      width: 20%;
+    }
+
+    &--full {
+      .page__main {
+        width: 80%;
+      }
+    }
+  }
+
+  @include mq($from: lg) {
+    &__sidebar {
+      width: percentage(2 / 12);
+    }
+
+    &__main {
+      width: percentage(10 / 12);
+
+      .js & {
+        width: percentage(8 / 12);
+      }
+    }
+
+    &__inpagenav {
+      width: percentage(2 / 12);
+    }
+
+    &--full {
+      .page__main {
+        width: percentage(10 / 12);
+      }
+    }
+  }
+}

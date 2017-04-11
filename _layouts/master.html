@@ -1,0 +1,135 @@
+{% assign type = 'website' %}
+{% assign description = 'Your source for creating beautiful, consistent experiences across NICE' %}
+{% assign title = page.title %}
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="description" content="{{ description }}">
+	<meta property="og:title" content="{{ title }}">
+	<meta property="og:type" content="{{ type }}">
+	<meta property="og:description" content="{{ description }}">
+
+	<title>{{ title }} | NICE Experience</title>
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+	<link type="text/plain" rel="author" href="{{ site.baseurl }}/humans.txt" />
+	<link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico" />
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/app.css" type="text/css" charset="utf-8">
+	<link href="//fonts.googleapis.com/css?family=Lato:200normal,200italic,300normal,300italic,400normal,400italic,700normal,700italic,900normal,900italic" rel="stylesheet" type="text/css">
+
+	<!--[if lt IE 9]>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body data-tracker>
+
+	<!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-MDNG92"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MDNG92');</script>
+	<!-- End Google Tag Manager -->
+
+	{% assign current = page.url | downcase | split: '/' %}
+	<div class="nice-tophat">
+		<div class="nice-global" id="nice-global">
+			<div class="tophat-inner">
+				<nav role="navigation">
+					<ul class="menu">
+						<li{% if current[1] == null %} class="active"{% endif %}><a href="{{ site.baseurl }}{% link index.md %}">NICE Experience</a></li>
+						<li{% if current[1] == 'about' %} class="active"{% endif %}><a href="{{ site.baseurl }}{% link about/index.md %}">About</a></li>
+						<li{% if current[1] == 'foundations' %} class="active"{% endif %}><a href="{{ site.baseurl }}{% link foundations/index.md %}">Foundations</a></li>
+						<li{% if current[1] == 'components' %} class="active"{% endif %}><a href="{{ site.baseurl }}{% link components/index.md %}">Components</a></li>
+						<li{% if current[1] == 'technical' %} class="active"{% endif %}><a href="{{ site.baseurl }}{% link technical/index.md %}">Technical</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<p class="phase-banner">
+			<span class="phase-banner__tag">
+				<strong class="phase-tag phase-tag--alpha">ALPHA</strong>
+			</span>
+			<span class="phase-banner__label">
+				NICE Experience is in development. This means it is not feature complete and there may be issues. Find any? Please, <a href="https://www.nice.org.uk/leave-feedback"  target="_blank" rel="external">let us know</a>!
+			</span>
+		</p>
+	</div>
+
+	{% include breadcrumbs.html %}
+
+	<div id="content">
+		 {{ content }}
+	</div>
+
+	{% include footer.html %}
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="//cdn.nice.org.uk/V3.1/Scripts/nice/NICE.TopHat.dev.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.2/anchor.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/nunjucks/3.0.0/nunjucks.min.js"></script>
+
+	<script src="{{ site.baseurl }}/javascripts/experience.min.js"></script>
+	<script src="{{ site.baseurl }}/javascripts/app.js"></script>
+	<script src="{{ site.baseurl }}/javascripts/in-page-nav.js"></script>
+
+	{% comment %} HLJS doesn't support IE8 {% endcomment %}
+	<!--[if gte IE 9 | !IE ]><!-->
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/languages/scss.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	<!--<![endif]-->
+
+	<script>
+		if(typeof console !== "undefined" && console.info) {
+			console.info("%c✪ We hire people like you; people who are curious about how things are built. Interested? See http://bit.ly/NICEJobs for more info ✪", "background: #333; border-radius: 4px; color: #fff; font-size: 18px; font-family: Lato,'Helvetica Neue',Helvetica,Arial,sans-serif; padding: 2px 6px;");
+		}
+	</script>
+
+	<script id="in-page-nav-template" type="text/template">
+		{% raw %}
+		{% macro renderLink(link, level) %}
+			<li class="in-page-nav__item" role="presentation">
+				<a id="ipn-{{ link.href.replace("#", "") }}" href="{{ link.href }}" role="menuitem" aria-selected="false">
+					{{ link.title }}
+				</a>
+				{% if link.links and link.links.length > 0 %}
+					<ul class="in-page-nav__list in-page-nav__list--level-{{ level + 1 }}" role="menu" aria-expanded="false" aria-hidden="true" aria-labelledby="ipn-{{ link.href.replace("#", "") }}">
+						{% for subLink in link.links %}
+							{{ renderLink(subLink, level + 1) }}
+						{% endfor %}
+					</ul>
+				{% endif %}
+			</li>
+		{% endmacro %}
+
+		<nav class="in-page-nav" role="navigation" aria-labelledby="ipn-title">
+			<h2 id="ipn-title" class="in-page-nav__title">On this page</h2>
+
+			<ul class="in-page-nav__list in-page-nav__list--level-1" role="menubar">
+				{% for link in links %}
+					{{ renderLink(link, 1) }}
+				{% endfor %}
+			</ul>
+		</nav>
+		{% endraw %}
+	</script>
+</body>
+</html>

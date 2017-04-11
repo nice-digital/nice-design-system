@@ -1,0 +1,134 @@
+<div id="{{ include.item.context.type }}-{{ include.item.context.name }}">
+
+	{% comment %} Name {% endcomment %}
+	<h4>
+		{% comment %} TODO: Add access/aliased/alias for {% endcomment %}
+		<a class="item__name" href="#{{ include.item.context.type }}-{{ include.item.context.name }}">
+			{% if include.item.context.type == "variable" %}${% endif %}{{ include.item.context.name }}
+		</a>
+	</h4>
+
+	{% comment %} Deprecated {% endcomment %}
+	{% comment %} TODO: Add deprecation {% endcomment %}
+
+
+	{% comment %} Preview {% endcomment %}
+	{% if include.item.context.type == "css" %}
+		{% comment %} NOOP {% endcomment %}
+	{% elsif include.item.context.type == "placeholder" %}
+		<div class="item__code-wrapper">
+			<pre class="item__code item__code--togglable language-scss"
+				data-current-state="collapsed"
+				data-expanded="%{{ include.item.context.name }} { {{ include.item.context.code }} }"
+				data-collapsed="%{{ include.item.context.name }} { }">
+				<code>%{{ include.item.context.name }} {}</code>
+			</pre>
+		</div>
+	{% elsif include.item.context.type == "variable" %}
+		
+		{% capture var %}${{ include.item.context.name }}: {{ include.item.context.value }};{% endcapture %}
+		{% include source.html lang='scss' body=var title=include.item.context.name %}
+
+		{% comment %} TODO: Display coloured square for colour variables {% endcomment %}
+
+	{% else %}
+		{% comment %} Functions/mixins {% endcomment %}
+		
+		{% comment %} TODO: Add parameter list {% endcomment %}
+		{% capture signature %}@{{ include.item.context.type }} {{include.item.context.name}} (...){% endcapture %}
+		{% capture body %}{{ signature }} { ... }{% endcapture %}
+		{% include source.html lang='scss' body=body title=include.item.context.name %}
+	{% endif %}
+
+
+	{% comment %} Parameters {% endcomment %}
+	{% if include.item.parameter %}
+		<h5>Parameters</h5>
+		<table>
+			<thead>
+				<tr>
+					<th scope="col"><span class="visually-hidden">{{ include.item.type }} parameter </span>Name</th>
+					<th scope="col"><span class="visually-hidden">{{ include.item.type }} parameter </span>Description</th>
+					<th scope="col"><span class="visually-hidden">{{ include.item.type }} parameter </span>Type</th>
+					<th scope="col"><span class="visually-hidden">{{ include.item.type }} parameter </span>Default value</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for parameter in include.item.parameter %}
+					<tr>
+						<th scope="row" data-label="name"><code>${{ parameter.name }}</code></th>
+						<td data-label="desc">{{ parameter.description | default: "&mdash;" }}</td>
+						<td data-label="type">
+							<code>
+								{% if parameter.type == '*' %}
+									Any
+								{% else %}
+									{{ parameter.type }}
+								{% endif %}
+							</code>
+						</td>
+						<td data-label="default">
+							{% if parameter.default %}
+								{% comment %} TODO: Add colour preview {% endcomment %}
+								<code>{{ parameter.default }}</code>
+							{% else %}
+								&mdash;
+							{% endif %}
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+	    </table>
+	{% endif %}
+
+
+	{% comment %} Properties - map structure {% endcomment %}
+	{% if include.item.property and include.item.property.size > 0 %}
+		<h5>Map structure</h5>
+
+		<table>
+			<thead>
+				<tr>
+					<th scope="col"><span class="visually-hidden">{{ item.type }} key </span>Name</th>
+					<th scope="col"><span class="visually-hidden">{{ item.type }} key </span>Description</th>
+					<th scope="col"><span class="visually-hidden">{{ item.type }} key </span>Type</th>
+					<th scope="col"><span class="visually-hidden">{{ item.type }} key </span>Value</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for prop in include.item.property %}
+				<tr>
+					<th scope="row" data-label="name">
+						<code>{{ prop.name }}</code>
+					</th>
+					<td data-label="desc">
+						{{ prop.description | default: "n/a" }}
+					</td>
+					<td data-label="type">
+						<code>{{ prop.type }}</code>
+					</td>
+					<td data-label="default">
+						{% if prop.default %}
+							<code>{{ prop.default }}</code>
+						{% else %}
+							<span class="visually-hidden">n/a</span>
+						{% endif %}
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% endif %}
+
+
+
+	{% comment %} Alias {% endcomment %}
+    {% unless include.item.alias %}
+        <div class="grid">
+            {% comment %} TODO: Add annotations {% endcomment %}
+        </div>
+    {% else %}
+        <p>Refer to <a href="#{{ include.item.context.type }}-{{ include.item.alias }}">{{ include.item.alias }}</a>.</p>
+    {% endunless %}
+
+</div>

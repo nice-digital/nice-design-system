@@ -1,0 +1,14 @@
+/* TEAM */
+	Lead developer: Ian Routledge
+	Twitter: @ediblecode
+	From: High Wycombe
+
+	UX designer: John Bailey
+	Twitter: @bailes550
+	From: Liverpool
+
+/* SITE */
+	Last update: 2017/04/06
+	Language: English
+	Doctype: HTML5
+	IDE: Sublime Text

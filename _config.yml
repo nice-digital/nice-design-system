@@ -1,0 +1,41 @@
+# Naming
+name:             NICE Experience
+description:      Your source for creating beautiful, consistent experiences across NICE
+
+# Dependencies
+markdown:         kramdown
+highlighter:      rouge
+
+kramdown:
+  auto_ids: true
+
+# Permalinks
+permalink:        pretty
+
+# Server
+timezone:         Europe/London
+source:           .
+destination:      _gh_pages
+host:             0.0.0.0
+port:             9001
+baseurl:          /nice-experience
+url:              https://nhsevidence.github.io
+exclude:
+- Gemfile
+- Gemfile.lock
+- README.md
+- Rakefile
+- vendor/bundle
+- bower_components
+
+safe:         false
+
+# Sass
+sass:
+  style: :compressed
+  load_paths:
+      - _sass
+      - bower_components/nice-experience/src/stylesheets
+
+# Custom vars
+test: true

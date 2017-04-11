@@ -1,0 +1,7 @@
+.grid-example-item {
+  background: get-colour(grey, x-light);
+  border: 5px solid $colour-border;
+  margin-bottom: .5em;
+  padding: .5em;
+  text-align: center;
+}

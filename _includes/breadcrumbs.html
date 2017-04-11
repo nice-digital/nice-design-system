@@ -1,0 +1,41 @@
+{% capture page_url_without_index_html %}{{ page.url | remove: "/index.html" }}{% endcapture %}
+{% assign splitted_url_parts = page_url_without_index_html | split: '/' %}
+
+{% if splitted_url_parts.size > 0 %}
+<div class="container">
+	<nav aria-label="Breadcrumbs" role="navigation">
+		<p class="visually-hidden" id="breadcrumb-label">
+			You are here:
+		</p>
+		<ol class="breadcrumbs" aria-labelledby="breadcrumb-label" itemscope itemtype="http://schema.org/BreadcrumbList">
+			<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+				<a href="{{ site.baseurl }}/" itemprop="name">
+					NICE Experience
+				</a>
+				<meta itemprop="position" content="1">
+			</li>
+			{% capture forLoopMaxInt %}{{ splitted_url_parts.size | minus:1 }}{% endcapture %}
+			{% for i in (1..forLoopMaxInt) %}
+				{% capture current_breadcrumb_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/index.html{% endcapture %}
+				{% capture current_breadcrumb_md_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/{% endcapture %}
+				{% capture next_prepender %}{{next_prepender}}/{{ splitted_url_parts[i] }}{% endcapture %}
+				{% for breadcrumb_page in site.pages %}
+					{% if current_breadcrumb_url == breadcrumb_page.url or current_breadcrumb_md_url == breadcrumb_page.url  %}
+					{% assign j = forLoopMaxInt | plus: 0 %}
+						<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" {% if i == j %}class="active"{% endif %}>
+							{% capture breadcrumb_page_page_url_without_index_html %}{{ breadcrumb_page.url | remove: "index.html" }}{% endcapture %}
+							<a itemprop="name" href="{{ site.baseurl }}{{breadcrumb_page_page_url_without_index_html}}">
+								{% if breadcrumb_page.breadcrumb %}
+									{{breadcrumb_page.breadcrumb}}
+								{% else %}
+									{{breadcrumb_page.title}}
+								{% endif %}
+							</a>
+						</li>
+					{% endif %}
+				{% endfor %}
+			{% endfor %}
+		</ol>
+	</nav>
+</div>
+{% endif %}
