@@ -7,102 +7,74 @@ title: Colour
 
 The NICE colour palette is also described on the [brand guidelines](https://www.nice.org.uk/brand/colour-palette){:target="_blank"}. Use these guidelines to determine the best way to apply the NICE colour palette.
 
-## Corporate colour palette
+## Corporate contrast
+The colour contrast ratio for text and interactive elements should be at least 4.5:1 as recommended by the W3C. To check your colour contrasts use ###
 
-### Primary palette
-
-The primary palette contains the core colours that should be used across all NICE communications channels. Examples of use include our logo variations, and main background colour (NICE white).
-
-When supporting content with icons, keylines and highlights, 'NICE Teal' should be your first choice of colour. By using these colours consistently and appropriately they help reinforce the NICE brand.
+## Text
 
 <ul class="colour-grid">
     <li class="colour-grid__item colour-grid__item--nice-black">
-        <h4>NICE Black</h4>
+        <h4>Primary text colour</h4>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$colour-nice-black</code></dd>
-            <dt>HEX:</dt> <dd><code>#222222</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(34, 34, 34)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--nice-white">
-        <h4>NICE White</h4>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$colour-nice-white</code></dd>
-            <dt>HEX:</dt> <dd><code>#FFFFFF</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(255, 255, 255)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--nice-teal">
-        <h4>NICE Teal</h4>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$colour-nice-teal</code></dd>
-            <dt>HEX:</dt> <dd><code>#004650</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(0, 70, 80)</code></dd>
-        </dl>
-    </li>
-</ul>
-
-### Secondary palette
-
-The secondary palette is used to support and compliment the 3 primary colours. Examples of use include text, background panels and lists.
-
-Please note: purple should be used sparingly and only used as a panel background to highlight a particular section of content, in which case font colour must be pure white (NICE White) to make text legible.
-
-<ul class="colour-grid">
-    <li class="colour-grid__item colour-grid__item--purple">
-        <h4>Purple</h4>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$colour-purple</code></dd>
-            <dt>HEX:</dt> <dd><code>#451551</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(69, 21, 81)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--cool-teal">
-        <h4>Cool Teal</h4>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$colour-cool-teal</code></dd>
-            <dt>HEX:</dt> <dd><code>#00506a</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(0, 80, 106)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--rich-black">
-        <h4>Rich Black</h4>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$colour-rich-black</code></dd>
             <dt>HEX:</dt> <dd><code>#0e0e0e</code></dd>
             <dt>RGB:</dt> <dd><code>rgb(14, 14, 14)</code></dd>
         </dl>
     </li>
-    <li class="colour-grid__item colour-grid__item--dark-grey">
-        <h4>Dark Grey</h4>
+    <li class="colour-grid__item colour-grid__item--nice-white">
+        <h4>Reverse text colour</h4>
         <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$colour-dark-grey</code></dd>
-            <dt>HEX:</dt> <dd><code>#393939</code></dd>
+            <dt>SASS:</dt> <dd><code>$colour-nice-white</code></dd>
+            <dt>HEX:</dt> <dd><code>#FFFFFF</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(0, 0, 0)</code></dd>
+        </dl>
+    </li>
+</ul>
+
+## Links
+
+If using links with dark background colours, ensure that the colour is checked for 
+legibility
+
+<ul class="colour-grid">
+    <li class="colour-grid__item colour-grid__item--link">
+        <h4>Link</h4>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$colour-nice-link</code></dd>
+            <dt>HEX:</dt> <dd><code>#005EA5</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(0, 94, 164)</code></dd>
+        </dl>
+    </li>
+    <li class="colour-grid__item colour-grid__item--linkhover">
+        <h4>Link hover state</h4>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$colour-nice-linkhover</code></dd>
+            <dt>HEX:</dt> <dd><code>#2E8ACA</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(46, 138, 203)</code></dd>
+        </dl>
+    </li>
+    <li class="colour-grid__item colour-grid__item--linkvisited">
+        <h4>Link visited state</h4>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$colour-nice-linkvisited</code></dd>
+            <dt>HEX:</dt> <dd><code>#4C2C92</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(76, 43, 147)</code></dd>
+        </dl>
+    </li>
+    <li class="colour-grid__item colour-grid__item--linkfocus">
+        <h4>Link focus state</h4>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$colour-nice-linkfocus</code></dd>
+            <dt>HEX:</dt> <dd><code>#FFD586</code></dd>
             <dt>RGB:</dt> <dd><code>rgb(57, 57, 57)</code></dd>
         </dl>
     </li>
-    <li class="colour-grid__item colour-grid__item--grey-1">
-        <h4>Grey 1</h4>
+    <li class="colour-grid__item colour-grid__item--linkactive">
+        <h4>Link active state</h4>
         <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$colour-grey-1</code></dd>
-            <dt>HEX:</dt> <dd><code>#adadad</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(173, 173, 173)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--grey-2">
-        <h4>Grey 2</h4>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$colour-grey-2</code></dd>
-            <dt>HEX:</dt> <dd><code>#d6d6d6</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(214, 214, 214)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--grey-3">
-        <h4>Grey 3</h4>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$colour-grey-3</code></dd>
-            <dt>HEX:</dt> <dd><code>#e9e9e9</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(233, 233, 233)</code></dd>
+            <dt>SASS:</dt> <dd><code>$colour-nice-linkactive</code></dd>
+            <dt>HEX:</dt> <dd><code>#2E8ACA</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(255, 214, 134)</code></dd>
         </dl>
     </li>
 </ul>
