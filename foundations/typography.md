@@ -8,7 +8,7 @@ title: Typography
 
 ## Basics
 
-- Typography follows the rules from our [brand guidelines](https://www.nice.org.uk/brand/typography){:target="_blank"} with some web specific adaptations (for responsive etc)
+- Typography follows the rules from our [brand guidelines](https://www.nice.org.uk/brand/typography){:target="_blank"} with some web specific adaptations (for responsive design etc)
 - we use Lato, which can be referenced or [downloaded from Google](https://fonts.google.com/specimen/Lato){:target="_blank"}
 - follow [NICE's style guide](https://www.nice.org.uk/corporate/ecd1/){:target="_blank"} for writing
 
