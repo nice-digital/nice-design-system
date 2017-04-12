@@ -82,8 +82,8 @@ legibility
         <h5>CTA button</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$ctabtn</code></dd>
-            <dt>HEX:</dt> <dd><code>#461252</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(70, 18, 82)</code></dd>
+            <dt>HEX:</dt> <dd><code>#451551</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(69, 21, 81)</code></dd>
         </dl>
     </li>
     <li class="colour-grid__item colour-grid__item--ctahover">
