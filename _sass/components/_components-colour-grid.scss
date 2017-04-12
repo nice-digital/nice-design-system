@@ -8,10 +8,12 @@
     margin-bottom: em(24);
 
      // Text
+    
     &--nice-black:before { background: #0e0e0e; }
     &--nice-white:before { background: #FFFFFF; }
 
     // Links
+      
     &--link:before { background: #005EA5; }
     &--linkhover:before { background: #2E8ACA; }
     &--linkvisited:before { background: #4C2C92; }
@@ -19,22 +21,19 @@
     &--linkactive:before { background: #2E8ACA; }
     
      // Buttons
+      
     &--ctabtn:before { background: #461252; }
     &--ctahover:before { background: #260b2d; }
-    &--ctatext:before { background: #FFFFFF; }
-      
+    &--ctatext:before { background: #FFFFFF; }   
     &--primarybtn:before { background: #393939; }
     &--primaryhover:before { background: #0e0e0e; }
-    &--primarytext:before { background: #FFFFFF; }
-      
+    &--primarytext:before { background: #FFFFFF; } 
     &--secondarybtn:before { background: #666666; }
     &--secondaryhover:before { background: #333333; }
     &--secondarytext:before { background: #FFFFFF; }
-    
     &--lightbtn:before { background: #FFFFFF; }
     &--lighthover:before { background: #eaeaea; }
     &--lighttext:before { background: #222222; }
-      
     &--btnfocus:before { background: #FFD586; }
       
     // Primary
