@@ -231,8 +231,7 @@ legibility
             <dt>RGB:</dt> <dd><code>rgb(255, 255, 255)</code></dd>
         </dl>
     </li>
-    
-      <li class="colour-grid__item colour-grid__item--lightpanel">
+    <li class="colour-grid__item colour-grid__item--lightpanel">
         <h5>Light panel</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$lightpanel</code></dd>
@@ -240,8 +239,7 @@ legibility
             <dt>RGB:</dt> <dd><code>rgb(233, 233, 233)</code></dd>
         </dl>
     </li>
-    
-       <li class="colour-grid__item colour-grid__item--darkpanel">
+     <li class="colour-grid__item colour-grid__item--darkpanel">
         <h5>Dark panel</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$darkpanel</code></dd>
@@ -249,8 +247,7 @@ legibility
             <dt>RGB:</dt> <dd><code>rgb(57, 57, 57)</code></dd>
         </dl>
     </li>
-    
-       <li class="colour-grid__item colour-grid__item--border">
+    <li class="colour-grid__item colour-grid__item--border">
         <h5>Borders</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$border</code></dd>
@@ -272,7 +269,6 @@ legibility
             <dt>RGB:</dt> <dd><code>rgb(1, 154, 234)</code></dd>
         </dl>
     </li>
-    
     <li class="colour-grid__item colour-grid__item--errortext">
         <h5>Error text &amp; border</h5>
         <dl class="dl-inline">
@@ -281,8 +277,7 @@ legibility
             <dt>RGB:</dt> <dd><code>rgb(177, 14, 30)</code></dd>
         </dl>
     </li>
-    
-     <li class="colour-grid__item colour-grid__item--errorbg">
+    <li class="colour-grid__item colour-grid__item--errorbg">
         <h5>Error background</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$errorbg</code></dd>
@@ -290,8 +285,7 @@ legibility
             <dt>RGB:</dt> <dd><code>rgb(234, 195, 195)</code></dd>
         </dl>
     </li>
-    
-        <li class="colour-grid__item colour-grid__item--cautiontxt">
+    <li class="colour-grid__item colour-grid__item--cautiontxt">
         <h5>Caution text &amp; border</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$cautiontxt</code></dd>
@@ -299,7 +293,6 @@ legibility
             <dt>RGB:</dt> <dd><code>rgb(155, 114, 47)</code></dd>
         </dl>
     </li>
-    
     <li class="colour-grid__item colour-grid__item--cautionbg">
         <h5>Caution background</h5>
         <dl class="dl-inline">
@@ -308,8 +301,7 @@ legibility
             <dt>RGB:</dt> <dd><code>rgb(255, 223, 164)</code></dd>
         </dl>
     </li>
-    
-     <li class="colour-grid__item colour-grid__item--infotxt">
+    <li class="colour-grid__item colour-grid__item--infotxt">
         <h5>Info text &amp; border</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$infotxt</code></dd>
@@ -317,8 +309,7 @@ legibility
             <dt>RGB:</dt> <dd><code>rgb(74, 127, 153)</code></dd>
         </dl>
     </li>
-    
-       <li class="colour-grid__item colour-grid__item--infobg">
+    <li class="colour-grid__item colour-grid__item--infobg">
         <h5>Info background</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$infobg</code></dd>
@@ -326,7 +317,6 @@ legibility
             <dt>RGB:</dt> <dd><code>rgb(230, 250, 255)</code></dd>
         </dl>
     </li>
-    
     <li class="colour-grid__item colour-grid__item--successtxt">
         <h5>Success text &amp; border</h5>
         <dl class="dl-inline">
@@ -335,7 +325,6 @@ legibility
             <dt>RGB:</dt> <dd><code>rgb(63, 140, 94)</code></dd>
         </dl>
     </li>
-    
      <li class="colour-grid__item colour-grid__item--successbg">
         <h5>Success background</h5>
         <dl class="dl-inline">
