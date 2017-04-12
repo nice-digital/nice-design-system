@@ -3,10 +3,6 @@ layout: sidebar
 title: Typography
 ---
 
-Our primary font is Lato, which is a san-serif font, that is consistently used across all NICE communication channels.
-
-
-
 ## Basics
 
 - typography follows the rules from our [brand guidelines](https://www.nice.org.uk/brand/typography){:target="_blank"} with some web specific adaptations (for responsive etc)
@@ -21,6 +17,7 @@ Our primary font is Lato, which is a san-serif font, that is consistently used a
 
 
 ## Headings
+
 - use sentence case for headings
 - use headings consistently to create a clear hierarchy
 - don't skip headings; use classes like `.h1, .h2` etc or mixins like `@include h1` etc if you need a visual difference in heading
@@ -61,60 +58,6 @@ Avoid using long lines of text, as it makes it harder for the user to read. Aim 
 
 ## Inline text
 
-### Marked text
-
-For highlighting a run of text due to its relevance in another context, use the `<mark>` tag or `.mark`.
-
-{% capture mark %}
-You can use the mark tag to <mark>highlight</mark> text.
-{% endcapture %}
-{% include example.html lang='html' body=mark %}
-
-### Deleted text
-
-For indicating blocks of text that have been deleted use the `<del>` tag.
-
-{% capture del %}
-<del>This line of text is meant to be treated as deleted text.</del>
-{% endcapture %}
-{% include example.html lang='html' body=del %}
-
-### Strikethrough text
-
-For indicating blocks of text that are no longer relevant use the `<s>` tag.
-
-{% capture strikethrough %}
-<s>This line of text is meant to be treated as no longer accurate.</s>
-{% endcapture %}
-{% include example.html lang='html' body=strikethrough %}
-
-### Inserted text
-
-For indicating additions to the document use the `<ins>` tag.
-
-{% capture ins %}
-<ins>This line of text is meant to be treated as an addition to the document.</ins>
-{% endcapture %}
-{% include example.html lang='html' body=ins %}
-
-### Underlined text
-
-To underline text use the `<u>` tag.
-
-{% capture underlined %}
-<u>This line of text will render as underlined</u>
-{% endcapture %}
-{% include example.html lang='html' body=underlined %}
-
-### Small text
-
-For de-emphasizing inline or blocks of text, use the `<small>` to set text at 85% the size of the parent. Alternatively, use `.small` instead.
-
-{% capture small %}
-<p>This is some text <small>with some</small> <span class="small">smaller text</span></p>
-{% endcapture %}
-{% include example.html lang='html' body=small %}
-
 ### Bold
 
 To emphasize a snippet of text with a heavier font-weight use the `<strong>` tag.
@@ -126,12 +69,33 @@ To emphasize a snippet of text with a heavier font-weight use the `<strong>` tag
 
 ### Italics
 
-To emphasize a snippet of text with italics `<em>` tag.
+To emphasize a snippet of text with italics `<em>` tag. 
 
 {% capture italics %}
 <em>rendered as italicized text</em>
 {% endcapture %}
 {% include example.html lang='html' body=italics %}
+
+
+### Strikethrough text
+
+For indicating blocks of text that are no longer relevant use the `<s>` tag.
+
+{% capture strikethrough %}
+<s>This line of text is meant to be treated as no longer accurate.</s>
+{% endcapture %}
+{% include example.html lang='html' body=strikethrough %}
+
+
+### Small text
+
+For de-emphasizing inline or blocks of text, use the `<small>` to set text at 85% the size of the parent. Alternatively, use `.small` instead.
+
+{% capture small %}
+<p>This is some text <small>with some</small> <span class="small">smaller text</span></p>
+{% endcapture %}
+{% include example.html lang='html' body=small %}
+
 
 ### Alternate elements
 
