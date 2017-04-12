@@ -43,7 +43,19 @@
     &--darkpanel:before { background: #393939; }   
     &--border:before { background: #adadad; }
   
+     // Notifications & borders
       
+    &--alphabeta:before { background: #FFFFFF; }
+    &--errortext:before { background:#B10E1E; }
+    &--errorbg:before { background: #EAC3C3; }   
+    &--cautiontxt:before { background: #9B722F; }
+    &--cautionbg:before { background: #FFDFA4; }
+    &--infotxt:before { background:#4A7F99; }
+    &--infobg:before { background: #E6FAFF; }   
+    &--successtxt:before { background: #3F8C5E; }
+    &--successbg:before { background: #EFF7EB; }
+
+     
     // Primary
 
     &--nice-teal:before { background: $colour-nice-teal; }
