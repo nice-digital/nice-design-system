@@ -3,14 +3,31 @@ layout: sidebar
 title: Buttons
 ---
 
+Their main purpose is to trigger an action when the user clicks on them. It's important that the button label is clear about what action the button performs to the user.
+
+
 ## Button basics
 
 - buttons can be `<a>`, `<button>` or `<input type="submit">`
 - use correct semantics for the button element
 - use BEM modifiers for different types
-- avoid excessively long button text
+
+## Button text
+
+- wording on buttons should be clear and inform the user what the button does
+- words like ‘okay’ and ‘no’ don’t give the user enough information
 - make sure the button text describes an action
-- don't use copy like 'read more' or 'view more'
+- avoid excessively long button text
+
+## Button positioning
+
+- consider the user's reading path before deciding where to put a button
+- ensure that prominent buttons are displayed in a easy to spot location
+- place buttons in a sensible order 
+- make it harder to find destructive buttons (Cancel, delete)
+
+
+
 
 {% capture basics %}
 <p>
