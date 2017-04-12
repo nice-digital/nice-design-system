@@ -36,6 +36,14 @@
     &--lighttext:before { background: #222222; }
     &--btnfocus:before { background: #FFD586; }
       
+    // Background & borders
+      
+    &--bodybg:before { background: #FFFFFF; }
+    &--lightpanel:before { background:#e9e9e9; }
+    &--darkpanel:before { background: #393939; }   
+    &--border:before { background: #adadad; }
+  
+      
     // Primary
 
     &--nice-teal:before { background: $colour-nice-teal; }
