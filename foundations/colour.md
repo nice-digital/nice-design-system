@@ -5,8 +5,6 @@ title: Colour
 
 The NICE colour palette is also described on the [brand guidelines](https://www.nice.org.uk/brand/colour-palette){:target="_blank"}. Use these guidelines to determine the best way to apply the NICE colour palette.
 
-## Corporate contrast
-The colour contrast ratio for text and interactive elements should be at least 4.5:1 as recommended by the W3C. To check your colour contrasts use ###
 
 ## Text
 
@@ -297,7 +295,7 @@ legibility
         <h5>Caution background</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$cautionbg</code></dd>
-            <dt>HEX:</dt> <dd><code>#EFF7EB</code></dd>
+            <dt>HEX:</dt> <dd><code>#FFDFA4</code></dd>
             <dt>RGB:</dt> <dd><code>rgb(255, 223, 164)</code></dd>
         </dl>
     </li>
