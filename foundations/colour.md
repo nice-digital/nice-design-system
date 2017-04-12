@@ -79,69 +79,133 @@ legibility
     </li>
 </ul>
 
-### Tertiary palette
-
-The tertiary palette is based on NICE Teal. It should be used to give more shades and colour variation for design elements such as charts, illustrations and assets which are used less frequently.
-
+## Buttons
+### Call-to-action 
 <ul class="colour-grid">
-    <li class="colour-grid__item colour-grid__item--blue-1">
-        <h4>Blue 1</h4>
+    <li class="colour-grid__item colour-grid__item--ctabtn">
+        <h4>CTA button</h4>
         <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$colour-blue-1</code></dd>
-            <dt>HEX:</dt> <dd><code>#233746</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(35, 55, 70)</code></dd>
+            <dt>SASS:</dt> <dd><code>$ctabtn</code></dd>
+            <dt>HEX:</dt> <dd><code>#461252</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(70, 18, 82)</code></dd>
         </dl>
     </li>
-    <li class="colour-grid__item colour-grid__item--blue-2">
-        <h4>Blue 2</h4>
+    <li class="colour-grid__item colour-grid__item--ctahover">
+        <h4>CTA button hover</h4>
         <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$colour-blue-2</code></dd>
-            <dt>HEX:</dt> <dd><code>#314c60</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(49, 76, 96)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--blue-3">
-        <h4>Blue 3</h4>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$colour-blue-3</code></dd>
-            <dt>HEX:</dt> <dd><code>#517489</code></dd>
+            <dt>SASS:</dt> <dd><code>$ctahover</code></dd>
+            <dt>HEX:</dt> <dd><code>#260b2d</code></dd>
             <dt>RGB:</dt> <dd><code>rgb(81, 116, 137)</code></dd>
         </dl>
     </li>
-    <li class="colour-grid__item colour-grid__item--ice-teal">
-        <h4>Ice Teal</h4>
+    <li class="colour-grid__item colour-grid__item--ctatext">
+        <h4>CTA button text</h4>
         <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$colour-ice-teal</code></dd>
-            <dt>HEX:</dt> <dd><code>#a2bdc1</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(162, 189, 193)</code></dd>
+            <dt>SASS:</dt> <dd><code>$ctatext</code></dd>
+            <dt>HEX:</dt> <dd><code>#FFFFFF</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(255, 255, 255)</code></dd>
         </dl>
     </li>
-    <li class="colour-grid__item colour-grid__item--teal-1">
-        <h4>Teal 1</h4>
+    </ul>
+    
+### Primary
+<ul class="colour-grid">
+    <li class="colour-grid__item colour-grid__item--primarybtn">
+        <h4>Primary button</h4>
         <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$colour-teal-1</code></dd>
-            <dt>HEX:</dt> <dd><code>#4f7d83</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(79, 125, 131)</code></dd>
+            <dt>SASS:</dt> <dd><code>$primarybtn</code></dd>
+            <dt>HEX:</dt> <dd><code>#393939</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(57, 57, 57)</code></dd>
         </dl>
     </li>
-    <li class="colour-grid__item colour-grid__item--teal-2">
-        <h4>Teal 2</h4>
+    <li class="colour-grid__item colour-grid__item--primaryhover">
+        <h4>Primary button hover</h4>
         <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$colour-teal-2</code></dd>
-            <dt>HEX:</dt> <dd><code>#18646e</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(24, 100, 110)</code></dd>
+            <dt>SASS:</dt> <dd><code>$primaryhover</code></dd>
+            <dt>HEX:</dt> <dd><code>#0e0e0e</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(14, 14, 14)</code></dd>
         </dl>
     </li>
-    <li class="colour-grid__item colour-grid__item--teal-3">
-        <h4>Teal 3</h4>
+    <li class="colour-grid__item colour-grid__item--primarytext">
+        <h4>Primary button text</h4>
         <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$colour-teal-3</code></dd>
-            <dt>HEX:</dt> <dd><code>#15434a</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(21, 67, 74)</code></dd>
+            <dt>SASS:</dt> <dd><code>$primarytext</code></dd>
+            <dt>HEX:</dt> <dd><code>#FFFFFF</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(255, 255, 255)</code></dd>
+        </dl>
+    </li>
+    
+</ul>
+
+### Secondary
+<ul class="colour-grid">
+    <li class="colour-grid__item colour-grid__item--secondarybtn">
+        <h4>Secondary button</h4>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$secondarybtn</code></dd>
+            <dt>HEX:</dt> <dd><code>#666666</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(102, 102, 102)</code></dd>
+        </dl>
+    </li>
+    <li class="colour-grid__item colour-grid__item--secondaryhover">
+        <h4>Secondary button hover</h4>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$secondaryhover</code></dd>
+            <dt>HEX:</dt> <dd><code>#333333</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(51, 51, 51)</code></dd>
+        </dl>
+    </li>
+    <li class="colour-grid__item colour-grid__item--secondarytext">
+        <h4>Secondary button text</h4>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$secondarytext</code></dd>
+            <dt>HEX:</dt> <dd><code>#FFFFFF</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(255, 255, 255)</code></dd>
         </dl>
     </li>
 </ul>
 
+
+### Light
+<ul class="colour-grid">
+    <li class="colour-grid__item colour-grid__item--lightbtn">
+        <h4>Light button</h4>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$lightbtn</code></dd>
+            <dt>HEX:</dt> <dd><code>#FFFFFF</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(255, 255, 255)</code></dd>
+        </dl>
+    </li>
+    <li class="colour-grid__item colour-grid__item--lighthover">
+        <h4>Secondary button hover</h4>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$lighthover</code></dd>
+            <dt>HEX:</dt> <dd><code>#eaeaea</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(234, 234, 234)</code></dd>
+        </dl>
+    </li>
+    <li class="colour-grid__item colour-grid__item--lighttext">
+        <h4>Secondary button text</h4>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$lighttext</code></dd>
+            <dt>HEX:</dt> <dd><code>#222222</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(34, 34, 34)</code></dd>
+        </dl>
+    </li>
+</ul>
+
+
+### Focus state (all buttons)
+<ul class="colour-grid">
+    <li class="colour-grid__item colour-grid__item--btnfocus">
+        <h4>Focus state</h4>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$btnfocus</code></dd>
+            <dt>HEX:</dt> <dd><code>#FFD586</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(255, 213, 134)</code></dd>
+        </dl>
+    </li>
+</ul>
 ## Semantic colours
 
 In addition to the corporate palette, there are a set of <a href="{{ site.baseurl }}{% link technical/sass/documentation/colours.md %}">semantic colour variables</a> in SASS for specific use cases. Wherever possible, these should be used rather than the corporate palette directly. For example, text should use `color: $colour-text` rather than `color: $colour-rich-black`.
