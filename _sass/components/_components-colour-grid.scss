@@ -8,15 +8,15 @@
     margin-bottom: em(24);
 
      // Text
-    &--nice-black:before { background: $colour-nice-black; }
-    &--nice-white:before { background: $colour-nice-white; }
+    &--nice-black:before { background: #0e0e0e; }
+    &--nice-white:before { background: #FFFFFF; }
 
     // Links
-    &--nice-link:before { background: $colour-nice-link; }
-    &--nice-linkhover:before { background: $colour-nice-linkhover; }
-    &--nice-linkvisited:before { background: $colour-nice-linkvisited; }
-    &--nice-linkfocus:before { background: $colour-nice-linkfocus; }
-    &--nice-linkactive:before { background: $colour-nice-linkactive; }
+    &--nice-link:before { background: #005EA5; }
+    &--nice-linkhover:before { background: #2E8ACA; }
+    &--nice-linkvisited:before { background: #4C2C92; }
+    &--nice-linkfocus:before { background: #FFD586; }
+    &--nice-linkactive:before { background: #2E8ACA; }
     
     
     // Primary
