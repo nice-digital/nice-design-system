@@ -59,14 +59,16 @@
     // Primary
 
     &--nice-teal:before { background: $colour-nice-teal; }
+
     // Secondary
-    &--purple:before { background: $colour-purple; }
+     &--purple:before { background: $colour-purple; }
     &--cool-teal:before { background: $colour-cool-teal; }
     &--rich-black:before { background: $colour-rich-black; }
     &--dark-grey:before { background: $colour-dark-grey; }
     &--grey-1:before { background: $colour-grey-1; }
     &--grey-2:before { background: $colour-grey-2; }
     &--grey-3:before { background: $colour-grey-3; }
+      
     // Tertiary
     &--blue-1:before { background: $colour-blue-1; }
     &--blue-2:before { background: $colour-blue-2; }
