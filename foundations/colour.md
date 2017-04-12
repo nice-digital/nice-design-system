@@ -204,6 +204,78 @@ legibility
         </dl>
     </li>
 </ul>
+
+
+### Icons and supporting elements
+
+<ul class="colour-grid">
+    <li class="colour-grid__item colour-grid__item--elementicons">
+        <h5>NICE Teal</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$elementicons</code></dd>
+            <dt>HEX:</dt> <dd><code>#004650</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(0, 70, 80)</code></dd>
+        </dl>
+    </li>
+</ul>
+
+
+### Icons and supporting elements
+
+<ul class="colour-grid">
+    <li class="colour-grid__item colour-grid__item--elementicons">
+        <h5>NICE Teal</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$elementicons</code></dd>
+            <dt>HEX:</dt> <dd><code>#004650</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(0, 70, 80)</code></dd>
+        </dl>
+    </li>
+</ul>
+
+
+### Backgrounds and border
+
+<ul class="colour-grid">
+    <li class="colour-grid__item colour-grid__item--elementicons">
+        <h5>Body background</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$elementicons</code></dd>
+            <dt>HEX:</dt> <dd><code>#FFFFFF</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(255, 255, 255)</code></dd>
+        </dl>
+    </li>
+    
+      <li class="colour-grid__item colour-grid__item--lightpanel">
+        <h5>Light panel</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$lightpanel</code></dd>
+            <dt>HEX:</dt> <dd><code>#e9e9e9</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(233, 233, 233)</code></dd>
+        </dl>
+    </li>
+    
+       <li class="colour-grid__item colour-grid__item--darkpanel">
+        <h5>Dark panel</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$darkpanel</code></dd>
+            <dt>HEX:</dt> <dd><code>#393939</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(57, 57, 57)</code></dd>
+        </dl>
+    </li>
+    
+       <li class="colour-grid__item colour-grid__item--border">
+        <h5>Borders</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$border</code></dd>
+            <dt>HEX:</dt> <dd><code>#adadad</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(173, 173, 173)</code></dd>
+        </dl>
+    </li>
+</ul>
+
+
+
 ## Semantic colours
 
 In addition to the corporate palette, there are a set of <a href="{{ site.baseurl }}{% link technical/sass/documentation/colours.md %}">semantic colour variables</a> in SASS for specific use cases. Wherever possible, these should be used rather than the corporate palette directly. For example, text should use `color: $colour-text` rather than `color: $colour-rich-black`.
