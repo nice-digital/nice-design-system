@@ -14,7 +14,7 @@ The colour contrast ratio for text and interactive elements should be at least 4
 
 <ul class="colour-grid">
     <li class="colour-grid__item colour-grid__item--nice-black">
-        <h4>Primary text colour</h4>
+        <h5>Primary text colour</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$colour-nice-black</code></dd>
             <dt>HEX:</dt> <dd><code>#0e0e0e</code></dd>
@@ -22,7 +22,7 @@ The colour contrast ratio for text and interactive elements should be at least 4
         </dl>
     </li>
     <li class="colour-grid__item colour-grid__item--nice-white">
-        <h4>Reverse text colour</h4>
+        <h5>Reverse text colour</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$colour-nice-white</code></dd>
             <dt>HEX:</dt> <dd><code>#FFFFFF</code></dd>
@@ -38,7 +38,7 @@ legibility
 
 <ul class="colour-grid">
     <li class="colour-grid__item colour-grid__item--link">
-        <h4>Link</h4>
+        <h5>Link</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$colour-nice-link</code></dd>
             <dt>HEX:</dt> <dd><code>#005EA5</code></dd>
@@ -46,7 +46,7 @@ legibility
         </dl>
     </li>
     <li class="colour-grid__item colour-grid__item--linkhover">
-        <h4>Link hover state</h4>
+        <h5>Link hover state</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$colour-nice-linkhover</code></dd>
             <dt>HEX:</dt> <dd><code>#2E8ACA</code></dd>
@@ -54,7 +54,7 @@ legibility
         </dl>
     </li>
     <li class="colour-grid__item colour-grid__item--linkvisited">
-        <h4>Link visited state</h4>
+        <h5>Link visited state</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$colour-nice-linkvisited</code></dd>
             <dt>HEX:</dt> <dd><code>#4C2C92</code></dd>
@@ -62,7 +62,7 @@ legibility
         </dl>
     </li>
     <li class="colour-grid__item colour-grid__item--linkfocus">
-        <h4>Link focus state</h4>
+        <h5>Link focus state</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$colour-nice-linkfocus</code></dd>
             <dt>HEX:</dt> <dd><code>#FFD586</code></dd>
@@ -70,7 +70,7 @@ legibility
         </dl>
     </li>
     <li class="colour-grid__item colour-grid__item--linkactive">
-        <h4>Link active state</h4>
+        <h5>Link active state</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$colour-nice-linkactive</code></dd>
             <dt>HEX:</dt> <dd><code>#2E8ACA</code></dd>
@@ -83,7 +83,7 @@ legibility
 ### Call-to-action 
 <ul class="colour-grid">
     <li class="colour-grid__item colour-grid__item--ctabtn">
-        <h4>CTA button</h4>
+        <h5>CTA button</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$ctabtn</code></dd>
             <dt>HEX:</dt> <dd><code>#461252</code></dd>
@@ -91,7 +91,7 @@ legibility
         </dl>
     </li>
     <li class="colour-grid__item colour-grid__item--ctahover">
-        <h4>CTA button hover</h4>
+        <h5>CTA button hover</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$ctahover</code></dd>
             <dt>HEX:</dt> <dd><code>#260b2d</code></dd>
@@ -111,7 +111,7 @@ legibility
 ### Primary
 <ul class="colour-grid">
     <li class="colour-grid__item colour-grid__item--primarybtn">
-        <h4>Primary button</h4>
+        <h5>Primary button</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$primarybtn</code></dd>
             <dt>HEX:</dt> <dd><code>#393939</code></dd>
@@ -119,7 +119,7 @@ legibility
         </dl>
     </li>
     <li class="colour-grid__item colour-grid__item--primaryhover">
-        <h4>Primary button hover</h4>
+        <h5>Primary button hover</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$primaryhover</code></dd>
             <dt>HEX:</dt> <dd><code>#0e0e0e</code></dd>
@@ -127,7 +127,7 @@ legibility
         </dl>
     </li>
     <li class="colour-grid__item colour-grid__item--primarytext">
-        <h4>Primary button text</h4>
+        <h5>Primary button text</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$primarytext</code></dd>
             <dt>HEX:</dt> <dd><code>#FFFFFF</code></dd>
@@ -140,7 +140,7 @@ legibility
 ### Secondary
 <ul class="colour-grid">
     <li class="colour-grid__item colour-grid__item--secondarybtn">
-        <h4>Secondary button</h4>
+        <h5>Secondary button</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$secondarybtn</code></dd>
             <dt>HEX:</dt> <dd><code>#666666</code></dd>
@@ -148,7 +148,7 @@ legibility
         </dl>
     </li>
     <li class="colour-grid__item colour-grid__item--secondaryhover">
-        <h4>Secondary button hover</h4>
+        <h5>Secondary button hover</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$secondaryhover</code></dd>
             <dt>HEX:</dt> <dd><code>#333333</code></dd>
@@ -156,7 +156,7 @@ legibility
         </dl>
     </li>
     <li class="colour-grid__item colour-grid__item--secondarytext">
-        <h4>Secondary button text</h4>
+        <h5>Secondary button text</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$secondarytext</code></dd>
             <dt>HEX:</dt> <dd><code>#FFFFFF</code></dd>
@@ -169,7 +169,7 @@ legibility
 ### Light
 <ul class="colour-grid">
     <li class="colour-grid__item colour-grid__item--lightbtn">
-        <h4>Light button</h4>
+        <h5>Light button</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$lightbtn</code></dd>
             <dt>HEX:</dt> <dd><code>#FFFFFF</code></dd>
@@ -177,7 +177,7 @@ legibility
         </dl>
     </li>
     <li class="colour-grid__item colour-grid__item--lighthover">
-        <h4>Secondary button hover</h4>
+        <h5>Secondary button hover</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$lighthover</code></dd>
             <dt>HEX:</dt> <dd><code>#eaeaea</code></dd>
@@ -185,7 +185,7 @@ legibility
         </dl>
     </li>
     <li class="colour-grid__item colour-grid__item--lighttext">
-        <h4>Secondary button text</h4>
+        <h5>Secondary button text</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$lighttext</code></dd>
             <dt>HEX:</dt> <dd><code>#222222</code></dd>
@@ -198,7 +198,7 @@ legibility
 ### Focus state (all buttons)
 <ul class="colour-grid">
     <li class="colour-grid__item colour-grid__item--btnfocus">
-        <h4>Focus state</h4>
+        <h5>Focus state</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$btnfocus</code></dd>
             <dt>HEX:</dt> <dd><code>#FFD586</code></dd>
