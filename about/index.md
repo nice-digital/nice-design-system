@@ -5,8 +5,6 @@ breadcrumb: About
 inpagenav: false
 ---
 
-# About NICE Digital
-
 NICE Digital is a set of reusable patterns, documentation and guidelines for rapid product development.
 {:.lead}
 

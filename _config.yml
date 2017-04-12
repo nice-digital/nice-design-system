@@ -38,4 +38,5 @@ sass:
       - bower_components/nice-experience/src/stylesheets
 
 # Custom vars
-test: true
+repository: https://github.com/nhsevidence/NICE-Experience
+

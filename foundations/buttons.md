@@ -3,8 +3,6 @@ layout: sidebar
 title: Buttons
 ---
 
-# Buttons
-
 ## Button basics
 
 - buttons can be `<a>`, `<button>` or `<input type="submit">`

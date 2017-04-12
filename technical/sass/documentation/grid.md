@@ -1,8 +1,6 @@
 ---
 layout: sidebar
-title: Grid
+title: Grid & layout
 ---
-
-# Grid
 
 {% include sass-group.html group='grid' %}

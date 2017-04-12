@@ -4,8 +4,6 @@ title: Foundations
 inpagenav: false
 ---
 
-# Foundations
-
 This guide shows how to make your service look consistent with the rest of NICE.
 {:.lead}
 

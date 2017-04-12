@@ -3,8 +3,6 @@ layout: sidebar
 title: Helpers
 ---
 
-# Helpers
-
 ## Floats
 
 Quickly float elements with `.left` or `.right`. Clear floats on a parent element with the `.clearfix` class.

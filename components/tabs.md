@@ -3,8 +3,6 @@ layout: sidebar
 title: Tabs
 ---
 
-# Tabs
-
 ## Basics
 
 - ARIA attributes are applied via JS

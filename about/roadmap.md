@@ -3,8 +3,6 @@ layout: sidebar
 title: Roadmap
 ---
 
-# Roadmap
-
 We've split our roadmap into short, medium and long term and by components, content, code and build. This is subject to change and will be updated on a regular basis.
 
 ~~Striked-through~~ text denotes completed items.

@@ -3,8 +3,6 @@ layout: sidebar
 title: Installation
 ---
 
-# Installation
-
 ## Basic template
 
 Use the following HTML structure as a guide when creating new applications. It contains annotations and placeholders for optional elements.

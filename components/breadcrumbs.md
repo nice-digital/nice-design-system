@@ -3,8 +3,6 @@ layout: sidebar
 title: Breadcrumbs
 ---
 
-# Breadcrumbs
-
 <h2>Basics</h2>
 
 - Use a `nav` element

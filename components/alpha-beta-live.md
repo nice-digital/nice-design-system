@@ -3,8 +3,6 @@ layout: sidebar
 title: Alpha, beta & live
 ---
 
-# Alpha, beta & live
-
 ## Phase tag
 
 {% capture phasetag %}

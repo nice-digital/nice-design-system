@@ -4,8 +4,6 @@ title: Technical
 inpagenav: false
 ---
 
-# Technical
-
 Technical documentation and code style guides for creating NICE digital services
 {:.lead}
 

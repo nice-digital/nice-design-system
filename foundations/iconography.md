@@ -3,8 +3,6 @@ layout: sidebar
 title: Iconography
 ---
 
-# Iconography
-
 ## Introduction
 
 We use a custom web font for rendering our icons.

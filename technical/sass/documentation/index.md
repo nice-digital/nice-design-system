@@ -5,8 +5,6 @@ breadcrumb: Docs
 inpagenav: false
 ---
 
-# SASS documentation
-
 <div class="grid">
 
     {% capture colours %}{% link technical/sass/documentation/colours.md %}{% endcapture %}

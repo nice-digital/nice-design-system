@@ -3,8 +3,6 @@ layout: sidebar
 title: Libraries
 ---
 
-# Libraries
-
 The following are 3<sup>rd</sup> party SASS libraries that we've included by default:
 
 

@@ -3,8 +3,6 @@ layout: sidebar
 title: Maintain ratio
 ---
 
-# Maintain ratio
-
 - Used for enforcing an aspect ratio for iframes, videos etc
 - Use modifiers for different ratios
 

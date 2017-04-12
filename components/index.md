@@ -4,8 +4,6 @@ title: Components
 inpagenav: false
 ---
 
-# Components
-
 Once you've mastered the foundations, these components are further patterns for building user interfaces.
 {:.lead}
 

@@ -3,8 +3,6 @@ layout: sidebar
 title: Visibility
 ---
 
-# Visibility
-
 ## Showing & hiding
 
 Use the following selectors for visibility:

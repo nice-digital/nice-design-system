@@ -3,8 +3,6 @@ layout: sidebar
 title: Grid & layout
 ---
 
-# Grid & layout
-
 ## Introduction
 
 Our grid system is a responsive, mobile-first, fluid grid system.

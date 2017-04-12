@@ -3,9 +3,6 @@ layout: sidebar
 title: Typography
 ---
 
-# Typography
-
-
 ## Basics
 
 - Typography follows the rules from our [brand guidelines](https://www.nice.org.uk/brand/typography){:target="_blank"} with some web specific adaptations (for responsive etc)
