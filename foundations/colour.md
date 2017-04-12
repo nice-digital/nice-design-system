@@ -206,7 +206,7 @@ legibility
 </ul>
 
 
-## Icons and supporting elements
+## Icons
 
 <ul class="colour-grid">
     <li class="colour-grid__item colour-grid__item--nice-teal">
@@ -223,10 +223,10 @@ legibility
 ## Backgrounds and border
 
 <ul class="colour-grid">
-    <li class="colour-grid__item colour-grid__item--elementicons">
+    <li class="colour-grid__item colour-grid__item--bodybg">
         <h5>Body background</h5>
         <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$elementicons</code></dd>
+            <dt>SASS:</dt> <dd><code>$bodybg</code></dd>
             <dt>HEX:</dt> <dd><code>#FFFFFF</code></dd>
             <dt>RGB:</dt> <dd><code>rgb(255, 255, 255)</code></dd>
         </dl>
