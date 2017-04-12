@@ -36,7 +36,7 @@ html {
 }
 
 body {
-  background: $colour-page;
+  background: $colour-body;
   color: $colour-text;
   font-family: font-family(sans);
   font-style: normal;
@@ -97,8 +97,8 @@ p,
 }
 
 code {
-  background: $colour-grey-3;
-  border: 1px solid $colour-grey-2;
+  background: $colour-panel-light;
+  border: 1px solid $colour-border;
   border-radius: 2px;
   color: $colour-text;
   display: inline-block;

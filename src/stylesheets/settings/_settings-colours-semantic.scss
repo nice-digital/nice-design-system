@@ -1,0 +1,192 @@
+////
+/// @group colors
+////
+
+/// True black, used for print styles
+/// @since 0.2.0
+$colour-true-black: #000;
+
+/// True white, used for print styles
+/// @since 0.2.0
+$colour-true-white: #fff;
+
+
+// GLOBAL
+
+/// Page background colour
+/// @since 0.2.0
+$colour-body: #fafafa;
+
+/// Standard, primary body text colour
+/// @since 0.2.0
+$colour-text: $colour-nice-rich-black;
+
+/// Subtle text colour
+/// @since 0.2.0
+$colour-text-subtle: $colour-nice-grey-1;
+
+/// Body text colour for use on dark background
+/// @since 0.2.2
+$colour-text-reverse: $colour-nice-white;
+
+/// Focus colour
+/// @since 0.2.0
+$colour-focus: #ffd586;
+
+/// Icons colour
+/// @since 0.2.0
+$colour-icons: $colour-nice-teal;
+
+
+
+// LINKS
+
+/// Link text colour
+/// @since 0.2.0
+$colour-link: #005ea5;
+
+/// Link hover colour
+/// @since 0.2.0
+$colour-link-hover: #2e8aca;
+
+/// Link visited colour
+/// @since 0.2.0
+$colour-link-visited: #4c2c92;
+
+/// Link active colour
+/// @since 0.2.0
+$colour-link-active: #2e8aca;
+
+
+// CTA BUTTONS
+
+/// CTA button background colour
+/// @since 0.2.2
+$colour-btn-cta: $colour-nice-purple;
+
+/// CTA button hover colour
+/// @since 0.2.2
+$colour-btn-cta-hover: #260b2d;
+
+/// CTA button text colour
+/// @since 0.2.2
+$colour-btn-cta-text: $colour-nice-white;
+
+
+// PRIMARY BUTTONS
+
+/// Primary button background colour
+/// @since 0.2.2
+$colour-btn-primary: $colour-nice-dark-grey;
+
+/// Primary button hover colour
+/// @since 0.2.2
+$colour-btn-primary-hover: $colour-nice-rich-black;
+
+/// Primary button text colour
+/// @since 0.2.2
+$colour-btn-primary-text: $colour-nice-white;
+
+
+// SECONDARY BUTTONS
+
+/// Secondary button background colour
+/// @since 0.2.2
+$colour-btn-secondary: #666;
+
+/// Secondary button hover colour
+/// @since 0.2.2
+$colour-btn-secondary-hover: #333;
+
+/// Primary button text colour
+/// @since 0.2.2
+$colour-btn-secondary-text: $colour-nice-white;
+
+
+// LIGHT BUTTONS
+
+/// Light button background colour
+/// @since 0.2.2
+$colour-btn-light: $colour-nice-white;
+
+/// Light button hover colour
+/// @since 0.2.2
+$colour-btn-light-hover: $colour-nice-grey-3;
+
+/// Light button text colour
+/// @since 0.2.2
+$colour-btn-light-text: $colour-nice-rich-black;
+
+
+// BACKGROUNDS/BORDERS
+
+/// Borders, seperators, rules, keylines etc.
+/// @since 0.2.0
+$colour-border: $colour-nice-grey-1;
+
+// Light panels, tabs etc
+/// @since 0.2.0
+$colour-panel-light: $colour-nice-grey-3;
+
+// Dark panels background
+/// @since 0.2.0
+$colour-panel-dark: $colour-nice-dark-grey;
+
+
+// NOTIFICATIONS/BANNERS
+
+/// Agile lifecycle phase banner
+/// @since 0.2.2
+$colour-agile-phase: #009ae9;
+
+/// Discovery agile lifecycle phase
+/// @since 0.2.0
+/// @deprecated Use $colour-agile-phase instead
+$colour-discovery: #b8008e;
+
+/// Alpha badges and banners
+/// @since 0.2.0
+/// @deprecated Use $colour-agile-phase instead
+$colour-alpha: #d5367f;
+
+/// Beta badges and banners
+/// @since 0.2.0
+/// @deprecated Use $colour-agile-phase instead
+$colour-beta: #f47738;
+
+/// Live badges and banners
+/// @since 0.2.0
+/// @deprecated Use $colour-agile-phase instead
+$colour-live: #70a747;
+
+/// Error text and border colour
+/// @since 0.2.0
+$colour-error: #b10e1e;
+
+/// Error background colour
+/// @since 0.2.0
+$colour-error-background: #eac3c3;
+
+/// Caution text and border colour
+/// @since 0.2.0
+$colour-caution: #9b722f;
+
+/// Caution background colour
+/// @since 0.2.0
+$colour-caution-background: #ffdfa4;
+
+/// Info text and border colour
+/// @since 0.2.0
+$colour-info: #4a7f99;
+
+/// Info background colour
+/// @since 0.2.0
+$colour-info-background: #e6faff;
+
+/// Success text and border colour
+/// @since 0.2.0
+$colour-success: #3f8c5e;
+
+/// Success background colour
+/// @since 0.2.0
+$colour-success-background: #eff7eb;

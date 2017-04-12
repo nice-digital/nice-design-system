@@ -4,7 +4,7 @@
 
 .navbar {
   @extend .nav;
-  background-color: $colour-grey-3;
+  background-color: $colour-nice-grey-3;
 
   @media print {
     display: none;
