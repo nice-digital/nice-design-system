@@ -261,6 +261,90 @@ legibility
 </ul>
 
 
+## Notifications and banners
+
+<ul class="colour-grid">
+    <li class="colour-grid__item colour-grid__item--alphabeta">
+        <h5>Alpha &amp; beta banner</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$alphabeta</code></dd>
+            <dt>HEX:</dt> <dd><code>#009ae9</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(1, 154, 234)</code></dd>
+        </dl>
+    </li>
+    
+    <li class="colour-grid__item colour-grid__item--errortext">
+        <h5>Error text &amp; border</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$errortxt</code></dd>
+            <dt>HEX:</dt> <dd><code>#B10E1E</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(177, 14, 30)</code></dd>
+        </dl>
+    </li>
+    
+     <li class="colour-grid__item colour-grid__item--errorbg">
+        <h5>Error background</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$errorbg</code></dd>
+            <dt>HEX:</dt> <dd><code>#EAC3C3</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(234, 195, 195)</code></dd>
+        </dl>
+    </li>
+    
+        <li class="colour-grid__item colour-grid__item--cautiontxt">
+        <h5>Caution text &amp; border</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$cautiontxt</code></dd>
+            <dt>HEX:</dt> <dd><code>#9B722F</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(155, 114, 47)</code></dd>
+        </dl>
+    </li>
+    
+    <li class="colour-grid__item colour-grid__item--cautionbg">
+        <h5>Caution background</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$cautionbg</code></dd>
+            <dt>HEX:</dt> <dd><code>#EFF7EB</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(255, 223, 164)</code></dd>
+        </dl>
+    </li>
+    
+     <li class="colour-grid__item colour-grid__item--infotxt">
+        <h5>Info text &amp; border</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$infotxt</code></dd>
+            <dt>HEX:</dt> <dd><code>#4A7F99</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(74, 127, 153)</code></dd>
+        </dl>
+    </li>
+    
+       <li class="colour-grid__item colour-grid__item--infobg">
+        <h5>Info background</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$infobg</code></dd>
+            <dt>HEX:</dt> <dd><code> #E6FAFF</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(230, 250, 255)</code></dd>
+        </dl>
+    </li>
+    
+    <li class="colour-grid__item colour-grid__item--successtxt">
+        <h5>Success text &amp; border</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$successtxt</code></dd>
+            <dt>HEX:</dt> <dd><code>#3F8C5E</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(63, 140, 94)</code></dd>
+        </dl>
+    </li>
+    
+     <li class="colour-grid__item colour-grid__item--successbg">
+        <h5>Success background</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$successbg</code></dd>
+            <dt>HEX:</dt> <dd><code>#EFF7EB</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(239, 247, 235)</code></dd>
+        </dl>
+    </li>
+</ul>
 
 ## Semantic colours
 
