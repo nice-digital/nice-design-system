@@ -12,11 +12,11 @@
     &--nice-white:before { background: #FFFFFF; }
 
     // Links
-    &--nice-link:before { background: #005EA5; }
-    &--nice-linkhover:before { background: #2E8ACA; }
-    &--nice-linkvisited:before { background: #4C2C92; }
-    &--nice-linkfocus:before { background: #FFD586; }
-    &--nice-linkactive:before { background: #2E8ACA; }
+    &--link:before { background: #005EA5; }
+    &--linkhover:before { background: #2E8ACA; }
+    &--linkvisited:before { background: #4C2C92; }
+    &--linkfocus:before { background: #FFD586; }
+    &--linkactive:before { background: #2E8ACA; }
     
     
     // Primary
