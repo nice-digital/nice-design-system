@@ -18,7 +18,25 @@
     &--linkfocus:before { background: #FFD586; }
     &--linkactive:before { background: #2E8ACA; }
     
+     // Buttons
+    &--ctabtn:before { background: #461252; }
+    &--ctahover:before { background: #260b2d; }
+    &--ctatext:before { background: #FFFFFF; }
+      
+    &--primarybtn:before { background: #393939; }
+    &--primaryhover:before { background: #0e0e0e; }
+    &--primarytext:before { background: #FFFFFF; }
+      
+    &--secondarybtn:before { background: #666666; }
+    &--secondaryhover:before { background: #333333; }
+    &--secondarytext:before { background: #FFFFFF; }
     
+    &--lightbtn:before { background: #FFFFFF; }
+    &--lighthover:before { background: #eaeaea; }
+    &--lighttext:before { background: #222222; }
+      
+    &--btnfocus:before { background: #FFD586; }
+      
     // Primary
 
     &--nice-teal:before { background: $colour-nice-teal; }
