@@ -6,7 +6,7 @@ title: Breadcrumbs
 A breadcrumb trail is a secondary navigation, that displays as a series of links, situated below the header. It helps identify where the user is, and the navigation they took to get to their current point.
 {:.lead}
 
-##Basics
+## Basics
 
 - Use a `nav` element
 - Use `aria-label` to describe the breadcrumbs
