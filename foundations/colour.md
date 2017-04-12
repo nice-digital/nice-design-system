@@ -97,7 +97,7 @@ legibility
         </dl>
     </li>
     <li class="colour-grid__item colour-grid__item--ctatext">
-        <h4>CTA button text</h4>
+        <h5>CTA button text</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$ctatext</code></dd>
             <dt>HEX:</dt> <dd><code>#FFFFFF</code></dd>
@@ -206,13 +206,13 @@ legibility
 </ul>
 
 
-### Icons and supporting elements
+## Icons and supporting elements
 
 <ul class="colour-grid">
-    <li class="colour-grid__item colour-grid__item--elementicons">
+    <li class="colour-grid__item colour-grid__item--nice-teal">
         <h5>NICE Teal</h5>
         <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$elementicons</code></dd>
+            <dt>SASS:</dt> <dd><code>$colour-nice-teal</code></dd>
             <dt>HEX:</dt> <dd><code>#004650</code></dd>
             <dt>RGB:</dt> <dd><code>rgb(0, 70, 80)</code></dd>
         </dl>
@@ -220,21 +220,7 @@ legibility
 </ul>
 
 
-### Icons and supporting elements
-
-<ul class="colour-grid">
-    <li class="colour-grid__item colour-grid__item--elementicons">
-        <h5>NICE Teal</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$elementicons</code></dd>
-            <dt>HEX:</dt> <dd><code>#004650</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(0, 70, 80)</code></dd>
-        </dl>
-    </li>
-</ul>
-
-
-### Backgrounds and border
+## Backgrounds and border
 
 <ul class="colour-grid">
     <li class="colour-grid__item colour-grid__item--elementicons">
