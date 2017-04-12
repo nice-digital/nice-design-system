@@ -130,8 +130,7 @@ Feel free to use `<b>` and `<i>` in HTML5. `<b>` is meant to highlight words or 
 
 ## Links
 
-- links should follow the same sizing as containing copy
-- use underline and colour to maximise [perceived affordance](http://www.jnd.org/dn.mss/affordances_and.html){:target="_blank"}
+- links should follow the same sizing as containing copyk
 - use `rel="external"`, `rel="next"` and `rel="previous"` where applicable
 - visually distinguish external links
 
@@ -146,6 +145,7 @@ Feel free to use `<b>` and `<i>` in HTML5. `<b>` is meant to highlight words or 
 
 - follow the [bullet points guide lines](https://www.nice.org.uk/corporate/ecd1/chapter/punctuation-and-bullet-points#bullet-points){:target="_blank"} on the NICE style guide
 - use unordered or ordered lists appropriately to semantically define content
+- list items start with a lowercase letter and have no full stop at the end
 
 ### Default lists
 
