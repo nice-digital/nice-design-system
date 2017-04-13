@@ -5,10 +5,10 @@ title: Create consistent digital experiences across NICE
 
 # NICE Experience
 
-Quickly create consistent on-brand NICE digital experiences. [Read more about NICE Digital]({{ site.baseurl }}{% link about/index.md %}).
+Your source for quickly creating consistent on-brand NICE digital services
 {: .lead}
 
-[Install]({{ site.baseurl }}{% link technical/installation.md %}){: .btn .btn--primary} [View on Github](https://github.com/nhsevidence/NICE-Experience){:target="_blank" .btn .btn--secondary}
+[Get started]({{ site.baseurl }}{% link technical/installation.md %}){: .btn .btn--primary} [View on Github](https://github.com/nhsevidence/NICE-Experience){:target="_blank" .btn .btn--secondary}
 
 
 
