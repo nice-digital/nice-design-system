@@ -42,6 +42,7 @@ The foundations and patterns that are to be used for faster product development.
     {% include menu-item.html title='Visibility' href=visibility description='Showing and hiding elements across breakpoints, for print, device orientations and screen readers' %}
 </div>
 
+___
 
 ## [Components]({{ site.baseurl }}{% link components/index.md %})
 
@@ -70,6 +71,7 @@ Once you've mastered the foundations, these components are further patterns for 
     {% include menu-item.html title='Tabs' href=tabs description='Content is separated into different panes, with only one pane viewable at a time.' %}
 </div>
 
+___
 
 ## [Technical]({{ site.baseurl }}{% link technical/index.md %})
 
@@ -86,7 +88,7 @@ Technical documentation and code style guides for creating NICE digital services
     {% include menu-item.html title='JavaScript' href=js description='JS documentation and code style guide' %}
 </div>
 
-
+___
 
 ## [About]({{ site.baseurl }}{% link about/index.md %})
 
