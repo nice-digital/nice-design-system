@@ -1,0 +1,9 @@
+.hero {
+	background: $colour-nice-teal;
+	color: $colour-text-reverse;
+	padding: em(0 0 $spacing-large);
+
+	&__container {
+		@extend %container;
+	}
+}
