@@ -83,6 +83,11 @@ layout: master
 								<a href="{{ site.baseurl }}{{ maintainratio }}">Maintain ratio</a>
 							</li>
 
+							{% capture panels %}{% link components/panels.md %}{% endcapture %}
+							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains panels %}stacked-nav__item--active{% endif %}">
+								<a href="{{ site.baseurl }}{{ panels }}">Panels</a>
+							</li>
+
 							{% capture side-nav %}{% link components/side-nav.md %}{% endcapture %}
 							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains side-nav %}stacked-nav__item--active{% endif %}">
 								<a href="{{ site.baseurl }}{{ side-nav }}">Side nav</a>

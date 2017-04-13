@@ -21,6 +21,9 @@ Once you've mastered the foundations, these components are further patterns for 
     {% capture maintainratio %}{% link components/maintain-ratio.md %}{% endcapture %}
     {% include menu-item.html title='Maintain ratio' href=maintainratio description='Embed media and maintain an aspect ratio across devices' %}
 
+    {% capture panels %}{% link components/panels.md %}{% endcapture %}
+    {% include menu-item.html title='Panels' href=panels description='Panels to highlight content' %}
+
     {% capture side-nav %}{% link components/side-nav.md %}{% endcapture %}
     {% include menu-item.html title='Side nav' href=side-nav description=' Navigation to support deeper content or guidance chapters.' %}
 
