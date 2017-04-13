@@ -34,7 +34,7 @@ Use a main call-to-action button when the user is moving forward in a path, conv
 For example 'Register now', 'Contact us' or 'Join the mailing list'. Try to have as few Call-to-action buttons per page as possible - just one is best
 
 {% capture cta %}
-<p><a href="#" class="btn">Register now</a></p>
+<p><a href="#" class="btn btn--cta">Register now</a></p>
 {% endcapture %}
 {% include example.html lang='html' body=cta %}
 
@@ -43,27 +43,33 @@ For example 'Register now', 'Contact us' or 'Join the mailing list'. Try to have
 Use the primary button for normal actions, do something within the page, typically to reveal more information, for example: 'View guidance consultations', 'List of guidelines' or 'Advice listing'.
 
 {% capture primary %}
-<p><a href="#" class="btn btn--primary">Find NICE guidance</a></p>
+<p><a href="#" class="btn">Find NICE guidance</a></p>
 {% endcapture %}
 {% include example.html lang='html' body=primary %}
 
 ### Secondary button
 When you require a button type that sits lower in the hierarchy then a primary button. 
 
-{% capture standard %}
+{% capture secondary %}
 <p><a href="#" class="btn btn--secondary">View guidance consultations</a></p>
 {% endcapture %}
-{% include example.html lang='html' body=standard %}
+{% include example.html lang='html' body=secondary %}
 
 ### Light button
 If you are wanting to place a button on a dark background, use the light button as a way of making the button distinguishable.
 
-CODE AREA
+{% capture light %}
+<p class="panel panel--dark"><a href="#" class="btn btn--light">View guidance consultations</a></p>
+{% endcapture %}
+{% include example.html lang='html' body=light %}
 
 ### Icon button
 If you are looking for an additional way to convey the label on a button. Instances of this could include: Refresh or loading state buttons.
 
-CODE AREA
+{% capture icon %}
+<p><a href="#" class="btn"><span class="icon icon--pathways" aria-hidden="true"></span> View guidance consultations</a></p>
+{% endcapture %}
+{% include example.html lang='html' body=icon %}
 
 ### Dropdown button
 A dropdown menu with a set of related actions. Ensure that the button label is clear as to what the contents of the dropdown are
