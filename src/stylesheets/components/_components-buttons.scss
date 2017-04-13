@@ -21,7 +21,12 @@
   vertical-align: top;
 
   &:hover,
-  &:focus,
+  &:focus {
+    background: $colour-btn-primary-hover;
+    color: $colour-btn-primary-text;
+    text-decoration: none;
+  }
+
   &:active {
     background: $colour-btn-primary-hover;
     color: $colour-btn-primary-text;
@@ -60,9 +65,9 @@
     }
   }
 
-  &--prominent {
+  &--cta {
     @include font-size(2);
-    padding: 0 em(20);
+    padding: 0 em($spacing-medium);
     background: $colour-btn-cta;
     border: 1px solid $colour-btn-cta-text;
     color: $colour-btn-cta-text;
@@ -94,6 +99,10 @@
       background: $colour-btn-secondary-hover;
       color: $colour-btn-secondary-text;
       text-decoration: underline;
+    }
+
+    &:active {
+      background: $colour-btn-secondary-hover;
     }
 
     &:visited {
