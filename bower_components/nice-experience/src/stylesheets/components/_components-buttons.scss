@@ -109,4 +109,24 @@
       color: $colour-btn-secondary-text;
     }
   }
+
+  &--light {
+    background: $colour-btn-light;
+    color: $colour-btn-light-text;
+
+    &:hover,
+    &:focus {
+      background: $colour-btn-light-hover;
+      color: $colour-btn-light-text;
+      text-decoration: underline;
+    }
+
+    &:active {
+      background: $colour-btn-light-hover;
+    }
+
+    &:visited {
+      color: $colour-btn-light-text;
+    }
+  }
 }
