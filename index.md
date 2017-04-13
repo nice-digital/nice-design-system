@@ -11,18 +11,6 @@ Quickly create consistent on-brand NICE digital experiences. [Read more about NI
 [Install]({{ site.baseurl }}{% link technical/installation.md %}){: .btn .btn--primary} [View on Github](https://github.com/nhsevidence/NICE-Experience){:target="_blank" .btn .btn--secondary}
 
 
-## [About]({{ site.baseurl }}{% link about/index.md %})
-
-Find out about the NICE Experience
-
-<div class="grid">
-    {% capture aims %}{% link about/index.md %}{% endcapture %}
-    {% include menu-item.html title='Aims and principles' href=aims description='The principles we follow when building the product' %}
-
-    {% capture roadmap %}{% link about/roadmap.md %}{% endcapture %}
-    {% include menu-item.html title='Roadmap' href=roadmap description='Where we&#39;re taking the product' %}
-</div>
-
 
 ## [Foundations]({{ site.baseurl }}{% link foundations/index.md %})
 
@@ -84,4 +72,18 @@ Technical documentation and code style guides for creating NICE digital services
 
     {% capture js %}{% link technical/javascript/index.md %}{% endcapture %}
     {% include menu-item.html title='JavaScript' href=js description='JS documentation and code style guide' %}
+</div>
+
+
+
+## [About]({{ site.baseurl }}{% link about/index.md %})
+
+Find out about the NICE Experience
+
+<div class="grid">
+    {% capture aims %}{% link about/index.md %}{% endcapture %}
+    {% include menu-item.html title='Aims and principles' href=aims description='The principles we follow when building the product' %}
+
+    {% capture roadmap %}{% link about/roadmap.md %}{% endcapture %}
+    {% include menu-item.html title='Roadmap' href=roadmap description='Where we&#39;re taking the product' %}
 </div>
