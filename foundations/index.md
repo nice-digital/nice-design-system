@@ -24,6 +24,9 @@ This guide shows how to make your service look consistent with the rest of NICE.
     {% capture layout %}{% link foundations/layout.md %}{% endcapture %}
     {% include menu-item.html title='Layout' href=layout description='Containers, grid, layouts and responsive behaviours' %}
 
+    {% capture links %}{% link foundations/links.md %}{% endcapture %}
+    {% include menu-item.html title='Links' href=links description='Links and hover/active/visited/focus states' %}
+
     {% capture typography %}{% link foundations/typography.md %}{% endcapture %}
     {% include menu-item.html title='Typography' href=typography description='Headings, paragraphs, featured text, quotations, lists, links' %}
 
