@@ -5,8 +5,6 @@ title: Colour
 
 The NICE colour palette is also described on the [brand guidelines](https://www.nice.org.uk/brand/colour-palette){:target="_blank"}. Use these guidelines to determine the best way to apply the NICE colour palette.
 
-## Corporate contrast
-The colour contrast ratio for text and interactive elements should be at least 4.5:1 as recommended by the W3C. To check your colour contrasts use ###
 
 ## Text
 
@@ -84,8 +82,8 @@ legibility
         <h5>CTA button</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$ctabtn</code></dd>
-            <dt>HEX:</dt> <dd><code>#461252</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(70, 18, 82)</code></dd>
+            <dt>HEX:</dt> <dd><code>#451551</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(69, 21, 81)</code></dd>
         </dl>
     </li>
     <li class="colour-grid__item colour-grid__item--ctahover">
@@ -97,7 +95,7 @@ legibility
         </dl>
     </li>
     <li class="colour-grid__item colour-grid__item--ctatext">
-        <h4>CTA button text</h4>
+        <h5>CTA button text</h5>
         <dl class="dl-inline">
             <dt>SASS:</dt> <dd><code>$ctatext</code></dd>
             <dt>HEX:</dt> <dd><code>#FFFFFF</code></dd>
@@ -204,6 +202,137 @@ legibility
         </dl>
     </li>
 </ul>
+
+
+## Icons
+
+<ul class="colour-grid">
+    <li class="colour-grid__item colour-grid__item--nice-teal">
+        <h5>NICE Teal</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$colour-nice-teal</code></dd>
+            <dt>HEX:</dt> <dd><code>#004650</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(0, 70, 80)</code></dd>
+        </dl>
+    </li>
+</ul>
+
+
+## Backgrounds and border
+
+<ul class="colour-grid">
+    <li class="colour-grid__item colour-grid__item--bodybg">
+        <h5>Body background</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$bodybg</code></dd>
+            <dt>HEX:</dt> <dd><code>#FFFFFF</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(255, 255, 255)</code></dd>
+        </dl>
+    </li>
+    <li class="colour-grid__item colour-grid__item--lightpanel">
+        <h5>Light panel</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$lightpanel</code></dd>
+            <dt>HEX:</dt> <dd><code>#e9e9e9</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(233, 233, 233)</code></dd>
+        </dl>
+    </li>
+     <li class="colour-grid__item colour-grid__item--darkpanel">
+        <h5>Dark panel</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$darkpanel</code></dd>
+            <dt>HEX:</dt> <dd><code>#393939</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(57, 57, 57)</code></dd>
+        </dl>
+    </li>
+    <li class="colour-grid__item colour-grid__item--border">
+        <h5>Borders</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$border</code></dd>
+            <dt>HEX:</dt> <dd><code>#adadad</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(173, 173, 173)</code></dd>
+        </dl>
+    </li>
+</ul>
+
+
+## Notifications and banners
+
+<ul class="colour-grid">
+    <li class="colour-grid__item colour-grid__item--alphabeta">
+        <h5>Alpha &amp; beta banner</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$alphabeta</code></dd>
+            <dt>HEX:</dt> <dd><code>#009ae9</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(1, 154, 234)</code></dd>
+        </dl>
+    </li>
+    <li class="colour-grid__item colour-grid__item--errortext">
+        <h5>Error text &amp; border</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$errortxt</code></dd>
+            <dt>HEX:</dt> <dd><code>#B10E1E</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(177, 14, 30)</code></dd>
+        </dl>
+    </li>
+    <li class="colour-grid__item colour-grid__item--errorbg">
+        <h5>Error background</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$errorbg</code></dd>
+            <dt>HEX:</dt> <dd><code>#EAC3C3</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(234, 195, 195)</code></dd>
+        </dl>
+    </li>
+    <li class="colour-grid__item colour-grid__item--cautiontxt">
+        <h5>Caution text &amp; border</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$cautiontxt</code></dd>
+            <dt>HEX:</dt> <dd><code>#9B722F</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(155, 114, 47)</code></dd>
+        </dl>
+    </li>
+    <li class="colour-grid__item colour-grid__item--cautionbg">
+        <h5>Caution background</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$cautionbg</code></dd>
+            <dt>HEX:</dt> <dd><code>#FFDFA4</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(255, 223, 164)</code></dd>
+        </dl>
+    </li>
+    <li class="colour-grid__item colour-grid__item--infotxt">
+        <h5>Info text &amp; border</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$infotxt</code></dd>
+            <dt>HEX:</dt> <dd><code>#4A7F99</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(74, 127, 153)</code></dd>
+        </dl>
+    </li>
+    <li class="colour-grid__item colour-grid__item--infobg">
+        <h5>Info background</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$infobg</code></dd>
+            <dt>HEX:</dt> <dd><code> #E6FAFF</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(230, 250, 255)</code></dd>
+        </dl>
+    </li>
+    <li class="colour-grid__item colour-grid__item--successtxt">
+        <h5>Success text &amp; border</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$successtxt</code></dd>
+            <dt>HEX:</dt> <dd><code>#3F8C5E</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(63, 140, 94)</code></dd>
+        </dl>
+    </li>
+     <li class="colour-grid__item colour-grid__item--successbg">
+        <h5>Success background</h5>
+        <dl class="dl-inline">
+            <dt>SASS:</dt> <dd><code>$successbg</code></dd>
+            <dt>HEX:</dt> <dd><code>#EFF7EB</code></dd>
+            <dt>RGB:</dt> <dd><code>rgb(239, 247, 235)</code></dd>
+        </dl>
+    </li>
+</ul>
+
 ## Semantic colours
 
 In addition to the corporate palette, there are a set of <a href="{{ site.baseurl }}{% link technical/sass/documentation/colours.md %}">semantic colour variables</a> in SASS for specific use cases. Wherever possible, these should be used rather than the corporate palette directly. For example, text should use `color: $colour-text` rather than `color: $colour-rich-black`.
