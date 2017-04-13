@@ -67,6 +67,584 @@
   },
   "items": [
     {
+      "description": "<p>NICE Black. Part of the primary palette.</p>\n",
+      "commentRange": {
+        "start": 8,
+        "end": 9
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-nice-black",
+        "value": "#222",
+        "scope": "private",
+        "line": {
+          "start": 10,
+          "end": 10
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+        "name": "_settings-colours-nice.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#222"
+    },
+    {
+      "description": "<p>NICE White. Part of the primary palette</p>\n",
+      "commentRange": {
+        "start": 12,
+        "end": 13
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-nice-white",
+        "value": "#fff",
+        "scope": "private",
+        "line": {
+          "start": 14,
+          "end": 14
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+        "name": "_settings-colours-nice.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#fff"
+    },
+    {
+      "description": "<p>NICE Teal. Part of the primary palette.\nFirst choice of colour for supporting</p>\n",
+      "commentRange": {
+        "start": 16,
+        "end": 18
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-nice-teal",
+        "value": "#004650",
+        "scope": "private",
+        "line": {
+          "start": 19,
+          "end": 19
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+        "name": "_settings-colours-nice.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#004650"
+    },
+    {
+      "description": "<p>Purple. Part of the secondary palette. Purple should be used sparingly and only used as a\npanel background to highlight a particular section of content,\nin which case font colour must be pure white (NICE White) to make text legible.</p>\n",
+      "commentRange": {
+        "start": 24,
+        "end": 27
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-nice-purple",
+        "value": "#451551",
+        "scope": "private",
+        "line": {
+          "start": 28,
+          "end": 28
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+        "name": "_settings-colours-nice.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#451551"
+    },
+    {
+      "description": "<p>Cool Teal. Part of the secondary palette.</p>\n",
+      "commentRange": {
+        "start": 30,
+        "end": 31
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-nice-cool-teal",
+        "value": "#00506a",
+        "scope": "private",
+        "line": {
+          "start": 32,
+          "end": 32
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+        "name": "_settings-colours-nice.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#00506a"
+    },
+    {
+      "description": "<p>Rich Black. Part of the secondary palette.</p>\n",
+      "commentRange": {
+        "start": 34,
+        "end": 35
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-nice-rich-black",
+        "value": "#0e0e0e",
+        "scope": "private",
+        "line": {
+          "start": 36,
+          "end": 36
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+        "name": "_settings-colours-nice.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#0e0e0e"
+    },
+    {
+      "description": "<p>Dark Grey. Part of the secondary palette.</p>\n",
+      "commentRange": {
+        "start": 38,
+        "end": 39
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-nice-dark-grey",
+        "value": "#393939",
+        "scope": "private",
+        "line": {
+          "start": 40,
+          "end": 40
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+        "name": "_settings-colours-nice.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#393939"
+    },
+    {
+      "description": "<p>Grey 1. Part of the secondary palette.</p>\n",
+      "commentRange": {
+        "start": 42,
+        "end": 43
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-nice-grey-1",
+        "value": "#adadad",
+        "scope": "private",
+        "line": {
+          "start": 44,
+          "end": 44
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+        "name": "_settings-colours-nice.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#adadad"
+    },
+    {
+      "description": "<p>Grey 2. Part of the secondary palette.</p>\n",
+      "commentRange": {
+        "start": 46,
+        "end": 47
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-nice-grey-2",
+        "value": "#d6d6d6",
+        "scope": "private",
+        "line": {
+          "start": 48,
+          "end": 48
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+        "name": "_settings-colours-nice.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#d6d6d6"
+    },
+    {
+      "description": "<p>Grey 3. Part of the secondary palette.</p>\n",
+      "commentRange": {
+        "start": 50,
+        "end": 51
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-nice-grey-3",
+        "value": "#e9e9e9",
+        "scope": "private",
+        "line": {
+          "start": 52,
+          "end": 52
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+        "name": "_settings-colours-nice.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#e9e9e9"
+    },
+    {
+      "description": "<p>Blue 1. Part of the tertiary palette.</p>\n",
+      "commentRange": {
+        "start": 57,
+        "end": 58
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-nice-blue-1",
+        "value": "#233746",
+        "scope": "private",
+        "line": {
+          "start": 59,
+          "end": 59
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+        "name": "_settings-colours-nice.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#233746"
+    },
+    {
+      "description": "<p>Blue 2. Part of the tertiary palette.</p>\n",
+      "commentRange": {
+        "start": 61,
+        "end": 62
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-nice-blue-2",
+        "value": "#314c60",
+        "scope": "private",
+        "line": {
+          "start": 63,
+          "end": 63
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+        "name": "_settings-colours-nice.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#314c60"
+    },
+    {
+      "description": "<p>Blue 3. Part of the tertiary palette.</p>\n",
+      "commentRange": {
+        "start": 65,
+        "end": 66
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-nice-blue-3",
+        "value": "#517489",
+        "scope": "private",
+        "line": {
+          "start": 67,
+          "end": 67
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+        "name": "_settings-colours-nice.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#517489"
+    },
+    {
+      "description": "<p>Ice Teal. Part of the tertiary palette.</p>\n",
+      "commentRange": {
+        "start": 69,
+        "end": 70
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-nice-ice-teal",
+        "value": "#a2bdc1",
+        "scope": "private",
+        "line": {
+          "start": 71,
+          "end": 71
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+        "name": "_settings-colours-nice.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#a2bdc1"
+    },
+    {
+      "description": "<p>Teal 1. Part of the tertiary palette.</p>\n",
+      "commentRange": {
+        "start": 73,
+        "end": 74
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-nice-teal-1",
+        "value": "#4f7d83",
+        "scope": "private",
+        "line": {
+          "start": 75,
+          "end": 75
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+        "name": "_settings-colours-nice.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#4f7d83"
+    },
+    {
+      "description": "<p>Teal 2. Part of the tertiary palette.</p>\n",
+      "commentRange": {
+        "start": 77,
+        "end": 78
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-nice-teal-2",
+        "value": "#18646e",
+        "scope": "private",
+        "line": {
+          "start": 79,
+          "end": 79
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+        "name": "_settings-colours-nice.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#18646e"
+    },
+    {
+      "description": "<p>Teal 3. Part of the tertiary palette.</p>\n",
+      "commentRange": {
+        "start": 81,
+        "end": 82
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-nice-teal-3",
+        "value": "#15434a",
+        "scope": "private",
+        "line": {
+          "start": 83,
+          "end": 83
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+        "name": "_settings-colours-nice.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#15434a"
+    },
+    {
       "description": "<p>True black, used for print styles</p>\n",
       "commentRange": {
         "start": 5,
@@ -92,8 +670,8 @@
       ],
       "access": "public",
       "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
       },
       "groupName": {
         "colors": "Colours"
@@ -126,8 +704,8 @@
       ],
       "access": "public",
       "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
       },
       "groupName": {
         "colors": "Colours"
@@ -135,19 +713,19 @@
       "resolvedValue": "#fff"
     },
     {
-      "description": "<p>NICE Black. Part of the primary palette.</p>\n",
+      "description": "<p>Page background colour</p>\n",
       "commentRange": {
-        "start": 15,
-        "end": 16
+        "start": 16,
+        "end": 17
       },
       "context": {
         "type": "variable",
-        "name": "colour-nice-black",
-        "value": "#222",
+        "name": "colour-body",
+        "value": "#fafafa",
         "scope": "private",
         "line": {
-          "start": 17,
-          "end": 17
+          "start": 18,
+          "end": 18
         }
       },
       "since": [
@@ -160,28 +738,28 @@
       ],
       "access": "public",
       "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
       },
       "groupName": {
         "colors": "Colours"
       },
-      "resolvedValue": "#222"
+      "resolvedValue": "#fafafa"
     },
     {
-      "description": "<p>NICE White. Part of the primary palette</p>\n",
+      "description": "<p>Standard, primary body text colour</p>\n",
       "commentRange": {
-        "start": 19,
-        "end": 20
+        "start": 20,
+        "end": 21
       },
       "context": {
         "type": "variable",
-        "name": "colour-nice-white",
-        "value": "#fff",
+        "name": "colour-text",
+        "value": "$colour-nice-rich-black",
         "scope": "private",
         "line": {
-          "start": 21,
-          "end": 21
+          "start": 22,
+          "end": 22
         }
       },
       "since": [
@@ -194,24 +772,24 @@
       ],
       "access": "public",
       "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
       },
       "groupName": {
         "colors": "Colours"
       },
-      "resolvedValue": "#fff"
+      "resolvedValue": "#0e0e0e"
     },
     {
-      "description": "<p>NICE Teal. Part of the primary palette.\nFirst choice of colour for supporting</p>\n",
+      "description": "<p>Subtle text colour</p>\n",
       "commentRange": {
-        "start": 23,
+        "start": 24,
         "end": 25
       },
       "context": {
         "type": "variable",
-        "name": "colour-nice-teal",
-        "value": "#004650",
+        "name": "colour-text-subtle",
+        "value": "$colour-nice-grey-1",
         "scope": "private",
         "line": {
           "start": 26,
@@ -228,24 +806,58 @@
       ],
       "access": "public",
       "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
       },
       "groupName": {
         "colors": "Colours"
       },
-      "resolvedValue": "#004650"
+      "resolvedValue": "#adadad"
     },
     {
-      "description": "<p>Purple. Part of the secondary palette. Purple should be used sparingly and only used as a\npanel background to highlight a particular section of content,\nin which case font colour must be pure white (NICE White) to make text legible.</p>\n",
+      "description": "<p>Body text colour for use on dark background</p>\n",
       "commentRange": {
-        "start": 30,
+        "start": 28,
+        "end": 29
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-text-reverse",
+        "value": "$colour-nice-white",
+        "scope": "private",
+        "line": {
+          "start": 30,
+          "end": 30
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.2"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#fff"
+    },
+    {
+      "description": "<p>Focus colour</p>\n",
+      "commentRange": {
+        "start": 32,
         "end": 33
       },
       "context": {
         "type": "variable",
-        "name": "colour-purple",
-        "value": "#451551",
+        "name": "colour-focus",
+        "value": "#ffd586",
         "scope": "private",
         "line": {
           "start": 34,
@@ -262,654 +874,8 @@
       ],
       "access": "public",
       "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#451551"
-    },
-    {
-      "description": "<p>Cool Teal. Part of the secondary palette.</p>\n",
-      "commentRange": {
-        "start": 36,
-        "end": 37
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-cool-teal",
-        "value": "#00506a",
-        "scope": "private",
-        "line": {
-          "start": 38,
-          "end": 38
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#00506a"
-    },
-    {
-      "description": "<p>Rich Black. Part of the secondary palette.</p>\n",
-      "commentRange": {
-        "start": 40,
-        "end": 41
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-rich-black",
-        "value": "#0e0e0e",
-        "scope": "private",
-        "line": {
-          "start": 42,
-          "end": 42
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#0e0e0e"
-    },
-    {
-      "description": "<p>Dark Grey. Part of the secondary palette.</p>\n",
-      "commentRange": {
-        "start": 44,
-        "end": 45
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-dark-grey",
-        "value": "#393939",
-        "scope": "private",
-        "line": {
-          "start": 46,
-          "end": 46
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#393939"
-    },
-    {
-      "description": "<p>Grey 1. Part of the secondary palette.</p>\n",
-      "commentRange": {
-        "start": 48,
-        "end": 49
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-grey-1",
-        "value": "#adadad",
-        "scope": "private",
-        "line": {
-          "start": 50,
-          "end": 50
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#adadad"
-    },
-    {
-      "description": "<p>Grey 2. Part of the secondary palette.</p>\n",
-      "commentRange": {
-        "start": 52,
-        "end": 53
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-grey-2",
-        "value": "#d6d6d6",
-        "scope": "private",
-        "line": {
-          "start": 54,
-          "end": 54
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#d6d6d6"
-    },
-    {
-      "description": "<p>Grey 3. Part of the secondary palette.</p>\n",
-      "commentRange": {
-        "start": 56,
-        "end": 57
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-grey-3",
-        "value": "#e9e9e9",
-        "scope": "private",
-        "line": {
-          "start": 58,
-          "end": 58
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#e9e9e9"
-    },
-    {
-      "description": "<p>Blue 1. Part of the tertiary palette.</p>\n",
-      "commentRange": {
-        "start": 62,
-        "end": 63
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-blue-1",
-        "value": "#233746",
-        "scope": "private",
-        "line": {
-          "start": 64,
-          "end": 64
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#233746"
-    },
-    {
-      "description": "<p>Blue 2. Part of the tertiary palette.</p>\n",
-      "commentRange": {
-        "start": 66,
-        "end": 67
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-blue-2",
-        "value": "#314c60",
-        "scope": "private",
-        "line": {
-          "start": 68,
-          "end": 68
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#314c60"
-    },
-    {
-      "description": "<p>Blue 3. Part of the tertiary palette.</p>\n",
-      "commentRange": {
-        "start": 70,
-        "end": 71
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-blue-3",
-        "value": "#517489",
-        "scope": "private",
-        "line": {
-          "start": 72,
-          "end": 72
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#517489"
-    },
-    {
-      "description": "<p>Ice Teal. Part of the tertiary palette.</p>\n",
-      "commentRange": {
-        "start": 74,
-        "end": 75
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-ice-teal",
-        "value": "#a2bdc1",
-        "scope": "private",
-        "line": {
-          "start": 76,
-          "end": 76
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#a2bdc1"
-    },
-    {
-      "description": "<p>Teal 1. Part of the tertiary palette.</p>\n",
-      "commentRange": {
-        "start": 78,
-        "end": 79
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-teal-1",
-        "value": "#4f7d83",
-        "scope": "private",
-        "line": {
-          "start": 80,
-          "end": 80
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#4f7d83"
-    },
-    {
-      "description": "<p>Teal 2. Part of the tertiary palette.</p>\n",
-      "commentRange": {
-        "start": 82,
-        "end": 83
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-teal-2",
-        "value": "#18646e",
-        "scope": "private",
-        "line": {
-          "start": 84,
-          "end": 84
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#18646e"
-    },
-    {
-      "description": "<p>Teal 3. Part of the tertiary palette.</p>\n",
-      "commentRange": {
-        "start": 86,
-        "end": 87
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-teal-3",
-        "value": "#15434a",
-        "scope": "private",
-        "line": {
-          "start": 88,
-          "end": 88
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#15434a"
-    },
-    {
-      "description": "<p>Page background colour</p>\n",
-      "commentRange": {
-        "start": 92,
-        "end": 93
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-page",
-        "value": "#fafafa",
-        "scope": "private",
-        "line": {
-          "start": 94,
-          "end": 94
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#fafafa"
-    },
-    {
-      "description": "<p>Link text colour</p>\n",
-      "commentRange": {
-        "start": 96,
-        "end": 97
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-link",
-        "value": "#005ea5",
-        "scope": "private",
-        "line": {
-          "start": 98,
-          "end": 98
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#005ea5"
-    },
-    {
-      "description": "<p>Link hover colour</p>\n",
-      "commentRange": {
-        "start": 100,
-        "end": 101
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-link-hover",
-        "value": "#2b8cc4",
-        "scope": "private",
-        "line": {
-          "start": 102,
-          "end": 102
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#2b8cc4"
-    },
-    {
-      "description": "<p>Link visited colour</p>\n",
-      "commentRange": {
-        "start": 104,
-        "end": 105
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-link-visited",
-        "value": "#4c2c92",
-        "scope": "private",
-        "line": {
-          "start": 106,
-          "end": 106
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#4c2c92"
-    },
-    {
-      "description": "<p>Link active colour</p>\n",
-      "commentRange": {
-        "start": 108,
-        "end": 109
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-link-active",
-        "value": "#2b8cc4",
-        "scope": "private",
-        "line": {
-          "start": 110,
-          "end": 110
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#2b8cc4"
-    },
-    {
-      "description": "<p>Focus colour</p>\n",
-      "commentRange": {
-        "start": 112,
-        "end": 113
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-focus",
-        "value": "#ffbf47",
-        "scope": "private",
-        "line": {
-          "start": 114,
-          "end": 114
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
       },
       "usedBy": [
         {
@@ -928,22 +894,22 @@
       "groupName": {
         "colors": "Colours"
       },
-      "resolvedValue": "#ffbf47"
+      "resolvedValue": "#ffd586"
     },
     {
-      "description": "<p>Standard text colour</p>\n",
+      "description": "<p>Icons colour</p>\n",
       "commentRange": {
-        "start": 116,
-        "end": 117
+        "start": 36,
+        "end": 37
       },
       "context": {
         "type": "variable",
-        "name": "colour-text",
-        "value": "$colour-rich-black",
+        "name": "colour-icons",
+        "value": "$colour-nice-teal",
         "scope": "private",
         "line": {
-          "start": 118,
-          "end": 118
+          "start": 38,
+          "end": 38
         }
       },
       "since": [
@@ -956,8 +922,552 @@
       ],
       "access": "public",
       "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#004650"
+    },
+    {
+      "description": "<p>Link text colour</p>\n",
+      "commentRange": {
+        "start": 44,
+        "end": 45
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-link",
+        "value": "#005ea5",
+        "scope": "private",
+        "line": {
+          "start": 46,
+          "end": 46
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#005ea5"
+    },
+    {
+      "description": "<p>Link hover colour</p>\n",
+      "commentRange": {
+        "start": 48,
+        "end": 49
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-link-hover",
+        "value": "#2e8aca",
+        "scope": "private",
+        "line": {
+          "start": 50,
+          "end": 50
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#2e8aca"
+    },
+    {
+      "description": "<p>Link visited colour</p>\n",
+      "commentRange": {
+        "start": 52,
+        "end": 53
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-link-visited",
+        "value": "#4c2c92",
+        "scope": "private",
+        "line": {
+          "start": 54,
+          "end": 54
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#4c2c92"
+    },
+    {
+      "description": "<p>Link active colour</p>\n",
+      "commentRange": {
+        "start": 56,
+        "end": 57
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-link-active",
+        "value": "#2e8aca",
+        "scope": "private",
+        "line": {
+          "start": 58,
+          "end": 58
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#2e8aca"
+    },
+    {
+      "description": "<p>CTA button background colour</p>\n",
+      "commentRange": {
+        "start": 63,
+        "end": 64
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-btn-cta",
+        "value": "$colour-nice-purple",
+        "scope": "private",
+        "line": {
+          "start": 65,
+          "end": 65
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.2"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#451551"
+    },
+    {
+      "description": "<p>CTA button hover colour</p>\n",
+      "commentRange": {
+        "start": 67,
+        "end": 68
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-btn-cta-hover",
+        "value": "#260b2d",
+        "scope": "private",
+        "line": {
+          "start": 69,
+          "end": 69
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.2"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#260b2d"
+    },
+    {
+      "description": "<p>CTA button text colour</p>\n",
+      "commentRange": {
+        "start": 71,
+        "end": 72
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-btn-cta-text",
+        "value": "$colour-nice-white",
+        "scope": "private",
+        "line": {
+          "start": 73,
+          "end": 73
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.2"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#fff"
+    },
+    {
+      "description": "<p>Primary button background colour</p>\n",
+      "commentRange": {
+        "start": 78,
+        "end": 79
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-btn-primary",
+        "value": "$colour-nice-dark-grey",
+        "scope": "private",
+        "line": {
+          "start": 80,
+          "end": 80
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.2"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#393939"
+    },
+    {
+      "description": "<p>Primary button hover colour</p>\n",
+      "commentRange": {
+        "start": 82,
+        "end": 83
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-btn-primary-hover",
+        "value": "$colour-nice-rich-black",
+        "scope": "private",
+        "line": {
+          "start": 84,
+          "end": 84
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.2"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#0e0e0e"
+    },
+    {
+      "description": "<p>Primary button text colour</p>\n",
+      "commentRange": {
+        "start": 86,
+        "end": 87
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-btn-primary-text",
+        "value": "$colour-nice-white",
+        "scope": "private",
+        "line": {
+          "start": 88,
+          "end": 88
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.2"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#fff"
+    },
+    {
+      "description": "<p>Secondary button background colour</p>\n",
+      "commentRange": {
+        "start": 93,
+        "end": 94
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-btn-secondary",
+        "value": "#666",
+        "scope": "private",
+        "line": {
+          "start": 95,
+          "end": 95
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.2"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#666"
+    },
+    {
+      "description": "<p>Secondary button hover colour</p>\n",
+      "commentRange": {
+        "start": 97,
+        "end": 98
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-btn-secondary-hover",
+        "value": "#333",
+        "scope": "private",
+        "line": {
+          "start": 99,
+          "end": 99
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.2"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#333"
+    },
+    {
+      "description": "<p>Primary button text colour</p>\n",
+      "commentRange": {
+        "start": 101,
+        "end": 102
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-btn-secondary-text",
+        "value": "$colour-nice-white",
+        "scope": "private",
+        "line": {
+          "start": 103,
+          "end": 103
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.2"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#fff"
+    },
+    {
+      "description": "<p>Light button background colour</p>\n",
+      "commentRange": {
+        "start": 108,
+        "end": 109
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-btn-light",
+        "value": "$colour-nice-white",
+        "scope": "private",
+        "line": {
+          "start": 110,
+          "end": 110
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.2"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#fff"
+    },
+    {
+      "description": "<p>Light button hover colour</p>\n",
+      "commentRange": {
+        "start": 112,
+        "end": 113
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-btn-light-hover",
+        "value": "$colour-nice-grey-3",
+        "scope": "private",
+        "line": {
+          "start": 114,
+          "end": 114
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.2"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#e9e9e9"
+    },
+    {
+      "description": "<p>Light button text colour</p>\n",
+      "commentRange": {
+        "start": 116,
+        "end": 117
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-btn-light-text",
+        "value": "$colour-nice-rich-black",
+        "scope": "private",
+        "line": {
+          "start": 118,
+          "end": 118
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.2"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
       },
       "groupName": {
         "colors": "Colours"
@@ -967,17 +1477,17 @@
     {
       "description": "<p>Borders, seperators, rules, keylines etc.</p>\n",
       "commentRange": {
-        "start": 120,
-        "end": 121
+        "start": 123,
+        "end": 124
       },
       "context": {
         "type": "variable",
         "name": "colour-border",
-        "value": "$colour-grey-1",
+        "value": "$colour-nice-grey-1",
         "scope": "private",
         "line": {
-          "start": 122,
-          "end": 122
+          "start": 125,
+          "end": 125
         }
       },
       "since": [
@@ -990,8 +1500,8 @@
       ],
       "access": "public",
       "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
       },
       "groupName": {
         "colors": "Colours"
@@ -1001,17 +1511,17 @@
     {
       "description": "",
       "commentRange": {
-        "start": 125,
-        "end": 125
+        "start": 128,
+        "end": 128
       },
       "context": {
         "type": "variable",
-        "name": "colour-panel",
-        "value": "$colour-grey-3",
+        "name": "colour-panel-light",
+        "value": "$colour-nice-grey-3",
         "scope": "private",
         "line": {
-          "start": 126,
-          "end": 126
+          "start": 129,
+          "end": 129
         }
       },
       "since": [
@@ -1024,8 +1534,8 @@
       ],
       "access": "public",
       "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
       },
       "groupName": {
         "colors": "Colours"
@@ -1035,17 +1545,17 @@
     {
       "description": "",
       "commentRange": {
-        "start": 129,
-        "end": 129
+        "start": 132,
+        "end": 132
       },
       "context": {
         "type": "variable",
         "name": "colour-panel-dark",
-        "value": "$colour-dark-grey",
+        "value": "$colour-nice-dark-grey",
         "scope": "private",
         "line": {
-          "start": 130,
-          "end": 130
+          "start": 133,
+          "end": 133
         }
       },
       "since": [
@@ -1058,8 +1568,8 @@
       ],
       "access": "public",
       "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
       },
       "groupName": {
         "colors": "Colours"
@@ -1067,24 +1577,24 @@
       "resolvedValue": "#393939"
     },
     {
-      "description": "<p>Discovery agile lifecycle phase</p>\n",
+      "description": "<p>Agile lifecycle phase banner</p>\n",
       "commentRange": {
-        "start": 132,
-        "end": 133
+        "start": 138,
+        "end": 139
       },
       "context": {
         "type": "variable",
-        "name": "colour-discovery",
-        "value": "#b8008e",
+        "name": "colour-agile-phase",
+        "value": "#009ae9",
         "scope": "private",
         "line": {
-          "start": 134,
-          "end": 134
+          "start": 140,
+          "end": 140
         }
       },
       "since": [
         {
-          "version": "0.2.0"
+          "version": "0.2.2"
         }
       ],
       "group": [
@@ -1092,8 +1602,43 @@
       ],
       "access": "public",
       "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#009ae9"
+    },
+    {
+      "description": "<p>Discovery agile lifecycle phase</p>\n",
+      "commentRange": {
+        "start": 142,
+        "end": 144
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-discovery",
+        "value": "#b8008e",
+        "scope": "private",
+        "line": {
+          "start": 145,
+          "end": 145
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "deprecated": "<p>Use $colour-agile-phase instead</p>\n",
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
       },
       "groupName": {
         "colors": "Colours"
@@ -1103,115 +1648,13 @@
     {
       "description": "<p>Alpha badges and banners</p>\n",
       "commentRange": {
-        "start": 136,
-        "end": 137
+        "start": 147,
+        "end": 149
       },
       "context": {
         "type": "variable",
         "name": "colour-alpha",
         "value": "#d5367f",
-        "scope": "private",
-        "line": {
-          "start": 138,
-          "end": 138
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#d5367f"
-    },
-    {
-      "description": "<p>Beta badges and banners</p>\n",
-      "commentRange": {
-        "start": 140,
-        "end": 141
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-beta",
-        "value": "#f47738",
-        "scope": "private",
-        "line": {
-          "start": 142,
-          "end": 142
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#f47738"
-    },
-    {
-      "description": "<p>Live badges and banners</p>\n",
-      "commentRange": {
-        "start": 144,
-        "end": 145
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-live",
-        "value": "#70a747",
-        "scope": "private",
-        "line": {
-          "start": 146,
-          "end": 146
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#70a747"
-    },
-    {
-      "description": "<p>Error text and border colour</p>\n",
-      "commentRange": {
-        "start": 148,
-        "end": 149
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-error",
-        "value": "#df3034",
         "scope": "private",
         "line": {
           "start": 150,
@@ -1223,33 +1666,104 @@
           "version": "0.2.0"
         }
       ],
+      "deprecated": "<p>Use $colour-agile-phase instead</p>\n",
       "group": [
         "colors"
       ],
       "access": "public",
       "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
       },
       "groupName": {
         "colors": "Colours"
       },
-      "resolvedValue": "#df3034"
+      "resolvedValue": "#d5367f"
     },
     {
-      "description": "<p>Error background colour</p>\n",
+      "description": "<p>Beta badges and banners</p>\n",
       "commentRange": {
         "start": 152,
-        "end": 153
+        "end": 154
       },
       "context": {
         "type": "variable",
-        "name": "colour-error-background",
-        "value": "#fef7f7",
+        "name": "colour-beta",
+        "value": "#f47738",
         "scope": "private",
         "line": {
-          "start": 154,
-          "end": 154
+          "start": 155,
+          "end": 155
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "deprecated": "<p>Use $colour-agile-phase instead</p>\n",
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#f47738"
+    },
+    {
+      "description": "<p>Live badges and banners</p>\n",
+      "commentRange": {
+        "start": 157,
+        "end": 159
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-live",
+        "value": "#70a747",
+        "scope": "private",
+        "line": {
+          "start": 160,
+          "end": 160
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "deprecated": "<p>Use $colour-agile-phase instead</p>\n",
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#70a747"
+    },
+    {
+      "description": "<p>Error text and border colour</p>\n",
+      "commentRange": {
+        "start": 162,
+        "end": 163
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-error",
+        "value": "#b10e1e",
+        "scope": "private",
+        "line": {
+          "start": 164,
+          "end": 164
         }
       },
       "since": [
@@ -1262,13 +1776,251 @@
       ],
       "access": "public",
       "file": {
-        "path": "stylesheets\\settings\\_settings-colours.scss",
-        "name": "_settings-colours.scss"
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
       },
       "groupName": {
         "colors": "Colours"
       },
-      "resolvedValue": "#fef7f7"
+      "resolvedValue": "#b10e1e"
+    },
+    {
+      "description": "<p>Error background colour</p>\n",
+      "commentRange": {
+        "start": 166,
+        "end": 167
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-error-background",
+        "value": "#eac3c3",
+        "scope": "private",
+        "line": {
+          "start": 168,
+          "end": 168
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#eac3c3"
+    },
+    {
+      "description": "<p>Caution text and border colour</p>\n",
+      "commentRange": {
+        "start": 170,
+        "end": 171
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-caution",
+        "value": "#9b722f",
+        "scope": "private",
+        "line": {
+          "start": 172,
+          "end": 172
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#9b722f"
+    },
+    {
+      "description": "<p>Caution background colour</p>\n",
+      "commentRange": {
+        "start": 174,
+        "end": 175
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-caution-background",
+        "value": "#ffdfa4",
+        "scope": "private",
+        "line": {
+          "start": 176,
+          "end": 176
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#ffdfa4"
+    },
+    {
+      "description": "<p>Info text and border colour</p>\n",
+      "commentRange": {
+        "start": 178,
+        "end": 179
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-info",
+        "value": "#4a7f99",
+        "scope": "private",
+        "line": {
+          "start": 180,
+          "end": 180
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#4a7f99"
+    },
+    {
+      "description": "<p>Info background colour</p>\n",
+      "commentRange": {
+        "start": 182,
+        "end": 183
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-info-background",
+        "value": "#e6faff",
+        "scope": "private",
+        "line": {
+          "start": 184,
+          "end": 184
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#e6faff"
+    },
+    {
+      "description": "<p>Success text and border colour</p>\n",
+      "commentRange": {
+        "start": 186,
+        "end": 187
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-success",
+        "value": "#3f8c5e",
+        "scope": "private",
+        "line": {
+          "start": 188,
+          "end": 188
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#3f8c5e"
+    },
+    {
+      "description": "<p>Success background colour</p>\n",
+      "commentRange": {
+        "start": 190,
+        "end": 191
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-success-background",
+        "value": "#eff7eb",
+        "scope": "private",
+        "line": {
+          "start": 192,
+          "end": 192
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#eff7eb"
     },
     {
       "description": "<p>Site footer</p>\n",
@@ -1279,7 +2031,7 @@
       "context": {
         "type": "css",
         "name": ".site-footer",
-        "value": "@include font-size(-1);\n  background: $colour-dark-grey;\n  color: $colour-nice-white;\n  margin-top: em(32px);\n  padding: em(32px 0);\n\n  @media print {\n    display: none;\n  }\n\n  a {\n    color: $colour-nice-white;\n\n    &:focus {\n      color: #000;\n    }\n  }\n\n  p {\n    @include font-size(-1);\n  }\n\n  &__logo {\n    display: block;\n    margin: em(0 0 32 0);\n    text-decoration: none;\n\n    .icon {\n      font-size: rem(48px);\n    }\n  }\n\n  &__services {\n    margin: em(0 0 32 0);\n  }\n\n  &__social {\n    clear: both;\n    margin: em(0 0 32 0);\n  }\n\n  &__nav {\n    clear: both;\n    margin: em(0 0 32 0);\n  }\n\n  &__copyright {\n    margin: 0;\n    text-align: center;\n  }\n\n  @include mq($from: sm) {\n    &__logo {\n      float: left;\n      margin: em(0 32 32 0);\n    }\n\n    &__services {\n      float: left;\n      margin: em(0 0 32 0);\n    }\n\n    &__social {\n      clear: both;\n    }\n\n    &__copyright {\n      text-align: left;\n    }\n  }\n\n  @include mq($from: md) {\n\n    &__social {\n      clear: none;\n      float: right;\n    }\n  }",
+        "value": "@include font-size(-1);\n  background: $colour-panel-dark;\n  color: $colour-text-reverse;\n  margin-top: em(32px);\n  padding: em(32px 0);\n\n  @media print {\n    display: none;\n  }\n\n  a {\n    color: $colour-text-reverse;\n\n    &:focus {\n      color: #000;\n    }\n  }\n\n  p {\n    @include font-size(-1);\n  }\n\n  &__logo {\n    display: block;\n    margin: em(0 0 32 0);\n    text-decoration: none;\n\n    .icon {\n      font-size: rem(48px);\n    }\n  }\n\n  &__services {\n    margin: em(0 0 32 0);\n  }\n\n  &__social {\n    clear: both;\n    margin: em(0 0 32 0);\n  }\n\n  &__nav {\n    clear: both;\n    margin: em(0 0 32 0);\n  }\n\n  &__copyright {\n    margin: 0;\n    text-align: center;\n  }\n\n  @include mq($from: sm) {\n    &__logo {\n      float: left;\n      margin: em(0 32 32 0);\n    }\n\n    &__services {\n      float: left;\n      margin: em(0 0 32 0);\n    }\n\n    &__social {\n      clear: both;\n    }\n\n    &__copyright {\n      text-align: left;\n    }\n  }\n\n  @include mq($from: md) {\n\n    &__social {\n      clear: none;\n      float: right;\n    }\n  }",
         "line": {
           "start": 7,
           "end": 239
@@ -1311,7 +2063,7 @@
       "context": {
         "type": "css",
         "name": ".services",
-        "value": "&__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n  }\n\n  &__item {\n    border-bottom: 1px solid $colour-grey-1;\n\n    &:first-child {\n      border-top: 1px solid $colour-grey-1;\n    }\n\n    a {\n      @include font-size(-1);\n      color: $colour-grey-3;\n      display: block;\n      padding: em(8 0);\n      text-decoration: none;\n\n      &:hover {\n        color: $colour-nice-white;\n      }\n\n      &:focus {\n        color: $colour-text;\n      }\n    }\n\n    .icon {\n      @include font-size(1);\n      display: inline-block;\n      margin: em(0 4 0 0);\n      vertical-align: middle;\n    }\n  }\n\n  @include mq($from: sm) {\n\n    &__item {\n      border: 0;\n      float: left;\n      text-align: center;\n      width: em(90px);\n\n      &:first-child {\n        border: 0;\n      }\n\n      a {\n        padding: em(4px) 0 0;\n      }\n    }\n\n    .icon {\n      @include font-size(6);\n      line-height: 1;\n      display: block;\n      margin: 0 auto em(4px);\n\n      // The following is needed for IE8 to go centrally aligned\n      &:before {\n        text-align: center;\n        width: 100%;\n      }\n    }\n  }",
+        "value": "&__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n  }\n\n  &__item {\n    border-bottom: 1px solid $colour-border;\n\n    &:first-child {\n      border-top: 1px solid $colour-border;\n    }\n\n    a {\n      @include font-size(-1);\n      color: $colour-panel-light;\n      display: block;\n      padding: em(8 0);\n      text-decoration: none;\n\n      &:hover {\n        color: $colour-text-reverse;\n      }\n\n      &:focus {\n        color: $colour-text;\n      }\n    }\n\n    .icon {\n      @include font-size(1);\n      display: inline-block;\n      margin: em(0 4 0 0);\n      vertical-align: middle;\n    }\n  }\n\n  @include mq($from: sm) {\n\n    &__item {\n      border: 0;\n      float: left;\n      text-align: center;\n      width: em(90px);\n\n      &:first-child {\n        border: 0;\n      }\n\n      a {\n        padding: em(4px) 0 0;\n      }\n    }\n\n    .icon {\n      @include font-size(6);\n      line-height: 1;\n      display: block;\n      margin: 0 auto em(4px);\n\n      // The following is needed for IE8 to go centrally aligned\n      &:before {\n        text-align: center;\n        width: 100%;\n      }\n    }\n  }",
         "line": {
           "start": 90,
           "end": 239
@@ -1365,7 +2117,7 @@
       "context": {
         "type": "css",
         "name": ".footer-nav",
-        "value": "&__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  a {\n    padding: em(4 0);\n    text-decoration: none;\n  }\n\n  @include mq($from: sm) {\n    &__list {\n      line-height: 1;\n    }\n\n    &__item {\n      border-left: 1px solid $colour-nice-white;\n      display: inline-block;\n      line-height: 1;\n\n      &:first-child {\n        border-left: 0;\n\n        a {\n          padding-left: 0;\n        }\n      }\n    }\n\n    a {\n      padding: em(0 8);\n    }\n  }",
+        "value": "&__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  a {\n    padding: em(4 0);\n    text-decoration: none;\n  }\n\n  @include mq($from: sm) {\n    &__list {\n      line-height: 1;\n    }\n\n    &__item {\n      border-left: 1px solid $colour-text-reverse;\n      display: inline-block;\n      line-height: 1;\n\n      &:first-child {\n        border-left: 0;\n\n        a {\n          padding-left: 0;\n        }\n      }\n    }\n\n    a {\n      padding: em(0 8);\n    }\n  }",
         "line": {
           "start": 203,
           "end": 239
@@ -1392,7 +2144,7 @@
       "context": {
         "type": "css",
         "name": ".tabs",
-        "value": "// The list of tabs\n  &__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n  }\n\n  //\n  &__tab {\n    float: left;\n\n    &--active .tabs__tab-btn { // sass-lint:disable-line no-combinators\n      background: $colour-panel;\n    }\n  }\n\n  // The button/link for the tab itself\n  &__tab-btn {\n    background: 0;\n    border: 0;\n    cursor: pointer;\n    display: block;\n    line-height: 4rem;\n    margin: 0;\n    padding: 0 1rem;\n\n    &:hover {\n      background: $colour-panel;\n    }\n  }\n\n  // The tab content containing the tab panels\n  &__content {\n    background: $colour-panel;\n    padding: 1rem;\n  }\n\n  // An individual tab content pane\n  &__pane {\n\n    // Assume tabs will stack if no JS is available\n    .js & {\n      display: none;\n\n      &--active {\n        display: block;\n      }\n    }\n  }",
+        "value": "// The list of tabs\n  &__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n  }\n\n  //\n  &__tab {\n    float: left;\n\n    &--active .tabs__tab-btn { // sass-lint:disable-line no-combinators\n      background: $colour-panel-light;\n    }\n  }\n\n  // The button/link for the tab itself\n  &__tab-btn {\n    background: 0;\n    border: 0;\n    cursor: pointer;\n    display: block;\n    line-height: 4rem;\n    margin: 0;\n    padding: 0 1rem;\n\n    &:hover {\n      background: $colour-panel-light;\n    }\n  }\n\n  // The tab content containing the tab panels\n  &__content {\n    background: $colour-panel-light;\n    padding: 1rem;\n  }\n\n  // An individual tab content pane\n  &__pane {\n\n    // Assume tabs will stack if no JS is available\n    .js & {\n      display: none;\n\n      &--active {\n        display: block;\n      }\n    }\n  }",
         "line": {
           "start": 40,
           "end": 93
@@ -1433,7 +2185,7 @@
       "context": {
         "type": "css",
         "name": ".breadcrumbs",
-        "value": "@include font-size(0);\n  list-style: none;\n  margin: em(0 0 $spacing-large);\n  padding: 0;\n\n  &__crumb {\n    display: inline-block;\n\n    &:before {\n      @include nice-icon(angle-right);\n      color: $colour-grey-1;\n      margin: em(0 10);\n    }\n\n    &:first-child:before {\n      display: none;\n    }\n\n    a {\n      color: $colour-text;\n    }\n  }",
+        "value": "@include font-size(0);\n  list-style: none;\n  margin: em(0 0 $spacing-large);\n  padding: 0;\n\n  &__crumb {\n    display: inline-block;\n\n    &:before {\n      @include nice-icon(angle-right);\n      color: $colour-text-subtle;\n      margin: em(0 10);\n    }\n\n    &:first-child:before {\n      display: none;\n    }\n\n    a {\n      color: $colour-text;\n    }\n  }",
         "line": {
           "start": 8,
           "end": 32
@@ -1465,10 +2217,10 @@
       "context": {
         "type": "css",
         "name": ".btn",
-        "value": "@include remove-mz-focus-inner;\n  @include font-size(0);\n  appearance: none;\n  background: $colour-dark-grey;\n  border: 0;\n  border-radius: 0;\n  color: $colour-nice-white;\n  cursor: pointer;\n  display: inline-block;\n  margin: em(0 $spacing-x-small 0 0);\n  padding: em($spacing-x-small $spacing-medium);\n  position: relative;\n  text-decoration: none;\n  vertical-align: top;\n\n  &:hover,\n  &:focus,\n  &:active {\n    background: $colour-rich-black;\n    color: $colour-nice-white;\n    text-decoration: none;\n  }\n\n  &:focus {\n    @include default-focus-style;\n  }\n\n  &:visited {\n    color: $colour-nice-white;\n  }\n\n  // Disabled button styles\n  &.disabled,\n  &[disabled='disabled'],\n  &[disabled] {\n    opacity: .5;\n\n    &:hover {\n      cursor: default;\n    }\n  }\n\n  // External links have an icon\n  &[rel='external'] {\n    &::after {\n      color: $colour-nice-white;\n    }\n\n    &:hover {\n      &::after {\n        color: $colour-nice-white;\n      }\n    }\n  }\n\n  &--prominent {\n    @include font-size(2);\n    padding: 0 em(20);\n    background: $colour-purple;\n    border: 1px solid $colour-nice-white;\n    color: $colour-nice-white;\n\n    &:hover {\n      text-decoration: underline;\n    }\n  }\n\n  &--secondary {\n    background: #666;\n    color: $colour-nice-white;\n\n    &[rel='external'] {\n      &:after {\n        color: $colour-nice-white;\n      }\n\n      &:hover {\n        &:after {\n          color: $colour-nice-white;\n        }\n      }\n    }\n\n    &:hover,\n    &:focus {\n      background: #333;\n      color: $colour-nice-white;\n      text-decoration: underline;\n    }\n\n    &:visited {\n      color: $colour-nice-white;\n    }\n  }",
+        "value": "@include remove-mz-focus-inner;\n  @include font-size(0);\n  appearance: none;\n  background: $colour-btn-primary;\n  border: 0;\n  border-radius: 0;\n  color: $colour-btn-primary-text;\n  cursor: pointer;\n  display: inline-block;\n  margin: em(0 $spacing-x-small 0 0);\n  padding: em($spacing-x-small $spacing-medium);\n  position: relative;\n  text-decoration: none;\n  vertical-align: top;\n\n  &:hover,\n  &:focus,\n  &:active {\n    background: $colour-btn-primary-hover;\n    color: $colour-btn-primary-text;\n    text-decoration: none;\n  }\n\n  &:focus {\n    @include default-focus-style;\n  }\n\n  &:visited {\n    color: $colour-btn-primary-text;\n  }\n\n  // Disabled button styles\n  &.disabled,\n  &[disabled='disabled'],\n  &[disabled] {\n    opacity: .5;\n\n    &:hover {\n      cursor: default;\n    }\n  }\n\n  // External links have an icon\n  &[rel='external'] {\n    &::after {\n      color: $colour-btn-primary-text;\n    }\n\n    &:hover {\n      &::after {\n        color: $colour-btn-primary-text;\n      }\n    }\n  }\n\n  &--prominent {\n    @include font-size(2);\n    padding: 0 em(20);\n    background: $colour-btn-cta;\n    border: 1px solid $colour-btn-cta-text;\n    color: $colour-btn-cta-text;\n\n    &:hover {\n      background: $colour-btn-cta-hover;\n      text-decoration: underline;\n    }\n  }\n\n  &--secondary {\n    background: $colour-btn-secondary;\n    color: $colour-btn-secondary-text;\n\n    &[rel='external'] {\n      &:after {\n        color: $colour-btn-secondary-text;\n      }\n\n      &:hover {\n        &:after {\n          color: $colour-btn-secondary-text;\n        }\n      }\n    }\n\n    &:hover,\n    &:focus {\n      background: $colour-btn-secondary-hover;\n      color: $colour-btn-secondary-text;\n      text-decoration: underline;\n    }\n\n    &:visited {\n      color: $colour-btn-secondary-text;\n    }\n  }",
         "line": {
           "start": 7,
-          "end": 103
+          "end": 104
         }
       },
       "since": [
@@ -1529,7 +2281,7 @@
       "context": {
         "type": "css",
         "name": ".container",
-        "value": "@extend %container;\n\n  &--narrow {\n    max-width: 1000px;\n  }\n\n  &--full {\n    max-width: 100%;\n    padding: 0 2%;\n    width: auto;\n  }\n\n  &--panel {\n    background: $colour-panel;\n    padding: 0 2%;\n    width: auto;\n  }",
+        "value": "@extend %container;\n\n  &--narrow {\n    max-width: 1000px;\n  }\n\n  &--full {\n    max-width: 100%;\n    padding: 0 2%;\n    width: auto;\n  }\n\n  &--panel {\n    background: $colour-panel-light;\n    padding: 0 2%;\n    width: auto;\n  }",
         "line": {
           "start": 25,
           "end": 48
@@ -1611,7 +2363,7 @@
       "context": {
         "type": "css",
         "name": ".panel",
-        "value": "background: $colour-panel;\n  padding: 1em;\n\n  &--dark {\n    background: $colour-panel-dark;\n    color: $colour-nice-white;\n  }",
+        "value": "background: $colour-panel-light;\n  padding: 1em;\n\n  &--dark {\n    background: $colour-panel-dark;\n    color: $colour-text-reverse;\n  }",
         "line": {
           "start": 8,
           "end": 17
@@ -1655,7 +2407,7 @@
           "context": {
             "type": "css",
             "name": ".phase-tag",
-            "value": "@include font-size(-1);\n  background-color: $colour-grey-1;\n  color: $colour-nice-white;\n  display: inline-block;\n  font-weight: 900;\n  letter-spacing: 1px;\n  padding: em($spacing-xx-small $spacing-small);\n  text-decoration: none;\n  text-transform: uppercase;\n  vertical-align: middle;\n\n  @media print {\n    @include important(background, $colour-true-black);\n    @include important(color, $colour-true-white);\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-nice-white;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-nice-white;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-nice-white;\n  }",
+            "value": "@include font-size(-1);\n  background-color: $colour-panel-dark;\n  color: $colour-text-reverse;\n  display: inline-block;\n  font-weight: 900;\n  letter-spacing: 1px;\n  padding: em($spacing-xx-small $spacing-small);\n  text-decoration: none;\n  text-transform: uppercase;\n  vertical-align: middle;\n\n  @media print {\n    @include important(background, $colour-true-black);\n    @include important(color, $colour-true-white);\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-reverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-reverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-reverse;\n  }",
             "line": {
               "start": 48,
               "end": 80
@@ -1689,7 +2441,7 @@
       "context": {
         "type": "css",
         "name": ".phase-tag",
-        "value": "@include font-size(-1);\n  background-color: $colour-grey-1;\n  color: $colour-nice-white;\n  display: inline-block;\n  font-weight: 900;\n  letter-spacing: 1px;\n  padding: em($spacing-xx-small $spacing-small);\n  text-decoration: none;\n  text-transform: uppercase;\n  vertical-align: middle;\n\n  @media print {\n    @include important(background, $colour-true-black);\n    @include important(color, $colour-true-white);\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-nice-white;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-nice-white;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-nice-white;\n  }",
+        "value": "@include font-size(-1);\n  background-color: $colour-panel-dark;\n  color: $colour-text-reverse;\n  display: inline-block;\n  font-weight: 900;\n  letter-spacing: 1px;\n  padding: em($spacing-xx-small $spacing-small);\n  text-decoration: none;\n  text-transform: uppercase;\n  vertical-align: middle;\n\n  @media print {\n    @include important(background, $colour-true-black);\n    @include important(color, $colour-true-white);\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-reverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-reverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-reverse;\n  }",
         "line": {
           "start": 48,
           "end": 80
@@ -3990,8 +4742,8 @@
             "name": "font-size",
             "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  font-size: rem($font-size);\n  line-height: rem($line-height);\n",
             "line": {
-              "start": 71,
-              "end": 77
+              "start": 69,
+              "end": 75
             }
           }
         },
@@ -4002,8 +4754,8 @@
             "name": "font",
             "code": "\n  @include font-size($scale);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  font-weight: map-get($font-map, fw);\n  margin-bottom: rem(map-get($font-map, mb));\n  margin-top: rem(map-get($font-map, mt));\n",
             "line": {
-              "start": 90,
-              "end": 99
+              "start": 88,
+              "end": 97
             }
           }
         }
@@ -5845,10 +6597,10 @@
           "context": {
             "type": "function",
             "name": "get-font-size",
-            "code": "\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n  @debug $scale-integer;\n  @debug $font-map;\n  @return map-get($font-map, fs);\n",
+            "code": "\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n  @return map-get($font-map, fs);\n",
             "line": {
               "start": 37,
-              "end": 43
+              "end": 41
             }
           }
         },
@@ -5859,8 +6611,8 @@
             "name": "get-line-height",
             "code": "\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n  @return map-get($font-map, lh);\n",
             "line": {
-              "start": 54,
-              "end": 58
+              "start": 52,
+              "end": 56
             }
           }
         },
@@ -5871,8 +6623,8 @@
             "name": "font",
             "code": "\n  @include font-size($scale);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  font-weight: map-get($font-map, fw);\n  margin-bottom: rem(map-get($font-map, mb));\n  margin-top: rem(map-get($font-map, mt));\n",
             "line": {
-              "start": 90,
-              "end": 99
+              "start": 88,
+              "end": 97
             }
           }
         }
@@ -5890,10 +6642,10 @@
       "context": {
         "type": "function",
         "name": "get-font-size",
-        "code": "\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n  @debug $scale-integer;\n  @debug $font-map;\n  @return map-get($font-map, fs);\n",
+        "code": "\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n  @return map-get($font-map, fs);\n",
         "line": {
           "start": 37,
-          "end": 43
+          "end": 41
         }
       },
       "parameter": [
@@ -5947,8 +6699,8 @@
             "name": "font-size",
             "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  font-size: rem($font-size);\n  line-height: rem($line-height);\n",
             "line": {
-              "start": 71,
-              "end": 77
+              "start": 69,
+              "end": 75
             }
           }
         }
@@ -5960,16 +6712,16 @@
     {
       "description": "<p>Gets a numeric line height (in px) from a given scale multiplier.\nUsually not used directly - the font-size or font mixin is usually used instead.</p>\n",
       "commentRange": {
-        "start": 45,
-        "end": 53
+        "start": 43,
+        "end": 51
       },
       "context": {
         "type": "function",
         "name": "get-line-height",
         "code": "\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n  @return map-get($font-map, lh);\n",
         "line": {
-          "start": 54,
-          "end": 58
+          "start": 52,
+          "end": 56
         }
       },
       "parameter": [
@@ -6023,8 +6775,8 @@
             "name": "font-size",
             "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  font-size: rem($font-size);\n  line-height: rem($line-height);\n",
             "line": {
-              "start": 71,
-              "end": 77
+              "start": 69,
+              "end": 75
             }
           }
         }
@@ -6036,16 +6788,16 @@
     {
       "description": "<p>Applies font size and line-height for the given scale.</p>\n",
       "commentRange": {
-        "start": 60,
-        "end": 70
+        "start": 58,
+        "end": 68
       },
       "context": {
         "type": "mixin",
         "name": "font-size",
         "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  font-size: rem($font-size);\n  line-height: rem($line-height);\n",
         "line": {
-          "start": 71,
-          "end": 77
+          "start": 69,
+          "end": 75
         }
       },
       "parameter": [
@@ -6099,8 +6851,8 @@
             "name": "font",
             "code": "\n  @include font-size($scale);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  font-weight: map-get($font-map, fw);\n  margin-bottom: rem(map-get($font-map, mb));\n  margin-top: rem(map-get($font-map, mt));\n",
             "line": {
-              "start": 90,
-              "end": 99
+              "start": 88,
+              "end": 97
             }
           }
         }
@@ -6112,16 +6864,16 @@
     {
       "description": "<p>Nice font: includes font size, line height, and margins.</p>\n",
       "commentRange": {
-        "start": 79,
-        "end": 89
+        "start": 77,
+        "end": 87
       },
       "context": {
         "type": "mixin",
         "name": "font",
         "code": "\n  @include font-size($scale);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  font-weight: map-get($font-map, fw);\n  margin-bottom: rem(map-get($font-map, mb));\n  margin-top: rem(map-get($font-map, mt));\n",
         "line": {
-          "start": 90,
-          "end": 99
+          "start": 88,
+          "end": 97
         }
       },
       "parameter": [
@@ -6447,10 +7199,10 @@
           "context": {
             "type": "function",
             "name": "get-font-size",
-            "code": "\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n  @debug $scale-integer;\n  @debug $font-map;\n  @return map-get($font-map, fs);\n",
+            "code": "\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n  @return map-get($font-map, fs);\n",
             "line": {
               "start": 37,
-              "end": 43
+              "end": 41
             }
           }
         },
@@ -6461,8 +7213,8 @@
             "name": "get-line-height",
             "code": "\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n  @return map-get($font-map, lh);\n",
             "line": {
-              "start": 54,
-              "end": 58
+              "start": 52,
+              "end": 56
             }
           }
         },
@@ -6473,8 +7225,8 @@
             "name": "font",
             "code": "\n  @include font-size($scale);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  font-weight: map-get($font-map, fw);\n  margin-bottom: rem(map-get($font-map, mb));\n  margin-top: rem(map-get($font-map, mt));\n",
             "line": {
-              "start": 90,
-              "end": 99
+              "start": 88,
+              "end": 97
             }
           }
         }
@@ -7559,6 +8311,584 @@
     "colors": {
       "variable": [
         {
+          "description": "<p>NICE Black. Part of the primary palette.</p>\n",
+          "commentRange": {
+            "start": 8,
+            "end": 9
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-nice-black",
+            "value": "#222",
+            "scope": "private",
+            "line": {
+              "start": 10,
+              "end": 10
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+            "name": "_settings-colours-nice.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#222"
+        },
+        {
+          "description": "<p>NICE White. Part of the primary palette</p>\n",
+          "commentRange": {
+            "start": 12,
+            "end": 13
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-nice-white",
+            "value": "#fff",
+            "scope": "private",
+            "line": {
+              "start": 14,
+              "end": 14
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+            "name": "_settings-colours-nice.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#fff"
+        },
+        {
+          "description": "<p>NICE Teal. Part of the primary palette.\nFirst choice of colour for supporting</p>\n",
+          "commentRange": {
+            "start": 16,
+            "end": 18
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-nice-teal",
+            "value": "#004650",
+            "scope": "private",
+            "line": {
+              "start": 19,
+              "end": 19
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+            "name": "_settings-colours-nice.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#004650"
+        },
+        {
+          "description": "<p>Purple. Part of the secondary palette. Purple should be used sparingly and only used as a\npanel background to highlight a particular section of content,\nin which case font colour must be pure white (NICE White) to make text legible.</p>\n",
+          "commentRange": {
+            "start": 24,
+            "end": 27
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-nice-purple",
+            "value": "#451551",
+            "scope": "private",
+            "line": {
+              "start": 28,
+              "end": 28
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+            "name": "_settings-colours-nice.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#451551"
+        },
+        {
+          "description": "<p>Cool Teal. Part of the secondary palette.</p>\n",
+          "commentRange": {
+            "start": 30,
+            "end": 31
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-nice-cool-teal",
+            "value": "#00506a",
+            "scope": "private",
+            "line": {
+              "start": 32,
+              "end": 32
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+            "name": "_settings-colours-nice.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#00506a"
+        },
+        {
+          "description": "<p>Rich Black. Part of the secondary palette.</p>\n",
+          "commentRange": {
+            "start": 34,
+            "end": 35
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-nice-rich-black",
+            "value": "#0e0e0e",
+            "scope": "private",
+            "line": {
+              "start": 36,
+              "end": 36
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+            "name": "_settings-colours-nice.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#0e0e0e"
+        },
+        {
+          "description": "<p>Dark Grey. Part of the secondary palette.</p>\n",
+          "commentRange": {
+            "start": 38,
+            "end": 39
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-nice-dark-grey",
+            "value": "#393939",
+            "scope": "private",
+            "line": {
+              "start": 40,
+              "end": 40
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+            "name": "_settings-colours-nice.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#393939"
+        },
+        {
+          "description": "<p>Grey 1. Part of the secondary palette.</p>\n",
+          "commentRange": {
+            "start": 42,
+            "end": 43
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-nice-grey-1",
+            "value": "#adadad",
+            "scope": "private",
+            "line": {
+              "start": 44,
+              "end": 44
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+            "name": "_settings-colours-nice.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#adadad"
+        },
+        {
+          "description": "<p>Grey 2. Part of the secondary palette.</p>\n",
+          "commentRange": {
+            "start": 46,
+            "end": 47
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-nice-grey-2",
+            "value": "#d6d6d6",
+            "scope": "private",
+            "line": {
+              "start": 48,
+              "end": 48
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+            "name": "_settings-colours-nice.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#d6d6d6"
+        },
+        {
+          "description": "<p>Grey 3. Part of the secondary palette.</p>\n",
+          "commentRange": {
+            "start": 50,
+            "end": 51
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-nice-grey-3",
+            "value": "#e9e9e9",
+            "scope": "private",
+            "line": {
+              "start": 52,
+              "end": 52
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+            "name": "_settings-colours-nice.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#e9e9e9"
+        },
+        {
+          "description": "<p>Blue 1. Part of the tertiary palette.</p>\n",
+          "commentRange": {
+            "start": 57,
+            "end": 58
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-nice-blue-1",
+            "value": "#233746",
+            "scope": "private",
+            "line": {
+              "start": 59,
+              "end": 59
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+            "name": "_settings-colours-nice.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#233746"
+        },
+        {
+          "description": "<p>Blue 2. Part of the tertiary palette.</p>\n",
+          "commentRange": {
+            "start": 61,
+            "end": 62
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-nice-blue-2",
+            "value": "#314c60",
+            "scope": "private",
+            "line": {
+              "start": 63,
+              "end": 63
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+            "name": "_settings-colours-nice.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#314c60"
+        },
+        {
+          "description": "<p>Blue 3. Part of the tertiary palette.</p>\n",
+          "commentRange": {
+            "start": 65,
+            "end": 66
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-nice-blue-3",
+            "value": "#517489",
+            "scope": "private",
+            "line": {
+              "start": 67,
+              "end": 67
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+            "name": "_settings-colours-nice.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#517489"
+        },
+        {
+          "description": "<p>Ice Teal. Part of the tertiary palette.</p>\n",
+          "commentRange": {
+            "start": 69,
+            "end": 70
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-nice-ice-teal",
+            "value": "#a2bdc1",
+            "scope": "private",
+            "line": {
+              "start": 71,
+              "end": 71
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+            "name": "_settings-colours-nice.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#a2bdc1"
+        },
+        {
+          "description": "<p>Teal 1. Part of the tertiary palette.</p>\n",
+          "commentRange": {
+            "start": 73,
+            "end": 74
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-nice-teal-1",
+            "value": "#4f7d83",
+            "scope": "private",
+            "line": {
+              "start": 75,
+              "end": 75
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+            "name": "_settings-colours-nice.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#4f7d83"
+        },
+        {
+          "description": "<p>Teal 2. Part of the tertiary palette.</p>\n",
+          "commentRange": {
+            "start": 77,
+            "end": 78
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-nice-teal-2",
+            "value": "#18646e",
+            "scope": "private",
+            "line": {
+              "start": 79,
+              "end": 79
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+            "name": "_settings-colours-nice.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#18646e"
+        },
+        {
+          "description": "<p>Teal 3. Part of the tertiary palette.</p>\n",
+          "commentRange": {
+            "start": 81,
+            "end": 82
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-nice-teal-3",
+            "value": "#15434a",
+            "scope": "private",
+            "line": {
+              "start": 83,
+              "end": 83
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-nice.scss",
+            "name": "_settings-colours-nice.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#15434a"
+        },
+        {
           "description": "<p>True black, used for print styles</p>\n",
           "commentRange": {
             "start": 5,
@@ -7584,8 +8914,8 @@
           ],
           "access": "public",
           "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
           },
           "groupName": {
             "colors": "Colours"
@@ -7618,8 +8948,8 @@
           ],
           "access": "public",
           "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
           },
           "groupName": {
             "colors": "Colours"
@@ -7627,19 +8957,19 @@
           "resolvedValue": "#fff"
         },
         {
-          "description": "<p>NICE Black. Part of the primary palette.</p>\n",
+          "description": "<p>Page background colour</p>\n",
           "commentRange": {
-            "start": 15,
-            "end": 16
+            "start": 16,
+            "end": 17
           },
           "context": {
             "type": "variable",
-            "name": "colour-nice-black",
-            "value": "#222",
+            "name": "colour-body",
+            "value": "#fafafa",
             "scope": "private",
             "line": {
-              "start": 17,
-              "end": 17
+              "start": 18,
+              "end": 18
             }
           },
           "since": [
@@ -7652,28 +8982,28 @@
           ],
           "access": "public",
           "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
           },
           "groupName": {
             "colors": "Colours"
           },
-          "resolvedValue": "#222"
+          "resolvedValue": "#fafafa"
         },
         {
-          "description": "<p>NICE White. Part of the primary palette</p>\n",
+          "description": "<p>Standard, primary body text colour</p>\n",
           "commentRange": {
-            "start": 19,
-            "end": 20
+            "start": 20,
+            "end": 21
           },
           "context": {
             "type": "variable",
-            "name": "colour-nice-white",
-            "value": "#fff",
+            "name": "colour-text",
+            "value": "$colour-nice-rich-black",
             "scope": "private",
             "line": {
-              "start": 21,
-              "end": 21
+              "start": 22,
+              "end": 22
             }
           },
           "since": [
@@ -7686,24 +9016,24 @@
           ],
           "access": "public",
           "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
           },
           "groupName": {
             "colors": "Colours"
           },
-          "resolvedValue": "#fff"
+          "resolvedValue": "#0e0e0e"
         },
         {
-          "description": "<p>NICE Teal. Part of the primary palette.\nFirst choice of colour for supporting</p>\n",
+          "description": "<p>Subtle text colour</p>\n",
           "commentRange": {
-            "start": 23,
+            "start": 24,
             "end": 25
           },
           "context": {
             "type": "variable",
-            "name": "colour-nice-teal",
-            "value": "#004650",
+            "name": "colour-text-subtle",
+            "value": "$colour-nice-grey-1",
             "scope": "private",
             "line": {
               "start": 26,
@@ -7720,24 +9050,58 @@
           ],
           "access": "public",
           "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
           },
           "groupName": {
             "colors": "Colours"
           },
-          "resolvedValue": "#004650"
+          "resolvedValue": "#adadad"
         },
         {
-          "description": "<p>Purple. Part of the secondary palette. Purple should be used sparingly and only used as a\npanel background to highlight a particular section of content,\nin which case font colour must be pure white (NICE White) to make text legible.</p>\n",
+          "description": "<p>Body text colour for use on dark background</p>\n",
           "commentRange": {
-            "start": 30,
+            "start": 28,
+            "end": 29
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-text-reverse",
+            "value": "$colour-nice-white",
+            "scope": "private",
+            "line": {
+              "start": 30,
+              "end": 30
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.2"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#fff"
+        },
+        {
+          "description": "<p>Focus colour</p>\n",
+          "commentRange": {
+            "start": 32,
             "end": 33
           },
           "context": {
             "type": "variable",
-            "name": "colour-purple",
-            "value": "#451551",
+            "name": "colour-focus",
+            "value": "#ffd586",
             "scope": "private",
             "line": {
               "start": 34,
@@ -7754,654 +9118,8 @@
           ],
           "access": "public",
           "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#451551"
-        },
-        {
-          "description": "<p>Cool Teal. Part of the secondary palette.</p>\n",
-          "commentRange": {
-            "start": 36,
-            "end": 37
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-cool-teal",
-            "value": "#00506a",
-            "scope": "private",
-            "line": {
-              "start": 38,
-              "end": 38
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#00506a"
-        },
-        {
-          "description": "<p>Rich Black. Part of the secondary palette.</p>\n",
-          "commentRange": {
-            "start": 40,
-            "end": 41
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-rich-black",
-            "value": "#0e0e0e",
-            "scope": "private",
-            "line": {
-              "start": 42,
-              "end": 42
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#0e0e0e"
-        },
-        {
-          "description": "<p>Dark Grey. Part of the secondary palette.</p>\n",
-          "commentRange": {
-            "start": 44,
-            "end": 45
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-dark-grey",
-            "value": "#393939",
-            "scope": "private",
-            "line": {
-              "start": 46,
-              "end": 46
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#393939"
-        },
-        {
-          "description": "<p>Grey 1. Part of the secondary palette.</p>\n",
-          "commentRange": {
-            "start": 48,
-            "end": 49
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-grey-1",
-            "value": "#adadad",
-            "scope": "private",
-            "line": {
-              "start": 50,
-              "end": 50
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#adadad"
-        },
-        {
-          "description": "<p>Grey 2. Part of the secondary palette.</p>\n",
-          "commentRange": {
-            "start": 52,
-            "end": 53
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-grey-2",
-            "value": "#d6d6d6",
-            "scope": "private",
-            "line": {
-              "start": 54,
-              "end": 54
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#d6d6d6"
-        },
-        {
-          "description": "<p>Grey 3. Part of the secondary palette.</p>\n",
-          "commentRange": {
-            "start": 56,
-            "end": 57
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-grey-3",
-            "value": "#e9e9e9",
-            "scope": "private",
-            "line": {
-              "start": 58,
-              "end": 58
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#e9e9e9"
-        },
-        {
-          "description": "<p>Blue 1. Part of the tertiary palette.</p>\n",
-          "commentRange": {
-            "start": 62,
-            "end": 63
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-blue-1",
-            "value": "#233746",
-            "scope": "private",
-            "line": {
-              "start": 64,
-              "end": 64
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#233746"
-        },
-        {
-          "description": "<p>Blue 2. Part of the tertiary palette.</p>\n",
-          "commentRange": {
-            "start": 66,
-            "end": 67
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-blue-2",
-            "value": "#314c60",
-            "scope": "private",
-            "line": {
-              "start": 68,
-              "end": 68
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#314c60"
-        },
-        {
-          "description": "<p>Blue 3. Part of the tertiary palette.</p>\n",
-          "commentRange": {
-            "start": 70,
-            "end": 71
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-blue-3",
-            "value": "#517489",
-            "scope": "private",
-            "line": {
-              "start": 72,
-              "end": 72
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#517489"
-        },
-        {
-          "description": "<p>Ice Teal. Part of the tertiary palette.</p>\n",
-          "commentRange": {
-            "start": 74,
-            "end": 75
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-ice-teal",
-            "value": "#a2bdc1",
-            "scope": "private",
-            "line": {
-              "start": 76,
-              "end": 76
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#a2bdc1"
-        },
-        {
-          "description": "<p>Teal 1. Part of the tertiary palette.</p>\n",
-          "commentRange": {
-            "start": 78,
-            "end": 79
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-teal-1",
-            "value": "#4f7d83",
-            "scope": "private",
-            "line": {
-              "start": 80,
-              "end": 80
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#4f7d83"
-        },
-        {
-          "description": "<p>Teal 2. Part of the tertiary palette.</p>\n",
-          "commentRange": {
-            "start": 82,
-            "end": 83
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-teal-2",
-            "value": "#18646e",
-            "scope": "private",
-            "line": {
-              "start": 84,
-              "end": 84
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#18646e"
-        },
-        {
-          "description": "<p>Teal 3. Part of the tertiary palette.</p>\n",
-          "commentRange": {
-            "start": 86,
-            "end": 87
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-teal-3",
-            "value": "#15434a",
-            "scope": "private",
-            "line": {
-              "start": 88,
-              "end": 88
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#15434a"
-        },
-        {
-          "description": "<p>Page background colour</p>\n",
-          "commentRange": {
-            "start": 92,
-            "end": 93
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-page",
-            "value": "#fafafa",
-            "scope": "private",
-            "line": {
-              "start": 94,
-              "end": 94
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#fafafa"
-        },
-        {
-          "description": "<p>Link text colour</p>\n",
-          "commentRange": {
-            "start": 96,
-            "end": 97
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-link",
-            "value": "#005ea5",
-            "scope": "private",
-            "line": {
-              "start": 98,
-              "end": 98
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#005ea5"
-        },
-        {
-          "description": "<p>Link hover colour</p>\n",
-          "commentRange": {
-            "start": 100,
-            "end": 101
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-link-hover",
-            "value": "#2b8cc4",
-            "scope": "private",
-            "line": {
-              "start": 102,
-              "end": 102
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#2b8cc4"
-        },
-        {
-          "description": "<p>Link visited colour</p>\n",
-          "commentRange": {
-            "start": 104,
-            "end": 105
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-link-visited",
-            "value": "#4c2c92",
-            "scope": "private",
-            "line": {
-              "start": 106,
-              "end": 106
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#4c2c92"
-        },
-        {
-          "description": "<p>Link active colour</p>\n",
-          "commentRange": {
-            "start": 108,
-            "end": 109
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-link-active",
-            "value": "#2b8cc4",
-            "scope": "private",
-            "line": {
-              "start": 110,
-              "end": 110
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#2b8cc4"
-        },
-        {
-          "description": "<p>Focus colour</p>\n",
-          "commentRange": {
-            "start": 112,
-            "end": 113
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-focus",
-            "value": "#ffbf47",
-            "scope": "private",
-            "line": {
-              "start": 114,
-              "end": 114
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
           },
           "usedBy": [
             {
@@ -8420,22 +9138,22 @@
           "groupName": {
             "colors": "Colours"
           },
-          "resolvedValue": "#ffbf47"
+          "resolvedValue": "#ffd586"
         },
         {
-          "description": "<p>Standard text colour</p>\n",
+          "description": "<p>Icons colour</p>\n",
           "commentRange": {
-            "start": 116,
-            "end": 117
+            "start": 36,
+            "end": 37
           },
           "context": {
             "type": "variable",
-            "name": "colour-text",
-            "value": "$colour-rich-black",
+            "name": "colour-icons",
+            "value": "$colour-nice-teal",
             "scope": "private",
             "line": {
-              "start": 118,
-              "end": 118
+              "start": 38,
+              "end": 38
             }
           },
           "since": [
@@ -8448,8 +9166,552 @@
           ],
           "access": "public",
           "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#004650"
+        },
+        {
+          "description": "<p>Link text colour</p>\n",
+          "commentRange": {
+            "start": 44,
+            "end": 45
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-link",
+            "value": "#005ea5",
+            "scope": "private",
+            "line": {
+              "start": 46,
+              "end": 46
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#005ea5"
+        },
+        {
+          "description": "<p>Link hover colour</p>\n",
+          "commentRange": {
+            "start": 48,
+            "end": 49
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-link-hover",
+            "value": "#2e8aca",
+            "scope": "private",
+            "line": {
+              "start": 50,
+              "end": 50
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#2e8aca"
+        },
+        {
+          "description": "<p>Link visited colour</p>\n",
+          "commentRange": {
+            "start": 52,
+            "end": 53
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-link-visited",
+            "value": "#4c2c92",
+            "scope": "private",
+            "line": {
+              "start": 54,
+              "end": 54
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#4c2c92"
+        },
+        {
+          "description": "<p>Link active colour</p>\n",
+          "commentRange": {
+            "start": 56,
+            "end": 57
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-link-active",
+            "value": "#2e8aca",
+            "scope": "private",
+            "line": {
+              "start": 58,
+              "end": 58
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#2e8aca"
+        },
+        {
+          "description": "<p>CTA button background colour</p>\n",
+          "commentRange": {
+            "start": 63,
+            "end": 64
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-btn-cta",
+            "value": "$colour-nice-purple",
+            "scope": "private",
+            "line": {
+              "start": 65,
+              "end": 65
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.2"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#451551"
+        },
+        {
+          "description": "<p>CTA button hover colour</p>\n",
+          "commentRange": {
+            "start": 67,
+            "end": 68
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-btn-cta-hover",
+            "value": "#260b2d",
+            "scope": "private",
+            "line": {
+              "start": 69,
+              "end": 69
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.2"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#260b2d"
+        },
+        {
+          "description": "<p>CTA button text colour</p>\n",
+          "commentRange": {
+            "start": 71,
+            "end": 72
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-btn-cta-text",
+            "value": "$colour-nice-white",
+            "scope": "private",
+            "line": {
+              "start": 73,
+              "end": 73
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.2"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#fff"
+        },
+        {
+          "description": "<p>Primary button background colour</p>\n",
+          "commentRange": {
+            "start": 78,
+            "end": 79
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-btn-primary",
+            "value": "$colour-nice-dark-grey",
+            "scope": "private",
+            "line": {
+              "start": 80,
+              "end": 80
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.2"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#393939"
+        },
+        {
+          "description": "<p>Primary button hover colour</p>\n",
+          "commentRange": {
+            "start": 82,
+            "end": 83
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-btn-primary-hover",
+            "value": "$colour-nice-rich-black",
+            "scope": "private",
+            "line": {
+              "start": 84,
+              "end": 84
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.2"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#0e0e0e"
+        },
+        {
+          "description": "<p>Primary button text colour</p>\n",
+          "commentRange": {
+            "start": 86,
+            "end": 87
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-btn-primary-text",
+            "value": "$colour-nice-white",
+            "scope": "private",
+            "line": {
+              "start": 88,
+              "end": 88
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.2"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#fff"
+        },
+        {
+          "description": "<p>Secondary button background colour</p>\n",
+          "commentRange": {
+            "start": 93,
+            "end": 94
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-btn-secondary",
+            "value": "#666",
+            "scope": "private",
+            "line": {
+              "start": 95,
+              "end": 95
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.2"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#666"
+        },
+        {
+          "description": "<p>Secondary button hover colour</p>\n",
+          "commentRange": {
+            "start": 97,
+            "end": 98
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-btn-secondary-hover",
+            "value": "#333",
+            "scope": "private",
+            "line": {
+              "start": 99,
+              "end": 99
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.2"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#333"
+        },
+        {
+          "description": "<p>Primary button text colour</p>\n",
+          "commentRange": {
+            "start": 101,
+            "end": 102
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-btn-secondary-text",
+            "value": "$colour-nice-white",
+            "scope": "private",
+            "line": {
+              "start": 103,
+              "end": 103
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.2"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#fff"
+        },
+        {
+          "description": "<p>Light button background colour</p>\n",
+          "commentRange": {
+            "start": 108,
+            "end": 109
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-btn-light",
+            "value": "$colour-nice-white",
+            "scope": "private",
+            "line": {
+              "start": 110,
+              "end": 110
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.2"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#fff"
+        },
+        {
+          "description": "<p>Light button hover colour</p>\n",
+          "commentRange": {
+            "start": 112,
+            "end": 113
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-btn-light-hover",
+            "value": "$colour-nice-grey-3",
+            "scope": "private",
+            "line": {
+              "start": 114,
+              "end": 114
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.2"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#e9e9e9"
+        },
+        {
+          "description": "<p>Light button text colour</p>\n",
+          "commentRange": {
+            "start": 116,
+            "end": 117
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-btn-light-text",
+            "value": "$colour-nice-rich-black",
+            "scope": "private",
+            "line": {
+              "start": 118,
+              "end": 118
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.2"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
           },
           "groupName": {
             "colors": "Colours"
@@ -8459,17 +9721,17 @@
         {
           "description": "<p>Borders, seperators, rules, keylines etc.</p>\n",
           "commentRange": {
-            "start": 120,
-            "end": 121
+            "start": 123,
+            "end": 124
           },
           "context": {
             "type": "variable",
             "name": "colour-border",
-            "value": "$colour-grey-1",
+            "value": "$colour-nice-grey-1",
             "scope": "private",
             "line": {
-              "start": 122,
-              "end": 122
+              "start": 125,
+              "end": 125
             }
           },
           "since": [
@@ -8482,8 +9744,8 @@
           ],
           "access": "public",
           "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
           },
           "groupName": {
             "colors": "Colours"
@@ -8493,17 +9755,17 @@
         {
           "description": "",
           "commentRange": {
-            "start": 125,
-            "end": 125
+            "start": 128,
+            "end": 128
           },
           "context": {
             "type": "variable",
-            "name": "colour-panel",
-            "value": "$colour-grey-3",
+            "name": "colour-panel-light",
+            "value": "$colour-nice-grey-3",
             "scope": "private",
             "line": {
-              "start": 126,
-              "end": 126
+              "start": 129,
+              "end": 129
             }
           },
           "since": [
@@ -8516,8 +9778,8 @@
           ],
           "access": "public",
           "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
           },
           "groupName": {
             "colors": "Colours"
@@ -8527,17 +9789,17 @@
         {
           "description": "",
           "commentRange": {
-            "start": 129,
-            "end": 129
+            "start": 132,
+            "end": 132
           },
           "context": {
             "type": "variable",
             "name": "colour-panel-dark",
-            "value": "$colour-dark-grey",
+            "value": "$colour-nice-dark-grey",
             "scope": "private",
             "line": {
-              "start": 130,
-              "end": 130
+              "start": 133,
+              "end": 133
             }
           },
           "since": [
@@ -8550,8 +9812,8 @@
           ],
           "access": "public",
           "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
           },
           "groupName": {
             "colors": "Colours"
@@ -8559,24 +9821,24 @@
           "resolvedValue": "#393939"
         },
         {
-          "description": "<p>Discovery agile lifecycle phase</p>\n",
+          "description": "<p>Agile lifecycle phase banner</p>\n",
           "commentRange": {
-            "start": 132,
-            "end": 133
+            "start": 138,
+            "end": 139
           },
           "context": {
             "type": "variable",
-            "name": "colour-discovery",
-            "value": "#b8008e",
+            "name": "colour-agile-phase",
+            "value": "#009ae9",
             "scope": "private",
             "line": {
-              "start": 134,
-              "end": 134
+              "start": 140,
+              "end": 140
             }
           },
           "since": [
             {
-              "version": "0.2.0"
+              "version": "0.2.2"
             }
           ],
           "group": [
@@ -8584,8 +9846,43 @@
           ],
           "access": "public",
           "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#009ae9"
+        },
+        {
+          "description": "<p>Discovery agile lifecycle phase</p>\n",
+          "commentRange": {
+            "start": 142,
+            "end": 144
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-discovery",
+            "value": "#b8008e",
+            "scope": "private",
+            "line": {
+              "start": 145,
+              "end": 145
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "deprecated": "<p>Use $colour-agile-phase instead</p>\n",
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
           },
           "groupName": {
             "colors": "Colours"
@@ -8595,115 +9892,13 @@
         {
           "description": "<p>Alpha badges and banners</p>\n",
           "commentRange": {
-            "start": 136,
-            "end": 137
+            "start": 147,
+            "end": 149
           },
           "context": {
             "type": "variable",
             "name": "colour-alpha",
             "value": "#d5367f",
-            "scope": "private",
-            "line": {
-              "start": 138,
-              "end": 138
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#d5367f"
-        },
-        {
-          "description": "<p>Beta badges and banners</p>\n",
-          "commentRange": {
-            "start": 140,
-            "end": 141
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-beta",
-            "value": "#f47738",
-            "scope": "private",
-            "line": {
-              "start": 142,
-              "end": 142
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#f47738"
-        },
-        {
-          "description": "<p>Live badges and banners</p>\n",
-          "commentRange": {
-            "start": 144,
-            "end": 145
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-live",
-            "value": "#70a747",
-            "scope": "private",
-            "line": {
-              "start": 146,
-              "end": 146
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#70a747"
-        },
-        {
-          "description": "<p>Error text and border colour</p>\n",
-          "commentRange": {
-            "start": 148,
-            "end": 149
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-error",
-            "value": "#df3034",
             "scope": "private",
             "line": {
               "start": 150,
@@ -8715,33 +9910,104 @@
               "version": "0.2.0"
             }
           ],
+          "deprecated": "<p>Use $colour-agile-phase instead</p>\n",
           "group": [
             "colors"
           ],
           "access": "public",
           "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
           },
           "groupName": {
             "colors": "Colours"
           },
-          "resolvedValue": "#df3034"
+          "resolvedValue": "#d5367f"
         },
         {
-          "description": "<p>Error background colour</p>\n",
+          "description": "<p>Beta badges and banners</p>\n",
           "commentRange": {
             "start": 152,
-            "end": 153
+            "end": 154
           },
           "context": {
             "type": "variable",
-            "name": "colour-error-background",
-            "value": "#fef7f7",
+            "name": "colour-beta",
+            "value": "#f47738",
             "scope": "private",
             "line": {
-              "start": 154,
-              "end": 154
+              "start": 155,
+              "end": 155
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "deprecated": "<p>Use $colour-agile-phase instead</p>\n",
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#f47738"
+        },
+        {
+          "description": "<p>Live badges and banners</p>\n",
+          "commentRange": {
+            "start": 157,
+            "end": 159
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-live",
+            "value": "#70a747",
+            "scope": "private",
+            "line": {
+              "start": 160,
+              "end": 160
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "deprecated": "<p>Use $colour-agile-phase instead</p>\n",
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#70a747"
+        },
+        {
+          "description": "<p>Error text and border colour</p>\n",
+          "commentRange": {
+            "start": 162,
+            "end": 163
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-error",
+            "value": "#b10e1e",
+            "scope": "private",
+            "line": {
+              "start": 164,
+              "end": 164
             }
           },
           "since": [
@@ -8754,13 +10020,251 @@
           ],
           "access": "public",
           "file": {
-            "path": "stylesheets\\settings\\_settings-colours.scss",
-            "name": "_settings-colours.scss"
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
           },
           "groupName": {
             "colors": "Colours"
           },
-          "resolvedValue": "#fef7f7"
+          "resolvedValue": "#b10e1e"
+        },
+        {
+          "description": "<p>Error background colour</p>\n",
+          "commentRange": {
+            "start": 166,
+            "end": 167
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-error-background",
+            "value": "#eac3c3",
+            "scope": "private",
+            "line": {
+              "start": 168,
+              "end": 168
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#eac3c3"
+        },
+        {
+          "description": "<p>Caution text and border colour</p>\n",
+          "commentRange": {
+            "start": 170,
+            "end": 171
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-caution",
+            "value": "#9b722f",
+            "scope": "private",
+            "line": {
+              "start": 172,
+              "end": 172
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#9b722f"
+        },
+        {
+          "description": "<p>Caution background colour</p>\n",
+          "commentRange": {
+            "start": 174,
+            "end": 175
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-caution-background",
+            "value": "#ffdfa4",
+            "scope": "private",
+            "line": {
+              "start": 176,
+              "end": 176
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#ffdfa4"
+        },
+        {
+          "description": "<p>Info text and border colour</p>\n",
+          "commentRange": {
+            "start": 178,
+            "end": 179
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-info",
+            "value": "#4a7f99",
+            "scope": "private",
+            "line": {
+              "start": 180,
+              "end": 180
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#4a7f99"
+        },
+        {
+          "description": "<p>Info background colour</p>\n",
+          "commentRange": {
+            "start": 182,
+            "end": 183
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-info-background",
+            "value": "#e6faff",
+            "scope": "private",
+            "line": {
+              "start": 184,
+              "end": 184
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#e6faff"
+        },
+        {
+          "description": "<p>Success text and border colour</p>\n",
+          "commentRange": {
+            "start": 186,
+            "end": 187
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-success",
+            "value": "#3f8c5e",
+            "scope": "private",
+            "line": {
+              "start": 188,
+              "end": 188
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#3f8c5e"
+        },
+        {
+          "description": "<p>Success background colour</p>\n",
+          "commentRange": {
+            "start": 190,
+            "end": 191
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-success-background",
+            "value": "#eff7eb",
+            "scope": "private",
+            "line": {
+              "start": 192,
+              "end": 192
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#eff7eb"
         }
       ]
     },
@@ -8775,7 +10279,7 @@
           "context": {
             "type": "css",
             "name": ".site-footer",
-            "value": "@include font-size(-1);\n  background: $colour-dark-grey;\n  color: $colour-nice-white;\n  margin-top: em(32px);\n  padding: em(32px 0);\n\n  @media print {\n    display: none;\n  }\n\n  a {\n    color: $colour-nice-white;\n\n    &:focus {\n      color: #000;\n    }\n  }\n\n  p {\n    @include font-size(-1);\n  }\n\n  &__logo {\n    display: block;\n    margin: em(0 0 32 0);\n    text-decoration: none;\n\n    .icon {\n      font-size: rem(48px);\n    }\n  }\n\n  &__services {\n    margin: em(0 0 32 0);\n  }\n\n  &__social {\n    clear: both;\n    margin: em(0 0 32 0);\n  }\n\n  &__nav {\n    clear: both;\n    margin: em(0 0 32 0);\n  }\n\n  &__copyright {\n    margin: 0;\n    text-align: center;\n  }\n\n  @include mq($from: sm) {\n    &__logo {\n      float: left;\n      margin: em(0 32 32 0);\n    }\n\n    &__services {\n      float: left;\n      margin: em(0 0 32 0);\n    }\n\n    &__social {\n      clear: both;\n    }\n\n    &__copyright {\n      text-align: left;\n    }\n  }\n\n  @include mq($from: md) {\n\n    &__social {\n      clear: none;\n      float: right;\n    }\n  }",
+            "value": "@include font-size(-1);\n  background: $colour-panel-dark;\n  color: $colour-text-reverse;\n  margin-top: em(32px);\n  padding: em(32px 0);\n\n  @media print {\n    display: none;\n  }\n\n  a {\n    color: $colour-text-reverse;\n\n    &:focus {\n      color: #000;\n    }\n  }\n\n  p {\n    @include font-size(-1);\n  }\n\n  &__logo {\n    display: block;\n    margin: em(0 0 32 0);\n    text-decoration: none;\n\n    .icon {\n      font-size: rem(48px);\n    }\n  }\n\n  &__services {\n    margin: em(0 0 32 0);\n  }\n\n  &__social {\n    clear: both;\n    margin: em(0 0 32 0);\n  }\n\n  &__nav {\n    clear: both;\n    margin: em(0 0 32 0);\n  }\n\n  &__copyright {\n    margin: 0;\n    text-align: center;\n  }\n\n  @include mq($from: sm) {\n    &__logo {\n      float: left;\n      margin: em(0 32 32 0);\n    }\n\n    &__services {\n      float: left;\n      margin: em(0 0 32 0);\n    }\n\n    &__social {\n      clear: both;\n    }\n\n    &__copyright {\n      text-align: left;\n    }\n  }\n\n  @include mq($from: md) {\n\n    &__social {\n      clear: none;\n      float: right;\n    }\n  }",
             "line": {
               "start": 7,
               "end": 239
@@ -8807,7 +10311,7 @@
           "context": {
             "type": "css",
             "name": ".services",
-            "value": "&__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n  }\n\n  &__item {\n    border-bottom: 1px solid $colour-grey-1;\n\n    &:first-child {\n      border-top: 1px solid $colour-grey-1;\n    }\n\n    a {\n      @include font-size(-1);\n      color: $colour-grey-3;\n      display: block;\n      padding: em(8 0);\n      text-decoration: none;\n\n      &:hover {\n        color: $colour-nice-white;\n      }\n\n      &:focus {\n        color: $colour-text;\n      }\n    }\n\n    .icon {\n      @include font-size(1);\n      display: inline-block;\n      margin: em(0 4 0 0);\n      vertical-align: middle;\n    }\n  }\n\n  @include mq($from: sm) {\n\n    &__item {\n      border: 0;\n      float: left;\n      text-align: center;\n      width: em(90px);\n\n      &:first-child {\n        border: 0;\n      }\n\n      a {\n        padding: em(4px) 0 0;\n      }\n    }\n\n    .icon {\n      @include font-size(6);\n      line-height: 1;\n      display: block;\n      margin: 0 auto em(4px);\n\n      // The following is needed for IE8 to go centrally aligned\n      &:before {\n        text-align: center;\n        width: 100%;\n      }\n    }\n  }",
+            "value": "&__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n  }\n\n  &__item {\n    border-bottom: 1px solid $colour-border;\n\n    &:first-child {\n      border-top: 1px solid $colour-border;\n    }\n\n    a {\n      @include font-size(-1);\n      color: $colour-panel-light;\n      display: block;\n      padding: em(8 0);\n      text-decoration: none;\n\n      &:hover {\n        color: $colour-text-reverse;\n      }\n\n      &:focus {\n        color: $colour-text;\n      }\n    }\n\n    .icon {\n      @include font-size(1);\n      display: inline-block;\n      margin: em(0 4 0 0);\n      vertical-align: middle;\n    }\n  }\n\n  @include mq($from: sm) {\n\n    &__item {\n      border: 0;\n      float: left;\n      text-align: center;\n      width: em(90px);\n\n      &:first-child {\n        border: 0;\n      }\n\n      a {\n        padding: em(4px) 0 0;\n      }\n    }\n\n    .icon {\n      @include font-size(6);\n      line-height: 1;\n      display: block;\n      margin: 0 auto em(4px);\n\n      // The following is needed for IE8 to go centrally aligned\n      &:before {\n        text-align: center;\n        width: 100%;\n      }\n    }\n  }",
             "line": {
               "start": 90,
               "end": 239
@@ -8861,7 +10365,7 @@
           "context": {
             "type": "css",
             "name": ".footer-nav",
-            "value": "&__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  a {\n    padding: em(4 0);\n    text-decoration: none;\n  }\n\n  @include mq($from: sm) {\n    &__list {\n      line-height: 1;\n    }\n\n    &__item {\n      border-left: 1px solid $colour-nice-white;\n      display: inline-block;\n      line-height: 1;\n\n      &:first-child {\n        border-left: 0;\n\n        a {\n          padding-left: 0;\n        }\n      }\n    }\n\n    a {\n      padding: em(0 8);\n    }\n  }",
+            "value": "&__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  a {\n    padding: em(4 0);\n    text-decoration: none;\n  }\n\n  @include mq($from: sm) {\n    &__list {\n      line-height: 1;\n    }\n\n    &__item {\n      border-left: 1px solid $colour-text-reverse;\n      display: inline-block;\n      line-height: 1;\n\n      &:first-child {\n        border-left: 0;\n\n        a {\n          padding-left: 0;\n        }\n      }\n    }\n\n    a {\n      padding: em(0 8);\n    }\n  }",
             "line": {
               "start": 203,
               "end": 239
@@ -8888,7 +10392,7 @@
           "context": {
             "type": "css",
             "name": ".tabs",
-            "value": "// The list of tabs\n  &__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n  }\n\n  //\n  &__tab {\n    float: left;\n\n    &--active .tabs__tab-btn { // sass-lint:disable-line no-combinators\n      background: $colour-panel;\n    }\n  }\n\n  // The button/link for the tab itself\n  &__tab-btn {\n    background: 0;\n    border: 0;\n    cursor: pointer;\n    display: block;\n    line-height: 4rem;\n    margin: 0;\n    padding: 0 1rem;\n\n    &:hover {\n      background: $colour-panel;\n    }\n  }\n\n  // The tab content containing the tab panels\n  &__content {\n    background: $colour-panel;\n    padding: 1rem;\n  }\n\n  // An individual tab content pane\n  &__pane {\n\n    // Assume tabs will stack if no JS is available\n    .js & {\n      display: none;\n\n      &--active {\n        display: block;\n      }\n    }\n  }",
+            "value": "// The list of tabs\n  &__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n  }\n\n  //\n  &__tab {\n    float: left;\n\n    &--active .tabs__tab-btn { // sass-lint:disable-line no-combinators\n      background: $colour-panel-light;\n    }\n  }\n\n  // The button/link for the tab itself\n  &__tab-btn {\n    background: 0;\n    border: 0;\n    cursor: pointer;\n    display: block;\n    line-height: 4rem;\n    margin: 0;\n    padding: 0 1rem;\n\n    &:hover {\n      background: $colour-panel-light;\n    }\n  }\n\n  // The tab content containing the tab panels\n  &__content {\n    background: $colour-panel-light;\n    padding: 1rem;\n  }\n\n  // An individual tab content pane\n  &__pane {\n\n    // Assume tabs will stack if no JS is available\n    .js & {\n      display: none;\n\n      &--active {\n        display: block;\n      }\n    }\n  }",
             "line": {
               "start": 40,
               "end": 93
@@ -8929,7 +10433,7 @@
           "context": {
             "type": "css",
             "name": ".breadcrumbs",
-            "value": "@include font-size(0);\n  list-style: none;\n  margin: em(0 0 $spacing-large);\n  padding: 0;\n\n  &__crumb {\n    display: inline-block;\n\n    &:before {\n      @include nice-icon(angle-right);\n      color: $colour-grey-1;\n      margin: em(0 10);\n    }\n\n    &:first-child:before {\n      display: none;\n    }\n\n    a {\n      color: $colour-text;\n    }\n  }",
+            "value": "@include font-size(0);\n  list-style: none;\n  margin: em(0 0 $spacing-large);\n  padding: 0;\n\n  &__crumb {\n    display: inline-block;\n\n    &:before {\n      @include nice-icon(angle-right);\n      color: $colour-text-subtle;\n      margin: em(0 10);\n    }\n\n    &:first-child:before {\n      display: none;\n    }\n\n    a {\n      color: $colour-text;\n    }\n  }",
             "line": {
               "start": 8,
               "end": 32
@@ -8961,10 +10465,10 @@
           "context": {
             "type": "css",
             "name": ".btn",
-            "value": "@include remove-mz-focus-inner;\n  @include font-size(0);\n  appearance: none;\n  background: $colour-dark-grey;\n  border: 0;\n  border-radius: 0;\n  color: $colour-nice-white;\n  cursor: pointer;\n  display: inline-block;\n  margin: em(0 $spacing-x-small 0 0);\n  padding: em($spacing-x-small $spacing-medium);\n  position: relative;\n  text-decoration: none;\n  vertical-align: top;\n\n  &:hover,\n  &:focus,\n  &:active {\n    background: $colour-rich-black;\n    color: $colour-nice-white;\n    text-decoration: none;\n  }\n\n  &:focus {\n    @include default-focus-style;\n  }\n\n  &:visited {\n    color: $colour-nice-white;\n  }\n\n  // Disabled button styles\n  &.disabled,\n  &[disabled='disabled'],\n  &[disabled] {\n    opacity: .5;\n\n    &:hover {\n      cursor: default;\n    }\n  }\n\n  // External links have an icon\n  &[rel='external'] {\n    &::after {\n      color: $colour-nice-white;\n    }\n\n    &:hover {\n      &::after {\n        color: $colour-nice-white;\n      }\n    }\n  }\n\n  &--prominent {\n    @include font-size(2);\n    padding: 0 em(20);\n    background: $colour-purple;\n    border: 1px solid $colour-nice-white;\n    color: $colour-nice-white;\n\n    &:hover {\n      text-decoration: underline;\n    }\n  }\n\n  &--secondary {\n    background: #666;\n    color: $colour-nice-white;\n\n    &[rel='external'] {\n      &:after {\n        color: $colour-nice-white;\n      }\n\n      &:hover {\n        &:after {\n          color: $colour-nice-white;\n        }\n      }\n    }\n\n    &:hover,\n    &:focus {\n      background: #333;\n      color: $colour-nice-white;\n      text-decoration: underline;\n    }\n\n    &:visited {\n      color: $colour-nice-white;\n    }\n  }",
+            "value": "@include remove-mz-focus-inner;\n  @include font-size(0);\n  appearance: none;\n  background: $colour-btn-primary;\n  border: 0;\n  border-radius: 0;\n  color: $colour-btn-primary-text;\n  cursor: pointer;\n  display: inline-block;\n  margin: em(0 $spacing-x-small 0 0);\n  padding: em($spacing-x-small $spacing-medium);\n  position: relative;\n  text-decoration: none;\n  vertical-align: top;\n\n  &:hover,\n  &:focus,\n  &:active {\n    background: $colour-btn-primary-hover;\n    color: $colour-btn-primary-text;\n    text-decoration: none;\n  }\n\n  &:focus {\n    @include default-focus-style;\n  }\n\n  &:visited {\n    color: $colour-btn-primary-text;\n  }\n\n  // Disabled button styles\n  &.disabled,\n  &[disabled='disabled'],\n  &[disabled] {\n    opacity: .5;\n\n    &:hover {\n      cursor: default;\n    }\n  }\n\n  // External links have an icon\n  &[rel='external'] {\n    &::after {\n      color: $colour-btn-primary-text;\n    }\n\n    &:hover {\n      &::after {\n        color: $colour-btn-primary-text;\n      }\n    }\n  }\n\n  &--prominent {\n    @include font-size(2);\n    padding: 0 em(20);\n    background: $colour-btn-cta;\n    border: 1px solid $colour-btn-cta-text;\n    color: $colour-btn-cta-text;\n\n    &:hover {\n      background: $colour-btn-cta-hover;\n      text-decoration: underline;\n    }\n  }\n\n  &--secondary {\n    background: $colour-btn-secondary;\n    color: $colour-btn-secondary-text;\n\n    &[rel='external'] {\n      &:after {\n        color: $colour-btn-secondary-text;\n      }\n\n      &:hover {\n        &:after {\n          color: $colour-btn-secondary-text;\n        }\n      }\n    }\n\n    &:hover,\n    &:focus {\n      background: $colour-btn-secondary-hover;\n      color: $colour-btn-secondary-text;\n      text-decoration: underline;\n    }\n\n    &:visited {\n      color: $colour-btn-secondary-text;\n    }\n  }",
             "line": {
               "start": 7,
-              "end": 103
+              "end": 104
             }
           },
           "since": [
@@ -8993,7 +10497,7 @@
           "context": {
             "type": "css",
             "name": ".container",
-            "value": "@extend %container;\n\n  &--narrow {\n    max-width: 1000px;\n  }\n\n  &--full {\n    max-width: 100%;\n    padding: 0 2%;\n    width: auto;\n  }\n\n  &--panel {\n    background: $colour-panel;\n    padding: 0 2%;\n    width: auto;\n  }",
+            "value": "@extend %container;\n\n  &--narrow {\n    max-width: 1000px;\n  }\n\n  &--full {\n    max-width: 100%;\n    padding: 0 2%;\n    width: auto;\n  }\n\n  &--panel {\n    background: $colour-panel-light;\n    padding: 0 2%;\n    width: auto;\n  }",
             "line": {
               "start": 25,
               "end": 48
@@ -9075,7 +10579,7 @@
           "context": {
             "type": "css",
             "name": ".panel",
-            "value": "background: $colour-panel;\n  padding: 1em;\n\n  &--dark {\n    background: $colour-panel-dark;\n    color: $colour-nice-white;\n  }",
+            "value": "background: $colour-panel-light;\n  padding: 1em;\n\n  &--dark {\n    background: $colour-panel-dark;\n    color: $colour-text-reverse;\n  }",
             "line": {
               "start": 8,
               "end": 17
@@ -9119,7 +10623,7 @@
               "context": {
                 "type": "css",
                 "name": ".phase-tag",
-                "value": "@include font-size(-1);\n  background-color: $colour-grey-1;\n  color: $colour-nice-white;\n  display: inline-block;\n  font-weight: 900;\n  letter-spacing: 1px;\n  padding: em($spacing-xx-small $spacing-small);\n  text-decoration: none;\n  text-transform: uppercase;\n  vertical-align: middle;\n\n  @media print {\n    @include important(background, $colour-true-black);\n    @include important(color, $colour-true-white);\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-nice-white;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-nice-white;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-nice-white;\n  }",
+                "value": "@include font-size(-1);\n  background-color: $colour-panel-dark;\n  color: $colour-text-reverse;\n  display: inline-block;\n  font-weight: 900;\n  letter-spacing: 1px;\n  padding: em($spacing-xx-small $spacing-small);\n  text-decoration: none;\n  text-transform: uppercase;\n  vertical-align: middle;\n\n  @media print {\n    @include important(background, $colour-true-black);\n    @include important(color, $colour-true-white);\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-reverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-reverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-reverse;\n  }",
                 "line": {
                   "start": 48,
                   "end": 80
@@ -9153,7 +10657,7 @@
           "context": {
             "type": "css",
             "name": ".phase-tag",
-            "value": "@include font-size(-1);\n  background-color: $colour-grey-1;\n  color: $colour-nice-white;\n  display: inline-block;\n  font-weight: 900;\n  letter-spacing: 1px;\n  padding: em($spacing-xx-small $spacing-small);\n  text-decoration: none;\n  text-transform: uppercase;\n  vertical-align: middle;\n\n  @media print {\n    @include important(background, $colour-true-black);\n    @include important(color, $colour-true-white);\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-nice-white;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-nice-white;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-nice-white;\n  }",
+            "value": "@include font-size(-1);\n  background-color: $colour-panel-dark;\n  color: $colour-text-reverse;\n  display: inline-block;\n  font-weight: 900;\n  letter-spacing: 1px;\n  padding: em($spacing-xx-small $spacing-small);\n  text-decoration: none;\n  text-transform: uppercase;\n  vertical-align: middle;\n\n  @media print {\n    @include important(background, $colour-true-black);\n    @include important(color, $colour-true-white);\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-reverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-reverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-reverse;\n  }",
             "line": {
               "start": 48,
               "end": 80
@@ -11796,8 +13300,8 @@
                 "name": "font-size",
                 "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  font-size: rem($font-size);\n  line-height: rem($line-height);\n",
                 "line": {
-                  "start": 71,
-                  "end": 77
+                  "start": 69,
+                  "end": 75
                 }
               }
             },
@@ -11808,8 +13312,8 @@
                 "name": "font",
                 "code": "\n  @include font-size($scale);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  font-weight: map-get($font-map, fw);\n  margin-bottom: rem(map-get($font-map, mb));\n  margin-top: rem(map-get($font-map, mt));\n",
                 "line": {
-                  "start": 90,
-                  "end": 99
+                  "start": 88,
+                  "end": 97
                 }
               }
             }
@@ -13211,16 +14715,16 @@
         {
           "description": "<p>Applies font size and line-height for the given scale.</p>\n",
           "commentRange": {
-            "start": 60,
-            "end": 70
+            "start": 58,
+            "end": 68
           },
           "context": {
             "type": "mixin",
             "name": "font-size",
             "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  font-size: rem($font-size);\n  line-height: rem($line-height);\n",
             "line": {
-              "start": 71,
-              "end": 77
+              "start": 69,
+              "end": 75
             }
           },
           "parameter": [
@@ -13274,8 +14778,8 @@
                 "name": "font",
                 "code": "\n  @include font-size($scale);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  font-weight: map-get($font-map, fw);\n  margin-bottom: rem(map-get($font-map, mb));\n  margin-top: rem(map-get($font-map, mt));\n",
                 "line": {
-                  "start": 90,
-                  "end": 99
+                  "start": 88,
+                  "end": 97
                 }
               }
             }
@@ -13287,16 +14791,16 @@
         {
           "description": "<p>Nice font: includes font size, line height, and margins.</p>\n",
           "commentRange": {
-            "start": 79,
-            "end": 89
+            "start": 77,
+            "end": 87
           },
           "context": {
             "type": "mixin",
             "name": "font",
             "code": "\n  @include font-size($scale);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  font-weight: map-get($font-map, fw);\n  margin-bottom: rem(map-get($font-map, mb));\n  margin-top: rem(map-get($font-map, mt));\n",
             "line": {
-              "start": 90,
-              "end": 99
+              "start": 88,
+              "end": 97
             }
           },
           "parameter": [
@@ -13635,10 +15139,10 @@
               "context": {
                 "type": "function",
                 "name": "get-font-size",
-                "code": "\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n  @debug $scale-integer;\n  @debug $font-map;\n  @return map-get($font-map, fs);\n",
+                "code": "\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n  @return map-get($font-map, fs);\n",
                 "line": {
                   "start": 37,
-                  "end": 43
+                  "end": 41
                 }
               }
             },
@@ -13649,8 +15153,8 @@
                 "name": "get-line-height",
                 "code": "\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n  @return map-get($font-map, lh);\n",
                 "line": {
-                  "start": 54,
-                  "end": 58
+                  "start": 52,
+                  "end": 56
                 }
               }
             },
@@ -13661,8 +15165,8 @@
                 "name": "font",
                 "code": "\n  @include font-size($scale);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  font-weight: map-get($font-map, fw);\n  margin-bottom: rem(map-get($font-map, mb));\n  margin-top: rem(map-get($font-map, mt));\n",
                 "line": {
-                  "start": 90,
-                  "end": 99
+                  "start": 88,
+                  "end": 97
                 }
               }
             }
@@ -13680,10 +15184,10 @@
           "context": {
             "type": "function",
             "name": "get-font-size",
-            "code": "\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n  @debug $scale-integer;\n  @debug $font-map;\n  @return map-get($font-map, fs);\n",
+            "code": "\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n  @return map-get($font-map, fs);\n",
             "line": {
               "start": 37,
-              "end": 43
+              "end": 41
             }
           },
           "parameter": [
@@ -13737,8 +15241,8 @@
                 "name": "font-size",
                 "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  font-size: rem($font-size);\n  line-height: rem($line-height);\n",
                 "line": {
-                  "start": 71,
-                  "end": 77
+                  "start": 69,
+                  "end": 75
                 }
               }
             }
@@ -13750,16 +15254,16 @@
         {
           "description": "<p>Gets a numeric line height (in px) from a given scale multiplier.\nUsually not used directly - the font-size or font mixin is usually used instead.</p>\n",
           "commentRange": {
-            "start": 45,
-            "end": 53
+            "start": 43,
+            "end": 51
           },
           "context": {
             "type": "function",
             "name": "get-line-height",
             "code": "\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n  @return map-get($font-map, lh);\n",
             "line": {
-              "start": 54,
-              "end": 58
+              "start": 52,
+              "end": 56
             }
           },
           "parameter": [
@@ -13813,8 +15317,8 @@
                 "name": "font-size",
                 "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  font-size: rem($font-size);\n  line-height: rem($line-height);\n",
                 "line": {
-                  "start": 71,
-                  "end": 77
+                  "start": 69,
+                  "end": 75
                 }
               }
             }
@@ -13993,10 +15497,10 @@
               "context": {
                 "type": "function",
                 "name": "get-font-size",
-                "code": "\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n  @debug $scale-integer;\n  @debug $font-map;\n  @return map-get($font-map, fs);\n",
+                "code": "\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n  @return map-get($font-map, fs);\n",
                 "line": {
                   "start": 37,
-                  "end": 43
+                  "end": 41
                 }
               }
             },
@@ -14007,8 +15511,8 @@
                 "name": "get-line-height",
                 "code": "\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n  @return map-get($font-map, lh);\n",
                 "line": {
-                  "start": 54,
-                  "end": 58
+                  "start": 52,
+                  "end": 56
                 }
               }
             },
@@ -14019,8 +15523,8 @@
                 "name": "font",
                 "code": "\n  @include font-size($scale);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  font-weight: map-get($font-map, fw);\n  margin-bottom: rem(map-get($font-map, mb));\n  margin-top: rem(map-get($font-map, mt));\n",
                 "line": {
-                  "start": 90,
-                  "end": 99
+                  "start": 88,
+                  "end": 97
                 }
               }
             }

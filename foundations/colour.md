@@ -7,330 +7,92 @@ The NICE colour palette is also described on the [brand guidelines](https://www.
 
 
 ## Text
-
 <ul class="colour-grid">
-    <li class="colour-grid__item colour-grid__item--nice-black">
-        <h5>Primary text colour</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$colour-nice-black</code></dd>
-            <dt>HEX:</dt> <dd><code>#0e0e0e</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(14, 14, 14)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--nice-white">
-        <h5>Reverse text colour</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$colour-nice-white</code></dd>
-            <dt>HEX:</dt> <dd><code>#FFFFFF</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(0, 0, 0)</code></dd>
-        </dl>
-    </li>
+    {% include colour.html title="Primary text" var="colour-text" %}
+    {% include colour.html title="Reverse text" var="colour-text-reverse" %}
 </ul>
 
 ## Links
 
-If using links with dark background colours, ensure that the colour is checked for 
-legibility
+If using links with dark background colours, ensure that the colour is checked for legibility
 
 <ul class="colour-grid">
-    <li class="colour-grid__item colour-grid__item--link">
-        <h5>Link</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$colour-nice-link</code></dd>
-            <dt>HEX:</dt> <dd><code>#005EA5</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(0, 94, 164)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--linkhover">
-        <h5>Link hover state</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$colour-nice-linkhover</code></dd>
-            <dt>HEX:</dt> <dd><code>#2E8ACA</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(46, 138, 203)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--linkvisited">
-        <h5>Link visited state</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$colour-nice-linkvisited</code></dd>
-            <dt>HEX:</dt> <dd><code>#4C2C92</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(76, 43, 147)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--linkfocus">
-        <h5>Link focus state</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$colour-nice-linkfocus</code></dd>
-            <dt>HEX:</dt> <dd><code>#FFD586</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(57, 57, 57)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--linkactive">
-        <h5>Link active state</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$colour-nice-linkactive</code></dd>
-            <dt>HEX:</dt> <dd><code>#2E8ACA</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(255, 214, 134)</code></dd>
-        </dl>
-    </li>
+    {% include colour.html title="Link" var="colour-link" %}
+    {% include colour.html title="Link hover state" var="colour-link-hover" %}
+    {% include colour.html title="Link visited state" var="colour-link-visited" %}
+    {% include colour.html title="Link active state" var="colour-link-active" %}
+    {% include colour.html title="Link focus" var="colour-focus" %}
 </ul>
 
 ## Buttons
+
 ### Call-to-action 
 <ul class="colour-grid">
-    <li class="colour-grid__item colour-grid__item--ctabtn">
-        <h5>CTA button</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$ctabtn</code></dd>
-            <dt>HEX:</dt> <dd><code>#451551</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(69, 21, 81)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--ctahover">
-        <h5>CTA button hover</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$ctahover</code></dd>
-            <dt>HEX:</dt> <dd><code>#260b2d</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(81, 116, 137)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--ctatext">
-        <h5>CTA button text</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$ctatext</code></dd>
-            <dt>HEX:</dt> <dd><code>#FFFFFF</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(255, 255, 255)</code></dd>
-        </dl>
-    </li>
-    </ul>
+    {% include colour.html title="CTA button" var="colour-btn-cta" %}
+    {% include colour.html title="CTA button hover state" var="colour-btn-cta-hover" %}
+    {% include colour.html title="CTA button text" var="colour-btn-cta-text" %}
+</ul>
     
 ### Primary
 <ul class="colour-grid">
-    <li class="colour-grid__item colour-grid__item--primarybtn">
-        <h5>Primary button</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$primarybtn</code></dd>
-            <dt>HEX:</dt> <dd><code>#393939</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(57, 57, 57)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--primaryhover">
-        <h5>Primary button hover</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$primaryhover</code></dd>
-            <dt>HEX:</dt> <dd><code>#0e0e0e</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(14, 14, 14)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--primarytext">
-        <h5>Primary button text</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$primarytext</code></dd>
-            <dt>HEX:</dt> <dd><code>#FFFFFF</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(255, 255, 255)</code></dd>
-        </dl>
-    </li>
-    
+    {% include colour.html title="Primary button" var="colour-btn-primary" %}
+    {% include colour.html title="Primary button hover state" var="colour-btn-primary-hover" %}
+    {% include colour.html title="Primary button text" var="colour-btn-primary-text" %}
 </ul>
 
 ### Secondary
 <ul class="colour-grid">
-    <li class="colour-grid__item colour-grid__item--secondarybtn">
-        <h5>Secondary button</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$secondarybtn</code></dd>
-            <dt>HEX:</dt> <dd><code>#666666</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(102, 102, 102)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--secondaryhover">
-        <h5>Secondary button hover</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$secondaryhover</code></dd>
-            <dt>HEX:</dt> <dd><code>#333333</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(51, 51, 51)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--secondarytext">
-        <h5>Secondary button text</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$secondarytext</code></dd>
-            <dt>HEX:</dt> <dd><code>#FFFFFF</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(255, 255, 255)</code></dd>
-        </dl>
-    </li>
+    {% include colour.html title="Secondary button" var="colour-btn-secondary" %}
+    {% include colour.html title="Secondary button hover state" var="colour-btn-secondary-hover" %}
+    {% include colour.html title="Secondary button text" var="colour-btn-secondary-text" %}
 </ul>
-
 
 ### Light
 <ul class="colour-grid">
-    <li class="colour-grid__item colour-grid__item--lightbtn">
-        <h5>Light button</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$lightbtn</code></dd>
-            <dt>HEX:</dt> <dd><code>#FFFFFF</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(255, 255, 255)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--lighthover">
-        <h5>Secondary button hover</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$lighthover</code></dd>
-            <dt>HEX:</dt> <dd><code>#eaeaea</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(234, 234, 234)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--lighttext">
-        <h5>Secondary button text</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$lighttext</code></dd>
-            <dt>HEX:</dt> <dd><code>#222222</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(34, 34, 34)</code></dd>
-        </dl>
-    </li>
+    {% include colour.html title="Light button" var="colour-btn-light" %}
+    {% include colour.html title="Light button hover state" var="colour-btn-light-hover" %}
+    {% include colour.html title="Light button text" var="colour-btn-light-text" %}
 </ul>
-
 
 ### Focus state (all buttons)
 <ul class="colour-grid">
-    <li class="colour-grid__item colour-grid__item--btnfocus">
-        <h5>Focus state</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$btnfocus</code></dd>
-            <dt>HEX:</dt> <dd><code>#FFD586</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(255, 213, 134)</code></dd>
-        </dl>
-    </li>
+    {% include colour.html title="Focus state" var="colour-focus" %}
 </ul>
 
 
 ## Icons
 
 <ul class="colour-grid">
-    <li class="colour-grid__item colour-grid__item--nice-teal">
-        <h5>NICE Teal</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$colour-nice-teal</code></dd>
-            <dt>HEX:</dt> <dd><code>#004650</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(0, 70, 80)</code></dd>
-        </dl>
-    </li>
+    {% include colour.html title="Icons" var="colour-icons" %}
 </ul>
 
 
 ## Backgrounds and border
 
 <ul class="colour-grid">
-    <li class="colour-grid__item colour-grid__item--bodybg">
-        <h5>Body background</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$bodybg</code></dd>
-            <dt>HEX:</dt> <dd><code>#FFFFFF</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(255, 255, 255)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--lightpanel">
-        <h5>Light panel</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$lightpanel</code></dd>
-            <dt>HEX:</dt> <dd><code>#e9e9e9</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(233, 233, 233)</code></dd>
-        </dl>
-    </li>
-     <li class="colour-grid__item colour-grid__item--darkpanel">
-        <h5>Dark panel</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$darkpanel</code></dd>
-            <dt>HEX:</dt> <dd><code>#393939</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(57, 57, 57)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--border">
-        <h5>Borders</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$border</code></dd>
-            <dt>HEX:</dt> <dd><code>#adadad</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(173, 173, 173)</code></dd>
-        </dl>
-    </li>
+    {% include colour.html title="Body background" var="colour-body" %}
+    {% include colour.html title="Light panel background" var="colour-panel-light" %}
+    {% include colour.html title="Dark panel background" var="colour-panel-dark" %}
+    {% include colour.html title="Borders" var="colour-border" %}
 </ul>
 
 
 ## Notifications and banners
 
 <ul class="colour-grid">
-    <li class="colour-grid__item colour-grid__item--alphabeta">
-        <h5>Alpha &amp; beta banner</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$alphabeta</code></dd>
-            <dt>HEX:</dt> <dd><code>#009ae9</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(1, 154, 234)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--errortext">
-        <h5>Error text &amp; border</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$errortxt</code></dd>
-            <dt>HEX:</dt> <dd><code>#B10E1E</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(177, 14, 30)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--errorbg">
-        <h5>Error background</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$errorbg</code></dd>
-            <dt>HEX:</dt> <dd><code>#EAC3C3</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(234, 195, 195)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--cautiontxt">
-        <h5>Caution text &amp; border</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$cautiontxt</code></dd>
-            <dt>HEX:</dt> <dd><code>#9B722F</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(155, 114, 47)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--cautionbg">
-        <h5>Caution background</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$cautionbg</code></dd>
-            <dt>HEX:</dt> <dd><code>#FFDFA4</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(255, 223, 164)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--infotxt">
-        <h5>Info text &amp; border</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$infotxt</code></dd>
-            <dt>HEX:</dt> <dd><code>#4A7F99</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(74, 127, 153)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--infobg">
-        <h5>Info background</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$infobg</code></dd>
-            <dt>HEX:</dt> <dd><code> #E6FAFF</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(230, 250, 255)</code></dd>
-        </dl>
-    </li>
-    <li class="colour-grid__item colour-grid__item--successtxt">
-        <h5>Success text &amp; border</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$successtxt</code></dd>
-            <dt>HEX:</dt> <dd><code>#3F8C5E</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(63, 140, 94)</code></dd>
-        </dl>
-    </li>
-     <li class="colour-grid__item colour-grid__item--successbg">
-        <h5>Success background</h5>
-        <dl class="dl-inline">
-            <dt>SASS:</dt> <dd><code>$successbg</code></dd>
-            <dt>HEX:</dt> <dd><code>#EFF7EB</code></dd>
-            <dt>RGB:</dt> <dd><code>rgb(239, 247, 235)</code></dd>
-        </dl>
-    </li>
+    {% include colour.html title="Alpha & beta banner" var="colour-agile-phase" %}
+
+    {% include colour.html title="Error text & border" var="colour-error" %}
+    {% include colour.html title="Error background" var="colour-error-background" %}
+
+    {% include colour.html title="Caution text & border" var="colour-caution" %}
+    {% include colour.html title="Caution background" var="colour-caution-background" %}
+
+    {% include colour.html title="Info text & border" var="colour-info" %}
+    {% include colour.html title="Info background" var="colour-info-background" %}
+
+    {% include colour.html title="Success text & border" var="colour-success" %}
+    {% include colour.html title="Success background" var="colour-success-background" %}
 </ul>
 
 ## Semantic colours

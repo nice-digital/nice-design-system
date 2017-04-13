@@ -1,0 +1,12 @@
+{% assign item = site.data.sass.items | where_exp: "item","item.context.name == include.var" | first %}
+
+<li class="colour-grid__item">
+	<div class="colour-grid__block" style="background: {{ item.resolvedValue }}">
+	</div>
+    <h4 class="colour-grid__heading">{{ include.title }}</h4>
+    <dl class="dl-inline">
+        <dt>SASS:</dt> <dd><code>${{ include.var }}</code></dd>
+        <dt>HEX:</dt> <dd><code>{{ item.resolvedValue }}</code></dd>
+        <dt>RGB:</dt> <dd><code>{% include rgb.html hex=item.resolvedValue %}</code></dd>
+    </dl>
+</li>

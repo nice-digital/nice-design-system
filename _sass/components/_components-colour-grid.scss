@@ -6,86 +6,19 @@
   &__item {
     @include grid-item;
     margin-bottom: em(24);
+  }
 
-     // Text
-    
-    &--nice-black:before { background: #0e0e0e; }
-    &--nice-white:before { background: #FFFFFF; }
+  &__block {
+    border: 1px solid $colour-border;
+    display: block;
+    height: 0;
+    padding-top: percentage(9 / 21);
+    width: 100%;
+  }
 
-    // Links
-      
-    &--link:before { background: #005EA5; }
-    &--linkhover:before { background: #2E8ACA; }
-    &--linkvisited:before { background: #4C2C92; }
-    &--linkfocus:before { background: #FFD586; }
-    &--linkactive:before { background: #2E8ACA; }
-    
-     // Buttons
-      
-    &--ctabtn:before { background: #451551; }
-    &--ctahover:before { background: #260b2d; }
-    &--ctatext:before { background: #FFFFFF; }   
-    &--primarybtn:before { background: #393939; }
-    &--primaryhover:before { background: #0e0e0e; }
-    &--primarytext:before { background: #FFFFFF; } 
-    &--secondarybtn:before { background: #666666; }
-    &--secondaryhover:before { background: #333333; }
-    &--secondarytext:before { background: #FFFFFF; }
-    &--lightbtn:before { background: #FFFFFF; }
-    &--lighthover:before { background: #eaeaea; }
-    &--lighttext:before { background: #222222; }
-    &--btnfocus:before { background: #FFD586; }
-      
-    // Background & borders
-      
-    &--bodybg:before { background: #FFFFFF; }
-    &--lightpanel:before { background:#e9e9e9; }
-    &--darkpanel:before { background: #393939; }   
-    &--border:before { background: #adadad; }
-  
-     // Notifications & borders
-      
-    &--alphabeta:before { background: #009ae9; }
-    &--errortext:before { background:#B10E1E; }
-    &--errorbg:before { background: #EAC3C3; }   
-    &--cautiontxt:before { background: #9B722F; }
-    &--cautionbg:before { background: #FFDFA4; }
-    &--infotxt:before { background:#4A7F99; }
-    &--infobg:before { background: #E6FAFF; }   
-    &--successtxt:before { background: #3F8C5E; }
-    &--successbg:before { background: #EFF7EB; }
-
-     
-    // Primary
-
-    &--nice-teal:before { background: $colour-nice-teal; }
-
-    // Secondary
-     &--purple:before { background: $colour-purple; }
-    &--cool-teal:before { background: $colour-cool-teal; }
-    &--rich-black:before { background: $colour-rich-black; }
-    &--dark-grey:before { background: $colour-dark-grey; }
-    &--grey-1:before { background: $colour-grey-1; }
-    &--grey-2:before { background: $colour-grey-2; }
-    &--grey-3:before { background: $colour-grey-3; }
-      
-    // Tertiary
-    &--blue-1:before { background: $colour-blue-1; }
-    &--blue-2:before { background: $colour-blue-2; }
-    &--blue-3:before { background: $colour-blue-3; }
-    &--ice-teal:before { background: $colour-ice-teal; }
-    &--teal-1:before { background: $colour-teal-1; }
-    &--teal-2:before { background: $colour-teal-2; }
-    &--teal-3:before { background: $colour-teal-3; }
-
-    &:before {
-      border: 1px solid $colour-grey-1;
-      content: '';
-      display: block;
-      height: 0;
-      padding-top: percentage(9 / 16);
-      width: 100%;
-    }
+  &__heading {
+    @include h5;
+    margin-top: em($spacing-small);
   }
 
   @include mq($from: xs) {
@@ -117,7 +50,7 @@
   dt {
     clear: both;
     float: left;
-    margin-right: em(5);
+    margin-right: em($spacing-xx-small);
   }
   dd {
     float: left;
