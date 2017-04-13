@@ -67,7 +67,7 @@
 
   &--cta {
     @include font-size(2);
-    padding: 0 em($spacing-medium);
+    padding: em($spacing-small $spacing-medium);
     background: $colour-btn-cta;
     border: 1px solid $colour-btn-cta-text;
     color: $colour-btn-cta-text;
