@@ -45,23 +45,6 @@
         })(window, document, 'script', 'dataLayer', 'GTM-MDNG92');</script>
 	<!-- End Google Tag Manager -->
 
-	{% assign current = page.url | downcase | split: '/' %}
-	<div class="nice-tophat">
-		<div class="nice-global" id="nice-global">
-			<div class="tophat-inner">
-				<nav role="navigation">
-					<ul class="menu">
-						<li{% if current[1] == null %} class="active"{% endif %}><a href="{{ site.baseurl }}{% link index.md %}">NICE Experience</a></li>
-						<li{% if current[1] == 'about' %} class="active"{% endif %}><a href="{{ site.baseurl }}{% link about/index.md %}">About</a></li>
-						<li{% if current[1] == 'foundations' %} class="active"{% endif %}><a href="{{ site.baseurl }}{% link foundations/index.md %}">Foundations</a></li>
-						<li{% if current[1] == 'components' %} class="active"{% endif %}><a href="{{ site.baseurl }}{% link components/index.md %}">Components</a></li>
-						<li{% if current[1] == 'technical' %} class="active"{% endif %}><a href="{{ site.baseurl }}{% link technical/index.md %}">Technical</a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</div>
-
 	<div class="container">
 		<p class="phase-banner">
 			<span class="phase-banner__tag">
