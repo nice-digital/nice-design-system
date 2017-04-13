@@ -37,8 +37,6 @@
 @function get-font-size($scale) {
   $scale-integer: get-scale-integer($scale);
   $font-map: map-get($font-sizes, $scale-integer);
-  @debug $scale-integer;
-  @debug $font-map;
   @return map-get($font-map, fs);
 }
 

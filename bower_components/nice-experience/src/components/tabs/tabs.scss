@@ -52,7 +52,7 @@
     float: left;
 
     &--active .tabs__tab-btn { // sass-lint:disable-line no-combinators
-      background: $colour-panel;
+      background: $colour-panel-light;
     }
   }
 
@@ -67,13 +67,13 @@
     padding: 0 1rem;
 
     &:hover {
-      background: $colour-panel;
+      background: $colour-panel-light;
     }
   }
 
   // The tab content containing the tab panels
   &__content {
-    background: $colour-panel;
+    background: $colour-panel-light;
     padding: 1rem;
   }
 

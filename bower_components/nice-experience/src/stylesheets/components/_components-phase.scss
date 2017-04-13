@@ -47,8 +47,8 @@
 /// @since 0.1.0
 .phase-tag {
   @include font-size(-1);
-  background-color: $colour-grey-1;
-  color: $colour-nice-white;
+  background-color: $colour-panel-dark;
+  color: $colour-text-reverse;
   display: inline-block;
   font-weight: 900;
   letter-spacing: 1px;
@@ -64,16 +64,16 @@
 
   &--alpha {
     background-color: $colour-alpha;
-    color: $colour-nice-white;
+    color: $colour-text-reverse;
   }
 
   &--beta {
     background-color: $colour-beta;
-    color: $colour-nice-white;
+    color: $colour-text-reverse;
   }
 
   &--live {
     background-color: $colour-live;
-    color: $colour-nice-white;
+    color: $colour-text-reverse;
   }
 }

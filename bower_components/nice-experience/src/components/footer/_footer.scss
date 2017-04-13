@@ -6,8 +6,8 @@
 /// @since 0.1.0
 .site-footer {
   @include font-size(-1);
-  background: $colour-dark-grey;
-  color: $colour-nice-white;
+  background: $colour-panel-dark;
+  color: $colour-text-reverse;
   margin-top: em(32px);
   padding: em(32px 0);
 
@@ -16,7 +16,7 @@
   }
 
   a {
-    color: $colour-nice-white;
+    color: $colour-text-reverse;
 
     &:focus {
       color: #000;
@@ -97,21 +97,21 @@
   }
 
   &__item {
-    border-bottom: 1px solid $colour-grey-1;
+    border-bottom: 1px solid $colour-border;
 
     &:first-child {
-      border-top: 1px solid $colour-grey-1;
+      border-top: 1px solid $colour-border;
     }
 
     a {
       @include font-size(-1);
-      color: $colour-grey-3;
+      color: $colour-panel-light;
       display: block;
       padding: em(8 0);
       text-decoration: none;
 
       &:hover {
-        color: $colour-nice-white;
+        color: $colour-text-reverse;
       }
 
       &:focus {
@@ -218,7 +218,7 @@
     }
 
     &__item {
-      border-left: 1px solid $colour-nice-white;
+      border-left: 1px solid $colour-text-reverse;
       display: inline-block;
       line-height: 1;
 
