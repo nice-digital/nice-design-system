@@ -128,18 +128,6 @@ Feel free to use `<b>` and `<i>` in HTML5. `<b>` is meant to highlight words or 
 {% include example.html lang='html' body=withcitation %}
 
 
-## Links
-
-- links should follow the same sizing as containing copyk
-- use `rel="external"`, `rel="next"` and `rel="previous"` where applicable
-- visually distinguish external links
-
-{% capture links %}
-<p><a href="#">A link on its own</a></p>
-<p>This is some text with <a href="#" target="_blank" rel="external">an external link</a> inside it.</p>
-{% endcapture %}
-{% include example.html lang='html' body=links %}
-
 
 ## Lists
 
