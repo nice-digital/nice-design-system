@@ -11,18 +11,6 @@ layout: master
 
 				<ul class="stacked-nav">
 
-					{% capture about %}{% link about/index.md %}{% endcapture %}
-					<li class="stacked-nav__item {% if page.url == about %}stacked-nav__item--active{% endif %}">
-						<a href="{{ site.baseurl }}{{ about }}">About</a>
-						<ul class="stacked-nav__sub-list {% if page.url contains about %}stacked-nav__sub-list--active{% endif %}">
-							
-							{% capture roadmap %}{% link about/roadmap.md %}{% endcapture %}
-							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains roadmap %}stacked-nav__item--active{% endif %}">
-								<a href="{{ site.baseurl }}{{ roadmap }}">Roadmap</a>
-							</li>
-						</ul>
-					</li>
-
 					{% capture foundations %}{% link foundations/index.md %}{% endcapture %}
 					<li class="stacked-nav__item {% if page.url == foundations %}stacked-nav__item--active{% endif %}">
 						<a href="{{ site.baseurl }}{{ foundations }}">Foundations</a>
@@ -85,9 +73,19 @@ layout: master
 								<a href="{{ site.baseurl }}{{ breadcrumbs }}">Breadcrumbs</a>
 							</li>
 
+							{% capture global %}{% link components/global.md %}{% endcapture %}
+							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains global %}stacked-nav__item--active{% endif %}">
+								<a href="{{ site.baseurl }}{{ global }}">Global</a>
+							</li>
+
 							{% capture maintainratio %}{% link components/maintain-ratio.md %}{% endcapture %}
 							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains maintainratio %}stacked-nav__item--active{% endif %}">
 								<a href="{{ site.baseurl }}{{ maintainratio }}">Maintain ratio</a>
+							</li>
+
+							{% capture side-nav %}{% link components/side-nav.md %}{% endcapture %}
+							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains side-nav %}stacked-nav__item--active{% endif %}">
+								<a href="{{ site.baseurl }}{{ side-nav }}">Side nav</a>
 							</li>
 
 							{% capture tabs %}{% link components/tabs.md %}{% endcapture %}
@@ -118,6 +116,19 @@ layout: master
 							</li>
 						</ul>
 					</li>
+
+					{% capture about %}{% link about/index.md %}{% endcapture %}
+					<li class="stacked-nav__item {% if page.url == about %}stacked-nav__item--active{% endif %}">
+						<a href="{{ site.baseurl }}{{ about }}">About</a>
+						<ul class="stacked-nav__sub-list {% if page.url contains about %}stacked-nav__sub-list--active{% endif %}">
+							
+							{% capture roadmap %}{% link about/roadmap.md %}{% endcapture %}
+							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains roadmap %}stacked-nav__item--active{% endif %}">
+								<a href="{{ site.baseurl }}{{ roadmap }}">Roadmap</a>
+							</li>
+						</ul>
+					</li>
+
 				</ul>
 			</nav>		
 		</aside>
