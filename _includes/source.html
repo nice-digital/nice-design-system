@@ -1,12 +1,12 @@
 <div class="example">
 	<div class="example__code">
 		<h4 class="example__label">
-			{% if include.title == '' or include.title == null %}
-				Source
-			{% else %}
-				{{ include.title }}
-			{% endif %}
-		</h4>{{include.lang}}
-		<pre><code {% if include.lang %}class="language-{{ include.lang }}"{% endif %}>{{ include.body | xml_escape }}</code></pre>
+			{{ include.title | default: 'Source' }}
+		</h4>
+<div markdown="1">
+``` {{ include.lang | default: 'html' }}
+{{ include.body }}
+```
+</div>
 	</div>
 </div>

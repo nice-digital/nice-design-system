@@ -36,7 +36,7 @@ For example 'Register now', 'Contact us' or 'Join the mailing list'. Try to have
 {% capture cta %}
 <p><a href="#" class="btn btn--cta">Register now</a></p>
 {% endcapture %}
-{% include example.html lang='html' body=cta %}
+{% include example.html body=cta %}
 
 ### Primary button
 
@@ -45,7 +45,7 @@ Use the primary button for normal actions, do something within the page, typical
 {% capture primary %}
 <p><a href="#" class="btn">Find NICE guidance</a></p>
 {% endcapture %}
-{% include example.html lang='html' body=primary %}
+{% include example.html body=primary %}
 
 ### Secondary button
 When you require a button type that sits lower in the hierarchy then a primary button. 
@@ -53,7 +53,7 @@ When you require a button type that sits lower in the hierarchy then a primary b
 {% capture secondary %}
 <p><a href="#" class="btn btn--secondary">View guidance consultations</a></p>
 {% endcapture %}
-{% include example.html lang='html' body=secondary %}
+{% include example.html body=secondary %}
 
 ### Light button
 If you are wanting to place a button on a dark background, use the light button as a way of making the button distinguishable.
@@ -61,7 +61,7 @@ If you are wanting to place a button on a dark background, use the light button 
 {% capture light %}
 <p class="panel panel--dark"><a href="#" class="btn btn--light">View guidance consultations</a></p>
 {% endcapture %}
-{% include example.html lang='html' body=light %}
+{% include example.html body=light %}
 
 ### Icon button
 If you are looking for an additional way to convey the label on a button. Instances of this could include: Refresh or loading state buttons.
@@ -69,7 +69,7 @@ If you are looking for an additional way to convey the label on a button. Instan
 {% capture icon %}
 <p><a href="#" class="btn"><span class="icon icon--pathways" aria-hidden="true"></span> View guidance consultations</a></p>
 {% endcapture %}
-{% include example.html lang='html' body=icon %}
+{% include example.html body=icon %}
 
 ## Dropdown button
 A dropdown menu with a set of related actions. Ensure that the button label is clear as to what the contents of the dropdown are
@@ -90,7 +90,7 @@ CODE AREA
     <button type="button" class="btn btn--light" disabled>Disabled light</button>
 </p>
 {% endcapture %}
-{% include example.html lang='html' body=disabled %}
+{% include example.html body=disabled %}
 
 ## Grouped buttons
 If you need to show a close relationship between multiple buttons, used grouped buttons
@@ -101,4 +101,4 @@ If you need to show a close relationship between multiple buttons, used grouped 
     <button type="button" class="btn btn--secondary">Secondary action</button>
 </p>
 {% endcapture %}
-{% include example.html lang='html' body=groups %}
+{% include example.html body=groups %}

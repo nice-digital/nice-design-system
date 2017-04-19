@@ -12,8 +12,7 @@ $nice-font-base-path: '/NICE-Experience/fonts/';
 @import 'experience';
 
 // Vendor
-@import 'vendor/highlight.js/default',
-'vendor/highlight.js/github';
+@import 'vendor/syntax';
 
 // Components
 @import 'components/components';

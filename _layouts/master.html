@@ -60,13 +60,6 @@
 	<script src="{{ site.baseurl }}/javascripts/app.js"></script>
 	<script src="{{ site.baseurl }}/javascripts/in-page-nav.js"></script>
 
-	{% comment %} HLJS doesn't support IE8 {% endcomment %}
-	<!--[if gte IE 9 | !IE ]><!-->
-		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/languages/scss.min.js"></script>
-		<script>hljs.initHighlightingOnLoad();</script>
-	<!--<![endif]-->
-
 	<script>
 		if(typeof console !== "undefined" && console.info) {
 			console.info("%c✪ We hire people like you; people who are curious about how things are built. Interested? See http://bit.ly/NICEJobs for more info ✪", "background: #333; border-radius: 4px; color: #fff; font-size: 18px; font-family: Lato,'Helvetica Neue',Helvetica,Arial,sans-serif; padding: 2px 6px;");
