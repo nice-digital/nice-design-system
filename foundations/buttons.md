@@ -71,12 +71,26 @@ If you are looking for an additional way to convey the label on a button. Instan
 {% endcapture %}
 {% include example.html lang='html' body=icon %}
 
-### Dropdown button
+## Dropdown button
 A dropdown menu with a set of related actions. Ensure that the button label is clear as to what the contents of the dropdown are
 
 CODE AREA
 
+## Disabled buttons
+- disabled buttons are lowered down to 50% opacity to ensure they look unclickable
+- if you are using disabled buttons, make sure there is a valid reason
+- provide clear infomation on why its disabled (error message or label text)
+- you can use `[disabled]`, `[disabled='disabled']`, `.disabled`, `.btn--disabled` or `[aria-disabled='true']`
 
+{% capture disabled %}
+<p>
+    <button type="button" class="btn" disabled>Disabled primary</button>
+    <button type="button" class="btn btn--cta" disabled>Disabled cta</button>
+    <button type="button" class="btn btn--secondary" disabled>Disabled secondary</button>
+    <button type="button" class="btn btn--light" disabled>Disabled light</button>
+</p>
+{% endcapture %}
+{% include example.html lang='html' body=disabled %}
 
 ## Grouped buttons
 If you need to show a close relationship between multiple buttons, used grouped buttons
