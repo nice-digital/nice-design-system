@@ -9,7 +9,7 @@
   @include font-size(0);
   appearance: none;
   background: $colour-btn-primary;
-  border: 0;
+  border: em(1px) solid $colour-btn-primary-text;
   border-radius: 0;
   color: $colour-btn-primary-text;
   cursor: pointer;
@@ -20,14 +20,11 @@
   text-decoration: none;
   vertical-align: top;
 
-  &:hover,
-  &:focus {
-    background: $colour-btn-primary-hover;
+  &:visited {
     color: $colour-btn-primary-text;
-    text-decoration: none;
   }
 
-  &:active {
+  &:hover {
     background: $colour-btn-primary-hover;
     color: $colour-btn-primary-text;
     text-decoration: none;
@@ -35,98 +32,99 @@
 
   &:focus {
     @include default-focus-style;
+    background: $colour-btn-primary;
+    border-color: $colour-focus;
   }
 
-  &:visited {
-    color: $colour-btn-primary-text;
+  &:active {
+    background: $colour-btn-primary-hover;
+    text-decoration: none;
+    top: em(2px);
   }
 
   // Disabled button styles
+  &--disabled,
   &.disabled,
+  &[aria-disabled='true'],
   &[disabled='disabled'],
   &[disabled] {
     opacity: .5;
+    pointer-events: none;
 
     &:hover {
       cursor: default;
     }
   }
 
-  // External links have an icon
-  &[rel='external'] {
-    &::after {
-      color: $colour-btn-primary-text;
-    }
-
-    &:hover {
-      &::after {
-        color: $colour-btn-primary-text;
-      }
-    }
-  }
-
+  // CTA/prominent button
   &--cta {
-    @include font-size(2);
-    padding: em($spacing-small $spacing-medium);
     background: $colour-btn-cta;
-    border: 1px solid $colour-btn-cta-text;
+    border: em(1px) solid $colour-btn-cta-text;
     color: $colour-btn-cta-text;
+
+    &:visited {
+      color: $colour-btn-cta-text;
+    }
 
     &:hover {
       background: $colour-btn-cta-hover;
-      text-decoration: underline;
+      color: $colour-btn-cta-text;
+    }
+
+    &:focus {
+      background: $colour-btn-cta-hover;
+    }
+
+    &:active {
+      background: $colour-btn-cta-hover;
     }
   }
 
+  // Secondary button
   &--secondary {
     background: $colour-btn-secondary;
+    border: em(1px) solid $colour-btn-secondary-text;
     color: $colour-btn-secondary-text;
 
-    &[rel='external'] {
-      &:after {
-        color: $colour-btn-secondary-text;
-      }
-
-      &:hover {
-        &:after {
-          color: $colour-btn-secondary-text;
-        }
-      }
+    &:visited {
+      color: $colour-btn-secondary-text;
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
       background: $colour-btn-secondary-hover;
       color: $colour-btn-secondary-text;
-      text-decoration: underline;
+    }
+
+    &:focus {
+      background: $colour-btn-secondary-hover;
     }
 
     &:active {
       background: $colour-btn-secondary-hover;
-    }
-
-    &:visited {
-      color: $colour-btn-secondary-text;
     }
   }
 
+  // Light button, for use on dark panels/sections
   &--light {
     background: $colour-btn-light;
+    border: em(1px) solid $colour-btn-light-text;
     color: $colour-btn-light-text;
 
-    &:hover,
-    &:focus {
+    &:visited {
+      color: $colour-btn-light-text;
+    }
+
+    &:hover {
       background: $colour-btn-light-hover;
       color: $colour-btn-light-text;
-      text-decoration: underline;
+    }
+
+    &:focus {
+      background: $colour-btn-light-hover;
     }
 
     &:active {
       background: $colour-btn-light-hover;
-    }
-
-    &:visited {
-      color: $colour-btn-light-text;
     }
   }
 }
