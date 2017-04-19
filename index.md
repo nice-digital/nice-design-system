@@ -1,16 +1,27 @@
 ---
-layout: default
-title: Create consistent digital experiences across NICE
+layout: master
+title: Your source for quickly creating consistent on-brand NICE digital services
 ---
 
-# NICE Experience
+<div class="hero">
+    {% include alpha.html %}
 
-Your source for quickly creating consistent on-brand NICE digital services
-{: .lead}
+    <div class="container">
 
-[Get started]({{ site.baseurl }}{% link technical/installation.md %}){: .btn .btn--primary} [View on Github](https://github.com/nhsevidence/NICE-Experience){:target="_blank" .btn .btn--secondary}
+        <h1 class="hero__title">NICE Experience</h1>
 
+        <p class="lead hero__intro">
+            Your source for quickly creating consistent on-brand NICE digital services
+        </p>
 
+        <div class="hero__actions">
+            <a href="{{ site.baseurl }}{% link technical/installation.md %}" class="btn btn--cta">Get started</a>
+            <a href="https://github.com/nhsevidence/NICE-Experience" class="btn" target="_blank">View on Github</a>
+        </div>
+    </div>
+</div>
+
+<div class="container" markdown="1">
 
 ## [Foundations]({{ site.baseurl }}{% link foundations/index.md %})
 
@@ -100,4 +111,6 @@ Find out about the NICE Experience
 
     {% capture roadmap %}{% link about/roadmap.md %}{% endcapture %}
     {% include menu-item.html title='Roadmap' href=roadmap description='Where we&#39;re taking the product' %}
+</div>
+
 </div>
