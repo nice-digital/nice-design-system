@@ -52,19 +52,6 @@
     }
   }
 
-  // External links have an icon
-  &[rel='external'] {
-    &::after {
-      color: $colour-btn-primary-text;
-    }
-
-    &:hover {
-      &::after {
-        color: $colour-btn-primary-text;
-      }
-    }
-  }
-
   &--cta {
     @include font-size(2);
     padding: em($spacing-small $spacing-medium);
@@ -81,18 +68,6 @@
   &--secondary {
     background: $colour-btn-secondary;
     color: $colour-btn-secondary-text;
-
-    &[rel='external'] {
-      &:after {
-        color: $colour-btn-secondary-text;
-      }
-
-      &:hover {
-        &:after {
-          color: $colour-btn-secondary-text;
-        }
-      }
-    }
 
     &:hover,
     &:focus {

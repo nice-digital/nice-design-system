@@ -16,8 +16,7 @@
 
     &:before {
       @include nice-icon(angle-right);
-      color: $colour-text-subtle;
-      margin: em(0 10);
+      margin: em(0 $spacing-x-small);
     }
 
     &:first-child:before {
