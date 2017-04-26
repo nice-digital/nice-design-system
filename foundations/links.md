@@ -7,7 +7,7 @@ Their primary usage is as a navigational element. They can also be used as a rep
 
 ## Basics
 - links should follow the same sizing as containing copy
-- use rel="external", rel="next" and rel="previous" where applicable
+- use `rel="external"`, `rel="noopener"`, `rel="next"` and `rel="prev"` and [other link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types){:rel="external"} where applicable
 
 ## Wording
 
@@ -23,15 +23,30 @@ The wording of links is very important and should be contextual and meaningful. 
 - links within body copy should be blue and underlined
 - links without surrounding text should not have a full stop at the end
 
-CODE AREA
-
+{% capture textlinks %}
+<p>
+    <a href="#">A link with surrounding text</a>
+</p>
+<p>
+    This is a <a href="#">body copy link</a> diam sem, interdum non scelerisque id, condimentum in arcu. Vivamus faucibus mollis mi ut ultrices. Quisque sed ultrices justo.
+</p>
+{% endcapture %}
+{% include example.html body=textlinks %}
 
 ## Heading links
 
 The default styling is blue and underlined, to indicate that it’s a clickable link, but 
 depending on the context in that the heading link appears, some of these rules could be relaxed. Check that your users understand this.
 
-CODE AREA
+{% capture headinglinks %}
+<h1><a href="#">This is a heading 1</a></h1>
+<h2><a href="#">This is a heading 2</a></h2>
+<h3><a href="#">This is a heading 3</a></h3>
+<h4><a href="#">This is a heading 4</a></h4>
+<h5><a href="#">This is a heading 5</a></h5>
+<h6><a href="#">This is a heading 6</a></h6>
+{% endcapture %}
+{% include example.html body=headinglinks %}
 
 ## Download links
 
@@ -40,7 +55,17 @@ CODE AREA
 - to display further information on the file, place next to the size and type
 
 CODE AREA
-
+{% comment %}
+{% capture downloadlinks %}
+<p>
+    <a href="#"><span class="icon icon--download" aria-hidden="true"></span> Costing report</a> PDF 281.92 kB
+</p>
+<p>
+    <a href="#"><span class="icon icon--download" aria-hidden="true"></span> Costing report</a> PDF 281.92 kB | 16 April 2010
+</p>
+{% endcapture %}
+{% include example.html body=downloadlinks %}
+{% endcomment %}
 
 ## List links
 When you need to group related links
