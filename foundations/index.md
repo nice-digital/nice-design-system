@@ -27,6 +27,9 @@ This guide shows how to make your service look consistent with the rest of NICE.
     {% capture links %}{% link foundations/links.md %}{% endcapture %}
     {% include menu-item.html title='Links' href=links description='Links and hover/active/visited/focus states' %}
 
+    {% capture spacing %}{% link foundations/spacing.md %}{% endcapture %}
+    {% include menu-item.html title='Spacing' href=spacing description='Spacing between elements and vertical rhythm' %}
+
     {% capture typography %}{% link foundations/typography.md %}{% endcapture %}
     {% include menu-item.html title='Typography' href=typography description='Headings, paragraphs, featured text, quotations, lists, links' %}
 

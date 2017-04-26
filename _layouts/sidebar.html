@@ -51,6 +51,11 @@ layout: master
 								<a href="{{ site.baseurl }}{{ links }}">Links</a>
 							</li>
 
+							{% capture spacing %}{% link foundations/spacing.md %}{% endcapture %}
+							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains spacing %}stacked-nav__item--active{% endif %}">
+								<a href="{{ site.baseurl }}{{ spacing }}">Spacing</a>
+							</li>
+
 							{% capture typography %}{% link foundations/typography.md %}{% endcapture %}
 							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains typography %}stacked-nav__item--active{% endif %}">
 								<a href="{{ site.baseurl }}{{ typography }}">Typography</a>
