@@ -145,7 +145,7 @@ The W3C guidlines [1.4.3 Contrast (Minimum) (AA)](https://www.w3.org/TR/2008/REC
 
 The NICE colour palette has been designed to meet WCAG 2.0 AA with respect to colour contrast. However, because applications can use colours in their own way, the following tools can be used to test colour contrast:
 
-- [Lea Verou's Contrast Ratio](http://leaverou.github.io/contrast-ratio/){:target="_blank"} - useful for a quick test of 2 colours</li>
+- [Lea Verou's Contrast Ratio](http://leaverou.github.io/contrast-ratio/){:target="_blank"} - useful for a quick test of 2 colours
 - [WAVE WebAIM](http://wave.webaim.org/extension/){:target="_blank"} - general accessibility testing tool that highlights colour contrast issues
 - [HTML_CodeSniffer](http://squizlabs.github.io/HTML_CodeSniffer/){:target="_blank"} - general accessibility testing tool that highlights colour contrast issues
 - [Accessibility Developer Tools extension for Chrome](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en){:target="_blank"} - extension for Chrome developer tools to check contrast of any inspected element
