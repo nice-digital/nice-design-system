@@ -31,7 +31,7 @@
     "// LINTING": "",
     "lint": "grunt lint --color",
     "// RELEASE": "",
-    "release": "grunt release --color"
+    "release": "grunt release-it --color"
   },
   "config": {
     "//": "Banner is used for prepending to compiled JS and CSS",
@@ -77,7 +77,7 @@
     "grunt-modernizr": "^1.0.2",
     "grunt-newer": "^1.2.0",
     "grunt-postcss": "^0.8.0",
-    "grunt-release": "^0.14.0",
+    "grunt-release-it": "^1.0.1",
     "grunt-sass": "^2.0.0",
     "grunt-sass-lint": "^0.2.2",
     "grunt-webfont": "^1.6.0",

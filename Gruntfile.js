@@ -15,7 +15,8 @@ module.exports = grunt => {
 			staticMappings: {
 				sasslint: "grunt-sass-lint",
 				express: "grunt-express-server",
-				cssmin: "grunt-contrib-cssmin"
+				cssmin: "grunt-contrib-cssmin",
+				releaseit: "grunt-release-it"
 			}
 		}
 	});
