@@ -27,11 +27,11 @@ The NICE colour palette is also described on the [brand guidelines](https://www.
 ### Inverse 
 
 <ul class="colour-grid">
-    {% include colour.html title="Inverse Link" var="colour-link" %}
-    {% include colour.html title="Inverse Link hover state" var="colour-link-hover" %}
-    {% include colour.html title="Inverse Link visited state" var="colour-link-visited" %}
-    {% include colour.html title="Inverse Link active state" var="colour-link-active" %}
-    {% include colour.html title="Inverse Link focus" var="colour-focus" %}
+    {% include colour.html title="Inverse link" var="colour-inverselink" %}
+    {% include colour.html title="Inverse link hover state" var="colour-inverselink-hover" %}
+    {% include colour.html title="Inverse link visited state" var="colour-inverselink-visited" %}
+    {% include colour.html title="Inverse link active state" var="colour-inverselink-active" %}
+    {% include colour.html title="Inverse link focus" var="colour-focus" %}
 </ul>
 
 ## Buttons
