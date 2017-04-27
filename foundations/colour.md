@@ -26,12 +26,22 @@ The NICE colour palette is also described on the [brand guidelines](https://www.
 
 ### Inverse 
 
+link : #FFFFFF , 255,255,255
+link hover : #d6d6d6 , 214,214,214
+link visited :  #FFFFFF , 255,255,255 (Keeping it same as link colour to conform to AA standard across potentially various dark bgs) 
+link active : #d6d6d6 , 214,214,214
+link focus : as is
+link focus text : #393939 
+
+
+
 <ul class="colour-grid">
     {% include colour.html title="Inverse link" var="colour-inverselink" %}
     {% include colour.html title="Inverse link hover state" var="colour-inverselink-hover" %}
     {% include colour.html title="Inverse link visited state" var="colour-inverselink-visited" %}
     {% include colour.html title="Inverse link active state" var="colour-inverselink-active" %}
     {% include colour.html title="Inverse link focus" var="colour-focus" %}
+    {% include colour.html title="Inverse link focus" var="colour-focus-text" %}
 </ul>
 
 ## Buttons
