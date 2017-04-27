@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="description" content="{{ title }}">
+
+	<title>{{ title }} | NICE Experience</title>
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="stylesheet" href="/stylesheets/experience.css" type="text/css" charset="utf-8">
+	<link href="//fonts.googleapis.com/css?family=Lato:200normal,200italic,300normal,300italic,400normal,400italic,700normal,700italic,900normal,900italic" rel="stylesheet" type="text/css">
+
+	<!--[if lt IE 9]>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body data-tracker>
+
+	<div id="content">
+		{% block body %}
+			This is the default body content
+		{% endblock %}
+	</div>
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!--[if !IE]><!-->
+		<script src="/javascripts/experience.dev.js"></script>
+	<!--<![endif]-->
+	<!--[if IE]>
+		<script src="/javascripts/experience.oldie.dev.js"></script>
+	<![endif]-->
+	<script>
+		$(document).ready(function() {
+			$(document).experience();
+		});
+	</script>
+</body>
+</html>

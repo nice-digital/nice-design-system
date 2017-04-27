@@ -11,7 +11,8 @@ module.exports = {
 			grunt.log.writeln(`Finished watch task in ${ time }s (${ moment().format("h:mm:ss a") })`);
 			grunt.log.writeln("Waiting...");
 			grunt.log.writeln();
-		}
+		},
+		livereload: true
 	},
 	sass: {
 		files: sasslint.target.src,
@@ -32,6 +33,14 @@ module.exports = {
 		tasks: ["newer:eslint"],
 		options: {
 			spawn: false
+		}
+	},
+	express: {
+		files: ["server/**/*.js"],
+		tasks: ["express"],
+		options: {
+			spawn: false,
+			atBegin: true
 		}
 	}
 };

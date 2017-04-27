@@ -1,6 +1,6 @@
 # NICE Experience
 
-Welcome to NICE Experience. Your source for creating beautiful, consistent experiences across NICE. See https://github.com/nhsevidence/NICE-brand-site for the Brand Site repository.
+> Welcome to NICE Experience. Your source for quickly creating consistent on-brand NICE digital services.
 
 [![License](https://img.shields.io/github/license/nhsevidence/nice-experience.svg)](https://github.com/nhsevidence/NICE-Experience/blob/master/LICENSE)
 [![Dependencies](https://img.shields.io/david/nhsevidence/nice-experience.svg)](https://david-dm.org/nhsevidence/nice-experience)
@@ -30,7 +30,7 @@ Welcome to NICE Experience. Your source for creating beautiful, consistent exper
 
 ## What is it?
 
-NICE Experience is a replacement for [NICE.Bootstrap](https://github.com/nhsevidence/NICE.Bootstrap/). It's a front-end toolkit and guidelines for rapidly building modern, accessible web apps that are consistent with the NICE brand guidelines.
+NICE Experience is a replacement for [NICE.Bootstrap](https://github.com/nhsevidence/NICE.Bootstrap/). It's a front-end toolkit/pattern library and guidelines for rapidly building modern, accessible web apps that are consistent with the NICE brand guidelines.
 
 ## Browser support
 
@@ -70,6 +70,7 @@ See https://www.nice.org.uk/accessibility for more information.
 | - [src/icons](src/icons) | SVG icon font source |
 | - [src/javascripts](src/javascripts) | Main Experience JS + [JSDoc config](src/javascripts/.jsdoc.json) and [ESLint config](src/javascripts/.eslintrc.json) |
 | - [src/stylesheets](src/stylesheets) | Main Experience SASS + [SASS Lint config](src/stylesheets/.sass-lint.yml) + [SASS Doc custom theme](src/stylesheets/sassdoc-nice-theme.js) |
+| [server](server) | Expres server, views etc for testing and building componennts |
 
 ## Prerequisites
 
@@ -119,7 +120,7 @@ Some of the npm scripts use Grunt tasks under the hood. These Grunt tasks (and a
 
 #### Node
 
-Once the app (CSS/JS etc) has been built, the express app can be run via Node directly e.g. `node web/server`. This isn't really useful for development as it just runs on port 3000, doesn't build assets, watch for changes etc - use `npm start` instead for deveopment. Running the web app directly via node is useful for production environments where the assets have already been built by a build server and we just need to serve the app.
+Once the app (CSS/JS etc) has been built, the express app can be run via Node directly e.g. `node server`. This isn't really useful for development as it just runs on port 54321, doesn't build assets, watch for changes etc - use `npm start` instead for development.
 
 ### JavaScript
 
