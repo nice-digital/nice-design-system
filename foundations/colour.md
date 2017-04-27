@@ -9,12 +9,12 @@ The NICE colour palette is also described on the [brand guidelines](https://www.
 ## Text
 <ul class="colour-grid">
     {% include colour.html title="Primary text" var="colour-text" %}
-    {% include colour.html title="Reverse text" var="colour-text-reverse" %}
+    {% include colour.html title="Inverse text" var="colour-text-reverse" %}
 </ul>
 
 ## Links
 
-If using links with dark background colours, ensure that the colour is checked for legibility
+### Default 
 
 <ul class="colour-grid">
     {% include colour.html title="Link" var="colour-link" %}
@@ -22,6 +22,16 @@ If using links with dark background colours, ensure that the colour is checked f
     {% include colour.html title="Link visited state" var="colour-link-visited" %}
     {% include colour.html title="Link active state" var="colour-link-active" %}
     {% include colour.html title="Link focus" var="colour-focus" %}
+</ul>
+
+### Inverse 
+
+<ul class="colour-grid">
+    {% include colour.html title="Inverse Link" var="colour-link" %}
+    {% include colour.html title="Inverse Link hover state" var="colour-link-hover" %}
+    {% include colour.html title="Inverse Link visited state" var="colour-link-visited" %}
+    {% include colour.html title="Inverse Link active state" var="colour-link-active" %}
+    {% include colour.html title="Inverse Link focus" var="colour-focus" %}
 </ul>
 
 ## Buttons
