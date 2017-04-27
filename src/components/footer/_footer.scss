@@ -146,8 +146,8 @@
 
     .icon {
       @include font-size(6);
-      line-height: 1;
       display: block;
+      line-height: 1;
       margin: 0 auto em(4px);
 
       // The following is needed for IE8 to go centrally aligned

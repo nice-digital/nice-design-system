@@ -15,11 +15,7 @@
 /// @param {Number} $base [$nice-base-font-size] - A base-value with which to calculate the em-value
 /// @since 0.2.0
 /// @link https://davidtheclark.github.io/scut/em.html
-@function em (
-  $pixels,
-  $base: $nice-base-font-size
-) {
-
+@function em ($pixels, $base: $nice-base-font-size) {
   // $base could be in em or px (no unit = px).
   // Adjust accordingly to create a $divisor that
   // serves as context for $pixels.
@@ -36,8 +32,7 @@
     // return a single value instead of a list,
     // so it can be used in calculations
     @return nth($em-vals, 1);
-  }
-  @else {
+  } @else {
     @return $em-vals;
   }
 }
@@ -48,10 +43,7 @@
 /// @param {Number} $base [$nice-base-font-size] - A base-value with which to calculate the em-value
 /// @since 0.2.0
 /// @link https://davidtheclark.github.io/scut/rem.html
-@function rem (
-  $pixels,
-  $base: $nice-base-font-size
-) {
+@function rem ($pixels, $base: $nice-base-font-size) {
 
   $rem-vals: ();
   @each $val in $pixels {
@@ -63,8 +55,7 @@
     // return a single value instead of a list,
     // so it can be used in calculations
     @return nth($rem-vals, 1);
-  }
-  @else {
+  } @else {
     @return $rem-vals;
   }
 }
