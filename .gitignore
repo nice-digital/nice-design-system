@@ -40,5 +40,5 @@ jspm_packages
 # Sublime
 *.sublime-workspace
 
-# Dist
-dist
+# Temp
+temp
