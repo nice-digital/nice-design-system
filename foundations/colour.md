@@ -3,8 +3,7 @@ layout: sidebar
 title: Colour
 ---
 
-The NICE colour palette is also described on the [brand guidelines](https://www.nice.org.uk/brand/colour-palette){:target="_blank"}. Use these guidelines to determine the best way to apply the NICE colour palette.
-
+Follow these guidelines to determine the best way to apply the NICE colour palette. We use colour to aid in communication, and help our users navigate. We also use our [brand guidelines](https://www.nice.org.uk/brand/colour-palette){:target="_blank"}to help form the base of our digital palette. 
 
 ## Text
 <ul class="colour-grid">
@@ -26,12 +25,12 @@ The NICE colour palette is also described on the [brand guidelines](https://www.
 
 ### Inverse 
 
-link : #FFFFFF , 255,255,255
-link hover : #d6d6d6 , 214,214,214
-link visited :  #FFFFFF , 255,255,255 (Keeping it same as link colour to conform to AA standard across potentially various dark bgs) 
-link active : #d6d6d6 , 214,214,214
-link focus : as is
-link focus text : #393939 
+- link : #FFFFFF , 255,255,255
+- link hover : #d6d6d6 , 214,214,214
+- link visited :  #FFFFFF , 255,255,255 (Keeping it same as link colour to conform to AA standard across potentially various dark bgs) 
+- link active : #d6d6d6 , 214,214,214
+- link focus : as is
+- link focus text : #393939 
 
 
 
