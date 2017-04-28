@@ -104,29 +104,20 @@ Feel free to use `<b>` and `<i>` in HTML5. `<b>` is meant to highlight words or 
 
 ## Quotations
 
+- use when you want to emphasize excerpts of text
 - use a citation where possible
 
-### Simple block quotation
+### With citation
 
 {% capture blockquote %}
 <blockquote class="quote">
-    <p>In 2015, 74% of staff rated NICE as a good place to work.</p>
-</blockquote>
-{% endcapture %}
-{% include example.html lang='html' body=blockquote %}
-
-### Block quotation w/ citation
-
-{% capture withcitation %}
-<blockquote class="quote">
     <p>We do the right work in the right way at NICE. We mix content, dev, design and research at the start to solve user problems.  We produce things quickly, get data and refine. </p>
     <footer>
-        <cite><strong>Dafydd</strong> - Content Team</cite>
+        <cite><strong>Dafydd - Content Team</strong></cite>
     </footer>
 </blockquote>
 {% endcapture %}
-{% include example.html lang='html' body=withcitation %}
-
+{% include example.html body=blockquote %}
 
 
 ## Lists
