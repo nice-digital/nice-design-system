@@ -1,5 +1,5 @@
 /*!
-NICE Experience 0.2.7 | 2017-04-27
+NICE Experience 0.2.8 | 2017-04-28
 © Copyright NICE 2015-2017
 Licensed under MIT (https://github.com/nhsevidence/nice-experience/blob/master/LICENSE)
 */
@@ -50,7 +50,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.c = installedModules;
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/javascripts/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);

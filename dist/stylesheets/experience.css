@@ -1,5 +1,5 @@
 /*!
- * NICE Experience 0.2.7 | 2017-04-27
+ * NICE Experience 0.2.8 | 2017-04-28
  * © Copyright NICE 2015-2017
  * Licensed under MIT (https://github.com/nhsevidence/nice-experience/blob/master/LICENSE)
  */
@@ -1563,8 +1563,8 @@ textarea {
   font-family: "NICE Icons";
   font-style: normal;
   font-weight: normal;
-  src: url("/fonts/nice-icons.eot?592612073");
-  src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/nice-icons.woff2?592612073") format("woff2"), url("/fonts/nice-icons.woff?592612073") format("woff"), url("/fonts/nice-icons.ttf?592612073") format("truetype"), url("/fonts/nice-icons.svg?592612073#typography-icons") format("svg"); }
+  src: url("/fonts/nice-icons.eot?196524237");
+  src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/nice-icons.woff2?196524237") format("woff2"), url("/fonts/nice-icons.woff?196524237") format("woff"), url("/fonts/nice-icons.ttf?196524237") format("truetype"), url("/fonts/nice-icons.svg?196524237#typography-icons") format("svg"); }
 
 .icon {
   display: inline-block;
@@ -1824,8 +1824,8 @@ p,
     margin-top: 1rem; }
     p.lead--drop-cap:first-letter,
     .p.lead--drop-cap:first-letter {
-      font-size: 200%;
       float: left;
+      font-size: 200%;
       font-weight: 300;
       padding: 0em 0.125em 0em 0em; }
 
@@ -2456,8 +2456,8 @@ table {
     font-size: 2.25rem;
     line-height: 44px;
     line-height: 2.75rem;
-    line-height: 1;
     display: block;
+    line-height: 1;
     margin: 0 auto 0.25em; }
     .services .icon:before {
       text-align: center;
