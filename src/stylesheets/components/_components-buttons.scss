@@ -55,76 +55,79 @@
       cursor: default;
     }
   }
+}
 
-  // CTA/prominent button
-  &--cta {
-    background: $colour-btn-cta;
-    border: em(1px) solid $colour-btn-cta-text;
+/// CTA/prominent button
+/// @since 0.2.0
+.btn.btn--cta {
+  background: $colour-btn-cta;
+  border: em(1px) solid $colour-btn-cta-text;
+  color: $colour-btn-cta-text;
+
+  &:visited {
     color: $colour-btn-cta-text;
-
-    &:visited {
-      color: $colour-btn-cta-text;
-    }
-
-    &:hover {
-      background: $colour-btn-cta-hover;
-      color: $colour-btn-cta-text;
-    }
-
-    &:focus {
-      background: $colour-btn-cta-hover;
-    }
-
-    &:active {
-      background: $colour-btn-cta-hover;
-    }
   }
 
-  // Secondary button
-  &--secondary {
-    background: $colour-btn-secondary;
-    border: em(1px) solid $colour-btn-secondary-text;
+  &:hover {
+    background: $colour-btn-cta-hover;
+    color: $colour-btn-cta-text;
+  }
+
+  &:focus {
+    background: $colour-btn-cta-hover;
+  }
+
+  &:active {
+    background: $colour-btn-cta-hover;
+  }
+}
+
+/// Secondary button
+/// @since 0.2.0
+.btn.btn--secondary {
+  background: $colour-btn-secondary;
+  border: em(1px) solid $colour-btn-secondary-text;
+  color: $colour-btn-secondary-text;
+
+  &:visited {
     color: $colour-btn-secondary-text;
-
-    &:visited {
-      color: $colour-btn-secondary-text;
-    }
-
-    &:hover {
-      background: $colour-btn-secondary-hover;
-      color: $colour-btn-secondary-text;
-    }
-
-    &:focus {
-      background: $colour-btn-secondary-hover;
-    }
-
-    &:active {
-      background: $colour-btn-secondary-hover;
-    }
   }
 
-  // Light button, for use on dark panels/sections
-  &--light {
-    background: $colour-btn-light;
-    border: em(1px) solid $colour-btn-light-text;
+  &:hover {
+    background: $colour-btn-secondary-hover;
+    color: $colour-btn-secondary-text;
+  }
+
+  &:focus {
+    background: $colour-btn-secondary-hover;
+  }
+
+  &:active {
+    background: $colour-btn-secondary-hover;
+  }
+}
+
+/// Light button, for use on dark panels/sections
+/// @since 0.2.0
+.btn.btn--light {
+  background: $colour-btn-light;
+  border: em(1px) solid $colour-btn-light-text;
+  color: $colour-btn-light-text;
+
+  &:visited {
     color: $colour-btn-light-text;
+  }
 
-    &:visited {
-      color: $colour-btn-light-text;
-    }
+  &:hover {
+    background: $colour-btn-light-hover;
+    color: $colour-btn-light-text;
+  }
 
-    &:hover {
-      background: $colour-btn-light-hover;
-      color: $colour-btn-light-text;
-    }
+  &:focus {
+    background: $colour-btn-light-hover;
+  }
 
-    &:focus {
-      background: $colour-btn-light-hover;
-    }
-
-    &:active {
-      background: $colour-btn-light-hover;
-    }
+  &:active {
+    background: $colour-btn-light-hover;
   }
 }
