@@ -70,5 +70,15 @@ CODE AREA
 ## List links
 When you need to group related links
 
-CODE AREA
+{% capture linklist %}
+<ul class="list list--unstyled">
+    <li><a target="_blank" rel="external" href="https://www.nice.org.uk/guidance/published?type=csg">Cancer service guidelines</a></li>
+    <li><a target="_blank" rel="external" href="https://www.nice.org.uk/guidance/published?type=cg">Clinical guidelines</a></li>
+    <li><a target="_blank" rel="external" href="https://www.nice.org.uk/guidance/published?type=ph">Public health guidelines</a></li>
+    <li><a target="_blank" rel="external" href="https://www.nice.org.uk/guidance/published?type=sc">Social care guidelines</a></li>
+    <li><a target="_blank" rel="external" href="https://www.nice.org.uk/guidance/published?type=sg">Safe staffing guidelines</a></li>
+</ul>
+{% endcapture %}
+{% include example.html body=linklist %}
+
 
