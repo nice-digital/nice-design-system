@@ -158,3 +158,16 @@ Use numbered lists when you want to indicate a hierarchy.
 </ol>
 {% endcapture %}
 {% include example.html body=numbered %}
+
+### Unstyled
+
+Unstyled lists don't have bullets and can be uses for lists of links
+
+{% capture unstyled %}
+<ul class="list list--unstyled">
+    <li><a href="#">list item</a></li>
+    <li><a href="#">list item</a></li>
+</ul>
+{% endcapture %}
+{% include example.html body=unstyled %}
+
