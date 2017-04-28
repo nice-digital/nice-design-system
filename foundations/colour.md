@@ -8,7 +8,7 @@ Follow these guidelines to determine the best way to apply the NICE colour palet
 ## Text
 <ul class="colour-grid">
     {% include colour.html title="Primary text" var="colour-text" %}
-    {% include colour.html title="Inverse text" var="colour-text-reverse" %}
+    {% include colour.html title="Inverse text" var="colour-text-inverse" %}
 </ul>
 
 ## Links
@@ -85,8 +85,8 @@ For use on a dark background
 
 <ul class="colour-grid">
     {% include colour.html title="Body background" var="colour-body" %}
-    {% include colour.html title="Light panel background" var="colour-panel-light" %}
-    {% include colour.html title="Dark panel background" var="colour-panel-dark" %}
+    {% include colour.html title="Default (light) panel background" var="colour-panel-default" %}
+    {% include colour.html title="Inverse (dark) panel background" var="colour-panel-inverse" %}
     {% include colour.html title="Borders" var="colour-border" %}
 </ul>
 

@@ -815,14 +815,14 @@
       "resolvedValue": "#adadad"
     },
     {
-      "description": "<p>Body text colour for use on dark background</p>\n",
+      "description": "<p>Inverse body text colour for use on dark background</p>\n",
       "commentRange": {
         "start": 28,
         "end": 29
       },
       "context": {
         "type": "variable",
-        "name": "colour-text-reverse",
+        "name": "colour-text-inverse",
         "value": "$colour-nice-white",
         "scope": "private",
         "line": {
@@ -1075,7 +1075,7 @@
       "context": {
         "type": "variable",
         "name": "colour-link-inverse",
-        "value": "$colour-text-reverse",
+        "value": "$colour-text-inverse",
         "scope": "private",
         "line": {
           "start": 64,
@@ -1756,7 +1756,7 @@
       },
       "context": {
         "type": "variable",
-        "name": "colour-panel-light",
+        "name": "colour-panel-default",
         "value": "$colour-nice-grey-3",
         "scope": "private",
         "line": {
@@ -1790,7 +1790,7 @@
       },
       "context": {
         "type": "variable",
-        "name": "colour-panel-dark",
+        "name": "colour-panel-inverse",
         "value": "$colour-nice-dark-grey",
         "scope": "private",
         "line": {
@@ -2271,7 +2271,7 @@
       "context": {
         "type": "css",
         "name": ".site-footer",
-        "value": "@include font-size(-1);\n  background: $colour-panel-dark;\n  color: $colour-text-reverse;\n  margin-top: em(32px);\n  padding: em(32px 0);\n\n  @media print {\n    display: none;\n  }\n\n  a {\n    color: $colour-text-reverse;\n\n    &:focus {\n      color: #000;\n    }\n  }\n\n  p {\n    @include font-size(-1);\n  }\n\n  &__logo {\n    display: block;\n    margin: em(0 0 32 0);\n    text-decoration: none;\n\n    .icon {\n      font-size: rem(48px);\n    }\n  }\n\n  &__services {\n    margin: em(0 0 32 0);\n  }\n\n  &__social {\n    clear: both;\n    margin: em(0 0 32 0);\n  }\n\n  &__nav {\n    clear: both;\n    margin: em(0 0 32 0);\n  }\n\n  &__copyright {\n    margin: 0;\n    text-align: center;\n  }\n\n  @include mq($from: sm) {\n    &__logo {\n      float: left;\n      margin: em(0 32 32 0);\n    }\n\n    &__services {\n      float: left;\n      margin: em(0 0 32 0);\n    }\n\n    &__social {\n      clear: both;\n    }\n\n    &__copyright {\n      text-align: left;\n    }\n  }\n\n  @include mq($from: md) {\n\n    &__social {\n      clear: none;\n      float: right;\n    }\n  }",
+        "value": "@include font-size(-1);\n  background: $colour-panel-inverse;\n  color: $colour-text-inverse;\n  margin-top: em(32px);\n  padding: em(32px 0);\n\n  @media print {\n    display: none;\n  }\n\n  a {\n    color: $colour-text-inverse;\n\n    &:focus {\n      color: #000;\n    }\n  }\n\n  p {\n    @include font-size(-1);\n  }\n\n  &__logo {\n    display: block;\n    margin: em(0 0 32 0);\n    text-decoration: none;\n\n    .icon {\n      font-size: rem(48px);\n    }\n  }\n\n  &__services {\n    margin: em(0 0 32 0);\n  }\n\n  &__social {\n    clear: both;\n    margin: em(0 0 32 0);\n  }\n\n  &__nav {\n    clear: both;\n    margin: em(0 0 32 0);\n  }\n\n  &__copyright {\n    margin: 0;\n    text-align: center;\n  }\n\n  @include mq($from: sm) {\n    &__logo {\n      float: left;\n      margin: em(0 32 32 0);\n    }\n\n    &__services {\n      float: left;\n      margin: em(0 0 32 0);\n    }\n\n    &__social {\n      clear: both;\n    }\n\n    &__copyright {\n      text-align: left;\n    }\n  }\n\n  @include mq($from: md) {\n\n    &__social {\n      clear: none;\n      float: right;\n    }\n  }",
         "line": {
           "start": 7,
           "end": 239
@@ -2303,7 +2303,7 @@
       "context": {
         "type": "css",
         "name": ".services",
-        "value": "&__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n  }\n\n  &__item {\n    border-bottom: 1px solid $colour-border;\n\n    &:first-child {\n      border-top: 1px solid $colour-border;\n    }\n\n    a {\n      @include font-size(-1);\n      color: $colour-panel-light;\n      display: block;\n      padding: em(8 0);\n      text-decoration: none;\n\n      &:hover {\n        color: $colour-text-reverse;\n      }\n\n      &:focus {\n        color: $colour-text;\n      }\n    }\n\n    .icon {\n      @include font-size(1);\n      display: inline-block;\n      margin: em(0 4 0 0);\n      vertical-align: middle;\n    }\n  }\n\n  @include mq($from: sm) {\n\n    &__item {\n      border: 0;\n      float: left;\n      text-align: center;\n      width: em(90px);\n\n      &:first-child {\n        border: 0;\n      }\n\n      a {\n        padding: em(4px) 0 0;\n      }\n    }\n\n    .icon {\n      @include font-size(6);\n      display: block;\n      line-height: 1;\n      margin: 0 auto em(4px);\n\n      // The following is needed for IE8 to go centrally aligned\n      &:before {\n        text-align: center;\n        width: 100%;\n      }\n    }\n  }",
+        "value": "&__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n  }\n\n  &__item {\n    border-bottom: 1px solid $colour-border;\n\n    &:first-child {\n      border-top: 1px solid $colour-border;\n    }\n\n    a {\n      @include font-size(-1);\n      color: $colour-panel-default;\n      display: block;\n      padding: em(8 0);\n      text-decoration: none;\n\n      &:hover {\n        color: $colour-text-inverse;\n      }\n\n      &:focus {\n        color: $colour-text;\n      }\n    }\n\n    .icon {\n      @include font-size(1);\n      display: inline-block;\n      margin: em(0 4 0 0);\n      vertical-align: middle;\n    }\n  }\n\n  @include mq($from: sm) {\n\n    &__item {\n      border: 0;\n      float: left;\n      text-align: center;\n      width: em(90px);\n\n      &:first-child {\n        border: 0;\n      }\n\n      a {\n        padding: em(4px) 0 0;\n      }\n    }\n\n    .icon {\n      @include font-size(6);\n      display: block;\n      line-height: 1;\n      margin: 0 auto em(4px);\n\n      // The following is needed for IE8 to go centrally aligned\n      &:before {\n        text-align: center;\n        width: 100%;\n      }\n    }\n  }",
         "line": {
           "start": 90,
           "end": 239
@@ -2357,7 +2357,7 @@
       "context": {
         "type": "css",
         "name": ".footer-nav",
-        "value": "&__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  a {\n    padding: em(4 0);\n    text-decoration: none;\n  }\n\n  @include mq($from: sm) {\n    &__list {\n      line-height: 1;\n    }\n\n    &__item {\n      border-left: 1px solid $colour-text-reverse;\n      display: inline-block;\n      line-height: 1;\n\n      &:first-child {\n        border-left: 0;\n\n        a {\n          padding-left: 0;\n        }\n      }\n    }\n\n    a {\n      padding: em(0 8);\n    }\n  }",
+        "value": "&__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  a {\n    padding: em(4 0);\n    text-decoration: none;\n  }\n\n  @include mq($from: sm) {\n    &__list {\n      line-height: 1;\n    }\n\n    &__item {\n      border-left: 1px solid $colour-text-inverse;\n      display: inline-block;\n      line-height: 1;\n\n      &:first-child {\n        border-left: 0;\n\n        a {\n          padding-left: 0;\n        }\n      }\n    }\n\n    a {\n      padding: em(0 8);\n    }\n  }",
         "line": {
           "start": 203,
           "end": 239
@@ -2384,7 +2384,7 @@
       "context": {
         "type": "css",
         "name": ".tabs",
-        "value": "// The list of tabs\n  &__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n  }\n\n  //\n  &__tab {\n    float: left;\n\n    &--active .tabs__tab-btn { // sass-lint:disable-line no-combinators\n      background: $colour-panel-light;\n    }\n  }\n\n  // The button/link for the tab itself\n  &__tab-btn {\n    background: 0;\n    border: 0;\n    cursor: pointer;\n    display: block;\n    line-height: 4rem;\n    margin: 0;\n    padding: 0 1rem;\n\n    &:hover {\n      background: $colour-panel-light;\n    }\n  }\n\n  // The tab content containing the tab panels\n  &__content {\n    background: $colour-panel-light;\n    padding: 1rem;\n  }\n\n  // An individual tab content pane\n  &__pane {\n\n    // Assume tabs will stack if no JS is available\n    .js & {\n      display: none;\n\n      &--active {\n        display: block;\n      }\n    }\n  }",
+        "value": "// The list of tabs\n  &__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n  }\n\n  //\n  &__tab {\n    float: left;\n\n    &--active .tabs__tab-btn { // sass-lint:disable-line no-combinators\n      background: $colour-panel-default;\n    }\n  }\n\n  // The button/link for the tab itself\n  &__tab-btn {\n    background: 0;\n    border: 0;\n    cursor: pointer;\n    display: block;\n    line-height: 4rem;\n    margin: 0;\n    padding: 0 1rem;\n\n    &:hover {\n      background: $colour-panel-default;\n    }\n  }\n\n  // The tab content containing the tab panels\n  &__content {\n    background: $colour-panel-default;\n    padding: 1rem;\n  }\n\n  // An individual tab content pane\n  &__pane {\n\n    // Assume tabs will stack if no JS is available\n    .js & {\n      display: none;\n\n      &--active {\n        display: block;\n      }\n    }\n  }",
         "line": {
           "start": 40,
           "end": 93
@@ -2457,15 +2457,111 @@
       "context": {
         "type": "css",
         "name": ".btn",
-        "value": "@include remove-mz-focus-inner;\n  @include font-size(0);\n  appearance: none;\n  background: $colour-btn-primary;\n  border: em(1px) solid $colour-btn-primary-text;\n  border-radius: 0;\n  color: $colour-btn-primary-text;\n  cursor: pointer;\n  display: inline-block;\n  margin: em(0 $spacing-x-small 0 0);\n  padding: em($spacing-small $spacing-medium);\n  position: relative;\n  text-decoration: none;\n  vertical-align: top;\n\n  &:visited {\n    color: $colour-btn-primary-text;\n  }\n\n  &:hover {\n    background: $colour-btn-primary-hover;\n    color: $colour-btn-primary-text;\n    text-decoration: none;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background: $colour-btn-primary;\n    border-color: $colour-focus;\n  }\n\n  &:active {\n    background: $colour-btn-primary-hover;\n    text-decoration: none;\n    top: em(2px);\n  }\n\n  // Disabled button styles\n  &--disabled,\n  &.disabled,\n  &[aria-disabled='true'],\n  &[disabled='disabled'],\n  &[disabled] {\n    opacity: .5;\n    pointer-events: none;\n\n    &:hover {\n      cursor: default;\n    }\n  }\n\n  // CTA/prominent button\n  &--cta {\n    background: $colour-btn-cta;\n    border: em(1px) solid $colour-btn-cta-text;\n    color: $colour-btn-cta-text;\n\n    &:visited {\n      color: $colour-btn-cta-text;\n    }\n\n    &:hover {\n      background: $colour-btn-cta-hover;\n      color: $colour-btn-cta-text;\n    }\n\n    &:focus {\n      background: $colour-btn-cta-hover;\n    }\n\n    &:active {\n      background: $colour-btn-cta-hover;\n    }\n  }\n\n  // Secondary button\n  &--secondary {\n    background: $colour-btn-secondary;\n    border: em(1px) solid $colour-btn-secondary-text;\n    color: $colour-btn-secondary-text;\n\n    &:visited {\n      color: $colour-btn-secondary-text;\n    }\n\n    &:hover {\n      background: $colour-btn-secondary-hover;\n      color: $colour-btn-secondary-text;\n    }\n\n    &:focus {\n      background: $colour-btn-secondary-hover;\n    }\n\n    &:active {\n      background: $colour-btn-secondary-hover;\n    }\n  }\n\n  // Light button, for use on dark panels/sections\n  &--light {\n    background: $colour-btn-light;\n    border: em(1px) solid $colour-btn-light-text;\n    color: $colour-btn-light-text;\n\n    &:visited {\n      color: $colour-btn-light-text;\n    }\n\n    &:hover {\n      background: $colour-btn-light-hover;\n      color: $colour-btn-light-text;\n    }\n\n    &:focus {\n      background: $colour-btn-light-hover;\n    }\n\n    &:active {\n      background: $colour-btn-light-hover;\n    }\n  }",
+        "value": "@include remove-mz-focus-inner;\n  @include font-size(0);\n  appearance: none;\n  background: $colour-btn-primary;\n  border: em(1px) solid $colour-btn-primary-text;\n  border-radius: 0;\n  color: $colour-btn-primary-text;\n  cursor: pointer;\n  display: inline-block;\n  margin: em(0 $spacing-x-small 0 0);\n  padding: em($spacing-small $spacing-medium);\n  position: relative;\n  text-decoration: none;\n  vertical-align: top;\n\n  &:visited {\n    color: $colour-btn-primary-text;\n  }\n\n  &:hover {\n    background: $colour-btn-primary-hover;\n    color: $colour-btn-primary-text;\n    text-decoration: none;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background: $colour-btn-primary;\n    border-color: $colour-focus;\n  }\n\n  &:active {\n    background: $colour-btn-primary-hover;\n    text-decoration: none;\n    top: em(2px);\n  }\n\n  // Disabled button styles\n  &--disabled,\n  &.disabled,\n  &[aria-disabled='true'],\n  &[disabled='disabled'],\n  &[disabled] {\n    opacity: .5;\n    pointer-events: none;\n\n    &:hover {\n      cursor: default;\n    }\n  }",
         "line": {
           "start": 7,
-          "end": 131
+          "end": 134
         }
       },
       "since": [
         {
           "version": "0.1.0"
+        }
+      ],
+      "group": [
+        "components"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\components\\_components-buttons.scss",
+        "name": "_components-buttons.scss"
+      },
+      "groupName": {
+        "components": "Components"
+      }
+    },
+    {
+      "description": "<p>CTA/prominent button</p>\n",
+      "commentRange": {
+        "start": 60,
+        "end": 61
+      },
+      "context": {
+        "type": "css",
+        "name": ".btn.btn--cta",
+        "value": "background: $colour-btn-cta;\n  border: em(1px) solid $colour-btn-cta-text;\n  color: $colour-btn-cta-text;\n\n  &:visited {\n    color: $colour-btn-cta-text;\n  }\n\n  &:hover {\n    background: $colour-btn-cta-hover;\n    color: $colour-btn-cta-text;\n  }\n\n  &:focus {\n    background: $colour-btn-cta-hover;\n  }\n\n  &:active {\n    background: $colour-btn-cta-hover;\n  }",
+        "line": {
+          "start": 62,
+          "end": 134
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "components"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\components\\_components-buttons.scss",
+        "name": "_components-buttons.scss"
+      },
+      "groupName": {
+        "components": "Components"
+      }
+    },
+    {
+      "description": "<p>Secondary button</p>\n",
+      "commentRange": {
+        "start": 85,
+        "end": 86
+      },
+      "context": {
+        "type": "css",
+        "name": ".btn.btn--secondary",
+        "value": "background: $colour-btn-secondary;\n  border: em(1px) solid $colour-btn-secondary-text;\n  color: $colour-btn-secondary-text;\n\n  &:visited {\n    color: $colour-btn-secondary-text;\n  }\n\n  &:hover {\n    background: $colour-btn-secondary-hover;\n    color: $colour-btn-secondary-text;\n  }\n\n  &:focus {\n    background: $colour-btn-secondary-hover;\n  }\n\n  &:active {\n    background: $colour-btn-secondary-hover;\n  }",
+        "line": {
+          "start": 87,
+          "end": 134
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "components"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\components\\_components-buttons.scss",
+        "name": "_components-buttons.scss"
+      },
+      "groupName": {
+        "components": "Components"
+      }
+    },
+    {
+      "description": "<p>Light button, for use on dark panels/sections</p>\n",
+      "commentRange": {
+        "start": 110,
+        "end": 111
+      },
+      "context": {
+        "type": "css",
+        "name": ".btn.btn--light",
+        "value": "background: $colour-btn-light;\n  border: em(1px) solid $colour-btn-light-text;\n  color: $colour-btn-light-text;\n\n  &:visited {\n    color: $colour-btn-light-text;\n  }\n\n  &:hover {\n    background: $colour-btn-light-hover;\n    color: $colour-btn-light-text;\n  }\n\n  &:focus {\n    background: $colour-btn-light-hover;\n  }\n\n  &:active {\n    background: $colour-btn-light-hover;\n  }",
+        "line": {
+          "start": 112,
+          "end": 134
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
         }
       ],
       "group": [
@@ -2521,10 +2617,10 @@
       "context": {
         "type": "css",
         "name": ".container",
-        "value": "@extend %container;\n\n  &--narrow {\n    max-width: 1000px;\n  }\n\n  &--full {\n    max-width: 100%;\n    padding: 0 2%;\n    width: auto;\n  }\n\n  &--panel {\n    background: $colour-panel-light;\n    padding: 0 2%;\n    width: auto;\n  }",
+        "value": "@extend %container;\n\n  &--narrow {\n    max-width: 1000px;\n  }\n\n  &--full {\n    max-width: 100%;\n    padding: 0 2%;\n    width: auto;\n  }\n\n  &--panel {\n    background: $colour-panel-default;\n    padding: 0 2%;\n    width: auto;\n  }\n\n  &--panel-inverse {\n    background: $colour-panel-inverse;\n    padding: 0 2%;\n    width: auto;\n  }",
         "line": {
           "start": 25,
-          "end": 57
+          "end": 63
         }
       },
       "example": [
@@ -2603,10 +2699,10 @@
       "context": {
         "type": "css",
         "name": ".panel",
-        "value": "background: $colour-panel-light;\n  margin: em($spacing-medium 0 $spacing-large);\n  padding: em($spacing-medium);\n\n  :first-child {\n    margin-top: 0;\n  }\n\n  :last-child {\n    margin-bottom: 0;\n  }",
+        "value": "background: $colour-panel-default;\n  margin: em($spacing-medium 0 $spacing-large);\n  padding: em($spacing-medium);\n\n  :first-child {\n    margin-top: 0;\n  }\n\n  :last-child {\n    margin-bottom: 0;\n  }",
         "line": {
           "start": 8,
-          "end": 31
+          "end": 33
         }
       },
       "since": [
@@ -2627,18 +2723,18 @@
       }
     },
     {
-      "description": "<p>Modifier for the panel, to use a dark background</p>\n",
+      "description": "<p>Modifier for the panel, to use a inverse (dark) background.\nAutmatically uses inverse links within it. Doesn&#39;t affect buttons\nthough, so any buttons within a dark panel should be <code>.btn.btn--light</code>.</p>\n",
       "commentRange": {
         "start": 22,
-        "end": 25
+        "end": 27
       },
       "context": {
         "type": "css",
-        "name": ".panel--dark",
-        "value": "@extend %inverse-links;\n  background: $colour-panel-dark;\n  color: $colour-text-reverse;",
+        "name": ".panel--inverse",
+        "value": "@extend %inverse-links;\n  background: $colour-panel-inverse;\n  color: $colour-text-inverse;",
         "line": {
-          "start": 26,
-          "end": 31
+          "start": 28,
+          "end": 33
         }
       },
       "require": [
@@ -2691,7 +2787,7 @@
           "context": {
             "type": "css",
             "name": ".phase-tag",
-            "value": "@include font-size(-1);\n  background-color: $colour-panel-dark;\n  color: $colour-text-reverse;\n  display: inline-block;\n  font-weight: 900;\n  letter-spacing: 1px;\n  padding: em($spacing-xx-small $spacing-small);\n  text-decoration: none;\n  text-transform: uppercase;\n  vertical-align: middle;\n\n  @media print {\n    @include important(background, $colour-true-black);\n    @include important(color, $colour-true-white);\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-reverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-reverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-reverse;\n  }",
+            "value": "@include font-size(-1);\n  background-color: $colour-panel-inverse;\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: 900;\n  letter-spacing: 1px;\n  padding: em($spacing-xx-small $spacing-small);\n  text-decoration: none;\n  text-transform: uppercase;\n  vertical-align: middle;\n\n  @media print {\n    @include important(background, $colour-true-black);\n    @include important(color, $colour-true-white);\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }",
             "line": {
               "start": 48,
               "end": 80
@@ -2725,7 +2821,7 @@
       "context": {
         "type": "css",
         "name": ".phase-tag",
-        "value": "@include font-size(-1);\n  background-color: $colour-panel-dark;\n  color: $colour-text-reverse;\n  display: inline-block;\n  font-weight: 900;\n  letter-spacing: 1px;\n  padding: em($spacing-xx-small $spacing-small);\n  text-decoration: none;\n  text-transform: uppercase;\n  vertical-align: middle;\n\n  @media print {\n    @include important(background, $colour-true-black);\n    @include important(color, $colour-true-white);\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-reverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-reverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-reverse;\n  }",
+        "value": "@include font-size(-1);\n  background-color: $colour-panel-inverse;\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: 900;\n  letter-spacing: 1px;\n  padding: em($spacing-xx-small $spacing-small);\n  text-decoration: none;\n  text-transform: uppercase;\n  vertical-align: middle;\n\n  @media print {\n    @include important(background, $colour-true-black);\n    @include important(color, $colour-true-white);\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }",
         "line": {
           "start": 48,
           "end": 80
@@ -6702,14 +6798,14 @@
       },
       "usedBy": [
         {
-          "description": "<p>Modifier for the panel, to use a dark background</p>\n",
+          "description": "<p>Modifier for the panel, to use a inverse (dark) background.\nAutmatically uses inverse links within it. Doesn&#39;t affect buttons\nthough, so any buttons within a dark panel should be <code>.btn.btn--light</code>.</p>\n",
           "context": {
             "type": "css",
-            "name": ".panel--dark",
-            "value": "@extend %inverse-links;\n  background: $colour-panel-dark;\n  color: $colour-text-reverse;",
+            "name": ".panel--inverse",
+            "value": "@extend %inverse-links;\n  background: $colour-panel-inverse;\n  color: $colour-text-inverse;",
             "line": {
-              "start": 26,
-              "end": 31
+              "start": 28,
+              "end": 33
             }
           }
         },
@@ -9738,14 +9834,14 @@
           "resolvedValue": "#adadad"
         },
         {
-          "description": "<p>Body text colour for use on dark background</p>\n",
+          "description": "<p>Inverse body text colour for use on dark background</p>\n",
           "commentRange": {
             "start": 28,
             "end": 29
           },
           "context": {
             "type": "variable",
-            "name": "colour-text-reverse",
+            "name": "colour-text-inverse",
             "value": "$colour-nice-white",
             "scope": "private",
             "line": {
@@ -9998,7 +10094,7 @@
           "context": {
             "type": "variable",
             "name": "colour-link-inverse",
-            "value": "$colour-text-reverse",
+            "value": "$colour-text-inverse",
             "scope": "private",
             "line": {
               "start": 64,
@@ -10679,7 +10775,7 @@
           },
           "context": {
             "type": "variable",
-            "name": "colour-panel-light",
+            "name": "colour-panel-default",
             "value": "$colour-nice-grey-3",
             "scope": "private",
             "line": {
@@ -10713,7 +10809,7 @@
           },
           "context": {
             "type": "variable",
-            "name": "colour-panel-dark",
+            "name": "colour-panel-inverse",
             "value": "$colour-nice-dark-grey",
             "scope": "private",
             "line": {
@@ -11198,7 +11294,7 @@
           "context": {
             "type": "css",
             "name": ".site-footer",
-            "value": "@include font-size(-1);\n  background: $colour-panel-dark;\n  color: $colour-text-reverse;\n  margin-top: em(32px);\n  padding: em(32px 0);\n\n  @media print {\n    display: none;\n  }\n\n  a {\n    color: $colour-text-reverse;\n\n    &:focus {\n      color: #000;\n    }\n  }\n\n  p {\n    @include font-size(-1);\n  }\n\n  &__logo {\n    display: block;\n    margin: em(0 0 32 0);\n    text-decoration: none;\n\n    .icon {\n      font-size: rem(48px);\n    }\n  }\n\n  &__services {\n    margin: em(0 0 32 0);\n  }\n\n  &__social {\n    clear: both;\n    margin: em(0 0 32 0);\n  }\n\n  &__nav {\n    clear: both;\n    margin: em(0 0 32 0);\n  }\n\n  &__copyright {\n    margin: 0;\n    text-align: center;\n  }\n\n  @include mq($from: sm) {\n    &__logo {\n      float: left;\n      margin: em(0 32 32 0);\n    }\n\n    &__services {\n      float: left;\n      margin: em(0 0 32 0);\n    }\n\n    &__social {\n      clear: both;\n    }\n\n    &__copyright {\n      text-align: left;\n    }\n  }\n\n  @include mq($from: md) {\n\n    &__social {\n      clear: none;\n      float: right;\n    }\n  }",
+            "value": "@include font-size(-1);\n  background: $colour-panel-inverse;\n  color: $colour-text-inverse;\n  margin-top: em(32px);\n  padding: em(32px 0);\n\n  @media print {\n    display: none;\n  }\n\n  a {\n    color: $colour-text-inverse;\n\n    &:focus {\n      color: #000;\n    }\n  }\n\n  p {\n    @include font-size(-1);\n  }\n\n  &__logo {\n    display: block;\n    margin: em(0 0 32 0);\n    text-decoration: none;\n\n    .icon {\n      font-size: rem(48px);\n    }\n  }\n\n  &__services {\n    margin: em(0 0 32 0);\n  }\n\n  &__social {\n    clear: both;\n    margin: em(0 0 32 0);\n  }\n\n  &__nav {\n    clear: both;\n    margin: em(0 0 32 0);\n  }\n\n  &__copyright {\n    margin: 0;\n    text-align: center;\n  }\n\n  @include mq($from: sm) {\n    &__logo {\n      float: left;\n      margin: em(0 32 32 0);\n    }\n\n    &__services {\n      float: left;\n      margin: em(0 0 32 0);\n    }\n\n    &__social {\n      clear: both;\n    }\n\n    &__copyright {\n      text-align: left;\n    }\n  }\n\n  @include mq($from: md) {\n\n    &__social {\n      clear: none;\n      float: right;\n    }\n  }",
             "line": {
               "start": 7,
               "end": 239
@@ -11230,7 +11326,7 @@
           "context": {
             "type": "css",
             "name": ".services",
-            "value": "&__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n  }\n\n  &__item {\n    border-bottom: 1px solid $colour-border;\n\n    &:first-child {\n      border-top: 1px solid $colour-border;\n    }\n\n    a {\n      @include font-size(-1);\n      color: $colour-panel-light;\n      display: block;\n      padding: em(8 0);\n      text-decoration: none;\n\n      &:hover {\n        color: $colour-text-reverse;\n      }\n\n      &:focus {\n        color: $colour-text;\n      }\n    }\n\n    .icon {\n      @include font-size(1);\n      display: inline-block;\n      margin: em(0 4 0 0);\n      vertical-align: middle;\n    }\n  }\n\n  @include mq($from: sm) {\n\n    &__item {\n      border: 0;\n      float: left;\n      text-align: center;\n      width: em(90px);\n\n      &:first-child {\n        border: 0;\n      }\n\n      a {\n        padding: em(4px) 0 0;\n      }\n    }\n\n    .icon {\n      @include font-size(6);\n      display: block;\n      line-height: 1;\n      margin: 0 auto em(4px);\n\n      // The following is needed for IE8 to go centrally aligned\n      &:before {\n        text-align: center;\n        width: 100%;\n      }\n    }\n  }",
+            "value": "&__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n  }\n\n  &__item {\n    border-bottom: 1px solid $colour-border;\n\n    &:first-child {\n      border-top: 1px solid $colour-border;\n    }\n\n    a {\n      @include font-size(-1);\n      color: $colour-panel-default;\n      display: block;\n      padding: em(8 0);\n      text-decoration: none;\n\n      &:hover {\n        color: $colour-text-inverse;\n      }\n\n      &:focus {\n        color: $colour-text;\n      }\n    }\n\n    .icon {\n      @include font-size(1);\n      display: inline-block;\n      margin: em(0 4 0 0);\n      vertical-align: middle;\n    }\n  }\n\n  @include mq($from: sm) {\n\n    &__item {\n      border: 0;\n      float: left;\n      text-align: center;\n      width: em(90px);\n\n      &:first-child {\n        border: 0;\n      }\n\n      a {\n        padding: em(4px) 0 0;\n      }\n    }\n\n    .icon {\n      @include font-size(6);\n      display: block;\n      line-height: 1;\n      margin: 0 auto em(4px);\n\n      // The following is needed for IE8 to go centrally aligned\n      &:before {\n        text-align: center;\n        width: 100%;\n      }\n    }\n  }",
             "line": {
               "start": 90,
               "end": 239
@@ -11284,7 +11380,7 @@
           "context": {
             "type": "css",
             "name": ".footer-nav",
-            "value": "&__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  a {\n    padding: em(4 0);\n    text-decoration: none;\n  }\n\n  @include mq($from: sm) {\n    &__list {\n      line-height: 1;\n    }\n\n    &__item {\n      border-left: 1px solid $colour-text-reverse;\n      display: inline-block;\n      line-height: 1;\n\n      &:first-child {\n        border-left: 0;\n\n        a {\n          padding-left: 0;\n        }\n      }\n    }\n\n    a {\n      padding: em(0 8);\n    }\n  }",
+            "value": "&__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  a {\n    padding: em(4 0);\n    text-decoration: none;\n  }\n\n  @include mq($from: sm) {\n    &__list {\n      line-height: 1;\n    }\n\n    &__item {\n      border-left: 1px solid $colour-text-inverse;\n      display: inline-block;\n      line-height: 1;\n\n      &:first-child {\n        border-left: 0;\n\n        a {\n          padding-left: 0;\n        }\n      }\n    }\n\n    a {\n      padding: em(0 8);\n    }\n  }",
             "line": {
               "start": 203,
               "end": 239
@@ -11311,7 +11407,7 @@
           "context": {
             "type": "css",
             "name": ".tabs",
-            "value": "// The list of tabs\n  &__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n  }\n\n  //\n  &__tab {\n    float: left;\n\n    &--active .tabs__tab-btn { // sass-lint:disable-line no-combinators\n      background: $colour-panel-light;\n    }\n  }\n\n  // The button/link for the tab itself\n  &__tab-btn {\n    background: 0;\n    border: 0;\n    cursor: pointer;\n    display: block;\n    line-height: 4rem;\n    margin: 0;\n    padding: 0 1rem;\n\n    &:hover {\n      background: $colour-panel-light;\n    }\n  }\n\n  // The tab content containing the tab panels\n  &__content {\n    background: $colour-panel-light;\n    padding: 1rem;\n  }\n\n  // An individual tab content pane\n  &__pane {\n\n    // Assume tabs will stack if no JS is available\n    .js & {\n      display: none;\n\n      &--active {\n        display: block;\n      }\n    }\n  }",
+            "value": "// The list of tabs\n  &__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n  }\n\n  //\n  &__tab {\n    float: left;\n\n    &--active .tabs__tab-btn { // sass-lint:disable-line no-combinators\n      background: $colour-panel-default;\n    }\n  }\n\n  // The button/link for the tab itself\n  &__tab-btn {\n    background: 0;\n    border: 0;\n    cursor: pointer;\n    display: block;\n    line-height: 4rem;\n    margin: 0;\n    padding: 0 1rem;\n\n    &:hover {\n      background: $colour-panel-default;\n    }\n  }\n\n  // The tab content containing the tab panels\n  &__content {\n    background: $colour-panel-default;\n    padding: 1rem;\n  }\n\n  // An individual tab content pane\n  &__pane {\n\n    // Assume tabs will stack if no JS is available\n    .js & {\n      display: none;\n\n      &--active {\n        display: block;\n      }\n    }\n  }",
             "line": {
               "start": 40,
               "end": 93
@@ -11384,15 +11480,111 @@
           "context": {
             "type": "css",
             "name": ".btn",
-            "value": "@include remove-mz-focus-inner;\n  @include font-size(0);\n  appearance: none;\n  background: $colour-btn-primary;\n  border: em(1px) solid $colour-btn-primary-text;\n  border-radius: 0;\n  color: $colour-btn-primary-text;\n  cursor: pointer;\n  display: inline-block;\n  margin: em(0 $spacing-x-small 0 0);\n  padding: em($spacing-small $spacing-medium);\n  position: relative;\n  text-decoration: none;\n  vertical-align: top;\n\n  &:visited {\n    color: $colour-btn-primary-text;\n  }\n\n  &:hover {\n    background: $colour-btn-primary-hover;\n    color: $colour-btn-primary-text;\n    text-decoration: none;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background: $colour-btn-primary;\n    border-color: $colour-focus;\n  }\n\n  &:active {\n    background: $colour-btn-primary-hover;\n    text-decoration: none;\n    top: em(2px);\n  }\n\n  // Disabled button styles\n  &--disabled,\n  &.disabled,\n  &[aria-disabled='true'],\n  &[disabled='disabled'],\n  &[disabled] {\n    opacity: .5;\n    pointer-events: none;\n\n    &:hover {\n      cursor: default;\n    }\n  }\n\n  // CTA/prominent button\n  &--cta {\n    background: $colour-btn-cta;\n    border: em(1px) solid $colour-btn-cta-text;\n    color: $colour-btn-cta-text;\n\n    &:visited {\n      color: $colour-btn-cta-text;\n    }\n\n    &:hover {\n      background: $colour-btn-cta-hover;\n      color: $colour-btn-cta-text;\n    }\n\n    &:focus {\n      background: $colour-btn-cta-hover;\n    }\n\n    &:active {\n      background: $colour-btn-cta-hover;\n    }\n  }\n\n  // Secondary button\n  &--secondary {\n    background: $colour-btn-secondary;\n    border: em(1px) solid $colour-btn-secondary-text;\n    color: $colour-btn-secondary-text;\n\n    &:visited {\n      color: $colour-btn-secondary-text;\n    }\n\n    &:hover {\n      background: $colour-btn-secondary-hover;\n      color: $colour-btn-secondary-text;\n    }\n\n    &:focus {\n      background: $colour-btn-secondary-hover;\n    }\n\n    &:active {\n      background: $colour-btn-secondary-hover;\n    }\n  }\n\n  // Light button, for use on dark panels/sections\n  &--light {\n    background: $colour-btn-light;\n    border: em(1px) solid $colour-btn-light-text;\n    color: $colour-btn-light-text;\n\n    &:visited {\n      color: $colour-btn-light-text;\n    }\n\n    &:hover {\n      background: $colour-btn-light-hover;\n      color: $colour-btn-light-text;\n    }\n\n    &:focus {\n      background: $colour-btn-light-hover;\n    }\n\n    &:active {\n      background: $colour-btn-light-hover;\n    }\n  }",
+            "value": "@include remove-mz-focus-inner;\n  @include font-size(0);\n  appearance: none;\n  background: $colour-btn-primary;\n  border: em(1px) solid $colour-btn-primary-text;\n  border-radius: 0;\n  color: $colour-btn-primary-text;\n  cursor: pointer;\n  display: inline-block;\n  margin: em(0 $spacing-x-small 0 0);\n  padding: em($spacing-small $spacing-medium);\n  position: relative;\n  text-decoration: none;\n  vertical-align: top;\n\n  &:visited {\n    color: $colour-btn-primary-text;\n  }\n\n  &:hover {\n    background: $colour-btn-primary-hover;\n    color: $colour-btn-primary-text;\n    text-decoration: none;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background: $colour-btn-primary;\n    border-color: $colour-focus;\n  }\n\n  &:active {\n    background: $colour-btn-primary-hover;\n    text-decoration: none;\n    top: em(2px);\n  }\n\n  // Disabled button styles\n  &--disabled,\n  &.disabled,\n  &[aria-disabled='true'],\n  &[disabled='disabled'],\n  &[disabled] {\n    opacity: .5;\n    pointer-events: none;\n\n    &:hover {\n      cursor: default;\n    }\n  }",
             "line": {
               "start": 7,
-              "end": 131
+              "end": 134
             }
           },
           "since": [
             {
               "version": "0.1.0"
+            }
+          ],
+          "group": [
+            "components"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\components\\_components-buttons.scss",
+            "name": "_components-buttons.scss"
+          },
+          "groupName": {
+            "components": "Components"
+          }
+        },
+        {
+          "description": "<p>CTA/prominent button</p>\n",
+          "commentRange": {
+            "start": 60,
+            "end": 61
+          },
+          "context": {
+            "type": "css",
+            "name": ".btn.btn--cta",
+            "value": "background: $colour-btn-cta;\n  border: em(1px) solid $colour-btn-cta-text;\n  color: $colour-btn-cta-text;\n\n  &:visited {\n    color: $colour-btn-cta-text;\n  }\n\n  &:hover {\n    background: $colour-btn-cta-hover;\n    color: $colour-btn-cta-text;\n  }\n\n  &:focus {\n    background: $colour-btn-cta-hover;\n  }\n\n  &:active {\n    background: $colour-btn-cta-hover;\n  }",
+            "line": {
+              "start": 62,
+              "end": 134
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "components"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\components\\_components-buttons.scss",
+            "name": "_components-buttons.scss"
+          },
+          "groupName": {
+            "components": "Components"
+          }
+        },
+        {
+          "description": "<p>Secondary button</p>\n",
+          "commentRange": {
+            "start": 85,
+            "end": 86
+          },
+          "context": {
+            "type": "css",
+            "name": ".btn.btn--secondary",
+            "value": "background: $colour-btn-secondary;\n  border: em(1px) solid $colour-btn-secondary-text;\n  color: $colour-btn-secondary-text;\n\n  &:visited {\n    color: $colour-btn-secondary-text;\n  }\n\n  &:hover {\n    background: $colour-btn-secondary-hover;\n    color: $colour-btn-secondary-text;\n  }\n\n  &:focus {\n    background: $colour-btn-secondary-hover;\n  }\n\n  &:active {\n    background: $colour-btn-secondary-hover;\n  }",
+            "line": {
+              "start": 87,
+              "end": 134
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "components"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\components\\_components-buttons.scss",
+            "name": "_components-buttons.scss"
+          },
+          "groupName": {
+            "components": "Components"
+          }
+        },
+        {
+          "description": "<p>Light button, for use on dark panels/sections</p>\n",
+          "commentRange": {
+            "start": 110,
+            "end": 111
+          },
+          "context": {
+            "type": "css",
+            "name": ".btn.btn--light",
+            "value": "background: $colour-btn-light;\n  border: em(1px) solid $colour-btn-light-text;\n  color: $colour-btn-light-text;\n\n  &:visited {\n    color: $colour-btn-light-text;\n  }\n\n  &:hover {\n    background: $colour-btn-light-hover;\n    color: $colour-btn-light-text;\n  }\n\n  &:focus {\n    background: $colour-btn-light-hover;\n  }\n\n  &:active {\n    background: $colour-btn-light-hover;\n  }",
+            "line": {
+              "start": 112,
+              "end": 134
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
             }
           ],
           "group": [
@@ -11416,10 +11608,10 @@
           "context": {
             "type": "css",
             "name": ".container",
-            "value": "@extend %container;\n\n  &--narrow {\n    max-width: 1000px;\n  }\n\n  &--full {\n    max-width: 100%;\n    padding: 0 2%;\n    width: auto;\n  }\n\n  &--panel {\n    background: $colour-panel-light;\n    padding: 0 2%;\n    width: auto;\n  }",
+            "value": "@extend %container;\n\n  &--narrow {\n    max-width: 1000px;\n  }\n\n  &--full {\n    max-width: 100%;\n    padding: 0 2%;\n    width: auto;\n  }\n\n  &--panel {\n    background: $colour-panel-default;\n    padding: 0 2%;\n    width: auto;\n  }\n\n  &--panel-inverse {\n    background: $colour-panel-inverse;\n    padding: 0 2%;\n    width: auto;\n  }",
             "line": {
               "start": 25,
-              "end": 57
+              "end": 63
             }
           },
           "example": [
@@ -11498,10 +11690,10 @@
           "context": {
             "type": "css",
             "name": ".panel",
-            "value": "background: $colour-panel-light;\n  margin: em($spacing-medium 0 $spacing-large);\n  padding: em($spacing-medium);\n\n  :first-child {\n    margin-top: 0;\n  }\n\n  :last-child {\n    margin-bottom: 0;\n  }",
+            "value": "background: $colour-panel-default;\n  margin: em($spacing-medium 0 $spacing-large);\n  padding: em($spacing-medium);\n\n  :first-child {\n    margin-top: 0;\n  }\n\n  :last-child {\n    margin-bottom: 0;\n  }",
             "line": {
               "start": 8,
-              "end": 31
+              "end": 33
             }
           },
           "since": [
@@ -11522,18 +11714,18 @@
           }
         },
         {
-          "description": "<p>Modifier for the panel, to use a dark background</p>\n",
+          "description": "<p>Modifier for the panel, to use a inverse (dark) background.\nAutmatically uses inverse links within it. Doesn&#39;t affect buttons\nthough, so any buttons within a dark panel should be <code>.btn.btn--light</code>.</p>\n",
           "commentRange": {
             "start": 22,
-            "end": 25
+            "end": 27
           },
           "context": {
             "type": "css",
-            "name": ".panel--dark",
-            "value": "@extend %inverse-links;\n  background: $colour-panel-dark;\n  color: $colour-text-reverse;",
+            "name": ".panel--inverse",
+            "value": "@extend %inverse-links;\n  background: $colour-panel-inverse;\n  color: $colour-text-inverse;",
             "line": {
-              "start": 26,
-              "end": 31
+              "start": 28,
+              "end": 33
             }
           },
           "require": [
@@ -11586,7 +11778,7 @@
               "context": {
                 "type": "css",
                 "name": ".phase-tag",
-                "value": "@include font-size(-1);\n  background-color: $colour-panel-dark;\n  color: $colour-text-reverse;\n  display: inline-block;\n  font-weight: 900;\n  letter-spacing: 1px;\n  padding: em($spacing-xx-small $spacing-small);\n  text-decoration: none;\n  text-transform: uppercase;\n  vertical-align: middle;\n\n  @media print {\n    @include important(background, $colour-true-black);\n    @include important(color, $colour-true-white);\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-reverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-reverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-reverse;\n  }",
+                "value": "@include font-size(-1);\n  background-color: $colour-panel-inverse;\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: 900;\n  letter-spacing: 1px;\n  padding: em($spacing-xx-small $spacing-small);\n  text-decoration: none;\n  text-transform: uppercase;\n  vertical-align: middle;\n\n  @media print {\n    @include important(background, $colour-true-black);\n    @include important(color, $colour-true-white);\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }",
                 "line": {
                   "start": 48,
                   "end": 80
@@ -11620,7 +11812,7 @@
           "context": {
             "type": "css",
             "name": ".phase-tag",
-            "value": "@include font-size(-1);\n  background-color: $colour-panel-dark;\n  color: $colour-text-reverse;\n  display: inline-block;\n  font-weight: 900;\n  letter-spacing: 1px;\n  padding: em($spacing-xx-small $spacing-small);\n  text-decoration: none;\n  text-transform: uppercase;\n  vertical-align: middle;\n\n  @media print {\n    @include important(background, $colour-true-black);\n    @include important(color, $colour-true-white);\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-reverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-reverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-reverse;\n  }",
+            "value": "@include font-size(-1);\n  background-color: $colour-panel-inverse;\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: 900;\n  letter-spacing: 1px;\n  padding: em($spacing-xx-small $spacing-small);\n  text-decoration: none;\n  text-transform: uppercase;\n  vertical-align: middle;\n\n  @media print {\n    @include important(background, $colour-true-black);\n    @include important(color, $colour-true-white);\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }",
             "line": {
               "start": 48,
               "end": 80
@@ -16125,14 +16317,14 @@
           },
           "usedBy": [
             {
-              "description": "<p>Modifier for the panel, to use a dark background</p>\n",
+              "description": "<p>Modifier for the panel, to use a inverse (dark) background.\nAutmatically uses inverse links within it. Doesn&#39;t affect buttons\nthough, so any buttons within a dark panel should be <code>.btn.btn--light</code>.</p>\n",
               "context": {
                 "type": "css",
-                "name": ".panel--dark",
-                "value": "@extend %inverse-links;\n  background: $colour-panel-dark;\n  color: $colour-text-reverse;",
+                "name": ".panel--inverse",
+                "value": "@extend %inverse-links;\n  background: $colour-panel-inverse;\n  color: $colour-text-inverse;",
                 "line": {
-                  "start": 26,
-                  "end": 31
+                  "start": 28,
+                  "end": 33
                 }
               }
             },

@@ -25,9 +25,9 @@ $colour-text: $colour-nice-rich-black;
 /// @since 0.2.0
 $colour-text-subtle: $colour-nice-grey-1;
 
-/// Body text colour for use on dark background
+/// Inverse body text colour for use on dark background
 /// @since 0.2.2
-$colour-text-reverse: $colour-nice-white;
+$colour-text-inverse: $colour-nice-white;
 
 /// Focus colour
 /// @since 0.2.0
@@ -61,7 +61,7 @@ $colour-link-active: #2e8aca;
 
 /// Inverse link text colour
 /// @since 0.2.9
-$colour-link-inverse: $colour-text-reverse;
+$colour-link-inverse: $colour-text-inverse;
 
 /// Inverse link hover colour
 /// @since 0.2.9
@@ -146,13 +146,13 @@ $colour-btn-light-text: $colour-nice-rich-black;
 /// @since 0.2.0
 $colour-border: $colour-nice-grey-1;
 
-// Light panels, tabs etc
+// Default (light) panel background, tabs etc
 /// @since 0.2.0
-$colour-panel-light: $colour-nice-grey-3;
+$colour-panel-default: $colour-nice-grey-3;
 
-// Dark panels background
+// Inverse (dark) panels background
 /// @since 0.2.0
-$colour-panel-dark: $colour-nice-dark-grey;
+$colour-panel-inverse: $colour-nice-dark-grey;
 
 
 // NOTIFICATIONS/BANNERS

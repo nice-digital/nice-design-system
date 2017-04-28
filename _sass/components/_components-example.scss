@@ -21,8 +21,8 @@
     text-transform: uppercase;
     top: 0;
 
-    &--dark {
-      background-color: $colour-panel-light;
+    &--inverse {
+      background-color: $colour-panel-default;
     }
   }
 

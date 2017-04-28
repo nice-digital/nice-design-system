@@ -6,7 +6,7 @@
 /// Often used within a sidebar.
 /// @since 0.1.0
 .panel {
-  background: $colour-panel-light;
+  background: $colour-panel-default;
   margin: em($spacing-medium 0 $spacing-large);
   padding: em($spacing-medium);
 
@@ -19,12 +19,14 @@
   }
 }
 
-/// Modifier for the panel, to use a dark background
+/// Modifier for the panel, to use a inverse (dark) background.
+/// Autmatically uses inverse links within it. Doesn't affect buttons
+/// though, so any buttons within a dark panel should be `.btn.btn--light`.
 /// @require %inverse-links
 /// @require .panel
 /// @since 0.1.0
-.panel--dark {
+.panel--inverse {
   @extend %inverse-links;
-  background: $colour-panel-dark;
-  color: $colour-text-reverse;
+  background: $colour-panel-inverse;
+  color: $colour-text-inverse;
 }

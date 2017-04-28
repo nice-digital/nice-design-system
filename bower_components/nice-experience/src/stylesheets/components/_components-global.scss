@@ -36,7 +36,13 @@
   }
 
   &--panel {
-    background: $colour-panel-light;
+    background: $colour-panel-default;
+    padding: 0 2%;
+    width: auto;
+  }
+
+  &--panel-inverse {
+    background: $colour-panel-inverse;
     padding: 0 2%;
     width: auto;
   }

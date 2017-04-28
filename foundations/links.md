@@ -16,12 +16,12 @@ The wording of links is very important and should be contextual and meaningful. 
 - provides some information when read out of context
 - explains what the link offers
 - doesn't talk about mechanics
-- is not a verb phrase
+- is not a verb phrase.
 
 ## Text links
 
 - links within body copy should be blue and underlined
-- links without surrounding text should not have a full stop at the end
+- links without surrounding text should not have a full stop at the end.
 
 {% capture textlinks %}
 <p>
@@ -32,6 +32,37 @@ The wording of links is very important and should be contextual and meaningful. 
 </p>
 {% endcapture %}
 {% include example.html body=textlinks %}
+
+## Inverse text links
+
+- for use on a dark background
+- use `.link--inverse` on an individual link
+- use `.inverse-links` on a containing element
+- use `%inverse-links` in SASS on custom dark background components.
+
+{% capture inverselinks %}
+<div class="panel panel--inverse">
+    <h3><a href="#">This is a heading 3</a></h3>
+    <p>
+        This is <a href="#">a link</a> in some body copy.
+    </p>
+</div>
+
+<div class="panel inverse-links" style="background: #393939;">
+    <p>
+        <a href="#">links on a</a>
+        <a href="#">dark background</a>
+    </p>
+</div>
+
+<div class="panel" style="background: #393939;">
+    <p>
+        <a class="link--inverse" href="#">individual link on dark background</a>
+    </p>
+</div>
+{% endcapture %}
+{% include example.html body=inverselinks %}
+
 
 ## Heading links
 
@@ -52,7 +83,7 @@ depending on the context in that the heading link appears, some of these rules c
 
 - it’s good practice to tell the user if they are downloading a media file
 - warn the user what the file type and the size is
-- to display further information on the file, place next to the size and type
+- to display further information on the file, place next to the size and type.
 
 CODE AREA
 {% comment %}
@@ -68,7 +99,7 @@ CODE AREA
 {% endcomment %}
 
 ## List links
-When you need to group related links
+When you need to group related links.
 
 {% capture linklist %}
 <ul class="list list--unstyled">

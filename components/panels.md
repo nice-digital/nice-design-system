@@ -7,7 +7,7 @@ title: Panels
 
 ## Variations
 
-### Light panel
+### Default (light) panel
 
 {% capture light %}
 <div class="panel">
@@ -16,10 +16,10 @@ title: Panels
 {% endcapture %}
 {% include example.html lang='html' body=light %}
 
-### Dark panel
+### Inverse (dark) panel
 
 {% capture dark %}
-<div class="panel panel--dark">
+<div class="panel panel--inverse">
     <p>This is some panel content</p>
     <p>
         <a href="#" class="btn btn--light">Light button</a>

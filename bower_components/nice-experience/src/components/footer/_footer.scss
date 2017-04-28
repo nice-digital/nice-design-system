@@ -6,8 +6,8 @@
 /// @since 0.1.0
 .site-footer {
   @include font-size(-1);
-  background: $colour-panel-dark;
-  color: $colour-text-reverse;
+  background: $colour-panel-inverse;
+  color: $colour-text-inverse;
   margin-top: em(32px);
   padding: em(32px 0);
 
@@ -16,7 +16,7 @@
   }
 
   a {
-    color: $colour-text-reverse;
+    color: $colour-text-inverse;
 
     &:focus {
       color: #000;
@@ -105,13 +105,13 @@
 
     a {
       @include font-size(-1);
-      color: $colour-panel-light;
+      color: $colour-panel-default;
       display: block;
       padding: em(8 0);
       text-decoration: none;
 
       &:hover {
-        color: $colour-text-reverse;
+        color: $colour-text-inverse;
       }
 
       &:focus {
@@ -218,7 +218,7 @@
     }
 
     &__item {
-      border-left: 1px solid $colour-text-reverse;
+      border-left: 1px solid $colour-text-inverse;
       display: inline-block;
       line-height: 1;
 
