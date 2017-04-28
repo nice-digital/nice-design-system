@@ -933,8 +933,8 @@
     {
       "description": "<p>Link text colour</p>\n",
       "commentRange": {
-        "start": 44,
-        "end": 45
+        "start": 43,
+        "end": 44
       },
       "context": {
         "type": "variable",
@@ -942,8 +942,8 @@
         "value": "#005ea5",
         "scope": "private",
         "line": {
-          "start": 46,
-          "end": 46
+          "start": 45,
+          "end": 45
         }
       },
       "since": [
@@ -967,8 +967,8 @@
     {
       "description": "<p>Link hover colour</p>\n",
       "commentRange": {
-        "start": 48,
-        "end": 49
+        "start": 47,
+        "end": 48
       },
       "context": {
         "type": "variable",
@@ -976,8 +976,8 @@
         "value": "#2e8aca",
         "scope": "private",
         "line": {
-          "start": 50,
-          "end": 50
+          "start": 49,
+          "end": 49
         }
       },
       "since": [
@@ -1001,8 +1001,8 @@
     {
       "description": "<p>Link visited colour</p>\n",
       "commentRange": {
-        "start": 52,
-        "end": 53
+        "start": 51,
+        "end": 52
       },
       "context": {
         "type": "variable",
@@ -1010,8 +1010,8 @@
         "value": "#4c2c92",
         "scope": "private",
         "line": {
-          "start": 54,
-          "end": 54
+          "start": 53,
+          "end": 53
         }
       },
       "since": [
@@ -1035,8 +1035,8 @@
     {
       "description": "<p>Link active colour</p>\n",
       "commentRange": {
-        "start": 56,
-        "end": 57
+        "start": 55,
+        "end": 56
       },
       "context": {
         "type": "variable",
@@ -1044,8 +1044,8 @@
         "value": "#2e8aca",
         "scope": "private",
         "line": {
-          "start": 58,
-          "end": 58
+          "start": 57,
+          "end": 57
         }
       },
       "since": [
@@ -1067,10 +1067,250 @@
       "resolvedValue": "#2e8aca"
     },
     {
+      "description": "<p>Inverse link text colour</p>\n",
+      "commentRange": {
+        "start": 62,
+        "end": 63
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-link-inverse",
+        "value": "$colour-text-reverse",
+        "scope": "private",
+        "line": {
+          "start": 64,
+          "end": 64
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.9"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "usedBy": [
+        {
+          "description": "<p>Inverse link style for use on a dark background</p>\n",
+          "context": {
+            "type": "placeholder",
+            "name": "inverse-link",
+            "code": "\n  color: $colour-link-inverse;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+            "line": {
+              "start": 72,
+              "end": 90
+            }
+          }
+        }
+      ],
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#fff"
+    },
+    {
+      "description": "<p>Inverse link hover colour</p>\n",
+      "commentRange": {
+        "start": 66,
+        "end": 67
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-link-inverse-hover",
+        "value": "$colour-nice-grey-2",
+        "scope": "private",
+        "line": {
+          "start": 68,
+          "end": 68
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.9"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "usedBy": [
+        {
+          "description": "<p>Inverse link style for use on a dark background</p>\n",
+          "context": {
+            "type": "placeholder",
+            "name": "inverse-link",
+            "code": "\n  color: $colour-link-inverse;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+            "line": {
+              "start": 72,
+              "end": 90
+            }
+          }
+        }
+      ],
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#d6d6d6"
+    },
+    {
+      "description": "<p>Inverse link visited colour. Same as normal inverse link colour to ensure minimum 4.5:1 colour contrast across various dark backgrounds.</p>\n",
+      "commentRange": {
+        "start": 70,
+        "end": 71
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-link-inverse-visited",
+        "value": "$colour-link-inverse",
+        "scope": "private",
+        "line": {
+          "start": 72,
+          "end": 72
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.9"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "usedBy": [
+        {
+          "description": "<p>Inverse link style for use on a dark background</p>\n",
+          "context": {
+            "type": "placeholder",
+            "name": "inverse-link",
+            "code": "\n  color: $colour-link-inverse;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+            "line": {
+              "start": 72,
+              "end": 90
+            }
+          }
+        }
+      ],
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#fff"
+    },
+    {
+      "description": "<p>Inverse link active colour</p>\n",
+      "commentRange": {
+        "start": 74,
+        "end": 75
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-link-inverse-active",
+        "value": "$colour-link-active",
+        "scope": "private",
+        "line": {
+          "start": 76,
+          "end": 76
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.9"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "usedBy": [
+        {
+          "description": "<p>Inverse link style for use on a dark background</p>\n",
+          "context": {
+            "type": "placeholder",
+            "name": "inverse-link",
+            "code": "\n  color: $colour-link-inverse;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+            "line": {
+              "start": 72,
+              "end": 90
+            }
+          }
+        }
+      ],
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#2e8aca"
+    },
+    {
+      "description": "<p>Inverse link focus text colour</p>\n",
+      "commentRange": {
+        "start": 78,
+        "end": 79
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-link-inverse-focus-text",
+        "value": "$colour-nice-dark-grey",
+        "scope": "private",
+        "line": {
+          "start": 80,
+          "end": 80
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.9"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "usedBy": [
+        {
+          "description": "<p>Inverse link style for use on a dark background</p>\n",
+          "context": {
+            "type": "placeholder",
+            "name": "inverse-link",
+            "code": "\n  color: $colour-link-inverse;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+            "line": {
+              "start": 72,
+              "end": 90
+            }
+          }
+        }
+      ],
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#393939"
+    },
+    {
       "description": "<p>CTA button background colour</p>\n",
       "commentRange": {
-        "start": 63,
-        "end": 64
+        "start": 85,
+        "end": 86
       },
       "context": {
         "type": "variable",
@@ -1078,8 +1318,8 @@
         "value": "$colour-nice-purple",
         "scope": "private",
         "line": {
-          "start": 65,
-          "end": 65
+          "start": 87,
+          "end": 87
         }
       },
       "since": [
@@ -1103,8 +1343,8 @@
     {
       "description": "<p>CTA button hover colour</p>\n",
       "commentRange": {
-        "start": 67,
-        "end": 68
+        "start": 89,
+        "end": 90
       },
       "context": {
         "type": "variable",
@@ -1112,8 +1352,8 @@
         "value": "#260b2d",
         "scope": "private",
         "line": {
-          "start": 69,
-          "end": 69
+          "start": 91,
+          "end": 91
         }
       },
       "since": [
@@ -1137,8 +1377,8 @@
     {
       "description": "<p>CTA button text colour</p>\n",
       "commentRange": {
-        "start": 71,
-        "end": 72
+        "start": 93,
+        "end": 94
       },
       "context": {
         "type": "variable",
@@ -1146,8 +1386,8 @@
         "value": "$colour-nice-white",
         "scope": "private",
         "line": {
-          "start": 73,
-          "end": 73
+          "start": 95,
+          "end": 95
         }
       },
       "since": [
@@ -1171,8 +1411,8 @@
     {
       "description": "<p>Primary button background colour</p>\n",
       "commentRange": {
-        "start": 78,
-        "end": 79
+        "start": 100,
+        "end": 101
       },
       "context": {
         "type": "variable",
@@ -1180,8 +1420,8 @@
         "value": "$colour-nice-dark-grey",
         "scope": "private",
         "line": {
-          "start": 80,
-          "end": 80
+          "start": 102,
+          "end": 102
         }
       },
       "since": [
@@ -1205,8 +1445,8 @@
     {
       "description": "<p>Primary button hover colour</p>\n",
       "commentRange": {
-        "start": 82,
-        "end": 83
+        "start": 104,
+        "end": 105
       },
       "context": {
         "type": "variable",
@@ -1214,8 +1454,8 @@
         "value": "$colour-nice-rich-black",
         "scope": "private",
         "line": {
-          "start": 84,
-          "end": 84
+          "start": 106,
+          "end": 106
         }
       },
       "since": [
@@ -1239,148 +1479,12 @@
     {
       "description": "<p>Primary button text colour</p>\n",
       "commentRange": {
-        "start": 86,
-        "end": 87
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-btn-primary-text",
-        "value": "$colour-nice-white",
-        "scope": "private",
-        "line": {
-          "start": 88,
-          "end": 88
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.2"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
-        "name": "_settings-colours-semantic.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#fff"
-    },
-    {
-      "description": "<p>Secondary button background colour</p>\n",
-      "commentRange": {
-        "start": 93,
-        "end": 94
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-btn-secondary",
-        "value": "#666",
-        "scope": "private",
-        "line": {
-          "start": 95,
-          "end": 95
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.2"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
-        "name": "_settings-colours-semantic.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#666"
-    },
-    {
-      "description": "<p>Secondary button hover colour</p>\n",
-      "commentRange": {
-        "start": 97,
-        "end": 98
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-btn-secondary-hover",
-        "value": "#333",
-        "scope": "private",
-        "line": {
-          "start": 99,
-          "end": 99
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.2"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
-        "name": "_settings-colours-semantic.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#333"
-    },
-    {
-      "description": "<p>Primary button text colour</p>\n",
-      "commentRange": {
-        "start": 101,
-        "end": 102
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-btn-secondary-text",
-        "value": "$colour-nice-white",
-        "scope": "private",
-        "line": {
-          "start": 103,
-          "end": 103
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.2"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
-        "name": "_settings-colours-semantic.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#fff"
-    },
-    {
-      "description": "<p>Light button background colour</p>\n",
-      "commentRange": {
         "start": 108,
         "end": 109
       },
       "context": {
         "type": "variable",
-        "name": "colour-btn-light",
+        "name": "colour-btn-primary-text",
         "value": "$colour-nice-white",
         "scope": "private",
         "line": {
@@ -1407,10 +1511,146 @@
       "resolvedValue": "#fff"
     },
     {
+      "description": "<p>Secondary button background colour</p>\n",
+      "commentRange": {
+        "start": 115,
+        "end": 116
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-btn-secondary",
+        "value": "#666",
+        "scope": "private",
+        "line": {
+          "start": 117,
+          "end": 117
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.2"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#666"
+    },
+    {
+      "description": "<p>Secondary button hover colour</p>\n",
+      "commentRange": {
+        "start": 119,
+        "end": 120
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-btn-secondary-hover",
+        "value": "#333",
+        "scope": "private",
+        "line": {
+          "start": 121,
+          "end": 121
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.2"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#333"
+    },
+    {
+      "description": "<p>Primary button text colour</p>\n",
+      "commentRange": {
+        "start": 123,
+        "end": 124
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-btn-secondary-text",
+        "value": "$colour-nice-white",
+        "scope": "private",
+        "line": {
+          "start": 125,
+          "end": 125
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.2"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#fff"
+    },
+    {
+      "description": "<p>Light button background colour</p>\n",
+      "commentRange": {
+        "start": 130,
+        "end": 131
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-btn-light",
+        "value": "$colour-nice-white",
+        "scope": "private",
+        "line": {
+          "start": 132,
+          "end": 132
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.2"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#fff"
+    },
+    {
       "description": "<p>Light button hover colour</p>\n",
       "commentRange": {
-        "start": 112,
-        "end": 113
+        "start": 134,
+        "end": 135
       },
       "context": {
         "type": "variable",
@@ -1418,8 +1658,8 @@
         "value": "$colour-nice-grey-3",
         "scope": "private",
         "line": {
-          "start": 114,
-          "end": 114
+          "start": 136,
+          "end": 136
         }
       },
       "since": [
@@ -1443,8 +1683,8 @@
     {
       "description": "<p>Light button text colour</p>\n",
       "commentRange": {
-        "start": 116,
-        "end": 117
+        "start": 138,
+        "end": 139
       },
       "context": {
         "type": "variable",
@@ -1452,8 +1692,8 @@
         "value": "$colour-nice-rich-black",
         "scope": "private",
         "line": {
-          "start": 118,
-          "end": 118
+          "start": 140,
+          "end": 140
         }
       },
       "since": [
@@ -1477,8 +1717,8 @@
     {
       "description": "<p>Borders, seperators, rules, keylines etc.</p>\n",
       "commentRange": {
-        "start": 123,
-        "end": 124
+        "start": 145,
+        "end": 146
       },
       "context": {
         "type": "variable",
@@ -1486,8 +1726,8 @@
         "value": "$colour-nice-grey-1",
         "scope": "private",
         "line": {
-          "start": 125,
-          "end": 125
+          "start": 147,
+          "end": 147
         }
       },
       "since": [
@@ -1511,8 +1751,8 @@
     {
       "description": "",
       "commentRange": {
-        "start": 128,
-        "end": 128
+        "start": 150,
+        "end": 150
       },
       "context": {
         "type": "variable",
@@ -1520,8 +1760,8 @@
         "value": "$colour-nice-grey-3",
         "scope": "private",
         "line": {
-          "start": 129,
-          "end": 129
+          "start": 151,
+          "end": 151
         }
       },
       "since": [
@@ -1545,8 +1785,8 @@
     {
       "description": "",
       "commentRange": {
-        "start": 132,
-        "end": 132
+        "start": 154,
+        "end": 154
       },
       "context": {
         "type": "variable",
@@ -1554,8 +1794,8 @@
         "value": "$colour-nice-dark-grey",
         "scope": "private",
         "line": {
-          "start": 133,
-          "end": 133
+          "start": 155,
+          "end": 155
         }
       },
       "since": [
@@ -1579,8 +1819,8 @@
     {
       "description": "<p>Agile lifecycle phase banner</p>\n",
       "commentRange": {
-        "start": 138,
-        "end": 139
+        "start": 160,
+        "end": 161
       },
       "context": {
         "type": "variable",
@@ -1588,8 +1828,8 @@
         "value": "#009ae9",
         "scope": "private",
         "line": {
-          "start": 140,
-          "end": 140
+          "start": 162,
+          "end": 162
         }
       },
       "since": [
@@ -1613,8 +1853,8 @@
     {
       "description": "<p>Discovery agile lifecycle phase</p>\n",
       "commentRange": {
-        "start": 142,
-        "end": 144
+        "start": 164,
+        "end": 166
       },
       "context": {
         "type": "variable",
@@ -1622,8 +1862,8 @@
         "value": "#b8008e",
         "scope": "private",
         "line": {
-          "start": 145,
-          "end": 145
+          "start": 167,
+          "end": 167
         }
       },
       "since": [
@@ -1648,8 +1888,8 @@
     {
       "description": "<p>Alpha badges and banners</p>\n",
       "commentRange": {
-        "start": 147,
-        "end": 149
+        "start": 169,
+        "end": 171
       },
       "context": {
         "type": "variable",
@@ -1657,8 +1897,8 @@
         "value": "#d5367f",
         "scope": "private",
         "line": {
-          "start": 150,
-          "end": 150
+          "start": 172,
+          "end": 172
         }
       },
       "since": [
@@ -1683,8 +1923,8 @@
     {
       "description": "<p>Beta badges and banners</p>\n",
       "commentRange": {
-        "start": 152,
-        "end": 154
+        "start": 174,
+        "end": 176
       },
       "context": {
         "type": "variable",
@@ -1692,8 +1932,8 @@
         "value": "#f47738",
         "scope": "private",
         "line": {
-          "start": 155,
-          "end": 155
+          "start": 177,
+          "end": 177
         }
       },
       "since": [
@@ -1718,8 +1958,8 @@
     {
       "description": "<p>Live badges and banners</p>\n",
       "commentRange": {
-        "start": 157,
-        "end": 159
+        "start": 179,
+        "end": 181
       },
       "context": {
         "type": "variable",
@@ -1727,8 +1967,8 @@
         "value": "#70a747",
         "scope": "private",
         "line": {
-          "start": 160,
-          "end": 160
+          "start": 182,
+          "end": 182
         }
       },
       "since": [
@@ -1753,8 +1993,8 @@
     {
       "description": "<p>Error text and border colour</p>\n",
       "commentRange": {
-        "start": 162,
-        "end": 163
+        "start": 184,
+        "end": 185
       },
       "context": {
         "type": "variable",
@@ -1762,8 +2002,8 @@
         "value": "#b10e1e",
         "scope": "private",
         "line": {
-          "start": 164,
-          "end": 164
+          "start": 186,
+          "end": 186
         }
       },
       "since": [
@@ -1787,8 +2027,8 @@
     {
       "description": "<p>Error background colour</p>\n",
       "commentRange": {
-        "start": 166,
-        "end": 167
+        "start": 188,
+        "end": 189
       },
       "context": {
         "type": "variable",
@@ -1796,8 +2036,8 @@
         "value": "#eac3c3",
         "scope": "private",
         "line": {
-          "start": 168,
-          "end": 168
+          "start": 190,
+          "end": 190
         }
       },
       "since": [
@@ -1821,8 +2061,8 @@
     {
       "description": "<p>Caution text and border colour</p>\n",
       "commentRange": {
-        "start": 170,
-        "end": 171
+        "start": 192,
+        "end": 193
       },
       "context": {
         "type": "variable",
@@ -1830,8 +2070,8 @@
         "value": "#9b722f",
         "scope": "private",
         "line": {
-          "start": 172,
-          "end": 172
+          "start": 194,
+          "end": 194
         }
       },
       "since": [
@@ -1855,8 +2095,8 @@
     {
       "description": "<p>Caution background colour</p>\n",
       "commentRange": {
-        "start": 174,
-        "end": 175
+        "start": 196,
+        "end": 197
       },
       "context": {
         "type": "variable",
@@ -1864,8 +2104,8 @@
         "value": "#ffdfa4",
         "scope": "private",
         "line": {
-          "start": 176,
-          "end": 176
+          "start": 198,
+          "end": 198
         }
       },
       "since": [
@@ -1889,8 +2129,8 @@
     {
       "description": "<p>Info text and border colour</p>\n",
       "commentRange": {
-        "start": 178,
-        "end": 179
+        "start": 200,
+        "end": 201
       },
       "context": {
         "type": "variable",
@@ -1898,8 +2138,8 @@
         "value": "#4a7f99",
         "scope": "private",
         "line": {
-          "start": 180,
-          "end": 180
+          "start": 202,
+          "end": 202
         }
       },
       "since": [
@@ -1923,8 +2163,8 @@
     {
       "description": "<p>Info background colour</p>\n",
       "commentRange": {
-        "start": 182,
-        "end": 183
+        "start": 204,
+        "end": 205
       },
       "context": {
         "type": "variable",
@@ -1932,8 +2172,8 @@
         "value": "#e6faff",
         "scope": "private",
         "line": {
-          "start": 184,
-          "end": 184
+          "start": 206,
+          "end": 206
         }
       },
       "since": [
@@ -1957,8 +2197,8 @@
     {
       "description": "<p>Success text and border colour</p>\n",
       "commentRange": {
-        "start": 186,
-        "end": 187
+        "start": 208,
+        "end": 209
       },
       "context": {
         "type": "variable",
@@ -1966,8 +2206,8 @@
         "value": "#3f8c5e",
         "scope": "private",
         "line": {
-          "start": 188,
-          "end": 188
+          "start": 210,
+          "end": 210
         }
       },
       "since": [
@@ -1991,8 +2231,8 @@
     {
       "description": "<p>Success background colour</p>\n",
       "commentRange": {
-        "start": 190,
-        "end": 191
+        "start": 212,
+        "end": 213
       },
       "context": {
         "type": "variable",
@@ -2000,8 +2240,8 @@
         "value": "#eff7eb",
         "scope": "private",
         "line": {
-          "start": 192,
-          "end": 192
+          "start": 214,
+          "end": 214
         }
       },
       "since": [
@@ -2363,12 +2603,56 @@
       "context": {
         "type": "css",
         "name": ".panel",
-        "value": "background: $colour-panel-light;\n  padding: 1em;\n\n  &--dark {\n    background: $colour-panel-dark;\n    color: $colour-text-reverse;\n  }",
+        "value": "background: $colour-panel-light;\n  margin: em($spacing-medium 0 $spacing-large);\n  padding: em($spacing-medium);\n\n  :first-child {\n    margin-top: 0;\n  }\n\n  :last-child {\n    margin-bottom: 0;\n  }",
         "line": {
           "start": 8,
-          "end": 17
+          "end": 31
         }
       },
+      "since": [
+        {
+          "version": "0.1.0"
+        }
+      ],
+      "group": [
+        "components"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\components\\_components-panel.scss",
+        "name": "_components-panel.scss"
+      },
+      "groupName": {
+        "components": "Components"
+      }
+    },
+    {
+      "description": "<p>Modifier for the panel, to use a dark background</p>\n",
+      "commentRange": {
+        "start": 22,
+        "end": 25
+      },
+      "context": {
+        "type": "css",
+        "name": ".panel--dark",
+        "value": "@extend %inverse-links;\n  background: $colour-panel-dark;\n  color: $colour-text-reverse;",
+        "line": {
+          "start": 26,
+          "end": 31
+        }
+      },
+      "require": [
+        {
+          "type": "placeholder",
+          "name": "inverse-links",
+          "external": false
+        },
+        {
+          "type": "function",
+          "name": ".panel",
+          "external": true
+        }
+      ],
       "since": [
         {
           "version": "0.1.0"
@@ -6315,18 +6599,221 @@
       }
     },
     {
+      "description": "<p>Inverse link style for use on a dark background</p>\n",
+      "commentRange": {
+        "start": 70,
+        "end": 71
+      },
+      "context": {
+        "type": "placeholder",
+        "name": "inverse-link",
+        "code": "\n  color: $colour-link-inverse;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+        "line": {
+          "start": 72,
+          "end": 90
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.9"
+        }
+      ],
+      "group": [
+        "typography"
+      ],
+      "access": "public",
+      "require": [
+        {
+          "type": "variable",
+          "name": "colour-link-inverse"
+        },
+        {
+          "type": "variable",
+          "name": "colour-link-inverse-visited"
+        },
+        {
+          "type": "variable",
+          "name": "colour-link-inverse-hover"
+        },
+        {
+          "type": "variable",
+          "name": "colour-link-inverse-focus-text"
+        },
+        {
+          "type": "variable",
+          "name": "colour-link-inverse-active"
+        }
+      ],
+      "file": {
+        "path": "stylesheets\\typography\\_typography-global.scss",
+        "name": "_typography-global.scss"
+      },
+      "usedBy": [
+        {
+          "description": "<p>Inverse links for use on a dark background</p>\n",
+          "context": {
+            "type": "placeholder",
+            "name": "inverse-links",
+            "code": "\n  a {\n    @extend %inverse-link;\n  }\n",
+            "line": {
+              "start": 94,
+              "end": 98
+            }
+          }
+        }
+      ],
+      "groupName": {
+        "typography": "Typography"
+      }
+    },
+    {
+      "description": "<p>Inverse links for use on a dark background</p>\n",
+      "commentRange": {
+        "start": 92,
+        "end": 93
+      },
+      "context": {
+        "type": "placeholder",
+        "name": "inverse-links",
+        "code": "\n  a {\n    @extend %inverse-link;\n  }\n",
+        "line": {
+          "start": 94,
+          "end": 98
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.9"
+        }
+      ],
+      "group": [
+        "typography"
+      ],
+      "access": "public",
+      "require": [
+        {
+          "type": "placeholder",
+          "name": "inverse-link"
+        }
+      ],
+      "file": {
+        "path": "stylesheets\\typography\\_typography-global.scss",
+        "name": "_typography-global.scss"
+      },
+      "usedBy": [
+        {
+          "description": "<p>Modifier for the panel, to use a dark background</p>\n",
+          "context": {
+            "type": "css",
+            "name": ".panel--dark",
+            "value": "@extend %inverse-links;\n  background: $colour-panel-dark;\n  color: $colour-text-reverse;",
+            "line": {
+              "start": 26,
+              "end": 31
+            }
+          }
+        },
+        {
+          "description": "<p>Inverse links, for use on dark backgrounds e.g dark panels.\nUse this class on a containing element to apply to all links within it.</p>\n",
+          "context": {
+            "type": "css",
+            "name": ".inverse-links",
+            "value": "@extend %inverse-links;",
+            "line": {
+              "start": 111,
+              "end": 165
+            }
+          }
+        }
+      ],
+      "groupName": {
+        "typography": "Typography"
+      }
+    },
+    {
+      "description": "<p>Inverse link for use on a dark background. Apply to an individual link.\nPrefer using <code>.inverse-links</code> on the container instead.</p>\n",
+      "commentRange": {
+        "start": 100,
+        "end": 102
+      },
+      "context": {
+        "type": "css",
+        "name": ".link--inverse",
+        "value": "@extend %inverse-link;",
+        "line": {
+          "start": 103,
+          "end": 165
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.9"
+        }
+      ],
+      "group": [
+        "typography"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\typography\\_typography-global.scss",
+        "name": "_typography-global.scss"
+      },
+      "groupName": {
+        "typography": "Typography"
+      }
+    },
+    {
+      "description": "<p>Inverse links, for use on dark backgrounds e.g dark panels.\nUse this class on a containing element to apply to all links within it.</p>\n",
+      "commentRange": {
+        "start": 107,
+        "end": 110
+      },
+      "context": {
+        "type": "css",
+        "name": ".inverse-links",
+        "value": "@extend %inverse-links;",
+        "line": {
+          "start": 111,
+          "end": 165
+        }
+      },
+      "require": [
+        {
+          "type": "placeholder",
+          "name": "inverse-links",
+          "external": false
+        }
+      ],
+      "since": [
+        {
+          "version": "0.2.9"
+        }
+      ],
+      "group": [
+        "typography"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\typography\\_typography-global.scss",
+        "name": "_typography-global.scss"
+      },
+      "groupName": {
+        "typography": "Typography"
+      }
+    },
+    {
       "description": "<p>Mark</p>\n",
       "commentRange": {
-        "start": 108,
-        "end": 108
+        "start": 153,
+        "end": 153
       },
       "context": {
         "type": "css",
         "name": "mark,\n.mark",
         "value": "background-color: #fff999;\n  padding: em(4);",
         "line": {
-          "start": 110,
-          "end": 120
+          "start": 155,
+          "end": 165
         }
       },
       "group": [
@@ -6344,16 +6831,16 @@
     {
       "description": "<p>Small</p>\n",
       "commentRange": {
-        "start": 115,
-        "end": 115
+        "start": 160,
+        "end": 160
       },
       "context": {
         "type": "css",
         "name": "small,\n.small",
         "value": "font-size: 85%;",
         "line": {
-          "start": 117,
-          "end": 120
+          "start": 162,
+          "end": 165
         }
       },
       "group": [
@@ -9369,8 +9856,8 @@
         {
           "description": "<p>Link text colour</p>\n",
           "commentRange": {
-            "start": 44,
-            "end": 45
+            "start": 43,
+            "end": 44
           },
           "context": {
             "type": "variable",
@@ -9378,8 +9865,8 @@
             "value": "#005ea5",
             "scope": "private",
             "line": {
-              "start": 46,
-              "end": 46
+              "start": 45,
+              "end": 45
             }
           },
           "since": [
@@ -9403,8 +9890,8 @@
         {
           "description": "<p>Link hover colour</p>\n",
           "commentRange": {
-            "start": 48,
-            "end": 49
+            "start": 47,
+            "end": 48
           },
           "context": {
             "type": "variable",
@@ -9412,8 +9899,8 @@
             "value": "#2e8aca",
             "scope": "private",
             "line": {
-              "start": 50,
-              "end": 50
+              "start": 49,
+              "end": 49
             }
           },
           "since": [
@@ -9437,8 +9924,8 @@
         {
           "description": "<p>Link visited colour</p>\n",
           "commentRange": {
-            "start": 52,
-            "end": 53
+            "start": 51,
+            "end": 52
           },
           "context": {
             "type": "variable",
@@ -9446,8 +9933,8 @@
             "value": "#4c2c92",
             "scope": "private",
             "line": {
-              "start": 54,
-              "end": 54
+              "start": 53,
+              "end": 53
             }
           },
           "since": [
@@ -9471,8 +9958,8 @@
         {
           "description": "<p>Link active colour</p>\n",
           "commentRange": {
-            "start": 56,
-            "end": 57
+            "start": 55,
+            "end": 56
           },
           "context": {
             "type": "variable",
@@ -9480,8 +9967,8 @@
             "value": "#2e8aca",
             "scope": "private",
             "line": {
-              "start": 58,
-              "end": 58
+              "start": 57,
+              "end": 57
             }
           },
           "since": [
@@ -9503,10 +9990,250 @@
           "resolvedValue": "#2e8aca"
         },
         {
+          "description": "<p>Inverse link text colour</p>\n",
+          "commentRange": {
+            "start": 62,
+            "end": 63
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-link-inverse",
+            "value": "$colour-text-reverse",
+            "scope": "private",
+            "line": {
+              "start": 64,
+              "end": 64
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.9"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "usedBy": [
+            {
+              "description": "<p>Inverse link style for use on a dark background</p>\n",
+              "context": {
+                "type": "placeholder",
+                "name": "inverse-link",
+                "code": "\n  color: $colour-link-inverse;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+                "line": {
+                  "start": 72,
+                  "end": 90
+                }
+              }
+            }
+          ],
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#fff"
+        },
+        {
+          "description": "<p>Inverse link hover colour</p>\n",
+          "commentRange": {
+            "start": 66,
+            "end": 67
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-link-inverse-hover",
+            "value": "$colour-nice-grey-2",
+            "scope": "private",
+            "line": {
+              "start": 68,
+              "end": 68
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.9"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "usedBy": [
+            {
+              "description": "<p>Inverse link style for use on a dark background</p>\n",
+              "context": {
+                "type": "placeholder",
+                "name": "inverse-link",
+                "code": "\n  color: $colour-link-inverse;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+                "line": {
+                  "start": 72,
+                  "end": 90
+                }
+              }
+            }
+          ],
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#d6d6d6"
+        },
+        {
+          "description": "<p>Inverse link visited colour. Same as normal inverse link colour to ensure minimum 4.5:1 colour contrast across various dark backgrounds.</p>\n",
+          "commentRange": {
+            "start": 70,
+            "end": 71
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-link-inverse-visited",
+            "value": "$colour-link-inverse",
+            "scope": "private",
+            "line": {
+              "start": 72,
+              "end": 72
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.9"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "usedBy": [
+            {
+              "description": "<p>Inverse link style for use on a dark background</p>\n",
+              "context": {
+                "type": "placeholder",
+                "name": "inverse-link",
+                "code": "\n  color: $colour-link-inverse;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+                "line": {
+                  "start": 72,
+                  "end": 90
+                }
+              }
+            }
+          ],
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#fff"
+        },
+        {
+          "description": "<p>Inverse link active colour</p>\n",
+          "commentRange": {
+            "start": 74,
+            "end": 75
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-link-inverse-active",
+            "value": "$colour-link-active",
+            "scope": "private",
+            "line": {
+              "start": 76,
+              "end": 76
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.9"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "usedBy": [
+            {
+              "description": "<p>Inverse link style for use on a dark background</p>\n",
+              "context": {
+                "type": "placeholder",
+                "name": "inverse-link",
+                "code": "\n  color: $colour-link-inverse;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+                "line": {
+                  "start": 72,
+                  "end": 90
+                }
+              }
+            }
+          ],
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#2e8aca"
+        },
+        {
+          "description": "<p>Inverse link focus text colour</p>\n",
+          "commentRange": {
+            "start": 78,
+            "end": 79
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-link-inverse-focus-text",
+            "value": "$colour-nice-dark-grey",
+            "scope": "private",
+            "line": {
+              "start": 80,
+              "end": 80
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.9"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "usedBy": [
+            {
+              "description": "<p>Inverse link style for use on a dark background</p>\n",
+              "context": {
+                "type": "placeholder",
+                "name": "inverse-link",
+                "code": "\n  color: $colour-link-inverse;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+                "line": {
+                  "start": 72,
+                  "end": 90
+                }
+              }
+            }
+          ],
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#393939"
+        },
+        {
           "description": "<p>CTA button background colour</p>\n",
           "commentRange": {
-            "start": 63,
-            "end": 64
+            "start": 85,
+            "end": 86
           },
           "context": {
             "type": "variable",
@@ -9514,8 +10241,8 @@
             "value": "$colour-nice-purple",
             "scope": "private",
             "line": {
-              "start": 65,
-              "end": 65
+              "start": 87,
+              "end": 87
             }
           },
           "since": [
@@ -9539,8 +10266,8 @@
         {
           "description": "<p>CTA button hover colour</p>\n",
           "commentRange": {
-            "start": 67,
-            "end": 68
+            "start": 89,
+            "end": 90
           },
           "context": {
             "type": "variable",
@@ -9548,8 +10275,8 @@
             "value": "#260b2d",
             "scope": "private",
             "line": {
-              "start": 69,
-              "end": 69
+              "start": 91,
+              "end": 91
             }
           },
           "since": [
@@ -9573,8 +10300,8 @@
         {
           "description": "<p>CTA button text colour</p>\n",
           "commentRange": {
-            "start": 71,
-            "end": 72
+            "start": 93,
+            "end": 94
           },
           "context": {
             "type": "variable",
@@ -9582,8 +10309,8 @@
             "value": "$colour-nice-white",
             "scope": "private",
             "line": {
-              "start": 73,
-              "end": 73
+              "start": 95,
+              "end": 95
             }
           },
           "since": [
@@ -9607,8 +10334,8 @@
         {
           "description": "<p>Primary button background colour</p>\n",
           "commentRange": {
-            "start": 78,
-            "end": 79
+            "start": 100,
+            "end": 101
           },
           "context": {
             "type": "variable",
@@ -9616,8 +10343,8 @@
             "value": "$colour-nice-dark-grey",
             "scope": "private",
             "line": {
-              "start": 80,
-              "end": 80
+              "start": 102,
+              "end": 102
             }
           },
           "since": [
@@ -9641,8 +10368,8 @@
         {
           "description": "<p>Primary button hover colour</p>\n",
           "commentRange": {
-            "start": 82,
-            "end": 83
+            "start": 104,
+            "end": 105
           },
           "context": {
             "type": "variable",
@@ -9650,8 +10377,8 @@
             "value": "$colour-nice-rich-black",
             "scope": "private",
             "line": {
-              "start": 84,
-              "end": 84
+              "start": 106,
+              "end": 106
             }
           },
           "since": [
@@ -9675,148 +10402,12 @@
         {
           "description": "<p>Primary button text colour</p>\n",
           "commentRange": {
-            "start": 86,
-            "end": 87
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-btn-primary-text",
-            "value": "$colour-nice-white",
-            "scope": "private",
-            "line": {
-              "start": 88,
-              "end": 88
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.2"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
-            "name": "_settings-colours-semantic.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#fff"
-        },
-        {
-          "description": "<p>Secondary button background colour</p>\n",
-          "commentRange": {
-            "start": 93,
-            "end": 94
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-btn-secondary",
-            "value": "#666",
-            "scope": "private",
-            "line": {
-              "start": 95,
-              "end": 95
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.2"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
-            "name": "_settings-colours-semantic.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#666"
-        },
-        {
-          "description": "<p>Secondary button hover colour</p>\n",
-          "commentRange": {
-            "start": 97,
-            "end": 98
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-btn-secondary-hover",
-            "value": "#333",
-            "scope": "private",
-            "line": {
-              "start": 99,
-              "end": 99
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.2"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
-            "name": "_settings-colours-semantic.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#333"
-        },
-        {
-          "description": "<p>Primary button text colour</p>\n",
-          "commentRange": {
-            "start": 101,
-            "end": 102
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-btn-secondary-text",
-            "value": "$colour-nice-white",
-            "scope": "private",
-            "line": {
-              "start": 103,
-              "end": 103
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.2"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
-            "name": "_settings-colours-semantic.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#fff"
-        },
-        {
-          "description": "<p>Light button background colour</p>\n",
-          "commentRange": {
             "start": 108,
             "end": 109
           },
           "context": {
             "type": "variable",
-            "name": "colour-btn-light",
+            "name": "colour-btn-primary-text",
             "value": "$colour-nice-white",
             "scope": "private",
             "line": {
@@ -9843,10 +10434,146 @@
           "resolvedValue": "#fff"
         },
         {
+          "description": "<p>Secondary button background colour</p>\n",
+          "commentRange": {
+            "start": 115,
+            "end": 116
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-btn-secondary",
+            "value": "#666",
+            "scope": "private",
+            "line": {
+              "start": 117,
+              "end": 117
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.2"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#666"
+        },
+        {
+          "description": "<p>Secondary button hover colour</p>\n",
+          "commentRange": {
+            "start": 119,
+            "end": 120
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-btn-secondary-hover",
+            "value": "#333",
+            "scope": "private",
+            "line": {
+              "start": 121,
+              "end": 121
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.2"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#333"
+        },
+        {
+          "description": "<p>Primary button text colour</p>\n",
+          "commentRange": {
+            "start": 123,
+            "end": 124
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-btn-secondary-text",
+            "value": "$colour-nice-white",
+            "scope": "private",
+            "line": {
+              "start": 125,
+              "end": 125
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.2"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#fff"
+        },
+        {
+          "description": "<p>Light button background colour</p>\n",
+          "commentRange": {
+            "start": 130,
+            "end": 131
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-btn-light",
+            "value": "$colour-nice-white",
+            "scope": "private",
+            "line": {
+              "start": 132,
+              "end": 132
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.2"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#fff"
+        },
+        {
           "description": "<p>Light button hover colour</p>\n",
           "commentRange": {
-            "start": 112,
-            "end": 113
+            "start": 134,
+            "end": 135
           },
           "context": {
             "type": "variable",
@@ -9854,8 +10581,8 @@
             "value": "$colour-nice-grey-3",
             "scope": "private",
             "line": {
-              "start": 114,
-              "end": 114
+              "start": 136,
+              "end": 136
             }
           },
           "since": [
@@ -9879,8 +10606,8 @@
         {
           "description": "<p>Light button text colour</p>\n",
           "commentRange": {
-            "start": 116,
-            "end": 117
+            "start": 138,
+            "end": 139
           },
           "context": {
             "type": "variable",
@@ -9888,8 +10615,8 @@
             "value": "$colour-nice-rich-black",
             "scope": "private",
             "line": {
-              "start": 118,
-              "end": 118
+              "start": 140,
+              "end": 140
             }
           },
           "since": [
@@ -9913,8 +10640,8 @@
         {
           "description": "<p>Borders, seperators, rules, keylines etc.</p>\n",
           "commentRange": {
-            "start": 123,
-            "end": 124
+            "start": 145,
+            "end": 146
           },
           "context": {
             "type": "variable",
@@ -9922,8 +10649,8 @@
             "value": "$colour-nice-grey-1",
             "scope": "private",
             "line": {
-              "start": 125,
-              "end": 125
+              "start": 147,
+              "end": 147
             }
           },
           "since": [
@@ -9947,8 +10674,8 @@
         {
           "description": "",
           "commentRange": {
-            "start": 128,
-            "end": 128
+            "start": 150,
+            "end": 150
           },
           "context": {
             "type": "variable",
@@ -9956,8 +10683,8 @@
             "value": "$colour-nice-grey-3",
             "scope": "private",
             "line": {
-              "start": 129,
-              "end": 129
+              "start": 151,
+              "end": 151
             }
           },
           "since": [
@@ -9981,8 +10708,8 @@
         {
           "description": "",
           "commentRange": {
-            "start": 132,
-            "end": 132
+            "start": 154,
+            "end": 154
           },
           "context": {
             "type": "variable",
@@ -9990,8 +10717,8 @@
             "value": "$colour-nice-dark-grey",
             "scope": "private",
             "line": {
-              "start": 133,
-              "end": 133
+              "start": 155,
+              "end": 155
             }
           },
           "since": [
@@ -10015,8 +10742,8 @@
         {
           "description": "<p>Agile lifecycle phase banner</p>\n",
           "commentRange": {
-            "start": 138,
-            "end": 139
+            "start": 160,
+            "end": 161
           },
           "context": {
             "type": "variable",
@@ -10024,8 +10751,8 @@
             "value": "#009ae9",
             "scope": "private",
             "line": {
-              "start": 140,
-              "end": 140
+              "start": 162,
+              "end": 162
             }
           },
           "since": [
@@ -10049,8 +10776,8 @@
         {
           "description": "<p>Discovery agile lifecycle phase</p>\n",
           "commentRange": {
-            "start": 142,
-            "end": 144
+            "start": 164,
+            "end": 166
           },
           "context": {
             "type": "variable",
@@ -10058,8 +10785,8 @@
             "value": "#b8008e",
             "scope": "private",
             "line": {
-              "start": 145,
-              "end": 145
+              "start": 167,
+              "end": 167
             }
           },
           "since": [
@@ -10084,8 +10811,8 @@
         {
           "description": "<p>Alpha badges and banners</p>\n",
           "commentRange": {
-            "start": 147,
-            "end": 149
+            "start": 169,
+            "end": 171
           },
           "context": {
             "type": "variable",
@@ -10093,8 +10820,8 @@
             "value": "#d5367f",
             "scope": "private",
             "line": {
-              "start": 150,
-              "end": 150
+              "start": 172,
+              "end": 172
             }
           },
           "since": [
@@ -10119,8 +10846,8 @@
         {
           "description": "<p>Beta badges and banners</p>\n",
           "commentRange": {
-            "start": 152,
-            "end": 154
+            "start": 174,
+            "end": 176
           },
           "context": {
             "type": "variable",
@@ -10128,8 +10855,8 @@
             "value": "#f47738",
             "scope": "private",
             "line": {
-              "start": 155,
-              "end": 155
+              "start": 177,
+              "end": 177
             }
           },
           "since": [
@@ -10154,8 +10881,8 @@
         {
           "description": "<p>Live badges and banners</p>\n",
           "commentRange": {
-            "start": 157,
-            "end": 159
+            "start": 179,
+            "end": 181
           },
           "context": {
             "type": "variable",
@@ -10163,8 +10890,8 @@
             "value": "#70a747",
             "scope": "private",
             "line": {
-              "start": 160,
-              "end": 160
+              "start": 182,
+              "end": 182
             }
           },
           "since": [
@@ -10189,8 +10916,8 @@
         {
           "description": "<p>Error text and border colour</p>\n",
           "commentRange": {
-            "start": 162,
-            "end": 163
+            "start": 184,
+            "end": 185
           },
           "context": {
             "type": "variable",
@@ -10198,8 +10925,8 @@
             "value": "#b10e1e",
             "scope": "private",
             "line": {
-              "start": 164,
-              "end": 164
+              "start": 186,
+              "end": 186
             }
           },
           "since": [
@@ -10223,8 +10950,8 @@
         {
           "description": "<p>Error background colour</p>\n",
           "commentRange": {
-            "start": 166,
-            "end": 167
+            "start": 188,
+            "end": 189
           },
           "context": {
             "type": "variable",
@@ -10232,8 +10959,8 @@
             "value": "#eac3c3",
             "scope": "private",
             "line": {
-              "start": 168,
-              "end": 168
+              "start": 190,
+              "end": 190
             }
           },
           "since": [
@@ -10257,8 +10984,8 @@
         {
           "description": "<p>Caution text and border colour</p>\n",
           "commentRange": {
-            "start": 170,
-            "end": 171
+            "start": 192,
+            "end": 193
           },
           "context": {
             "type": "variable",
@@ -10266,8 +10993,8 @@
             "value": "#9b722f",
             "scope": "private",
             "line": {
-              "start": 172,
-              "end": 172
+              "start": 194,
+              "end": 194
             }
           },
           "since": [
@@ -10291,8 +11018,8 @@
         {
           "description": "<p>Caution background colour</p>\n",
           "commentRange": {
-            "start": 174,
-            "end": 175
+            "start": 196,
+            "end": 197
           },
           "context": {
             "type": "variable",
@@ -10300,8 +11027,8 @@
             "value": "#ffdfa4",
             "scope": "private",
             "line": {
-              "start": 176,
-              "end": 176
+              "start": 198,
+              "end": 198
             }
           },
           "since": [
@@ -10325,8 +11052,8 @@
         {
           "description": "<p>Info text and border colour</p>\n",
           "commentRange": {
-            "start": 178,
-            "end": 179
+            "start": 200,
+            "end": 201
           },
           "context": {
             "type": "variable",
@@ -10334,8 +11061,8 @@
             "value": "#4a7f99",
             "scope": "private",
             "line": {
-              "start": 180,
-              "end": 180
+              "start": 202,
+              "end": 202
             }
           },
           "since": [
@@ -10359,8 +11086,8 @@
         {
           "description": "<p>Info background colour</p>\n",
           "commentRange": {
-            "start": 182,
-            "end": 183
+            "start": 204,
+            "end": 205
           },
           "context": {
             "type": "variable",
@@ -10368,8 +11095,8 @@
             "value": "#e6faff",
             "scope": "private",
             "line": {
-              "start": 184,
-              "end": 184
+              "start": 206,
+              "end": 206
             }
           },
           "since": [
@@ -10393,8 +11120,8 @@
         {
           "description": "<p>Success text and border colour</p>\n",
           "commentRange": {
-            "start": 186,
-            "end": 187
+            "start": 208,
+            "end": 209
           },
           "context": {
             "type": "variable",
@@ -10402,8 +11129,8 @@
             "value": "#3f8c5e",
             "scope": "private",
             "line": {
-              "start": 188,
-              "end": 188
+              "start": 210,
+              "end": 210
             }
           },
           "since": [
@@ -10427,8 +11154,8 @@
         {
           "description": "<p>Success background colour</p>\n",
           "commentRange": {
-            "start": 190,
-            "end": 191
+            "start": 212,
+            "end": 213
           },
           "context": {
             "type": "variable",
@@ -10436,8 +11163,8 @@
             "value": "#eff7eb",
             "scope": "private",
             "line": {
-              "start": 192,
-              "end": 192
+              "start": 214,
+              "end": 214
             }
           },
           "since": [
@@ -10771,12 +11498,56 @@
           "context": {
             "type": "css",
             "name": ".panel",
-            "value": "background: $colour-panel-light;\n  padding: 1em;\n\n  &--dark {\n    background: $colour-panel-dark;\n    color: $colour-text-reverse;\n  }",
+            "value": "background: $colour-panel-light;\n  margin: em($spacing-medium 0 $spacing-large);\n  padding: em($spacing-medium);\n\n  :first-child {\n    margin-top: 0;\n  }\n\n  :last-child {\n    margin-bottom: 0;\n  }",
             "line": {
               "start": 8,
-              "end": 17
+              "end": 31
             }
           },
+          "since": [
+            {
+              "version": "0.1.0"
+            }
+          ],
+          "group": [
+            "components"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\components\\_components-panel.scss",
+            "name": "_components-panel.scss"
+          },
+          "groupName": {
+            "components": "Components"
+          }
+        },
+        {
+          "description": "<p>Modifier for the panel, to use a dark background</p>\n",
+          "commentRange": {
+            "start": 22,
+            "end": 25
+          },
+          "context": {
+            "type": "css",
+            "name": ".panel--dark",
+            "value": "@extend %inverse-links;\n  background: $colour-panel-dark;\n  color: $colour-text-reverse;",
+            "line": {
+              "start": 26,
+              "end": 31
+            }
+          },
+          "require": [
+            {
+              "type": "placeholder",
+              "name": "inverse-links",
+              "external": false
+            },
+            {
+              "type": "function",
+              "name": ".panel",
+              "external": true
+            }
+          ],
           "since": [
             {
               "version": "0.1.0"
@@ -15249,20 +16020,257 @@
           }
         }
       ],
+      "placeholder": [
+        {
+          "description": "<p>Inverse link style for use on a dark background</p>\n",
+          "commentRange": {
+            "start": 70,
+            "end": 71
+          },
+          "context": {
+            "type": "placeholder",
+            "name": "inverse-link",
+            "code": "\n  color: $colour-link-inverse;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+            "line": {
+              "start": 72,
+              "end": 90
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.9"
+            }
+          ],
+          "group": [
+            "typography"
+          ],
+          "access": "public",
+          "require": [
+            {
+              "type": "variable",
+              "name": "colour-link-inverse"
+            },
+            {
+              "type": "variable",
+              "name": "colour-link-inverse-visited"
+            },
+            {
+              "type": "variable",
+              "name": "colour-link-inverse-hover"
+            },
+            {
+              "type": "variable",
+              "name": "colour-link-inverse-focus-text"
+            },
+            {
+              "type": "variable",
+              "name": "colour-link-inverse-active"
+            }
+          ],
+          "file": {
+            "path": "stylesheets\\typography\\_typography-global.scss",
+            "name": "_typography-global.scss"
+          },
+          "usedBy": [
+            {
+              "description": "<p>Inverse links for use on a dark background</p>\n",
+              "context": {
+                "type": "placeholder",
+                "name": "inverse-links",
+                "code": "\n  a {\n    @extend %inverse-link;\n  }\n",
+                "line": {
+                  "start": 94,
+                  "end": 98
+                }
+              }
+            }
+          ],
+          "groupName": {
+            "typography": "Typography"
+          }
+        },
+        {
+          "description": "<p>Inverse links for use on a dark background</p>\n",
+          "commentRange": {
+            "start": 92,
+            "end": 93
+          },
+          "context": {
+            "type": "placeholder",
+            "name": "inverse-links",
+            "code": "\n  a {\n    @extend %inverse-link;\n  }\n",
+            "line": {
+              "start": 94,
+              "end": 98
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.9"
+            }
+          ],
+          "group": [
+            "typography"
+          ],
+          "access": "public",
+          "require": [
+            {
+              "type": "placeholder",
+              "name": "inverse-link"
+            }
+          ],
+          "file": {
+            "path": "stylesheets\\typography\\_typography-global.scss",
+            "name": "_typography-global.scss"
+          },
+          "usedBy": [
+            {
+              "description": "<p>Modifier for the panel, to use a dark background</p>\n",
+              "context": {
+                "type": "css",
+                "name": ".panel--dark",
+                "value": "@extend %inverse-links;\n  background: $colour-panel-dark;\n  color: $colour-text-reverse;",
+                "line": {
+                  "start": 26,
+                  "end": 31
+                }
+              }
+            },
+            {
+              "description": "<p>Inverse links, for use on dark backgrounds e.g dark panels.\nUse this class on a containing element to apply to all links within it.</p>\n",
+              "context": {
+                "type": "css",
+                "name": ".inverse-links",
+                "value": "@extend %inverse-links;",
+                "line": {
+                  "start": 111,
+                  "end": 165
+                }
+              }
+            }
+          ],
+          "groupName": {
+            "typography": "Typography"
+          }
+        },
+        {
+          "description": "",
+          "commentRange": {
+            "start": 5,
+            "end": 5
+          },
+          "context": {
+            "type": "placeholder",
+            "name": "list",
+            "code": "\n  font-feature-settings: 'kern', 'onum', 'liga';\n  margin-left: 2rem;\n  padding: 0;\n",
+            "line": {
+              "start": 6,
+              "end": 10
+            }
+          },
+          "since": [
+            {
+              "version": "0.1.0"
+            }
+          ],
+          "group": [
+            "typography"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\typography\\_typography-lists.scss",
+            "name": "_typography-lists.scss"
+          },
+          "groupName": {
+            "typography": "Typography"
+          }
+        }
+      ],
       "css": [
+        {
+          "description": "<p>Inverse link for use on a dark background. Apply to an individual link.\nPrefer using <code>.inverse-links</code> on the container instead.</p>\n",
+          "commentRange": {
+            "start": 100,
+            "end": 102
+          },
+          "context": {
+            "type": "css",
+            "name": ".link--inverse",
+            "value": "@extend %inverse-link;",
+            "line": {
+              "start": 103,
+              "end": 165
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.9"
+            }
+          ],
+          "group": [
+            "typography"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\typography\\_typography-global.scss",
+            "name": "_typography-global.scss"
+          },
+          "groupName": {
+            "typography": "Typography"
+          }
+        },
+        {
+          "description": "<p>Inverse links, for use on dark backgrounds e.g dark panels.\nUse this class on a containing element to apply to all links within it.</p>\n",
+          "commentRange": {
+            "start": 107,
+            "end": 110
+          },
+          "context": {
+            "type": "css",
+            "name": ".inverse-links",
+            "value": "@extend %inverse-links;",
+            "line": {
+              "start": 111,
+              "end": 165
+            }
+          },
+          "require": [
+            {
+              "type": "placeholder",
+              "name": "inverse-links",
+              "external": false
+            }
+          ],
+          "since": [
+            {
+              "version": "0.2.9"
+            }
+          ],
+          "group": [
+            "typography"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\typography\\_typography-global.scss",
+            "name": "_typography-global.scss"
+          },
+          "groupName": {
+            "typography": "Typography"
+          }
+        },
         {
           "description": "<p>Mark</p>\n",
           "commentRange": {
-            "start": 108,
-            "end": 108
+            "start": 153,
+            "end": 153
           },
           "context": {
             "type": "css",
             "name": "mark,\n.mark",
             "value": "background-color: #fff999;\n  padding: em(4);",
             "line": {
-              "start": 110,
-              "end": 120
+              "start": 155,
+              "end": 165
             }
           },
           "group": [
@@ -15280,16 +16288,16 @@
         {
           "description": "<p>Small</p>\n",
           "commentRange": {
-            "start": 115,
-            "end": 115
+            "start": 160,
+            "end": 160
           },
           "context": {
             "type": "css",
             "name": "small,\n.small",
             "value": "font-size: 85%;",
             "line": {
-              "start": 117,
-              "end": 120
+              "start": 162,
+              "end": 165
             }
           },
           "group": [
@@ -15651,40 +16659,6 @@
               }
             }
           ],
-          "groupName": {
-            "typography": "Typography"
-          }
-        }
-      ],
-      "placeholder": [
-        {
-          "description": "",
-          "commentRange": {
-            "start": 5,
-            "end": 5
-          },
-          "context": {
-            "type": "placeholder",
-            "name": "list",
-            "code": "\n  font-feature-settings: 'kern', 'onum', 'liga';\n  margin-left: 2rem;\n  padding: 0;\n",
-            "line": {
-              "start": 6,
-              "end": 10
-            }
-          },
-          "since": [
-            {
-              "version": "0.1.0"
-            }
-          ],
-          "group": [
-            "typography"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\typography\\_typography-lists.scss",
-            "name": "_typography-lists.scss"
-          },
           "groupName": {
             "typography": "Typography"
           }
