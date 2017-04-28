@@ -10,11 +10,6 @@
   margin: em($spacing-medium 0 $spacing-large);
   padding: em($spacing-medium);
 
-  &--dark {
-    background: $colour-panel-dark;
-    color: $colour-text-reverse;
-  }
-
   :first-child {
     margin-top: 0;
   }
@@ -22,4 +17,14 @@
   :last-child {
     margin-bottom: 0;
   }
+}
+
+/// Modifier for the panel, to use a dark background
+/// @require %inverse-links
+/// @require .panel
+/// @since 0.1.0
+.panel--dark {
+  @extend %inverse-links;
+  background: $colour-panel-dark;
+  color: $colour-text-reverse;
 }

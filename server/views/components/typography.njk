@@ -1,0 +1,49 @@
+{% extends "layouts/_layout.njk" %}
+{% set title = "Lists" %}
+
+{% block body %}
+
+	<div class="container">
+
+		<h1>Links</h1>
+
+		<h2>Body copy links</h2>
+
+		<p>
+			This is <a href="#">a link</a> in some body copy.
+		</p>
+
+		<h2>Inverse links</h2>
+
+		<div class="panel panel--dark">
+			<h3><a href="#">This is a heading 3</a></h3>
+			<p>
+				This is <a href="#">a link</a> in some body copy.
+			</p>
+		</div>
+
+		<div class="panel inverse-links" style="background: black;">
+			<p>
+				<a href="#">links on a</a>
+				<a href="#">dark background</a>
+			</p>
+		</div>
+
+		<div class="panel" style="background: black;">
+			<p>
+				<a class="link--inverse" href="#">individual link on dark background</a>
+			</p>
+		</div>
+
+		<h2>Header links</h2>
+
+		<h1><a href="#">This is a heading 1</a></h1>
+		<h2><a href="#">This is a heading 2</a></h2>
+		<h3><a href="#">This is a heading 3</a></h3>
+		<h4><a href="#">This is a heading 4</a></h4>
+		<h5><a href="#">This is a heading 5</a></h5>
+		<h6><a href="#">This is a heading 6</a></h6>
+
+	</div>
+
+{% endblock %}
