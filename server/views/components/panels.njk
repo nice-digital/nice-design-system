@@ -1,0 +1,31 @@
+{% extends "layouts/_layout.njk" %}
+{% set title = "Panels component" %}
+
+{% block body %}
+
+	<div class="container">
+
+		<h1>Panels</h1>
+
+		<h2>Default (light) panel</h2>
+
+		<div class="panel">
+			<p>
+				Some <a href="#">text</a> content
+			</p>
+		</div>
+
+		<h2>Inverse (dark) panel</h2>
+
+		<div class="panel panel--inverse">
+			<p>
+				Some <a href="#">text</a> content
+			</p>
+			<p>
+				<a href="#" class="btn btn--light">A light button</a>
+			</p>
+		</div>
+
+	</div>
+
+{% endblock %}

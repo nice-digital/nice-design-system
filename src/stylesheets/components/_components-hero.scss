@@ -1,6 +1,7 @@
 .hero {
+  @extend %inverse-links;
   background: $colour-nice-teal;
-  color: $colour-text-reverse;
+  color: $colour-text-inverse;
   padding: em(0 0 $spacing-large);
 
   &__container {
