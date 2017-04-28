@@ -1,5 +1,5 @@
 /*!
- * NICE Experience 0.2.9 | 2017-04-28
+ * NICE Experience 0.2.10 | 2017-04-28
  * © Copyright NICE 2015-2017
  * Licensed under MIT (https://github.com/nhsevidence/nice-experience/blob/master/LICENSE)
  */
@@ -1563,8 +1563,8 @@ textarea {
   font-family: "NICE Icons";
   font-style: normal;
   font-weight: normal;
-  src: url("/fonts/nice-icons.eot?399671472");
-  src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/nice-icons.woff2?399671472") format("woff2"), url("/fonts/nice-icons.woff?399671472") format("woff"), url("/fonts/nice-icons.ttf?399671472") format("truetype"), url("/fonts/nice-icons.svg?399671472#typography-icons") format("svg"); }
+  src: url("/fonts/nice-icons.eot?545038917");
+  src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/nice-icons.woff2?545038917") format("woff2"), url("/fonts/nice-icons.woff?545038917") format("woff"), url("/fonts/nice-icons.ttf?545038917") format("truetype"), url("/fonts/nice-icons.svg?545038917#typography-icons") format("svg"); }
 
 .icon {
   display: inline-block;
@@ -1797,15 +1797,15 @@ a {
   a:active {
     color: #2e8aca; }
 
-.inverse-links a, .panel--dark a, .link--inverse {
+.inverse-links a, .panel--inverse a, .hero a, .link--inverse {
   color: #fff; }
-  .inverse-links a:visited, .panel--dark a:visited, .link--inverse:visited {
+  .inverse-links a:visited, .panel--inverse a:visited, .hero a:visited, .link--inverse:visited {
     color: #fff; }
-  .inverse-links a:hover, .panel--dark a:hover, .link--inverse:hover {
+  .inverse-links a:hover, .panel--inverse a:hover, .hero a:hover, .link--inverse:hover {
     color: #d6d6d6; }
-  .inverse-links a:focus, .panel--dark a:focus, .link--inverse:focus {
+  .inverse-links a:focus, .panel--inverse a:focus, .hero a:focus, .link--inverse:focus {
     color: #393939; }
-  .inverse-links a:active, .panel--dark a:active, .link--inverse:active {
+  .inverse-links a:active, .panel--inverse a:active, .hero a:active, .link--inverse:active {
     color: #2e8aca; }
 
 p,
@@ -2041,6 +2041,11 @@ ol, .list {
   padding: 0 2%;
   width: auto; }
 
+.container--panel-inverse {
+  background: #393939;
+  padding: 0 2%;
+  width: auto; }
+
 img {
   max-width: 100%; }
 
@@ -2068,7 +2073,7 @@ hr {
   .panel :last-child {
     margin-bottom: 0; }
 
-.panel--dark {
+.panel--inverse {
   background: #393939;
   color: #fff; }
 
@@ -2134,45 +2139,48 @@ table {
     pointer-events: none; }
     .btn--disabled:hover, .btn.disabled:hover, .btn[aria-disabled='true']:hover, .btn[disabled='disabled']:hover, .btn[disabled]:hover {
       cursor: default; }
-  .btn--cta {
-    background: #451551;
-    border: 0.0625em solid #fff;
+
+.btn.btn--cta {
+  background: #451551;
+  border: 0.0625em solid #fff;
+  color: #fff; }
+  .btn.btn--cta:visited {
     color: #fff; }
-    .btn--cta:visited {
-      color: #fff; }
-    .btn--cta:hover {
-      background: #260b2d;
-      color: #fff; }
-    .btn--cta:focus {
-      background: #260b2d; }
-    .btn--cta:active {
-      background: #260b2d; }
-  .btn--secondary {
-    background: #666;
-    border: 0.0625em solid #fff;
+  .btn.btn--cta:hover {
+    background: #260b2d;
     color: #fff; }
-    .btn--secondary:visited {
-      color: #fff; }
-    .btn--secondary:hover {
-      background: #333;
-      color: #fff; }
-    .btn--secondary:focus {
-      background: #333; }
-    .btn--secondary:active {
-      background: #333; }
-  .btn--light {
-    background: #fff;
-    border: 0.0625em solid #0e0e0e;
+  .btn.btn--cta:focus {
+    background: #260b2d; }
+  .btn.btn--cta:active {
+    background: #260b2d; }
+
+.btn.btn--secondary {
+  background: #666;
+  border: 0.0625em solid #fff;
+  color: #fff; }
+  .btn.btn--secondary:visited {
+    color: #fff; }
+  .btn.btn--secondary:hover {
+    background: #333;
+    color: #fff; }
+  .btn.btn--secondary:focus {
+    background: #333; }
+  .btn.btn--secondary:active {
+    background: #333; }
+
+.btn.btn--light {
+  background: #fff;
+  border: 0.0625em solid #0e0e0e;
+  color: #0e0e0e; }
+  .btn.btn--light:visited {
     color: #0e0e0e; }
-    .btn--light:visited {
-      color: #0e0e0e; }
-    .btn--light:hover {
-      background: #e9e9e9;
-      color: #0e0e0e; }
-    .btn--light:focus {
-      background: #e9e9e9; }
-    .btn--light:active {
-      background: #e9e9e9; }
+  .btn.btn--light:hover {
+    background: #e9e9e9;
+    color: #0e0e0e; }
+  .btn.btn--light:focus {
+    background: #e9e9e9; }
+  .btn.btn--light:active {
+    background: #e9e9e9; }
 
 .hero {
   background: #004650;
