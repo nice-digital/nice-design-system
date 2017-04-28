@@ -21,7 +21,7 @@
   "browser": "src/javascripts",
   "scripts": {
     "start": "grunt --color --timing",
-    "prepublish": "grunt prepublish --color",
+    "dist": "grunt dist --color",
     "// JAVASCRIPT": "",
     "webpack": "SET \"NODE_ENV=production\" && webpack --progress --colors --display-error-details",
     "// TESTS": "",
