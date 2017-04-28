@@ -17,6 +17,12 @@ ol {
 .list {
   @extend %list;
 
+  &--unstyled {
+    list-style: none;
+    margin-left: 0;
+    padding: 0;
+  }
+
   &--featured {
     list-style: none outside;
 
@@ -37,6 +43,5 @@ ol {
         }
       }
     }
-
   }
 }

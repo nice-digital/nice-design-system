@@ -25,6 +25,7 @@ $named-font-sizes: (
 /// Numeric font sizes
 /// @since 0.2.0
 $font-sizes: (
+  // sass-lint:disable-block space-around-operator
   -1: (
     fs: 14,
     lh: 4 * 5,

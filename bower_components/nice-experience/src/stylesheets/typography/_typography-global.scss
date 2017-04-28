@@ -79,8 +79,8 @@ p,
     // TODO: Drop cap needs some work
     &--drop-cap {
       &:first-letter {
-        font-size: 200%;
         float: left;
+        font-size: 200%;
         font-weight: 300;
         padding: em(0 2px 0 0);
       }
