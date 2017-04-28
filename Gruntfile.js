@@ -32,6 +32,9 @@ module.exports = grunt => {
 
 	var r = grunt.registerTask;
 
+	// Generate documentation
+	r("docs", ["sassdoc", "documentation"]);
+
 	// Lint both SASS and JS
 	r("lint", ["sasslint", "eslint"]);
 
@@ -39,7 +42,7 @@ module.exports = grunt => {
 	r("test", ["mochaTest"]);
 
 	// For building before publishing to NPM etc
-	r("prepublish", ["env:dist", "clean:dist", "lint", "test", "webfont:dist", "sass:dist", "postcss:dist", "cssmin:dist", "webpack"]);
+	r("prepublish", ["env:dist", "clean:dist", "lint", "test", "webfont:dist", "sass:dist", "postcss:dist", "cssmin:dist", "docs", "webpack"]);
 
 	r("default", ["env:dev", "clean:temp", "lint", "test", "webfont:temp", "sass:temp", "postcss:temp", "cssmin:temp", "watch"]);
 };
