@@ -3,7 +3,7 @@ layout: sidebar
 title: Colour
 ---
 
-Follow these guidelines to determine the best way to apply the NICE colour palette. We use colour to aid in communication, and help our users navigate. We also use our [brand guidelines](https://www.nice.org.uk/brand/colour-palette){:target="_blank"}to help form the base of our digital palette. 
+Follow these guidelines to determine the best way to apply the NICE colour palette. We use colour to aid in communication, and help our users navigate. We also use our [brand guidelines](https://www.nice.org.uk/brand/colour-palette){:target="_blank"} to help form the base of our digital palette. 
 
 ## Text
 <ul class="colour-grid">
@@ -114,11 +114,13 @@ Follow these guidelines to determine the best way to apply the NICE colour palet
     {% include colour.html title="Success background" var="colour-success-background" %}
 </ul>
 
-## Semantic colours
+## Colours in SASS
 
-In addition to the corporate palette, there are a set of <a href="{{ site.baseurl }}{% link technical/sass/documentation/colours.md %}">semantic colour variables</a> in SASS for specific use cases. Wherever possible, these should be used rather than the corporate palette directly. For example, text should use `color: $colour-text` rather than `color: $colour-rich-black`.
+In our SASS, we have colour variables for both <a href="{{ site.baseurl }}{% link technical/sass/documentation/colours.md %}">the corporate palette and 'semantic' colours</a>. Wherever possible, the semantic variables should be used rather than the corporate palette directly. For example, text should use `color: $colour-text` rather than `color: $colour-rich-black`, panels should use `background: $colour-panel-light` rather than `background: $colour-nice-grey-3;` and so on.
 
 <a href="{{ site.baseurl }}{% link technical/sass/documentation/colours.md %}" class="btn btn--secondary">SASS colour documentation</a>
+
+### SASS example
 
 {% capture semantic %}
 body {
@@ -161,6 +163,8 @@ Use other visual cues aside from colour to convey information, states etc. Use e
 </blockquote>
 
 The W3C guidlines [1.4.3 Contrast (Minimum) (AA)](https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-contrast){:target="_blank"} and [1.4.6 Contrast (Enhanced) (AAA)](https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast7){:target="_blank"} describe the minimum levels of colour contrast for different sizes of text.
+
+#### Contrast tools
 
 The NICE colour palette has been designed to meet WCAG 2.0 AA with respect to colour contrast. However, because applications can use colours in their own way, the following tools can be used to test colour contrast:
 
