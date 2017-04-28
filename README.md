@@ -112,7 +112,7 @@ Run `npm start` and `npm run test:watch` for development.
 | `npm run test:watch`  | Runs JS test tests (with [min reporter](https://github.com/mochajs/mocha/blob/master/lib/reporters/min.js)) and watches for changes. Useful to run in development alongside grunt. |
 | `npm run test:coverage`  | Runs JS test tests and generates a coverage report with [Istanbul](https://istanbul.js.org/) into the *coverage* folder |
 | `npm run lint`        | Lints SASS and JS (uses `grunt lint` under the hood) |
-| `npm run release`        | Releases a new version as a git tag, release and npm release. |
+| `npm run release`        | Builds the assets in dist mode, increments package.json version, pushes a new git tag, GitHub release with notes from commits and npm release. |
 
 #### Grunt
 
