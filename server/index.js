@@ -5,7 +5,11 @@ var compression = require("compression"),
 	favicon = require("serve-favicon"),
 	nunjucks = require("nunjucks"),
 	moment = require("moment"),
-	path = require("path");
+	path = require("path"),
+	webpack = require("webpack"),
+	webpackMiddleware = require("webpack-dev-middleware");
+
+const webpackConfig = require("./../webpack.config.js");
 
 var PORT = process.env.PORT || 3000;
 var app = express();
@@ -46,10 +50,15 @@ app.use(favicon(path.join(__dirname, "../src/assets/favicon.ico")));
 app.use(require("./middlewares/render-minified"));
 
 
+// Webpack
+var compiler = webpack(webpackConfig);
+app.use(webpackMiddleware(compiler, { publicPath: "/javascripts/" }));
+
 // Static assets
-app.use("/fonts", express.static(path.join(__dirname, "../dist/fonts")));
-app.use(express.static(path.join(__dirname, "../dist")));
+app.use("/fonts", express.static(path.join(__dirname, "../temp/fonts")));
+app.use(express.static(path.join(__dirname, "../temp")));
 app.use(express.static(path.join(__dirname, "../src/assets")));
+
 // Routes and middleware
 app.use(require("./controllers"));
 

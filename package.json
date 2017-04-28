@@ -102,6 +102,7 @@
     "string-replace-webpack-plugin": "0.0.4",
     "time-grunt": "^1.4.0",
     "webpack": "^1.13.2",
+    "webpack-dev-middleware": "^1.10.2",
     "webpack-dev-server": "^1.16.1"
   },
   "dependencies": {

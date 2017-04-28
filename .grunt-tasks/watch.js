@@ -16,14 +16,7 @@ module.exports = {
 	},
 	sass: {
 		files: sasslint.target.src,
-		tasks: ["sass:dev", "postcss", "newer:sasslint"],
-		options: {
-			spawn: false
-		}
-	},
-	jsbuild: {
-		files: ["src/**/*.js", "!src/components/**/*.test.js"],
-		tasks: ["webpack"],
+		tasks: ["sass:temp", "postcss:temp", "cssmin:temp", "newer:sasslint"],
 		options: {
 			spawn: false
 		}

@@ -2,6 +2,7 @@
 /*eslint-env node*/
 
 const _ = require("lodash"),
+	path = require("path"),
 	moment = require("moment"),
 	webpack = require("webpack"),
 	StringReplacePlugin = require("string-replace-webpack-plugin");
@@ -13,7 +14,8 @@ const pkg = require("./package.json"),
 const baseConfig = {
 	entry: ["./src/javascripts/experience"],
 	output: {
-		path: "./dist/javascripts",
+		path: path.join(__dirname, "dist/javascripts"),
+		publicPath: "/javascripts/",
 		library: "experience",
 		libraryTarget: "umd",
 		umdNamedDefine: true
@@ -33,7 +35,7 @@ const baseConfig = {
 	stats: {
 		colors: true,
 		modules: false,
-		reasons: true,
+		reasons: false,
 		errorDetails: true
 	}
 };

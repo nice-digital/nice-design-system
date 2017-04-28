@@ -39,7 +39,7 @@ module.exports = grunt => {
 	r("test", ["mochaTest"]);
 
 	// For building before publishing to NPM etc
-	r("prepublish", ["env:dist", "clean", "lint", "test", "webfont", "sass", "postcss", "cssmin", "webpack"]);
+	r("prepublish", ["env:dist", "clean:dist", "lint", "test", "webfont:dist", "sass:dist", "postcss:dist", "cssmin:dist", "webpack"]);
 
-	r("default", ["env:dev", "clean", "lint", "test", "webfont", "sass:dev", "postcss", "webpack", "watch"]);
+	r("default", ["env:dev", "clean:temp", "lint", "test", "webfont:temp", "sass:temp", "postcss:temp", "cssmin:temp", "watch"]);
 };

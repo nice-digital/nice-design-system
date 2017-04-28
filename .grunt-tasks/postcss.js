@@ -16,7 +16,10 @@ module.exports = {
 			require("postcss-banner")({ banner: banner, important: true })
 		]
 	},
-	default: {
+	dist: {
 		src: "dist/stylesheets/*.css"
+	},
+	temp: {
+		src: "temp/stylesheets/*.css"
 	}
 };

@@ -1,5 +1,5 @@
 module.exports = {
-	dev: {
+	temp: {
 		options: {
 			sourceMap: true,
 			includePaths: ["src/stylesheets"],
@@ -7,16 +7,19 @@ module.exports = {
 			sourceMapContents: true
 		},
 		files: {
-			"dist/stylesheets/experience.css": "src/stylesheets/experience.scss"
+			"temp/stylesheets/experience.css": "src/stylesheets/experience.scss",
+			"temp/stylesheets/experience.min.css": "src/stylesheets/experience.scss"
 		}
 	},
-	publishMin: {
+	dist: {
 		options: {
 			sourceMap: true,
 			includePaths: ["src/stylesheets"],
-			outputStyle: "compressed"
+			outputStyle: "nested",
+			sourceMapContents: true
 		},
 		files: {
+			"dist/stylesheets/experience.css": "src/stylesheets/experience.scss",
 			"dist/stylesheets/experience.min.css": "src/stylesheets/experience.scss"
 		}
 	}

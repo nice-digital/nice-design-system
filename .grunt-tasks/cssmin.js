@@ -6,5 +6,13 @@ module.exports = {
 		options: {
 			sourceMap: true
 		}
+	},
+	temp: {
+		files: {
+			"temp/stylesheets/experience.min.css": "temp/stylesheets/experience.min.css"
+		},
+		options: {
+			sourceMap: true
+		}
 	}
 };
