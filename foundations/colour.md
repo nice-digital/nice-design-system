@@ -13,7 +13,9 @@ Follow these guidelines to determine the best way to apply the NICE colour palet
 
 ## Links
 
-### Default 
+### Default links
+
+For use on a light background
 
 <ul class="colour-grid">
     {% include colour.html title="Link" var="colour-link" %}
@@ -23,24 +25,17 @@ Follow these guidelines to determine the best way to apply the NICE colour palet
     {% include colour.html title="Link focus" var="colour-focus" %}
 </ul>
 
-### Inverse 
+### Inverse links
 
-- link : #FFFFFF , 255,255,255
-- link hover : #d6d6d6 , 214,214,214
-- link visited :  #FFFFFF , 255,255,255 (Keeping it same as link colour to conform to AA standard across potentially various dark bgs) 
-- link active : #d6d6d6 , 214,214,214
-- link focus : as is
-- link focus text : #393939 
-
-
+For use on a dark background
 
 <ul class="colour-grid">
-    {% include colour.html title="Inverse link" var="colour-inverselink" %}
-    {% include colour.html title="Inverse link hover state" var="colour-inverselink-hover" %}
-    {% include colour.html title="Inverse link visited state" var="colour-inverselink-visited" %}
-    {% include colour.html title="Inverse link active state" var="colour-inverselink-active" %}
+    {% include colour.html title="Inverse link" var="colour-link-inverse" %}
+    {% include colour.html title="Inverse link hover state" var="colour-link-inverse-hover" %}
+    {% include colour.html title="Inverse link visited state" var="colour-link-inverse-visited" %}
+    {% include colour.html title="Inverse link active state" var="colour-link-inverse-active" %}
     {% include colour.html title="Inverse link focus" var="colour-focus" %}
-    {% include colour.html title="Inverse link focus" var="colour-focus-text" %}
+    {% include colour.html title="Inverse link focus text" var="colour-link-inverse-focus-text" %}
 </ul>
 
 ## Buttons

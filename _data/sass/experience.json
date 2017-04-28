@@ -933,8 +933,8 @@
     {
       "description": "<p>Link text colour</p>\n",
       "commentRange": {
-        "start": 44,
-        "end": 45
+        "start": 43,
+        "end": 44
       },
       "context": {
         "type": "variable",
@@ -942,8 +942,8 @@
         "value": "#005ea5",
         "scope": "private",
         "line": {
-          "start": 46,
-          "end": 46
+          "start": 45,
+          "end": 45
         }
       },
       "since": [
@@ -967,8 +967,8 @@
     {
       "description": "<p>Link hover colour</p>\n",
       "commentRange": {
-        "start": 48,
-        "end": 49
+        "start": 47,
+        "end": 48
       },
       "context": {
         "type": "variable",
@@ -976,8 +976,8 @@
         "value": "#2e8aca",
         "scope": "private",
         "line": {
-          "start": 50,
-          "end": 50
+          "start": 49,
+          "end": 49
         }
       },
       "since": [
@@ -1001,8 +1001,8 @@
     {
       "description": "<p>Link visited colour</p>\n",
       "commentRange": {
-        "start": 52,
-        "end": 53
+        "start": 51,
+        "end": 52
       },
       "context": {
         "type": "variable",
@@ -1010,8 +1010,8 @@
         "value": "#4c2c92",
         "scope": "private",
         "line": {
-          "start": 54,
-          "end": 54
+          "start": 53,
+          "end": 53
         }
       },
       "since": [
@@ -1035,8 +1035,8 @@
     {
       "description": "<p>Link active colour</p>\n",
       "commentRange": {
-        "start": 56,
-        "end": 57
+        "start": 55,
+        "end": 56
       },
       "context": {
         "type": "variable",
@@ -1044,8 +1044,8 @@
         "value": "#2e8aca",
         "scope": "private",
         "line": {
-          "start": 58,
-          "end": 58
+          "start": 57,
+          "end": 57
         }
       },
       "since": [
@@ -1067,10 +1067,250 @@
       "resolvedValue": "#2e8aca"
     },
     {
+      "description": "<p>Inverse link text colour</p>\n",
+      "commentRange": {
+        "start": 62,
+        "end": 63
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-link-inverse",
+        "value": "$colour-text-reverse",
+        "scope": "private",
+        "line": {
+          "start": 64,
+          "end": 64
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.9"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "usedBy": [
+        {
+          "description": "<p>Inverse link style for use on a dark background</p>\n",
+          "context": {
+            "type": "placeholder",
+            "name": "inverse-link",
+            "code": "\n  color: $colour-link-inverse;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+            "line": {
+              "start": 72,
+              "end": 90
+            }
+          }
+        }
+      ],
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#fff"
+    },
+    {
+      "description": "<p>Inverse link hover colour</p>\n",
+      "commentRange": {
+        "start": 66,
+        "end": 67
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-link-inverse-hover",
+        "value": "$colour-nice-grey-2",
+        "scope": "private",
+        "line": {
+          "start": 68,
+          "end": 68
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.9"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "usedBy": [
+        {
+          "description": "<p>Inverse link style for use on a dark background</p>\n",
+          "context": {
+            "type": "placeholder",
+            "name": "inverse-link",
+            "code": "\n  color: $colour-link-inverse;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+            "line": {
+              "start": 72,
+              "end": 90
+            }
+          }
+        }
+      ],
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#d6d6d6"
+    },
+    {
+      "description": "<p>Inverse link visited colour. Same as normal inverse link colour to ensure minimum 4.5:1 colour contrast across various dark backgrounds.</p>\n",
+      "commentRange": {
+        "start": 70,
+        "end": 71
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-link-inverse-visited",
+        "value": "$colour-link-inverse",
+        "scope": "private",
+        "line": {
+          "start": 72,
+          "end": 72
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.9"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "usedBy": [
+        {
+          "description": "<p>Inverse link style for use on a dark background</p>\n",
+          "context": {
+            "type": "placeholder",
+            "name": "inverse-link",
+            "code": "\n  color: $colour-link-inverse;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+            "line": {
+              "start": 72,
+              "end": 90
+            }
+          }
+        }
+      ],
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#fff"
+    },
+    {
+      "description": "<p>Inverse link active colour</p>\n",
+      "commentRange": {
+        "start": 74,
+        "end": 75
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-link-inverse-active",
+        "value": "$colour-link-active",
+        "scope": "private",
+        "line": {
+          "start": 76,
+          "end": 76
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.9"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "usedBy": [
+        {
+          "description": "<p>Inverse link style for use on a dark background</p>\n",
+          "context": {
+            "type": "placeholder",
+            "name": "inverse-link",
+            "code": "\n  color: $colour-link-inverse;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+            "line": {
+              "start": 72,
+              "end": 90
+            }
+          }
+        }
+      ],
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#2e8aca"
+    },
+    {
+      "description": "<p>Inverse link focus text colour</p>\n",
+      "commentRange": {
+        "start": 78,
+        "end": 79
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-link-inverse-focus-text",
+        "value": "$colour-nice-dark-grey",
+        "scope": "private",
+        "line": {
+          "start": 80,
+          "end": 80
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.9"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "usedBy": [
+        {
+          "description": "<p>Inverse link style for use on a dark background</p>\n",
+          "context": {
+            "type": "placeholder",
+            "name": "inverse-link",
+            "code": "\n  color: $colour-link-inverse;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+            "line": {
+              "start": 72,
+              "end": 90
+            }
+          }
+        }
+      ],
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#393939"
+    },
+    {
       "description": "<p>CTA button background colour</p>\n",
       "commentRange": {
-        "start": 63,
-        "end": 64
+        "start": 85,
+        "end": 86
       },
       "context": {
         "type": "variable",
@@ -1078,8 +1318,8 @@
         "value": "$colour-nice-purple",
         "scope": "private",
         "line": {
-          "start": 65,
-          "end": 65
+          "start": 87,
+          "end": 87
         }
       },
       "since": [
@@ -1103,8 +1343,8 @@
     {
       "description": "<p>CTA button hover colour</p>\n",
       "commentRange": {
-        "start": 67,
-        "end": 68
+        "start": 89,
+        "end": 90
       },
       "context": {
         "type": "variable",
@@ -1112,8 +1352,8 @@
         "value": "#260b2d",
         "scope": "private",
         "line": {
-          "start": 69,
-          "end": 69
+          "start": 91,
+          "end": 91
         }
       },
       "since": [
@@ -1137,8 +1377,8 @@
     {
       "description": "<p>CTA button text colour</p>\n",
       "commentRange": {
-        "start": 71,
-        "end": 72
+        "start": 93,
+        "end": 94
       },
       "context": {
         "type": "variable",
@@ -1146,8 +1386,8 @@
         "value": "$colour-nice-white",
         "scope": "private",
         "line": {
-          "start": 73,
-          "end": 73
+          "start": 95,
+          "end": 95
         }
       },
       "since": [
@@ -1171,8 +1411,8 @@
     {
       "description": "<p>Primary button background colour</p>\n",
       "commentRange": {
-        "start": 78,
-        "end": 79
+        "start": 100,
+        "end": 101
       },
       "context": {
         "type": "variable",
@@ -1180,8 +1420,8 @@
         "value": "$colour-nice-dark-grey",
         "scope": "private",
         "line": {
-          "start": 80,
-          "end": 80
+          "start": 102,
+          "end": 102
         }
       },
       "since": [
@@ -1205,8 +1445,8 @@
     {
       "description": "<p>Primary button hover colour</p>\n",
       "commentRange": {
-        "start": 82,
-        "end": 83
+        "start": 104,
+        "end": 105
       },
       "context": {
         "type": "variable",
@@ -1214,8 +1454,8 @@
         "value": "$colour-nice-rich-black",
         "scope": "private",
         "line": {
-          "start": 84,
-          "end": 84
+          "start": 106,
+          "end": 106
         }
       },
       "since": [
@@ -1239,148 +1479,12 @@
     {
       "description": "<p>Primary button text colour</p>\n",
       "commentRange": {
-        "start": 86,
-        "end": 87
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-btn-primary-text",
-        "value": "$colour-nice-white",
-        "scope": "private",
-        "line": {
-          "start": 88,
-          "end": 88
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.2"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
-        "name": "_settings-colours-semantic.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#fff"
-    },
-    {
-      "description": "<p>Secondary button background colour</p>\n",
-      "commentRange": {
-        "start": 93,
-        "end": 94
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-btn-secondary",
-        "value": "#666",
-        "scope": "private",
-        "line": {
-          "start": 95,
-          "end": 95
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.2"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
-        "name": "_settings-colours-semantic.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#666"
-    },
-    {
-      "description": "<p>Secondary button hover colour</p>\n",
-      "commentRange": {
-        "start": 97,
-        "end": 98
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-btn-secondary-hover",
-        "value": "#333",
-        "scope": "private",
-        "line": {
-          "start": 99,
-          "end": 99
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.2"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
-        "name": "_settings-colours-semantic.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#333"
-    },
-    {
-      "description": "<p>Primary button text colour</p>\n",
-      "commentRange": {
-        "start": 101,
-        "end": 102
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-btn-secondary-text",
-        "value": "$colour-nice-white",
-        "scope": "private",
-        "line": {
-          "start": 103,
-          "end": 103
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.2"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
-        "name": "_settings-colours-semantic.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#fff"
-    },
-    {
-      "description": "<p>Light button background colour</p>\n",
-      "commentRange": {
         "start": 108,
         "end": 109
       },
       "context": {
         "type": "variable",
-        "name": "colour-btn-light",
+        "name": "colour-btn-primary-text",
         "value": "$colour-nice-white",
         "scope": "private",
         "line": {
@@ -1407,10 +1511,146 @@
       "resolvedValue": "#fff"
     },
     {
+      "description": "<p>Secondary button background colour</p>\n",
+      "commentRange": {
+        "start": 115,
+        "end": 116
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-btn-secondary",
+        "value": "#666",
+        "scope": "private",
+        "line": {
+          "start": 117,
+          "end": 117
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.2"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#666"
+    },
+    {
+      "description": "<p>Secondary button hover colour</p>\n",
+      "commentRange": {
+        "start": 119,
+        "end": 120
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-btn-secondary-hover",
+        "value": "#333",
+        "scope": "private",
+        "line": {
+          "start": 121,
+          "end": 121
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.2"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#333"
+    },
+    {
+      "description": "<p>Primary button text colour</p>\n",
+      "commentRange": {
+        "start": 123,
+        "end": 124
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-btn-secondary-text",
+        "value": "$colour-nice-white",
+        "scope": "private",
+        "line": {
+          "start": 125,
+          "end": 125
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.2"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#fff"
+    },
+    {
+      "description": "<p>Light button background colour</p>\n",
+      "commentRange": {
+        "start": 130,
+        "end": 131
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-btn-light",
+        "value": "$colour-nice-white",
+        "scope": "private",
+        "line": {
+          "start": 132,
+          "end": 132
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.2"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#fff"
+    },
+    {
       "description": "<p>Light button hover colour</p>\n",
       "commentRange": {
-        "start": 112,
-        "end": 113
+        "start": 134,
+        "end": 135
       },
       "context": {
         "type": "variable",
@@ -1418,8 +1658,8 @@
         "value": "$colour-nice-grey-3",
         "scope": "private",
         "line": {
-          "start": 114,
-          "end": 114
+          "start": 136,
+          "end": 136
         }
       },
       "since": [
@@ -1443,8 +1683,8 @@
     {
       "description": "<p>Light button text colour</p>\n",
       "commentRange": {
-        "start": 116,
-        "end": 117
+        "start": 138,
+        "end": 139
       },
       "context": {
         "type": "variable",
@@ -1452,8 +1692,8 @@
         "value": "$colour-nice-rich-black",
         "scope": "private",
         "line": {
-          "start": 118,
-          "end": 118
+          "start": 140,
+          "end": 140
         }
       },
       "since": [
@@ -1477,8 +1717,8 @@
     {
       "description": "<p>Borders, seperators, rules, keylines etc.</p>\n",
       "commentRange": {
-        "start": 123,
-        "end": 124
+        "start": 145,
+        "end": 146
       },
       "context": {
         "type": "variable",
@@ -1486,8 +1726,8 @@
         "value": "$colour-nice-grey-1",
         "scope": "private",
         "line": {
-          "start": 125,
-          "end": 125
+          "start": 147,
+          "end": 147
         }
       },
       "since": [
@@ -1511,8 +1751,8 @@
     {
       "description": "",
       "commentRange": {
-        "start": 128,
-        "end": 128
+        "start": 150,
+        "end": 150
       },
       "context": {
         "type": "variable",
@@ -1520,8 +1760,8 @@
         "value": "$colour-nice-grey-3",
         "scope": "private",
         "line": {
-          "start": 129,
-          "end": 129
+          "start": 151,
+          "end": 151
         }
       },
       "since": [
@@ -1545,8 +1785,8 @@
     {
       "description": "",
       "commentRange": {
-        "start": 132,
-        "end": 132
+        "start": 154,
+        "end": 154
       },
       "context": {
         "type": "variable",
@@ -1554,8 +1794,8 @@
         "value": "$colour-nice-dark-grey",
         "scope": "private",
         "line": {
-          "start": 133,
-          "end": 133
+          "start": 155,
+          "end": 155
         }
       },
       "since": [
@@ -1579,8 +1819,8 @@
     {
       "description": "<p>Agile lifecycle phase banner</p>\n",
       "commentRange": {
-        "start": 138,
-        "end": 139
+        "start": 160,
+        "end": 161
       },
       "context": {
         "type": "variable",
@@ -1588,8 +1828,8 @@
         "value": "#009ae9",
         "scope": "private",
         "line": {
-          "start": 140,
-          "end": 140
+          "start": 162,
+          "end": 162
         }
       },
       "since": [
@@ -1613,8 +1853,8 @@
     {
       "description": "<p>Discovery agile lifecycle phase</p>\n",
       "commentRange": {
-        "start": 142,
-        "end": 144
+        "start": 164,
+        "end": 166
       },
       "context": {
         "type": "variable",
@@ -1622,8 +1862,8 @@
         "value": "#b8008e",
         "scope": "private",
         "line": {
-          "start": 145,
-          "end": 145
+          "start": 167,
+          "end": 167
         }
       },
       "since": [
@@ -1648,8 +1888,8 @@
     {
       "description": "<p>Alpha badges and banners</p>\n",
       "commentRange": {
-        "start": 147,
-        "end": 149
+        "start": 169,
+        "end": 171
       },
       "context": {
         "type": "variable",
@@ -1657,8 +1897,8 @@
         "value": "#d5367f",
         "scope": "private",
         "line": {
-          "start": 150,
-          "end": 150
+          "start": 172,
+          "end": 172
         }
       },
       "since": [
@@ -1683,8 +1923,8 @@
     {
       "description": "<p>Beta badges and banners</p>\n",
       "commentRange": {
-        "start": 152,
-        "end": 154
+        "start": 174,
+        "end": 176
       },
       "context": {
         "type": "variable",
@@ -1692,8 +1932,8 @@
         "value": "#f47738",
         "scope": "private",
         "line": {
-          "start": 155,
-          "end": 155
+          "start": 177,
+          "end": 177
         }
       },
       "since": [
@@ -1718,8 +1958,8 @@
     {
       "description": "<p>Live badges and banners</p>\n",
       "commentRange": {
-        "start": 157,
-        "end": 159
+        "start": 179,
+        "end": 181
       },
       "context": {
         "type": "variable",
@@ -1727,8 +1967,8 @@
         "value": "#70a747",
         "scope": "private",
         "line": {
-          "start": 160,
-          "end": 160
+          "start": 182,
+          "end": 182
         }
       },
       "since": [
@@ -1753,8 +1993,8 @@
     {
       "description": "<p>Error text and border colour</p>\n",
       "commentRange": {
-        "start": 162,
-        "end": 163
+        "start": 184,
+        "end": 185
       },
       "context": {
         "type": "variable",
@@ -1762,8 +2002,8 @@
         "value": "#b10e1e",
         "scope": "private",
         "line": {
-          "start": 164,
-          "end": 164
+          "start": 186,
+          "end": 186
         }
       },
       "since": [
@@ -1787,8 +2027,8 @@
     {
       "description": "<p>Error background colour</p>\n",
       "commentRange": {
-        "start": 166,
-        "end": 167
+        "start": 188,
+        "end": 189
       },
       "context": {
         "type": "variable",
@@ -1796,8 +2036,8 @@
         "value": "#eac3c3",
         "scope": "private",
         "line": {
-          "start": 168,
-          "end": 168
+          "start": 190,
+          "end": 190
         }
       },
       "since": [
@@ -1821,8 +2061,8 @@
     {
       "description": "<p>Caution text and border colour</p>\n",
       "commentRange": {
-        "start": 170,
-        "end": 171
+        "start": 192,
+        "end": 193
       },
       "context": {
         "type": "variable",
@@ -1830,8 +2070,8 @@
         "value": "#9b722f",
         "scope": "private",
         "line": {
-          "start": 172,
-          "end": 172
+          "start": 194,
+          "end": 194
         }
       },
       "since": [
@@ -1855,8 +2095,8 @@
     {
       "description": "<p>Caution background colour</p>\n",
       "commentRange": {
-        "start": 174,
-        "end": 175
+        "start": 196,
+        "end": 197
       },
       "context": {
         "type": "variable",
@@ -1864,8 +2104,8 @@
         "value": "#ffdfa4",
         "scope": "private",
         "line": {
-          "start": 176,
-          "end": 176
+          "start": 198,
+          "end": 198
         }
       },
       "since": [
@@ -1889,8 +2129,8 @@
     {
       "description": "<p>Info text and border colour</p>\n",
       "commentRange": {
-        "start": 178,
-        "end": 179
+        "start": 200,
+        "end": 201
       },
       "context": {
         "type": "variable",
@@ -1898,8 +2138,8 @@
         "value": "#4a7f99",
         "scope": "private",
         "line": {
-          "start": 180,
-          "end": 180
+          "start": 202,
+          "end": 202
         }
       },
       "since": [
@@ -1923,8 +2163,8 @@
     {
       "description": "<p>Info background colour</p>\n",
       "commentRange": {
-        "start": 182,
-        "end": 183
+        "start": 204,
+        "end": 205
       },
       "context": {
         "type": "variable",
@@ -1932,8 +2172,8 @@
         "value": "#e6faff",
         "scope": "private",
         "line": {
-          "start": 184,
-          "end": 184
+          "start": 206,
+          "end": 206
         }
       },
       "since": [
@@ -1957,8 +2197,8 @@
     {
       "description": "<p>Success text and border colour</p>\n",
       "commentRange": {
-        "start": 186,
-        "end": 187
+        "start": 208,
+        "end": 209
       },
       "context": {
         "type": "variable",
@@ -1966,8 +2206,8 @@
         "value": "#3f8c5e",
         "scope": "private",
         "line": {
-          "start": 188,
-          "end": 188
+          "start": 210,
+          "end": 210
         }
       },
       "since": [
@@ -1991,8 +2231,8 @@
     {
       "description": "<p>Success background colour</p>\n",
       "commentRange": {
-        "start": 190,
-        "end": 191
+        "start": 212,
+        "end": 213
       },
       "context": {
         "type": "variable",
@@ -2000,8 +2240,8 @@
         "value": "#eff7eb",
         "scope": "private",
         "line": {
-          "start": 192,
-          "end": 192
+          "start": 214,
+          "end": 214
         }
       },
       "since": [
@@ -2063,7 +2303,7 @@
       "context": {
         "type": "css",
         "name": ".services",
-        "value": "&__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n  }\n\n  &__item {\n    border-bottom: 1px solid $colour-border;\n\n    &:first-child {\n      border-top: 1px solid $colour-border;\n    }\n\n    a {\n      @include font-size(-1);\n      color: $colour-panel-light;\n      display: block;\n      padding: em(8 0);\n      text-decoration: none;\n\n      &:hover {\n        color: $colour-text-reverse;\n      }\n\n      &:focus {\n        color: $colour-text;\n      }\n    }\n\n    .icon {\n      @include font-size(1);\n      display: inline-block;\n      margin: em(0 4 0 0);\n      vertical-align: middle;\n    }\n  }\n\n  @include mq($from: sm) {\n\n    &__item {\n      border: 0;\n      float: left;\n      text-align: center;\n      width: em(90px);\n\n      &:first-child {\n        border: 0;\n      }\n\n      a {\n        padding: em(4px) 0 0;\n      }\n    }\n\n    .icon {\n      @include font-size(6);\n      line-height: 1;\n      display: block;\n      margin: 0 auto em(4px);\n\n      // The following is needed for IE8 to go centrally aligned\n      &:before {\n        text-align: center;\n        width: 100%;\n      }\n    }\n  }",
+        "value": "&__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n  }\n\n  &__item {\n    border-bottom: 1px solid $colour-border;\n\n    &:first-child {\n      border-top: 1px solid $colour-border;\n    }\n\n    a {\n      @include font-size(-1);\n      color: $colour-panel-light;\n      display: block;\n      padding: em(8 0);\n      text-decoration: none;\n\n      &:hover {\n        color: $colour-text-reverse;\n      }\n\n      &:focus {\n        color: $colour-text;\n      }\n    }\n\n    .icon {\n      @include font-size(1);\n      display: inline-block;\n      margin: em(0 4 0 0);\n      vertical-align: middle;\n    }\n  }\n\n  @include mq($from: sm) {\n\n    &__item {\n      border: 0;\n      float: left;\n      text-align: center;\n      width: em(90px);\n\n      &:first-child {\n        border: 0;\n      }\n\n      a {\n        padding: em(4px) 0 0;\n      }\n    }\n\n    .icon {\n      @include font-size(6);\n      display: block;\n      line-height: 1;\n      margin: 0 auto em(4px);\n\n      // The following is needed for IE8 to go centrally aligned\n      &:before {\n        text-align: center;\n        width: 100%;\n      }\n    }\n  }",
         "line": {
           "start": 90,
           "end": 239
@@ -2185,10 +2425,10 @@
       "context": {
         "type": "css",
         "name": ".breadcrumbs",
-        "value": "@include font-size(0);\n  list-style: none;\n  margin: em(0 0 $spacing-large);\n  padding: 0;\n\n  &__crumb {\n    display: inline-block;\n\n    &:before {\n      @include nice-icon(angle-right);\n      color: $colour-text-subtle;\n      margin: em(0 10);\n    }\n\n    &:first-child:before {\n      display: none;\n    }\n\n    a {\n      color: $colour-text;\n    }\n  }",
+        "value": "@include font-size(0);\n  list-style: none;\n  margin: em(0 0 $spacing-large);\n  padding: 0;\n\n  &__crumb {\n    display: inline-block;\n\n    &:before {\n      @include nice-icon(angle-right);\n      margin: em(0 $spacing-x-small);\n    }\n\n    &:first-child:before {\n      display: none;\n    }\n\n    a {\n      color: $colour-text;\n    }\n  }",
         "line": {
           "start": 8,
-          "end": 32
+          "end": 31
         }
       },
       "since": [
@@ -2217,10 +2457,10 @@
       "context": {
         "type": "css",
         "name": ".btn",
-        "value": "@include remove-mz-focus-inner;\n  @include font-size(0);\n  appearance: none;\n  background: $colour-btn-primary;\n  border: 0;\n  border-radius: 0;\n  color: $colour-btn-primary-text;\n  cursor: pointer;\n  display: inline-block;\n  margin: em(0 $spacing-x-small 0 0);\n  padding: em($spacing-x-small $spacing-medium);\n  position: relative;\n  text-decoration: none;\n  vertical-align: top;\n\n  &:hover,\n  &:focus,\n  &:active {\n    background: $colour-btn-primary-hover;\n    color: $colour-btn-primary-text;\n    text-decoration: none;\n  }\n\n  &:focus {\n    @include default-focus-style;\n  }\n\n  &:visited {\n    color: $colour-btn-primary-text;\n  }\n\n  // Disabled button styles\n  &.disabled,\n  &[disabled='disabled'],\n  &[disabled] {\n    opacity: .5;\n\n    &:hover {\n      cursor: default;\n    }\n  }\n\n  // External links have an icon\n  &[rel='external'] {\n    &::after {\n      color: $colour-btn-primary-text;\n    }\n\n    &:hover {\n      &::after {\n        color: $colour-btn-primary-text;\n      }\n    }\n  }\n\n  &--prominent {\n    @include font-size(2);\n    padding: 0 em(20);\n    background: $colour-btn-cta;\n    border: 1px solid $colour-btn-cta-text;\n    color: $colour-btn-cta-text;\n\n    &:hover {\n      background: $colour-btn-cta-hover;\n      text-decoration: underline;\n    }\n  }\n\n  &--secondary {\n    background: $colour-btn-secondary;\n    color: $colour-btn-secondary-text;\n\n    &[rel='external'] {\n      &:after {\n        color: $colour-btn-secondary-text;\n      }\n\n      &:hover {\n        &:after {\n          color: $colour-btn-secondary-text;\n        }\n      }\n    }\n\n    &:hover,\n    &:focus {\n      background: $colour-btn-secondary-hover;\n      color: $colour-btn-secondary-text;\n      text-decoration: underline;\n    }\n\n    &:visited {\n      color: $colour-btn-secondary-text;\n    }\n  }",
+        "value": "@include remove-mz-focus-inner;\n  @include font-size(0);\n  appearance: none;\n  background: $colour-btn-primary;\n  border: em(1px) solid $colour-btn-primary-text;\n  border-radius: 0;\n  color: $colour-btn-primary-text;\n  cursor: pointer;\n  display: inline-block;\n  margin: em(0 $spacing-x-small 0 0);\n  padding: em($spacing-small $spacing-medium);\n  position: relative;\n  text-decoration: none;\n  vertical-align: top;\n\n  &:visited {\n    color: $colour-btn-primary-text;\n  }\n\n  &:hover {\n    background: $colour-btn-primary-hover;\n    color: $colour-btn-primary-text;\n    text-decoration: none;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background: $colour-btn-primary;\n    border-color: $colour-focus;\n  }\n\n  &:active {\n    background: $colour-btn-primary-hover;\n    text-decoration: none;\n    top: em(2px);\n  }\n\n  // Disabled button styles\n  &--disabled,\n  &.disabled,\n  &[aria-disabled='true'],\n  &[disabled='disabled'],\n  &[disabled] {\n    opacity: .5;\n    pointer-events: none;\n\n    &:hover {\n      cursor: default;\n    }\n  }\n\n  // CTA/prominent button\n  &--cta {\n    background: $colour-btn-cta;\n    border: em(1px) solid $colour-btn-cta-text;\n    color: $colour-btn-cta-text;\n\n    &:visited {\n      color: $colour-btn-cta-text;\n    }\n\n    &:hover {\n      background: $colour-btn-cta-hover;\n      color: $colour-btn-cta-text;\n    }\n\n    &:focus {\n      background: $colour-btn-cta-hover;\n    }\n\n    &:active {\n      background: $colour-btn-cta-hover;\n    }\n  }\n\n  // Secondary button\n  &--secondary {\n    background: $colour-btn-secondary;\n    border: em(1px) solid $colour-btn-secondary-text;\n    color: $colour-btn-secondary-text;\n\n    &:visited {\n      color: $colour-btn-secondary-text;\n    }\n\n    &:hover {\n      background: $colour-btn-secondary-hover;\n      color: $colour-btn-secondary-text;\n    }\n\n    &:focus {\n      background: $colour-btn-secondary-hover;\n    }\n\n    &:active {\n      background: $colour-btn-secondary-hover;\n    }\n  }\n\n  // Light button, for use on dark panels/sections\n  &--light {\n    background: $colour-btn-light;\n    border: em(1px) solid $colour-btn-light-text;\n    color: $colour-btn-light-text;\n\n    &:visited {\n      color: $colour-btn-light-text;\n    }\n\n    &:hover {\n      background: $colour-btn-light-hover;\n      color: $colour-btn-light-text;\n    }\n\n    &:focus {\n      background: $colour-btn-light-hover;\n    }\n\n    &:active {\n      background: $colour-btn-light-hover;\n    }\n  }",
         "line": {
           "start": 7,
-          "end": 104
+          "end": 131
         }
       },
       "since": [
@@ -2284,7 +2524,7 @@
         "value": "@extend %container;\n\n  &--narrow {\n    max-width: 1000px;\n  }\n\n  &--full {\n    max-width: 100%;\n    padding: 0 2%;\n    width: auto;\n  }\n\n  &--panel {\n    background: $colour-panel-light;\n    padding: 0 2%;\n    width: auto;\n  }",
         "line": {
           "start": 25,
-          "end": 48
+          "end": 57
         }
       },
       "example": [
@@ -2363,12 +2603,56 @@
       "context": {
         "type": "css",
         "name": ".panel",
-        "value": "background: $colour-panel-light;\n  padding: 1em;\n\n  &--dark {\n    background: $colour-panel-dark;\n    color: $colour-text-reverse;\n  }",
+        "value": "background: $colour-panel-light;\n  margin: em($spacing-medium 0 $spacing-large);\n  padding: em($spacing-medium);\n\n  :first-child {\n    margin-top: 0;\n  }\n\n  :last-child {\n    margin-bottom: 0;\n  }",
         "line": {
           "start": 8,
-          "end": 17
+          "end": 31
         }
       },
+      "since": [
+        {
+          "version": "0.1.0"
+        }
+      ],
+      "group": [
+        "components"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\components\\_components-panel.scss",
+        "name": "_components-panel.scss"
+      },
+      "groupName": {
+        "components": "Components"
+      }
+    },
+    {
+      "description": "<p>Modifier for the panel, to use a dark background</p>\n",
+      "commentRange": {
+        "start": 22,
+        "end": 25
+      },
+      "context": {
+        "type": "css",
+        "name": ".panel--dark",
+        "value": "@extend %inverse-links;\n  background: $colour-panel-dark;\n  color: $colour-text-reverse;",
+        "line": {
+          "start": 26,
+          "end": 31
+        }
+      },
+      "require": [
+        {
+          "type": "placeholder",
+          "name": "inverse-links",
+          "external": false
+        },
+        {
+          "type": "function",
+          "name": ".panel",
+          "external": true
+        }
+      ],
       "since": [
         {
           "version": "0.1.0"
@@ -3756,6 +4040,30 @@
               "end": 63
             }
           }
+        },
+        {
+          "description": "<p>Gets a glyph code, or several, (character entity reference) from the\n<code>$nice-glyphs</code> map, matching the given <code>$names</code>. Usually used with the content\nproperty for psuedo elements, to avoid use of magic character reference strings.</p>\n",
+          "context": {
+            "type": "function",
+            "name": "get-glyph",
+            "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
+            "line": {
+              "start": 50,
+              "end": 63
+            }
+          }
+        },
+        {
+          "description": "<p>Gets a glyph code, or several, (character entity reference) from the\n<code>$nice-glyphs</code> map, matching the given <code>$names</code>. Usually used with the content\nproperty for psuedo elements, to avoid use of magic character reference strings.</p>\n",
+          "context": {
+            "type": "function",
+            "name": "get-glyph",
+            "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
+            "line": {
+              "start": 50,
+              "end": 63
+            }
+          }
         }
       ],
       "groupName": {
@@ -3826,6 +4134,14 @@
       ],
       "access": "public",
       "require": [
+        {
+          "type": "variable",
+          "name": "nice-glyphs"
+        },
+        {
+          "type": "variable",
+          "name": "nice-glyphs"
+        },
         {
           "type": "variable",
           "name": "nice-glyphs"
@@ -4598,10 +4914,22 @@
           "context": {
             "type": "function",
             "name": "em",
-            "code": "\n\n  // $base could be in em or px (no unit = px).\n  // Adjust accordingly to create a $divisor that\n  // serves as context for $pixels.\n  $multiplier: if(unit($base) == em, 16, 1);\n  $divisor: strip-unit($base) * $multiplier;\n\n  $em-vals: ();\n  @each $val in $pixels {\n    $val-in-ems: (strip-unit($val) / $divisor) * 1em;\n    $em-vals: append($em-vals, $val-in-ems);\n  }\n\n  @if length($em-vals) == 1 {\n    // return a single value instead of a list,\n    // so it can be used in calculations\n    @return nth($em-vals, 1);\n  }\n  @else {\n    @return $em-vals;\n  }\n",
+            "code": "\n  // $base could be in em or px (no unit = px).\n  // Adjust accordingly to create a $divisor that\n  // serves as context for $pixels.\n  $multiplier: if(unit($base) == em, 16, 1);\n  $divisor: strip-unit($base) * $multiplier;\n\n  $em-vals: ();\n  @each $val in $pixels {\n    $val-in-ems: (strip-unit($val) / $divisor) * 1em;\n    $em-vals: append($em-vals, $val-in-ems);\n  }\n\n  @if length($em-vals) == 1 {\n    // return a single value instead of a list,\n    // so it can be used in calculations\n    @return nth($em-vals, 1);\n  } @else {\n    @return $em-vals;\n  }\n",
             "line": {
               "start": 18,
-              "end": 43
+              "end": 38
+            }
+          }
+        },
+        {
+          "description": "<p>Convert pixel-values to em-values.</p>\n",
+          "context": {
+            "type": "function",
+            "name": "em",
+            "code": "\n  // $base could be in em or px (no unit = px).\n  // Adjust accordingly to create a $divisor that\n  // serves as context for $pixels.\n  $multiplier: if(unit($base) == em, 16, 1);\n  $divisor: strip-unit($base) * $multiplier;\n\n  $em-vals: ();\n  @each $val in $pixels {\n    $val-in-ems: (strip-unit($val) / $divisor) * 1em;\n    $em-vals: append($em-vals, $val-in-ems);\n  }\n\n  @if length($em-vals) == 1 {\n    // return a single value instead of a list,\n    // so it can be used in calculations\n    @return nth($em-vals, 1);\n  } @else {\n    @return $em-vals;\n  }\n",
+            "line": {
+              "start": 18,
+              "end": 38
             }
           }
         },
@@ -4610,10 +4938,10 @@
           "context": {
             "type": "function",
             "name": "rem",
-            "code": "\n\n  $rem-vals: ();\n  @each $val in $pixels {\n    $val-in-rems: strip-unit($val) / $base * 1rem;\n    $rem-vals: append($rem-vals, $val-in-rems);\n  }\n\n  @if length($rem-vals) == 1 {\n    // return a single value instead of a list,\n    // so it can be used in calculations\n    @return nth($rem-vals, 1);\n  }\n  @else {\n    @return $rem-vals;\n  }\n",
+            "code": "\n\n  $rem-vals: ();\n  @each $val in $pixels {\n    $val-in-rems: strip-unit($val) / $base * 1rem;\n    $rem-vals: append($rem-vals, $val-in-rems);\n  }\n\n  @if length($rem-vals) == 1 {\n    // return a single value instead of a list,\n    // so it can be used in calculations\n    @return nth($rem-vals, 1);\n  } @else {\n    @return $rem-vals;\n  }\n",
             "line": {
-              "start": 51,
-              "end": 70
+              "start": 46,
+              "end": 61
             }
           }
         }
@@ -4631,10 +4959,10 @@
       "context": {
         "type": "function",
         "name": "em",
-        "code": "\n\n  // $base could be in em or px (no unit = px).\n  // Adjust accordingly to create a $divisor that\n  // serves as context for $pixels.\n  $multiplier: if(unit($base) == em, 16, 1);\n  $divisor: strip-unit($base) * $multiplier;\n\n  $em-vals: ();\n  @each $val in $pixels {\n    $val-in-ems: (strip-unit($val) / $divisor) * 1em;\n    $em-vals: append($em-vals, $val-in-ems);\n  }\n\n  @if length($em-vals) == 1 {\n    // return a single value instead of a list,\n    // so it can be used in calculations\n    @return nth($em-vals, 1);\n  }\n  @else {\n    @return $em-vals;\n  }\n",
+        "code": "\n  // $base could be in em or px (no unit = px).\n  // Adjust accordingly to create a $divisor that\n  // serves as context for $pixels.\n  $multiplier: if(unit($base) == em, 16, 1);\n  $divisor: strip-unit($base) * $multiplier;\n\n  $em-vals: ();\n  @each $val in $pixels {\n    $val-in-ems: (strip-unit($val) / $divisor) * 1em;\n    $em-vals: append($em-vals, $val-in-ems);\n  }\n\n  @if length($em-vals) == 1 {\n    // return a single value instead of a list,\n    // so it can be used in calculations\n    @return nth($em-vals, 1);\n  } @else {\n    @return $em-vals;\n  }\n",
         "line": {
           "start": 18,
-          "end": 43
+          "end": 38
         }
       },
       "parameter": [
@@ -4670,6 +4998,10 @@
         {
           "type": "function",
           "name": "strip-unit"
+        },
+        {
+          "type": "function",
+          "name": "strip-unit"
         }
       ],
       "file": {
@@ -4683,16 +5015,16 @@
     {
       "description": "<p>Convert pixel-values to rem-values.</p>\n",
       "commentRange": {
-        "start": 46,
-        "end": 50
+        "start": 41,
+        "end": 45
       },
       "context": {
         "type": "function",
         "name": "rem",
-        "code": "\n\n  $rem-vals: ();\n  @each $val in $pixels {\n    $val-in-rems: strip-unit($val) / $base * 1rem;\n    $rem-vals: append($rem-vals, $val-in-rems);\n  }\n\n  @if length($rem-vals) == 1 {\n    // return a single value instead of a list,\n    // so it can be used in calculations\n    @return nth($rem-vals, 1);\n  }\n  @else {\n    @return $rem-vals;\n  }\n",
+        "code": "\n\n  $rem-vals: ();\n  @each $val in $pixels {\n    $val-in-rems: strip-unit($val) / $base * 1rem;\n    $rem-vals: append($rem-vals, $val-in-rems);\n  }\n\n  @if length($rem-vals) == 1 {\n    // return a single value instead of a list,\n    // so it can be used in calculations\n    @return nth($rem-vals, 1);\n  } @else {\n    @return $rem-vals;\n  }\n",
         "line": {
-          "start": 51,
-          "end": 70
+          "start": 46,
+          "end": 61
         }
       },
       "parameter": [
@@ -4744,6 +5076,30 @@
             "line": {
               "start": 69,
               "end": 75
+            }
+          }
+        },
+        {
+          "description": "<p>Applies font size and line-height for the given scale.</p>\n",
+          "context": {
+            "type": "mixin",
+            "name": "font-size",
+            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  font-size: rem($font-size);\n  line-height: rem($line-height);\n",
+            "line": {
+              "start": 69,
+              "end": 75
+            }
+          }
+        },
+        {
+          "description": "<p>Nice font: includes font size, line height, and margins.</p>\n",
+          "context": {
+            "type": "mixin",
+            "name": "font",
+            "code": "\n  @include font-size($scale);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  font-weight: map-get($font-map, fw);\n  margin-bottom: rem(map-get($font-map, mb));\n  margin-top: rem(map-get($font-map, mt));\n",
+            "line": {
+              "start": 88,
+              "end": 97
             }
           }
         },
@@ -5707,6 +6063,42 @@
           }
         },
         {
+          "description": "<p>Applies the required styles for the given icon\nincluding the codepoint.</p>\n",
+          "context": {
+            "type": "mixin",
+            "name": "nice-icon",
+            "code": "\n  @if map-has-key($nice-icons, $icon) {\n    @include icon-base;\n    content: nice-icon($icon);\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
+            "line": {
+              "start": 237,
+              "end": 244
+            }
+          }
+        },
+        {
+          "description": "<p>Function for getting the codepoint for a given icon, for use\nwithin the <code>content</code> property of psuedo elements.</p>\n",
+          "context": {
+            "type": "function",
+            "name": "nice-icon",
+            "code": "\n  @if map-has-key($nice-icons, $icon) {\n    $icon-code: map-get($nice-icons, $icon);\n    @return unquote('\\'\\\\#{ $icon-code }\\'');\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
+            "line": {
+              "start": 256,
+              "end": 263
+            }
+          }
+        },
+        {
+          "description": "<p>Function for getting the codepoint for a given icon, for use\nwithin the <code>content</code> property of psuedo elements.</p>\n",
+          "context": {
+            "type": "function",
+            "name": "nice-icon",
+            "code": "\n  @if map-has-key($nice-icons, $icon) {\n    $icon-code: map-get($nice-icons, $icon);\n    @return unquote('\\'\\\\#{ $icon-code }\\'');\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
+            "line": {
+              "start": 256,
+              "end": 263
+            }
+          }
+        },
+        {
           "description": "<p>Function for getting the codepoint for a given icon, for use\nwithin the <code>content</code> property of psuedo elements.</p>\n",
           "context": {
             "type": "function",
@@ -5818,6 +6210,10 @@
         {
           "type": "variable",
           "name": "nice-icons"
+        },
+        {
+          "type": "variable",
+          "name": "nice-icons"
         }
       ],
       "file": {
@@ -5854,6 +6250,14 @@
       ],
       "access": "public",
       "require": [
+        {
+          "type": "variable",
+          "name": "nice-icons"
+        },
+        {
+          "type": "variable",
+          "name": "nice-icons"
+        },
         {
           "type": "variable",
           "name": "nice-icons"
@@ -6195,18 +6599,221 @@
       }
     },
     {
+      "description": "<p>Inverse link style for use on a dark background</p>\n",
+      "commentRange": {
+        "start": 70,
+        "end": 71
+      },
+      "context": {
+        "type": "placeholder",
+        "name": "inverse-link",
+        "code": "\n  color: $colour-link-inverse;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+        "line": {
+          "start": 72,
+          "end": 90
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.9"
+        }
+      ],
+      "group": [
+        "typography"
+      ],
+      "access": "public",
+      "require": [
+        {
+          "type": "variable",
+          "name": "colour-link-inverse"
+        },
+        {
+          "type": "variable",
+          "name": "colour-link-inverse-visited"
+        },
+        {
+          "type": "variable",
+          "name": "colour-link-inverse-hover"
+        },
+        {
+          "type": "variable",
+          "name": "colour-link-inverse-focus-text"
+        },
+        {
+          "type": "variable",
+          "name": "colour-link-inverse-active"
+        }
+      ],
+      "file": {
+        "path": "stylesheets\\typography\\_typography-global.scss",
+        "name": "_typography-global.scss"
+      },
+      "usedBy": [
+        {
+          "description": "<p>Inverse links for use on a dark background</p>\n",
+          "context": {
+            "type": "placeholder",
+            "name": "inverse-links",
+            "code": "\n  a {\n    @extend %inverse-link;\n  }\n",
+            "line": {
+              "start": 94,
+              "end": 98
+            }
+          }
+        }
+      ],
+      "groupName": {
+        "typography": "Typography"
+      }
+    },
+    {
+      "description": "<p>Inverse links for use on a dark background</p>\n",
+      "commentRange": {
+        "start": 92,
+        "end": 93
+      },
+      "context": {
+        "type": "placeholder",
+        "name": "inverse-links",
+        "code": "\n  a {\n    @extend %inverse-link;\n  }\n",
+        "line": {
+          "start": 94,
+          "end": 98
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.9"
+        }
+      ],
+      "group": [
+        "typography"
+      ],
+      "access": "public",
+      "require": [
+        {
+          "type": "placeholder",
+          "name": "inverse-link"
+        }
+      ],
+      "file": {
+        "path": "stylesheets\\typography\\_typography-global.scss",
+        "name": "_typography-global.scss"
+      },
+      "usedBy": [
+        {
+          "description": "<p>Modifier for the panel, to use a dark background</p>\n",
+          "context": {
+            "type": "css",
+            "name": ".panel--dark",
+            "value": "@extend %inverse-links;\n  background: $colour-panel-dark;\n  color: $colour-text-reverse;",
+            "line": {
+              "start": 26,
+              "end": 31
+            }
+          }
+        },
+        {
+          "description": "<p>Inverse links, for use on dark backgrounds e.g dark panels.\nUse this class on a containing element to apply to all links within it.</p>\n",
+          "context": {
+            "type": "css",
+            "name": ".inverse-links",
+            "value": "@extend %inverse-links;",
+            "line": {
+              "start": 111,
+              "end": 165
+            }
+          }
+        }
+      ],
+      "groupName": {
+        "typography": "Typography"
+      }
+    },
+    {
+      "description": "<p>Inverse link for use on a dark background. Apply to an individual link.\nPrefer using <code>.inverse-links</code> on the container instead.</p>\n",
+      "commentRange": {
+        "start": 100,
+        "end": 102
+      },
+      "context": {
+        "type": "css",
+        "name": ".link--inverse",
+        "value": "@extend %inverse-link;",
+        "line": {
+          "start": 103,
+          "end": 165
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.9"
+        }
+      ],
+      "group": [
+        "typography"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\typography\\_typography-global.scss",
+        "name": "_typography-global.scss"
+      },
+      "groupName": {
+        "typography": "Typography"
+      }
+    },
+    {
+      "description": "<p>Inverse links, for use on dark backgrounds e.g dark panels.\nUse this class on a containing element to apply to all links within it.</p>\n",
+      "commentRange": {
+        "start": 107,
+        "end": 110
+      },
+      "context": {
+        "type": "css",
+        "name": ".inverse-links",
+        "value": "@extend %inverse-links;",
+        "line": {
+          "start": 111,
+          "end": 165
+        }
+      },
+      "require": [
+        {
+          "type": "placeholder",
+          "name": "inverse-links",
+          "external": false
+        }
+      ],
+      "since": [
+        {
+          "version": "0.2.9"
+        }
+      ],
+      "group": [
+        "typography"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\typography\\_typography-global.scss",
+        "name": "_typography-global.scss"
+      },
+      "groupName": {
+        "typography": "Typography"
+      }
+    },
+    {
       "description": "<p>Mark</p>\n",
       "commentRange": {
-        "start": 116,
-        "end": 116
+        "start": 153,
+        "end": 153
       },
       "context": {
         "type": "css",
         "name": "mark,\n.mark",
         "value": "background-color: #fff999;\n  padding: em(4);",
         "line": {
-          "start": 118,
-          "end": 128
+          "start": 155,
+          "end": 165
         }
       },
       "group": [
@@ -6224,16 +6831,16 @@
     {
       "description": "<p>Small</p>\n",
       "commentRange": {
-        "start": 123,
-        "end": 123
+        "start": 160,
+        "end": 160
       },
       "context": {
         "type": "css",
         "name": "small,\n.small",
         "value": "font-size: 85%;",
         "line": {
-          "start": 125,
-          "end": 128
+          "start": 162,
+          "end": 165
         }
       },
       "group": [
@@ -6582,6 +7189,14 @@
         {
           "type": "variable",
           "name": "named-font-sizes"
+        },
+        {
+          "type": "variable",
+          "name": "named-font-sizes"
+        },
+        {
+          "type": "variable",
+          "name": "named-font-sizes"
         }
       ],
       "throw": [
@@ -6837,6 +7452,10 @@
         {
           "type": "function",
           "name": "rem"
+        },
+        {
+          "type": "function",
+          "name": "rem"
         }
       ],
       "file": {
@@ -6909,6 +7528,10 @@
         {
           "type": "function",
           "name": "get-scale-integer"
+        },
+        {
+          "type": "function",
+          "name": "rem"
         },
         {
           "type": "function",
@@ -7042,10 +7665,10 @@
       "context": {
         "type": "css",
         "name": ".quote",
-        "value": "@include font-size($scale: h4);\n  font-weight: 300;\n\n  &:before {\n    color: $colour-nice-teal;\n    content: get-glyph(left-double-quotation-mark);\n    display: inline-block;\n    font-family: Arial;\n    font-size: 6rem;\n    font-weight: bold;\n    line-height: 0;\n    vertical-align: bottom;\n\n    @media print {\n      color: $colour-true-black;\n    }\n  }\n\n  p {\n    font-size: inherit;\n    padding-top: 0;\n  }\n\n  footer,\n  cite {\n    @include font-size($scale: 0);\n    font-style: normal;\n  }",
+        "value": "@include font-size(lead);\n  border-left: em($spacing-x-small) solid $colour-nice-teal;\n  font-weight: normal;\n  margin: rem($spacing-large 0);\n  padding: rem(0 0 0 $spacing-xx-large);\n  position: relative;\n\n  &:before {\n    color: $colour-nice-teal;\n    content: get-glyph(left-double-quotation-mark);\n    display: block;\n    font-family: Arial;\n    font-size: 5rem;\n    font-weight: bold;\n    left: 0;\n    line-height: .8;\n    position: absolute;\n    text-align: center;\n    top: 0;\n    width: rem($spacing-xx-large);\n\n    @media print {\n      color: $colour-true-black;\n    }\n  }\n\n  p {\n    font-size: inherit;\n  }\n\n  footer,\n  cite {\n    @include font-size($scale: 0);\n    font-style: normal;\n  }",
         "line": {
           "start": 7,
-          "end": 37
+          "end": 44
         }
       },
       "since": [
@@ -7157,6 +7780,30 @@
               "end": 25
             }
           }
+        },
+        {
+          "description": "<p>Gets a numeric scale</p>\n",
+          "context": {
+            "type": "function",
+            "name": "get-scale-integer",
+            "code": "\n  @if map-has-key($named-font-sizes, $scale) {\n    @return map-get($named-font-sizes, $scale);\n  }\n  @elseif is-integer($scale) {\n    @return $scale;\n  }\n\n  @error '`$scale` must either be an integer or exist as a named font size in `$named-font-sizes`';\n",
+            "line": {
+              "start": 16,
+              "end": 25
+            }
+          }
+        },
+        {
+          "description": "<p>Gets a numeric scale</p>\n",
+          "context": {
+            "type": "function",
+            "name": "get-scale-integer",
+            "code": "\n  @if map-has-key($named-font-sizes, $scale) {\n    @return map-get($named-font-sizes, $scale);\n  }\n  @elseif is-integer($scale) {\n    @return $scale;\n  }\n\n  @error '`$scale` must either be an integer or exist as a named font size in `$named-font-sizes`';\n",
+            "line": {
+              "start": 16,
+              "end": 25
+            }
+          }
         }
       ],
       "groupName": {
@@ -7173,11 +7820,11 @@
       "context": {
         "type": "variable",
         "name": "font-sizes",
-        "value": "(\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  2: (\n    fs: 3 * 5,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  3: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  4: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  5: (\n    fs: 4 * 6,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 11,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)",
+        "value": "(\n  // sass-lint:disable-block space-around-operator\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  2: (\n    fs: 4 * 5,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  3: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  4: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  5: (\n    fs: 4 * 6,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 11,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)",
         "scope": "private",
         "line": {
           "start": 27,
-          "end": 91
+          "end": 92
         }
       },
       "since": [
@@ -7234,7 +7881,7 @@
       "groupName": {
         "typography": "Typography"
       },
-      "resolvedValue": "(\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  2: (\n    fs: 3 * 5,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  3: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  4: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  5: (\n    fs: 4 * 6,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 11,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)"
+      "resolvedValue": "(\n  // sass-lint:disable-block space-around-operator\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  2: (\n    fs: 4 * 5,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  3: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  4: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  5: (\n    fs: 4 * 6,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 11,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)"
     },
     {
       "description": "<p>Modular scale values</p>\n",
@@ -7377,6 +8024,30 @@
               "end": 51
             }
           }
+        },
+        {
+          "description": "<p>Gets a module scale ratio with the given name. Looks\ninside the $scales map to find a ratio.</p>\n",
+          "context": {
+            "type": "function",
+            "name": "get-ratio",
+            "code": "\n  @if map-has-key($scales, $scale) {\n    @return map-get($scales, $scale);\n  } @else {\n    @error 'Scale with name #{$scale} could not be found in the $scales map';\n  }\n",
+            "line": {
+              "start": 45,
+              "end": 51
+            }
+          }
+        },
+        {
+          "description": "<p>Gets a module scale ratio with the given name. Looks\ninside the $scales map to find a ratio.</p>\n",
+          "context": {
+            "type": "function",
+            "name": "get-ratio",
+            "code": "\n  @if map-has-key($scales, $scale) {\n    @return map-get($scales, $scale);\n  } @else {\n    @error 'Scale with name #{$scale} could not be found in the $scales map';\n  }\n",
+            "line": {
+              "start": 45,
+              "end": 51
+            }
+          }
         }
       ],
       "groupName": {
@@ -7419,6 +8090,14 @@
         "undefined"
       ],
       "require": [
+        {
+          "type": "variable",
+          "name": "scales"
+        },
+        {
+          "type": "variable",
+          "name": "scales"
+        },
         {
           "type": "variable",
           "name": "scales"
@@ -9177,8 +9856,8 @@
         {
           "description": "<p>Link text colour</p>\n",
           "commentRange": {
-            "start": 44,
-            "end": 45
+            "start": 43,
+            "end": 44
           },
           "context": {
             "type": "variable",
@@ -9186,8 +9865,8 @@
             "value": "#005ea5",
             "scope": "private",
             "line": {
-              "start": 46,
-              "end": 46
+              "start": 45,
+              "end": 45
             }
           },
           "since": [
@@ -9211,8 +9890,8 @@
         {
           "description": "<p>Link hover colour</p>\n",
           "commentRange": {
-            "start": 48,
-            "end": 49
+            "start": 47,
+            "end": 48
           },
           "context": {
             "type": "variable",
@@ -9220,8 +9899,8 @@
             "value": "#2e8aca",
             "scope": "private",
             "line": {
-              "start": 50,
-              "end": 50
+              "start": 49,
+              "end": 49
             }
           },
           "since": [
@@ -9245,8 +9924,8 @@
         {
           "description": "<p>Link visited colour</p>\n",
           "commentRange": {
-            "start": 52,
-            "end": 53
+            "start": 51,
+            "end": 52
           },
           "context": {
             "type": "variable",
@@ -9254,8 +9933,8 @@
             "value": "#4c2c92",
             "scope": "private",
             "line": {
-              "start": 54,
-              "end": 54
+              "start": 53,
+              "end": 53
             }
           },
           "since": [
@@ -9279,8 +9958,8 @@
         {
           "description": "<p>Link active colour</p>\n",
           "commentRange": {
-            "start": 56,
-            "end": 57
+            "start": 55,
+            "end": 56
           },
           "context": {
             "type": "variable",
@@ -9288,8 +9967,8 @@
             "value": "#2e8aca",
             "scope": "private",
             "line": {
-              "start": 58,
-              "end": 58
+              "start": 57,
+              "end": 57
             }
           },
           "since": [
@@ -9311,10 +9990,250 @@
           "resolvedValue": "#2e8aca"
         },
         {
+          "description": "<p>Inverse link text colour</p>\n",
+          "commentRange": {
+            "start": 62,
+            "end": 63
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-link-inverse",
+            "value": "$colour-text-reverse",
+            "scope": "private",
+            "line": {
+              "start": 64,
+              "end": 64
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.9"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "usedBy": [
+            {
+              "description": "<p>Inverse link style for use on a dark background</p>\n",
+              "context": {
+                "type": "placeholder",
+                "name": "inverse-link",
+                "code": "\n  color: $colour-link-inverse;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+                "line": {
+                  "start": 72,
+                  "end": 90
+                }
+              }
+            }
+          ],
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#fff"
+        },
+        {
+          "description": "<p>Inverse link hover colour</p>\n",
+          "commentRange": {
+            "start": 66,
+            "end": 67
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-link-inverse-hover",
+            "value": "$colour-nice-grey-2",
+            "scope": "private",
+            "line": {
+              "start": 68,
+              "end": 68
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.9"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "usedBy": [
+            {
+              "description": "<p>Inverse link style for use on a dark background</p>\n",
+              "context": {
+                "type": "placeholder",
+                "name": "inverse-link",
+                "code": "\n  color: $colour-link-inverse;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+                "line": {
+                  "start": 72,
+                  "end": 90
+                }
+              }
+            }
+          ],
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#d6d6d6"
+        },
+        {
+          "description": "<p>Inverse link visited colour. Same as normal inverse link colour to ensure minimum 4.5:1 colour contrast across various dark backgrounds.</p>\n",
+          "commentRange": {
+            "start": 70,
+            "end": 71
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-link-inverse-visited",
+            "value": "$colour-link-inverse",
+            "scope": "private",
+            "line": {
+              "start": 72,
+              "end": 72
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.9"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "usedBy": [
+            {
+              "description": "<p>Inverse link style for use on a dark background</p>\n",
+              "context": {
+                "type": "placeholder",
+                "name": "inverse-link",
+                "code": "\n  color: $colour-link-inverse;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+                "line": {
+                  "start": 72,
+                  "end": 90
+                }
+              }
+            }
+          ],
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#fff"
+        },
+        {
+          "description": "<p>Inverse link active colour</p>\n",
+          "commentRange": {
+            "start": 74,
+            "end": 75
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-link-inverse-active",
+            "value": "$colour-link-active",
+            "scope": "private",
+            "line": {
+              "start": 76,
+              "end": 76
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.9"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "usedBy": [
+            {
+              "description": "<p>Inverse link style for use on a dark background</p>\n",
+              "context": {
+                "type": "placeholder",
+                "name": "inverse-link",
+                "code": "\n  color: $colour-link-inverse;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+                "line": {
+                  "start": 72,
+                  "end": 90
+                }
+              }
+            }
+          ],
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#2e8aca"
+        },
+        {
+          "description": "<p>Inverse link focus text colour</p>\n",
+          "commentRange": {
+            "start": 78,
+            "end": 79
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-link-inverse-focus-text",
+            "value": "$colour-nice-dark-grey",
+            "scope": "private",
+            "line": {
+              "start": 80,
+              "end": 80
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.9"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "usedBy": [
+            {
+              "description": "<p>Inverse link style for use on a dark background</p>\n",
+              "context": {
+                "type": "placeholder",
+                "name": "inverse-link",
+                "code": "\n  color: $colour-link-inverse;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+                "line": {
+                  "start": 72,
+                  "end": 90
+                }
+              }
+            }
+          ],
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#393939"
+        },
+        {
           "description": "<p>CTA button background colour</p>\n",
           "commentRange": {
-            "start": 63,
-            "end": 64
+            "start": 85,
+            "end": 86
           },
           "context": {
             "type": "variable",
@@ -9322,8 +10241,8 @@
             "value": "$colour-nice-purple",
             "scope": "private",
             "line": {
-              "start": 65,
-              "end": 65
+              "start": 87,
+              "end": 87
             }
           },
           "since": [
@@ -9347,8 +10266,8 @@
         {
           "description": "<p>CTA button hover colour</p>\n",
           "commentRange": {
-            "start": 67,
-            "end": 68
+            "start": 89,
+            "end": 90
           },
           "context": {
             "type": "variable",
@@ -9356,8 +10275,8 @@
             "value": "#260b2d",
             "scope": "private",
             "line": {
-              "start": 69,
-              "end": 69
+              "start": 91,
+              "end": 91
             }
           },
           "since": [
@@ -9381,8 +10300,8 @@
         {
           "description": "<p>CTA button text colour</p>\n",
           "commentRange": {
-            "start": 71,
-            "end": 72
+            "start": 93,
+            "end": 94
           },
           "context": {
             "type": "variable",
@@ -9390,8 +10309,8 @@
             "value": "$colour-nice-white",
             "scope": "private",
             "line": {
-              "start": 73,
-              "end": 73
+              "start": 95,
+              "end": 95
             }
           },
           "since": [
@@ -9415,8 +10334,8 @@
         {
           "description": "<p>Primary button background colour</p>\n",
           "commentRange": {
-            "start": 78,
-            "end": 79
+            "start": 100,
+            "end": 101
           },
           "context": {
             "type": "variable",
@@ -9424,8 +10343,8 @@
             "value": "$colour-nice-dark-grey",
             "scope": "private",
             "line": {
-              "start": 80,
-              "end": 80
+              "start": 102,
+              "end": 102
             }
           },
           "since": [
@@ -9449,8 +10368,8 @@
         {
           "description": "<p>Primary button hover colour</p>\n",
           "commentRange": {
-            "start": 82,
-            "end": 83
+            "start": 104,
+            "end": 105
           },
           "context": {
             "type": "variable",
@@ -9458,8 +10377,8 @@
             "value": "$colour-nice-rich-black",
             "scope": "private",
             "line": {
-              "start": 84,
-              "end": 84
+              "start": 106,
+              "end": 106
             }
           },
           "since": [
@@ -9483,148 +10402,12 @@
         {
           "description": "<p>Primary button text colour</p>\n",
           "commentRange": {
-            "start": 86,
-            "end": 87
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-btn-primary-text",
-            "value": "$colour-nice-white",
-            "scope": "private",
-            "line": {
-              "start": 88,
-              "end": 88
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.2"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
-            "name": "_settings-colours-semantic.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#fff"
-        },
-        {
-          "description": "<p>Secondary button background colour</p>\n",
-          "commentRange": {
-            "start": 93,
-            "end": 94
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-btn-secondary",
-            "value": "#666",
-            "scope": "private",
-            "line": {
-              "start": 95,
-              "end": 95
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.2"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
-            "name": "_settings-colours-semantic.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#666"
-        },
-        {
-          "description": "<p>Secondary button hover colour</p>\n",
-          "commentRange": {
-            "start": 97,
-            "end": 98
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-btn-secondary-hover",
-            "value": "#333",
-            "scope": "private",
-            "line": {
-              "start": 99,
-              "end": 99
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.2"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
-            "name": "_settings-colours-semantic.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#333"
-        },
-        {
-          "description": "<p>Primary button text colour</p>\n",
-          "commentRange": {
-            "start": 101,
-            "end": 102
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-btn-secondary-text",
-            "value": "$colour-nice-white",
-            "scope": "private",
-            "line": {
-              "start": 103,
-              "end": 103
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.2"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
-            "name": "_settings-colours-semantic.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#fff"
-        },
-        {
-          "description": "<p>Light button background colour</p>\n",
-          "commentRange": {
             "start": 108,
             "end": 109
           },
           "context": {
             "type": "variable",
-            "name": "colour-btn-light",
+            "name": "colour-btn-primary-text",
             "value": "$colour-nice-white",
             "scope": "private",
             "line": {
@@ -9651,10 +10434,146 @@
           "resolvedValue": "#fff"
         },
         {
+          "description": "<p>Secondary button background colour</p>\n",
+          "commentRange": {
+            "start": 115,
+            "end": 116
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-btn-secondary",
+            "value": "#666",
+            "scope": "private",
+            "line": {
+              "start": 117,
+              "end": 117
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.2"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#666"
+        },
+        {
+          "description": "<p>Secondary button hover colour</p>\n",
+          "commentRange": {
+            "start": 119,
+            "end": 120
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-btn-secondary-hover",
+            "value": "#333",
+            "scope": "private",
+            "line": {
+              "start": 121,
+              "end": 121
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.2"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#333"
+        },
+        {
+          "description": "<p>Primary button text colour</p>\n",
+          "commentRange": {
+            "start": 123,
+            "end": 124
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-btn-secondary-text",
+            "value": "$colour-nice-white",
+            "scope": "private",
+            "line": {
+              "start": 125,
+              "end": 125
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.2"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#fff"
+        },
+        {
+          "description": "<p>Light button background colour</p>\n",
+          "commentRange": {
+            "start": 130,
+            "end": 131
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-btn-light",
+            "value": "$colour-nice-white",
+            "scope": "private",
+            "line": {
+              "start": 132,
+              "end": 132
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.2"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#fff"
+        },
+        {
           "description": "<p>Light button hover colour</p>\n",
           "commentRange": {
-            "start": 112,
-            "end": 113
+            "start": 134,
+            "end": 135
           },
           "context": {
             "type": "variable",
@@ -9662,8 +10581,8 @@
             "value": "$colour-nice-grey-3",
             "scope": "private",
             "line": {
-              "start": 114,
-              "end": 114
+              "start": 136,
+              "end": 136
             }
           },
           "since": [
@@ -9687,8 +10606,8 @@
         {
           "description": "<p>Light button text colour</p>\n",
           "commentRange": {
-            "start": 116,
-            "end": 117
+            "start": 138,
+            "end": 139
           },
           "context": {
             "type": "variable",
@@ -9696,8 +10615,8 @@
             "value": "$colour-nice-rich-black",
             "scope": "private",
             "line": {
-              "start": 118,
-              "end": 118
+              "start": 140,
+              "end": 140
             }
           },
           "since": [
@@ -9721,8 +10640,8 @@
         {
           "description": "<p>Borders, seperators, rules, keylines etc.</p>\n",
           "commentRange": {
-            "start": 123,
-            "end": 124
+            "start": 145,
+            "end": 146
           },
           "context": {
             "type": "variable",
@@ -9730,8 +10649,8 @@
             "value": "$colour-nice-grey-1",
             "scope": "private",
             "line": {
-              "start": 125,
-              "end": 125
+              "start": 147,
+              "end": 147
             }
           },
           "since": [
@@ -9755,8 +10674,8 @@
         {
           "description": "",
           "commentRange": {
-            "start": 128,
-            "end": 128
+            "start": 150,
+            "end": 150
           },
           "context": {
             "type": "variable",
@@ -9764,8 +10683,8 @@
             "value": "$colour-nice-grey-3",
             "scope": "private",
             "line": {
-              "start": 129,
-              "end": 129
+              "start": 151,
+              "end": 151
             }
           },
           "since": [
@@ -9789,8 +10708,8 @@
         {
           "description": "",
           "commentRange": {
-            "start": 132,
-            "end": 132
+            "start": 154,
+            "end": 154
           },
           "context": {
             "type": "variable",
@@ -9798,8 +10717,8 @@
             "value": "$colour-nice-dark-grey",
             "scope": "private",
             "line": {
-              "start": 133,
-              "end": 133
+              "start": 155,
+              "end": 155
             }
           },
           "since": [
@@ -9823,8 +10742,8 @@
         {
           "description": "<p>Agile lifecycle phase banner</p>\n",
           "commentRange": {
-            "start": 138,
-            "end": 139
+            "start": 160,
+            "end": 161
           },
           "context": {
             "type": "variable",
@@ -9832,8 +10751,8 @@
             "value": "#009ae9",
             "scope": "private",
             "line": {
-              "start": 140,
-              "end": 140
+              "start": 162,
+              "end": 162
             }
           },
           "since": [
@@ -9857,8 +10776,8 @@
         {
           "description": "<p>Discovery agile lifecycle phase</p>\n",
           "commentRange": {
-            "start": 142,
-            "end": 144
+            "start": 164,
+            "end": 166
           },
           "context": {
             "type": "variable",
@@ -9866,8 +10785,8 @@
             "value": "#b8008e",
             "scope": "private",
             "line": {
-              "start": 145,
-              "end": 145
+              "start": 167,
+              "end": 167
             }
           },
           "since": [
@@ -9892,8 +10811,8 @@
         {
           "description": "<p>Alpha badges and banners</p>\n",
           "commentRange": {
-            "start": 147,
-            "end": 149
+            "start": 169,
+            "end": 171
           },
           "context": {
             "type": "variable",
@@ -9901,8 +10820,8 @@
             "value": "#d5367f",
             "scope": "private",
             "line": {
-              "start": 150,
-              "end": 150
+              "start": 172,
+              "end": 172
             }
           },
           "since": [
@@ -9927,8 +10846,8 @@
         {
           "description": "<p>Beta badges and banners</p>\n",
           "commentRange": {
-            "start": 152,
-            "end": 154
+            "start": 174,
+            "end": 176
           },
           "context": {
             "type": "variable",
@@ -9936,8 +10855,8 @@
             "value": "#f47738",
             "scope": "private",
             "line": {
-              "start": 155,
-              "end": 155
+              "start": 177,
+              "end": 177
             }
           },
           "since": [
@@ -9962,8 +10881,8 @@
         {
           "description": "<p>Live badges and banners</p>\n",
           "commentRange": {
-            "start": 157,
-            "end": 159
+            "start": 179,
+            "end": 181
           },
           "context": {
             "type": "variable",
@@ -9971,8 +10890,8 @@
             "value": "#70a747",
             "scope": "private",
             "line": {
-              "start": 160,
-              "end": 160
+              "start": 182,
+              "end": 182
             }
           },
           "since": [
@@ -9997,8 +10916,8 @@
         {
           "description": "<p>Error text and border colour</p>\n",
           "commentRange": {
-            "start": 162,
-            "end": 163
+            "start": 184,
+            "end": 185
           },
           "context": {
             "type": "variable",
@@ -10006,8 +10925,8 @@
             "value": "#b10e1e",
             "scope": "private",
             "line": {
-              "start": 164,
-              "end": 164
+              "start": 186,
+              "end": 186
             }
           },
           "since": [
@@ -10031,8 +10950,8 @@
         {
           "description": "<p>Error background colour</p>\n",
           "commentRange": {
-            "start": 166,
-            "end": 167
+            "start": 188,
+            "end": 189
           },
           "context": {
             "type": "variable",
@@ -10040,8 +10959,8 @@
             "value": "#eac3c3",
             "scope": "private",
             "line": {
-              "start": 168,
-              "end": 168
+              "start": 190,
+              "end": 190
             }
           },
           "since": [
@@ -10065,8 +10984,8 @@
         {
           "description": "<p>Caution text and border colour</p>\n",
           "commentRange": {
-            "start": 170,
-            "end": 171
+            "start": 192,
+            "end": 193
           },
           "context": {
             "type": "variable",
@@ -10074,8 +10993,8 @@
             "value": "#9b722f",
             "scope": "private",
             "line": {
-              "start": 172,
-              "end": 172
+              "start": 194,
+              "end": 194
             }
           },
           "since": [
@@ -10099,8 +11018,8 @@
         {
           "description": "<p>Caution background colour</p>\n",
           "commentRange": {
-            "start": 174,
-            "end": 175
+            "start": 196,
+            "end": 197
           },
           "context": {
             "type": "variable",
@@ -10108,8 +11027,8 @@
             "value": "#ffdfa4",
             "scope": "private",
             "line": {
-              "start": 176,
-              "end": 176
+              "start": 198,
+              "end": 198
             }
           },
           "since": [
@@ -10133,8 +11052,8 @@
         {
           "description": "<p>Info text and border colour</p>\n",
           "commentRange": {
-            "start": 178,
-            "end": 179
+            "start": 200,
+            "end": 201
           },
           "context": {
             "type": "variable",
@@ -10142,8 +11061,8 @@
             "value": "#4a7f99",
             "scope": "private",
             "line": {
-              "start": 180,
-              "end": 180
+              "start": 202,
+              "end": 202
             }
           },
           "since": [
@@ -10167,8 +11086,8 @@
         {
           "description": "<p>Info background colour</p>\n",
           "commentRange": {
-            "start": 182,
-            "end": 183
+            "start": 204,
+            "end": 205
           },
           "context": {
             "type": "variable",
@@ -10176,8 +11095,8 @@
             "value": "#e6faff",
             "scope": "private",
             "line": {
-              "start": 184,
-              "end": 184
+              "start": 206,
+              "end": 206
             }
           },
           "since": [
@@ -10201,8 +11120,8 @@
         {
           "description": "<p>Success text and border colour</p>\n",
           "commentRange": {
-            "start": 186,
-            "end": 187
+            "start": 208,
+            "end": 209
           },
           "context": {
             "type": "variable",
@@ -10210,8 +11129,8 @@
             "value": "#3f8c5e",
             "scope": "private",
             "line": {
-              "start": 188,
-              "end": 188
+              "start": 210,
+              "end": 210
             }
           },
           "since": [
@@ -10235,8 +11154,8 @@
         {
           "description": "<p>Success background colour</p>\n",
           "commentRange": {
-            "start": 190,
-            "end": 191
+            "start": 212,
+            "end": 213
           },
           "context": {
             "type": "variable",
@@ -10244,8 +11163,8 @@
             "value": "#eff7eb",
             "scope": "private",
             "line": {
-              "start": 192,
-              "end": 192
+              "start": 214,
+              "end": 214
             }
           },
           "since": [
@@ -10311,7 +11230,7 @@
           "context": {
             "type": "css",
             "name": ".services",
-            "value": "&__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n  }\n\n  &__item {\n    border-bottom: 1px solid $colour-border;\n\n    &:first-child {\n      border-top: 1px solid $colour-border;\n    }\n\n    a {\n      @include font-size(-1);\n      color: $colour-panel-light;\n      display: block;\n      padding: em(8 0);\n      text-decoration: none;\n\n      &:hover {\n        color: $colour-text-reverse;\n      }\n\n      &:focus {\n        color: $colour-text;\n      }\n    }\n\n    .icon {\n      @include font-size(1);\n      display: inline-block;\n      margin: em(0 4 0 0);\n      vertical-align: middle;\n    }\n  }\n\n  @include mq($from: sm) {\n\n    &__item {\n      border: 0;\n      float: left;\n      text-align: center;\n      width: em(90px);\n\n      &:first-child {\n        border: 0;\n      }\n\n      a {\n        padding: em(4px) 0 0;\n      }\n    }\n\n    .icon {\n      @include font-size(6);\n      line-height: 1;\n      display: block;\n      margin: 0 auto em(4px);\n\n      // The following is needed for IE8 to go centrally aligned\n      &:before {\n        text-align: center;\n        width: 100%;\n      }\n    }\n  }",
+            "value": "&__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n  }\n\n  &__item {\n    border-bottom: 1px solid $colour-border;\n\n    &:first-child {\n      border-top: 1px solid $colour-border;\n    }\n\n    a {\n      @include font-size(-1);\n      color: $colour-panel-light;\n      display: block;\n      padding: em(8 0);\n      text-decoration: none;\n\n      &:hover {\n        color: $colour-text-reverse;\n      }\n\n      &:focus {\n        color: $colour-text;\n      }\n    }\n\n    .icon {\n      @include font-size(1);\n      display: inline-block;\n      margin: em(0 4 0 0);\n      vertical-align: middle;\n    }\n  }\n\n  @include mq($from: sm) {\n\n    &__item {\n      border: 0;\n      float: left;\n      text-align: center;\n      width: em(90px);\n\n      &:first-child {\n        border: 0;\n      }\n\n      a {\n        padding: em(4px) 0 0;\n      }\n    }\n\n    .icon {\n      @include font-size(6);\n      display: block;\n      line-height: 1;\n      margin: 0 auto em(4px);\n\n      // The following is needed for IE8 to go centrally aligned\n      &:before {\n        text-align: center;\n        width: 100%;\n      }\n    }\n  }",
             "line": {
               "start": 90,
               "end": 239
@@ -10433,10 +11352,10 @@
           "context": {
             "type": "css",
             "name": ".breadcrumbs",
-            "value": "@include font-size(0);\n  list-style: none;\n  margin: em(0 0 $spacing-large);\n  padding: 0;\n\n  &__crumb {\n    display: inline-block;\n\n    &:before {\n      @include nice-icon(angle-right);\n      color: $colour-text-subtle;\n      margin: em(0 10);\n    }\n\n    &:first-child:before {\n      display: none;\n    }\n\n    a {\n      color: $colour-text;\n    }\n  }",
+            "value": "@include font-size(0);\n  list-style: none;\n  margin: em(0 0 $spacing-large);\n  padding: 0;\n\n  &__crumb {\n    display: inline-block;\n\n    &:before {\n      @include nice-icon(angle-right);\n      margin: em(0 $spacing-x-small);\n    }\n\n    &:first-child:before {\n      display: none;\n    }\n\n    a {\n      color: $colour-text;\n    }\n  }",
             "line": {
               "start": 8,
-              "end": 32
+              "end": 31
             }
           },
           "since": [
@@ -10465,10 +11384,10 @@
           "context": {
             "type": "css",
             "name": ".btn",
-            "value": "@include remove-mz-focus-inner;\n  @include font-size(0);\n  appearance: none;\n  background: $colour-btn-primary;\n  border: 0;\n  border-radius: 0;\n  color: $colour-btn-primary-text;\n  cursor: pointer;\n  display: inline-block;\n  margin: em(0 $spacing-x-small 0 0);\n  padding: em($spacing-x-small $spacing-medium);\n  position: relative;\n  text-decoration: none;\n  vertical-align: top;\n\n  &:hover,\n  &:focus,\n  &:active {\n    background: $colour-btn-primary-hover;\n    color: $colour-btn-primary-text;\n    text-decoration: none;\n  }\n\n  &:focus {\n    @include default-focus-style;\n  }\n\n  &:visited {\n    color: $colour-btn-primary-text;\n  }\n\n  // Disabled button styles\n  &.disabled,\n  &[disabled='disabled'],\n  &[disabled] {\n    opacity: .5;\n\n    &:hover {\n      cursor: default;\n    }\n  }\n\n  // External links have an icon\n  &[rel='external'] {\n    &::after {\n      color: $colour-btn-primary-text;\n    }\n\n    &:hover {\n      &::after {\n        color: $colour-btn-primary-text;\n      }\n    }\n  }\n\n  &--prominent {\n    @include font-size(2);\n    padding: 0 em(20);\n    background: $colour-btn-cta;\n    border: 1px solid $colour-btn-cta-text;\n    color: $colour-btn-cta-text;\n\n    &:hover {\n      background: $colour-btn-cta-hover;\n      text-decoration: underline;\n    }\n  }\n\n  &--secondary {\n    background: $colour-btn-secondary;\n    color: $colour-btn-secondary-text;\n\n    &[rel='external'] {\n      &:after {\n        color: $colour-btn-secondary-text;\n      }\n\n      &:hover {\n        &:after {\n          color: $colour-btn-secondary-text;\n        }\n      }\n    }\n\n    &:hover,\n    &:focus {\n      background: $colour-btn-secondary-hover;\n      color: $colour-btn-secondary-text;\n      text-decoration: underline;\n    }\n\n    &:visited {\n      color: $colour-btn-secondary-text;\n    }\n  }",
+            "value": "@include remove-mz-focus-inner;\n  @include font-size(0);\n  appearance: none;\n  background: $colour-btn-primary;\n  border: em(1px) solid $colour-btn-primary-text;\n  border-radius: 0;\n  color: $colour-btn-primary-text;\n  cursor: pointer;\n  display: inline-block;\n  margin: em(0 $spacing-x-small 0 0);\n  padding: em($spacing-small $spacing-medium);\n  position: relative;\n  text-decoration: none;\n  vertical-align: top;\n\n  &:visited {\n    color: $colour-btn-primary-text;\n  }\n\n  &:hover {\n    background: $colour-btn-primary-hover;\n    color: $colour-btn-primary-text;\n    text-decoration: none;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background: $colour-btn-primary;\n    border-color: $colour-focus;\n  }\n\n  &:active {\n    background: $colour-btn-primary-hover;\n    text-decoration: none;\n    top: em(2px);\n  }\n\n  // Disabled button styles\n  &--disabled,\n  &.disabled,\n  &[aria-disabled='true'],\n  &[disabled='disabled'],\n  &[disabled] {\n    opacity: .5;\n    pointer-events: none;\n\n    &:hover {\n      cursor: default;\n    }\n  }\n\n  // CTA/prominent button\n  &--cta {\n    background: $colour-btn-cta;\n    border: em(1px) solid $colour-btn-cta-text;\n    color: $colour-btn-cta-text;\n\n    &:visited {\n      color: $colour-btn-cta-text;\n    }\n\n    &:hover {\n      background: $colour-btn-cta-hover;\n      color: $colour-btn-cta-text;\n    }\n\n    &:focus {\n      background: $colour-btn-cta-hover;\n    }\n\n    &:active {\n      background: $colour-btn-cta-hover;\n    }\n  }\n\n  // Secondary button\n  &--secondary {\n    background: $colour-btn-secondary;\n    border: em(1px) solid $colour-btn-secondary-text;\n    color: $colour-btn-secondary-text;\n\n    &:visited {\n      color: $colour-btn-secondary-text;\n    }\n\n    &:hover {\n      background: $colour-btn-secondary-hover;\n      color: $colour-btn-secondary-text;\n    }\n\n    &:focus {\n      background: $colour-btn-secondary-hover;\n    }\n\n    &:active {\n      background: $colour-btn-secondary-hover;\n    }\n  }\n\n  // Light button, for use on dark panels/sections\n  &--light {\n    background: $colour-btn-light;\n    border: em(1px) solid $colour-btn-light-text;\n    color: $colour-btn-light-text;\n\n    &:visited {\n      color: $colour-btn-light-text;\n    }\n\n    &:hover {\n      background: $colour-btn-light-hover;\n      color: $colour-btn-light-text;\n    }\n\n    &:focus {\n      background: $colour-btn-light-hover;\n    }\n\n    &:active {\n      background: $colour-btn-light-hover;\n    }\n  }",
             "line": {
               "start": 7,
-              "end": 104
+              "end": 131
             }
           },
           "since": [
@@ -10500,7 +11419,7 @@
             "value": "@extend %container;\n\n  &--narrow {\n    max-width: 1000px;\n  }\n\n  &--full {\n    max-width: 100%;\n    padding: 0 2%;\n    width: auto;\n  }\n\n  &--panel {\n    background: $colour-panel-light;\n    padding: 0 2%;\n    width: auto;\n  }",
             "line": {
               "start": 25,
-              "end": 48
+              "end": 57
             }
           },
           "example": [
@@ -10579,12 +11498,56 @@
           "context": {
             "type": "css",
             "name": ".panel",
-            "value": "background: $colour-panel-light;\n  padding: 1em;\n\n  &--dark {\n    background: $colour-panel-dark;\n    color: $colour-text-reverse;\n  }",
+            "value": "background: $colour-panel-light;\n  margin: em($spacing-medium 0 $spacing-large);\n  padding: em($spacing-medium);\n\n  :first-child {\n    margin-top: 0;\n  }\n\n  :last-child {\n    margin-bottom: 0;\n  }",
             "line": {
               "start": 8,
-              "end": 17
+              "end": 31
             }
           },
+          "since": [
+            {
+              "version": "0.1.0"
+            }
+          ],
+          "group": [
+            "components"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\components\\_components-panel.scss",
+            "name": "_components-panel.scss"
+          },
+          "groupName": {
+            "components": "Components"
+          }
+        },
+        {
+          "description": "<p>Modifier for the panel, to use a dark background</p>\n",
+          "commentRange": {
+            "start": 22,
+            "end": 25
+          },
+          "context": {
+            "type": "css",
+            "name": ".panel--dark",
+            "value": "@extend %inverse-links;\n  background: $colour-panel-dark;\n  color: $colour-text-reverse;",
+            "line": {
+              "start": 26,
+              "end": 31
+            }
+          },
+          "require": [
+            {
+              "type": "placeholder",
+              "name": "inverse-links",
+              "external": false
+            },
+            {
+              "type": "function",
+              "name": ".panel",
+              "external": true
+            }
+          ],
           "since": [
             {
               "version": "0.1.0"
@@ -12883,6 +13846,30 @@
                   "end": 63
                 }
               }
+            },
+            {
+              "description": "<p>Gets a glyph code, or several, (character entity reference) from the\n<code>$nice-glyphs</code> map, matching the given <code>$names</code>. Usually used with the content\nproperty for psuedo elements, to avoid use of magic character reference strings.</p>\n",
+              "context": {
+                "type": "function",
+                "name": "get-glyph",
+                "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
+                "line": {
+                  "start": 50,
+                  "end": 63
+                }
+              }
+            },
+            {
+              "description": "<p>Gets a glyph code, or several, (character entity reference) from the\n<code>$nice-glyphs</code> map, matching the given <code>$names</code>. Usually used with the content\nproperty for psuedo elements, to avoid use of magic character reference strings.</p>\n",
+              "context": {
+                "type": "function",
+                "name": "get-glyph",
+                "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
+                "line": {
+                  "start": 50,
+                  "end": 63
+                }
+              }
             }
           ],
           "groupName": {
@@ -12955,6 +13942,14 @@
           ],
           "access": "public",
           "require": [
+            {
+              "type": "variable",
+              "name": "nice-glyphs"
+            },
+            {
+              "type": "variable",
+              "name": "nice-glyphs"
+            },
             {
               "type": "variable",
               "name": "nice-glyphs"
@@ -13156,10 +14151,22 @@
               "context": {
                 "type": "function",
                 "name": "em",
-                "code": "\n\n  // $base could be in em or px (no unit = px).\n  // Adjust accordingly to create a $divisor that\n  // serves as context for $pixels.\n  $multiplier: if(unit($base) == em, 16, 1);\n  $divisor: strip-unit($base) * $multiplier;\n\n  $em-vals: ();\n  @each $val in $pixels {\n    $val-in-ems: (strip-unit($val) / $divisor) * 1em;\n    $em-vals: append($em-vals, $val-in-ems);\n  }\n\n  @if length($em-vals) == 1 {\n    // return a single value instead of a list,\n    // so it can be used in calculations\n    @return nth($em-vals, 1);\n  }\n  @else {\n    @return $em-vals;\n  }\n",
+                "code": "\n  // $base could be in em or px (no unit = px).\n  // Adjust accordingly to create a $divisor that\n  // serves as context for $pixels.\n  $multiplier: if(unit($base) == em, 16, 1);\n  $divisor: strip-unit($base) * $multiplier;\n\n  $em-vals: ();\n  @each $val in $pixels {\n    $val-in-ems: (strip-unit($val) / $divisor) * 1em;\n    $em-vals: append($em-vals, $val-in-ems);\n  }\n\n  @if length($em-vals) == 1 {\n    // return a single value instead of a list,\n    // so it can be used in calculations\n    @return nth($em-vals, 1);\n  } @else {\n    @return $em-vals;\n  }\n",
                 "line": {
                   "start": 18,
-                  "end": 43
+                  "end": 38
+                }
+              }
+            },
+            {
+              "description": "<p>Convert pixel-values to em-values.</p>\n",
+              "context": {
+                "type": "function",
+                "name": "em",
+                "code": "\n  // $base could be in em or px (no unit = px).\n  // Adjust accordingly to create a $divisor that\n  // serves as context for $pixels.\n  $multiplier: if(unit($base) == em, 16, 1);\n  $divisor: strip-unit($base) * $multiplier;\n\n  $em-vals: ();\n  @each $val in $pixels {\n    $val-in-ems: (strip-unit($val) / $divisor) * 1em;\n    $em-vals: append($em-vals, $val-in-ems);\n  }\n\n  @if length($em-vals) == 1 {\n    // return a single value instead of a list,\n    // so it can be used in calculations\n    @return nth($em-vals, 1);\n  } @else {\n    @return $em-vals;\n  }\n",
+                "line": {
+                  "start": 18,
+                  "end": 38
                 }
               }
             },
@@ -13168,10 +14175,10 @@
               "context": {
                 "type": "function",
                 "name": "rem",
-                "code": "\n\n  $rem-vals: ();\n  @each $val in $pixels {\n    $val-in-rems: strip-unit($val) / $base * 1rem;\n    $rem-vals: append($rem-vals, $val-in-rems);\n  }\n\n  @if length($rem-vals) == 1 {\n    // return a single value instead of a list,\n    // so it can be used in calculations\n    @return nth($rem-vals, 1);\n  }\n  @else {\n    @return $rem-vals;\n  }\n",
+                "code": "\n\n  $rem-vals: ();\n  @each $val in $pixels {\n    $val-in-rems: strip-unit($val) / $base * 1rem;\n    $rem-vals: append($rem-vals, $val-in-rems);\n  }\n\n  @if length($rem-vals) == 1 {\n    // return a single value instead of a list,\n    // so it can be used in calculations\n    @return nth($rem-vals, 1);\n  } @else {\n    @return $rem-vals;\n  }\n",
                 "line": {
-                  "start": 51,
-                  "end": 70
+                  "start": 46,
+                  "end": 61
                 }
               }
             }
@@ -13189,10 +14196,10 @@
           "context": {
             "type": "function",
             "name": "em",
-            "code": "\n\n  // $base could be in em or px (no unit = px).\n  // Adjust accordingly to create a $divisor that\n  // serves as context for $pixels.\n  $multiplier: if(unit($base) == em, 16, 1);\n  $divisor: strip-unit($base) * $multiplier;\n\n  $em-vals: ();\n  @each $val in $pixels {\n    $val-in-ems: (strip-unit($val) / $divisor) * 1em;\n    $em-vals: append($em-vals, $val-in-ems);\n  }\n\n  @if length($em-vals) == 1 {\n    // return a single value instead of a list,\n    // so it can be used in calculations\n    @return nth($em-vals, 1);\n  }\n  @else {\n    @return $em-vals;\n  }\n",
+            "code": "\n  // $base could be in em or px (no unit = px).\n  // Adjust accordingly to create a $divisor that\n  // serves as context for $pixels.\n  $multiplier: if(unit($base) == em, 16, 1);\n  $divisor: strip-unit($base) * $multiplier;\n\n  $em-vals: ();\n  @each $val in $pixels {\n    $val-in-ems: (strip-unit($val) / $divisor) * 1em;\n    $em-vals: append($em-vals, $val-in-ems);\n  }\n\n  @if length($em-vals) == 1 {\n    // return a single value instead of a list,\n    // so it can be used in calculations\n    @return nth($em-vals, 1);\n  } @else {\n    @return $em-vals;\n  }\n",
             "line": {
               "start": 18,
-              "end": 43
+              "end": 38
             }
           },
           "parameter": [
@@ -13228,6 +14235,10 @@
             {
               "type": "function",
               "name": "strip-unit"
+            },
+            {
+              "type": "function",
+              "name": "strip-unit"
             }
           ],
           "file": {
@@ -13241,16 +14252,16 @@
         {
           "description": "<p>Convert pixel-values to rem-values.</p>\n",
           "commentRange": {
-            "start": 46,
-            "end": 50
+            "start": 41,
+            "end": 45
           },
           "context": {
             "type": "function",
             "name": "rem",
-            "code": "\n\n  $rem-vals: ();\n  @each $val in $pixels {\n    $val-in-rems: strip-unit($val) / $base * 1rem;\n    $rem-vals: append($rem-vals, $val-in-rems);\n  }\n\n  @if length($rem-vals) == 1 {\n    // return a single value instead of a list,\n    // so it can be used in calculations\n    @return nth($rem-vals, 1);\n  }\n  @else {\n    @return $rem-vals;\n  }\n",
+            "code": "\n\n  $rem-vals: ();\n  @each $val in $pixels {\n    $val-in-rems: strip-unit($val) / $base * 1rem;\n    $rem-vals: append($rem-vals, $val-in-rems);\n  }\n\n  @if length($rem-vals) == 1 {\n    // return a single value instead of a list,\n    // so it can be used in calculations\n    @return nth($rem-vals, 1);\n  } @else {\n    @return $rem-vals;\n  }\n",
             "line": {
-              "start": 51,
-              "end": 70
+              "start": 46,
+              "end": 61
             }
           },
           "parameter": [
@@ -13302,6 +14313,30 @@
                 "line": {
                   "start": 69,
                   "end": 75
+                }
+              }
+            },
+            {
+              "description": "<p>Applies font size and line-height for the given scale.</p>\n",
+              "context": {
+                "type": "mixin",
+                "name": "font-size",
+                "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  font-size: rem($font-size);\n  line-height: rem($line-height);\n",
+                "line": {
+                  "start": 69,
+                  "end": 75
+                }
+              }
+            },
+            {
+              "description": "<p>Nice font: includes font size, line height, and margins.</p>\n",
+              "context": {
+                "type": "mixin",
+                "name": "font",
+                "code": "\n  @include font-size($scale);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  font-weight: map-get($font-map, fw);\n  margin-bottom: rem(map-get($font-map, mb));\n  margin-top: rem(map-get($font-map, mt));\n",
+                "line": {
+                  "start": 88,
+                  "end": 97
                 }
               }
             },
@@ -13983,6 +15018,42 @@
               }
             },
             {
+              "description": "<p>Applies the required styles for the given icon\nincluding the codepoint.</p>\n",
+              "context": {
+                "type": "mixin",
+                "name": "nice-icon",
+                "code": "\n  @if map-has-key($nice-icons, $icon) {\n    @include icon-base;\n    content: nice-icon($icon);\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
+                "line": {
+                  "start": 237,
+                  "end": 244
+                }
+              }
+            },
+            {
+              "description": "<p>Function for getting the codepoint for a given icon, for use\nwithin the <code>content</code> property of psuedo elements.</p>\n",
+              "context": {
+                "type": "function",
+                "name": "nice-icon",
+                "code": "\n  @if map-has-key($nice-icons, $icon) {\n    $icon-code: map-get($nice-icons, $icon);\n    @return unquote('\\'\\\\#{ $icon-code }\\'');\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
+                "line": {
+                  "start": 256,
+                  "end": 263
+                }
+              }
+            },
+            {
+              "description": "<p>Function for getting the codepoint for a given icon, for use\nwithin the <code>content</code> property of psuedo elements.</p>\n",
+              "context": {
+                "type": "function",
+                "name": "nice-icon",
+                "code": "\n  @if map-has-key($nice-icons, $icon) {\n    $icon-code: map-get($nice-icons, $icon);\n    @return unquote('\\'\\\\#{ $icon-code }\\'');\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
+                "line": {
+                  "start": 256,
+                  "end": 263
+                }
+              }
+            },
+            {
               "description": "<p>Function for getting the codepoint for a given icon, for use\nwithin the <code>content</code> property of psuedo elements.</p>\n",
               "context": {
                 "type": "function",
@@ -14096,6 +15167,10 @@
             {
               "type": "variable",
               "name": "nice-icons"
+            },
+            {
+              "type": "variable",
+              "name": "nice-icons"
             }
           ],
           "file": {
@@ -14134,6 +15209,14 @@
           ],
           "access": "public",
           "require": [
+            {
+              "type": "variable",
+              "name": "nice-icons"
+            },
+            {
+              "type": "variable",
+              "name": "nice-icons"
+            },
             {
               "type": "variable",
               "name": "nice-icons"
@@ -14764,6 +15847,10 @@
             {
               "type": "function",
               "name": "rem"
+            },
+            {
+              "type": "function",
+              "name": "rem"
             }
           ],
           "file": {
@@ -14836,6 +15923,10 @@
             {
               "type": "function",
               "name": "get-scale-integer"
+            },
+            {
+              "type": "function",
+              "name": "rem"
             },
             {
               "type": "function",
@@ -14929,20 +16020,257 @@
           }
         }
       ],
+      "placeholder": [
+        {
+          "description": "<p>Inverse link style for use on a dark background</p>\n",
+          "commentRange": {
+            "start": 70,
+            "end": 71
+          },
+          "context": {
+            "type": "placeholder",
+            "name": "inverse-link",
+            "code": "\n  color: $colour-link-inverse;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+            "line": {
+              "start": 72,
+              "end": 90
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.9"
+            }
+          ],
+          "group": [
+            "typography"
+          ],
+          "access": "public",
+          "require": [
+            {
+              "type": "variable",
+              "name": "colour-link-inverse"
+            },
+            {
+              "type": "variable",
+              "name": "colour-link-inverse-visited"
+            },
+            {
+              "type": "variable",
+              "name": "colour-link-inverse-hover"
+            },
+            {
+              "type": "variable",
+              "name": "colour-link-inverse-focus-text"
+            },
+            {
+              "type": "variable",
+              "name": "colour-link-inverse-active"
+            }
+          ],
+          "file": {
+            "path": "stylesheets\\typography\\_typography-global.scss",
+            "name": "_typography-global.scss"
+          },
+          "usedBy": [
+            {
+              "description": "<p>Inverse links for use on a dark background</p>\n",
+              "context": {
+                "type": "placeholder",
+                "name": "inverse-links",
+                "code": "\n  a {\n    @extend %inverse-link;\n  }\n",
+                "line": {
+                  "start": 94,
+                  "end": 98
+                }
+              }
+            }
+          ],
+          "groupName": {
+            "typography": "Typography"
+          }
+        },
+        {
+          "description": "<p>Inverse links for use on a dark background</p>\n",
+          "commentRange": {
+            "start": 92,
+            "end": 93
+          },
+          "context": {
+            "type": "placeholder",
+            "name": "inverse-links",
+            "code": "\n  a {\n    @extend %inverse-link;\n  }\n",
+            "line": {
+              "start": 94,
+              "end": 98
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.9"
+            }
+          ],
+          "group": [
+            "typography"
+          ],
+          "access": "public",
+          "require": [
+            {
+              "type": "placeholder",
+              "name": "inverse-link"
+            }
+          ],
+          "file": {
+            "path": "stylesheets\\typography\\_typography-global.scss",
+            "name": "_typography-global.scss"
+          },
+          "usedBy": [
+            {
+              "description": "<p>Modifier for the panel, to use a dark background</p>\n",
+              "context": {
+                "type": "css",
+                "name": ".panel--dark",
+                "value": "@extend %inverse-links;\n  background: $colour-panel-dark;\n  color: $colour-text-reverse;",
+                "line": {
+                  "start": 26,
+                  "end": 31
+                }
+              }
+            },
+            {
+              "description": "<p>Inverse links, for use on dark backgrounds e.g dark panels.\nUse this class on a containing element to apply to all links within it.</p>\n",
+              "context": {
+                "type": "css",
+                "name": ".inverse-links",
+                "value": "@extend %inverse-links;",
+                "line": {
+                  "start": 111,
+                  "end": 165
+                }
+              }
+            }
+          ],
+          "groupName": {
+            "typography": "Typography"
+          }
+        },
+        {
+          "description": "",
+          "commentRange": {
+            "start": 5,
+            "end": 5
+          },
+          "context": {
+            "type": "placeholder",
+            "name": "list",
+            "code": "\n  font-feature-settings: 'kern', 'onum', 'liga';\n  margin-left: 2rem;\n  padding: 0;\n",
+            "line": {
+              "start": 6,
+              "end": 10
+            }
+          },
+          "since": [
+            {
+              "version": "0.1.0"
+            }
+          ],
+          "group": [
+            "typography"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\typography\\_typography-lists.scss",
+            "name": "_typography-lists.scss"
+          },
+          "groupName": {
+            "typography": "Typography"
+          }
+        }
+      ],
       "css": [
+        {
+          "description": "<p>Inverse link for use on a dark background. Apply to an individual link.\nPrefer using <code>.inverse-links</code> on the container instead.</p>\n",
+          "commentRange": {
+            "start": 100,
+            "end": 102
+          },
+          "context": {
+            "type": "css",
+            "name": ".link--inverse",
+            "value": "@extend %inverse-link;",
+            "line": {
+              "start": 103,
+              "end": 165
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.9"
+            }
+          ],
+          "group": [
+            "typography"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\typography\\_typography-global.scss",
+            "name": "_typography-global.scss"
+          },
+          "groupName": {
+            "typography": "Typography"
+          }
+        },
+        {
+          "description": "<p>Inverse links, for use on dark backgrounds e.g dark panels.\nUse this class on a containing element to apply to all links within it.</p>\n",
+          "commentRange": {
+            "start": 107,
+            "end": 110
+          },
+          "context": {
+            "type": "css",
+            "name": ".inverse-links",
+            "value": "@extend %inverse-links;",
+            "line": {
+              "start": 111,
+              "end": 165
+            }
+          },
+          "require": [
+            {
+              "type": "placeholder",
+              "name": "inverse-links",
+              "external": false
+            }
+          ],
+          "since": [
+            {
+              "version": "0.2.9"
+            }
+          ],
+          "group": [
+            "typography"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\typography\\_typography-global.scss",
+            "name": "_typography-global.scss"
+          },
+          "groupName": {
+            "typography": "Typography"
+          }
+        },
         {
           "description": "<p>Mark</p>\n",
           "commentRange": {
-            "start": 116,
-            "end": 116
+            "start": 153,
+            "end": 153
           },
           "context": {
             "type": "css",
             "name": "mark,\n.mark",
             "value": "background-color: #fff999;\n  padding: em(4);",
             "line": {
-              "start": 118,
-              "end": 128
+              "start": 155,
+              "end": 165
             }
           },
           "group": [
@@ -14960,16 +16288,16 @@
         {
           "description": "<p>Small</p>\n",
           "commentRange": {
-            "start": 123,
-            "end": 123
+            "start": 160,
+            "end": 160
           },
           "context": {
             "type": "css",
             "name": "small,\n.small",
             "value": "font-size: 85%;",
             "line": {
-              "start": 125,
-              "end": 128
+              "start": 162,
+              "end": 165
             }
           },
           "group": [
@@ -15020,10 +16348,10 @@
           "context": {
             "type": "css",
             "name": ".quote",
-            "value": "@include font-size($scale: h4);\n  font-weight: 300;\n\n  &:before {\n    color: $colour-nice-teal;\n    content: get-glyph(left-double-quotation-mark);\n    display: inline-block;\n    font-family: Arial;\n    font-size: 6rem;\n    font-weight: bold;\n    line-height: 0;\n    vertical-align: bottom;\n\n    @media print {\n      color: $colour-true-black;\n    }\n  }\n\n  p {\n    font-size: inherit;\n    padding-top: 0;\n  }\n\n  footer,\n  cite {\n    @include font-size($scale: 0);\n    font-style: normal;\n  }",
+            "value": "@include font-size(lead);\n  border-left: em($spacing-x-small) solid $colour-nice-teal;\n  font-weight: normal;\n  margin: rem($spacing-large 0);\n  padding: rem(0 0 0 $spacing-xx-large);\n  position: relative;\n\n  &:before {\n    color: $colour-nice-teal;\n    content: get-glyph(left-double-quotation-mark);\n    display: block;\n    font-family: Arial;\n    font-size: 5rem;\n    font-weight: bold;\n    left: 0;\n    line-height: .8;\n    position: absolute;\n    text-align: center;\n    top: 0;\n    width: rem($spacing-xx-large);\n\n    @media print {\n      color: $colour-true-black;\n    }\n  }\n\n  p {\n    font-size: inherit;\n  }\n\n  footer,\n  cite {\n    @include font-size($scale: 0);\n    font-style: normal;\n  }",
             "line": {
               "start": 7,
-              "end": 37
+              "end": 44
             }
           },
           "since": [
@@ -15121,6 +16449,14 @@
           ],
           "access": "public",
           "require": [
+            {
+              "type": "variable",
+              "name": "named-font-sizes"
+            },
+            {
+              "type": "variable",
+              "name": "named-font-sizes"
+            },
             {
               "type": "variable",
               "name": "named-font-sizes"
@@ -15328,40 +16664,6 @@
           }
         }
       ],
-      "placeholder": [
-        {
-          "description": "",
-          "commentRange": {
-            "start": 5,
-            "end": 5
-          },
-          "context": {
-            "type": "placeholder",
-            "name": "list",
-            "code": "\n  font-feature-settings: 'kern', 'onum', 'liga';\n  margin-left: 2rem;\n  padding: 0;\n",
-            "line": {
-              "start": 6,
-              "end": 10
-            }
-          },
-          "since": [
-            {
-              "version": "0.1.0"
-            }
-          ],
-          "group": [
-            "typography"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\typography\\_typography-lists.scss",
-            "name": "_typography-lists.scss"
-          },
-          "groupName": {
-            "typography": "Typography"
-          }
-        }
-      ],
       "variable": [
         {
           "description": "<p>A map of named font sizes to their corresponding modular scale factor</p>\n",
@@ -15455,6 +16757,30 @@
                   "end": 25
                 }
               }
+            },
+            {
+              "description": "<p>Gets a numeric scale</p>\n",
+              "context": {
+                "type": "function",
+                "name": "get-scale-integer",
+                "code": "\n  @if map-has-key($named-font-sizes, $scale) {\n    @return map-get($named-font-sizes, $scale);\n  }\n  @elseif is-integer($scale) {\n    @return $scale;\n  }\n\n  @error '`$scale` must either be an integer or exist as a named font size in `$named-font-sizes`';\n",
+                "line": {
+                  "start": 16,
+                  "end": 25
+                }
+              }
+            },
+            {
+              "description": "<p>Gets a numeric scale</p>\n",
+              "context": {
+                "type": "function",
+                "name": "get-scale-integer",
+                "code": "\n  @if map-has-key($named-font-sizes, $scale) {\n    @return map-get($named-font-sizes, $scale);\n  }\n  @elseif is-integer($scale) {\n    @return $scale;\n  }\n\n  @error '`$scale` must either be an integer or exist as a named font size in `$named-font-sizes`';\n",
+                "line": {
+                  "start": 16,
+                  "end": 25
+                }
+              }
             }
           ],
           "groupName": {
@@ -15471,11 +16797,11 @@
           "context": {
             "type": "variable",
             "name": "font-sizes",
-            "value": "(\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  2: (\n    fs: 3 * 5,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  3: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  4: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  5: (\n    fs: 4 * 6,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 11,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)",
+            "value": "(\n  // sass-lint:disable-block space-around-operator\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  2: (\n    fs: 4 * 5,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  3: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  4: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  5: (\n    fs: 4 * 6,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 11,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)",
             "scope": "private",
             "line": {
               "start": 27,
-              "end": 91
+              "end": 92
             }
           },
           "since": [
@@ -15532,7 +16858,7 @@
           "groupName": {
             "typography": "Typography"
           },
-          "resolvedValue": "(\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  2: (\n    fs: 3 * 5,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  3: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  4: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  5: (\n    fs: 4 * 6,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 11,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)"
+          "resolvedValue": "(\n  // sass-lint:disable-block space-around-operator\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  2: (\n    fs: 4 * 5,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  3: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  4: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  5: (\n    fs: 4 * 6,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 11,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)"
         }
       ]
     },
@@ -15668,6 +16994,30 @@
             "name": "_settings-modular-scale.scss"
           },
           "usedBy": [
+            {
+              "description": "<p>Gets a module scale ratio with the given name. Looks\ninside the $scales map to find a ratio.</p>\n",
+              "context": {
+                "type": "function",
+                "name": "get-ratio",
+                "code": "\n  @if map-has-key($scales, $scale) {\n    @return map-get($scales, $scale);\n  } @else {\n    @error 'Scale with name #{$scale} could not be found in the $scales map';\n  }\n",
+                "line": {
+                  "start": 45,
+                  "end": 51
+                }
+              }
+            },
+            {
+              "description": "<p>Gets a module scale ratio with the given name. Looks\ninside the $scales map to find a ratio.</p>\n",
+              "context": {
+                "type": "function",
+                "name": "get-ratio",
+                "code": "\n  @if map-has-key($scales, $scale) {\n    @return map-get($scales, $scale);\n  } @else {\n    @error 'Scale with name #{$scale} could not be found in the $scales map';\n  }\n",
+                "line": {
+                  "start": 45,
+                  "end": 51
+                }
+              }
+            },
             {
               "description": "<p>Gets a module scale ratio with the given name. Looks\ninside the $scales map to find a ratio.</p>\n",
               "context": {
@@ -16582,6 +17932,14 @@
             "undefined"
           ],
           "require": [
+            {
+              "type": "variable",
+              "name": "scales"
+            },
+            {
+              "type": "variable",
+              "name": "scales"
+            },
             {
               "type": "variable",
               "name": "scales"

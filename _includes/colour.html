@@ -1,4 +1,4 @@
-{% assign item = site.data.sass.items | where_exp: "item","item.context.name == include.var" | first %}
+{% assign item = site.data.sass.experience.items | where_exp: "item","item.context.name == include.var" | first %}
 
 <li class="colour-grid__item">
 	<div class="colour-grid__block" style="background: {{ item.resolvedValue }}">
