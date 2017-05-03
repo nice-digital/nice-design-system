@@ -14,11 +14,15 @@
   color: $colour-btn-primary-text;
   cursor: pointer;
   display: inline-block;
-  margin: em(0 $spacing-x-small 0 0);
+  margin: em(0 $spacing-small $spacing-small -4px); // Negative left margin to combat inline-block gaps
   padding: em($spacing-small $spacing-medium);
   position: relative;
   text-decoration: none;
   vertical-align: top;
+
+  &:first-child {
+    margin-left: 0;
+  }
 
   &:visited {
     color: $colour-btn-primary-text;
