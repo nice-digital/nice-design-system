@@ -1,0 +1,44 @@
+{% extends "layouts/_layout.njk" %}
+{% set title = "Breadcrumbs" %}
+
+{% block body %}
+
+	<div class="container">
+
+		<h1>Breadcrumbs</h1>
+
+		<nav aria-label="Breadcrumbs" role="navigation">
+		<p class="visually-hidden" id="breadcrumb-label">
+			You are here:
+		</p>
+		<ol class="breadcrumbs" aria-labelledby="breadcrumb-label" itemscope itemtype="http://schema.org/BreadcrumbList">
+			<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+				<a href="/" itemprop="name">
+					NICE
+				</a>
+				<meta itemprop="position" content="1">
+			</li>
+			<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+				<a href="/" itemprop="name">
+					Guidance
+				</a>
+				<meta itemprop="position" content="2">
+			</li>
+			<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+				<a href="/" itemprop="name">
+					Conditions and diseases
+				</a>
+				<meta itemprop="position" content="3">
+			</li>
+			<li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+				<span itemprop="name">
+					{{ title }}
+				</span>
+				<meta itemprop="position" content="{{ lastCrumbIndex + 1 }}">
+			</li>
+		</ol>
+	</nav>
+
+	</div>
+
+{% endblock %}
