@@ -24,7 +24,9 @@
 		"components": "Components",
 		"hacks": "Hacks",
 		"grid": "Grid",
-		"icons": "Icons"
+		"icons": "Icons",
+		"spacing": "Spacing",
+		"visibility": "Visibility"
 	},
 	"package": "./package.json",
 	"theme": "./src/stylesheets/.sassdoc-nice-theme"
