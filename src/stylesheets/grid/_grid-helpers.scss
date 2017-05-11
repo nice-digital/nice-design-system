@@ -7,6 +7,8 @@
 ///
 /// @param {boolean} $reverse [false] Whether the grid items flow the opposite way to their natural source order
 /// @param {boolean} $gutterless [false] Whether the grid has no spacing
+/// @param {boolean} $compact [false] Whether the grid has compact spacing
+/// @param {boolean} $loose [false] Whether the grid has loose spacing
 /// @param {boolean} $right [false] Whether to render items from the right instead of the left
 /// @param {boolean} $center [false] Whether the grid's items are centrally aligned horizontally
 /// @param {boolean} $debug [false] Whether to put a highlight round the grid for debugging
@@ -17,7 +19,7 @@
 /// @require {mixin} grid-debug
 /// @example scss SCSS usage
 ///   .test {
-///     @include grid;
+///     @include grid($compact: true);
 ///
 ///     @include element('item') {
 ///       @include grid-item;
@@ -37,7 +39,7 @@
 ///     <div class="test__item">item</div>
 ///   </div>
 /// @since 0.1.0
-@mixin grid($reverse: false, $gutterless: false, $right: false, $center: false, $debug: false) {
+@mixin grid($reverse: false, $gutterless: false, $compact: false, $loose: false, $right: false, $center: false, $debug: false) {
   letter-spacing: -.31em;
   list-style: none;
   margin: 0;
@@ -51,6 +53,14 @@
 
   @if $gutterless {
     @include grid-gutterless;
+  }
+
+  @if $compact {
+    @include grid-compact;
+  }
+
+  @if $loose {
+    @include grid-loose;
   }
 
   @if $right {
@@ -81,6 +91,20 @@
   margin-left: 0;
 }
 
+/// Compact grids have a smaller gutter
+/// @see grid-item-compact
+/// @since 0.2.10
+@mixin grid-compact {
+  margin-left: -$nice-grid-gutter-compact;
+}
+
+/// Loose grids have a smaller gutter
+/// @see grid-item-compact
+/// @since 0.2.10
+@mixin grid-loose {
+  margin-left: -$nice-grid-gutter-loose;
+}
+
 /// Align the entire grid to the right
 /// @since 0.1.0
 @mixin grid-right {
@@ -102,6 +126,8 @@
 
 /// Grid item
 /// @param {boolean} $gutterless [false] Whether the grid has no spacing
+/// @param {boolean} $compact [false] Whether the grid has compact spacing
+/// @param {boolean} $loose [false] Whether the grid has loose spacing
 /// @param {boolean} $middle [false] Whether the grid item is vertically aligned to the middle
 /// @param {boolean} $bottom [false] Whether the grid item is vertically aligned to the bottom
 /// @param {boolean} $debug [false] Whether to put a highlight round the grid item for debugging
@@ -117,7 +143,7 @@
 ///     @include grid-item($breakpoints: ( md: ( width: 50%, push: 25% ), lg: 20% ));
 ///   }
 /// @since 0.1.0
-@mixin grid-item($gutterless: false, $middle: false, $bottom: false, $debug: false, $breakpoints: null) {
+@mixin grid-item($gutterless: false, $compact: false, $loose: false, $middle: false, $bottom: false, $debug: false, $breakpoints: null) {
   @include border-box;
   direction: ltr;
   display: inline-block;
@@ -131,6 +157,14 @@
 
   @if $gutterless {
     @include grid-item-gutterless;
+  }
+
+  @if $compact {
+    @include grid-item-compact;
+  }
+
+  @if $loose {
+    @include grid-item-loose;
   }
 
   @if $middle {
@@ -183,6 +217,18 @@
 /// @since 0.1.0
 @mixin grid-item-gutterless {
   padding-left: 0;
+}
+
+/// Compact grid item with a smaller gutter
+/// @since 0.2.10
+@mixin grid-item-compact {
+  padding-left: $nice-grid-gutter-compact;
+}
+
+/// Loose grid item with a larger gutter
+/// @since 0.2.10
+@mixin grid-item-loose {
+  padding-left: $nice-grid-gutter-loose;
 }
 
 /// Align grid cell vertically to the middle
