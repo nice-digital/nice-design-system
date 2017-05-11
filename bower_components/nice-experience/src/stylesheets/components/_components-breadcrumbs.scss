@@ -8,7 +8,7 @@
 .breadcrumbs {
   @include font-size(0);
   list-style: none;
-  margin: em(0 0 $spacing-large);
+  margin: em($spacing-small 0 $spacing-large);
   padding: 0;
 
   &__crumb {
@@ -22,9 +22,22 @@
     &:first-child:before {
       display: none;
     }
+  }
 
-    a {
-      color: $colour-text;
+  a {
+    color: $colour-text;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:focus {
+      color: $colour-link-focus-text;
+    }
+
+    &:active {
+      color: $colour-link-active;
     }
   }
 }

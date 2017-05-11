@@ -38,6 +38,7 @@
 ///   </div>
 /// @since 0.1.0
 .tabs {
+  margin: em($spacing-medium 0 $spacing-large);
 
   // The list of tabs
   &__list {
@@ -45,36 +46,44 @@
     margin: 0;
     overflow: hidden;
     padding: 0;
+    position: relative;
+    top: 1px; // To cover the border around the tabs content
   }
 
-  //
+  // Individual tab
   &__tab {
     float: left;
 
     &--active .tabs__tab-btn { // sass-lint:disable-line no-combinators
       background: $colour-panel-default;
+      border-top: 1px solid $colour-border;
+      border-left: 1px solid $colour-border;
+      border-right: 1px solid $colour-border;
+      box-shadow: inset 0px em($spacing-x-small) 0px 0px $colour-nice-teal;
+      color: $colour-text;
+      text-decoration: none;
     }
   }
 
   // The button/link for the tab itself
   &__tab-btn {
+    @extend %link;
     background: 0;
     border: 0;
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
     cursor: pointer;
     display: block;
-    line-height: 4rem;
     margin: 0;
-    padding: 0 1rem;
-
-    &:hover {
-      background: $colour-panel-default;
-    }
+    padding: em($spacing-medium $spacing-medium);
   }
 
   // The tab content containing the tab panels
   &__content {
     background: $colour-panel-default;
-    padding: 1rem;
+    border: 1px solid $colour-border;
+    padding: em($spacing-medium);
   }
 
   // An individual tab content pane
@@ -87,6 +96,14 @@
       &--active {
         display: block;
       }
+    }
+
+    :first-child {
+      margin-top: 0;
+    }
+
+    :last-child {
+      margin-bottom: 0;
     }
   }
 }

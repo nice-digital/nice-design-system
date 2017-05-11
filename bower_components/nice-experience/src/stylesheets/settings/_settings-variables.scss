@@ -10,9 +10,17 @@ $nice-base-font-size: $nice-baseline * 4 !default;
 /// @since 0.2.0
 $nice-base-line-height: $nice-baseline * 6 !default;
 
-/// The width of the spacing between grid items
+/// The width of the default spacing between grid items
 /// @since 0.2.0
-$nice-grid-gutter: 1.5em !default;
+$nice-grid-gutter: 1em * ($spacing-medium / 16) !default;
+
+/// The width of the spacing between grid items in a compact grid
+/// @since 0.2.0
+$nice-grid-gutter-compact: 1em * ($spacing-small / 16) !default;
+
+/// The width of the spacing between grid items in a loose grid
+/// @since 0.2.0
+$nice-grid-gutter-loose: 1em * ($spacing-large / 16) !default;
 
 /// Sans-serif font stack
 /// @since 0.2.0

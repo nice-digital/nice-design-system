@@ -84,6 +84,22 @@
     }
   }
 
+  @include modifier('compact') {
+    @include grid-compact;
+
+    [data-g] {
+      @include grid-item-compact;
+    }
+  }
+
+  @include modifier('loose') {
+    @include grid-loose;
+
+    [data-g] {
+      @include grid-item-loose;
+    }
+  }
+
   @include modifier('right') {
     @include grid-right;
   }

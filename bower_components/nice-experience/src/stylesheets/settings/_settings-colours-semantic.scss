@@ -54,7 +54,11 @@ $colour-link-visited: #4c2c92;
 
 /// Link active colour
 /// @since 0.2.0
-$colour-link-active: #2e8aca;
+$colour-link-active: $colour-text;
+
+/// Link focus text colour
+/// @since 0.2.11
+$colour-link-focus-text: $colour-link;
 
 
 // INVERSE LINKS
@@ -77,7 +81,7 @@ $colour-link-inverse-active: $colour-link-active;
 
 /// Inverse link focus text colour
 /// @since 0.2.9
-$colour-link-inverse-focus-text: $colour-nice-dark-grey;
+$colour-link-inverse-focus-text: $colour-link;
 
 
 // CTA BUTTONS

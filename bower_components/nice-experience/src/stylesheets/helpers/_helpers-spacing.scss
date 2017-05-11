@@ -1,0 +1,242 @@
+////
+/// @group spacing
+////
+
+// sass-lint:disable no-important, one-declaration-per-line
+
+// Spacing classes were inspired by https://v4-alpha.getbootstrap.com/utilities/spacing/
+
+// Spacing classes take the form {property}{sides}-{size} e.g. `mv-f`
+// Where {property} is one of:
+//  - m - for classes that set margin
+//  - p - for classes that set padding
+// And {sides} is one of:
+//  - t - for classes that set *-top
+//  - b - for classes that set *-bottom
+//  - v - for classes that set both *-top and *-bottom
+// And {size} is on a scale from a (small) via d (default/medium) to g (large) so is one of:
+//  - 0 - for classes that eliminate the margin or padding by setting it to 0
+//  - a - for extra extra small margin/padding
+//  - b - for extra small margin/padding
+//  - c - for small margin/padding
+//  - d - for default (medium) margin/padding
+//  - e - for large margin/padding
+//  - f - for extra large margin/padding
+//  - g - for extra extra large margin/padding
+
+// TODO: Add breakpoints
+
+//## MARGIN TOP
+
+/// Applies a 0px top margin
+/// @since 0.2.10
+.mt-0 { margin-top: 0 !important; }
+
+/// Applies an extra extra small top margin
+/// @since 0.2.10
+.mt-a { margin-top: rem($spacing-xx-small) !important; }
+
+/// Applies an extra small top margin
+/// @since 0.2.10
+.mt-b { margin-top: rem($spacing-x-small) !important; }
+
+/// Applies a small top margin
+/// @since 0.2.10
+.mt-c { margin-top: rem($spacing-small) !important; }
+
+/// Applies a default (medium) top margin
+/// @since 0.2.10
+.mt,
+.mt-d { margin-top: rem($spacing-medium) !important; }
+
+/// Applies a large top margin
+/// @since 0.2.10
+.mt-e { margin-top: rem($spacing-large) !important; }
+
+/// Applies an extra large top margin
+/// @since 0.2.10
+.mt-f { margin-top: rem($spacing-x-large) !important; }
+
+/// Applies an extra extra large top margin
+/// @since 0.2.10
+.mt-g { margin-top: rem($spacing-xx-large) !important; }
+
+
+//## MARGIN BOTTOM
+
+/// Applies a 0px bottom margin
+/// @since 0.2.10
+.mb-0 { margin-bottom: 0 !important; }
+
+/// Applies an extra extra small bottom margin
+/// @since 0.2.10
+.mb-a { margin-bottom: rem($spacing-xx-small) !important; }
+
+/// Applies an extra small bottom margin
+/// @since 0.2.10
+.mb-b { margin-bottom: rem($spacing-x-small) !important; }
+
+/// Applies a small bottom margin
+/// @since 0.2.10
+.mb-c { margin-bottom: rem($spacing-small) !important; }
+
+/// Applies a default (medium) bottom margin
+/// @since 0.2.10
+.mb,
+.mb-d { margin-bottom: rem($spacing-medium) !important; }
+
+/// Applies a large bottom margin
+/// @since 0.2.10
+.mb-e { margin-bottom: rem($spacing-large) !important; }
+
+/// Applies an extra large bottom margin
+/// @since 0.2.10
+.mb-f { margin-bottom: rem($spacing-x-large) !important; }
+
+/// Applies an extra extra large bottom margin
+/// @since 0.2.10
+.mb-g { margin-bottom: rem($spacing-xx-large) !important; }
+
+
+//## MARGIN VERTICAL
+
+/// Applies a 0px top and bottom margin
+/// @since 0.2.10
+.mv-0 { margin-bottom: 0 !important; margin-top: 0 !important; }
+
+/// Applies an extra extra small top and bottom margin
+/// @since 0.2.10
+.mv-a { margin-bottom: rem($spacing-xx-small) !important; margin-top: rem($spacing-xx-small) !important; }
+
+/// Applies an extra small top and bottom margin
+/// @since 0.2.10
+.mv-b { margin-bottom: rem($spacing-x-small) !important; margin-top: rem($spacing-x-small) !important; }
+
+/// Applies a small top and bottom margin
+/// @since 0.2.10
+.mv-c { margin-bottom: rem($spacing-small) !important; margin-top: rem($spacing-small) !important; }
+
+/// Applies a default (medium) top and bottom margin
+/// @since 0.2.10
+.mv,
+.mv-d { margin-bottom: rem($spacing-medium) !important; margin-top: rem($spacing-medium) !important; }
+
+/// Applies a large top and bottom margin
+/// @since 0.2.10
+.mv-e { margin-bottom: rem($spacing-large) !important; margin-top: rem($spacing-large) !important; }
+
+/// Applies an extra large top and bottom margin
+/// @since 0.2.10
+.mv-f { margin-bottom: rem($spacing-x-large) !important; margin-top: rem($spacing-x-large) !important; }
+
+/// Applies an extra extra large top and bottom margin
+/// @since 0.2.10
+.mv-g { margin-bottom: rem($spacing-xx-large) !important; margin-top: rem($spacing-xx-large) !important; }
+
+
+//## PADDING TOP
+
+/// Applies a 0px top padding
+/// @since 0.2.10
+.pt-0 { padding-top: 0 !important; }
+
+/// Applies an extra extra small top padding
+/// @since 0.2.10
+.pt-a { padding-top: rem($spacing-xx-small) !important; }
+
+/// Applies an extra small top padding
+/// @since 0.2.10
+.pt-b { padding-top: rem($spacing-x-small) !important; }
+
+/// Applies a small top padding
+/// @since 0.2.10
+.pt-c { padding-top: rem($spacing-small) !important; }
+
+/// Applies a default (medium) top padding
+/// @since 0.2.10
+.pt,
+.pt-d { padding-top: rem($spacing-medium) !important; }
+
+/// Applies a large top padding
+/// @since 0.2.10
+.pt-e { padding-top: rem($spacing-large) !important; }
+
+/// Applies an extra large top padding
+/// @since 0.2.10
+.pt-f { padding-top: rem($spacing-x-large) !important; }
+
+/// Applies an extra extra large top padding
+/// @since 0.2.10
+.pt-g { padding-top: rem($spacing-xx-large) !important; }
+
+
+//## PADDING BOTTOM
+
+/// Applies a 0px bottom padding
+/// @since 0.2.10
+.pb-0 { padding-bottom: 0 !important; }
+
+/// Applies an extra extra small bottom padding
+/// @since 0.2.10
+.pb-a { padding-bottom: rem($spacing-xx-small) !important; }
+
+/// Applies an extra small bottom padding
+/// @since 0.2.10
+.pb-b { padding-bottom: rem($spacing-x-small) !important; }
+
+/// Applies a small bottom padding
+/// @since 0.2.10
+.pb-c { padding-bottom: rem($spacing-small) !important; }
+
+/// Applies a default (medium) bottom padding
+/// @since 0.2.10
+.pb,
+.pb-d { padding-bottom: rem($spacing-medium) !important; }
+
+/// Applies a large bottom padding
+/// @since 0.2.10
+.pb-e { padding-bottom: rem($spacing-large) !important; }
+
+/// Applies an extra large bottom padding
+/// @since 0.2.10
+.pb-f { padding-bottom: rem($spacing-x-large) !important; }
+
+/// Applies an extra extra large bottom padding
+/// @since 0.2.10
+.pb-g { padding-bottom: rem($spacing-xx-large) !important; }
+
+
+//## PADDING VERTICAL
+
+/// Applies a 0px top and bottom padding
+/// @since 0.2.10
+.pv-0 { padding-bottom: 0 !important; padding-top: 0 !important; }
+
+/// Applies an extra extra small top and bottom padding
+/// @since 0.2.10
+.pv-a { padding-bottom: rem($spacing-xx-small) !important; padding-top: rem($spacing-xx-small) !important; }
+
+/// Applies an extra small top and bottom padding
+/// @since 0.2.10
+.pv-b { padding-bottom: rem($spacing-x-small) !important; padding-top: rem($spacing-x-small) !important; }
+
+/// Applies a small top and bottom padding
+/// @since 0.2.10
+.pv-c { padding-bottom: rem($spacing-small) !important; padding-top: rem($spacing-small) !important; }
+
+/// Applies a default (medium) top and bottom padding
+/// @since 0.2.10
+.pv,
+.pv-d { padding-bottom: rem($spacing-medium) !important; padding-top: rem($spacing-medium) !important; }
+
+/// Applies a large top and bottom padding
+/// @since 0.2.10
+.pv-e { padding-bottom: rem($spacing-large) !important; padding-top: rem($spacing-large) !important; }
+
+/// Applies an extra large top and bottom padding
+/// @since 0.2.10
+.pv-f { padding-bottom: rem($spacing-x-large) !important; padding-top: rem($spacing-x-large) !important; }
+
+/// Applies an extra extra large top and bottom padding
+/// @since 0.2.10
+.pv-g { padding-bottom: rem($spacing-xx-large) !important; padding-top: rem($spacing-xx-large) !important; }
