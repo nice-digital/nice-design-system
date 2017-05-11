@@ -23,6 +23,7 @@ For use on a light background
     {% include colour.html title="Link visited state" var="colour-link-visited" %}
     {% include colour.html title="Link active state" var="colour-link-active" %}
     {% include colour.html title="Link focus" var="colour-focus" %}
+    {% include colour.html title="Link focus text" var="colour-link-focus-text" %}
 </ul>
 
 ### Inverse links
