@@ -40,12 +40,11 @@
 ///   </div>
 /// @since 0.1.0
 @mixin grid($reverse: false, $gutterless: false, $compact: false, $loose: false, $right: false, $center: false, $debug: false) {
-  letter-spacing: -.31em;
-  list-style: none;
-  margin: 0;
-  margin-left: -$nice-grid-gutter;
-  padding: 0;
-  word-spacing: -.43em;
+  letter-spacing: -.31em; // Remove whitespace caused by `inline-block` elements
+  list-style: none; // Allow the grid system to be used on lists.
+  margin: 0; // Remove any margins that might affect the grid system.
+  margin-left: -$nice-grid-gutter; // Apply a negative `margin-left` to negate the columns’ gutters.
+  padding: 0; // Remove any paddings that might affect the grid system.
 
   @if $reverse {
     @include grid-reverse;
