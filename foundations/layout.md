@@ -220,20 +220,64 @@ Remove the gutter between grid items with the `.grid--gutterless` modifier
 {% capture gutterlesss %}
 <div class="grid grid--gutterless">
     <div data-g="one-quarter">
-        <div class="grid-example-item">full</div>
+        <div class="grid-example-item">1/4</div>
     </div>
     <div data-g="one-quarter">
-        <div class="grid-example-item">full</div>
+        <div class="grid-example-item">1/4</div>
     </div>
     <div data-g="one-quarter">
-        <div class="grid-example-item">full</div>
+        <div class="grid-example-item">1/4</div>
     </div>
     <div data-g="one-quarter">
-        <div class="grid-example-item">full</div>
+        <div class="grid-example-item">1/4</div>
     </div>
 </div>
 {% endcapture %}
 {% include example.html lang='html' body=gutterlesss %}
+
+### Compact
+
+Use smaller gutters between grid items with the `.grid--compact` modifier
+
+{% capture compact %}
+<div class="grid grid--compact">
+    <div data-g="one-quarter">
+        <div class="grid-example-item">1/4</div>
+    </div>
+    <div data-g="one-quarter">
+        <div class="grid-example-item">1/4</div>
+    </div>
+    <div data-g="one-quarter">
+        <div class="grid-example-item">1/4</div>
+    </div>
+    <div data-g="one-quarter">
+        <div class="grid-example-item">1/4</div>
+    </div>
+</div>
+{% endcapture %}
+{% include example.html lang='html' body=compact %}
+
+### Loose
+
+Use larger gutters between grid items with the `.grid--loose` modifier
+
+{% capture compact %}
+<div class="grid grid--loose">
+    <div data-g="one-quarter">
+        <div class="grid-example-item">1/4</div>
+    </div>
+    <div data-g="one-quarter">
+        <div class="grid-example-item">1/4</div>
+    </div>
+    <div data-g="one-quarter">
+        <div class="grid-example-item">1/4</div>
+    </div>
+    <div data-g="one-quarter">
+        <div class="grid-example-item">1/4</div>
+    </div>
+</div>
+{% endcapture %}
+{% include example.html lang='html' body=compact %}
 
 ### Right
 
