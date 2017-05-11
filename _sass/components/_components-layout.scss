@@ -3,10 +3,10 @@
 ///   - main body content
 ///   - optional in page nav column
 .page {
-  @include grid;
+  @include grid($loose: true);
 
   &__sidebar {
-    @include grid-item;
+    @include grid-item($loose: true);
 
     @media print {
       display: none;
@@ -14,7 +14,7 @@
   }
 
   &__main {
-    @include grid-item;
+    @include grid-item($loose: true);
 
     @media print {
       width: 100%;
@@ -22,7 +22,7 @@
   }
 
   &__inpagenav {
-    @include grid-item;
+    @include grid-item($loose: true);
     display: none;
 
     @media print {
