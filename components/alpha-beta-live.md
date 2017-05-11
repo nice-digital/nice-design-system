@@ -3,6 +3,7 @@ layout: sidebar
 title: Alpha & Beta
 ---
 
+ <!--- 
 ## Phase tag
 
 {% capture phasetag %}
@@ -26,6 +27,8 @@ title: Alpha & Beta
 </ul>
 {% endcapture %}
 {% include example.html lang='html' body=phasetag %}
+
+--->
 
 ## Phase banner
 
