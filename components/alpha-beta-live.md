@@ -1,6 +1,6 @@
 ---
 layout: sidebar
-title: Alpha, beta & live
+title: Alpha & Beta
 ---
 
 ## Phase tag
@@ -29,8 +29,10 @@ title: Alpha, beta & live
 
 ## Phase banner
 
-- Phase banners combine phase tags into a layout
-- Phase banners should be prominent at the top a service
+If your service is on the NICE subdomain and is within alpha or beta you must have a phase banner which reflects this.
+Your banner must sit below the global NICE header, and above the page breadcrumb
+
+You should use a ‘feedback’ link to collect on-page feedback about your service. Ensure the user can return to their previous point in the page, having opened a dedicated page or form.
 
 ### Alpha
 
@@ -40,7 +42,7 @@ title: Alpha, beta & live
         <strong class="phase-tag phase-tag--alpha">ALPHA</strong>
     </span>
     <span class="phase-banner__label">
-        NICE Experience is in development. This means there it isn't feature complete and there will be issues. Find any? Please, let us know!
+       This is a new service – your <a href="#">feedback</a> will help us to improve it.
     </span>
 </p>
 {% endcapture %}
@@ -54,13 +56,13 @@ title: Alpha, beta & live
         <strong class="phase-tag phase-tag--beta">BETA</strong>
     </span>
     <span class="phase-banner__label">
-        HDAS2 is in Beta
+       This is a new service – your <a href="#">feedback</a> will help us to improve it.
     </span>
 </p>
 {% endcapture %}
 {% include example.html lang='html' body=beta %}
 
-### Live
+<!--- ### Live 
 
 {% capture live %}
 <p class="phase-banner">
@@ -72,4 +74,4 @@ title: Alpha, beta & live
     </span>
 </p>
 {% endcapture %}
-{% include example.html lang='html' body=live %}
+{% include example.html lang='html' body=live %}  ---> 
