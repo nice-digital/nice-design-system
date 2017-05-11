@@ -23,6 +23,9 @@ title: Panels
     <p>This is some panel content</p>
     <p>
         <a href="#" class="btn btn--light">Light button</a>
+        <a href="#" class="btn btn">Primary button</a>
+        <a href="#" class="btn btn--cta">CTA button</a>
+        <a href="#" class="btn btn--secondary">Secondary button</a>
     </p>
 </div>
 {% endcapture %}
