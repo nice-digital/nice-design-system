@@ -46,10 +46,6 @@ app.use(function (req, res, next) {
 // Serve favicon with caching
 app.use(favicon(path.join(__dirname, "../src/assets/favicon.ico")));
 
-// Minify HTML (strip whitespace) for a) speed & b) grid system
-app.use(require("./middlewares/render-minified"));
-
-
 // Webpack
 var compiler = webpack(webpackConfig);
 app.use(webpackMiddleware(compiler, { publicPath: "/javascripts/" }));
