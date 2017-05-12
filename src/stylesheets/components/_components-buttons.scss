@@ -4,7 +4,7 @@
 
 /// Button
 /// @since 0.1.0
-.btn {
+.btn.btn { // Repeat selector for specificity to avoid link overrides
   @include remove-mz-focus-inner;
   @include font-size(0);
   appearance: none;
