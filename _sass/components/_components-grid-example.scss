@@ -1,6 +1,6 @@
 .grid-example-item {
   background: get-colour(grey, x-light);
-  border: 5px solid $colour-border;
+  border: em($spacing-x-small) solid $colour-border;
   margin-bottom: em($spacing-small);
   padding: em($spacing-small);
   text-align: center;

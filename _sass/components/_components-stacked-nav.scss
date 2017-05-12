@@ -25,7 +25,7 @@
     font-weight: normal;
     list-style: none;
     margin: 0;
-    padding: em(0 0 0 24px);
+    padding: em(0 0 0 $spacing-medium);
 
     @include m('active') {
       display: block;
