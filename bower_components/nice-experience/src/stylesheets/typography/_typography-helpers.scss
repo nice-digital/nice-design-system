@@ -95,3 +95,9 @@
   margin-bottom: rem(map-get($font-map, mb));
   margin-top: rem(map-get($font-map, mt));
 }
+
+/// Lead paragraph style
+/// @since 0.2.12
+@mixin lead {
+  @include font(lead);
+}

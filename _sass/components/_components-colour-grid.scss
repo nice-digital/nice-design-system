@@ -4,8 +4,8 @@
   padding: 0;
 
   &__item {
-    @include grid-item;
-    margin-bottom: em(24);
+    @include grid-item($xs: 6, $sm: 4, $md: 6, $lg: 4);
+    margin-bottom: em($spacing-large);
   }
 
   &__block {
@@ -19,30 +19,6 @@
   &__heading {
     @include h5;
     margin-top: em($spacing-small);
-  }
-
-  @include mq($from: xs) {
-    &__item {
-      width: percentage(1 / 2);
-    }
-  }
-
-  @include mq($from: sm) {
-    &__item {
-      width: percentage(1 / 3);
-    }
-  }
-
-  @include mq($from: md) {
-    &__item {
-      width: percentage(1 / 2);
-    }
-  }
-
-  @include mq($from: lg) {
-    &__item {
-      width: percentage(1 / 3);
-    }
   }
 }
 

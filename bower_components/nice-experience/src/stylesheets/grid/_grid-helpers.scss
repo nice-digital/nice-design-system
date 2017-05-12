@@ -40,12 +40,11 @@
 ///   </div>
 /// @since 0.1.0
 @mixin grid($reverse: false, $gutterless: false, $compact: false, $loose: false, $right: false, $center: false, $debug: false) {
-  letter-spacing: -.31em;
-  list-style: none;
-  margin: 0;
-  margin-left: -$nice-grid-gutter;
-  padding: 0;
-  word-spacing: -.43em;
+  letter-spacing: -.31em; // Remove whitespace caused by `inline-block` elements
+  list-style: none; // Allow the grid system to be used on lists.
+  margin: 0; // Remove any margins that might affect the grid system.
+  margin-left: -$nice-grid-gutter; // Apply a negative `margin-left` to negate the columns’ gutters.
+  padding: 0; // Remove any paddings that might affect the grid system.
 
   @if $reverse {
     @include grid-reverse;
@@ -124,26 +123,74 @@
   outline: 4px dashed red;
 }
 
-/// Grid item
-/// @param {boolean} $gutterless [false] Whether the grid has no spacing
+// Helper mixin for outputting breakpoints within a custom grid item.
+@mixin _grid-item-breakpoint($bp, $bp-name) {
+  @if $bp {
+    @include mq($from: $bp-name) {
+      @if is-integer($bp) {
+        width: percentage($bp / 12);
+      } @else if is-map($bp) {
+        $cols: map-get($bp, cols);
+        $push: map-get($bp, push);
+        $pull: map-get($bp, pull);
+
+        width: percentage($cols / 12);
+        @if $push {
+          left: percentage($push / 12);
+        }
+        @if $pull {
+          right: percentage($pull / 12);
+        }
+
+      } @else {
+        @error '$bp must be an integer or a map';
+      }
+    }
+  }
+}
+
+/// Grid item mixin. Used in tandem with the `grid` mixin for creating semantic grid
+/// classes within custom componenents.
+/// @param {Number} $columns [12] The number of columns (1-12) to fill on mobile
+/// @param {Number} $push [false] The number of columns (1-12) to push right
+/// @param {Number} $push [false] The number of columns (1-12) to pull left
+/// @param {boolean} $gutterless [false] Set to `true` to remove the spacing between grid items.
 /// @param {boolean} $compact [false] Whether the grid has compact spacing
 /// @param {boolean} $loose [false] Whether the grid has loose spacing
 /// @param {boolean} $middle [false] Whether the grid item is vertically aligned to the middle
 /// @param {boolean} $bottom [false] Whether the grid item is vertically aligned to the bottom
 /// @param {boolean} $debug [false] Whether to put a highlight round the grid item for debugging
-/// @param {map} $breakpoints [null] A map of breakpoints and the width/parameters for the grid item
+/// @param {Number | Map} $xs [false] The number of columns (1-12) to fill from xs breakpoint upwards, or a map with cols, push and pull
+/// @param {Number | Map} $sm [false] The number of columns (1-12) to fill from sm breakpoint upwards, or a map with cols, push and pull
+/// @param {Number | Map} $md [false] The number of columns (1-12) to fill from md breakpoint upwards, or a map with cols, push and pull
+/// @param {Number | Map} $lg [false] The number of columns (1-12) to fill from lg breakpoint upwards, or a map with cols, push and pull
+/// @param {Number | Map} $xl [false] The number of columns (1-12) to fill from xl breakpoint upwards, or a map with cols, push and pull
 /// @require {mixin} grid-item-gutterless
+/// @require {mixin} grid-item-compact
+/// @require {mixin} grid-item-loose
 /// @require {mixin} grid-item-middle
 /// @require {mixin} grid-item-bottom
 /// @require {mixin} grid-item-debug
 /// @require mq <https://github.com/sass-mq/sass-mq>
 /// @example scss
 ///   .test {
-///     width: 100%;
-///     @include grid-item($breakpoints: ( md: ( width: 50%, push: 25% ), lg: 20% ));
+///     @include grid-item(12, $md: 8, $lg: (cols: 7, push: 1), $loose: true);
 ///   }
 /// @since 0.1.0
-@mixin grid-item($gutterless: false, $compact: false, $loose: false, $middle: false, $bottom: false, $debug: false, $breakpoints: null) {
+@mixin grid-item($columns: 12,
+  $push: false,
+  $pull: false,
+  $gutterless: false,
+  $compact: false,
+  $loose: false,
+  $middle: false,
+  $bottom: false,
+  $debug: false,
+  $xs: false,
+  $sm: false,
+  $md: false,
+  $lg: false,
+  $xl: false) {
   @include border-box;
   direction: ltr;
   display: inline-block;
@@ -152,8 +199,16 @@
   position: relative;
   text-align: left;
   vertical-align: top;
-  width: 100%;
+  width: percentage($columns / 12);
   word-spacing: normal;
+
+  @if $push {
+    left: percentage($push / 12);
+  }
+
+  @if $pull {
+    right: percentage($pull / 12);
+  }
 
   @if $gutterless {
     @include grid-item-gutterless;
@@ -175,42 +230,11 @@
     @include grid-item-bottom;
   }
 
-  // Output any breakpoint overrides passed in via the map
-  @if $breakpoints {
-    @each $breakpoint-key, $values in $breakpoints {
-
-      @if is-percentage($values) {
-        @include mq($from: $breakpoint-key) {
-          width: $values;
-        }
-      } @else {
-
-        $width: map-get($values, width);
-        $push: map-get($values, push);
-        $pull: map-get($values, pull);
-
-        @if $push and not is-percentage($push) {
-          @error 'Expected push to be a percentage but found `#{$push}`';
-        }
-
-        @if $pull and not is-percentage($pull) {
-          @error 'Expected pull to be a percentage but found `#{$pull}`';
-        }
-
-        @include mq($from: $breakpoint-key) {
-          width: $width;
-
-          @if $push {
-            left: $push;
-          }
-
-          @if $pull {
-            right: $pull;
-          }
-        }
-      }
-    }
-  }
+  @include _grid-item-breakpoint($xs, xs);
+  @include _grid-item-breakpoint($sm, sm);
+  @include _grid-item-breakpoint($md, md);
+  @include _grid-item-breakpoint($lg, lg);
+  @include _grid-item-breakpoint($xl, xl);
 }
 
 /// Gutterless grids have all the properties of regular grids, minus any spacing.

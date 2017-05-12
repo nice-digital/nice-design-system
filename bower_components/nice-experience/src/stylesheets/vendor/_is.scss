@@ -51,3 +51,7 @@
 @function is-position($value) {
   @return is-length($value) or is-percentage($value) or index('top' 'right' 'bottom' 'left' 'center', $value) != null;
 }
+
+@function is-map($value){
+  @return type-of($value) == 'map';
+}

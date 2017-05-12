@@ -1,0 +1,41 @@
+////
+/// @group components
+////
+
+/// Hero banner component.
+/// @since 0.2.0
+.hero {
+  @extend %inverse-links;
+  background: $colour-nice-teal-2;
+  color: $colour-text-inverse;
+  margin: em(0 0 $spacing-large);
+  overflow: hidden;
+  padding: em(0 0 $spacing-large);
+
+  &__container {
+    @extend %container;
+  }
+
+  &__body {
+    @include grid($loose: true);
+    margin-top: rem($spacing-large);
+  }
+
+  // The main container for the copy
+  &__copy {
+    @include grid-item(12, $md: 8, $loose: true);
+  }
+
+  // Extra supplementary links etc
+  &__extra {
+    @include grid-item(12, $md: 4, $loose: true);
+  }
+
+  &__title {
+    @include h1;
+  }
+
+  &__intro {
+    @include lead;
+  }
+}

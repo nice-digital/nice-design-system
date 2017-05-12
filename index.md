@@ -6,17 +6,23 @@ title: Your source for quickly creating consistent on-brand NICE digital service
 <div class="hero">
     {% include alpha.html %}
 
-    <div class="container">
+    <div class="hero__container">
+        <div class="hero__body">
+            <div class="hero__copy">
+                <h1 class="hero__title">NICE Experience</h1>
 
-        <h1 class="hero__title">NICE Experience</h1>
+                <p class="hero__intro">
+                    Your source for quickly creating consistent on-brand NICE digital services
+                </p>
 
-        <p class="lead hero__intro">
-            Your source for quickly creating consistent on-brand NICE digital services
-        </p>
-
-        <div class="hero__actions">
-            <a href="{{ site.baseurl }}{% link technical/installation.md %}" class="btn btn--cta">Get started</a>
-            <a href="https://github.com/nhsevidence/NICE-Experience" class="btn" target="_blank">View on Github</a>
+                <div class="hero__actions">
+                    <a href="{{ site.baseurl }}{% link technical/installation.md %}" class="btn btn--cta">Get started</a>
+                    <a href="https://github.com/nhsevidence/NICE-Experience" class="btn" target="_blank">View on Github</a>
+                </div>
+            </div>
+            <div class="hero__extra">
+                Extra
+            </div>
         </div>
     </div>
 </div>

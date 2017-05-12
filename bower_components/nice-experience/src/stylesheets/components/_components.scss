@@ -1,15 +1,14 @@
-@import 'components-global',
-'components-skiplinks',
-'components-panel',
-'components-tables',
+@import 'components-breadcrumbs',
 'components-buttons',
-'components-hero',
-'components-phase',
+'components-global',
 'components-maintain-ratio',
 'components-navbar',
 'components-nav',
-'components-breadcrumbs',
+'components-panel',
+'components-skiplinks',
 'components-tables';
 
-@import '../components/tabs/tabs',
-'../components/footer/footer';
+@import '../components/footer/footer',
+'../components/hero/hero',
+'../components/phase-banner/phase-banner',
+'../components/tabs/tabs';

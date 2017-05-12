@@ -40,7 +40,7 @@
 /// Grid item default selector.
 /// Use within a `.grid`.
 /// Use the value of the data attribute to specify the grid item widths
-/// mobile first. E.g "n w:n" where *n* is the number of columns and *w*
+/// mobile first. E.g "n w:m" where *n* and *m* are the number of columns and *w*
 /// is the name of the breakpoint.
 ///
 /// @example html HTML usage
@@ -60,6 +60,8 @@
 /// Modifiers:
 ///   - `rev` - Reverses the grid direction from natural source order
 ///   - `gutterless` - Removes spacing and gutters from the grid
+///   - `compact` - Uses tighter spacing and gutters
+///   - `loose` - Uses looser spacing and gutters
 ///   - `right` - Right aligned grid items
 ///   - `center` - Horizontally center aligned grid items
 ///   - `middle` - Vertically middle aligned grid items
