@@ -21,7 +21,7 @@ title: Your source for quickly creating consistent on-brand NICE digital service
                 </div>
             </div>
             <div class="hero__extra">
-                Extra
+                
             </div>
         </div>
     </div>
