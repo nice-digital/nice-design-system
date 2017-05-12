@@ -1,0 +1,68 @@
+{% extends "layouts/_layout.njk" %}
+{% set title = "Hero component" %}
+{% from "hero/hero.njk" import hero %}
+
+{% block body %}
+
+	<div class="container">
+		<h1>Hero</h1>
+	</div>
+
+	{% macro _phase() -%}
+		<p class="phase-banner mb-0">
+			<span class="phase-banner__tag">
+				<strong class="phase-tag phase-tag--alpha">ALPHA</strong>
+			</span>
+			<span class="phase-banner__label">
+				This site is in development. This means there it isn't feature complete and there will be issues. Find any? Please, <a href="#">let us know</a>!
+			</span>
+		</p>
+	{%- endmacro %}
+	{% set phase = _phase() %}
+
+	{% set heroContent = {
+			phase: phase,
+			title: "Improving health and social care through evidence-based guidance",
+			intro: "The National Institute for Health and Care Excellence (NICE) provides national guidance and advice to improve health and social care.",
+			cta: {
+				text: "Find NICE guidance",
+				href: "/guidance"
+			},
+			secondCta: {
+				text: "About us",
+				href: "/about"
+			},
+			aside: {
+				title: "Browse guidance by area:",
+				links: [
+					{
+						title: "Conditions and diseases",
+						href: "/guidance/conditions-and-diseases"
+					},
+					{
+						title: "Health protection",
+						href: "/guidance/health-protection"
+					},
+					{
+						title: "Lifestyle and wellbeing",
+						href: "/guidance/lifestyle-and-wellbeing"
+					},
+					{
+						title: "Population groups",
+						href: "/guidance/population-groups"
+					},
+					{
+						title: "Service delivery, organisation and staffing",
+						href: "/guidance/service-delivery--organisation-and-staffing"
+					},
+					{
+						title: "Settings",
+						href: "/guidance/settings"
+					}
+				]
+			}
+		} %}
+
+	{{ hero(heroContent) }}
+
+{% endblock %}
