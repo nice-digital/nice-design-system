@@ -11,12 +11,10 @@
 - [What is it?](#what-is-it)
 - [Browser support](#browser-support)
 - [Project structure](#project-structure)
-- [Prerequisites](#prerequisites)
 - [Development](#development)
-	- [npm/Grunt](#npmgrunt)
+	- [Getting started](#getting-started)
 		- [npm](#npm)
 		- [Grunt](#grunt)
-		- [Node](#node)
 	- [JavaScript](#javascript)
 	- [SASS](#sass)
 	- [Icons](#icons)
@@ -24,9 +22,10 @@
 - [Installation](#installation)
 	- [CDN](#cdn)
 	- [Install with npm](#install-with-npm)
-		- [Precompiled (npm)](#precompiled-npm)
-		- [Source (npm)](#source-npm)
 	- [Install with Bower](#install-with-bower)
+	- [Usage](#usage)
+		- [Precompiled](#precompiled)
+		- [From source](#from-source)
 
 ## What is it?
 
@@ -65,45 +64,50 @@ See https://www.nice.org.uk/accessibility for more information.
 | ---- | ----------- |
 | [.github](.github) | [Github templates folder](https://help.github.com/articles/helping-people-contribute-to-your-project/) |
 | [.grunt-tasks](.grunt-tasks) | Grunt task configs loaded in from Gruntfile.js |
+| [dist](dist) | Built files for distribution with each new version |
 | [src](src) | The main source of Experience |
 | - [src/assets](src/assets) | Common static assets |
+| - [src/components](src/components) | Components (SASS/JS/Nunjucks view/test) |
 | - [src/icons](src/icons) | SVG icon font source |
 | - [src/javascripts](src/javascripts) | Main Experience JS + [JSDoc config](src/javascripts/.jsdoc.json) and [ESLint config](src/javascripts/.eslintrc.json) |
 | - [src/stylesheets](src/stylesheets) | Main Experience SASS + [SASS Lint config](src/stylesheets/.sass-lint.yml) + [SASS Doc custom theme](src/stylesheets/sassdoc-nice-theme.js) |
-| [server](server) | Expres server, views etc for testing and building componennts |
-
-## Prerequisites
-
-We use Grunt for running tasks so the only prerequisites are:
-
-- [Node 6+](https://nodejs.org/en/download/) (with npm 3.9)
+| [server](server) | Express dev server, views etc for testing and building components |
+| [test](test) | Test setup and unit tests |
 
 ## Development
 
-### npm/Grunt
+### Getting started
 
 	TL;DR:
 		1. `npm i -g grunt-cli`
 		2. `npm i`
 		3. `npm start`
 
-If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide first.
+To run the dev server and tests on your local machine, first install:
 
-If you want to run the app directly (via Grunt/npm) on your machine you can do so, but you'll need:
+- [Node 6+](https://nodejs.org/en/download/)
+- [npm 3.9+](https://docs.npmjs.com/getting-started/installing-node)
 
-- Node 6+
-- npm 3.9+
-
-We use Grunt as a task runner to build assets etc so have a dependency on Node. Run `npm start` from the command line which will build the required assets (JS/CSS/web fonts) and serve the app.
-
-Before you run any tasks, you'll have to run the following from the command line to install dependencies:
+Then before you can run any tasks, run the following from the command line to install dependencies:
 
 - `npm i -g grunt-cli`
 - `npm i`
 
+We use Grunt as a task runner hence the dependency on Node. If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide first.
+
+Run `npm start` from the command line which will:
+
+- run tests
+- lint JavaScript and SCSS
+- build the required assets (JS/CSS/web fonts)
+- serve the development site
+- watch for change to source files
+
+There are also other commands you can run:
+
 #### npm
 
-Run `npm start` and `npm run test:watch` for development.
+Run `npm start` and `npm run test:watch` for development. However, there are other npm scripts available to be run for other tasks:
 
 | Task | Description |
 | ---- | ----------- |
@@ -112,15 +116,11 @@ Run `npm start` and `npm run test:watch` for development.
 | `npm run test:watch`  | Runs JS test tests (with [min reporter](https://github.com/mochajs/mocha/blob/master/lib/reporters/min.js)) and watches for changes. Useful to run in development alongside grunt. |
 | `npm run test:coverage`  | Runs JS test tests and generates a coverage report with [Istanbul](https://istanbul.js.org/) into the *coverage* folder |
 | `npm run lint`        | Lints SASS and JS (uses `grunt lint` under the hood) |
-| `npm run release`        | Builds the assets in dist mode, increments package.json version, pushes a new git tag, GitHub release with notes from commits and npm release. |
+| `npm run release`        | Builds the assets in dist mode, increments package.json patch version, pushes a new git tag, creates a GitHub release (with release notes from commits since last release) and creates an npm release. |
 
 #### Grunt
 
-Some of the npm scripts use Grunt tasks under the hood. These Grunt tasks (and aliases) can be run directly e.g. `grunt lint`. However, we recommend using the npm scripts themselves.
-
-#### Node
-
-Once the app (CSS/JS etc) has been built, the express app can be run via Node directly e.g. `node server`. This isn't really useful for development as it just runs on port 54321, doesn't build assets, watch for changes etc - use `npm start` instead for development.
+Some of the npm scripts use Grunt tasks under the hood. These Grunt tasks (and aliases) can be run directly e.g. `grunt lint`. However, we recommend using the npm scripts themselves. See the task aliases in [Gruntfile.js](Gruntfile.js) for more information.
 
 ### JavaScript
 
@@ -138,17 +138,23 @@ See the [test](test) folder for more information.
 
 ### NICE CDN
 
-TODO
+TODO - we will deploy pre-compiled versions onto cdn.nice.org.uk
 
 ### Install with npm
 
-NICE Experience is released as a package on npm for convenience, but is designed to be used as a client side module, rather than server side.
+`npm i nice-experience`
 
-`npm install nice-experience`
+Then follow the [usage](#usage) steps below...
 
-Then...
+### Install with bower
 
-#### Precompiled (npm)
+`bower i nice-experience`
+
+Then follow the [usage](#usage) steps below...
+
+### Usage
+
+#### Precompiled
 
 Not recommended for production, but useful for quick prototypes, the npm package includes a dist folder with precompiled assets.
 
@@ -179,10 +185,6 @@ and then reference it from your HTML as:
 
 OR you can use a copy command (with Grunt or similar) to copy the compiled assets out of the *node_modules* folder to somewhere where you can serve them.
 
-#### Source (npm)
+#### From source
 
 The npm package contains the source code as well as the precompiled assets.
-
-### Install with Bower
-
-TODO
