@@ -13,6 +13,11 @@
 	$(document).ready(function() {
 
 		$el = $("[data-inpagenav]");
+
+		if($el.length === 0) {
+			return;
+		}
+
 		render();
 
 		$el.on("click", "a", function(e) {
@@ -26,17 +31,17 @@
 		});
 
 		updateNavState(false);
-	});
 
-	$(window).on("load", function() {
-		updateNavState(false);
-	});
+		$(window).on("load", function() {
+			updateNavState(false);
+		});
 
-	$(window).on("scroll", function() {
-		updateNavState(true);
-	});
+		$(window).on("scroll", function() {
+			updateNavState(true);
+		});
 
-	$(window).on("resize", calculatePosition);
+		$(window).on("resize", calculatePosition);
+	});
 
 	// Renders the nav tree
 	function render() {
