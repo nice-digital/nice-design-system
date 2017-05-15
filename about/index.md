@@ -51,7 +51,7 @@ It is a re-work of NICE's original adaptation of Bootstrap, known as [NICE.Boots
     <li data-g="12 sm:6 md:4 lg:3">
         <h3 class="h6">Accessible</h3>
         <p>
-            We aim to conform to <a href="https://www.nice.org.uk/accessibility" target="_blank" rel="external">WCAG 2.0 Level AA</a> and follow the <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/intro.html#introduction-fourprincs-head" target="_blank" rel="external">4 principles of accessibility</a> of perceivable, operable, understandable, and robust for our content.
+            We aim to conform to <a href="https://www.nice.org.uk/accessibility" target="_blank" rel="noopener external">WCAG 2.0 Level AA</a> and follow the <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/intro.html#introduction-fourprincs-head" target="_blank" rel="noopener external">4 principles of accessibility</a> of perceivable, operable, understandable, and robust for our content.
         </p>
     </li>
     <li data-g="12 sm:6 md:4 lg:3">

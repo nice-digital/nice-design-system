@@ -77,7 +77,7 @@ We've split our roadmap into short, medium and long term and by components, cont
             <li>Page layout examples/templates</li>
             <li>JavaScript &amp; ES6 coding standards</li>
             <li>Accessibility test scripts</li>
-            <li><a href="http://documentation.js.org/" target="_blank" rel="external">JS Documentation</a> page generation</li>
+            <li><a href="http://documentation.js.org/" target="_blank" rel="noopener external">JS Documentation</a> page generation</li>
         </ul>
     </div>
     <div data-g="12 xs:6 sm:4 md:3">
@@ -86,13 +86,13 @@ We've split our roadmap into short, medium and long term and by components, cont
             <li>Transition/animation guidelines</li>
             <li>GTM &amp; GA implementation</li>
             <li>Copy to clipboard for code examples</li>
-            <li>JS <a href="https://flowtype.org/" target="_blank" rel="external">Flow type annotations</a></li>
+            <li>JS <a href="https://flowtype.org/" target="_blank" rel="noopener external">Flow type annotations</a></li>
         </ul>
     </div>
     <div data-g="12 xs:6 sm:4 md:3">
         <h3 class="h5">Build</h3>
         <ul>
-            <li>NPM Scripts (option to use <a href="https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/" target="_blank" rel="external">NPM as build tool</a>)</li>
+            <li>NPM Scripts (option to use <a href="https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/" target="_blank" rel="noopener external">NPM as build tool</a>)</li>
             <li>NPM Package</li>
             <li>CDN Deployment</li>
             <li>Beta site</li>
@@ -117,13 +117,13 @@ We've split our roadmap into short, medium and long term and by components, cont
         <h3 class="h5">Content</h3>
         <ul>
             <li>General development principles</li>
-            <li>Wider content style guide e.g. tone of voice, <a href="http://styleguide.mailchimp.com/grammar-and-mechanics/" target="_blank" rel="external">grammar &amp; mechanics</a></li>
+            <li>Wider content style guide e.g. tone of voice, <a href="http://styleguide.mailchimp.com/grammar-and-mechanics/" target="_blank" rel="noopener external">grammar &amp; mechanics</a></li>
         </ul>
     </div>
     <div data-g="12 xs:6 sm:4 md:3">
         <h3 class="h5">Code</h3>
         <ul>
-            <li><a href="https://github.com/mattonfoot/NICE.TopHat" target="_blank" rel="external">TopHat</a> refresh</li>
+            <li><a href="https://github.com/mattonfoot/NICE.TopHat" target="_blank" rel="noopener external">TopHat</a> refresh</li>
             <li>Responsive emails</li>
         </ul>
     </div>

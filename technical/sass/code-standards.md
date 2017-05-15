@@ -49,7 +49,7 @@ We encourage writing CSS as close to the W3C spec as possible which means not in
 <blockquote class="quote">
     <p>There are 2 hard problems in computer science: cache invalidation, naming things, and off-by-1 errors.</p>
     <footer>
-        - <cite>Phil Karlton &amp; <a href="https://twitter.com/secretGeek/status/7269997868" target="_blank" rel="external">Leon Bambrick</a></cite>
+        - <cite>Phil Karlton &amp; <a href="https://twitter.com/secretGeek/status/7269997868" target="_blank" rel="noopener external">Leon Bambrick</a></cite>
     </footer>
 </blockquote>
 

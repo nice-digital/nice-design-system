@@ -432,7 +432,7 @@ This avoids using the `grid` and `[data-g]` selectors directly in the html and c
 
 An alternative to [semantic classes](#semantic), media queries can be used to build custom responsive layouts. They can either be used with the grid mixins or on their own to build completely bespoke layouts. We use SASS MQ to create our breakpoints:
 
-<a href="https://github.com/sass-mq/sass-mq" class="btn" rel="external" target="_blank">SASS MQ</a>
+<a href="https://github.com/sass-mq/sass-mq" class="btn" rel="noopener external" target="_blank">SASS MQ</a>
 
 {% capture mixins %}
 .test-parent {

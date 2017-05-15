@@ -10,7 +10,7 @@ We use [SASS](http://sass-lang.com/){:target="_blank"} as our [CSS pre-processor
 <blockquote class="quote">
     <p>Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
     <footer>
-        - <cite><a href="http://sass-lang.com/" target="_blank" rel="external">sass-lang.com</a></cite>
+        - <cite><a href="http://sass-lang.com/" target="_blank" rel="noopener external">sass-lang.com</a></cite>
     </footer>
 </blockquote>
 

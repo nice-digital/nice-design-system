@@ -7,7 +7,7 @@ Their primary usage is as a navigational element. They can also be used as a rep
 
 ## Basics
 - links should follow the same sizing as containing copy
-- use `rel="external"`, `rel="noopener"`, `rel="next"` and `rel="prev"` and [other link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types){:rel="external"} where applicable
+- use `rel="noopener external"`, `rel="noopener"`, `rel="next"` and `rel="prev"` and [other link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types){:rel="noopener external"} where applicable
 
 ## Wording
 
@@ -103,11 +103,11 @@ When you need to group related links.
 
 {% capture linklist %}
 <ul class="list list--unstyled">
-    <li><a target="_blank" rel="external" href="https://www.nice.org.uk/guidance/published?type=csg">Cancer service guidelines</a></li>
-    <li><a target="_blank" rel="external" href="https://www.nice.org.uk/guidance/published?type=cg">Clinical guidelines</a></li>
-    <li><a target="_blank" rel="external" href="https://www.nice.org.uk/guidance/published?type=ph">Public health guidelines</a></li>
-    <li><a target="_blank" rel="external" href="https://www.nice.org.uk/guidance/published?type=sc">Social care guidelines</a></li>
-    <li><a target="_blank" rel="external" href="https://www.nice.org.uk/guidance/published?type=sg">Safe staffing guidelines</a></li>
+    <li><a target="_blank" rel="noopener external" href="https://www.nice.org.uk/guidance/published?type=csg">Cancer service guidelines</a></li>
+    <li><a target="_blank" rel="noopener external" href="https://www.nice.org.uk/guidance/published?type=cg">Clinical guidelines</a></li>
+    <li><a target="_blank" rel="noopener external" href="https://www.nice.org.uk/guidance/published?type=ph">Public health guidelines</a></li>
+    <li><a target="_blank" rel="noopener external" href="https://www.nice.org.uk/guidance/published?type=sc">Social care guidelines</a></li>
+    <li><a target="_blank" rel="noopener external" href="https://www.nice.org.uk/guidance/published?type=sg">Safe staffing guidelines</a></li>
 </ul>
 {% endcapture %}
 {% include example.html body=linklist %}
