@@ -12,15 +12,17 @@
 	<meta property="og:title" content="{{ title }}">
 	<meta property="og:type" content="{{ type }}">
 	<meta property="og:description" content="{{ description }}">
+	<meta name="theme-color" content="#004650">
 
 	<title>{{ title }} | NICE Experience</title>
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
-	<link type="text/plain" rel="author" href="{{ site.baseurl }}/humans.txt" />
+	<link rel="manifest" href="{{ site.baseurl }}/manifest.json">
+	<link rel="author" type="text/plain" href="{{ site.baseurl }}/humans.txt" />
 	<link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico" />
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/app.css" type="text/css" charset="utf-8">
-	<link href="//fonts.googleapis.com/css?family=Lato:200normal,200italic,300normal,300italic,400normal,400italic,700normal,700italic,900normal,900italic" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:200normal,200italic,300normal,300italic,400normal,400italic,700normal,700italic,900normal,900italic" type="text/css">
 
 	<!--[if lt IE 9]>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -64,6 +66,20 @@
 		if(typeof console !== "undefined" && console.info) {
 			console.info("%c✪ We hire people like you; people who are curious about how things are built. Interested? See http://bit.ly/NICEJobs for more info ✪", "background: #333; border-radius: 4px; color: #fff; font-size: 18px; font-family: Lato,'Helvetica Neue',Helvetica,Arial,sans-serif; padding: 2px 6px;");
 		}
+	</script>
+
+	<script>
+	if("serviceWorker" in navigator) {
+		navigator.serviceWorker
+			.register("{{ site.baseurl }}/sw.js", { scope: "{{ site.baseurl }}/" })
+			.then(function(registration) {
+				//console.log("Service Worker Registered");
+			});
+		navigator.serviceWorker.ready
+			.then(function(registration) {
+				//console.log("Service Worker Ready");
+			});
+	}
 	</script>
 
 	<script id="in-page-nav-template" type="text/template">

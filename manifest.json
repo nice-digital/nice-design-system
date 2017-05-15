@@ -1,0 +1,33 @@
+{
+  "background_color": "#fff",
+  "description": "Your source for quickly creating consistent on-brand NICE digital services",
+  "display": "minimal-ui",
+  "dir": "ltr",
+  "icons": [{
+    "src": "images/nice-logo-128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }, {
+      "src": "images/nice-logo-144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }, {
+      "src": "images/nice-logo-152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    }, {
+      "src": "images/nice-logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }, {
+      "src": "images/nice-logo-256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }],
+  "lang": "en-GB",
+  "name": "NICE Experience",
+  "orientation": "portrait-primary",
+  "short_name": "Experience",
+  "start_url": ".",
+  "theme_color": "#004650"
+}
