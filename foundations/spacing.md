@@ -12,32 +12,25 @@ Spacing values should be applied both within a component and between components/
 
 ## Spacing scale
 
-Our spacing is set out on a non-linear scale, to avoid ambiguity between adjacent values: it should be obvious which value to use in each use-case. These values are defined as SASS variables and should cover the majority of scenarios:
+Our spacing is set out on a non-linear scale, to avoid ambiguity between adjacent values: it should be obvious which value to use in each use-case.
 
-{% assign spacingVars = site.data.sass.experience.items | where_exp: "item","item.context.name contains 'spacing-'" %}
+- spacing is based off a `4px` baseline
+- default spacing is provided within typography, grid and all components
+- use [css classes](#css-classes) or [SASS variables](#sass-variables) in code rather than pixel values directly.
 
-{% for item in spacingVars %}
-- `${{ item.context.name }}` ({{ item.resolvedValue }}px)
-{% endfor %}
+<ul class="list list--unstyled">
+    <li><div class="spacing-block spacing-block--xx-small"></div> 2px</li>
+    <li><div class="spacing-block spacing-block--x-small"></div> 4px</li>
+    <li><div class="spacing-block spacing-block--small"></div> 8px</li>
+    <li><div class="spacing-block spacing-block--medium"></div> 16px</li>
+    <li><div class="spacing-block spacing-block--large"></div> 32px</li>
+    <li><div class="spacing-block spacing-block--x-large"></div> 48px</li>
+    <li><div class="spacing-block spacing-block--xx-large"></div> 64px</li>
+</ul>
 
-**Note**: use the `rem` or `em` function in SASS to convert pixel values to rems/ems.
+## CSS classes
 
-### Usage
-
-These SASS variables should be used in custom components to ensure consistent spacing:
-
-{% capture usage %}
-.component {
-    border-top: em($spacing-xx-small) solid $colour-border;
-    margin: rem($spacing-medium 0 $spacing-large);
-    padding: rem($spacing-medium);
-}
-{% endcapture %}
-{% include source.html lang='scss' body=usage title='Spacing example' %}
-
-## Classes
-
-In addition to SASS variables, we provide CSS classes for overriding margin/padding where appropriate.
+Typography, components, containers and grids have built in spacing, but sometimes it is necassary to override this default spacing. This can be done via CSS helper classes for overriding margin and/or padding.
 
 These classes are named using the format `{property}{sides}-{size}`.
 
@@ -63,6 +56,8 @@ Where `{size}` is on a linear scale from *a* (small) via *d* (default/medium) to
 - `f` - for extra large margin/padding
 - `g` - for extra extra large margin/padding
 
+### Class examples
+
 For example: `mt`, `pv-e` etc
 
 {% capture classes %}
@@ -77,3 +72,34 @@ For example: `mt`, `pv-e` etc
 </p>
 {% endcapture %}
 {% include example.html body=classes title="Spacing classes example" %}
+
+## SASS variables
+
+As well as CSS classes, we provide SASS variables for use in custom components:
+
+- the variables are unitless
+- use these variables rather than pixel values directly
+- use the variables for things like widths, heights, margins, paddings and borders
+- wrap in `em` or `rem` functions to convert to relative units.
+
+The variables are:
+
+<ul class="list list--unstyled">
+{% assign spacingVars = site.data.sass.experience.items | where_exp: "item","item.context.name contains 'spacing-'" %}
+{% for item in spacingVars %}
+<li><code>${{ item.context.name }}</code> ({{ item.resolvedValue }}px)</li>
+{% endfor %}
+</ul>
+
+### Usage
+
+These SASS variables should be used in custom components to ensure consistent spacing:
+
+{% capture usage %}
+.component {
+    border-top: em($spacing-xx-small) solid $colour-border;
+    margin: rem($spacing-medium 0 $spacing-large);
+    padding: rem($spacing-medium);
+}
+{% endcapture %}
+{% include source.html lang='scss' body=usage title='Spacing example' %}

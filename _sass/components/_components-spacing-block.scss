@@ -1,0 +1,36 @@
+/// A block for demonstrating the spacing sizes
+.spacing-block {
+	background: $colour-panel-default;
+	display: inline-block;
+	height: em($spacing-large);
+	margin: em(0 0 $spacing-x-small);
+	vertical-align: middle;
+
+	&--xx-small {
+		width: em($spacing-xx-small);
+	}
+
+	&--x-small {
+		width: em($spacing-x-small);
+	}
+
+	&--small {
+		width: em($spacing-small);
+	}
+
+	&--medium {
+		width: em($spacing-medium);
+	}
+
+	&--large {
+		width: em($spacing-large);
+	}
+
+	&--x-large {
+		width: em($spacing-x-large);
+	}
+
+	&--xx-large {
+		width: em($spacing-xx-large);
+	}
+}
