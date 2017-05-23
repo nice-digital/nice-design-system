@@ -1,0 +1,29 @@
+{% comment %}
+	Renders a group of pages for a grid of section links.
+	Example usage:
+		{% include section-nav.html nav="foundations" %}
+{% endcomment %}
+
+{% assign pageGroups = site.pages | group_by_exp: "p", "p.url | remove_first: '/' | split: '/' | first" %}
+{% assign pageGroup = pageGroups | where: "name", include.nav | first %}
+{% capture indexUrl %}/{{ pageGroup.name }}/{% endcapture %}
+{% assign index = pageGroup.items | where_exp: "pg","pg.url == indexUrl" | first %}
+
+{% if include.lead %}
+{{ index.description }}
+{:.lead}
+{% else %}
+{{ index.description }}
+{% endif %}
+
+{% if pageGroup.items %}
+<div class="grid">
+	{% assign pages = pageGroup.items | where_exp: "pg", "pg.url != indexUrl" %}
+	{% for p in pages %}
+		{% assign depth = p.url | split: '/' | size %}
+		{% if depth == 3 %}
+			{% include menu-item.html page=p %}
+		{% endif %}
+	{% endfor %}
+</div>
+{% endif %}

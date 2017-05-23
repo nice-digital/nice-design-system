@@ -1,6 +1,6 @@
 <div data-g="12 xs:6 sm:4 md:3">
-	<h4><a href="{{ include.href | relative_url }}">{{ include.title }}</a></h4>
+	<h4><a href="{{ include.page.url | relative_url }}">{{ include.page.title }}</a></h4>
 	<p>
-		{{ include.description }}
+		{{ include.page.description }}
 	</p>
 </div>
