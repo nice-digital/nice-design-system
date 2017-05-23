@@ -10,22 +10,23 @@ Our grid system is a responsive, mobile-first, fluid grid system.
 It is based on a 12 column grid and can use predefined classes or mixins for generating layouts with more semantic class names.
 {:.lead}
 
-Grids usually sit within a `.container` which takes care of the maximum width and fluidity - grids fill the available space within their parent container. There are no rows: grid items sit directly within the grid itself.
+Grids should sit within a `.container` which takes care of the maximum width and fluidity - grids fill the available space within their parent container. There are no rows: grid items sit directly within the grid itself.
 
-- SASS mixins can also be used to make layouts with more semantic class names
 - Gutters between grid items are achieved with a left margin, but the gutter can easily be removed, or reduced
 - The grid has a negative left margin so that the grid can align with non-grid content
-- If there are more than 12 items within a grid, the items simply wrap onto the next line
-- Grid item widths are mobile-first. This means they apply from the given widths upwards, overriding widths targeted for smaller devices. E.g. `[data-g="6 md:3"]` will be &frac14; of the width for 'medium' screen widths and up.
 - The grid is based on `inline-block` so uses a word and letter spacing fix.
+- SASS mixins can also be used to make layouts with more semantic class names
 
 
 ### Defining grid items
+
 - Grid items are created by specifying how many of the 12 columns to span, e.g. `[data-g="3"]` for 3/12 columns
 - Predefined selectors like `[data-g="6"]` for grid items exist for quickly making grid-based layouts
 - There are also more human readable names like *one-half* etc, eg. `[data-g="two-thirds"]`
+- Grid item widths are mobile-first. This means they apply from the given widths upwards, overriding widths targeted for smaller devices. E.g. `[data-g="6 md:3"]` will be &frac14; of the width for 'medium' screen widths and up.
+- If there are more than 12 items within a grid, the items simply wrap onto the next line
 
-### Layouts considerations
+### Layout considerations
 
 - Organise content in terms of priority and group related content together
 - Always consider how your layout will be shown on small screen devices
