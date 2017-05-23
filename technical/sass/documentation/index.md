@@ -8,25 +8,25 @@ inpagenav: false
 
 <div class="grid">
 
-    {% capture colours %}{% link technical/sass/documentation/colours.md %}{% endcapture %}
-    {% include menu-item.html title='Colours' href=colours description='Colour variables to use the NICE corporate palette' %}
+    {% assign colours = site.pages | where: "path", "technical/sass/documentation/colours.md" | first %}
+    {% include menu-item.html page=colours %}
 
-    {% capture components %}{% link technical/sass/documentation/components.md %}{% endcapture %}
-    {% include menu-item.html title='Components' href=components description='Components' %}
+    {% assign components = site.pages | where: "path", "technical/sass/documentation/components.md" | first %}
+    {% include menu-item.html page=components %}
 
-    {% capture grid %}{% link technical/sass/documentation/grid.md %}{% endcapture %}
-    {% include menu-item.html title='Grid' href=grid description='Grid and layout functions and mixins for building responsive layouts' %}
+    {% assign grid = site.pages | where: "path", "technical/sass/documentation/grid.md" | first %}
+    {% include menu-item.html page=grid %}
 
-    {% capture helpers %}{% link technical/sass/documentation/helpers.md %}{% endcapture %}
-    {% include menu-item.html title='Helpers' href=helpers description='Helper functions and mixins' %}
+    {% assign helpers = site.pages | where: "path", "technical/sass/documentation/helpers.md" | first %}
+    {% include menu-item.html page=helpers %}
 
-    {% capture icons %}{% link technical/sass/documentation/icons.md %}{% endcapture %}
-    {% include menu-item.html title='Icons' href=icons description='Iconography' %}
+    {% assign icons = site.pages | where: "path", "technical/sass/documentation/icons.md" | first %}
+    {% include menu-item.html page=icons %}
 
-    {% capture spacing %}{% link technical/sass/documentation/spacing.md %}{% endcapture %}
-    {% include menu-item.html title='Spacing' href=spacing description='Spacing' %}
+    {% assign spacing = site.pages | where: "path", "technical/sass/documentation/spacing.md" | first %}
+    {% include menu-item.html page=spacing %}
 
-    {% capture typography %}{% link technical/sass/documentation/typography.md %}{% endcapture %}
-    {% include menu-item.html title='Typography' href=typography description='Functions, mixins and variables for consistent typography' %}
+    {% assign typography = site.pages | where: "path", "technical/sass/documentation/typography.md" | first %}
+    {% include menu-item.html page=typography %}
 
 </div>
