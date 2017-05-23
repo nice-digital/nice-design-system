@@ -20,7 +20,7 @@
 			{% for p in pages %}
 				{% assign depth = p.url | split: '/' | size %}
 				{% if depth == 3 %}
-					<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url == p.url %}stacked-nav__item--active{% endif %}">
+					<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains p.url %}stacked-nav__item--active{% endif %}">
 						<a href="{{ site.baseurl }}{{ p.url }}" title="{{ p.description }}">
 							{{ p.nav | default: p.title }}
 						</a>
