@@ -1,10 +1,11 @@
 ---
 layout: sidebar
 title: Foundations
+description: The foundations and patterns that are to be used for faster product development
 inpagenav: false
 ---
 
-This guide shows how to make your service look consistent with the rest of NICE.
+{{ page.description }}
 {:.lead}
 
 <div class="grid">

@@ -2,6 +2,7 @@
 layout: sidebar
 title: SASS & CSS
 breadcrumb: SASS
+description: SASS documentation (mixins, functions, variables, selectors) and code style guide
 inpagenav: false
 ---
 

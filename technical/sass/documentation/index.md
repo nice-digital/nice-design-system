@@ -2,6 +2,7 @@
 layout: sidebar
 title: SASS documentation
 breadcrumb: Docs
+description: Auto-generated SASS documentation from our SASSDoc comments
 inpagenav: false
 ---
 

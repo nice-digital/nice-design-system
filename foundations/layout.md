@@ -1,6 +1,7 @@
 ---
 layout: sidebar
 title: Grid & layout
+description: Containers, grid, layouts and responsive behaviours
 ---
 
 ## Introduction

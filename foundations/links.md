@@ -1,6 +1,7 @@
 ---
 layout: sidebar
 title: Links
+description: Links and hover/active/visited/focus states
 ---
 
 Their primary usage is as a navigational element. They can also be used as a replacement for a button in space constrained situations (tables, forms, panels) or  when you need less visual prominence to perform an action.

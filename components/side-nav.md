@@ -1,6 +1,7 @@
 ---
 layout: sidebar
 title: Side navigation
+description: Navigation to support deeper content or guidance chapters
 ---
 
 ## What problem does this solve?

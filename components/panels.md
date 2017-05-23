@@ -1,6 +1,7 @@
 ---
 layout: sidebar
 title: Panels
+description: Blocks to highlight or separate content
 ---
 
 ## What problem does this solve?

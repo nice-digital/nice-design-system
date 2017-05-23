@@ -1,10 +1,11 @@
 ---
 layout: sidebar
 title: Components
+description: Once you've mastered the foundations, these components are further patterns for building user interfaces
 inpagenav: false
 ---
 
-Once you've mastered the foundations, these components are further patterns for building user interfaces.
+{{ page.description }}
 {:.lead}
 
 <div class='grid'>

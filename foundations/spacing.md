@@ -1,6 +1,7 @@
 ---
 layout: sidebar
 title: Spacing
+description: Spacing between elements and vertical rhythm
 ---
 
 ## Introduction

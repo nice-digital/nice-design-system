@@ -1,6 +1,7 @@
 ---
 layout: sidebar
 title: Libraries
+description: The third party libraries we use within our SASS
 ---
 
 The following are 3<sup>rd</sup> party SASS libraries that we've included by default:

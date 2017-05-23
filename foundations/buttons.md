@@ -1,6 +1,7 @@
 ---
 layout: sidebar
 title: Buttons
+description: Button of different types, colours and sizes and combination of buttons
 ---
 
 Their main purpose is to trigger an action when the user clicks on them. It's important that the button label is clear about what action the button performs to the user.
