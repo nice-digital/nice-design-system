@@ -29,26 +29,18 @@ title: Your source for quickly creating consistent on-brand NICE digital service
 
 <div class="container" markdown="1">
 
-## [Foundations]({{ site.baseurl }}{% link foundations/index.md %})
-
-{% include section-nav.html nav="foundations" %}
+{% include section-nav.html nav="foundations" heading=true %}
 
 ___
 
-## [Components]({{ site.baseurl }}{% link components/index.md %})
-
-{% include section-nav.html nav="components" %}
+{% include section-nav.html nav="components" heading=true %}
 
 ___
 
-## [Technical]({{ site.baseurl }}{% link technical/index.md %})
-
-{% include section-nav.html nav="technical" %}
+{% include section-nav.html nav="technical" heading=true %}
 
 ___
 
-## [About]({{ site.baseurl }}{% link about/index.md %})
-
-{% include section-nav.html nav="about" %}
+{% include section-nav.html nav="about" heading=true %}
 
 </div>
