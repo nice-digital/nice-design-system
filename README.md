@@ -16,7 +16,7 @@ However, there's an easier way:
 
 ### 1 - Install Bash on Ubuntu on Windows
 
-Follow the [https://msdn.microsoft.com/en-us/commandline/wsl/install_guide](installation guide for Bash on Ubuntu on Windows)
+Follow the [installation guide for Bash on Ubuntu on Windows](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide).
 
 ### 2 - Install make/gcc
 
