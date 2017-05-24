@@ -4,11 +4,14 @@
  * Setup dependencies for Mocha tests
  */
 
-import sinon from "sinon";
-import chai from "chai";
-import chaiAsPromised from "chai-as-promised";
-import sinonChai from "sinon-chai";
-import jsdom from "jsdom";
+require("./nunjucks-compiler.js");
+
+var sinon = require("sinon");
+var chai = require("chai");
+var chaiAsPromised = require("chai-as-promised");
+var sinonChai = require("sinon-chai");
+
+var testHelpers = require("./test-helpers");
 
 // Setup chai, see https://github.com/domenic/sinon-chai/blob/master/test/common.js
 global.chai = chai;
@@ -22,11 +25,7 @@ chai.use(chaiAsPromised);
 global.sinon = sinon;
 global.chai.use(sinonChai);
 
-// Setup jsdom for faking dom and jquery
-global.document = jsdom.jsdom("<html><head></head><body></body></html>");
-global.window = document.defaultView;
-
-// Loading jQuery doesn't work with ES6 import
-global.jQuery = global.$ = require("jquery");
-
 global.PRODUCTION = false;
+
+// Setup a fake docm
+testHelpers.setupDOM();
