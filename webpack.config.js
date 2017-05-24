@@ -78,67 +78,69 @@ const minPlugins = [
 	bannerPlugin
 ];
 
-const normalModule = {
-	loaders: [{
-		test: /\.js$/,
-		exclude: /(node_modules|bower_components)/,
-		loader: "babel-loader",
-		query: {
-			babelrc: false,
-			presets: [ "es2015" ],
-			passPerPreset: true,
-			plugins: [
-				["typecheck", {
-					disable: { production: true }
-				}],
-				"syntax-flow",
-				"transform-flow-strip-types"
-			]
+const moduleObj = {
+	loaders: [
+		{
+			test: /\.js$/,
+			exclude: /(node_modules|bower_components)/,
+			loader: "babel-loader",
+			query: {
+				babelrc: false,
+				presets: [ "es2015" ],
+				passPerPreset: true,
+				plugins: [
+					["typecheck", {
+						disable: { production: true }
+					}],
+					"syntax-flow",
+					"transform-flow-strip-types",
+					"transform-es3-member-expression-literals",
+					"transform-es3-property-literals"
+				]
+			}
+		},
+		{
+			test: /\.(njk|nunjucks)$/,
+			loader: "nunjucks-loader"
 		}
-	}]
-};
-
-const oldIEModule = {
-	loaders: [{
-		test: /\.js$/,
-		exclude: /(node_modules|bower_components)/,
-		loader: "babel-loader",
-		query: {
-			babelrc: false,
-			presets: [ "es2015" ],
-			passPerPreset: true,
-			plugins: [
-				["typecheck", {
-					disable: { production: true }
-				}],
-				"syntax-flow",
-				"transform-flow-strip-types",
-				"transform-es3-member-expression-literals",
-				"transform-es3-property-literals"
-			]
+	],
+	postLoaders: [
+		{
+			test: /\.js$/,
+			loader: StringReplacePlugin.replace({
+				replacements: [
+					// Fix for IE8 to wrap default keyword in quotes
+					// See https://github.com/reactjs/react-redux/issues/232#issuecomment-167665147
+					{
+						pattern: /\.default(?=[^\w$])/g,
+						replacement: function () {
+							return "['default']";
+						}
+					},
+					{
+						pattern: /\{\sdefault:/g,
+						replacement: function () {
+							return "{ 'default':";
+						}
+					},
+					// Fix for "Uncaught TypeError: Cannot read property 'MutationObserver' of undefined" win nunjucks
+					// See https://github.com/mozilla/nunjucks/issues/520
+					{
+						pattern: /global\.MutationObserver/g,
+						replacement: function () {
+							return "window.MutationObserver";
+						}
+					},
+					{
+						pattern: /global\.WebKitMutationObserver/g,
+						replacement: function () {
+							return "window.WebKitMutationObserver";
+						}
+					}
+				]
+			})
 		}
-	}],
-	// Fix for IE8 to wrap default keyword in quotes
-	// See https://github.com/reactjs/react-redux/issues/232#issuecomment-167665147
-	postLoaders: [{
-		test: /\.js$/,
-		loader: StringReplacePlugin.replace({
-			replacements: [
-				{
-					pattern: /\.default(?=[^\w$])/g,
-					replacement: function () {
-						return "['default']";
-					}
-				},
-				{
-					pattern: /\{\sdefault:/g,
-					replacement: function () {
-						return "{ 'default':";
-					}
-				}
-			]
-		})
-	}]
+	]
 };
 
 
@@ -151,7 +153,7 @@ module.exports = [
 			filename: "experience.dev.js",
 			sourceMapFilename: "experience.dev.map"
 		},
-		module: normalModule,
+		module: moduleObj,
 		plugins: normalPlugins
 	}),
 
@@ -162,7 +164,7 @@ module.exports = [
 			filename: "experience.min.js",
 			sourceMapFilename: "experience.min.map"
 		},
-		module: normalModule,
+		module: moduleObj,
 		plugins: minPlugins
 	}),
 
@@ -175,7 +177,7 @@ module.exports = [
 			filename: "experience.oldie.dev.js",
 			sourceMapFilename: "experience.oldie.dev.map"
 		},
-		module: oldIEModule,
+		module: moduleObj,
 		plugins: normalPlugins
 	}),
 
@@ -187,7 +189,7 @@ module.exports = [
 			filename: "experience.oldie.min.js",
 			sourceMapFilename: "experience.oldie.min.map"
 		},
-		module: oldIEModule,
+		module: moduleObj,
 		plugins: minPlugins
 	})
 ];
