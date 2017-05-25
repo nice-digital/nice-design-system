@@ -1,6 +1,7 @@
 ---
 layout: sidebar
 title: Colour
+description: Colour palettes and usage, contrast guidelines and SASS variables
 ---
 
 Follow these guidelines to determine the best way to apply the NICE colour palette. We use colour to aid in communication, and help our users navigate. We also use our [brand guidelines](https://www.nice.org.uk/brand/colour-palette){:target="_blank"} to help form the base of our digital palette. 

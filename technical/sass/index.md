@@ -2,6 +2,7 @@
 layout: sidebar
 title: SASS & CSS
 breadcrumb: SASS
+description: SASS documentation (mixins, functions, variables, selectors) and code style guide
 inpagenav: false
 ---
 
@@ -16,13 +17,13 @@ We use [SASS](http://sass-lang.com/){:target="_blank"} as our [CSS pre-processor
 
 <div class="grid">
 
-    {% capture codestandards %}{% link technical/sass/code-standards.md %}{% endcapture %}
-    {% include menu-item.html title='Code standards' href=codestandards description='SASS code standards, naming conventions etc' %}
+    {% assign codestandards = site.pages | where: "path", "technical/sass/code-standards.md" | first %}
+    {% include menu-item.html page=codestandards %}
 
-    {% capture docs %}{% link technical/sass/documentation/index.md %}{% endcapture %}
-    {% include menu-item.html title='Documentation' href=docs description='Auto-generated SASS documentation from our SASSDoc comments' %}
+    {% assign docs = site.pages | where: "path", "technical/sass/documentation/index.md" | first %}
+    {% include menu-item.html page=docs %}
 
-    {% capture libraries %}{% link technical/sass/libraries.md %}{% endcapture %}
-    {% include menu-item.html title='Libraries' href=libraries description='The third party libraries we use within our SASS' %}
+    {% assign libs = site.pages | where: "path", "technical/sass/libraries.md" | first %}
+    {% include menu-item.html page=libs %}
 
 </div>

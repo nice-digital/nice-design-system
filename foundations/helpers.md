@@ -1,6 +1,7 @@
 ---
 layout: sidebar
 title: Helpers
+description: Useful helper classes for common tasks
 ---
 
 ## Floats

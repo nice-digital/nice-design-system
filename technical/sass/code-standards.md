@@ -1,6 +1,7 @@
 ---
 layout: sidebar
 title: SASS code standards
+description: SASS code standards, naming conventions etc
 ---
 
 We follow the coding standards rules from the brilliant [Code Guide by @mdo](http://codeguide.co/#css){:target="_blank"} (which in turn was heavily inspired by [Idiomatic CSS](https://github.com/necolas/idiomatic-css){:target="_blank"} and the [GitHub Styleguide](http://github.com/styleguide){:target="_blank"}) with a few exceptions as described below.

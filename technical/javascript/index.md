@@ -1,7 +1,9 @@
 ---
 layout: sidebar
 title: JavaScript
+description: JS documentation and code style guide
 inpagenav: false
 ---
 
-To do...
+{{ page.description }}
+{:.lead}

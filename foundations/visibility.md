@@ -1,6 +1,7 @@
 ---
 layout: sidebar
 title: Visibility
+description: Showing and hiding elements across breakpoints, for print, device orientations and screen readers
 ---
 
 ## Showing & hiding

@@ -12,139 +12,17 @@ layout: master
 
 		<aside class="page__sidebar" role="complementary">
 			<nav role="navigation">
-				{% assign current = page.url | downcase | split: '/' %}
 
 				<ul class="stacked-nav">
 
-					{% capture foundations %}{% link foundations/index.md %}{% endcapture %}
-					<li class="stacked-nav__item {% if page.url == foundations %}stacked-nav__item--active{% endif %}">
-						<a href="{{ site.baseurl }}{{ foundations }}">Foundations</a>
-						<ul class="stacked-nav__sub-list {% if page.url contains foundations %}stacked-nav__sub-list--active{% endif %}">
-
-							{% capture buttons %}{% link foundations/buttons.md %}{% endcapture %}
-							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains buttons %}stacked-nav__item--active{% endif %}">
-								<a href="{{ site.baseurl }}{{ buttons }}">Buttons</a>
-							</li>
-
-							{% capture colour %}{% link foundations/colour.md %}{% endcapture %}
-							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains colour %}stacked-nav__item--active{% endif %}">
-								<a href="{{ site.baseurl }}{{ colour }}">Colour</a>
-							</li>
-
-							{% capture helpers %}{% link foundations/helpers.md %}{% endcapture %}
-							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains helpers %}stacked-nav__item--active{% endif %}">
-								<a href="{{ site.baseurl }}{{ helpers }}">Helpers</a>
-							</li>
-
-							{% capture iconography %}{% link foundations/iconography.md %}{% endcapture %}
-							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains iconography %}stacked-nav__item--active{% endif %}">
-								<a href="{{ site.baseurl }}{{ iconography }}">Iconography</a>
-							</li>
-
-							{% capture layout %}{% link foundations/layout.md %}{% endcapture %}
-							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains layout %}stacked-nav__item--active{% endif %}">
-								<a href="{{ site.baseurl }}{{ layout }}">Layout</a>
-							</li>
-
-							{% capture links %}{% link foundations/links.md %}{% endcapture %}
-							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains links %}stacked-nav__item--active{% endif %}">
-								<a href="{{ site.baseurl }}{{ links }}">Links</a>
-							</li>
-
-							{% capture spacing %}{% link foundations/spacing.md %}{% endcapture %}
-							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains spacing %}stacked-nav__item--active{% endif %}">
-								<a href="{{ site.baseurl }}{{ spacing }}">Spacing</a>
-							</li>
-
-							{% capture typography %}{% link foundations/typography.md %}{% endcapture %}
-							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains typography %}stacked-nav__item--active{% endif %}">
-								<a href="{{ site.baseurl }}{{ typography }}">Typography</a>
-							</li>
-
-							{% capture visibility %}{% link foundations/visibility.md %}{% endcapture %}
-							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains visibility %}stacked-nav__item--active{% endif %}">
-								<a href="{{ site.baseurl }}{{ visibility }}">Visibility</a>
-							</li>
-						</ul>
-					</li>
-
-					{% capture components %}{% link components/index.md %}{% endcapture %}
-					<li class="stacked-nav__item {% if page.url == components %}stacked-nav__item--active{% endif %}">
-						<a href="{{ site.baseurl }}{{ components }}">Components</a>
-						<ul class="stacked-nav__sub-list {% if page.url contains components %}stacked-nav__sub-list--active{% endif %}">
-
-							{% capture alphabetalive %}{% link components/alpha-beta-live.md %}{% endcapture %}
-							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains alphabetalive %}stacked-nav__item--active{% endif %}">
-								<a href="{{ site.baseurl }}{{ alphabetalive }}">Alpha/beta/live</a>
-							</li>
-
-							{% capture breadcrumbs %}{% link components/breadcrumbs.md %}{% endcapture %}
-							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains breadcrumbs %}stacked-nav__item--active{% endif %}">
-								<a href="{{ site.baseurl }}{{ breadcrumbs }}">Breadcrumbs</a>
-							</li>
-
-							{% capture global %}{% link components/global.md %}{% endcapture %}
-							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains global %}stacked-nav__item--active{% endif %}">
-								<a href="{{ site.baseurl }}{{ global }}">Global</a>
-							</li>
-
-							{% capture maintainratio %}{% link components/maintain-ratio.md %}{% endcapture %}
-							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains maintainratio %}stacked-nav__item--active{% endif %}">
-								<a href="{{ site.baseurl }}{{ maintainratio }}">Maintain ratio</a>
-							</li>
-
-							{% capture panels %}{% link components/panels.md %}{% endcapture %}
-							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains panels %}stacked-nav__item--active{% endif %}">
-								<a href="{{ site.baseurl }}{{ panels }}">Panels</a>
-							</li>
-
-							{% capture side-nav %}{% link components/side-nav.md %}{% endcapture %}
-							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains side-nav %}stacked-nav__item--active{% endif %}">
-								<a href="{{ site.baseurl }}{{ side-nav }}">Side nav</a>
-							</li>
-
-							{% capture tabs %}{% link components/tabs.md %}{% endcapture %}
-							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains tabs %}stacked-nav__item--active{% endif %}">
-								<a href="{{ site.baseurl }}{{ tabs }}">Tabs</a>
-							</li>
-						</ul>
-					</li>
-
-					{% capture technical %}{% link technical/index.md %}{% endcapture %}
-					<li class="stacked-nav__item {% if page.url == technical %}stacked-nav__item--active{% endif %}">
-						<a href="{{ site.baseurl }}{{ technical }}">Technical</a>
-						<ul class="stacked-nav__sub-list {% if page.url contains technical %}stacked-nav__sub-list--active{% endif %}">
-
-							{% capture installation %}{% link technical/installation.md %}{% endcapture %}
-							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains installation %}stacked-nav__item--active{% endif %}">
-								<a href="{{ site.baseurl }}{{ installation }}">Installation</a>
-							</li>
-
-							{% capture sass %}{% link technical/sass/index.md %}{% endcapture %}
-							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains sass %}stacked-nav__item--active{% endif %}">
-								<a href="{{ site.baseurl }}{{ sass }}">SASS</a>
-							</li>
-
-							{% capture js %}{% link technical/javascript/index.md %}{% endcapture %}
-							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains js %}stacked-nav__item--active{% endif %}">
-								<a href="{{ site.baseurl }}{{ js }}">JavaScript</a>
-							</li>
-						</ul>
-					</li>
-
-					{% capture about %}{% link about/index.md %}{% endcapture %}
-					<li class="stacked-nav__item {% if page.url == about %}stacked-nav__item--active{% endif %}">
-						<a href="{{ site.baseurl }}{{ about }}">About</a>
-						<ul class="stacked-nav__sub-list {% if page.url contains about %}stacked-nav__sub-list--active{% endif %}">
-							
-							{% capture roadmap %}{% link about/roadmap.md %}{% endcapture %}
-							<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains roadmap %}stacked-nav__item--active{% endif %}">
-								<a href="{{ site.baseurl }}{{ roadmap }}">Roadmap</a>
-							</li>
-						</ul>
-					</li>
+					{% include left-nav-group.html nav="foundations" %}
+					{% include left-nav-group.html nav="components" %}
+					{% include left-nav-group.html nav="technical" %}
+					{% include left-nav-group.html nav="about" %}
+					{% include left-nav-group.html nav="research" %}
 
 				</ul>
+
 			</nav>		
 		</aside>
 

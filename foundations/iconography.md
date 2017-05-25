@@ -1,6 +1,7 @@
 ---
 layout: sidebar
 title: Iconography
+description: Icons, their usage and how to create new icons
 ---
 
 ## Introduction

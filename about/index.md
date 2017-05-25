@@ -2,10 +2,12 @@
 layout: sidebar
 title: About the NICE Experience
 breadcrumb: About
+description: NICE Digital is a set of reusable patterns, documentation and guidelines for rapid product development.
+nav: About
 inpagenav: false
 ---
 
-NICE Digital is a set of reusable patterns, documentation and guidelines for rapid product development.
+{{ page.description }}
 {:.lead}
 
 Its goal is to create a consistent, acccessible digital experience across all of NICE's services.

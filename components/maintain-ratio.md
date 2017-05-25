@@ -1,6 +1,7 @@
 ---
 layout: sidebar
 title: Maintain ratio
+description: Embed media and maintain an aspect ratio across devices
 ---
 
 - Used for enforcing an aspect ratio for iframes, videos etc

@@ -1,6 +1,7 @@
 ---
 layout: sidebar
 title: Tabs
+description: Content is separated into different panes, with only one pane viewable at a time
 ---
 
 ## What problem does this solve?

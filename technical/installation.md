@@ -1,6 +1,7 @@
 ---
 layout: sidebar
 title: Installation
+description: Install the product to get started
 ---
 
 ## Basic template

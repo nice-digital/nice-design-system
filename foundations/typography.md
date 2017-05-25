@@ -1,6 +1,7 @@
 ---
 layout: sidebar
 title: Typography
+description: Headings, paragraphs, featured text, quotations, lists, links
 ---
 
 ## Basics

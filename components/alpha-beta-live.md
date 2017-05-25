@@ -1,6 +1,7 @@
 ---
 layout: sidebar
 title: Alpha & Beta
+description: Phase tags and banners to denote alpha and beta services
 ---
 
 <!--- 

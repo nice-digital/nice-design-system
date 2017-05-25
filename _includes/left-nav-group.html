@@ -1,0 +1,32 @@
+{% comment %}
+	Renders a group of pages for the left hand nav.
+	Example usage:
+		{% include left-nav-group.html nav="foundations" %}
+{% endcomment %}
+
+{% assign pageGroups = site.pages | group_by_exp: "p", "p.url | remove_first: '/' | split: '/' | first" %}
+{% assign pageGroup = pageGroups | where: "name", include.nav | first %}
+{% capture indexUrl %}/{{ pageGroup.name }}/{% endcapture %}
+{% assign index = pageGroup.items | where_exp: "pg","pg.url == indexUrl" | first %}
+
+{% if pageGroup.items %}
+	<li class="stacked-nav__item {% if page.url == index.url %}stacked-nav__item--active{% endif %}">
+		<a href="{{ site.baseurl }}{{ index.url }}" title="{{ index.description }}">
+			{{ index.nav | default: index.title }}
+		</a>
+
+		<ul class="stacked-nav__sub-list {% if page.url contains index.url %}stacked-nav__sub-list--active{% endif %}">
+			{% assign pages = pageGroup.items | where_exp: "pg", "pg.url != indexUrl" %}
+			{% for p in pages %}
+				{% assign depth = p.url | split: '/' | size %}
+				{% if depth == 3 %}
+					<li class="stacked-nav__item stacked-nav__item--level-2 {% if page.url contains p.url %}stacked-nav__item--active{% endif %}">
+						<a href="{{ site.baseurl }}{{ p.url }}" title="{{ p.description }}">
+							{{ p.nav | default: p.title }}
+						</a>
+					</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	</li>
+{% endif %}
