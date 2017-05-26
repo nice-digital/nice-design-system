@@ -56,10 +56,10 @@
 
     &--active .tabs__tab-btn { // sass-lint:disable-line no-combinators
       background: $colour-panel-default;
-      border-top: 1px solid $colour-border;
       border-left: 1px solid $colour-border;
       border-right: 1px solid $colour-border;
-      box-shadow: inset 0px em($spacing-x-small) 0px 0px $colour-nice-teal;
+      border-top: 1px solid $colour-border;
+      box-shadow: inset 0 em($spacing-x-small) 0 0 $colour-nice-teal;
       color: $colour-text;
       text-decoration: none;
     }
@@ -70,9 +70,9 @@
     @extend %link;
     background: 0;
     border: 0;
-    border-top: 1px solid transparent;
     border-left: 1px solid transparent;
     border-right: 1px solid transparent;
+    border-top: 1px solid transparent;
     cursor: pointer;
     display: block;
     margin: 0;

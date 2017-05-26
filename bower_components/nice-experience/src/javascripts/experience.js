@@ -1,8 +1,11 @@
 import pluginAutoLoader from "./plugin-autoloader";
 import Tabs from "./../components/tabs/tabs.js";
+import InPageNav from "./../components/in-page-nav/in-page-nav.js";
 import Tracker from "./tracker";
 import pluginizr from "./pluginizr";
 import eventr from "./eventr";
+import breakpoints from "./breakpoints";
+import utils from "./utils";
 
 let experience = {
 	init: (el: $) => {
@@ -15,12 +18,15 @@ let experience = {
 		pluginAutoLoader.findPlugins(el);
 	},
 	// Components
+	InPageNav: InPageNav,
 	Tabs: Tabs,
 	Tracker: Tracker,
 	// Utils
 	pluginAutoLoader: pluginAutoLoader,
 	pluginizr: pluginizr,
-	eventr: eventr
+	eventr: eventr,
+	breakpoints,
+	utils
 };
 
 $.fn.experience = function() {
@@ -34,10 +40,13 @@ window.NICE.experience = experience;
 export {
 	experience as default,
 	// Components
+	InPageNav,
 	Tabs,
 	Tracker,
 	// Utils
 	pluginAutoLoader,
 	pluginizr,
-	eventr
+	eventr,
+	breakpoints,
+	utils
 };

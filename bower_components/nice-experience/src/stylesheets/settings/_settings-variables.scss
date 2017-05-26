@@ -70,24 +70,23 @@ $nice-breakpoint-lg: 1200px !default;
 /// @since 0.2.0
 $nice-breakpoint-xl: 1600px !default;
 
-/// The default root font size in pixels
-/// @since 0.2.0
-$nice-mobile-root-size: 16 !default;
+/// The minimum root font size, in pixels
+/// @since 0.2.13
+$nice-root-font-size-min: 15;
 
-/// @since 0.2.0
-$nice-breakpoint-xs-root-size: 16 !default;
+/// The maximum root font size, used from breakpoint `$nice-root-font-size-max-breakpoint`
+/// @since 0.2.13
+$nice-root-font-size-max: 19;
 
-/// @since 0.2.0
-$nice-breakpoint-sm-root-size: 16 !default;
+/// The breakpoint at which the root font size starts changing from minimum
+/// towards maximum.
+/// @since 0.2.13
+$nice-root-font-size-min-breakpoint: $nice-breakpoint-md;
 
-/// @since 0.2.0
-$nice-breakpoint-md-root-size: 18 !default;
-
-/// @since 0.2.0
-$nice-breakpoint-lg-root-size: 18 !default;
-
-/// @since 0.2.0
-$nice-breakpoint-xl-root-size: 18 !default;
+/// The breakpoint at which the root font size stops changing and is at its maximum
+/// towards maximum.
+/// @since 0.2.13
+$nice-root-font-size-max-breakpoint: $nice-breakpoint-lg;
 
 /// Whether to output a default set of generic print styles for things
 /// like avoiding page breaks after headings etc. If you disabled this,

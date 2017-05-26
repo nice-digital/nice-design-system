@@ -12,26 +12,22 @@
 }
 
 html {
-  font-size: percentage($nice-mobile-root-size / $nice-base-font-size);
+  font-size: rem($nice-root-font-size-min);
 
-  @include mq($from: xs) {
-    font-size: percentage($nice-breakpoint-xs-root-size / $nice-base-font-size);
+  @include mq($from: $nice-root-font-size-min-breakpoint) {
+    // sass-lint:disable-block no-duplicate-properties
+
+    // Fallback halfway between max and min for older browsers that don't support calc
+    font-size: rem($nice-root-font-size-min + ($nice-root-font-size-max - $nice-root-font-size-min) / 2);
+    // Follows "fluid typography" rules: https://www.google.co.uk/search?q=fluid%20typography%20vw
+    // ie scales font-size linearly between 2 breakpoints.
+    // Also uses rems so that they're relative to browser font size.
+    // In form: MIN_FONT_SIZE + (MAX_FONT_SIZE - MIN_FONT_SIZE) * (100vw - MIN_SCREEN_SIZE) / (MAX_SCREEN_SIZE - MIN_SCREEN_SIZE)
+    font-size: calc(#{rem($nice-root-font-size-min)} + #{strip-unit(rem($nice-root-font-size-max) - rem($nice-root-font-size-min))} * ((100vw - #{rem($nice-root-font-size-min-breakpoint)}) / #{strip-unit(rem($nice-root-font-size-max-breakpoint) - rem($nice-root-font-size-min-breakpoint))}));
   }
 
-  @include mq($from: sm) {
-    font-size: percentage($nice-breakpoint-sm-root-size / $nice-base-font-size);
-  }
-
-  @include mq($from: md) {
-    font-size: percentage($nice-breakpoint-md-root-size / $nice-base-font-size);
-  }
-
-  @include mq($from: lg) {
-    font-size: percentage($nice-breakpoint-lg-root-size / $nice-base-font-size);
-  }
-
-  @include mq($from: xl) {
-    font-size: percentage($nice-breakpoint-xl-root-size / $nice-base-font-size);
+  @include mq($from: $nice-root-font-size-max-breakpoint) {
+    font-size: rem($nice-root-font-size-max);
   }
 }
 

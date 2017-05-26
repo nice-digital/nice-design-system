@@ -32,6 +32,8 @@ layout: master
 				{{ page.title }}
 			</h1>
 
+			<div data-inpagenav data-inpagenav-headings-container="[role='main']" data-inpagenav-wide-target="in-page-nav-target"></div>
+
 			{{ content }}
 
 			<p class="text-right">
@@ -44,8 +46,7 @@ layout: master
 
 		{% unless page.inpagenav == false %}
 		<aside class="page__inpagenav" role="complementary">
-			<div data-inpagenav>
-			</div>
+			<div id="in-page-nav-target"></div>
 		</aside>
 		{% endunless %}
 

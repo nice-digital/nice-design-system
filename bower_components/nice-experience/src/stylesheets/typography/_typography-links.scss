@@ -19,7 +19,6 @@
 
   &:focus {
     @include default-focus-style;
-    background-color: $colour-focus;
     color: $colour-link-focus-text;
   }
 
