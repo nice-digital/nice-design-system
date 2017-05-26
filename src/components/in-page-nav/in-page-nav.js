@@ -1,5 +1,4 @@
 import pluginizr from "../../javascripts/pluginizr";
-import eventr from "../../javascripts/eventr";
 import utils from "../../javascripts/utils";
 import { matchesFrom } from "../../javascripts/breakpoints";
 
@@ -227,7 +226,6 @@ export default class InPageNav {
 	 */
 	getActiveHeading(): ?HTMLHeadingElement {
 		let scrollTop = $(window).scrollTop(),
-			headings = this.headings,
 			activeHeading = this.headings && this.headings[0] || null;
 
 		$(this.headings).each((i, heading) => {
@@ -263,7 +261,7 @@ export default class InPageNav {
 	 */
 	generateHeadingId(heading: HTMLHeadingElement): HTMLHeadingElement {
 
-	 	if(heading.id) return heading;
+		if(heading.id) return heading;
 
 		let slug: string = utils.slugify(heading.textContent);
 

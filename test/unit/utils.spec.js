@@ -1,5 +1,4 @@
 /* eslint-env node, mocha, jquery */
-/* global sinon */
 
 import { slugify, nextUniqueId } from "../../src/javascripts/utils";
 

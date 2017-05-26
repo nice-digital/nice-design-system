@@ -15,7 +15,7 @@
  *          // returns "a-string-to-transform-and-slugify"
  *          slugify("A (string) to transform & slugify!");
  */
-export const slugify = (str: string):string => {
+export const slugify = (str: string): string => {
 	return str.toLowerCase().trim()
 		.replace(/\s+/g, "-")			// Replace spaces with -
 		.replace(/&/g, "-and-")			// Replace & with 'and'

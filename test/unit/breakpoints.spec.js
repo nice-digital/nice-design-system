@@ -1,3 +1,6 @@
+/* eslint-env node, mocha, jquery */
+/* global sinon */
+
 import breakpoints, { matchesFrom } from "../../src/javascripts/breakpoints";
 
 describe("breakpoints", function() {
@@ -43,14 +46,14 @@ describe("breakpoints", function() {
 
 	it("matchesFrom returns true when media query is matched", function() {
 		// Arrange
-		let matchMedia = sandbox.stub(window, "matchMedia", () => ({ matches: true }));
+		sandbox.stub(window, "matchMedia", () => ({ matches: true }));
 		// Act/assert
 		matchesFrom("xs").should.be.eql(true);
 	});
 
 	it("matchesFrom returns true when media query isn't matched", function() {
 		// Arrange
-		let matchMedia = sandbox.stub(window, "matchMedia", () => ({ matches: false }));
+		sandbox.stub(window, "matchMedia", () => ({ matches: false }));
 		// Act/assert
 		matchesFrom("xs").should.be.eql(false);
 	});
