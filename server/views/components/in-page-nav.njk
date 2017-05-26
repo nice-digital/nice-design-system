@@ -1,0 +1,105 @@
+{% extends "layouts/_layout.njk" %}
+{% set title = "In page nav" %}
+{% from "in-page-nav/in-page-nav.njk" import inPageNav %}
+
+{% block body %}
+
+	<div class="container">
+
+		<h1>In page nav</h1>
+
+		<div class="grid">
+			<div data-g="12 md:8">
+
+				{{ inPageNav({ target: "in-page-nav-target" }) }}
+
+				<h2>Lorem ipsum</h2>
+
+				<p>
+					Lorem
+					<br>
+					ipsum
+					<br>
+					ipsum
+					<br>
+					ipsum
+					<br>
+					ipsum
+					<br>
+					ipsum
+				</p>
+
+				<h3>Dolor sit amet</h3>
+
+				<p>
+					Lorem
+					<br>
+					ipsum
+					<br>
+					ipsum
+					<br>
+					ipsum
+					<br>
+					ipsum
+					<br>
+					ipsum
+				</p>
+
+				<h2>A heading 2</h2>
+
+				<h3>A heading 3</h3>
+
+				<p>
+					Lorem
+					<br>
+					ipsum
+					<br>
+					ipsum
+					<br>
+					ipsum
+					<br>
+					ipsum
+				</p>
+
+				<h4>Too deep</h4>
+
+				<p>
+					Lorem
+					<br>
+					ipsum
+				</p>
+
+				<h2>A third h2</h2>
+
+				<h3>Another h3</h3>
+
+				<p>
+					Lorem
+					<br>
+					ipsum
+					<br>
+					ipsum
+					<br>
+					ipsum
+					<br>
+					ipsum
+				</p>
+
+				<div data-no-inpagenav>
+
+					<h2>A heading</h2>
+
+					<h3>Not in in-page nav</h3>
+
+				</div>
+
+				<h2 data-no-inpagenav>Excluded heading</h2>
+
+			</div>
+			<div data-g="12 md:4">
+				<div id="in-page-nav-target">{# In page nav gets moved here for wider breakpoints #}</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
