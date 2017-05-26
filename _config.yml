@@ -37,6 +37,14 @@ sass:
       - _sass
       - bower_components/nice-experience/src/stylesheets
 
+# Defaults
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      inpagenav: true
+
 # Custom vars
 repository: https://github.com/nhsevidence/NICE-Experience
 

@@ -32,7 +32,9 @@ layout: master
 				{{ page.title }}
 			</h1>
 
-			<div data-inpagenav data-inpagenav-headings-container="[role='main']" data-inpagenav-wide-target="in-page-nav-target"></div>
+			{% if page.inpagenav == true %}
+				<div data-inpagenav data-inpagenav-headings-container="[role='main']" data-inpagenav-wide-target="in-page-nav-target"></div>
+			{% endif %}
 
 			{{ content }}
 
