@@ -857,7 +857,7 @@
       "context": {
         "type": "variable",
         "name": "colour-focus",
-        "value": "#ffd586",
+        "value": "#0092a6",
         "scope": "private",
         "line": {
           "start": 34,
@@ -889,24 +889,12 @@
               "end": 12
             }
           }
-        },
-        {
-          "description": "<p>Default link style for use on a normal (light) background</p>\n",
-          "context": {
-            "type": "placeholder",
-            "name": "link",
-            "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background-color: $colour-focus;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
-            "line": {
-              "start": 7,
-              "end": 29
-            }
-          }
         }
       ],
       "groupName": {
         "colors": "Colours"
       },
-      "resolvedValue": "#ffd586"
+      "resolvedValue": "#0092a6"
     },
     {
       "description": "<p>Icons colour</p>\n",
@@ -977,10 +965,10 @@
           "context": {
             "type": "placeholder",
             "name": "link",
-            "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background-color: $colour-focus;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+            "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
             "line": {
               "start": 7,
-              "end": 29
+              "end": 28
             }
           }
         }
@@ -1025,10 +1013,10 @@
           "context": {
             "type": "placeholder",
             "name": "link",
-            "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background-color: $colour-focus;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+            "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
             "line": {
               "start": 7,
-              "end": 29
+              "end": 28
             }
           }
         }
@@ -1073,10 +1061,10 @@
           "context": {
             "type": "placeholder",
             "name": "link",
-            "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background-color: $colour-focus;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+            "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
             "line": {
               "start": 7,
-              "end": 29
+              "end": 28
             }
           }
         }
@@ -1121,10 +1109,10 @@
           "context": {
             "type": "placeholder",
             "name": "link",
-            "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background-color: $colour-focus;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+            "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
             "line": {
               "start": 7,
-              "end": 29
+              "end": 28
             }
           }
         }
@@ -1169,10 +1157,10 @@
           "context": {
             "type": "placeholder",
             "name": "link",
-            "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background-color: $colour-focus;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+            "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
             "line": {
               "start": 7,
-              "end": 29
+              "end": 28
             }
           }
         }
@@ -1219,8 +1207,8 @@
             "name": "inverse-link",
             "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 33,
-              "end": 53
+              "start": 32,
+              "end": 52
             }
           }
         }
@@ -1267,8 +1255,8 @@
             "name": "inverse-link",
             "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 33,
-              "end": 53
+              "start": 32,
+              "end": 52
             }
           }
         }
@@ -1315,8 +1303,8 @@
             "name": "inverse-link",
             "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 33,
-              "end": 53
+              "start": 32,
+              "end": 52
             }
           }
         }
@@ -1363,8 +1351,8 @@
             "name": "inverse-link",
             "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 33,
-              "end": 53
+              "start": 32,
+              "end": 52
             }
           }
         }
@@ -1411,8 +1399,8 @@
             "name": "inverse-link",
             "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 33,
-              "end": 53
+              "start": 32,
+              "end": 52
             }
           }
         }
@@ -2524,6 +2512,33 @@
       }
     },
     {
+      "description": "<p>In page nav</p>\n",
+      "commentRange": {
+        "start": 5,
+        "end": 5
+      },
+      "context": {
+        "type": "css",
+        "name": ".in-page-nav",
+        "value": "// The 'on this page' title\n  &__title {\n    @include font-size(h2);\n  }\n\n  // Lists (both root level and sub level)\n  &__list {\n    margin-left: em($spacing-medium);\n\n    [aria-hidden='true'] {\n      display: none;\n    }\n  }\n\n  a {\n    &:visited {\n      color: $colour-link;\n    }\n\n    &:focus {\n      background: none;\n    }\n  }\n\n  @include mq($from: md) {\n    // Docked to the top of the screen\n    &--fixed {\n      position: fixed;\n      top: 0;\n    }\n\n    &__title {\n      @include font-size(h4);\n      margin-top: 0;\n    }\n\n    a {\n      &[aria-selected='true'] {\n        font-weight: bold;\n      }\n    }\n  }",
+        "line": {
+          "start": 6,
+          "end": 51
+        }
+      },
+      "group": [
+        "components"
+      ],
+      "access": "public",
+      "file": {
+        "path": "components\\in-page-nav\\_in-page-nav.scss",
+        "name": "_in-page-nav.scss"
+      },
+      "groupName": {
+        "components": "Components"
+      }
+    },
+    {
       "description": "<p>A phase banner includes a tag and a label and is designed\nto designate that a service is in alpha or beta.\nUsually contains a <code>.phase-tag</code>.</p>\n<p>BEM elements:</p>\n<ul>\n<li><code>__tag</code>   The tag itself</li>\n<li><code>__label</code> The label explaining</li>\n</ul>\n",
       "commentRange": {
         "start": 5,
@@ -2628,7 +2643,7 @@
       "context": {
         "type": "css",
         "name": ".tabs",
-        "value": "margin: em($spacing-medium 0 $spacing-large);\n\n  // The list of tabs\n  &__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n    position: relative;\n    top: 1px; // To cover the border around the tabs content\n  }\n\n  // Individual tab\n  &__tab {\n    float: left;\n\n    &--active .tabs__tab-btn { // sass-lint:disable-line no-combinators\n      background: $colour-panel-default;\n      border-top: 1px solid $colour-border;\n      border-left: 1px solid $colour-border;\n      border-right: 1px solid $colour-border;\n      box-shadow: inset 0px em($spacing-x-small) 0px 0px $colour-nice-teal;\n      color: $colour-text;\n      text-decoration: none;\n    }\n  }\n\n  // The button/link for the tab itself\n  &__tab-btn {\n    @extend %link;\n    background: 0;\n    border: 0;\n    border-top: 1px solid transparent;\n    border-left: 1px solid transparent;\n    border-right: 1px solid transparent;\n    cursor: pointer;\n    display: block;\n    margin: 0;\n    padding: em($spacing-medium $spacing-medium);\n  }\n\n  // The tab content containing the tab panels\n  &__content {\n    background: $colour-panel-default;\n    border: 1px solid $colour-border;\n    padding: em($spacing-medium);\n  }\n\n  // An individual tab content pane\n  &__pane {\n\n    // Assume tabs will stack if no JS is available\n    .js & {\n      display: none;\n\n      &--active {\n        display: block;\n      }\n    }\n\n    :first-child {\n      margin-top: 0;\n    }\n\n    :last-child {\n      margin-bottom: 0;\n    }\n  }",
+        "value": "margin: em($spacing-medium 0 $spacing-large);\n\n  // The list of tabs\n  &__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n    position: relative;\n    top: 1px; // To cover the border around the tabs content\n  }\n\n  // Individual tab\n  &__tab {\n    float: left;\n\n    &--active .tabs__tab-btn { // sass-lint:disable-line no-combinators\n      background: $colour-panel-default;\n      border-left: 1px solid $colour-border;\n      border-right: 1px solid $colour-border;\n      border-top: 1px solid $colour-border;\n      box-shadow: inset 0 em($spacing-x-small) 0 0 $colour-nice-teal;\n      color: $colour-text;\n      text-decoration: none;\n    }\n  }\n\n  // The button/link for the tab itself\n  &__tab-btn {\n    @extend %link;\n    background: 0;\n    border: 0;\n    border-left: 1px solid transparent;\n    border-right: 1px solid transparent;\n    border-top: 1px solid transparent;\n    cursor: pointer;\n    display: block;\n    margin: 0;\n    padding: em($spacing-medium $spacing-medium);\n  }\n\n  // The tab content containing the tab panels\n  &__content {\n    background: $colour-panel-default;\n    border: 1px solid $colour-border;\n    padding: em($spacing-medium);\n  }\n\n  // An individual tab content pane\n  &__pane {\n\n    // Assume tabs will stack if no JS is available\n    .js & {\n      display: none;\n\n      &--active {\n        display: block;\n      }\n    }\n\n    :first-child {\n      margin-top: 0;\n    }\n\n    :last-child {\n      margin-bottom: 0;\n    }\n  }",
         "line": {
           "start": 40,
           "end": 110
@@ -5691,7 +5706,7 @@
           "context": {
             "type": "placeholder",
             "name": "list",
-            "code": "\n  font-feature-settings: 'kern', 'onum', 'liga';\n  margin-left: rem($spacing-large);\n  padding: 0;\n",
+            "code": "\n  font-feature-settings: 'kern', 'onum', 'liga';\n  margin-left: rem($spacing-medium);\n  padding: 0;\n",
             "line": {
               "start": 7,
               "end": 11
@@ -8571,6 +8586,20 @@
         "path": "stylesheets\\settings\\_settings-spacing.scss",
         "name": "_settings-spacing.scss"
       },
+      "usedBy": [
+        {
+          "description": "<p>List placeholder</p>\n",
+          "context": {
+            "type": "placeholder",
+            "name": "list",
+            "code": "\n  font-feature-settings: 'kern', 'onum', 'liga';\n  margin-left: rem($spacing-medium);\n  padding: 0;\n",
+            "line": {
+              "start": 7,
+              "end": 11
+            }
+          }
+        }
+      ],
       "groupName": {
         "spacing": "Spacing"
       },
@@ -8605,20 +8634,6 @@
         "path": "stylesheets\\settings\\_settings-spacing.scss",
         "name": "_settings-spacing.scss"
       },
-      "usedBy": [
-        {
-          "description": "<p>List placeholder</p>\n",
-          "context": {
-            "type": "placeholder",
-            "name": "list",
-            "code": "\n  font-feature-settings: 'kern', 'onum', 'liga';\n  margin-left: rem($spacing-large);\n  padding: 0;\n",
-            "line": {
-              "start": 7,
-              "end": 11
-            }
-          }
-        }
-      ],
       "groupName": {
         "spacing": "Spacing"
       },
@@ -8733,10 +8748,10 @@
           "context": {
             "type": "placeholder",
             "name": "link",
-            "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background-color: $colour-focus;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+            "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
             "line": {
               "start": 7,
-              "end": 29
+              "end": 28
             }
           }
         }
@@ -8748,16 +8763,16 @@
     {
       "description": "<p>Mark</p>\n",
       "commentRange": {
-        "start": 86,
-        "end": 86
+        "start": 82,
+        "end": 82
       },
       "context": {
         "type": "css",
         "name": "mark,\n.mark",
         "value": "background-color: #fff999;\n  padding: em(4);",
         "line": {
-          "start": 88,
-          "end": 98
+          "start": 84,
+          "end": 94
         }
       },
       "group": [
@@ -8775,16 +8790,16 @@
     {
       "description": "<p>Small</p>\n",
       "commentRange": {
-        "start": 93,
-        "end": 93
+        "start": 89,
+        "end": 89
       },
       "context": {
         "type": "css",
         "name": "small,\n.small",
         "value": "font-size: 85%;",
         "line": {
-          "start": 95,
-          "end": 98
+          "start": 91,
+          "end": 94
         }
       },
       "group": [
@@ -9627,10 +9642,10 @@
       "context": {
         "type": "placeholder",
         "name": "link",
-        "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background-color: $colour-focus;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+        "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
         "line": {
           "start": 7,
-          "end": 29
+          "end": 28
         }
       },
       "since": [
@@ -9661,10 +9676,6 @@
         },
         {
           "type": "variable",
-          "name": "colour-focus"
-        },
-        {
-          "type": "variable",
           "name": "colour-link-focus-text"
         },
         {
@@ -9683,16 +9694,16 @@
     {
       "description": "<p>Inverse link style for use on an inverse (dark) background</p>\n",
       "commentRange": {
-        "start": 31,
-        "end": 32
+        "start": 30,
+        "end": 31
       },
       "context": {
         "type": "placeholder",
         "name": "inverse-link",
         "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
         "line": {
-          "start": 33,
-          "end": 53
+          "start": 32,
+          "end": 52
         }
       },
       "since": [
@@ -9738,8 +9749,8 @@
             "name": "inverse-links",
             "code": "\n  a {\n    @extend %inverse-link;\n  }\n",
             "line": {
-              "start": 57,
-              "end": 61
+              "start": 56,
+              "end": 60
             }
           }
         }
@@ -9751,16 +9762,16 @@
     {
       "description": "<p>Inverse links for use on a dark background</p>\n",
       "commentRange": {
-        "start": 55,
-        "end": 56
+        "start": 54,
+        "end": 55
       },
       "context": {
         "type": "placeholder",
         "name": "inverse-links",
         "code": "\n  a {\n    @extend %inverse-link;\n  }\n",
         "line": {
-          "start": 57,
-          "end": 61
+          "start": 56,
+          "end": 60
         }
       },
       "since": [
@@ -9802,8 +9813,8 @@
             "name": ".inverse-links",
             "value": "@extend %inverse-links;",
             "line": {
-              "start": 78,
-              "end": 81
+              "start": 77,
+              "end": 80
             }
           }
         }
@@ -9815,16 +9826,16 @@
     {
       "description": "<p>Inverse link for use on a dark background. Apply to an individual link.\nPrefer using <code>.inverse-links</code> on the container instead.</p>\n",
       "commentRange": {
-        "start": 67,
-        "end": 69
+        "start": 66,
+        "end": 68
       },
       "context": {
         "type": "css",
         "name": ".link--inverse",
         "value": "@extend %inverse-link;",
         "line": {
-          "start": 70,
-          "end": 81
+          "start": 69,
+          "end": 80
         }
       },
       "since": [
@@ -9847,16 +9858,16 @@
     {
       "description": "<p>Inverse links, for use on dark backgrounds e.g dark panels.\nUse this class on a containing element to apply to all links within it.</p>\n",
       "commentRange": {
-        "start": 74,
-        "end": 77
+        "start": 73,
+        "end": 76
       },
       "context": {
         "type": "css",
         "name": ".inverse-links",
         "value": "@extend %inverse-links;",
         "line": {
-          "start": 78,
-          "end": 81
+          "start": 77,
+          "end": 80
         }
       },
       "require": [
@@ -9892,7 +9903,7 @@
       "context": {
         "type": "placeholder",
         "name": "list",
-        "code": "\n  font-feature-settings: 'kern', 'onum', 'liga';\n  margin-left: rem($spacing-large);\n  padding: 0;\n",
+        "code": "\n  font-feature-settings: 'kern', 'onum', 'liga';\n  margin-left: rem($spacing-medium);\n  padding: 0;\n",
         "line": {
           "start": 7,
           "end": 11
@@ -9914,7 +9925,7 @@
         },
         {
           "type": "variable",
-          "name": "spacing-large"
+          "name": "spacing-medium"
         }
       ],
       "file": {
@@ -9934,10 +9945,10 @@
       "context": {
         "type": "css",
         "name": ".list",
-        "value": "@extend %list;\n\n  // TODO: Do we need featured lists?\n  &--featured {\n    list-style: none outside;\n\n    li,\n    .list__item {\n      position: relative;\n\n      &:before {\n        color: $colour-nice-teal;\n        content: get-glyph(bullet);\n        font-size: 150%;\n        left: -1.5rem;\n        position: absolute;\n        top: 0;\n\n        @media print {\n          color: $colour-true-black;\n        }\n      }\n    }\n  }",
+        "value": "@extend %list;",
         "line": {
           "start": 22,
-          "end": 68
+          "end": 45
         }
       },
       "see": [
@@ -9948,8 +9959,8 @@
             "name": ".list--unstyled",
             "value": "list-style: none;\n  margin-left: 0;\n  padding: 0;",
             "line": {
-              "start": 54,
-              "end": 68
+              "start": 31,
+              "end": 45
             }
           }
         },
@@ -9960,8 +9971,8 @@
             "name": ".list--loose",
             "value": "li,\n  .list__item {\n    margin-bottom: rem($spacing-x-small);\n  }",
             "line": {
-              "start": 62,
-              "end": 68
+              "start": 39,
+              "end": 45
             }
           }
         }
@@ -9986,16 +9997,16 @@
     {
       "description": "<p>Unstyled list modifier - remove bullets, padding etc.\nUsed as a modifier for <code>.list</code>.\nOften used for lists of links.</p>\n",
       "commentRange": {
-        "start": 49,
-        "end": 53
+        "start": 26,
+        "end": 30
       },
       "context": {
         "type": "css",
         "name": ".list--unstyled",
         "value": "list-style: none;\n  margin-left: 0;\n  padding: 0;",
         "line": {
-          "start": 54,
-          "end": 68
+          "start": 31,
+          "end": 45
         }
       },
       "require": [
@@ -10025,16 +10036,16 @@
     {
       "description": "<p>Loose list style - with a gap between list items</p>\n",
       "commentRange": {
-        "start": 60,
-        "end": 61
+        "start": 37,
+        "end": 38
       },
       "context": {
         "type": "css",
         "name": ".list--loose",
         "value": "li,\n  .list__item {\n    margin-bottom: rem($spacing-x-small);\n  }",
         "line": {
-          "start": 62,
-          "end": 68
+          "start": 39,
+          "end": 45
         }
       },
       "since": [
@@ -10218,11 +10229,11 @@
       "context": {
         "type": "variable",
         "name": "font-sizes",
-        "value": "(\n  // sass-lint:disable-block space-around-operator\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  2: (\n    fs: 4 * 5,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  3: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  4: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  5: (\n    fs: 4 * 6,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 11,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)",
+        "value": "(\n  // sass-lint:disable-block space-around-operator\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 11,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)",
         "scope": "private",
         "line": {
           "start": 27,
-          "end": 92
+          "end": 100
         }
       },
       "since": [
@@ -10279,7 +10290,7 @@
       "groupName": {
         "typography": "Typography"
       },
-      "resolvedValue": "(\n  // sass-lint:disable-block space-around-operator\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  2: (\n    fs: 4 * 5,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  3: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  4: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  5: (\n    fs: 4 * 6,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 11,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)"
+      "resolvedValue": "(\n  // sass-lint:disable-block space-around-operator\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 11,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)"
     },
     {
       "description": "<p>Modular scale values</p>\n",
@@ -11186,16 +11197,16 @@
       "resolvedValue": "1600px"
     },
     {
-      "description": "<p>The default root font size in pixels</p>\n",
+      "description": "<p>The minimum root font size, in pixels</p>\n",
       "commentRange": {
         "start": 73,
         "end": 74
       },
       "context": {
         "type": "variable",
-        "name": "nice-mobile-root-size",
-        "value": "16",
-        "scope": "default",
+        "name": "nice-root-font-size-min",
+        "value": "15",
+        "scope": "private",
         "line": {
           "start": 75,
           "end": 75
@@ -11203,7 +11214,7 @@
       },
       "since": [
         {
-          "version": "0.2.0"
+          "version": "0.2.13"
         }
       ],
       "access": "public",
@@ -11217,27 +11228,27 @@
       "groupName": {
         "undefined": "Ungrouped"
       },
-      "resolvedValue": "16"
+      "resolvedValue": "15"
     },
     {
-      "description": "",
+      "description": "<p>The maximum root font size, used from breakpoint <code>$nice-root-font-size-max-breakpoint</code></p>\n",
       "commentRange": {
         "start": 77,
-        "end": 77
+        "end": 78
       },
       "context": {
         "type": "variable",
-        "name": "nice-breakpoint-xs-root-size",
-        "value": "16",
-        "scope": "default",
+        "name": "nice-root-font-size-max",
+        "value": "19",
+        "scope": "private",
         "line": {
-          "start": 78,
-          "end": 78
+          "start": 79,
+          "end": 79
         }
       },
       "since": [
         {
-          "version": "0.2.0"
+          "version": "0.2.13"
         }
       ],
       "access": "public",
@@ -11251,53 +11262,19 @@
       "groupName": {
         "undefined": "Ungrouped"
       },
-      "resolvedValue": "16"
+      "resolvedValue": "19"
     },
     {
-      "description": "",
+      "description": "<p>The breakpoint at which the root font size starts changing from minimum\ntowards maximum.</p>\n",
       "commentRange": {
-        "start": 80,
-        "end": 80
-      },
-      "context": {
-        "type": "variable",
-        "name": "nice-breakpoint-sm-root-size",
-        "value": "16",
-        "scope": "default",
-        "line": {
-          "start": 81,
-          "end": 81
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "access": "public",
-      "group": [
-        "undefined"
-      ],
-      "file": {
-        "path": "stylesheets\\settings\\_settings-variables.scss",
-        "name": "_settings-variables.scss"
-      },
-      "groupName": {
-        "undefined": "Ungrouped"
-      },
-      "resolvedValue": "16"
-    },
-    {
-      "description": "",
-      "commentRange": {
-        "start": 83,
+        "start": 81,
         "end": 83
       },
       "context": {
         "type": "variable",
-        "name": "nice-breakpoint-md-root-size",
-        "value": "18",
-        "scope": "default",
+        "name": "nice-root-font-size-min-breakpoint",
+        "value": "$nice-breakpoint-md",
+        "scope": "private",
         "line": {
           "start": 84,
           "end": 84
@@ -11305,7 +11282,7 @@
       },
       "since": [
         {
-          "version": "0.2.0"
+          "version": "0.2.13"
         }
       ],
       "access": "public",
@@ -11319,27 +11296,27 @@
       "groupName": {
         "undefined": "Ungrouped"
       },
-      "resolvedValue": "18"
+      "resolvedValue": "900px"
     },
     {
-      "description": "",
+      "description": "<p>The breakpoint at which the root font size stops changing and is at its maximum\ntowards maximum.</p>\n",
       "commentRange": {
         "start": 86,
-        "end": 86
+        "end": 88
       },
       "context": {
         "type": "variable",
-        "name": "nice-breakpoint-lg-root-size",
-        "value": "18",
-        "scope": "default",
+        "name": "nice-root-font-size-max-breakpoint",
+        "value": "$nice-breakpoint-lg",
+        "scope": "private",
         "line": {
-          "start": 87,
-          "end": 87
+          "start": 89,
+          "end": 89
         }
       },
       "since": [
         {
-          "version": "0.2.0"
+          "version": "0.2.13"
         }
       ],
       "access": "public",
@@ -11353,47 +11330,13 @@
       "groupName": {
         "undefined": "Ungrouped"
       },
-      "resolvedValue": "18"
-    },
-    {
-      "description": "",
-      "commentRange": {
-        "start": 89,
-        "end": 89
-      },
-      "context": {
-        "type": "variable",
-        "name": "nice-breakpoint-xl-root-size",
-        "value": "18",
-        "scope": "default",
-        "line": {
-          "start": 90,
-          "end": 90
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "access": "public",
-      "group": [
-        "undefined"
-      ],
-      "file": {
-        "path": "stylesheets\\settings\\_settings-variables.scss",
-        "name": "_settings-variables.scss"
-      },
-      "groupName": {
-        "undefined": "Ungrouped"
-      },
-      "resolvedValue": "18"
+      "resolvedValue": "1200px"
     },
     {
       "description": "<p>Whether to output a default set of generic print styles for things\nlike avoiding page breaks after headings etc. If you disabled this,\nbe sure to add your own print styles.</p>\n",
       "commentRange": {
-        "start": 92,
-        "end": 95
+        "start": 91,
+        "end": 94
       },
       "context": {
         "type": "variable",
@@ -11401,8 +11344,8 @@
         "value": "true",
         "scope": "default",
         "line": {
-          "start": 96,
-          "end": 96
+          "start": 95,
+          "end": 95
         }
       },
       "since": [
@@ -11426,8 +11369,8 @@
     {
       "description": "<p>Whether to output the classes for the UTF-8 glyphs.</p>\n",
       "commentRange": {
-        "start": 98,
-        "end": 99
+        "start": 97,
+        "end": 98
       },
       "context": {
         "type": "variable",
@@ -11435,8 +11378,8 @@
         "value": "false",
         "scope": "default",
         "line": {
-          "start": 100,
-          "end": 100
+          "start": 99,
+          "end": 99
         }
       },
       "since": [
@@ -11460,8 +11403,8 @@
     {
       "description": "<p>Whether the site is responsive. Setting to false will disable\ngeneration of the responsie grid selectors.\nTrue by default.</p>\n",
       "commentRange": {
-        "start": 102,
-        "end": 105
+        "start": 101,
+        "end": 104
       },
       "context": {
         "type": "variable",
@@ -11469,8 +11412,8 @@
         "value": "true",
         "scope": "default",
         "line": {
-          "start": 106,
-          "end": 106
+          "start": 105,
+          "end": 105
         }
       },
       "since": [
@@ -12299,7 +12242,7 @@
           "context": {
             "type": "variable",
             "name": "colour-focus",
-            "value": "#ffd586",
+            "value": "#0092a6",
             "scope": "private",
             "line": {
               "start": 34,
@@ -12331,24 +12274,12 @@
                   "end": 12
                 }
               }
-            },
-            {
-              "description": "<p>Default link style for use on a normal (light) background</p>\n",
-              "context": {
-                "type": "placeholder",
-                "name": "link",
-                "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background-color: $colour-focus;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
-                "line": {
-                  "start": 7,
-                  "end": 29
-                }
-              }
             }
           ],
           "groupName": {
             "colors": "Colours"
           },
-          "resolvedValue": "#ffd586"
+          "resolvedValue": "#0092a6"
         },
         {
           "description": "<p>Icons colour</p>\n",
@@ -12419,10 +12350,10 @@
               "context": {
                 "type": "placeholder",
                 "name": "link",
-                "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background-color: $colour-focus;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+                "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
                 "line": {
                   "start": 7,
-                  "end": 29
+                  "end": 28
                 }
               }
             }
@@ -12467,10 +12398,10 @@
               "context": {
                 "type": "placeholder",
                 "name": "link",
-                "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background-color: $colour-focus;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+                "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
                 "line": {
                   "start": 7,
-                  "end": 29
+                  "end": 28
                 }
               }
             }
@@ -12515,10 +12446,10 @@
               "context": {
                 "type": "placeholder",
                 "name": "link",
-                "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background-color: $colour-focus;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+                "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
                 "line": {
                   "start": 7,
-                  "end": 29
+                  "end": 28
                 }
               }
             }
@@ -12563,10 +12494,10 @@
               "context": {
                 "type": "placeholder",
                 "name": "link",
-                "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background-color: $colour-focus;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+                "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
                 "line": {
                   "start": 7,
-                  "end": 29
+                  "end": 28
                 }
               }
             }
@@ -12611,10 +12542,10 @@
               "context": {
                 "type": "placeholder",
                 "name": "link",
-                "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background-color: $colour-focus;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+                "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
                 "line": {
                   "start": 7,
-                  "end": 29
+                  "end": 28
                 }
               }
             }
@@ -12661,8 +12592,8 @@
                 "name": "inverse-link",
                 "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 33,
-                  "end": 53
+                  "start": 32,
+                  "end": 52
                 }
               }
             }
@@ -12709,8 +12640,8 @@
                 "name": "inverse-link",
                 "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 33,
-                  "end": 53
+                  "start": 32,
+                  "end": 52
                 }
               }
             }
@@ -12757,8 +12688,8 @@
                 "name": "inverse-link",
                 "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 33,
-                  "end": 53
+                  "start": 32,
+                  "end": 52
                 }
               }
             }
@@ -12805,8 +12736,8 @@
                 "name": "inverse-link",
                 "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 33,
-                  "end": 53
+                  "start": 32,
+                  "end": 52
                 }
               }
             }
@@ -12853,8 +12784,8 @@
                 "name": "inverse-link",
                 "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 33,
-                  "end": 53
+                  "start": 32,
+                  "end": 52
                 }
               }
             }
@@ -13970,6 +13901,33 @@
           }
         },
         {
+          "description": "<p>In page nav</p>\n",
+          "commentRange": {
+            "start": 5,
+            "end": 5
+          },
+          "context": {
+            "type": "css",
+            "name": ".in-page-nav",
+            "value": "// The 'on this page' title\n  &__title {\n    @include font-size(h2);\n  }\n\n  // Lists (both root level and sub level)\n  &__list {\n    margin-left: em($spacing-medium);\n\n    [aria-hidden='true'] {\n      display: none;\n    }\n  }\n\n  a {\n    &:visited {\n      color: $colour-link;\n    }\n\n    &:focus {\n      background: none;\n    }\n  }\n\n  @include mq($from: md) {\n    // Docked to the top of the screen\n    &--fixed {\n      position: fixed;\n      top: 0;\n    }\n\n    &__title {\n      @include font-size(h4);\n      margin-top: 0;\n    }\n\n    a {\n      &[aria-selected='true'] {\n        font-weight: bold;\n      }\n    }\n  }",
+            "line": {
+              "start": 6,
+              "end": 51
+            }
+          },
+          "group": [
+            "components"
+          ],
+          "access": "public",
+          "file": {
+            "path": "components\\in-page-nav\\_in-page-nav.scss",
+            "name": "_in-page-nav.scss"
+          },
+          "groupName": {
+            "components": "Components"
+          }
+        },
+        {
           "description": "<p>A phase banner includes a tag and a label and is designed\nto designate that a service is in alpha or beta.\nUsually contains a <code>.phase-tag</code>.</p>\n<p>BEM elements:</p>\n<ul>\n<li><code>__tag</code>   The tag itself</li>\n<li><code>__label</code> The label explaining</li>\n</ul>\n",
           "commentRange": {
             "start": 5,
@@ -14074,7 +14032,7 @@
           "context": {
             "type": "css",
             "name": ".tabs",
-            "value": "margin: em($spacing-medium 0 $spacing-large);\n\n  // The list of tabs\n  &__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n    position: relative;\n    top: 1px; // To cover the border around the tabs content\n  }\n\n  // Individual tab\n  &__tab {\n    float: left;\n\n    &--active .tabs__tab-btn { // sass-lint:disable-line no-combinators\n      background: $colour-panel-default;\n      border-top: 1px solid $colour-border;\n      border-left: 1px solid $colour-border;\n      border-right: 1px solid $colour-border;\n      box-shadow: inset 0px em($spacing-x-small) 0px 0px $colour-nice-teal;\n      color: $colour-text;\n      text-decoration: none;\n    }\n  }\n\n  // The button/link for the tab itself\n  &__tab-btn {\n    @extend %link;\n    background: 0;\n    border: 0;\n    border-top: 1px solid transparent;\n    border-left: 1px solid transparent;\n    border-right: 1px solid transparent;\n    cursor: pointer;\n    display: block;\n    margin: 0;\n    padding: em($spacing-medium $spacing-medium);\n  }\n\n  // The tab content containing the tab panels\n  &__content {\n    background: $colour-panel-default;\n    border: 1px solid $colour-border;\n    padding: em($spacing-medium);\n  }\n\n  // An individual tab content pane\n  &__pane {\n\n    // Assume tabs will stack if no JS is available\n    .js & {\n      display: none;\n\n      &--active {\n        display: block;\n      }\n    }\n\n    :first-child {\n      margin-top: 0;\n    }\n\n    :last-child {\n      margin-bottom: 0;\n    }\n  }",
+            "value": "margin: em($spacing-medium 0 $spacing-large);\n\n  // The list of tabs\n  &__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n    position: relative;\n    top: 1px; // To cover the border around the tabs content\n  }\n\n  // Individual tab\n  &__tab {\n    float: left;\n\n    &--active .tabs__tab-btn { // sass-lint:disable-line no-combinators\n      background: $colour-panel-default;\n      border-left: 1px solid $colour-border;\n      border-right: 1px solid $colour-border;\n      border-top: 1px solid $colour-border;\n      box-shadow: inset 0 em($spacing-x-small) 0 0 $colour-nice-teal;\n      color: $colour-text;\n      text-decoration: none;\n    }\n  }\n\n  // The button/link for the tab itself\n  &__tab-btn {\n    @extend %link;\n    background: 0;\n    border: 0;\n    border-left: 1px solid transparent;\n    border-right: 1px solid transparent;\n    border-top: 1px solid transparent;\n    cursor: pointer;\n    display: block;\n    margin: 0;\n    padding: em($spacing-medium $spacing-medium);\n  }\n\n  // The tab content containing the tab panels\n  &__content {\n    background: $colour-panel-default;\n    border: 1px solid $colour-border;\n    padding: em($spacing-medium);\n  }\n\n  // An individual tab content pane\n  &__pane {\n\n    // Assume tabs will stack if no JS is available\n    .js & {\n      display: none;\n\n      &--active {\n        display: block;\n      }\n    }\n\n    :first-child {\n      margin-top: 0;\n    }\n\n    :last-child {\n      margin-bottom: 0;\n    }\n  }",
             "line": {
               "start": 40,
               "end": 110
@@ -17447,7 +17405,7 @@
               "context": {
                 "type": "placeholder",
                 "name": "list",
-                "code": "\n  font-feature-settings: 'kern', 'onum', 'liga';\n  margin-left: rem($spacing-large);\n  padding: 0;\n",
+                "code": "\n  font-feature-settings: 'kern', 'onum', 'liga';\n  margin-left: rem($spacing-medium);\n  padding: 0;\n",
                 "line": {
                   "start": 7,
                   "end": 11
@@ -20057,6 +20015,20 @@
             "path": "stylesheets\\settings\\_settings-spacing.scss",
             "name": "_settings-spacing.scss"
           },
+          "usedBy": [
+            {
+              "description": "<p>List placeholder</p>\n",
+              "context": {
+                "type": "placeholder",
+                "name": "list",
+                "code": "\n  font-feature-settings: 'kern', 'onum', 'liga';\n  margin-left: rem($spacing-medium);\n  padding: 0;\n",
+                "line": {
+                  "start": 7,
+                  "end": 11
+                }
+              }
+            }
+          ],
           "groupName": {
             "spacing": "Spacing"
           },
@@ -20091,20 +20063,6 @@
             "path": "stylesheets\\settings\\_settings-spacing.scss",
             "name": "_settings-spacing.scss"
           },
-          "usedBy": [
-            {
-              "description": "<p>List placeholder</p>\n",
-              "context": {
-                "type": "placeholder",
-                "name": "list",
-                "code": "\n  font-feature-settings: 'kern', 'onum', 'liga';\n  margin-left: rem($spacing-large);\n  padding: 0;\n",
-                "line": {
-                  "start": 7,
-                  "end": 11
-                }
-              }
-            }
-          ],
           "groupName": {
             "spacing": "Spacing"
           },
@@ -20223,10 +20181,10 @@
               "context": {
                 "type": "placeholder",
                 "name": "link",
-                "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background-color: $colour-focus;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+                "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
                 "line": {
                   "start": 7,
-                  "end": 29
+                  "end": 28
                 }
               }
             }
@@ -20742,16 +20700,16 @@
         {
           "description": "<p>Mark</p>\n",
           "commentRange": {
-            "start": 86,
-            "end": 86
+            "start": 82,
+            "end": 82
           },
           "context": {
             "type": "css",
             "name": "mark,\n.mark",
             "value": "background-color: #fff999;\n  padding: em(4);",
             "line": {
-              "start": 88,
-              "end": 98
+              "start": 84,
+              "end": 94
             }
           },
           "group": [
@@ -20769,16 +20727,16 @@
         {
           "description": "<p>Small</p>\n",
           "commentRange": {
-            "start": 93,
-            "end": 93
+            "start": 89,
+            "end": 89
           },
           "context": {
             "type": "css",
             "name": "small,\n.small",
             "value": "font-size: 85%;",
             "line": {
-              "start": 95,
-              "end": 98
+              "start": 91,
+              "end": 94
             }
           },
           "group": [
@@ -20823,16 +20781,16 @@
         {
           "description": "<p>Inverse link for use on a dark background. Apply to an individual link.\nPrefer using <code>.inverse-links</code> on the container instead.</p>\n",
           "commentRange": {
-            "start": 67,
-            "end": 69
+            "start": 66,
+            "end": 68
           },
           "context": {
             "type": "css",
             "name": ".link--inverse",
             "value": "@extend %inverse-link;",
             "line": {
-              "start": 70,
-              "end": 81
+              "start": 69,
+              "end": 80
             }
           },
           "since": [
@@ -20855,16 +20813,16 @@
         {
           "description": "<p>Inverse links, for use on dark backgrounds e.g dark panels.\nUse this class on a containing element to apply to all links within it.</p>\n",
           "commentRange": {
-            "start": 74,
-            "end": 77
+            "start": 73,
+            "end": 76
           },
           "context": {
             "type": "css",
             "name": ".inverse-links",
             "value": "@extend %inverse-links;",
             "line": {
-              "start": 78,
-              "end": 81
+              "start": 77,
+              "end": 80
             }
           },
           "require": [
@@ -20900,10 +20858,10 @@
           "context": {
             "type": "css",
             "name": ".list",
-            "value": "@extend %list;\n\n  // TODO: Do we need featured lists?\n  &--featured {\n    list-style: none outside;\n\n    li,\n    .list__item {\n      position: relative;\n\n      &:before {\n        color: $colour-nice-teal;\n        content: get-glyph(bullet);\n        font-size: 150%;\n        left: -1.5rem;\n        position: absolute;\n        top: 0;\n\n        @media print {\n          color: $colour-true-black;\n        }\n      }\n    }\n  }",
+            "value": "@extend %list;",
             "line": {
               "start": 22,
-              "end": 68
+              "end": 45
             }
           },
           "see": [
@@ -20914,8 +20872,8 @@
                 "name": ".list--unstyled",
                 "value": "list-style: none;\n  margin-left: 0;\n  padding: 0;",
                 "line": {
-                  "start": 54,
-                  "end": 68
+                  "start": 31,
+                  "end": 45
                 }
               }
             },
@@ -20926,8 +20884,8 @@
                 "name": ".list--loose",
                 "value": "li,\n  .list__item {\n    margin-bottom: rem($spacing-x-small);\n  }",
                 "line": {
-                  "start": 62,
-                  "end": 68
+                  "start": 39,
+                  "end": 45
                 }
               }
             }
@@ -20952,16 +20910,16 @@
         {
           "description": "<p>Unstyled list modifier - remove bullets, padding etc.\nUsed as a modifier for <code>.list</code>.\nOften used for lists of links.</p>\n",
           "commentRange": {
-            "start": 49,
-            "end": 53
+            "start": 26,
+            "end": 30
           },
           "context": {
             "type": "css",
             "name": ".list--unstyled",
             "value": "list-style: none;\n  margin-left: 0;\n  padding: 0;",
             "line": {
-              "start": 54,
-              "end": 68
+              "start": 31,
+              "end": 45
             }
           },
           "require": [
@@ -20991,16 +20949,16 @@
         {
           "description": "<p>Loose list style - with a gap between list items</p>\n",
           "commentRange": {
-            "start": 60,
-            "end": 61
+            "start": 37,
+            "end": 38
           },
           "context": {
             "type": "css",
             "name": ".list--loose",
             "value": "li,\n  .list__item {\n    margin-bottom: rem($spacing-x-small);\n  }",
             "line": {
-              "start": 62,
-              "end": 68
+              "start": 39,
+              "end": 45
             }
           },
           "since": [
@@ -21355,10 +21313,10 @@
           "context": {
             "type": "placeholder",
             "name": "link",
-            "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background-color: $colour-focus;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+            "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
             "line": {
               "start": 7,
-              "end": 29
+              "end": 28
             }
           },
           "since": [
@@ -21389,10 +21347,6 @@
             },
             {
               "type": "variable",
-              "name": "colour-focus"
-            },
-            {
-              "type": "variable",
               "name": "colour-link-focus-text"
             },
             {
@@ -21411,16 +21365,16 @@
         {
           "description": "<p>Inverse link style for use on an inverse (dark) background</p>\n",
           "commentRange": {
-            "start": 31,
-            "end": 32
+            "start": 30,
+            "end": 31
           },
           "context": {
             "type": "placeholder",
             "name": "inverse-link",
             "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 33,
-              "end": 53
+              "start": 32,
+              "end": 52
             }
           },
           "since": [
@@ -21466,8 +21420,8 @@
                 "name": "inverse-links",
                 "code": "\n  a {\n    @extend %inverse-link;\n  }\n",
                 "line": {
-                  "start": 57,
-                  "end": 61
+                  "start": 56,
+                  "end": 60
                 }
               }
             }
@@ -21479,16 +21433,16 @@
         {
           "description": "<p>Inverse links for use on a dark background</p>\n",
           "commentRange": {
-            "start": 55,
-            "end": 56
+            "start": 54,
+            "end": 55
           },
           "context": {
             "type": "placeholder",
             "name": "inverse-links",
             "code": "\n  a {\n    @extend %inverse-link;\n  }\n",
             "line": {
-              "start": 57,
-              "end": 61
+              "start": 56,
+              "end": 60
             }
           },
           "since": [
@@ -21530,8 +21484,8 @@
                 "name": ".inverse-links",
                 "value": "@extend %inverse-links;",
                 "line": {
-                  "start": 78,
-                  "end": 81
+                  "start": 77,
+                  "end": 80
                 }
               }
             }
@@ -21549,7 +21503,7 @@
           "context": {
             "type": "placeholder",
             "name": "list",
-            "code": "\n  font-feature-settings: 'kern', 'onum', 'liga';\n  margin-left: rem($spacing-large);\n  padding: 0;\n",
+            "code": "\n  font-feature-settings: 'kern', 'onum', 'liga';\n  margin-left: rem($spacing-medium);\n  padding: 0;\n",
             "line": {
               "start": 7,
               "end": 11
@@ -21571,7 +21525,7 @@
             },
             {
               "type": "variable",
-              "name": "spacing-large"
+              "name": "spacing-medium"
             }
           ],
           "file": {
@@ -21716,11 +21670,11 @@
           "context": {
             "type": "variable",
             "name": "font-sizes",
-            "value": "(\n  // sass-lint:disable-block space-around-operator\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  2: (\n    fs: 4 * 5,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  3: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  4: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  5: (\n    fs: 4 * 6,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 11,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)",
+            "value": "(\n  // sass-lint:disable-block space-around-operator\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 11,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)",
             "scope": "private",
             "line": {
               "start": 27,
-              "end": 92
+              "end": 100
             }
           },
           "since": [
@@ -21777,7 +21731,7 @@
           "groupName": {
             "typography": "Typography"
           },
-          "resolvedValue": "(\n  // sass-lint:disable-block space-around-operator\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  2: (\n    fs: 4 * 5,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  3: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  4: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  5: (\n    fs: 4 * 6,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 11,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)"
+          "resolvedValue": "(\n  // sass-lint:disable-block space-around-operator\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 11,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)"
         }
       ]
     },
@@ -22629,16 +22583,16 @@
           "resolvedValue": "1600px"
         },
         {
-          "description": "<p>The default root font size in pixels</p>\n",
+          "description": "<p>The minimum root font size, in pixels</p>\n",
           "commentRange": {
             "start": 73,
             "end": 74
           },
           "context": {
             "type": "variable",
-            "name": "nice-mobile-root-size",
-            "value": "16",
-            "scope": "default",
+            "name": "nice-root-font-size-min",
+            "value": "15",
+            "scope": "private",
             "line": {
               "start": 75,
               "end": 75
@@ -22646,7 +22600,7 @@
           },
           "since": [
             {
-              "version": "0.2.0"
+              "version": "0.2.13"
             }
           ],
           "access": "public",
@@ -22660,27 +22614,27 @@
           "groupName": {
             "undefined": "Ungrouped"
           },
-          "resolvedValue": "16"
+          "resolvedValue": "15"
         },
         {
-          "description": "",
+          "description": "<p>The maximum root font size, used from breakpoint <code>$nice-root-font-size-max-breakpoint</code></p>\n",
           "commentRange": {
             "start": 77,
-            "end": 77
+            "end": 78
           },
           "context": {
             "type": "variable",
-            "name": "nice-breakpoint-xs-root-size",
-            "value": "16",
-            "scope": "default",
+            "name": "nice-root-font-size-max",
+            "value": "19",
+            "scope": "private",
             "line": {
-              "start": 78,
-              "end": 78
+              "start": 79,
+              "end": 79
             }
           },
           "since": [
             {
-              "version": "0.2.0"
+              "version": "0.2.13"
             }
           ],
           "access": "public",
@@ -22694,53 +22648,19 @@
           "groupName": {
             "undefined": "Ungrouped"
           },
-          "resolvedValue": "16"
+          "resolvedValue": "19"
         },
         {
-          "description": "",
+          "description": "<p>The breakpoint at which the root font size starts changing from minimum\ntowards maximum.</p>\n",
           "commentRange": {
-            "start": 80,
-            "end": 80
-          },
-          "context": {
-            "type": "variable",
-            "name": "nice-breakpoint-sm-root-size",
-            "value": "16",
-            "scope": "default",
-            "line": {
-              "start": 81,
-              "end": 81
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "access": "public",
-          "group": [
-            "undefined"
-          ],
-          "file": {
-            "path": "stylesheets\\settings\\_settings-variables.scss",
-            "name": "_settings-variables.scss"
-          },
-          "groupName": {
-            "undefined": "Ungrouped"
-          },
-          "resolvedValue": "16"
-        },
-        {
-          "description": "",
-          "commentRange": {
-            "start": 83,
+            "start": 81,
             "end": 83
           },
           "context": {
             "type": "variable",
-            "name": "nice-breakpoint-md-root-size",
-            "value": "18",
-            "scope": "default",
+            "name": "nice-root-font-size-min-breakpoint",
+            "value": "$nice-breakpoint-md",
+            "scope": "private",
             "line": {
               "start": 84,
               "end": 84
@@ -22748,7 +22668,7 @@
           },
           "since": [
             {
-              "version": "0.2.0"
+              "version": "0.2.13"
             }
           ],
           "access": "public",
@@ -22762,27 +22682,27 @@
           "groupName": {
             "undefined": "Ungrouped"
           },
-          "resolvedValue": "18"
+          "resolvedValue": "900px"
         },
         {
-          "description": "",
+          "description": "<p>The breakpoint at which the root font size stops changing and is at its maximum\ntowards maximum.</p>\n",
           "commentRange": {
             "start": 86,
-            "end": 86
+            "end": 88
           },
           "context": {
             "type": "variable",
-            "name": "nice-breakpoint-lg-root-size",
-            "value": "18",
-            "scope": "default",
+            "name": "nice-root-font-size-max-breakpoint",
+            "value": "$nice-breakpoint-lg",
+            "scope": "private",
             "line": {
-              "start": 87,
-              "end": 87
+              "start": 89,
+              "end": 89
             }
           },
           "since": [
             {
-              "version": "0.2.0"
+              "version": "0.2.13"
             }
           ],
           "access": "public",
@@ -22796,47 +22716,13 @@
           "groupName": {
             "undefined": "Ungrouped"
           },
-          "resolvedValue": "18"
-        },
-        {
-          "description": "",
-          "commentRange": {
-            "start": 89,
-            "end": 89
-          },
-          "context": {
-            "type": "variable",
-            "name": "nice-breakpoint-xl-root-size",
-            "value": "18",
-            "scope": "default",
-            "line": {
-              "start": 90,
-              "end": 90
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "access": "public",
-          "group": [
-            "undefined"
-          ],
-          "file": {
-            "path": "stylesheets\\settings\\_settings-variables.scss",
-            "name": "_settings-variables.scss"
-          },
-          "groupName": {
-            "undefined": "Ungrouped"
-          },
-          "resolvedValue": "18"
+          "resolvedValue": "1200px"
         },
         {
           "description": "<p>Whether to output a default set of generic print styles for things\nlike avoiding page breaks after headings etc. If you disabled this,\nbe sure to add your own print styles.</p>\n",
           "commentRange": {
-            "start": 92,
-            "end": 95
+            "start": 91,
+            "end": 94
           },
           "context": {
             "type": "variable",
@@ -22844,8 +22730,8 @@
             "value": "true",
             "scope": "default",
             "line": {
-              "start": 96,
-              "end": 96
+              "start": 95,
+              "end": 95
             }
           },
           "since": [
@@ -22869,8 +22755,8 @@
         {
           "description": "<p>Whether to output the classes for the UTF-8 glyphs.</p>\n",
           "commentRange": {
-            "start": 98,
-            "end": 99
+            "start": 97,
+            "end": 98
           },
           "context": {
             "type": "variable",
@@ -22878,8 +22764,8 @@
             "value": "false",
             "scope": "default",
             "line": {
-              "start": 100,
-              "end": 100
+              "start": 99,
+              "end": 99
             }
           },
           "since": [
@@ -22903,8 +22789,8 @@
         {
           "description": "<p>Whether the site is responsive. Setting to false will disable\ngeneration of the responsie grid selectors.\nTrue by default.</p>\n",
           "commentRange": {
-            "start": 102,
-            "end": 105
+            "start": 101,
+            "end": 104
           },
           "context": {
             "type": "variable",
@@ -22912,8 +22798,8 @@
             "value": "true",
             "scope": "default",
             "line": {
-              "start": 106,
-              "end": 106
+              "start": 105,
+              "end": 105
             }
           },
           "since": [
