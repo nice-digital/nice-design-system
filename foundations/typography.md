@@ -24,6 +24,7 @@ description: Headings, paragraphs, featured text, quotations, lists, links
 - don't skip headings; use classes like `.h1, .h2` etc or mixins like `@include h1` etc if you need a visual difference in heading
 - do not put a full stop at the end of the heading.
 
+<div data-no-inpagenav>
 {% capture headings %}
 <h1>This is a heading 1</h1>
 <h2>This is a heading 2</h2>
@@ -33,6 +34,7 @@ description: Headings, paragraphs, featured text, quotations, lists, links
 <h6>This is a heading 6</h6>
 {% endcapture %}
 {% include example.html lang='html' body=headings %}
+</div>
 
 
 ## Body copy
