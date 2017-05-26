@@ -6,7 +6,7 @@
 /// @since 0.1.0
 %list {
   font-feature-settings: 'kern', 'onum', 'liga';
-  margin-left: rem($spacing-large);
+  margin-left: rem($spacing-medium);
   padding: 0;
 }
 
@@ -21,29 +21,6 @@ ol {
 /// @since 0.1.0
 .list {
   @extend %list;
-
-  // TODO: Do we need featured lists?
-  &--featured {
-    list-style: none outside;
-
-    li,
-    .list__item {
-      position: relative;
-
-      &:before {
-        color: $colour-nice-teal;
-        content: get-glyph(bullet);
-        font-size: 150%;
-        left: -1.5rem;
-        position: absolute;
-        top: 0;
-
-        @media print {
-          color: $colour-true-black;
-        }
-      }
-    }
-  }
 }
 
 /// Unstyled list modifier - remove bullets, padding etc.
