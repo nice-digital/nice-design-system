@@ -6,7 +6,7 @@ description:
 
 #NAME# is the source for creating consistent, accessible and trustworthy services for NICE. It’s aimed at developers, designers and content editors. Please use our relevant guides below to get started.
 
-##<a href="{{ site.baseurl }}{% link technical/installation.md %}" class="btn btn--cta">Developers</a>
+##<a href="{{ site.baseurl }}{% link technical/installation.md %}">Developers</a>
 IR to help on content
  
 ##Designers
