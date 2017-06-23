@@ -20,7 +20,7 @@
 	- [Icons](#icons)
 - [Test](#tests)
 - [Installation](#installation)
-	- [CDN](#cdn)
+	- [CDN](#nice-cdn)
 	- [Install with npm](#install-with-npm)
 	- [Install with Bower](#install-with-bower)
 	- [Usage](#usage)
