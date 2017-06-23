@@ -130,6 +130,10 @@ See the [javascript](src/javascripts) folder for more information.
 
 See the [stylesheets](src/stylesheets) folder for more information.
 
+### Icons
+
+See the [icons](src/icons) folder for more information.
+
 ## Tests
 
 See the [test](test) folder for more information.
