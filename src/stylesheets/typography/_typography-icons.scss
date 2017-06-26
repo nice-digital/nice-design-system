@@ -30,176 +30,30 @@ $nice-font-base-path: '/fonts/' !default;
 /// Map of icon name to codepoint.
 /// This map avoids the use of 'magic strings' for codepoints throught SASS code. The map is usually not used directly - use the nice-icon function/mixin instead.
 /// Please note - the values for codepoints are not fixed and may change each time the font is re-generated.
-/// @prop {string} adjust [f101] - <span class="icon icon--adjust" aria-hidden="true"></span>
-/// @prop {string} angle-down [f102] - <span class="icon icon--angle-down" aria-hidden="true"></span>
-/// @prop {string} angle-left [f103] - <span class="icon icon--angle-left" aria-hidden="true"></span>
-/// @prop {string} angle-right [f104] - <span class="icon icon--angle-right" aria-hidden="true"></span>
-/// @prop {string} angle-up [f105] - <span class="icon icon--angle-up" aria-hidden="true"></span>
-/// @prop {string} apps [f106] - <span class="icon icon--apps" aria-hidden="true"></span>
-/// @prop {string} bookmark [f107] - <span class="icon icon--bookmark" aria-hidden="true"></span>
-/// @prop {string} calendar [f108] - <span class="icon icon--calendar" aria-hidden="true"></span>
-/// @prop {string} capsule [f109] - <span class="icon icon--capsule" aria-hidden="true"></span>
-/// @prop {string} caret-down [f10a] - <span class="icon icon--caret-down" aria-hidden="true"></span>
-/// @prop {string} caret-left [f10b] - <span class="icon icon--caret-left" aria-hidden="true"></span>
-/// @prop {string} caret-right [f10c] - <span class="icon icon--caret-right" aria-hidden="true"></span>
-/// @prop {string} caret-up [f10d] - <span class="icon icon--caret-up" aria-hidden="true"></span>
-/// @prop {string} chevron-down [f10e] - <span class="icon icon--chevron-down" aria-hidden="true"></span>
-/// @prop {string} chevron-left [f10f] - <span class="icon icon--chevron-left" aria-hidden="true"></span>
-/// @prop {string} chevron-right [f110] - <span class="icon icon--chevron-right" aria-hidden="true"></span>
-/// @prop {string} chevron-up [f111] - <span class="icon icon--chevron-up" aria-hidden="true"></span>
-/// @prop {string} circle-blank [f112] - <span class="icon icon--circle-blank" aria-hidden="true"></span>
-/// @prop {string} circle [f113] - <span class="icon icon--circle" aria-hidden="true"></span>
-/// @prop {string} cloud-download [f114] - <span class="icon icon--cloud-download" aria-hidden="true"></span>
-/// @prop {string} cloud-upload [f115] - <span class="icon icon--cloud-upload" aria-hidden="true"></span>
-/// @prop {string} double-angle-down [f116] - <span class="icon icon--double-angle-down" aria-hidden="true"></span>
-/// @prop {string} double-angle-left [f117] - <span class="icon icon--double-angle-left" aria-hidden="true"></span>
-/// @prop {string} double-angle-right [f118] - <span class="icon icon--double-angle-right" aria-hidden="true"></span>
-/// @prop {string} double-angle-up [f119] - <span class="icon icon--double-angle-up" aria-hidden="true"></span>
-/// @prop {string} download [f11a] - <span class="icon icon--download" aria-hidden="true"></span>
-/// @prop {string} email-closed [f11b] - <span class="icon icon--email-closed" aria-hidden="true"></span>
-/// @prop {string} email-open [f11c] - <span class="icon icon--email-open" aria-hidden="true"></span>
-/// @prop {string} evidence [f11d] - <span class="icon icon--evidence" aria-hidden="true"></span>
-/// @prop {string} facebook-square [f11e] - <span class="icon icon--facebook-square" aria-hidden="true"></span>
-/// @prop {string} facebook [f11f] - <span class="icon icon--facebook" aria-hidden="true"></span>
-/// @prop {string} file-blank [f120] - <span class="icon icon--file-blank" aria-hidden="true"></span>
-/// @prop {string} file-text [f121] - <span class="icon icon--file-text" aria-hidden="true"></span>
-/// @prop {string} file [f122] - <span class="icon icon--file" aria-hidden="true"></span>
-/// @prop {string} filter [f123] - <span class="icon icon--filter" aria-hidden="true"></span>
-/// @prop {string} fullscreen [f124] - <span class="icon icon--fullscreen" aria-hidden="true"></span>
-/// @prop {string} google-plus [f125] - <span class="icon icon--google-plus" aria-hidden="true"></span>
-/// @prop {string} group [f126] - <span class="icon icon--group" aria-hidden="true"></span>
-/// @prop {string} guidance [f127] - <span class="icon icon--guidance" aria-hidden="true"></span>
-/// @prop {string} guideline [f128] - <span class="icon icon--guideline" aria-hidden="true"></span>
-/// @prop {string} hamburger [f129] - <span class="icon icon--hamburger" aria-hidden="true"></span>
-/// @prop {string} infoforpublic [f12a] - <span class="icon icon--infoforpublic" aria-hidden="true"></span>
-/// @prop {string} information [f12b] - <span class="icon icon--information" aria-hidden="true"></span>
-/// @prop {string} lines [f12c] - <span class="icon icon--lines" aria-hidden="true"></span>
-/// @prop {string} linkedin-square [f12d] - <span class="icon icon--linkedin-square" aria-hidden="true"></span>
-/// @prop {string} linkedin [f12e] - <span class="icon icon--linkedin" aria-hidden="true"></span>
-/// @prop {string} logo-name [f12f] - <span class="icon icon--logo-name" aria-hidden="true"></span>
-/// @prop {string} logo [f130] - <span class="icon icon--logo" aria-hidden="true"></span>
-/// @prop {string} minus [f131] - <span class="icon icon--minus" aria-hidden="true"></span>
-/// @prop {string} news [f132] - <span class="icon icon--news" aria-hidden="true"></span>
-/// @prop {string} next [f133] - <span class="icon icon--next" aria-hidden="true"></span>
-/// @prop {string} ok [f134] - <span class="icon icon--ok" aria-hidden="true"></span>
-/// @prop {string} pathways-node [f135] - <span class="icon icon--pathways-node" aria-hidden="true"></span>
-/// @prop {string} pathways [f136] - <span class="icon icon--pathways" aria-hidden="true"></span>
-/// @prop {string} play [f137] - <span class="icon icon--play" aria-hidden="true"></span>
-/// @prop {string} plus-circle [f138] - <span class="icon icon--plus-circle" aria-hidden="true"></span>
-/// @prop {string} plus [f139] - <span class="icon icon--plus" aria-hidden="true"></span>
-/// @prop {string} podcast [f13a] - <span class="icon icon--podcast" aria-hidden="true"></span>
-/// @prop {string} prescribing [f13b] - <span class="icon icon--prescribing" aria-hidden="true"></span>
-/// @prop {string} previous [f13c] - <span class="icon icon--previous" aria-hidden="true"></span>
-/// @prop {string} print [f13d] - <span class="icon icon--print" aria-hidden="true"></span>
-/// @prop {string} quote-left [f13e] - <span class="icon icon--quote-left" aria-hidden="true"></span>
-/// @prop {string} quote-right [f13f] - <span class="icon icon--quote-right" aria-hidden="true"></span>
-/// @prop {string} readnews [f140] - <span class="icon icon--readnews" aria-hidden="true"></span>
-/// @prop {string} remove [f141] - <span class="icon icon--remove" aria-hidden="true"></span>
-/// @prop {string} search [f142] - <span class="icon icon--search" aria-hidden="true"></span>
-/// @prop {string} share [f143] - <span class="icon icon--share" aria-hidden="true"></span>
-/// @prop {string} sort-down [f144] - <span class="icon icon--sort-down" aria-hidden="true"></span>
-/// @prop {string} sort-up [f145] - <span class="icon icon--sort-up" aria-hidden="true"></span>
-/// @prop {string} sort [f146] - <span class="icon icon--sort" aria-hidden="true"></span>
-/// @prop {string} spinner [f147] - <span class="icon icon--spinner" aria-hidden="true"></span>
-/// @prop {string} standards [f148] - <span class="icon icon--standards" aria-hidden="true"></span>
-/// @prop {string} stop [f149] - <span class="icon icon--stop" aria-hidden="true"></span>
-/// @prop {string} support [f14a] - <span class="icon icon--support" aria-hidden="true"></span>
-/// @prop {string} syndication [f14b] - <span class="icon icon--syndication" aria-hidden="true"></span>
-/// @prop {string} trash [f14c] - <span class="icon icon--trash" aria-hidden="true"></span>
-/// @prop {string} twitter-square [f14d] - <span class="icon icon--twitter-square" aria-hidden="true"></span>
-/// @prop {string} twitter [f14e] - <span class="icon icon--twitter" aria-hidden="true"></span>
-/// @prop {string} uptake [f14f] - <span class="icon icon--uptake" aria-hidden="true"></span>
-/// @prop {string} user [f150] - <span class="icon icon--user" aria-hidden="true"></span>
-/// @prop {string} warning [f151] - <span class="icon icon--warning" aria-hidden="true"></span>
-/// @prop {string} youtube-play [f152] - <span class="icon icon--youtube-play" aria-hidden="true"></span>
-/// @prop {string} youtube-square [f153] - <span class="icon icon--youtube-square" aria-hidden="true"></span>
-/// @prop {string} youtube [f154] - <span class="icon icon--youtube" aria-hidden="true"></span>
+/// @prop {string} evidence [f101] - <span class="icon icon--evidence" aria-hidden="true"></span>
+/// @prop {string} facebook-square [f102] - <span class="icon icon--facebook-square" aria-hidden="true"></span>
+/// @prop {string} guidance [f103] - <span class="icon icon--guidance" aria-hidden="true"></span>
+/// @prop {string} linkedin-square [f104] - <span class="icon icon--linkedin-square" aria-hidden="true"></span>
+/// @prop {string} logo-name [f105] - <span class="icon icon--logo-name" aria-hidden="true"></span>
+/// @prop {string} logo [f106] - <span class="icon icon--logo" aria-hidden="true"></span>
+/// @prop {string} pathways [f107] - <span class="icon icon--pathways" aria-hidden="true"></span>
+/// @prop {string} standards [f108] - <span class="icon icon--standards" aria-hidden="true"></span>
+/// @prop {string} syndication [f109] - <span class="icon icon--syndication" aria-hidden="true"></span>
+/// @prop {string} twitter-square [f10a] - <span class="icon icon--twitter-square" aria-hidden="true"></span>
+/// @prop {string} youtube-square [f10b] - <span class="icon icon--youtube-square" aria-hidden="true"></span>
 
 $nice-icons: (
-  adjust: "f101",
-  angle-down: "f102",
-  angle-left: "f103",
-  angle-right: "f104",
-  angle-up: "f105",
-  apps: "f106",
-  bookmark: "f107",
-  calendar: "f108",
-  capsule: "f109",
-  caret-down: "f10a",
-  caret-left: "f10b",
-  caret-right: "f10c",
-  caret-up: "f10d",
-  chevron-down: "f10e",
-  chevron-left: "f10f",
-  chevron-right: "f110",
-  chevron-up: "f111",
-  circle-blank: "f112",
-  circle: "f113",
-  cloud-download: "f114",
-  cloud-upload: "f115",
-  double-angle-down: "f116",
-  double-angle-left: "f117",
-  double-angle-right: "f118",
-  double-angle-up: "f119",
-  download: "f11a",
-  email-closed: "f11b",
-  email-open: "f11c",
-  evidence: "f11d",
-  facebook-square: "f11e",
-  facebook: "f11f",
-  file-blank: "f120",
-  file-text: "f121",
-  file: "f122",
-  filter: "f123",
-  fullscreen: "f124",
-  google-plus: "f125",
-  group: "f126",
-  guidance: "f127",
-  guideline: "f128",
-  hamburger: "f129",
-  infoforpublic: "f12a",
-  information: "f12b",
-  lines: "f12c",
-  linkedin-square: "f12d",
-  linkedin: "f12e",
-  logo-name: "f12f",
-  logo: "f130",
-  minus: "f131",
-  news: "f132",
-  next: "f133",
-  ok: "f134",
-  pathways-node: "f135",
-  pathways: "f136",
-  play: "f137",
-  plus-circle: "f138",
-  plus: "f139",
-  podcast: "f13a",
-  prescribing: "f13b",
-  previous: "f13c",
-  print: "f13d",
-  quote-left: "f13e",
-  quote-right: "f13f",
-  readnews: "f140",
-  remove: "f141",
-  search: "f142",
-  share: "f143",
-  sort-down: "f144",
-  sort-up: "f145",
-  sort: "f146",
-  spinner: "f147",
-  standards: "f148",
-  stop: "f149",
-  support: "f14a",
-  syndication: "f14b",
-  trash: "f14c",
-  twitter-square: "f14d",
-  twitter: "f14e",
-  uptake: "f14f",
-  user: "f150",
-  warning: "f151",
-  youtube-play: "f152",
-  youtube-square: "f153",
-  youtube: "f154"
+  evidence: "f101",
+  facebook-square: "f102",
+  guidance: "f103",
+  linkedin-square: "f104",
+  logo-name: "f105",
+  logo: "f106",
+  pathways: "f107",
+  standards: "f108",
+  syndication: "f109",
+  twitter-square: "f10a",
+  youtube-square: "f10b"
 ) !default;
 
 /// Base styles required for an icon including font family etc
