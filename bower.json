@@ -16,6 +16,6 @@
     "tests"
   ],
   "dependencies": {
-    "nice-experience": "^0.2.13"
+    "nice-experience": "^0.2.15"
   }
 }
