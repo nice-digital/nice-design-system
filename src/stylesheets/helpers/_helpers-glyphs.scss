@@ -2,34 +2,26 @@
 /// @group helpers
 ////
 
-/// A map of glyph name to code (character entity reference).
-/// Avoids things like content: '\201C' throughout SASS.
-/// Usual usage is via the `get-glyph` function.
+/// A map of glyph name to code point (character entity reference).
+/// Avoids magic strings like `content: '\201C'` within our SASS.
+/// Usual usage is via the `get-glyph` function, e.g. `get-glyph(greater-than)`.
 /// @see get-glyph
 /// @link https://css-tricks.com/snippets/html/glyphs/
 /// @prop {String} bullet [2022] Bullet (•)
-/// @prop {String} quotation-mark [0022] Quotation mark (")
-/// @prop {String} greater-than [003e] Greater than symbol (>)
-/// @prop {String} greater-than [003c] Less than symbol (<)
 /// @prop {String} copyright [00a9] Copyright symbol (©)
-/// @prop {String} left-double-quotation-mark [201C] Left double quotation mark (“)
+/// @prop {String} greater-than [003e] Greater than symbol (>)
 /// @prop {String} heavy-right-pointing-angle-quotation-mark-ornament [276F] Heavy right pointing angle quotation mark ornament (❯)
-/// @prop {String} ne-double-arrow [021D7] North east double arrow (⇗)
-/// @prop {String} up-tee-arrow [021A5] Up tee (bar) arrow (↥)
-/// @prop {String} box-box [029C9] Double box (⧉)
+/// @prop {String} left-double-quotation-mark [201C] Left double quotation mark (“)
+/// @prop {String} less-than [003c] Less than symbol (<)
 /// @prop {String} punc-space [02008] Punctuation space (small, width of a comma)
 /// @since 0.1.0
 $nice-glyphs: (
   bullet: '2022',
-  quotation-mark: '0022',
-  greater-than: '003e',
-  less-than: '003c',
   copyright: '00a9',
-  left-double-quotation-mark: '201C',
+  greater-than: '003e',
   heavy-right-pointing-angle-quotation-mark-ornament: '276F',
-  ne-double-arrow: '021D7',
-  up-tee-arrow: '021A5',
-  box-box: '029C9',
+  left-double-quotation-mark: '201C',
+  less-than: '003c',
   punc-space: '02008'
   // Add more entity codes here as and when they're needed
 ) !default;
