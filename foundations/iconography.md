@@ -1,26 +1,92 @@
 ---
 layout: sidebar
 title: Iconography
-description: Icons, their usage and how to create new icons
+description: Icons, their usage and guidance for creating new custom icons
 ---
 
 ## Introduction
 
-We use a custom web font for rendering our icons.
-This is built from [source SVGs](https://github.com/nhsevidence/NICE-Experience/tree/master/src/icons){:target="_blank"} by a [grunt task](https://github.com/nhsevidence/NICE-Experience/blob/master/.grunt-tasks/webfont.js){:target="_blank"} as part of our build process.
+Avoid unnecessary decoration - only use icons if there’s a real user need:
 
-- The icon font supports IE8+
-- The icons are infinitely scalable
+- if icons are needed ensure they are clear, simple and accompanied by relevant text
+- don’t hide functionality under icons
+- icons should be easily recognizable
+- keep icon designs simple and schematic.
 
-Basic usage of icons is easy as (where [NAME] is the icon name e.g. 'search'):
+We use two types of icons: [unicode glyphs](#unicode-icons) and a [custom icon font](#icon-font):
 
-{% capture basics %}
-<span class="icon icon--[NAME]" aria-hidden="true"></span>
+## Unicode icons
+
+We use unicode symbols as icons because:
+
+- there are over 136,000 of them
+- they don't require a download so are better for performance.
+
+Use unicode symbols instead of SVGs icons wherever possible. If there is no unicode symbol available, then use an icon from our [icon font](#icon-font).
+
+### Unicode glyphs
+
+We use a few unicode glyphs within our core code. These are available for by name to avoid using 'magic strings' in code:
+
+{% assign unicode = site.data.sass.experience.items | where_exp: "item","item.context.name == 'nice-glyphs'" | first %}
+<div class="grid">
+    {% for glyph in unicode.property %}
+        <div data-g="6 xs:4 md:3 lg:2" class="text-center">
+            <div class="h2">
+                &#x{{ glyph.resolvedValue }};
+            </div>
+            <p>
+                {{ glyph.name }}
+            </p>
+        </div>
+    {% endfor %}
+</div>
+
+### Usage in SASS
+
+#### SASS map
+
+The core unicode glyphs we use are defined within the [$nice-glyphs map]({{ site.baseurl }}{% link technical/sass/documentation/helpers.md %}#nice-glyphs).
+
+This map can be overriden in your application if you use different glyphs, or can be added to over time within the core code.
+
+#### SASS function
+
+The [get-glyph function]({{ site.baseurl }}{% link technical/sass/documentation/helpers.md %}#get-glyph) is a convenient way to use a unicode glyph without needing to know its codepoint. For example:
+
+{% capture unicodesass %}
+.rule:before {
+    content: get-glyph(greater-than);
+}
 {% endcapture %}
-{% include source.html lang='html' body=basics title='Icons basics' %}
+{% include source.html lang='scss' body=unicodesass title='Unicode SASS pattern' %}
 
+### Usage in markup
 
-## Icons
+To use a unciode icon in markup, you must set `$nice-output-glyph-classes: true` so that the classes are generated. Note: this is set to `false` by default to reduce the size of our CSS.
+
+Usage follows this pattern:
+
+{% capture unicodebasics %}
+<span class="glyph glyph--greater-than" aria-hidden="true"></span>
+{% endcapture %}
+{% include source.html lang='html' body=unicodebasics title='Unicode basics' %}
+
+Note: you can use any unicode glyph in markup yourself if you know it's codepoint or shortcut, e.g. &#169;. However these 'magic number' codepoints can make it more difficult to understand what icon is being used. It is advisable to use descriptive class names wherever possible.
+
+## Icon font
+
+Use icons from an icon font when there are no applicable [unicode icons](#unicode-icons).
+
+We use a custom icon web font for rendering our icons, built from [source SVGs]({{ site.repository }}/tree/master/src/icons){:target="_blank"} by a [grunt task]({{ site.repository }}/blob/master/.grunt-tasks/webfont.js){:target="_blank"} as part of our build process.
+
+- any custom icons can be used
+- icon fonts support IE8+
+- icons are infinitely scalable.
+
+### The icons
+
+The following icons are included within our icon font by default:
 
 <div class="grid">
     {% for glyph in site.data.fonts.nice-icons.glyphs %}
@@ -35,27 +101,85 @@ Basic usage of icons is easy as (where [NAME] is the icon name e.g. 'search'):
     {% endfor %}
 </div>
 
+### Icon markup
 
-## Usage
+Use custom icons in markup wherever possible. Note: there are also [SASS functions and mixins](#icon-font-in-sass) available for building custom components.
+
+- hide from screenreaders with `[aria-hidden="true"]`
+- use BEM style CSS classes (`icon--NAME` modifier)
+- prefer `<span>` over `<i>`.
 
 For performance reasons, all icons require a base class and individual icon class. To use, place the following code just about anywhere. Be sure to leave a space between the icon and text for proper padding.
+
+{% capture markup %}
+<span class="icon icon--syndication" aria-hidden="true"></span>
+{% endcapture %}
+{% include example.html lang='html' body=markup %}
 
 Icon classes cannot be directly combined with other components. They should not be used along with other classes on the same element. Instead, add a nested `<span>` and apply the icon classes to the `<span>`.
 
 Icon classes should only be used on elements that contain no text content and have no child elements. Use a `<span>` tag rather than `<i>`.
 
-### URL
+### Usage in SASS
 
-By default, the icon font files are referenced from CSS at the */fonts/*. This can be overridden by setting the `$nice-font-base-path` in your application settings. For example, if you move the font files to a different location or you want to load them from a CDN.
+There are generated SASS constructs (map, function and mixin) available for creating custom components. These are useful if the default classes for use in markup are not sufficient.
 
-If you're using node and express then you can use the following to add the compiled fonts from the node modules folder:
+<a href="{{ site.baseurl }}{% link technical/sass/documentation/icons.md %}" class="btn">Browse SASS docs for icons</a>
+
+{% capture sass %}
+.search {
+    &__btn {
+        @include nice-icon(search);
+    }
+
+    // or
+    &__btn {
+        @include nice-icon-base;
+
+        &:before {
+            content: nice-icon(search);
+            display: block;
+        }
+    }
+}
+{% endcapture %}
+{% include source.html lang='xml' body=sass title='Custom component icon example' %}
+
+### Custom URL
+
+By default, icon font files are referenced from CSS at the */fonts/* directory. This can be overridden with the `$nice-font-base-path` variable in your application's SASS. For example:
+
+- serve fonts from a different folder (e.g. `$nice-font-base-path: '/assets/icons/';`)
+- serve fonts from a CDN (e.g. `$nice-font-base-path: 'https://cdn.nice.org.uk/fonts/';`).
+
+See [$nice-font-base-path]({{ site.baseurl }}{% link technical/sass/documentation/icons.md %}#nice-font-base-path) in the SASS docs.
+
+### Icon font path
+
+The icon font files are included with the *dist/fonts* folder so are either:
+
+- \bower_components\nice-experience\dist\fonts
+- \node_modules\nice-experience\dist\fonts
+
+To serve these they either need to be served directly or copied into a directory:
+
+#### Node/express
+
+If you're using node and express then you can use the following to serve the compiled font files (woff/eot/ttf etc) directly from the *node_modules/nice-experience/dist/fonts* folder:
 
 {% capture mount %}
+const express = require("express"),
+    path = require("path");
+
+const app = express();
+
 app.use("/fonts", express.static(path.join(__dirname, "./node_modules/nice-experience/dist/fonts")));
 {% endcapture %}
 {% include source.html lang='js' body=mount title='Mount fonts with Express' %}
 
-If you're not using express, you could easily create a [copy task](ttps://github.com/gruntjs/grunt-contrib-copy){:target="_blank"} to copy the font files to a directory of your choice on build, e.g.:
+#### Grunt
+
+If you're not using express but using Grunt, use a [copy task](ttps://github.com/gruntjs/grunt-contrib-copy){:target="_blank"} to copy the font files to a directory of your choice on build, e.g.:
 
 {% capture gruntcopy %}
 // Run `npm install grunt-contrib-copy --save-dev`
@@ -93,80 +217,47 @@ If you get a 404 error for .woff files with IIS, then you may need to [add the M
 {% endcapture %}
 {% include source.html lang='xml' body=webconfig title='Web.config update' %}
 
-## Markup
+### IE8 and @font-face
 
-- Hide from screenreaders with `[aria-hidden="true"]`
-- Use BEM style CSS classes
-- Prefer `<span>` over `<i>`
-
-{% capture markup %}
-<p>
-    <span class="icon icon--plus" aria-hidden="true"></span>
-    Some text with an icon
-    <span class="icon icon--standards" aria-hidden="true"></span>
-</p>
-<p>
-    <button type="button" class="btn">Remove <span class="icon icon--remove" aria-hidden="true"></span></button>
-</p>
-{% endcapture %}
-{% include example.html lang='html' body=markup %}
-
-### SASS
-
-There are generated SASS constructs (map, function and mixin) available for creating custom components. These are useful if the default classes for use in markup are not sufficient.
-
-<a href="{{ site.baseurl }}{% link technical/sass/documentation/icons.md %}" class="btn">Iconography constructs</a>
-
-{% capture sass %}
-.search {
-    &__btn {
-        @include nice-icon(search);
-    }
-
-    // or
-    &__btn {
-        @include nice-icon-base;
-
-        &:before {
-            content: nice-icon(search);
-            display: block;
-        }
-    }
-}
-{% endcapture %}
-{% include source.html lang='xml' body=sass title='Custom component icon example' %}
+Internet Explorer 8 has some issues with `@font-face `when combined with `:before`. Our icon font uses that combination. If a page is cached, and loaded without the mouse over the window (i.e. hit the refresh button or load something in an iframe) then the page gets rendered before the font loads. Hovering over the page (body) will show some of the icons and hovering over the remaining icons will show those as well.
 
 
 ## Custom icons
 
-The icons provided by default should cater for most scenarios but sometimes you'll need an icon that isn't included.
-Then you have 2 options after [creating an icon SVG](#creating-icons):
+The icons provided by default (unicode or icon font) should cater for most scenarios but sometimes you'll need an icon that isn't included.
 
-- Option 1: Add a new core icon in to the NICE Experience via a PR and release a new version - this is the best approach if it's an icon that could be used for other applications
-- Option 2: Add an icon into your application and generate a custom icon font (see below).
+There are 2 options for creating custom icons:
+
+1. Create a new icon and add it to the core code to make it available for all applications
+2. Create a new icon and generate a [custom icon font](#custom-icon-font) within your application.
+
+### Creating SVG icons
+
+The following should be followed when creating custom SVG icons:
+
+- icons should be easily recognizable
+- keep icon designs simple, clear and schematic
+- use a 512px height SVG
+- use a single compound path
+- ensure the viewbox is from 0,0.
+
+### Core icon
+
+To create a new core icon:
+
+- create an SVG as per the [creating SVG icons](#creating-svg-icons) section
+- save into the *src/icons* folder
+- run `npm start` to build and run the dev site locally
+- test the icon renders correctly
+- submit a pull request
+- release a new version after it's merged to master.
 
 ### Custom icon font
 
-Option 2 is best if you're creating a bespoke icon set for your application but it does require more work. The steps are:
+Creating a custom icon font is the best option if you need bespoke icons for your application:
 
-1. Create the SVG as per the [creating icons](#creating-icons) section
-2. Create a [grunt task for webfont generation](https://github.com/sapegin/grunt-webfont){:target="_blank"}. You can base this off [our webfont task](https://github.com/nhsevidence/NICE-Experience/blob/master/.grunt-tasks/webfont.js){:target="_blank"}.
-3. Use a [custom template](https://github.com/nhsevidence/NICE-Experience/blob/master/src/icons/.nice-icons.tmpl.scss){:target="_blank"} to override the `$nice-icons` map. (You don't need the mixins in your template.)
-4. Reference both your SVG icon and the core ones from NICE Experience: (`src: ["./icons/*.svg", "./node_modules/nice-experience/src/icons/*.svg"]`). You can also only reference the icons you need from the NICE Experience if you're only using a few.
-5. Override the `$nice-font-base-path` variable if you generate your font files anywhere other than */fonts/*
-
-
-## Creating icons
-
-- 512px height SVG
-- Single compund path
-- Viewbox from 0,0
-- Save into the *src/icons* folder (if creating a new core icon)
-- Rerun `grunt webfont` rebuild the icon font and run the app
-
-
-## More Info
-
-### IE8 and @font-face
-
-Internet Explorer 8 has some issues with `@font-face `when combined with `:before`. Our icon font uses that combination. If a page is cached, and loaded without the mouse over the window (i.e. hit the refresh button or load something in an iframe) then the page gets rendered before the font loads. Hovering over the page (body) will show some of the icons and hovering over the remaining icons will show those as well.
+1. create the SVG as per the [creating SVG icons](#creating-svg-icons) section
+2. create a [grunt task for webfont generation](https://github.com/sapegin/grunt-webfont){:target="_blank"}. You can base this off [our webfont task]({{ site.repository }}/blob/master/.grunt-tasks/webfont.js){:target="_blank"}.
+3. use a custom template for the Grunt task to override the `$nice-icons` map. You can base this off [our custom template]({{ site.repository }}/blob/master/src/icons/.nice-icons.tmpl.scss){:target="_blank"}. You don't need the mixins in your template.
+4. reference both your custom SVG icon(s) and the core ones: `src: ["./icons/*.svg", "./node_modules/nice-experience/src/icons/*.svg"]`.
+5. override the `$nice-font-base-path` variable if you generate your font files anywhere other than */fonts/*
