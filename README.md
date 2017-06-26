@@ -20,7 +20,7 @@
 	- [Icons](#icons)
 - [Test](#tests)
 - [Installation](#installation)
-	- [CDN](#cdn)
+	- [CDN](#nice-cdn)
 	- [Install with npm](#install-with-npm)
 	- [Install with Bower](#install-with-bower)
 	- [Usage](#usage)
@@ -129,6 +129,10 @@ See the [javascript](src/javascripts) folder for more information.
 ### SASS
 
 See the [stylesheets](src/stylesheets) folder for more information.
+
+### Icons
+
+See the [icons](src/icons) folder for more information.
 
 ## Tests
 
