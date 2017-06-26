@@ -2684,10 +2684,10 @@
       "context": {
         "type": "css",
         "name": ".breadcrumbs",
-        "value": "@include font-size(0);\n  list-style: none;\n  margin: em($spacing-small 0 $spacing-large);\n  padding: 0;\n\n  &__crumb {\n    display: inline-block;\n\n    &:before {\n      @include nice-icon(angle-right);\n      margin: em(0 $spacing-x-small);\n    }\n\n    &:first-child:before {\n      display: none;\n    }\n  }\n\n  a {\n    color: $colour-text;\n    text-decoration: underline;\n\n    &:hover {\n      text-decoration: none;\n    }\n\n    &:focus {\n      color: $colour-link-focus-text;\n    }\n\n    &:active {\n      color: $colour-link-active;\n    }\n  }",
+        "value": "@include font-size(0);\n  list-style: none;\n  margin: em($spacing-small 0 $spacing-large);\n  padding: 0;\n\n  &__crumb {\n    display: inline-block;\n\n    &:before {\n      content: get-glyph(heavy-right-pointing-angle-quotation-mark-ornament);\n      font-size: 70%;\n      margin: em(0 $spacing-x-small);\n    }\n\n    &:first-child:before {\n      display: none;\n    }\n  }\n\n  a {\n    color: $colour-text;\n    text-decoration: underline;\n\n    &:hover {\n      text-decoration: none;\n    }\n\n    &:focus {\n      color: $colour-link-focus-text;\n    }\n\n    &:active {\n      color: $colour-link-active;\n    }\n  }",
         "line": {
           "start": 8,
-          "end": 44
+          "end": 45
         }
       },
       "since": [
@@ -4497,16 +4497,16 @@
       "description": "<p>A map of glyph name to code (character entity reference).\nAvoids things like content: &#39;\\201C&#39; throughout SASS.\nUsual usage is via the <code>get-glyph</code> function.</p>\n",
       "commentRange": {
         "start": 5,
-        "end": 20
+        "end": 21
       },
       "context": {
         "type": "variable",
         "name": "nice-glyphs",
-        "value": "(\n  bullet: '2022',\n  quotation-mark: '0022',\n  greater-than: '003e',\n  less-than: '003c',\n  copyright: '00a9',\n  left-double-quotation-mark: '201C',\n  ne-double-arrow: '021D7',\n  up-tee-arrow: '021A5',\n  box-box: '029C9',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
+        "value": "(\n  bullet: '2022',\n  quotation-mark: '0022',\n  greater-than: '003e',\n  less-than: '003c',\n  copyright: '00a9',\n  left-double-quotation-mark: '201C',\n  heavy-right-pointing-angle-quotation-mark-ornament: '276F',\n  ne-double-arrow: '021D7',\n  up-tee-arrow: '021A5',\n  box-box: '029C9',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
         "scope": "default",
         "line": {
-          "start": 21,
-          "end": 33
+          "start": 22,
+          "end": 35
         }
       },
       "see": [
@@ -4517,8 +4517,8 @@
             "name": "get-glyph",
             "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
             "line": {
-              "start": 50,
-              "end": 63
+              "start": 52,
+              "end": 65
             }
           }
         }
@@ -4574,6 +4574,13 @@
         },
         {
           "type": "String",
+          "name": "heavy-right-pointing-angle-quotation-mark-ornament",
+          "default": "276F",
+          "description": "<p>Heavy right pointing angle quotation mark ornament (❯)</p>\n",
+          "resolvedValue": "276F"
+        },
+        {
+          "type": "String",
           "name": "ne-double-arrow",
           "default": "021D7",
           "description": "<p>North east double arrow (⇗)</p>\n",
@@ -4622,8 +4629,8 @@
             "name": "get-glyph",
             "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
             "line": {
-              "start": 50,
-              "end": 63
+              "start": 52,
+              "end": 65
             }
           }
         },
@@ -4634,8 +4641,8 @@
             "name": "get-glyph",
             "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
             "line": {
-              "start": 50,
-              "end": 63
+              "start": 52,
+              "end": 65
             }
           }
         },
@@ -4646,8 +4653,8 @@
             "name": "get-glyph",
             "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
             "line": {
-              "start": 50,
-              "end": 63
+              "start": 52,
+              "end": 65
             }
           }
         }
@@ -4655,21 +4662,21 @@
       "groupName": {
         "helpers": "Helpers"
       },
-      "resolvedValue": "(\n  bullet: '2022',\n  quotation-mark: '0022',\n  greater-than: '003e',\n  less-than: '003c',\n  copyright: '00a9',\n  left-double-quotation-mark: '201C',\n  ne-double-arrow: '021D7',\n  up-tee-arrow: '021A5',\n  box-box: '029C9',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)"
+      "resolvedValue": "(\n  bullet: '2022',\n  quotation-mark: '0022',\n  greater-than: '003e',\n  less-than: '003c',\n  copyright: '00a9',\n  left-double-quotation-mark: '201C',\n  heavy-right-pointing-angle-quotation-mark-ornament: '276F',\n  ne-double-arrow: '021D7',\n  up-tee-arrow: '021A5',\n  box-box: '029C9',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)"
     },
     {
       "description": "<p>Gets a glyph code, or several, (character entity reference) from the\n<code>$nice-glyphs</code> map, matching the given <code>$names</code>. Usually used with the content\nproperty for psuedo elements, to avoid use of magic character reference strings.</p>\n",
       "commentRange": {
-        "start": 35,
-        "end": 49
+        "start": 37,
+        "end": 51
       },
       "context": {
         "type": "function",
         "name": "get-glyph",
         "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
         "line": {
-          "start": 50,
-          "end": 63
+          "start": 52,
+          "end": 65
         }
       },
       "parameter": [
@@ -4689,11 +4696,11 @@
           "context": {
             "type": "variable",
             "name": "nice-glyphs",
-            "value": "(\n  bullet: '2022',\n  quotation-mark: '0022',\n  greater-than: '003e',\n  less-than: '003c',\n  copyright: '00a9',\n  left-double-quotation-mark: '201C',\n  ne-double-arrow: '021D7',\n  up-tee-arrow: '021A5',\n  box-box: '029C9',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
+            "value": "(\n  bullet: '2022',\n  quotation-mark: '0022',\n  greater-than: '003e',\n  less-than: '003c',\n  copyright: '00a9',\n  left-double-quotation-mark: '201C',\n  heavy-right-pointing-angle-quotation-mark-ornament: '276F',\n  ne-double-arrow: '021D7',\n  up-tee-arrow: '021A5',\n  box-box: '029C9',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
             "scope": "default",
             "line": {
-              "start": 21,
-              "end": 33
+              "start": 22,
+              "end": 35
             }
           }
         }
@@ -4747,16 +4754,16 @@
     {
       "description": "<p>Output a BEM style glyph selector for each glyph in the map.\n  E.g. .glyph.glyph--bullet { content: &#39;\\2022&#39;; }\n  @since 0.1.0</p>\n",
       "commentRange": {
-        "start": 66,
-        "end": 68
+        "start": 68,
+        "end": 70
       },
       "context": {
         "type": "css",
         "name": ".glyph",
         "value": "@each $key, $value in $nice-glyphs {\n      &--#{$key} {\n        &::before {\n          content: unquote('\\'\\\\#{$value}\\'');\n        }\n      }\n    }",
         "line": {
-          "start": 69,
-          "end": 79
+          "start": 71,
+          "end": 81
         }
       },
       "group": [
@@ -6037,606 +6044,95 @@
       "description": "<p>Map of icon name to codepoint.\nThis map avoids the use of &#39;magic strings&#39; for codepoints throught SASS code. The map is usually not used directly - use the nice-icon function/mixin instead.\nPlease note - the values for codepoints are not fixed and may change each time the font is re-generated.</p>\n",
       "commentRange": {
         "start": 30,
-        "end": 116
+        "end": 43
       },
       "context": {
         "type": "variable",
         "name": "nice-icons",
-        "value": "(\n  adjust: \"f101\",\n  angle-down: \"f102\",\n  angle-left: \"f103\",\n  angle-right: \"f104\",\n  angle-up: \"f105\",\n  apps: \"f106\",\n  bookmark: \"f107\",\n  calendar: \"f108\",\n  capsule: \"f109\",\n  caret-down: \"f10a\",\n  caret-left: \"f10b\",\n  caret-right: \"f10c\",\n  caret-up: \"f10d\",\n  chevron-down: \"f10e\",\n  chevron-left: \"f10f\",\n  chevron-right: \"f110\",\n  chevron-up: \"f111\",\n  circle-blank: \"f112\",\n  circle: \"f113\",\n  cloud-download: \"f114\",\n  cloud-upload: \"f115\",\n  double-angle-down: \"f116\",\n  double-angle-left: \"f117\",\n  double-angle-right: \"f118\",\n  double-angle-up: \"f119\",\n  download: \"f11a\",\n  email-closed: \"f11b\",\n  email-open: \"f11c\",\n  evidence: \"f11d\",\n  facebook-square: \"f11e\",\n  facebook: \"f11f\",\n  file-blank: \"f120\",\n  file-text: \"f121\",\n  file: \"f122\",\n  filter: \"f123\",\n  fullscreen: \"f124\",\n  google-plus: \"f125\",\n  group: \"f126\",\n  guidance: \"f127\",\n  guideline: \"f128\",\n  hamburger: \"f129\",\n  infoforpublic: \"f12a\",\n  information: \"f12b\",\n  lines: \"f12c\",\n  linkedin-square: \"f12d\",\n  linkedin: \"f12e\",\n  logo-name: \"f12f\",\n  logo: \"f130\",\n  minus: \"f131\",\n  news: \"f132\",\n  next: \"f133\",\n  ok: \"f134\",\n  pathways-node: \"f135\",\n  pathways: \"f136\",\n  play: \"f137\",\n  plus-circle: \"f138\",\n  plus: \"f139\",\n  podcast: \"f13a\",\n  prescribing: \"f13b\",\n  previous: \"f13c\",\n  print: \"f13d\",\n  quote-left: \"f13e\",\n  quote-right: \"f13f\",\n  readnews: \"f140\",\n  remove: \"f141\",\n  search: \"f142\",\n  share: \"f143\",\n  sort-down: \"f144\",\n  sort-up: \"f145\",\n  sort: \"f146\",\n  spinner: \"f147\",\n  standards: \"f148\",\n  stop: \"f149\",\n  support: \"f14a\",\n  syndication: \"f14b\",\n  trash: \"f14c\",\n  twitter-square: \"f14d\",\n  twitter: \"f14e\",\n  uptake: \"f14f\",\n  user: \"f150\",\n  warning: \"f151\",\n  youtube-play: \"f152\",\n  youtube-square: \"f153\",\n  youtube: \"f154\"\n)",
+        "value": "(\n  evidence: \"f101\",\n  facebook-square: \"f102\",\n  guidance: \"f103\",\n  linkedin-square: \"f104\",\n  logo-name: \"f105\",\n  logo: \"f106\",\n  pathways: \"f107\",\n  standards: \"f108\",\n  syndication: \"f109\",\n  twitter-square: \"f10a\",\n  youtube-square: \"f10b\"\n)",
         "scope": "default",
         "line": {
-          "start": 118,
-          "end": 203
+          "start": 45,
+          "end": 57
         }
       },
       "property": [
         {
           "type": "string",
-          "name": "adjust",
+          "name": "evidence",
           "default": "f101",
-          "description": "<p><span class=\"icon icon--adjust\" aria-hidden=\"true\"></span></p>\n",
+          "description": "<p><span class=\"icon icon--evidence\" aria-hidden=\"true\"></span></p>\n",
           "resolvedValue": "f101"
         },
         {
           "type": "string",
-          "name": "angle-down",
+          "name": "facebook-square",
           "default": "f102",
-          "description": "<p><span class=\"icon icon--angle-down\" aria-hidden=\"true\"></span></p>\n",
+          "description": "<p><span class=\"icon icon--facebook-square\" aria-hidden=\"true\"></span></p>\n",
           "resolvedValue": "f102"
         },
         {
           "type": "string",
-          "name": "angle-left",
+          "name": "guidance",
           "default": "f103",
-          "description": "<p><span class=\"icon icon--angle-left\" aria-hidden=\"true\"></span></p>\n",
+          "description": "<p><span class=\"icon icon--guidance\" aria-hidden=\"true\"></span></p>\n",
           "resolvedValue": "f103"
         },
         {
           "type": "string",
-          "name": "angle-right",
+          "name": "linkedin-square",
           "default": "f104",
-          "description": "<p><span class=\"icon icon--angle-right\" aria-hidden=\"true\"></span></p>\n",
+          "description": "<p><span class=\"icon icon--linkedin-square\" aria-hidden=\"true\"></span></p>\n",
           "resolvedValue": "f104"
         },
         {
           "type": "string",
-          "name": "angle-up",
+          "name": "logo-name",
           "default": "f105",
-          "description": "<p><span class=\"icon icon--angle-up\" aria-hidden=\"true\"></span></p>\n",
+          "description": "<p><span class=\"icon icon--logo-name\" aria-hidden=\"true\"></span></p>\n",
           "resolvedValue": "f105"
         },
         {
           "type": "string",
-          "name": "apps",
+          "name": "logo",
           "default": "f106",
-          "description": "<p><span class=\"icon icon--apps\" aria-hidden=\"true\"></span></p>\n",
+          "description": "<p><span class=\"icon icon--logo\" aria-hidden=\"true\"></span></p>\n",
           "resolvedValue": "f106"
         },
         {
           "type": "string",
-          "name": "bookmark",
+          "name": "pathways",
           "default": "f107",
-          "description": "<p><span class=\"icon icon--bookmark\" aria-hidden=\"true\"></span></p>\n",
+          "description": "<p><span class=\"icon icon--pathways\" aria-hidden=\"true\"></span></p>\n",
           "resolvedValue": "f107"
         },
         {
           "type": "string",
-          "name": "calendar",
+          "name": "standards",
           "default": "f108",
-          "description": "<p><span class=\"icon icon--calendar\" aria-hidden=\"true\"></span></p>\n",
+          "description": "<p><span class=\"icon icon--standards\" aria-hidden=\"true\"></span></p>\n",
           "resolvedValue": "f108"
         },
         {
           "type": "string",
-          "name": "capsule",
+          "name": "syndication",
           "default": "f109",
-          "description": "<p><span class=\"icon icon--capsule\" aria-hidden=\"true\"></span></p>\n",
+          "description": "<p><span class=\"icon icon--syndication\" aria-hidden=\"true\"></span></p>\n",
           "resolvedValue": "f109"
         },
         {
           "type": "string",
-          "name": "caret-down",
+          "name": "twitter-square",
           "default": "f10a",
-          "description": "<p><span class=\"icon icon--caret-down\" aria-hidden=\"true\"></span></p>\n",
+          "description": "<p><span class=\"icon icon--twitter-square\" aria-hidden=\"true\"></span></p>\n",
           "resolvedValue": "f10a"
         },
         {
           "type": "string",
-          "name": "caret-left",
-          "default": "f10b",
-          "description": "<p><span class=\"icon icon--caret-left\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f10b"
-        },
-        {
-          "type": "string",
-          "name": "caret-right",
-          "default": "f10c",
-          "description": "<p><span class=\"icon icon--caret-right\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f10c"
-        },
-        {
-          "type": "string",
-          "name": "caret-up",
-          "default": "f10d",
-          "description": "<p><span class=\"icon icon--caret-up\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f10d"
-        },
-        {
-          "type": "string",
-          "name": "chevron-down",
-          "default": "f10e",
-          "description": "<p><span class=\"icon icon--chevron-down\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f10e"
-        },
-        {
-          "type": "string",
-          "name": "chevron-left",
-          "default": "f10f",
-          "description": "<p><span class=\"icon icon--chevron-left\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f10f"
-        },
-        {
-          "type": "string",
-          "name": "chevron-right",
-          "default": "f110",
-          "description": "<p><span class=\"icon icon--chevron-right\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f110"
-        },
-        {
-          "type": "string",
-          "name": "chevron-up",
-          "default": "f111",
-          "description": "<p><span class=\"icon icon--chevron-up\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f111"
-        },
-        {
-          "type": "string",
-          "name": "circle-blank",
-          "default": "f112",
-          "description": "<p><span class=\"icon icon--circle-blank\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f112"
-        },
-        {
-          "type": "string",
-          "name": "circle",
-          "default": "f113",
-          "description": "<p><span class=\"icon icon--circle\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f113"
-        },
-        {
-          "type": "string",
-          "name": "cloud-download",
-          "default": "f114",
-          "description": "<p><span class=\"icon icon--cloud-download\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f114"
-        },
-        {
-          "type": "string",
-          "name": "cloud-upload",
-          "default": "f115",
-          "description": "<p><span class=\"icon icon--cloud-upload\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f115"
-        },
-        {
-          "type": "string",
-          "name": "double-angle-down",
-          "default": "f116",
-          "description": "<p><span class=\"icon icon--double-angle-down\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f116"
-        },
-        {
-          "type": "string",
-          "name": "double-angle-left",
-          "default": "f117",
-          "description": "<p><span class=\"icon icon--double-angle-left\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f117"
-        },
-        {
-          "type": "string",
-          "name": "double-angle-right",
-          "default": "f118",
-          "description": "<p><span class=\"icon icon--double-angle-right\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f118"
-        },
-        {
-          "type": "string",
-          "name": "double-angle-up",
-          "default": "f119",
-          "description": "<p><span class=\"icon icon--double-angle-up\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f119"
-        },
-        {
-          "type": "string",
-          "name": "download",
-          "default": "f11a",
-          "description": "<p><span class=\"icon icon--download\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f11a"
-        },
-        {
-          "type": "string",
-          "name": "email-closed",
-          "default": "f11b",
-          "description": "<p><span class=\"icon icon--email-closed\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f11b"
-        },
-        {
-          "type": "string",
-          "name": "email-open",
-          "default": "f11c",
-          "description": "<p><span class=\"icon icon--email-open\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f11c"
-        },
-        {
-          "type": "string",
-          "name": "evidence",
-          "default": "f11d",
-          "description": "<p><span class=\"icon icon--evidence\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f11d"
-        },
-        {
-          "type": "string",
-          "name": "facebook-square",
-          "default": "f11e",
-          "description": "<p><span class=\"icon icon--facebook-square\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f11e"
-        },
-        {
-          "type": "string",
-          "name": "facebook",
-          "default": "f11f",
-          "description": "<p><span class=\"icon icon--facebook\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f11f"
-        },
-        {
-          "type": "string",
-          "name": "file-blank",
-          "default": "f120",
-          "description": "<p><span class=\"icon icon--file-blank\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f120"
-        },
-        {
-          "type": "string",
-          "name": "file-text",
-          "default": "f121",
-          "description": "<p><span class=\"icon icon--file-text\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f121"
-        },
-        {
-          "type": "string",
-          "name": "file",
-          "default": "f122",
-          "description": "<p><span class=\"icon icon--file\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f122"
-        },
-        {
-          "type": "string",
-          "name": "filter",
-          "default": "f123",
-          "description": "<p><span class=\"icon icon--filter\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f123"
-        },
-        {
-          "type": "string",
-          "name": "fullscreen",
-          "default": "f124",
-          "description": "<p><span class=\"icon icon--fullscreen\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f124"
-        },
-        {
-          "type": "string",
-          "name": "google-plus",
-          "default": "f125",
-          "description": "<p><span class=\"icon icon--google-plus\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f125"
-        },
-        {
-          "type": "string",
-          "name": "group",
-          "default": "f126",
-          "description": "<p><span class=\"icon icon--group\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f126"
-        },
-        {
-          "type": "string",
-          "name": "guidance",
-          "default": "f127",
-          "description": "<p><span class=\"icon icon--guidance\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f127"
-        },
-        {
-          "type": "string",
-          "name": "guideline",
-          "default": "f128",
-          "description": "<p><span class=\"icon icon--guideline\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f128"
-        },
-        {
-          "type": "string",
-          "name": "hamburger",
-          "default": "f129",
-          "description": "<p><span class=\"icon icon--hamburger\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f129"
-        },
-        {
-          "type": "string",
-          "name": "infoforpublic",
-          "default": "f12a",
-          "description": "<p><span class=\"icon icon--infoforpublic\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f12a"
-        },
-        {
-          "type": "string",
-          "name": "information",
-          "default": "f12b",
-          "description": "<p><span class=\"icon icon--information\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f12b"
-        },
-        {
-          "type": "string",
-          "name": "lines",
-          "default": "f12c",
-          "description": "<p><span class=\"icon icon--lines\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f12c"
-        },
-        {
-          "type": "string",
-          "name": "linkedin-square",
-          "default": "f12d",
-          "description": "<p><span class=\"icon icon--linkedin-square\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f12d"
-        },
-        {
-          "type": "string",
-          "name": "linkedin",
-          "default": "f12e",
-          "description": "<p><span class=\"icon icon--linkedin\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f12e"
-        },
-        {
-          "type": "string",
-          "name": "logo-name",
-          "default": "f12f",
-          "description": "<p><span class=\"icon icon--logo-name\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f12f"
-        },
-        {
-          "type": "string",
-          "name": "logo",
-          "default": "f130",
-          "description": "<p><span class=\"icon icon--logo\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f130"
-        },
-        {
-          "type": "string",
-          "name": "minus",
-          "default": "f131",
-          "description": "<p><span class=\"icon icon--minus\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f131"
-        },
-        {
-          "type": "string",
-          "name": "news",
-          "default": "f132",
-          "description": "<p><span class=\"icon icon--news\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f132"
-        },
-        {
-          "type": "string",
-          "name": "next",
-          "default": "f133",
-          "description": "<p><span class=\"icon icon--next\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f133"
-        },
-        {
-          "type": "string",
-          "name": "ok",
-          "default": "f134",
-          "description": "<p><span class=\"icon icon--ok\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f134"
-        },
-        {
-          "type": "string",
-          "name": "pathways-node",
-          "default": "f135",
-          "description": "<p><span class=\"icon icon--pathways-node\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f135"
-        },
-        {
-          "type": "string",
-          "name": "pathways",
-          "default": "f136",
-          "description": "<p><span class=\"icon icon--pathways\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f136"
-        },
-        {
-          "type": "string",
-          "name": "play",
-          "default": "f137",
-          "description": "<p><span class=\"icon icon--play\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f137"
-        },
-        {
-          "type": "string",
-          "name": "plus-circle",
-          "default": "f138",
-          "description": "<p><span class=\"icon icon--plus-circle\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f138"
-        },
-        {
-          "type": "string",
-          "name": "plus",
-          "default": "f139",
-          "description": "<p><span class=\"icon icon--plus\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f139"
-        },
-        {
-          "type": "string",
-          "name": "podcast",
-          "default": "f13a",
-          "description": "<p><span class=\"icon icon--podcast\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f13a"
-        },
-        {
-          "type": "string",
-          "name": "prescribing",
-          "default": "f13b",
-          "description": "<p><span class=\"icon icon--prescribing\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f13b"
-        },
-        {
-          "type": "string",
-          "name": "previous",
-          "default": "f13c",
-          "description": "<p><span class=\"icon icon--previous\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f13c"
-        },
-        {
-          "type": "string",
-          "name": "print",
-          "default": "f13d",
-          "description": "<p><span class=\"icon icon--print\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f13d"
-        },
-        {
-          "type": "string",
-          "name": "quote-left",
-          "default": "f13e",
-          "description": "<p><span class=\"icon icon--quote-left\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f13e"
-        },
-        {
-          "type": "string",
-          "name": "quote-right",
-          "default": "f13f",
-          "description": "<p><span class=\"icon icon--quote-right\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f13f"
-        },
-        {
-          "type": "string",
-          "name": "readnews",
-          "default": "f140",
-          "description": "<p><span class=\"icon icon--readnews\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f140"
-        },
-        {
-          "type": "string",
-          "name": "remove",
-          "default": "f141",
-          "description": "<p><span class=\"icon icon--remove\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f141"
-        },
-        {
-          "type": "string",
-          "name": "search",
-          "default": "f142",
-          "description": "<p><span class=\"icon icon--search\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f142"
-        },
-        {
-          "type": "string",
-          "name": "share",
-          "default": "f143",
-          "description": "<p><span class=\"icon icon--share\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f143"
-        },
-        {
-          "type": "string",
-          "name": "sort-down",
-          "default": "f144",
-          "description": "<p><span class=\"icon icon--sort-down\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f144"
-        },
-        {
-          "type": "string",
-          "name": "sort-up",
-          "default": "f145",
-          "description": "<p><span class=\"icon icon--sort-up\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f145"
-        },
-        {
-          "type": "string",
-          "name": "sort",
-          "default": "f146",
-          "description": "<p><span class=\"icon icon--sort\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f146"
-        },
-        {
-          "type": "string",
-          "name": "spinner",
-          "default": "f147",
-          "description": "<p><span class=\"icon icon--spinner\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f147"
-        },
-        {
-          "type": "string",
-          "name": "standards",
-          "default": "f148",
-          "description": "<p><span class=\"icon icon--standards\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f148"
-        },
-        {
-          "type": "string",
-          "name": "stop",
-          "default": "f149",
-          "description": "<p><span class=\"icon icon--stop\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f149"
-        },
-        {
-          "type": "string",
-          "name": "support",
-          "default": "f14a",
-          "description": "<p><span class=\"icon icon--support\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f14a"
-        },
-        {
-          "type": "string",
-          "name": "syndication",
-          "default": "f14b",
-          "description": "<p><span class=\"icon icon--syndication\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f14b"
-        },
-        {
-          "type": "string",
-          "name": "trash",
-          "default": "f14c",
-          "description": "<p><span class=\"icon icon--trash\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f14c"
-        },
-        {
-          "type": "string",
-          "name": "twitter-square",
-          "default": "f14d",
-          "description": "<p><span class=\"icon icon--twitter-square\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f14d"
-        },
-        {
-          "type": "string",
-          "name": "twitter",
-          "default": "f14e",
-          "description": "<p><span class=\"icon icon--twitter\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f14e"
-        },
-        {
-          "type": "string",
-          "name": "uptake",
-          "default": "f14f",
-          "description": "<p><span class=\"icon icon--uptake\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f14f"
-        },
-        {
-          "type": "string",
-          "name": "user",
-          "default": "f150",
-          "description": "<p><span class=\"icon icon--user\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f150"
-        },
-        {
-          "type": "string",
-          "name": "warning",
-          "default": "f151",
-          "description": "<p><span class=\"icon icon--warning\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f151"
-        },
-        {
-          "type": "string",
-          "name": "youtube-play",
-          "default": "f152",
-          "description": "<p><span class=\"icon icon--youtube-play\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f152"
-        },
-        {
-          "type": "string",
           "name": "youtube-square",
-          "default": "f153",
+          "default": "f10b",
           "description": "<p><span class=\"icon icon--youtube-square\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f153"
-        },
-        {
-          "type": "string",
-          "name": "youtube",
-          "default": "f154",
-          "description": "<p><span class=\"icon icon--youtube\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f154"
+          "resolvedValue": "f10b"
         }
       ],
       "group": [
@@ -6655,8 +6151,8 @@
             "name": "nice-icon",
             "code": "\n  @if map-has-key($nice-icons, $icon) {\n    @include icon-base;\n    content: nice-icon($icon);\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
             "line": {
-              "start": 237,
-              "end": 244
+              "start": 91,
+              "end": 98
             }
           }
         },
@@ -6667,8 +6163,8 @@
             "name": "nice-icon",
             "code": "\n  @if map-has-key($nice-icons, $icon) {\n    @include icon-base;\n    content: nice-icon($icon);\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
             "line": {
-              "start": 237,
-              "end": 244
+              "start": 91,
+              "end": 98
             }
           }
         },
@@ -6679,8 +6175,8 @@
             "name": "nice-icon",
             "code": "\n  @if map-has-key($nice-icons, $icon) {\n    $icon-code: map-get($nice-icons, $icon);\n    @return unquote('\\'\\\\#{ $icon-code }\\'');\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
             "line": {
-              "start": 256,
-              "end": 263
+              "start": 110,
+              "end": 117
             }
           }
         },
@@ -6691,8 +6187,8 @@
             "name": "nice-icon",
             "code": "\n  @if map-has-key($nice-icons, $icon) {\n    $icon-code: map-get($nice-icons, $icon);\n    @return unquote('\\'\\\\#{ $icon-code }\\'');\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
             "line": {
-              "start": 256,
-              "end": 263
+              "start": 110,
+              "end": 117
             }
           }
         },
@@ -6703,8 +6199,8 @@
             "name": "nice-icon",
             "code": "\n  @if map-has-key($nice-icons, $icon) {\n    $icon-code: map-get($nice-icons, $icon);\n    @return unquote('\\'\\\\#{ $icon-code }\\'');\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
             "line": {
-              "start": 256,
-              "end": 263
+              "start": 110,
+              "end": 117
             }
           }
         }
@@ -6712,21 +6208,21 @@
       "groupName": {
         "icons": "Icons"
       },
-      "resolvedValue": "(\n  adjust: \"f101\",\n  angle-down: \"f102\",\n  angle-left: \"f103\",\n  angle-right: \"f104\",\n  angle-up: \"f105\",\n  apps: \"f106\",\n  bookmark: \"f107\",\n  calendar: \"f108\",\n  capsule: \"f109\",\n  caret-down: \"f10a\",\n  caret-left: \"f10b\",\n  caret-right: \"f10c\",\n  caret-up: \"f10d\",\n  chevron-down: \"f10e\",\n  chevron-left: \"f10f\",\n  chevron-right: \"f110\",\n  chevron-up: \"f111\",\n  circle-blank: \"f112\",\n  circle: \"f113\",\n  cloud-download: \"f114\",\n  cloud-upload: \"f115\",\n  double-angle-down: \"f116\",\n  double-angle-left: \"f117\",\n  double-angle-right: \"f118\",\n  double-angle-up: \"f119\",\n  download: \"f11a\",\n  email-closed: \"f11b\",\n  email-open: \"f11c\",\n  evidence: \"f11d\",\n  facebook-square: \"f11e\",\n  facebook: \"f11f\",\n  file-blank: \"f120\",\n  file-text: \"f121\",\n  file: \"f122\",\n  filter: \"f123\",\n  fullscreen: \"f124\",\n  google-plus: \"f125\",\n  group: \"f126\",\n  guidance: \"f127\",\n  guideline: \"f128\",\n  hamburger: \"f129\",\n  infoforpublic: \"f12a\",\n  information: \"f12b\",\n  lines: \"f12c\",\n  linkedin-square: \"f12d\",\n  linkedin: \"f12e\",\n  logo-name: \"f12f\",\n  logo: \"f130\",\n  minus: \"f131\",\n  news: \"f132\",\n  next: \"f133\",\n  ok: \"f134\",\n  pathways-node: \"f135\",\n  pathways: \"f136\",\n  play: \"f137\",\n  plus-circle: \"f138\",\n  plus: \"f139\",\n  podcast: \"f13a\",\n  prescribing: \"f13b\",\n  previous: \"f13c\",\n  print: \"f13d\",\n  quote-left: \"f13e\",\n  quote-right: \"f13f\",\n  readnews: \"f140\",\n  remove: \"f141\",\n  search: \"f142\",\n  share: \"f143\",\n  sort-down: \"f144\",\n  sort-up: \"f145\",\n  sort: \"f146\",\n  spinner: \"f147\",\n  standards: \"f148\",\n  stop: \"f149\",\n  support: \"f14a\",\n  syndication: \"f14b\",\n  trash: \"f14c\",\n  twitter-square: \"f14d\",\n  twitter: \"f14e\",\n  uptake: \"f14f\",\n  user: \"f150\",\n  warning: \"f151\",\n  youtube-play: \"f152\",\n  youtube-square: \"f153\",\n  youtube: \"f154\"\n)"
+      "resolvedValue": "(\n  evidence: \"f101\",\n  facebook-square: \"f102\",\n  guidance: \"f103\",\n  linkedin-square: \"f104\",\n  logo-name: \"f105\",\n  logo: \"f106\",\n  pathways: \"f107\",\n  standards: \"f108\",\n  syndication: \"f109\",\n  twitter-square: \"f10a\",\n  youtube-square: \"f10b\"\n)"
     },
     {
       "description": "<p>Base styles required for an icon including font family etc</p>\n",
       "commentRange": {
-        "start": 205,
-        "end": 213
+        "start": 59,
+        "end": 67
       },
       "context": {
         "type": "mixin",
         "name": "icon-base",
         "code": "\n  display: inline-block;\n  font-family: 'NICE Icons';\n  font-style: normal;\n  font-weight: normal;\n  line-height: 1;\n  speak: none;\n  text-decoration: inherit;\n  text-rendering: auto;\n  text-transform: none;\n  vertical-align: baseline;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n",
         "line": {
-          "start": 214,
-          "end": 227
+          "start": 68,
+          "end": 81
         }
       },
       "example": [
@@ -6751,8 +6247,8 @@
             "name": "nice-icon",
             "code": "\n  @if map-has-key($nice-icons, $icon) {\n    @include icon-base;\n    content: nice-icon($icon);\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
             "line": {
-              "start": 237,
-              "end": 244
+              "start": 91,
+              "end": 98
             }
           }
         }
@@ -6764,16 +6260,16 @@
     {
       "description": "<p>Applies the required styles for the given icon\nincluding the codepoint.</p>\n",
       "commentRange": {
-        "start": 229,
-        "end": 236
+        "start": 83,
+        "end": 90
       },
       "context": {
         "type": "mixin",
         "name": "nice-icon",
         "code": "\n  @if map-has-key($nice-icons, $icon) {\n    @include icon-base;\n    content: nice-icon($icon);\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
         "line": {
-          "start": 237,
-          "end": 244
+          "start": 91,
+          "end": 98
         }
       },
       "parameter": [
@@ -6825,16 +6321,16 @@
     {
       "description": "<p>Function for getting the codepoint for a given icon, for use\nwithin the <code>content</code> property of psuedo elements.</p>\n",
       "commentRange": {
-        "start": 246,
-        "end": 255
+        "start": 100,
+        "end": 109
       },
       "context": {
         "type": "function",
         "name": "nice-icon",
         "code": "\n  @if map-has-key($nice-icons, $icon) {\n    $icon-code: map-get($nice-icons, $icon);\n    @return unquote('\\'\\\\#{ $icon-code }\\'');\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
         "line": {
-          "start": 256,
-          "end": 263
+          "start": 110,
+          "end": 117
         }
       },
       "example": [
@@ -6876,8 +6372,8 @@
             "name": "nice-icon",
             "code": "\n  @if map-has-key($nice-icons, $icon) {\n    @include icon-base;\n    content: nice-icon($icon);\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
             "line": {
-              "start": 237,
-              "end": 244
+              "start": 91,
+              "end": 98
             }
           }
         }
@@ -6889,16 +6385,16 @@
     {
       "description": "<p>Class for rendering an icon.\nUse with a named modifier for an icon.</p>\n",
       "commentRange": {
-        "start": 265,
-        "end": 268
+        "start": 119,
+        "end": 122
       },
       "context": {
         "type": "css",
         "name": ".icon",
         "value": "@include icon-base;\n\n  &:before {\n    display: block;\n  }\n\n  @each $icon, $code in $nice-icons {\n    &--#{ $icon }:before {\n      content: nice-icon($icon);\n    }\n  }",
         "line": {
-          "start": 269,
-          "end": 282
+          "start": 123,
+          "end": 136
         }
       },
       "example": [
@@ -10229,7 +9725,7 @@
       "context": {
         "type": "variable",
         "name": "font-sizes",
-        "value": "(\n  // sass-lint:disable-block space-around-operator\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 11,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)",
+        "value": "(\n  // sass-lint:disable-block space-around-operator\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 6,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 10,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)",
         "scope": "private",
         "line": {
           "start": 27,
@@ -10290,7 +9786,7 @@
       "groupName": {
         "typography": "Typography"
       },
-      "resolvedValue": "(\n  // sass-lint:disable-block space-around-operator\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 11,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)"
+      "resolvedValue": "(\n  // sass-lint:disable-block space-around-operator\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 6,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 10,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)"
     },
     {
       "description": "<p>Modular scale values</p>\n",
@@ -14073,10 +13569,10 @@
           "context": {
             "type": "css",
             "name": ".breadcrumbs",
-            "value": "@include font-size(0);\n  list-style: none;\n  margin: em($spacing-small 0 $spacing-large);\n  padding: 0;\n\n  &__crumb {\n    display: inline-block;\n\n    &:before {\n      @include nice-icon(angle-right);\n      margin: em(0 $spacing-x-small);\n    }\n\n    &:first-child:before {\n      display: none;\n    }\n  }\n\n  a {\n    color: $colour-text;\n    text-decoration: underline;\n\n    &:hover {\n      text-decoration: none;\n    }\n\n    &:focus {\n      color: $colour-link-focus-text;\n    }\n\n    &:active {\n      color: $colour-link-active;\n    }\n  }",
+            "value": "@include font-size(0);\n  list-style: none;\n  margin: em($spacing-small 0 $spacing-large);\n  padding: 0;\n\n  &__crumb {\n    display: inline-block;\n\n    &:before {\n      content: get-glyph(heavy-right-pointing-angle-quotation-mark-ornament);\n      font-size: 70%;\n      margin: em(0 $spacing-x-small);\n    }\n\n    &:first-child:before {\n      display: none;\n    }\n  }\n\n  a {\n    color: $colour-text;\n    text-decoration: underline;\n\n    &:hover {\n      text-decoration: none;\n    }\n\n    &:focus {\n      color: $colour-link-focus-text;\n    }\n\n    &:active {\n      color: $colour-link-active;\n    }\n  }",
             "line": {
               "start": 8,
-              "end": 44
+              "end": 45
             }
           },
           "since": [
@@ -16093,16 +15589,16 @@
         {
           "description": "<p>Output a BEM style glyph selector for each glyph in the map.\n  E.g. .glyph.glyph--bullet { content: &#39;\\2022&#39;; }\n  @since 0.1.0</p>\n",
           "commentRange": {
-            "start": 66,
-            "end": 68
+            "start": 68,
+            "end": 70
           },
           "context": {
             "type": "css",
             "name": ".glyph",
             "value": "@each $key, $value in $nice-glyphs {\n      &--#{$key} {\n        &::before {\n          content: unquote('\\'\\\\#{$value}\\'');\n        }\n      }\n    }",
             "line": {
-              "start": 69,
-              "end": 79
+              "start": 71,
+              "end": 81
             }
           },
           "group": [
@@ -16765,16 +16261,16 @@
           "description": "<p>A map of glyph name to code (character entity reference).\nAvoids things like content: &#39;\\201C&#39; throughout SASS.\nUsual usage is via the <code>get-glyph</code> function.</p>\n",
           "commentRange": {
             "start": 5,
-            "end": 20
+            "end": 21
           },
           "context": {
             "type": "variable",
             "name": "nice-glyphs",
-            "value": "(\n  bullet: '2022',\n  quotation-mark: '0022',\n  greater-than: '003e',\n  less-than: '003c',\n  copyright: '00a9',\n  left-double-quotation-mark: '201C',\n  ne-double-arrow: '021D7',\n  up-tee-arrow: '021A5',\n  box-box: '029C9',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
+            "value": "(\n  bullet: '2022',\n  quotation-mark: '0022',\n  greater-than: '003e',\n  less-than: '003c',\n  copyright: '00a9',\n  left-double-quotation-mark: '201C',\n  heavy-right-pointing-angle-quotation-mark-ornament: '276F',\n  ne-double-arrow: '021D7',\n  up-tee-arrow: '021A5',\n  box-box: '029C9',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
             "scope": "default",
             "line": {
-              "start": 21,
-              "end": 33
+              "start": 22,
+              "end": 35
             }
           },
           "see": [
@@ -16785,8 +16281,8 @@
                 "name": "get-glyph",
                 "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
                 "line": {
-                  "start": 50,
-                  "end": 63
+                  "start": 52,
+                  "end": 65
                 }
               }
             }
@@ -16842,6 +16338,13 @@
             },
             {
               "type": "String",
+              "name": "heavy-right-pointing-angle-quotation-mark-ornament",
+              "default": "276F",
+              "description": "<p>Heavy right pointing angle quotation mark ornament (❯)</p>\n",
+              "resolvedValue": "276F"
+            },
+            {
+              "type": "String",
               "name": "ne-double-arrow",
               "default": "021D7",
               "description": "<p>North east double arrow (⇗)</p>\n",
@@ -16890,8 +16393,8 @@
                 "name": "get-glyph",
                 "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
                 "line": {
-                  "start": 50,
-                  "end": 63
+                  "start": 52,
+                  "end": 65
                 }
               }
             },
@@ -16902,8 +16405,8 @@
                 "name": "get-glyph",
                 "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
                 "line": {
-                  "start": 50,
-                  "end": 63
+                  "start": 52,
+                  "end": 65
                 }
               }
             },
@@ -16914,8 +16417,8 @@
                 "name": "get-glyph",
                 "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
                 "line": {
-                  "start": 50,
-                  "end": 63
+                  "start": 52,
+                  "end": 65
                 }
               }
             }
@@ -16923,23 +16426,23 @@
           "groupName": {
             "helpers": "Helpers"
           },
-          "resolvedValue": "(\n  bullet: '2022',\n  quotation-mark: '0022',\n  greater-than: '003e',\n  less-than: '003c',\n  copyright: '00a9',\n  left-double-quotation-mark: '201C',\n  ne-double-arrow: '021D7',\n  up-tee-arrow: '021A5',\n  box-box: '029C9',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)"
+          "resolvedValue": "(\n  bullet: '2022',\n  quotation-mark: '0022',\n  greater-than: '003e',\n  less-than: '003c',\n  copyright: '00a9',\n  left-double-quotation-mark: '201C',\n  heavy-right-pointing-angle-quotation-mark-ornament: '276F',\n  ne-double-arrow: '021D7',\n  up-tee-arrow: '021A5',\n  box-box: '029C9',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)"
         }
       ],
       "function": [
         {
           "description": "<p>Gets a glyph code, or several, (character entity reference) from the\n<code>$nice-glyphs</code> map, matching the given <code>$names</code>. Usually used with the content\nproperty for psuedo elements, to avoid use of magic character reference strings.</p>\n",
           "commentRange": {
-            "start": 35,
-            "end": 49
+            "start": 37,
+            "end": 51
           },
           "context": {
             "type": "function",
             "name": "get-glyph",
             "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
             "line": {
-              "start": 50,
-              "end": 63
+              "start": 52,
+              "end": 65
             }
           },
           "parameter": [
@@ -16959,11 +16462,11 @@
               "context": {
                 "type": "variable",
                 "name": "nice-glyphs",
-                "value": "(\n  bullet: '2022',\n  quotation-mark: '0022',\n  greater-than: '003e',\n  less-than: '003c',\n  copyright: '00a9',\n  left-double-quotation-mark: '201C',\n  ne-double-arrow: '021D7',\n  up-tee-arrow: '021A5',\n  box-box: '029C9',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
+                "value": "(\n  bullet: '2022',\n  quotation-mark: '0022',\n  greater-than: '003e',\n  less-than: '003c',\n  copyright: '00a9',\n  left-double-quotation-mark: '201C',\n  heavy-right-pointing-angle-quotation-mark-ornament: '276F',\n  ne-double-arrow: '021D7',\n  up-tee-arrow: '021A5',\n  box-box: '029C9',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
                 "scope": "default",
                 "line": {
-                  "start": 21,
-                  "end": 33
+                  "start": 22,
+                  "end": 35
                 }
               }
             }
@@ -17454,606 +16957,95 @@
           "description": "<p>Map of icon name to codepoint.\nThis map avoids the use of &#39;magic strings&#39; for codepoints throught SASS code. The map is usually not used directly - use the nice-icon function/mixin instead.\nPlease note - the values for codepoints are not fixed and may change each time the font is re-generated.</p>\n",
           "commentRange": {
             "start": 30,
-            "end": 116
+            "end": 43
           },
           "context": {
             "type": "variable",
             "name": "nice-icons",
-            "value": "(\n  adjust: \"f101\",\n  angle-down: \"f102\",\n  angle-left: \"f103\",\n  angle-right: \"f104\",\n  angle-up: \"f105\",\n  apps: \"f106\",\n  bookmark: \"f107\",\n  calendar: \"f108\",\n  capsule: \"f109\",\n  caret-down: \"f10a\",\n  caret-left: \"f10b\",\n  caret-right: \"f10c\",\n  caret-up: \"f10d\",\n  chevron-down: \"f10e\",\n  chevron-left: \"f10f\",\n  chevron-right: \"f110\",\n  chevron-up: \"f111\",\n  circle-blank: \"f112\",\n  circle: \"f113\",\n  cloud-download: \"f114\",\n  cloud-upload: \"f115\",\n  double-angle-down: \"f116\",\n  double-angle-left: \"f117\",\n  double-angle-right: \"f118\",\n  double-angle-up: \"f119\",\n  download: \"f11a\",\n  email-closed: \"f11b\",\n  email-open: \"f11c\",\n  evidence: \"f11d\",\n  facebook-square: \"f11e\",\n  facebook: \"f11f\",\n  file-blank: \"f120\",\n  file-text: \"f121\",\n  file: \"f122\",\n  filter: \"f123\",\n  fullscreen: \"f124\",\n  google-plus: \"f125\",\n  group: \"f126\",\n  guidance: \"f127\",\n  guideline: \"f128\",\n  hamburger: \"f129\",\n  infoforpublic: \"f12a\",\n  information: \"f12b\",\n  lines: \"f12c\",\n  linkedin-square: \"f12d\",\n  linkedin: \"f12e\",\n  logo-name: \"f12f\",\n  logo: \"f130\",\n  minus: \"f131\",\n  news: \"f132\",\n  next: \"f133\",\n  ok: \"f134\",\n  pathways-node: \"f135\",\n  pathways: \"f136\",\n  play: \"f137\",\n  plus-circle: \"f138\",\n  plus: \"f139\",\n  podcast: \"f13a\",\n  prescribing: \"f13b\",\n  previous: \"f13c\",\n  print: \"f13d\",\n  quote-left: \"f13e\",\n  quote-right: \"f13f\",\n  readnews: \"f140\",\n  remove: \"f141\",\n  search: \"f142\",\n  share: \"f143\",\n  sort-down: \"f144\",\n  sort-up: \"f145\",\n  sort: \"f146\",\n  spinner: \"f147\",\n  standards: \"f148\",\n  stop: \"f149\",\n  support: \"f14a\",\n  syndication: \"f14b\",\n  trash: \"f14c\",\n  twitter-square: \"f14d\",\n  twitter: \"f14e\",\n  uptake: \"f14f\",\n  user: \"f150\",\n  warning: \"f151\",\n  youtube-play: \"f152\",\n  youtube-square: \"f153\",\n  youtube: \"f154\"\n)",
+            "value": "(\n  evidence: \"f101\",\n  facebook-square: \"f102\",\n  guidance: \"f103\",\n  linkedin-square: \"f104\",\n  logo-name: \"f105\",\n  logo: \"f106\",\n  pathways: \"f107\",\n  standards: \"f108\",\n  syndication: \"f109\",\n  twitter-square: \"f10a\",\n  youtube-square: \"f10b\"\n)",
             "scope": "default",
             "line": {
-              "start": 118,
-              "end": 203
+              "start": 45,
+              "end": 57
             }
           },
           "property": [
             {
               "type": "string",
-              "name": "adjust",
+              "name": "evidence",
               "default": "f101",
-              "description": "<p><span class=\"icon icon--adjust\" aria-hidden=\"true\"></span></p>\n",
+              "description": "<p><span class=\"icon icon--evidence\" aria-hidden=\"true\"></span></p>\n",
               "resolvedValue": "f101"
             },
             {
               "type": "string",
-              "name": "angle-down",
+              "name": "facebook-square",
               "default": "f102",
-              "description": "<p><span class=\"icon icon--angle-down\" aria-hidden=\"true\"></span></p>\n",
+              "description": "<p><span class=\"icon icon--facebook-square\" aria-hidden=\"true\"></span></p>\n",
               "resolvedValue": "f102"
             },
             {
               "type": "string",
-              "name": "angle-left",
+              "name": "guidance",
               "default": "f103",
-              "description": "<p><span class=\"icon icon--angle-left\" aria-hidden=\"true\"></span></p>\n",
+              "description": "<p><span class=\"icon icon--guidance\" aria-hidden=\"true\"></span></p>\n",
               "resolvedValue": "f103"
             },
             {
               "type": "string",
-              "name": "angle-right",
+              "name": "linkedin-square",
               "default": "f104",
-              "description": "<p><span class=\"icon icon--angle-right\" aria-hidden=\"true\"></span></p>\n",
+              "description": "<p><span class=\"icon icon--linkedin-square\" aria-hidden=\"true\"></span></p>\n",
               "resolvedValue": "f104"
             },
             {
               "type": "string",
-              "name": "angle-up",
+              "name": "logo-name",
               "default": "f105",
-              "description": "<p><span class=\"icon icon--angle-up\" aria-hidden=\"true\"></span></p>\n",
+              "description": "<p><span class=\"icon icon--logo-name\" aria-hidden=\"true\"></span></p>\n",
               "resolvedValue": "f105"
             },
             {
               "type": "string",
-              "name": "apps",
+              "name": "logo",
               "default": "f106",
-              "description": "<p><span class=\"icon icon--apps\" aria-hidden=\"true\"></span></p>\n",
+              "description": "<p><span class=\"icon icon--logo\" aria-hidden=\"true\"></span></p>\n",
               "resolvedValue": "f106"
             },
             {
               "type": "string",
-              "name": "bookmark",
+              "name": "pathways",
               "default": "f107",
-              "description": "<p><span class=\"icon icon--bookmark\" aria-hidden=\"true\"></span></p>\n",
+              "description": "<p><span class=\"icon icon--pathways\" aria-hidden=\"true\"></span></p>\n",
               "resolvedValue": "f107"
             },
             {
               "type": "string",
-              "name": "calendar",
+              "name": "standards",
               "default": "f108",
-              "description": "<p><span class=\"icon icon--calendar\" aria-hidden=\"true\"></span></p>\n",
+              "description": "<p><span class=\"icon icon--standards\" aria-hidden=\"true\"></span></p>\n",
               "resolvedValue": "f108"
             },
             {
               "type": "string",
-              "name": "capsule",
+              "name": "syndication",
               "default": "f109",
-              "description": "<p><span class=\"icon icon--capsule\" aria-hidden=\"true\"></span></p>\n",
+              "description": "<p><span class=\"icon icon--syndication\" aria-hidden=\"true\"></span></p>\n",
               "resolvedValue": "f109"
             },
             {
               "type": "string",
-              "name": "caret-down",
+              "name": "twitter-square",
               "default": "f10a",
-              "description": "<p><span class=\"icon icon--caret-down\" aria-hidden=\"true\"></span></p>\n",
+              "description": "<p><span class=\"icon icon--twitter-square\" aria-hidden=\"true\"></span></p>\n",
               "resolvedValue": "f10a"
             },
             {
               "type": "string",
-              "name": "caret-left",
-              "default": "f10b",
-              "description": "<p><span class=\"icon icon--caret-left\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f10b"
-            },
-            {
-              "type": "string",
-              "name": "caret-right",
-              "default": "f10c",
-              "description": "<p><span class=\"icon icon--caret-right\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f10c"
-            },
-            {
-              "type": "string",
-              "name": "caret-up",
-              "default": "f10d",
-              "description": "<p><span class=\"icon icon--caret-up\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f10d"
-            },
-            {
-              "type": "string",
-              "name": "chevron-down",
-              "default": "f10e",
-              "description": "<p><span class=\"icon icon--chevron-down\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f10e"
-            },
-            {
-              "type": "string",
-              "name": "chevron-left",
-              "default": "f10f",
-              "description": "<p><span class=\"icon icon--chevron-left\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f10f"
-            },
-            {
-              "type": "string",
-              "name": "chevron-right",
-              "default": "f110",
-              "description": "<p><span class=\"icon icon--chevron-right\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f110"
-            },
-            {
-              "type": "string",
-              "name": "chevron-up",
-              "default": "f111",
-              "description": "<p><span class=\"icon icon--chevron-up\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f111"
-            },
-            {
-              "type": "string",
-              "name": "circle-blank",
-              "default": "f112",
-              "description": "<p><span class=\"icon icon--circle-blank\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f112"
-            },
-            {
-              "type": "string",
-              "name": "circle",
-              "default": "f113",
-              "description": "<p><span class=\"icon icon--circle\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f113"
-            },
-            {
-              "type": "string",
-              "name": "cloud-download",
-              "default": "f114",
-              "description": "<p><span class=\"icon icon--cloud-download\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f114"
-            },
-            {
-              "type": "string",
-              "name": "cloud-upload",
-              "default": "f115",
-              "description": "<p><span class=\"icon icon--cloud-upload\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f115"
-            },
-            {
-              "type": "string",
-              "name": "double-angle-down",
-              "default": "f116",
-              "description": "<p><span class=\"icon icon--double-angle-down\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f116"
-            },
-            {
-              "type": "string",
-              "name": "double-angle-left",
-              "default": "f117",
-              "description": "<p><span class=\"icon icon--double-angle-left\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f117"
-            },
-            {
-              "type": "string",
-              "name": "double-angle-right",
-              "default": "f118",
-              "description": "<p><span class=\"icon icon--double-angle-right\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f118"
-            },
-            {
-              "type": "string",
-              "name": "double-angle-up",
-              "default": "f119",
-              "description": "<p><span class=\"icon icon--double-angle-up\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f119"
-            },
-            {
-              "type": "string",
-              "name": "download",
-              "default": "f11a",
-              "description": "<p><span class=\"icon icon--download\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f11a"
-            },
-            {
-              "type": "string",
-              "name": "email-closed",
-              "default": "f11b",
-              "description": "<p><span class=\"icon icon--email-closed\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f11b"
-            },
-            {
-              "type": "string",
-              "name": "email-open",
-              "default": "f11c",
-              "description": "<p><span class=\"icon icon--email-open\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f11c"
-            },
-            {
-              "type": "string",
-              "name": "evidence",
-              "default": "f11d",
-              "description": "<p><span class=\"icon icon--evidence\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f11d"
-            },
-            {
-              "type": "string",
-              "name": "facebook-square",
-              "default": "f11e",
-              "description": "<p><span class=\"icon icon--facebook-square\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f11e"
-            },
-            {
-              "type": "string",
-              "name": "facebook",
-              "default": "f11f",
-              "description": "<p><span class=\"icon icon--facebook\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f11f"
-            },
-            {
-              "type": "string",
-              "name": "file-blank",
-              "default": "f120",
-              "description": "<p><span class=\"icon icon--file-blank\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f120"
-            },
-            {
-              "type": "string",
-              "name": "file-text",
-              "default": "f121",
-              "description": "<p><span class=\"icon icon--file-text\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f121"
-            },
-            {
-              "type": "string",
-              "name": "file",
-              "default": "f122",
-              "description": "<p><span class=\"icon icon--file\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f122"
-            },
-            {
-              "type": "string",
-              "name": "filter",
-              "default": "f123",
-              "description": "<p><span class=\"icon icon--filter\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f123"
-            },
-            {
-              "type": "string",
-              "name": "fullscreen",
-              "default": "f124",
-              "description": "<p><span class=\"icon icon--fullscreen\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f124"
-            },
-            {
-              "type": "string",
-              "name": "google-plus",
-              "default": "f125",
-              "description": "<p><span class=\"icon icon--google-plus\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f125"
-            },
-            {
-              "type": "string",
-              "name": "group",
-              "default": "f126",
-              "description": "<p><span class=\"icon icon--group\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f126"
-            },
-            {
-              "type": "string",
-              "name": "guidance",
-              "default": "f127",
-              "description": "<p><span class=\"icon icon--guidance\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f127"
-            },
-            {
-              "type": "string",
-              "name": "guideline",
-              "default": "f128",
-              "description": "<p><span class=\"icon icon--guideline\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f128"
-            },
-            {
-              "type": "string",
-              "name": "hamburger",
-              "default": "f129",
-              "description": "<p><span class=\"icon icon--hamburger\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f129"
-            },
-            {
-              "type": "string",
-              "name": "infoforpublic",
-              "default": "f12a",
-              "description": "<p><span class=\"icon icon--infoforpublic\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f12a"
-            },
-            {
-              "type": "string",
-              "name": "information",
-              "default": "f12b",
-              "description": "<p><span class=\"icon icon--information\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f12b"
-            },
-            {
-              "type": "string",
-              "name": "lines",
-              "default": "f12c",
-              "description": "<p><span class=\"icon icon--lines\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f12c"
-            },
-            {
-              "type": "string",
-              "name": "linkedin-square",
-              "default": "f12d",
-              "description": "<p><span class=\"icon icon--linkedin-square\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f12d"
-            },
-            {
-              "type": "string",
-              "name": "linkedin",
-              "default": "f12e",
-              "description": "<p><span class=\"icon icon--linkedin\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f12e"
-            },
-            {
-              "type": "string",
-              "name": "logo-name",
-              "default": "f12f",
-              "description": "<p><span class=\"icon icon--logo-name\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f12f"
-            },
-            {
-              "type": "string",
-              "name": "logo",
-              "default": "f130",
-              "description": "<p><span class=\"icon icon--logo\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f130"
-            },
-            {
-              "type": "string",
-              "name": "minus",
-              "default": "f131",
-              "description": "<p><span class=\"icon icon--minus\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f131"
-            },
-            {
-              "type": "string",
-              "name": "news",
-              "default": "f132",
-              "description": "<p><span class=\"icon icon--news\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f132"
-            },
-            {
-              "type": "string",
-              "name": "next",
-              "default": "f133",
-              "description": "<p><span class=\"icon icon--next\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f133"
-            },
-            {
-              "type": "string",
-              "name": "ok",
-              "default": "f134",
-              "description": "<p><span class=\"icon icon--ok\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f134"
-            },
-            {
-              "type": "string",
-              "name": "pathways-node",
-              "default": "f135",
-              "description": "<p><span class=\"icon icon--pathways-node\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f135"
-            },
-            {
-              "type": "string",
-              "name": "pathways",
-              "default": "f136",
-              "description": "<p><span class=\"icon icon--pathways\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f136"
-            },
-            {
-              "type": "string",
-              "name": "play",
-              "default": "f137",
-              "description": "<p><span class=\"icon icon--play\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f137"
-            },
-            {
-              "type": "string",
-              "name": "plus-circle",
-              "default": "f138",
-              "description": "<p><span class=\"icon icon--plus-circle\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f138"
-            },
-            {
-              "type": "string",
-              "name": "plus",
-              "default": "f139",
-              "description": "<p><span class=\"icon icon--plus\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f139"
-            },
-            {
-              "type": "string",
-              "name": "podcast",
-              "default": "f13a",
-              "description": "<p><span class=\"icon icon--podcast\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f13a"
-            },
-            {
-              "type": "string",
-              "name": "prescribing",
-              "default": "f13b",
-              "description": "<p><span class=\"icon icon--prescribing\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f13b"
-            },
-            {
-              "type": "string",
-              "name": "previous",
-              "default": "f13c",
-              "description": "<p><span class=\"icon icon--previous\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f13c"
-            },
-            {
-              "type": "string",
-              "name": "print",
-              "default": "f13d",
-              "description": "<p><span class=\"icon icon--print\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f13d"
-            },
-            {
-              "type": "string",
-              "name": "quote-left",
-              "default": "f13e",
-              "description": "<p><span class=\"icon icon--quote-left\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f13e"
-            },
-            {
-              "type": "string",
-              "name": "quote-right",
-              "default": "f13f",
-              "description": "<p><span class=\"icon icon--quote-right\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f13f"
-            },
-            {
-              "type": "string",
-              "name": "readnews",
-              "default": "f140",
-              "description": "<p><span class=\"icon icon--readnews\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f140"
-            },
-            {
-              "type": "string",
-              "name": "remove",
-              "default": "f141",
-              "description": "<p><span class=\"icon icon--remove\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f141"
-            },
-            {
-              "type": "string",
-              "name": "search",
-              "default": "f142",
-              "description": "<p><span class=\"icon icon--search\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f142"
-            },
-            {
-              "type": "string",
-              "name": "share",
-              "default": "f143",
-              "description": "<p><span class=\"icon icon--share\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f143"
-            },
-            {
-              "type": "string",
-              "name": "sort-down",
-              "default": "f144",
-              "description": "<p><span class=\"icon icon--sort-down\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f144"
-            },
-            {
-              "type": "string",
-              "name": "sort-up",
-              "default": "f145",
-              "description": "<p><span class=\"icon icon--sort-up\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f145"
-            },
-            {
-              "type": "string",
-              "name": "sort",
-              "default": "f146",
-              "description": "<p><span class=\"icon icon--sort\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f146"
-            },
-            {
-              "type": "string",
-              "name": "spinner",
-              "default": "f147",
-              "description": "<p><span class=\"icon icon--spinner\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f147"
-            },
-            {
-              "type": "string",
-              "name": "standards",
-              "default": "f148",
-              "description": "<p><span class=\"icon icon--standards\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f148"
-            },
-            {
-              "type": "string",
-              "name": "stop",
-              "default": "f149",
-              "description": "<p><span class=\"icon icon--stop\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f149"
-            },
-            {
-              "type": "string",
-              "name": "support",
-              "default": "f14a",
-              "description": "<p><span class=\"icon icon--support\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f14a"
-            },
-            {
-              "type": "string",
-              "name": "syndication",
-              "default": "f14b",
-              "description": "<p><span class=\"icon icon--syndication\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f14b"
-            },
-            {
-              "type": "string",
-              "name": "trash",
-              "default": "f14c",
-              "description": "<p><span class=\"icon icon--trash\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f14c"
-            },
-            {
-              "type": "string",
-              "name": "twitter-square",
-              "default": "f14d",
-              "description": "<p><span class=\"icon icon--twitter-square\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f14d"
-            },
-            {
-              "type": "string",
-              "name": "twitter",
-              "default": "f14e",
-              "description": "<p><span class=\"icon icon--twitter\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f14e"
-            },
-            {
-              "type": "string",
-              "name": "uptake",
-              "default": "f14f",
-              "description": "<p><span class=\"icon icon--uptake\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f14f"
-            },
-            {
-              "type": "string",
-              "name": "user",
-              "default": "f150",
-              "description": "<p><span class=\"icon icon--user\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f150"
-            },
-            {
-              "type": "string",
-              "name": "warning",
-              "default": "f151",
-              "description": "<p><span class=\"icon icon--warning\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f151"
-            },
-            {
-              "type": "string",
-              "name": "youtube-play",
-              "default": "f152",
-              "description": "<p><span class=\"icon icon--youtube-play\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f152"
-            },
-            {
-              "type": "string",
               "name": "youtube-square",
-              "default": "f153",
+              "default": "f10b",
               "description": "<p><span class=\"icon icon--youtube-square\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f153"
-            },
-            {
-              "type": "string",
-              "name": "youtube",
-              "default": "f154",
-              "description": "<p><span class=\"icon icon--youtube\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f154"
+              "resolvedValue": "f10b"
             }
           ],
           "group": [
@@ -18072,8 +17064,8 @@
                 "name": "nice-icon",
                 "code": "\n  @if map-has-key($nice-icons, $icon) {\n    @include icon-base;\n    content: nice-icon($icon);\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
                 "line": {
-                  "start": 237,
-                  "end": 244
+                  "start": 91,
+                  "end": 98
                 }
               }
             },
@@ -18084,8 +17076,8 @@
                 "name": "nice-icon",
                 "code": "\n  @if map-has-key($nice-icons, $icon) {\n    @include icon-base;\n    content: nice-icon($icon);\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
                 "line": {
-                  "start": 237,
-                  "end": 244
+                  "start": 91,
+                  "end": 98
                 }
               }
             },
@@ -18096,8 +17088,8 @@
                 "name": "nice-icon",
                 "code": "\n  @if map-has-key($nice-icons, $icon) {\n    $icon-code: map-get($nice-icons, $icon);\n    @return unquote('\\'\\\\#{ $icon-code }\\'');\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
                 "line": {
-                  "start": 256,
-                  "end": 263
+                  "start": 110,
+                  "end": 117
                 }
               }
             },
@@ -18108,8 +17100,8 @@
                 "name": "nice-icon",
                 "code": "\n  @if map-has-key($nice-icons, $icon) {\n    $icon-code: map-get($nice-icons, $icon);\n    @return unquote('\\'\\\\#{ $icon-code }\\'');\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
                 "line": {
-                  "start": 256,
-                  "end": 263
+                  "start": 110,
+                  "end": 117
                 }
               }
             },
@@ -18120,8 +17112,8 @@
                 "name": "nice-icon",
                 "code": "\n  @if map-has-key($nice-icons, $icon) {\n    $icon-code: map-get($nice-icons, $icon);\n    @return unquote('\\'\\\\#{ $icon-code }\\'');\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
                 "line": {
-                  "start": 256,
-                  "end": 263
+                  "start": 110,
+                  "end": 117
                 }
               }
             }
@@ -18129,23 +17121,23 @@
           "groupName": {
             "icons": "Icons"
           },
-          "resolvedValue": "(\n  adjust: \"f101\",\n  angle-down: \"f102\",\n  angle-left: \"f103\",\n  angle-right: \"f104\",\n  angle-up: \"f105\",\n  apps: \"f106\",\n  bookmark: \"f107\",\n  calendar: \"f108\",\n  capsule: \"f109\",\n  caret-down: \"f10a\",\n  caret-left: \"f10b\",\n  caret-right: \"f10c\",\n  caret-up: \"f10d\",\n  chevron-down: \"f10e\",\n  chevron-left: \"f10f\",\n  chevron-right: \"f110\",\n  chevron-up: \"f111\",\n  circle-blank: \"f112\",\n  circle: \"f113\",\n  cloud-download: \"f114\",\n  cloud-upload: \"f115\",\n  double-angle-down: \"f116\",\n  double-angle-left: \"f117\",\n  double-angle-right: \"f118\",\n  double-angle-up: \"f119\",\n  download: \"f11a\",\n  email-closed: \"f11b\",\n  email-open: \"f11c\",\n  evidence: \"f11d\",\n  facebook-square: \"f11e\",\n  facebook: \"f11f\",\n  file-blank: \"f120\",\n  file-text: \"f121\",\n  file: \"f122\",\n  filter: \"f123\",\n  fullscreen: \"f124\",\n  google-plus: \"f125\",\n  group: \"f126\",\n  guidance: \"f127\",\n  guideline: \"f128\",\n  hamburger: \"f129\",\n  infoforpublic: \"f12a\",\n  information: \"f12b\",\n  lines: \"f12c\",\n  linkedin-square: \"f12d\",\n  linkedin: \"f12e\",\n  logo-name: \"f12f\",\n  logo: \"f130\",\n  minus: \"f131\",\n  news: \"f132\",\n  next: \"f133\",\n  ok: \"f134\",\n  pathways-node: \"f135\",\n  pathways: \"f136\",\n  play: \"f137\",\n  plus-circle: \"f138\",\n  plus: \"f139\",\n  podcast: \"f13a\",\n  prescribing: \"f13b\",\n  previous: \"f13c\",\n  print: \"f13d\",\n  quote-left: \"f13e\",\n  quote-right: \"f13f\",\n  readnews: \"f140\",\n  remove: \"f141\",\n  search: \"f142\",\n  share: \"f143\",\n  sort-down: \"f144\",\n  sort-up: \"f145\",\n  sort: \"f146\",\n  spinner: \"f147\",\n  standards: \"f148\",\n  stop: \"f149\",\n  support: \"f14a\",\n  syndication: \"f14b\",\n  trash: \"f14c\",\n  twitter-square: \"f14d\",\n  twitter: \"f14e\",\n  uptake: \"f14f\",\n  user: \"f150\",\n  warning: \"f151\",\n  youtube-play: \"f152\",\n  youtube-square: \"f153\",\n  youtube: \"f154\"\n)"
+          "resolvedValue": "(\n  evidence: \"f101\",\n  facebook-square: \"f102\",\n  guidance: \"f103\",\n  linkedin-square: \"f104\",\n  logo-name: \"f105\",\n  logo: \"f106\",\n  pathways: \"f107\",\n  standards: \"f108\",\n  syndication: \"f109\",\n  twitter-square: \"f10a\",\n  youtube-square: \"f10b\"\n)"
         }
       ],
       "mixin": [
         {
           "description": "<p>Base styles required for an icon including font family etc</p>\n",
           "commentRange": {
-            "start": 205,
-            "end": 213
+            "start": 59,
+            "end": 67
           },
           "context": {
             "type": "mixin",
             "name": "icon-base",
             "code": "\n  display: inline-block;\n  font-family: 'NICE Icons';\n  font-style: normal;\n  font-weight: normal;\n  line-height: 1;\n  speak: none;\n  text-decoration: inherit;\n  text-rendering: auto;\n  text-transform: none;\n  vertical-align: baseline;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n",
             "line": {
-              "start": 214,
-              "end": 227
+              "start": 68,
+              "end": 81
             }
           },
           "example": [
@@ -18170,8 +17162,8 @@
                 "name": "nice-icon",
                 "code": "\n  @if map-has-key($nice-icons, $icon) {\n    @include icon-base;\n    content: nice-icon($icon);\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
                 "line": {
-                  "start": 237,
-                  "end": 244
+                  "start": 91,
+                  "end": 98
                 }
               }
             }
@@ -18183,16 +17175,16 @@
         {
           "description": "<p>Applies the required styles for the given icon\nincluding the codepoint.</p>\n",
           "commentRange": {
-            "start": 229,
-            "end": 236
+            "start": 83,
+            "end": 90
           },
           "context": {
             "type": "mixin",
             "name": "nice-icon",
             "code": "\n  @if map-has-key($nice-icons, $icon) {\n    @include icon-base;\n    content: nice-icon($icon);\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
             "line": {
-              "start": 237,
-              "end": 244
+              "start": 91,
+              "end": 98
             }
           },
           "parameter": [
@@ -18246,16 +17238,16 @@
         {
           "description": "<p>Function for getting the codepoint for a given icon, for use\nwithin the <code>content</code> property of psuedo elements.</p>\n",
           "commentRange": {
-            "start": 246,
-            "end": 255
+            "start": 100,
+            "end": 109
           },
           "context": {
             "type": "function",
             "name": "nice-icon",
             "code": "\n  @if map-has-key($nice-icons, $icon) {\n    $icon-code: map-get($nice-icons, $icon);\n    @return unquote('\\'\\\\#{ $icon-code }\\'');\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
             "line": {
-              "start": 256,
-              "end": 263
+              "start": 110,
+              "end": 117
             }
           },
           "example": [
@@ -18297,8 +17289,8 @@
                 "name": "nice-icon",
                 "code": "\n  @if map-has-key($nice-icons, $icon) {\n    @include icon-base;\n    content: nice-icon($icon);\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
                 "line": {
-                  "start": 237,
-                  "end": 244
+                  "start": 91,
+                  "end": 98
                 }
               }
             }
@@ -18312,16 +17304,16 @@
         {
           "description": "<p>Class for rendering an icon.\nUse with a named modifier for an icon.</p>\n",
           "commentRange": {
-            "start": 265,
-            "end": 268
+            "start": 119,
+            "end": 122
           },
           "context": {
             "type": "css",
             "name": ".icon",
             "value": "@include icon-base;\n\n  &:before {\n    display: block;\n  }\n\n  @each $icon, $code in $nice-icons {\n    &--#{ $icon }:before {\n      content: nice-icon($icon);\n    }\n  }",
             "line": {
-              "start": 269,
-              "end": 282
+              "start": 123,
+              "end": 136
             }
           },
           "example": [
@@ -21670,7 +20662,7 @@
           "context": {
             "type": "variable",
             "name": "font-sizes",
-            "value": "(\n  // sass-lint:disable-block space-around-operator\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 11,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)",
+            "value": "(\n  // sass-lint:disable-block space-around-operator\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 6,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 10,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)",
             "scope": "private",
             "line": {
               "start": 27,
@@ -21731,7 +20723,7 @@
           "groupName": {
             "typography": "Typography"
           },
-          "resolvedValue": "(\n  // sass-lint:disable-block space-around-operator\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 11,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)"
+          "resolvedValue": "(\n  // sass-lint:disable-block space-around-operator\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 6,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 10,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)"
         }
       ]
     },

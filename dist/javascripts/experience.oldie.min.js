@@ -1,5 +1,5 @@
 /*!
-NICE Experience 0.2.13 | 2017-05-26
+NICE Experience 0.2.14 | 2017-06-26
 © Copyright NICE 2015-2017
 Licensed under MIT (https://github.com/nhsevidence/nice-experience/blob/master/LICENSE)
 */

@@ -1,5 +1,5 @@
 /*!
- * NICE Experience 0.2.13 | 2017-05-26
+ * NICE Experience 0.2.14 | 2017-06-26
  * © Copyright NICE 2015-2017
  * Licensed under MIT (https://github.com/nhsevidence/nice-experience/blob/master/LICENSE)
  */
@@ -1792,8 +1792,8 @@ textarea {
   font-family: "NICE Icons";
   font-style: normal;
   font-weight: normal;
-  src: url("/fonts/nice-icons.eot?112767861");
-  src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/nice-icons.woff2?112767861") format("woff2"), url("/fonts/nice-icons.woff?112767861") format("woff"), url("/fonts/nice-icons.ttf?112767861") format("truetype"), url("/fonts/nice-icons.svg?112767861#typography-icons") format("svg"); }
+  src: url("/fonts/nice-icons.eot?468495578");
+  src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/nice-icons.woff2?468495578") format("woff2"), url("/fonts/nice-icons.woff?468495578") format("woff"), url("/fonts/nice-icons.ttf?468495578") format("truetype"), url("/fonts/nice-icons.svg?468495578#typography-icons") format("svg"); }
 
 .icon {
   display: inline-block;
@@ -1810,174 +1810,28 @@ textarea {
   -moz-osx-font-smoothing: grayscale; }
   .icon:before {
     display: block; }
-  .icon--adjust:before {
-    content: '\f101'; }
-  .icon--angle-down:before {
-    content: '\f102'; }
-  .icon--angle-left:before {
-    content: '\f103'; }
-  .icon--angle-right:before {
-    content: '\f104'; }
-  .icon--angle-up:before {
-    content: '\f105'; }
-  .icon--apps:before {
-    content: '\f106'; }
-  .icon--bookmark:before {
-    content: '\f107'; }
-  .icon--calendar:before {
-    content: '\f108'; }
-  .icon--capsule:before {
-    content: '\f109'; }
-  .icon--caret-down:before {
-    content: '\f10a'; }
-  .icon--caret-left:before {
-    content: '\f10b'; }
-  .icon--caret-right:before {
-    content: '\f10c'; }
-  .icon--caret-up:before {
-    content: '\f10d'; }
-  .icon--chevron-down:before {
-    content: '\f10e'; }
-  .icon--chevron-left:before {
-    content: '\f10f'; }
-  .icon--chevron-right:before {
-    content: '\f110'; }
-  .icon--chevron-up:before {
-    content: '\f111'; }
-  .icon--circle-blank:before {
-    content: '\f112'; }
-  .icon--circle:before {
-    content: '\f113'; }
-  .icon--cloud-download:before {
-    content: '\f114'; }
-  .icon--cloud-upload:before {
-    content: '\f115'; }
-  .icon--double-angle-down:before {
-    content: '\f116'; }
-  .icon--double-angle-left:before {
-    content: '\f117'; }
-  .icon--double-angle-right:before {
-    content: '\f118'; }
-  .icon--double-angle-up:before {
-    content: '\f119'; }
-  .icon--download:before {
-    content: '\f11a'; }
-  .icon--email-closed:before {
-    content: '\f11b'; }
-  .icon--email-open:before {
-    content: '\f11c'; }
   .icon--evidence:before {
-    content: '\f11d'; }
+    content: '\f101'; }
   .icon--facebook-square:before {
-    content: '\f11e'; }
-  .icon--facebook:before {
-    content: '\f11f'; }
-  .icon--file-blank:before {
-    content: '\f120'; }
-  .icon--file-text:before {
-    content: '\f121'; }
-  .icon--file:before {
-    content: '\f122'; }
-  .icon--filter:before {
-    content: '\f123'; }
-  .icon--fullscreen:before {
-    content: '\f124'; }
-  .icon--google-plus:before {
-    content: '\f125'; }
-  .icon--group:before {
-    content: '\f126'; }
+    content: '\f102'; }
   .icon--guidance:before {
-    content: '\f127'; }
-  .icon--guideline:before {
-    content: '\f128'; }
-  .icon--hamburger:before {
-    content: '\f129'; }
-  .icon--infoforpublic:before {
-    content: '\f12a'; }
-  .icon--information:before {
-    content: '\f12b'; }
-  .icon--lines:before {
-    content: '\f12c'; }
+    content: '\f103'; }
   .icon--linkedin-square:before {
-    content: '\f12d'; }
-  .icon--linkedin:before {
-    content: '\f12e'; }
+    content: '\f104'; }
   .icon--logo-name:before {
-    content: '\f12f'; }
+    content: '\f105'; }
   .icon--logo:before {
-    content: '\f130'; }
-  .icon--minus:before {
-    content: '\f131'; }
-  .icon--news:before {
-    content: '\f132'; }
-  .icon--next:before {
-    content: '\f133'; }
-  .icon--ok:before {
-    content: '\f134'; }
-  .icon--pathways-node:before {
-    content: '\f135'; }
+    content: '\f106'; }
   .icon--pathways:before {
-    content: '\f136'; }
-  .icon--play:before {
-    content: '\f137'; }
-  .icon--plus-circle:before {
-    content: '\f138'; }
-  .icon--plus:before {
-    content: '\f139'; }
-  .icon--podcast:before {
-    content: '\f13a'; }
-  .icon--prescribing:before {
-    content: '\f13b'; }
-  .icon--previous:before {
-    content: '\f13c'; }
-  .icon--print:before {
-    content: '\f13d'; }
-  .icon--quote-left:before {
-    content: '\f13e'; }
-  .icon--quote-right:before {
-    content: '\f13f'; }
-  .icon--readnews:before {
-    content: '\f140'; }
-  .icon--remove:before {
-    content: '\f141'; }
-  .icon--search:before {
-    content: '\f142'; }
-  .icon--share:before {
-    content: '\f143'; }
-  .icon--sort-down:before {
-    content: '\f144'; }
-  .icon--sort-up:before {
-    content: '\f145'; }
-  .icon--sort:before {
-    content: '\f146'; }
-  .icon--spinner:before {
-    content: '\f147'; }
+    content: '\f107'; }
   .icon--standards:before {
-    content: '\f148'; }
-  .icon--stop:before {
-    content: '\f149'; }
-  .icon--support:before {
-    content: '\f14a'; }
+    content: '\f108'; }
   .icon--syndication:before {
-    content: '\f14b'; }
-  .icon--trash:before {
-    content: '\f14c'; }
+    content: '\f109'; }
   .icon--twitter-square:before {
-    content: '\f14d'; }
-  .icon--twitter:before {
-    content: '\f14e'; }
-  .icon--uptake:before {
-    content: '\f14f'; }
-  .icon--user:before {
-    content: '\f150'; }
-  .icon--warning:before {
-    content: '\f151'; }
-  .icon--youtube-play:before {
-    content: '\f152'; }
+    content: '\f10a'; }
   .icon--youtube-square:before {
-    content: '\f153'; }
-  .icon--youtube:before {
-    content: '\f154'; }
+    content: '\f10b'; }
 
 html {
   box-sizing: border-box; }
@@ -2123,8 +1977,8 @@ h2,
 .heading--secondary {
   font-size: 36px;
   font-size: 2.25rem;
-  line-height: 44px;
-  line-height: 2.75rem;
+  line-height: 40px;
+  line-height: 2.5rem;
   font-weight: 700;
   margin-bottom: 16px;
   margin-bottom: 1rem;
@@ -2162,8 +2016,8 @@ h5,
 .heading--quinary {
   font-size: 20px;
   font-size: 1.25rem;
-  line-height: 20px;
-  line-height: 1.25rem;
+  line-height: 24px;
+  line-height: 1.5rem;
   font-weight: 700;
   margin-bottom: 16px;
   margin-bottom: 1rem;
@@ -2252,19 +2106,8 @@ ol, .list {
   .breadcrumbs__crumb {
     display: inline-block; }
     .breadcrumbs__crumb:before {
-      display: inline-block;
-      font-family: 'NICE Icons';
-      font-style: normal;
-      font-weight: normal;
-      line-height: 1;
-      speak: none;
-      text-decoration: inherit;
-      text-rendering: auto;
-      text-transform: none;
-      vertical-align: baseline;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      content: '\f104';
+      content: '\276F';
+      font-size: 70%;
       margin: 0em 0.25em; }
     .breadcrumbs__crumb:first-child:before {
       display: none; }
@@ -2603,8 +2446,8 @@ table {
   .services .icon {
     font-size: 36px;
     font-size: 2.25rem;
-    line-height: 44px;
-    line-height: 2.75rem;
+    line-height: 40px;
+    line-height: 2.5rem;
     display: block;
     line-height: 1;
     margin: 0 auto 0.25em; }
@@ -2737,8 +2580,8 @@ table {
 .in-page-nav__title {
   font-size: 36px;
   font-size: 2.25rem;
-  line-height: 44px;
-  line-height: 2.75rem; }
+  line-height: 40px;
+  line-height: 2.5rem; }
 
 .in-page-nav__list {
   margin-left: 1em; }
