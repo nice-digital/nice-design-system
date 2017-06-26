@@ -15,7 +15,8 @@
     display: inline-block;
 
     &:before {
-      @include nice-icon(angle-right);
+      content: get-glyph(heavy-right-pointing-angle-quotation-mark-ornament);
+      font-size: 70%;
       margin: em(0 $spacing-x-small);
     }
 
