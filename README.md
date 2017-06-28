@@ -6,7 +6,8 @@
 [![Dependencies](https://img.shields.io/david/nhsevidence/nice-experience.svg)](https://david-dm.org/nhsevidence/nice-experience)
 [![Dev dependencies](https://img.shields.io/david/dev/nhsevidence/nice-experience.svg)](https://david-dm.org/nhsevidence/nice-experience?type=dev)
 
-## Table of contents
+<details>
+<summary><strong>Table of Contents</strong></summary>
 
 - [What is it?](#what-is-it)
 - [Browser support](#browser-support)
@@ -26,6 +27,7 @@
 	- [Usage](#usage)
 		- [Precompiled](#precompiled)
 		- [From source](#from-source)
+</details>
 
 ## What is it?
 
