@@ -1,4 +1,4 @@
-# NICE Experience
+# :art: NICE Experience
 
 > Welcome to NICE Experience. Your source for quickly creating consistent on-brand NICE digital services.
 
@@ -31,7 +31,7 @@
 
 ## What is it?
 
-NICE Experience is a replacement for [NICE.Bootstrap](https://github.com/nhsevidence/NICE.Bootstrap/). It's a front-end toolkit/pattern library and guidelines for rapidly building modern, accessible web apps that are consistent with the NICE brand guidelines.
+NICE Experience is a replacement for [NICE.Bootstrap](https://github.com/nhsevidence/NICE.Bootstrap/). It's a design system, front-end toolkit and pattern library for rapidly building modern, accessible web apps that are consistent with the NICE brand guidelines.
 
 ## Browser support
 
