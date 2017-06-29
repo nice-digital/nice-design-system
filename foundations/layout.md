@@ -6,63 +6,83 @@ description: Containers, grid, layouts and responsive behaviours
 
 ## Introduction
 
-Our grid system is a responsive, mobile-first, fluid grid system.
-It is based on a 12 column grid and can use predefined classes or mixins for generating layouts with more semantic class names.
+Use containers, grids and whitespace to build a structure and hierarchy on the page. 
 {:.lead}
 
-Grids should sit within a `.container` which takes care of the maximum width and fluidity - grids fill the available space within their parent container. There are no rows: grid items sit directly within the grid itself.
+### Page width
 
-- Gutters between grid items are achieved with a left margin, but the gutter can easily be removed, or reduced
-- The grid has a negative left margin so that the grid can align with non-grid content
-- The grid is based on `inline-block` so uses a word and letter spacing fix.
-- SASS mixins can also be used to make layouts with more semantic class names
+The default [maximum page width](#containers) is 1170px (73.125rem), but go wider if the content requires it.
 
+[Use a grid](#grid-system) to lay out your content. To prevent long lines of text, content should sit in a column which is two-thirds of the page width.
 
-### Defining grid items
+Long lines reduce legibility, so all lines of text should be no longer than 70 to 80 characters.
 
-- Grid items are created by specifying how many of the 12 columns to span, e.g. `[data-g="3"]` for 3/12 columns
-- Predefined selectors like `[data-g="6"]` for grid items exist for quickly making grid-based layouts
-- There are also more human readable names like *one-half* etc, eg. `[data-g="two-thirds"]`
-- Grid item widths are mobile-first. This means they apply from the given widths upwards, overriding widths targeted for smaller devices. E.g. `[data-g="6 md:3"]` will be &frac14; of the width for 'medium' screen widths and up.
-- If there are more than 12 items within a grid, the items simply wrap onto the next line
+### Screen size
+
+Design for small screens first using a single column layout.
+
+Optimise for different screen sizes, but don’t make assumptions about specific devices.
+
+See our [responsive guidelines]({{ site.baseurl }}{% link foundations/responsive.md %}) for further content on building mobile first responsive layouts.
 
 ### Layout considerations
 
-- Organise content in terms of priority and group related content together
-- Always consider how your layout will be shown on small screen devices
-- Only exceed the maximum container width when your content requires it
-- Keep the layout consistent when developing similar pages
-
+- Know and understand how the information on the page will be used
+- organise content in terms of priority and group related content together
+- always consider how your layout will be shown on small screen devices
+- only exceed the maximum container width when your content requires it
+- keep the layout consistent when developing similar pages.
 
 ## Containers
 
-- Containers have a max width and centrally aligned horizontally
-- Use containers to wrap grids to restrict their width
-- Containers can be 'normal' or one of the followin BEM modifiers:
-    * `--narrow` - smaller width, good for adding visual interest
-    * `--full` - fills the available width on all screen sizes
-    * `--panel` - adds a background fill
-- Can extend it in SASS via the `%container` placeholder for building custom components
-- Containers aren't designed to be nested
-- Vertical spacing classes can be added to containers
+- Containers have a maximum width (1170px or 73.125rem) and are centrally aligned horizontally
+- use the `--full` modifier to fill the available screen width when your content requires it
+- extend it in SASS via the `%container` placeholder for building custom components
+- don't nest containers
+- add vertical [spacing classes]({{ site.baseurl }}{% link foundations/spacing.md %}#css-classes) to containers to add margins and padding.
 
 {% capture containers %}
-<div class="container">
-    Some content e.g. a grid goes here
+<div class="container mb-d">
+    This is a container with a margin bottom
 </div>
-<div class="container container--narrow">
-    Some content in a narrower container
+<div class="container container--full">
+    This is a full width container
 </div>
 {% endcapture %}
-{% include example.html lang='html' body=containers %}
+{% include source.html lang='html' body=containers title='Container class example' %}
 
+{% capture containersplaceholder %}
+.layout {
+    @extend %container;
 
-## Basic grid
+    &__body {
+        @include grid;
+    }
+}
+{% endcapture %}
+{% include source.html lang='scss' body=containersplaceholder title='Container placeholder example' %}
 
-- The grid is based on a fluid, responsive 12 column grid
-- Use the `data-g` attribute to specify column widths
-- E.g. `data-g="6"` 6 of 12 columns
-- Alternatively use more 'human' names like `data-g="one-half"` or `data-g="two-fifths"`
+## Grid system
+
+We use a grid to structure our designs. Our grid is a mobile-first, responsive, fluid system based on a 12 column layout:
+
+- wrap grids in a `.container` to take care of maximum width and fluidity
+- grids fill the available space within their parent container
+- the grid is based on a fluid, responsive 12 column grid
+- [grid items](#grid-items) sit directly within grids
+- use `.grid` for grids and `data-g` for grid items
+- grids can be nested within infinitely nested
+- use [mixins](#semantic) for generating layouts or components with semantic class names.
+
+### Grid items
+
+Use the `data-g` attribute to create grid items:
+
+- specify how many of the 12 columns to span, e.g. `data-g="3"` or `data-g="one-quarter"` for spanning three of the twelve columns
+- there are also more human readable names like *one-half*, *two-thirds*, *three-quarters* etc, eg. `data-g="two-thirds"`
+- use `breakpoint:columns` to override the column width from a breakpoint e.g. `data-g="6 md:3"` or `data-g="12 md:one-third"`
+- grid item widths are mobile-first
+- if there are more than 12 items within a grid, the items simply wrap onto the next line.
 
 ### Whole
 
@@ -180,8 +200,9 @@ Grids should sit within a `.container` which takes care of the maximum width and
 
 ## Responsive grids
 
-- Grids are mobile first
-- Use `xs:`, `sm:`, `md:`, `lg:` and `xl:` for different screen size
+- grids are mobile first
+- use `xs:`, `sm:`, `md:`, `lg:` and `xl:` for different screen size
+- use our [breakpoints]({{ site.baseurl }}{% link foundations/responsive.md %}#breakpoints).
 
 {% capture responsive %}
 <div class="grid">
@@ -204,14 +225,15 @@ Grids should sit within a `.container` which takes care of the maximum width and
 {% endcapture %}
 {% include example.html lang='html' body=responsive %}
 
+<a href="{{ site.baseurl }}{% link foundations/responsive.md %}" class="btn btn--secondary">More about responsive design</a>
 
 ## Other grid features
 
-Use BEM modifiers for grids features:
+Use [BEM modifiers]({{ site.baseurl }}{% link technical/sass/code-standards.md %}#bem-and-naming) for grids features. Use grid features when needed to suit the presentation of content.
 
 ### Reversed
 
-The `.grid--rev` modifier renders the grid it in the opposite order to the source order
+The `.grid--rev` modifier renders the grid it in the opposite order to the source order. This is useful for stacking things in the correct order on mobile devices.
 
 {% capture reversed %}
 <div class="grid grid--rev">
@@ -227,21 +249,15 @@ The `.grid--rev` modifier renders the grid it in the opposite order to the sourc
 
 ### Gutterlesss
 
-Remove the gutter between grid items with the `.grid--gutterless` modifier
+Remove the gutter between grid items with the `.grid--gutterless` modifier. Generally used for small components nested within other grids, or when you need to closely relate two pieces of information.
 
 {% capture gutterlesss %}
 <div class="grid grid--gutterless">
-    <div data-g="one-quarter">
-        <div class="grid-example-item">1/4</div>
+    <div data-g="one-quarter push:one-quarter">
+        <div class="grid-example-item">something</div>
     </div>
-    <div data-g="one-quarter">
-        <div class="grid-example-item">1/4</div>
-    </div>
-    <div data-g="one-quarter">
-        <div class="grid-example-item">1/4</div>
-    </div>
-    <div data-g="one-quarter">
-        <div class="grid-example-item">1/4</div>
+    <div data-g="one-quarter push:one-quarter">
+        <div class="grid-example-item">else</div>
     </div>
 </div>
 {% endcapture %}
@@ -271,25 +287,22 @@ Use smaller gutters between grid items with the `.grid--compact` modifier
 
 ### Loose
 
-Use larger gutters between grid items with the `.grid--loose` modifier
+Use larger gutters between grid items with the `.grid--loose` modifier. A loose grid is generally used for layouts and container components.
 
-{% capture compact %}
+{% capture loose %}
 <div class="grid grid--loose">
-    <div data-g="one-quarter">
-        <div class="grid-example-item">1/4</div>
+    <div data-g="one-fifth">
+        <div class="grid-example-item">1/5</div>
     </div>
-    <div data-g="one-quarter">
-        <div class="grid-example-item">1/4</div>
+    <div data-g="three-fifths">
+        <div class="grid-example-item">3/5</div>
     </div>
-    <div data-g="one-quarter">
-        <div class="grid-example-item">1/4</div>
-    </div>
-    <div data-g="one-quarter">
-        <div class="grid-example-item">1/4</div>
+    <div data-g="one-fifth">
+        <div class="grid-example-item">1/5</div>
     </div>
 </div>
 {% endcapture %}
-{% include example.html lang='html' body=compact %}
+{% include example.html lang='html' body=loose %}
 
 ### Right
 
@@ -428,40 +441,45 @@ Or debug all grids in an ancestor with the `.debug-grid` class (apply to the bod
 
 ## Semantic
 
-There are mixins and placeholders available for creating more 'semantic' named classes.
-This avoids using the `grid` and `[data-g]` selectors directly in the html and can be useful for creating custom components or layouts. For example, you could create a classes of `.sidebar` and `.main` and the widths/layouts are taken care of in CSS. Alternatively, use [media queries](#media-queries) for custom layouts.
+Use grid mixins for creating semantic class names for grid-based layouts. This replaces the default grid selectors with classes like `sidebar` or `article-body`.
 
 {% capture semantic %}
-.test {
-    @include grid-item($breakpoints: ( md: ( width: 50%, push: 25% ), lg: 20% ));
+.layout {
+    @include grid;
+
+    &__sidebar {
+        @include grid-item(12, $md: 3, $lg: 4);
+    }
+
+    &__body {
+        @include grid-item(12, $md: 9, $lg: 8);
+    }
 }
 {% endcapture %}
-{% include source.html lang='scss' body=semantic %}
+{% include source.html lang='scss' body=semantic title='Semantic example' %}
 
-<a href="{{ site.baseurl }}{% link technical/sass/documentation/grid.md %}#mixin-grid-item" class="btn">Grid item docs</a>
+<a href="{{ site.baseurl }}{% link technical/sass/documentation/grid.md %}#mixin-grid-item" class="btn btn--secondary">Grid item docs</a>
 
 ## Media queries
 
-An alternative to [semantic classes](#semantic), media queries can be used to build custom responsive layouts. They can either be used with the grid mixins or on their own to build completely bespoke layouts. We use SASS MQ to create our breakpoints:
+Use [media queries]({{ site.baseurl }}{% link foundations/responsive.md %}#media-queries) to build custom responsive layouts:
 
-<a href="https://github.com/sass-mq/sass-mq" class="btn" rel="noopener external" target="_blank">SASS MQ</a>
-
-{% capture mixins %}
-.test-parent {
-    @include grid();
-}
+{% capture mediaqueries %}
 .test {
-    @include grid-item();
+    &__item {
+        float: left;
+        width: 100%;
 
-    @include mq($from: md) {
-        width: percentage(1 / 3);
-    }
+        @include mq($from: md) {
+            width: percentage(1 / 3);
+        }
 
-    @include mq($from: lg) {
-        width: 25%;
+        @include mq($from: lg) {
+            width: 25%;
+        }
     }
 }
 {% endcapture %}
-{% include source.html lang='scss' body=mixins title='Mixins example' %}
+{% include source.html lang='scss' body=mediaqueries title='Media queries example' %}
 
-Please note: there are also [responsive utilities]({{ site.baseurl }}{% link foundations/visibility.md %}) for showing and hiding elements across breakpoints.
+<a href="{{ site.baseurl }}{% link foundations/responsive.md %}#media-queries" class="btn btn--secondary">More about media queries</a>
