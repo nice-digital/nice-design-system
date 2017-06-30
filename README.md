@@ -1,10 +1,10 @@
-# NICE Experience
+# NICE Design System
 
-> Welcome to NICE Experience. Your source for quickly creating consistent on-brand NICE digital services.
+> Your source for quickly creating consistent on-brand NICE digital services.
 
-[![License](https://img.shields.io/github/license/nhsevidence/nice-experience.svg)](https://github.com/nhsevidence/NICE-Experience/blob/master/LICENSE)
-[![Dependencies](https://img.shields.io/david/nhsevidence/nice-experience.svg)](https://david-dm.org/nhsevidence/nice-experience)
-[![Dev dependencies](https://img.shields.io/david/dev/nhsevidence/nice-experience.svg)](https://david-dm.org/nhsevidence/nice-experience?type=dev)
+[![License](https://img.shields.io/github/license/nhsevidence/nice-design-system.svg)](https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
+[![Dependencies](https://img.shields.io/david/nhsevidence/nice-design-system.svg)](https://david-dm.org/nhsevidence/nice-design-system)
+[![Dev dependencies](https://img.shields.io/david/dev/nhsevidence/nice-design-system.svg)](https://david-dm.org/nhsevidence/nice-design-system?type=dev)
 
 ## Table of contents
 
@@ -21,6 +21,7 @@
 - [Test](#tests)
 - [Installation](#installation)
 	- [CDN](#nice-cdn)
+	- [Install with yarn](#install-with-yarn)
 	- [Install with npm](#install-with-npm)
 	- [Install with Bower](#install-with-bower)
 	- [Usage](#usage)
@@ -29,7 +30,7 @@
 
 ## What is it?
 
-NICE Experience is a replacement for [NICE.Bootstrap](https://github.com/nhsevidence/NICE.Bootstrap/). It's a front-end toolkit/pattern library and guidelines for rapidly building modern, accessible web apps that are consistent with the NICE brand guidelines.
+NICE Design System is a replacement for [NICE.Bootstrap](https://github.com/nhsevidence/NICE.Bootstrap/). It's a front-end toolkit/pattern library and guidelines for rapidly building modern, accessible web apps that are consistent with the NICE brand guidelines.
 
 ## Browser support
 
@@ -52,11 +53,9 @@ To support older IE we have separate builds of our JS and CSS.
 
 ## Accessibility
 
-Experience has been built with accessibility in mind and is built to conform to WCAG 2.0 AA.
+NICE Design System has been built with accessibility in mind and is built to conform to WCAG 2.0 AA. 
 
-If you are building an application with Experience, please keep the same level of conformance.
-
-See https://www.nice.org.uk/accessibility for more information.
+See https://www.nice.org.uk/accessibility for more information on NICE's policy.
 
 ## Project structure
 
@@ -65,12 +64,12 @@ See https://www.nice.org.uk/accessibility for more information.
 | [.github](.github) | [Github templates folder](https://help.github.com/articles/helping-people-contribute-to-your-project/) |
 | [.grunt-tasks](.grunt-tasks) | Grunt task configs loaded in from Gruntfile.js |
 | [dist](dist) | Built files for distribution with each new version |
-| [src](src) | The main source of Experience |
+| [src](src) | The main source |
 | - [src/assets](src/assets) | Common static assets |
 | - [src/components](src/components) | Components (SASS/JS/Nunjucks view/test) |
 | - [src/icons](src/icons) | SVG icon font source |
-| - [src/javascripts](src/javascripts) | Main Experience JS + [JSDoc config](src/javascripts/.jsdoc.json) and [ESLint config](src/javascripts/.eslintrc.json) |
-| - [src/stylesheets](src/stylesheets) | Main Experience SASS + [SASS Lint config](src/stylesheets/.sass-lint.yml) + [SASS Doc custom theme](src/stylesheets/sassdoc-nice-theme.js) |
+| - [src/javascripts](src/javascripts) | Main JavaScript source + [JSDoc config](src/javascripts/.jsdoc.json) and [ESLint config](src/javascripts/.eslintrc.json) |
+| - [src/stylesheets](src/stylesheets) | Main SASS + [SASS Lint config](src/stylesheets/.sass-lint.yml) + [SASS Doc custom theme](src/stylesheets/sassdoc-nice-theme.js) |
 | [server](server) | Express dev server, views etc for testing and building components |
 | [test](test) | Test setup and unit tests |
 
@@ -79,23 +78,23 @@ See https://www.nice.org.uk/accessibility for more information.
 ### Getting started
 
 	TL;DR:
-		1. `npm i -g grunt-cli`
-		2. `npm i`
+		1. `yarn`
 		3. `npm start`
 
 To run the dev server and tests on your local machine, first install:
 
 - [Node 6+](https://nodejs.org/en/download/)
-- [npm 3.9+](https://docs.npmjs.com/getting-started/installing-node)
+- [Yarn](https://yarnpkg.com/en/docs/install)
 
 Then before you can run any tasks, run the following from the command line to install dependencies:
 
-- `npm i -g grunt-cli`
-- `npm i`
+- `yarn`
+
+Note: if you prefer to use npm rather than yarn, run `npm i` instead.
 
 We use Grunt as a task runner hence the dependency on Node. If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide first.
 
-Run `npm start` from the command line which will:
+Run `npm start` from the command line for development which will:
 
 - run tests
 - lint JavaScript and SCSS
@@ -144,15 +143,27 @@ See the [test](test) folder for more information.
 
 TODO - we will deploy pre-compiled versions onto cdn.nice.org.uk
 
+### Install with yarn
+
+`yarn add @nice-digital/design-system -D`
+
+Then follow the [usage](#usage) steps below...
+
 ### Install with npm
 
-`npm i nice-experience`
+`npm i @nice-digital/design-system --save-dev`
+
+Then follow the [usage](#usage) steps below...
+
+### Install with Yaen
+
+`yarn install @nice-digital/design-system --save-dev`
 
 Then follow the [usage](#usage) steps below...
 
 ### Install with bower
 
-`bower i nice-experience`
+`bower i nice-design-system`
 
 Then follow the [usage](#usage) steps below...
 
@@ -167,24 +178,24 @@ You can reference directly if you have the correct permissions:
 ```html
 <!-- Font from Google & compiled/minified CSS -->
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700" rel="stylesheet">
-<link rel="stylesheet" href="/node_modules/nice-experience/dist/stylesheets/experience.min.css">
+<link rel="stylesheet" href="/node_modules/@nice-digital/design-system/dist/stylesheets/nice.min.css">
 
 <!-- jQuery from CDN & compiled/minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="/node_modules/nice-experience/dist/javascripts/experience.min.js"></script>
+<script src="/node_modules/@nice-digital/design-system/dist/javascripts/nice.min.js"></script>
 ```
 
 OR if you're using express you can use the dist folder as a static directory:
 
 ```javascript
-app.use(express.static(__dirname + "/node_modules/nice-experience/dist/"));
+app.use(express.static(__dirname + "/node_modules/@nice-digital/design-system/dist/"));
 ```
 
 and then reference it from your HTML as:
 
 ```html
-<link rel="stylesheet" href="/stylesheets/experience.min.css" type="text/css" media="screen" charset="utf-8">
-<script src="/javascripts/experience.min.js"></script>
+<link rel="stylesheet" href="/stylesheets/nice.min.css" type="text/css" media="screen" charset="utf-8">
+<script src="/javascripts/nice.min.js"></script>
 ```
 
 OR you can use a copy command (with Grunt or similar) to copy the compiled assets out of the *node_modules* folder to somewhere where you can serve them.

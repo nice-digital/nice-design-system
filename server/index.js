@@ -14,7 +14,7 @@ const webpackConfig = require("./../webpack.config.js");
 var PORT = process.env.PORT || 3000;
 var app = express();
 
-process.title = "Experience";
+process.title = "NICE Design System";
 
 // Express
 app.set("port", PORT);

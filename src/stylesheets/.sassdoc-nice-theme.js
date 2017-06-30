@@ -50,7 +50,7 @@ module.exports = function (dest, ctx) {
 		byGroupAndType: sassdocExtras.byGroupAndType(ctx.data)
 	};
 
-	fs.writeFileSync(path.join(dest, "experience.json"), JSON.stringify(ctx.data, null, 2), "utf-8");
+	fs.writeFileSync(path.join(dest, "nice.json"), JSON.stringify(ctx.data, null, 2), "utf-8");
 
 	return new Promise(function(resolve, reject) { resolve(); });
 };

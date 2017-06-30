@@ -12,11 +12,11 @@ const pkg = require("./package.json"),
 	bannerPlugin = new webpack.BannerPlugin(`/*!\n${banner}\n*/\n`, { raw: true });
 
 const baseConfig = {
-	entry: ["./src/javascripts/experience"],
+	entry: ["./src/javascripts/index"],
 	output: {
 		path: path.join(__dirname, "dist/javascripts"),
 		publicPath: "/javascripts/",
-		library: "experience",
+		library: "nice",
 		libraryTarget: "umd",
 		umdNamedDefine: true
 	},
@@ -148,10 +148,10 @@ module.exports = [
 
 	// Dev mode
 	_.merge({}, baseConfig, {
-		name: "experience.dev",
+		name: "nice.dev",
 		output: {
-			filename: "experience.dev.js",
-			sourceMapFilename: "experience.dev.map"
+			filename: "nice.dev.js",
+			sourceMapFilename: "nice.dev.map"
 		},
 		module: moduleObj,
 		plugins: normalPlugins
@@ -159,10 +159,10 @@ module.exports = [
 
 	// Minified
 	_.merge({}, baseConfig, {
-		name: "experience.min",
+		name: "nice.min",
 		output: {
-			filename: "experience.min.js",
-			sourceMapFilename: "experience.min.map"
+			filename: "nice.min.js",
+			sourceMapFilename: "nice.min.map"
 		},
 		module: moduleObj,
 		plugins: minPlugins
@@ -172,10 +172,10 @@ module.exports = [
 	// Dev mode - Old IE
 	_.merge({}, baseConfig, {
 		entry: ["babel-polyfill"].concat(baseConfig.entry),
-		name: "experience.oldie.dev",
+		name: "nice.oldie.dev",
 		output: {
-			filename: "experience.oldie.dev.js",
-			sourceMapFilename: "experience.oldie.dev.map"
+			filename: "nice.oldie.dev.js",
+			sourceMapFilename: "nice.oldie.dev.map"
 		},
 		module: moduleObj,
 		plugins: normalPlugins
@@ -184,10 +184,10 @@ module.exports = [
 	// Minified - Old IE
 	_.merge({}, baseConfig, {
 		entry: ["babel-polyfill"].concat(baseConfig.entry),
-		name: "experience.oldie.min",
+		name: "nice.oldie.min",
 		output: {
-			filename: "experience.oldie.min.js",
-			sourceMapFilename: "experience.oldie.min.map"
+			filename: "nice.oldie.min.js",
+			sourceMapFilename: "nice.oldie.min.map"
 		},
 		module: moduleObj,
 		plugins: minPlugins

@@ -1,5 +1,5 @@
 {
-  "name": "nice-experience",
+  "name": "@nice-digital/design-system",
   "version": "0.2.15",
   "description": "Your source for creating beautiful, consistent experiences across NICE",
   "keywords": [
@@ -15,9 +15,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/nhsevidence/NICE-Experience.git"
+    "url": "https://github.com/nhsevidence/nice-design-system.git"
   },
-  "main": "src/javascripts/experience.js",
+  "main": "src/javascripts/index.js",
   "browser": "src/javascripts",
   "scripts": {
     "start": "grunt --color --timing",
@@ -35,10 +35,11 @@
   },
   "config": {
     "//": "Banner is used for prepending to compiled JS and CSS",
-    "banner": "NICE Experience ${ version } | ${ date }\n© Copyright NICE 2015-${ year }\nLicensed under MIT (https://github.com/nhsevidence/nice-experience/blob/master/LICENSE)"
+    "banner": "NICE Design System ${ version } | ${ date }\n© Copyright NICE 2015-${ year }\nLicensed under MIT (https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)"
   },
-  "author": "NICE Digital Services (https://github.com/nhsevidence/nice-experience/graphs/contributors)",
+  "author": "NICE Digital Services (https://github.com/nhsevidence/nice-design-system/graphs/contributors)",
   "contributors": [
+    "NICE Digital Services (https://www.nice.org.uk/)",
     "Ian Routledge (http://ediblecode.com)"
   ],
   "license": "MIT",

@@ -7,8 +7,8 @@ module.exports = {
 			sourceMapContents: true
 		},
 		files: {
-			"temp/stylesheets/experience.css": "src/stylesheets/experience.scss",
-			"temp/stylesheets/experience.min.css": "src/stylesheets/experience.scss"
+			"temp/stylesheets/nice.css": "src/stylesheets/index.scss",
+			"temp/stylesheets/nice.min.css": "src/stylesheets/index.scss"
 		}
 	},
 	dist: {
@@ -19,8 +19,8 @@ module.exports = {
 			sourceMapContents: true
 		},
 		files: {
-			"dist/stylesheets/experience.css": "src/stylesheets/experience.scss",
-			"dist/stylesheets/experience.min.css": "src/stylesheets/experience.scss"
+			"dist/stylesheets/nice.css": "src/stylesheets/index.scss",
+			"dist/stylesheets/nice.min.css": "src/stylesheets/index.scss"
 		}
 	}
 };

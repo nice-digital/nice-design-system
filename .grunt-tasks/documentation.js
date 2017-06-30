@@ -8,7 +8,7 @@ module.exports = {
 		options: {
 			destination: "./dist/docs/js",
 			format: "json",
-			filename: "experience.json"
+			filename: "nice.json"
 		}
 	}
 };

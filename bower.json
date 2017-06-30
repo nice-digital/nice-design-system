@@ -1,9 +1,9 @@
 {
-  "name": "nice-experience",
+  "name": "nice-design-system",
   "description": "Your source for creating beautiful, consistent experiences across NICE",
   "main": [
-    "src/javascripts/experience.js",
-    "src/stylesheets/experience.scss"
+    "src/javascripts/index.js",
+    "src/stylesheets/index.scss"
   ],
   "moduleType": "es6",
   "authors": [
@@ -22,10 +22,10 @@
     "nice",
     "nhs"
   ],
-  "homepage": "https://github.com/nhsevidence/NICE-Experience",
+  "homepage": "https://nhsevidence.github.io/nice-design-system/",
   "repository": {
     "type": "git",
-    "url": "git://github.com/nhsevidence/NICE-Experience.git"
+    "url": "git://github.com/nhsevidence/nice-design-system.git"
   },
   "ignore": [
     "**/.*",

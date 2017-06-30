@@ -1,7 +1,7 @@
 module.exports = {
 	dist: {
 		files: {
-			"dist/stylesheets/experience.min.css": "dist/stylesheets/experience.min.css"
+			"dist/stylesheets/nice.min.css": "dist/stylesheets/nice.min.css"
 		},
 		options: {
 			sourceMap: true
@@ -9,7 +9,7 @@ module.exports = {
 	},
 	temp: {
 		files: {
-			"temp/stylesheets/experience.min.css": "temp/stylesheets/experience.min.css"
+			"temp/stylesheets/nice.min.css": "temp/stylesheets/nice.min.css"
 		},
 		options: {
 			sourceMap: true
