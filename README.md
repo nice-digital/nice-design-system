@@ -1,6 +1,6 @@
-# NICE Experience site
+# NICE Design System site
 
-> GitHub pages (Jekyll) static site to showcase the NICE Experience
+> GitHub pages (Jekyll) static site to showcase the NICE Design System
 
 ## Requirements
 
@@ -38,7 +38,7 @@ apt install ruby2.3 ruby2.3-dev ruby-switch
 
 ``` bash
 gem install bundler
-cd /mnt/c/_src/NICE-Experience-gh-pages # note the /mnt/c path mapped the c:/ drive on Windows
+cd /mnt/c/_src/nice-design-system-gh-pages # note the /mnt/c path mapped the c:/ drive on Windows
 bundle install
 bundle exec jekyll serve --force_polling
 ```
@@ -47,4 +47,4 @@ Note: `--force_polling` is needed on Windows because of [this bug](https://githu
 
 ### 5 - Navigate!
 
-Navigate to [http://localhost:9001/NICE-Experience/](http://localhost:9001/NICE-Experience/)
+Navigate to [http://localhost:9001/nice-design-system/](http://localhost:9001/nice-design-system/)

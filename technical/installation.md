@@ -105,7 +105,7 @@ Use the following HTML structure as a guide when creating new applications. It c
 
 ## npm
 
-npm is the recommended way of installing the NICE Experience into your project:
+npm is the recommended way of installing the NICE Design System into your project:
 
 {% capture npm %}
 npm i nice-experience --save
@@ -178,7 +178,7 @@ CDN is [coming soon]({{ site.baseurl }}{% link about/roadmap.md %}) &hellip;
 - Use the latest release directly
 - Not recommended for production setups
 
-<a href="https://github.com/nhsevidence/NICE-Experience/releases/latest" class="btn">Latest release</a>
+<a href="{{ site.repository }}/releases/latest" class="btn">Latest release</a>
 
 
 ## Download master ZIP
@@ -186,7 +186,7 @@ CDN is [coming soon]({{ site.baseurl }}{% link about/roadmap.md %}) &hellip;
 - Download a ZIP of the latest code from master
 - Not recommended for production setups
 
-<a href="https://github.com/nhsevidence/NICE-Experience/archive/master.zip" class="btn">Download latest ZIP</a>
+<a href="{{ site.repository }}/archive/master.zip" class="btn">Download latest ZIP</a>
 
 
 ## Bower

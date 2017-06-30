@@ -14,7 +14,7 @@ description: Headings, paragraphs, featured text, quotations, lists, links
 
 - there are set of <a href="{{ site.baseurl }}{% link technical/sass/documentation/typography.md %}">typographic SASS constructs</a> to allow consistent use of responsive typography
 - favour using mixins e.g. `@include font-size(1)` rather than specifying font sizes directly
-- we use REMs and automatically add fallbacks to px for older browsers via [PostCSS](https://github.com/nhsevidence/NICE-Experience/blob/master/.grunt-tasks/postcss.js){:target="_blank"}.
+- we use REMs and automatically add fallbacks to px for older browsers via [PostCSS]({{ site.repository }}/blob/master/.grunt-tasks/postcss.js){:target="_blank"}.
 
 
 ## Headings

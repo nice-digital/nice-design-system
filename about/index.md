@@ -1,8 +1,8 @@
 ---
 layout: sidebar
-title: About the NICE Experience
+title: About NICE Design System
 breadcrumb: About
-description: NICE Digital is a set of reusable patterns, documentation and guidelines for rapid product development.
+description: NICE Design System is a set of reusable patterns, documentation and guidelines for rapid product development.
 nav: About
 inpagenav: false
 ---
@@ -47,7 +47,7 @@ It is a re-work of NICE's original adaptation of Bootstrap, known as [NICE.Boots
     <li data-g="12 sm:6 md:4 lg:3">
         <h3 class="h6">Easy to use and consume</h3>
         <p>
-            It should be easy to integrate the NICE Experience into any application with just a few commands, for example via NPM, Bower, or Meteor's Atmosphere.
+            It should be easy to integrate the NICE Design System into any application with just a few commands, for example via NPM, Bower, or Meteor's Atmosphere.
         </p>
     </li>
     <li data-g="12 sm:6 md:4 lg:3">

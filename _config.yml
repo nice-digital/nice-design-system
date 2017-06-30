@@ -1,5 +1,5 @@
 # Naming
-name:             NICE Experience
+name:             NICE Design System
 description:      Your source for creating beautiful, consistent experiences across NICE
 
 # Dependencies
@@ -18,7 +18,7 @@ source:           .
 destination:      _gh_pages
 host:             0.0.0.0
 port:             9001
-baseurl:          /NICE-Experience
+baseurl:          /nice-design-system
 url:              https://nhsevidence.github.io
 exclude:
 - Gemfile
@@ -46,5 +46,5 @@ defaults:
       inpagenav: true
 
 # Custom vars
-repository: https://github.com/nhsevidence/NICE-Experience
+repository: https://github.com/nhsevidence/nice-design-system
 

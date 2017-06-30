@@ -25,9 +25,9 @@
       "type": "image/png"
     }],
   "lang": "en-GB",
-  "name": "NICE Experience",
+  "name": "NICE Design System",
   "orientation": "portrait-primary",
-  "short_name": "Experience",
+  "short_name": "Design System",
   "start_url": ".",
   "theme_color": "#004650"
 }

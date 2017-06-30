@@ -9,7 +9,7 @@ title: Your source for quickly creating consistent on-brand NICE digital service
     <div class="hero__container">
         <div class="hero__body">
             <div class="hero__copy">
-                <h1 class="hero__title">NICE Experience</h1>
+                <h1 class="hero__title">NICE Design System</h1>
 
                 <p class="hero__intro">
                     Your source for quickly creating consistent on-brand NICE digital services
@@ -17,7 +17,7 @@ title: Your source for quickly creating consistent on-brand NICE digital service
 
                 <div class="hero__actions">
                     <a href="{{ site.baseurl }}{% link technical/installation.md %}" class="btn btn--cta">Get started</a>
-                    <a href="https://github.com/nhsevidence/NICE-Experience" class="btn" target="_blank" rel="noopener external">View on Github</a>
+                    <a href="{{ site.repository }}" class="btn" target="_blank" rel="noopener external">View on Github</a>
                 </div>
             </div>
             <div class="hero__extra">
