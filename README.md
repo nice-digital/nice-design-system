@@ -1,4 +1,4 @@
-# NICE Design System
+# :art: NICE Design System
 
 > Your source for quickly creating consistent on-brand NICE digital services.
 
@@ -6,7 +6,8 @@
 [![Dependencies](https://img.shields.io/david/nhsevidence/nice-design-system.svg)](https://david-dm.org/nhsevidence/nice-design-system)
 [![Dev dependencies](https://img.shields.io/david/dev/nhsevidence/nice-design-system.svg)](https://david-dm.org/nhsevidence/nice-design-system?type=dev)
 
-## Table of contents
+<details>
+<summary><strong>Table of contents</strong></summary>
 
 - [What is it?](#what-is-it)
 - [Browser support](#browser-support)
@@ -27,10 +28,11 @@
 	- [Usage](#usage)
 		- [Precompiled](#precompiled)
 		- [From source](#from-source)
+</details>
 
 ## What is it?
 
-NICE Design System is a replacement for [NICE.Bootstrap](https://github.com/nhsevidence/NICE.Bootstrap/). It's a front-end toolkit/pattern library and guidelines for rapidly building modern, accessible web apps that are consistent with the NICE brand guidelines.
+NICE Design System is a replacement for [NICE.Bootstrap](https://github.com/nhsevidence/NICE.Bootstrap/). It's a design system, front-end toolkit and pattern library for rapidly building modern, accessible web apps that are consistent with the NICE brand guidelines.
 
 ## Browser support
 
