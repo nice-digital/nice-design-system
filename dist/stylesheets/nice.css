@@ -1,5 +1,5 @@
 /*!
- * NICE Design System 0.2.16 | 2017-06-30
+ * NICE Design System 0.2.17 | 2017-06-30
  * © Copyright NICE 2015-2017
  * Licensed under MIT (https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
  */
@@ -1792,8 +1792,8 @@ textarea {
   font-family: "NICE Icons";
   font-style: normal;
   font-weight: normal;
-  src: url("/fonts/nice-icons.eot?629344303");
-  src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/nice-icons.woff2?629344303") format("woff2"), url("/fonts/nice-icons.woff?629344303") format("woff"), url("/fonts/nice-icons.ttf?629344303") format("truetype"), url("/fonts/nice-icons.svg?629344303#typography-icons") format("svg"); }
+  src: url("/fonts/nice-icons.eot?731751316");
+  src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/nice-icons.woff2?731751316") format("woff2"), url("/fonts/nice-icons.woff?731751316") format("woff"), url("/fonts/nice-icons.ttf?731751316") format("truetype"), url("/fonts/nice-icons.svg?731751316#typography-icons") format("svg"); }
 
 .icon {
   display: inline-block;
