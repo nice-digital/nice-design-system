@@ -70,9 +70,9 @@ $_sides: (
   v: (bottom, top)
 );
 
-@mixin _prop($prop-name, $length, $side: "") {
-  $side: if($side == "", "", "-#{$side}");
-  $prop: "#{$prop-name}#{$side}";
+@mixin _prop($prop-name, $length, $side: '') {
+  $side: if($side == '', '', '-#{$side}');
+  $prop: '#{$prop-name}#{$side}';
   #{$prop}: rem($length) !important;
 }
 
@@ -100,16 +100,16 @@ $_sides: (
   }
 }
 
-@mixin _properties($breakpoint: "") {
+@mixin _properties($breakpoint: '') {
   @each $prop-abbrev, $prop-name in $_properties {
     @include _spacings($prop-abbrev, $prop-name, $breakpoint);
   }
 }
 
-@include _properties();
+@include _properties;
 
 @each $breakpoint-name, $breakpoint-value in $mq-breakpoints {
   @include mq($from: $breakpoint-name) {
-    @include _properties("-#{$breakpoint-name}");
+    @include _properties('-#{$breakpoint-name}');
   }
 }
