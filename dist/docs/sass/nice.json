@@ -4139,8 +4139,8 @@
             "name": "invisible",
             "code": "\n  @include important(position, absolute);\n  clip: rect(0, 0, 0, 0);\n  height: 1px;\n  overflow: hidden;\n  width: 1px;\n",
             "line": {
-              "start": 23,
-              "end": 29
+              "start": 24,
+              "end": 30
             }
           }
         },
@@ -4151,8 +4151,8 @@
             "name": "invisible-off",
             "code": "\n  @include important(static, absolute);\n  clip: auto;\n  height: auto;\n  overflow: visible;\n  width: auto;\n",
             "line": {
-              "start": 32,
-              "end": 38
+              "start": 33,
+              "end": 39
             }
           }
         }
@@ -5718,16 +5718,16 @@
     {
       "description": "<p>Portrait media query</p>\n",
       "commentRange": {
-        "start": 8,
-        "end": 8
+        "start": 9,
+        "end": 9
       },
       "context": {
         "type": "mixin",
         "name": "portrait",
         "code": "\n  @media screen and (orientation: portrait) {\n    @content;\n  }\n",
         "line": {
-          "start": 9,
-          "end": 13
+          "start": 10,
+          "end": 14
         }
       },
       "group": [
@@ -5747,16 +5747,16 @@
     {
       "description": "<p>Landscape media query</p>\n",
       "commentRange": {
-        "start": 15,
-        "end": 15
+        "start": 16,
+        "end": 16
       },
       "context": {
         "type": "mixin",
         "name": "landscape",
         "code": "\n  @media screen and (orientation: landscape) {\n    @content;\n  }\n",
         "line": {
-          "start": 16,
-          "end": 20
+          "start": 17,
+          "end": 21
         }
       },
       "group": [
@@ -5776,16 +5776,16 @@
     {
       "description": "<p>Makes an element visually hidden, but still accessible to keyboards and assistive devices.</p>\n",
       "commentRange": {
-        "start": 22,
-        "end": 22
+        "start": 23,
+        "end": 23
       },
       "context": {
         "type": "mixin",
         "name": "invisible",
         "code": "\n  @include important(position, absolute);\n  clip: rect(0, 0, 0, 0);\n  height: 1px;\n  overflow: hidden;\n  width: 1px;\n",
         "line": {
-          "start": 23,
-          "end": 29
+          "start": 24,
+          "end": 30
         }
       },
       "group": [
@@ -5809,16 +5809,16 @@
     {
       "description": "<p>Reverses the CSS output created by the <code>invisible()</code> mixin.</p>\n",
       "commentRange": {
-        "start": 31,
-        "end": 31
+        "start": 32,
+        "end": 32
       },
       "context": {
         "type": "mixin",
         "name": "invisible-off",
         "code": "\n  @include important(static, absolute);\n  clip: auto;\n  height: auto;\n  overflow: visible;\n  width: auto;\n",
         "line": {
-          "start": 32,
-          "end": 38
+          "start": 33,
+          "end": 39
         }
       },
       "group": [
@@ -5842,16 +5842,16 @@
     {
       "description": "<p>Display none.\nNote the use of <code>!important</code> for overriding styles.</p>\n",
       "commentRange": {
-        "start": 43,
-        "end": 44
+        "start": 44,
+        "end": 45
       },
       "context": {
         "type": "css",
         "name": ".hide",
-        "value": "@include important(display, none);",
+        "value": "display: none !important;",
         "line": {
-          "start": 45,
-          "end": 234
+          "start": 46,
+          "end": 162
         }
       },
       "group": [
@@ -5869,16 +5869,16 @@
     {
       "description": "<p>Displays an element as block by default.\nOr use modifiers to display inline/inline-block:</p>\n<p>Modifiers:</p>\n<ul>\n<li><code>i</code></li>\n<li><code>ib</code></li>\n</ul>\n",
       "commentRange": {
-        "start": 49,
-        "end": 54
+        "start": 50,
+        "end": 55
       },
       "context": {
         "type": "css",
         "name": ".show",
-        "value": "display: block;\n\n  &--i {\n    display: inline;\n  }\n\n  &--ib {\n    display: inline-block;\n  }",
+        "value": "display: block !important;\n\n  &--i {\n    display: inline !important;\n  }\n\n  &--ib {\n    display: inline-block !important;\n  }",
         "line": {
-          "start": 55,
-          "end": 234
+          "start": 56,
+          "end": 162
         }
       },
       "group": [
@@ -5896,16 +5896,16 @@
     {
       "description": "<p>Visible</p>\n",
       "commentRange": {
-        "start": 67,
-        "end": 67
+        "start": 68,
+        "end": 68
       },
       "context": {
         "type": "css",
         "name": ".visible",
-        "value": "visibility: visible;",
+        "value": "visibility: visible !important;",
         "line": {
-          "start": 68,
-          "end": 234
+          "start": 69,
+          "end": 162
         }
       },
       "group": [
@@ -5923,16 +5923,16 @@
     {
       "description": "<p>Visibility hidden</p>\n",
       "commentRange": {
-        "start": 72,
-        "end": 72
+        "start": 73,
+        "end": 73
       },
       "context": {
         "type": "css",
         "name": ".invisible",
-        "value": "visibility: hidden;",
+        "value": "visibility: hidden !important;",
         "line": {
-          "start": 73,
-          "end": 234
+          "start": 74,
+          "end": 162
         }
       },
       "group": [
@@ -5950,16 +5950,16 @@
     {
       "description": "<p>Landscape and portrait display</p>\n",
       "commentRange": {
-        "start": 80,
-        "end": 80
+        "start": 81,
+        "end": 81
       },
       "context": {
         "type": "css",
         "name": ".show-landscape,\n.hide-portrait",
-        "value": "@include important(display, block);\n\n  @include landscape {\n    @include important(display, block);\n  }\n\n  @include portrait {\n    @include important(display, none);\n  }",
+        "value": "display: block !important;\n\n  @include landscape {\n    display: block !important;\n  }\n\n  @include portrait {\n    display: none !important;\n  }",
         "line": {
-          "start": 82,
-          "end": 234
+          "start": 83,
+          "end": 162
         }
       },
       "group": [
@@ -5977,16 +5977,16 @@
     {
       "description": "<p>Landscape and portrait display</p>\n",
       "commentRange": {
-        "start": 94,
-        "end": 94
+        "start": 95,
+        "end": 95
       },
       "context": {
         "type": "css",
         "name": ".hide-landscape,\n.show-portrait",
-        "value": "@include important(display, none);\n\n  @include landscape {\n    @include important(display, none);\n  }\n\n  @include portrait {\n    @include important(display, block);\n  }",
+        "value": "display: none !important;\n\n  @include landscape {\n    display: none !important;\n  }\n\n  @include portrait {\n    display: block !important;\n  }",
         "line": {
-          "start": 96,
-          "end": 234
+          "start": 97,
+          "end": 162
         }
       },
       "group": [
@@ -6406,1542 +6406,6 @@
       }
     },
     {
-      "description": "<p>Applies a 0px top margin</p>\n",
-      "commentRange": {
-        "start": 31,
-        "end": 32
-      },
-      "context": {
-        "type": "css",
-        "name": ".mt-0",
-        "value": "margin-top: 0 !important;",
-        "line": {
-          "start": 33,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies an extra extra small top margin</p>\n",
-      "commentRange": {
-        "start": 35,
-        "end": 36
-      },
-      "context": {
-        "type": "css",
-        "name": ".mt-a",
-        "value": "margin-top: rem($spacing-xx-small) !important;",
-        "line": {
-          "start": 37,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies an extra small top margin</p>\n",
-      "commentRange": {
-        "start": 39,
-        "end": 40
-      },
-      "context": {
-        "type": "css",
-        "name": ".mt-b",
-        "value": "margin-top: rem($spacing-x-small) !important;",
-        "line": {
-          "start": 41,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies a small top margin</p>\n",
-      "commentRange": {
-        "start": 43,
-        "end": 44
-      },
-      "context": {
-        "type": "css",
-        "name": ".mt-c",
-        "value": "margin-top: rem($spacing-small) !important;",
-        "line": {
-          "start": 45,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies a default (medium) top margin</p>\n",
-      "commentRange": {
-        "start": 47,
-        "end": 48
-      },
-      "context": {
-        "type": "css",
-        "name": ".mt,\n.mt-d",
-        "value": "margin-top: rem($spacing-medium) !important;",
-        "line": {
-          "start": 50,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies a large top margin</p>\n",
-      "commentRange": {
-        "start": 52,
-        "end": 53
-      },
-      "context": {
-        "type": "css",
-        "name": ".mt-e",
-        "value": "margin-top: rem($spacing-large) !important;",
-        "line": {
-          "start": 54,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies an extra large top margin</p>\n",
-      "commentRange": {
-        "start": 56,
-        "end": 57
-      },
-      "context": {
-        "type": "css",
-        "name": ".mt-f",
-        "value": "margin-top: rem($spacing-x-large) !important;",
-        "line": {
-          "start": 58,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies an extra extra large top margin</p>\n",
-      "commentRange": {
-        "start": 60,
-        "end": 61
-      },
-      "context": {
-        "type": "css",
-        "name": ".mt-g",
-        "value": "margin-top: rem($spacing-xx-large) !important;",
-        "line": {
-          "start": 62,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies a 0px bottom margin</p>\n",
-      "commentRange": {
-        "start": 67,
-        "end": 68
-      },
-      "context": {
-        "type": "css",
-        "name": ".mb-0",
-        "value": "margin-bottom: 0 !important;",
-        "line": {
-          "start": 69,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies an extra extra small bottom margin</p>\n",
-      "commentRange": {
-        "start": 71,
-        "end": 72
-      },
-      "context": {
-        "type": "css",
-        "name": ".mb-a",
-        "value": "margin-bottom: rem($spacing-xx-small) !important;",
-        "line": {
-          "start": 73,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies an extra small bottom margin</p>\n",
-      "commentRange": {
-        "start": 75,
-        "end": 76
-      },
-      "context": {
-        "type": "css",
-        "name": ".mb-b",
-        "value": "margin-bottom: rem($spacing-x-small) !important;",
-        "line": {
-          "start": 77,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies a small bottom margin</p>\n",
-      "commentRange": {
-        "start": 79,
-        "end": 80
-      },
-      "context": {
-        "type": "css",
-        "name": ".mb-c",
-        "value": "margin-bottom: rem($spacing-small) !important;",
-        "line": {
-          "start": 81,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies a default (medium) bottom margin</p>\n",
-      "commentRange": {
-        "start": 83,
-        "end": 84
-      },
-      "context": {
-        "type": "css",
-        "name": ".mb,\n.mb-d",
-        "value": "margin-bottom: rem($spacing-medium) !important;",
-        "line": {
-          "start": 86,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies a large bottom margin</p>\n",
-      "commentRange": {
-        "start": 88,
-        "end": 89
-      },
-      "context": {
-        "type": "css",
-        "name": ".mb-e",
-        "value": "margin-bottom: rem($spacing-large) !important;",
-        "line": {
-          "start": 90,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies an extra large bottom margin</p>\n",
-      "commentRange": {
-        "start": 92,
-        "end": 93
-      },
-      "context": {
-        "type": "css",
-        "name": ".mb-f",
-        "value": "margin-bottom: rem($spacing-x-large) !important;",
-        "line": {
-          "start": 94,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies an extra extra large bottom margin</p>\n",
-      "commentRange": {
-        "start": 96,
-        "end": 97
-      },
-      "context": {
-        "type": "css",
-        "name": ".mb-g",
-        "value": "margin-bottom: rem($spacing-xx-large) !important;",
-        "line": {
-          "start": 98,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies a 0px top and bottom margin</p>\n",
-      "commentRange": {
-        "start": 103,
-        "end": 104
-      },
-      "context": {
-        "type": "css",
-        "name": ".mv-0",
-        "value": "margin-bottom: 0 !important; margin-top: 0 !important;",
-        "line": {
-          "start": 105,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies an extra extra small top and bottom margin</p>\n",
-      "commentRange": {
-        "start": 107,
-        "end": 108
-      },
-      "context": {
-        "type": "css",
-        "name": ".mv-a",
-        "value": "margin-bottom: rem($spacing-xx-small) !important; margin-top: rem($spacing-xx-small) !important;",
-        "line": {
-          "start": 109,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies an extra small top and bottom margin</p>\n",
-      "commentRange": {
-        "start": 111,
-        "end": 112
-      },
-      "context": {
-        "type": "css",
-        "name": ".mv-b",
-        "value": "margin-bottom: rem($spacing-x-small) !important; margin-top: rem($spacing-x-small) !important;",
-        "line": {
-          "start": 113,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies a small top and bottom margin</p>\n",
-      "commentRange": {
-        "start": 115,
-        "end": 116
-      },
-      "context": {
-        "type": "css",
-        "name": ".mv-c",
-        "value": "margin-bottom: rem($spacing-small) !important; margin-top: rem($spacing-small) !important;",
-        "line": {
-          "start": 117,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies a default (medium) top and bottom margin</p>\n",
-      "commentRange": {
-        "start": 119,
-        "end": 120
-      },
-      "context": {
-        "type": "css",
-        "name": ".mv,\n.mv-d",
-        "value": "margin-bottom: rem($spacing-medium) !important; margin-top: rem($spacing-medium) !important;",
-        "line": {
-          "start": 122,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies a large top and bottom margin</p>\n",
-      "commentRange": {
-        "start": 124,
-        "end": 125
-      },
-      "context": {
-        "type": "css",
-        "name": ".mv-e",
-        "value": "margin-bottom: rem($spacing-large) !important; margin-top: rem($spacing-large) !important;",
-        "line": {
-          "start": 126,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies an extra large top and bottom margin</p>\n",
-      "commentRange": {
-        "start": 128,
-        "end": 129
-      },
-      "context": {
-        "type": "css",
-        "name": ".mv-f",
-        "value": "margin-bottom: rem($spacing-x-large) !important; margin-top: rem($spacing-x-large) !important;",
-        "line": {
-          "start": 130,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies an extra extra large top and bottom margin</p>\n",
-      "commentRange": {
-        "start": 132,
-        "end": 133
-      },
-      "context": {
-        "type": "css",
-        "name": ".mv-g",
-        "value": "margin-bottom: rem($spacing-xx-large) !important; margin-top: rem($spacing-xx-large) !important;",
-        "line": {
-          "start": 134,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies a 0px top padding</p>\n",
-      "commentRange": {
-        "start": 139,
-        "end": 140
-      },
-      "context": {
-        "type": "css",
-        "name": ".pt-0",
-        "value": "padding-top: 0 !important;",
-        "line": {
-          "start": 141,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies an extra extra small top padding</p>\n",
-      "commentRange": {
-        "start": 143,
-        "end": 144
-      },
-      "context": {
-        "type": "css",
-        "name": ".pt-a",
-        "value": "padding-top: rem($spacing-xx-small) !important;",
-        "line": {
-          "start": 145,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies an extra small top padding</p>\n",
-      "commentRange": {
-        "start": 147,
-        "end": 148
-      },
-      "context": {
-        "type": "css",
-        "name": ".pt-b",
-        "value": "padding-top: rem($spacing-x-small) !important;",
-        "line": {
-          "start": 149,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies a small top padding</p>\n",
-      "commentRange": {
-        "start": 151,
-        "end": 152
-      },
-      "context": {
-        "type": "css",
-        "name": ".pt-c",
-        "value": "padding-top: rem($spacing-small) !important;",
-        "line": {
-          "start": 153,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies a default (medium) top padding</p>\n",
-      "commentRange": {
-        "start": 155,
-        "end": 156
-      },
-      "context": {
-        "type": "css",
-        "name": ".pt,\n.pt-d",
-        "value": "padding-top: rem($spacing-medium) !important;",
-        "line": {
-          "start": 158,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies a large top padding</p>\n",
-      "commentRange": {
-        "start": 160,
-        "end": 161
-      },
-      "context": {
-        "type": "css",
-        "name": ".pt-e",
-        "value": "padding-top: rem($spacing-large) !important;",
-        "line": {
-          "start": 162,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies an extra large top padding</p>\n",
-      "commentRange": {
-        "start": 164,
-        "end": 165
-      },
-      "context": {
-        "type": "css",
-        "name": ".pt-f",
-        "value": "padding-top: rem($spacing-x-large) !important;",
-        "line": {
-          "start": 166,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies an extra extra large top padding</p>\n",
-      "commentRange": {
-        "start": 168,
-        "end": 169
-      },
-      "context": {
-        "type": "css",
-        "name": ".pt-g",
-        "value": "padding-top: rem($spacing-xx-large) !important;",
-        "line": {
-          "start": 170,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies a 0px bottom padding</p>\n",
-      "commentRange": {
-        "start": 175,
-        "end": 176
-      },
-      "context": {
-        "type": "css",
-        "name": ".pb-0",
-        "value": "padding-bottom: 0 !important;",
-        "line": {
-          "start": 177,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies an extra extra small bottom padding</p>\n",
-      "commentRange": {
-        "start": 179,
-        "end": 180
-      },
-      "context": {
-        "type": "css",
-        "name": ".pb-a",
-        "value": "padding-bottom: rem($spacing-xx-small) !important;",
-        "line": {
-          "start": 181,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies an extra small bottom padding</p>\n",
-      "commentRange": {
-        "start": 183,
-        "end": 184
-      },
-      "context": {
-        "type": "css",
-        "name": ".pb-b",
-        "value": "padding-bottom: rem($spacing-x-small) !important;",
-        "line": {
-          "start": 185,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies a small bottom padding</p>\n",
-      "commentRange": {
-        "start": 187,
-        "end": 188
-      },
-      "context": {
-        "type": "css",
-        "name": ".pb-c",
-        "value": "padding-bottom: rem($spacing-small) !important;",
-        "line": {
-          "start": 189,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies a default (medium) bottom padding</p>\n",
-      "commentRange": {
-        "start": 191,
-        "end": 192
-      },
-      "context": {
-        "type": "css",
-        "name": ".pb,\n.pb-d",
-        "value": "padding-bottom: rem($spacing-medium) !important;",
-        "line": {
-          "start": 194,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies a large bottom padding</p>\n",
-      "commentRange": {
-        "start": 196,
-        "end": 197
-      },
-      "context": {
-        "type": "css",
-        "name": ".pb-e",
-        "value": "padding-bottom: rem($spacing-large) !important;",
-        "line": {
-          "start": 198,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies an extra large bottom padding</p>\n",
-      "commentRange": {
-        "start": 200,
-        "end": 201
-      },
-      "context": {
-        "type": "css",
-        "name": ".pb-f",
-        "value": "padding-bottom: rem($spacing-x-large) !important;",
-        "line": {
-          "start": 202,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies an extra extra large bottom padding</p>\n",
-      "commentRange": {
-        "start": 204,
-        "end": 205
-      },
-      "context": {
-        "type": "css",
-        "name": ".pb-g",
-        "value": "padding-bottom: rem($spacing-xx-large) !important;",
-        "line": {
-          "start": 206,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies a 0px top and bottom padding</p>\n",
-      "commentRange": {
-        "start": 211,
-        "end": 212
-      },
-      "context": {
-        "type": "css",
-        "name": ".pv-0",
-        "value": "padding-bottom: 0 !important; padding-top: 0 !important;",
-        "line": {
-          "start": 213,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies an extra extra small top and bottom padding</p>\n",
-      "commentRange": {
-        "start": 215,
-        "end": 216
-      },
-      "context": {
-        "type": "css",
-        "name": ".pv-a",
-        "value": "padding-bottom: rem($spacing-xx-small) !important; padding-top: rem($spacing-xx-small) !important;",
-        "line": {
-          "start": 217,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies an extra small top and bottom padding</p>\n",
-      "commentRange": {
-        "start": 219,
-        "end": 220
-      },
-      "context": {
-        "type": "css",
-        "name": ".pv-b",
-        "value": "padding-bottom: rem($spacing-x-small) !important; padding-top: rem($spacing-x-small) !important;",
-        "line": {
-          "start": 221,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies a small top and bottom padding</p>\n",
-      "commentRange": {
-        "start": 223,
-        "end": 224
-      },
-      "context": {
-        "type": "css",
-        "name": ".pv-c",
-        "value": "padding-bottom: rem($spacing-small) !important; padding-top: rem($spacing-small) !important;",
-        "line": {
-          "start": 225,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies a default (medium) top and bottom padding</p>\n",
-      "commentRange": {
-        "start": 227,
-        "end": 228
-      },
-      "context": {
-        "type": "css",
-        "name": ".pv,\n.pv-d",
-        "value": "padding-bottom: rem($spacing-medium) !important; padding-top: rem($spacing-medium) !important;",
-        "line": {
-          "start": 230,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies a large top and bottom padding</p>\n",
-      "commentRange": {
-        "start": 232,
-        "end": 233
-      },
-      "context": {
-        "type": "css",
-        "name": ".pv-e",
-        "value": "padding-bottom: rem($spacing-large) !important; padding-top: rem($spacing-large) !important;",
-        "line": {
-          "start": 234,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies an extra large top and bottom padding</p>\n",
-      "commentRange": {
-        "start": 236,
-        "end": 237
-      },
-      "context": {
-        "type": "css",
-        "name": ".pv-f",
-        "value": "padding-bottom: rem($spacing-x-large) !important; padding-top: rem($spacing-x-large) !important;",
-        "line": {
-          "start": 238,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
-      "description": "<p>Applies an extra extra large top and bottom padding</p>\n",
-      "commentRange": {
-        "start": 240,
-        "end": 241
-      },
-      "context": {
-        "type": "css",
-        "name": ".pv-g",
-        "value": "padding-bottom: rem($spacing-xx-large) !important; padding-top: rem($spacing-xx-large) !important;",
-        "line": {
-          "start": 242,
-          "end": 243
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.10"
-        }
-      ],
-      "group": [
-        "spacing"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-        "name": "_helpers-spacing.scss"
-      },
-      "groupName": {
-        "spacing": "Spacing"
-      }
-    },
-    {
       "description": "<p>Extra extra small spacing</p>\n",
       "commentRange": {
         "start": 5,
@@ -8192,6 +6656,40 @@
         "spacing": "Spacing"
       },
       "resolvedValue": "64"
+    },
+    {
+      "description": "<p>A map of spacing values</p>\n",
+      "commentRange": {
+        "start": 33,
+        "end": 34
+      },
+      "context": {
+        "type": "variable",
+        "name": "spacings",
+        "value": "(\n  xx-small: $spacing-xx-small,\n  x-small: $spacing-x-small,\n  small: $spacing-small,\n  medium: $spacing-medium,\n  large: $spacing-large,\n  x-large: $spacing-x-large,\n  xx-large: $spacing-xx-large\n)",
+        "scope": "private",
+        "line": {
+          "start": 35,
+          "end": 43
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.15"
+        }
+      ],
+      "group": [
+        "spacing"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-spacing.scss",
+        "name": "_settings-spacing.scss"
+      },
+      "groupName": {
+        "spacing": "Spacing"
+      },
+      "resolvedValue": "(\n  xx-small: $spacing-xx-small,\n  x-small: $spacing-x-small,\n  small: $spacing-small,\n  medium: $spacing-medium,\n  large: $spacing-large,\n  x-large: $spacing-x-large,\n  xx-large: $spacing-xx-large\n)"
     },
     {
       "description": "<p>The default focus style used for elements like anchors and buttons</p>\n",
@@ -15026,8 +13524,8 @@
                 "name": "invisible",
                 "code": "\n  @include important(position, absolute);\n  clip: rect(0, 0, 0, 0);\n  height: 1px;\n  overflow: hidden;\n  width: 1px;\n",
                 "line": {
-                  "start": 23,
-                  "end": 29
+                  "start": 24,
+                  "end": 30
                 }
               }
             },
@@ -15038,8 +13536,8 @@
                 "name": "invisible-off",
                 "code": "\n  @include important(static, absolute);\n  clip: auto;\n  height: auto;\n  overflow: visible;\n  width: auto;\n",
                 "line": {
-                  "start": 32,
-                  "end": 38
+                  "start": 33,
+                  "end": 39
                 }
               }
             }
@@ -15387,16 +13885,16 @@
         {
           "description": "<p>Portrait media query</p>\n",
           "commentRange": {
-            "start": 8,
-            "end": 8
+            "start": 9,
+            "end": 9
           },
           "context": {
             "type": "mixin",
             "name": "portrait",
             "code": "\n  @media screen and (orientation: portrait) {\n    @content;\n  }\n",
             "line": {
-              "start": 9,
-              "end": 13
+              "start": 10,
+              "end": 14
             }
           },
           "group": [
@@ -15416,16 +13914,16 @@
         {
           "description": "<p>Landscape media query</p>\n",
           "commentRange": {
-            "start": 15,
-            "end": 15
+            "start": 16,
+            "end": 16
           },
           "context": {
             "type": "mixin",
             "name": "landscape",
             "code": "\n  @media screen and (orientation: landscape) {\n    @content;\n  }\n",
             "line": {
-              "start": 16,
-              "end": 20
+              "start": 17,
+              "end": 21
             }
           },
           "group": [
@@ -15445,16 +13943,16 @@
         {
           "description": "<p>Makes an element visually hidden, but still accessible to keyboards and assistive devices.</p>\n",
           "commentRange": {
-            "start": 22,
-            "end": 22
+            "start": 23,
+            "end": 23
           },
           "context": {
             "type": "mixin",
             "name": "invisible",
             "code": "\n  @include important(position, absolute);\n  clip: rect(0, 0, 0, 0);\n  height: 1px;\n  overflow: hidden;\n  width: 1px;\n",
             "line": {
-              "start": 23,
-              "end": 29
+              "start": 24,
+              "end": 30
             }
           },
           "group": [
@@ -15478,16 +13976,16 @@
         {
           "description": "<p>Reverses the CSS output created by the <code>invisible()</code> mixin.</p>\n",
           "commentRange": {
-            "start": 31,
-            "end": 31
+            "start": 32,
+            "end": 32
           },
           "context": {
             "type": "mixin",
             "name": "invisible-off",
             "code": "\n  @include important(static, absolute);\n  clip: auto;\n  height: auto;\n  overflow: visible;\n  width: auto;\n",
             "line": {
-              "start": 32,
-              "end": 38
+              "start": 33,
+              "end": 39
             }
           },
           "group": [
@@ -16092,16 +14590,16 @@
         {
           "description": "<p>Display none.\nNote the use of <code>!important</code> for overriding styles.</p>\n",
           "commentRange": {
-            "start": 43,
-            "end": 44
+            "start": 44,
+            "end": 45
           },
           "context": {
             "type": "css",
             "name": ".hide",
-            "value": "@include important(display, none);",
+            "value": "display: none !important;",
             "line": {
-              "start": 45,
-              "end": 234
+              "start": 46,
+              "end": 162
             }
           },
           "group": [
@@ -16119,16 +14617,16 @@
         {
           "description": "<p>Displays an element as block by default.\nOr use modifiers to display inline/inline-block:</p>\n<p>Modifiers:</p>\n<ul>\n<li><code>i</code></li>\n<li><code>ib</code></li>\n</ul>\n",
           "commentRange": {
-            "start": 49,
-            "end": 54
+            "start": 50,
+            "end": 55
           },
           "context": {
             "type": "css",
             "name": ".show",
-            "value": "display: block;\n\n  &--i {\n    display: inline;\n  }\n\n  &--ib {\n    display: inline-block;\n  }",
+            "value": "display: block !important;\n\n  &--i {\n    display: inline !important;\n  }\n\n  &--ib {\n    display: inline-block !important;\n  }",
             "line": {
-              "start": 55,
-              "end": 234
+              "start": 56,
+              "end": 162
             }
           },
           "group": [
@@ -16146,16 +14644,16 @@
         {
           "description": "<p>Visible</p>\n",
           "commentRange": {
-            "start": 67,
-            "end": 67
+            "start": 68,
+            "end": 68
           },
           "context": {
             "type": "css",
             "name": ".visible",
-            "value": "visibility: visible;",
+            "value": "visibility: visible !important;",
             "line": {
-              "start": 68,
-              "end": 234
+              "start": 69,
+              "end": 162
             }
           },
           "group": [
@@ -16173,16 +14671,16 @@
         {
           "description": "<p>Visibility hidden</p>\n",
           "commentRange": {
-            "start": 72,
-            "end": 72
+            "start": 73,
+            "end": 73
           },
           "context": {
             "type": "css",
             "name": ".invisible",
-            "value": "visibility: hidden;",
+            "value": "visibility: hidden !important;",
             "line": {
-              "start": 73,
-              "end": 234
+              "start": 74,
+              "end": 162
             }
           },
           "group": [
@@ -16200,16 +14698,16 @@
         {
           "description": "<p>Landscape and portrait display</p>\n",
           "commentRange": {
-            "start": 80,
-            "end": 80
+            "start": 81,
+            "end": 81
           },
           "context": {
             "type": "css",
             "name": ".show-landscape,\n.hide-portrait",
-            "value": "@include important(display, block);\n\n  @include landscape {\n    @include important(display, block);\n  }\n\n  @include portrait {\n    @include important(display, none);\n  }",
+            "value": "display: block !important;\n\n  @include landscape {\n    display: block !important;\n  }\n\n  @include portrait {\n    display: none !important;\n  }",
             "line": {
-              "start": 82,
-              "end": 234
+              "start": 83,
+              "end": 162
             }
           },
           "group": [
@@ -16227,16 +14725,16 @@
         {
           "description": "<p>Landscape and portrait display</p>\n",
           "commentRange": {
-            "start": 94,
-            "end": 94
+            "start": 95,
+            "end": 95
           },
           "context": {
             "type": "css",
             "name": ".hide-landscape,\n.show-portrait",
-            "value": "@include important(display, none);\n\n  @include landscape {\n    @include important(display, none);\n  }\n\n  @include portrait {\n    @include important(display, block);\n  }",
+            "value": "display: none !important;\n\n  @include landscape {\n    display: none !important;\n  }\n\n  @include portrait {\n    display: block !important;\n  }",
             "line": {
-              "start": 96,
-              "end": 234
+              "start": 97,
+              "end": 162
             }
           },
           "group": [
@@ -17317,1544 +15815,6 @@
       ]
     },
     "spacing": {
-      "css": [
-        {
-          "description": "<p>Applies a 0px top margin</p>\n",
-          "commentRange": {
-            "start": 31,
-            "end": 32
-          },
-          "context": {
-            "type": "css",
-            "name": ".mt-0",
-            "value": "margin-top: 0 !important;",
-            "line": {
-              "start": 33,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies an extra extra small top margin</p>\n",
-          "commentRange": {
-            "start": 35,
-            "end": 36
-          },
-          "context": {
-            "type": "css",
-            "name": ".mt-a",
-            "value": "margin-top: rem($spacing-xx-small) !important;",
-            "line": {
-              "start": 37,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies an extra small top margin</p>\n",
-          "commentRange": {
-            "start": 39,
-            "end": 40
-          },
-          "context": {
-            "type": "css",
-            "name": ".mt-b",
-            "value": "margin-top: rem($spacing-x-small) !important;",
-            "line": {
-              "start": 41,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies a small top margin</p>\n",
-          "commentRange": {
-            "start": 43,
-            "end": 44
-          },
-          "context": {
-            "type": "css",
-            "name": ".mt-c",
-            "value": "margin-top: rem($spacing-small) !important;",
-            "line": {
-              "start": 45,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies a default (medium) top margin</p>\n",
-          "commentRange": {
-            "start": 47,
-            "end": 48
-          },
-          "context": {
-            "type": "css",
-            "name": ".mt,\n.mt-d",
-            "value": "margin-top: rem($spacing-medium) !important;",
-            "line": {
-              "start": 50,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies a large top margin</p>\n",
-          "commentRange": {
-            "start": 52,
-            "end": 53
-          },
-          "context": {
-            "type": "css",
-            "name": ".mt-e",
-            "value": "margin-top: rem($spacing-large) !important;",
-            "line": {
-              "start": 54,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies an extra large top margin</p>\n",
-          "commentRange": {
-            "start": 56,
-            "end": 57
-          },
-          "context": {
-            "type": "css",
-            "name": ".mt-f",
-            "value": "margin-top: rem($spacing-x-large) !important;",
-            "line": {
-              "start": 58,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies an extra extra large top margin</p>\n",
-          "commentRange": {
-            "start": 60,
-            "end": 61
-          },
-          "context": {
-            "type": "css",
-            "name": ".mt-g",
-            "value": "margin-top: rem($spacing-xx-large) !important;",
-            "line": {
-              "start": 62,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies a 0px bottom margin</p>\n",
-          "commentRange": {
-            "start": 67,
-            "end": 68
-          },
-          "context": {
-            "type": "css",
-            "name": ".mb-0",
-            "value": "margin-bottom: 0 !important;",
-            "line": {
-              "start": 69,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies an extra extra small bottom margin</p>\n",
-          "commentRange": {
-            "start": 71,
-            "end": 72
-          },
-          "context": {
-            "type": "css",
-            "name": ".mb-a",
-            "value": "margin-bottom: rem($spacing-xx-small) !important;",
-            "line": {
-              "start": 73,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies an extra small bottom margin</p>\n",
-          "commentRange": {
-            "start": 75,
-            "end": 76
-          },
-          "context": {
-            "type": "css",
-            "name": ".mb-b",
-            "value": "margin-bottom: rem($spacing-x-small) !important;",
-            "line": {
-              "start": 77,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies a small bottom margin</p>\n",
-          "commentRange": {
-            "start": 79,
-            "end": 80
-          },
-          "context": {
-            "type": "css",
-            "name": ".mb-c",
-            "value": "margin-bottom: rem($spacing-small) !important;",
-            "line": {
-              "start": 81,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies a default (medium) bottom margin</p>\n",
-          "commentRange": {
-            "start": 83,
-            "end": 84
-          },
-          "context": {
-            "type": "css",
-            "name": ".mb,\n.mb-d",
-            "value": "margin-bottom: rem($spacing-medium) !important;",
-            "line": {
-              "start": 86,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies a large bottom margin</p>\n",
-          "commentRange": {
-            "start": 88,
-            "end": 89
-          },
-          "context": {
-            "type": "css",
-            "name": ".mb-e",
-            "value": "margin-bottom: rem($spacing-large) !important;",
-            "line": {
-              "start": 90,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies an extra large bottom margin</p>\n",
-          "commentRange": {
-            "start": 92,
-            "end": 93
-          },
-          "context": {
-            "type": "css",
-            "name": ".mb-f",
-            "value": "margin-bottom: rem($spacing-x-large) !important;",
-            "line": {
-              "start": 94,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies an extra extra large bottom margin</p>\n",
-          "commentRange": {
-            "start": 96,
-            "end": 97
-          },
-          "context": {
-            "type": "css",
-            "name": ".mb-g",
-            "value": "margin-bottom: rem($spacing-xx-large) !important;",
-            "line": {
-              "start": 98,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies a 0px top and bottom margin</p>\n",
-          "commentRange": {
-            "start": 103,
-            "end": 104
-          },
-          "context": {
-            "type": "css",
-            "name": ".mv-0",
-            "value": "margin-bottom: 0 !important; margin-top: 0 !important;",
-            "line": {
-              "start": 105,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies an extra extra small top and bottom margin</p>\n",
-          "commentRange": {
-            "start": 107,
-            "end": 108
-          },
-          "context": {
-            "type": "css",
-            "name": ".mv-a",
-            "value": "margin-bottom: rem($spacing-xx-small) !important; margin-top: rem($spacing-xx-small) !important;",
-            "line": {
-              "start": 109,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies an extra small top and bottom margin</p>\n",
-          "commentRange": {
-            "start": 111,
-            "end": 112
-          },
-          "context": {
-            "type": "css",
-            "name": ".mv-b",
-            "value": "margin-bottom: rem($spacing-x-small) !important; margin-top: rem($spacing-x-small) !important;",
-            "line": {
-              "start": 113,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies a small top and bottom margin</p>\n",
-          "commentRange": {
-            "start": 115,
-            "end": 116
-          },
-          "context": {
-            "type": "css",
-            "name": ".mv-c",
-            "value": "margin-bottom: rem($spacing-small) !important; margin-top: rem($spacing-small) !important;",
-            "line": {
-              "start": 117,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies a default (medium) top and bottom margin</p>\n",
-          "commentRange": {
-            "start": 119,
-            "end": 120
-          },
-          "context": {
-            "type": "css",
-            "name": ".mv,\n.mv-d",
-            "value": "margin-bottom: rem($spacing-medium) !important; margin-top: rem($spacing-medium) !important;",
-            "line": {
-              "start": 122,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies a large top and bottom margin</p>\n",
-          "commentRange": {
-            "start": 124,
-            "end": 125
-          },
-          "context": {
-            "type": "css",
-            "name": ".mv-e",
-            "value": "margin-bottom: rem($spacing-large) !important; margin-top: rem($spacing-large) !important;",
-            "line": {
-              "start": 126,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies an extra large top and bottom margin</p>\n",
-          "commentRange": {
-            "start": 128,
-            "end": 129
-          },
-          "context": {
-            "type": "css",
-            "name": ".mv-f",
-            "value": "margin-bottom: rem($spacing-x-large) !important; margin-top: rem($spacing-x-large) !important;",
-            "line": {
-              "start": 130,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies an extra extra large top and bottom margin</p>\n",
-          "commentRange": {
-            "start": 132,
-            "end": 133
-          },
-          "context": {
-            "type": "css",
-            "name": ".mv-g",
-            "value": "margin-bottom: rem($spacing-xx-large) !important; margin-top: rem($spacing-xx-large) !important;",
-            "line": {
-              "start": 134,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies a 0px top padding</p>\n",
-          "commentRange": {
-            "start": 139,
-            "end": 140
-          },
-          "context": {
-            "type": "css",
-            "name": ".pt-0",
-            "value": "padding-top: 0 !important;",
-            "line": {
-              "start": 141,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies an extra extra small top padding</p>\n",
-          "commentRange": {
-            "start": 143,
-            "end": 144
-          },
-          "context": {
-            "type": "css",
-            "name": ".pt-a",
-            "value": "padding-top: rem($spacing-xx-small) !important;",
-            "line": {
-              "start": 145,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies an extra small top padding</p>\n",
-          "commentRange": {
-            "start": 147,
-            "end": 148
-          },
-          "context": {
-            "type": "css",
-            "name": ".pt-b",
-            "value": "padding-top: rem($spacing-x-small) !important;",
-            "line": {
-              "start": 149,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies a small top padding</p>\n",
-          "commentRange": {
-            "start": 151,
-            "end": 152
-          },
-          "context": {
-            "type": "css",
-            "name": ".pt-c",
-            "value": "padding-top: rem($spacing-small) !important;",
-            "line": {
-              "start": 153,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies a default (medium) top padding</p>\n",
-          "commentRange": {
-            "start": 155,
-            "end": 156
-          },
-          "context": {
-            "type": "css",
-            "name": ".pt,\n.pt-d",
-            "value": "padding-top: rem($spacing-medium) !important;",
-            "line": {
-              "start": 158,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies a large top padding</p>\n",
-          "commentRange": {
-            "start": 160,
-            "end": 161
-          },
-          "context": {
-            "type": "css",
-            "name": ".pt-e",
-            "value": "padding-top: rem($spacing-large) !important;",
-            "line": {
-              "start": 162,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies an extra large top padding</p>\n",
-          "commentRange": {
-            "start": 164,
-            "end": 165
-          },
-          "context": {
-            "type": "css",
-            "name": ".pt-f",
-            "value": "padding-top: rem($spacing-x-large) !important;",
-            "line": {
-              "start": 166,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies an extra extra large top padding</p>\n",
-          "commentRange": {
-            "start": 168,
-            "end": 169
-          },
-          "context": {
-            "type": "css",
-            "name": ".pt-g",
-            "value": "padding-top: rem($spacing-xx-large) !important;",
-            "line": {
-              "start": 170,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies a 0px bottom padding</p>\n",
-          "commentRange": {
-            "start": 175,
-            "end": 176
-          },
-          "context": {
-            "type": "css",
-            "name": ".pb-0",
-            "value": "padding-bottom: 0 !important;",
-            "line": {
-              "start": 177,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies an extra extra small bottom padding</p>\n",
-          "commentRange": {
-            "start": 179,
-            "end": 180
-          },
-          "context": {
-            "type": "css",
-            "name": ".pb-a",
-            "value": "padding-bottom: rem($spacing-xx-small) !important;",
-            "line": {
-              "start": 181,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies an extra small bottom padding</p>\n",
-          "commentRange": {
-            "start": 183,
-            "end": 184
-          },
-          "context": {
-            "type": "css",
-            "name": ".pb-b",
-            "value": "padding-bottom: rem($spacing-x-small) !important;",
-            "line": {
-              "start": 185,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies a small bottom padding</p>\n",
-          "commentRange": {
-            "start": 187,
-            "end": 188
-          },
-          "context": {
-            "type": "css",
-            "name": ".pb-c",
-            "value": "padding-bottom: rem($spacing-small) !important;",
-            "line": {
-              "start": 189,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies a default (medium) bottom padding</p>\n",
-          "commentRange": {
-            "start": 191,
-            "end": 192
-          },
-          "context": {
-            "type": "css",
-            "name": ".pb,\n.pb-d",
-            "value": "padding-bottom: rem($spacing-medium) !important;",
-            "line": {
-              "start": 194,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies a large bottom padding</p>\n",
-          "commentRange": {
-            "start": 196,
-            "end": 197
-          },
-          "context": {
-            "type": "css",
-            "name": ".pb-e",
-            "value": "padding-bottom: rem($spacing-large) !important;",
-            "line": {
-              "start": 198,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies an extra large bottom padding</p>\n",
-          "commentRange": {
-            "start": 200,
-            "end": 201
-          },
-          "context": {
-            "type": "css",
-            "name": ".pb-f",
-            "value": "padding-bottom: rem($spacing-x-large) !important;",
-            "line": {
-              "start": 202,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies an extra extra large bottom padding</p>\n",
-          "commentRange": {
-            "start": 204,
-            "end": 205
-          },
-          "context": {
-            "type": "css",
-            "name": ".pb-g",
-            "value": "padding-bottom: rem($spacing-xx-large) !important;",
-            "line": {
-              "start": 206,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies a 0px top and bottom padding</p>\n",
-          "commentRange": {
-            "start": 211,
-            "end": 212
-          },
-          "context": {
-            "type": "css",
-            "name": ".pv-0",
-            "value": "padding-bottom: 0 !important; padding-top: 0 !important;",
-            "line": {
-              "start": 213,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies an extra extra small top and bottom padding</p>\n",
-          "commentRange": {
-            "start": 215,
-            "end": 216
-          },
-          "context": {
-            "type": "css",
-            "name": ".pv-a",
-            "value": "padding-bottom: rem($spacing-xx-small) !important; padding-top: rem($spacing-xx-small) !important;",
-            "line": {
-              "start": 217,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies an extra small top and bottom padding</p>\n",
-          "commentRange": {
-            "start": 219,
-            "end": 220
-          },
-          "context": {
-            "type": "css",
-            "name": ".pv-b",
-            "value": "padding-bottom: rem($spacing-x-small) !important; padding-top: rem($spacing-x-small) !important;",
-            "line": {
-              "start": 221,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies a small top and bottom padding</p>\n",
-          "commentRange": {
-            "start": 223,
-            "end": 224
-          },
-          "context": {
-            "type": "css",
-            "name": ".pv-c",
-            "value": "padding-bottom: rem($spacing-small) !important; padding-top: rem($spacing-small) !important;",
-            "line": {
-              "start": 225,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies a default (medium) top and bottom padding</p>\n",
-          "commentRange": {
-            "start": 227,
-            "end": 228
-          },
-          "context": {
-            "type": "css",
-            "name": ".pv,\n.pv-d",
-            "value": "padding-bottom: rem($spacing-medium) !important; padding-top: rem($spacing-medium) !important;",
-            "line": {
-              "start": 230,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies a large top and bottom padding</p>\n",
-          "commentRange": {
-            "start": 232,
-            "end": 233
-          },
-          "context": {
-            "type": "css",
-            "name": ".pv-e",
-            "value": "padding-bottom: rem($spacing-large) !important; padding-top: rem($spacing-large) !important;",
-            "line": {
-              "start": 234,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies an extra large top and bottom padding</p>\n",
-          "commentRange": {
-            "start": 236,
-            "end": 237
-          },
-          "context": {
-            "type": "css",
-            "name": ".pv-f",
-            "value": "padding-bottom: rem($spacing-x-large) !important; padding-top: rem($spacing-x-large) !important;",
-            "line": {
-              "start": 238,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        },
-        {
-          "description": "<p>Applies an extra extra large top and bottom padding</p>\n",
-          "commentRange": {
-            "start": 240,
-            "end": 241
-          },
-          "context": {
-            "type": "css",
-            "name": ".pv-g",
-            "value": "padding-bottom: rem($spacing-xx-large) !important; padding-top: rem($spacing-xx-large) !important;",
-            "line": {
-              "start": 242,
-              "end": 243
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.10"
-            }
-          ],
-          "group": [
-            "spacing"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\helpers\\_helpers-spacing.scss",
-            "name": "_helpers-spacing.scss"
-          },
-          "groupName": {
-            "spacing": "Spacing"
-          }
-        }
-      ],
       "variable": [
         {
           "description": "<p>Extra extra small spacing</p>\n",
@@ -19107,6 +16067,40 @@
             "spacing": "Spacing"
           },
           "resolvedValue": "64"
+        },
+        {
+          "description": "<p>A map of spacing values</p>\n",
+          "commentRange": {
+            "start": 33,
+            "end": 34
+          },
+          "context": {
+            "type": "variable",
+            "name": "spacings",
+            "value": "(\n  xx-small: $spacing-xx-small,\n  x-small: $spacing-x-small,\n  small: $spacing-small,\n  medium: $spacing-medium,\n  large: $spacing-large,\n  x-large: $spacing-x-large,\n  xx-large: $spacing-xx-large\n)",
+            "scope": "private",
+            "line": {
+              "start": 35,
+              "end": 43
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.15"
+            }
+          ],
+          "group": [
+            "spacing"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-spacing.scss",
+            "name": "_settings-spacing.scss"
+          },
+          "groupName": {
+            "spacing": "Spacing"
+          },
+          "resolvedValue": "(\n  xx-small: $spacing-xx-small,\n  x-small: $spacing-x-small,\n  small: $spacing-small,\n  medium: $spacing-medium,\n  large: $spacing-large,\n  x-large: $spacing-x-large,\n  xx-large: $spacing-xx-large\n)"
         }
       ]
     },
