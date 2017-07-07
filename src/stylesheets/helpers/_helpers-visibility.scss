@@ -2,6 +2,7 @@
 /// @group helpers
 ////
 
+// sass-lint:disable no-important
 
 //## Mixins
 
@@ -43,7 +44,7 @@
 /// Display none.
 /// Note the use of `!important` for overriding styles.
 .hide {
-  @include important(display, none);
+  display: none !important;
 }
 
 /// Displays an element as block by default.
@@ -53,25 +54,25 @@
 ///   - `i`
 ///   - `ib`
 .show {
-  display: block;
+  display: block !important;
 
   &--i {
-    display: inline;
+    display: inline !important;
   }
 
   &--ib {
-    display: inline-block;
+    display: inline-block !important;
   }
 }
 
 /// Visible
 .visible {
-  visibility: visible;
+  visibility: visible !important;
 }
 
 /// Visibility hidden
 .invisible {
-  visibility: hidden;
+  visibility: hidden !important;
 }
 
 
@@ -80,138 +81,65 @@
 /// Landscape and portrait display
 .show-landscape,
 .hide-portrait {
-  @include important(display, block);
+  display: block !important;
 
   @include landscape {
-    @include important(display, block);
+    display: block !important;
   }
 
   @include portrait {
-    @include important(display, none);
+    display: none !important;
   }
 }
 
 /// Landscape and portrait display
 .hide-landscape,
 .show-portrait {
-  @include important(display, none);
+  display: none !important;
 
   @include landscape {
-    @include important(display, none);
+    display: none !important;
   }
 
   @include portrait {
-    @include important(display, block);
+    display: block !important;
   }
 }
 
 //## Breakpoints show
 
 // Outuput the following for each break point:
-//  - .hide-only-*
-//  - .hide-until-*
 //  - .hide-from-*
-//  - .show-only-*
 //  - .show-from-*
-//  - .show-until-*
 
 $hide-selectors: ();
-$block-selectors: ();
-$inline-selectors: ();
-$inline-block-selectors: ();
 @each $brkpnt-key, $brkpnt-value in $mq-breakpoints {
-  // Hide until
-  $hide-selectors: append($hide-selectors, '.hide-until-#{ $brkpnt-key }', comma);
-  $hide-selectors: append($hide-selectors, '.hide-until-#{ $brkpnt-key }--i', comma);
-  $hide-selectors: append($hide-selectors, '.hide-until-#{ $brkpnt-key }--ib', comma);
-  // Show only
-  $hide-selectors: append($hide-selectors, '.show-only-#{ $brkpnt-key }', comma);
-  $hide-selectors: append($hide-selectors, '.show-only-#{ $brkpnt-key }--i', comma);
-  $hide-selectors: append($hide-selectors, '.show-only-#{ $brkpnt-key }--ib', comma);
   // Show from
-  $hide-selectors: append($hide-selectors, '.show-from-#{ $brkpnt-key }', comma);
-  $hide-selectors: append($hide-selectors, '.show-from-#{ $brkpnt-key }--i', comma);
-  $hide-selectors: append($hide-selectors, '.show-from-#{ $brkpnt-key }--ib', comma);
-  // Show until
-  $block-selectors: append($block-selectors, '.show-until-#{ $brkpnt-key }', comma);
-  $inline-selectors: append($inline-selectors, '.show-until-#{ $brkpnt-key }--i', comma);
-  $inline-block-selectors: append($inline-block-selectors, '.show-until-#{ $brkpnt-key }--ib', comma);
+  $hide-selectors: append($hide-selectors, '.show-#{ $brkpnt-key }', comma);
+  $hide-selectors: append($hide-selectors, '.show--i-#{ $brkpnt-key }', comma);
+  $hide-selectors: append($hide-selectors, '.show--ib-#{ $brkpnt-key }', comma);
 }
 
 #{ $hide-selectors } {
-  @include important(display, none);
+  display: none;
 }
 
-#{ $block-selectors } {
-  @include important(display, block);
-}
-
-#{ $inline-selectors } {
-  @include important(display, inline);
-}
-
-#{ $inline-block-selectors } {
-  @include important(display, inline-block);
-}
-
-
-@for $i from 1 through length($mq-breakpoints) {
-  $iterator: nth($mq-breakpoints, $i);
-  $brkpnt-key: nth($iterator, 1);
-  $brkpnt-value: nth($iterator, 2);
-
-  @if $i < length($mq-breakpoints) {
-    $next: nth($mq-breakpoints, $i + 1);
-    $next-brkpnt-key: nth($next, 1);
-
-    @include mq($from: $brkpnt-key, $until: $next-brkpnt-key) {
-      .hide-only-#{ $brkpnt-key } {
-        @include important(display, none);
-      }
-    }
-  }
-
+@each $brkpnt-key, $brkpnt-value in $mq-breakpoints {
   @include mq($from: $brkpnt-key) {
-    @if $i > 2 {
-      $prev: nth($mq-breakpoints, $i - 1);
-      $prev-brkpnt-key: nth($prev, 1);
-
-      .show-only-#{ $prev-brkpnt-key },
-      .show-only-#{ $prev-brkpnt-key }--i,
-      .show-only-#{ $prev-brkpnt-key }--ib {
-        @include important(display, none);
-      }
+    .show-#{ $brkpnt-key } {
+      display: block !important;
     }
 
-    .show-until-#{ $brkpnt-key },
-    .show-until-#{ $brkpnt-key }--i,
-    .show-until-#{ $brkpnt-key }--ib,
-    .hide-from-#{ $brkpnt-key } {
-      @include important(display, none);
+    .show--i-#{ $brkpnt-key } {
+      display: inline !important;
     }
 
-    .show-only-#{ $brkpnt-key },
-    .show-from-#{ $brkpnt-key },
-    .hide-until-#{ $brkpnt-key } {
-      @include important(display, block);
+    .show--ib-#{ $brkpnt-key } {
+      display: inline-block !important;
     }
 
-    .show-only-#{ $brkpnt-key }--i,
-    .show-from-#{ $brkpnt-key }--i,
-    .hide-until-#{ $brkpnt-key }--i {
-      @include important(display, inline);
-    }
-
-    .show-only-#{ $brkpnt-key }--ib,
-    .show-from-#{ $brkpnt-key }--ib,
-    .hide-until-#{ $brkpnt-key }--ib {
-      @include important(display, inline-block);
-    }
-
-    @if $i == length($mq-breakpoints) {
-      .hide-only-#{ $brkpnt-key } {
-        @include important(display, none);
-      }
+    .hide-#{ $brkpnt-key } {
+      display: none !important;
     }
   }
 }
