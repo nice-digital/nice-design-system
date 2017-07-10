@@ -35,7 +35,7 @@ sass:
   style: :compressed
   load_paths:
       - _sass
-      - bower_components/nice-experience/src/stylesheets
+      - bower_components/nice-design-system/src/stylesheets
 
 # Defaults
 defaults:
@@ -47,4 +47,4 @@ defaults:
 
 # Custom vars
 repository: https://github.com/nhsevidence/nice-design-system
-
+product_name: NICE Design System

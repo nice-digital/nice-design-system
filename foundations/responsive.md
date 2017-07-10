@@ -145,7 +145,7 @@ Follow our [typography]({{ site.baseurl }}{% link foundations/typography.md %}) 
 Use the `breakpoints` module:
 
 {% capture mediaqueriesjs %}
-import { breakpoints } from "nice-experience";
+import { breakpoints } from "@nice-digital/design-system";
 // Or if you're building a core module: import breakpoints from "./breakpoints";
 
 console.log(breakpoints.breakpoints.md); // 900

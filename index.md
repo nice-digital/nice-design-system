@@ -9,7 +9,7 @@ title: Your source for quickly creating consistent on-brand NICE digital service
     <div class="hero__container">
         <div class="hero__body">
             <div class="hero__copy">
-                <h1 class="hero__title">NICE Design System</h1>
+                <h1 class="hero__title">{{ site.product_name }}</h1>
 
                 <p class="hero__intro">
                     Your source for quickly creating consistent on-brand NICE digital services

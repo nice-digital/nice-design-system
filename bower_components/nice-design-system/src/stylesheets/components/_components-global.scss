@@ -1,0 +1,42 @@
+////
+/// @group components
+////
+
+/// Container placeholder.
+/// @since 0.1.0
+%container {
+  margin: auto;
+  max-width: rem(1170px);
+  width: 96%;
+}
+
+/// Container, used as a wrapper around sections within a page.
+/// Usually used to house grids.
+///
+/// @example
+///   <div class="container">
+///     <div class="grid">
+///     </div>
+///   </div>
+/// @since 0.1.0
+.container {
+  @extend %container;
+
+  &--full {
+    max-width: 100%;
+    padding: 0 2%;
+    width: auto;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+hr {
+  background: 0;
+  border: 0;
+  border-top: em(1px) solid $colour-border;
+  margin: em($spacing-large 0);
+  padding: 0;
+}

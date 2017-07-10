@@ -1,0 +1,52 @@
+{
+  "name": "nice-design-system",
+  "description": "Your source for creating beautiful, consistent experiences across NICE",
+  "main": [
+    "src/javascripts/index.js",
+    "src/stylesheets/index.scss"
+  ],
+  "moduleType": "es6",
+  "authors": [
+    "NICE Digital Services (https://www.nice.org.uk/)",
+    "Ian Routledge (http://ediblecode.com)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "sass",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "framework",
+    "web",
+    "nice",
+    "nhs"
+  ],
+  "homepage": "https://nhsevidence.github.io/nice-design-system/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nhsevidence/nice-design-system.git"
+  },
+  "ignore": [
+    "**/.*",
+    "!src/**/.*",
+    "**/.md",
+    "node_modules",
+    "bower_components",
+    "server",
+    "test",
+    "tests",
+    ".github",
+    ".grunt-tasks"
+  ],
+  "version": "0.2.19",
+  "_release": "0.2.19",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.2.19",
+    "commit": "6bd3e637742885068cf27ada2e0807e120e767dc"
+  },
+  "_source": "https://github.com/nhsevidence/nice-design-system.git",
+  "_target": "^0.2.17",
+  "_originalSource": "nice-design-system"
+}

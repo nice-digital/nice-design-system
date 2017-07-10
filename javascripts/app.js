@@ -10,5 +10,5 @@ anchors.remove(".example h2, .example h3, .example h4, [data-no-anchor] h2, [dat
 $(document).ready(function() {
 
 	// Load any plugins automatically
-	$(document).experience();
+	$(document).nice();
 });

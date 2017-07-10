@@ -4,7 +4,7 @@ title: Getting started
 description: 
 ---
 
-NICE Design System is the source for creating consistent, accessible and trustworthy services for NICE. It’s aimed at developers, designers and content editors. Please use our relevant guides below to get started:
+{{ site.product_name }} is the source for creating consistent, accessible and trustworthy services for NICE. It’s aimed at developers, designers and content editors. Please use our relevant guides below to get started:
 
 ## Developers
 

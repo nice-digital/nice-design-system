@@ -108,7 +108,7 @@ Use the following HTML structure as a guide when creating new applications. It c
 npm is the recommended way of installing the NICE Design System into your project:
 
 {% capture npm %}
-npm i nice-experience --save
+npm i @nice-digital/design-system --save
 {% endcapture %}
 {% include source.html lang='bash' body=npm title='npm install' %}
 
@@ -117,7 +117,7 @@ The package contains both source and pre-compiled versions for SASS, JavaScript 
 The following is the basic structure with important files mentioned. Please note, not all source files are included in the list below:
 
 {% capture npm %}
-node_modules/nice-experience/
+node_modules/@nice-digital/design-system/
 ├── dist/
 │   ├── docs/
 │       ├── fonts/
@@ -129,19 +129,19 @@ node_modules/nice-experience/
 │           ├── nice-icons.woff
 │           ├── nice-icons.woff2
 │   ├── javascripts/
-│           ├── experience.dev.js
-│           ├── experience.dev.map
-│           ├── experience.min.js
-│           ├── experience.min.map
-│           ├── experience.oldie.dev.js
-│           ├── experience.oldie.dev.map
-│           ├── experience.oldie.min.js
-│           ├── experience.oldie.min.map
+│           ├── nice.dev.js
+│           ├── nice.dev.map
+│           ├── nice.min.js
+│           ├── nice.min.map
+│           ├── nice.oldie.dev.js
+│           ├── nice.oldie.dev.map
+│           ├── nice.oldie.min.js
+│           ├── nice.oldie.min.map
 │   ├── stylesheets/
-│           ├── experience.css
-│           ├── experience.css.map
-│           ├── experience.min.css
-│           ├── experience.min.map
+│           ├── nice.css
+│           ├── nice.css.map
+│           ├── nice.min.css
+│           ├── nice.min.map
 ├── src
 │   ├── assets/
 │           ├── favicon.ico
@@ -152,11 +152,11 @@ node_modules/nice-experience/
 │   ├── javascripts/
 │           ├── .eslintignore
 │           ├── .eslintrc.json
-│           ├── experience.js
+│           ├── index.js
 │           ├── *
 │   ├── stylesheets/
 │           ├── .sass-lint.yml
-│           ├── experience.scss
+│           ├── index.scss
 │           ├── *
 {% endcapture %}
 {% include source.html lang='bash' body=npm title='directory structure' %}

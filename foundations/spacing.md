@@ -33,7 +33,7 @@ Our spacing is set out on a non-linear scale, to avoid ambiguity between adjacen
 
 Typography, components, containers and grids have built in spacing, but sometimes it is necassary to override this default spacing. This can be done via CSS helper classes for overriding margin and/or padding.
 
-These classes are named using the format `{property}{sides}-{size}`.
+These classes are named using the format `{property}{sides}--{size}` or `{property}{sides}--{size}-{breakpoint}`.
 
 Where `{property}` is one of:
 
@@ -44,9 +44,12 @@ Where `{sides}` is one of:
 
 - `t` - for classes that set margin-top or padding-top
 - `b` - for classes that set margin-bottom or padding-bottom
+- `l` - for classes that set margin-left or padding-left
+- `r` - for classes that set margin-right or padding-right
+- `h` - for classes that set both *-left and *-right
 - `v` - for classes that set both *-top and *-bottom
 
-Where `{size}` is on a linear scale from *a* (small) via *d* (default/medium) to *g* (large) so is one of:
+Where `{size}` is on a linear scale from *a* (small) via *d* (default/medium) to *g* (large):
 
 - `0` - for classes that eliminate the margin or padding by setting it to 0
 - `a` - for extra extra small margin/padding
@@ -56,20 +59,28 @@ Where `{size}` is on a linear scale from *a* (small) via *d* (default/medium) to
 - `e` - for large margin/padding
 - `f` - for extra large margin/padding
 - `g` - for extra extra large margin/padding
+- 
+And `{breakpoint}` is optional and one of:
+
+- `xs`
+- `sm`
+- `md`
+- `lg`
+- `xl`
 
 ### Class examples
 
-For example: `mt`, `pv-e` etc
+For example: `mt--d`, `pv-e` etc
 
 {% capture classes %}
-<p class="mv-0">
-    <code>.mv-0</code> removes margins from both top and bottom
+<p class="mv--0">
+    <code>.mv--0</code> removes margins from both top and bottom
 </p>
-<p class="mt mb-b">
-    <code>.mt</code> gives a default top margin and <code>.mb-b</code> a small bottom margin
+<p class="mt--d mb--b">
+    <code>.mt--d</code> gives a default top margin and <code>.mb--b</code> a small bottom margin
 </p>
-<p class="pt-f pb-c">
-    <code>.pt-f</code> gives a large top padding and <code>.pb-c</code> a small bottom padding 
+<p class="pt--f pb--c">
+    <code>.pt--f</code> gives a large top padding and <code>.pb--c</code> a small bottom padding 
 </p>
 {% endcapture %}
 {% include example.html body=classes title="Spacing classes example" %}

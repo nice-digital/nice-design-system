@@ -158,14 +158,14 @@ See [$nice-font-base-path]({{ site.baseurl }}{% link technical/sass/documentatio
 
 The icon font files are included with the *dist/fonts* folder so are either:
 
-- \bower_components\nice-experience\dist\fonts
-- \node_modules\nice-experience\dist\fonts
+- \bower_components\nice-design-system\dist\fonts
+- \node_modules\@nice-digital\design-system\dist\fonts
 
 To serve these they either need to be served directly or copied into a directory:
 
 #### Node/express
 
-If you're using node and express then you can use the following to serve the compiled font files (woff/eot/ttf etc) directly from the *node_modules/nice-experience/dist/fonts* folder:
+If you're using node and express then you can use the following to serve the compiled font files (woff/eot/ttf etc) directly from the *node_modules/@nice-digital/design-system/dist/fonts* folder:
 
 {% capture mount %}
 const express = require("express"),
@@ -173,7 +173,7 @@ const express = require("express"),
 
 const app = express();
 
-app.use("/fonts", express.static(path.join(__dirname, "./node_modules/nice-experience/dist/fonts")));
+app.use("/fonts", express.static(path.join(__dirname, "./node_modules/@nice-digital/design-system/dist/fonts")));
 {% endcapture %}
 {% include source.html lang='js' body=mount title='Mount fonts with Express' %}
 
@@ -190,7 +190,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         copy: {
             icons: {
-                cwd: "node_modules/nice-experience/dist/fonts/",
+                cwd: "node_modules/@nice-digital/design-system/dist/fonts/",
                 src: ["*"],
                 dest: "/fonts/",
                 expand: true,
@@ -259,5 +259,5 @@ Creating a custom icon font is the best option if you need bespoke icons for you
 1. create the SVG as per the [creating SVG icons](#creating-svg-icons) section
 2. create a [grunt task for webfont generation](https://github.com/sapegin/grunt-webfont){:target="_blank"}. You can base this off [our webfont task]({{ site.repository }}/blob/master/.grunt-tasks/webfont.js){:target="_blank"}.
 3. use a custom template for the Grunt task to override the `$nice-icons` map. You can base this off [our custom template]({{ site.repository }}/blob/master/src/icons/.nice-icons.tmpl.scss){:target="_blank"}. You don't need the mixins in your template.
-4. reference both your custom SVG icon(s) and the core ones: `src: ["./icons/*.svg", "./node_modules/nice-experience/src/icons/*.svg"]`.
+4. reference both your custom SVG icon(s) and the core ones: `src: ["./icons/*.svg", "./node_modules/@nice-digital/design-system/src/icons/*.svg"]`.
 5. override the `$nice-font-base-path` variable if you generate your font files anywhere other than */fonts/*
