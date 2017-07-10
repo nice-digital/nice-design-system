@@ -171,7 +171,6 @@
 /// @require {mixin} grid-item-middle
 /// @require {mixin} grid-item-bottom
 /// @require {mixin} grid-item-debug
-/// @require mq <https://github.com/sass-mq/sass-mq>
 /// @example scss
 ///   .test {
 ///     @include grid-item(12, $md: 8, $lg: (cols: 7, push: 1), $loose: true);
