@@ -28,7 +28,7 @@ Use unicode symbols instead of SVGs icons wherever possible. If there is no unic
 
 We use a few unicode glyphs within our core code. These are available for by name to avoid using 'magic strings' in code:
 
-{% assign unicode = site.data.sass.experience.items | where_exp: "item","item.context.name == 'nice-glyphs'" | first %}
+{% assign unicode = site.data.sass.nice-design-system.items | where_exp: "item","item.context.name == 'nice-glyphs'" | first %}
 <div class="grid">
     {% for glyph in unicode.property %}
         <div data-g="6 xs:4 md:3 lg:2" class="text-center">

@@ -97,7 +97,7 @@ As well as CSS classes, we provide SASS variables for use in custom components:
 The variables are:
 
 <ul class="list list--unstyled">
-{% assign spacingVars = site.data.sass.experience.items | where_exp: "item","item.context.name contains 'spacing-'" %}
+{% assign spacingVars = site.data.sass.nice-design-system.items | where_exp: "item","item.context.name contains 'spacing-'" %}
 {% for item in spacingVars %}
 <li><code>${{ item.context.name }}</code> ({{ item.resolvedValue }}px)</li>
 {% endfor %}
