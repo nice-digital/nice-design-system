@@ -16,7 +16,7 @@ const CacheKey = `{{ site.name | slugify }}-${CacheVersion}`;
 const CacheInitialItems = [
 		`${AppRoot}/`,
 		`${AppRoot}/css/app.css`,
-		`${AppRoot}/javascripts/experience.min.js`,
+		`${AppRoot}/javascripts/nice.min.js`,
 		`${AppRoot}/javascripts/app.js`
 	];
 
