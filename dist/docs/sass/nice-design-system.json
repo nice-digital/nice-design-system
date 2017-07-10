@@ -3234,8 +3234,8 @@
             "name": "grid-item-gutterless",
             "code": "\n  padding-left: 0;\n",
             "line": {
-              "start": 242,
-              "end": 244
+              "start": 241,
+              "end": 243
             }
           }
         }
@@ -3294,8 +3294,8 @@
             "name": "grid-item-compact",
             "code": "\n  padding-left: $nice-grid-gutter-compact;\n",
             "line": {
-              "start": 248,
-              "end": 250
+              "start": 247,
+              "end": 249
             }
           }
         }
@@ -3360,8 +3360,8 @@
             "name": "grid-item-compact",
             "code": "\n  padding-left: $nice-grid-gutter-compact;\n",
             "line": {
-              "start": 248,
-              "end": 250
+              "start": 247,
+              "end": 249
             }
           }
         }
@@ -3518,8 +3518,8 @@
             "name": "grid-item-debug",
             "code": "\n  outline: 2px dashed blue;\n",
             "line": {
-              "start": 273,
-              "end": 275
+              "start": 272,
+              "end": 274
             }
           }
         }
@@ -3559,15 +3559,15 @@
       "description": "<p>Grid item mixin. Used in tandem with the <code>grid</code> mixin for creating semantic grid\nclasses within custom componenents.</p>\n",
       "commentRange": {
         "start": 152,
-        "end": 179
+        "end": 178
       },
       "context": {
         "type": "mixin",
         "name": "grid-item",
         "code": "\n  @include border-box;\n  direction: ltr;\n  display: inline-block;\n  letter-spacing: normal;\n  padding-left: $nice-grid-gutter;\n  position: relative;\n  text-align: left;\n  vertical-align: top;\n  width: percentage($columns / 12);\n  word-spacing: normal;\n\n  @if $push {\n    left: percentage($push / 12);\n  }\n\n  @if $pull {\n    right: percentage($pull / 12);\n  }\n\n  @if $gutterless {\n    @include grid-item-gutterless;\n  }\n\n  @if $compact {\n    @include grid-item-compact;\n  }\n\n  @if $loose {\n    @include grid-item-loose;\n  }\n\n  @if $middle {\n    @include grid-item-middle;\n  }\n\n  @if $bottom {\n    @include grid-item-bottom;\n  }\n\n  @include _grid-item-breakpoint($xs, xs);\n  @include _grid-item-breakpoint($sm, sm);\n  @include _grid-item-breakpoint($md, md);\n  @include _grid-item-breakpoint($lg, lg);\n  @include _grid-item-breakpoint($xl, xl);\n",
         "line": {
-          "start": 180,
-          "end": 238
+          "start": 179,
+          "end": 237
         }
       },
       "parameter": [
@@ -3736,16 +3736,16 @@
     {
       "description": "<p>Gutterless grids have all the properties of regular grids, minus any spacing.</p>\n",
       "commentRange": {
-        "start": 240,
-        "end": 241
+        "start": 239,
+        "end": 240
       },
       "context": {
         "type": "mixin",
         "name": "grid-item-gutterless",
         "code": "\n  padding-left: 0;\n",
         "line": {
-          "start": 242,
-          "end": 244
+          "start": 241,
+          "end": 243
         }
       },
       "since": [
@@ -3769,8 +3769,8 @@
             "name": "grid-item",
             "code": "\n  @include border-box;\n  direction: ltr;\n  display: inline-block;\n  letter-spacing: normal;\n  padding-left: $nice-grid-gutter;\n  position: relative;\n  text-align: left;\n  vertical-align: top;\n  width: percentage($columns / 12);\n  word-spacing: normal;\n\n  @if $push {\n    left: percentage($push / 12);\n  }\n\n  @if $pull {\n    right: percentage($pull / 12);\n  }\n\n  @if $gutterless {\n    @include grid-item-gutterless;\n  }\n\n  @if $compact {\n    @include grid-item-compact;\n  }\n\n  @if $loose {\n    @include grid-item-loose;\n  }\n\n  @if $middle {\n    @include grid-item-middle;\n  }\n\n  @if $bottom {\n    @include grid-item-bottom;\n  }\n\n  @include _grid-item-breakpoint($xs, xs);\n  @include _grid-item-breakpoint($sm, sm);\n  @include _grid-item-breakpoint($md, md);\n  @include _grid-item-breakpoint($lg, lg);\n  @include _grid-item-breakpoint($xl, xl);\n",
             "line": {
-              "start": 180,
-              "end": 238
+              "start": 179,
+              "end": 237
             }
           }
         }
@@ -3782,16 +3782,16 @@
     {
       "description": "<p>Compact grid item with a smaller gutter</p>\n",
       "commentRange": {
-        "start": 246,
-        "end": 247
+        "start": 245,
+        "end": 246
       },
       "context": {
         "type": "mixin",
         "name": "grid-item-compact",
         "code": "\n  padding-left: $nice-grid-gutter-compact;\n",
         "line": {
-          "start": 248,
-          "end": 250
+          "start": 247,
+          "end": 249
         }
       },
       "since": [
@@ -3821,8 +3821,8 @@
             "name": "grid-item",
             "code": "\n  @include border-box;\n  direction: ltr;\n  display: inline-block;\n  letter-spacing: normal;\n  padding-left: $nice-grid-gutter;\n  position: relative;\n  text-align: left;\n  vertical-align: top;\n  width: percentage($columns / 12);\n  word-spacing: normal;\n\n  @if $push {\n    left: percentage($push / 12);\n  }\n\n  @if $pull {\n    right: percentage($pull / 12);\n  }\n\n  @if $gutterless {\n    @include grid-item-gutterless;\n  }\n\n  @if $compact {\n    @include grid-item-compact;\n  }\n\n  @if $loose {\n    @include grid-item-loose;\n  }\n\n  @if $middle {\n    @include grid-item-middle;\n  }\n\n  @if $bottom {\n    @include grid-item-bottom;\n  }\n\n  @include _grid-item-breakpoint($xs, xs);\n  @include _grid-item-breakpoint($sm, sm);\n  @include _grid-item-breakpoint($md, md);\n  @include _grid-item-breakpoint($lg, lg);\n  @include _grid-item-breakpoint($xl, xl);\n",
             "line": {
-              "start": 180,
-              "end": 238
+              "start": 179,
+              "end": 237
             }
           }
         }
@@ -3834,16 +3834,16 @@
     {
       "description": "<p>Loose grid item with a larger gutter</p>\n",
       "commentRange": {
-        "start": 252,
-        "end": 253
+        "start": 251,
+        "end": 252
       },
       "context": {
         "type": "mixin",
         "name": "grid-item-loose",
         "code": "\n  padding-left: $nice-grid-gutter-loose;\n",
         "line": {
-          "start": 254,
-          "end": 256
+          "start": 253,
+          "end": 255
         }
       },
       "since": [
@@ -3873,8 +3873,8 @@
             "name": "grid-item",
             "code": "\n  @include border-box;\n  direction: ltr;\n  display: inline-block;\n  letter-spacing: normal;\n  padding-left: $nice-grid-gutter;\n  position: relative;\n  text-align: left;\n  vertical-align: top;\n  width: percentage($columns / 12);\n  word-spacing: normal;\n\n  @if $push {\n    left: percentage($push / 12);\n  }\n\n  @if $pull {\n    right: percentage($pull / 12);\n  }\n\n  @if $gutterless {\n    @include grid-item-gutterless;\n  }\n\n  @if $compact {\n    @include grid-item-compact;\n  }\n\n  @if $loose {\n    @include grid-item-loose;\n  }\n\n  @if $middle {\n    @include grid-item-middle;\n  }\n\n  @if $bottom {\n    @include grid-item-bottom;\n  }\n\n  @include _grid-item-breakpoint($xs, xs);\n  @include _grid-item-breakpoint($sm, sm);\n  @include _grid-item-breakpoint($md, md);\n  @include _grid-item-breakpoint($lg, lg);\n  @include _grid-item-breakpoint($xl, xl);\n",
             "line": {
-              "start": 180,
-              "end": 238
+              "start": 179,
+              "end": 237
             }
           }
         }
@@ -3886,16 +3886,16 @@
     {
       "description": "<p>Align grid cell vertically to the middle</p>\n",
       "commentRange": {
-        "start": 258,
-        "end": 259
+        "start": 257,
+        "end": 258
       },
       "context": {
         "type": "mixin",
         "name": "grid-item-middle",
         "code": "\n  vertical-align: middle;\n",
         "line": {
-          "start": 260,
-          "end": 262
+          "start": 259,
+          "end": 261
         }
       },
       "since": [
@@ -3919,8 +3919,8 @@
             "name": "grid-item",
             "code": "\n  @include border-box;\n  direction: ltr;\n  display: inline-block;\n  letter-spacing: normal;\n  padding-left: $nice-grid-gutter;\n  position: relative;\n  text-align: left;\n  vertical-align: top;\n  width: percentage($columns / 12);\n  word-spacing: normal;\n\n  @if $push {\n    left: percentage($push / 12);\n  }\n\n  @if $pull {\n    right: percentage($pull / 12);\n  }\n\n  @if $gutterless {\n    @include grid-item-gutterless;\n  }\n\n  @if $compact {\n    @include grid-item-compact;\n  }\n\n  @if $loose {\n    @include grid-item-loose;\n  }\n\n  @if $middle {\n    @include grid-item-middle;\n  }\n\n  @if $bottom {\n    @include grid-item-bottom;\n  }\n\n  @include _grid-item-breakpoint($xs, xs);\n  @include _grid-item-breakpoint($sm, sm);\n  @include _grid-item-breakpoint($md, md);\n  @include _grid-item-breakpoint($lg, lg);\n  @include _grid-item-breakpoint($xl, xl);\n",
             "line": {
-              "start": 180,
-              "end": 238
+              "start": 179,
+              "end": 237
             }
           }
         }
@@ -3932,16 +3932,16 @@
     {
       "description": "<p>Align grid cell vertically to the bottom</p>\n",
       "commentRange": {
-        "start": 264,
-        "end": 265
+        "start": 263,
+        "end": 264
       },
       "context": {
         "type": "mixin",
         "name": "grid-item-bottom",
         "code": "\n  vertical-align: bottom;\n",
         "line": {
-          "start": 266,
-          "end": 268
+          "start": 265,
+          "end": 267
         }
       },
       "since": [
@@ -3965,8 +3965,8 @@
             "name": "grid-item",
             "code": "\n  @include border-box;\n  direction: ltr;\n  display: inline-block;\n  letter-spacing: normal;\n  padding-left: $nice-grid-gutter;\n  position: relative;\n  text-align: left;\n  vertical-align: top;\n  width: percentage($columns / 12);\n  word-spacing: normal;\n\n  @if $push {\n    left: percentage($push / 12);\n  }\n\n  @if $pull {\n    right: percentage($pull / 12);\n  }\n\n  @if $gutterless {\n    @include grid-item-gutterless;\n  }\n\n  @if $compact {\n    @include grid-item-compact;\n  }\n\n  @if $loose {\n    @include grid-item-loose;\n  }\n\n  @if $middle {\n    @include grid-item-middle;\n  }\n\n  @if $bottom {\n    @include grid-item-bottom;\n  }\n\n  @include _grid-item-breakpoint($xs, xs);\n  @include _grid-item-breakpoint($sm, sm);\n  @include _grid-item-breakpoint($md, md);\n  @include _grid-item-breakpoint($lg, lg);\n  @include _grid-item-breakpoint($xl, xl);\n",
             "line": {
-              "start": 180,
-              "end": 238
+              "start": 179,
+              "end": 237
             }
           }
         }
@@ -3978,16 +3978,16 @@
     {
       "description": "<p>Debug a grid item by putting a highlight round it</p>\n",
       "commentRange": {
-        "start": 270,
-        "end": 272
+        "start": 269,
+        "end": 271
       },
       "context": {
         "type": "mixin",
         "name": "grid-item-debug",
         "code": "\n  outline: 2px dashed blue;\n",
         "line": {
-          "start": 273,
-          "end": 275
+          "start": 272,
+          "end": 274
         }
       },
       "see": [
@@ -4025,8 +4025,8 @@
             "name": "grid-item",
             "code": "\n  @include border-box;\n  direction: ltr;\n  display: inline-block;\n  letter-spacing: normal;\n  padding-left: $nice-grid-gutter;\n  position: relative;\n  text-align: left;\n  vertical-align: top;\n  width: percentage($columns / 12);\n  word-spacing: normal;\n\n  @if $push {\n    left: percentage($push / 12);\n  }\n\n  @if $pull {\n    right: percentage($pull / 12);\n  }\n\n  @if $gutterless {\n    @include grid-item-gutterless;\n  }\n\n  @if $compact {\n    @include grid-item-compact;\n  }\n\n  @if $loose {\n    @include grid-item-loose;\n  }\n\n  @if $middle {\n    @include grid-item-middle;\n  }\n\n  @if $bottom {\n    @include grid-item-bottom;\n  }\n\n  @include _grid-item-breakpoint($xs, xs);\n  @include _grid-item-breakpoint($sm, sm);\n  @include _grid-item-breakpoint($md, md);\n  @include _grid-item-breakpoint($lg, lg);\n  @include _grid-item-breakpoint($xl, xl);\n",
             "line": {
-              "start": 180,
-              "end": 238
+              "start": 179,
+              "end": 237
             }
           }
         }
@@ -4235,8 +4235,8 @@
             "name": "grid-item",
             "code": "\n  @include border-box;\n  direction: ltr;\n  display: inline-block;\n  letter-spacing: normal;\n  padding-left: $nice-grid-gutter;\n  position: relative;\n  text-align: left;\n  vertical-align: top;\n  width: percentage($columns / 12);\n  word-spacing: normal;\n\n  @if $push {\n    left: percentage($push / 12);\n  }\n\n  @if $pull {\n    right: percentage($pull / 12);\n  }\n\n  @if $gutterless {\n    @include grid-item-gutterless;\n  }\n\n  @if $compact {\n    @include grid-item-compact;\n  }\n\n  @if $loose {\n    @include grid-item-loose;\n  }\n\n  @if $middle {\n    @include grid-item-middle;\n  }\n\n  @if $bottom {\n    @include grid-item-bottom;\n  }\n\n  @include _grid-item-breakpoint($xs, xs);\n  @include _grid-item-breakpoint($sm, sm);\n  @include _grid-item-breakpoint($md, md);\n  @include _grid-item-breakpoint($lg, lg);\n  @include _grid-item-breakpoint($xl, xl);\n",
             "line": {
-              "start": 180,
-              "end": 238
+              "start": 179,
+              "end": 237
             }
           }
         }
@@ -8658,8 +8658,8 @@
             "name": "grid-item",
             "code": "\n  @include border-box;\n  direction: ltr;\n  display: inline-block;\n  letter-spacing: normal;\n  padding-left: $nice-grid-gutter;\n  position: relative;\n  text-align: left;\n  vertical-align: top;\n  width: percentage($columns / 12);\n  word-spacing: normal;\n\n  @if $push {\n    left: percentage($push / 12);\n  }\n\n  @if $pull {\n    right: percentage($pull / 12);\n  }\n\n  @if $gutterless {\n    @include grid-item-gutterless;\n  }\n\n  @if $compact {\n    @include grid-item-compact;\n  }\n\n  @if $loose {\n    @include grid-item-loose;\n  }\n\n  @if $middle {\n    @include grid-item-middle;\n  }\n\n  @if $bottom {\n    @include grid-item-bottom;\n  }\n\n  @include _grid-item-breakpoint($xs, xs);\n  @include _grid-item-breakpoint($sm, sm);\n  @include _grid-item-breakpoint($md, md);\n  @include _grid-item-breakpoint($lg, lg);\n  @include _grid-item-breakpoint($xl, xl);\n",
             "line": {
-              "start": 180,
-              "end": 238
+              "start": 179,
+              "end": 237
             }
           }
         }
@@ -8718,8 +8718,8 @@
             "name": "grid-item-compact",
             "code": "\n  padding-left: $nice-grid-gutter-compact;\n",
             "line": {
-              "start": 248,
-              "end": 250
+              "start": 247,
+              "end": 249
             }
           }
         }
@@ -8778,8 +8778,8 @@
             "name": "grid-item-loose",
             "code": "\n  padding-left: $nice-grid-gutter-loose;\n",
             "line": {
-              "start": 254,
-              "end": 256
+              "start": 253,
+              "end": 255
             }
           }
         }
@@ -12613,8 +12613,8 @@
                 "name": "grid-item-gutterless",
                 "code": "\n  padding-left: 0;\n",
                 "line": {
-                  "start": 242,
-                  "end": 244
+                  "start": 241,
+                  "end": 243
                 }
               }
             }
@@ -12673,8 +12673,8 @@
                 "name": "grid-item-compact",
                 "code": "\n  padding-left: $nice-grid-gutter-compact;\n",
                 "line": {
-                  "start": 248,
-                  "end": 250
+                  "start": 247,
+                  "end": 249
                 }
               }
             }
@@ -12739,8 +12739,8 @@
                 "name": "grid-item-compact",
                 "code": "\n  padding-left: $nice-grid-gutter-compact;\n",
                 "line": {
-                  "start": 248,
-                  "end": 250
+                  "start": 247,
+                  "end": 249
                 }
               }
             }
@@ -12897,8 +12897,8 @@
                 "name": "grid-item-debug",
                 "code": "\n  outline: 2px dashed blue;\n",
                 "line": {
-                  "start": 273,
-                  "end": 275
+                  "start": 272,
+                  "end": 274
                 }
               }
             }
@@ -12938,15 +12938,15 @@
           "description": "<p>Grid item mixin. Used in tandem with the <code>grid</code> mixin for creating semantic grid\nclasses within custom componenents.</p>\n",
           "commentRange": {
             "start": 152,
-            "end": 179
+            "end": 178
           },
           "context": {
             "type": "mixin",
             "name": "grid-item",
             "code": "\n  @include border-box;\n  direction: ltr;\n  display: inline-block;\n  letter-spacing: normal;\n  padding-left: $nice-grid-gutter;\n  position: relative;\n  text-align: left;\n  vertical-align: top;\n  width: percentage($columns / 12);\n  word-spacing: normal;\n\n  @if $push {\n    left: percentage($push / 12);\n  }\n\n  @if $pull {\n    right: percentage($pull / 12);\n  }\n\n  @if $gutterless {\n    @include grid-item-gutterless;\n  }\n\n  @if $compact {\n    @include grid-item-compact;\n  }\n\n  @if $loose {\n    @include grid-item-loose;\n  }\n\n  @if $middle {\n    @include grid-item-middle;\n  }\n\n  @if $bottom {\n    @include grid-item-bottom;\n  }\n\n  @include _grid-item-breakpoint($xs, xs);\n  @include _grid-item-breakpoint($sm, sm);\n  @include _grid-item-breakpoint($md, md);\n  @include _grid-item-breakpoint($lg, lg);\n  @include _grid-item-breakpoint($xl, xl);\n",
             "line": {
-              "start": 180,
-              "end": 238
+              "start": 179,
+              "end": 237
             }
           },
           "parameter": [
@@ -13115,16 +13115,16 @@
         {
           "description": "<p>Gutterless grids have all the properties of regular grids, minus any spacing.</p>\n",
           "commentRange": {
-            "start": 240,
-            "end": 241
+            "start": 239,
+            "end": 240
           },
           "context": {
             "type": "mixin",
             "name": "grid-item-gutterless",
             "code": "\n  padding-left: 0;\n",
             "line": {
-              "start": 242,
-              "end": 244
+              "start": 241,
+              "end": 243
             }
           },
           "since": [
@@ -13148,8 +13148,8 @@
                 "name": "grid-item",
                 "code": "\n  @include border-box;\n  direction: ltr;\n  display: inline-block;\n  letter-spacing: normal;\n  padding-left: $nice-grid-gutter;\n  position: relative;\n  text-align: left;\n  vertical-align: top;\n  width: percentage($columns / 12);\n  word-spacing: normal;\n\n  @if $push {\n    left: percentage($push / 12);\n  }\n\n  @if $pull {\n    right: percentage($pull / 12);\n  }\n\n  @if $gutterless {\n    @include grid-item-gutterless;\n  }\n\n  @if $compact {\n    @include grid-item-compact;\n  }\n\n  @if $loose {\n    @include grid-item-loose;\n  }\n\n  @if $middle {\n    @include grid-item-middle;\n  }\n\n  @if $bottom {\n    @include grid-item-bottom;\n  }\n\n  @include _grid-item-breakpoint($xs, xs);\n  @include _grid-item-breakpoint($sm, sm);\n  @include _grid-item-breakpoint($md, md);\n  @include _grid-item-breakpoint($lg, lg);\n  @include _grid-item-breakpoint($xl, xl);\n",
                 "line": {
-                  "start": 180,
-                  "end": 238
+                  "start": 179,
+                  "end": 237
                 }
               }
             }
@@ -13161,16 +13161,16 @@
         {
           "description": "<p>Compact grid item with a smaller gutter</p>\n",
           "commentRange": {
-            "start": 246,
-            "end": 247
+            "start": 245,
+            "end": 246
           },
           "context": {
             "type": "mixin",
             "name": "grid-item-compact",
             "code": "\n  padding-left: $nice-grid-gutter-compact;\n",
             "line": {
-              "start": 248,
-              "end": 250
+              "start": 247,
+              "end": 249
             }
           },
           "since": [
@@ -13200,8 +13200,8 @@
                 "name": "grid-item",
                 "code": "\n  @include border-box;\n  direction: ltr;\n  display: inline-block;\n  letter-spacing: normal;\n  padding-left: $nice-grid-gutter;\n  position: relative;\n  text-align: left;\n  vertical-align: top;\n  width: percentage($columns / 12);\n  word-spacing: normal;\n\n  @if $push {\n    left: percentage($push / 12);\n  }\n\n  @if $pull {\n    right: percentage($pull / 12);\n  }\n\n  @if $gutterless {\n    @include grid-item-gutterless;\n  }\n\n  @if $compact {\n    @include grid-item-compact;\n  }\n\n  @if $loose {\n    @include grid-item-loose;\n  }\n\n  @if $middle {\n    @include grid-item-middle;\n  }\n\n  @if $bottom {\n    @include grid-item-bottom;\n  }\n\n  @include _grid-item-breakpoint($xs, xs);\n  @include _grid-item-breakpoint($sm, sm);\n  @include _grid-item-breakpoint($md, md);\n  @include _grid-item-breakpoint($lg, lg);\n  @include _grid-item-breakpoint($xl, xl);\n",
                 "line": {
-                  "start": 180,
-                  "end": 238
+                  "start": 179,
+                  "end": 237
                 }
               }
             }
@@ -13213,16 +13213,16 @@
         {
           "description": "<p>Loose grid item with a larger gutter</p>\n",
           "commentRange": {
-            "start": 252,
-            "end": 253
+            "start": 251,
+            "end": 252
           },
           "context": {
             "type": "mixin",
             "name": "grid-item-loose",
             "code": "\n  padding-left: $nice-grid-gutter-loose;\n",
             "line": {
-              "start": 254,
-              "end": 256
+              "start": 253,
+              "end": 255
             }
           },
           "since": [
@@ -13252,8 +13252,8 @@
                 "name": "grid-item",
                 "code": "\n  @include border-box;\n  direction: ltr;\n  display: inline-block;\n  letter-spacing: normal;\n  padding-left: $nice-grid-gutter;\n  position: relative;\n  text-align: left;\n  vertical-align: top;\n  width: percentage($columns / 12);\n  word-spacing: normal;\n\n  @if $push {\n    left: percentage($push / 12);\n  }\n\n  @if $pull {\n    right: percentage($pull / 12);\n  }\n\n  @if $gutterless {\n    @include grid-item-gutterless;\n  }\n\n  @if $compact {\n    @include grid-item-compact;\n  }\n\n  @if $loose {\n    @include grid-item-loose;\n  }\n\n  @if $middle {\n    @include grid-item-middle;\n  }\n\n  @if $bottom {\n    @include grid-item-bottom;\n  }\n\n  @include _grid-item-breakpoint($xs, xs);\n  @include _grid-item-breakpoint($sm, sm);\n  @include _grid-item-breakpoint($md, md);\n  @include _grid-item-breakpoint($lg, lg);\n  @include _grid-item-breakpoint($xl, xl);\n",
                 "line": {
-                  "start": 180,
-                  "end": 238
+                  "start": 179,
+                  "end": 237
                 }
               }
             }
@@ -13265,16 +13265,16 @@
         {
           "description": "<p>Align grid cell vertically to the middle</p>\n",
           "commentRange": {
-            "start": 258,
-            "end": 259
+            "start": 257,
+            "end": 258
           },
           "context": {
             "type": "mixin",
             "name": "grid-item-middle",
             "code": "\n  vertical-align: middle;\n",
             "line": {
-              "start": 260,
-              "end": 262
+              "start": 259,
+              "end": 261
             }
           },
           "since": [
@@ -13298,8 +13298,8 @@
                 "name": "grid-item",
                 "code": "\n  @include border-box;\n  direction: ltr;\n  display: inline-block;\n  letter-spacing: normal;\n  padding-left: $nice-grid-gutter;\n  position: relative;\n  text-align: left;\n  vertical-align: top;\n  width: percentage($columns / 12);\n  word-spacing: normal;\n\n  @if $push {\n    left: percentage($push / 12);\n  }\n\n  @if $pull {\n    right: percentage($pull / 12);\n  }\n\n  @if $gutterless {\n    @include grid-item-gutterless;\n  }\n\n  @if $compact {\n    @include grid-item-compact;\n  }\n\n  @if $loose {\n    @include grid-item-loose;\n  }\n\n  @if $middle {\n    @include grid-item-middle;\n  }\n\n  @if $bottom {\n    @include grid-item-bottom;\n  }\n\n  @include _grid-item-breakpoint($xs, xs);\n  @include _grid-item-breakpoint($sm, sm);\n  @include _grid-item-breakpoint($md, md);\n  @include _grid-item-breakpoint($lg, lg);\n  @include _grid-item-breakpoint($xl, xl);\n",
                 "line": {
-                  "start": 180,
-                  "end": 238
+                  "start": 179,
+                  "end": 237
                 }
               }
             }
@@ -13311,16 +13311,16 @@
         {
           "description": "<p>Align grid cell vertically to the bottom</p>\n",
           "commentRange": {
-            "start": 264,
-            "end": 265
+            "start": 263,
+            "end": 264
           },
           "context": {
             "type": "mixin",
             "name": "grid-item-bottom",
             "code": "\n  vertical-align: bottom;\n",
             "line": {
-              "start": 266,
-              "end": 268
+              "start": 265,
+              "end": 267
             }
           },
           "since": [
@@ -13344,8 +13344,8 @@
                 "name": "grid-item",
                 "code": "\n  @include border-box;\n  direction: ltr;\n  display: inline-block;\n  letter-spacing: normal;\n  padding-left: $nice-grid-gutter;\n  position: relative;\n  text-align: left;\n  vertical-align: top;\n  width: percentage($columns / 12);\n  word-spacing: normal;\n\n  @if $push {\n    left: percentage($push / 12);\n  }\n\n  @if $pull {\n    right: percentage($pull / 12);\n  }\n\n  @if $gutterless {\n    @include grid-item-gutterless;\n  }\n\n  @if $compact {\n    @include grid-item-compact;\n  }\n\n  @if $loose {\n    @include grid-item-loose;\n  }\n\n  @if $middle {\n    @include grid-item-middle;\n  }\n\n  @if $bottom {\n    @include grid-item-bottom;\n  }\n\n  @include _grid-item-breakpoint($xs, xs);\n  @include _grid-item-breakpoint($sm, sm);\n  @include _grid-item-breakpoint($md, md);\n  @include _grid-item-breakpoint($lg, lg);\n  @include _grid-item-breakpoint($xl, xl);\n",
                 "line": {
-                  "start": 180,
-                  "end": 238
+                  "start": 179,
+                  "end": 237
                 }
               }
             }
@@ -13357,16 +13357,16 @@
         {
           "description": "<p>Debug a grid item by putting a highlight round it</p>\n",
           "commentRange": {
-            "start": 270,
-            "end": 272
+            "start": 269,
+            "end": 271
           },
           "context": {
             "type": "mixin",
             "name": "grid-item-debug",
             "code": "\n  outline: 2px dashed blue;\n",
             "line": {
-              "start": 273,
-              "end": 275
+              "start": 272,
+              "end": 274
             }
           },
           "see": [
@@ -13404,8 +13404,8 @@
                 "name": "grid-item",
                 "code": "\n  @include border-box;\n  direction: ltr;\n  display: inline-block;\n  letter-spacing: normal;\n  padding-left: $nice-grid-gutter;\n  position: relative;\n  text-align: left;\n  vertical-align: top;\n  width: percentage($columns / 12);\n  word-spacing: normal;\n\n  @if $push {\n    left: percentage($push / 12);\n  }\n\n  @if $pull {\n    right: percentage($pull / 12);\n  }\n\n  @if $gutterless {\n    @include grid-item-gutterless;\n  }\n\n  @if $compact {\n    @include grid-item-compact;\n  }\n\n  @if $loose {\n    @include grid-item-loose;\n  }\n\n  @if $middle {\n    @include grid-item-middle;\n  }\n\n  @if $bottom {\n    @include grid-item-bottom;\n  }\n\n  @include _grid-item-breakpoint($xs, xs);\n  @include _grid-item-breakpoint($sm, sm);\n  @include _grid-item-breakpoint($md, md);\n  @include _grid-item-breakpoint($lg, lg);\n  @include _grid-item-breakpoint($xl, xl);\n",
                 "line": {
-                  "start": 180,
-                  "end": 238
+                  "start": 179,
+                  "end": 237
                 }
               }
             }
@@ -13620,8 +13620,8 @@
                 "name": "grid-item",
                 "code": "\n  @include border-box;\n  direction: ltr;\n  display: inline-block;\n  letter-spacing: normal;\n  padding-left: $nice-grid-gutter;\n  position: relative;\n  text-align: left;\n  vertical-align: top;\n  width: percentage($columns / 12);\n  word-spacing: normal;\n\n  @if $push {\n    left: percentage($push / 12);\n  }\n\n  @if $pull {\n    right: percentage($pull / 12);\n  }\n\n  @if $gutterless {\n    @include grid-item-gutterless;\n  }\n\n  @if $compact {\n    @include grid-item-compact;\n  }\n\n  @if $loose {\n    @include grid-item-loose;\n  }\n\n  @if $middle {\n    @include grid-item-middle;\n  }\n\n  @if $bottom {\n    @include grid-item-bottom;\n  }\n\n  @include _grid-item-breakpoint($xs, xs);\n  @include _grid-item-breakpoint($sm, sm);\n  @include _grid-item-breakpoint($md, md);\n  @include _grid-item-breakpoint($lg, lg);\n  @include _grid-item-breakpoint($xl, xl);\n",
                 "line": {
-                  "start": 180,
-                  "end": 238
+                  "start": 179,
+                  "end": 237
                 }
               }
             }
@@ -18026,8 +18026,8 @@
                 "name": "grid-item",
                 "code": "\n  @include border-box;\n  direction: ltr;\n  display: inline-block;\n  letter-spacing: normal;\n  padding-left: $nice-grid-gutter;\n  position: relative;\n  text-align: left;\n  vertical-align: top;\n  width: percentage($columns / 12);\n  word-spacing: normal;\n\n  @if $push {\n    left: percentage($push / 12);\n  }\n\n  @if $pull {\n    right: percentage($pull / 12);\n  }\n\n  @if $gutterless {\n    @include grid-item-gutterless;\n  }\n\n  @if $compact {\n    @include grid-item-compact;\n  }\n\n  @if $loose {\n    @include grid-item-loose;\n  }\n\n  @if $middle {\n    @include grid-item-middle;\n  }\n\n  @if $bottom {\n    @include grid-item-bottom;\n  }\n\n  @include _grid-item-breakpoint($xs, xs);\n  @include _grid-item-breakpoint($sm, sm);\n  @include _grid-item-breakpoint($md, md);\n  @include _grid-item-breakpoint($lg, lg);\n  @include _grid-item-breakpoint($xl, xl);\n",
                 "line": {
-                  "start": 180,
-                  "end": 238
+                  "start": 179,
+                  "end": 237
                 }
               }
             }
@@ -18086,8 +18086,8 @@
                 "name": "grid-item-compact",
                 "code": "\n  padding-left: $nice-grid-gutter-compact;\n",
                 "line": {
-                  "start": 248,
-                  "end": 250
+                  "start": 247,
+                  "end": 249
                 }
               }
             }
@@ -18146,8 +18146,8 @@
                 "name": "grid-item-loose",
                 "code": "\n  padding-left: $nice-grid-gutter-loose;\n",
                 "line": {
-                  "start": 254,
-                  "end": 256
+                  "start": 253,
+                  "end": 255
                 }
               }
             }
