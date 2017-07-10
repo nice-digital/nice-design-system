@@ -103,7 +103,7 @@ The following icons are included within our icon font by default:
 
 ### Icon markup
 
-Use custom icons in markup wherever possible. Note: there are also [SASS functions and mixins](#icon-font-in-sass) available for building custom components.
+Use custom icons in markup wherever possible. Note: there are also [SASS functions and mixins](#usage-in-sass-1) available for building custom components.
 
 - hide from screenreaders with `[aria-hidden="true"]`
 - use BEM style CSS classes (`icon--NAME` modifier)
@@ -143,7 +143,7 @@ There are generated SASS constructs (map, function and mixin) available for crea
     }
 }
 {% endcapture %}
-{% include source.html lang='xml' body=sass title='Custom component icon example' %}
+{% include source.html lang='scss' body=sass title='Custom component icon example' %}
 
 ### Custom URL
 
