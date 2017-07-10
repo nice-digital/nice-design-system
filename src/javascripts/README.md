@@ -17,24 +17,24 @@ var el = document.querySelector(".a-selector");
 import Tabs from "tabs";
 var tabs = new Tabs(el);
 
-// Import a named export from experience
-import { Tabs } from "experience";
+// Import a named export
+import { Tabs } from "@nice-digital/design-system";
 var tabs = new Tabs(el);
 
-// Import via experience module
-import experience from "experience";
-var tabs = new experience.Tabs(el);
+// Import via module
+import nice from "@nice-digital/design-system";
+var tabs = new nice.Tabs(el);
 
 // Requiring - named module
 var Tabs = require("tabs").default;
 var tabs = new Tabs(el);
 
-// Requiring - via experience module
-var experience = require("experience");
-var tabs = new experience.Tabs(el);
+// Requiring - via module
+var nice = require("@nice-digital/design-system");
+var tabs = new nice.Tabs(el);
 
 // Not recommended - global namespace usage
-var tabs = new NICE.Experience.Tabs(el);
+var tabs = new NICE.nice.Tabs(el);
 
 // Use the jquery plugin version
 $(".a-selector").tabs();
@@ -46,8 +46,8 @@ Our source JS needs to be compiled, transpiled and packed for several reasons:
 
 - [Flow type annotations](#flow-type)
 - [ES6 (ECMAScript 2015)](https://github.com/lukehoban/es6features)
-- Our JS is written in modules and should be combined and minified
-- Apps using Experience should ideally use the source, rather than using the pre-compiled version
+- our JS is written in modules and should be combined and minified
+- applications should ideally build from source, rather than using the pre-compiled version
 
 We use and recommend [Webpack](https://webpack.github.io/) with [Babel](https://babeljs.io/) and their respective plugins for packing and transpiling our JavaScript.
 
@@ -83,12 +83,12 @@ Our modules are written as ES6 classes within modules so can be used directly, b
 - applies the named plugin to each
 - parses the `[data-PLUGIN-OPTION]` attributes for plugin options
 
-The pre-compiled version of experience automatically includes the plugin auto loader. So you can do:
+The pre-compiled version automatically includes the plugin auto loader. So you can do:
 
 ```html
 <div class="tabs" data-tabs data-tabs-test="something">
 </div>
-<script src="experience.min.js"></script>
+<script src="nice.min.js"></script>
 ```
 
 ## Comments

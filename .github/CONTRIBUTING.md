@@ -1,6 +1,6 @@
 # Contribution Guidelines
 
-We welcome patches to NICE Experience, as long as you follow these
+We welcome patches to NICE Design System, as long as you follow these
 guidelines:
 
 ## Coding standards

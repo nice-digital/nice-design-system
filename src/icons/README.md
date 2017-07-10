@@ -2,9 +2,9 @@
 
 ## Compiling icons
 
-We use [grunt-webfont](https://github.com/nhsevidence/NICE-Experience/blob/master/.grunt-tasks/webfont.js) for compiling our icons into a web font. This generates a [SASS file](https://github.com/nhsevidence/NICE-Experience/blob/master/src/stylesheets/typography/_typography-icons.scss) and icon font files (eot, svg, ttf, woff and woff2) into the dist folder.
+We use [grunt-webfont](https://github.com/nhsevidence/nice-design-system/blob/master/.grunt-tasks/webfont.js) for compiling our icons into a web font. This generates a [SASS file](https://github.com/nhsevidence/nice-design-system/blob/master/src/stylesheets/typography/_typography-icons.scss) and icon font files (eot, svg, ttf, woff and woff2) into the dist folder.
 
-If you're using Node/Express you can use the following to serve font files: `app.use("/fonts", express.static(path.join(__dirname, "./node_modules/nice-experience/dist/fonts")))`, otherwise you'd need to setup a copy task to copy the font files out of the node module into your application.
+If you're using Node/Express you can use the following to serve font files: `app.use("/fonts", express.static(path.join(__dirname, "./node_modules/@nice-digital/design-system/dist/fonts")))`, otherwise you'd need to setup a copy task to copy the font files out of the node module into your application.
 
 ## Usage
 
@@ -32,7 +32,7 @@ Follow the following steps to create a new icon:
 
 If you're creating custom icons for your application only (not adding them to the core set), then you can follow the steps above but then you need to do the following to generate your own custom webfont:
 
-1. Create a [grunt task](https://github.com/sapegin/grunt-webfont) for webfont generation. You can base this off [our webfont task](https://github.com/nhsevidence/NICE-Experience/blob/master/.grunt-tasks/webfont.js).
-2. Use a [custom template](https://github.com/nhsevidence/NICE-Experience/blob/master/src/icons/.nice-icons.tmpl.scss) to override the $nice-icons map. (You don't need the mixins in your template.)
-3. Reference both your SVG icon and the core ones from NICE Experience: (`src: ["./icons/*.svg", "./node_modules/nice-experience/src/icons/*.svg"]`). You can also only reference the icons you need from the NICE Experience if you're only using a few.
+1. Create a [grunt task](https://github.com/sapegin/grunt-webfont) for webfont generation. You can base this off [our webfont task](https://github.com/nhsevidence/nice-design-system/blob/master/.grunt-tasks/webfont.js).
+2. Use a [custom template](https://github.com/nhsevidence/nice-design-system/blob/master/src/icons/.nice-icons.tmpl.scss) to override the $nice-icons map. (You don't need the mixins in your template.)
+3. Reference both your SVG icon and the core ones from NICE Experience: (`src: ["./icons/*.svg", "./node_modules/@nice-digital/design-system/src/icons/*.svg"]`). You can also only reference the icons you need from the NICE Experience if you're only using a few.
 Override the `$nice-font-base-path` variable if you generate your font files anywhere other than */fonts/*
