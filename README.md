@@ -71,7 +71,7 @@ See https://www.nice.org.uk/accessibility for more information on NICE's policy.
 | - [src/components](src/components) | Components (SASS/JS/Nunjucks view/test) |
 | - [src/icons](src/icons) | SVG icon font source |
 | - [src/javascripts](src/javascripts) | Main JavaScript source + [JSDoc config](src/javascripts/.jsdoc.json) and [ESLint config](src/javascripts/.eslintrc.json) |
-| - [src/stylesheets](src/stylesheets) | Main SASS + [SASS Lint config](src/stylesheets/.sass-lint.yml) + [SASS Doc custom theme](src/stylesheets/sassdoc-nice-theme.js) |
+| - [src/stylesheets](src/stylesheets) | Main SASS + [SASS Lint config](src/stylesheets/.sass-lint.yml) + [SASS Doc custom theme](src/stylesheets/.sassdoc-nice-theme.js) |
 | [server](server) | Express dev server, views etc for testing and building components |
 | [test](test) | Test setup and unit tests |
 
@@ -92,7 +92,7 @@ Then before you can run any tasks, run the following from the command line to in
 
 - `yarn`
 
-Note: if you prefer to use npm rather than yarn, run `npm i` instead.
+> Note: if you prefer to use npm rather than yarn, run `npm i` instead.
 
 We use Grunt as a task runner hence the dependency on Node. If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide first.
 
@@ -121,7 +121,7 @@ Run `npm start` and `npm run test:watch` for development. However, there are oth
 
 #### Grunt
 
-Some of the npm scripts use Grunt tasks under the hood. These Grunt tasks (and aliases) can be run directly e.g. `grunt lint`. However, we recommend using the npm scripts themselves. See the task aliases in [Gruntfile.js](Gruntfile.js) for more information.
+Some of the npm scripts use Grunt tasks under the hood. These Grunt tasks (and aliases) can be run directly e.g. `grunt lint`. However, we recommend using the npm scripts themselves. See the task aliases in [Gruntfile.js#L35-L47](Gruntfile.js) for more information.
 
 ### JavaScript
 
@@ -154,12 +154,6 @@ Then follow the [usage](#usage) steps below...
 ### Install with npm
 
 `npm i @nice-digital/design-system --save-dev`
-
-Then follow the [usage](#usage) steps below...
-
-### Install with Yaen
-
-`yarn install @nice-digital/design-system --save-dev`
 
 Then follow the [usage](#usage) steps below...
 
