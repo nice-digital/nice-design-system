@@ -65,6 +65,8 @@ Install [NICE Icons from Yarn](https://yarnpkg.com/en/package/@nice-digital/icon
 
 Source SVG files and dist files will then be available in *./node_modules/@nice-digital/icons*.
 
+> Note: NICE Icons is available on Bower as *nice-icons* but is not recommended.
+
 ### Build process
 
 Include the path *./node_modules/@nice-digital/icons/dist/_nice-icons.scss* in your SASS.
