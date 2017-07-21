@@ -72,7 +72,7 @@ A runtime error would look like: *Uncaught TypeError: Value of argument "num" vi
 
 ## Linting
 
-We have a set of ES Lint rules for linting our JS. See our [.eslintrc.json](.eslintrc.json) for our ruleset. It uses [babel-eslint](https://github.com/babel/babel-eslint) as the parser and uses a [flowtype plugin](eslint-plugin-flowtype) because of our [Flow type annotations](#flow-type). You should use a [watch task](../../.grunt-tasks/watch.js#L30-L36) to lint as you work.
+We have a set of ES Lint rules for linting our JS. See our [.eslintrc.json](.eslintrc.json) for our ruleset. It uses [babel-eslint](https://github.com/babel/babel-eslint) as the parser and uses a [flowtype plugin](eslint-plugin-flowtype) because of our [Flow type annotations](#flow-type). You should use a [watch task](../../.grunt-tasks/watch.js#L24-L30) to lint as you work.
 
 ## Auto plugin loader
 
@@ -93,5 +93,5 @@ The pre-compiled version automatically includes the plugin auto loader. So you c
 
 ## Comments
 
-We use [documentationjs](http://documentation.js.org/) to generate documentation for our library code, so any comments shoudl follow a [JSDoc style](https://github.com/documentationjs/documentation/blob/master/docs/GETTING_STARTED.md) syntax.
+We use [documentationjs](http://documentation.js.org/) to generate documentation for our library code, so any comments should follow a [JSDoc style](https://github.com/documentationjs/documentation/blob/master/docs/GETTING_STARTED.md) syntax.
 

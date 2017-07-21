@@ -2,6 +2,9 @@
 
 > Your source for quickly creating consistent on-brand NICE digital services.
 
+[![npm](https://img.shields.io/npm/v/@nice-digital/design-system.svg)](https://www.npmjs.com/package/@nice-digital/design-system)
+[![Bower](https://img.shields.io/bower/v/nice-design-system.svg)](http://bower.io/search?q=nice-design-system)
+[![GitHub release](https://img.shields.io/github/release/nhsevidence/nice-design-system.svg)](https://github.com/nhsevidence/nice-design-system)
 [![License](https://img.shields.io/github/license/nhsevidence/nice-design-system.svg)](https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
 [![Dependencies](https://img.shields.io/david/nhsevidence/nice-design-system.svg)](https://david-dm.org/nhsevidence/nice-design-system)
 [![Dev dependencies](https://img.shields.io/david/dev/nhsevidence/nice-design-system.svg)](https://david-dm.org/nhsevidence/nice-design-system?type=dev)
@@ -69,7 +72,7 @@ See https://www.nice.org.uk/accessibility for more information on NICE's policy.
 | - [src/assets](src/assets) | Common static assets |
 | - [src/components](src/components) | Components (SASS/JS/Nunjucks view/test) |
 | - [src/javascripts](src/javascripts) | Main JavaScript source + [JSDoc config](src/javascripts/.jsdoc.json) and [ESLint config](src/javascripts/.eslintrc.json) |
-| - [src/stylesheets](src/stylesheets) | Main SASS + [SASS Lint config](src/stylesheets/.sass-lint.yml) + [SASS Doc custom theme](src/stylesheets/sassdoc-nice-theme.js) |
+| - [src/stylesheets](src/stylesheets) | Main SASS + [SASS Lint config](src/stylesheets/.sass-lint.yml) + [SASS Doc custom theme](src/stylesheets/.sassdoc-nice-theme.js) |
 | [server](server) | Express dev server, views etc for testing and building components |
 | [test](test) | Test setup and unit tests |
 
@@ -90,7 +93,7 @@ Then before you can run any tasks, run the following from the command line to in
 
 - `yarn`
 
-Note: if you prefer to use npm rather than yarn, run `npm i` instead.
+> Note: if you prefer to use npm rather than yarn, run `npm i` instead.
 
 We use Grunt as a task runner hence the dependency on Node. If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide first.
 
@@ -119,7 +122,7 @@ Run `npm start` and `npm run test:watch` for development. However, there are oth
 
 #### Grunt
 
-Some of the npm scripts use Grunt tasks under the hood. These Grunt tasks (and aliases) can be run directly e.g. `grunt lint`. However, we recommend using the npm scripts themselves. See the task aliases in [Gruntfile.js](Gruntfile.js) for more information.
+Some of the npm scripts use Grunt tasks under the hood. These Grunt tasks (and aliases) can be run directly e.g. `grunt lint`. However, we recommend using the npm scripts themselves. See the task aliases in [Gruntfile.js#L35-L47](Gruntfile.js) for more information.
 
 ### JavaScript
 
