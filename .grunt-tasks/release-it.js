@@ -12,7 +12,7 @@ module.exports = {
 			release: true
 		},
 		"changelogCommand": "git log --format=format:\"* %s | %ad | %h\" --date=short [REV_RANGE]",
-		buildCommand: "npm run dist",
+		buildCommand: "npm start",
 		"non-interactive": true,
 		//"dry-run": true,
 		verbose: true
