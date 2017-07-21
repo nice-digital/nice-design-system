@@ -83,7 +83,6 @@
     "grunt-sass": "^2.0.0",
     "grunt-sass-lint": "^0.2.2",
     "grunt-sassdoc": "^2.0.2",
-    "grunt-webfont": "^1.6.0",
     "grunt-webpack": "^1.0.11",
     "html-minifier": "^3.4.3",
     "istanbul": "^1.1.0-alpha.1",
@@ -110,6 +109,7 @@
     "webpack-dev-server": "^1.16.1"
   },
   "dependencies": {
+    "@nice-digital/icons": "^1.0.0",
     "jquery": "^3.1.1",
     "keycode": "^2.1.7"
   },

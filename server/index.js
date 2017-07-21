@@ -51,7 +51,7 @@ var compiler = webpack(webpackConfig);
 app.use(webpackMiddleware(compiler, { publicPath: "/javascripts/" }));
 
 // Static assets
-app.use("/fonts", express.static(path.join(__dirname, "../temp/fonts")));
+app.use("/fonts", express.static(path.join(__dirname, "../node_modules/@nice-digital/icons/dist")));
 app.use(express.static(path.join(__dirname, "../temp")));
 app.use(express.static(path.join(__dirname, "../src/assets")));
 

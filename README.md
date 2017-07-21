@@ -24,7 +24,6 @@
 	- [CDN](#nice-cdn)
 	- [Install with yarn](#install-with-yarn)
 	- [Install with npm](#install-with-npm)
-	- [Install with Bower](#install-with-bower)
 	- [Usage](#usage)
 		- [Precompiled](#precompiled)
 		- [From source](#from-source)
@@ -69,7 +68,6 @@ See https://www.nice.org.uk/accessibility for more information on NICE's policy.
 | [src](src) | The main source |
 | - [src/assets](src/assets) | Common static assets |
 | - [src/components](src/components) | Components (SASS/JS/Nunjucks view/test) |
-| - [src/icons](src/icons) | SVG icon font source |
 | - [src/javascripts](src/javascripts) | Main JavaScript source + [JSDoc config](src/javascripts/.jsdoc.json) and [ESLint config](src/javascripts/.eslintrc.json) |
 | - [src/stylesheets](src/stylesheets) | Main SASS + [SASS Lint config](src/stylesheets/.sass-lint.yml) + [SASS Doc custom theme](src/stylesheets/sassdoc-nice-theme.js) |
 | [server](server) | Express dev server, views etc for testing and building components |
@@ -133,7 +131,7 @@ See the [stylesheets](src/stylesheets) folder for more information.
 
 ### Icons
 
-See the [icons](src/icons) folder for more information.
+Icons are used via a separate package, [NICE Icons](https://github.com/nhsevidence/nice-icons#readme).
 
 ## Tests
 
@@ -157,17 +155,7 @@ Then follow the [usage](#usage) steps below...
 
 Then follow the [usage](#usage) steps below...
 
-### Install with Yaen
-
-`yarn install @nice-digital/design-system --save-dev`
-
-Then follow the [usage](#usage) steps below...
-
-### Install with bower
-
-`bower i nice-design-system`
-
-Then follow the [usage](#usage) steps below...
+> Note: The [Design System is on Bower](https://bower.io/search/?q=nice-design-system), but this installation method is unsupported.
 
 ### Usage
 
@@ -191,6 +179,7 @@ OR if you're using express you can use the dist folder as a static directory:
 
 ```javascript
 app.use(express.static(__dirname + "/node_modules/@nice-digital/design-system/dist/"));
+app.use(express.static(__dirname + "/node_modules/@nice-digital/icons/dist/"));
 ```
 
 and then reference it from your HTML as:

@@ -2,7 +2,7 @@ module.exports = {
 	temp: {
 		options: {
 			sourceMap: true,
-			includePaths: ["src/stylesheets"],
+			includePaths: ["src/stylesheets", "node_modules/@nice-digital/icons/dist"],
 			outputStyle: "nested",
 			sourceMapContents: true
 		},
@@ -14,7 +14,7 @@ module.exports = {
 	dist: {
 		options: {
 			sourceMap: true,
-			includePaths: ["src/stylesheets"],
+			includePaths: ["src/stylesheets", "node_modules/@nice-digital/icons/dist"],
 			outputStyle: "nested",
 			sourceMapContents: true
 		},
