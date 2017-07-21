@@ -2,6 +2,13 @@
 
 > Icons for use in NICE Digital Services
 
+[![npm](https://img.shields.io/npm/v/@nice-digital/icons.svg)](https://www.npmjs.com/package/@nice-digital/icons)
+[![Bower](https://img.shields.io/bower/v/nice-icons.svg)](http://bower.io/search?q=nice-icons)
+[![GitHub release](https://img.shields.io/github/release/nhsevidence/nice-icons.svg)](https://github.com/nhsevidence/nice-icons/releases/latest)
+[![License](https://img.shields.io/github/license/nhsevidence/nice-icons.svg)](https://github.com/nhsevidence/nice-icons/blob/master/LICENSE)
+[![Dependencies](https://img.shields.io/david/nhsevidence/nice-icons.svg)](https://david-dm.org/nhsevidence/nice-icons)
+[![Dev dependencies](https://img.shields.io/david/dev/nhsevidence/nice-icons.svg)](https://david-dm.org/nhsevidence/nice-icons?type=dev)
+
 <details>
 <summary><strong>Table of contents</strong></summary>
 
