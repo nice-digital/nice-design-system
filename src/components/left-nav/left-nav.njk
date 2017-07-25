@@ -1,0 +1,14 @@
+{% macro leftNav(leftNav) %}
+	<nav class="left-nav">
+		<h2 class="left-nav__root">
+			<a href="{{ leftNav.root.href }}">{{ leftNav.root.title }}</a>
+		</h2>
+		<ul class="left-nav__list">
+			{% for navItem in leftNav.links %}
+				<li class="left-nav__list-item">
+					<a href="{{ navItem.href }}" {{ ('aria-current="page"' if navItem.active) | safe }}>{{ navItem.title }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</nav>
+{% endmacro %}
