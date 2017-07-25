@@ -1219,7 +1219,7 @@
       "resolvedValue": "#fff"
     },
     {
-      "description": "<p>Inverse link hover colour</p>\n",
+      "description": "<p>Inverse link hover text colour</p>\n",
       "commentRange": {
         "start": 70,
         "end": 71
@@ -1267,7 +1267,7 @@
       "resolvedValue": "#d6d6d6"
     },
     {
-      "description": "<p>Inverse link visited colour. Same as normal inverse link colour to ensure minimum 4.5:1 colour contrast across various dark backgrounds.</p>\n",
+      "description": "<p>Inverse link visited text colour. Same as normal inverse link colour to ensure minimum 4.5:1 colour contrast across various dark backgrounds.</p>\n",
       "commentRange": {
         "start": 74,
         "end": 75
@@ -1315,7 +1315,7 @@
       "resolvedValue": "#fff"
     },
     {
-      "description": "<p>Inverse link active colour</p>\n",
+      "description": "<p>Inverse link active text colour</p>\n",
       "commentRange": {
         "start": 78,
         "end": 79
@@ -1323,7 +1323,7 @@
       "context": {
         "type": "variable",
         "name": "colour-link-inverse-active",
-        "value": "$colour-link-active",
+        "value": "$colour-link-inverse-hover",
         "scope": "private",
         "line": {
           "start": 80,
@@ -1360,7 +1360,7 @@
       "groupName": {
         "colors": "Colours"
       },
-      "resolvedValue": "#0e0e0e"
+      "resolvedValue": "#d6d6d6"
     },
     {
       "description": "<p>Inverse link focus text colour</p>\n",
@@ -1371,7 +1371,7 @@
       "context": {
         "type": "variable",
         "name": "colour-link-inverse-focus-text",
-        "value": "$colour-link",
+        "value": "$colour-link-inverse",
         "scope": "private",
         "line": {
           "start": 84,
@@ -1408,7 +1408,7 @@
       "groupName": {
         "colors": "Colours"
       },
-      "resolvedValue": "#005ea5"
+      "resolvedValue": "#fff"
     },
     {
       "description": "<p>CTA button background colour</p>\n",
@@ -2367,6 +2367,242 @@
       "resolvedValue": "#eff7eb"
     },
     {
+      "description": "<p>breadcrumbs\nSee <a href=\"https://www.w3.org/WAI/WCAG20/Techniques/working-examples/G65/ex3.html\">https://www.w3.org/WAI/WCAG20/Techniques/working-examples/G65/ex3.html</a></p>\n",
+      "commentRange": {
+        "start": 5,
+        "end": 7
+      },
+      "context": {
+        "type": "css",
+        "name": ".breadcrumbs",
+        "value": "@include font-size(0);\n  list-style: none;\n  margin: em($spacing-small 0 $spacing-large);\n  padding: 0;\n\n  &__crumb {\n    display: inline-block;\n\n    &:before {\n      content: get-glyph(heavy-right-pointing-angle-quotation-mark-ornament);\n      font-size: 70%;\n      margin: em(0 $spacing-x-small);\n    }\n\n    &:first-child:before {\n      display: none;\n    }\n  }\n\n  a {\n    color: $colour-text;\n    text-decoration: underline;\n\n    &:hover {\n      text-decoration: none;\n    }\n\n    &:focus {\n      color: $colour-link-focus-text;\n    }\n\n    &:active {\n      color: $colour-link-active;\n    }\n  }",
+        "line": {
+          "start": 8,
+          "end": 45
+        }
+      },
+      "since": [
+        {
+          "version": "0.1.0"
+        }
+      ],
+      "group": [
+        "components"
+      ],
+      "access": "public",
+      "file": {
+        "path": "components\\breadcrumbs\\_breadcrumbs.scss",
+        "name": "_breadcrumbs.scss"
+      },
+      "groupName": {
+        "components": "Components"
+      }
+    },
+    {
+      "description": "<p>Button</p>\n",
+      "commentRange": {
+        "start": 5,
+        "end": 6
+      },
+      "context": {
+        "type": "css",
+        "name": ".btn.btn",
+        "value": "// Repeat selector for specificity to avoid link overrides\n  @include remove-mz-focus-inner;\n  @include font-size(0);\n  appearance: none;\n  background: $colour-btn-primary;\n  border: em(1px) solid $colour-btn-primary-text;\n  border-radius: 0;\n  color: $colour-btn-primary-text;\n  cursor: pointer;\n  display: inline-block;\n  margin: em(0 $spacing-small $spacing-small -4px); // Negative left margin to combat inline-block gaps\n  padding: em($spacing-small $spacing-medium);\n  position: relative;\n  text-decoration: none;\n  vertical-align: top;\n\n  &:first-child {\n    margin-left: 0;\n  }\n\n  &:visited {\n    color: $colour-btn-primary-text;\n  }\n\n  &:hover {\n    background: $colour-btn-primary-hover;\n    color: $colour-btn-primary-text;\n    text-decoration: none;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background: $colour-btn-primary;\n    border-color: $colour-focus;\n  }\n\n  &:active {\n    background: $colour-btn-primary-hover;\n    text-decoration: none;\n    top: em(2px);\n  }\n\n  // Disabled button styles\n  &--disabled,\n  &.disabled,\n  &[aria-disabled='true'],\n  &[disabled='disabled'],\n  &[disabled] {\n    opacity: .5;\n    pointer-events: none;\n\n    &:hover {\n      cursor: default;\n    }\n  }",
+        "line": {
+          "start": 7,
+          "end": 138
+        }
+      },
+      "since": [
+        {
+          "version": "0.1.0"
+        }
+      ],
+      "group": [
+        "components"
+      ],
+      "access": "public",
+      "file": {
+        "path": "components\\buttons\\_buttons.scss",
+        "name": "_buttons.scss"
+      },
+      "groupName": {
+        "components": "Components"
+      }
+    },
+    {
+      "description": "<p>CTA/prominent button</p>\n",
+      "commentRange": {
+        "start": 64,
+        "end": 65
+      },
+      "context": {
+        "type": "css",
+        "name": ".btn.btn--cta",
+        "value": "background: $colour-btn-cta;\n  border: em(1px) solid $colour-btn-cta-text;\n  color: $colour-btn-cta-text;\n\n  &:visited {\n    color: $colour-btn-cta-text;\n  }\n\n  &:hover {\n    background: $colour-btn-cta-hover;\n    color: $colour-btn-cta-text;\n  }\n\n  &:focus {\n    background: $colour-btn-cta-hover;\n  }\n\n  &:active {\n    background: $colour-btn-cta-hover;\n  }",
+        "line": {
+          "start": 66,
+          "end": 138
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "components"
+      ],
+      "access": "public",
+      "file": {
+        "path": "components\\buttons\\_buttons.scss",
+        "name": "_buttons.scss"
+      },
+      "groupName": {
+        "components": "Components"
+      }
+    },
+    {
+      "description": "<p>Secondary button</p>\n",
+      "commentRange": {
+        "start": 89,
+        "end": 90
+      },
+      "context": {
+        "type": "css",
+        "name": ".btn.btn--secondary",
+        "value": "background: $colour-btn-secondary;\n  border: em(1px) solid $colour-btn-secondary-text;\n  color: $colour-btn-secondary-text;\n\n  &:visited {\n    color: $colour-btn-secondary-text;\n  }\n\n  &:hover {\n    background: $colour-btn-secondary-hover;\n    color: $colour-btn-secondary-text;\n  }\n\n  &:focus {\n    background: $colour-btn-secondary-hover;\n  }\n\n  &:active {\n    background: $colour-btn-secondary-hover;\n  }",
+        "line": {
+          "start": 91,
+          "end": 138
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "components"
+      ],
+      "access": "public",
+      "file": {
+        "path": "components\\buttons\\_buttons.scss",
+        "name": "_buttons.scss"
+      },
+      "groupName": {
+        "components": "Components"
+      }
+    },
+    {
+      "description": "<p>Light button, for use on dark panels/sections</p>\n",
+      "commentRange": {
+        "start": 114,
+        "end": 115
+      },
+      "context": {
+        "type": "css",
+        "name": ".btn.btn--light",
+        "value": "background: $colour-btn-light;\n  border: em(1px) solid $colour-btn-light-text;\n  color: $colour-btn-light-text;\n\n  &:visited {\n    color: $colour-btn-light-text;\n  }\n\n  &:hover {\n    background: $colour-btn-light-hover;\n    color: $colour-btn-light-text;\n  }\n\n  &:focus {\n    background: $colour-btn-light-hover;\n  }\n\n  &:active {\n    background: $colour-btn-light-hover;\n  }",
+        "line": {
+          "start": 116,
+          "end": 138
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "components"
+      ],
+      "access": "public",
+      "file": {
+        "path": "components\\buttons\\_buttons.scss",
+        "name": "_buttons.scss"
+      },
+      "groupName": {
+        "components": "Components"
+      }
+    },
+    {
+      "description": "<p>Container placeholder.</p>\n",
+      "commentRange": {
+        "start": 5,
+        "end": 6
+      },
+      "context": {
+        "type": "placeholder",
+        "name": "container",
+        "code": "\n  margin: auto;\n  max-width: rem(1170px);\n  width: 96%;\n",
+        "line": {
+          "start": 7,
+          "end": 11
+        }
+      },
+      "since": [
+        {
+          "version": "0.1.0"
+        }
+      ],
+      "group": [
+        "components"
+      ],
+      "access": "public",
+      "require": [
+        {
+          "type": "function",
+          "name": "rem"
+        }
+      ],
+      "file": {
+        "path": "components\\container\\_container.scss",
+        "name": "_container.scss"
+      },
+      "groupName": {
+        "components": "Components"
+      }
+    },
+    {
+      "description": "<p>Container, used as a wrapper around sections within a page.\nUsually used to house grids.</p>\n",
+      "commentRange": {
+        "start": 13,
+        "end": 21
+      },
+      "context": {
+        "type": "css",
+        "name": ".container",
+        "value": "@extend %container;\n\n  &--full {\n    max-width: 100%;\n    padding: 0 2%;\n    width: auto;\n  }",
+        "line": {
+          "start": 22,
+          "end": 31
+        }
+      },
+      "example": [
+        {
+          "type": "scss",
+          "code": "<div class=\"container\">\n  <div class=\"grid\">\n  </div>\n</div>"
+        }
+      ],
+      "since": [
+        {
+          "version": "0.1.0"
+        }
+      ],
+      "group": [
+        "components"
+      ],
+      "access": "public",
+      "file": {
+        "path": "components\\container\\_container.scss",
+        "name": "_container.scss"
+      },
+      "groupName": {
+        "components": "Components"
+      }
+    },
+    {
       "description": "<p>Site footer</p>\n",
       "commentRange": {
         "start": 5,
@@ -2375,10 +2611,10 @@
       "context": {
         "type": "css",
         "name": ".site-footer",
-        "value": "@include font-size(-1);\n  background: $colour-panel-inverse;\n  color: $colour-text-inverse;\n  margin-top: em(32px);\n  padding: em(32px 0);\n\n  @media print {\n    display: none;\n  }\n\n  a {\n    color: $colour-text-inverse;\n\n    &:focus {\n      color: #000;\n    }\n  }\n\n  p {\n    @include font-size(-1);\n  }\n\n  &__logo {\n    display: block;\n    margin: em(0 0 32 0);\n    text-decoration: none;\n\n    .icon {\n      font-size: rem(48px);\n    }\n  }\n\n  &__services {\n    margin: em(0 0 32 0);\n  }\n\n  &__social {\n    clear: both;\n    margin: em(0 0 32 0);\n  }\n\n  &__nav {\n    clear: both;\n    margin: em(0 0 32 0);\n  }\n\n  &__copyright {\n    margin: 0;\n    text-align: center;\n  }\n\n  @include mq($from: sm) {\n    &__logo {\n      float: left;\n      margin: em(0 32 32 0);\n    }\n\n    &__services {\n      float: left;\n      margin: em(0 0 32 0);\n    }\n\n    &__social {\n      clear: both;\n    }\n\n    &__copyright {\n      text-align: left;\n    }\n  }\n\n  @include mq($from: md) {\n\n    &__social {\n      clear: none;\n      float: right;\n    }\n  }",
+        "value": "@extend %inverse-links;\n  @include font-size(-1);\n  background: $colour-panel-inverse;\n  color: $colour-text-inverse;\n  margin-top: em($spacing-large);\n  padding: em($spacing-large 0);\n\n  @media print {\n    display: none;\n  }\n\n  p {\n    @include font-size(-1);\n  }\n\n  &__logo {\n    display: block;\n    margin: em(0 0 $spacing-large 0);\n    text-decoration: none !important; // sass-lint:disable-line no-important\n\n    .icon {\n      font-size: rem(48px);\n    }\n  }\n\n  &__services {\n    margin: em(0 0 $spacing-large 0);\n  }\n\n  &__social {\n    clear: both;\n    margin: em(0 0 $spacing-large 0);\n  }\n\n  &__nav {\n    clear: both;\n    margin: em(0 0 $spacing-large 0);\n  }\n\n  &__copyright {\n    margin: 0;\n    text-align: center;\n  }\n\n  @include mq($from: sm) {\n    &__logo {\n      float: left;\n      margin: em(0 $spacing-large $spacing-large 0);\n    }\n\n    &__services {\n      float: left;\n      margin: em(0 0 $spacing-large 0);\n    }\n\n    &__social {\n      clear: both;\n    }\n\n    &__copyright {\n      text-align: left;\n    }\n  }\n\n  @include mq($from: md) {\n\n    &__social {\n      clear: none;\n      float: right;\n    }\n  }",
         "line": {
           "start": 7,
-          "end": 239
+          "end": 223
         }
       },
       "since": [
@@ -2401,16 +2637,16 @@
     {
       "description": "<p>Services list - ie.g. service icon and name.\nStacked on mobile, and side-by-side on larger screen widths</p>\n",
       "commentRange": {
-        "start": 88,
-        "end": 89
+        "start": 81,
+        "end": 82
       },
       "context": {
         "type": "css",
         "name": ".services",
-        "value": "&__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n  }\n\n  &__item {\n    border-bottom: 1px solid $colour-border;\n\n    &:first-child {\n      border-top: 1px solid $colour-border;\n    }\n\n    a {\n      @include font-size(-1);\n      color: $colour-panel-default;\n      display: block;\n      padding: em(8 0);\n      text-decoration: none;\n\n      &:hover {\n        color: $colour-text-inverse;\n      }\n\n      &:focus {\n        color: $colour-text;\n      }\n    }\n\n    .icon {\n      @include font-size(1);\n      display: inline-block;\n      margin: em(0 4 0 0);\n      vertical-align: middle;\n    }\n  }\n\n  @include mq($from: sm) {\n\n    &__item {\n      border: 0;\n      float: left;\n      text-align: center;\n      width: em(90px);\n\n      &:first-child {\n        border: 0;\n      }\n\n      a {\n        padding: em(4px) 0 0;\n      }\n    }\n\n    .icon {\n      @include font-size(6);\n      display: block;\n      line-height: 1;\n      margin: 0 auto em(4px);\n\n      // The following is needed for IE8 to go centrally aligned\n      &:before {\n        text-align: center;\n        width: 100%;\n      }\n    }\n  }",
+        "value": "&__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n  }\n\n  &__item {\n    border-bottom: 1px solid $colour-border;\n\n    &:first-child {\n      border-top: 1px solid $colour-border;\n    }\n\n    a {\n      @include font-size(-1);\n      color: $colour-panel-default;\n      display: block;\n      padding: em($spacing-small 0);\n      text-decoration: none;\n\n      &:hover {\n        color: $colour-text-inverse;\n      }\n    }\n\n    .icon {\n      @include font-size(1);\n      display: inline-block;\n      margin: em(0 $spacing-x-small 0 0);\n      vertical-align: middle;\n    }\n  }\n\n  @include mq($from: sm) {\n\n    &__item {\n      border: 0;\n      float: left;\n      text-align: center;\n      width: em(90px);\n\n      &:first-child {\n        border: 0;\n      }\n\n      a {\n        padding: em($spacing-x-small) 0 0;\n      }\n    }\n\n    .icon {\n      @include font-size(6);\n      display: block;\n      line-height: 1;\n      margin: 0 auto em($spacing-x-small);\n\n      // The following is needed for IE8 to go centrally aligned\n      &:before {\n        text-align: center;\n        width: 100%;\n      }\n    }\n  }",
         "line": {
-          "start": 90,
-          "end": 239
+          "start": 83,
+          "end": 223
         }
       },
       "group": [
@@ -2428,16 +2664,16 @@
     {
       "description": "<p>List of social networks icons</p>\n",
       "commentRange": {
-        "start": 162,
-        "end": 162
+        "start": 151,
+        "end": 151
       },
       "context": {
         "type": "css",
         "name": ".social-networks",
-        "value": "&__heading {\n    @include font-size(-1);\n    display: inline-block;\n    font-weight: normal;\n    margin: em(0 8 0 0);\n    padding: 0;\n    vertical-align: top;\n  }\n\n  &__list {\n    display: inline;\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  &__item {\n    display: inline-block;\n\n    .icon {\n      @include font-size(4);\n      line-height: 1;\n    }\n  }\n\n  a {\n    display: block;\n    padding: em(0 4);\n    text-decoration: none;\n\n    &:focus,\n    &:active {\n      color: $colour-text;\n    }\n  }",
+        "value": "&__heading {\n    @include font-size(-1);\n    display: inline-block;\n    font-weight: normal;\n    margin: em(0 $spacing-small 0 0);\n    padding: 0;\n    vertical-align: top;\n  }\n\n  &__list {\n    display: inline;\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  &__item {\n    display: inline-block;\n\n    .icon {\n      @include font-size(4);\n      line-height: 1;\n    }\n  }\n\n  a {\n    display: block;\n    padding: em(0 $spacing-x-small);\n    text-decoration: none;\n  }",
         "line": {
-          "start": 163,
-          "end": 239
+          "start": 152,
+          "end": 223
         }
       },
       "group": [
@@ -2455,16 +2691,16 @@
     {
       "description": "<p>Footer navigation - list of links that stacks on mobile and is side-by-side on wider screen widths</p>\n",
       "commentRange": {
-        "start": 202,
-        "end": 202
+        "start": 186,
+        "end": 186
       },
       "context": {
         "type": "css",
         "name": ".footer-nav",
-        "value": "&__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  a {\n    padding: em(4 0);\n    text-decoration: none;\n  }\n\n  @include mq($from: sm) {\n    &__list {\n      line-height: 1;\n    }\n\n    &__item {\n      border-left: 1px solid $colour-text-inverse;\n      display: inline-block;\n      line-height: 1;\n\n      &:first-child {\n        border-left: 0;\n\n        a {\n          padding-left: 0;\n        }\n      }\n    }\n\n    a {\n      padding: em(0 8);\n    }\n  }",
+        "value": "&__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  a {\n    padding: em($spacing-x-small 0);\n    text-decoration: none;\n  }\n\n  @include mq($from: sm) {\n    &__list {\n      line-height: 1;\n    }\n\n    &__item {\n      border-left: 1px solid $colour-text-inverse;\n      display: inline-block;\n      line-height: 1;\n\n      &:first-child {\n        border-left: 0;\n\n        a {\n          padding-left: 0;\n        }\n      }\n    }\n\n    a {\n      padding: em(0 $spacing-small);\n    }\n  }",
         "line": {
-          "start": 203,
-          "end": 239
+          "start": 187,
+          "end": 223
         }
       },
       "group": [
@@ -2533,6 +2769,153 @@
       "file": {
         "path": "components\\in-page-nav\\_in-page-nav.scss",
         "name": "_in-page-nav.scss"
+      },
+      "groupName": {
+        "components": "Components"
+      }
+    },
+    {
+      "description": "<p>Left nav component.\nExpands to fill the available space.\nUsually full width on mobile and 1/3 on wider screens.</p>\n",
+      "commentRange": {
+        "start": 5,
+        "end": 7
+      },
+      "context": {
+        "type": "css",
+        "name": ".left-nav",
+        "value": "background: #fafafa;\n  border: 1px solid $colour-border;\n\n  a {\n    color: $colour-link;\n    display: block;\n    padding: em($spacing-small);\n    position: relative;\n    text-decoration: none;\n\n    &[aria-current='page'] {\n      background: $colour-nice-grey-3;\n      font-weight: bold;\n\n      &:before {\n        background: $colour-icons;\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: em($spacing-x-small);\n      }\n    }\n\n    &:hover {\n      background: $colour-nice-grey-2;\n    }\n\n    &:active {\n      background: $colour-icons;\n      color: $colour-link-inverse;\n    }\n  }\n\n  // The title nav link\n  &__root {\n    @include font-size(h5);\n    border-bottom: 1px solid $colour-border;\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      color: $colour-text;\n    }\n  }\n\n  &__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  &__list-item {\n    border-top: 1px solid $colour-border;\n  }",
+        "line": {
+          "start": 8,
+          "end": 67
+        }
+      },
+      "group": [
+        "components"
+      ],
+      "access": "public",
+      "file": {
+        "path": "components\\left-nav\\_left-nav.scss",
+        "name": "_left-nav.scss"
+      },
+      "groupName": {
+        "components": "Components"
+      }
+    },
+    {
+      "description": "<p>Maintains the aspect ratio of an embedded item, useful for responsive embedding, e.g.\nYouTube videos in iframes or video tags. Also useful when you know the ratio of an image\nand want to avoid the &#39;pop&#39; for slow loading images.</p>\n<p>Automatically applies to <code>iframe</code>, <code>embed</code>, <code>object</code> and <code>video</code> tags.\nAlternatively, you can use the <code>__item</code> selector to specify the element directly.</p>\n<p>BEM elements:</p>\n<ul>\n<li><code>__item</code></li>\n</ul>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--21-9</code></li>\n<li><code>--16-9</code></li>\n<li><code>--4-3</code></li>\n<li><code>--square</code></li>\n</ul>\n",
+      "commentRange": {
+        "start": 5,
+        "end": 35
+      },
+      "context": {
+        "type": "css",
+        "name": ".maintain-ratio",
+        "value": "display: block;\n  height: 0;\n  overflow: hidden;\n  padding: 0;\n  position: relative;\n\n  &__item,\n  iframe,\n  embed,\n  object,\n  video {\n    border: 0;\n    bottom: 0;\n    height: 100%;\n    left: 0;\n    position: absolute;\n    top: 0;\n    width: 100%;\n  }\n\n  // Modifier class for 21:9 aspect ratio\n  &--21-9 {\n    padding-bottom: percentage(9 / 21);\n  }\n\n  // Modifier class for 16:9 aspect ratio\n  &--16-9 {\n    padding-bottom: percentage(9 / 16);\n  }\n\n  // Modifier class for 4:3 aspect ratio\n  &--4-3 {\n    padding-bottom: percentage(3 / 4);\n  }\n\n  // Modifier class for square aspect ratio\n  &--square {\n    padding-bottom: 100%;\n  }",
+        "line": {
+          "start": 36,
+          "end": 77
+        }
+      },
+      "example": [
+        {
+          "type": "html",
+          "code": "<div class=\"maintain-ratio maintain-ratio--16-9\">\n  <iframe src=\"https://www.youtube.com/embed/FTQbiNvZqaY\" allowfullscreen></iframe>\n</div>",
+          "description": "<p>Sixteen by nine example</p>\n"
+        },
+        {
+          "type": "html",
+          "code": "<div class=\"maintain-ratio maintain-ratio--4-3\">\n  <div style=\"background: #ddd; text-align: center;\" class=\"maintain-ratio__item\">\n    <div style=\"display: inline-block; font-size: 300%;\">\n      4:3\n    </div>\n    <div style=\"display: inline-block; height: 100%; vertical-align: middle;\"></div>\n  </div>\n</div>",
+          "description": "<p>Using element</p>\n"
+        }
+      ],
+      "since": [
+        {
+          "version": "0.1.0"
+        }
+      ],
+      "group": [
+        "components"
+      ],
+      "access": "public",
+      "file": {
+        "path": "components\\maintain-ratio\\_maintain-ratio.scss",
+        "name": "_maintain-ratio.scss"
+      },
+      "groupName": {
+        "components": "Components"
+      }
+    },
+    {
+      "description": "<p>A panel is a container for visually separating content.\nOften used within a sidebar.</p>\n",
+      "commentRange": {
+        "start": 5,
+        "end": 7
+      },
+      "context": {
+        "type": "css",
+        "name": ".panel",
+        "value": "background: $colour-panel-default;\n  margin: em($spacing-medium 0 $spacing-large);\n  padding: em($spacing-medium);\n\n  :first-child {\n    margin-top: 0;\n  }\n\n  :last-child {\n    margin-bottom: 0;\n  }",
+        "line": {
+          "start": 8,
+          "end": 33
+        }
+      },
+      "since": [
+        {
+          "version": "0.1.0"
+        }
+      ],
+      "group": [
+        "components"
+      ],
+      "access": "public",
+      "file": {
+        "path": "components\\panel\\_panel.scss",
+        "name": "_panel.scss"
+      },
+      "groupName": {
+        "components": "Components"
+      }
+    },
+    {
+      "description": "<p>Modifier for the panel, to use a inverse (dark) background.\nAutmatically uses inverse links within it. Doesn&#39;t affect buttons\nthough, so any buttons within a dark panel should be <code>.btn.btn--light</code>.</p>\n",
+      "commentRange": {
+        "start": 22,
+        "end": 27
+      },
+      "context": {
+        "type": "css",
+        "name": ".panel--inverse",
+        "value": "@extend %inverse-links;\n  background: $colour-panel-inverse;\n  color: $colour-text-inverse;",
+        "line": {
+          "start": 28,
+          "end": 33
+        }
+      },
+      "require": [
+        {
+          "type": "placeholder",
+          "name": "inverse-links",
+          "external": false
+        },
+        {
+          "type": "function",
+          "name": ".panel",
+          "external": true
+        }
+      ],
+      "since": [
+        {
+          "version": "0.1.0"
+        }
+      ],
+      "group": [
+        "components"
+      ],
+      "access": "public",
+      "file": {
+        "path": "components\\panel\\_panel.scss",
+        "name": "_panel.scss"
       },
       "groupName": {
         "components": "Components"
@@ -2670,362 +3053,6 @@
       "file": {
         "path": "components\\tabs\\_tabs.scss",
         "name": "_tabs.scss"
-      },
-      "groupName": {
-        "components": "Components"
-      }
-    },
-    {
-      "description": "<p>breadcrumbs\nSee <a href=\"https://www.w3.org/WAI/WCAG20/Techniques/working-examples/G65/ex3.html\">https://www.w3.org/WAI/WCAG20/Techniques/working-examples/G65/ex3.html</a></p>\n",
-      "commentRange": {
-        "start": 5,
-        "end": 7
-      },
-      "context": {
-        "type": "css",
-        "name": ".breadcrumbs",
-        "value": "@include font-size(0);\n  list-style: none;\n  margin: em($spacing-small 0 $spacing-large);\n  padding: 0;\n\n  &__crumb {\n    display: inline-block;\n\n    &:before {\n      content: get-glyph(heavy-right-pointing-angle-quotation-mark-ornament);\n      font-size: 70%;\n      margin: em(0 $spacing-x-small);\n    }\n\n    &:first-child:before {\n      display: none;\n    }\n  }\n\n  a {\n    color: $colour-text;\n    text-decoration: underline;\n\n    &:hover {\n      text-decoration: none;\n    }\n\n    &:focus {\n      color: $colour-link-focus-text;\n    }\n\n    &:active {\n      color: $colour-link-active;\n    }\n  }",
-        "line": {
-          "start": 8,
-          "end": 45
-        }
-      },
-      "since": [
-        {
-          "version": "0.1.0"
-        }
-      ],
-      "group": [
-        "components"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\components\\_components-breadcrumbs.scss",
-        "name": "_components-breadcrumbs.scss"
-      },
-      "groupName": {
-        "components": "Components"
-      }
-    },
-    {
-      "description": "<p>Button</p>\n",
-      "commentRange": {
-        "start": 5,
-        "end": 6
-      },
-      "context": {
-        "type": "css",
-        "name": ".btn.btn",
-        "value": "// Repeat selector for specificity to avoid link overrides\n  @include remove-mz-focus-inner;\n  @include font-size(0);\n  appearance: none;\n  background: $colour-btn-primary;\n  border: em(1px) solid $colour-btn-primary-text;\n  border-radius: 0;\n  color: $colour-btn-primary-text;\n  cursor: pointer;\n  display: inline-block;\n  margin: em(0 $spacing-small $spacing-small -4px); // Negative left margin to combat inline-block gaps\n  padding: em($spacing-small $spacing-medium);\n  position: relative;\n  text-decoration: none;\n  vertical-align: top;\n\n  &:first-child {\n    margin-left: 0;\n  }\n\n  &:visited {\n    color: $colour-btn-primary-text;\n  }\n\n  &:hover {\n    background: $colour-btn-primary-hover;\n    color: $colour-btn-primary-text;\n    text-decoration: none;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background: $colour-btn-primary;\n    border-color: $colour-focus;\n  }\n\n  &:active {\n    background: $colour-btn-primary-hover;\n    text-decoration: none;\n    top: em(2px);\n  }\n\n  // Disabled button styles\n  &--disabled,\n  &.disabled,\n  &[aria-disabled='true'],\n  &[disabled='disabled'],\n  &[disabled] {\n    opacity: .5;\n    pointer-events: none;\n\n    &:hover {\n      cursor: default;\n    }\n  }",
-        "line": {
-          "start": 7,
-          "end": 138
-        }
-      },
-      "since": [
-        {
-          "version": "0.1.0"
-        }
-      ],
-      "group": [
-        "components"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\components\\_components-buttons.scss",
-        "name": "_components-buttons.scss"
-      },
-      "groupName": {
-        "components": "Components"
-      }
-    },
-    {
-      "description": "<p>CTA/prominent button</p>\n",
-      "commentRange": {
-        "start": 64,
-        "end": 65
-      },
-      "context": {
-        "type": "css",
-        "name": ".btn.btn--cta",
-        "value": "background: $colour-btn-cta;\n  border: em(1px) solid $colour-btn-cta-text;\n  color: $colour-btn-cta-text;\n\n  &:visited {\n    color: $colour-btn-cta-text;\n  }\n\n  &:hover {\n    background: $colour-btn-cta-hover;\n    color: $colour-btn-cta-text;\n  }\n\n  &:focus {\n    background: $colour-btn-cta-hover;\n  }\n\n  &:active {\n    background: $colour-btn-cta-hover;\n  }",
-        "line": {
-          "start": 66,
-          "end": 138
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "components"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\components\\_components-buttons.scss",
-        "name": "_components-buttons.scss"
-      },
-      "groupName": {
-        "components": "Components"
-      }
-    },
-    {
-      "description": "<p>Secondary button</p>\n",
-      "commentRange": {
-        "start": 89,
-        "end": 90
-      },
-      "context": {
-        "type": "css",
-        "name": ".btn.btn--secondary",
-        "value": "background: $colour-btn-secondary;\n  border: em(1px) solid $colour-btn-secondary-text;\n  color: $colour-btn-secondary-text;\n\n  &:visited {\n    color: $colour-btn-secondary-text;\n  }\n\n  &:hover {\n    background: $colour-btn-secondary-hover;\n    color: $colour-btn-secondary-text;\n  }\n\n  &:focus {\n    background: $colour-btn-secondary-hover;\n  }\n\n  &:active {\n    background: $colour-btn-secondary-hover;\n  }",
-        "line": {
-          "start": 91,
-          "end": 138
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "components"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\components\\_components-buttons.scss",
-        "name": "_components-buttons.scss"
-      },
-      "groupName": {
-        "components": "Components"
-      }
-    },
-    {
-      "description": "<p>Light button, for use on dark panels/sections</p>\n",
-      "commentRange": {
-        "start": 114,
-        "end": 115
-      },
-      "context": {
-        "type": "css",
-        "name": ".btn.btn--light",
-        "value": "background: $colour-btn-light;\n  border: em(1px) solid $colour-btn-light-text;\n  color: $colour-btn-light-text;\n\n  &:visited {\n    color: $colour-btn-light-text;\n  }\n\n  &:hover {\n    background: $colour-btn-light-hover;\n    color: $colour-btn-light-text;\n  }\n\n  &:focus {\n    background: $colour-btn-light-hover;\n  }\n\n  &:active {\n    background: $colour-btn-light-hover;\n  }",
-        "line": {
-          "start": 116,
-          "end": 138
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "components"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\components\\_components-buttons.scss",
-        "name": "_components-buttons.scss"
-      },
-      "groupName": {
-        "components": "Components"
-      }
-    },
-    {
-      "description": "<p>Container placeholder.</p>\n",
-      "commentRange": {
-        "start": 5,
-        "end": 6
-      },
-      "context": {
-        "type": "placeholder",
-        "name": "container",
-        "code": "\n  margin: auto;\n  max-width: rem(1170px);\n  width: 96%;\n",
-        "line": {
-          "start": 7,
-          "end": 11
-        }
-      },
-      "since": [
-        {
-          "version": "0.1.0"
-        }
-      ],
-      "group": [
-        "components"
-      ],
-      "access": "public",
-      "require": [
-        {
-          "type": "function",
-          "name": "rem"
-        }
-      ],
-      "file": {
-        "path": "stylesheets\\components\\_components-global.scss",
-        "name": "_components-global.scss"
-      },
-      "groupName": {
-        "components": "Components"
-      }
-    },
-    {
-      "description": "<p>Container, used as a wrapper around sections within a page.\nUsually used to house grids.</p>\n",
-      "commentRange": {
-        "start": 13,
-        "end": 21
-      },
-      "context": {
-        "type": "css",
-        "name": ".container",
-        "value": "@extend %container;\n\n  &--full {\n    max-width: 100%;\n    padding: 0 2%;\n    width: auto;\n  }",
-        "line": {
-          "start": 22,
-          "end": 43
-        }
-      },
-      "example": [
-        {
-          "type": "scss",
-          "code": "<div class=\"container\">\n  <div class=\"grid\">\n  </div>\n</div>"
-        }
-      ],
-      "since": [
-        {
-          "version": "0.1.0"
-        }
-      ],
-      "group": [
-        "components"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\components\\_components-global.scss",
-        "name": "_components-global.scss"
-      },
-      "groupName": {
-        "components": "Components"
-      }
-    },
-    {
-      "description": "<p>Maintains the aspect ratio of an embedded item, useful for responsive embedding, e.g.\nYouTube videos in iframes or video tags. Also useful when you know the ratio of an image\nand want to avoid the &#39;pop&#39; for slow loading images.</p>\n<p>Automatically applies to <code>iframe</code>, <code>embed</code>, <code>object</code> and <code>video</code> tags.\nAlternatively, you can use the <code>__item</code> selector to specify the element directly.</p>\n<p>BEM elements:</p>\n<ul>\n<li><code>__item</code></li>\n</ul>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--21-9</code></li>\n<li><code>--16-9</code></li>\n<li><code>--4-3</code></li>\n<li><code>--square</code></li>\n</ul>\n",
-      "commentRange": {
-        "start": 5,
-        "end": 35
-      },
-      "context": {
-        "type": "css",
-        "name": ".maintain-ratio",
-        "value": "display: block;\n  height: 0;\n  overflow: hidden;\n  padding: 0;\n  position: relative;\n\n  &__item,\n  iframe,\n  embed,\n  object,\n  video {\n    border: 0;\n    bottom: 0;\n    height: 100%;\n    left: 0;\n    position: absolute;\n    top: 0;\n    width: 100%;\n  }\n\n  // Modifier class for 21:9 aspect ratio\n  &--21-9 {\n    padding-bottom: percentage(9 / 21);\n  }\n\n  // Modifier class for 16:9 aspect ratio\n  &--16-9 {\n    padding-bottom: percentage(9 / 16);\n  }\n\n  // Modifier class for 4:3 aspect ratio\n  &--4-3 {\n    padding-bottom: percentage(3 / 4);\n  }\n\n  // Modifier class for square aspect ratio\n  &--square {\n    padding-bottom: 100%;\n  }",
-        "line": {
-          "start": 36,
-          "end": 77
-        }
-      },
-      "example": [
-        {
-          "type": "html",
-          "code": "<div class=\"maintain-ratio maintain-ratio--16-9\">\n  <iframe src=\"https://www.youtube.com/embed/FTQbiNvZqaY\" allowfullscreen></iframe>\n</div>",
-          "description": "<p>Sixteen by nine example</p>\n"
-        },
-        {
-          "type": "html",
-          "code": "<div class=\"maintain-ratio maintain-ratio--4-3\">\n  <div style=\"background: #ddd; text-align: center;\" class=\"maintain-ratio__item\">\n    <div style=\"display: inline-block; font-size: 300%;\">\n      4:3\n    </div>\n    <div style=\"display: inline-block; height: 100%; vertical-align: middle;\"></div>\n  </div>\n</div>",
-          "description": "<p>Using element</p>\n"
-        }
-      ],
-      "since": [
-        {
-          "version": "0.1.0"
-        }
-      ],
-      "group": [
-        "components"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\components\\_components-maintain-ratio.scss",
-        "name": "_components-maintain-ratio.scss"
-      },
-      "groupName": {
-        "components": "Components"
-      }
-    },
-    {
-      "description": "<p>A panel is a container for visually separating content.\nOften used within a sidebar.</p>\n",
-      "commentRange": {
-        "start": 5,
-        "end": 7
-      },
-      "context": {
-        "type": "css",
-        "name": ".panel",
-        "value": "background: $colour-panel-default;\n  margin: em($spacing-medium 0 $spacing-large);\n  padding: em($spacing-medium);\n\n  :first-child {\n    margin-top: 0;\n  }\n\n  :last-child {\n    margin-bottom: 0;\n  }",
-        "line": {
-          "start": 8,
-          "end": 33
-        }
-      },
-      "since": [
-        {
-          "version": "0.1.0"
-        }
-      ],
-      "group": [
-        "components"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\components\\_components-panel.scss",
-        "name": "_components-panel.scss"
-      },
-      "groupName": {
-        "components": "Components"
-      }
-    },
-    {
-      "description": "<p>Modifier for the panel, to use a inverse (dark) background.\nAutmatically uses inverse links within it. Doesn&#39;t affect buttons\nthough, so any buttons within a dark panel should be <code>.btn.btn--light</code>.</p>\n",
-      "commentRange": {
-        "start": 22,
-        "end": 27
-      },
-      "context": {
-        "type": "css",
-        "name": ".panel--inverse",
-        "value": "@extend %inverse-links;\n  background: $colour-panel-inverse;\n  color: $colour-text-inverse;",
-        "line": {
-          "start": 28,
-          "end": 33
-        }
-      },
-      "require": [
-        {
-          "type": "placeholder",
-          "name": "inverse-links",
-          "external": false
-        },
-        {
-          "type": "function",
-          "name": ".panel",
-          "external": true
-        }
-      ],
-      "since": [
-        {
-          "version": "0.1.0"
-        }
-      ],
-      "group": [
-        "components"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\components\\_components-panel.scss",
-        "name": "_components-panel.scss"
       },
       "groupName": {
         "components": "Components"
@@ -3338,7 +3365,7 @@
       }
     },
     {
-      "description": "<p>Loose grids have a smaller gutter</p>\n",
+      "description": "<p>Loose grids have a larger gutter</p>\n",
       "commentRange": {
         "start": 100,
         "end": 102
@@ -6002,410 +6029,6 @@
       }
     },
     {
-      "description": "<p>Base path for loading font files\nOverride this in your application if your path differs.\nE.g. if you want to replace it off a CDN you could change this to &#39;<a href=\"http://cdn.com/fonts/\">http://cdn.com/fonts/</a>&#39;</p>\n",
-      "commentRange": {
-        "start": 13,
-        "end": 15
-      },
-      "context": {
-        "type": "variable",
-        "name": "nice-font-base-path",
-        "value": "'/fonts/'",
-        "scope": "default",
-        "line": {
-          "start": 16,
-          "end": 16
-        }
-      },
-      "group": [
-        "icons"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\typography\\_typography-icons.scss",
-        "name": "_typography-icons.scss"
-      },
-      "groupName": {
-        "icons": "Icons"
-      },
-      "resolvedValue": "'/fonts/'"
-    },
-    {
-      "description": "<p>Map of icon name to codepoint.\nThis map avoids the use of &#39;magic strings&#39; for codepoints throught SASS code. The map is usually not used directly - use the nice-icon function/mixin instead.\nPlease note - the values for codepoints are not fixed and may change each time the font is re-generated.</p>\n",
-      "commentRange": {
-        "start": 30,
-        "end": 43
-      },
-      "context": {
-        "type": "variable",
-        "name": "nice-icons",
-        "value": "(\n  evidence: \"f101\",\n  facebook-square: \"f102\",\n  guidance: \"f103\",\n  linkedin-square: \"f104\",\n  logo-name: \"f105\",\n  logo: \"f106\",\n  pathways: \"f107\",\n  standards: \"f108\",\n  syndication: \"f109\",\n  twitter-square: \"f10a\",\n  youtube-square: \"f10b\"\n)",
-        "scope": "default",
-        "line": {
-          "start": 45,
-          "end": 57
-        }
-      },
-      "property": [
-        {
-          "type": "string",
-          "name": "evidence",
-          "default": "f101",
-          "description": "<p><span class=\"icon icon--evidence\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f101"
-        },
-        {
-          "type": "string",
-          "name": "facebook-square",
-          "default": "f102",
-          "description": "<p><span class=\"icon icon--facebook-square\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f102"
-        },
-        {
-          "type": "string",
-          "name": "guidance",
-          "default": "f103",
-          "description": "<p><span class=\"icon icon--guidance\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f103"
-        },
-        {
-          "type": "string",
-          "name": "linkedin-square",
-          "default": "f104",
-          "description": "<p><span class=\"icon icon--linkedin-square\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f104"
-        },
-        {
-          "type": "string",
-          "name": "logo-name",
-          "default": "f105",
-          "description": "<p><span class=\"icon icon--logo-name\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f105"
-        },
-        {
-          "type": "string",
-          "name": "logo",
-          "default": "f106",
-          "description": "<p><span class=\"icon icon--logo\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f106"
-        },
-        {
-          "type": "string",
-          "name": "pathways",
-          "default": "f107",
-          "description": "<p><span class=\"icon icon--pathways\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f107"
-        },
-        {
-          "type": "string",
-          "name": "standards",
-          "default": "f108",
-          "description": "<p><span class=\"icon icon--standards\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f108"
-        },
-        {
-          "type": "string",
-          "name": "syndication",
-          "default": "f109",
-          "description": "<p><span class=\"icon icon--syndication\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f109"
-        },
-        {
-          "type": "string",
-          "name": "twitter-square",
-          "default": "f10a",
-          "description": "<p><span class=\"icon icon--twitter-square\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f10a"
-        },
-        {
-          "type": "string",
-          "name": "youtube-square",
-          "default": "f10b",
-          "description": "<p><span class=\"icon icon--youtube-square\" aria-hidden=\"true\"></span></p>\n",
-          "resolvedValue": "f10b"
-        }
-      ],
-      "group": [
-        "icons"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\typography\\_typography-icons.scss",
-        "name": "_typography-icons.scss"
-      },
-      "usedBy": [
-        {
-          "description": "<p>Applies the required styles for the given icon\nincluding the codepoint.</p>\n",
-          "context": {
-            "type": "mixin",
-            "name": "nice-icon",
-            "code": "\n  @if map-has-key($nice-icons, $icon) {\n    @include icon-base;\n    content: nice-icon($icon);\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
-            "line": {
-              "start": 91,
-              "end": 98
-            }
-          }
-        },
-        {
-          "description": "<p>Applies the required styles for the given icon\nincluding the codepoint.</p>\n",
-          "context": {
-            "type": "mixin",
-            "name": "nice-icon",
-            "code": "\n  @if map-has-key($nice-icons, $icon) {\n    @include icon-base;\n    content: nice-icon($icon);\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
-            "line": {
-              "start": 91,
-              "end": 98
-            }
-          }
-        },
-        {
-          "description": "<p>Function for getting the codepoint for a given icon, for use\nwithin the <code>content</code> property of psuedo elements.</p>\n",
-          "context": {
-            "type": "function",
-            "name": "nice-icon",
-            "code": "\n  @if map-has-key($nice-icons, $icon) {\n    $icon-code: map-get($nice-icons, $icon);\n    @return unquote('\\'\\\\#{ $icon-code }\\'');\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
-            "line": {
-              "start": 110,
-              "end": 117
-            }
-          }
-        },
-        {
-          "description": "<p>Function for getting the codepoint for a given icon, for use\nwithin the <code>content</code> property of psuedo elements.</p>\n",
-          "context": {
-            "type": "function",
-            "name": "nice-icon",
-            "code": "\n  @if map-has-key($nice-icons, $icon) {\n    $icon-code: map-get($nice-icons, $icon);\n    @return unquote('\\'\\\\#{ $icon-code }\\'');\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
-            "line": {
-              "start": 110,
-              "end": 117
-            }
-          }
-        },
-        {
-          "description": "<p>Function for getting the codepoint for a given icon, for use\nwithin the <code>content</code> property of psuedo elements.</p>\n",
-          "context": {
-            "type": "function",
-            "name": "nice-icon",
-            "code": "\n  @if map-has-key($nice-icons, $icon) {\n    $icon-code: map-get($nice-icons, $icon);\n    @return unquote('\\'\\\\#{ $icon-code }\\'');\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
-            "line": {
-              "start": 110,
-              "end": 117
-            }
-          }
-        }
-      ],
-      "groupName": {
-        "icons": "Icons"
-      },
-      "resolvedValue": "(\n  evidence: \"f101\",\n  facebook-square: \"f102\",\n  guidance: \"f103\",\n  linkedin-square: \"f104\",\n  logo-name: \"f105\",\n  logo: \"f106\",\n  pathways: \"f107\",\n  standards: \"f108\",\n  syndication: \"f109\",\n  twitter-square: \"f10a\",\n  youtube-square: \"f10b\"\n)"
-    },
-    {
-      "description": "<p>Base styles required for an icon including font family etc</p>\n",
-      "commentRange": {
-        "start": 59,
-        "end": 67
-      },
-      "context": {
-        "type": "mixin",
-        "name": "icon-base",
-        "code": "\n  display: inline-block;\n  font-family: 'NICE Icons';\n  font-style: normal;\n  font-weight: normal;\n  line-height: 1;\n  speak: none;\n  text-decoration: inherit;\n  text-rendering: auto;\n  text-transform: none;\n  vertical-align: baseline;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n",
-        "line": {
-          "start": 68,
-          "end": 81
-        }
-      },
-      "example": [
-        {
-          "type": "scss",
-          "code": ".test {\n  @icnlude icon-base;\n\n  &:before {\n    content: nice-icon(search);\n  }\n}"
-        }
-      ],
-      "group": [
-        "icons"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\typography\\_typography-icons.scss",
-        "name": "_typography-icons.scss"
-      },
-      "usedBy": [
-        {
-          "description": "<p>Applies the required styles for the given icon\nincluding the codepoint.</p>\n",
-          "context": {
-            "type": "mixin",
-            "name": "nice-icon",
-            "code": "\n  @if map-has-key($nice-icons, $icon) {\n    @include icon-base;\n    content: nice-icon($icon);\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
-            "line": {
-              "start": 91,
-              "end": 98
-            }
-          }
-        }
-      ],
-      "groupName": {
-        "icons": "Icons"
-      }
-    },
-    {
-      "description": "<p>Applies the required styles for the given icon\nincluding the codepoint.</p>\n",
-      "commentRange": {
-        "start": 83,
-        "end": 90
-      },
-      "context": {
-        "type": "mixin",
-        "name": "nice-icon",
-        "code": "\n  @if map-has-key($nice-icons, $icon) {\n    @include icon-base;\n    content: nice-icon($icon);\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
-        "line": {
-          "start": 91,
-          "end": 98
-        }
-      },
-      "parameter": [
-        {
-          "type": "string",
-          "name": "icon",
-          "description": "<p>The name of the icon</p>\n"
-        }
-      ],
-      "throw": [
-        "<p>Icons with name #{ $icon } could not be found in the $nice-icons map</p>\n"
-      ],
-      "example": [
-        {
-          "type": "scss",
-          "code": ".search-icon {\n  @include nice-icon(search);\n}"
-        }
-      ],
-      "group": [
-        "icons"
-      ],
-      "access": "public",
-      "require": [
-        {
-          "type": "mixin",
-          "name": "icon-base"
-        },
-        {
-          "type": "function",
-          "name": "nice-icon"
-        },
-        {
-          "type": "variable",
-          "name": "nice-icons"
-        },
-        {
-          "type": "variable",
-          "name": "nice-icons"
-        }
-      ],
-      "file": {
-        "path": "stylesheets\\typography\\_typography-icons.scss",
-        "name": "_typography-icons.scss"
-      },
-      "groupName": {
-        "icons": "Icons"
-      }
-    },
-    {
-      "description": "<p>Function for getting the codepoint for a given icon, for use\nwithin the <code>content</code> property of psuedo elements.</p>\n",
-      "commentRange": {
-        "start": 100,
-        "end": 109
-      },
-      "context": {
-        "type": "function",
-        "name": "nice-icon",
-        "code": "\n  @if map-has-key($nice-icons, $icon) {\n    $icon-code: map-get($nice-icons, $icon);\n    @return unquote('\\'\\\\#{ $icon-code }\\'');\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
-        "line": {
-          "start": 110,
-          "end": 117
-        }
-      },
-      "example": [
-        {
-          "type": "scss",
-          "code": ".test {\n  @icnlude icon-base;\n\n  &:before {\n    content: nice-icon(search);\n  }\n}"
-        }
-      ],
-      "group": [
-        "icons"
-      ],
-      "access": "public",
-      "require": [
-        {
-          "type": "variable",
-          "name": "nice-icons"
-        },
-        {
-          "type": "variable",
-          "name": "nice-icons"
-        },
-        {
-          "type": "variable",
-          "name": "nice-icons"
-        }
-      ],
-      "throw": [
-        "<p>Icons with name #{ $icon } could not be found in the $nice-icons map</p>\n"
-      ],
-      "file": {
-        "path": "stylesheets\\typography\\_typography-icons.scss",
-        "name": "_typography-icons.scss"
-      },
-      "usedBy": [
-        {
-          "description": "<p>Applies the required styles for the given icon\nincluding the codepoint.</p>\n",
-          "context": {
-            "type": "mixin",
-            "name": "nice-icon",
-            "code": "\n  @if map-has-key($nice-icons, $icon) {\n    @include icon-base;\n    content: nice-icon($icon);\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
-            "line": {
-              "start": 91,
-              "end": 98
-            }
-          }
-        }
-      ],
-      "groupName": {
-        "icons": "Icons"
-      }
-    },
-    {
-      "description": "<p>Class for rendering an icon.\nUse with a named modifier for an icon.</p>\n",
-      "commentRange": {
-        "start": 119,
-        "end": 122
-      },
-      "context": {
-        "type": "css",
-        "name": ".icon",
-        "value": "@include icon-base;\n\n  &:before {\n    display: block;\n  }\n\n  @each $icon, $code in $nice-icons {\n    &--#{ $icon }:before {\n      content: nice-icon($icon);\n    }\n  }",
-        "line": {
-          "start": 123,
-          "end": 136
-        }
-      },
-      "example": [
-        {
-          "type": "scss",
-          "code": "<span class=\"icon icon--search\" aria-hidden=\"true\"></span>"
-        }
-      ],
-      "group": [
-        "icons"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\typography\\_typography-icons.scss",
-        "name": "_typography-icons.scss"
-      },
-      "groupName": {
-        "icons": "Icons"
-      }
-    },
-    {
       "description": "<p>Extra extra small spacing</p>\n",
       "commentRange": {
         "start": 5,
@@ -6747,16 +6370,16 @@
     {
       "description": "<p>Mark</p>\n",
       "commentRange": {
-        "start": 82,
-        "end": 82
+        "start": 94,
+        "end": 94
       },
       "context": {
         "type": "css",
         "name": "mark,\n.mark",
         "value": "background-color: #fff999;\n  padding: em(4);",
         "line": {
-          "start": 84,
-          "end": 94
+          "start": 96,
+          "end": 106
         }
       },
       "group": [
@@ -6774,16 +6397,16 @@
     {
       "description": "<p>Small</p>\n",
       "commentRange": {
-        "start": 89,
-        "end": 89
+        "start": 101,
+        "end": 101
       },
       "context": {
         "type": "css",
         "name": "small,\n.small",
         "value": "font-size: 85%;",
         "line": {
-          "start": 91,
-          "end": 94
+          "start": 103,
+          "end": 106
         }
       },
       "group": [
@@ -8760,7 +8383,7 @@
       },
       "usedBy": [
         {
-          "description": "<p>Loose grids have a smaller gutter</p>\n",
+          "description": "<p>Loose grids have a larger gutter</p>\n",
           "context": {
             "type": "mixin",
             "name": "grid-loose",
@@ -10588,7 +10211,7 @@
           "resolvedValue": "#fff"
         },
         {
-          "description": "<p>Inverse link hover colour</p>\n",
+          "description": "<p>Inverse link hover text colour</p>\n",
           "commentRange": {
             "start": 70,
             "end": 71
@@ -10636,7 +10259,7 @@
           "resolvedValue": "#d6d6d6"
         },
         {
-          "description": "<p>Inverse link visited colour. Same as normal inverse link colour to ensure minimum 4.5:1 colour contrast across various dark backgrounds.</p>\n",
+          "description": "<p>Inverse link visited text colour. Same as normal inverse link colour to ensure minimum 4.5:1 colour contrast across various dark backgrounds.</p>\n",
           "commentRange": {
             "start": 74,
             "end": 75
@@ -10684,7 +10307,7 @@
           "resolvedValue": "#fff"
         },
         {
-          "description": "<p>Inverse link active colour</p>\n",
+          "description": "<p>Inverse link active text colour</p>\n",
           "commentRange": {
             "start": 78,
             "end": 79
@@ -10692,7 +10315,7 @@
           "context": {
             "type": "variable",
             "name": "colour-link-inverse-active",
-            "value": "$colour-link-active",
+            "value": "$colour-link-inverse-hover",
             "scope": "private",
             "line": {
               "start": 80,
@@ -10729,7 +10352,7 @@
           "groupName": {
             "colors": "Colours"
           },
-          "resolvedValue": "#0e0e0e"
+          "resolvedValue": "#d6d6d6"
         },
         {
           "description": "<p>Inverse link focus text colour</p>\n",
@@ -10740,7 +10363,7 @@
           "context": {
             "type": "variable",
             "name": "colour-link-inverse-focus-text",
-            "value": "$colour-link",
+            "value": "$colour-link-inverse",
             "scope": "private",
             "line": {
               "start": 84,
@@ -10777,7 +10400,7 @@
           "groupName": {
             "colors": "Colours"
           },
-          "resolvedValue": "#005ea5"
+          "resolvedValue": "#fff"
         },
         {
           "description": "<p>CTA button background colour</p>\n",
@@ -11740,6 +11363,204 @@
     "components": {
       "css": [
         {
+          "description": "<p>breadcrumbs\nSee <a href=\"https://www.w3.org/WAI/WCAG20/Techniques/working-examples/G65/ex3.html\">https://www.w3.org/WAI/WCAG20/Techniques/working-examples/G65/ex3.html</a></p>\n",
+          "commentRange": {
+            "start": 5,
+            "end": 7
+          },
+          "context": {
+            "type": "css",
+            "name": ".breadcrumbs",
+            "value": "@include font-size(0);\n  list-style: none;\n  margin: em($spacing-small 0 $spacing-large);\n  padding: 0;\n\n  &__crumb {\n    display: inline-block;\n\n    &:before {\n      content: get-glyph(heavy-right-pointing-angle-quotation-mark-ornament);\n      font-size: 70%;\n      margin: em(0 $spacing-x-small);\n    }\n\n    &:first-child:before {\n      display: none;\n    }\n  }\n\n  a {\n    color: $colour-text;\n    text-decoration: underline;\n\n    &:hover {\n      text-decoration: none;\n    }\n\n    &:focus {\n      color: $colour-link-focus-text;\n    }\n\n    &:active {\n      color: $colour-link-active;\n    }\n  }",
+            "line": {
+              "start": 8,
+              "end": 45
+            }
+          },
+          "since": [
+            {
+              "version": "0.1.0"
+            }
+          ],
+          "group": [
+            "components"
+          ],
+          "access": "public",
+          "file": {
+            "path": "components\\breadcrumbs\\_breadcrumbs.scss",
+            "name": "_breadcrumbs.scss"
+          },
+          "groupName": {
+            "components": "Components"
+          }
+        },
+        {
+          "description": "<p>Button</p>\n",
+          "commentRange": {
+            "start": 5,
+            "end": 6
+          },
+          "context": {
+            "type": "css",
+            "name": ".btn.btn",
+            "value": "// Repeat selector for specificity to avoid link overrides\n  @include remove-mz-focus-inner;\n  @include font-size(0);\n  appearance: none;\n  background: $colour-btn-primary;\n  border: em(1px) solid $colour-btn-primary-text;\n  border-radius: 0;\n  color: $colour-btn-primary-text;\n  cursor: pointer;\n  display: inline-block;\n  margin: em(0 $spacing-small $spacing-small -4px); // Negative left margin to combat inline-block gaps\n  padding: em($spacing-small $spacing-medium);\n  position: relative;\n  text-decoration: none;\n  vertical-align: top;\n\n  &:first-child {\n    margin-left: 0;\n  }\n\n  &:visited {\n    color: $colour-btn-primary-text;\n  }\n\n  &:hover {\n    background: $colour-btn-primary-hover;\n    color: $colour-btn-primary-text;\n    text-decoration: none;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background: $colour-btn-primary;\n    border-color: $colour-focus;\n  }\n\n  &:active {\n    background: $colour-btn-primary-hover;\n    text-decoration: none;\n    top: em(2px);\n  }\n\n  // Disabled button styles\n  &--disabled,\n  &.disabled,\n  &[aria-disabled='true'],\n  &[disabled='disabled'],\n  &[disabled] {\n    opacity: .5;\n    pointer-events: none;\n\n    &:hover {\n      cursor: default;\n    }\n  }",
+            "line": {
+              "start": 7,
+              "end": 138
+            }
+          },
+          "since": [
+            {
+              "version": "0.1.0"
+            }
+          ],
+          "group": [
+            "components"
+          ],
+          "access": "public",
+          "file": {
+            "path": "components\\buttons\\_buttons.scss",
+            "name": "_buttons.scss"
+          },
+          "groupName": {
+            "components": "Components"
+          }
+        },
+        {
+          "description": "<p>CTA/prominent button</p>\n",
+          "commentRange": {
+            "start": 64,
+            "end": 65
+          },
+          "context": {
+            "type": "css",
+            "name": ".btn.btn--cta",
+            "value": "background: $colour-btn-cta;\n  border: em(1px) solid $colour-btn-cta-text;\n  color: $colour-btn-cta-text;\n\n  &:visited {\n    color: $colour-btn-cta-text;\n  }\n\n  &:hover {\n    background: $colour-btn-cta-hover;\n    color: $colour-btn-cta-text;\n  }\n\n  &:focus {\n    background: $colour-btn-cta-hover;\n  }\n\n  &:active {\n    background: $colour-btn-cta-hover;\n  }",
+            "line": {
+              "start": 66,
+              "end": 138
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "components"
+          ],
+          "access": "public",
+          "file": {
+            "path": "components\\buttons\\_buttons.scss",
+            "name": "_buttons.scss"
+          },
+          "groupName": {
+            "components": "Components"
+          }
+        },
+        {
+          "description": "<p>Secondary button</p>\n",
+          "commentRange": {
+            "start": 89,
+            "end": 90
+          },
+          "context": {
+            "type": "css",
+            "name": ".btn.btn--secondary",
+            "value": "background: $colour-btn-secondary;\n  border: em(1px) solid $colour-btn-secondary-text;\n  color: $colour-btn-secondary-text;\n\n  &:visited {\n    color: $colour-btn-secondary-text;\n  }\n\n  &:hover {\n    background: $colour-btn-secondary-hover;\n    color: $colour-btn-secondary-text;\n  }\n\n  &:focus {\n    background: $colour-btn-secondary-hover;\n  }\n\n  &:active {\n    background: $colour-btn-secondary-hover;\n  }",
+            "line": {
+              "start": 91,
+              "end": 138
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "components"
+          ],
+          "access": "public",
+          "file": {
+            "path": "components\\buttons\\_buttons.scss",
+            "name": "_buttons.scss"
+          },
+          "groupName": {
+            "components": "Components"
+          }
+        },
+        {
+          "description": "<p>Light button, for use on dark panels/sections</p>\n",
+          "commentRange": {
+            "start": 114,
+            "end": 115
+          },
+          "context": {
+            "type": "css",
+            "name": ".btn.btn--light",
+            "value": "background: $colour-btn-light;\n  border: em(1px) solid $colour-btn-light-text;\n  color: $colour-btn-light-text;\n\n  &:visited {\n    color: $colour-btn-light-text;\n  }\n\n  &:hover {\n    background: $colour-btn-light-hover;\n    color: $colour-btn-light-text;\n  }\n\n  &:focus {\n    background: $colour-btn-light-hover;\n  }\n\n  &:active {\n    background: $colour-btn-light-hover;\n  }",
+            "line": {
+              "start": 116,
+              "end": 138
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "components"
+          ],
+          "access": "public",
+          "file": {
+            "path": "components\\buttons\\_buttons.scss",
+            "name": "_buttons.scss"
+          },
+          "groupName": {
+            "components": "Components"
+          }
+        },
+        {
+          "description": "<p>Container, used as a wrapper around sections within a page.\nUsually used to house grids.</p>\n",
+          "commentRange": {
+            "start": 13,
+            "end": 21
+          },
+          "context": {
+            "type": "css",
+            "name": ".container",
+            "value": "@extend %container;\n\n  &--full {\n    max-width: 100%;\n    padding: 0 2%;\n    width: auto;\n  }",
+            "line": {
+              "start": 22,
+              "end": 31
+            }
+          },
+          "example": [
+            {
+              "type": "scss",
+              "code": "<div class=\"container\">\n  <div class=\"grid\">\n  </div>\n</div>"
+            }
+          ],
+          "since": [
+            {
+              "version": "0.1.0"
+            }
+          ],
+          "group": [
+            "components"
+          ],
+          "access": "public",
+          "file": {
+            "path": "components\\container\\_container.scss",
+            "name": "_container.scss"
+          },
+          "groupName": {
+            "components": "Components"
+          }
+        },
+        {
           "description": "<p>Site footer</p>\n",
           "commentRange": {
             "start": 5,
@@ -11748,10 +11569,10 @@
           "context": {
             "type": "css",
             "name": ".site-footer",
-            "value": "@include font-size(-1);\n  background: $colour-panel-inverse;\n  color: $colour-text-inverse;\n  margin-top: em(32px);\n  padding: em(32px 0);\n\n  @media print {\n    display: none;\n  }\n\n  a {\n    color: $colour-text-inverse;\n\n    &:focus {\n      color: #000;\n    }\n  }\n\n  p {\n    @include font-size(-1);\n  }\n\n  &__logo {\n    display: block;\n    margin: em(0 0 32 0);\n    text-decoration: none;\n\n    .icon {\n      font-size: rem(48px);\n    }\n  }\n\n  &__services {\n    margin: em(0 0 32 0);\n  }\n\n  &__social {\n    clear: both;\n    margin: em(0 0 32 0);\n  }\n\n  &__nav {\n    clear: both;\n    margin: em(0 0 32 0);\n  }\n\n  &__copyright {\n    margin: 0;\n    text-align: center;\n  }\n\n  @include mq($from: sm) {\n    &__logo {\n      float: left;\n      margin: em(0 32 32 0);\n    }\n\n    &__services {\n      float: left;\n      margin: em(0 0 32 0);\n    }\n\n    &__social {\n      clear: both;\n    }\n\n    &__copyright {\n      text-align: left;\n    }\n  }\n\n  @include mq($from: md) {\n\n    &__social {\n      clear: none;\n      float: right;\n    }\n  }",
+            "value": "@extend %inverse-links;\n  @include font-size(-1);\n  background: $colour-panel-inverse;\n  color: $colour-text-inverse;\n  margin-top: em($spacing-large);\n  padding: em($spacing-large 0);\n\n  @media print {\n    display: none;\n  }\n\n  p {\n    @include font-size(-1);\n  }\n\n  &__logo {\n    display: block;\n    margin: em(0 0 $spacing-large 0);\n    text-decoration: none !important; // sass-lint:disable-line no-important\n\n    .icon {\n      font-size: rem(48px);\n    }\n  }\n\n  &__services {\n    margin: em(0 0 $spacing-large 0);\n  }\n\n  &__social {\n    clear: both;\n    margin: em(0 0 $spacing-large 0);\n  }\n\n  &__nav {\n    clear: both;\n    margin: em(0 0 $spacing-large 0);\n  }\n\n  &__copyright {\n    margin: 0;\n    text-align: center;\n  }\n\n  @include mq($from: sm) {\n    &__logo {\n      float: left;\n      margin: em(0 $spacing-large $spacing-large 0);\n    }\n\n    &__services {\n      float: left;\n      margin: em(0 0 $spacing-large 0);\n    }\n\n    &__social {\n      clear: both;\n    }\n\n    &__copyright {\n      text-align: left;\n    }\n  }\n\n  @include mq($from: md) {\n\n    &__social {\n      clear: none;\n      float: right;\n    }\n  }",
             "line": {
               "start": 7,
-              "end": 239
+              "end": 223
             }
           },
           "since": [
@@ -11774,16 +11595,16 @@
         {
           "description": "<p>Services list - ie.g. service icon and name.\nStacked on mobile, and side-by-side on larger screen widths</p>\n",
           "commentRange": {
-            "start": 88,
-            "end": 89
+            "start": 81,
+            "end": 82
           },
           "context": {
             "type": "css",
             "name": ".services",
-            "value": "&__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n  }\n\n  &__item {\n    border-bottom: 1px solid $colour-border;\n\n    &:first-child {\n      border-top: 1px solid $colour-border;\n    }\n\n    a {\n      @include font-size(-1);\n      color: $colour-panel-default;\n      display: block;\n      padding: em(8 0);\n      text-decoration: none;\n\n      &:hover {\n        color: $colour-text-inverse;\n      }\n\n      &:focus {\n        color: $colour-text;\n      }\n    }\n\n    .icon {\n      @include font-size(1);\n      display: inline-block;\n      margin: em(0 4 0 0);\n      vertical-align: middle;\n    }\n  }\n\n  @include mq($from: sm) {\n\n    &__item {\n      border: 0;\n      float: left;\n      text-align: center;\n      width: em(90px);\n\n      &:first-child {\n        border: 0;\n      }\n\n      a {\n        padding: em(4px) 0 0;\n      }\n    }\n\n    .icon {\n      @include font-size(6);\n      display: block;\n      line-height: 1;\n      margin: 0 auto em(4px);\n\n      // The following is needed for IE8 to go centrally aligned\n      &:before {\n        text-align: center;\n        width: 100%;\n      }\n    }\n  }",
+            "value": "&__list {\n    list-style: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n  }\n\n  &__item {\n    border-bottom: 1px solid $colour-border;\n\n    &:first-child {\n      border-top: 1px solid $colour-border;\n    }\n\n    a {\n      @include font-size(-1);\n      color: $colour-panel-default;\n      display: block;\n      padding: em($spacing-small 0);\n      text-decoration: none;\n\n      &:hover {\n        color: $colour-text-inverse;\n      }\n    }\n\n    .icon {\n      @include font-size(1);\n      display: inline-block;\n      margin: em(0 $spacing-x-small 0 0);\n      vertical-align: middle;\n    }\n  }\n\n  @include mq($from: sm) {\n\n    &__item {\n      border: 0;\n      float: left;\n      text-align: center;\n      width: em(90px);\n\n      &:first-child {\n        border: 0;\n      }\n\n      a {\n        padding: em($spacing-x-small) 0 0;\n      }\n    }\n\n    .icon {\n      @include font-size(6);\n      display: block;\n      line-height: 1;\n      margin: 0 auto em($spacing-x-small);\n\n      // The following is needed for IE8 to go centrally aligned\n      &:before {\n        text-align: center;\n        width: 100%;\n      }\n    }\n  }",
             "line": {
-              "start": 90,
-              "end": 239
+              "start": 83,
+              "end": 223
             }
           },
           "group": [
@@ -11801,16 +11622,16 @@
         {
           "description": "<p>List of social networks icons</p>\n",
           "commentRange": {
-            "start": 162,
-            "end": 162
+            "start": 151,
+            "end": 151
           },
           "context": {
             "type": "css",
             "name": ".social-networks",
-            "value": "&__heading {\n    @include font-size(-1);\n    display: inline-block;\n    font-weight: normal;\n    margin: em(0 8 0 0);\n    padding: 0;\n    vertical-align: top;\n  }\n\n  &__list {\n    display: inline;\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  &__item {\n    display: inline-block;\n\n    .icon {\n      @include font-size(4);\n      line-height: 1;\n    }\n  }\n\n  a {\n    display: block;\n    padding: em(0 4);\n    text-decoration: none;\n\n    &:focus,\n    &:active {\n      color: $colour-text;\n    }\n  }",
+            "value": "&__heading {\n    @include font-size(-1);\n    display: inline-block;\n    font-weight: normal;\n    margin: em(0 $spacing-small 0 0);\n    padding: 0;\n    vertical-align: top;\n  }\n\n  &__list {\n    display: inline;\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  &__item {\n    display: inline-block;\n\n    .icon {\n      @include font-size(4);\n      line-height: 1;\n    }\n  }\n\n  a {\n    display: block;\n    padding: em(0 $spacing-x-small);\n    text-decoration: none;\n  }",
             "line": {
-              "start": 163,
-              "end": 239
+              "start": 152,
+              "end": 223
             }
           },
           "group": [
@@ -11828,16 +11649,16 @@
         {
           "description": "<p>Footer navigation - list of links that stacks on mobile and is side-by-side on wider screen widths</p>\n",
           "commentRange": {
-            "start": 202,
-            "end": 202
+            "start": 186,
+            "end": 186
           },
           "context": {
             "type": "css",
             "name": ".footer-nav",
-            "value": "&__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  a {\n    padding: em(4 0);\n    text-decoration: none;\n  }\n\n  @include mq($from: sm) {\n    &__list {\n      line-height: 1;\n    }\n\n    &__item {\n      border-left: 1px solid $colour-text-inverse;\n      display: inline-block;\n      line-height: 1;\n\n      &:first-child {\n        border-left: 0;\n\n        a {\n          padding-left: 0;\n        }\n      }\n    }\n\n    a {\n      padding: em(0 8);\n    }\n  }",
+            "value": "&__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  a {\n    padding: em($spacing-x-small 0);\n    text-decoration: none;\n  }\n\n  @include mq($from: sm) {\n    &__list {\n      line-height: 1;\n    }\n\n    &__item {\n      border-left: 1px solid $colour-text-inverse;\n      display: inline-block;\n      line-height: 1;\n\n      &:first-child {\n        border-left: 0;\n\n        a {\n          padding-left: 0;\n        }\n      }\n    }\n\n    a {\n      padding: em(0 $spacing-small);\n    }\n  }",
             "line": {
-              "start": 203,
-              "end": 239
+              "start": 187,
+              "end": 223
             }
           },
           "group": [
@@ -11906,6 +11727,153 @@
           "file": {
             "path": "components\\in-page-nav\\_in-page-nav.scss",
             "name": "_in-page-nav.scss"
+          },
+          "groupName": {
+            "components": "Components"
+          }
+        },
+        {
+          "description": "<p>Left nav component.\nExpands to fill the available space.\nUsually full width on mobile and 1/3 on wider screens.</p>\n",
+          "commentRange": {
+            "start": 5,
+            "end": 7
+          },
+          "context": {
+            "type": "css",
+            "name": ".left-nav",
+            "value": "background: #fafafa;\n  border: 1px solid $colour-border;\n\n  a {\n    color: $colour-link;\n    display: block;\n    padding: em($spacing-small);\n    position: relative;\n    text-decoration: none;\n\n    &[aria-current='page'] {\n      background: $colour-nice-grey-3;\n      font-weight: bold;\n\n      &:before {\n        background: $colour-icons;\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: em($spacing-x-small);\n      }\n    }\n\n    &:hover {\n      background: $colour-nice-grey-2;\n    }\n\n    &:active {\n      background: $colour-icons;\n      color: $colour-link-inverse;\n    }\n  }\n\n  // The title nav link\n  &__root {\n    @include font-size(h5);\n    border-bottom: 1px solid $colour-border;\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      color: $colour-text;\n    }\n  }\n\n  &__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  &__list-item {\n    border-top: 1px solid $colour-border;\n  }",
+            "line": {
+              "start": 8,
+              "end": 67
+            }
+          },
+          "group": [
+            "components"
+          ],
+          "access": "public",
+          "file": {
+            "path": "components\\left-nav\\_left-nav.scss",
+            "name": "_left-nav.scss"
+          },
+          "groupName": {
+            "components": "Components"
+          }
+        },
+        {
+          "description": "<p>Maintains the aspect ratio of an embedded item, useful for responsive embedding, e.g.\nYouTube videos in iframes or video tags. Also useful when you know the ratio of an image\nand want to avoid the &#39;pop&#39; for slow loading images.</p>\n<p>Automatically applies to <code>iframe</code>, <code>embed</code>, <code>object</code> and <code>video</code> tags.\nAlternatively, you can use the <code>__item</code> selector to specify the element directly.</p>\n<p>BEM elements:</p>\n<ul>\n<li><code>__item</code></li>\n</ul>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--21-9</code></li>\n<li><code>--16-9</code></li>\n<li><code>--4-3</code></li>\n<li><code>--square</code></li>\n</ul>\n",
+          "commentRange": {
+            "start": 5,
+            "end": 35
+          },
+          "context": {
+            "type": "css",
+            "name": ".maintain-ratio",
+            "value": "display: block;\n  height: 0;\n  overflow: hidden;\n  padding: 0;\n  position: relative;\n\n  &__item,\n  iframe,\n  embed,\n  object,\n  video {\n    border: 0;\n    bottom: 0;\n    height: 100%;\n    left: 0;\n    position: absolute;\n    top: 0;\n    width: 100%;\n  }\n\n  // Modifier class for 21:9 aspect ratio\n  &--21-9 {\n    padding-bottom: percentage(9 / 21);\n  }\n\n  // Modifier class for 16:9 aspect ratio\n  &--16-9 {\n    padding-bottom: percentage(9 / 16);\n  }\n\n  // Modifier class for 4:3 aspect ratio\n  &--4-3 {\n    padding-bottom: percentage(3 / 4);\n  }\n\n  // Modifier class for square aspect ratio\n  &--square {\n    padding-bottom: 100%;\n  }",
+            "line": {
+              "start": 36,
+              "end": 77
+            }
+          },
+          "example": [
+            {
+              "type": "html",
+              "code": "<div class=\"maintain-ratio maintain-ratio--16-9\">\n  <iframe src=\"https://www.youtube.com/embed/FTQbiNvZqaY\" allowfullscreen></iframe>\n</div>",
+              "description": "<p>Sixteen by nine example</p>\n"
+            },
+            {
+              "type": "html",
+              "code": "<div class=\"maintain-ratio maintain-ratio--4-3\">\n  <div style=\"background: #ddd; text-align: center;\" class=\"maintain-ratio__item\">\n    <div style=\"display: inline-block; font-size: 300%;\">\n      4:3\n    </div>\n    <div style=\"display: inline-block; height: 100%; vertical-align: middle;\"></div>\n  </div>\n</div>",
+              "description": "<p>Using element</p>\n"
+            }
+          ],
+          "since": [
+            {
+              "version": "0.1.0"
+            }
+          ],
+          "group": [
+            "components"
+          ],
+          "access": "public",
+          "file": {
+            "path": "components\\maintain-ratio\\_maintain-ratio.scss",
+            "name": "_maintain-ratio.scss"
+          },
+          "groupName": {
+            "components": "Components"
+          }
+        },
+        {
+          "description": "<p>A panel is a container for visually separating content.\nOften used within a sidebar.</p>\n",
+          "commentRange": {
+            "start": 5,
+            "end": 7
+          },
+          "context": {
+            "type": "css",
+            "name": ".panel",
+            "value": "background: $colour-panel-default;\n  margin: em($spacing-medium 0 $spacing-large);\n  padding: em($spacing-medium);\n\n  :first-child {\n    margin-top: 0;\n  }\n\n  :last-child {\n    margin-bottom: 0;\n  }",
+            "line": {
+              "start": 8,
+              "end": 33
+            }
+          },
+          "since": [
+            {
+              "version": "0.1.0"
+            }
+          ],
+          "group": [
+            "components"
+          ],
+          "access": "public",
+          "file": {
+            "path": "components\\panel\\_panel.scss",
+            "name": "_panel.scss"
+          },
+          "groupName": {
+            "components": "Components"
+          }
+        },
+        {
+          "description": "<p>Modifier for the panel, to use a inverse (dark) background.\nAutmatically uses inverse links within it. Doesn&#39;t affect buttons\nthough, so any buttons within a dark panel should be <code>.btn.btn--light</code>.</p>\n",
+          "commentRange": {
+            "start": 22,
+            "end": 27
+          },
+          "context": {
+            "type": "css",
+            "name": ".panel--inverse",
+            "value": "@extend %inverse-links;\n  background: $colour-panel-inverse;\n  color: $colour-text-inverse;",
+            "line": {
+              "start": 28,
+              "end": 33
+            }
+          },
+          "require": [
+            {
+              "type": "placeholder",
+              "name": "inverse-links",
+              "external": false
+            },
+            {
+              "type": "function",
+              "name": ".panel",
+              "external": true
+            }
+          ],
+          "since": [
+            {
+              "version": "0.1.0"
+            }
+          ],
+          "group": [
+            "components"
+          ],
+          "access": "public",
+          "file": {
+            "path": "components\\panel\\_panel.scss",
+            "name": "_panel.scss"
           },
           "groupName": {
             "components": "Components"
@@ -12047,324 +12015,6 @@
           "groupName": {
             "components": "Components"
           }
-        },
-        {
-          "description": "<p>breadcrumbs\nSee <a href=\"https://www.w3.org/WAI/WCAG20/Techniques/working-examples/G65/ex3.html\">https://www.w3.org/WAI/WCAG20/Techniques/working-examples/G65/ex3.html</a></p>\n",
-          "commentRange": {
-            "start": 5,
-            "end": 7
-          },
-          "context": {
-            "type": "css",
-            "name": ".breadcrumbs",
-            "value": "@include font-size(0);\n  list-style: none;\n  margin: em($spacing-small 0 $spacing-large);\n  padding: 0;\n\n  &__crumb {\n    display: inline-block;\n\n    &:before {\n      content: get-glyph(heavy-right-pointing-angle-quotation-mark-ornament);\n      font-size: 70%;\n      margin: em(0 $spacing-x-small);\n    }\n\n    &:first-child:before {\n      display: none;\n    }\n  }\n\n  a {\n    color: $colour-text;\n    text-decoration: underline;\n\n    &:hover {\n      text-decoration: none;\n    }\n\n    &:focus {\n      color: $colour-link-focus-text;\n    }\n\n    &:active {\n      color: $colour-link-active;\n    }\n  }",
-            "line": {
-              "start": 8,
-              "end": 45
-            }
-          },
-          "since": [
-            {
-              "version": "0.1.0"
-            }
-          ],
-          "group": [
-            "components"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\components\\_components-breadcrumbs.scss",
-            "name": "_components-breadcrumbs.scss"
-          },
-          "groupName": {
-            "components": "Components"
-          }
-        },
-        {
-          "description": "<p>Button</p>\n",
-          "commentRange": {
-            "start": 5,
-            "end": 6
-          },
-          "context": {
-            "type": "css",
-            "name": ".btn.btn",
-            "value": "// Repeat selector for specificity to avoid link overrides\n  @include remove-mz-focus-inner;\n  @include font-size(0);\n  appearance: none;\n  background: $colour-btn-primary;\n  border: em(1px) solid $colour-btn-primary-text;\n  border-radius: 0;\n  color: $colour-btn-primary-text;\n  cursor: pointer;\n  display: inline-block;\n  margin: em(0 $spacing-small $spacing-small -4px); // Negative left margin to combat inline-block gaps\n  padding: em($spacing-small $spacing-medium);\n  position: relative;\n  text-decoration: none;\n  vertical-align: top;\n\n  &:first-child {\n    margin-left: 0;\n  }\n\n  &:visited {\n    color: $colour-btn-primary-text;\n  }\n\n  &:hover {\n    background: $colour-btn-primary-hover;\n    color: $colour-btn-primary-text;\n    text-decoration: none;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background: $colour-btn-primary;\n    border-color: $colour-focus;\n  }\n\n  &:active {\n    background: $colour-btn-primary-hover;\n    text-decoration: none;\n    top: em(2px);\n  }\n\n  // Disabled button styles\n  &--disabled,\n  &.disabled,\n  &[aria-disabled='true'],\n  &[disabled='disabled'],\n  &[disabled] {\n    opacity: .5;\n    pointer-events: none;\n\n    &:hover {\n      cursor: default;\n    }\n  }",
-            "line": {
-              "start": 7,
-              "end": 138
-            }
-          },
-          "since": [
-            {
-              "version": "0.1.0"
-            }
-          ],
-          "group": [
-            "components"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\components\\_components-buttons.scss",
-            "name": "_components-buttons.scss"
-          },
-          "groupName": {
-            "components": "Components"
-          }
-        },
-        {
-          "description": "<p>CTA/prominent button</p>\n",
-          "commentRange": {
-            "start": 64,
-            "end": 65
-          },
-          "context": {
-            "type": "css",
-            "name": ".btn.btn--cta",
-            "value": "background: $colour-btn-cta;\n  border: em(1px) solid $colour-btn-cta-text;\n  color: $colour-btn-cta-text;\n\n  &:visited {\n    color: $colour-btn-cta-text;\n  }\n\n  &:hover {\n    background: $colour-btn-cta-hover;\n    color: $colour-btn-cta-text;\n  }\n\n  &:focus {\n    background: $colour-btn-cta-hover;\n  }\n\n  &:active {\n    background: $colour-btn-cta-hover;\n  }",
-            "line": {
-              "start": 66,
-              "end": 138
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "components"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\components\\_components-buttons.scss",
-            "name": "_components-buttons.scss"
-          },
-          "groupName": {
-            "components": "Components"
-          }
-        },
-        {
-          "description": "<p>Secondary button</p>\n",
-          "commentRange": {
-            "start": 89,
-            "end": 90
-          },
-          "context": {
-            "type": "css",
-            "name": ".btn.btn--secondary",
-            "value": "background: $colour-btn-secondary;\n  border: em(1px) solid $colour-btn-secondary-text;\n  color: $colour-btn-secondary-text;\n\n  &:visited {\n    color: $colour-btn-secondary-text;\n  }\n\n  &:hover {\n    background: $colour-btn-secondary-hover;\n    color: $colour-btn-secondary-text;\n  }\n\n  &:focus {\n    background: $colour-btn-secondary-hover;\n  }\n\n  &:active {\n    background: $colour-btn-secondary-hover;\n  }",
-            "line": {
-              "start": 91,
-              "end": 138
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "components"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\components\\_components-buttons.scss",
-            "name": "_components-buttons.scss"
-          },
-          "groupName": {
-            "components": "Components"
-          }
-        },
-        {
-          "description": "<p>Light button, for use on dark panels/sections</p>\n",
-          "commentRange": {
-            "start": 114,
-            "end": 115
-          },
-          "context": {
-            "type": "css",
-            "name": ".btn.btn--light",
-            "value": "background: $colour-btn-light;\n  border: em(1px) solid $colour-btn-light-text;\n  color: $colour-btn-light-text;\n\n  &:visited {\n    color: $colour-btn-light-text;\n  }\n\n  &:hover {\n    background: $colour-btn-light-hover;\n    color: $colour-btn-light-text;\n  }\n\n  &:focus {\n    background: $colour-btn-light-hover;\n  }\n\n  &:active {\n    background: $colour-btn-light-hover;\n  }",
-            "line": {
-              "start": 116,
-              "end": 138
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "components"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\components\\_components-buttons.scss",
-            "name": "_components-buttons.scss"
-          },
-          "groupName": {
-            "components": "Components"
-          }
-        },
-        {
-          "description": "<p>Container, used as a wrapper around sections within a page.\nUsually used to house grids.</p>\n",
-          "commentRange": {
-            "start": 13,
-            "end": 21
-          },
-          "context": {
-            "type": "css",
-            "name": ".container",
-            "value": "@extend %container;\n\n  &--full {\n    max-width: 100%;\n    padding: 0 2%;\n    width: auto;\n  }",
-            "line": {
-              "start": 22,
-              "end": 43
-            }
-          },
-          "example": [
-            {
-              "type": "scss",
-              "code": "<div class=\"container\">\n  <div class=\"grid\">\n  </div>\n</div>"
-            }
-          ],
-          "since": [
-            {
-              "version": "0.1.0"
-            }
-          ],
-          "group": [
-            "components"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\components\\_components-global.scss",
-            "name": "_components-global.scss"
-          },
-          "groupName": {
-            "components": "Components"
-          }
-        },
-        {
-          "description": "<p>Maintains the aspect ratio of an embedded item, useful for responsive embedding, e.g.\nYouTube videos in iframes or video tags. Also useful when you know the ratio of an image\nand want to avoid the &#39;pop&#39; for slow loading images.</p>\n<p>Automatically applies to <code>iframe</code>, <code>embed</code>, <code>object</code> and <code>video</code> tags.\nAlternatively, you can use the <code>__item</code> selector to specify the element directly.</p>\n<p>BEM elements:</p>\n<ul>\n<li><code>__item</code></li>\n</ul>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--21-9</code></li>\n<li><code>--16-9</code></li>\n<li><code>--4-3</code></li>\n<li><code>--square</code></li>\n</ul>\n",
-          "commentRange": {
-            "start": 5,
-            "end": 35
-          },
-          "context": {
-            "type": "css",
-            "name": ".maintain-ratio",
-            "value": "display: block;\n  height: 0;\n  overflow: hidden;\n  padding: 0;\n  position: relative;\n\n  &__item,\n  iframe,\n  embed,\n  object,\n  video {\n    border: 0;\n    bottom: 0;\n    height: 100%;\n    left: 0;\n    position: absolute;\n    top: 0;\n    width: 100%;\n  }\n\n  // Modifier class for 21:9 aspect ratio\n  &--21-9 {\n    padding-bottom: percentage(9 / 21);\n  }\n\n  // Modifier class for 16:9 aspect ratio\n  &--16-9 {\n    padding-bottom: percentage(9 / 16);\n  }\n\n  // Modifier class for 4:3 aspect ratio\n  &--4-3 {\n    padding-bottom: percentage(3 / 4);\n  }\n\n  // Modifier class for square aspect ratio\n  &--square {\n    padding-bottom: 100%;\n  }",
-            "line": {
-              "start": 36,
-              "end": 77
-            }
-          },
-          "example": [
-            {
-              "type": "html",
-              "code": "<div class=\"maintain-ratio maintain-ratio--16-9\">\n  <iframe src=\"https://www.youtube.com/embed/FTQbiNvZqaY\" allowfullscreen></iframe>\n</div>",
-              "description": "<p>Sixteen by nine example</p>\n"
-            },
-            {
-              "type": "html",
-              "code": "<div class=\"maintain-ratio maintain-ratio--4-3\">\n  <div style=\"background: #ddd; text-align: center;\" class=\"maintain-ratio__item\">\n    <div style=\"display: inline-block; font-size: 300%;\">\n      4:3\n    </div>\n    <div style=\"display: inline-block; height: 100%; vertical-align: middle;\"></div>\n  </div>\n</div>",
-              "description": "<p>Using element</p>\n"
-            }
-          ],
-          "since": [
-            {
-              "version": "0.1.0"
-            }
-          ],
-          "group": [
-            "components"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\components\\_components-maintain-ratio.scss",
-            "name": "_components-maintain-ratio.scss"
-          },
-          "groupName": {
-            "components": "Components"
-          }
-        },
-        {
-          "description": "<p>A panel is a container for visually separating content.\nOften used within a sidebar.</p>\n",
-          "commentRange": {
-            "start": 5,
-            "end": 7
-          },
-          "context": {
-            "type": "css",
-            "name": ".panel",
-            "value": "background: $colour-panel-default;\n  margin: em($spacing-medium 0 $spacing-large);\n  padding: em($spacing-medium);\n\n  :first-child {\n    margin-top: 0;\n  }\n\n  :last-child {\n    margin-bottom: 0;\n  }",
-            "line": {
-              "start": 8,
-              "end": 33
-            }
-          },
-          "since": [
-            {
-              "version": "0.1.0"
-            }
-          ],
-          "group": [
-            "components"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\components\\_components-panel.scss",
-            "name": "_components-panel.scss"
-          },
-          "groupName": {
-            "components": "Components"
-          }
-        },
-        {
-          "description": "<p>Modifier for the panel, to use a inverse (dark) background.\nAutmatically uses inverse links within it. Doesn&#39;t affect buttons\nthough, so any buttons within a dark panel should be <code>.btn.btn--light</code>.</p>\n",
-          "commentRange": {
-            "start": 22,
-            "end": 27
-          },
-          "context": {
-            "type": "css",
-            "name": ".panel--inverse",
-            "value": "@extend %inverse-links;\n  background: $colour-panel-inverse;\n  color: $colour-text-inverse;",
-            "line": {
-              "start": 28,
-              "end": 33
-            }
-          },
-          "require": [
-            {
-              "type": "placeholder",
-              "name": "inverse-links",
-              "external": false
-            },
-            {
-              "type": "function",
-              "name": ".panel",
-              "external": true
-            }
-          ],
-          "since": [
-            {
-              "version": "0.1.0"
-            }
-          ],
-          "group": [
-            "components"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\components\\_components-panel.scss",
-            "name": "_components-panel.scss"
-          },
-          "groupName": {
-            "components": "Components"
-          }
         }
       ],
       "placeholder": [
@@ -12399,8 +12049,8 @@
             }
           ],
           "file": {
-            "path": "stylesheets\\components\\_components-global.scss",
-            "name": "_components-global.scss"
+            "path": "components\\container\\_container.scss",
+            "name": "_container.scss"
           },
           "groupName": {
             "components": "Components"
@@ -12717,7 +12367,7 @@
           }
         },
         {
-          "description": "<p>Loose grids have a smaller gutter</p>\n",
+          "description": "<p>Loose grids have a larger gutter</p>\n",
           "commentRange": {
             "start": 100,
             "end": 102
@@ -15400,420 +15050,6 @@
         }
       ]
     },
-    "icons": {
-      "variable": [
-        {
-          "description": "<p>Base path for loading font files\nOverride this in your application if your path differs.\nE.g. if you want to replace it off a CDN you could change this to &#39;<a href=\"http://cdn.com/fonts/\">http://cdn.com/fonts/</a>&#39;</p>\n",
-          "commentRange": {
-            "start": 13,
-            "end": 15
-          },
-          "context": {
-            "type": "variable",
-            "name": "nice-font-base-path",
-            "value": "'/fonts/'",
-            "scope": "default",
-            "line": {
-              "start": 16,
-              "end": 16
-            }
-          },
-          "group": [
-            "icons"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\typography\\_typography-icons.scss",
-            "name": "_typography-icons.scss"
-          },
-          "groupName": {
-            "icons": "Icons"
-          },
-          "resolvedValue": "'/fonts/'"
-        },
-        {
-          "description": "<p>Map of icon name to codepoint.\nThis map avoids the use of &#39;magic strings&#39; for codepoints throught SASS code. The map is usually not used directly - use the nice-icon function/mixin instead.\nPlease note - the values for codepoints are not fixed and may change each time the font is re-generated.</p>\n",
-          "commentRange": {
-            "start": 30,
-            "end": 43
-          },
-          "context": {
-            "type": "variable",
-            "name": "nice-icons",
-            "value": "(\n  evidence: \"f101\",\n  facebook-square: \"f102\",\n  guidance: \"f103\",\n  linkedin-square: \"f104\",\n  logo-name: \"f105\",\n  logo: \"f106\",\n  pathways: \"f107\",\n  standards: \"f108\",\n  syndication: \"f109\",\n  twitter-square: \"f10a\",\n  youtube-square: \"f10b\"\n)",
-            "scope": "default",
-            "line": {
-              "start": 45,
-              "end": 57
-            }
-          },
-          "property": [
-            {
-              "type": "string",
-              "name": "evidence",
-              "default": "f101",
-              "description": "<p><span class=\"icon icon--evidence\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f101"
-            },
-            {
-              "type": "string",
-              "name": "facebook-square",
-              "default": "f102",
-              "description": "<p><span class=\"icon icon--facebook-square\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f102"
-            },
-            {
-              "type": "string",
-              "name": "guidance",
-              "default": "f103",
-              "description": "<p><span class=\"icon icon--guidance\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f103"
-            },
-            {
-              "type": "string",
-              "name": "linkedin-square",
-              "default": "f104",
-              "description": "<p><span class=\"icon icon--linkedin-square\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f104"
-            },
-            {
-              "type": "string",
-              "name": "logo-name",
-              "default": "f105",
-              "description": "<p><span class=\"icon icon--logo-name\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f105"
-            },
-            {
-              "type": "string",
-              "name": "logo",
-              "default": "f106",
-              "description": "<p><span class=\"icon icon--logo\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f106"
-            },
-            {
-              "type": "string",
-              "name": "pathways",
-              "default": "f107",
-              "description": "<p><span class=\"icon icon--pathways\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f107"
-            },
-            {
-              "type": "string",
-              "name": "standards",
-              "default": "f108",
-              "description": "<p><span class=\"icon icon--standards\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f108"
-            },
-            {
-              "type": "string",
-              "name": "syndication",
-              "default": "f109",
-              "description": "<p><span class=\"icon icon--syndication\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f109"
-            },
-            {
-              "type": "string",
-              "name": "twitter-square",
-              "default": "f10a",
-              "description": "<p><span class=\"icon icon--twitter-square\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f10a"
-            },
-            {
-              "type": "string",
-              "name": "youtube-square",
-              "default": "f10b",
-              "description": "<p><span class=\"icon icon--youtube-square\" aria-hidden=\"true\"></span></p>\n",
-              "resolvedValue": "f10b"
-            }
-          ],
-          "group": [
-            "icons"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\typography\\_typography-icons.scss",
-            "name": "_typography-icons.scss"
-          },
-          "usedBy": [
-            {
-              "description": "<p>Applies the required styles for the given icon\nincluding the codepoint.</p>\n",
-              "context": {
-                "type": "mixin",
-                "name": "nice-icon",
-                "code": "\n  @if map-has-key($nice-icons, $icon) {\n    @include icon-base;\n    content: nice-icon($icon);\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
-                "line": {
-                  "start": 91,
-                  "end": 98
-                }
-              }
-            },
-            {
-              "description": "<p>Applies the required styles for the given icon\nincluding the codepoint.</p>\n",
-              "context": {
-                "type": "mixin",
-                "name": "nice-icon",
-                "code": "\n  @if map-has-key($nice-icons, $icon) {\n    @include icon-base;\n    content: nice-icon($icon);\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
-                "line": {
-                  "start": 91,
-                  "end": 98
-                }
-              }
-            },
-            {
-              "description": "<p>Function for getting the codepoint for a given icon, for use\nwithin the <code>content</code> property of psuedo elements.</p>\n",
-              "context": {
-                "type": "function",
-                "name": "nice-icon",
-                "code": "\n  @if map-has-key($nice-icons, $icon) {\n    $icon-code: map-get($nice-icons, $icon);\n    @return unquote('\\'\\\\#{ $icon-code }\\'');\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
-                "line": {
-                  "start": 110,
-                  "end": 117
-                }
-              }
-            },
-            {
-              "description": "<p>Function for getting the codepoint for a given icon, for use\nwithin the <code>content</code> property of psuedo elements.</p>\n",
-              "context": {
-                "type": "function",
-                "name": "nice-icon",
-                "code": "\n  @if map-has-key($nice-icons, $icon) {\n    $icon-code: map-get($nice-icons, $icon);\n    @return unquote('\\'\\\\#{ $icon-code }\\'');\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
-                "line": {
-                  "start": 110,
-                  "end": 117
-                }
-              }
-            },
-            {
-              "description": "<p>Function for getting the codepoint for a given icon, for use\nwithin the <code>content</code> property of psuedo elements.</p>\n",
-              "context": {
-                "type": "function",
-                "name": "nice-icon",
-                "code": "\n  @if map-has-key($nice-icons, $icon) {\n    $icon-code: map-get($nice-icons, $icon);\n    @return unquote('\\'\\\\#{ $icon-code }\\'');\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
-                "line": {
-                  "start": 110,
-                  "end": 117
-                }
-              }
-            }
-          ],
-          "groupName": {
-            "icons": "Icons"
-          },
-          "resolvedValue": "(\n  evidence: \"f101\",\n  facebook-square: \"f102\",\n  guidance: \"f103\",\n  linkedin-square: \"f104\",\n  logo-name: \"f105\",\n  logo: \"f106\",\n  pathways: \"f107\",\n  standards: \"f108\",\n  syndication: \"f109\",\n  twitter-square: \"f10a\",\n  youtube-square: \"f10b\"\n)"
-        }
-      ],
-      "mixin": [
-        {
-          "description": "<p>Base styles required for an icon including font family etc</p>\n",
-          "commentRange": {
-            "start": 59,
-            "end": 67
-          },
-          "context": {
-            "type": "mixin",
-            "name": "icon-base",
-            "code": "\n  display: inline-block;\n  font-family: 'NICE Icons';\n  font-style: normal;\n  font-weight: normal;\n  line-height: 1;\n  speak: none;\n  text-decoration: inherit;\n  text-rendering: auto;\n  text-transform: none;\n  vertical-align: baseline;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n",
-            "line": {
-              "start": 68,
-              "end": 81
-            }
-          },
-          "example": [
-            {
-              "type": "scss",
-              "code": ".test {\n  @icnlude icon-base;\n\n  &:before {\n    content: nice-icon(search);\n  }\n}"
-            }
-          ],
-          "group": [
-            "icons"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\typography\\_typography-icons.scss",
-            "name": "_typography-icons.scss"
-          },
-          "usedBy": [
-            {
-              "description": "<p>Applies the required styles for the given icon\nincluding the codepoint.</p>\n",
-              "context": {
-                "type": "mixin",
-                "name": "nice-icon",
-                "code": "\n  @if map-has-key($nice-icons, $icon) {\n    @include icon-base;\n    content: nice-icon($icon);\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
-                "line": {
-                  "start": 91,
-                  "end": 98
-                }
-              }
-            }
-          ],
-          "groupName": {
-            "icons": "Icons"
-          }
-        },
-        {
-          "description": "<p>Applies the required styles for the given icon\nincluding the codepoint.</p>\n",
-          "commentRange": {
-            "start": 83,
-            "end": 90
-          },
-          "context": {
-            "type": "mixin",
-            "name": "nice-icon",
-            "code": "\n  @if map-has-key($nice-icons, $icon) {\n    @include icon-base;\n    content: nice-icon($icon);\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
-            "line": {
-              "start": 91,
-              "end": 98
-            }
-          },
-          "parameter": [
-            {
-              "type": "string",
-              "name": "icon",
-              "description": "<p>The name of the icon</p>\n"
-            }
-          ],
-          "throw": [
-            "<p>Icons with name #{ $icon } could not be found in the $nice-icons map</p>\n"
-          ],
-          "example": [
-            {
-              "type": "scss",
-              "code": ".search-icon {\n  @include nice-icon(search);\n}"
-            }
-          ],
-          "group": [
-            "icons"
-          ],
-          "access": "public",
-          "require": [
-            {
-              "type": "mixin",
-              "name": "icon-base"
-            },
-            {
-              "type": "function",
-              "name": "nice-icon"
-            },
-            {
-              "type": "variable",
-              "name": "nice-icons"
-            },
-            {
-              "type": "variable",
-              "name": "nice-icons"
-            }
-          ],
-          "file": {
-            "path": "stylesheets\\typography\\_typography-icons.scss",
-            "name": "_typography-icons.scss"
-          },
-          "groupName": {
-            "icons": "Icons"
-          }
-        }
-      ],
-      "function": [
-        {
-          "description": "<p>Function for getting the codepoint for a given icon, for use\nwithin the <code>content</code> property of psuedo elements.</p>\n",
-          "commentRange": {
-            "start": 100,
-            "end": 109
-          },
-          "context": {
-            "type": "function",
-            "name": "nice-icon",
-            "code": "\n  @if map-has-key($nice-icons, $icon) {\n    $icon-code: map-get($nice-icons, $icon);\n    @return unquote('\\'\\\\#{ $icon-code }\\'');\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
-            "line": {
-              "start": 110,
-              "end": 117
-            }
-          },
-          "example": [
-            {
-              "type": "scss",
-              "code": ".test {\n  @icnlude icon-base;\n\n  &:before {\n    content: nice-icon(search);\n  }\n}"
-            }
-          ],
-          "group": [
-            "icons"
-          ],
-          "access": "public",
-          "require": [
-            {
-              "type": "variable",
-              "name": "nice-icons"
-            },
-            {
-              "type": "variable",
-              "name": "nice-icons"
-            },
-            {
-              "type": "variable",
-              "name": "nice-icons"
-            }
-          ],
-          "throw": [
-            "<p>Icons with name #{ $icon } could not be found in the $nice-icons map</p>\n"
-          ],
-          "file": {
-            "path": "stylesheets\\typography\\_typography-icons.scss",
-            "name": "_typography-icons.scss"
-          },
-          "usedBy": [
-            {
-              "description": "<p>Applies the required styles for the given icon\nincluding the codepoint.</p>\n",
-              "context": {
-                "type": "mixin",
-                "name": "nice-icon",
-                "code": "\n  @if map-has-key($nice-icons, $icon) {\n    @include icon-base;\n    content: nice-icon($icon);\n  } @else {\n    @error 'Icons with name #{ $icon } could not be found in the $nice-icons map';\n  }\n",
-                "line": {
-                  "start": 91,
-                  "end": 98
-                }
-              }
-            }
-          ],
-          "groupName": {
-            "icons": "Icons"
-          }
-        }
-      ],
-      "css": [
-        {
-          "description": "<p>Class for rendering an icon.\nUse with a named modifier for an icon.</p>\n",
-          "commentRange": {
-            "start": 119,
-            "end": 122
-          },
-          "context": {
-            "type": "css",
-            "name": ".icon",
-            "value": "@include icon-base;\n\n  &:before {\n    display: block;\n  }\n\n  @each $icon, $code in $nice-icons {\n    &--#{ $icon }:before {\n      content: nice-icon($icon);\n    }\n  }",
-            "line": {
-              "start": 123,
-              "end": 136
-            }
-          },
-          "example": [
-            {
-              "type": "scss",
-              "code": "<span class=\"icon icon--search\" aria-hidden=\"true\"></span>"
-            }
-          ],
-          "group": [
-            "icons"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\typography\\_typography-icons.scss",
-            "name": "_typography-icons.scss"
-          },
-          "groupName": {
-            "icons": "Icons"
-          }
-        }
-      ]
-    },
     "spacing": {
       "variable": [
         {
@@ -16666,16 +15902,16 @@
         {
           "description": "<p>Mark</p>\n",
           "commentRange": {
-            "start": 82,
-            "end": 82
+            "start": 94,
+            "end": 94
           },
           "context": {
             "type": "css",
             "name": "mark,\n.mark",
             "value": "background-color: #fff999;\n  padding: em(4);",
             "line": {
-              "start": 84,
-              "end": 94
+              "start": 96,
+              "end": 106
             }
           },
           "group": [
@@ -16693,16 +15929,16 @@
         {
           "description": "<p>Small</p>\n",
           "commentRange": {
-            "start": 89,
-            "end": 89
+            "start": 101,
+            "end": 101
           },
           "context": {
             "type": "css",
             "name": "small,\n.small",
             "value": "font-size: 85%;",
             "line": {
-              "start": 91,
-              "end": 94
+              "start": 103,
+              "end": 106
             }
           },
           "group": [
@@ -18128,7 +17364,7 @@
           },
           "usedBy": [
             {
-              "description": "<p>Loose grids have a smaller gutter</p>\n",
+              "description": "<p>Loose grids have a larger gutter</p>\n",
               "context": {
                 "type": "mixin",
                 "name": "grid-loose",
