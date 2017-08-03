@@ -64,7 +64,13 @@
 		<script src="//cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.2/anchor.min.js"></script>
     <!--<![endif]-->
 
-	<script src="{{ site.baseurl }}/javascripts/nice.min.js"></script>
+	<!--[if !IE]><!-->
+        <script src="{{ site.baseurl }}/javascripts/nice.min.js"></script>
+    <!--<![endif]-->
+    <!--[if IE]>
+        <script src="{{ site.baseurl }}/javascripts/nice.oldie.min.js"></script>
+    <![endif]-->
+
 	<script src="{{ site.baseurl }}/javascripts/app.js"></script>
 
 	<script>
