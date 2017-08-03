@@ -26,6 +26,7 @@
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:200normal,200italic,300normal,300italic,400normal,400italic,700normal,700italic,900normal,900italic" type="text/css">
 
 	<!--[if lt IE 9]>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-shim.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
@@ -55,9 +56,12 @@
 	{% include footer.html %}
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="//cdn.nice.org.uk/V3.1/Scripts/nice/NICE.TopHat.dev.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.2/anchor.min.js"></script>
+	<script src="//cdn.nice.org.uk/V3.1/Scripts/nice/NICE.TopHat.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/nunjucks/3.0.0/nunjucks.min.js"></script>
+
+	<!--[if gt IE 8]><!-->
+		<script src="//cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.2/anchor.min.js"></script>
+    <!--<![endif]-->
 
 	<script src="{{ site.baseurl }}/javascripts/nice.min.js"></script>
 	<script src="{{ site.baseurl }}/javascripts/app.js"></script>
