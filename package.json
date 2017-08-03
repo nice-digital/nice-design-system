@@ -87,6 +87,7 @@
     "html-minifier": "^3.4.3",
     "istanbul": "^1.1.0-alpha.1",
     "jit-grunt": "^0.10.0",
+    "jquery": "^3.1.1",
     "jsdom": "^9.5.0",
     "load-grunt-config": "^0.19.2",
     "load-grunt-tasks": "^3.5.0",
@@ -110,7 +111,6 @@
   },
   "dependencies": {
     "@nice-digital/icons": "^1.0.0",
-    "jquery": "^3.1.1",
     "keycode": "^2.1.7"
   },
   "engines": {
