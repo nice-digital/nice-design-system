@@ -7,8 +7,8 @@ module.exports = {
 			sourceMapContents: true
 		},
 		files: {
-			"temp/stylesheets/nice.css": "src/stylesheets/index.scss",
-			"temp/stylesheets/nice.min.css": "src/stylesheets/index.scss"
+			"temp/stylesheets/nice.css": "src/stylesheets/nice-design-system.scss",
+			"temp/stylesheets/nice.min.css": "src/stylesheets/nice-design-system.scss"
 		}
 	},
 	dist: {
@@ -19,8 +19,8 @@ module.exports = {
 			sourceMapContents: true
 		},
 		files: {
-			"dist/stylesheets/nice.css": "src/stylesheets/index.scss",
-			"dist/stylesheets/nice.min.css": "src/stylesheets/index.scss"
+			"dist/stylesheets/nice.css": "src/stylesheets/nice-design-system.scss",
+			"dist/stylesheets/nice.min.css": "src/stylesheets/nice-design-system.scss"
 		}
 	}
 };
