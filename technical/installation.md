@@ -103,16 +103,27 @@ Use the following HTML structure as a guide when creating new applications. It c
 {% endcapture %}
 {% include source.html lang='html' body=template title='Basic HTML template' %}
 
-## npm
+## yarn (or npm)
 
-npm is the recommended way of installing the NICE Design System into your project:
+[yarn](https://yarnpkg.com/en/package/@nice-digital/design-system) is the recommended way of installing the NICE Design System into your project. Run the following from the command line to install it as a dependency:
 
-{% capture npm %}
-npm i @nice-digital/design-system --save
+{% capture yarn %}
+yarn add @nice-digital/design-system
 {% endcapture %}
-{% include source.html lang='bash' body=npm title='npm install' %}
+{% include source.html lang='bash' body=yarn title='yarn' %}
 
-The package contains both source and pre-compiled versions for SASS, JavaScript and our icon font, as well as static assets like favicon and logo. We recommend only using the pre-compiled versions for rapid prototyping. Instead, [build the source JavaScript]({{ site.baseurl }}{% link technical/javascript/index.md %}) into your project with webpack, and <a href="{{ site.baseurl }}{% link technical/sass/index.md %}">build the source SASS</a> into your project with grunt-sass.
+Note: if you prefer to use npm rather than yarn, run npm `npm i @nice-digital/design-system --save` instead.
+
+The installed package contains:
+ - source SASS
+ - pre-compiled (dist) CSS
+ - source (ES6) JavaScript
+ - pre-compiled (dist) JavaScript
+ - static assets like favicon and logo.
+
+Note: The icon font is referenced as a dependency from [@nice-digital/icons](https://yarnpkg.com/en/package/@nice-digital/icons).
+
+We recommend only using the pre-compiled versions for rapid prototyping. Instead, [build the source JavaScript]({{ site.baseurl }}{% link technical/javascript/index.md %}) into your project (with webpack), and <a href="{{ site.baseurl }}{% link technical/sass/installation.md %}">build the source SASS</a> into your project.
 
 The following is the basic structure with important files mentioned. Please note, not all source files are included in the list below:
 
@@ -120,14 +131,7 @@ The following is the basic structure with important files mentioned. Please note
 node_modules/@nice-digital/design-system/
 ├── dist/
 │   ├── docs/
-│       ├── fonts/
-│           ├── nice-icons.json
-│   ├── fonts/
-│           ├── nice-icons.eot
-│           ├── nice-icons.svg
-│           ├── nice-icons.ttf
-│           ├── nice-icons.woff
-│           ├── nice-icons.woff2
+│       ├── *
 │   ├── javascripts/
 │           ├── nice.dev.js
 │           ├── nice.dev.map
@@ -147,8 +151,6 @@ node_modules/@nice-digital/design-system/
 │           ├── favicon.ico
 │   ├── components/
 │           ├── *
-│   ├── icons/
-│           ├── *.svg
 │   ├── javascripts/
 │           ├── .eslintignore
 │           ├── .eslintrc.json
@@ -160,7 +162,6 @@ node_modules/@nice-digital/design-system/
 │           ├── *
 {% endcapture %}
 {% include source.html lang='bash' body=npm title='directory structure' %}
-
 
 ## CDN
 

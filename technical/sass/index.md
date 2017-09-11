@@ -17,6 +17,9 @@ We use [SASS](http://sass-lang.com/){:target="_blank"} as our [CSS pre-processor
 
 <div class="grid">
 
+    {% assign installation = site.pages | where: "path", "technical/sass/installation.md" | first %}
+    {% include menu-item.html page=installation %}
+
     {% assign codestandards = site.pages | where: "path", "technical/sass/code-standards.md" | first %}
     {% include menu-item.html page=codestandards %}
 
