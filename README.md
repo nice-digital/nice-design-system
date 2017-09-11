@@ -26,10 +26,10 @@
 - [Installation](#installation)
 	- [CDN](#nice-cdn)
 	- [Install with yarn](#install-with-yarn)
-	- [Install with npm](#install-with-npm)
 	- [Usage](#usage)
-		- [Precompiled](#precompiled)
 		- [From source](#from-source)
+		- [CDN](#cdn)
+		- [Precompiled](#precompiled)
 </details>
 
 ## What is it?
@@ -126,11 +126,11 @@ Some of the npm scripts use Grunt tasks under the hood. These Grunt tasks (and a
 
 ### JavaScript
 
-See the [javascript](src/javascripts) folder for more information.
+See the [javascript](src/javascripts#readme) folder for more information.
 
 ### SASS
 
-See the [stylesheets](src/stylesheets) folder for more information.
+See the [stylesheets](src/stylesheets#readme) folder for more information.
 
 ### Icons
 
@@ -142,25 +142,47 @@ See the [test](test) folder for more information.
 
 ## Installation
 
-### NICE CDN
-
-TODO - we will deploy pre-compiled versions onto cdn.nice.org.uk
-
 ### Install with yarn
+
+[yarn](https://yarnpkg.com/en/package/@nice-digital/design-system) is the recommended way of installing the NICE Design System into your project. Run the following from the command line to install it as a dependency:
 
 `yarn add @nice-digital/design-system -D`
 
 Then follow the [usage](#usage) steps below...
 
-### Install with npm
-
-`npm i @nice-digital/design-system --save-dev`
-
-Then follow the [usage](#usage) steps below...
+> Note: if you prefer to use npm rather than yarn, run npm `npm i @nice-digital/design-system --save` instead.
 
 > Note: The [Design System is on Bower](https://bower.io/search/?q=nice-design-system), but this installation method is unsupported.
 
+The installed package contains:
+
+- source SASS
+- pre-compiled (dist) CSS
+- source (ES6) JavaScript
+- pre-compiled (dist) JavaScript
+- static assets like favicon and logo.
+
+Note: The icon font is referenced as a dependency from [@nice-digital/icons](https://github.com/nhsevidence/nice-icons#readme).
+
 ### Usage
+
+#### From source
+
+The yarn/npm package contains the source code as well as the precompiled assets.
+
+See the [stylesheets directory](src/stylesheets#installation) for further information on how to build from SASS source in your project.
+
+See the [javascripts directory](src/javascripts#installation) for further information on how to build from JavaScript source in your project.
+
+#### CDN
+
+- Useful for rapid prototyping
+- no need for CSS/JS build steps: just reference the pre-compiled CSS/JS
+- uses compiled CSS so loses the benefit of SASS mixins, function and variables
+- you get everything: you can’t pick and choose just what you need
+- not recommended for production setups.
+
+*CDN is coming soon…*
 
 #### Precompiled
 
@@ -188,12 +210,8 @@ app.use(express.static(__dirname + "/node_modules/@nice-digital/icons/dist/"));
 and then reference it from your HTML as:
 
 ```html
-<link rel="stylesheet" href="/stylesheets/nice.min.css" type="text/css" media="screen" charset="utf-8">
+<link rel="stylesheet" href="/stylesheets/nice.min.css" type="text/css">
 <script src="/javascripts/nice.min.js"></script>
 ```
 
 OR you can use a copy command (with Grunt or similar) to copy the compiled assets out of the *node_modules* folder to somewhere where you can serve them.
-
-#### From source
-
-The npm package contains the source code as well as the precompiled assets.

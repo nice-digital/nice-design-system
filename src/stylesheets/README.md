@@ -7,7 +7,7 @@
 	- [Grunt](#grunt)
 	- [Webpack](#webpack)
 - [Linting](#linting)
-- [.editorconfig](#.editorconfig)
+- [.editorconfig](#editorconfig)
 - [Naming and syntax](#naming-and-syntax)
 </details>
 
