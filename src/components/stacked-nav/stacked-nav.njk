@@ -1,0 +1,16 @@
+{% macro stackedNav(stackedNav) %}
+	<nav class="stacked-nav" aria-label="{{ stackedNav.root.title }}">
+		<h2 class="stacked-nav__root">
+			<a href="{{ stackedNav.root.href }}" {{ ('aria-current="page"' if stackedNav.root.current) | safe }}>
+				{{ stackedNav.root.title }}
+			</a>
+		</h2>
+		<ul class="stacked-nav__list">
+			{% for navItem in stackedNav.links %}
+				<li class="stacked-nav__list-item">
+					<a href="{{ navItem.href }}" {{ ('aria-current="page"' if navItem.current) | safe }}>{{ navItem.title }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</nav>
+{% endmacro %}
