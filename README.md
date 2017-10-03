@@ -119,6 +119,7 @@ Run `npm start` and `npm run test:watch` for development. However, there are oth
 | `npm run test:coverage`  | Runs JS test tests and generates a coverage report with [Istanbul](https://istanbul.js.org/) into the *coverage* folder |
 | `npm run lint`        | Lints SASS and JS (uses `grunt lint` under the hood) |
 | `npm run release`        | Builds the assets in dist mode, increments package.json patch version, pushes a new git tag, creates a GitHub release (with release notes from commits since last release) and creates an npm release. |
+| `npm run release:minor` | Does the same as release but with a minor version |
 
 #### Grunt
 
