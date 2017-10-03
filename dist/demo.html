@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>NICE Icons</title>
+		<style>
+		body {
+			margin:0;
+			padding:10px 20px;
+			background:#fff;
+			color:#222;
+			}
+		h1, div, footer {
+			font-family:"Helvetica Neue", Arial, sans-serif;
+			}
+		h1 {
+			margin:0 0 20px;
+			font-size:32px;
+			font-weight:normal;
+			}
+		h1 small {
+			font-size: 0.8em;
+			padding-left: 2em;
+		}
+
+		/* Icons container */
+		.icons {
+			margin-bottom:40px;
+			-webkit-column-count:5;
+			   -moz-column-count:5;
+			        column-count:5;
+			-webkit-column-gap:20px;
+			   -moz-column-gap:20px;
+			        column-gap:20px;
+			}
+		.icons__item,
+		.icons__item .icon {
+			line-height:2em;
+			cursor:pointer;
+			}
+		.icons__item:hover {
+			color:#3c90be;
+			}
+		.icons__item:hover .icon {
+			-webkit-transform:scale(1.15);
+			        transform:scale(1.15);
+			}
+
+		/* Individual icons */
+		@font-face {
+			font-family: 'NICE Icons';
+			font-style: normal;
+			font-weight: normal;
+			src: url("nice-icons.eot?445e08abffc3f6dae2c65e8569322316");
+			src: url("nice-icons.eot?#iefix") format("embedded-opentype"),
+		url("nice-icons.woff2?445e08abffc3f6dae2c65e8569322316") format("woff2"),
+		url("nice-icons.woff?445e08abffc3f6dae2c65e8569322316") format("woff"),
+		url("nice-icons.ttf?445e08abffc3f6dae2c65e8569322316") format("truetype"),
+		url("nice-icons.svg?445e08abffc3f6dae2c65e8569322316#nice-icons") format("svg")
+		}
+
+		.icon {
+			display: inline-block;
+			font-family: 'NICE Icons';
+			font-size: 32px;
+			font-style: normal;
+			font-weight: normal;
+			line-height: 1;
+			speak: none;
+			text-align:center;
+			text-decoration: inherit;
+			text-rendering: auto;
+			text-transform: none;
+			width:32px;
+			vertical-align: baseline;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+
+		
+			.icon.icon--comment:before {
+				content: '\f101';
+			}
+		
+			.icon.icon--evidence:before {
+				content: '\f102';
+			}
+		
+			.icon.icon--facebook-square:before {
+				content: '\f103';
+			}
+		
+			.icon.icon--guidance:before {
+				content: '\f104';
+			}
+		
+			.icon.icon--linkedin-square:before {
+				content: '\f105';
+			}
+		
+			.icon.icon--logo-name:before {
+				content: '\f106';
+			}
+		
+			.icon.icon--logo:before {
+				content: '\f107';
+			}
+		
+			.icon.icon--pathways:before {
+				content: '\f108';
+			}
+		
+			.icon.icon--standards:before {
+				content: '\f109';
+			}
+		
+			.icon.icon--syndication:before {
+				content: '\f10a';
+			}
+		
+			.icon.icon--twitter-square:before {
+				content: '\f10b';
+			}
+		
+			.icon.icon--youtube-square:before {
+				content: '\f10c';
+			}
+		
+
+		</style>
+	</head>
+	<body>
+		<h1>NICE Icons demo</h1>
+
+		<div class="icons" id="icons">
+			
+				<div class="icons__item" data-name="comment">
+					<span class="icon icon--comment"></span> comment
+				</div>
+			
+				<div class="icons__item" data-name="evidence">
+					<span class="icon icon--evidence"></span> evidence
+				</div>
+			
+				<div class="icons__item" data-name="facebook-square">
+					<span class="icon icon--facebook-square"></span> facebook-square
+				</div>
+			
+				<div class="icons__item" data-name="guidance">
+					<span class="icon icon--guidance"></span> guidance
+				</div>
+			
+				<div class="icons__item" data-name="linkedin-square">
+					<span class="icon icon--linkedin-square"></span> linkedin-square
+				</div>
+			
+				<div class="icons__item" data-name="logo-name">
+					<span class="icon icon--logo-name"></span> logo-name
+				</div>
+			
+				<div class="icons__item" data-name="logo">
+					<span class="icon icon--logo"></span> logo
+				</div>
+			
+				<div class="icons__item" data-name="pathways">
+					<span class="icon icon--pathways"></span> pathways
+				</div>
+			
+				<div class="icons__item" data-name="standards">
+					<span class="icon icon--standards"></span> standards
+				</div>
+			
+				<div class="icons__item" data-name="syndication">
+					<span class="icon icon--syndication"></span> syndication
+				</div>
+			
+				<div class="icons__item" data-name="twitter-square">
+					<span class="icon icon--twitter-square"></span> twitter-square
+				</div>
+			
+				<div class="icons__item" data-name="youtube-square">
+					<span class="icon icon--youtube-square"></span> youtube-square
+				</div>
+			
+		</div>
+
+		<h1>Usage</h1>
+		<pre><code>&lt;span class=&quot;icon icon--<span id="name">name</span>&quot;&gt;&lt;/span&gt;</code></pre>
+
+		<script>
+		(function() {
+			document.getElementById('icons').onclick = function(e) {
+				e = e || window.event;
+				var name = e.target.getAttribute('data-name') || e.target.parentNode.getAttribute('data-name');
+				document.getElementById('name').innerHTML = name;
+			}
+		})();
+		</script>
+	</body>
+</html>

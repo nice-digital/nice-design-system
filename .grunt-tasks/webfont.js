@@ -17,11 +17,18 @@ module.exports = {
 			fontFilename: "nice-icons",
 			fontHeight: 512,
 			normalize: true,
-			htmlDemo: false,
+			htmlDemo: true,
+			htmlDemoTemplate: ".nice-icons.tmpl.html",
+			htmlDemoFilename: "demo",
+			destHtml: "./dist/",
 			optimize: false,
 			relativeFontPath: "/fonts",
 			stylesheet: "scss",
 			template: ".nice-icons.tmpl.scss",
+			templateOptions: {
+				baseClass: "icon",
+				classPrefix: "icon--"
+			},
 			types: "eot,woff2,woff,ttf,svg"
 		}
 	}
