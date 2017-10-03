@@ -2375,7 +2375,7 @@
       "context": {
         "type": "css",
         "name": ".breadcrumbs",
-        "value": "@include font-size(0);\n  list-style: none;\n  margin: em($spacing-small 0 $spacing-large);\n  padding: 0;\n\n  &__crumb {\n    display: inline-block;\n\n    &:before {\n      content: get-glyph(heavy-right-pointing-angle-quotation-mark-ornament);\n      font-size: 70%;\n      margin: em(0 $spacing-x-small);\n    }\n\n    &:first-child:before {\n      display: none;\n    }\n  }\n\n  a {\n    color: $colour-text;\n    text-decoration: underline;\n\n    &:hover {\n      text-decoration: none;\n    }\n\n    &:focus {\n      color: $colour-link-focus-text;\n    }\n\n    &:active {\n      color: $colour-link-active;\n    }\n  }",
+        "value": "@include font-size(0);\n  list-style: none;\n  margin: em($spacing-small 0 $spacing-large);\n  padding: 0;\n\n  &__crumb {\n    display: inline-block;\n\n    &:before {\n      content: get-glyph(greater-than);\n      font-size: 80%;\n      margin: em(0 $spacing-x-small);\n    }\n\n    &:first-child:before {\n      display: none;\n    }\n  }\n\n  a {\n    color: $colour-text;\n    text-decoration: underline;\n\n    &:hover {\n      text-decoration: none;\n    }\n\n    &:focus {\n      color: $colour-link-focus-text;\n    }\n\n    &:active {\n      color: $colour-link-active;\n    }\n  }",
         "line": {
           "start": 8,
           "end": 45
@@ -2775,33 +2775,6 @@
       }
     },
     {
-      "description": "<p>Left nav component.\nExpands to fill the available space.\nUsually full width on mobile and 1/3 on wider screens.</p>\n",
-      "commentRange": {
-        "start": 5,
-        "end": 7
-      },
-      "context": {
-        "type": "css",
-        "name": ".left-nav",
-        "value": "background: #fafafa;\n  border: 1px solid $colour-border;\n\n  a {\n    color: $colour-link;\n    display: block;\n    padding: em($spacing-small);\n    position: relative;\n    text-decoration: none;\n\n    &[aria-current='page'] {\n      background: $colour-nice-grey-3;\n      font-weight: bold;\n\n      &:before {\n        background: $colour-icons;\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: em($spacing-x-small);\n      }\n    }\n\n    &:hover {\n      background: $colour-nice-grey-2;\n    }\n\n    &:active {\n      background: $colour-icons;\n      color: $colour-link-inverse;\n    }\n  }\n\n  // The title nav link\n  &__root {\n    @include font-size(h5);\n    border-bottom: 1px solid $colour-border;\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      color: $colour-text;\n    }\n  }\n\n  &__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  &__list-item {\n    border-top: 1px solid $colour-border;\n  }",
-        "line": {
-          "start": 8,
-          "end": 67
-        }
-      },
-      "group": [
-        "components"
-      ],
-      "access": "public",
-      "file": {
-        "path": "components\\left-nav\\_left-nav.scss",
-        "name": "_left-nav.scss"
-      },
-      "groupName": {
-        "components": "Components"
-      }
-    },
-    {
       "description": "<p>Maintains the aspect ratio of an embedded item, useful for responsive embedding, e.g.\nYouTube videos in iframes or video tags. Also useful when you know the ratio of an image\nand want to avoid the &#39;pop&#39; for slow loading images.</p>\n<p>Automatically applies to <code>iframe</code>, <code>embed</code>, <code>object</code> and <code>video</code> tags.\nAlternatively, you can use the <code>__item</code> selector to specify the element directly.</p>\n<p>BEM elements:</p>\n<ul>\n<li><code>__item</code></li>\n</ul>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--21-9</code></li>\n<li><code>--16-9</code></li>\n<li><code>--4-3</code></li>\n<li><code>--square</code></li>\n</ul>\n",
       "commentRange": {
         "start": 5,
@@ -3012,6 +2985,33 @@
       "file": {
         "path": "components\\phase-banner\\_phase-banner.scss",
         "name": "_phase-banner.scss"
+      },
+      "groupName": {
+        "components": "Components"
+      }
+    },
+    {
+      "description": "<p>Stacked navigation component.\nExpands to fill the available space.\nUsually full width on mobile and 1/3 on wider screens.</p>\n",
+      "commentRange": {
+        "start": 5,
+        "end": 7
+      },
+      "context": {
+        "type": "css",
+        "name": ".stacked-nav",
+        "value": "background: #fafafa;\n  border: 1px solid $colour-border;\n\n  a {\n    color: $colour-link;\n    display: block;\n    padding: em($spacing-small);\n    position: relative;\n    text-decoration: none;\n\n    &[aria-current='page'] {\n      background: $colour-nice-grey-3;\n      font-weight: bold;\n\n      &:before {\n        background: $colour-icons;\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: em($spacing-x-small);\n      }\n    }\n\n    &:hover {\n      background: $colour-nice-grey-2;\n    }\n\n    &:active {\n      background: $colour-icons;\n      color: $colour-link-inverse;\n    }\n  }\n\n  // The title nav link\n  &__root {\n    @include font-size(h6);\n    border-bottom: 1px solid $colour-border;\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      color: $colour-text;\n    }\n  }\n\n  &__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  &__list-item {\n    border-top: 1px solid $colour-border;\n  }",
+        "line": {
+          "start": 8,
+          "end": 67
+        }
+      },
+      "group": [
+        "components"
+      ],
+      "access": "public",
+      "file": {
+        "path": "components\\stacked-nav\\_stacked-nav.scss",
+        "name": "_stacked-nav.scss"
       },
       "groupName": {
         "components": "Components"
@@ -4530,16 +4530,16 @@
       "description": "<p>A map of glyph name to code point (character entity reference).\nAvoids magic strings like <code>content: &#39;\\201C&#39;</code> within our SASS.\nUsual usage is via the <code>get-glyph</code> function, e.g. <code>get-glyph(greater-than)</code>.</p>\n",
       "commentRange": {
         "start": 5,
-        "end": 17
+        "end": 16
       },
       "context": {
         "type": "variable",
         "name": "nice-glyphs",
-        "value": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  heavy-right-pointing-angle-quotation-mark-ornament: '276F',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
+        "value": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
         "scope": "default",
         "line": {
-          "start": 18,
-          "end": 27
+          "start": 17,
+          "end": 25
         }
       },
       "see": [
@@ -4550,8 +4550,8 @@
             "name": "get-glyph",
             "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
             "line": {
-              "start": 44,
-              "end": 57
+              "start": 42,
+              "end": 55
             }
           }
         }
@@ -4583,13 +4583,6 @@
           "default": "003e",
           "description": "<p>Greater than symbol (&gt;)</p>\n",
           "resolvedValue": "003e"
-        },
-        {
-          "type": "String",
-          "name": "heavy-right-pointing-angle-quotation-mark-ornament",
-          "default": "276F",
-          "description": "<p>Heavy right pointing angle quotation mark ornament (❯)</p>\n",
-          "resolvedValue": "276F"
         },
         {
           "type": "String",
@@ -4634,8 +4627,8 @@
             "name": "get-glyph",
             "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
             "line": {
-              "start": 44,
-              "end": 57
+              "start": 42,
+              "end": 55
             }
           }
         },
@@ -4646,8 +4639,8 @@
             "name": "get-glyph",
             "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
             "line": {
-              "start": 44,
-              "end": 57
+              "start": 42,
+              "end": 55
             }
           }
         },
@@ -4658,8 +4651,8 @@
             "name": "get-glyph",
             "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
             "line": {
-              "start": 44,
-              "end": 57
+              "start": 42,
+              "end": 55
             }
           }
         }
@@ -4667,21 +4660,21 @@
       "groupName": {
         "helpers": "Helpers"
       },
-      "resolvedValue": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  heavy-right-pointing-angle-quotation-mark-ornament: '276F',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)"
+      "resolvedValue": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)"
     },
     {
       "description": "<p>Gets a glyph code, or several, (character entity reference) from the\n<code>$nice-glyphs</code> map, matching the given <code>$names</code>. Usually used with the content\nproperty for psuedo elements, to avoid use of magic character reference strings.</p>\n",
       "commentRange": {
-        "start": 29,
-        "end": 43
+        "start": 27,
+        "end": 41
       },
       "context": {
         "type": "function",
         "name": "get-glyph",
         "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
         "line": {
-          "start": 44,
-          "end": 57
+          "start": 42,
+          "end": 55
         }
       },
       "parameter": [
@@ -4701,11 +4694,11 @@
           "context": {
             "type": "variable",
             "name": "nice-glyphs",
-            "value": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  heavy-right-pointing-angle-quotation-mark-ornament: '276F',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
+            "value": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
             "scope": "default",
             "line": {
-              "start": 18,
-              "end": 27
+              "start": 17,
+              "end": 25
             }
           }
         }
@@ -4759,16 +4752,16 @@
     {
       "description": "<p>Output a BEM style glyph selector for each glyph in the map.\n  E.g. .glyph.glyph--bullet { content: &#39;\\2022&#39;; }\n  @since 0.1.0</p>\n",
       "commentRange": {
-        "start": 60,
-        "end": 62
+        "start": 58,
+        "end": 60
       },
       "context": {
         "type": "css",
         "name": ".glyph",
         "value": "@each $key, $value in $nice-glyphs {\n      &--#{$key} {\n        &::before {\n          content: unquote('\\'\\\\#{$value}\\'');\n        }\n      }\n    }",
         "line": {
-          "start": 63,
-          "end": 73
+          "start": 61,
+          "end": 71
         }
       },
       "group": [
@@ -11371,7 +11364,7 @@
           "context": {
             "type": "css",
             "name": ".breadcrumbs",
-            "value": "@include font-size(0);\n  list-style: none;\n  margin: em($spacing-small 0 $spacing-large);\n  padding: 0;\n\n  &__crumb {\n    display: inline-block;\n\n    &:before {\n      content: get-glyph(heavy-right-pointing-angle-quotation-mark-ornament);\n      font-size: 70%;\n      margin: em(0 $spacing-x-small);\n    }\n\n    &:first-child:before {\n      display: none;\n    }\n  }\n\n  a {\n    color: $colour-text;\n    text-decoration: underline;\n\n    &:hover {\n      text-decoration: none;\n    }\n\n    &:focus {\n      color: $colour-link-focus-text;\n    }\n\n    &:active {\n      color: $colour-link-active;\n    }\n  }",
+            "value": "@include font-size(0);\n  list-style: none;\n  margin: em($spacing-small 0 $spacing-large);\n  padding: 0;\n\n  &__crumb {\n    display: inline-block;\n\n    &:before {\n      content: get-glyph(greater-than);\n      font-size: 80%;\n      margin: em(0 $spacing-x-small);\n    }\n\n    &:first-child:before {\n      display: none;\n    }\n  }\n\n  a {\n    color: $colour-text;\n    text-decoration: underline;\n\n    &:hover {\n      text-decoration: none;\n    }\n\n    &:focus {\n      color: $colour-link-focus-text;\n    }\n\n    &:active {\n      color: $colour-link-active;\n    }\n  }",
             "line": {
               "start": 8,
               "end": 45
@@ -11733,33 +11726,6 @@
           }
         },
         {
-          "description": "<p>Left nav component.\nExpands to fill the available space.\nUsually full width on mobile and 1/3 on wider screens.</p>\n",
-          "commentRange": {
-            "start": 5,
-            "end": 7
-          },
-          "context": {
-            "type": "css",
-            "name": ".left-nav",
-            "value": "background: #fafafa;\n  border: 1px solid $colour-border;\n\n  a {\n    color: $colour-link;\n    display: block;\n    padding: em($spacing-small);\n    position: relative;\n    text-decoration: none;\n\n    &[aria-current='page'] {\n      background: $colour-nice-grey-3;\n      font-weight: bold;\n\n      &:before {\n        background: $colour-icons;\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: em($spacing-x-small);\n      }\n    }\n\n    &:hover {\n      background: $colour-nice-grey-2;\n    }\n\n    &:active {\n      background: $colour-icons;\n      color: $colour-link-inverse;\n    }\n  }\n\n  // The title nav link\n  &__root {\n    @include font-size(h5);\n    border-bottom: 1px solid $colour-border;\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      color: $colour-text;\n    }\n  }\n\n  &__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  &__list-item {\n    border-top: 1px solid $colour-border;\n  }",
-            "line": {
-              "start": 8,
-              "end": 67
-            }
-          },
-          "group": [
-            "components"
-          ],
-          "access": "public",
-          "file": {
-            "path": "components\\left-nav\\_left-nav.scss",
-            "name": "_left-nav.scss"
-          },
-          "groupName": {
-            "components": "Components"
-          }
-        },
-        {
           "description": "<p>Maintains the aspect ratio of an embedded item, useful for responsive embedding, e.g.\nYouTube videos in iframes or video tags. Also useful when you know the ratio of an image\nand want to avoid the &#39;pop&#39; for slow loading images.</p>\n<p>Automatically applies to <code>iframe</code>, <code>embed</code>, <code>object</code> and <code>video</code> tags.\nAlternatively, you can use the <code>__item</code> selector to specify the element directly.</p>\n<p>BEM elements:</p>\n<ul>\n<li><code>__item</code></li>\n</ul>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--21-9</code></li>\n<li><code>--16-9</code></li>\n<li><code>--4-3</code></li>\n<li><code>--square</code></li>\n</ul>\n",
           "commentRange": {
             "start": 5,
@@ -11970,6 +11936,33 @@
           "file": {
             "path": "components\\phase-banner\\_phase-banner.scss",
             "name": "_phase-banner.scss"
+          },
+          "groupName": {
+            "components": "Components"
+          }
+        },
+        {
+          "description": "<p>Stacked navigation component.\nExpands to fill the available space.\nUsually full width on mobile and 1/3 on wider screens.</p>\n",
+          "commentRange": {
+            "start": 5,
+            "end": 7
+          },
+          "context": {
+            "type": "css",
+            "name": ".stacked-nav",
+            "value": "background: #fafafa;\n  border: 1px solid $colour-border;\n\n  a {\n    color: $colour-link;\n    display: block;\n    padding: em($spacing-small);\n    position: relative;\n    text-decoration: none;\n\n    &[aria-current='page'] {\n      background: $colour-nice-grey-3;\n      font-weight: bold;\n\n      &:before {\n        background: $colour-icons;\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: em($spacing-x-small);\n      }\n    }\n\n    &:hover {\n      background: $colour-nice-grey-2;\n    }\n\n    &:active {\n      background: $colour-icons;\n      color: $colour-link-inverse;\n    }\n  }\n\n  // The title nav link\n  &__root {\n    @include font-size(h6);\n    border-bottom: 1px solid $colour-border;\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      color: $colour-text;\n    }\n  }\n\n  &__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  &__list-item {\n    border-top: 1px solid $colour-border;\n  }",
+            "line": {
+              "start": 8,
+              "end": 67
+            }
+          },
+          "group": [
+            "components"
+          ],
+          "access": "public",
+          "file": {
+            "path": "components\\stacked-nav\\_stacked-nav.scss",
+            "name": "_stacked-nav.scss"
           },
           "groupName": {
             "components": "Components"
@@ -13733,16 +13726,16 @@
         {
           "description": "<p>Output a BEM style glyph selector for each glyph in the map.\n  E.g. .glyph.glyph--bullet { content: &#39;\\2022&#39;; }\n  @since 0.1.0</p>\n",
           "commentRange": {
-            "start": 60,
-            "end": 62
+            "start": 58,
+            "end": 60
           },
           "context": {
             "type": "css",
             "name": ".glyph",
             "value": "@each $key, $value in $nice-glyphs {\n      &--#{$key} {\n        &::before {\n          content: unquote('\\'\\\\#{$value}\\'');\n        }\n      }\n    }",
             "line": {
-              "start": 63,
-              "end": 73
+              "start": 61,
+              "end": 71
             }
           },
           "group": [
@@ -14405,16 +14398,16 @@
           "description": "<p>A map of glyph name to code point (character entity reference).\nAvoids magic strings like <code>content: &#39;\\201C&#39;</code> within our SASS.\nUsual usage is via the <code>get-glyph</code> function, e.g. <code>get-glyph(greater-than)</code>.</p>\n",
           "commentRange": {
             "start": 5,
-            "end": 17
+            "end": 16
           },
           "context": {
             "type": "variable",
             "name": "nice-glyphs",
-            "value": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  heavy-right-pointing-angle-quotation-mark-ornament: '276F',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
+            "value": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
             "scope": "default",
             "line": {
-              "start": 18,
-              "end": 27
+              "start": 17,
+              "end": 25
             }
           },
           "see": [
@@ -14425,8 +14418,8 @@
                 "name": "get-glyph",
                 "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
                 "line": {
-                  "start": 44,
-                  "end": 57
+                  "start": 42,
+                  "end": 55
                 }
               }
             }
@@ -14458,13 +14451,6 @@
               "default": "003e",
               "description": "<p>Greater than symbol (&gt;)</p>\n",
               "resolvedValue": "003e"
-            },
-            {
-              "type": "String",
-              "name": "heavy-right-pointing-angle-quotation-mark-ornament",
-              "default": "276F",
-              "description": "<p>Heavy right pointing angle quotation mark ornament (❯)</p>\n",
-              "resolvedValue": "276F"
             },
             {
               "type": "String",
@@ -14509,8 +14495,8 @@
                 "name": "get-glyph",
                 "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
                 "line": {
-                  "start": 44,
-                  "end": 57
+                  "start": 42,
+                  "end": 55
                 }
               }
             },
@@ -14521,8 +14507,8 @@
                 "name": "get-glyph",
                 "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
                 "line": {
-                  "start": 44,
-                  "end": 57
+                  "start": 42,
+                  "end": 55
                 }
               }
             },
@@ -14533,8 +14519,8 @@
                 "name": "get-glyph",
                 "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
                 "line": {
-                  "start": 44,
-                  "end": 57
+                  "start": 42,
+                  "end": 55
                 }
               }
             }
@@ -14542,23 +14528,23 @@
           "groupName": {
             "helpers": "Helpers"
           },
-          "resolvedValue": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  heavy-right-pointing-angle-quotation-mark-ornament: '276F',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)"
+          "resolvedValue": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)"
         }
       ],
       "function": [
         {
           "description": "<p>Gets a glyph code, or several, (character entity reference) from the\n<code>$nice-glyphs</code> map, matching the given <code>$names</code>. Usually used with the content\nproperty for psuedo elements, to avoid use of magic character reference strings.</p>\n",
           "commentRange": {
-            "start": 29,
-            "end": 43
+            "start": 27,
+            "end": 41
           },
           "context": {
             "type": "function",
             "name": "get-glyph",
             "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
             "line": {
-              "start": 44,
-              "end": 57
+              "start": 42,
+              "end": 55
             }
           },
           "parameter": [
@@ -14578,11 +14564,11 @@
               "context": {
                 "type": "variable",
                 "name": "nice-glyphs",
-                "value": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  heavy-right-pointing-angle-quotation-mark-ornament: '276F',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
+                "value": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
                 "scope": "default",
                 "line": {
-                  "start": 18,
-                  "end": 27
+                  "start": 17,
+                  "end": 25
                 }
               }
             }
