@@ -14,11 +14,16 @@
 	"addLigatures": false,
 	"template": ".nice-icons.tmpl.scss",
 	"syntax": "bem",
-	"templateOptions": {},
+	"templateOptions": {
+		"baseClass": "icon",
+		"classPrefix": "icon--"
+	},
 	"stylesheets": [
 		"scss"
 	],
-	"htmlDemo": false,
+	"htmlDemo": true,
+	"htmlDemoTemplate": ".nice-icons.tmpl.html",
+	"htmlDemoFilename": "demo",
 	"styles": [
 		"font",
 		"icon"
@@ -51,7 +56,8 @@
 		"f108",
 		"f109",
 		"f10a",
-		"f10b"
+		"f10b",
+		"f10c"
 	],
 	"startCodepoint": 61697,
 	"ie7": false,
@@ -76,11 +82,12 @@
 		"less": "dist",
 		"styl": "dist"
 	},
-	"destHtml": "dist",
+	"destHtml": "./dist/",
 	"fontfaceStyles": true,
 	"baseStyles": true,
 	"extraStyles": false,
 	"files": [
+		"src/comment.svg",
 		"src/evidence.svg",
 		"src/facebook-square.svg",
 		"src/guidance.svg",
@@ -94,6 +101,7 @@
 		"src/youtube-square.svg"
 	],
 	"glyphs": [
+		"comment",
 		"evidence",
 		"facebook-square",
 		"guidance",
@@ -106,23 +114,25 @@
 		"twitter-square",
 		"youtube-square"
 	],
-	"hash": "3340be03c9eadfd09b99bf3e8cacd71f",
+	"hash": "445e08abffc3f6dae2c65e8569322316",
 	"fontFilename": "nice-icons",
 	"fontFamilyName": "NICE Icons",
-	"fontSrc1": "url(\"/fonts/nice-icons.eot?3340be03c9eadfd09b99bf3e8cacd71f\")",
-	"fontSrc2": "url(\"/fonts/nice-icons.eot?#iefix\") format(\"embedded-opentype\"),\n\t\turl(\"/fonts/nice-icons.woff2?3340be03c9eadfd09b99bf3e8cacd71f\") format(\"woff2\"),\n\t\turl(\"/fonts/nice-icons.woff?3340be03c9eadfd09b99bf3e8cacd71f\") format(\"woff\"),\n\t\turl(\"/fonts/nice-icons.ttf?3340be03c9eadfd09b99bf3e8cacd71f\") format(\"truetype\"),\n\t\turl(\"/fonts/nice-icons.svg?3340be03c9eadfd09b99bf3e8cacd71f#nice-icons\") format(\"svg\")",
+	"fontSrc1": "url(\"/fonts/nice-icons.eot?445e08abffc3f6dae2c65e8569322316\")",
+	"fontSrc2": "url(\"/fonts/nice-icons.eot?#iefix\") format(\"embedded-opentype\"),\n\t\turl(\"/fonts/nice-icons.woff2?445e08abffc3f6dae2c65e8569322316\") format(\"woff2\"),\n\t\turl(\"/fonts/nice-icons.woff?445e08abffc3f6dae2c65e8569322316\") format(\"woff\"),\n\t\turl(\"/fonts/nice-icons.ttf?445e08abffc3f6dae2c65e8569322316\") format(\"truetype\"),\n\t\turl(\"/fonts/nice-icons.svg?445e08abffc3f6dae2c65e8569322316#nice-icons\") format(\"svg\")",
 	"fontRawSrcs": [
 		[
-			"url(\"/fonts/nice-icons.eot?3340be03c9eadfd09b99bf3e8cacd71f\")"
+			"url(\"/fonts/nice-icons.eot?445e08abffc3f6dae2c65e8569322316\")"
 		],
 		[
 			"url(\"/fonts/nice-icons.eot?#iefix\") format(\"embedded-opentype\")",
-			"url(\"/fonts/nice-icons.woff2?3340be03c9eadfd09b99bf3e8cacd71f\") format(\"woff2\")",
-			"url(\"/fonts/nice-icons.woff?3340be03c9eadfd09b99bf3e8cacd71f\") format(\"woff\")",
-			"url(\"/fonts/nice-icons.ttf?3340be03c9eadfd09b99bf3e8cacd71f\") format(\"truetype\")",
-			"url(\"/fonts/nice-icons.svg?3340be03c9eadfd09b99bf3e8cacd71f#nice-icons\") format(\"svg\")"
+			"url(\"/fonts/nice-icons.woff2?445e08abffc3f6dae2c65e8569322316\") format(\"woff2\")",
+			"url(\"/fonts/nice-icons.woff?445e08abffc3f6dae2c65e8569322316\") format(\"woff\")",
+			"url(\"/fonts/nice-icons.ttf?445e08abffc3f6dae2c65e8569322316\") format(\"truetype\")",
+			"url(\"/fonts/nice-icons.svg?445e08abffc3f6dae2c65e8569322316#nice-icons\") format(\"svg\")"
 		]
 	],
+	"baseClass": "icon",
+	"classPrefix": "icon--",
 	"iconsStyles": true,
 	"stylesheet": "scss"
 }
