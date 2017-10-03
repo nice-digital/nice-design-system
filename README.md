@@ -77,15 +77,15 @@ Use the [includePaths option from node-sass](https://github.com/sass/node-sass#i
 // Gruntfile.js
 module.exports = function(grunt) {
 	// Run `npm i grunt-sass --save-dev`
-    grunt.loadNpmTasks("grunt-sass");
+	grunt.loadNpmTasks("grunt-sass");
 
-    grunt.initConfig({
-        sass: {
-            app: {
-                includePaths: ["node_modules/@nice-digital/icons/dist"]
-            }
-        }
-    });
+	grunt.initConfig({
+		sass: {
+			app: {
+				includePaths: ["node_modules/@nice-digital/icons/dist"]
+			}
+		}
+	});
 };
 ```
 
@@ -105,7 +105,7 @@ Use `express.static` to serve font files in [Express](https://expressjs.com/) di
 
 ```js
 const express = require("express"),
-    path = require("path");
+	path = require("path");
 
 const app = express();
 
@@ -120,20 +120,20 @@ Setup a [copy task](https://github.com/gruntjs/grunt-contrib-copy) with [Grunt](
 // Gruntfile.js
 module.exports = function(grunt) {
 	// Run `npm i grunt-contrib-copy --save-dev`
-    grunt.loadNpmTasks("grunt-contrib-copy");
+	grunt.loadNpmTasks("grunt-contrib-copy");
 
-    grunt.initConfig({
-        copy: {
-            icons: {
-                cwd: "node_modules/@nice-digital/icons/dist/",
-                src: ["*"],
-                dest: "/fonts/",
-                expand: true,
-                flatten: true,,
-                filter: "isFile"
-            }
-        }
-    });
+	grunt.initConfig({
+		copy: {
+			icons: {
+				cwd: "node_modules/@nice-digital/icons/dist/",
+				src: ["*"],
+				dest: "/fonts/",
+				expand: true,
+				flatten: true,,
+				filter: "isFile"
+			}
+		}
+	});
 };
 ```
 
@@ -167,19 +167,19 @@ There are SASS constructs for advanced usage:
 
 ```scss
 .logo {
-    &__btn {
-        @include nice-icon(logo);
-    }
+	&__btn {
+		@include nice-icon(logo);
+	}
 
-    // or
-    &__btn {
-        @include nice-icon-base;
+	// or
+	&__btn {
+		@include nice-icon-base;
 
-        &:before {
-            content: nice-icon(logo);
-            display: block;
-        }
-    }
+		&:before {
+			content: nice-icon(logo);
+			display: block;
+		}
+	}
 }
 ```
 
@@ -215,7 +215,8 @@ Run `npm start` from the command line for development. This uses [grunt-webfont]
 	- [WOFF](dist/nice-icons.woff)
 	- [WOFF2](dist/nice-icons.woff2)
 - build a [SASS file](dist/_nice-icons.scss)
-- build a [JSON file](dist/nice-icons.json) of metadata for the font.
+- build a [JSON file](dist/nice-icons.json) of metadata for the font
+- create a [demo html](dist/demo.html) - use this for testing new icons.
 
 ### Releasing
 
