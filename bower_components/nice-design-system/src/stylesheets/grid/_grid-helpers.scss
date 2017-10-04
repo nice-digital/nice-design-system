@@ -97,7 +97,7 @@
   margin-left: -$nice-grid-gutter-compact;
 }
 
-/// Loose grids have a smaller gutter
+/// Loose grids have a larger gutter
 /// @see grid-item-compact
 /// @since 0.2.10
 @mixin grid-loose {

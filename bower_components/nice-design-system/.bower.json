@@ -39,14 +39,17 @@
     ".github",
     ".grunt-tasks"
   ],
-  "version": "0.2.19",
-  "_release": "0.2.19",
+  "dependencies": {
+    "nice-icons": "^1.0.0"
+  },
+  "version": "0.3.0",
+  "_release": "0.3.0",
   "_resolution": {
     "type": "version",
-    "tag": "v0.2.19",
-    "commit": "6bd3e637742885068cf27ada2e0807e120e767dc"
+    "tag": "v0.3.0",
+    "commit": "d671a253038baa37ac0bb66a621eb8e7ca1eb38d"
   },
   "_source": "https://github.com/nhsevidence/nice-design-system.git",
-  "_target": "^0.2.17",
+  "_target": "^0.3.0",
   "_originalSource": "nice-design-system"
 }

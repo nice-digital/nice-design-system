@@ -215,8 +215,10 @@ export default class InPageNav {
 				// Move element to the target
 				this.$inpagenav.appendTo(this.$wideTarget);
 			}
+			this.$inpagenav.width(this.$wideTarget.width());
 		} else if(!this.$inpagenav.parent().is(this.$el)) {
 			this.$inpagenav.appendTo(this.$el);
+			this.$inpagenav.width("auto");
 		}
 	}
 

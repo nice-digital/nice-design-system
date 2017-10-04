@@ -2,6 +2,9 @@
 
 > Your source for quickly creating consistent on-brand NICE digital services.
 
+[![npm](https://img.shields.io/npm/v/@nice-digital/design-system.svg)](https://www.npmjs.com/package/@nice-digital/design-system)
+[![Bower](https://img.shields.io/bower/v/nice-design-system.svg)](http://bower.io/search?q=nice-design-system)
+[![GitHub release](https://img.shields.io/github/release/nhsevidence/nice-design-system.svg)](https://github.com/nhsevidence/nice-design-system)
 [![License](https://img.shields.io/github/license/nhsevidence/nice-design-system.svg)](https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
 [![Dependencies](https://img.shields.io/david/nhsevidence/nice-design-system.svg)](https://david-dm.org/nhsevidence/nice-design-system)
 [![Dev dependencies](https://img.shields.io/david/dev/nhsevidence/nice-design-system.svg)](https://david-dm.org/nhsevidence/nice-design-system?type=dev)
@@ -23,11 +26,10 @@
 - [Installation](#installation)
 	- [CDN](#nice-cdn)
 	- [Install with yarn](#install-with-yarn)
-	- [Install with npm](#install-with-npm)
-	- [Install with Bower](#install-with-bower)
 	- [Usage](#usage)
-		- [Precompiled](#precompiled)
 		- [From source](#from-source)
+		- [CDN](#cdn)
+		- [Precompiled](#precompiled)
 </details>
 
 ## What is it?
@@ -69,9 +71,8 @@ See https://www.nice.org.uk/accessibility for more information on NICE's policy.
 | [src](src) | The main source |
 | - [src/assets](src/assets) | Common static assets |
 | - [src/components](src/components) | Components (SASS/JS/Nunjucks view/test) |
-| - [src/icons](src/icons) | SVG icon font source |
 | - [src/javascripts](src/javascripts) | Main JavaScript source + [JSDoc config](src/javascripts/.jsdoc.json) and [ESLint config](src/javascripts/.eslintrc.json) |
-| - [src/stylesheets](src/stylesheets) | Main SASS + [SASS Lint config](src/stylesheets/.sass-lint.yml) + [SASS Doc custom theme](src/stylesheets/sassdoc-nice-theme.js) |
+| - [src/stylesheets](src/stylesheets) | Main SASS + [SASS Lint config](src/stylesheets/.sass-lint.yml) + [SASS Doc custom theme](src/stylesheets/.sassdoc-nice-theme.js) |
 | [server](server) | Express dev server, views etc for testing and building components |
 | [test](test) | Test setup and unit tests |
 
@@ -92,7 +93,7 @@ Then before you can run any tasks, run the following from the command line to in
 
 - `yarn`
 
-Note: if you prefer to use npm rather than yarn, run `npm i` instead.
+> Note: if you prefer to use npm rather than yarn, run `npm i` instead.
 
 We use Grunt as a task runner hence the dependency on Node. If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide first.
 
@@ -118,22 +119,23 @@ Run `npm start` and `npm run test:watch` for development. However, there are oth
 | `npm run test:coverage`  | Runs JS test tests and generates a coverage report with [Istanbul](https://istanbul.js.org/) into the *coverage* folder |
 | `npm run lint`        | Lints SASS and JS (uses `grunt lint` under the hood) |
 | `npm run release`        | Builds the assets in dist mode, increments package.json patch version, pushes a new git tag, creates a GitHub release (with release notes from commits since last release) and creates an npm release. |
+| `npm run release:minor` | Does the same as release but with a minor version |
 
 #### Grunt
 
-Some of the npm scripts use Grunt tasks under the hood. These Grunt tasks (and aliases) can be run directly e.g. `grunt lint`. However, we recommend using the npm scripts themselves. See the task aliases in [Gruntfile.js](Gruntfile.js) for more information.
+Some of the npm scripts use Grunt tasks under the hood. These Grunt tasks (and aliases) can be run directly e.g. `grunt lint`. However, we recommend using the npm scripts themselves. See the task aliases in [Gruntfile.js#L35-L47](Gruntfile.js) for more information.
 
 ### JavaScript
 
-See the [javascript](src/javascripts) folder for more information.
+See the [javascript](src/javascripts#readme) folder for more information.
 
 ### SASS
 
-See the [stylesheets](src/stylesheets) folder for more information.
+See the [stylesheets](src/stylesheets#readme) folder for more information.
 
 ### Icons
 
-See the [icons](src/icons) folder for more information.
+Icons are used via a separate package, [NICE Icons](https://github.com/nhsevidence/nice-icons#readme).
 
 ## Tests
 
@@ -141,35 +143,47 @@ See the [test](test) folder for more information.
 
 ## Installation
 
-### NICE CDN
-
-TODO - we will deploy pre-compiled versions onto cdn.nice.org.uk
-
 ### Install with yarn
+
+[yarn](https://yarnpkg.com/en/package/@nice-digital/design-system) is the recommended way of installing the NICE Design System into your project. Run the following from the command line to install it as a dependency:
 
 `yarn add @nice-digital/design-system -D`
 
 Then follow the [usage](#usage) steps below...
 
-### Install with npm
+> Note: if you prefer to use npm rather than yarn, run npm `npm i @nice-digital/design-system --save` instead.
 
-`npm i @nice-digital/design-system --save-dev`
+> Note: The [Design System is on Bower](https://bower.io/search/?q=nice-design-system), but this installation method is unsupported.
 
-Then follow the [usage](#usage) steps below...
+The installed package contains:
 
-### Install with Yaen
+- source SASS
+- pre-compiled (dist) CSS
+- source (ES6) JavaScript
+- pre-compiled (dist) JavaScript
+- static assets like favicon and logo.
 
-`yarn install @nice-digital/design-system --save-dev`
-
-Then follow the [usage](#usage) steps below...
-
-### Install with bower
-
-`bower i nice-design-system`
-
-Then follow the [usage](#usage) steps below...
+Note: The icon font is referenced as a dependency from [@nice-digital/icons](https://github.com/nhsevidence/nice-icons#readme).
 
 ### Usage
+
+#### From source
+
+The yarn/npm package contains the source code as well as the precompiled assets.
+
+See the [stylesheets directory](src/stylesheets#installation) for further information on how to build from SASS source in your project.
+
+See the [javascripts directory](src/javascripts#installation) for further information on how to build from JavaScript source in your project.
+
+#### CDN
+
+- Useful for rapid prototyping
+- no need for CSS/JS build steps: just reference the pre-compiled CSS/JS
+- uses compiled CSS so loses the benefit of SASS mixins, function and variables
+- you get everything: you can’t pick and choose just what you need
+- not recommended for production setups.
+
+*CDN is coming soon…*
 
 #### Precompiled
 
@@ -191,17 +205,14 @@ OR if you're using express you can use the dist folder as a static directory:
 
 ```javascript
 app.use(express.static(__dirname + "/node_modules/@nice-digital/design-system/dist/"));
+app.use(express.static(__dirname + "/node_modules/@nice-digital/icons/dist/"));
 ```
 
 and then reference it from your HTML as:
 
 ```html
-<link rel="stylesheet" href="/stylesheets/nice.min.css" type="text/css" media="screen" charset="utf-8">
+<link rel="stylesheet" href="/stylesheets/nice.min.css" type="text/css">
 <script src="/javascripts/nice.min.js"></script>
 ```
 
 OR you can use a copy command (with Grunt or similar) to copy the compiled assets out of the *node_modules* folder to somewhere where you can serve them.
-
-#### From source
-
-The npm package contains the source code as well as the precompiled assets.

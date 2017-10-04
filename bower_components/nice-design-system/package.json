@@ -1,6 +1,6 @@
 {
   "name": "@nice-digital/design-system",
-  "version": "0.2.19",
+  "version": "0.3.0",
   "description": "Your source for creating beautiful, consistent experiences across NICE",
   "keywords": [
     "css",
@@ -31,7 +31,8 @@
     "// LINTING": "",
     "lint": "grunt lint --color",
     "// RELEASE": "",
-    "release": "grunt release-it --color"
+    "release": "grunt release-it --color",
+    "release:minor": "grunt release-it:minor --color"
   },
   "config": {
     "//": "Banner is used for prepending to compiled JS and CSS",
@@ -83,11 +84,11 @@
     "grunt-sass": "^2.0.0",
     "grunt-sass-lint": "^0.2.2",
     "grunt-sassdoc": "^2.0.2",
-    "grunt-webfont": "^1.6.0",
     "grunt-webpack": "^1.0.11",
     "html-minifier": "^3.4.3",
     "istanbul": "^1.1.0-alpha.1",
     "jit-grunt": "^0.10.0",
+    "jquery": "^3.1.1",
     "jsdom": "^9.5.0",
     "load-grunt-config": "^0.19.2",
     "load-grunt-tasks": "^3.5.0",
@@ -110,7 +111,7 @@
     "webpack-dev-server": "^1.16.1"
   },
   "dependencies": {
-    "jquery": "^3.1.1",
+    "@nice-digital/icons": "^1.1.0",
     "keycode": "^2.1.7"
   },
   "engines": {

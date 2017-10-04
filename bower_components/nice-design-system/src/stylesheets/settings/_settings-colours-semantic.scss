@@ -67,21 +67,21 @@ $colour-link-focus-text: $colour-link;
 /// @since 0.2.9
 $colour-link-inverse: $colour-text-inverse;
 
-/// Inverse link hover colour
+/// Inverse link hover text colour
 /// @since 0.2.9
 $colour-link-inverse-hover: $colour-nice-grey-2;
 
-/// Inverse link visited colour. Same as normal inverse link colour to ensure minimum 4.5:1 colour contrast across various dark backgrounds.
+/// Inverse link visited text colour. Same as normal inverse link colour to ensure minimum 4.5:1 colour contrast across various dark backgrounds.
 /// @since 0.2.9
 $colour-link-inverse-visited: $colour-link-inverse;
 
-/// Inverse link active colour
+/// Inverse link active text colour
 /// @since 0.2.9
-$colour-link-inverse-active: $colour-link-active;
+$colour-link-inverse-active: $colour-link-inverse-hover;
 
 /// Inverse link focus text colour
 /// @since 0.2.9
-$colour-link-inverse-focus-text: $colour-link;
+$colour-link-inverse-focus-text: $colour-link-inverse;
 
 
 // CTA BUTTONS

@@ -36,6 +36,7 @@ sass:
   load_paths:
       - _sass
       - bower_components/nice-design-system/src/stylesheets
+      - bower_components/nice-icons/dist/
 
 # Defaults
 defaults:

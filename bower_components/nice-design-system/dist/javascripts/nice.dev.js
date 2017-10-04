@@ -1,5 +1,5 @@
 /*!
-NICE Design System 0.2.19 | 2017-07-10
+NICE Design System 0.3.0 | 2017-10-03
 © Copyright NICE 2015-2017
 Licensed under MIT (https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
 */
@@ -1181,8 +1181,10 @@ return /******/ (function(modules) { // webpackBootstrap
 						// Move element to the target
 						this.$inpagenav.appendTo(this.$wideTarget);
 					}
+					this.$inpagenav.width(this.$wideTarget.width());
 				} else if (!this.$inpagenav.parent().is(this.$el)) {
 					this.$inpagenav.appendTo(this.$el);
+					this.$inpagenav.width("auto");
 				}
 			}
 	

@@ -5,22 +5,15 @@
 /// Site footer
 /// @since 0.1.0
 .site-footer {
+  @extend %inverse-links;
   @include font-size(-1);
   background: $colour-panel-inverse;
   color: $colour-text-inverse;
-  margin-top: em(32px);
-  padding: em(32px 0);
+  margin-top: em($spacing-large);
+  padding: em($spacing-large 0);
 
   @media print {
     display: none;
-  }
-
-  a {
-    color: $colour-text-inverse;
-
-    &:focus {
-      color: #000;
-    }
   }
 
   p {
@@ -29,8 +22,8 @@
 
   &__logo {
     display: block;
-    margin: em(0 0 32 0);
-    text-decoration: none;
+    margin: em(0 0 $spacing-large 0);
+    text-decoration: none !important; // sass-lint:disable-line no-important
 
     .icon {
       font-size: rem(48px);
@@ -38,17 +31,17 @@
   }
 
   &__services {
-    margin: em(0 0 32 0);
+    margin: em(0 0 $spacing-large 0);
   }
 
   &__social {
     clear: both;
-    margin: em(0 0 32 0);
+    margin: em(0 0 $spacing-large 0);
   }
 
   &__nav {
     clear: both;
-    margin: em(0 0 32 0);
+    margin: em(0 0 $spacing-large 0);
   }
 
   &__copyright {
@@ -59,12 +52,12 @@
   @include mq($from: sm) {
     &__logo {
       float: left;
-      margin: em(0 32 32 0);
+      margin: em(0 $spacing-large $spacing-large 0);
     }
 
     &__services {
       float: left;
-      margin: em(0 0 32 0);
+      margin: em(0 0 $spacing-large 0);
     }
 
     &__social {
@@ -107,22 +100,18 @@
       @include font-size(-1);
       color: $colour-panel-default;
       display: block;
-      padding: em(8 0);
+      padding: em($spacing-small 0);
       text-decoration: none;
 
       &:hover {
         color: $colour-text-inverse;
-      }
-
-      &:focus {
-        color: $colour-text;
       }
     }
 
     .icon {
       @include font-size(1);
       display: inline-block;
-      margin: em(0 4 0 0);
+      margin: em(0 $spacing-x-small 0 0);
       vertical-align: middle;
     }
   }
@@ -140,7 +129,7 @@
       }
 
       a {
-        padding: em(4px) 0 0;
+        padding: em($spacing-x-small) 0 0;
       }
     }
 
@@ -148,7 +137,7 @@
       @include font-size(6);
       display: block;
       line-height: 1;
-      margin: 0 auto em(4px);
+      margin: 0 auto em($spacing-x-small);
 
       // The following is needed for IE8 to go centrally aligned
       &:before {
@@ -166,7 +155,7 @@
     @include font-size(-1);
     display: inline-block;
     font-weight: normal;
-    margin: em(0 8 0 0);
+    margin: em(0 $spacing-small 0 0);
     padding: 0;
     vertical-align: top;
   }
@@ -189,13 +178,8 @@
 
   a {
     display: block;
-    padding: em(0 4);
+    padding: em(0 $spacing-x-small);
     text-decoration: none;
-
-    &:focus,
-    &:active {
-      color: $colour-text;
-    }
   }
 }
 
@@ -208,7 +192,7 @@
   }
 
   a {
-    padding: em(4 0);
+    padding: em($spacing-x-small 0);
     text-decoration: none;
   }
 
@@ -232,7 +216,7 @@
     }
 
     a {
-      padding: em(0 8);
+      padding: em(0 $spacing-small);
     }
   }
 }

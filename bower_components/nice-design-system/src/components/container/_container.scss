@@ -28,15 +28,3 @@
     width: auto;
   }
 }
-
-img {
-  max-width: 100%;
-}
-
-hr {
-  background: 0;
-  border: 0;
-  border-top: em(1px) solid $colour-border;
-  margin: em($spacing-large 0);
-  padding: 0;
-}
