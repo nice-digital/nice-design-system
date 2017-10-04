@@ -1,0 +1,51 @@
+{% comment %}
+	Contextual stacked navigation
+	Example usage:
+		{% include stacked-nav.html %}
+{% endcomment %}
+
+<nav class="stacked-nav">
+
+	{% assign root = page %}
+	{% assign ancestorPages = site.pages | where_exp: 'p', 'p.url contains root.url' %}
+
+	{% comment %}For leaf nodes, go up one level to the parent{% endcomment %}
+	{% if ancestorPages.size == 1 %}
+		{% assign slug = root.url | split: '/' | last | append: '/' %}
+		{% assign parentUrl = root.url | remove: slug %}
+		{% assign root = site.pages | where_exp: 'p', 'p.url == parentUrl' | first %}
+	{% endif %}
+
+	{% assign ancestorPages = site.pages | where_exp: 'p', 'p.url contains root.url' %}
+
+	{% assign rootDirStrLength = root.dir | size %}
+	{% assign rootDirNextDepth = root.dir | split: '/' | size | plus: 1 %}
+
+	{% comment %}Empty array - used for building up list of pages{% endcomment %}
+	{% assign pages = "" | split, "" %}
+	{% for p in ancestorPages %}
+		{% assign pDepth = p.dir | split: '/' | size %}
+		{% assign start = p.dir | slice: 0, rootDirStrLength %}
+
+		{% if start == root.dir and pDepth == rootDirNextDepth %}
+			{% assign pages = pages | push: p %}
+		{% endif %}
+	{% endfor %}
+
+	<h2 class="stacked-nav__root">
+		<a href="{{ site.baseurl }}{{ root.url }}"{% if root == page %} aria-current="page"{% endif %}>
+			{{ root.title }}
+		</a>
+	</h2>
+
+	<ul class="stacked-nav__list">
+		{% for p in pages %}
+			<li class="stacked-nav__list-item">
+				<a href="{{ site.baseurl }}{{ p.url }}"{% if p.url == page.url %} aria-current="page"{% endif %}>
+					{{ p.title }}
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+
+</nav>	

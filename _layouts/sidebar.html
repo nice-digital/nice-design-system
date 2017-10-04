@@ -11,19 +11,7 @@ layout: master
 	<div class="page {% if page.inpagenav == false %}page--full{% endif %}">
 
 		<aside class="page__sidebar" role="complementary">
-			<nav role="navigation">
-
-				<ul class="stacked-nav">
-
-					{% include left-nav-group.html nav="foundations" %}
-					{% include left-nav-group.html nav="components" %}
-					{% include left-nav-group.html nav="technical" %}
-					{% include left-nav-group.html nav="about" %}
-					{% include left-nav-group.html nav="research" %}
-
-				</ul>
-
-			</nav>		
+			{% include stacked-nav.html %}	
 		</aside>
 
 		<article class="page__main" role="main">
