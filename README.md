@@ -114,6 +114,8 @@ const app = express();
 app.use("/fonts", express.static(path.join(__dirname, "./node_modules/@nice-digital/icons/dist")))
 ```
 
+See the [simple-express](examples/simple-express) folder for a complete example of this.
+
 #### Grunt copy
 
 Setup a [copy task](https://github.com/gruntjs/grunt-contrib-copy) with [Grunt](https://gruntjs.com/) to copy the font files into your application:
@@ -251,3 +253,5 @@ Use these instructions to build a webfont from custom icons for your application
 4. Override the `$nice-font-base-path` variable in your application's SASS to match where your font files are served from. The default path is */fonts/*.
 
 > Note: Only reference the core icons you need when building a custom icon font. E.g. replace `"./icons/*.svg"` with `"./icons/logo.svg", "./icons/search.svg"` etc.
+
+See the [custom-icon](examples/custom-icon) folder for a complete example of this.
