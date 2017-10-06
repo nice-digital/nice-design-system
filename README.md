@@ -51,6 +51,8 @@ Avoid unnecessary decoration - only use icons if there’s a real user need:
 
 ## Usage
 
+See the [examples](examples) folder for usage examples.
+
 The easiest and recommended way to use NICE Icons is through the [NICE Design System](https://nhsevidence.github.io/nice-design-system/foundations/iconography/) rather than directly.
 
 However, follow the steps below if you need to use NICE Icons manually:
