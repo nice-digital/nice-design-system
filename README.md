@@ -51,6 +51,8 @@ Avoid unnecessary decoration - only use icons if there’s a real user need:
 
 ## Usage
 
+See the [examples](examples) folder for usage examples.
+
 The easiest and recommended way to use NICE Icons is through the [NICE Design System](https://nhsevidence.github.io/nice-design-system/foundations/iconography/) rather than directly.
 
 However, follow the steps below if you need to use NICE Icons manually:
@@ -111,6 +113,8 @@ const app = express();
 
 app.use("/fonts", express.static(path.join(__dirname, "./node_modules/@nice-digital/icons/dist")))
 ```
+
+See the [simple-express](examples/simple-express) folder for a complete example of this.
 
 #### Grunt copy
 
@@ -249,3 +253,5 @@ Use these instructions to build a webfont from custom icons for your application
 4. Override the `$nice-font-base-path` variable in your application's SASS to match where your font files are served from. The default path is */fonts/*.
 
 > Note: Only reference the core icons you need when building a custom icon font. E.g. replace `"./icons/*.svg"` with `"./icons/logo.svg", "./icons/search.svg"` etc.
+
+See the [custom-icon](examples/custom-icon) folder for a complete example of this.
