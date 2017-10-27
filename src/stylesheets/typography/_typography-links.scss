@@ -3,8 +3,8 @@
 ////
 
 /// Default link style for use on a normal (light) background
-/// @since 0.2.10
-%link {
+/// @since 0.3.1
+@mixin link-default {
   color: $colour-link;
   text-decoration: underline;
   text-decoration-skip: ink;
@@ -28,8 +28,8 @@
 }
 
 /// Inverse link style for use on an inverse (dark) background
-/// @since 0.2.9
-%inverse-link {
+/// @since 0.3.1
+@mixin link-inverse {
   color: $colour-link-inverse;
   text-decoration: underline;
   text-decoration-skip: ink;
@@ -43,6 +43,7 @@
   }
 
   &:focus {
+    @include inverse-focus-style;
     color: $colour-link-inverse-focus-text;
   }
 
@@ -52,22 +53,22 @@
 }
 
 /// Inverse links for use on a dark background
-/// @since 0.2.9
-%inverse-links {
+/// @since 0.3.1
+@mixin links-inverse {
   a {
-    @extend %inverse-link;
+    @include link-inverse;
   }
 }
 
 a {
-  @extend %link;
+  @include link-default;
 }
 
 /// Inverse link for use on a dark background. Apply to an individual link.
 /// Prefer using `.inverse-links` on the container instead.
 /// @since 0.2.9
 .link--inverse {
-  @extend %inverse-link;
+  @include link-inverse;
 }
 
 /// Inverse links, for use on dark backgrounds e.g dark panels.
@@ -75,5 +76,5 @@ a {
 /// @require %inverse-links
 /// @since 0.2.9
 .inverse-links {
-  @extend %inverse-links;
+  @include links-inverse;
 }

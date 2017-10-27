@@ -11,6 +11,14 @@
   outline: 3px solid $colour-focus;
 }
 
+/// The inverse focus style used for elements like anchors and buttons
+/// on an inverse (dark) background
+/// @output the inverse focus styles ie background colour and outline
+/// @since 0.3.1
+@mixin inverse-focus-style {
+  outline: 3px solid $colour-focus-inverse;
+}
+
 html {
   font-size: rem($nice-root-font-size-min);
 

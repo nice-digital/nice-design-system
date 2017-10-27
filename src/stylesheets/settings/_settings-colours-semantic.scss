@@ -29,10 +29,6 @@ $colour-text-subtle: $colour-nice-grey-1;
 /// @since 0.2.2
 $colour-text-inverse: $colour-nice-white;
 
-/// Focus colour
-/// @since 0.2.0
-$colour-focus: #0092a6;
-
 /// Icons colour
 /// @since 0.2.0
 $colour-icons: $colour-nice-teal;
@@ -82,6 +78,17 @@ $colour-link-inverse-active: $colour-link-inverse-hover;
 /// Inverse link focus text colour
 /// @since 0.2.9
 $colour-link-inverse-focus-text: $colour-link-inverse;
+
+
+// FOCUS
+
+/// Focus colour
+/// @since 0.2.0
+$colour-focus: #0092a6;
+
+/// Focus colour
+/// @since 0.3.1
+$colour-focus-inverse: $colour-link-inverse;
 
 
 // CTA BUTTONS

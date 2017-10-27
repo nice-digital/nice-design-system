@@ -5,7 +5,7 @@
 /// Hero banner component.
 /// @since 0.2.0
 .hero {
-  @extend %inverse-links;
+  @include links-inverse;
   background: $colour-nice-teal-2;
   color: $colour-text-inverse;
   margin: em(0 0 $spacing-large);
