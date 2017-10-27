@@ -12,8 +12,8 @@ let nice = {
 
 		// Load all component modules from this directory automatically, see http://stackoverflow.com/a/31770875/486434
 		// But exclude test files http://stackoverflow.com/a/30372240
-		pluginAutoLoader.load(require.context("./../components/", true, /^((?!test\.).)*\.js$/igm));
-		pluginAutoLoader.load(require.context("./", true, /^((?!test\.).)*\.js$/igm));
+		pluginAutoLoader.load(require.context("./../components/", true, /^((?!test\.).)*\.js$/im));
+		pluginAutoLoader.load(require.context("./", true, /^((?!test\.).)*\.js$/im));
 
 		pluginAutoLoader.findPlugins(el);
 	},

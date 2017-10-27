@@ -71,7 +71,7 @@ See https://www.nice.org.uk/accessibility for more information on NICE's policy.
 | [src](src) | The main source |
 | - [src/assets](src/assets) | Common static assets |
 | - [src/components](src/components) | Components (SASS/JS/Nunjucks view/test) |
-| - [src/javascripts](src/javascripts) | Main JavaScript source + [JSDoc config](src/javascripts/.jsdoc.json) and [ESLint config](src/javascripts/.eslintrc.json) |
+| - [src/javascripts](src/javascripts) | Main JavaScript source + [JSDoc config](src/javascripts/.jsdoc.json) and [ESLint config](src/javascripts/.eslintrc) |
 | - [src/stylesheets](src/stylesheets) | Main SASS + [SASS Lint config](src/stylesheets/.sass-lint.yml) + [SASS Doc custom theme](src/stylesheets/.sassdoc-nice-theme.js) |
 | [server](server) | Express dev server, views etc for testing and building components |
 | [test](test) | Test setup and unit tests |

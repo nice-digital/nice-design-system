@@ -3,7 +3,7 @@ import { getPlugins } from "./pluginizr";
 // Regex to find the name of a module from its path.
 // E.g, "./experience.js" find "experience" from the matched group
 // E.g, "/tabs/tabs.js" find "tabs" from the matched group
-const ModuleNameRegex = /([^\/.]*)\.js$/i;
+const ModuleNameRegex = /([^/.]*)\.js$/i;
 
 // Constructs a module object - parses a key (path) into a module name
 let getModuleObj =

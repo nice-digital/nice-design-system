@@ -11,7 +11,7 @@ module.exports = {
 	},
 	options: {
 		ignorePath: "src/javascripts/.eslintignore",
-		configFile: "src/javascripts/.eslintrc.json",
+		configFile: "src/javascripts/.eslintrc",
 		quiet: false,
 		format: "table"
 	}
