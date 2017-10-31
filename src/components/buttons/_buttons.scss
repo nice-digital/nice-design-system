@@ -37,7 +37,7 @@
   &:focus {
     @include default-focus-style;
     background: $colour-btn-primary;
-    border-color: $colour-focus;
+    border-color: $colour-focus-inverse;
     color: $colour-btn-primary-text;
   }
 
@@ -112,27 +112,27 @@
   }
 }
 
-/// Light button, for use on dark panels/sections
+/// Inverse (light) button, for use on inverse (dark) panels/sections
 /// @since 0.2.0
-.btn--light {
-  background: $colour-btn-light;
-  border: em(1px) solid $colour-btn-light-text;
-  color: $colour-btn-light-text;
+.btn--inverse {
+  background: $colour-btn-inverse;
+  border: em(1px) solid $colour-btn-inverse-text;
+  color: $colour-btn-inverse-text !important; // sass-lint:disable-line no-important
 
   &:visited {
-    color: $colour-btn-light-text;
+    color: $colour-btn-inverse-text;
   }
 
   &:hover {
-    background: $colour-btn-light-hover;
-    color: $colour-btn-light-text;
+    background: $colour-btn-inverse-hover;
+    color: $colour-btn-inverse-text;
   }
 
   &:focus {
-    background: $colour-btn-light-hover;
+    background: $colour-btn-inverse-hover;
   }
 
   &:active {
-    background: $colour-btn-light-hover;
+    background: $colour-btn-inverse-hover;
   }
 }
