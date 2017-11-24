@@ -66,6 +66,7 @@ p,
   @include font($scale: 0);
   font-feature-settings: 'kern', 'onum', 'liga';
   font-weight: normal;
+  max-width: 66ch;
 
   &.lead {
     @include font($scale: 1);
