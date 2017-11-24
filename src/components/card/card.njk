@@ -1,0 +1,33 @@
+{% macro card(card) %}
+	<article class="card">
+		<header class="card__header">
+			<h{{ (card.heading.level if card.heading.level else "4") }} class="card__heading">
+				<a href="{{ card.href }}">
+					{% if card.heading.icon %}
+						<span class="card__icon icon icon--{{ card.heading.icon }}" aria-hidden="false"></span>
+					{% endif %}
+
+					{{ card.heading.text }}
+
+					{% if card.tag %}
+						<span class="card__tag tag tag--{{ card.tag.modifier }}">{{ card.tag.label }}</span>
+					{% endif %}
+				</a>
+			</h{{ card.heading.level if card.heading.level else "4" }}>
+		</header>
+		{% if card.metadata %}
+			<dl class="card__metadata">
+				{% for item in card.metadata %}
+					<dt>{{ item.key }}:</dt>
+					<dd>
+						{% if item.datetime %}
+							<time datetime="{{ item.datetime }}">{{ item.value }}</time>
+						{% else %}
+							{{ item.value }}
+						{% endif %}
+					</dd>
+				{% endfor %}
+			</dl>
+		{% endif %}
+	</article>
+{% endmacro %}

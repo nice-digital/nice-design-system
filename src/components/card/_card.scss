@@ -1,0 +1,55 @@
+////
+/// @group components
+////
+
+/// Card
+/// @since 0.3.1
+.card {
+  border-bottom: 1px solid $colour-border;
+  padding: em($spacing-small 0);
+
+  &__header {
+  }
+
+  &__heading {
+    @include font-size(0);
+    font-weight: bold;
+    margin: 0;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &__icon {
+    margin: em(0 $spacing-x-small 0 0);
+  }
+
+  &__tag {
+    @include font-size(-1)
+    margin-left: em($spacing-x-small);
+  }
+
+  &__metadata {
+    @include font-size(-1);
+    color: $colour-nice-dark-grey;
+    margin: em($spacing-x-small 0 0);
+    overflow: hidden;
+
+    dt {
+      clear: both;
+      float: left;
+      margin: em(0 $spacing-x-small 0 0);
+    }
+    dd {
+      float: left;
+      margin: em(0 $spacing-medium 0 0);
+    }
+
+    @include mq($from: md) {
+      dt {
+        clear: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{% extends "layouts/_layout.njk" %}
+{% set title = "CTA bar" %}
+{% from "card/card.njk" import card %}
+
+{% block body %}
+
+	<div class="container">
+
+		<h1>Card</h1>
+
+		{{ card({ heading: { text: "This is a card heading" }, href: "https://www.nice.org.uk/", metadata: [ { key: "Published date", value: "March 2015", datetime: "2015-03" }, { key: "Metadata key", value: "Metadata value" } ] }) }}
+
+		<h2>Card with tag</h2>
+
+		{{ card({ heading: { text: "This is another heading" }, href: "https://www.nice.org.uk/", tag: { modifier: "new", label: "New" }, metadata: [ { key: "Published date", value: "March 2015", datetime: "2015-03" }, { key: "Metadata key", value: "Metadata value" } ] }) }}
+
+		<h2>List of cards</h1>
+
+		<ul class="list list--unstyled">
+			<li>
+				{{ card({ heading: { text: "This is a card heading" }, href: "https://www.nice.org.uk/", metadata: [ { key: "Published date", value: "March 2015", datetime: "2015-03" }, { key: "Metadata key", value: "Metadata value" } ] }) }}
+			</li>
+			<li>
+				{{ card({ heading: { text: "This is a card heading" }, href: "https://www.nice.org.uk/", metadata: [ { key: "Published date", value: "March 2015", datetime: "2015-03" }, { key: "Metadata key", value: "Metadata value" } ] }) }}
+			</li>
+		</ul>
+
+	</div>
+
+{% endblock %}
