@@ -8,15 +8,28 @@
 					{% endif %}
 
 					{{ card.heading.text }}
-
-					{% if card.tag %}
-						<span class="card__tag tag tag--{{ card.tag.modifier }}">{{ card.tag.label }}</span>
-					{% endif %}
 				</a>
 			</h{{ card.heading.level if card.heading.level else "4" }}>
 		</header>
 		{% if card.metadata %}
 			<dl class="card__metadata">
+				{% if card.tag %}
+					<dt>
+						<span class="card__tag tag tag--{{ card.tag.modifier }}">
+							{{ card.tag.label }}
+						</span>
+					</dt>
+					<dt class="visually-hidden">Yes</dt>
+				{% elif card.tags %}
+					{% for tag in card.tags %}
+						<dt>
+							<span class="card__tag tag tag--{{ tag.modifier }}">
+								{{ tag.label }}
+							</span>
+						</dt>
+						<dt class="visually-hidden">Yes</dt>
+					{% endfor %}
+				{% endif %}
 				{% for item in card.metadata %}
 					<dt>{{ item.key }}:</dt>
 					<dd>
