@@ -223,3 +223,18 @@ $colour-success: #3f8c5e;
 /// Success background colour
 /// @since 0.2.0
 $colour-success-background: #eff7eb;
+
+
+// GUIDANCE TYPES
+
+/// New guidance colour
+/// @since 0.3.0
+$colour-guidance-new: $colour-nice-purple;
+
+/// Updated guidance colour
+/// @since 0.3.0
+$colour-guidance-updated: $colour-nice-blue-3;
+
+/// In consultation guidance colour
+/// @since 0.3.0
+$colour-guidance-consultation: #557021;
