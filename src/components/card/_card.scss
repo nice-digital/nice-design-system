@@ -61,7 +61,8 @@
     display: block;
     margin: em(0 $spacing-medium 0 0);
 
-    dt, dd {
+    dt,
+    dd {
       display: inline-block;
       margin: 0;
     }
