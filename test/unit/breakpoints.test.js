@@ -46,14 +46,14 @@ describe("breakpoints", function() {
 
 	it("matchesFrom returns true when media query is matched", function() {
 		// Arrange
-		sandbox.stub(window, "matchMedia", () => ({ matches: true }));
+		sandbox.stub(window, "matchMedia").callsFake(() => ({ matches: true }));
 		// Act/assert
 		matchesFrom("xs").should.be.eql(true);
 	});
 
 	it("matchesFrom returns true when media query isn't matched", function() {
 		// Arrange
-		sandbox.stub(window, "matchMedia", () => ({ matches: false }));
+		sandbox.stub(window, "matchMedia").callsFake(() => ({ matches: false }));
 		// Act/assert
 		matchesFrom("xs").should.be.eql(false);
 	});

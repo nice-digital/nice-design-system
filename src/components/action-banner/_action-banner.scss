@@ -39,10 +39,6 @@
     @include grid-item($middle: true);
   }
 
-  &__cta {
-
-  }
-
   @include mq($from: md) {
     &__text {
       margin-bottom: 0;

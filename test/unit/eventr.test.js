@@ -132,7 +132,7 @@ describe("Delegate events", function() {
 	describe("Mixin", function() {
 
 		it("Should be a function", function() {
-			eventr.should.exist.and.be.a.function;
+			eventr.should.exist.and.be.a("function");
 		});
 
 		it("Should have shortcuts to raw functions", function() {

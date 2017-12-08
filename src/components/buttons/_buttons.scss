@@ -37,7 +37,7 @@
   &:focus {
     @include default-focus-style;
     background: $colour-btn-primary;
-    border-color: $colour-focus;
+    border-color: $colour-focus-inverse;
     color: $colour-btn-primary-text;
   }
 
@@ -112,7 +112,7 @@
   }
 }
 
-/// Inverse button, for use on inverse (dark) panels/sections
+/// Inverse (light) button, for use on inverse (dark) panels/sections
 /// @since 0.2.0
 .btn--inverse {
   background: $colour-btn-inverse;

@@ -87,18 +87,17 @@ export default class Tabs {
 	/// @param {integer} index The index of the tab to activate
 	/// @param {boolean} focus Whether to give focus to the active tab btn
 	activate(index: number, focus: ?boolean = true) {
-		var $selectedTabBtn =
-			this._getTabs()
+		var $selectedTabBtn = this._getTabs()
 			.removeClass(this.options.tabActiveClass)
 			.find(`.${ this.options.tabButtonClass }`)
-				.attr("aria-expanded", false)
-				.attr("aria-selected", false)
+			.attr("aria-expanded", false)
+			.attr("aria-selected", false)
 			.end()
 			.eq(index)
 			.addClass(this.options.tabActiveClass)
 			.find(`.${ this.options.tabButtonClass }`)
-				.attr("aria-expanded", true)
-				.attr("aria-selected", true);
+			.attr("aria-expanded", true)
+			.attr("aria-selected", true);
 
 		if(focus === true) {
 			$selectedTabBtn.focus();

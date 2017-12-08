@@ -1,13 +1,14 @@
 {
-	"presets": [ "es2015" ],
-	"passPerPreset": true,
-	"plugins": [
-		["typecheck", {
-			"disable": { "production": true }
-		}],
-		"syntax-flow",
-		"transform-flow-strip-types",
-		"transform-es3-member-expression-literals",
-		"transform-es3-property-literals"
+  "presets": [
+  	["env", {
+  		"loose": true,
+  		"targets": {
+	    	"browsers": ["last 2 versions", "ie >= 8"]
+	  	}
+  	}]
+  ],
+  plugins: [
+  	"transform-runtime",
+  	"transform-flow-strip-types"
 	]
 }

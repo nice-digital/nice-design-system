@@ -10,6 +10,8 @@ const fs = require("fs"),
 	nunjucks = require("nunjucks"),
 	jsdom = require("jsdom");
 
+const { JSDOM } = jsdom;
+
 /**
  * Loads and renders a component template from the given name, with the given data.
  * Assumes that the component had a macro inside with the same name as the component.
@@ -30,8 +32,9 @@ function setupDOM() {
 	const setupValues = {};
 
 	// Setup jsdom for faking dom and jquery
-	setupValues.document = jsdom.jsdom("<!doctype html><html><head><title>Test</title></head><body><div id='main'></div></body></html>");
-	setupValues.window = setupValues.document.defaultView;
+	const dom = new JSDOM("<!doctype html><html><head><title>Test</title></head><body><div id='main'></div></body></html>");
+	setupValues.window = dom.window;
+	setupValues.document = dom.window.document;
 
 	// Loading jQuery doesn't work with ES6 import
 	// jQuery works with the window object from above

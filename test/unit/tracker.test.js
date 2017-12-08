@@ -29,7 +29,7 @@ describe("Tracker", function() {
 		it("have defaults", function() {
 			$.fn.tracker
 				.should.have.property("defaults")
-					.that.has.keys("trackSelectors");
+				.that.has.keys("trackSelectors");
 		});
 
 		it("return jquery collection containing the element", function() {

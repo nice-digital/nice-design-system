@@ -152,7 +152,7 @@ describe("In page nav", function() {
 			// Assert
 			headings.should.be.an("Array")
 				.to.have.lengthOf(1)
-				.and.have.deep.property("[0].textContent", "Heading 3");
+				.and.have.nested.property("[0].textContent", "Heading 3");
 		});
 
 		it("uses headings from 'headings' option", function() {
@@ -167,8 +167,8 @@ describe("In page nav", function() {
 			headings.should.be.an("Array")
 				.to.have.lengthOf(2);
 
-			headings.should.have.deep.property("[0].textContent", "Heading 4");
-			headings.should.have.deep.property("[1].textContent", "Heading 5");
+			headings.should.have.nested.property("[0].textContent", "Heading 4");
+			headings.should.have.nested.property("[1].textContent", "Heading 5");
 		});
 
 		it("ignores headings from 'exclude' option", function() {
@@ -182,7 +182,7 @@ describe("In page nav", function() {
 			// Assert
 			headings.should.be.an("Array")
 				.to.have.lengthOf(1)
-				.and.have.deep.property("[0].textContent", "Heading 2");
+				.and.have.nested.property("[0].textContent", "Heading 2");
 		});
 
 	});

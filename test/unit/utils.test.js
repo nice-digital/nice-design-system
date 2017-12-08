@@ -65,7 +65,7 @@ describe("Utils", function() {
 			nextUniqueId("test").indexOf("test-").should.be.eql(0);
 		});
 
-		it("increments counter", function () {
+		it("increments counter on subsequent calls", function () {
 			let a = Number(nextUniqueId().match(/\d+/)[0]),
 				b = Number(nextUniqueId().match(/\d+/)[0]);
 

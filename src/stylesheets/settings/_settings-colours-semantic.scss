@@ -19,7 +19,7 @@ $colour-body: #fafafa;
 
 /// Standard, primary body text colour
 /// @since 0.2.0
-$colour-text: $colour-nice-black;
+$colour-text: $colour-nice-rich-black;
 
 /// Subtle text colour
 /// @since 0.2.0
@@ -136,17 +136,17 @@ $colour-btn-secondary-hover: #333;
 $colour-btn-secondary-text: $colour-nice-white;
 
 
-// INVERSE BUTTONS
+// LIGHT BUTTONS
 
-/// Inverse button background colour
+/// Inverse (light) button background colour
 /// @since 0.2.2
 $colour-btn-inverse: $colour-nice-white;
 
-/// Inverse button hover colour
+/// Inverse (light) button hover colour
 /// @since 0.2.2
 $colour-btn-inverse-hover: $colour-nice-grey-3;
 
-/// Inverse button text colour
+/// Inverse (light) button text colour
 /// @since 0.2.2
 $colour-btn-inverse-text: $colour-nice-rich-black;
 
