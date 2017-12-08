@@ -1,0 +1,11 @@
+{% macro tag(tag) %}
+	{% if tag.modifier %}
+		<span class="{{ tag.className if tag.className }} tag tag--{{ tag.modifier }}">
+			{{ tag.label }}
+		</span>
+	{% else %}
+		<span class="{{ tag.className if tag.className }} tag{% for modifier in tag.modifiers %} tag--{{ modifier }}{% endfor %}">
+			{{ tag.label }}
+		</span>
+	{% endif %}
+{% endmacro %}

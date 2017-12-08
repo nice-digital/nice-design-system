@@ -1,5 +1,6 @@
 {% extends "layouts/_layout.njk" %}
 {% set title = "Tag" %}
+{% from "tag/tag.njk" import tag %}
 
 {% block body %}
 
@@ -10,15 +11,15 @@
 		<h2>Types of tag</h2>
 
 		<ul>
-			<li>Tag <span class="tag">Tag</span></li>
-			<li>New <span class="tag tag--new">New</span></li>
-			<li>Updated <span class="tag tag--updated">Updated</span></li>
-			<li>In consultation <span class="tag tag--consultation">In consultation</span></li>
-			<li>Alpha <span class="tag tag--alpha">Alpha</span></li>
-			<li>Beta <span class="tag tag--beta">Beta</span></li>
-			<li>Live <span class="tag tag--live">Live</span></li>
-			<li>Impact <span class="tag tag--impact">Impact</span></li>
-			<li>Impact alpha <span class="tag tag--impact tag--alpha">Alpha</span></li>
+			<li>Tag {{ tag({ label: "Tag" }) }}</li>
+			<li>New {{ tag({ label: "New", modifier: "new" }) }}</li>
+			<li>Updated {{ tag({ label: "Updated", modifier: "updated" }) }}</li>
+			<li>In consultation {{ tag({ label: "In consultation", modifier: "consultation" }) }}</li>
+			<li>Alpha {{ tag({ label: "Alpha", modifier: "alpha" }) }}</li>
+			<li>Beta {{ tag({ label: "Beta", modifier: "beta" }) }}</li>
+			<li>Live {{ tag({ label: "Live", modifier: "live" }) }}</li>
+			<li>Impact {{ tag({ label: "Impact", modifier: "impact" }) }}</li>
+			<li>Impact alpha {{ tag({ label: "Alpha", modifiers: ["impact", "alpha"] }) }}</li>
 		</ul>
 
 	</div>
