@@ -1,9 +1,0 @@
-{% extends "layouts/_layout.njk" %}
-{% set title = "CTA bar" %}
-{% from "cta-bar/cta-bar.njk" import ctaBar %}
-
-{% block body %}
-
-	{{ ctaBar({ title: "This is a title", body: "This is some body copy", cta: { text: "Button text", href: "/button-href" } }) }}
-
-{% endblock %}

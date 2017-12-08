@@ -1,0 +1,23 @@
+{% macro actionBanner(actionBanner) %}
+
+	<section class="action-banner">
+		<div class="action-banner__container">
+			<div class="action-banner__inner">
+				<div class="action-banner__text">
+					<h2 class="action-banner__title">
+						{{ actionBanner.title }}
+					</h2>
+					<p class="action-banner__intro">
+						{{ actionBanner.body }}
+					</p>
+				</div>
+				<div class="action-banner__actions">
+					<a href="{{ actionBanner.cta.href }}" class="btn btn--inverse">
+						{{ actionBanner.cta.text }}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endmacro %}

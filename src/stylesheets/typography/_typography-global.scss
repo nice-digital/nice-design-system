@@ -19,6 +19,11 @@
   outline: 3px solid $colour-focus-inverse;
 }
 
+.nice-tophat {
+  // Remove the pesky margin below tophat
+  margin-bottom: 0 !important; // sass-lint:disable-line no-important
+}
+
 html {
   font-size: rem($nice-root-font-size-min);
 

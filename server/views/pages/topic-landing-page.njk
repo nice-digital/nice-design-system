@@ -1,6 +1,5 @@
 {% extends "layouts/_layout.njk" %}
 {% set title = "Topic landing page" %}
-{% from "cta-bar/cta-bar.njk" import ctaBar %}
 {% from "stacked-nav/stacked-nav.njk" import stackedNav %}
 {% from "card/card.njk" import card %}
 {% from "footer/footer.njk" import footer %}
@@ -53,24 +52,22 @@
 			Everything NICE has produced on the topic of breast cancer. Includes related guidelines, NICE Pathways, quality standards and advice.
 		</p>
 
+		<p>
+			<a href="https://www.nice.org.uk/get-involved/stakeholder-registration">Register as a stakeholder</a>
+		</p>
+
 	</div>
 
-	{{ ctaBar({ title: "Interested in becoming a NICE stakeholder?", body: "Receive alerts about the latest guidance, comment on consultations, and participate in NICE events and workshops", cta: { text: "Register as a stakeholder", href: "https://www.nice.org.uk/get-involved/stakeholder-registration" } }) }}
-
-	<div class="container">
+	<div class="container mt--e">
 		<div class="grid grid--loose">
-			<div data-g="12 md:3">
+			<div data-g="12 sm:4 md:3">
 				{% set stackedNavContent = {
 					root: {
-						title: "Breast cancer",
+						title: "Breast cancer guidance",
 						href: "/guidance/conditions-and-diseases/cancer/breast-cancer",
 						current: true
 					},
 					links: [
-						{
-							title: "Research recommendations",
-							href: "/resources/conditions-and-diseases/cancer/breast-cancer"
-						},
 						{
 							title: "Shared learning",
 							href: "/localpracticeresources/conditions-and-diseases/cancer/breast-cancer"
@@ -79,33 +76,31 @@
 				} %}
 				{{ stackedNav(stackedNavContent) }}
 			</div>
-			<div data-g="12 md:9">
+			<div data-g="12 sm:8 md:9">
 
-				<h2 class="mt--0">NICE Pathways<small> - mapping our guidance</small></h2>
+				<p class="mt--0">27 <span class="tag tag--new">new</span> and 2 <span class="tag tag--updated">updated</span> products since May 2017. There is 1 <span class="tag tag--consultation">consultation</span> in progress.</p>
 
-				<p><a href="https://www.nice.org.uk/About/What-we-do/Our-Programmes/About-NICE-Pathways">NICE Pathways</a> brings together everything we have said on a topic in an interactive flowchart.</p>
+				<h2>NICE Pathways</h2>
 
 				<ul class="list list--unstyled">
 					<li>
-						{{ card({ heading: { icon: "pathways", text: "Advanced breast cancer" }, href: "https://pathways.nice.org.uk/pathways/advanced-breast-cancer" }) }}
+						{{ card({ heading: { text: "Advanced breast cancer" }, href: "https://pathways.nice.org.uk/pathways/advanced-breast-cancer" }) }}
 					</li>
 					<li>
-						{{ card({ heading: { icon: "pathways", text: "Early and locally advanced breast cancer" }, href: "https://pathways.nice.org.uk/pathways/early-and-locally-advanced-breast-cancer", tag: { modifier: "updated", label: "Updated" } }) }}
+						{{ card({ heading: { text: "Early and locally advanced breast cancer" }, href: "https://pathways.nice.org.uk/pathways/early-and-locally-advanced-breast-cancer", tag: { modifier: "updated", label: "Updated" } }) }}
 					</li>
 					<li>
-						{{ card({ heading: { icon: "pathways", text: "Familial breast cancer" }, href: "https://pathways.nice.org.uk/pathways/familial-breast-cancer" }) }}
+						{{ card({ heading: { text: "Familial breast cancer" }, href: "https://pathways.nice.org.uk/pathways/familial-breast-cancer" }) }}
 					</li>
 					<li>
-						{{ card({ heading: { icon: "pathways", text: "Lung cancer" }, href: "https://pathways.nice.org.uk/pathways/lung-cancer" }) }}
+						{{ card({ heading: { text: "Lung cancer" }, href: "https://pathways.nice.org.uk/pathways/lung-cancer" }) }}
 					</li>
 					<li>
-						{{ card({ heading: { level: 5, icon: "pathways", text: "Suspected cancer recognition and referral" }, href: "https://pathways.nice.org.uk/pathways/suspected-cancer-recognition-and-referral", tag: { modifier: "new", label: "New" } }) }}
+						{{ card({ heading: { level: 5, text: "Suspected cancer recognition and referral" }, href: "https://pathways.nice.org.uk/pathways/suspected-cancer-recognition-and-referral", tag: { modifier: "new", label: "New" } }) }}
 					</li>
 				</ul>
 
 				<h2>NICE guidelines</h2>
-
-				<p><a href="https://www.nice.org.uk/About/What-we-do/Our-Programmes/NICE-guidance/NICE-guidelines">NICE guidelines</a> are evidence-based recommendations for health and care in England.</p>
 
 				<ul class="list list--unstyled">
 					<li>
@@ -150,6 +145,13 @@
 					</li>
 				</ul>
 
+				<h2>In development</h2>
+
+				<ul class="list list--unstyled">
+					<li>
+						{{ card({ heading: { text: "The Prosigna gene expression profiling assay for assessing long‑term risk of breast cancer recurrence (MIB27)" }, href: "https://www.nice.org.uk/advice/mib27", tags: [{ modifier: "consultation", label: "In consultation" }, { modifier: "new", label: "New" }], metadata: [ { key: "Published date", value: "March 2015", datetime: "2015-03" } ] }) }}
+					</li>
+				</ul>
 
 			</div>
 		</div>

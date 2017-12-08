@@ -2,7 +2,8 @@
 /// @group components
 ////
 
-/// A tag for labelling
+/// Tag component. Used for labelling items in lists
+/// and also used within alpha/beta phase banners.
 ///
 /// BEM modifiers:
 ///   - `--impact` Larger tag, used for impact
@@ -11,9 +12,9 @@
 ///   - `--live`  Live
 ///   - `--new`  New
 ///   - `--updated`  Updated
+///   - `--consultation`  In consultation
 /// @since 0.3.1
 .tag {
-  @include font-size(-2);
   background-color: $colour-panel-inverse;
   border-radius: em($spacing-xx-small);
   color: $colour-text-inverse;
@@ -21,11 +22,13 @@
   font-weight: normal;
   padding: em(0 $spacing-x-small);
   text-decoration: none;
-  vertical-align: text-bottom;
+  vertical-align: baseline;
 
   @media print {
-    @include important(background, none);
-    @include important(color, $colour-true-black);
+    // sass-lint:disable-block no-important
+    background: none !important;
+    color: $colour-true-black !important;
+    padding: 0 !important;
   }
 
   &--impact {
@@ -52,10 +55,14 @@
   }
 
   &--new {
-    background: $colour-nice-purple;
+    background: $colour-guidance-new;
   }
 
   &--updated {
-    background: $colour-nice-blue-3;
+    background: $colour-guidance-updated;
+  }
+
+  &--consultation {
+    background: $colour-guidance-consultation;
   }
 }
