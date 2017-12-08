@@ -1,3 +1,5 @@
+{% from "tag/tag.njk" import tag %}
+
 {% macro card(card) %}
 	<article class="card">
 		<header class="card__header">
@@ -14,31 +16,33 @@
 		{% if card.metadata %}
 			<dl class="card__metadata">
 				{% if card.tag %}
-					<dt>
-						<span class="card__tag tag tag--{{ card.tag.modifier }}">
-							{{ card.tag.label }}
-						</span>
-					</dt>
-					<dt class="visually-hidden">Yes</dt>
-				{% elif card.tags %}
-					{% for tag in card.tags %}
+					<div class="card__metadatum">
 						<dt>
-							<span class="card__tag tag tag--{{ tag.modifier }}">
-								{{ tag.label }}
-							</span>
+							{{ tag({ className: "card__tag", label: card.tag.label, modifier: card.tag.modifier }) }}
 						</dt>
 						<dt class="visually-hidden">Yes</dt>
+					</div>
+				{% elif card.tags %}
+					{% for t in card.tags %}
+						<div class="card__metadatum">
+							<dt>
+								{{ tag({ className: "card__tag", label: t.label, modifier: t.modifier }) }}
+							</dt>
+							<dt class="visually-hidden">Yes</dt>
+						</div>
 					{% endfor %}
 				{% endif %}
 				{% for item in card.metadata %}
-					<dt>{{ item.key }}:</dt>
-					<dd>
-						{% if item.datetime %}
-							<time datetime="{{ item.datetime }}">{{ item.value }}</time>
-						{% else %}
-							{{ item.value }}
-						{% endif %}
-					</dd>
+					<div class="card__metadatum">
+						<dt>{{ item.key }}:</dt>
+						<dd>
+							{% if item.datetime %}
+								<time datetime="{{ item.datetime }}">{{ item.value }}</time>
+							{% else %}
+								{{ item.value }}
+							{% endif %}
+						</dd>
+					</div>
 				{% endfor %}
 			</dl>
 		{% endif %}

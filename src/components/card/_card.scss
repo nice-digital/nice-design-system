@@ -4,9 +4,10 @@
 
 /// Flexible card component for displaying
 /// guidance, news etc in a list. Consists
-/// of a heading, optional body copy, optional
-/// image and optional metadata.
+/// of a heading, optional icon, optional body
+/// copy, optional image and optional metadata.
 /// Usually used withing an unstyled list.
+///
 /// @since 0.3.1
 .card {
   border-bottom: 1px solid $colour-border;
@@ -54,19 +55,23 @@
     overflow: hidden;
 
     dt {
-      clear: both;
-      float: left;
+      display: inline-block;
       margin: em(0 $spacing-x-small 0 0);
     }
     dd {
-      float: left;
+      display: inline-block;
       margin: em(0 $spacing-medium 0 0);
     }
+  }
 
-    @include mq($from: md) {
-      dt {
-        clear: none;
-      }
+  &__metadatum {
+    display: block;
+  }
+
+  @include mq($from: sm) {
+    &__metadatum {
+      display: inline-block;
+      white-space: nowrap;
     }
   }
 }
