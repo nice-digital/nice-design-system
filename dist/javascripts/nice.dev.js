@@ -1,5 +1,5 @@
 /*!
-NICE Design System 0.3.0 | 2017-10-27
+NICE Design System 0.3.1 | 2017-12-08
 © Copyright NICE 2015-2017
 Licensed under MIT (https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
 */
@@ -3274,17 +3274,17 @@ if (kwargs.hasOwnProperty("caller")) {
 frame.set("caller", kwargs.caller); }
 frame.set("link", l_link);
 frame.set("level", l_level);
-var t_2 = "";t_2 += "\r\n\t<li class=\"in-page-nav__item\" role=\"presentation\">\r\n\t\t<a id=\"ipn-";
+var t_2 = "";t_2 += "\n\t<li class=\"in-page-nav__item\" role=\"presentation\">\n\t\t<a id=\"ipn-";
 t_2 += runtime.suppressValue((lineno = 2, colno = 31, runtime.callWrap(runtime.memberLookup((runtime.memberLookup((l_link),"href")),"replace"), "link[\"href\"][\"replace\"]", context, ["#",""])), env.opts.autoescape);
 t_2 += "\" href=\"";
 t_2 += runtime.suppressValue(runtime.memberLookup((l_link),"href"), env.opts.autoescape);
-t_2 += "\" role=\"menuitem\" aria-selected=\"false\">\r\n\t\t\t";
+t_2 += "\" role=\"menuitem\" aria-selected=\"false\">\n\t\t\t";
 t_2 += runtime.suppressValue(runtime.memberLookup((l_link),"title"), env.opts.autoescape);
-t_2 += "\r\n\t\t</a>\r\n\t\t";
+t_2 += "\n\t\t</a>\n\t\t";
 if(runtime.memberLookup((l_link),"links") && runtime.memberLookup((runtime.memberLookup((l_link),"links")),"length") > 0) {
-t_2 += "\r\n\t\t\t<ul class=\"in-page-nav__list\" role=\"menu\" aria-expanded=\"true\" aria-hidden=\"false\" aria-labelledby=\"ipn-";
+t_2 += "\n\t\t\t<ul class=\"in-page-nav__list\" role=\"menu\" aria-expanded=\"true\" aria-hidden=\"false\" aria-labelledby=\"ipn-";
 t_2 += runtime.suppressValue((lineno = 6, colno = 125, runtime.callWrap(runtime.memberLookup((runtime.memberLookup((l_link),"href")),"replace"), "link[\"href\"][\"replace\"]", context, ["#",""])), env.opts.autoescape);
-t_2 += "\">\r\n\t\t\t\t";
+t_2 += "\">\n\t\t\t\t";
 frame = frame.push();
 var t_5 = runtime.memberLookup((l_link),"links");
 if(t_5) {var t_4 = t_5.length;
@@ -3298,24 +3298,24 @@ frame.set("loop.revindex0", t_4 - t_3 - 1);
 frame.set("loop.first", t_3 === 0);
 frame.set("loop.last", t_3 === t_4 - 1);
 frame.set("loop.length", t_4);
-t_2 += "\r\n\t\t\t\t\t";
+t_2 += "\n\t\t\t\t\t";
 t_2 += runtime.suppressValue((lineno = 8, colno = 16, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "renderLink"), "renderLink", context, [t_6,l_level + 1])), env.opts.autoescape);
-t_2 += "\r\n\t\t\t\t";
+t_2 += "\n\t\t\t\t";
 ;
 }
 }
 frame = frame.pop();
-t_2 += "\r\n\t\t\t</ul>\r\n\t\t";
+t_2 += "\n\t\t\t</ul>\n\t\t";
 ;
 }
-t_2 += "\r\n\t</li>\r\n";
+t_2 += "\n\t</li>\n";
 ;
 frame = callerFrame;
 return new runtime.SafeString(t_2);
 });
 context.addExport("renderLink");
 context.setVariable("renderLink", macro_t_1);
-output += "\r\n\r\n<nav class=\"in-page-nav\" role=\"navigation\" aria-labelledby=\"ipn-title\">\r\n\t<h2 id=\"ipn-title\" class=\"in-page-nav__title\">On this page</h2>\r\n\r\n\t<ul class=\"in-page-nav__list\" role=\"menubar\">\r\n\t\t";
+output += "\n\n<nav class=\"in-page-nav\" role=\"navigation\" aria-labelledby=\"ipn-title\">\n\t<h2 id=\"ipn-title\" class=\"in-page-nav__title\">On this page</h2>\n\n\t<ul class=\"in-page-nav__list\" role=\"menubar\">\n\t\t";
 frame = frame.push();
 var t_9 = runtime.contextOrFrameLookup(context, frame, "links");
 if(t_9) {var t_8 = t_9.length;
@@ -3329,14 +3329,14 @@ frame.set("loop.revindex0", t_8 - t_7 - 1);
 frame.set("loop.first", t_7 === 0);
 frame.set("loop.last", t_7 === t_8 - 1);
 frame.set("loop.length", t_8);
-output += "\r\n\t\t\t";
+output += "\n\t\t\t";
 output += runtime.suppressValue((lineno = 20, colno = 14, runtime.callWrap(macro_t_1, "renderLink", context, [t_10,1])), env.opts.autoescape);
-output += "\r\n\t\t";
+output += "\n\t\t";
 ;
 }
 }
 frame = frame.pop();
-output += "\r\n\t</ul>\r\n</nav>\r\n";
+output += "\n\t</ul>\n</nav>\n";
 if(parentTemplate) {
 parentTemplate.rootRenderFunc(env, context, frame, runtime, cb);
 } else {
