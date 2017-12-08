@@ -14,10 +14,6 @@
   padding: em($spacing-small 0);
   position: relative;
 
-  &:hover a {
-    text-decoration: underline;
-  }
-
   &__heading {
     @include font-size(0);
     font-weight: bold;
@@ -25,6 +21,10 @@
 
     a {
       text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
 
       &:before {
         content: '';
@@ -51,21 +51,20 @@
   &__metadata {
     @include font-size(-1);
     color: $colour-nice-dark-grey;
+    display: inline-block;
     margin: em($spacing-x-small 0 0);
-    overflow: hidden;
-
-    dt {
-      display: inline-block;
-      margin: em(0 $spacing-x-small 0 0);
-    }
-    dd {
-      display: inline-block;
-      margin: em(0 $spacing-medium 0 0);
-    }
+    position: relative;
+    z-index: 1;
   }
 
   &__metadatum {
     display: block;
+    margin: em(0 $spacing-medium 0 0);
+
+    dt, dd {
+      display: inline-block;
+      margin: 0;
+    }
   }
 
   @include mq($from: sm) {
