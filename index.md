@@ -21,7 +21,14 @@ title: Your source for quickly creating consistent on-brand NICE digital service
                 </div>
             </div>
             <div class="hero__extra">
-                
+                <h2 class="h4 mt--0-md">Quick links</h2>
+
+                <ul class="list list--unstyled list--loose">
+                    <li><a href="{{ site.baseurl }}{% link foundations/index.md %}">Foundations</a></li>
+                    <li><a href="{{ site.baseurl }}{% link components/index.md %}">Components</a></li>
+                    <li><a href="{{ site.baseurl }}{% link technical/index.md %}">Technical</a></li>
+                    <li><a href="{{ site.baseurl }}{% link about/index.md %}">About the Design System</a></li>
+                </ul>
             </div>
         </div>
     </div>
