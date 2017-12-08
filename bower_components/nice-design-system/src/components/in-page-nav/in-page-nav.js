@@ -274,7 +274,7 @@ export default class InPageNav {
 
 		// Increment the integer suffix to make a unique id
 		let slugPrefixRegex: RegExp
-			= new RegExp(`^${ slug }(-\d+)?`, "i");
+			= new RegExp(`^${ slug }(-[0-9]+)?`, "i");
 
 		let isSlugPrefixMatch
 			= (i, el) => el.id.match(slugPrefixRegex);

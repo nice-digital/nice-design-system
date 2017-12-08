@@ -9,7 +9,7 @@ const _ = require("lodash"),
 
 const pkg = require("./package.json"),
 	banner = _.template(pkg.config.banner)({ version: pkg.version, date: moment().format("YYYY-MM-DD"), year: moment().format("YYYY") }),
-	bannerPlugin = new webpack.BannerPlugin(`/*!\n${banner}\n*/\n`, { raw: true });
+	bannerPlugin = new webpack.BannerPlugin({ banner: `/*!\n${banner}\n*/\n`, raw: true });
 
 const baseConfig = {
 	entry: ["./src/javascripts/index"],
@@ -21,23 +21,11 @@ const baseConfig = {
 		umdNamedDefine: true
 	},
 	resolve: {
-		root: ["./src/javascripts/"],
-		modulesDirectories: ["node_modules"],
-		extensions: ["", ".js"]
+		modules: [path.resolve(__dirname, "./src/javascripts/"), "node_modules"]
 	},
 	externals: { jquery: "jQuery" },
 	devtool: "#source-map",
-	debug: true,
-	eslint: {
-		ignorePath: "./src/javascripts/.eslintignore",
-		configFile: "./src/javascripts/.eslintrc.json"
-	},
-	stats: {
-		colors: true,
-		modules: false,
-		reasons: false,
-		errorDetails: true
-	}
+	stats: "detailed"
 };
 
 const normalPlugins = [
@@ -63,13 +51,14 @@ const minPlugins = [
 		}
 	}),
 	new webpack.optimize.OccurrenceOrderPlugin(true),
-	new webpack.optimize.DedupePlugin(),
 	new webpack.optimize.UglifyJsPlugin({
 		minimize: true,
 		compress: {
-			warnings: false
+			warnings: false,
+			screw_ie8: false
 		},
 		mangle: {
+			screw_ie8: false,
 			except: ["$super", "$", "exports", "require"]
 		}
 	}),
@@ -78,51 +67,37 @@ const minPlugins = [
 	bannerPlugin
 ];
 
-const moduleObj = {
-	loaders: [
+const webpackModules = {
+	rules: [
+		{
+			enforce: "pre",
+			test: /\.js$/,
+			exclude: /node_modules/,
+			loader: "eslint-loader",
+			options: {
+				ignorePath: "src/javascripts/.eslintignore",
+				configFile: "src/javascripts/.eslintrc",
+			}
+		},
 		{
 			test: /\.js$/,
 			exclude: /(node_modules|bower_components)/,
-			loader: "babel-loader",
-			query: {
-				babelrc: false,
-				presets: [ "es2015" ],
-				passPerPreset: true,
-				plugins: [
-					["typecheck", {
-						disable: { production: true }
-					}],
-					"syntax-flow",
-					"transform-flow-strip-types",
-					"transform-es3-member-expression-literals",
-					"transform-es3-property-literals"
-				]
-			}
+			loader: "babel-loader"
 		},
 		{
 			test: /\.(njk|nunjucks)$/,
 			loader: "nunjucks-loader"
-		}
-	],
-	postLoaders: [
+		},
 		{
 			test: /\.js$/,
+			enforce: "post",
+			loader: "es3ify-loader"
+		},
+		{
+			test: /\.js$/,
+			enforce: "post",
 			loader: StringReplacePlugin.replace({
 				replacements: [
-					// Fix for IE8 to wrap default keyword in quotes
-					// See https://github.com/reactjs/react-redux/issues/232#issuecomment-167665147
-					{
-						pattern: /\.default(?=[^\w$])/g,
-						replacement: function () {
-							return "['default']";
-						}
-					},
-					{
-						pattern: /\{\sdefault:/g,
-						replacement: function () {
-							return "{ 'default':";
-						}
-					},
 					// Fix for "Uncaught TypeError: Cannot read property 'MutationObserver' of undefined" win nunjucks
 					// See https://github.com/mozilla/nunjucks/issues/520
 					{
@@ -153,7 +128,7 @@ module.exports = [
 			filename: "nice.dev.js",
 			sourceMapFilename: "nice.dev.map"
 		},
-		module: moduleObj,
+		module: webpackModules,
 		plugins: normalPlugins
 	}),
 
@@ -164,32 +139,7 @@ module.exports = [
 			filename: "nice.min.js",
 			sourceMapFilename: "nice.min.map"
 		},
-		module: moduleObj,
-		plugins: minPlugins
-	}),
-
-
-	// Dev mode - Old IE
-	_.merge({}, baseConfig, {
-		entry: ["babel-polyfill"].concat(baseConfig.entry),
-		name: "nice.oldie.dev",
-		output: {
-			filename: "nice.oldie.dev.js",
-			sourceMapFilename: "nice.oldie.dev.map"
-		},
-		module: moduleObj,
-		plugins: normalPlugins
-	}),
-
-	// Minified - Old IE
-	_.merge({}, baseConfig, {
-		entry: ["babel-polyfill"].concat(baseConfig.entry),
-		name: "nice.oldie.min",
-		output: {
-			filename: "nice.oldie.min.js",
-			sourceMapFilename: "nice.oldie.min.map"
-		},
-		module: moduleObj,
+		module: webpackModules,
 		plugins: minPlugins
 	})
 ];

@@ -26,15 +26,13 @@
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:200normal,200italic,300normal,300italic,400normal,400italic,700normal,700italic,900normal,900italic" type="text/css">
 
 	<!--[if lt IE 9]>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-shim.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-sham.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    	<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-shim.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
 <body data-tracker>
 
-	<!-- Google Tag Manager -->
     <noscript>
         <iframe src="//www.googletagmanager.com/ns.html?id=GTM-MDNG92"
                 height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -48,7 +46,6 @@
                     j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
                         '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MDNG92');</script>
-	<!-- End Google Tag Manager -->
 
 	<div id="content">
 		 {{ content }}
@@ -64,13 +61,7 @@
 		<script src="//cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.2/anchor.min.js"></script>
     <!--<![endif]-->
 
-	<!--[if !IE]><!-->
-        <script src="{{ site.baseurl }}/javascripts/nice.min.js"></script>
-    <!--<![endif]-->
-    <!--[if IE]>
-        <script src="{{ site.baseurl }}/javascripts/nice.oldie.min.js"></script>
-    <![endif]-->
-
+	<script src="{{ site.baseurl }}/javascripts/nice.min.js"></script>
 	<script src="{{ site.baseurl }}/javascripts/app.js"></script>
 
 	<script>

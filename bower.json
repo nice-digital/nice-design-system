@@ -16,7 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "nice-design-system": "^0.3.0",
+    "nice-design-system": "^0.3.3",
     "nice-icons": "^1.1.0"
   }
 }

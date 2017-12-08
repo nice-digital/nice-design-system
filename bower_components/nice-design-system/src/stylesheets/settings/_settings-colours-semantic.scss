@@ -29,10 +29,6 @@ $colour-text-subtle: $colour-nice-grey-1;
 /// @since 0.2.2
 $colour-text-inverse: $colour-nice-white;
 
-/// Focus colour
-/// @since 0.2.0
-$colour-focus: #0092a6;
-
 /// Icons colour
 /// @since 0.2.0
 $colour-icons: $colour-nice-teal;
@@ -84,6 +80,17 @@ $colour-link-inverse-active: $colour-link-inverse-hover;
 $colour-link-inverse-focus-text: $colour-link-inverse;
 
 
+// FOCUS
+
+/// Focus colour
+/// @since 0.2.0
+$colour-focus: #0092a6;
+
+/// Focus colour
+/// @since 0.3.1
+$colour-focus-inverse: $colour-link-inverse;
+
+
 // CTA BUTTONS
 
 /// CTA button background colour
@@ -131,17 +138,17 @@ $colour-btn-secondary-text: $colour-nice-white;
 
 // LIGHT BUTTONS
 
-/// Light button background colour
+/// Inverse (light) button background colour
 /// @since 0.2.2
-$colour-btn-light: $colour-nice-white;
+$colour-btn-inverse: $colour-nice-white;
 
-/// Light button hover colour
+/// Inverse (light) button hover colour
 /// @since 0.2.2
-$colour-btn-light-hover: $colour-nice-grey-3;
+$colour-btn-inverse-hover: $colour-nice-grey-3;
 
-/// Light button text colour
+/// Inverse (light) button text colour
 /// @since 0.2.2
-$colour-btn-light-text: $colour-nice-rich-black;
+$colour-btn-inverse-text: $colour-nice-rich-black;
 
 
 // BACKGROUNDS/BORDERS
@@ -216,3 +223,18 @@ $colour-success: #3f8c5e;
 /// Success background colour
 /// @since 0.2.0
 $colour-success-background: #eff7eb;
+
+
+// GUIDANCE TYPES
+
+/// New guidance colour
+/// @since 0.3.0
+$colour-guidance-new: $colour-nice-purple;
+
+/// Updated guidance colour
+/// @since 0.3.0
+$colour-guidance-updated: $colour-nice-blue-3;
+
+/// In consultation guidance colour
+/// @since 0.3.0
+$colour-guidance-consultation: #557021;

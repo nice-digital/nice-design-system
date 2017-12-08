@@ -1,0 +1,68 @@
+////
+/// @group components
+////
+
+/// Tag component. Used for labelling items in lists
+/// and also used within alpha/beta phase banners.
+///
+/// BEM modifiers:
+///   - `--impact` Larger tag, used for impact
+///   - `--alpha` Alpha
+///   - `--beta`  Beta
+///   - `--live`  Live
+///   - `--new`  New
+///   - `--updated`  Updated
+///   - `--consultation`  In consultation
+/// @since 0.3.1
+.tag {
+  background-color: $colour-panel-inverse;
+  border-radius: em($spacing-xx-small);
+  color: $colour-text-inverse;
+  display: inline-block;
+  font-weight: normal;
+  padding: em(0 $spacing-x-small);
+  text-decoration: none;
+  vertical-align: baseline;
+
+  @media print {
+    // sass-lint:disable-block no-important
+    background: none !important;
+    color: $colour-true-black !important;
+    padding: 0 !important;
+  }
+
+  &--impact {
+    @include font-size(-1);
+    font-weight: 900;
+    letter-spacing: 1px;
+    padding: em($spacing-xx-small $spacing-small);
+    text-transform: uppercase;
+  }
+
+  &--alpha {
+    background-color: $colour-alpha;
+    color: $colour-text-inverse;
+  }
+
+  &--beta {
+    background-color: $colour-beta;
+    color: $colour-text-inverse;
+  }
+
+  &--live {
+    background-color: $colour-live;
+    color: $colour-text-inverse;
+  }
+
+  &--new {
+    background: $colour-guidance-new;
+  }
+
+  &--updated {
+    background: $colour-guidance-updated;
+  }
+
+  &--consultation {
+    background: $colour-guidance-consultation;
+  }
+}

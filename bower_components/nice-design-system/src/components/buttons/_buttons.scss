@@ -4,7 +4,7 @@
 
 /// Button
 /// @since 0.1.0
-.btn.btn { // Repeat selector for specificity to avoid link overrides
+.btn {
   @include remove-mz-focus-inner;
   @include font-size(0);
   appearance: none;
@@ -17,7 +17,7 @@
   margin: em(0 $spacing-small $spacing-small -4px); // Negative left margin to combat inline-block gaps
   padding: em($spacing-small $spacing-medium);
   position: relative;
-  text-decoration: none;
+  text-decoration: none !important; // sass-lint:disable-line no-important
   vertical-align: top;
 
   &:first-child {
@@ -37,7 +37,8 @@
   &:focus {
     @include default-focus-style;
     background: $colour-btn-primary;
-    border-color: $colour-focus;
+    border-color: $colour-focus-inverse;
+    color: $colour-btn-primary-text;
   }
 
   &:active {
@@ -63,7 +64,7 @@
 
 /// CTA/prominent button
 /// @since 0.2.0
-.btn.btn--cta {
+.btn--cta {
   background: $colour-btn-cta;
   border: em(1px) solid $colour-btn-cta-text;
   color: $colour-btn-cta-text;
@@ -88,7 +89,7 @@
 
 /// Secondary button
 /// @since 0.2.0
-.btn.btn--secondary {
+.btn--secondary {
   background: $colour-btn-secondary;
   border: em(1px) solid $colour-btn-secondary-text;
   color: $colour-btn-secondary-text;
@@ -111,27 +112,27 @@
   }
 }
 
-/// Light button, for use on dark panels/sections
+/// Inverse (light) button, for use on inverse (dark) panels/sections
 /// @since 0.2.0
-.btn.btn--light {
-  background: $colour-btn-light;
-  border: em(1px) solid $colour-btn-light-text;
-  color: $colour-btn-light-text;
+.btn--inverse {
+  background: $colour-btn-inverse;
+  border: em(1px) solid $colour-btn-inverse-text;
+  color: $colour-btn-inverse-text !important; // sass-lint:disable-line no-important
 
   &:visited {
-    color: $colour-btn-light-text;
+    color: $colour-btn-inverse-text;
   }
 
   &:hover {
-    background: $colour-btn-light-hover;
-    color: $colour-btn-light-text;
+    background: $colour-btn-inverse-hover;
+    color: $colour-btn-inverse-text;
   }
 
   &:focus {
-    background: $colour-btn-light-hover;
+    background: $colour-btn-inverse-hover;
   }
 
   &:active {
-    background: $colour-btn-light-hover;
+    background: $colour-btn-inverse-hover;
   }
 }

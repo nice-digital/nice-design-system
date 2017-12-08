@@ -1,0 +1,77 @@
+////
+/// @group components
+////
+
+/// Flexible card component for displaying
+/// guidance, news etc in a list. Consists
+/// of a heading, optional icon, optional body
+/// copy, optional image and optional metadata.
+/// Usually used withing an unstyled list.
+///
+/// @since 0.3.1
+.card {
+  border-bottom: 1px solid $colour-border;
+  padding: em($spacing-small 0);
+  position: relative;
+
+  &__heading {
+    @include font-size(0);
+    font-weight: bold;
+    margin: 0;
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 0;
+      }
+    }
+  }
+
+  &__icon {
+    margin: em(0 $spacing-x-small 0 0);
+  }
+
+  &__tag {
+    @include font-size(-1);
+    margin-right: em($spacing-x-small);
+  }
+
+  &__metadata {
+    @include font-size(-1);
+    color: $colour-nice-dark-grey;
+    display: inline-block;
+    margin: em($spacing-x-small 0 0);
+    position: relative;
+    z-index: 1;
+  }
+
+  &__metadatum {
+    display: block;
+    margin: em(0 $spacing-medium 0 0);
+
+    dt,
+    dd {
+      display: inline-block;
+      margin: 0;
+    }
+  }
+
+  @include mq($from: sm) {
+    &__metadatum {
+      display: inline-block;
+      white-space: nowrap;
+    }
+  }
+}

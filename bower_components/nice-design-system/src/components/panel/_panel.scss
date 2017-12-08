@@ -26,7 +26,7 @@
 /// @require .panel
 /// @since 0.1.0
 .panel--inverse {
-  @extend %inverse-links;
+  @include links-inverse;
   background: $colour-panel-inverse;
   color: $colour-text-inverse;
 }

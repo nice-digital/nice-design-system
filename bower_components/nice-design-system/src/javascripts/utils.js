@@ -19,10 +19,10 @@ export const slugify = (str: string): string => {
 	return str.toLowerCase().trim()
 		.replace(/\s+/g, "-")			// Replace spaces with -
 		.replace(/&/g, "-and-")			// Replace & with 'and'
-		.replace(/[^\w\-]+/g, "")		// Remove all non-word chars
-		.replace(/^\-+/g, "")			// Trim dashes from the start
-		.replace(/\-+$/g, "")			// Trim dashes from the end
-		.replace(/\-{2,}/g, "-");		// Replace multiple - with single -
+		.replace(/[^\w-]+/g, "")		// Remove all non-word chars
+		.replace(/^-+/g, "")			// Trim dashes from the start
+		.replace(/-+$/g, "")			// Trim dashes from the end
+		.replace(/-{2,}/g, "-");		// Replace multiple - with single -
 };
 
 /**

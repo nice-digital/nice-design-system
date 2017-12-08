@@ -8,6 +8,7 @@
 .stacked-nav {
   background: #fafafa;
   border: 1px solid $colour-border;
+  margin: em(0 0 $spacing-large);
 
   a {
     color: $colour-link;
@@ -62,5 +63,9 @@
 
   &__list-item {
     border-top: 1px solid $colour-border;
+  }
+
+  @media print {
+    display: none;
   }
 }

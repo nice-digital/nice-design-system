@@ -5,7 +5,7 @@
 /// Site footer
 /// @since 0.1.0
 .site-footer {
-  @extend %inverse-links;
+  @include links-inverse;
   @include font-size(-1);
   background: $colour-panel-inverse;
   color: $colour-text-inverse;
@@ -85,7 +85,6 @@
   &__list {
     list-style: none;
     margin: 0;
-    overflow: hidden;
     padding: 0;
   }
 

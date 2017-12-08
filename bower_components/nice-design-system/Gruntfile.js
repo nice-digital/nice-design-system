@@ -22,7 +22,7 @@ module.exports = grunt => {
 	});
 
 	grunt.log.header = (msg) => {
-		if(/^Running \"newer.*/.test(msg)) return;
+		if(/^Running "newer.*/.test(msg)) return;
 
 		let taskName = msg.match(/"(.*)"/)[1];
 		grunt.log.writeln();

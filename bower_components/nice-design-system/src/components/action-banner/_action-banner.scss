@@ -1,0 +1,57 @@
+////
+/// @group components
+////
+
+/// Action banner component. Used to highlight
+/// and give context to a call-to-action.
+///
+/// @since 0.3.1
+.action-banner {
+  @include links-inverse;
+  background: $colour-nice-cool-teal;
+  color: $colour-text-inverse;
+  margin: em($spacing-large 0);
+  padding: em($spacing-small 0);
+
+  &__container {
+    @extend %container;
+  }
+
+  &__inner {
+    @include grid;
+  }
+
+  &__text {
+    @include grid-item($middle: true);
+    margin-bottom: em($spacing-medium);
+  }
+
+  &__title {
+    @include font-size(3);
+    margin: em(0 0 $spacing-x-small);
+  }
+
+  &__intro {
+    margin: 0;
+  }
+
+  &__actions {
+    @include grid-item($middle: true);
+  }
+
+  @include mq($from: md) {
+    &__text {
+      margin-bottom: 0;
+      width: percentage(3/4);
+    }
+
+    &__actions {
+      text-align: right;
+      width: percentage(1/4);
+    }
+  }
+
+  @media print {
+    @include important(display, none);
+  }
+}
