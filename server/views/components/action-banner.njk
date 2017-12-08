@@ -1,0 +1,13 @@
+{% extends "layouts/_layout.njk" %}
+{% set title = "Action banner" %}
+{% from "action-banner/action-banner.njk" import actionBanner %}
+
+{% block body %}
+
+	<div class="container">
+		<h1>Action banner</h1>
+	</div>
+
+	{{ actionBanner({ title: "This is a title", body: "This is some body copy", cta: { text: "Button text", href: "/button-href" } }) }}
+
+{% endblock %}
