@@ -4,6 +4,8 @@ title: Tag
 description: Tag component used for labelling items in a list
 ---
 
+Use tags to mark or highlight an item in a list.
+
 ## Standard
 
 {% capture standard %}
