@@ -1,4 +1,5 @@
 .sass-cache
+.jekyll-metadata
 _gh_pages
 
 bower_components/nice-experience/*
