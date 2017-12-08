@@ -111,6 +111,15 @@ For use on a dark background
     {% include colour.html title="Success background" var="colour-success-background" %}
 </ul>
 
+
+## Guidance colours
+
+<ul class="colour-grid">
+    {% include colour.html title="New guidance" var="colour-guidance-new" %}
+    {% include colour.html title="Updated guidance" var="colour-guidance-updated" %}
+    {% include colour.html title="In consultation guidance" var="colour-guidance-consultation" %}
+</ul>
+
 ## Colours in SASS
 
 In our SASS, we have colour variables for both <a href="{{ site.baseurl }}{% link technical/sass/documentation/colours.md %}">the corporate palette and 'semantic' colours</a>. Wherever possible, the semantic variables should be used rather than the corporate palette directly. For example, text should use `color: $colour-text` rather than `color: $colour-rich-black`, panels should use `background: $colour-panel-light` rather than `background: $colour-nice-grey-3;` and so on.
