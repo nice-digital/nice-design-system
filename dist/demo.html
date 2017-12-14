@@ -51,12 +51,12 @@
 			font-family: 'NICE Icons';
 			font-style: normal;
 			font-weight: normal;
-			src: url("nice-icons.eot?84f311aaa39e1f18f1903231fa90e694");
+			src: url("nice-icons.eot?03a2d32ef07d78aaf13fce90b5700fe6");
 			src: url("nice-icons.eot?#iefix") format("embedded-opentype"),
-		url("nice-icons.woff2?84f311aaa39e1f18f1903231fa90e694") format("woff2"),
-		url("nice-icons.woff?84f311aaa39e1f18f1903231fa90e694") format("woff"),
-		url("nice-icons.ttf?84f311aaa39e1f18f1903231fa90e694") format("truetype"),
-		url("nice-icons.svg?84f311aaa39e1f18f1903231fa90e694#nice-icons") format("svg")
+		url("nice-icons.woff2?03a2d32ef07d78aaf13fce90b5700fe6") format("woff2"),
+		url("nice-icons.woff?03a2d32ef07d78aaf13fce90b5700fe6") format("woff"),
+		url("nice-icons.ttf?03a2d32ef07d78aaf13fce90b5700fe6") format("truetype"),
+		url("nice-icons.svg?03a2d32ef07d78aaf13fce90b5700fe6#nice-icons") format("svg")
 		}
 
 		.icon {
@@ -78,52 +78,60 @@
 		}
 
 		
+			.icon.icon--android:before {
+				content: '\f17b';
+			}
+		
+			.icon.icon--apple:before {
+				content: '\f179';
+			}
+		
 			.icon.icon--comment:before {
 				content: '\f101';
 			}
 		
 			.icon.icon--evidence:before {
-				content: '\f102';
+				content: '\e017';
 			}
 		
 			.icon.icon--facebook-square:before {
-				content: '\f103';
+				content: '\f102';
 			}
 		
 			.icon.icon--guidance:before {
-				content: '\f104';
+				content: '\e011';
 			}
 		
 			.icon.icon--linkedin-square:before {
-				content: '\f105';
+				content: '\f103';
 			}
 		
 			.icon.icon--logo-name:before {
-				content: '\f106';
+				content: '\e01b';
 			}
 		
 			.icon.icon--logo:before {
-				content: '\f107';
+				content: '\e01a';
 			}
 		
 			.icon.icon--pathways:before {
-				content: '\f108';
+				content: '\e005';
 			}
 		
 			.icon.icon--standards:before {
-				content: '\f109';
+				content: '\e002';
 			}
 		
 			.icon.icon--syndication:before {
-				content: '\f10a';
+				content: '\e013';
 			}
 		
 			.icon.icon--twitter-square:before {
-				content: '\f10b';
+				content: '\f104';
 			}
 		
 			.icon.icon--youtube-square:before {
-				content: '\f10c';
+				content: '\f105';
 			}
 		
 
@@ -133,6 +141,14 @@
 		<h1>NICE Icons demo</h1>
 
 		<div class="icons" id="icons">
+			
+				<div class="icons__item" data-name="android">
+					<span class="icon icon--android"></span> android
+				</div>
+			
+				<div class="icons__item" data-name="apple">
+					<span class="icon icon--apple"></span> apple
+				</div>
 			
 				<div class="icons__item" data-name="comment">
 					<span class="icon icon--comment"></span> comment
