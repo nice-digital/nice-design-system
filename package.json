@@ -22,6 +22,8 @@
   "scripts": {
     "start": "grunt --color --timing",
     "dist": "grunt dist --color",
+    "prebuild": "grunt prebuild:dist --color",
+    "build": "grunt build:dist --color",
     "dist:teamcity": "npm run lint && npm run test:coverage:teamcity && grunt css:dist --color && grunt docs --color && grunt webpack",
     "// JAVASCRIPT": "",
     "webpack": "SET \"NODE_ENV=production\" && webpack --progress --colors --display-error-details",

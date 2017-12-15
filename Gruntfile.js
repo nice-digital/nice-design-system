@@ -41,7 +41,9 @@ module.exports = grunt => {
 	// Run JS unit tests
 	r("test", ["mochaTest"]);
 
-	r("css:dist", ["sass:dist", "postcss:dist", "cssmin:dist"]);
+	r("prebuild:dist", ["env:dist", "clean:dist", "lint"]);
+
+	r("build:dist", ["sass:dist", "postcss:dist", "cssmin:dist", "docs", "webpack"]);
 
 	// For building before publishing to NPM etc
 	r("dist", ["env:dist", "clean:dist", "lint", "test", "css:dist", "docs", "webpack"]);
