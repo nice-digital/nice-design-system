@@ -5,6 +5,19 @@ module.exports = {
 		destScss: "dist",
 		options: {
 			autoHint: false,
+			codepoints: {
+				// FontAwesome codepoints for backwards compatability
+				android: 0xf17b,
+				apple: 0xf179,
+				// NICE.Glyphs codepoints for backwards compatability
+				evidence: 0xe017,
+				guidance: 0xe011,
+				logo: 0xe01a,
+				"logo-name": 0xe01b,
+				pathways: 0xe005,
+				standards: 0xe002,
+				syndication: 0xe013
+			},
 			customOutputs: [
 				{
 					template: ".nice-icons.tmpl.js",
