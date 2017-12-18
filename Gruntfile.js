@@ -39,7 +39,9 @@ module.exports = grunt => {
 	r("lint", ["sasslint", "eslint"]);
 
 	// Run JS unit tests
-	r("test", ["mochaTest"]);
+	r("test", ["mochaTest:test"]);
+
+	r("test:teamcity", ["mochaTest:teamcity"]);
 
 	r("prebuild:dist", ["env:dist", "clean:dist", "lint"]);
 
