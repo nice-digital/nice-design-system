@@ -279,29 +279,29 @@ See the [custom-icon](examples/custom-icon) folder for a complete example of thi
 ## Icons
 
 <!-- START icons -->
-- ![android](src/android.svg =100x) android 
-- ![apple](src/apple.svg =100x) apple 
-- ![calendar](src/calendar.svg =100x) calendar 
-- ![comment](src/comment.svg =100x) comment 
-- ![evidence](src/evidence.svg =100x) evidence 
-- ![facebook-square](src/facebook-square.svg =100x) facebook-square 
-- ![facebook](src/facebook.svg =100x) facebook 
-- ![guidance](src/guidance.svg =100x) guidance 
-- ![hamburger](src/hamburger.svg =100x) hamburger 
-- ![linkedin-sign](src/linkedin-sign.svg =100x) linkedin-sign 
-- ![logo-name](src/logo-name.svg =100x) logo-name 
-- ![logo](src/logo.svg =100x) logo 
-- ![pathways](src/pathways.svg =100x) pathways 
-- ![print](src/print.svg =100x) print 
-- ![readnews](src/readnews.svg =100x) readnews 
-- ![search](src/search.svg =100x) search 
-- ![standards](src/standards.svg =100x) standards 
-- ![syndication](src/syndication.svg =100x) syndication 
-- ![trash](src/trash.svg =100x) trash 
-- ![twitter-square](src/twitter-square.svg =100x) twitter-square 
-- ![twitter](src/twitter.svg =100x) twitter 
-- ![user](src/user.svg =100x) user 
-- ![youtube-play](src/youtube-play.svg =100x) youtube-play 
-- ![youtube-square](src/youtube-square.svg =100x) youtube-square 
+- ![android](src/android.svg | width=100) android 
+- ![apple](src/apple.svg | width=100) apple 
+- ![calendar](src/calendar.svg | width=100) calendar 
+- ![comment](src/comment.svg | width=100) comment 
+- ![evidence](src/evidence.svg | width=100) evidence 
+- ![facebook-square](src/facebook-square.svg | width=100) facebook-square 
+- ![facebook](src/facebook.svg | width=100) facebook 
+- ![guidance](src/guidance.svg | width=100) guidance 
+- ![hamburger](src/hamburger.svg | width=100) hamburger 
+- ![linkedin-sign](src/linkedin-sign.svg | width=100) linkedin-sign 
+- ![logo-name](src/logo-name.svg | width=100) logo-name 
+- ![logo](src/logo.svg | width=100) logo 
+- ![pathways](src/pathways.svg | width=100) pathways 
+- ![print](src/print.svg | width=100) print 
+- ![readnews](src/readnews.svg | width=100) readnews 
+- ![search](src/search.svg | width=100) search 
+- ![standards](src/standards.svg | width=100) standards 
+- ![syndication](src/syndication.svg | width=100) syndication 
+- ![trash](src/trash.svg | width=100) trash 
+- ![twitter-square](src/twitter-square.svg | width=100) twitter-square 
+- ![twitter](src/twitter.svg | width=100) twitter 
+- ![user](src/user.svg | width=100) user 
+- ![youtube-play](src/youtube-play.svg | width=100) youtube-play 
+- ![youtube-square](src/youtube-square.svg | width=100) youtube-square 
 
 <!-- END icons -->
