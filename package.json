@@ -6,7 +6,8 @@
   "scripts": {
     "start": "grunt dist --color",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "grunt release-it --color"
+    "release": "grunt release-it --color",
+    "release:minor": "grunt release-it:minor --color"
   },
   "repository": {
     "type": "git",

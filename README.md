@@ -245,7 +245,7 @@ npx doctoc ./readme.md
 
 ### Releasing
 
-Run `npm run release` from the command line to release a new patch version. This uses [grunt-release-it](.grunt-tasks/release-it.js) under the hood.
+Run `npm run release` from the command line to release a new patch version.  Run `npm run release:minor` to release a new minor version. This uses [grunt-release-it](.grunt-tasks/release-it.js) under the hood.
 
 > Note: Generate a [GitHub personal acccess token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) and set this as the environment variable GITHUB_TOKEN. E.g. `export GITHUB_TOKEN="abcde1234"`
 
