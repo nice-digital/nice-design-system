@@ -19,7 +19,7 @@ module.exports = {
 							var glyph = font.glyphs[i],
 								file = font.files[i];
 
-							icons += `- ![${ glyph }](${ file } =100x) ${ glyph } \r\n`;
+							icons += `- ![${ glyph }](${ file } | width=100) ${ glyph } \r\n`;
 						}
 
 						console.log(icons);
