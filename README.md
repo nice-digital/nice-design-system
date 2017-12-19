@@ -279,29 +279,29 @@ See the [custom-icon](examples/custom-icon) folder for a complete example of thi
 ## Icons
 
 <!-- START icons -->
-- ![android](src/android.svg | width=100) android 
-- ![apple](src/apple.svg | width=100) apple 
-- ![calendar](src/calendar.svg | width=100) calendar 
-- ![comment](src/comment.svg | width=100) comment 
-- ![evidence](src/evidence.svg | width=100) evidence 
-- ![facebook-square](src/facebook-square.svg | width=100) facebook-square 
-- ![facebook](src/facebook.svg | width=100) facebook 
-- ![guidance](src/guidance.svg | width=100) guidance 
-- ![hamburger](src/hamburger.svg | width=100) hamburger 
-- ![linkedin-sign](src/linkedin-sign.svg | width=100) linkedin-sign 
-- ![logo-name](src/logo-name.svg | width=100) logo-name 
-- ![logo](src/logo.svg | width=100) logo 
-- ![pathways](src/pathways.svg | width=100) pathways 
-- ![print](src/print.svg | width=100) print 
-- ![readnews](src/readnews.svg | width=100) readnews 
-- ![search](src/search.svg | width=100) search 
-- ![standards](src/standards.svg | width=100) standards 
-- ![syndication](src/syndication.svg | width=100) syndication 
-- ![trash](src/trash.svg | width=100) trash 
-- ![twitter-square](src/twitter-square.svg | width=100) twitter-square 
-- ![twitter](src/twitter.svg | width=100) twitter 
-- ![user](src/user.svg | width=100) user 
-- ![youtube-play](src/youtube-play.svg | width=100) youtube-play 
-- ![youtube-square](src/youtube-square.svg | width=100) youtube-square 
+- <img src="src/android.svg" alt="android" height="50"> android 
+- <img src="src/apple.svg" alt="apple" height="50"> apple 
+- <img src="src/calendar.svg" alt="calendar" height="50"> calendar 
+- <img src="src/comment.svg" alt="comment" height="50"> comment 
+- <img src="src/evidence.svg" alt="evidence" height="50"> evidence 
+- <img src="src/facebook-square.svg" alt="facebook-square" height="50"> facebook-square 
+- <img src="src/facebook.svg" alt="facebook" height="50"> facebook 
+- <img src="src/guidance.svg" alt="guidance" height="50"> guidance 
+- <img src="src/hamburger.svg" alt="hamburger" height="50"> hamburger 
+- <img src="src/linkedin-sign.svg" alt="linkedin-sign" height="50"> linkedin-sign 
+- <img src="src/logo-name.svg" alt="logo-name" height="50"> logo-name 
+- <img src="src/logo.svg" alt="logo" height="50"> logo 
+- <img src="src/pathways.svg" alt="pathways" height="50"> pathways 
+- <img src="src/print.svg" alt="print" height="50"> print 
+- <img src="src/readnews.svg" alt="readnews" height="50"> readnews 
+- <img src="src/search.svg" alt="search" height="50"> search 
+- <img src="src/standards.svg" alt="standards" height="50"> standards 
+- <img src="src/syndication.svg" alt="syndication" height="50"> syndication 
+- <img src="src/trash.svg" alt="trash" height="50"> trash 
+- <img src="src/twitter-square.svg" alt="twitter-square" height="50"> twitter-square 
+- <img src="src/twitter.svg" alt="twitter" height="50"> twitter 
+- <img src="src/user.svg" alt="user" height="50"> user 
+- <img src="src/youtube-play.svg" alt="youtube-play" height="50"> youtube-play 
+- <img src="src/youtube-square.svg" alt="youtube-square" height="50"> youtube-square 
 
 <!-- END icons -->
