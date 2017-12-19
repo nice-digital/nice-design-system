@@ -41,6 +41,8 @@
 
 ## Intro
 
+Nice-icons is a replacement for [NICE.Glyphs](http://nhsevidence.github.io/NICE.Bootstrap/Guide.Glyphs.html#charset). It is independent of Bootstrap and the Design System so can be used on its own.
+
 We use a custom icon web font because:
 
 - there's no JavaScript required
