@@ -9,14 +9,28 @@ module.exports = {
 				// FontAwesome codepoints for backwards compatability
 				android: 0xf17b,
 				apple: 0xf179,
+				"facebook-square": 0xf082,
+				"linkedin-sign": 0xf08c,
+				"youtube-play": 0xf16a,
+				"youtube-square": 0xf166,
 				// NICE.Glyphs codepoints for backwards compatability
+				// See http://nhsevidence.github.io/NICE.Bootstrap/Guide.Glyphs.html#charset
+				calendar: 0xe045,
 				evidence: 0xe017,
+				facebook: 0xe012,
 				guidance: 0xe011,
+				hamburger: 0xe03d,
 				logo: 0xe01a,
 				"logo-name": 0xe01b,
 				pathways: 0xe005,
+				print: 0xe001,
+				readnews: 0xe009,
+				search: 0xe004,
 				standards: 0xe002,
-				syndication: 0xe013
+				syndication: 0xe013,
+				trash: 0xe020,
+				twitter: 0xe000,
+				user: 0xe01f
 			},
 			customOutputs: [
 				{

@@ -14,5 +14,5 @@ module.exports = grunt => {
 	});
 
 	// For building before publishing to NPM etc
-	grunt.registerTask("dist", ["webfont:dist"]);
+	grunt.registerTask("dist", ["webfont:dist", "replace"]);
 };
