@@ -27,6 +27,10 @@
     "url": "https://github.com/nhsevidence/nice-icons/issues"
   },
   "homepage": "https://github.com/nhsevidence/nice-icons#readme",
+  "files": [
+    "dist",
+    "src"
+  ],
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-release-it": "^1.0.1",
