@@ -12,21 +12,31 @@
 <details>
 <summary><strong>Table of contents</strong></summary>
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
 - [Intro](#intro)
-	- [Guidance](#guidance)
+  - [Guidance](#guidance)
 - [Usage](#usage)
-	- [Installation](#installation)
-	- [Build process](#build-process)
-	- [Serving font files](#serving-font-files)
-		- [Express](#express)
-		- [Grunt copy](#grunt-copy)
-		- [Visual Studio Copy Task](#visual-studio-copy-task)
-	- [Markup](#markup)
-	- [SASS](#sass)
+  - [Installation](#installation)
+  - [Build process](#build-process)
+  - [Serving font files](#serving-font-files)
+    - [Express](#express)
+    - [Grunt copy](#grunt-copy)
+    - [Visual Studio Copy Task](#visual-studio-copy-task)
+  - [Markup](#markup)
+  - [SASS](#sass)
 - [Development](#development)
-	- [Dependencies](#dependencies)
-	- [Commands](#commands)
+  - [Dependencies](#dependencies)
+  - [Commands](#commands)
+  - [Updating ToC](#updating-toc)
+  - [Releasing](#releasing)
 - [Creating icons](#creating-icons)
+- [Custom application icons](#custom-application-icons)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 </details>
 
 ## Intro
@@ -221,6 +231,14 @@ Run `npm start` from the command line for development. This uses [grunt-webfont]
 - build a [SASS file](dist/_nice-icons.scss)
 - build a [JSON file](dist/nice-icons.json) of metadata for the font
 - create a [demo html](dist/demo.html) - use this for testing new icons.
+
+### Updating ToC
+
+Run the following command to update the readme:
+
+```sh
+npx doctoc ./readme.md
+```
 
 ### Releasing
 
