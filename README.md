@@ -34,6 +34,7 @@
   - [Releasing](#releasing)
 - [Creating icons](#creating-icons)
 - [Custom application icons](#custom-application-icons)
+- [Icons](#icons)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
