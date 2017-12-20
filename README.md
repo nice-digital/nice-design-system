@@ -142,12 +142,15 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		copy: {
 			icons: {
-				cwd: "node_modules/@nice-digital/icons/dist/",
-				src: ["*"],
-				dest: "/fonts/",
-				expand: true,
-				flatten: true,,
-				filter: "isFile"
+				src: ['node_modules/@nice-digital/icons/dist/*.eot',
+				      'node_modules/@nice-digital/icons/dist/*.svg',
+				      'node_modules/@nice-digital/icons/dist/*.ttf',
+				      'node_modules/@nice-digital/icons/dist/*.woff',
+				      'node_modules/@nice-digital/icons/dist/*.woff2'],
+				dest: 'wwwroot/css/fonts/',
+				filter: 'isFile',
+				flatten: true,
+				expand: true
 			}
 		}
 	});
