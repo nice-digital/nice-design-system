@@ -33,7 +33,8 @@ $nice-font-base-path: '/fonts/' !default;
 /// @prop {string} android [f17b] - <span class="icon icon--android" aria-hidden="true"></span>
 /// @prop {string} apple [f179] - <span class="icon icon--apple" aria-hidden="true"></span>
 /// @prop {string} calendar [e045] - <span class="icon icon--calendar" aria-hidden="true"></span>
-/// @prop {string} comment [f101] - <span class="icon icon--comment" aria-hidden="true"></span>
+/// @prop {string} chevron-up [f101] - <span class="icon icon--chevron-up" aria-hidden="true"></span>
+/// @prop {string} comment [f102] - <span class="icon icon--comment" aria-hidden="true"></span>
 /// @prop {string} evidence [e017] - <span class="icon icon--evidence" aria-hidden="true"></span>
 /// @prop {string} facebook-square [f082] - <span class="icon icon--facebook-square" aria-hidden="true"></span>
 /// @prop {string} facebook [e012] - <span class="icon icon--facebook" aria-hidden="true"></span>
@@ -49,7 +50,7 @@ $nice-font-base-path: '/fonts/' !default;
 /// @prop {string} standards [e002] - <span class="icon icon--standards" aria-hidden="true"></span>
 /// @prop {string} syndication [e013] - <span class="icon icon--syndication" aria-hidden="true"></span>
 /// @prop {string} trash [e020] - <span class="icon icon--trash" aria-hidden="true"></span>
-/// @prop {string} twitter-square [f102] - <span class="icon icon--twitter-square" aria-hidden="true"></span>
+/// @prop {string} twitter-square [f103] - <span class="icon icon--twitter-square" aria-hidden="true"></span>
 /// @prop {string} twitter [e000] - <span class="icon icon--twitter" aria-hidden="true"></span>
 /// @prop {string} user [e01f] - <span class="icon icon--user" aria-hidden="true"></span>
 /// @prop {string} youtube-play [f16a] - <span class="icon icon--youtube-play" aria-hidden="true"></span>
@@ -59,7 +60,8 @@ $nice-icons: (
   android: "f17b",
   apple: "f179",
   calendar: "e045",
-  comment: "f101",
+  chevron-up: "f101",
+  comment: "f102",
   evidence: "e017",
   facebook-square: "f082",
   facebook: "e012",
@@ -75,7 +77,7 @@ $nice-icons: (
   standards: "e002",
   syndication: "e013",
   trash: "e020",
-  twitter-square: "f102",
+  twitter-square: "f103",
   twitter: "e000",
   user: "e01f",
   youtube-play: "f16a",
