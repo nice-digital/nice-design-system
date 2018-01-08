@@ -22,15 +22,14 @@
   "scripts": {
     "start": "grunt --color --timing",
     "dist": "grunt dist --color",
-    "prebuild": "grunt prebuild:dist --color",
-    "build": "grunt build:dist --color",
-    "test:teamcity": "grunt test:teamcity",
+    "dist:teamcity": "grunt dist:teamcity --color",
     "// JAVASCRIPT": "",
     "webpack": "SET \"NODE_ENV=production\" && webpack --progress --colors --display-error-details",
     "// TESTS": "",
+    "test:teamcity": "grunt test:mocha-teamcity-reporter --color",
     "test": "mocha src/**/*.test.js test/**/*.test.js --require babel-core/register --require mocha-clean --require test/_setup.js --color",
     "test:watch": "mocha src/**/*.test.js test/**/*.test.js --require babel-core/register --require mocha-clean --require test/_setup.js --reporter min --watch --color",
-    "test:coverage": "node ./node_modules/istanbul/lib/cli cover node_modules/mocha/bin/_mocha -- --compilers js:babel-register --require mocha-clean --require test/_setup.js src/**/*.test.js test/**/*.test.js --color",
+    "test:coverage": "nyc --reporter=html npm run test --color",
     "test:coverage:teamcity": "nyc --reporter=teamcity --reporter=html npm run test:teamcity --color",
     "// LINTING": "",
     "lint": "grunt lint --color",
@@ -112,13 +111,13 @@
     "time-grunt": "^1.4.0",
     "webpack": "^3.8.1",
     "webpack-dev-middleware": "^1.10.2",
-    "webpack-dev-server": "^2.9.3"
+    "webpack-dev-server": "^2.9.3",
+    "mocha-teamcity-reporter": "^1.1.1",
+    "nyc": "^11.3.0"
   },
   "dependencies": {
     "@nice-digital/icons": "^1.1.0",
-    "keycode": "^2.1.7",
-    "mocha-teamcity-reporter": "^1.1.1",
-    "nyc": "^11.3.0"
+    "keycode": "^2.1.7"
   },
   "engines": {
     "node": ">=4"
