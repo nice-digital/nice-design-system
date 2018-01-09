@@ -45,6 +45,7 @@
 
   &__tag {
     @include font-size(-1);
+    margin-bottom: 0 !important; // sass-lint:disable-line no-important
     margin-right: em($spacing-x-small);
   }
 
@@ -59,7 +60,7 @@
 
   &__metadatum {
     display: block;
-    margin: em(0 $spacing-medium 0 0);
+    margin: em($spacing-x-small $spacing-small 0 0);
 
     dt,
     dd {
