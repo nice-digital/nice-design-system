@@ -45,21 +45,21 @@
 
   &__tag {
     @include font-size(-1);
-    margin-right: em($spacing-x-small);
+    margin-right: rem($spacing-x-small);
   }
 
   &__metadata {
     @include font-size(-1);
     color: $colour-nice-dark-grey;
     display: inline-block;
-    margin: em($spacing-x-small 0 0);
+    margin: rem($spacing-x-small 0 0);
     position: relative;
     z-index: 1;
   }
 
   &__metadatum {
     display: block;
-    margin: em(0 $spacing-medium 0 0);
+    margin: em($spacing-x-small $spacing-small 0 0);
 
     dt,
     dd {
