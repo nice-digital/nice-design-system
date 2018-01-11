@@ -33,6 +33,7 @@ $nice-font-base-path: '/fonts/' !default;
 /// @prop {string} android [f17b] - <span class="icon icon--android" aria-hidden="true"></span>
 /// @prop {string} apple [f179] - <span class="icon icon--apple" aria-hidden="true"></span>
 /// @prop {string} calendar [e045] - <span class="icon icon--calendar" aria-hidden="true"></span>
+/// @prop {string} chevron-up [e039] - <span class="icon icon--chevron-up" aria-hidden="true"></span>
 /// @prop {string} comment [f101] - <span class="icon icon--comment" aria-hidden="true"></span>
 /// @prop {string} download [e006] - <span class="icon icon--download" aria-hidden="true"></span>
 /// @prop {string} evidence [e017] - <span class="icon icon--evidence" aria-hidden="true"></span>
@@ -64,6 +65,7 @@ $nice-icons: (
   android: "f17b",
   apple: "f179",
   calendar: "e045",
+  chevron-up: "e039",
   comment: "f101",
   download: "e006",
   evidence: "e017",

@@ -48,6 +48,7 @@
 		"f17b",
 		"f179",
 		"e045",
+		"e039",
 		"f101",
 		"e006",
 		"e017",
@@ -106,6 +107,7 @@
 		"src/android.svg",
 		"src/apple.svg",
 		"src/calendar.svg",
+		"src/chevron-up.svg",
 		"src/comment.svg",
 		"src/download.svg",
 		"src/evidence.svg",
@@ -137,6 +139,7 @@
 		"android",
 		"apple",
 		"calendar",
+		"chevron-up",
 		"comment",
 		"download",
 		"evidence",
@@ -164,21 +167,21 @@
 		"youtube-play",
 		"youtube-square"
 	],
-	"hash": "f1be8669c53bc57c5f1f166174b8cb51",
+	"hash": "68eb6f6c4a7eaad93954b3af2b7cd8b8",
 	"fontFilename": "nice-icons",
 	"fontFamilyName": "NICE Icons",
-	"fontSrc1": "url(\"/fonts/nice-icons.eot?f1be8669c53bc57c5f1f166174b8cb51\")",
-	"fontSrc2": "url(\"/fonts/nice-icons.eot?#iefix\") format(\"embedded-opentype\"),\n\t\turl(\"/fonts/nice-icons.woff2?f1be8669c53bc57c5f1f166174b8cb51\") format(\"woff2\"),\n\t\turl(\"/fonts/nice-icons.woff?f1be8669c53bc57c5f1f166174b8cb51\") format(\"woff\"),\n\t\turl(\"/fonts/nice-icons.ttf?f1be8669c53bc57c5f1f166174b8cb51\") format(\"truetype\"),\n\t\turl(\"/fonts/nice-icons.svg?f1be8669c53bc57c5f1f166174b8cb51#nice-icons\") format(\"svg\")",
+	"fontSrc1": "url(\"/fonts/nice-icons.eot?68eb6f6c4a7eaad93954b3af2b7cd8b8\")",
+	"fontSrc2": "url(\"/fonts/nice-icons.eot?#iefix\") format(\"embedded-opentype\"),\n\t\turl(\"/fonts/nice-icons.woff2?68eb6f6c4a7eaad93954b3af2b7cd8b8\") format(\"woff2\"),\n\t\turl(\"/fonts/nice-icons.woff?68eb6f6c4a7eaad93954b3af2b7cd8b8\") format(\"woff\"),\n\t\turl(\"/fonts/nice-icons.ttf?68eb6f6c4a7eaad93954b3af2b7cd8b8\") format(\"truetype\"),\n\t\turl(\"/fonts/nice-icons.svg?68eb6f6c4a7eaad93954b3af2b7cd8b8#nice-icons\") format(\"svg\")",
 	"fontRawSrcs": [
 		[
-			"url(\"/fonts/nice-icons.eot?f1be8669c53bc57c5f1f166174b8cb51\")"
+			"url(\"/fonts/nice-icons.eot?68eb6f6c4a7eaad93954b3af2b7cd8b8\")"
 		],
 		[
 			"url(\"/fonts/nice-icons.eot?#iefix\") format(\"embedded-opentype\")",
-			"url(\"/fonts/nice-icons.woff2?f1be8669c53bc57c5f1f166174b8cb51\") format(\"woff2\")",
-			"url(\"/fonts/nice-icons.woff?f1be8669c53bc57c5f1f166174b8cb51\") format(\"woff\")",
-			"url(\"/fonts/nice-icons.ttf?f1be8669c53bc57c5f1f166174b8cb51\") format(\"truetype\")",
-			"url(\"/fonts/nice-icons.svg?f1be8669c53bc57c5f1f166174b8cb51#nice-icons\") format(\"svg\")"
+			"url(\"/fonts/nice-icons.woff2?68eb6f6c4a7eaad93954b3af2b7cd8b8\") format(\"woff2\")",
+			"url(\"/fonts/nice-icons.woff?68eb6f6c4a7eaad93954b3af2b7cd8b8\") format(\"woff\")",
+			"url(\"/fonts/nice-icons.ttf?68eb6f6c4a7eaad93954b3af2b7cd8b8\") format(\"truetype\")",
+			"url(\"/fonts/nice-icons.svg?68eb6f6c4a7eaad93954b3af2b7cd8b8#nice-icons\") format(\"svg\")"
 		]
 	],
 	"baseClass": "icon",

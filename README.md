@@ -287,6 +287,7 @@ Icon | Name | Unicode | HTML | SASS
 <img src="src/android.svg" alt="android" height="50"> | android | f17b | `<span class="icon icon--android" aria-hidden="true"></span>` | `@include nice-icon(android);` 
 <img src="src/apple.svg" alt="apple" height="50"> | apple | f179 | `<span class="icon icon--apple" aria-hidden="true"></span>` | `@include nice-icon(apple);` 
 <img src="src/calendar.svg" alt="calendar" height="50"> | calendar | e045 | `<span class="icon icon--calendar" aria-hidden="true"></span>` | `@include nice-icon(calendar);` 
+<img src="src/chevron-up.svg" alt="chevron-up" height="50"> | chevron-up | e039 | `<span class="icon icon--chevron-up" aria-hidden="true"></span>` | `@include nice-icon(chevron-up);` 
 <img src="src/comment.svg" alt="comment" height="50"> | comment | f101 | `<span class="icon icon--comment" aria-hidden="true"></span>` | `@include nice-icon(comment);` 
 <img src="src/download.svg" alt="download" height="50"> | download | e006 | `<span class="icon icon--download" aria-hidden="true"></span>` | `@include nice-icon(download);` 
 <img src="src/evidence.svg" alt="evidence" height="50"> | evidence | e017 | `<span class="icon icon--evidence" aria-hidden="true"></span>` | `@include nice-icon(evidence);` 

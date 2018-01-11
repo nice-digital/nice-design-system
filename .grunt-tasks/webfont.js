@@ -16,6 +16,7 @@ module.exports = {
 				// NICE.Glyphs codepoints for backwards compatability
 				// See http://nhsevidence.github.io/NICE.Bootstrap/Guide.Glyphs.html#charset
 				calendar: 0xe045,
+				"chevron-up": 0xe039,
 				download: 0xe006,
 				evidence: 0xe017,
 				facebook: 0xe012,
