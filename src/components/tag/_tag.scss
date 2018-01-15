@@ -13,6 +13,7 @@
 ///   - `--new`  New
 ///   - `--updated`  Updated
 ///   - `--consultation`  In consultation
+///   - `--flush`  No margin
 /// @since 0.3.1
 .tag {
   background-color: $colour-panel-inverse;
@@ -20,6 +21,7 @@
   color: $colour-text-inverse;
   display: inline-block;
   font-weight: normal;
+  margin: rem(0 0 $spacing-x-small 0);
   padding: em(0 $spacing-x-small);
   text-decoration: none;
   vertical-align: baseline;
@@ -64,5 +66,9 @@
 
   &--consultation {
     background: $colour-guidance-consultation;
+  }
+
+  &--flush {
+    margin-bottom: 0;
   }
 }

@@ -12,11 +12,11 @@
 
 		<h2>Card with tag</h2>
 
-		{{ card({ heading: { text: "This is another heading" }, href: "https://www.nice.org.uk/", tag: { modifier: "new", label: "New" }, metadata: [ { key: "Published date", value: "March 2015", datetime: "2015-03" }, { key: "Metadata key", value: "Metadata value" } ] }) }}
+		{{ card({ heading: { text: "This is another heading" }, href: "https://www.nice.org.uk/", tag: { modifiers: ["new", "flush"], label: "New" }, metadata: [ { key: "Published date", value: "March 2015", datetime: "2015-03" }, { key: "Metadata key", value: "Metadata value" } ] }) }}
 
 		<h2>Card with multiple tags</h2>
 
-		{{ card({ heading: { text: "The Prosigna gene expression profiling assay for assessing long‑term risk of breast cancer recurrence (MIB27)" }, href: "https://www.nice.org.uk/advice/mib27", tags: [{ modifier: "consultation", label: "In consultation" }, { modifier: "new", label: "New" }], metadata: [ { key: "Published date", value: "March 2015", datetime: "2015-03" } ] }) }}
+		{{ card({ heading: { text: "The Prosigna gene expression profiling assay for assessing long‑term risk of breast cancer recurrence (MIB27)" }, href: "https://www.nice.org.uk/advice/mib27", tags: [{ modifiers: ["consultation", "flush"], label: "In consultation" }, { modifiers: ["new", "flush"], label: "New" }], metadata: [ { key: "Published date", value: "March 2015", datetime: "2015-03" } ] }) }}
 
 		<h2>List of cards</h1>
 
