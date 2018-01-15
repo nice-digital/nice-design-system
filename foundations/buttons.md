@@ -56,13 +56,15 @@ When you require a button type that sits lower in the hierarchy then a primary b
 {% endcapture %}
 {% include example.html body=secondary %}
 
-### Light button
-If you are wanting to place a button on a dark background, use the light button as a way of making the button distinguishable.
+### Inverse button
+Use the inverse (light) button button on an inverse (dark) background, to make the button distinguishable.
 
-{% capture light %}
-<p class="panel panel--dark"><a href="#" class="btn btn--light">View guidance consultations</a></p>
+{% capture inverse %}
+<p class="panel panel--inverse">
+    <a href="#" class="btn btn--inverse">Inverse button</a>
+</p>
 {% endcapture %}
-{% include example.html body=light %}
+{% include example.html body=inverse %}
 
 ### Icon button
 If you are looking for an additional way to convey the label on a button. Instances of this could include: Refresh or loading state buttons.
@@ -75,7 +77,10 @@ If you are looking for an additional way to convey the label on a button. Instan
 ## Dropdown button
 A dropdown menu with a set of related actions. Ensure that the button label is clear as to what the contents of the dropdown are
 
-CODE AREA
+{% capture dropdown %}
+TODO
+{% endcapture %}
+{% include example.html body=dropdown %}
 
 ## Disabled buttons
 - disabled buttons are lowered down to 50% opacity to ensure they look unclickable

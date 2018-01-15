@@ -10,23 +10,20 @@ description: Blocks to highlight or separate content
 
 ### Default (light) panel
 
-{% capture light %}
+{% capture default %}
 <div class="panel">
-    <p>This is some panel content</p>
+    <p>This is a default panel</p>
 </div>
 {% endcapture %}
-{% include example.html lang='html' body=light %}
+{% include example.html lang='html' body=default %}
 
 ### Inverse (dark) panel
 
 {% capture dark %}
 <div class="panel panel--inverse">
-    <p>This is some panel content</p>
+    <p>This is a dark panel</p>
     <p>
-        <a href="#" class="btn btn--light">Light button</a>
-        <a href="#" class="btn btn">Primary button</a>
-        <a href="#" class="btn btn--cta">CTA button</a>
-        <a href="#" class="btn btn--secondary">Secondary button</a>
+        <a href="#" class="btn btn--inverse">Inverse button</a>
     </p>
 </div>
 {% endcapture %}
