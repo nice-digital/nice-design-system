@@ -2717,7 +2717,7 @@
       "context": {
         "type": "css",
         "name": ".card",
-        "value": "border-bottom: 1px solid $colour-border;\n  padding: em($spacing-small 0);\n  position: relative;\n\n  &__heading {\n    @include font-size(0);\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      text-decoration: none;\n\n      &:hover {\n        text-decoration: underline;\n      }\n\n      &:before {\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: 100%;\n        z-index: 0;\n      }\n    }\n  }\n\n  &__icon {\n    margin: em(0 $spacing-x-small 0 0);\n  }\n\n  &__tag {\n    @include font-size(-1)\n    margin-right: em($spacing-x-small);\n  }\n\n  &__metadata {\n    @include font-size(-1);\n    color: $colour-nice-dark-grey;\n    display: inline-block;\n    margin: em($spacing-x-small 0 0);\n    position: relative;\n    z-index: 1;\n  }\n\n  &__metadatum {\n    display: block;\n    margin: em(0 $spacing-medium 0 0);\n\n    dt,\n    dd {\n      display: inline-block;\n      margin: 0;\n    }\n  }\n\n  @include mq($from: sm) {\n    &__metadatum {\n      display: inline-block;\n      white-space: nowrap;\n    }\n  }",
+        "value": "border-bottom: 1px solid $colour-border;\n  padding: em($spacing-small 0);\n  position: relative;\n\n  &__heading {\n    @include font-size(0);\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      text-decoration: none;\n\n      &:hover {\n        text-decoration: underline;\n      }\n\n      &:before {\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: 100%;\n        z-index: 0;\n      }\n    }\n  }\n\n  &__icon {\n    margin: em(0 $spacing-x-small 0 0);\n  }\n\n  &__tag {\n    @include font-size(-1);\n    margin-right: rem($spacing-x-small);\n  }\n\n  &__metadata {\n    @include font-size(-1);\n    color: $colour-nice-dark-grey;\n    display: inline-block;\n    margin: rem($spacing-x-small 0 0);\n    position: relative;\n    z-index: 1;\n  }\n\n  &__metadatum {\n    display: block;\n    margin: em($spacing-x-small $spacing-small 0 0);\n\n    dt,\n    dd {\n      display: inline-block;\n      margin: 0;\n    }\n  }\n\n  @include mq($from: sm) {\n    &__metadatum {\n      display: inline-block;\n      white-space: nowrap;\n    }\n  }",
         "line": {
           "start": 12,
           "end": 78
@@ -3120,14 +3120,14 @@
       },
       "see": [
         {
-          "description": "<p>Tag component. Used for labelling items in lists\nand also used within alpha/beta phase banners.</p>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--impact</code> Larger tag, used for impact</li>\n<li><code>--alpha</code> Alpha</li>\n<li><code>--beta</code>  Beta</li>\n<li><code>--live</code>  Live</li>\n<li><code>--new</code>  New</li>\n<li><code>--updated</code>  Updated</li>\n<li><code>--consultation</code>  In consultation</li>\n</ul>\n",
+          "description": "<p>Tag component. Used for labelling items in lists\nand also used within alpha/beta phase banners.</p>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--impact</code> Larger tag, used for impact</li>\n<li><code>--alpha</code> Alpha</li>\n<li><code>--beta</code>  Beta</li>\n<li><code>--live</code>  Live</li>\n<li><code>--new</code>  New</li>\n<li><code>--updated</code>  Updated</li>\n<li><code>--consultation</code>  In consultation</li>\n<li><code>--flush</code>  No margin</li>\n</ul>\n",
           "context": {
             "type": "css",
             "name": ".tag",
-            "value": "background-color: $colour-panel-inverse;\n  border-radius: em($spacing-xx-small);\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: normal;\n  padding: em(0 $spacing-x-small);\n  text-decoration: none;\n  vertical-align: baseline;\n\n  @media print {\n    // sass-lint:disable-block no-important\n    background: none !important;\n    color: $colour-true-black !important;\n    padding: 0 !important;\n  }\n\n  &--impact {\n    @include font-size(-1);\n    font-weight: 900;\n    letter-spacing: 1px;\n    padding: em($spacing-xx-small $spacing-small);\n    text-transform: uppercase;\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }\n\n  &--new {\n    background: $colour-guidance-new;\n  }\n\n  &--updated {\n    background: $colour-guidance-updated;\n  }\n\n  &--consultation {\n    background: $colour-guidance-consultation;\n  }",
+            "value": "background-color: $colour-panel-inverse;\n  border-radius: em($spacing-xx-small);\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: normal;\n  margin: rem(0 0 $spacing-x-small 0);\n  padding: em(0 $spacing-x-small);\n  text-decoration: none;\n  vertical-align: baseline;\n\n  @media print {\n    // sass-lint:disable-block no-important\n    background: none !important;\n    color: $colour-true-black !important;\n    padding: 0 !important;\n  }\n\n  &--impact {\n    @include font-size(-1);\n    font-weight: 900;\n    letter-spacing: 1px;\n    padding: em($spacing-xx-small $spacing-small);\n    text-transform: uppercase;\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }\n\n  &--new {\n    background: $colour-guidance-new;\n  }\n\n  &--updated {\n    background: $colour-guidance-updated;\n  }\n\n  &--consultation {\n    background: $colour-guidance-consultation;\n  }\n\n  &--flush {\n    margin-bottom: 0;\n  }",
             "line": {
-              "start": 17,
-              "end": 69
+              "start": 18,
+              "end": 75
             }
           }
         }
@@ -3218,18 +3218,18 @@
       }
     },
     {
-      "description": "<p>Tag component. Used for labelling items in lists\nand also used within alpha/beta phase banners.</p>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--impact</code> Larger tag, used for impact</li>\n<li><code>--alpha</code> Alpha</li>\n<li><code>--beta</code>  Beta</li>\n<li><code>--live</code>  Live</li>\n<li><code>--new</code>  New</li>\n<li><code>--updated</code>  Updated</li>\n<li><code>--consultation</code>  In consultation</li>\n</ul>\n",
+      "description": "<p>Tag component. Used for labelling items in lists\nand also used within alpha/beta phase banners.</p>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--impact</code> Larger tag, used for impact</li>\n<li><code>--alpha</code> Alpha</li>\n<li><code>--beta</code>  Beta</li>\n<li><code>--live</code>  Live</li>\n<li><code>--new</code>  New</li>\n<li><code>--updated</code>  Updated</li>\n<li><code>--consultation</code>  In consultation</li>\n<li><code>--flush</code>  No margin</li>\n</ul>\n",
       "commentRange": {
         "start": 5,
-        "end": 16
+        "end": 17
       },
       "context": {
         "type": "css",
         "name": ".tag",
-        "value": "background-color: $colour-panel-inverse;\n  border-radius: em($spacing-xx-small);\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: normal;\n  padding: em(0 $spacing-x-small);\n  text-decoration: none;\n  vertical-align: baseline;\n\n  @media print {\n    // sass-lint:disable-block no-important\n    background: none !important;\n    color: $colour-true-black !important;\n    padding: 0 !important;\n  }\n\n  &--impact {\n    @include font-size(-1);\n    font-weight: 900;\n    letter-spacing: 1px;\n    padding: em($spacing-xx-small $spacing-small);\n    text-transform: uppercase;\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }\n\n  &--new {\n    background: $colour-guidance-new;\n  }\n\n  &--updated {\n    background: $colour-guidance-updated;\n  }\n\n  &--consultation {\n    background: $colour-guidance-consultation;\n  }",
+        "value": "background-color: $colour-panel-inverse;\n  border-radius: em($spacing-xx-small);\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: normal;\n  margin: rem(0 0 $spacing-x-small 0);\n  padding: em(0 $spacing-x-small);\n  text-decoration: none;\n  vertical-align: baseline;\n\n  @media print {\n    // sass-lint:disable-block no-important\n    background: none !important;\n    color: $colour-true-black !important;\n    padding: 0 !important;\n  }\n\n  &--impact {\n    @include font-size(-1);\n    font-weight: 900;\n    letter-spacing: 1px;\n    padding: em($spacing-xx-small $spacing-small);\n    text-transform: uppercase;\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }\n\n  &--new {\n    background: $colour-guidance-new;\n  }\n\n  &--updated {\n    background: $colour-guidance-updated;\n  }\n\n  &--consultation {\n    background: $colour-guidance-consultation;\n  }\n\n  &--flush {\n    margin-bottom: 0;\n  }",
         "line": {
-          "start": 17,
-          "end": 69
+          "start": 18,
+          "end": 75
         }
       },
       "since": [
@@ -4721,16 +4721,16 @@
       "description": "<p>A map of glyph name to code point (character entity reference).\nAvoids magic strings like <code>content: &#39;\\201C&#39;</code> within our SASS.\nUsual usage is via the <code>get-glyph</code> function, e.g. <code>get-glyph(greater-than)</code>.</p>\n",
       "commentRange": {
         "start": 5,
-        "end": 16
+        "end": 18
       },
       "context": {
         "type": "variable",
         "name": "nice-glyphs",
-        "value": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
+        "value": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  hyphen-minus: '002d',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  plus: '002b',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
         "scope": "default",
         "line": {
-          "start": 17,
-          "end": 25
+          "start": 19,
+          "end": 29
         }
       },
       "see": [
@@ -4741,8 +4741,8 @@
             "name": "get-glyph",
             "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
             "line": {
-              "start": 42,
-              "end": 55
+              "start": 46,
+              "end": 59
             }
           }
         }
@@ -4777,6 +4777,13 @@
         },
         {
           "type": "String",
+          "name": "hyphen-minus",
+          "default": "002d",
+          "description": "<p>Hyphen minus (-)</p>\n",
+          "resolvedValue": "002d"
+        },
+        {
+          "type": "String",
           "name": "left-double-quotation-mark",
           "default": "201C",
           "description": "<p>Left double quotation mark (“)</p>\n",
@@ -4788,6 +4795,13 @@
           "default": "003c",
           "description": "<p>Less than symbol (&lt;)</p>\n",
           "resolvedValue": "003c"
+        },
+        {
+          "type": "String",
+          "name": "plus",
+          "default": "002b",
+          "description": "<p>Plus sign (+)</p>\n",
+          "resolvedValue": "002b"
         },
         {
           "type": "String",
@@ -4818,8 +4832,8 @@
             "name": "get-glyph",
             "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
             "line": {
-              "start": 42,
-              "end": 55
+              "start": 46,
+              "end": 59
             }
           }
         },
@@ -4830,8 +4844,8 @@
             "name": "get-glyph",
             "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
             "line": {
-              "start": 42,
-              "end": 55
+              "start": 46,
+              "end": 59
             }
           }
         },
@@ -4842,8 +4856,8 @@
             "name": "get-glyph",
             "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
             "line": {
-              "start": 42,
-              "end": 55
+              "start": 46,
+              "end": 59
             }
           }
         }
@@ -4851,21 +4865,21 @@
       "groupName": {
         "helpers": "Helpers"
       },
-      "resolvedValue": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)"
+      "resolvedValue": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  hyphen-minus: '002d',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  plus: '002b',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)"
     },
     {
       "description": "<p>Gets a glyph code, or several, (character entity reference) from the\n<code>$nice-glyphs</code> map, matching the given <code>$names</code>. Usually used with the content\nproperty for psuedo elements, to avoid use of magic character reference strings.</p>\n",
       "commentRange": {
-        "start": 27,
-        "end": 41
+        "start": 31,
+        "end": 45
       },
       "context": {
         "type": "function",
         "name": "get-glyph",
         "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
         "line": {
-          "start": 42,
-          "end": 55
+          "start": 46,
+          "end": 59
         }
       },
       "parameter": [
@@ -4885,11 +4899,11 @@
           "context": {
             "type": "variable",
             "name": "nice-glyphs",
-            "value": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
+            "value": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  hyphen-minus: '002d',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  plus: '002b',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
             "scope": "default",
             "line": {
-              "start": 17,
-              "end": 25
+              "start": 19,
+              "end": 29
             }
           }
         }
@@ -4943,16 +4957,16 @@
     {
       "description": "<p>Output a BEM style glyph selector for each glyph in the map.\n  E.g. .glyph.glyph--bullet { content: &#39;\\2022&#39;; }\n  @since 0.1.0</p>\n",
       "commentRange": {
-        "start": 58,
-        "end": 60
+        "start": 62,
+        "end": 64
       },
       "context": {
         "type": "css",
         "name": ".glyph",
         "value": "@each $key, $value in $nice-glyphs {\n      &--#{$key} {\n        &::before {\n          content: unquote('\\'\\\\#{$value}\\'');\n        }\n      }\n    }",
         "line": {
-          "start": 61,
-          "end": 71
+          "start": 65,
+          "end": 75
         }
       },
       "group": [
@@ -5148,7 +5162,7 @@
         "value": "@include important(text-align, justify);",
         "line": {
           "start": 19,
-          "end": 126
+          "end": 127
         }
       },
       "since": [
@@ -5180,7 +5194,7 @@
         "value": "@include important(white-space, nowrap);",
         "line": {
           "start": 25,
-          "end": 126
+          "end": 127
         }
       },
       "since": [
@@ -5212,7 +5226,7 @@
         "value": "@include text-truncate;",
         "line": {
           "start": 32,
-          "end": 126
+          "end": 127
         }
       },
       "since": [
@@ -5244,7 +5258,7 @@
         "value": "@include important(text-align, left);",
         "line": {
           "start": 38,
-          "end": 126
+          "end": 127
         }
       },
       "since": [
@@ -5276,7 +5290,7 @@
         "value": "@include important(text-align, center);",
         "line": {
           "start": 44,
-          "end": 126
+          "end": 127
         }
       },
       "since": [
@@ -5305,10 +5319,10 @@
       "context": {
         "type": "css",
         "name": ".text-right",
-        "value": "@include important(text-align, right);",
+        "value": "@include important(text-align, right);\n  max-width: 100%; // Because of max character width on paragraphs",
         "line": {
           "start": 50,
-          "end": 126
+          "end": 127
         }
       },
       "since": [
@@ -5331,16 +5345,16 @@
     {
       "description": "<p>Lowercase text</p>\n",
       "commentRange": {
-        "start": 59,
-        "end": 60
+        "start": 60,
+        "end": 61
       },
       "context": {
         "type": "css",
         "name": ".text-lowercase",
         "value": "@include important(text-transform, lowercase);",
         "line": {
-          "start": 61,
-          "end": 126
+          "start": 62,
+          "end": 127
         }
       },
       "since": [
@@ -5363,16 +5377,16 @@
     {
       "description": "<p>Uppercase text</p>\n",
       "commentRange": {
-        "start": 65,
-        "end": 66
+        "start": 66,
+        "end": 67
       },
       "context": {
         "type": "css",
         "name": ".text-uppercase",
         "value": "@include important(text-transform, uppercase);",
         "line": {
-          "start": 67,
-          "end": 126
+          "start": 68,
+          "end": 127
         }
       },
       "since": [
@@ -5395,16 +5409,16 @@
     {
       "description": "<p>Capitalized text</p>\n",
       "commentRange": {
-        "start": 71,
-        "end": 72
+        "start": 72,
+        "end": 73
       },
       "context": {
         "type": "css",
         "name": ".text-capitalize",
         "value": "@include important(text-transform, capitalize);",
         "line": {
-          "start": 73,
-          "end": 126
+          "start": 74,
+          "end": 127
         }
       },
       "since": [
@@ -5427,16 +5441,16 @@
     {
       "description": "<p>Normal font weight</p>\n",
       "commentRange": {
-        "start": 80,
-        "end": 81
+        "start": 81,
+        "end": 82
       },
       "context": {
         "type": "css",
         "name": ".font-weight-normal",
         "value": "font-weight: normal;",
         "line": {
-          "start": 82,
-          "end": 126
+          "start": 83,
+          "end": 127
         }
       },
       "since": [
@@ -5459,16 +5473,16 @@
     {
       "description": "<p>Bold font weight</p>\n",
       "commentRange": {
-        "start": 86,
-        "end": 87
+        "start": 87,
+        "end": 88
       },
       "context": {
         "type": "css",
         "name": ".font-weight-bold",
         "value": "font-weight: bold;",
         "line": {
-          "start": 88,
-          "end": 126
+          "start": 89,
+          "end": 127
         }
       },
       "since": [
@@ -5491,16 +5505,16 @@
     {
       "description": "<p>Italic font style</p>\n",
       "commentRange": {
-        "start": 92,
-        "end": 93
+        "start": 93,
+        "end": 94
       },
       "context": {
         "type": "css",
         "name": ".font-italic",
         "value": "font-style: italic;",
         "line": {
-          "start": 94,
-          "end": 126
+          "start": 95,
+          "end": 127
         }
       },
       "since": [
@@ -5523,16 +5537,16 @@
     {
       "description": "<p>Quick left float</p>\n",
       "commentRange": {
-        "start": 98,
-        "end": 99
+        "start": 99,
+        "end": 100
       },
       "context": {
         "type": "css",
         "name": ".left",
         "value": "float: left;",
         "line": {
-          "start": 100,
-          "end": 126
+          "start": 101,
+          "end": 127
         }
       },
       "since": [
@@ -5555,16 +5569,16 @@
     {
       "description": "<p>Quick right float</p>\n",
       "commentRange": {
-        "start": 104,
-        "end": 105
+        "start": 105,
+        "end": 106
       },
       "context": {
         "type": "css",
         "name": ".right",
         "value": "float: right;",
         "line": {
-          "start": 106,
-          "end": 126
+          "start": 107,
+          "end": 127
         }
       },
       "since": [
@@ -5587,16 +5601,16 @@
     {
       "description": "<p>Set and element to display as block and align\ncentrally via auto left/right margins</p>\n",
       "commentRange": {
-        "start": 111,
-        "end": 113
+        "start": 112,
+        "end": 114
       },
       "context": {
         "type": "mixin",
         "name": "center-block",
         "code": "\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n",
         "line": {
-          "start": 114,
-          "end": 118
+          "start": 115,
+          "end": 119
         }
       },
       "since": [
@@ -5619,16 +5633,16 @@
     {
       "description": "<p>Set and element to display as block and align\ncentrally via auto left/right margins</p>\n",
       "commentRange": {
-        "start": 120,
-        "end": 122
+        "start": 121,
+        "end": 123
       },
       "context": {
         "type": "css",
         "name": ".center-block",
         "value": "@include center-block;",
         "line": {
-          "start": 123,
-          "end": 126
+          "start": 124,
+          "end": 127
         }
       },
       "since": [
@@ -6661,16 +6675,16 @@
     {
       "description": "<p>Heading, BEM style.\nModifiers:</p>\n<ul>\n<li>separator: Border below</li>\n</ul>\n",
       "commentRange": {
-        "start": 16,
-        "end": 18
+        "start": 17,
+        "end": 19
       },
       "context": {
         "type": "css",
         "name": ".heading",
         "value": "&--separator {\n    border-bottom: 1px solid $colour-border;\n  }",
         "line": {
-          "start": 19,
-          "end": 102
+          "start": 20,
+          "end": 103
         }
       },
       "group": [
@@ -6688,16 +6702,16 @@
     {
       "description": "<p>Primary heading. Used for h1 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
       "commentRange": {
-        "start": 25,
-        "end": 27
+        "start": 26,
+        "end": 28
       },
       "context": {
         "type": "mixin",
         "name": "h1",
         "code": "\n  @include font(h1);\n",
         "line": {
-          "start": 28,
-          "end": 30
+          "start": 29,
+          "end": 31
         }
       },
       "since": [
@@ -6726,16 +6740,16 @@
     {
       "description": "<p>Secondary heading. Used for h2 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
       "commentRange": {
-        "start": 32,
-        "end": 34
+        "start": 33,
+        "end": 35
       },
       "context": {
         "type": "mixin",
         "name": "h2",
         "code": "\n  @include font(h2);\n",
         "line": {
-          "start": 35,
-          "end": 37
+          "start": 36,
+          "end": 38
         }
       },
       "since": [
@@ -6764,16 +6778,16 @@
     {
       "description": "<p>Tertiary heading. Used for h3 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
       "commentRange": {
-        "start": 39,
-        "end": 41
+        "start": 40,
+        "end": 42
       },
       "context": {
         "type": "mixin",
         "name": "h3",
         "code": "\n  @include font(h3);\n",
         "line": {
-          "start": 42,
-          "end": 44
+          "start": 43,
+          "end": 45
         }
       },
       "since": [
@@ -6802,16 +6816,16 @@
     {
       "description": "<p>Fourth level heading. Used for h4 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
       "commentRange": {
-        "start": 46,
-        "end": 48
+        "start": 47,
+        "end": 49
       },
       "context": {
         "type": "mixin",
         "name": "h4",
         "code": "\n  @include font(h4);\n",
         "line": {
-          "start": 49,
-          "end": 51
+          "start": 50,
+          "end": 52
         }
       },
       "since": [
@@ -6840,16 +6854,16 @@
     {
       "description": "<p>Fifth level heading. Used for h5 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
       "commentRange": {
-        "start": 53,
-        "end": 55
+        "start": 54,
+        "end": 56
       },
       "context": {
         "type": "mixin",
         "name": "h5",
         "code": "\n  @include font(h5);\n",
         "line": {
-          "start": 56,
-          "end": 58
+          "start": 57,
+          "end": 59
         }
       },
       "since": [
@@ -6878,16 +6892,16 @@
     {
       "description": "<p>Sixth level heading. Used for h6 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
       "commentRange": {
-        "start": 60,
-        "end": 62
+        "start": 61,
+        "end": 63
       },
       "context": {
         "type": "mixin",
         "name": "h6",
         "code": "\n  @include font(h6);\n",
         "line": {
-          "start": 63,
-          "end": 65
+          "start": 64,
+          "end": 66
         }
       },
       "since": [
@@ -7357,8 +7371,8 @@
             "name": "h1",
             "code": "\n  @include font(h1);\n",
             "line": {
-              "start": 28,
-              "end": 30
+              "start": 29,
+              "end": 31
             }
           }
         },
@@ -7369,8 +7383,8 @@
             "name": "h2",
             "code": "\n  @include font(h2);\n",
             "line": {
-              "start": 35,
-              "end": 37
+              "start": 36,
+              "end": 38
             }
           }
         },
@@ -7381,8 +7395,8 @@
             "name": "h3",
             "code": "\n  @include font(h3);\n",
             "line": {
-              "start": 42,
-              "end": 44
+              "start": 43,
+              "end": 45
             }
           }
         },
@@ -7393,8 +7407,8 @@
             "name": "h4",
             "code": "\n  @include font(h4);\n",
             "line": {
-              "start": 49,
-              "end": 51
+              "start": 50,
+              "end": 52
             }
           }
         },
@@ -7405,8 +7419,8 @@
             "name": "h5",
             "code": "\n  @include font(h5);\n",
             "line": {
-              "start": 56,
-              "end": 58
+              "start": 57,
+              "end": 59
             }
           }
         },
@@ -7417,8 +7431,8 @@
             "name": "h6",
             "code": "\n  @include font(h6);\n",
             "line": {
-              "start": 63,
-              "end": 65
+              "start": 64,
+              "end": 66
             }
           }
         },
@@ -11922,7 +11936,7 @@
           "context": {
             "type": "css",
             "name": ".card",
-            "value": "border-bottom: 1px solid $colour-border;\n  padding: em($spacing-small 0);\n  position: relative;\n\n  &__heading {\n    @include font-size(0);\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      text-decoration: none;\n\n      &:hover {\n        text-decoration: underline;\n      }\n\n      &:before {\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: 100%;\n        z-index: 0;\n      }\n    }\n  }\n\n  &__icon {\n    margin: em(0 $spacing-x-small 0 0);\n  }\n\n  &__tag {\n    @include font-size(-1)\n    margin-right: em($spacing-x-small);\n  }\n\n  &__metadata {\n    @include font-size(-1);\n    color: $colour-nice-dark-grey;\n    display: inline-block;\n    margin: em($spacing-x-small 0 0);\n    position: relative;\n    z-index: 1;\n  }\n\n  &__metadatum {\n    display: block;\n    margin: em(0 $spacing-medium 0 0);\n\n    dt,\n    dd {\n      display: inline-block;\n      margin: 0;\n    }\n  }\n\n  @include mq($from: sm) {\n    &__metadatum {\n      display: inline-block;\n      white-space: nowrap;\n    }\n  }",
+            "value": "border-bottom: 1px solid $colour-border;\n  padding: em($spacing-small 0);\n  position: relative;\n\n  &__heading {\n    @include font-size(0);\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      text-decoration: none;\n\n      &:hover {\n        text-decoration: underline;\n      }\n\n      &:before {\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: 100%;\n        z-index: 0;\n      }\n    }\n  }\n\n  &__icon {\n    margin: em(0 $spacing-x-small 0 0);\n  }\n\n  &__tag {\n    @include font-size(-1);\n    margin-right: rem($spacing-x-small);\n  }\n\n  &__metadata {\n    @include font-size(-1);\n    color: $colour-nice-dark-grey;\n    display: inline-block;\n    margin: rem($spacing-x-small 0 0);\n    position: relative;\n    z-index: 1;\n  }\n\n  &__metadatum {\n    display: block;\n    margin: em($spacing-x-small $spacing-small 0 0);\n\n    dt,\n    dd {\n      display: inline-block;\n      margin: 0;\n    }\n  }\n\n  @include mq($from: sm) {\n    &__metadatum {\n      display: inline-block;\n      white-space: nowrap;\n    }\n  }",
             "line": {
               "start": 12,
               "end": 78
@@ -12287,14 +12301,14 @@
           },
           "see": [
             {
-              "description": "<p>Tag component. Used for labelling items in lists\nand also used within alpha/beta phase banners.</p>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--impact</code> Larger tag, used for impact</li>\n<li><code>--alpha</code> Alpha</li>\n<li><code>--beta</code>  Beta</li>\n<li><code>--live</code>  Live</li>\n<li><code>--new</code>  New</li>\n<li><code>--updated</code>  Updated</li>\n<li><code>--consultation</code>  In consultation</li>\n</ul>\n",
+              "description": "<p>Tag component. Used for labelling items in lists\nand also used within alpha/beta phase banners.</p>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--impact</code> Larger tag, used for impact</li>\n<li><code>--alpha</code> Alpha</li>\n<li><code>--beta</code>  Beta</li>\n<li><code>--live</code>  Live</li>\n<li><code>--new</code>  New</li>\n<li><code>--updated</code>  Updated</li>\n<li><code>--consultation</code>  In consultation</li>\n<li><code>--flush</code>  No margin</li>\n</ul>\n",
               "context": {
                 "type": "css",
                 "name": ".tag",
-                "value": "background-color: $colour-panel-inverse;\n  border-radius: em($spacing-xx-small);\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: normal;\n  padding: em(0 $spacing-x-small);\n  text-decoration: none;\n  vertical-align: baseline;\n\n  @media print {\n    // sass-lint:disable-block no-important\n    background: none !important;\n    color: $colour-true-black !important;\n    padding: 0 !important;\n  }\n\n  &--impact {\n    @include font-size(-1);\n    font-weight: 900;\n    letter-spacing: 1px;\n    padding: em($spacing-xx-small $spacing-small);\n    text-transform: uppercase;\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }\n\n  &--new {\n    background: $colour-guidance-new;\n  }\n\n  &--updated {\n    background: $colour-guidance-updated;\n  }\n\n  &--consultation {\n    background: $colour-guidance-consultation;\n  }",
+                "value": "background-color: $colour-panel-inverse;\n  border-radius: em($spacing-xx-small);\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: normal;\n  margin: rem(0 0 $spacing-x-small 0);\n  padding: em(0 $spacing-x-small);\n  text-decoration: none;\n  vertical-align: baseline;\n\n  @media print {\n    // sass-lint:disable-block no-important\n    background: none !important;\n    color: $colour-true-black !important;\n    padding: 0 !important;\n  }\n\n  &--impact {\n    @include font-size(-1);\n    font-weight: 900;\n    letter-spacing: 1px;\n    padding: em($spacing-xx-small $spacing-small);\n    text-transform: uppercase;\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }\n\n  &--new {\n    background: $colour-guidance-new;\n  }\n\n  &--updated {\n    background: $colour-guidance-updated;\n  }\n\n  &--consultation {\n    background: $colour-guidance-consultation;\n  }\n\n  &--flush {\n    margin-bottom: 0;\n  }",
                 "line": {
-                  "start": 17,
-                  "end": 69
+                  "start": 18,
+                  "end": 75
                 }
               }
             }
@@ -12385,18 +12399,18 @@
           }
         },
         {
-          "description": "<p>Tag component. Used for labelling items in lists\nand also used within alpha/beta phase banners.</p>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--impact</code> Larger tag, used for impact</li>\n<li><code>--alpha</code> Alpha</li>\n<li><code>--beta</code>  Beta</li>\n<li><code>--live</code>  Live</li>\n<li><code>--new</code>  New</li>\n<li><code>--updated</code>  Updated</li>\n<li><code>--consultation</code>  In consultation</li>\n</ul>\n",
+          "description": "<p>Tag component. Used for labelling items in lists\nand also used within alpha/beta phase banners.</p>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--impact</code> Larger tag, used for impact</li>\n<li><code>--alpha</code> Alpha</li>\n<li><code>--beta</code>  Beta</li>\n<li><code>--live</code>  Live</li>\n<li><code>--new</code>  New</li>\n<li><code>--updated</code>  Updated</li>\n<li><code>--consultation</code>  In consultation</li>\n<li><code>--flush</code>  No margin</li>\n</ul>\n",
           "commentRange": {
             "start": 5,
-            "end": 16
+            "end": 17
           },
           "context": {
             "type": "css",
             "name": ".tag",
-            "value": "background-color: $colour-panel-inverse;\n  border-radius: em($spacing-xx-small);\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: normal;\n  padding: em(0 $spacing-x-small);\n  text-decoration: none;\n  vertical-align: baseline;\n\n  @media print {\n    // sass-lint:disable-block no-important\n    background: none !important;\n    color: $colour-true-black !important;\n    padding: 0 !important;\n  }\n\n  &--impact {\n    @include font-size(-1);\n    font-weight: 900;\n    letter-spacing: 1px;\n    padding: em($spacing-xx-small $spacing-small);\n    text-transform: uppercase;\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }\n\n  &--new {\n    background: $colour-guidance-new;\n  }\n\n  &--updated {\n    background: $colour-guidance-updated;\n  }\n\n  &--consultation {\n    background: $colour-guidance-consultation;\n  }",
+            "value": "background-color: $colour-panel-inverse;\n  border-radius: em($spacing-xx-small);\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: normal;\n  margin: rem(0 0 $spacing-x-small 0);\n  padding: em(0 $spacing-x-small);\n  text-decoration: none;\n  vertical-align: baseline;\n\n  @media print {\n    // sass-lint:disable-block no-important\n    background: none !important;\n    color: $colour-true-black !important;\n    padding: 0 !important;\n  }\n\n  &--impact {\n    @include font-size(-1);\n    font-weight: 900;\n    letter-spacing: 1px;\n    padding: em($spacing-xx-small $spacing-small);\n    text-transform: uppercase;\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }\n\n  &--new {\n    background: $colour-guidance-new;\n  }\n\n  &--updated {\n    background: $colour-guidance-updated;\n  }\n\n  &--consultation {\n    background: $colour-guidance-consultation;\n  }\n\n  &--flush {\n    margin-bottom: 0;\n  }",
             "line": {
-              "start": 17,
-              "end": 69
+              "start": 18,
+              "end": 75
             }
           },
           "since": [
@@ -13903,16 +13917,16 @@
         {
           "description": "<p>Set and element to display as block and align\ncentrally via auto left/right margins</p>\n",
           "commentRange": {
-            "start": 111,
-            "end": 113
+            "start": 112,
+            "end": 114
           },
           "context": {
             "type": "mixin",
             "name": "center-block",
             "code": "\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n",
             "line": {
-              "start": 114,
-              "end": 118
+              "start": 115,
+              "end": 119
             }
           },
           "since": [
@@ -14133,16 +14147,16 @@
         {
           "description": "<p>Output a BEM style glyph selector for each glyph in the map.\n  E.g. .glyph.glyph--bullet { content: &#39;\\2022&#39;; }\n  @since 0.1.0</p>\n",
           "commentRange": {
-            "start": 58,
-            "end": 60
+            "start": 62,
+            "end": 64
           },
           "context": {
             "type": "css",
             "name": ".glyph",
             "value": "@each $key, $value in $nice-glyphs {\n      &--#{$key} {\n        &::before {\n          content: unquote('\\'\\\\#{$value}\\'');\n        }\n      }\n    }",
             "line": {
-              "start": 61,
-              "end": 71
+              "start": 65,
+              "end": 75
             }
           },
           "group": [
@@ -14169,7 +14183,7 @@
             "value": "@include important(text-align, justify);",
             "line": {
               "start": 19,
-              "end": 126
+              "end": 127
             }
           },
           "since": [
@@ -14201,7 +14215,7 @@
             "value": "@include important(white-space, nowrap);",
             "line": {
               "start": 25,
-              "end": 126
+              "end": 127
             }
           },
           "since": [
@@ -14233,7 +14247,7 @@
             "value": "@include text-truncate;",
             "line": {
               "start": 32,
-              "end": 126
+              "end": 127
             }
           },
           "since": [
@@ -14265,7 +14279,7 @@
             "value": "@include important(text-align, left);",
             "line": {
               "start": 38,
-              "end": 126
+              "end": 127
             }
           },
           "since": [
@@ -14297,7 +14311,7 @@
             "value": "@include important(text-align, center);",
             "line": {
               "start": 44,
-              "end": 126
+              "end": 127
             }
           },
           "since": [
@@ -14326,10 +14340,10 @@
           "context": {
             "type": "css",
             "name": ".text-right",
-            "value": "@include important(text-align, right);",
+            "value": "@include important(text-align, right);\n  max-width: 100%; // Because of max character width on paragraphs",
             "line": {
               "start": 50,
-              "end": 126
+              "end": 127
             }
           },
           "since": [
@@ -14352,16 +14366,16 @@
         {
           "description": "<p>Lowercase text</p>\n",
           "commentRange": {
-            "start": 59,
-            "end": 60
+            "start": 60,
+            "end": 61
           },
           "context": {
             "type": "css",
             "name": ".text-lowercase",
             "value": "@include important(text-transform, lowercase);",
             "line": {
-              "start": 61,
-              "end": 126
+              "start": 62,
+              "end": 127
             }
           },
           "since": [
@@ -14384,16 +14398,16 @@
         {
           "description": "<p>Uppercase text</p>\n",
           "commentRange": {
-            "start": 65,
-            "end": 66
+            "start": 66,
+            "end": 67
           },
           "context": {
             "type": "css",
             "name": ".text-uppercase",
             "value": "@include important(text-transform, uppercase);",
             "line": {
-              "start": 67,
-              "end": 126
+              "start": 68,
+              "end": 127
             }
           },
           "since": [
@@ -14416,16 +14430,16 @@
         {
           "description": "<p>Capitalized text</p>\n",
           "commentRange": {
-            "start": 71,
-            "end": 72
+            "start": 72,
+            "end": 73
           },
           "context": {
             "type": "css",
             "name": ".text-capitalize",
             "value": "@include important(text-transform, capitalize);",
             "line": {
-              "start": 73,
-              "end": 126
+              "start": 74,
+              "end": 127
             }
           },
           "since": [
@@ -14448,16 +14462,16 @@
         {
           "description": "<p>Normal font weight</p>\n",
           "commentRange": {
-            "start": 80,
-            "end": 81
+            "start": 81,
+            "end": 82
           },
           "context": {
             "type": "css",
             "name": ".font-weight-normal",
             "value": "font-weight: normal;",
             "line": {
-              "start": 82,
-              "end": 126
+              "start": 83,
+              "end": 127
             }
           },
           "since": [
@@ -14480,16 +14494,16 @@
         {
           "description": "<p>Bold font weight</p>\n",
           "commentRange": {
-            "start": 86,
-            "end": 87
+            "start": 87,
+            "end": 88
           },
           "context": {
             "type": "css",
             "name": ".font-weight-bold",
             "value": "font-weight: bold;",
             "line": {
-              "start": 88,
-              "end": 126
+              "start": 89,
+              "end": 127
             }
           },
           "since": [
@@ -14512,16 +14526,16 @@
         {
           "description": "<p>Italic font style</p>\n",
           "commentRange": {
-            "start": 92,
-            "end": 93
+            "start": 93,
+            "end": 94
           },
           "context": {
             "type": "css",
             "name": ".font-italic",
             "value": "font-style: italic;",
             "line": {
-              "start": 94,
-              "end": 126
+              "start": 95,
+              "end": 127
             }
           },
           "since": [
@@ -14544,16 +14558,16 @@
         {
           "description": "<p>Quick left float</p>\n",
           "commentRange": {
-            "start": 98,
-            "end": 99
+            "start": 99,
+            "end": 100
           },
           "context": {
             "type": "css",
             "name": ".left",
             "value": "float: left;",
             "line": {
-              "start": 100,
-              "end": 126
+              "start": 101,
+              "end": 127
             }
           },
           "since": [
@@ -14576,16 +14590,16 @@
         {
           "description": "<p>Quick right float</p>\n",
           "commentRange": {
-            "start": 104,
-            "end": 105
+            "start": 105,
+            "end": 106
           },
           "context": {
             "type": "css",
             "name": ".right",
             "value": "float: right;",
             "line": {
-              "start": 106,
-              "end": 126
+              "start": 107,
+              "end": 127
             }
           },
           "since": [
@@ -14608,16 +14622,16 @@
         {
           "description": "<p>Set and element to display as block and align\ncentrally via auto left/right margins</p>\n",
           "commentRange": {
-            "start": 120,
-            "end": 122
+            "start": 121,
+            "end": 123
           },
           "context": {
             "type": "css",
             "name": ".center-block",
             "value": "@include center-block;",
             "line": {
-              "start": 123,
-              "end": 126
+              "start": 124,
+              "end": 127
             }
           },
           "since": [
@@ -14805,16 +14819,16 @@
           "description": "<p>A map of glyph name to code point (character entity reference).\nAvoids magic strings like <code>content: &#39;\\201C&#39;</code> within our SASS.\nUsual usage is via the <code>get-glyph</code> function, e.g. <code>get-glyph(greater-than)</code>.</p>\n",
           "commentRange": {
             "start": 5,
-            "end": 16
+            "end": 18
           },
           "context": {
             "type": "variable",
             "name": "nice-glyphs",
-            "value": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
+            "value": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  hyphen-minus: '002d',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  plus: '002b',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
             "scope": "default",
             "line": {
-              "start": 17,
-              "end": 25
+              "start": 19,
+              "end": 29
             }
           },
           "see": [
@@ -14825,8 +14839,8 @@
                 "name": "get-glyph",
                 "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
                 "line": {
-                  "start": 42,
-                  "end": 55
+                  "start": 46,
+                  "end": 59
                 }
               }
             }
@@ -14861,6 +14875,13 @@
             },
             {
               "type": "String",
+              "name": "hyphen-minus",
+              "default": "002d",
+              "description": "<p>Hyphen minus (-)</p>\n",
+              "resolvedValue": "002d"
+            },
+            {
+              "type": "String",
               "name": "left-double-quotation-mark",
               "default": "201C",
               "description": "<p>Left double quotation mark (“)</p>\n",
@@ -14872,6 +14893,13 @@
               "default": "003c",
               "description": "<p>Less than symbol (&lt;)</p>\n",
               "resolvedValue": "003c"
+            },
+            {
+              "type": "String",
+              "name": "plus",
+              "default": "002b",
+              "description": "<p>Plus sign (+)</p>\n",
+              "resolvedValue": "002b"
             },
             {
               "type": "String",
@@ -14902,8 +14930,8 @@
                 "name": "get-glyph",
                 "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
                 "line": {
-                  "start": 42,
-                  "end": 55
+                  "start": 46,
+                  "end": 59
                 }
               }
             },
@@ -14914,8 +14942,8 @@
                 "name": "get-glyph",
                 "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
                 "line": {
-                  "start": 42,
-                  "end": 55
+                  "start": 46,
+                  "end": 59
                 }
               }
             },
@@ -14926,8 +14954,8 @@
                 "name": "get-glyph",
                 "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
                 "line": {
-                  "start": 42,
-                  "end": 55
+                  "start": 46,
+                  "end": 59
                 }
               }
             }
@@ -14935,23 +14963,23 @@
           "groupName": {
             "helpers": "Helpers"
           },
-          "resolvedValue": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)"
+          "resolvedValue": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  hyphen-minus: '002d',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  plus: '002b',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)"
         }
       ],
       "function": [
         {
           "description": "<p>Gets a glyph code, or several, (character entity reference) from the\n<code>$nice-glyphs</code> map, matching the given <code>$names</code>. Usually used with the content\nproperty for psuedo elements, to avoid use of magic character reference strings.</p>\n",
           "commentRange": {
-            "start": 27,
-            "end": 41
+            "start": 31,
+            "end": 45
           },
           "context": {
             "type": "function",
             "name": "get-glyph",
             "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
             "line": {
-              "start": 42,
-              "end": 55
+              "start": 46,
+              "end": 59
             }
           },
           "parameter": [
@@ -14971,11 +14999,11 @@
               "context": {
                 "type": "variable",
                 "name": "nice-glyphs",
-                "value": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
+                "value": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  hyphen-minus: '002d',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  plus: '002b',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
                 "scope": "default",
                 "line": {
-                  "start": 17,
-                  "end": 25
+                  "start": 19,
+                  "end": 29
                 }
               }
             }
@@ -15844,16 +15872,16 @@
         {
           "description": "<p>Primary heading. Used for h1 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
           "commentRange": {
-            "start": 25,
-            "end": 27
+            "start": 26,
+            "end": 28
           },
           "context": {
             "type": "mixin",
             "name": "h1",
             "code": "\n  @include font(h1);\n",
             "line": {
-              "start": 28,
-              "end": 30
+              "start": 29,
+              "end": 31
             }
           },
           "since": [
@@ -15882,16 +15910,16 @@
         {
           "description": "<p>Secondary heading. Used for h2 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
           "commentRange": {
-            "start": 32,
-            "end": 34
+            "start": 33,
+            "end": 35
           },
           "context": {
             "type": "mixin",
             "name": "h2",
             "code": "\n  @include font(h2);\n",
             "line": {
-              "start": 35,
-              "end": 37
+              "start": 36,
+              "end": 38
             }
           },
           "since": [
@@ -15920,16 +15948,16 @@
         {
           "description": "<p>Tertiary heading. Used for h3 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
           "commentRange": {
-            "start": 39,
-            "end": 41
+            "start": 40,
+            "end": 42
           },
           "context": {
             "type": "mixin",
             "name": "h3",
             "code": "\n  @include font(h3);\n",
             "line": {
-              "start": 42,
-              "end": 44
+              "start": 43,
+              "end": 45
             }
           },
           "since": [
@@ -15958,16 +15986,16 @@
         {
           "description": "<p>Fourth level heading. Used for h4 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
           "commentRange": {
-            "start": 46,
-            "end": 48
+            "start": 47,
+            "end": 49
           },
           "context": {
             "type": "mixin",
             "name": "h4",
             "code": "\n  @include font(h4);\n",
             "line": {
-              "start": 49,
-              "end": 51
+              "start": 50,
+              "end": 52
             }
           },
           "since": [
@@ -15996,16 +16024,16 @@
         {
           "description": "<p>Fifth level heading. Used for h5 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
           "commentRange": {
-            "start": 53,
-            "end": 55
+            "start": 54,
+            "end": 56
           },
           "context": {
             "type": "mixin",
             "name": "h5",
             "code": "\n  @include font(h5);\n",
             "line": {
-              "start": 56,
-              "end": 58
+              "start": 57,
+              "end": 59
             }
           },
           "since": [
@@ -16034,16 +16062,16 @@
         {
           "description": "<p>Sixth level heading. Used for h6 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
           "commentRange": {
-            "start": 60,
-            "end": 62
+            "start": 61,
+            "end": 63
           },
           "context": {
             "type": "mixin",
             "name": "h6",
             "code": "\n  @include font(h6);\n",
             "line": {
-              "start": 63,
-              "end": 65
+              "start": 64,
+              "end": 66
             }
           },
           "since": [
@@ -16223,8 +16251,8 @@
                 "name": "h1",
                 "code": "\n  @include font(h1);\n",
                 "line": {
-                  "start": 28,
-                  "end": 30
+                  "start": 29,
+                  "end": 31
                 }
               }
             },
@@ -16235,8 +16263,8 @@
                 "name": "h2",
                 "code": "\n  @include font(h2);\n",
                 "line": {
-                  "start": 35,
-                  "end": 37
+                  "start": 36,
+                  "end": 38
                 }
               }
             },
@@ -16247,8 +16275,8 @@
                 "name": "h3",
                 "code": "\n  @include font(h3);\n",
                 "line": {
-                  "start": 42,
-                  "end": 44
+                  "start": 43,
+                  "end": 45
                 }
               }
             },
@@ -16259,8 +16287,8 @@
                 "name": "h4",
                 "code": "\n  @include font(h4);\n",
                 "line": {
-                  "start": 49,
-                  "end": 51
+                  "start": 50,
+                  "end": 52
                 }
               }
             },
@@ -16271,8 +16299,8 @@
                 "name": "h5",
                 "code": "\n  @include font(h5);\n",
                 "line": {
-                  "start": 56,
-                  "end": 58
+                  "start": 57,
+                  "end": 59
                 }
               }
             },
@@ -16283,8 +16311,8 @@
                 "name": "h6",
                 "code": "\n  @include font(h6);\n",
                 "line": {
-                  "start": 63,
-                  "end": 65
+                  "start": 64,
+                  "end": 66
                 }
               }
             },
@@ -16570,16 +16598,16 @@
         {
           "description": "<p>Heading, BEM style.\nModifiers:</p>\n<ul>\n<li>separator: Border below</li>\n</ul>\n",
           "commentRange": {
-            "start": 16,
-            "end": 18
+            "start": 17,
+            "end": 19
           },
           "context": {
             "type": "css",
             "name": ".heading",
             "value": "&--separator {\n    border-bottom: 1px solid $colour-border;\n  }",
             "line": {
-              "start": 19,
-              "end": 102
+              "start": 20,
+              "end": 103
             }
           },
           "group": [

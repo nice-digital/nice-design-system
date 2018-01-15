@@ -1,6 +1,6 @@
 /*!
-NICE Design System 0.3.3 | 2017-12-08
-© Copyright NICE 2015-2017
+NICE Design System 0.3.4 | 2018-01-10
+© Copyright NICE 2015-2018
 Licensed under MIT (https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
 */
 
@@ -13,7 +13,7 @@ Licensed under MIT (https://github.com/nhsevidence/nice-design-system/blob/maste
 		exports["nice"] = factory();
 	else
 		root["nice"] = factory();
-})(this, function() {
+})(typeof self !== 'undefined' ? self : this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};

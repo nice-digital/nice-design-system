@@ -10,7 +10,9 @@
   "keywords": [
     "nice",
     "icons",
-    "nhs"
+    "nhs",
+    "svg",
+    "webfont"
   ],
   "homepage": "https://github.com/nhsevidence/nice-icons#readme",
   "repository": {
@@ -21,6 +23,8 @@
     "**/.*",
     "node_modules",
     "Gruntfile.js",
-    ".grunt-tasks"
+    ".grunt-tasks",
+    "dist/demo.html",
+    "examples"
   ]
 }

@@ -63,7 +63,7 @@ Use tags to denote the status of guidance in lists etc. Usually used within a <a
 
 ## Impact
 
-Use impact tags sparingly, e.g. within phase banners.
+Use impact tags sparingly, e.g. within <a href="{{ site.baseurl }}{% link components/alpha-beta-live.md %}">phase banners</a>.
 
 {% capture impact %}
 <p>
@@ -72,3 +72,15 @@ Use impact tags sparingly, e.g. within phase banners.
 </p>
 {% endcapture %}
 {% include example.html lang='html' body=impact %}
+
+## Flush
+
+Tags have a small margin by default. Use the `.tag--flush` modifier to remove the margin:
+
+{% capture flush %}
+<p>
+    This is an flush tag
+    <span class="tag tag--flush">Flush</span>
+</p>
+{% endcapture %}
+{% include example.html lang='html' body=flush %}

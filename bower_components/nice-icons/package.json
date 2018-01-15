@@ -1,12 +1,13 @@
 {
   "name": "@nice-digital/icons",
-  "version": "1.1.0",
+  "version": "1.4.0",
   "description": "Icons for use in NICE Digital Services",
   "main": "index.js",
   "scripts": {
     "start": "grunt dist --color",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "grunt release-it --color"
+    "release": "grunt release-it --color",
+    "release:minor": "grunt release-it:minor --color"
   },
   "repository": {
     "type": "git",
@@ -27,9 +28,14 @@
     "url": "https://github.com/nhsevidence/nice-icons/issues"
   },
   "homepage": "https://github.com/nhsevidence/nice-icons#readme",
+  "files": [
+    "dist",
+    "src"
+  ],
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-release-it": "^1.0.1",
+    "grunt-replace": "^1.0.1",
     "grunt-webfont": "^1.6.0",
     "load-grunt-config": "^0.19.2"
   }

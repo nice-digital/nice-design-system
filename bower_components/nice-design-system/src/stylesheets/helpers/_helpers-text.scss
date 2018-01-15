@@ -49,7 +49,7 @@
 /// @since 0.1.0
 .text-right {
   @include important(text-align, right);
-  max-width: 100%;
+  max-width: 100%; // Because of max character width on paragraphs
 }
 
 // TODO: Responsive text alignment

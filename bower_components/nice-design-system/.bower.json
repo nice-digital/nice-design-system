@@ -42,14 +42,14 @@
   "dependencies": {
     "nice-icons": "^1.0.0"
   },
-  "version": "0.3.3",
-  "_release": "0.3.3",
+  "version": "0.3.4",
+  "_release": "0.3.4",
   "_resolution": {
     "type": "version",
-    "tag": "v0.3.3",
-    "commit": "2739713adf094be07ae16c305db3dc9b0290ff5b"
+    "tag": "v0.3.4",
+    "commit": "d8dfda580c5f7a5e08d5390e07989cdcbdc51e4a"
   },
   "_source": "https://github.com/nhsevidence/nice-design-system.git",
-  "_target": "^0.3.3",
+  "_target": "^0.3.4",
   "_originalSource": "nice-design-system"
 }
