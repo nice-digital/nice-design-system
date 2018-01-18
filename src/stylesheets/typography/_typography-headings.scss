@@ -20,6 +20,7 @@ h6,
 .heading {
   &--separator {
     border-bottom: 1px solid $colour-border;
+    padding-bottom: rem($spacing-x-small);
   }
 }
 
@@ -66,37 +67,31 @@ h6,
 }
 
 h1,
-.h1,
-.heading--primary {
+.h1 {
   @include h1;
 }
 
 h2,
-.h2,
-.heading--secondary {
+.h2 {
   @include h2;
 }
 
 h3,
-.h3,
-.heading--tertiary {
+.h3 {
   @include h3;
 }
 
 h4,
-.h4,
-.heading--quaternary {
+.h4 {
   @include h4;
 }
 
 h5,
-.h5,
-.heading--quinary {
+.h5 {
   @include h5;
 }
 
 h6,
-.h6,
-.heading--senary {
+.h6 {
   @include h6;
 }
