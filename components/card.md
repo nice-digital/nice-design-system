@@ -4,7 +4,14 @@ title: Card
 description: A flexible component for displaying an item like news or guidance within a list
 ---
 
-Cards are flexible components for displaying items, usually within a list. They're used for items like guidance, news and search results. They consist of a heading and optional:
+Cards are flexible components for displaying items, usually within a list. 
+{:.lead}
+
+## Why?
+They're used for items like guidance, news and search results to give an easily scannable list.
+
+## Usage
+Cards consist of a heading and optional:
 
 - heading icon
 - summary
@@ -12,7 +19,9 @@ Cards are flexible components for displaying items, usually within a list. They'
 
 Cards are usually used within an unstyled, unordered list (`ul.list--unstyled`).
 
-## Standard
+## Variants
+
+### Standard
 
 {% capture standard %}
 <article class="card" data-no-inpagenav>
@@ -57,7 +66,7 @@ Cards are usually used within an unstyled, unordered list (`ul.list--unstyled`).
 {% endcapture %}
 {% include example.html lang='html' body=standard %}
 
-## Card list
+### Card list
 
 {% capture standard %}
 <ul class="list--unstyled" data-no-inpagenav>

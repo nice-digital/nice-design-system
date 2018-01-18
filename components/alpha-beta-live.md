@@ -1,15 +1,16 @@
 ---
 layout: sidebar
 title: Alpha & Beta
-description: Phase tags and banners to denote alpha and beta services
+description: Alpha and beta beta banners clearly identify non-live services
 ---
 
-## Phase banner
-
+## Why?
 If your service is on the NICE subdomain and is within alpha or beta you must have a phase banner which reflects this.
-Your banner must sit below the global NICE header, and above the page breadcrumb.
 
-You should use a ‘feedback’ link to collect on-page feedback about your service. Ensure the user can return to their previous point in the page, having opened a dedicated page or form.
+## Usage
+Your banner must sit below the TopHat, and above the page breadcrumb. You should use a ‘feedback’ link to collect feedback about your service. Ensure the user can return to their previous point in the page, having opened a dedicated page or form.
+
+## Variants
 
 ### Alpha
 

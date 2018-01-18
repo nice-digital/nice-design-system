@@ -1,12 +1,20 @@
 ---
 layout: sidebar
 title: Tag
+heading: Tag component
 description: Tag component used for labelling items in a list
+lead: Use tags to mark or highlight an item in a list
 ---
 
-Use tags to mark or highlight an item in a list.
+## Why?
+Tags provide a visual way to identify, label or highlight an item. For example, to highlight a new or updated piece of guidance with a list.
 
-## Standard
+## Usage
+Use within a <a href="{{ site.baseurl }}{% link components/card.md %}">card component</a> or <a href="{{ site.baseurl }}{% link components/alpha-beta-live.md %}">alpha/beta banner component</a>, or within a list to label items.
+
+## Variants
+
+### Standard
 
 {% capture standard %}
 <p>
@@ -16,7 +24,7 @@ Use tags to mark or highlight an item in a list.
 {% endcapture %}
 {% include example.html lang='html' body=standard %}
 
-## Phase
+### Phase
 
 See also <a href="{{ site.baseurl }}{% link components/alpha-beta-live.md %}">phase banners</a>.
 
@@ -42,7 +50,7 @@ See also <a href="{{ site.baseurl }}{% link components/alpha-beta-live.md %}">ph
 {% endcapture %}
 {% include example.html lang='html' body=phase %}
 
-## Guidance
+### Guidance
 
 Use tags to denote the status of guidance in lists etc. Usually used within a <a href="{{ site.baseurl }}{% link components/card.md %}">card component</a>.
 
@@ -61,7 +69,7 @@ Use tags to denote the status of guidance in lists etc. Usually used within a <a
 {% endcapture %}
 {% include example.html lang='html' body=guidance %}
 
-## Impact
+### Impact
 
 Use impact tags sparingly, e.g. within <a href="{{ site.baseurl }}{% link components/alpha-beta-live.md %}">phase banners</a>.
 
@@ -73,7 +81,7 @@ Use impact tags sparingly, e.g. within <a href="{{ site.baseurl }}{% link compon
 {% endcapture %}
 {% include example.html lang='html' body=impact %}
 
-## Flush
+### Flush
 
 Tags have a small margin by default. Use the `.tag--flush` modifier to remove the margin:
 
