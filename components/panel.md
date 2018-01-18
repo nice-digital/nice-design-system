@@ -1,12 +1,18 @@
 ---
 layout: sidebar
-title: Panels
+title: Panel
 description: Blocks to highlight or separate content
 ---
 
-## What problem does this solve?
+## Why?
+To group related content into a box or to visually break up a page layout.
 
-## Variations
+## Usage
+Use panels in side panel as an aside from the main content, or to group related content.
+
+Panels have a margin above and below by default to separate from the surrounding content. Use with <a href="{{ site.baseurl }}{% link foundations/spacing.md %}#css-classes">spacing CSS classes</a> to adjust the margins if necessary.
+
+## Variants
 
 ### Default (light) panel
 
