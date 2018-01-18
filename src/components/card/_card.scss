@@ -44,8 +44,7 @@
   }
 
   &__tag {
-    @include font-size(-1);
-    margin-right: rem($spacing-x-small);
+    @include font-size(-1, true);
   }
 
   &__metadata {
