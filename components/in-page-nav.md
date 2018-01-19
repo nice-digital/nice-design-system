@@ -1,0 +1,20 @@
+---
+layout: sidebar
+title: In page nav
+description: Allows users to navigate to specific sections, within long pages of content, across any screen size.
+---
+
+## Why?
+Allows users to navigate to specific sections, within long pages of content, across any screen size.
+
+## Usage
+If applied correctly, in-page links can be beneficial to users who need to find information on long scrolling content page. They also have the potential to confuse users as they do not meet the expected outcome that a typical link performs ie taking the user to a new page. Please consider the following:
+
+- could the content be shorter or broken up into new pages
+- if the length of each in-page section is short, it would potentially be unnecessary as the scrolling effort is minimal.
+
+Other usage notes:
+
+- ensure clear links and headings are clear to the user as these act as reference point for what the content is and where they’re taken to
+- positioned to the far right on larger screens
+- positioned below the main page title on small screens.
