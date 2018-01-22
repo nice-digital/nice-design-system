@@ -38,4 +38,10 @@
     display: block;
     margin: 0;
   }
+
+  @media print {
+    &__cta {
+      display: none;
+    }
+  }
 }
