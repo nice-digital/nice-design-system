@@ -81,6 +81,7 @@
   &--gutterless {
     @include grid-gutterless;
 
+    // sass-lint:disable-block no-combinators
     > [data-g] {
       @include grid-item-gutterless;
     }
@@ -89,6 +90,7 @@
   &--compact {
     @include grid-compact;
 
+    // sass-lint:disable-block no-combinators
     > [data-g] {
       @include grid-item-compact;
     }
@@ -97,6 +99,7 @@
   &--loose {
     @include grid-loose;
 
+    // sass-lint:disable-block no-combinators
     > [data-g] {
       @include grid-item-loose;
     }
@@ -111,12 +114,14 @@
   }
 
   &--middle {
+    // sass-lint:disable-block no-combinators
     > [data-g] {
       @include grid-item-middle;
     }
   }
 
   &--bottom {
+    // sass-lint:disable-block no-combinators
     > [data-g] {
       @include grid-item-bottom;
     }
