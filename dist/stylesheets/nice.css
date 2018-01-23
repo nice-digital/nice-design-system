@@ -1,5 +1,5 @@
 /*!
- * NICE Design System 0.3.5 | 2018-01-23
+ * NICE Design System 0.3.6 | 2018-01-23
  * © Copyright NICE 2015-2018
  * Licensed under MIT (https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
  */
@@ -4005,8 +4005,8 @@ ol, .list {
   font-family: "NICE Icons";
   font-style: normal;
   font-weight: normal;
-  src: url("/fonts/nice-icons.eot?233932776");
-  src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/nice-icons.woff2?233932776") format("woff2"), url("/fonts/nice-icons.woff?233932776") format("woff"), url("/fonts/nice-icons.ttf?233932776") format("truetype"), url("/fonts/nice-icons.svg?233932776#nice-icons") format("svg"); }
+  src: url("/fonts/nice-icons.eot?386096099");
+  src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/nice-icons.woff2?386096099") format("woff2"), url("/fonts/nice-icons.woff?386096099") format("woff"), url("/fonts/nice-icons.ttf?386096099") format("truetype"), url("/fonts/nice-icons.svg?386096099#nice-icons") format("svg"); }
 
 .icon {
   display: inline-block;
@@ -4023,30 +4023,66 @@ ol, .list {
   -moz-osx-font-smoothing: grayscale; }
   .icon:before {
     display: block; }
+  .icon--android:before {
+    content: '\f17b'; }
+  .icon--apple:before {
+    content: '\f179'; }
+  .icon--calendar:before {
+    content: '\e045'; }
+  .icon--chevron-up:before {
+    content: '\e039'; }
   .icon--comment:before {
     content: '\f101'; }
+  .icon--download:before {
+    content: '\e006'; }
   .icon--evidence:before {
-    content: '\f102'; }
+    content: '\e017'; }
   .icon--facebook-square:before {
-    content: '\f103'; }
+    content: '\f082'; }
+  .icon--facebook:before {
+    content: '\e012'; }
   .icon--guidance:before {
-    content: '\f104'; }
-  .icon--linkedin-square:before {
-    content: '\f105'; }
+    content: '\e011'; }
+  .icon--hamburger:before {
+    content: '\e03d'; }
+  .icon--linkedin-sign:before {
+    content: '\f08c'; }
   .icon--logo-name:before {
-    content: '\f106'; }
+    content: '\e01b'; }
   .icon--logo:before {
-    content: '\f107'; }
+    content: '\e01a'; }
+  .icon--minus:before {
+    content: '\e02a'; }
   .icon--pathways:before {
-    content: '\f108'; }
+    content: '\e005'; }
+  .icon--plus:before {
+    content: '\e027'; }
+  .icon--print:before {
+    content: '\e001'; }
+  .icon--readnews:before {
+    content: '\e009'; }
+  .icon--search:before {
+    content: '\e004'; }
+  .icon--share:before {
+    content: '\e008'; }
   .icon--standards:before {
-    content: '\f109'; }
+    content: '\e002'; }
   .icon--syndication:before {
-    content: '\f10a'; }
+    content: '\e013'; }
+  .icon--trash:before {
+    content: '\e020'; }
   .icon--twitter-square:before {
-    content: '\f10b'; }
+    content: '\f102'; }
+  .icon--twitter:before {
+    content: '\e000'; }
+  .icon--user:before {
+    content: '\e01f'; }
+  .icon--warning:before {
+    content: '\e04b'; }
+  .icon--youtube-play:before {
+    content: '\f16a'; }
   .icon--youtube-square:before {
-    content: '\f10c'; }
+    content: '\f166'; }
 
 .action-banner {
   background: #00506a;
