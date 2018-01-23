@@ -7,7 +7,7 @@
 /// lead intro paragraph and call-to-action.
 ///
 /// @example html
-///   <div class="page-header">
+///   <header class="page-header">
 ///     <h1 class="page-header__heading">
 ///       Breast cancer
 ///     </h1>
@@ -16,12 +16,12 @@
 ///       Includes related guidelines, NICE Pathways, quality standards and advice.
 ///     </p>
 ///     <p class="page-header__cta">
-///       <a href="">Register as a stakeholder</a>
+///       <a href="/some-action.html">Register as a stakeholder</a>
 ///     </p>
-///   </div>
+///   </header>
 /// @since 0.4.0
 .page-header {
-  margin: rem($spacing-large 0 $spacing-x-large 0);
+  margin: rem(0 0 $spacing-x-large 0);
 
   &__heading {
     @include font-size(h1);
@@ -37,5 +37,11 @@
     @include font-size(p);
     display: block;
     margin: 0;
+  }
+
+  @media print {
+    &__cta {
+      display: none;
+    }
   }
 }
