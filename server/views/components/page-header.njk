@@ -1,0 +1,21 @@
+{% extends "layouts/_layout.njk" %}
+{% set title = "Page header" %}
+{% from "page-header/page-header.njk" import pageHeader %}
+
+{% block body %}
+
+	<div class="container">
+
+		<h1>Page header</h1>
+
+		<h2>Default</h2>
+
+		{{ pageHeader({ heading: "Breast cancer", lead: "Everything NICE has produced on the topic of breast cancer. Includes related guidelines, NICE Pathways, quality standards and advice." }) }}
+
+		<h2>With CTA</h2>
+
+		{{ pageHeader({ heading: "Breast cancer", lead: "Everything NICE has produced on the topic of breast cancer. Includes related guidelines, NICE Pathways, quality standards and advice.", cta: { text: "Register as a stakeholder", href: "/register" } }) }}
+
+	</div>
+
+{% endblock %}

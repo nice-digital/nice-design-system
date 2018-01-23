@@ -3,6 +3,7 @@
 {% from "stacked-nav/stacked-nav.njk" import stackedNav %}
 {% from "card/card.njk" import card %}
 {% from "footer/footer.njk" import footer %}
+{% from "page-header/page-header.njk" import pageHeader %}
 
 {% block body %}
 
@@ -46,15 +47,7 @@
 			</ol>
 		</nav>
 
-		<h1>Breast cancer</h1>
-
-		<p class="lead">
-			Everything NICE has produced on the topic of breast cancer. Includes related guidelines, NICE Pathways, quality standards and advice.
-		</p>
-
-		<p>
-			<a href="https://www.nice.org.uk/get-involved/stakeholder-registration">Register as a stakeholder</a>
-		</p>
+		{{ pageHeader({ heading: "Breast cancer", lead: "Everything NICE has produced on the topic of breast cancer. Includes related guidelines, NICE Pathways, quality standards and advice.", cta: { text: "Register as a stakeholder", href: "/register" } }) }}
 
 	</div>
 
