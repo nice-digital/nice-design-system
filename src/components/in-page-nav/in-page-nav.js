@@ -1,34 +1,48 @@
+/*eslint-env browser */
+/**
+ * @module In page navigation
+ */
+
 import pluginizr from "../../javascripts/pluginizr";
 import utils from "../../javascripts/utils";
-import { matchesFrom } from "../../javascripts/breakpoints";
 
 import template from "./in-page-nav.template.njk";
 
 /**
- * { The default settings for in page nav }
- *
+ * The name of the jquery plugin e.g. $(".test").inpagenav();
+ * @type       {string}
+ */
+export const pluginName: String = "inpagenav";
+
+/**
+ * The headings to exclude
+ * @type       {string}
+ */
+export const headingsExclude: String = "[data-no-inpagenav] *, [data-no-inpagenav], .card *, .footer *, .site-footer *, .stacked-nav *, .page-header *";
+
+
+/**
+ * The default settings, used for in page navigation.
  * @type       {Object}
  */
 export const Defaults = {
 
-	// Selector for the container to look for headings from which the nav tree is built
+	// Selector for the container in which to look for headings from which the nav tree is built
 	headingsContainer: "body",
 
 	// Selector for headings to include
-	headings: "h2,h3",
+	headings: "h2, h3",
 
-	// Selector for excluding headings
-	headingsExclude: "[data-no-inpagenav] *, [data-no-inpagenav]",
+	// Selector(s) for headings to exclude
+	headingsExclude: "",
+
+	// Selector for a footer to avoid overlap
+	footerContainer: ".footer, .site-footer",
 
 	// Number of pixels from the top of the screen that a heading is considered to be 'active'
-	scrollTolerance: 80,
-
-	// The target element that the in page nav will be moved to on wider breakpoints
-	wideTarget: null,
-
-	// The breakpoint from which the nav will be moved into 'wideTarget'
-	wideBreakpoint: "md"
+	scrollTolerance: 80
 };
+
 
 /// Creates a nested, in page navigation, built from existing headings on the page.
 /// @see {@link http://stackoverflow.com/a/12279190/486434|Useful answer on StackOverflow}
@@ -44,43 +58,49 @@ export const Defaults = {
 /// 	});
 export default class InPageNav {
 
-	static defaults() {
-		return Defaults;
-	}
+	static defaults() { return Defaults; }
 
 	constructor(element, options) {
 		if(!element) throw new Error("Element must be non-null");
 
-		this.el = element;
 		this.$el = $(element);
-
-		// Generate uid for this component, used for namespacing events
-		this.uid = utils.nextUniqueId("inpagenav");
 
 		this.options = $.extend({}, InPageNav.defaults(), options);
 
-		// The containing element where the nav will be moved to on wider breakpoints
-		this.$wideTarget = $("#" + this.options.wideTarget);
+		// Append the static headings to excluded headings
+		if(this.options.headingsExclude !== "")
+			this.options.headingsExclude += ",";
+		this.options.headingsExclude += headingsExclude;
+
+		// Generate uid (e.g. inpagenav-9) for this component, used for namespacing events
+		this.uid = utils.nextUniqueId(pluginName);
 
 		// Find headings to use for building the nav
-		this.headings = this.getHeadings();
+		this.headings = this.findHeadings();
 
 		this.render();
 		this.updateNavState();
 
+		// Used 2 namespaces for global events:
+		// - Plugin name
+		// - Individual instance id
 		$(window)
-			.on(`load.InPageNav.${ this.uid }`, () => {
+			.on(`load.${ pluginName }.${ this.uid }`, () => {
 				this.updateNavState();
 			})
-			.on(`scroll.InPageNav.${ this.uid }`, () => {
+			.on(`scroll.${ pluginName }.${ this.uid }`, utils.throttle(() => {
 				this.updateNavState(true);
-			})
-			.on(`resize.InPageNav.${ this.uid }`, () => {
+			}, 50))
+			.on(`resize.${ pluginName }.${ this.uid }`, utils.debounce(() => {
 				this.calculatePosition();
-			});
+			}, true));
 	}
 
+	/**
+	 * Removes all event listeners (by namespace) and removes element
+	 */
 	destroy() {
+		// Used the namespaced event
 		$(window).off(`.${ this.uid }`);
 		this.$el.remove();
 	}
@@ -125,25 +145,20 @@ export default class InPageNav {
 	 * Resets classes and aria attributes
 	 */
 	resetNavState() {
-		$("a", this.$inpagenav).attr("aria-selected", false);
+		$("a", this.$el).attr("aria-current", false);
 
-		this.$inpagenav.removeAttr("aria-activedescendant");
+		$("[aria-activedescendant]", this.$el).removeAttr("aria-activedescendant");
 
-		// TODO: This should be a media query with em values
-		// Nav is fully expanded on smaller breakpoints
-		// and expands as you scroll on wider breakpoints
-		if(matchesFrom(this.options.wideBreakpoint)) {
-			$(".in-page-nav__list .in-page-nav__list", this.$inpagenav)
-				.attr("aria-expanded", false)
-				.attr("aria-hidden", true);
-		} else {
-			$(".in-page-nav__list .in-page-nav__list", this.$inpagenav)
-				.attr("aria-expanded", true)
-				.attr("aria-hidden", false);
-		}
+		$(".in-page-nav__list .in-page-nav__list", this.$el)
+			.attr("aria-expanded", false)
+			.attr("aria-hidden", true);
 	}
 
-	// Determins which navigation elements are active
+	/**
+	 * Determines which navigation elements are active
+	 *
+	 * @param      {boolean}  updateHash  Whether to update the hash in the URL
+	 */
 	updateNavState(updateHash = false) {
 
 		this.resetNavState();
@@ -153,7 +168,7 @@ export default class InPageNav {
 		if(!activeHeading) return;
 
 		let activeHref = "#" + activeHeading.id,
-			$activeLink = $("a[href='" + activeHref + "']", this.$inpagenav);
+			$activeLink = $("a[href='" + activeHref + "']", this.$inpagenav).attr("aria-current", "location");
 
 		if(updateHash && history.replaceState) {
 			history.replaceState(undefined, undefined, activeHref);
@@ -162,63 +177,39 @@ export default class InPageNav {
 		// Set aria-activedescendant on parent element
 		this.$inpagenav.attr("aria-activedescendant", $activeLink.attr("id"));
 
-		$activeLink.attr("aria-selected", true);
-
-		// aria-expanded="true/false" for second-level <ul> containers
-		// aria-hidden="true/false" for second-level <ul> containers
 		$activeLink
 			.closest(".in-page-nav__item")
 			.find(".in-page-nav__list")
-			.attr("aria-expanded", true)
 			.attr("aria-hidden", false)
 			.end()
 			.parents(".in-page-nav__list")
-			.attr("aria-expanded", true)
 			.attr("aria-hidden", false);
 
 		this.calculatePosition();
 	}
 
-
-	calculatePosition() {
-		// If the element isn't attached to the dom then don't care about calculating position
-		if(!document.contains(this.$el[0])) return;
-
-		this.calculateFixedPosition();
-		this.attachToCorrectParent();
-	}
-
 	/**
 	 * Works out whether the menu should be fixed or not and add/removes a class to reflect this.
 	 */
-	calculateFixedPosition() {
+	calculatePosition() {
 		let isFixed = this.$inpagenav.outerHeight() <= $(window).height()
 			&& $(window).scrollTop() > this.$inpagenav.parent().offset().top;
 
-		if(isFixed)
+		if(isFixed) {
 			this.$inpagenav.addClass("in-page-nav--fixed");
-		else
-			this.$inpagenav.removeClass("in-page-nav--fixed");
-	}
+			this.$inpagenav.width(this.$el.width());
 
-	// Attached the in page nav to the correct parent depending on breakpoint.
-	// ie on mobile devices the nav sits within the main body but on wider screens
-	// it gets copied into a different container
-	attachToCorrectParent() {
-
-		let isWide = matchesFrom(this.options.wideBreakpoint)
-			&& this.$wideTarget.length === 1;
-
-		// Move to the correct container based on width
-		if(isWide) {
-			if(!this.$inpagenav.parent().is(this.$wideTarget)) {
-				// Move element to the target
-				this.$inpagenav.appendTo(this.$wideTarget);
+			// Take footer into consideration to avoid overlap
+			var $footer = $(this.options.footerContainer);
+			if($footer.length > 0) {
+				var footerYPos = $(this.options.footerContainer).offset().top - $(window).scrollTop(),
+					top = footerYPos - this.$inpagenav.outerHeight();
+				this.$inpagenav.css("top", (top < 0 ? top : ""));
 			}
-			this.$inpagenav.width(this.$wideTarget.width());
-		} else if(!this.$inpagenav.parent().is(this.$el)) {
-			this.$inpagenav.appendTo(this.$el);
-			this.$inpagenav.width("auto");
+		}
+		else {
+			this.$inpagenav.removeClass("in-page-nav--fixed");
+			this.$inpagenav.width("auto").css("top", "");
 		}
 	}
 
@@ -241,20 +232,21 @@ export default class InPageNav {
 		return activeHeading;
 	}
 
-	// Find headings to use for building the nav
-	getHeadings(): Array<HTMLHeadingElement> {
-		return $(this.options.headingsContainer)
-			.find(this.options.headings)
-			.not(this.options.headingsExclude)
-			.not("#ipn-title")
+	/**
+	 * Find headings within the headings container to use for building the nav.
+	 * Ignores "excluded" headings, from the options passed in.
+	 */
+	findHeadings(): Array<HTMLHeadingElement> {
+		return $(this.options.headingsContainer).find(this.options.headings)
+			.not(this.options.headingsExclude).not("#inpagenav-title")
 			.toArray();
 	}
 
 	/**
-	 * Generates an id for a given heading element from its text content, but only if
-	 * it doesn't already have an id.
-	 * Checks to se if an element alrerady exists with the generated id - if it does
-	 * then it adds an integer suffix incremented from the current maximum e.g. -1, -2.
+	 * Generates a unique id for a given heading element from its text content, but only if
+	 * it doesn't already have an id attribute.
+	 * Checks to see if an element already exists with the generated id - if it does
+	 * then it adds an integer suffix incremented from the current maximum e.g. "-1", "-2" etc.
 	 * This is to cater for the scenario that the id already exists on the page or if
 	 * there are 2 headings with the same text.
 	 *
@@ -286,4 +278,4 @@ export default class InPageNav {
 		return heading;
 	}
 }
-pluginizr("inpagenav", InPageNav);
+pluginizr(pluginName, InPageNav);
