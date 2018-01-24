@@ -80,7 +80,7 @@ export const debounce = function(func: () => mixed, execAsap: boolean = false, t
  *          slugify("A (string) to transform & slugify!");
  */
 export const slugify = (str: string): string => {
-	return str.toLowerCase().trim()
+	return $.trim(str).toLowerCase()
 		.replace(/\s+/g, "-")			// Replace spaces with -
 		.replace(/&/g, "-and-")			// Replace & with 'and'
 		.replace(/[^\w-]+/g, "")		// Remove all non-word chars
