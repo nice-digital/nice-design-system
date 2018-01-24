@@ -170,8 +170,11 @@ export default class InPageNav {
 		let activeHref = "#" + activeHeading.id,
 			$activeLink = $("a[href='" + activeHref + "']", this.$inpagenav).attr("aria-current", "location");
 
-		if(updateHash && history.replaceState) {
-			history.replaceState(undefined, undefined, activeHref);
+		if(updateHash) {
+			if(history.replaceState)
+				history.replaceState(undefined, undefined, activeHref);
+			else if(window.location.hash != activeHref)
+				window.location.hash = activeHref;
 		}
 
 		// Set aria-activedescendant on parent element
@@ -257,7 +260,7 @@ export default class InPageNav {
 
 		if(heading.id) return heading;
 
-		let slug: string = utils.slugify(heading.textContent);
+		let slug: string = utils.slugify(heading.textContent || heading.innerText);
 
 		if($(`#${ slug }`).length === 0) {
 			heading.id = slug;
