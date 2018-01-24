@@ -51,7 +51,7 @@
 
 	</div>
 
-	<div class="container mt--e">
+	<main class="container mt--e">
 		<div class="grid grid--loose">
 			<div data-g="12 sm:4 md:3">
 				{% set stackedNavContent = {
@@ -71,84 +71,97 @@
 			</div>
 			<div data-g="12 sm:8 md:9">
 
-				<p class="mt--0">27 <span class="tag tag--new">new</span> and 2 <span class="tag tag--updated">updated</span> products since May 2017. There is 1 <span class="tag tag--consultation">consultation</span> in progress.</p>
+				<div class="grid grid--loose grid--rev">
+					<div data-g="12 md:3">
+						<div data-inpagenav></div>
+					</div>
+					<div data-g="12 md:9">
 
-				<h2>NICE Pathways</h2>
+						<p class="mt--0">27 <span class="tag tag--new">new</span> and 2 <span class="tag tag--updated">updated</span> products since May 2017. There is 1 <span class="tag tag--consultation">consultation</span> in progress.</p>
 
-				<ul class="list list--unstyled">
-					<li>
-						{{ card({ heading: { text: "Advanced breast cancer" }, href: "https://pathways.nice.org.uk/pathways/advanced-breast-cancer" }) }}
-					</li>
-					<li>
-						{{ card({ heading: { text: "Early and locally advanced breast cancer" }, href: "https://pathways.nice.org.uk/pathways/early-and-locally-advanced-breast-cancer", tag: { modifier: "updated", label: "Updated" } }) }}
-					</li>
-					<li>
-						{{ card({ heading: { text: "Familial breast cancer" }, href: "https://pathways.nice.org.uk/pathways/familial-breast-cancer" }) }}
-					</li>
-					<li>
-						{{ card({ heading: { text: "Lung cancer" }, href: "https://pathways.nice.org.uk/pathways/lung-cancer" }) }}
-					</li>
-					<li>
-						{{ card({ heading: { level: 5, text: "Suspected cancer recognition and referral" }, href: "https://pathways.nice.org.uk/pathways/suspected-cancer-recognition-and-referral", tag: { modifier: "new", label: "New" } }) }}
-					</li>
-				</ul>
+						<h2 id="pathways">NICE Pathways</h2>
 
-				<h2>NICE guidelines</h2>
+						<p>Interactive topic-based flowcharts that allow you to navigate our recommendations on any subject. <a href="https://www.nice.org.uk/About/What-we-do/Our-Programmes/About-NICE-Pathways">Find out more about NICE Pathways</a>.</p>
 
-				<ul class="list list--unstyled">
-					<li>
-						{{ card({ heading: { text: "Advanced breast cancer: diagnosis and treatment (CG81)" }, href: "https://www.nice.org.uk/guidance/cg81", tag: { modifiers: ["updated", "flush"], label: "Updated" }, metadata: [ { key: "Published date", value: "February 2009", datetime: "2009-02" }, { key: "Last updated", value: "August 2017", datetime: "2017-08" } ] }) }}
-					</li>
-					<li>
-						{{ card({ heading: { text: "Early and locally advanced breast cancer: diagnosis and treatment (CG80)" }, href: "https://www.nice.org.uk/guidance/cg80", metadata: [ { key: "Published date", value: "February 2009", datetime: "2009-02" } ] }) }}
-					</li>
-					<li>
-						{{ card({ heading: { text: "Familial breast cancer: classification, care and managing breast cancer and related risks in people with a family history of breast cancer (CG164)" }, href: "https://www.nice.org.uk/guidance/cg164", metadata: [ { key: "Published date", value: "June 2013", datetime: "2013-06" } ] }) }}
-					</li>
-					<li>
-						{{ card({ heading: { text: "Improving outcomes in breast cancer (CSG1)" }, href: "https://www.nice.org.uk/guidance/csg1", metadata: [ { key: "Published date", value: "August 2002", datetime: "2012-10" } ] }) }}
-					</li>
-					<li>
-						{{ card({ heading: { text: "Suspected cancer: recognition and referral (NG12)" }, href: "https://www.nice.org.uk/guidance/ng12", tag: { modifiers: ["updated", "flush"], label: "Updated" }, metadata: [ { key: "Published date", value: "June 2015", datetime: "2015-06" }, { key: "Last updated", value: "July 2017", datetime: "2017-07" } ] }) }}
-					</li>
-				</ul>
+						<ul class="list list--unstyled">
+							<li>
+								{{ card({ heading: { text: "Advanced breast cancer" }, href: "https://pathways.nice.org.uk/pathways/advanced-breast-cancer" }) }}
+							</li>
+							<li>
+								{{ card({ heading: { text: "Early and locally advanced breast cancer" }, href: "https://pathways.nice.org.uk/pathways/early-and-locally-advanced-breast-cancer", tag: { modifier: "updated", label: "Updated" } }) }}
+							</li>
+							<li>
+								{{ card({ heading: { text: "Familial breast cancer" }, href: "https://pathways.nice.org.uk/pathways/familial-breast-cancer" }) }}
+							</li>
+							<li>
+								{{ card({ heading: { text: "Lung cancer" }, href: "https://pathways.nice.org.uk/pathways/lung-cancer" }) }}
+							</li>
+							<li>
+								{{ card({ heading: { level: 5, text: "Suspected cancer recognition and referral" }, href: "https://pathways.nice.org.uk/pathways/suspected-cancer-recognition-and-referral", tag: { modifier: "new", label: "New" } }) }}
+							</li>
+						</ul>
 
-				<h2>NICE medtech innovation briefings</h2>
+						<h2>NICE guidelines</h2>
 
-				<p>Medtech innovation briefings (<abbr title="Medtech innovation briefings">MIB</abbr>s) are NICE advice. These short briefings examine new, innovative technologies. <a href="https://www.nice.org.uk/About/What-we-do/Our-Programmes/NICE-Advice/Medtech-innovation-briefings">Find out more about MIBs</a></p>
+						<p>Evidence-based recommendations on a range of health and care topics. <a href="https://www.nice.org.uk/About/What-we-do/Our-Programmes/About-NICE-Pathways">Find out more about NICE guidelines</a>.</p>
 
-				<ul class="list list--unstyled">
-					<li>
-						{{ card({ heading: { text: "Aixplorer ShearWave Elastography for ultrasound imaging and assessing suspicious breast lesions (MIB15)" }, href: "https://www.nice.org.uk/advice/mib15", metadata: [ { key: "Published date", value: "December 2014", datetime: "2014-12" } ] }) }}
-					</li>
-					<li>
-						{{ card({ heading: { text: "ATEC system for vacuum-assisted breast biopsy (MIB43)" }, href: "https://www.nice.org.uk/advice/mib143", metadata: [ { key: "Published date", value: "November 2015", datetime: "2015-11" } ] }) }}
-					</li>
-					<li>
-						{{ card({ heading: { text: "Axxent electronic brachytherapy system for early stage breast cancer (MIB76)" }, href: "https://www.nice.org.uk/advice/mib76", metadata: [ { key: "Published date", value: "August 2016", datetime: "2016-08" } ] }) }}
-					</li>
-					<li>
-						{{ card({ heading: { text: "EndoPredict gene expression profiling assay for assessing risk of breast cancer recurrence (MIB44)" }, href: "https://www.nice.org.uk/advice/mib44", metadata: [ { key: "Published date", value: "November 2015", datetime: "2015-11" } ] }) }}
-					</li>
-					<li>
-						{{ card({ heading: { text: "L-Dex U400 for lymphoedema after breast cancer treatment (MIB111)" }, href: "https://www.nice.org.uk/advice/mib111", tag: { modifiers: ["new", "flush"], label: "New" }, metadata: [ { key: "Published date", value: "July 2017", datetime: "2017-07" } ] }) }}
-					</li>
-					<li>
-						{{ card({ heading: { text: "The Prosigna gene expression profiling assay for assessing long‑term risk of breast cancer recurrence (MIB27)" }, href: "https://www.nice.org.uk/advice/mib27", metadata: [ { key: "Published date", value: "March 2015", datetime: "2015-03" } ] }) }}
-					</li>
-				</ul>
+						<ul class="list list--unstyled">
+							<li>
+								{{ card({ heading: { text: "Advanced breast cancer: diagnosis and treatment (CG81)" }, href: "https://www.nice.org.uk/guidance/cg81", tag: { modifiers: ["updated", "flush"], label: "Updated" }, metadata: [ { key: "Published date", value: "February 2009", datetime: "2009-02" }, { key: "Last updated", value: "August 2017", datetime: "2017-08" } ] }) }}
+							</li>
+							<li>
+								{{ card({ heading: { text: "Early and locally advanced breast cancer: diagnosis and treatment (CG80)" }, href: "https://www.nice.org.uk/guidance/cg80", metadata: [ { key: "Published date", value: "February 2009", datetime: "2009-02" } ] }) }}
+							</li>
+							<li>
+								{{ card({ heading: { text: "Familial breast cancer: classification, care and managing breast cancer and related risks in people with a family history of breast cancer (CG164)" }, href: "https://www.nice.org.uk/guidance/cg164", metadata: [ { key: "Published date", value: "June 2013", datetime: "2013-06" } ] }) }}
+							</li>
+							<li>
+								{{ card({ heading: { text: "Improving outcomes in breast cancer (CSG1)" }, href: "https://www.nice.org.uk/guidance/csg1", metadata: [ { key: "Published date", value: "August 2002", datetime: "2012-10" } ] }) }}
+							</li>
+							<li>
+								{{ card({ heading: { text: "Suspected cancer: recognition and referral (NG12)" }, href: "https://www.nice.org.uk/guidance/ng12", tag: { modifiers: ["updated", "flush"], label: "Updated" }, metadata: [ { key: "Published date", value: "June 2015", datetime: "2015-06" }, { key: "Last updated", value: "July 2017", datetime: "2017-07" } ] }) }}
+							</li>
+						</ul>
 
-				<h2>In development</h2>
+						<h2>NICE medtech innovation briefings</h2>
 
-				<ul class="list list--unstyled">
-					<li>
-						{{ card({ heading: { text: "The Prosigna gene expression profiling assay for assessing long‑term risk of breast cancer recurrence (MIB27)" }, href: "https://www.nice.org.uk/advice/mib27", tags: [{ modifiers: ["consultation", "flush"], label: "In consultation" }, { modifiers: ["new", "flush"], label: "New" }], metadata: [ { key: "Published date", value: "March 2015", datetime: "2015-03" } ] }) }}
-					</li>
-				</ul>
+						<p>Information on device and diagnostic technologies to help local decision-making. <a href="https://www.nice.org.uk/About/What-we-do/Our-Programmes/NICE-Advice/Medtech-innovation-briefings">Find out more about MIBs</a>.</p>
+
+						<ul class="list list--unstyled">
+							<li>
+								{{ card({ heading: { text: "Aixplorer ShearWave Elastography for ultrasound imaging and assessing suspicious breast lesions (MIB15)" }, href: "https://www.nice.org.uk/advice/mib15", metadata: [ { key: "Published date", value: "December 2014", datetime: "2014-12" } ] }) }}
+							</li>
+							<li>
+								{{ card({ heading: { text: "ATEC system for vacuum-assisted breast biopsy (MIB43)" }, href: "https://www.nice.org.uk/advice/mib143", metadata: [ { key: "Published date", value: "November 2015", datetime: "2015-11" } ] }) }}
+							</li>
+							<li>
+								{{ card({ heading: { text: "Axxent electronic brachytherapy system for early stage breast cancer (MIB76)" }, href: "https://www.nice.org.uk/advice/mib76", metadata: [ { key: "Published date", value: "August 2016", datetime: "2016-08" } ] }) }}
+							</li>
+							<li>
+								{{ card({ heading: { text: "EndoPredict gene expression profiling assay for assessing risk of breast cancer recurrence (MIB44)" }, href: "https://www.nice.org.uk/advice/mib44", metadata: [ { key: "Published date", value: "November 2015", datetime: "2015-11" } ] }) }}
+							</li>
+							<li>
+								{{ card({ heading: { text: "L-Dex U400 for lymphoedema after breast cancer treatment (MIB111)" }, href: "https://www.nice.org.uk/advice/mib111", tag: { modifiers: ["new", "flush"], label: "New" }, metadata: [ { key: "Published date", value: "July 2017", datetime: "2017-07" } ] }) }}
+							</li>
+							<li>
+								{{ card({ heading: { text: "The Prosigna gene expression profiling assay for assessing long‑term risk of breast cancer recurrence (MIB27)" }, href: "https://www.nice.org.uk/advice/mib27", metadata: [ { key: "Published date", value: "March 2015", datetime: "2015-03" } ] }) }}
+							</li>
+						</ul>
+
+						<h2>In development</h2>
+
+						<ul class="list list--unstyled">
+							<li>
+								{{ card({ heading: { text: "The Prosigna gene expression profiling assay for assessing long‑term risk of breast cancer recurrence (MIB27)" }, href: "https://www.nice.org.uk/advice/mib27", tags: [{ modifiers: ["consultation", "flush"], label: "In consultation" }, { modifiers: ["new", "flush"], label: "New" }], metadata: [ { key: "Published date", value: "March 2015", datetime: "2015-03" } ] }) }}
+							</li>
+						</ul>
+
+					</div>
+				</div>
 
 			</div>
 		</div>
-	</div>
+	</main>
 
 	{{ footer({ year: moment().year() }) }}
 
