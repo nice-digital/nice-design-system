@@ -4,9 +4,6 @@ title: Tabs
 description: Content is separated into different panes, with only one pane viewable at a time
 ---
 
-Content is separated into different panes, with only one pane viewable at a time
-{:.lead}
-
 ## Why?
 When you have a group of related content, and you need to save space, or when your user needs to switch between grouped content.
 

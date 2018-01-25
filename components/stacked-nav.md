@@ -1,11 +1,8 @@
 ---
 layout: sidebar
 title: Stacked navigation
-description: Navigation to support deeper content
+description: Navigation to support sub-pages within a section
 ---
-
-Navigation to support sub-pages within a section
-{:.lead}
 
 ## Why?
 When you need to sign post a user to child pages within a section.

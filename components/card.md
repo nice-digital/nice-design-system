@@ -4,9 +4,6 @@ title: Card
 description: A flexible component for displaying an item like news or guidance within a list
 ---
 
-Cards are flexible components for displaying items, usually within a list. 
-{:.lead}
-
 ## Why?
 They're used for items like guidance, news and search results to give an easily scannable list.
 

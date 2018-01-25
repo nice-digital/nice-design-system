@@ -4,9 +4,6 @@ title: Maintain ratio
 description: Embed media and maintain an aspect ratio across devices
 ---
 
-Embed media and maintain an aspect ratio across devices
-{:.lead}
-
 ## Why?
 Embedded media, for example YouTube, videos generally need to keep a specific aspect ratio across a responsive site.
 

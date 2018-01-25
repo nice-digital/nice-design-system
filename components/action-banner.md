@@ -4,9 +4,6 @@ title: Action banner
 description: Banner for highlighting, and giving context to, a call-to-action
 ---
 
-Use action banners to highlight important calls-to-action
-{:.lead}
-
 ## Why?
 Some calls-to-action are higher priority than others. An action banner gives a way of highlighting these CTAs. They can also be used to break up a page layout and give visual interest.
 

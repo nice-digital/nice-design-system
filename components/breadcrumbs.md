@@ -1,11 +1,8 @@
 ---
 layout: sidebar
 title: Breadcrumbs
-description: Secondary navigation scheme that reveals the users location
+description: A breadcrumb trail is a secondary navigation, that displays as a series of links, situated below the header. 
 ---
-
-A breadcrumb trail is a secondary navigation, that displays as a series of links, situated below the header. 
-{:.lead}
 
 ## Why?
 It helps identify where the user is, and the navigation they may have taken to get to the current page.
