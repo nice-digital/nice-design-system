@@ -1,7 +1,7 @@
 /* eslint-env node, mocha, jquery */
 /* global sinon, should */
 
-import InPageNav from "./in-page-nav";
+import InPageNav, { headingsExclude } from "./in-page-nav";
 
 describe("In page nav", function() {
 
@@ -10,13 +10,15 @@ describe("In page nav", function() {
 		sandbox;
 
 	beforeEach(function () {
+		$(window).off(".inpagenav");
 		if(inPageNav) {
 			// Cleanup so we don't have to do it in every test
 			inPageNav.destroy();
 		}
+		window.pageYOffset = 0;
 		sandbox = sinon.sandbox.create();
 		$nav = $("<div class=parent><div class=navholder /></div>");
-		$("body").html($nav);
+		$("body").html($nav).append("<div class=footer></div>");
 	});
 
 	afterEach(function () {
@@ -76,21 +78,36 @@ describe("In page nav", function() {
 		it("has default keys", function() {
 			InPageNav.defaults()
 				.should.be.an("object")
-				.and.have.all.keys("headingsContainer", "headings", "headingsExclude", "scrollTolerance", "wideTarget", "wideBreakpoint");
+				.and.have.all.keys("headingsContainer", "headings", "headingsExclude", "footerContainer", "scrollTolerance");
 		});
 
 	});
 
-	describe("Initialization", function() {
+	describe("constructor", function() {
 
 		it("throws error without an element argument", function() {
 			(() => { new InPageNav; }).should.throw(Error);
 		});
 
+		it("saves a reference to $el", function () {
+			inPageNav = new InPageNav($nav[0]);
+			inPageNav.$el.should.deep.equal($nav);
+		});
+
 		it("copies defaults into instance options", function() {
-			inPageNav = new InPageNav($nav);
+			// Arrange
+			let opts = $.extend({ test: true }, InPageNav.defaults(), { headingsExclude: headingsExclude });
+			// Act
+			inPageNav = new InPageNav($nav, { test: true });
 			// Assert
-			inPageNav.options.should.deep.equal(InPageNav.defaults());
+			inPageNav.options.should.deep.equal(opts);
+		});
+
+		it("generates a unique id property on creation", function() {
+			inPageNav = new InPageNav($nav);
+			let inPageNav2 = new InPageNav($nav);
+			// Assert
+			inPageNav.uid.should.not.equal(inPageNav2.uid);
 		});
 
 		it("doesn't select a heading by default", function() {
@@ -99,7 +116,7 @@ describe("In page nav", function() {
 			should.not.exist(inPageNav.getActiveHeading());
 		});
 
-		it("should render template on creation", function() {
+		it("renders template on creation", function() {
 			// Arrange
 			let render = sandbox.spy(InPageNav.prototype, "render");
 			// Act
@@ -108,14 +125,54 @@ describe("In page nav", function() {
 			render.should.be.calledOnce;
 		});
 
-		it("generates a unique id property prefixed 'inpagenav-' on creation", function() {
+		it("updates nav state on creation", function() {
+			// Arrange
+			let updateNavState = sandbox.spy(InPageNav.prototype, "updateNavState");
+			// Act
 			inPageNav = new InPageNav($nav);
 			// Assert
-			inPageNav.uid.should.match(/inpagenav-\d+/);
+			updateNavState.should.be.calledOnce;
+		});
+
+		describe("event delegation", function() {
+
+			it("updates nav state on window load", function() {
+				// Arrange
+				let updateNavState = sandbox.spy(InPageNav.prototype, "updateNavState");
+				inPageNav = new InPageNav($nav);
+				updateNavState.reset();
+				// Act
+				$(window).trigger("load");
+				// Assert
+				updateNavState.should.be.calledOnce;
+			});
+
+			it("updates nav state on window scroll", function() {
+				// Arrange
+				let updateNavState = sandbox.spy(InPageNav.prototype, "updateNavState");
+				inPageNav = new InPageNav($nav);
+				updateNavState.reset();
+				// Act
+				$(window).trigger("scroll");
+				// Assert
+				updateNavState.should.be.calledOnce;
+			});
+
+			it("calculates position on window resize", function() {
+				// Arrange
+				let calculatePosition = sandbox.spy(InPageNav.prototype, "calculatePosition");
+				inPageNav = new InPageNav($nav);
+				calculatePosition.reset();
+				// Act
+				$(window).trigger("resize");
+				// Assert
+				calculatePosition.should.be.calledOnce;
+			});
+
 		});
 	});
 
-	describe("Destruction", function() {
+	describe("destroy", function() {
 
 		it("should remove window event listeners when destroyed", function() {
 			// Arrange
@@ -139,7 +196,7 @@ describe("In page nav", function() {
 
 	});
 
-	describe("Options", function() {
+	describe("findHeadings", function() {
 
 		it("looks for headings within element specified by 'container' option", function() {
 			// Arrange
@@ -147,7 +204,7 @@ describe("In page nav", function() {
 			inPageNav = new InPageNav($nav, { headingsContainer: ".headings" });
 
 			// Act
-			let headings = inPageNav.getHeadings();
+			let headings = inPageNav.findHeadings();
 
 			// Assert
 			headings.should.be.an("Array")
@@ -161,7 +218,7 @@ describe("In page nav", function() {
 			inPageNav = new InPageNav($nav, { headings: "h4, h5" });
 
 			// Act
-			let headings = inPageNav.getHeadings();
+			let headings = inPageNav.findHeadings();
 
 			// Assert
 			headings.should.be.an("Array")
@@ -171,13 +228,27 @@ describe("In page nav", function() {
 			headings.should.have.nested.property("[1].textContent", "Heading 5");
 		});
 
+		it("ignores headings from default 'excludes' constant", function() {
+			// Arrange
+			$("body").append("<h2>Heading 2</h2><h3>Heading 3.1</h3><h3 data-no-inpagenav>Heading 3.2</h3>");
+			inPageNav = new InPageNav($nav);
+
+			// Act
+			let headings = inPageNav.findHeadings();
+
+			// Assert
+			headings.should.be.an("Array")
+				.to.have.lengthOf(2)
+				.and.have.nested.property("[1].textContent", "Heading 3.1");
+		});
+
 		it("ignores headings from 'exclude' option", function() {
 			// Arrange
 			$("body").append("<div class=ignore><h3>Heading 3</h3></div><h2>Heading 2</h2><h3 class=ignore>Heading 3</h3>");
 			inPageNav = new InPageNav($nav, { headingsExclude: ".ignore, .ignore *" });
 
 			// Act
-			let headings = inPageNav.getHeadings();
+			let headings = inPageNav.findHeadings();
 
 			// Assert
 			headings.should.be.an("Array")
@@ -187,45 +258,82 @@ describe("In page nav", function() {
 
 	});
 
-	describe("Events", function() {
-
-		it("updates nav state on window load", function() {
+	describe("generateHeadingId", function() {
+		it("doesn't generate an id for a heading with an id attribute", function () {
 			// Arrange
-			let updateNavState = sandbox.spy(InPageNav.prototype, "updateNavState");
-			inPageNav = new InPageNav($nav);
-			updateNavState.reset();
+			var inPageNav = new InPageNav($nav);
+			var heading = document.createElement("h2");
+			heading.id = "an-id";
+
 			// Act
-			$(window).trigger("load");
+			inPageNav.generateHeadingId(heading);
+
 			// Assert
-			updateNavState.should.be.calledOnce;
+			heading.id.should.eql("an-id");
 		});
 
-		it("updates nav state on window scroll", function() {
+		it("generates a heading id from the text content for a heading with no id attribute", function () {
 			// Arrange
-			let updateNavState = sandbox.spy(InPageNav.prototype, "updateNavState");
-			inPageNav = new InPageNav($nav);
-			updateNavState.reset();
+			var inPageNav = new InPageNav($nav);
+			var heading = document.createElement("h2");
+			heading.textContent = "A heading";
+
 			// Act
-			$(window).trigger("scroll");
+			inPageNav.generateHeadingId(heading);
+
 			// Assert
-			updateNavState.should.be.calledOnce;
+			heading.id.should.eql("a-heading");
 		});
 
-		it("calculates position on window resize", function() {
+		it("generates a sequential heading id when there are duplicate headings", function () {
 			// Arrange
-			let calculatePosition = sandbox.spy(InPageNav.prototype, "calculatePosition");
-			inPageNav = new InPageNav($nav);
-			calculatePosition.reset();
-			// Act
-			$(window).trigger("resize");
-			// Assert
-			calculatePosition.should.be.calledOnce;
-		});
+			$("body").append("<h2>Heading two</h2><h2>Heading two</h2>");
+			var inPageNav = new InPageNav($nav);
+			var heading = document.createElement("h2");
+			heading.textContent = "Heading two";
 
+			// Act
+			inPageNav.generateHeadingId(heading);
+
+			// Assert
+			heading.id.should.eql("heading-two-3");
+		});
 	});
 
-	describe("Position calculation", function() {
-		// TODO - test that position is calculated correctly
+	describe("calculatePosition", function() {
+
+		it("is fixed when above viewport", function () {
+
+			// Arrange
+			inPageNav = new InPageNav($nav);
+			window.pageYOffset = 1;
+
+			// Act
+			inPageNav.$el.find(".in-page-nav--fixed").length.should.eql(0);
+			inPageNav.calculatePosition();
+
+			// Assert
+			inPageNav.$el.find(".in-page-nav--fixed").length.should.eql(1);
+		});
+
+		it("isn't fixed when within viewport", function () {
+
+			// Arrange
+			inPageNav = new InPageNav($nav);
+
+			window.pageYOffset = 1;
+			inPageNav.calculatePosition();
+			inPageNav.$el.find(".in-page-nav--fixed").length.should.eql(1);
+
+			window.pageYOffset = 0;
+			inPageNav.calculatePosition();
+			inPageNav.$el.find(".in-page-nav--fixed").length.should.eql(0);
+		});
+
+		it("matches width of parent when fixed", function() {
+
+		});
+
 	});
 
 	describe("Tree rendering", function() {

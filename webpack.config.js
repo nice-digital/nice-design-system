@@ -60,6 +60,9 @@ const minPlugins = [
 		mangle: {
 			screw_ie8: false,
 			except: ["$super", "$", "exports", "require"]
+		},
+		output: {
+			screw_ie8: false
 		}
 	}),
 	new webpack.optimize.AggressiveMergingPlugin(),
