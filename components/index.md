@@ -5,4 +5,4 @@ description: Once you've mastered the foundations, these components are further 
 inpagenav: false
 ---
 
-{% include section-nav.html nav="components" lead=true %}
+{% include section-nav.html nav="components" %}

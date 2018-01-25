@@ -5,6 +5,7 @@
 /// Default link style for use on a normal (light) background
 /// @since 0.3.1
 @mixin link-default {
+  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes
   color: $colour-link;
   text-decoration: underline;
   text-decoration-skip: ink;
@@ -30,6 +31,7 @@
 /// Inverse link style for use on an inverse (dark) background
 /// @since 0.3.1
 @mixin link-inverse {
+  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes
   color: $colour-link-inverse;
   text-decoration: underline;
   text-decoration-skip: ink;

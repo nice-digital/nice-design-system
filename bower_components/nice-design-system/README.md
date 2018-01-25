@@ -114,12 +114,18 @@ Run `npm start` and `npm run test:watch` for development. However, there are oth
 | Task | Description |
 | ---- | ----------- |
 | `npm start`           | Simply runs `grunt` under the hood |
+| `npm run dist`           | Builds the projects in distribution mode for release |
+| `npm run dist:teamcity`           | Builds the projects in distribution mode for release via teamcity |
 | `npm test`            | Runs JS tests |
+| `npm test:teamcity`            | Runs JS tests (with the [mocha-teamcity-reporter](https://www.npmjs.com/package/mocha-teamcity-reporter))|
 | `npm run test:watch`  | Runs JS test tests (with [min reporter](https://github.com/mochajs/mocha/blob/master/lib/reporters/min.js)) and watches for changes. Useful to run in development alongside grunt. |
 | `npm run test:coverage`  | Runs JS test tests and generates a coverage report with [Istanbul](https://istanbul.js.org/) into the *coverage* folder |
+| `test:coverage:teamcity` | Runs JS test tests and generates a coverage report with [Istanbul](https://istanbul.js.org/) (using the [mocha-teamcity-reporter](https://www.npmjs.com/package/mocha-teamcity-reporter)). |
 | `npm run lint`        | Lints SASS and JS (uses `grunt lint` under the hood) |
+
 | `npm run release`        | Builds the assets in dist mode, increments package.json patch version, pushes a new git tag, creates a GitHub release (with release notes from commits since last release) and creates an npm release. |
 | `npm run release:minor` | Does the same as release but with a minor version |
+
 
 #### Grunt
 

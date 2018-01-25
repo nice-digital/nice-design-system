@@ -40,6 +40,6 @@
     ".grunt-tasks"
   ],
   "dependencies": {
-    "nice-icons": "^1.0.0"
+    "nice-icons": "^1.4.0"
   }
 }

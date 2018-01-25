@@ -917,10 +917,10 @@
           "context": {
             "type": "mixin",
             "name": "link-default",
-            "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+            "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
             "line": {
               "start": 7,
-              "end": 28
+              "end": 29
             }
           }
         }
@@ -965,10 +965,10 @@
           "context": {
             "type": "mixin",
             "name": "link-default",
-            "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+            "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
             "line": {
               "start": 7,
-              "end": 28
+              "end": 29
             }
           }
         }
@@ -1013,10 +1013,10 @@
           "context": {
             "type": "mixin",
             "name": "link-default",
-            "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+            "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
             "line": {
               "start": 7,
-              "end": 28
+              "end": 29
             }
           }
         }
@@ -1061,10 +1061,10 @@
           "context": {
             "type": "mixin",
             "name": "link-default",
-            "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+            "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
             "line": {
               "start": 7,
-              "end": 28
+              "end": 29
             }
           }
         }
@@ -1109,10 +1109,10 @@
           "context": {
             "type": "mixin",
             "name": "link-default",
-            "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+            "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
             "line": {
               "start": 7,
-              "end": 28
+              "end": 29
             }
           }
         }
@@ -1157,10 +1157,10 @@
           "context": {
             "type": "mixin",
             "name": "link-inverse",
-            "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+            "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 32,
-              "end": 53
+              "start": 33,
+              "end": 55
             }
           }
         }
@@ -1205,10 +1205,10 @@
           "context": {
             "type": "mixin",
             "name": "link-inverse",
-            "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+            "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 32,
-              "end": 53
+              "start": 33,
+              "end": 55
             }
           }
         }
@@ -1253,10 +1253,10 @@
           "context": {
             "type": "mixin",
             "name": "link-inverse",
-            "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+            "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 32,
-              "end": 53
+              "start": 33,
+              "end": 55
             }
           }
         }
@@ -1301,10 +1301,10 @@
           "context": {
             "type": "mixin",
             "name": "link-inverse",
-            "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+            "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 32,
-              "end": 53
+              "start": 33,
+              "end": 55
             }
           }
         }
@@ -1349,10 +1349,10 @@
           "context": {
             "type": "mixin",
             "name": "link-inverse",
-            "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+            "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 32,
-              "end": 53
+              "start": 33,
+              "end": 55
             }
           }
         }
@@ -1401,6 +1401,30 @@
             "line": {
               "start": 10,
               "end": 12
+            }
+          }
+        },
+        {
+          "description": "<p>Default link style for use on a normal (light) background</p>\n",
+          "context": {
+            "type": "mixin",
+            "name": "link-default",
+            "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+            "line": {
+              "start": 7,
+              "end": 29
+            }
+          }
+        },
+        {
+          "description": "<p>Inverse link style for use on an inverse (dark) background</p>\n",
+          "context": {
+            "type": "mixin",
+            "name": "link-inverse",
+            "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+            "line": {
+              "start": 33,
+              "end": 55
             }
           }
         }
@@ -2589,10 +2613,10 @@
       "context": {
         "type": "css",
         "name": ".btn",
-        "value": "@include remove-mz-focus-inner;\n  @include font-size(0);\n  appearance: none;\n  background: $colour-btn-primary;\n  border: em(1px) solid $colour-btn-primary-text;\n  border-radius: 0;\n  color: $colour-btn-primary-text;\n  cursor: pointer;\n  display: inline-block;\n  margin: em(0 $spacing-small $spacing-small -4px); // Negative left margin to combat inline-block gaps\n  padding: em($spacing-small $spacing-medium);\n  position: relative;\n  text-decoration: none !important; // sass-lint:disable-line no-important\n  vertical-align: top;\n\n  &:first-child {\n    margin-left: 0;\n  }\n\n  &:visited {\n    color: $colour-btn-primary-text;\n  }\n\n  &:hover {\n    background: $colour-btn-primary-hover;\n    color: $colour-btn-primary-text;\n    text-decoration: none;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background: $colour-btn-primary;\n    border-color: $colour-focus-inverse;\n    color: $colour-btn-primary-text;\n  }\n\n  &:active {\n    background: $colour-btn-primary-hover;\n    text-decoration: none;\n    top: em(2px);\n  }\n\n  // Disabled button styles\n  &--disabled,\n  &.disabled,\n  &[aria-disabled='true'],\n  &[disabled='disabled'],\n  &[disabled] {\n    opacity: .5;\n    pointer-events: none;\n\n    &:hover {\n      cursor: default;\n    }\n  }",
+        "value": "@include remove-mz-focus-inner;\n  @include font-size(0);\n  appearance: none;\n  background: $colour-btn-primary;\n  border: em(1px) solid $colour-btn-primary-text;\n  border-radius: 0;\n  color: $colour-btn-primary-text;\n  cursor: pointer;\n  display: inline-block;\n  margin: em(0 $spacing-small $spacing-small -4px); // Negative left margin to combat inline-block gaps\n  padding: em($spacing-small $spacing-medium);\n  position: relative;\n  text-align: left;\n  text-decoration: none !important; // sass-lint:disable-line no-important\n  vertical-align: top;\n  white-space: nowrap;\n\n  &:first-child {\n    margin-left: 0;\n  }\n\n  &:visited {\n    color: $colour-btn-primary-text;\n  }\n\n  &:hover {\n    background: $colour-btn-primary-hover;\n    color: $colour-btn-primary-text;\n    text-decoration: none;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background: $colour-btn-primary;\n    border-color: $colour-focus-inverse;\n    color: $colour-btn-primary-text;\n  }\n\n  &:active {\n    background: $colour-btn-primary-hover;\n    text-decoration: none;\n    top: em(2px);\n  }\n\n  // Disabled button styles\n  &--disabled,\n  &.disabled,\n  &[aria-disabled='true'],\n  &[disabled='disabled'],\n  &[disabled] {\n    opacity: .5;\n    pointer-events: none;\n\n    &:hover {\n      cursor: default;\n    }\n  }",
         "line": {
           "start": 7,
-          "end": 139
+          "end": 141
         }
       },
       "since": [
@@ -2615,16 +2639,16 @@
     {
       "description": "<p>CTA/prominent button</p>\n",
       "commentRange": {
-        "start": 65,
-        "end": 66
+        "start": 67,
+        "end": 68
       },
       "context": {
         "type": "css",
         "name": ".btn--cta",
         "value": "background: $colour-btn-cta;\n  border: em(1px) solid $colour-btn-cta-text;\n  color: $colour-btn-cta-text;\n\n  &:visited {\n    color: $colour-btn-cta-text;\n  }\n\n  &:hover {\n    background: $colour-btn-cta-hover;\n    color: $colour-btn-cta-text;\n  }\n\n  &:focus {\n    background: $colour-btn-cta-hover;\n  }\n\n  &:active {\n    background: $colour-btn-cta-hover;\n  }",
         "line": {
-          "start": 67,
-          "end": 139
+          "start": 69,
+          "end": 141
         }
       },
       "since": [
@@ -2647,16 +2671,16 @@
     {
       "description": "<p>Secondary button</p>\n",
       "commentRange": {
-        "start": 90,
-        "end": 91
+        "start": 92,
+        "end": 93
       },
       "context": {
         "type": "css",
         "name": ".btn--secondary",
         "value": "background: $colour-btn-secondary;\n  border: em(1px) solid $colour-btn-secondary-text;\n  color: $colour-btn-secondary-text;\n\n  &:visited {\n    color: $colour-btn-secondary-text;\n  }\n\n  &:hover {\n    background: $colour-btn-secondary-hover;\n    color: $colour-btn-secondary-text;\n  }\n\n  &:focus {\n    background: $colour-btn-secondary-hover;\n  }\n\n  &:active {\n    background: $colour-btn-secondary-hover;\n  }",
         "line": {
-          "start": 92,
-          "end": 139
+          "start": 94,
+          "end": 141
         }
       },
       "since": [
@@ -2679,16 +2703,16 @@
     {
       "description": "<p>Inverse (light) button, for use on inverse (dark) panels/sections</p>\n",
       "commentRange": {
-        "start": 115,
-        "end": 116
+        "start": 117,
+        "end": 118
       },
       "context": {
         "type": "css",
         "name": ".btn--inverse",
         "value": "background: $colour-btn-inverse;\n  border: em(1px) solid $colour-btn-inverse-text;\n  color: $colour-btn-inverse-text !important; // sass-lint:disable-line no-important\n\n  &:visited {\n    color: $colour-btn-inverse-text;\n  }\n\n  &:hover {\n    background: $colour-btn-inverse-hover;\n    color: $colour-btn-inverse-text;\n  }\n\n  &:focus {\n    background: $colour-btn-inverse-hover;\n  }\n\n  &:active {\n    background: $colour-btn-inverse-hover;\n  }",
         "line": {
-          "start": 117,
-          "end": 139
+          "start": 119,
+          "end": 141
         }
       },
       "since": [
@@ -2717,10 +2741,10 @@
       "context": {
         "type": "css",
         "name": ".card",
-        "value": "border-bottom: 1px solid $colour-border;\n  padding: em($spacing-small 0);\n  position: relative;\n\n  &__heading {\n    @include font-size(0);\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      text-decoration: none;\n\n      &:hover {\n        text-decoration: underline;\n      }\n\n      &:before {\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: 100%;\n        z-index: 0;\n      }\n    }\n  }\n\n  &__icon {\n    margin: em(0 $spacing-x-small 0 0);\n  }\n\n  &__tag {\n    @include font-size(-1);\n    margin-right: rem($spacing-x-small);\n  }\n\n  &__metadata {\n    @include font-size(-1);\n    color: $colour-nice-dark-grey;\n    display: inline-block;\n    margin: rem($spacing-x-small 0 0);\n    position: relative;\n    z-index: 1;\n  }\n\n  &__metadatum {\n    display: block;\n    margin: em($spacing-x-small $spacing-small 0 0);\n\n    dt,\n    dd {\n      display: inline-block;\n      margin: 0;\n    }\n  }\n\n  @include mq($from: sm) {\n    &__metadatum {\n      display: inline-block;\n      white-space: nowrap;\n    }\n  }",
+        "value": "border-bottom: 1px solid $colour-border;\n  padding: em($spacing-small 0);\n  position: relative;\n\n  &__heading {\n    @include font-size(0);\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      text-decoration: none;\n\n      &:hover {\n        text-decoration: underline;\n      }\n\n      &:before {\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: 100%;\n        z-index: 0;\n      }\n    }\n  }\n\n  &__icon {\n    margin: em(0 $spacing-x-small 0 0);\n  }\n\n  &__tag {\n    @include font-size(-1, true);\n  }\n\n  &__metadata {\n    @include font-size(-1);\n    color: $colour-nice-dark-grey;\n    display: inline-block;\n    margin: rem($spacing-x-small 0 0);\n    position: relative;\n    z-index: 1;\n  }\n\n  &__metadatum {\n    display: block;\n    margin: em($spacing-x-small $spacing-small 0 0);\n\n    dt,\n    dd {\n      display: inline-block;\n      margin: 0;\n    }\n  }\n\n  @include mq($from: sm) {\n    &__metadatum {\n      display: inline-block;\n      white-space: nowrap;\n    }\n  }",
         "line": {
           "start": 12,
-          "end": 78
+          "end": 77
         }
       },
       "since": [
@@ -2970,10 +2994,10 @@
       "context": {
         "type": "css",
         "name": ".in-page-nav",
-        "value": "// The 'on this page' title\n  &__title {\n    @include font-size(h2);\n  }\n\n  // Lists (both root level and sub level)\n  &__list {\n    margin-left: em($spacing-medium);\n\n    [aria-hidden='true'] {\n      display: none;\n    }\n  }\n\n  a {\n    &:visited {\n      color: $colour-link;\n    }\n\n    &:focus {\n      background: none;\n    }\n  }\n\n  @include mq($from: md) {\n    // Docked to the top of the screen\n    &--fixed {\n      position: fixed;\n      top: 0;\n    }\n\n    &__title {\n      @include font-size(h4);\n      margin-top: 0;\n    }\n\n    a {\n      &[aria-selected='true'] {\n        font-weight: bold;\n      }\n    }\n  }",
+        "value": "margin: rem(0 0 $spacing-large);\n\n  // The 'on this page' title\n  &__title {\n    @include font-size(h4);\n    margin-top: 0;\n  }\n\n  // Lists (both root level and sub level)\n  &__list {\n    list-style: disc;\n    margin-left: em($spacing-medium);\n\n    .in-page-nav__list {\n      list-style: circle;\n    }\n\n    [aria-hidden='true'] {\n      display: none;\n    }\n  }\n\n  a {\n    &:visited {\n      color: $colour-link;\n    }\n\n    &:focus {\n      background: none;\n    }\n  }\n\n  @include mq($from: md) {\n    margin: 0;\n\n    // Docked to the top of the screen\n    &--fixed {\n      position: fixed;\n      top: 0;\n\n      .in-page-nav__title {\n        margin-top: rem($spacing-small);\n      }\n    }\n\n    a {\n      &[aria-current='location'] {\n        font-weight: bold;\n      }\n    }\n  }",
         "line": {
           "start": 6,
-          "end": 51
+          "end": 59
         }
       },
       "group": [
@@ -3027,6 +3051,44 @@
       "file": {
         "path": "components\\maintain-ratio\\_maintain-ratio.scss",
         "name": "_maintain-ratio.scss"
+      },
+      "groupName": {
+        "components": "Components"
+      }
+    },
+    {
+      "description": "<p>Page header component.\nUsed at the top of a page to contain an h1 and optional\nlead intro paragraph and call-to-action.</p>\n",
+      "commentRange": {
+        "start": 5,
+        "end": 22
+      },
+      "context": {
+        "type": "css",
+        "name": ".page-header",
+        "value": "margin: rem(0 0 $spacing-x-large 0);\n\n  &__heading {\n    @include font-size(h1);\n    margin: rem(0 0 $spacing-small 0);\n  }\n\n  &__lead {\n    @include font-size(lead);\n    margin: rem(0 0 $spacing-small 0);\n  }\n\n  &__cta {\n    @include font-size(p);\n    display: block;\n    margin: 0;\n  }\n\n  @media print {\n    &__cta {\n      display: none;\n    }\n  }",
+        "line": {
+          "start": 23,
+          "end": 48
+        }
+      },
+      "example": [
+        {
+          "type": "html",
+          "code": "<header class=\"page-header\">\n  <h1 class=\"page-header__heading\">\n    Breast cancer\n  </h1>\n  <p class=\"page-header__lead\">\n    Everything NICE has produced on the topic of breast cancer.\n    Includes related guidelines, NICE Pathways, quality standards and advice.\n  </p>\n  <p class=\"page-header__cta\">\n    <a href=\"/some-action.html\">Register as a stakeholder</a>\n  </p>\n</header>"
+        }
+      ],
+      "since": [
+        {
+          "version": "0.4.0"
+        }
+      ],
+      "group": [
+        "components"
+      ],
+      "access": "public",
+      "file": {
+        "path": "components\\page-header\\_page-header.scss",
+        "name": "_page-header.scss"
       },
       "groupName": {
         "components": "Components"
@@ -3112,7 +3174,7 @@
       "context": {
         "type": "css",
         "name": ".phase-banner",
-        "value": "border-bottom: 1px solid $colour-border;\n  display: table;\n  margin: em(0 0 $spacing-medium);\n  max-width: 100%;\n  padding: em($spacing-small 0);\n  width: 100%;\n\n  &__tag {\n    display: table-cell;\n    padding: em(0 $spacing-small 0 0);\n    vertical-align: top;\n  }\n\n  &__label {\n    display: table-cell;\n    line-height: 1.3;\n    vertical-align: middle;\n    width: 100%;\n  }",
+        "value": "border-bottom: 1px solid $colour-border;\n  display: table;\n  margin: em(0 0 $spacing-small);\n  max-width: 100%;\n  padding: em($spacing-small 0);\n  width: 100%;\n\n  &__tag {\n    display: table-cell;\n    padding: em(0 $spacing-small 0 0);\n    vertical-align: top;\n  }\n\n  &__label {\n    display: table-cell;\n    line-height: 1.3;\n    vertical-align: middle;\n    width: 100%;\n  }",
         "line": {
           "start": 15,
           "end": 36
@@ -3120,14 +3182,14 @@
       },
       "see": [
         {
-          "description": "<p>Tag component. Used for labelling items in lists\nand also used within alpha/beta phase banners.</p>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--impact</code> Larger tag, used for impact</li>\n<li><code>--alpha</code> Alpha</li>\n<li><code>--beta</code>  Beta</li>\n<li><code>--live</code>  Live</li>\n<li><code>--new</code>  New</li>\n<li><code>--updated</code>  Updated</li>\n<li><code>--consultation</code>  In consultation</li>\n<li><code>--flush</code>  No margin</li>\n</ul>\n",
+          "description": "<p>Tag component. Used for labelling items in lists\nand also used within alpha/beta phase banners.</p>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--impact</code> Bolder tag, used for higher impact</li>\n<li><code>--super</code>  Super aligned, useful for tagging headings</li>\n<li><code>--alpha</code> Alpha</li>\n<li><code>--beta</code>  Beta</li>\n<li><code>--live</code>  Live</li>\n<li><code>--new</code>  New</li>\n<li><code>--updated</code>  Updated</li>\n<li><code>--consultation</code>  In consultation</li>\n<li><code>--flush</code>  No margin</li>\n</ul>\n",
           "context": {
             "type": "css",
             "name": ".tag",
-            "value": "background-color: $colour-panel-inverse;\n  border-radius: em($spacing-xx-small);\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: normal;\n  margin: rem(0 0 $spacing-x-small 0);\n  padding: em(0 $spacing-x-small);\n  text-decoration: none;\n  vertical-align: baseline;\n\n  @media print {\n    // sass-lint:disable-block no-important\n    background: none !important;\n    color: $colour-true-black !important;\n    padding: 0 !important;\n  }\n\n  &--impact {\n    @include font-size(-1);\n    font-weight: 900;\n    letter-spacing: 1px;\n    padding: em($spacing-xx-small $spacing-small);\n    text-transform: uppercase;\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }\n\n  &--new {\n    background: $colour-guidance-new;\n  }\n\n  &--updated {\n    background: $colour-guidance-updated;\n  }\n\n  &--consultation {\n    background: $colour-guidance-consultation;\n  }\n\n  &--flush {\n    margin-bottom: 0;\n  }",
+            "value": "@include font-size(0);\n  background-color: $colour-panel-inverse;\n  border-radius: em($spacing-xx-small);\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: normal;\n  margin: rem(0 0 $spacing-x-small 0);\n  padding: em(0 $spacing-x-small);\n  text-decoration: none;\n  vertical-align: baseline;\n\n  @media print {\n    // sass-lint:disable-block no-important\n    background: none !important;\n    color: $colour-true-black !important;\n    padding: 0 !important;\n  }\n\n  &--impact {\n    font-weight: 900;\n    letter-spacing: 1px;\n    padding: em($spacing-xx-small $spacing-small);\n    text-transform: uppercase;\n  }\n\n  &--super {\n    vertical-align: super;\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }\n\n  &--new {\n    background: $colour-guidance-new;\n  }\n\n  &--updated {\n    background: $colour-guidance-updated;\n  }\n\n  &--consultation {\n    background: $colour-guidance-consultation;\n  }\n\n  &--flush {\n    margin-bottom: 0;\n  }",
             "line": {
-              "start": 18,
-              "end": 75
+              "start": 19,
+              "end": 80
             }
           }
         }
@@ -3158,7 +3220,7 @@
       "context": {
         "type": "css",
         "name": ".stacked-nav",
-        "value": "background: #fafafa;\n  border: 1px solid $colour-border;\n  margin: em(0 0 $spacing-large);\n\n  a {\n    color: $colour-link;\n    display: block;\n    padding: em($spacing-small);\n    position: relative;\n    text-decoration: none;\n\n    &[aria-current='page'] {\n      background: $colour-nice-grey-3;\n      font-weight: bold;\n\n      &:before {\n        background: $colour-icons;\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: em($spacing-x-small);\n      }\n    }\n\n    &:hover {\n      background: $colour-nice-grey-2;\n    }\n\n    &:active {\n      background: $colour-icons;\n      color: $colour-link-inverse;\n    }\n  }\n\n  // The title nav link\n  &__root {\n    @include font-size(h6);\n    border-bottom: 1px solid $colour-border;\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      color: $colour-text;\n    }\n  }\n\n  &__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  &__list-item {\n    border-top: 1px solid $colour-border;\n  }\n\n  @media print {\n    display: none;\n  }",
+        "value": "background: $colour-nice-white;\n  border: 1px solid $colour-border;\n  margin: em(0 0 $spacing-large);\n\n  a {\n    color: $colour-link;\n    display: block;\n    padding: em($spacing-small);\n    position: relative;\n    text-decoration: none;\n\n    &[aria-current='page'] {\n      background: $colour-nice-grey-3;\n      font-weight: bold;\n\n      &:before {\n        background: $colour-icons;\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: em($spacing-x-small);\n      }\n    }\n\n    &:hover {\n      background: $colour-nice-grey-2;\n    }\n\n    &:active {\n      background: $colour-icons;\n      color: $colour-link-inverse;\n    }\n  }\n\n  // The title nav link\n  &__root {\n    @include font-size(h6);\n    border-bottom: 1px solid $colour-border;\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      color: $colour-text;\n    }\n  }\n\n  &__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  &__list-item {\n    border-top: 1px solid $colour-border;\n  }\n\n  @media print {\n    display: none;\n  }",
         "line": {
           "start": 8,
           "end": 72
@@ -3218,18 +3280,18 @@
       }
     },
     {
-      "description": "<p>Tag component. Used for labelling items in lists\nand also used within alpha/beta phase banners.</p>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--impact</code> Larger tag, used for impact</li>\n<li><code>--alpha</code> Alpha</li>\n<li><code>--beta</code>  Beta</li>\n<li><code>--live</code>  Live</li>\n<li><code>--new</code>  New</li>\n<li><code>--updated</code>  Updated</li>\n<li><code>--consultation</code>  In consultation</li>\n<li><code>--flush</code>  No margin</li>\n</ul>\n",
+      "description": "<p>Tag component. Used for labelling items in lists\nand also used within alpha/beta phase banners.</p>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--impact</code> Bolder tag, used for higher impact</li>\n<li><code>--super</code>  Super aligned, useful for tagging headings</li>\n<li><code>--alpha</code> Alpha</li>\n<li><code>--beta</code>  Beta</li>\n<li><code>--live</code>  Live</li>\n<li><code>--new</code>  New</li>\n<li><code>--updated</code>  Updated</li>\n<li><code>--consultation</code>  In consultation</li>\n<li><code>--flush</code>  No margin</li>\n</ul>\n",
       "commentRange": {
         "start": 5,
-        "end": 17
+        "end": 18
       },
       "context": {
         "type": "css",
         "name": ".tag",
-        "value": "background-color: $colour-panel-inverse;\n  border-radius: em($spacing-xx-small);\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: normal;\n  margin: rem(0 0 $spacing-x-small 0);\n  padding: em(0 $spacing-x-small);\n  text-decoration: none;\n  vertical-align: baseline;\n\n  @media print {\n    // sass-lint:disable-block no-important\n    background: none !important;\n    color: $colour-true-black !important;\n    padding: 0 !important;\n  }\n\n  &--impact {\n    @include font-size(-1);\n    font-weight: 900;\n    letter-spacing: 1px;\n    padding: em($spacing-xx-small $spacing-small);\n    text-transform: uppercase;\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }\n\n  &--new {\n    background: $colour-guidance-new;\n  }\n\n  &--updated {\n    background: $colour-guidance-updated;\n  }\n\n  &--consultation {\n    background: $colour-guidance-consultation;\n  }\n\n  &--flush {\n    margin-bottom: 0;\n  }",
+        "value": "@include font-size(0);\n  background-color: $colour-panel-inverse;\n  border-radius: em($spacing-xx-small);\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: normal;\n  margin: rem(0 0 $spacing-x-small 0);\n  padding: em(0 $spacing-x-small);\n  text-decoration: none;\n  vertical-align: baseline;\n\n  @media print {\n    // sass-lint:disable-block no-important\n    background: none !important;\n    color: $colour-true-black !important;\n    padding: 0 !important;\n  }\n\n  &--impact {\n    font-weight: 900;\n    letter-spacing: 1px;\n    padding: em($spacing-xx-small $spacing-small);\n    text-transform: uppercase;\n  }\n\n  &--super {\n    vertical-align: super;\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }\n\n  &--new {\n    background: $colour-guidance-new;\n  }\n\n  &--updated {\n    background: $colour-guidance-updated;\n  }\n\n  &--consultation {\n    background: $colour-guidance-consultation;\n  }\n\n  &--flush {\n    margin-bottom: 0;\n  }",
         "line": {
-          "start": 18,
-          "end": 75
+          "start": 19,
+          "end": 80
         }
       },
       "since": [
@@ -4265,7 +4327,7 @@
         "value": "@include grid-item;",
         "line": {
           "start": 53,
-          "end": 152
+          "end": 157
         }
       },
       "example": [
@@ -4296,10 +4358,10 @@
       "context": {
         "type": "css",
         "name": ".grid",
-        "value": "@include grid;\n\n  @include modifier('rev') {\n    @include grid-reverse;\n  }\n\n  @include modifier('gutterless') {\n    @include grid-gutterless;\n\n    [data-g] {\n      @include grid-item-gutterless;\n    }\n  }\n\n  @include modifier('compact') {\n    @include grid-compact;\n\n    [data-g] {\n      @include grid-item-compact;\n    }\n  }\n\n  @include modifier('loose') {\n    @include grid-loose;\n\n    [data-g] {\n      @include grid-item-loose;\n    }\n  }\n\n  @include modifier('right') {\n    @include grid-right;\n  }\n\n  @include modifier('center') {\n    @include grid-center;\n  }\n\n  @include modifier('middle') {\n    [data-g] {\n      @include grid-item-middle;\n    }\n  }\n\n  @include modifier('bottom') {\n    [data-g] {\n      @include grid-item-bottom;\n    }\n  }\n\n  @include modifier('debug') {\n    @include grid-debug;\n\n    [data-g] {\n      @include grid-item-debug;\n    }\n  }\n\n  // Add debug grid to body to show an outline on all grids\n  .debug-grid & {\n    @include grid-debug;\n\n    [data-g] {\n      @include grid-item-debug;\n    }\n  }\n\n  @include generate-grid-classes;\n\n  @if $nice-responsive {\n    @each $brkpnt-key, $brkpnt-value in $mq-breakpoints {\n      @include mq($from: $brkpnt-key) {\n        @include generate-grid-classes($brkpnt-key);\n      }\n    }\n  }",
+        "value": "@include grid;\n\n  &--rev {\n    @include grid-reverse;\n  }\n\n  &--gutterless {\n    @include grid-gutterless;\n\n    // sass-lint:disable-block no-combinators\n    > [data-g] {\n      @include grid-item-gutterless;\n    }\n  }\n\n  &--compact {\n    @include grid-compact;\n\n    // sass-lint:disable-block no-combinators\n    > [data-g] {\n      @include grid-item-compact;\n    }\n  }\n\n  &--loose {\n    @include grid-loose;\n\n    // sass-lint:disable-block no-combinators\n    > [data-g] {\n      @include grid-item-loose;\n    }\n  }\n\n  &--right {\n    @include grid-right;\n  }\n\n  &--center {\n    @include grid-center;\n  }\n\n  &--middle {\n    // sass-lint:disable-block no-combinators\n    > [data-g] {\n      @include grid-item-middle;\n    }\n  }\n\n  &--bottom {\n    // sass-lint:disable-block no-combinators\n    > [data-g] {\n      @include grid-item-bottom;\n    }\n  }\n\n  &--debug {\n    @include grid-debug;\n\n    [data-g] {\n      @include grid-item-debug;\n    }\n  }\n\n  // Add debug grid to body to show an outline on all grids\n  .debug-grid & {\n    @include grid-debug;\n\n    [data-g] {\n      @include grid-item-debug;\n    }\n  }\n\n  @include generate-grid-classes;\n\n  @if $nice-responsive {\n    @each $brkpnt-key, $brkpnt-value in $mq-breakpoints {\n      @include mq($from: $brkpnt-key) {\n        @include generate-grid-classes($brkpnt-key);\n      }\n    }\n  }",
         "line": {
           "start": 74,
-          "end": 152
+          "end": 157
         }
       },
       "example": [
@@ -5880,10 +5942,10 @@
           "context": {
             "type": "mixin",
             "name": "font-size",
-            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  font-size: rem($font-size);\n  line-height: rem($line-height);\n",
+            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
             "line": {
-              "start": 69,
-              "end": 75
+              "start": 70,
+              "end": 83
             }
           }
         },
@@ -5892,10 +5954,34 @@
           "context": {
             "type": "mixin",
             "name": "font-size",
-            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  font-size: rem($font-size);\n  line-height: rem($line-height);\n",
+            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
             "line": {
-              "start": 69,
-              "end": 75
+              "start": 70,
+              "end": 83
+            }
+          }
+        },
+        {
+          "description": "<p>Applies font size and line-height for the given scale.</p>\n",
+          "context": {
+            "type": "mixin",
+            "name": "font-size",
+            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
+            "line": {
+              "start": 70,
+              "end": 83
+            }
+          }
+        },
+        {
+          "description": "<p>Applies font size and line-height for the given scale.</p>\n",
+          "context": {
+            "type": "mixin",
+            "name": "font-size",
+            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
+            "line": {
+              "start": 70,
+              "end": 83
             }
           }
         },
@@ -5904,10 +5990,10 @@
           "context": {
             "type": "mixin",
             "name": "font",
-            "code": "\n  @include font-size($scale);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  font-weight: map-get($font-map, fw);\n  margin-bottom: rem(map-get($font-map, mb));\n  margin-top: rem(map-get($font-map, mt));\n",
+            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
             "line": {
-              "start": 88,
-              "end": 97
+              "start": 97,
+              "end": 114
             }
           }
         },
@@ -5916,10 +6002,34 @@
           "context": {
             "type": "mixin",
             "name": "font",
-            "code": "\n  @include font-size($scale);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  font-weight: map-get($font-map, fw);\n  margin-bottom: rem(map-get($font-map, mb));\n  margin-top: rem(map-get($font-map, mt));\n",
+            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
             "line": {
-              "start": 88,
-              "end": 97
+              "start": 97,
+              "end": 114
+            }
+          }
+        },
+        {
+          "description": "<p>Nice font: includes font size, line height, and margins.</p>\n",
+          "context": {
+            "type": "mixin",
+            "name": "font",
+            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+            "line": {
+              "start": 97,
+              "end": 114
+            }
+          }
+        },
+        {
+          "description": "<p>Nice font: includes font size, line height, and margins.</p>\n",
+          "context": {
+            "type": "mixin",
+            "name": "font",
+            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+            "line": {
+              "start": 97,
+              "end": 114
             }
           }
         },
@@ -6553,10 +6663,10 @@
           "context": {
             "type": "mixin",
             "name": "link-default",
-            "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+            "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
             "line": {
               "start": 7,
-              "end": 28
+              "end": 29
             }
           }
         }
@@ -6606,10 +6716,10 @@
           "context": {
             "type": "mixin",
             "name": "link-inverse",
-            "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+            "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 32,
-              "end": 53
+              "start": 33,
+              "end": 55
             }
           }
         }
@@ -6681,10 +6791,10 @@
       "context": {
         "type": "css",
         "name": ".heading",
-        "value": "&--separator {\n    border-bottom: 1px solid $colour-border;\n  }",
+        "value": "&--separator {\n    border-bottom: 1px solid $colour-border;\n    padding-bottom: rem($spacing-x-small);\n  }",
         "line": {
           "start": 20,
-          "end": 103
+          "end": 98
         }
       },
       "group": [
@@ -6702,16 +6812,16 @@
     {
       "description": "<p>Primary heading. Used for h1 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
       "commentRange": {
-        "start": 26,
-        "end": 28
+        "start": 27,
+        "end": 29
       },
       "context": {
         "type": "mixin",
         "name": "h1",
         "code": "\n  @include font(h1);\n",
         "line": {
-          "start": 29,
-          "end": 31
+          "start": 30,
+          "end": 32
         }
       },
       "since": [
@@ -6740,16 +6850,16 @@
     {
       "description": "<p>Secondary heading. Used for h2 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
       "commentRange": {
-        "start": 33,
-        "end": 35
+        "start": 34,
+        "end": 36
       },
       "context": {
         "type": "mixin",
         "name": "h2",
         "code": "\n  @include font(h2);\n",
         "line": {
-          "start": 36,
-          "end": 38
+          "start": 37,
+          "end": 39
         }
       },
       "since": [
@@ -6778,16 +6888,16 @@
     {
       "description": "<p>Tertiary heading. Used for h3 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
       "commentRange": {
-        "start": 40,
-        "end": 42
+        "start": 41,
+        "end": 43
       },
       "context": {
         "type": "mixin",
         "name": "h3",
         "code": "\n  @include font(h3);\n",
         "line": {
-          "start": 43,
-          "end": 45
+          "start": 44,
+          "end": 46
         }
       },
       "since": [
@@ -6816,16 +6926,16 @@
     {
       "description": "<p>Fourth level heading. Used for h4 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
       "commentRange": {
-        "start": 47,
-        "end": 49
+        "start": 48,
+        "end": 50
       },
       "context": {
         "type": "mixin",
         "name": "h4",
         "code": "\n  @include font(h4);\n",
         "line": {
-          "start": 50,
-          "end": 52
+          "start": 51,
+          "end": 53
         }
       },
       "since": [
@@ -6854,16 +6964,16 @@
     {
       "description": "<p>Fifth level heading. Used for h5 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
       "commentRange": {
-        "start": 54,
-        "end": 56
+        "start": 55,
+        "end": 57
       },
       "context": {
         "type": "mixin",
         "name": "h5",
         "code": "\n  @include font(h5);\n",
         "line": {
-          "start": 57,
-          "end": 59
+          "start": 58,
+          "end": 60
         }
       },
       "since": [
@@ -6892,16 +7002,16 @@
     {
       "description": "<p>Sixth level heading. Used for h6 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
       "commentRange": {
-        "start": 61,
-        "end": 63
+        "start": 62,
+        "end": 64
       },
       "context": {
         "type": "mixin",
         "name": "h6",
         "code": "\n  @include font(h6);\n",
         "line": {
-          "start": 64,
-          "end": 66
+          "start": 65,
+          "end": 67
         }
       },
       "since": [
@@ -7053,10 +7163,10 @@
           "context": {
             "type": "mixin",
             "name": "font",
-            "code": "\n  @include font-size($scale);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  font-weight: map-get($font-map, fw);\n  margin-bottom: rem(map-get($font-map, mb));\n  margin-top: rem(map-get($font-map, mt));\n",
+            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
             "line": {
-              "start": 88,
-              "end": 97
+              "start": 97,
+              "end": 114
             }
           }
         }
@@ -7129,10 +7239,10 @@
           "context": {
             "type": "mixin",
             "name": "font-size",
-            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  font-size: rem($font-size);\n  line-height: rem($line-height);\n",
+            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
             "line": {
-              "start": 69,
-              "end": 75
+              "start": 70,
+              "end": 83
             }
           }
         }
@@ -7205,10 +7315,10 @@
           "context": {
             "type": "mixin",
             "name": "font-size",
-            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  font-size: rem($font-size);\n  line-height: rem($line-height);\n",
+            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
             "line": {
-              "start": 69,
-              "end": 75
+              "start": 70,
+              "end": 83
             }
           }
         }
@@ -7221,21 +7331,25 @@
       "description": "<p>Applies font size and line-height for the given scale.</p>\n",
       "commentRange": {
         "start": 58,
-        "end": 68
+        "end": 69
       },
       "context": {
         "type": "mixin",
         "name": "font-size",
-        "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  font-size: rem($font-size);\n  line-height: rem($line-height);\n",
+        "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
         "line": {
-          "start": 69,
-          "end": 75
+          "start": 70,
+          "end": 83
         }
       },
       "parameter": [
         {
           "name": "scale",
           "description": "<p>{Integer|Name} The integer ratio or named font-size.</p>\n"
+        },
+        {
+          "name": "important",
+          "description": "<p>{Boolean} Whether to add an important declaration to the CSS rules.</p>\n"
         }
       ],
       "example": [
@@ -7245,7 +7359,7 @@
         },
         {
           "type": "scss",
-          "code": ".test {\n  @include font-size(h1);\n}"
+          "code": ".test {\n  @include font-size(h1, true);\n}"
         }
       ],
       "since": [
@@ -7273,6 +7387,14 @@
         {
           "type": "function",
           "name": "rem"
+        },
+        {
+          "type": "function",
+          "name": "rem"
+        },
+        {
+          "type": "function",
+          "name": "rem"
         }
       ],
       "file": {
@@ -7285,10 +7407,10 @@
           "context": {
             "type": "mixin",
             "name": "font",
-            "code": "\n  @include font-size($scale);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  font-weight: map-get($font-map, fw);\n  margin-bottom: rem(map-get($font-map, mb));\n  margin-top: rem(map-get($font-map, mt));\n",
+            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
             "line": {
-              "start": 88,
-              "end": 97
+              "start": 97,
+              "end": 114
             }
           }
         }
@@ -7300,22 +7422,26 @@
     {
       "description": "<p>Nice font: includes font size, line height, and margins.</p>\n",
       "commentRange": {
-        "start": 77,
-        "end": 87
+        "start": 85,
+        "end": 96
       },
       "context": {
         "type": "mixin",
         "name": "font",
-        "code": "\n  @include font-size($scale);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  font-weight: map-get($font-map, fw);\n  margin-bottom: rem(map-get($font-map, mb));\n  margin-top: rem(map-get($font-map, mt));\n",
+        "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
         "line": {
-          "start": 88,
-          "end": 97
+          "start": 97,
+          "end": 114
         }
       },
       "parameter": [
         {
           "name": "scale",
           "description": "<p>{Integer|Name} The integer ratio or named font-size.</p>\n"
+        },
+        {
+          "name": "important",
+          "description": "<p>{Boolean} Whether to add an important declaration to the CSS rules.</p>\n"
         }
       ],
       "example": [
@@ -7325,7 +7451,7 @@
         },
         {
           "type": "scss",
-          "code": ".test {\n  @include font(h1);\n}"
+          "code": ".test {\n  @include font(h1, true);\n}"
         }
       ],
       "since": [
@@ -7355,6 +7481,14 @@
           "name": "rem"
         },
         {
+          "type": "function",
+          "name": "rem"
+        },
+        {
+          "type": "function",
+          "name": "rem"
+        },
+        {
           "type": "variable",
           "name": "font-sizes"
         }
@@ -7371,8 +7505,8 @@
             "name": "h1",
             "code": "\n  @include font(h1);\n",
             "line": {
-              "start": 29,
-              "end": 31
+              "start": 30,
+              "end": 32
             }
           }
         },
@@ -7383,8 +7517,8 @@
             "name": "h2",
             "code": "\n  @include font(h2);\n",
             "line": {
-              "start": 36,
-              "end": 38
+              "start": 37,
+              "end": 39
             }
           }
         },
@@ -7395,8 +7529,8 @@
             "name": "h3",
             "code": "\n  @include font(h3);\n",
             "line": {
-              "start": 43,
-              "end": 45
+              "start": 44,
+              "end": 46
             }
           }
         },
@@ -7407,8 +7541,8 @@
             "name": "h4",
             "code": "\n  @include font(h4);\n",
             "line": {
-              "start": 50,
-              "end": 52
+              "start": 51,
+              "end": 53
             }
           }
         },
@@ -7419,8 +7553,8 @@
             "name": "h5",
             "code": "\n  @include font(h5);\n",
             "line": {
-              "start": 57,
-              "end": 59
+              "start": 58,
+              "end": 60
             }
           }
         },
@@ -7431,8 +7565,8 @@
             "name": "h6",
             "code": "\n  @include font(h6);\n",
             "line": {
-              "start": 64,
-              "end": 66
+              "start": 65,
+              "end": 67
             }
           }
         },
@@ -7443,8 +7577,8 @@
             "name": "lead",
             "code": "\n  @include font(lead);\n",
             "line": {
-              "start": 101,
-              "end": 103
+              "start": 118,
+              "end": 120
             }
           }
         }
@@ -7456,16 +7590,16 @@
     {
       "description": "<p>Lead paragraph style</p>\n",
       "commentRange": {
-        "start": 99,
-        "end": 100
+        "start": 116,
+        "end": 117
       },
       "context": {
         "type": "mixin",
         "name": "lead",
         "code": "\n  @include font(lead);\n",
         "line": {
-          "start": 101,
-          "end": 103
+          "start": 118,
+          "end": 120
         }
       },
       "since": [
@@ -7500,10 +7634,10 @@
       "context": {
         "type": "mixin",
         "name": "link-default",
-        "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+        "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
         "line": {
           "start": 7,
-          "end": 28
+          "end": 29
         }
       },
       "since": [
@@ -7519,6 +7653,10 @@
         {
           "type": "mixin",
           "name": "default-focus-style"
+        },
+        {
+          "type": "variable",
+          "name": "colour-focus"
         },
         {
           "type": "variable",
@@ -7552,16 +7690,16 @@
     {
       "description": "<p>Inverse link style for use on an inverse (dark) background</p>\n",
       "commentRange": {
-        "start": 30,
-        "end": 31
+        "start": 31,
+        "end": 32
       },
       "context": {
         "type": "mixin",
         "name": "link-inverse",
-        "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+        "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
         "line": {
-          "start": 32,
-          "end": 53
+          "start": 33,
+          "end": 55
         }
       },
       "since": [
@@ -7577,6 +7715,10 @@
         {
           "type": "mixin",
           "name": "inverse-focus-style"
+        },
+        {
+          "type": "variable",
+          "name": "colour-focus"
         },
         {
           "type": "variable",
@@ -7611,8 +7753,8 @@
             "name": "links-inverse",
             "code": "\n  a {\n    @include link-inverse;\n  }\n",
             "line": {
-              "start": 57,
-              "end": 61
+              "start": 59,
+              "end": 63
             }
           }
         }
@@ -7624,16 +7766,16 @@
     {
       "description": "<p>Inverse links for use on a dark background</p>\n",
       "commentRange": {
-        "start": 55,
-        "end": 56
+        "start": 57,
+        "end": 58
       },
       "context": {
         "type": "mixin",
         "name": "links-inverse",
         "code": "\n  a {\n    @include link-inverse;\n  }\n",
         "line": {
-          "start": 57,
-          "end": 61
+          "start": 59,
+          "end": 63
         }
       },
       "since": [
@@ -7662,16 +7804,16 @@
     {
       "description": "<p>Inverse link for use on a dark background. Apply to an individual link.\nPrefer using <code>.inverse-links</code> on the container instead.</p>\n",
       "commentRange": {
-        "start": 67,
-        "end": 69
+        "start": 69,
+        "end": 71
       },
       "context": {
         "type": "css",
         "name": ".link--inverse",
         "value": "@include link-inverse;",
         "line": {
-          "start": 70,
-          "end": 81
+          "start": 72,
+          "end": 83
         }
       },
       "since": [
@@ -7694,16 +7836,16 @@
     {
       "description": "<p>Inverse links, for use on dark backgrounds e.g dark panels.\nUse this class on a containing element to apply to all links within it.</p>\n",
       "commentRange": {
-        "start": 74,
-        "end": 77
+        "start": 76,
+        "end": 79
       },
       "context": {
         "type": "css",
         "name": ".inverse-links",
         "value": "@include links-inverse;",
         "line": {
-          "start": 78,
-          "end": 81
+          "start": 80,
+          "end": 83
         }
       },
       "require": [],
@@ -8059,7 +8201,7 @@
       "context": {
         "type": "variable",
         "name": "font-sizes",
-        "value": "(\n  // sass-lint:disable-block space-around-operator\n  -2: (\n    fs: 12,\n    lh: 4 * 4,\n    fw: 400,\n    mb: $spacing-small,\n    mt: $spacing-small\n  ),\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 6,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 10,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)",
+        "value": "(\n  // sass-lint:disable-block space-around-operator\n  -2: (\n    fs: 12,\n    lh: 4 * 4,\n    fw: 400,\n    mb: $spacing-small,\n    mt: $spacing-small\n  ),\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 6,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 8,\n    lh: 4 * 10,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)",
         "scope": "private",
         "line": {
           "start": 27,
@@ -8109,10 +8251,10 @@
           "context": {
             "type": "mixin",
             "name": "font",
-            "code": "\n  @include font-size($scale);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  font-weight: map-get($font-map, fw);\n  margin-bottom: rem(map-get($font-map, mb));\n  margin-top: rem(map-get($font-map, mt));\n",
+            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
             "line": {
-              "start": 88,
-              "end": 97
+              "start": 97,
+              "end": 114
             }
           }
         }
@@ -8120,7 +8262,7 @@
       "groupName": {
         "typography": "Typography"
       },
-      "resolvedValue": "(\n  // sass-lint:disable-block space-around-operator\n  -2: (\n    fs: 12,\n    lh: 4 * 4,\n    fw: 400,\n    mb: $spacing-small,\n    mt: $spacing-small\n  ),\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 6,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 10,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)"
+      "resolvedValue": "(\n  // sass-lint:disable-block space-around-operator\n  -2: (\n    fs: 12,\n    lh: 4 * 4,\n    fw: 400,\n    mb: $spacing-small,\n    mt: $spacing-small\n  ),\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 6,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 8,\n    lh: 4 * 10,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)"
     },
     {
       "description": "<p>Modular scale values</p>\n",
@@ -9069,7 +9211,7 @@
       "context": {
         "type": "variable",
         "name": "nice-root-font-size-max",
-        "value": "19",
+        "value": "18",
         "scope": "private",
         "line": {
           "start": 79,
@@ -9092,7 +9234,7 @@
       "groupName": {
         "undefined": "Ungrouped"
       },
-      "resolvedValue": "19"
+      "resolvedValue": "18"
     },
     {
       "description": "<p>The breakpoint at which the root font size starts changing from minimum\ntowards maximum.</p>\n",
@@ -10132,10 +10274,10 @@
               "context": {
                 "type": "mixin",
                 "name": "link-default",
-                "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+                "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
                 "line": {
                   "start": 7,
-                  "end": 28
+                  "end": 29
                 }
               }
             }
@@ -10180,10 +10322,10 @@
               "context": {
                 "type": "mixin",
                 "name": "link-default",
-                "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+                "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
                 "line": {
                   "start": 7,
-                  "end": 28
+                  "end": 29
                 }
               }
             }
@@ -10228,10 +10370,10 @@
               "context": {
                 "type": "mixin",
                 "name": "link-default",
-                "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+                "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
                 "line": {
                   "start": 7,
-                  "end": 28
+                  "end": 29
                 }
               }
             }
@@ -10276,10 +10418,10 @@
               "context": {
                 "type": "mixin",
                 "name": "link-default",
-                "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+                "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
                 "line": {
                   "start": 7,
-                  "end": 28
+                  "end": 29
                 }
               }
             }
@@ -10324,10 +10466,10 @@
               "context": {
                 "type": "mixin",
                 "name": "link-default",
-                "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+                "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
                 "line": {
                   "start": 7,
-                  "end": 28
+                  "end": 29
                 }
               }
             }
@@ -10372,10 +10514,10 @@
               "context": {
                 "type": "mixin",
                 "name": "link-inverse",
-                "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+                "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 32,
-                  "end": 53
+                  "start": 33,
+                  "end": 55
                 }
               }
             }
@@ -10420,10 +10562,10 @@
               "context": {
                 "type": "mixin",
                 "name": "link-inverse",
-                "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+                "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 32,
-                  "end": 53
+                  "start": 33,
+                  "end": 55
                 }
               }
             }
@@ -10468,10 +10610,10 @@
               "context": {
                 "type": "mixin",
                 "name": "link-inverse",
-                "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+                "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 32,
-                  "end": 53
+                  "start": 33,
+                  "end": 55
                 }
               }
             }
@@ -10516,10 +10658,10 @@
               "context": {
                 "type": "mixin",
                 "name": "link-inverse",
-                "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+                "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 32,
-                  "end": 53
+                  "start": 33,
+                  "end": 55
                 }
               }
             }
@@ -10564,10 +10706,10 @@
               "context": {
                 "type": "mixin",
                 "name": "link-inverse",
-                "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+                "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 32,
-                  "end": 53
+                  "start": 33,
+                  "end": 55
                 }
               }
             }
@@ -10616,6 +10758,30 @@
                 "line": {
                   "start": 10,
                   "end": 12
+                }
+              }
+            },
+            {
+              "description": "<p>Default link style for use on a normal (light) background</p>\n",
+              "context": {
+                "type": "mixin",
+                "name": "link-default",
+                "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+                "line": {
+                  "start": 7,
+                  "end": 29
+                }
+              }
+            },
+            {
+              "description": "<p>Inverse link style for use on an inverse (dark) background</p>\n",
+              "context": {
+                "type": "mixin",
+                "name": "link-inverse",
+                "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+                "line": {
+                  "start": 33,
+                  "end": 55
                 }
               }
             }
@@ -11808,10 +11974,10 @@
           "context": {
             "type": "css",
             "name": ".btn",
-            "value": "@include remove-mz-focus-inner;\n  @include font-size(0);\n  appearance: none;\n  background: $colour-btn-primary;\n  border: em(1px) solid $colour-btn-primary-text;\n  border-radius: 0;\n  color: $colour-btn-primary-text;\n  cursor: pointer;\n  display: inline-block;\n  margin: em(0 $spacing-small $spacing-small -4px); // Negative left margin to combat inline-block gaps\n  padding: em($spacing-small $spacing-medium);\n  position: relative;\n  text-decoration: none !important; // sass-lint:disable-line no-important\n  vertical-align: top;\n\n  &:first-child {\n    margin-left: 0;\n  }\n\n  &:visited {\n    color: $colour-btn-primary-text;\n  }\n\n  &:hover {\n    background: $colour-btn-primary-hover;\n    color: $colour-btn-primary-text;\n    text-decoration: none;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background: $colour-btn-primary;\n    border-color: $colour-focus-inverse;\n    color: $colour-btn-primary-text;\n  }\n\n  &:active {\n    background: $colour-btn-primary-hover;\n    text-decoration: none;\n    top: em(2px);\n  }\n\n  // Disabled button styles\n  &--disabled,\n  &.disabled,\n  &[aria-disabled='true'],\n  &[disabled='disabled'],\n  &[disabled] {\n    opacity: .5;\n    pointer-events: none;\n\n    &:hover {\n      cursor: default;\n    }\n  }",
+            "value": "@include remove-mz-focus-inner;\n  @include font-size(0);\n  appearance: none;\n  background: $colour-btn-primary;\n  border: em(1px) solid $colour-btn-primary-text;\n  border-radius: 0;\n  color: $colour-btn-primary-text;\n  cursor: pointer;\n  display: inline-block;\n  margin: em(0 $spacing-small $spacing-small -4px); // Negative left margin to combat inline-block gaps\n  padding: em($spacing-small $spacing-medium);\n  position: relative;\n  text-align: left;\n  text-decoration: none !important; // sass-lint:disable-line no-important\n  vertical-align: top;\n  white-space: nowrap;\n\n  &:first-child {\n    margin-left: 0;\n  }\n\n  &:visited {\n    color: $colour-btn-primary-text;\n  }\n\n  &:hover {\n    background: $colour-btn-primary-hover;\n    color: $colour-btn-primary-text;\n    text-decoration: none;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    background: $colour-btn-primary;\n    border-color: $colour-focus-inverse;\n    color: $colour-btn-primary-text;\n  }\n\n  &:active {\n    background: $colour-btn-primary-hover;\n    text-decoration: none;\n    top: em(2px);\n  }\n\n  // Disabled button styles\n  &--disabled,\n  &.disabled,\n  &[aria-disabled='true'],\n  &[disabled='disabled'],\n  &[disabled] {\n    opacity: .5;\n    pointer-events: none;\n\n    &:hover {\n      cursor: default;\n    }\n  }",
             "line": {
               "start": 7,
-              "end": 139
+              "end": 141
             }
           },
           "since": [
@@ -11834,16 +12000,16 @@
         {
           "description": "<p>CTA/prominent button</p>\n",
           "commentRange": {
-            "start": 65,
-            "end": 66
+            "start": 67,
+            "end": 68
           },
           "context": {
             "type": "css",
             "name": ".btn--cta",
             "value": "background: $colour-btn-cta;\n  border: em(1px) solid $colour-btn-cta-text;\n  color: $colour-btn-cta-text;\n\n  &:visited {\n    color: $colour-btn-cta-text;\n  }\n\n  &:hover {\n    background: $colour-btn-cta-hover;\n    color: $colour-btn-cta-text;\n  }\n\n  &:focus {\n    background: $colour-btn-cta-hover;\n  }\n\n  &:active {\n    background: $colour-btn-cta-hover;\n  }",
             "line": {
-              "start": 67,
-              "end": 139
+              "start": 69,
+              "end": 141
             }
           },
           "since": [
@@ -11866,16 +12032,16 @@
         {
           "description": "<p>Secondary button</p>\n",
           "commentRange": {
-            "start": 90,
-            "end": 91
+            "start": 92,
+            "end": 93
           },
           "context": {
             "type": "css",
             "name": ".btn--secondary",
             "value": "background: $colour-btn-secondary;\n  border: em(1px) solid $colour-btn-secondary-text;\n  color: $colour-btn-secondary-text;\n\n  &:visited {\n    color: $colour-btn-secondary-text;\n  }\n\n  &:hover {\n    background: $colour-btn-secondary-hover;\n    color: $colour-btn-secondary-text;\n  }\n\n  &:focus {\n    background: $colour-btn-secondary-hover;\n  }\n\n  &:active {\n    background: $colour-btn-secondary-hover;\n  }",
             "line": {
-              "start": 92,
-              "end": 139
+              "start": 94,
+              "end": 141
             }
           },
           "since": [
@@ -11898,16 +12064,16 @@
         {
           "description": "<p>Inverse (light) button, for use on inverse (dark) panels/sections</p>\n",
           "commentRange": {
-            "start": 115,
-            "end": 116
+            "start": 117,
+            "end": 118
           },
           "context": {
             "type": "css",
             "name": ".btn--inverse",
             "value": "background: $colour-btn-inverse;\n  border: em(1px) solid $colour-btn-inverse-text;\n  color: $colour-btn-inverse-text !important; // sass-lint:disable-line no-important\n\n  &:visited {\n    color: $colour-btn-inverse-text;\n  }\n\n  &:hover {\n    background: $colour-btn-inverse-hover;\n    color: $colour-btn-inverse-text;\n  }\n\n  &:focus {\n    background: $colour-btn-inverse-hover;\n  }\n\n  &:active {\n    background: $colour-btn-inverse-hover;\n  }",
             "line": {
-              "start": 117,
-              "end": 139
+              "start": 119,
+              "end": 141
             }
           },
           "since": [
@@ -11936,10 +12102,10 @@
           "context": {
             "type": "css",
             "name": ".card",
-            "value": "border-bottom: 1px solid $colour-border;\n  padding: em($spacing-small 0);\n  position: relative;\n\n  &__heading {\n    @include font-size(0);\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      text-decoration: none;\n\n      &:hover {\n        text-decoration: underline;\n      }\n\n      &:before {\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: 100%;\n        z-index: 0;\n      }\n    }\n  }\n\n  &__icon {\n    margin: em(0 $spacing-x-small 0 0);\n  }\n\n  &__tag {\n    @include font-size(-1);\n    margin-right: rem($spacing-x-small);\n  }\n\n  &__metadata {\n    @include font-size(-1);\n    color: $colour-nice-dark-grey;\n    display: inline-block;\n    margin: rem($spacing-x-small 0 0);\n    position: relative;\n    z-index: 1;\n  }\n\n  &__metadatum {\n    display: block;\n    margin: em($spacing-x-small $spacing-small 0 0);\n\n    dt,\n    dd {\n      display: inline-block;\n      margin: 0;\n    }\n  }\n\n  @include mq($from: sm) {\n    &__metadatum {\n      display: inline-block;\n      white-space: nowrap;\n    }\n  }",
+            "value": "border-bottom: 1px solid $colour-border;\n  padding: em($spacing-small 0);\n  position: relative;\n\n  &__heading {\n    @include font-size(0);\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      text-decoration: none;\n\n      &:hover {\n        text-decoration: underline;\n      }\n\n      &:before {\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: 100%;\n        z-index: 0;\n      }\n    }\n  }\n\n  &__icon {\n    margin: em(0 $spacing-x-small 0 0);\n  }\n\n  &__tag {\n    @include font-size(-1, true);\n  }\n\n  &__metadata {\n    @include font-size(-1);\n    color: $colour-nice-dark-grey;\n    display: inline-block;\n    margin: rem($spacing-x-small 0 0);\n    position: relative;\n    z-index: 1;\n  }\n\n  &__metadatum {\n    display: block;\n    margin: em($spacing-x-small $spacing-small 0 0);\n\n    dt,\n    dd {\n      display: inline-block;\n      margin: 0;\n    }\n  }\n\n  @include mq($from: sm) {\n    &__metadatum {\n      display: inline-block;\n      white-space: nowrap;\n    }\n  }",
             "line": {
               "start": 12,
-              "end": 78
+              "end": 77
             }
           },
           "since": [
@@ -12151,10 +12317,10 @@
           "context": {
             "type": "css",
             "name": ".in-page-nav",
-            "value": "// The 'on this page' title\n  &__title {\n    @include font-size(h2);\n  }\n\n  // Lists (both root level and sub level)\n  &__list {\n    margin-left: em($spacing-medium);\n\n    [aria-hidden='true'] {\n      display: none;\n    }\n  }\n\n  a {\n    &:visited {\n      color: $colour-link;\n    }\n\n    &:focus {\n      background: none;\n    }\n  }\n\n  @include mq($from: md) {\n    // Docked to the top of the screen\n    &--fixed {\n      position: fixed;\n      top: 0;\n    }\n\n    &__title {\n      @include font-size(h4);\n      margin-top: 0;\n    }\n\n    a {\n      &[aria-selected='true'] {\n        font-weight: bold;\n      }\n    }\n  }",
+            "value": "margin: rem(0 0 $spacing-large);\n\n  // The 'on this page' title\n  &__title {\n    @include font-size(h4);\n    margin-top: 0;\n  }\n\n  // Lists (both root level and sub level)\n  &__list {\n    list-style: disc;\n    margin-left: em($spacing-medium);\n\n    .in-page-nav__list {\n      list-style: circle;\n    }\n\n    [aria-hidden='true'] {\n      display: none;\n    }\n  }\n\n  a {\n    &:visited {\n      color: $colour-link;\n    }\n\n    &:focus {\n      background: none;\n    }\n  }\n\n  @include mq($from: md) {\n    margin: 0;\n\n    // Docked to the top of the screen\n    &--fixed {\n      position: fixed;\n      top: 0;\n\n      .in-page-nav__title {\n        margin-top: rem($spacing-small);\n      }\n    }\n\n    a {\n      &[aria-current='location'] {\n        font-weight: bold;\n      }\n    }\n  }",
             "line": {
               "start": 6,
-              "end": 51
+              "end": 59
             }
           },
           "group": [
@@ -12208,6 +12374,44 @@
           "file": {
             "path": "components\\maintain-ratio\\_maintain-ratio.scss",
             "name": "_maintain-ratio.scss"
+          },
+          "groupName": {
+            "components": "Components"
+          }
+        },
+        {
+          "description": "<p>Page header component.\nUsed at the top of a page to contain an h1 and optional\nlead intro paragraph and call-to-action.</p>\n",
+          "commentRange": {
+            "start": 5,
+            "end": 22
+          },
+          "context": {
+            "type": "css",
+            "name": ".page-header",
+            "value": "margin: rem(0 0 $spacing-x-large 0);\n\n  &__heading {\n    @include font-size(h1);\n    margin: rem(0 0 $spacing-small 0);\n  }\n\n  &__lead {\n    @include font-size(lead);\n    margin: rem(0 0 $spacing-small 0);\n  }\n\n  &__cta {\n    @include font-size(p);\n    display: block;\n    margin: 0;\n  }\n\n  @media print {\n    &__cta {\n      display: none;\n    }\n  }",
+            "line": {
+              "start": 23,
+              "end": 48
+            }
+          },
+          "example": [
+            {
+              "type": "html",
+              "code": "<header class=\"page-header\">\n  <h1 class=\"page-header__heading\">\n    Breast cancer\n  </h1>\n  <p class=\"page-header__lead\">\n    Everything NICE has produced on the topic of breast cancer.\n    Includes related guidelines, NICE Pathways, quality standards and advice.\n  </p>\n  <p class=\"page-header__cta\">\n    <a href=\"/some-action.html\">Register as a stakeholder</a>\n  </p>\n</header>"
+            }
+          ],
+          "since": [
+            {
+              "version": "0.4.0"
+            }
+          ],
+          "group": [
+            "components"
+          ],
+          "access": "public",
+          "file": {
+            "path": "components\\page-header\\_page-header.scss",
+            "name": "_page-header.scss"
           },
           "groupName": {
             "components": "Components"
@@ -12293,7 +12497,7 @@
           "context": {
             "type": "css",
             "name": ".phase-banner",
-            "value": "border-bottom: 1px solid $colour-border;\n  display: table;\n  margin: em(0 0 $spacing-medium);\n  max-width: 100%;\n  padding: em($spacing-small 0);\n  width: 100%;\n\n  &__tag {\n    display: table-cell;\n    padding: em(0 $spacing-small 0 0);\n    vertical-align: top;\n  }\n\n  &__label {\n    display: table-cell;\n    line-height: 1.3;\n    vertical-align: middle;\n    width: 100%;\n  }",
+            "value": "border-bottom: 1px solid $colour-border;\n  display: table;\n  margin: em(0 0 $spacing-small);\n  max-width: 100%;\n  padding: em($spacing-small 0);\n  width: 100%;\n\n  &__tag {\n    display: table-cell;\n    padding: em(0 $spacing-small 0 0);\n    vertical-align: top;\n  }\n\n  &__label {\n    display: table-cell;\n    line-height: 1.3;\n    vertical-align: middle;\n    width: 100%;\n  }",
             "line": {
               "start": 15,
               "end": 36
@@ -12301,14 +12505,14 @@
           },
           "see": [
             {
-              "description": "<p>Tag component. Used for labelling items in lists\nand also used within alpha/beta phase banners.</p>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--impact</code> Larger tag, used for impact</li>\n<li><code>--alpha</code> Alpha</li>\n<li><code>--beta</code>  Beta</li>\n<li><code>--live</code>  Live</li>\n<li><code>--new</code>  New</li>\n<li><code>--updated</code>  Updated</li>\n<li><code>--consultation</code>  In consultation</li>\n<li><code>--flush</code>  No margin</li>\n</ul>\n",
+              "description": "<p>Tag component. Used for labelling items in lists\nand also used within alpha/beta phase banners.</p>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--impact</code> Bolder tag, used for higher impact</li>\n<li><code>--super</code>  Super aligned, useful for tagging headings</li>\n<li><code>--alpha</code> Alpha</li>\n<li><code>--beta</code>  Beta</li>\n<li><code>--live</code>  Live</li>\n<li><code>--new</code>  New</li>\n<li><code>--updated</code>  Updated</li>\n<li><code>--consultation</code>  In consultation</li>\n<li><code>--flush</code>  No margin</li>\n</ul>\n",
               "context": {
                 "type": "css",
                 "name": ".tag",
-                "value": "background-color: $colour-panel-inverse;\n  border-radius: em($spacing-xx-small);\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: normal;\n  margin: rem(0 0 $spacing-x-small 0);\n  padding: em(0 $spacing-x-small);\n  text-decoration: none;\n  vertical-align: baseline;\n\n  @media print {\n    // sass-lint:disable-block no-important\n    background: none !important;\n    color: $colour-true-black !important;\n    padding: 0 !important;\n  }\n\n  &--impact {\n    @include font-size(-1);\n    font-weight: 900;\n    letter-spacing: 1px;\n    padding: em($spacing-xx-small $spacing-small);\n    text-transform: uppercase;\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }\n\n  &--new {\n    background: $colour-guidance-new;\n  }\n\n  &--updated {\n    background: $colour-guidance-updated;\n  }\n\n  &--consultation {\n    background: $colour-guidance-consultation;\n  }\n\n  &--flush {\n    margin-bottom: 0;\n  }",
+                "value": "@include font-size(0);\n  background-color: $colour-panel-inverse;\n  border-radius: em($spacing-xx-small);\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: normal;\n  margin: rem(0 0 $spacing-x-small 0);\n  padding: em(0 $spacing-x-small);\n  text-decoration: none;\n  vertical-align: baseline;\n\n  @media print {\n    // sass-lint:disable-block no-important\n    background: none !important;\n    color: $colour-true-black !important;\n    padding: 0 !important;\n  }\n\n  &--impact {\n    font-weight: 900;\n    letter-spacing: 1px;\n    padding: em($spacing-xx-small $spacing-small);\n    text-transform: uppercase;\n  }\n\n  &--super {\n    vertical-align: super;\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }\n\n  &--new {\n    background: $colour-guidance-new;\n  }\n\n  &--updated {\n    background: $colour-guidance-updated;\n  }\n\n  &--consultation {\n    background: $colour-guidance-consultation;\n  }\n\n  &--flush {\n    margin-bottom: 0;\n  }",
                 "line": {
-                  "start": 18,
-                  "end": 75
+                  "start": 19,
+                  "end": 80
                 }
               }
             }
@@ -12339,7 +12543,7 @@
           "context": {
             "type": "css",
             "name": ".stacked-nav",
-            "value": "background: #fafafa;\n  border: 1px solid $colour-border;\n  margin: em(0 0 $spacing-large);\n\n  a {\n    color: $colour-link;\n    display: block;\n    padding: em($spacing-small);\n    position: relative;\n    text-decoration: none;\n\n    &[aria-current='page'] {\n      background: $colour-nice-grey-3;\n      font-weight: bold;\n\n      &:before {\n        background: $colour-icons;\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: em($spacing-x-small);\n      }\n    }\n\n    &:hover {\n      background: $colour-nice-grey-2;\n    }\n\n    &:active {\n      background: $colour-icons;\n      color: $colour-link-inverse;\n    }\n  }\n\n  // The title nav link\n  &__root {\n    @include font-size(h6);\n    border-bottom: 1px solid $colour-border;\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      color: $colour-text;\n    }\n  }\n\n  &__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  &__list-item {\n    border-top: 1px solid $colour-border;\n  }\n\n  @media print {\n    display: none;\n  }",
+            "value": "background: $colour-nice-white;\n  border: 1px solid $colour-border;\n  margin: em(0 0 $spacing-large);\n\n  a {\n    color: $colour-link;\n    display: block;\n    padding: em($spacing-small);\n    position: relative;\n    text-decoration: none;\n\n    &[aria-current='page'] {\n      background: $colour-nice-grey-3;\n      font-weight: bold;\n\n      &:before {\n        background: $colour-icons;\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: em($spacing-x-small);\n      }\n    }\n\n    &:hover {\n      background: $colour-nice-grey-2;\n    }\n\n    &:active {\n      background: $colour-icons;\n      color: $colour-link-inverse;\n    }\n  }\n\n  // The title nav link\n  &__root {\n    @include font-size(h6);\n    border-bottom: 1px solid $colour-border;\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      color: $colour-text;\n    }\n  }\n\n  &__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  &__list-item {\n    border-top: 1px solid $colour-border;\n  }\n\n  @media print {\n    display: none;\n  }",
             "line": {
               "start": 8,
               "end": 72
@@ -12399,18 +12603,18 @@
           }
         },
         {
-          "description": "<p>Tag component. Used for labelling items in lists\nand also used within alpha/beta phase banners.</p>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--impact</code> Larger tag, used for impact</li>\n<li><code>--alpha</code> Alpha</li>\n<li><code>--beta</code>  Beta</li>\n<li><code>--live</code>  Live</li>\n<li><code>--new</code>  New</li>\n<li><code>--updated</code>  Updated</li>\n<li><code>--consultation</code>  In consultation</li>\n<li><code>--flush</code>  No margin</li>\n</ul>\n",
+          "description": "<p>Tag component. Used for labelling items in lists\nand also used within alpha/beta phase banners.</p>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--impact</code> Bolder tag, used for higher impact</li>\n<li><code>--super</code>  Super aligned, useful for tagging headings</li>\n<li><code>--alpha</code> Alpha</li>\n<li><code>--beta</code>  Beta</li>\n<li><code>--live</code>  Live</li>\n<li><code>--new</code>  New</li>\n<li><code>--updated</code>  Updated</li>\n<li><code>--consultation</code>  In consultation</li>\n<li><code>--flush</code>  No margin</li>\n</ul>\n",
           "commentRange": {
             "start": 5,
-            "end": 17
+            "end": 18
           },
           "context": {
             "type": "css",
             "name": ".tag",
-            "value": "background-color: $colour-panel-inverse;\n  border-radius: em($spacing-xx-small);\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: normal;\n  margin: rem(0 0 $spacing-x-small 0);\n  padding: em(0 $spacing-x-small);\n  text-decoration: none;\n  vertical-align: baseline;\n\n  @media print {\n    // sass-lint:disable-block no-important\n    background: none !important;\n    color: $colour-true-black !important;\n    padding: 0 !important;\n  }\n\n  &--impact {\n    @include font-size(-1);\n    font-weight: 900;\n    letter-spacing: 1px;\n    padding: em($spacing-xx-small $spacing-small);\n    text-transform: uppercase;\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }\n\n  &--new {\n    background: $colour-guidance-new;\n  }\n\n  &--updated {\n    background: $colour-guidance-updated;\n  }\n\n  &--consultation {\n    background: $colour-guidance-consultation;\n  }\n\n  &--flush {\n    margin-bottom: 0;\n  }",
+            "value": "@include font-size(0);\n  background-color: $colour-panel-inverse;\n  border-radius: em($spacing-xx-small);\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: normal;\n  margin: rem(0 0 $spacing-x-small 0);\n  padding: em(0 $spacing-x-small);\n  text-decoration: none;\n  vertical-align: baseline;\n\n  @media print {\n    // sass-lint:disable-block no-important\n    background: none !important;\n    color: $colour-true-black !important;\n    padding: 0 !important;\n  }\n\n  &--impact {\n    font-weight: 900;\n    letter-spacing: 1px;\n    padding: em($spacing-xx-small $spacing-small);\n    text-transform: uppercase;\n  }\n\n  &--super {\n    vertical-align: super;\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }\n\n  &--new {\n    background: $colour-guidance-new;\n  }\n\n  &--updated {\n    background: $colour-guidance-updated;\n  }\n\n  &--consultation {\n    background: $colour-guidance-consultation;\n  }\n\n  &--flush {\n    margin-bottom: 0;\n  }",
             "line": {
-              "start": 18,
-              "end": 75
+              "start": 19,
+              "end": 80
             }
           },
           "since": [
@@ -13492,7 +13696,7 @@
             "value": "@include grid-item;",
             "line": {
               "start": 53,
-              "end": 152
+              "end": 157
             }
           },
           "example": [
@@ -13523,10 +13727,10 @@
           "context": {
             "type": "css",
             "name": ".grid",
-            "value": "@include grid;\n\n  @include modifier('rev') {\n    @include grid-reverse;\n  }\n\n  @include modifier('gutterless') {\n    @include grid-gutterless;\n\n    [data-g] {\n      @include grid-item-gutterless;\n    }\n  }\n\n  @include modifier('compact') {\n    @include grid-compact;\n\n    [data-g] {\n      @include grid-item-compact;\n    }\n  }\n\n  @include modifier('loose') {\n    @include grid-loose;\n\n    [data-g] {\n      @include grid-item-loose;\n    }\n  }\n\n  @include modifier('right') {\n    @include grid-right;\n  }\n\n  @include modifier('center') {\n    @include grid-center;\n  }\n\n  @include modifier('middle') {\n    [data-g] {\n      @include grid-item-middle;\n    }\n  }\n\n  @include modifier('bottom') {\n    [data-g] {\n      @include grid-item-bottom;\n    }\n  }\n\n  @include modifier('debug') {\n    @include grid-debug;\n\n    [data-g] {\n      @include grid-item-debug;\n    }\n  }\n\n  // Add debug grid to body to show an outline on all grids\n  .debug-grid & {\n    @include grid-debug;\n\n    [data-g] {\n      @include grid-item-debug;\n    }\n  }\n\n  @include generate-grid-classes;\n\n  @if $nice-responsive {\n    @each $brkpnt-key, $brkpnt-value in $mq-breakpoints {\n      @include mq($from: $brkpnt-key) {\n        @include generate-grid-classes($brkpnt-key);\n      }\n    }\n  }",
+            "value": "@include grid;\n\n  &--rev {\n    @include grid-reverse;\n  }\n\n  &--gutterless {\n    @include grid-gutterless;\n\n    // sass-lint:disable-block no-combinators\n    > [data-g] {\n      @include grid-item-gutterless;\n    }\n  }\n\n  &--compact {\n    @include grid-compact;\n\n    // sass-lint:disable-block no-combinators\n    > [data-g] {\n      @include grid-item-compact;\n    }\n  }\n\n  &--loose {\n    @include grid-loose;\n\n    // sass-lint:disable-block no-combinators\n    > [data-g] {\n      @include grid-item-loose;\n    }\n  }\n\n  &--right {\n    @include grid-right;\n  }\n\n  &--center {\n    @include grid-center;\n  }\n\n  &--middle {\n    // sass-lint:disable-block no-combinators\n    > [data-g] {\n      @include grid-item-middle;\n    }\n  }\n\n  &--bottom {\n    // sass-lint:disable-block no-combinators\n    > [data-g] {\n      @include grid-item-bottom;\n    }\n  }\n\n  &--debug {\n    @include grid-debug;\n\n    [data-g] {\n      @include grid-item-debug;\n    }\n  }\n\n  // Add debug grid to body to show an outline on all grids\n  .debug-grid & {\n    @include grid-debug;\n\n    [data-g] {\n      @include grid-item-debug;\n    }\n  }\n\n  @include generate-grid-classes;\n\n  @if $nice-responsive {\n    @each $brkpnt-key, $brkpnt-value in $mq-breakpoints {\n      @include mq($from: $brkpnt-key) {\n        @include generate-grid-classes($brkpnt-key);\n      }\n    }\n  }",
             "line": {
               "start": 74,
-              "end": 152
+              "end": 157
             }
           },
           "example": [
@@ -15409,10 +15613,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font-size",
-                "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  font-size: rem($font-size);\n  line-height: rem($line-height);\n",
+                "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
                 "line": {
-                  "start": 69,
-                  "end": 75
+                  "start": 70,
+                  "end": 83
                 }
               }
             },
@@ -15421,10 +15625,34 @@
               "context": {
                 "type": "mixin",
                 "name": "font-size",
-                "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  font-size: rem($font-size);\n  line-height: rem($line-height);\n",
+                "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
                 "line": {
-                  "start": 69,
-                  "end": 75
+                  "start": 70,
+                  "end": 83
+                }
+              }
+            },
+            {
+              "description": "<p>Applies font size and line-height for the given scale.</p>\n",
+              "context": {
+                "type": "mixin",
+                "name": "font-size",
+                "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
+                "line": {
+                  "start": 70,
+                  "end": 83
+                }
+              }
+            },
+            {
+              "description": "<p>Applies font size and line-height for the given scale.</p>\n",
+              "context": {
+                "type": "mixin",
+                "name": "font-size",
+                "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
+                "line": {
+                  "start": 70,
+                  "end": 83
                 }
               }
             },
@@ -15433,10 +15661,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font",
-                "code": "\n  @include font-size($scale);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  font-weight: map-get($font-map, fw);\n  margin-bottom: rem(map-get($font-map, mb));\n  margin-top: rem(map-get($font-map, mt));\n",
+                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
                 "line": {
-                  "start": 88,
-                  "end": 97
+                  "start": 97,
+                  "end": 114
                 }
               }
             },
@@ -15445,10 +15673,34 @@
               "context": {
                 "type": "mixin",
                 "name": "font",
-                "code": "\n  @include font-size($scale);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  font-weight: map-get($font-map, fw);\n  margin-bottom: rem(map-get($font-map, mb));\n  margin-top: rem(map-get($font-map, mt));\n",
+                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
                 "line": {
-                  "start": 88,
-                  "end": 97
+                  "start": 97,
+                  "end": 114
+                }
+              }
+            },
+            {
+              "description": "<p>Nice font: includes font size, line height, and margins.</p>\n",
+              "context": {
+                "type": "mixin",
+                "name": "font",
+                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+                "line": {
+                  "start": 97,
+                  "end": 114
+                }
+              }
+            },
+            {
+              "description": "<p>Nice font: includes font size, line height, and margins.</p>\n",
+              "context": {
+                "type": "mixin",
+                "name": "font",
+                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+                "line": {
+                  "start": 97,
+                  "end": 114
                 }
               }
             },
@@ -15804,10 +16056,10 @@
               "context": {
                 "type": "mixin",
                 "name": "link-default",
-                "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+                "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
                 "line": {
                   "start": 7,
-                  "end": 28
+                  "end": 29
                 }
               }
             }
@@ -15857,10 +16109,10 @@
               "context": {
                 "type": "mixin",
                 "name": "link-inverse",
-                "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+                "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 32,
-                  "end": 53
+                  "start": 33,
+                  "end": 55
                 }
               }
             }
@@ -15872,16 +16124,16 @@
         {
           "description": "<p>Primary heading. Used for h1 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
           "commentRange": {
-            "start": 26,
-            "end": 28
+            "start": 27,
+            "end": 29
           },
           "context": {
             "type": "mixin",
             "name": "h1",
             "code": "\n  @include font(h1);\n",
             "line": {
-              "start": 29,
-              "end": 31
+              "start": 30,
+              "end": 32
             }
           },
           "since": [
@@ -15910,16 +16162,16 @@
         {
           "description": "<p>Secondary heading. Used for h2 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
           "commentRange": {
-            "start": 33,
-            "end": 35
+            "start": 34,
+            "end": 36
           },
           "context": {
             "type": "mixin",
             "name": "h2",
             "code": "\n  @include font(h2);\n",
             "line": {
-              "start": 36,
-              "end": 38
+              "start": 37,
+              "end": 39
             }
           },
           "since": [
@@ -15948,16 +16200,16 @@
         {
           "description": "<p>Tertiary heading. Used for h3 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
           "commentRange": {
-            "start": 40,
-            "end": 42
+            "start": 41,
+            "end": 43
           },
           "context": {
             "type": "mixin",
             "name": "h3",
             "code": "\n  @include font(h3);\n",
             "line": {
-              "start": 43,
-              "end": 45
+              "start": 44,
+              "end": 46
             }
           },
           "since": [
@@ -15986,16 +16238,16 @@
         {
           "description": "<p>Fourth level heading. Used for h4 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
           "commentRange": {
-            "start": 47,
-            "end": 49
+            "start": 48,
+            "end": 50
           },
           "context": {
             "type": "mixin",
             "name": "h4",
             "code": "\n  @include font(h4);\n",
             "line": {
-              "start": 50,
-              "end": 52
+              "start": 51,
+              "end": 53
             }
           },
           "since": [
@@ -16024,16 +16276,16 @@
         {
           "description": "<p>Fifth level heading. Used for h5 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
           "commentRange": {
-            "start": 54,
-            "end": 56
+            "start": 55,
+            "end": 57
           },
           "context": {
             "type": "mixin",
             "name": "h5",
             "code": "\n  @include font(h5);\n",
             "line": {
-              "start": 57,
-              "end": 59
+              "start": 58,
+              "end": 60
             }
           },
           "since": [
@@ -16062,16 +16314,16 @@
         {
           "description": "<p>Sixth level heading. Used for h6 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
           "commentRange": {
-            "start": 61,
-            "end": 63
+            "start": 62,
+            "end": 64
           },
           "context": {
             "type": "mixin",
             "name": "h6",
             "code": "\n  @include font(h6);\n",
             "line": {
-              "start": 64,
-              "end": 66
+              "start": 65,
+              "end": 67
             }
           },
           "since": [
@@ -16101,21 +16353,25 @@
           "description": "<p>Applies font size and line-height for the given scale.</p>\n",
           "commentRange": {
             "start": 58,
-            "end": 68
+            "end": 69
           },
           "context": {
             "type": "mixin",
             "name": "font-size",
-            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  font-size: rem($font-size);\n  line-height: rem($line-height);\n",
+            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
             "line": {
-              "start": 69,
-              "end": 75
+              "start": 70,
+              "end": 83
             }
           },
           "parameter": [
             {
               "name": "scale",
               "description": "<p>{Integer|Name} The integer ratio or named font-size.</p>\n"
+            },
+            {
+              "name": "important",
+              "description": "<p>{Boolean} Whether to add an important declaration to the CSS rules.</p>\n"
             }
           ],
           "example": [
@@ -16125,7 +16381,7 @@
             },
             {
               "type": "scss",
-              "code": ".test {\n  @include font-size(h1);\n}"
+              "code": ".test {\n  @include font-size(h1, true);\n}"
             }
           ],
           "since": [
@@ -16153,6 +16409,14 @@
             {
               "type": "function",
               "name": "rem"
+            },
+            {
+              "type": "function",
+              "name": "rem"
+            },
+            {
+              "type": "function",
+              "name": "rem"
             }
           ],
           "file": {
@@ -16165,10 +16429,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font",
-                "code": "\n  @include font-size($scale);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  font-weight: map-get($font-map, fw);\n  margin-bottom: rem(map-get($font-map, mb));\n  margin-top: rem(map-get($font-map, mt));\n",
+                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
                 "line": {
-                  "start": 88,
-                  "end": 97
+                  "start": 97,
+                  "end": 114
                 }
               }
             }
@@ -16180,22 +16444,26 @@
         {
           "description": "<p>Nice font: includes font size, line height, and margins.</p>\n",
           "commentRange": {
-            "start": 77,
-            "end": 87
+            "start": 85,
+            "end": 96
           },
           "context": {
             "type": "mixin",
             "name": "font",
-            "code": "\n  @include font-size($scale);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  font-weight: map-get($font-map, fw);\n  margin-bottom: rem(map-get($font-map, mb));\n  margin-top: rem(map-get($font-map, mt));\n",
+            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
             "line": {
-              "start": 88,
-              "end": 97
+              "start": 97,
+              "end": 114
             }
           },
           "parameter": [
             {
               "name": "scale",
               "description": "<p>{Integer|Name} The integer ratio or named font-size.</p>\n"
+            },
+            {
+              "name": "important",
+              "description": "<p>{Boolean} Whether to add an important declaration to the CSS rules.</p>\n"
             }
           ],
           "example": [
@@ -16205,7 +16473,7 @@
             },
             {
               "type": "scss",
-              "code": ".test {\n  @include font(h1);\n}"
+              "code": ".test {\n  @include font(h1, true);\n}"
             }
           ],
           "since": [
@@ -16235,6 +16503,14 @@
               "name": "rem"
             },
             {
+              "type": "function",
+              "name": "rem"
+            },
+            {
+              "type": "function",
+              "name": "rem"
+            },
+            {
               "type": "variable",
               "name": "font-sizes"
             }
@@ -16251,8 +16527,8 @@
                 "name": "h1",
                 "code": "\n  @include font(h1);\n",
                 "line": {
-                  "start": 29,
-                  "end": 31
+                  "start": 30,
+                  "end": 32
                 }
               }
             },
@@ -16263,8 +16539,8 @@
                 "name": "h2",
                 "code": "\n  @include font(h2);\n",
                 "line": {
-                  "start": 36,
-                  "end": 38
+                  "start": 37,
+                  "end": 39
                 }
               }
             },
@@ -16275,8 +16551,8 @@
                 "name": "h3",
                 "code": "\n  @include font(h3);\n",
                 "line": {
-                  "start": 43,
-                  "end": 45
+                  "start": 44,
+                  "end": 46
                 }
               }
             },
@@ -16287,8 +16563,8 @@
                 "name": "h4",
                 "code": "\n  @include font(h4);\n",
                 "line": {
-                  "start": 50,
-                  "end": 52
+                  "start": 51,
+                  "end": 53
                 }
               }
             },
@@ -16299,8 +16575,8 @@
                 "name": "h5",
                 "code": "\n  @include font(h5);\n",
                 "line": {
-                  "start": 57,
-                  "end": 59
+                  "start": 58,
+                  "end": 60
                 }
               }
             },
@@ -16311,8 +16587,8 @@
                 "name": "h6",
                 "code": "\n  @include font(h6);\n",
                 "line": {
-                  "start": 64,
-                  "end": 66
+                  "start": 65,
+                  "end": 67
                 }
               }
             },
@@ -16323,8 +16599,8 @@
                 "name": "lead",
                 "code": "\n  @include font(lead);\n",
                 "line": {
-                  "start": 101,
-                  "end": 103
+                  "start": 118,
+                  "end": 120
                 }
               }
             }
@@ -16336,16 +16612,16 @@
         {
           "description": "<p>Lead paragraph style</p>\n",
           "commentRange": {
-            "start": 99,
-            "end": 100
+            "start": 116,
+            "end": 117
           },
           "context": {
             "type": "mixin",
             "name": "lead",
             "code": "\n  @include font(lead);\n",
             "line": {
-              "start": 101,
-              "end": 103
+              "start": 118,
+              "end": 120
             }
           },
           "since": [
@@ -16380,10 +16656,10 @@
           "context": {
             "type": "mixin",
             "name": "link-default",
-            "code": "\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
+            "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-visited;\n  }\n\n  &:hover {\n    color: $colour-link-hover;\n  }\n\n  &:focus {\n    @include default-focus-style;\n    color: $colour-link-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-active;\n  }\n",
             "line": {
               "start": 7,
-              "end": 28
+              "end": 29
             }
           },
           "since": [
@@ -16399,6 +16675,10 @@
             {
               "type": "mixin",
               "name": "default-focus-style"
+            },
+            {
+              "type": "variable",
+              "name": "colour-focus"
             },
             {
               "type": "variable",
@@ -16432,16 +16712,16 @@
         {
           "description": "<p>Inverse link style for use on an inverse (dark) background</p>\n",
           "commentRange": {
-            "start": 30,
-            "end": 31
+            "start": 31,
+            "end": 32
           },
           "context": {
             "type": "mixin",
             "name": "link-inverse",
-            "code": "\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
+            "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 32,
-              "end": 53
+              "start": 33,
+              "end": 55
             }
           },
           "since": [
@@ -16457,6 +16737,10 @@
             {
               "type": "mixin",
               "name": "inverse-focus-style"
+            },
+            {
+              "type": "variable",
+              "name": "colour-focus"
             },
             {
               "type": "variable",
@@ -16491,8 +16775,8 @@
                 "name": "links-inverse",
                 "code": "\n  a {\n    @include link-inverse;\n  }\n",
                 "line": {
-                  "start": 57,
-                  "end": 61
+                  "start": 59,
+                  "end": 63
                 }
               }
             }
@@ -16504,16 +16788,16 @@
         {
           "description": "<p>Inverse links for use on a dark background</p>\n",
           "commentRange": {
-            "start": 55,
-            "end": 56
+            "start": 57,
+            "end": 58
           },
           "context": {
             "type": "mixin",
             "name": "links-inverse",
             "code": "\n  a {\n    @include link-inverse;\n  }\n",
             "line": {
-              "start": 57,
-              "end": 61
+              "start": 59,
+              "end": 63
             }
           },
           "since": [
@@ -16604,10 +16888,10 @@
           "context": {
             "type": "css",
             "name": ".heading",
-            "value": "&--separator {\n    border-bottom: 1px solid $colour-border;\n  }",
+            "value": "&--separator {\n    border-bottom: 1px solid $colour-border;\n    padding-bottom: rem($spacing-x-small);\n  }",
             "line": {
               "start": 20,
-              "end": 103
+              "end": 98
             }
           },
           "group": [
@@ -16625,16 +16909,16 @@
         {
           "description": "<p>Inverse link for use on a dark background. Apply to an individual link.\nPrefer using <code>.inverse-links</code> on the container instead.</p>\n",
           "commentRange": {
-            "start": 67,
-            "end": 69
+            "start": 69,
+            "end": 71
           },
           "context": {
             "type": "css",
             "name": ".link--inverse",
             "value": "@include link-inverse;",
             "line": {
-              "start": 70,
-              "end": 81
+              "start": 72,
+              "end": 83
             }
           },
           "since": [
@@ -16657,16 +16941,16 @@
         {
           "description": "<p>Inverse links, for use on dark backgrounds e.g dark panels.\nUse this class on a containing element to apply to all links within it.</p>\n",
           "commentRange": {
-            "start": 74,
-            "end": 77
+            "start": 76,
+            "end": 79
           },
           "context": {
             "type": "css",
             "name": ".inverse-links",
             "value": "@include links-inverse;",
             "line": {
-              "start": 78,
-              "end": 81
+              "start": 80,
+              "end": 83
             }
           },
           "require": [],
@@ -16976,10 +17260,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font",
-                "code": "\n  @include font-size($scale);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  font-weight: map-get($font-map, fw);\n  margin-bottom: rem(map-get($font-map, mb));\n  margin-top: rem(map-get($font-map, mt));\n",
+                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
                 "line": {
-                  "start": 88,
-                  "end": 97
+                  "start": 97,
+                  "end": 114
                 }
               }
             }
@@ -17052,10 +17336,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font-size",
-                "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  font-size: rem($font-size);\n  line-height: rem($line-height);\n",
+                "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
                 "line": {
-                  "start": 69,
-                  "end": 75
+                  "start": 70,
+                  "end": 83
                 }
               }
             }
@@ -17128,10 +17412,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font-size",
-                "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  font-size: rem($font-size);\n  line-height: rem($line-height);\n",
+                "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
                 "line": {
-                  "start": 69,
-                  "end": 75
+                  "start": 70,
+                  "end": 83
                 }
               }
             }
@@ -17318,7 +17602,7 @@
           "context": {
             "type": "variable",
             "name": "font-sizes",
-            "value": "(\n  // sass-lint:disable-block space-around-operator\n  -2: (\n    fs: 12,\n    lh: 4 * 4,\n    fw: 400,\n    mb: $spacing-small,\n    mt: $spacing-small\n  ),\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 6,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 10,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)",
+            "value": "(\n  // sass-lint:disable-block space-around-operator\n  -2: (\n    fs: 12,\n    lh: 4 * 4,\n    fw: 400,\n    mb: $spacing-small,\n    mt: $spacing-small\n  ),\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 6,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 8,\n    lh: 4 * 10,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)",
             "scope": "private",
             "line": {
               "start": 27,
@@ -17368,10 +17652,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font",
-                "code": "\n  @include font-size($scale);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  font-weight: map-get($font-map, fw);\n  margin-bottom: rem(map-get($font-map, mb));\n  margin-top: rem(map-get($font-map, mt));\n",
+                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
                 "line": {
-                  "start": 88,
-                  "end": 97
+                  "start": 97,
+                  "end": 114
                 }
               }
             }
@@ -17379,7 +17663,7 @@
           "groupName": {
             "typography": "Typography"
           },
-          "resolvedValue": "(\n  // sass-lint:disable-block space-around-operator\n  -2: (\n    fs: 12,\n    lh: 4 * 4,\n    fw: 400,\n    mb: $spacing-small,\n    mt: $spacing-small\n  ),\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 6,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 9,\n    lh: 4 * 10,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)"
+          "resolvedValue": "(\n  // sass-lint:disable-block space-around-operator\n  -2: (\n    fs: 12,\n    lh: 4 * 4,\n    fw: 400,\n    mb: $spacing-small,\n    mt: $spacing-small\n  ),\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 6,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 8,\n    lh: 4 * 10,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)"
         }
       ]
     },
@@ -18273,7 +18557,7 @@
           "context": {
             "type": "variable",
             "name": "nice-root-font-size-max",
-            "value": "19",
+            "value": "18",
             "scope": "private",
             "line": {
               "start": 79,
@@ -18296,7 +18580,7 @@
           "groupName": {
             "undefined": "Ungrouped"
           },
-          "resolvedValue": "19"
+          "resolvedValue": "18"
         },
         {
           "description": "<p>The breakpoint at which the root font size starts changing from minimum\ntowards maximum.</p>\n",
