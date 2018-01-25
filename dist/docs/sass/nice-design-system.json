@@ -2994,10 +2994,10 @@
       "context": {
         "type": "css",
         "name": ".in-page-nav",
-        "value": "// The 'on this page' title\n  &__title {\n    @include font-size(h2);\n  }\n\n  // Lists (both root level and sub level)\n  &__list {\n    margin-left: em($spacing-medium);\n\n    [aria-hidden='true'] {\n      display: none;\n    }\n  }\n\n  a {\n    &:visited {\n      color: $colour-link;\n    }\n\n    &:focus {\n      background: none;\n    }\n  }\n\n  @include mq($from: md) {\n    // Docked to the top of the screen\n    &--fixed {\n      position: fixed;\n      top: 0;\n    }\n\n    &__title {\n      @include font-size(h4);\n      margin-top: 0;\n    }\n\n    a {\n      &[aria-selected='true'] {\n        font-weight: bold;\n      }\n    }\n  }",
+        "value": "margin: rem(0 0 $spacing-large);\n\n  // The 'on this page' title\n  &__title {\n    @include font-size(h4);\n    margin-top: 0;\n  }\n\n  // Lists (both root level and sub level)\n  &__list {\n    list-style: disc;\n    margin-left: em($spacing-medium);\n\n    .in-page-nav__list {\n      list-style: circle;\n    }\n\n    [aria-hidden='true'] {\n      display: none;\n    }\n  }\n\n  a {\n    &:visited {\n      color: $colour-link;\n    }\n\n    &:focus {\n      background: none;\n    }\n  }\n\n  @include mq($from: md) {\n    margin: 0;\n\n    // Docked to the top of the screen\n    &--fixed {\n      position: fixed;\n      top: 0;\n\n      .in-page-nav__title {\n        margin-top: rem($spacing-small);\n      }\n    }\n\n    a {\n      &[aria-current='location'] {\n        font-weight: bold;\n      }\n    }\n  }",
         "line": {
           "start": 6,
-          "end": 51
+          "end": 59
         }
       },
       "group": [
@@ -12317,10 +12317,10 @@
           "context": {
             "type": "css",
             "name": ".in-page-nav",
-            "value": "// The 'on this page' title\n  &__title {\n    @include font-size(h2);\n  }\n\n  // Lists (both root level and sub level)\n  &__list {\n    margin-left: em($spacing-medium);\n\n    [aria-hidden='true'] {\n      display: none;\n    }\n  }\n\n  a {\n    &:visited {\n      color: $colour-link;\n    }\n\n    &:focus {\n      background: none;\n    }\n  }\n\n  @include mq($from: md) {\n    // Docked to the top of the screen\n    &--fixed {\n      position: fixed;\n      top: 0;\n    }\n\n    &__title {\n      @include font-size(h4);\n      margin-top: 0;\n    }\n\n    a {\n      &[aria-selected='true'] {\n        font-weight: bold;\n      }\n    }\n  }",
+            "value": "margin: rem(0 0 $spacing-large);\n\n  // The 'on this page' title\n  &__title {\n    @include font-size(h4);\n    margin-top: 0;\n  }\n\n  // Lists (both root level and sub level)\n  &__list {\n    list-style: disc;\n    margin-left: em($spacing-medium);\n\n    .in-page-nav__list {\n      list-style: circle;\n    }\n\n    [aria-hidden='true'] {\n      display: none;\n    }\n  }\n\n  a {\n    &:visited {\n      color: $colour-link;\n    }\n\n    &:focus {\n      background: none;\n    }\n  }\n\n  @include mq($from: md) {\n    margin: 0;\n\n    // Docked to the top of the screen\n    &--fixed {\n      position: fixed;\n      top: 0;\n\n      .in-page-nav__title {\n        margin-top: rem($spacing-small);\n      }\n    }\n\n    a {\n      &[aria-current='location'] {\n        font-weight: bold;\n      }\n    }\n  }",
             "line": {
               "start": 6,
-              "end": 51
+              "end": 59
             }
           },
           "group": [

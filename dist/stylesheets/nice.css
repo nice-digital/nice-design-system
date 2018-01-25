@@ -1,5 +1,5 @@
 /*!
- * NICE Design System 0.3.6 | 2018-01-23
+ * NICE Design System 0.4.0 | 2018-01-25
  * © Copyright NICE 2015-2018
  * Licensed under MIT (https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
  */
@@ -4005,8 +4005,8 @@ ol, .list {
   font-family: "NICE Icons";
   font-style: normal;
   font-weight: normal;
-  src: url("/fonts/nice-icons.eot?386096099");
-  src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/nice-icons.woff2?386096099") format("woff2"), url("/fonts/nice-icons.woff?386096099") format("woff"), url("/fonts/nice-icons.ttf?386096099") format("truetype"), url("/fonts/nice-icons.svg?386096099#nice-icons") format("svg"); }
+  src: url("/fonts/nice-icons.eot?787076375");
+  src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/nice-icons.woff2?787076375") format("woff2"), url("/fonts/nice-icons.woff?787076375") format("woff"), url("/fonts/nice-icons.ttf?787076375") format("truetype"), url("/fonts/nice-icons.svg?787076375#nice-icons") format("svg"); }
 
 .icon {
   display: inline-block;
@@ -4590,35 +4590,37 @@ ol, .list {
     margin-top: 16px;
     margin-top: 1rem; }
 
-.in-page-nav__title {
-  font-size: 32px;
-  font-size: 2rem;
-  line-height: 40px;
-  line-height: 2.5rem; }
-
-.in-page-nav__list {
-  margin-left: 1em; }
-  .in-page-nav__list [aria-hidden='true'] {
-    display: none; }
-
-.in-page-nav a:visited {
-  color: #005ea5; }
-
-.in-page-nav a:focus {
-  background: none; }
-
-@media (min-width: 56.25em) {
-  .in-page-nav--fixed {
-    position: fixed;
-    top: 0; }
+.in-page-nav {
+  margin: 0px 0px 32px;
+  margin: 0rem 0rem 2rem; }
   .in-page-nav__title {
     font-size: 24px;
     font-size: 1.5rem;
     line-height: 28px;
     line-height: 1.75rem;
     margin-top: 0; }
-  .in-page-nav a[aria-selected='true'] {
-    font-weight: bold; } }
+  .in-page-nav__list {
+    list-style: disc;
+    margin-left: 1em; }
+    .in-page-nav__list .in-page-nav__list {
+      list-style: circle; }
+    .in-page-nav__list [aria-hidden='true'] {
+      display: none; }
+  .in-page-nav a:visited {
+    color: #005ea5; }
+  .in-page-nav a:focus {
+    background: none; }
+  @media (min-width: 56.25em) {
+    .in-page-nav {
+      margin: 0; }
+      .in-page-nav--fixed {
+        position: fixed;
+        top: 0; }
+        .in-page-nav--fixed .in-page-nav__title {
+          margin-top: 8px;
+          margin-top: 0.5rem; }
+      .in-page-nav a[aria-current='location'] {
+        font-weight: bold; } }
 
 .stacked-nav {
   background: #fff;

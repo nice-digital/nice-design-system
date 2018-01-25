@@ -1,5 +1,5 @@
 /*!
-NICE Design System 0.3.6 | 2018-01-23
+NICE Design System 0.4.0 | 2018-01-25
 © Copyright NICE 2015-2018
 Licensed under MIT (https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
 */
@@ -146,7 +146,7 @@ module.exports = __webpack_require__(6) ? function (object, key, value) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject = __webpack_require__(3);
-var IE8_DOM_DEFINE = __webpack_require__(41);
+var IE8_DOM_DEFINE = __webpack_require__(40);
 var toPrimitive = __webpack_require__(25);
 var dP = Object.defineProperty;
 
@@ -712,7 +712,7 @@ module.exports = function (it, S) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys = __webpack_require__(44);
+var $keys = __webpack_require__(43);
 var enumBugKeys = __webpack_require__(29);
 
 module.exports = Object.keys || function keys(O) {
@@ -811,6 +811,73 @@ exports.__esModule = true;
  */
 
 /**
+ * Throttle events
+ * See https://remysharp.com/2010/07/21/throttling-function-calls
+ *
+ * @param      {Function}  func       The function to throttle
+ * @param      {Integer}  threshold  The threshhold period, in milliseconds
+ * @param      {Object}  scope   The context of the throttled function
+ * @return     {Function}  { The throttled function }
+ */
+var throttle = exports.throttle = function throttle(fn) {
+  var threshhold = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 100;
+  var scope = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+
+  var last = void 0,
+      deferTimer = void 0;
+
+  return function throttled() {
+    var context = scope || this,
+        now = +new Date(),
+        args = arguments;
+
+    if (last && now < last + threshhold) {
+      // hold on to it
+      clearTimeout(deferTimer);
+      deferTimer = setTimeout(function () {
+        last = now;
+        fn.apply(context, args);
+      }, threshhold);
+    } else {
+      last = now;
+      fn.apply(context, args);
+    }
+  };
+};
+
+/**
+ * Debounce
+ * See http://unscriptable.com/2009/03/20/debouncing-javascript-methods/
+ *
+ * @param      {Function}  func       The function to debounce
+ * @param      {Integer}  execAsap   Whether to execute the function now
+ * @param      {Integer}  threshold  The detection period, in milliseconds
+ * @param      {Object}  scope  The context for the debounced function
+ * @return     {Function}  { The debounced function }
+ */
+var debounce = exports.debounce = function debounce(func) {
+  var execAsap = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+  var threshold = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 100;
+  var scope = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
+
+  var timeout = void 0;
+
+  return function debounced() {
+    var context = scope || this,
+        args = arguments;
+
+    function delayed() {
+      if (!execAsap) func.apply(context, args);
+      timeout = null;
+    }
+
+    if (timeout) clearTimeout(timeout);else if (execAsap) func.apply(context, args);
+
+    timeout = setTimeout(delayed, threshold);
+  };
+};
+
+/**
  * Turns a string into a slug.
  * See {@link https://gist.github.com/mathewbyrne/1280286#gistcomment-1606270|this gist}.
  *
@@ -823,7 +890,7 @@ exports.__esModule = true;
  *          slugify("A (string) to transform & slugify!");
  */
 var slugify = exports.slugify = function slugify(str) {
-  return str.toLowerCase().trim().replace(/\s+/g, "-") // Replace spaces with -
+  return $.trim(str).toLowerCase().replace(/\s+/g, "-") // Replace spaces with -
   .replace(/&/g, "-and-") // Replace & with 'and'
   .replace(/[^\w-]+/g, "") // Remove all non-word chars
   .replace(/^-+/g, "") // Trim dashes from the start
@@ -858,63 +925,14 @@ var nextUniqueId = exports.nextUniqueId = function (i) {
 }(0);
 
 exports["default"] = {
+  throttle: throttle,
+  debounce: debounce,
   slugify: slugify,
   nextUniqueId: nextUniqueId
 };
 
 /***/ }),
 /* 35 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-/**
- * @module Breakpoints
- */
-
-/**
- * The breakpoints, in pixel values.
- * These correspond with the breakpoints defined in SASS.
- * Often not used directly, but via matchesFrom.
- */
-var breakpoints = {
-  xs: 400,
-  sm: 600,
-  md: 900,
-  lg: 1200,
-  xl: 1600
-};
-
-/**
- * Determines if the device's width matches a min-width query from the given breakpoint.
- *
- * @param {string} breakpointName The breakpoint name
- * @return {Boolean} True if it matches, false otherwise.
- *
- * @example
- * 	import { matchesFrom } from "./breakpoints";
- * 	// Checks if the media query (min-width: 25em) matches
- * 	var matches = matchesFrom("xs");
- */
-var matchesFrom = function matchesFrom(breakpointName) {
-  var breakpointPx = breakpoints[breakpointName];
-
-  if (!breakpointPx) {
-    throw new Error("Breakpoint " + breakpointName + " does not exist");
-  }
-
-  // Assume matchMedia is polyfilled elsewhere
-  // Convert to ems to match the media query if the browser's root font-size isn't 16
-  return window.matchMedia("(min-width: " + breakpointPx / 16 + "em)").matches;
-};
-
-exports["default"] = breakpoints;
-exports.matchesFrom = matchesFrom;
-
-/***/ }),
-/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -939,7 +957,7 @@ module.exports.f = function (C) {
 
 
 /***/ }),
-/* 37 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -948,19 +966,19 @@ module.exports.f = function (C) {
 exports.__esModule = true;
 exports.utils = exports.breakpoints = exports.eventr = exports.pluginizr = exports.pluginAutoLoader = exports.Tracker = exports.Tabs = exports.InPageNav = exports["default"] = undefined;
 
-var _pluginAutoloader = __webpack_require__(38);
+var _pluginAutoloader = __webpack_require__(37);
 
 var _pluginAutoloader2 = _interopRequireDefault(_pluginAutoloader);
 
-var _tabs = __webpack_require__(51);
+var _tabs = __webpack_require__(50);
 
 var _tabs2 = _interopRequireDefault(_tabs);
 
-var _inPageNav = __webpack_require__(52);
+var _inPageNav = __webpack_require__(51);
 
 var _inPageNav2 = _interopRequireDefault(_inPageNav);
 
-var _tracker = __webpack_require__(54);
+var _tracker = __webpack_require__(53);
 
 var _tracker2 = _interopRequireDefault(_tracker);
 
@@ -972,7 +990,7 @@ var _eventr = __webpack_require__(21);
 
 var _eventr2 = _interopRequireDefault(_eventr);
 
-var _breakpoints = __webpack_require__(35);
+var _breakpoints = __webpack_require__(59);
 
 var _breakpoints2 = _interopRequireDefault(_breakpoints);
 
@@ -1023,7 +1041,7 @@ exports.breakpoints = _breakpoints2["default"];
 exports.utils = _utils2["default"];
 
 /***/ }),
-/* 38 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1102,7 +1120,7 @@ exports["default"] = {
 };
 
 /***/ }),
-/* 39 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1110,7 +1128,7 @@ exports["default"] = {
 var $at = __webpack_require__(64)(true);
 
 // 21.1.3.27 String.prototype[@@iterator]()
-__webpack_require__(40)(String, 'String', function (iterated) {
+__webpack_require__(39)(String, 'String', function (iterated) {
   this._t = String(iterated); // target
   this._i = 0;                // next index
 // 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -1126,14 +1144,14 @@ __webpack_require__(40)(String, 'String', function (iterated) {
 
 
 /***/ }),
-/* 40 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var LIBRARY = __webpack_require__(14);
 var $export = __webpack_require__(11);
-var redefine = __webpack_require__(42);
+var redefine = __webpack_require__(41);
 var hide = __webpack_require__(4);
 var has = __webpack_require__(7);
 var Iterators = __webpack_require__(12);
@@ -1203,7 +1221,7 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
 
 
 /***/ }),
-/* 41 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = !__webpack_require__(6) && !__webpack_require__(17)(function () {
@@ -1212,14 +1230,14 @@ module.exports = !__webpack_require__(6) && !__webpack_require__(17)(function ()
 
 
 /***/ }),
-/* 42 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(4);
 
 
 /***/ }),
-/* 43 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
@@ -1239,7 +1257,7 @@ var createDict = function () {
   var gt = '>';
   var iframeDocument;
   iframe.style.display = 'none';
-  __webpack_require__(46).appendChild(iframe);
+  __webpack_require__(45).appendChild(iframe);
   iframe.src = 'javascript:'; // eslint-disable-line no-script-url
   // createDict = iframe.contentWindow.Object;
   // html.removeChild(iframe);
@@ -1266,7 +1284,7 @@ module.exports = Object.create || function create(O, Properties) {
 
 
 /***/ }),
-/* 44 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var has = __webpack_require__(7);
@@ -1289,7 +1307,7 @@ module.exports = function (object, names) {
 
 
 /***/ }),
-/* 45 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.15 ToLength
@@ -1301,7 +1319,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 46 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var document = __webpack_require__(0).document;
@@ -1309,7 +1327,7 @@ module.exports = document && document.documentElement;
 
 
 /***/ }),
-/* 47 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(72);
@@ -1334,18 +1352,18 @@ for (var i = 0; i < DOMIterables.length; i++) {
 
 
 /***/ }),
-/* 48 */
+/* 47 */
 /***/ (function(module, exports) {
 
 exports.f = Object.getOwnPropertySymbols;
 
 
 /***/ }),
-/* 49 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-var $keys = __webpack_require__(44);
+var $keys = __webpack_require__(43);
 var hiddenKeys = __webpack_require__(29).concat('length', 'prototype');
 
 exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
@@ -1354,13 +1372,13 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
 
 
 /***/ }),
-/* 50 */
+/* 49 */
 /***/ (function(module, exports) {
 
 
 
 /***/ }),
-/* 51 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1625,14 +1643,14 @@ exports["default"] = Tabs;
 (0, _pluginizr2["default"])("tabs", Tabs);
 
 /***/ }),
-/* 52 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 exports.__esModule = true;
-exports.Defaults = undefined;
+exports.Defaults = exports.headingsExclude = exports.pluginName = undefined;
 
 var _classCallCheck2 = __webpack_require__(33);
 
@@ -1646,8 +1664,6 @@ var _utils = __webpack_require__(34);
 
 var _utils2 = _interopRequireDefault(_utils);
 
-var _breakpoints = __webpack_require__(35);
-
 var _inPageNavTemplate = __webpack_require__(86);
 
 var _inPageNavTemplate2 = _interopRequireDefault(_inPageNavTemplate);
@@ -1655,29 +1671,42 @@ var _inPageNavTemplate2 = _interopRequireDefault(_inPageNavTemplate);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /**
- * { The default settings for in page nav }
- *
+ * The name of the jquery plugin e.g. $(".test").inpagenav();
+ * @type       {string}
+ */
+var pluginName = exports.pluginName = "inpagenav";
+
+/**
+ * The headings to exclude
+ * @type       {string}
+ */
+/*eslint-env browser */
+/**
+ * @module In page navigation
+ */
+
+var headingsExclude = exports.headingsExclude = "[data-no-inpagenav] *, [data-no-inpagenav], .card *, .footer *, .site-footer *, .stacked-nav *, .page-header *";
+
+/**
+ * The default settings, used for in page navigation.
  * @type       {Object}
  */
 var Defaults = exports.Defaults = {
 
-	// Selector for the container to look for headings from which the nav tree is built
+	// Selector for the container in which to look for headings from which the nav tree is built
 	headingsContainer: "body",
 
 	// Selector for headings to include
-	headings: "h2,h3",
+	headings: "h2, h3",
 
-	// Selector for excluding headings
-	headingsExclude: "[data-no-inpagenav] *, [data-no-inpagenav]",
+	// Selector(s) for headings to exclude
+	headingsExclude: "",
+
+	// Selector for a footer to avoid overlap
+	footerContainer: ".footer, .site-footer",
 
 	// Number of pixels from the top of the screen that a heading is considered to be 'active'
-	scrollTolerance: 80,
-
-	// The target element that the in page nav will be moved to on wider breakpoints
-	wideTarget: null,
-
-	// The breakpoint from which the nav will be moved into 'wideTarget'
-	wideBreakpoint: "md"
+	scrollTolerance: 80
 };
 
 /// Creates a nested, in page navigation, built from existing headings on the page.
@@ -1705,33 +1734,42 @@ var InPageNav = function () {
 
 		if (!element) throw new Error("Element must be non-null");
 
-		this.el = element;
 		this.$el = $(element);
-
-		// Generate uid for this component, used for namespacing events
-		this.uid = _utils2["default"].nextUniqueId("inpagenav");
 
 		this.options = $.extend({}, InPageNav.defaults(), options);
 
-		// The containing element where the nav will be moved to on wider breakpoints
-		this.$wideTarget = $("#" + this.options.wideTarget);
+		// Append the static headings to excluded headings
+		if (this.options.headingsExclude !== "") this.options.headingsExclude += ",";
+		this.options.headingsExclude += headingsExclude;
+
+		// Generate uid (e.g. inpagenav-9) for this component, used for namespacing events
+		this.uid = _utils2["default"].nextUniqueId(pluginName);
 
 		// Find headings to use for building the nav
-		this.headings = this.getHeadings();
+		this.headings = this.findHeadings();
 
 		this.render();
 		this.updateNavState();
 
-		$(window).on("load.InPageNav." + this.uid, function () {
+		// Used 2 namespaces for global events:
+		// - Plugin name
+		// - Individual instance id
+		$(window).on("load." + pluginName + "." + this.uid, function () {
 			_this.updateNavState();
-		}).on("scroll.InPageNav." + this.uid, function () {
+		}).on("scroll." + pluginName + "." + this.uid, _utils2["default"].throttle(function () {
 			_this.updateNavState(true);
-		}).on("resize.InPageNav." + this.uid, function () {
+		}, 50)).on("resize." + pluginName + "." + this.uid, _utils2["default"].debounce(function () {
 			_this.calculatePosition();
-		});
+		}, true));
 	}
 
+	/**
+  * Removes all event listeners (by namespace) and removes element
+  */
+
+
 	InPageNav.prototype.destroy = function destroy() {
+		// Used the namespaced event
 		$(window).off("." + this.uid);
 		this.$el.remove();
 	};
@@ -1783,21 +1821,18 @@ var InPageNav = function () {
 
 
 	InPageNav.prototype.resetNavState = function resetNavState() {
-		$("a", this.$inpagenav).attr("aria-selected", false);
+		$("a", this.$el).attr("aria-current", false);
 
-		this.$inpagenav.removeAttr("aria-activedescendant");
+		$("[aria-activedescendant]", this.$el).removeAttr("aria-activedescendant");
 
-		// TODO: This should be a media query with em values
-		// Nav is fully expanded on smaller breakpoints
-		// and expands as you scroll on wider breakpoints
-		if ((0, _breakpoints.matchesFrom)(this.options.wideBreakpoint)) {
-			$(".in-page-nav__list .in-page-nav__list", this.$inpagenav).attr("aria-expanded", false).attr("aria-hidden", true);
-		} else {
-			$(".in-page-nav__list .in-page-nav__list", this.$inpagenav).attr("aria-expanded", true).attr("aria-hidden", false);
-		}
+		$(".in-page-nav__list .in-page-nav__list", this.$el).attr("aria-expanded", false).attr("aria-hidden", true);
 	};
 
-	// Determins which navigation elements are active
+	/**
+  * Determines which navigation elements are active
+  *
+  * @param      {boolean}  updateHash  Whether to update the hash in the URL
+  */
 
 
 	InPageNav.prototype.updateNavState = function updateNavState() {
@@ -1811,30 +1846,18 @@ var InPageNav = function () {
 		if (!activeHeading) return;
 
 		var activeHref = "#" + activeHeading.id,
-		    $activeLink = $("a[href='" + activeHref + "']", this.$inpagenav);
+		    $activeLink = $("a[href='" + activeHref + "']", this.$inpagenav).attr("aria-current", "location");
 
-		if (updateHash && history.replaceState) {
-			history.replaceState(undefined, undefined, activeHref);
+		if (updateHash) {
+			if (history.replaceState) history.replaceState(undefined, undefined, activeHref);else if (window.location.hash != activeHref) window.location.hash = activeHref;
 		}
 
 		// Set aria-activedescendant on parent element
 		this.$inpagenav.attr("aria-activedescendant", $activeLink.attr("id"));
 
-		$activeLink.attr("aria-selected", true);
-
-		// aria-expanded="true/false" for second-level <ul> containers
-		// aria-hidden="true/false" for second-level <ul> containers
-		$activeLink.closest(".in-page-nav__item").find(".in-page-nav__list").attr("aria-expanded", true).attr("aria-hidden", false).end().parents(".in-page-nav__list").attr("aria-expanded", true).attr("aria-hidden", false);
+		$activeLink.closest(".in-page-nav__item").find(".in-page-nav__list").attr("aria-hidden", false).end().parents(".in-page-nav__list").attr("aria-hidden", false);
 
 		this.calculatePosition();
-	};
-
-	InPageNav.prototype.calculatePosition = function calculatePosition() {
-		// If the element isn't attached to the dom then don't care about calculating position
-		if (!document.contains(this.$el[0])) return;
-
-		this.calculateFixedPosition();
-		this.attachToCorrectParent();
 	};
 
 	/**
@@ -1842,31 +1865,23 @@ var InPageNav = function () {
   */
 
 
-	InPageNav.prototype.calculateFixedPosition = function calculateFixedPosition() {
+	InPageNav.prototype.calculatePosition = function calculatePosition() {
 		var isFixed = this.$inpagenav.outerHeight() <= $(window).height() && $(window).scrollTop() > this.$inpagenav.parent().offset().top;
 
-		if (isFixed) this.$inpagenav.addClass("in-page-nav--fixed");else this.$inpagenav.removeClass("in-page-nav--fixed");
-	};
+		if (isFixed) {
+			this.$inpagenav.addClass("in-page-nav--fixed");
+			this.$inpagenav.width(this.$el.width());
 
-	// Attached the in page nav to the correct parent depending on breakpoint.
-	// ie on mobile devices the nav sits within the main body but on wider screens
-	// it gets copied into a different container
-
-
-	InPageNav.prototype.attachToCorrectParent = function attachToCorrectParent() {
-
-		var isWide = (0, _breakpoints.matchesFrom)(this.options.wideBreakpoint) && this.$wideTarget.length === 1;
-
-		// Move to the correct container based on width
-		if (isWide) {
-			if (!this.$inpagenav.parent().is(this.$wideTarget)) {
-				// Move element to the target
-				this.$inpagenav.appendTo(this.$wideTarget);
+			// Take footer into consideration to avoid overlap
+			var $footer = $(this.options.footerContainer);
+			if ($footer.length > 0) {
+				var footerYPos = $(this.options.footerContainer).offset().top - $(window).scrollTop(),
+				    top = footerYPos - this.$inpagenav.outerHeight();
+				this.$inpagenav.css("top", top < 0 ? top : "");
 			}
-			this.$inpagenav.width(this.$wideTarget.width());
-		} else if (!this.$inpagenav.parent().is(this.$el)) {
-			this.$inpagenav.appendTo(this.$el);
-			this.$inpagenav.width("auto");
+		} else {
+			this.$inpagenav.removeClass("in-page-nav--fixed");
+			this.$inpagenav.width("auto").css("top", "");
 		}
 	};
 
@@ -1890,18 +1905,21 @@ var InPageNav = function () {
 		return activeHeading;
 	};
 
-	// Find headings to use for building the nav
+	/**
+  * Find headings within the headings container to use for building the nav.
+  * Ignores "excluded" headings, from the options passed in.
+  */
 
 
-	InPageNav.prototype.getHeadings = function getHeadings() {
-		return $(this.options.headingsContainer).find(this.options.headings).not(this.options.headingsExclude).not("#ipn-title").toArray();
+	InPageNav.prototype.findHeadings = function findHeadings() {
+		return $(this.options.headingsContainer).find(this.options.headings).not(this.options.headingsExclude).not("#inpagenav-title").toArray();
 	};
 
 	/**
-  * Generates an id for a given heading element from its text content, but only if
-  * it doesn't already have an id.
-  * Checks to se if an element alrerady exists with the generated id - if it does
-  * then it adds an integer suffix incremented from the current maximum e.g. -1, -2.
+  * Generates a unique id for a given heading element from its text content, but only if
+  * it doesn't already have an id attribute.
+  * Checks to see if an element already exists with the generated id - if it does
+  * then it adds an integer suffix incremented from the current maximum e.g. "-1", "-2" etc.
   * This is to cater for the scenario that the id already exists on the page or if
   * there are 2 headings with the same text.
   *
@@ -1914,7 +1932,7 @@ var InPageNav = function () {
 
 		if (heading.id) return heading;
 
-		var slug = _utils2["default"].slugify(heading.textContent);
+		var slug = _utils2["default"].slugify(heading.textContent || heading.innerText);
 
 		if ($("#" + slug).length === 0) {
 			heading.id = slug;
@@ -1939,10 +1957,10 @@ var InPageNav = function () {
 
 exports["default"] = InPageNav;
 
-(0, _pluginizr2["default"])("inpagenav", InPageNav);
+(0, _pluginizr2["default"])(pluginName, InPageNav);
 
 /***/ }),
-/* 53 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var apply = Function.prototype.apply;
@@ -2001,7 +2019,7 @@ exports.clearImmediate = clearImmediate;
 
 
 /***/ }),
-/* 54 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2259,7 +2277,7 @@ Tracker.sendClassicEvent = sendClassicEvent;
 (0, _pluginizr2["default"])("tracker", Tracker);
 
 /***/ }),
-/* 55 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // getting tag from 19.1.3.6 Object.prototype.toString()
@@ -2288,7 +2306,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 56 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.3.20 SpeciesConstructor(O, defaultConstructor)
@@ -2303,12 +2321,12 @@ module.exports = function (O, D) {
 
 
 /***/ }),
-/* 57 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ctx = __webpack_require__(15);
 var invoke = __webpack_require__(100);
-var html = __webpack_require__(46);
+var html = __webpack_require__(45);
 var cel = __webpack_require__(24);
 var global = __webpack_require__(0);
 var process = global.process;
@@ -2393,7 +2411,7 @@ module.exports = {
 
 
 /***/ }),
-/* 58 */
+/* 57 */
 /***/ (function(module, exports) {
 
 module.exports = function (exec) {
@@ -2406,12 +2424,12 @@ module.exports = function (exec) {
 
 
 /***/ }),
-/* 59 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject = __webpack_require__(3);
 var isObject = __webpack_require__(9);
-var newPromiseCapability = __webpack_require__(36);
+var newPromiseCapability = __webpack_require__(35);
 
 module.exports = function (C, x) {
   anObject(C);
@@ -2424,10 +2442,61 @@ module.exports = function (C, x) {
 
 
 /***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+/**
+ * @module Breakpoints
+ */
+
+/**
+ * The breakpoints, in pixel values.
+ * These correspond with the breakpoints defined in SASS.
+ * Often not used directly, but via matchesFrom.
+ */
+var breakpoints = {
+  xs: 400,
+  sm: 600,
+  md: 900,
+  lg: 1200,
+  xl: 1600
+};
+
+/**
+ * Determines if the device's width matches a min-width query from the given breakpoint.
+ *
+ * @param {string} breakpointName The breakpoint name
+ * @return {Boolean} True if it matches, false otherwise.
+ *
+ * @example
+ * 	import { matchesFrom } from "./breakpoints";
+ * 	// Checks if the media query (min-width: 25em) matches
+ * 	var matches = matchesFrom("xs");
+ */
+var matchesFrom = function matchesFrom(breakpointName) {
+  var breakpointPx = breakpoints[breakpointName];
+
+  if (!breakpointPx) {
+    throw new Error("Breakpoint " + breakpointName + " does not exist");
+  }
+
+  // Assume matchMedia is polyfilled elsewhere
+  // Convert to ems to match the media query if the browser's root font-size isn't 16
+  return window.matchMedia("(min-width: " + breakpointPx / 16 + "em)").matches;
+};
+
+exports["default"] = breakpoints;
+exports.matchesFrom = matchesFrom;
+
+/***/ }),
 /* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(37);
+module.exports = __webpack_require__(36);
 
 
 /***/ }),
@@ -2467,8 +2536,8 @@ module.exports = { "default": __webpack_require__(63), __esModule: true };
 /* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(39);
-__webpack_require__(47);
+__webpack_require__(38);
+__webpack_require__(46);
 module.exports = __webpack_require__(30).f('iterator');
 
 
@@ -2501,7 +2570,7 @@ module.exports = function (TO_STRING) {
 
 "use strict";
 
-var create = __webpack_require__(43);
+var create = __webpack_require__(42);
 var descriptor = __webpack_require__(18);
 var setToStringTag = __webpack_require__(20);
 var IteratorPrototype = {};
@@ -2553,7 +2622,7 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
 // false -> Array#indexOf
 // true  -> Array#includes
 var toIObject = __webpack_require__(10);
-var toLength = __webpack_require__(45);
+var toLength = __webpack_require__(44);
 var toAbsoluteIndex = __webpack_require__(69);
 module.exports = function (IS_INCLUDES) {
   return function ($this, el, fromIndex) {
@@ -2633,7 +2702,7 @@ var toIObject = __webpack_require__(10);
 // 22.1.3.13 Array.prototype.keys()
 // 22.1.3.29 Array.prototype.values()
 // 22.1.3.30 Array.prototype[@@iterator]()
-module.exports = __webpack_require__(40)(Array, 'Array', function (iterated, kind) {
+module.exports = __webpack_require__(39)(Array, 'Array', function (iterated, kind) {
   this._t = toIObject(iterated); // target
   this._i = 0;                   // next index
   this._k = kind;                // kind
@@ -2686,7 +2755,7 @@ module.exports = { "default": __webpack_require__(76), __esModule: true };
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(77);
-__webpack_require__(50);
+__webpack_require__(49);
 __webpack_require__(83);
 __webpack_require__(84);
 module.exports = __webpack_require__(2).Symbol;
@@ -2703,7 +2772,7 @@ var global = __webpack_require__(0);
 var has = __webpack_require__(7);
 var DESCRIPTORS = __webpack_require__(6);
 var $export = __webpack_require__(11);
-var redefine = __webpack_require__(42);
+var redefine = __webpack_require__(41);
 var META = __webpack_require__(78).KEY;
 var $fails = __webpack_require__(17);
 var shared = __webpack_require__(28);
@@ -2718,7 +2787,7 @@ var anObject = __webpack_require__(3);
 var toIObject = __webpack_require__(10);
 var toPrimitive = __webpack_require__(25);
 var createDesc = __webpack_require__(18);
-var _create = __webpack_require__(43);
+var _create = __webpack_require__(42);
 var gOPNExt = __webpack_require__(81);
 var $GOPD = __webpack_require__(82);
 var $DP = __webpack_require__(5);
@@ -2845,9 +2914,9 @@ if (!USE_NATIVE) {
 
   $GOPD.f = $getOwnPropertyDescriptor;
   $DP.f = $defineProperty;
-  __webpack_require__(49).f = gOPNExt.f = $getOwnPropertyNames;
+  __webpack_require__(48).f = gOPNExt.f = $getOwnPropertyNames;
   __webpack_require__(32).f = $propertyIsEnumerable;
-  __webpack_require__(48).f = $getOwnPropertySymbols;
+  __webpack_require__(47).f = $getOwnPropertySymbols;
 
   if (DESCRIPTORS && !__webpack_require__(14)) {
     redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
@@ -2998,7 +3067,7 @@ var meta = module.exports = {
 
 // all enumerable object keys, includes symbols
 var getKeys = __webpack_require__(26);
-var gOPS = __webpack_require__(48);
+var gOPS = __webpack_require__(47);
 var pIE = __webpack_require__(32);
 module.exports = function (it) {
   var result = getKeys(it);
@@ -3030,7 +3099,7 @@ module.exports = Array.isArray || function isArray(arg) {
 
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
 var toIObject = __webpack_require__(10);
-var gOPN = __webpack_require__(49).f;
+var gOPN = __webpack_require__(48).f;
 var toString = {}.toString;
 
 var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
@@ -3058,7 +3127,7 @@ var createDesc = __webpack_require__(18);
 var toIObject = __webpack_require__(10);
 var toPrimitive = __webpack_require__(25);
 var has = __webpack_require__(7);
-var IE8_DOM_DEFINE = __webpack_require__(41);
+var IE8_DOM_DEFINE = __webpack_require__(40);
 var gOPD = Object.getOwnPropertyDescriptor;
 
 exports.f = __webpack_require__(6) ? gOPD : function getOwnPropertyDescriptor(O, P) {
@@ -3274,17 +3343,17 @@ if (kwargs.hasOwnProperty("caller")) {
 frame.set("caller", kwargs.caller); }
 frame.set("link", l_link);
 frame.set("level", l_level);
-var t_2 = "";t_2 += "\n\t<li class=\"in-page-nav__item\" role=\"presentation\">\n\t\t<a id=\"ipn-";
-t_2 += runtime.suppressValue((lineno = 2, colno = 31, runtime.callWrap(runtime.memberLookup((runtime.memberLookup((l_link),"href")),"replace"), "link[\"href\"][\"replace\"]", context, ["#",""])), env.opts.autoescape);
+var t_2 = "";t_2 += "\r\n\t<li class=\"in-page-nav__item\" role=\"presentation\">\r\n\t\t<a id=\"inpagenav-";
+t_2 += runtime.suppressValue((lineno = 2, colno = 37, runtime.callWrap(runtime.memberLookup((runtime.memberLookup((l_link),"href")),"replace"), "link[\"href\"][\"replace\"]", context, ["#",""])), env.opts.autoescape);
 t_2 += "\" href=\"";
 t_2 += runtime.suppressValue(runtime.memberLookup((l_link),"href"), env.opts.autoescape);
-t_2 += "\" role=\"menuitem\" aria-selected=\"false\">\n\t\t\t";
+t_2 += "\" role=\"menuitem\">\r\n\t\t\t";
 t_2 += runtime.suppressValue(runtime.memberLookup((l_link),"title"), env.opts.autoescape);
-t_2 += "\n\t\t</a>\n\t\t";
+t_2 += "\r\n\t\t</a>\r\n\t\t";
 if(runtime.memberLookup((l_link),"links") && runtime.memberLookup((runtime.memberLookup((l_link),"links")),"length") > 0) {
-t_2 += "\n\t\t\t<ul class=\"in-page-nav__list\" role=\"menu\" aria-expanded=\"true\" aria-hidden=\"false\" aria-labelledby=\"ipn-";
-t_2 += runtime.suppressValue((lineno = 6, colno = 125, runtime.callWrap(runtime.memberLookup((runtime.memberLookup((l_link),"href")),"replace"), "link[\"href\"][\"replace\"]", context, ["#",""])), env.opts.autoescape);
-t_2 += "\">\n\t\t\t\t";
+t_2 += "\r\n\t\t\t<ol class=\"in-page-nav__list\" role=\"menu\" aria-hidden=\"false\" aria-labelledby=\"inpagenav-";
+t_2 += runtime.suppressValue((lineno = 6, colno = 110, runtime.callWrap(runtime.memberLookup((runtime.memberLookup((l_link),"href")),"replace"), "link[\"href\"][\"replace\"]", context, ["#",""])), env.opts.autoescape);
+t_2 += "\">\r\n\t\t\t\t";
 frame = frame.push();
 var t_5 = runtime.memberLookup((l_link),"links");
 if(t_5) {var t_4 = t_5.length;
@@ -3298,24 +3367,24 @@ frame.set("loop.revindex0", t_4 - t_3 - 1);
 frame.set("loop.first", t_3 === 0);
 frame.set("loop.last", t_3 === t_4 - 1);
 frame.set("loop.length", t_4);
-t_2 += "\n\t\t\t\t\t";
+t_2 += "\r\n\t\t\t\t\t";
 t_2 += runtime.suppressValue((lineno = 8, colno = 16, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "renderLink"), "renderLink", context, [t_6,l_level + 1])), env.opts.autoescape);
-t_2 += "\n\t\t\t\t";
+t_2 += "\r\n\t\t\t\t";
 ;
 }
 }
 frame = frame.pop();
-t_2 += "\n\t\t\t</ul>\n\t\t";
+t_2 += "\r\n\t\t\t</ol>\r\n\t\t";
 ;
 }
-t_2 += "\n\t</li>\n";
+t_2 += "\r\n\t</li>\r\n";
 ;
 frame = callerFrame;
 return new runtime.SafeString(t_2);
 });
 context.addExport("renderLink");
 context.setVariable("renderLink", macro_t_1);
-output += "\n\n<nav class=\"in-page-nav\" role=\"navigation\" aria-labelledby=\"ipn-title\">\n\t<h2 id=\"ipn-title\" class=\"in-page-nav__title\">On this page</h2>\n\n\t<ul class=\"in-page-nav__list\" role=\"menubar\">\n\t\t";
+output += "\r\n\r\n<nav class=\"in-page-nav\" aria-labelledby=\"inpagenav-title\">\r\n\t<h2 id=\"inpagenav-title\" class=\"in-page-nav__title\">On this page</h2>\r\n\r\n\t<ol class=\"in-page-nav__list\" role=\"menubar\">\r\n\t\t";
 frame = frame.push();
 var t_9 = runtime.contextOrFrameLookup(context, frame, "links");
 if(t_9) {var t_8 = t_9.length;
@@ -3329,14 +3398,14 @@ frame.set("loop.revindex0", t_8 - t_7 - 1);
 frame.set("loop.first", t_7 === 0);
 frame.set("loop.last", t_7 === t_8 - 1);
 frame.set("loop.length", t_8);
-output += "\n\t\t\t";
+output += "\r\n\t\t\t";
 output += runtime.suppressValue((lineno = 20, colno = 14, runtime.callWrap(macro_t_1, "renderLink", context, [t_10,1])), env.opts.autoescape);
-output += "\n\t\t";
+output += "\r\n\t\t";
 ;
 }
 }
 frame = frame.pop();
-output += "\n\t</ul>\n</nav>\n";
+output += "\r\n\t</ol>\r\n</nav>\r\n";
 if(parentTemplate) {
 parentTemplate.rootRenderFunc(env, context, frame, runtime, cb);
 } else {
@@ -6568,7 +6637,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ ])
 });
 ;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(53).setImmediate, __webpack_require__(53).clearImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52).setImmediate, __webpack_require__(52).clearImmediate))
 
 /***/ }),
 /* 88 */
@@ -7041,9 +7110,9 @@ module.exports = { "default": __webpack_require__(93), __esModule: true };
 /* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(50);
-__webpack_require__(39);
-__webpack_require__(47);
+__webpack_require__(49);
+__webpack_require__(38);
+__webpack_require__(46);
 __webpack_require__(94);
 __webpack_require__(105);
 __webpack_require__(106);
@@ -7059,18 +7128,18 @@ module.exports = __webpack_require__(2).Promise;
 var LIBRARY = __webpack_require__(14);
 var global = __webpack_require__(0);
 var ctx = __webpack_require__(15);
-var classof = __webpack_require__(55);
+var classof = __webpack_require__(54);
 var $export = __webpack_require__(11);
 var isObject = __webpack_require__(9);
 var aFunction = __webpack_require__(16);
 var anInstance = __webpack_require__(95);
 var forOf = __webpack_require__(96);
-var speciesConstructor = __webpack_require__(56);
-var task = __webpack_require__(57).set;
+var speciesConstructor = __webpack_require__(55);
+var task = __webpack_require__(56).set;
 var microtask = __webpack_require__(101)();
-var newPromiseCapabilityModule = __webpack_require__(36);
-var perform = __webpack_require__(58);
-var promiseResolve = __webpack_require__(59);
+var newPromiseCapabilityModule = __webpack_require__(35);
+var perform = __webpack_require__(57);
+var promiseResolve = __webpack_require__(58);
 var PROMISE = 'Promise';
 var TypeError = global.TypeError;
 var process = global.process;
@@ -7356,7 +7425,7 @@ var ctx = __webpack_require__(15);
 var call = __webpack_require__(97);
 var isArrayIter = __webpack_require__(98);
 var anObject = __webpack_require__(3);
-var toLength = __webpack_require__(45);
+var toLength = __webpack_require__(44);
 var getIterFn = __webpack_require__(99);
 var BREAK = {};
 var RETURN = {};
@@ -7415,7 +7484,7 @@ module.exports = function (it) {
 /* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var classof = __webpack_require__(55);
+var classof = __webpack_require__(54);
 var ITERATOR = __webpack_require__(1)('iterator');
 var Iterators = __webpack_require__(12);
 module.exports = __webpack_require__(2).getIteratorMethod = function (it) {
@@ -7452,7 +7521,7 @@ module.exports = function (fn, args, that) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(0);
-var macrotask = __webpack_require__(57).set;
+var macrotask = __webpack_require__(56).set;
 var Observer = window.MutationObserver || window.WebKitMutationObserver;
 var process = global.process;
 var Promise = global.Promise;
@@ -7593,8 +7662,8 @@ module.exports = function (exec, skipClosing) {
 var $export = __webpack_require__(11);
 var core = __webpack_require__(2);
 var global = __webpack_require__(0);
-var speciesConstructor = __webpack_require__(56);
-var promiseResolve = __webpack_require__(59);
+var speciesConstructor = __webpack_require__(55);
+var promiseResolve = __webpack_require__(58);
 
 $export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
   var C = speciesConstructor(this, core.Promise || global.Promise);
@@ -7618,8 +7687,8 @@ $export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
 
 // https://github.com/tc39/proposal-promise-try
 var $export = __webpack_require__(11);
-var newPromiseCapability = __webpack_require__(36);
-var perform = __webpack_require__(58);
+var newPromiseCapability = __webpack_require__(35);
+var perform = __webpack_require__(57);
 
 $export($export.S, 'Promise', { 'try': function (callbackfn) {
   var promiseCapability = newPromiseCapability.f(this);
@@ -7634,8 +7703,8 @@ $export($export.S, 'Promise', { 'try': function (callbackfn) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./in-page-nav/in-page-nav.js": 52,
-	"./tabs/tabs.js": 51
+	"./in-page-nav/in-page-nav.js": 51,
+	"./tabs/tabs.js": 50
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -7658,12 +7727,12 @@ webpackContext.id = 107;
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./breakpoints.js": 35,
+	"./breakpoints.js": 59,
 	"./eventr.js": 21,
-	"./index.js": 37,
-	"./plugin-autoloader.js": 38,
+	"./index.js": 36,
+	"./plugin-autoloader.js": 37,
 	"./pluginizr.js": 8,
-	"./tracker.js": 54,
+	"./tracker.js": 53,
 	"./utils.js": 34
 };
 function webpackContext(req) {
