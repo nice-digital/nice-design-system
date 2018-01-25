@@ -23,11 +23,12 @@
 	<link rel="author" type="text/plain" href="{{ site.baseurl }}/humans.txt" />
 	<link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico" />
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/app.css" type="text/css" charset="utf-8">
-	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:200normal,200italic,300normal,300italic,400normal,400italic,700normal,700italic,900normal,900italic" type="text/css">
+	<link href="//fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet" type="text/css" />
 
 	<!--[if lt IE 9]>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    	<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-shim.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-shim.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.10/es5-sham.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
@@ -55,7 +56,6 @@
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="//cdn.nice.org.uk/V3.1/Scripts/nice/NICE.TopHat.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/nunjucks/3.0.0/nunjucks.min.js"></script>
 
 	<!--[if gt IE 8]><!-->
 		<script src="//cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.2/anchor.min.js"></script>
@@ -82,35 +82,6 @@
 				//console.log("Service Worker Ready");
 			});
 	}
-	</script>
-
-	<script id="in-page-nav-template" type="text/template">
-		{% raw %}
-		{% macro renderLink(link, level) %}
-			<li class="in-page-nav__item" role="presentation">
-				<a id="ipn-{{ link.href.replace("#", "") }}" href="{{ link.href }}" role="menuitem" aria-selected="false">
-					{{ link.title }}
-				</a>
-				{% if link.links and link.links.length > 0 %}
-					<ul class="in-page-nav__list in-page-nav__list--level-{{ level + 1 }}" role="menu" aria-expanded="false" aria-hidden="true" aria-labelledby="ipn-{{ link.href.replace("#", "") }}">
-						{% for subLink in link.links %}
-							{{ renderLink(subLink, level + 1) }}
-						{% endfor %}
-					</ul>
-				{% endif %}
-			</li>
-		{% endmacro %}
-
-		<nav class="in-page-nav" role="navigation" aria-labelledby="ipn-title">
-			<h2 id="ipn-title" class="in-page-nav__title">On this page</h2>
-
-			<ul class="in-page-nav__list in-page-nav__list--level-1" role="menubar">
-				{% for link in links %}
-					{{ renderLink(link, 1) }}
-				{% endfor %}
-			</ul>
-		</nav>
-		{% endraw %}
 	</script>
 </body>
 </html>

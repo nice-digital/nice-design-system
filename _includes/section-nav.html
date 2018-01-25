@@ -9,17 +9,6 @@
 {% capture indexUrl %}/{{ pageGroup.name }}/{% endcapture %}
 {% assign index = pageGroup.items | where_exp: "pg","pg.url == indexUrl" | first %}
 
-{% if include.heading %}
-## [{{ index.title }}]({{ index.url | relative_url }})
-{% endif %}
-
-{% if include.lead %}
-{{ index.description }}
-{:.lead}
-{% else %}
-{{ index.description }}
-{% endif %}
-
 {% if pageGroup.items %}
 <div class="grid">
 	{% assign pages = pageGroup.items | where_exp: "pg", "pg.url != indexUrl" %}

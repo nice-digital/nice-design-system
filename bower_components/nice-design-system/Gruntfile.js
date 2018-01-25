@@ -39,10 +39,15 @@ module.exports = grunt => {
 	r("lint", ["sasslint", "eslint"]);
 
 	// Run JS unit tests
-	r("test", ["mochaTest"]);
+	r("test", ["mochaTest:test"]);
+
+	r("test:teamcity", ["mochaTest:teamcity"]);
 
 	// For building before publishing to NPM etc
 	r("dist", ["env:dist", "clean:dist", "lint", "test", "sass:dist", "postcss:dist", "cssmin:dist", "docs", "webpack"]);
 
+	r("dist:teamcity", ["env:dist", "clean:dist", "lint", "test:teamcity", "sass:dist", "postcss:dist", "cssmin:dist", "docs", "webpack"]);
+
+	//For building locally
 	r("default", ["env:dev", "clean:temp", "lint", "test", "sass:temp", "postcss:temp", "cssmin:temp", "watch"]);
 };

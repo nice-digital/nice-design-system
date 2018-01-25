@@ -3,10 +3,9 @@
 ///   - main body content
 ///   - optional in page nav column
 .page {
-  @include grid($loose: true);
+  @include clearfix;
 
   &__sidebar {
-    @include grid-item($loose: true);
     margin-bottom: em($spacing-large);
 
     @media print {
@@ -15,43 +14,67 @@
   }
 
   &__main {
+    @include grid($loose: true);
+  }
+
+  &__body {
     @include grid-item($loose: true);
 
-    @media print {
-      width: 100%;
+    > :first-child {
+      margin-top: 0;
     }
   }
 
   &__inpagenav {
     @include grid-item($loose: true);
-    display: none;
+
+    .no-js & {
+      display: none;
+    }
 
     @media print {
       display: none;
     }
   }
 
-  @include mq($from: md) {
+  @include mq($from: sm) {
     &__sidebar {
-      width: 20%;
+      float: left;
+      margin-right: rem($spacing-large);
+      width: percentage(4 / 12);
     }
 
     &__main {
-      width: 80%;
+      float: left;
+      width: percentage(8 / 12);
+    }
+  }
+
+  @include mq($from: md) {
+    &__sidebar {
+      width: percentage(3 / 12);
+    }
+
+    &__main {
+      @include grid-reverse;
+      width: percentage(9 / 12);
+    }
+
+    &__body {
+      width: 100%;
 
       .js & {
-        width: 60%;
+        width: percentage(8 / 12);
       }
     }
 
     &__inpagenav {
-      display: inline-block;
-      width: 20%;
+      width: percentage(4 / 12);
     }
 
     &--full {
-      .page__main {
-        width: 80%;
+      .page__body {
+        width: 100%;
       }
     }
   }
@@ -63,19 +86,21 @@
 
     &__main {
       width: percentage(10 / 12);
+    }
 
+    &__body {
       .js & {
-        width: percentage(8 / 12);
+        width: percentage(9 / 12);
       }
     }
 
     &__inpagenav {
-      width: percentage(2 / 12);
+      width: percentage(3 / 12);
     }
 
     &--full {
-      .page__main {
-        width: percentage(10 / 12);
+      .page__body {
+        width: 100%;
       }
     }
   }

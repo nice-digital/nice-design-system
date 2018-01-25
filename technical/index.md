@@ -5,4 +5,4 @@ description: Technical documentation and code style guides for creating NICE dig
 inpagenav: false
 ---
 
-{% include section-nav.html nav="technical" lead=true %}
+{% include section-nav.html nav="technical" %}

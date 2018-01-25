@@ -4,15 +4,20 @@ title: Breadcrumbs
 description: Secondary navigation scheme that reveals the users location
 ---
 
-A breadcrumb trail is a secondary navigation, that displays as a series of links, situated below the header. It helps identify where the user is, and the navigation they took to get to their current point.
+A breadcrumb trail is a secondary navigation, that displays as a series of links, situated below the header. 
 {:.lead}
 
-## Basics
+## Why?
+It helps identify where the user is, and the navigation they may have taken to get to the current page.
 
+## Usage
 - Use a `nav` element
-- Use `aria-label` to describe the breadcrumbs
-- Use `.visually-hidden` to only show the 'you are here' label to screen readers.
-- Use [schema.org microdata](http://schema.org/BreadcrumbList){:target="_blank"} for *BreadcrumbList* and *ListItem*.
+- use an `aria-label` attribute to describe the breadcrumbs
+- use `.visually-hidden` to only show the 'you are here' label to screen readers.
+- use [schema.org microdata](http://schema.org/BreadcrumbList){:target="_blank"} for *BreadcrumbList* and *ListItem*.
+
+## Variants
+There's only 1 variant of breadcrumbs:
 
 {% capture basics %}
 <nav aria-label="Breadcrumbs" role="navigation">

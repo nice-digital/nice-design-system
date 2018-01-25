@@ -6,20 +6,24 @@
 /// and also used within alpha/beta phase banners.
 ///
 /// BEM modifiers:
-///   - `--impact` Larger tag, used for impact
+///   - `--impact` Bolder tag, used for higher impact
+///   - `--super`  Super aligned, useful for tagging headings
 ///   - `--alpha` Alpha
 ///   - `--beta`  Beta
 ///   - `--live`  Live
 ///   - `--new`  New
 ///   - `--updated`  Updated
 ///   - `--consultation`  In consultation
+///   - `--flush`  No margin
 /// @since 0.3.1
 .tag {
+  @include font-size(0);
   background-color: $colour-panel-inverse;
   border-radius: em($spacing-xx-small);
   color: $colour-text-inverse;
   display: inline-block;
   font-weight: normal;
+  margin: rem(0 0 $spacing-x-small 0);
   padding: em(0 $spacing-x-small);
   text-decoration: none;
   vertical-align: baseline;
@@ -32,11 +36,14 @@
   }
 
   &--impact {
-    @include font-size(-1);
     font-weight: 900;
     letter-spacing: 1px;
     padding: em($spacing-xx-small $spacing-small);
     text-transform: uppercase;
+  }
+
+  &--super {
+    vertical-align: super;
   }
 
   &--alpha {
@@ -64,5 +71,9 @@
 
   &--consultation {
     background: $colour-guidance-consultation;
+  }
+
+  &--flush {
+    margin-bottom: 0;
   }
 }

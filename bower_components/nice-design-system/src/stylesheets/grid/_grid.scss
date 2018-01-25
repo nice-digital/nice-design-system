@@ -74,55 +74,60 @@
 .grid {
   @include grid;
 
-  @include modifier('rev') {
+  &--rev {
     @include grid-reverse;
   }
 
-  @include modifier('gutterless') {
+  &--gutterless {
     @include grid-gutterless;
 
-    [data-g] {
+    // sass-lint:disable-block no-combinators
+    > [data-g] {
       @include grid-item-gutterless;
     }
   }
 
-  @include modifier('compact') {
+  &--compact {
     @include grid-compact;
 
-    [data-g] {
+    // sass-lint:disable-block no-combinators
+    > [data-g] {
       @include grid-item-compact;
     }
   }
 
-  @include modifier('loose') {
+  &--loose {
     @include grid-loose;
 
-    [data-g] {
+    // sass-lint:disable-block no-combinators
+    > [data-g] {
       @include grid-item-loose;
     }
   }
 
-  @include modifier('right') {
+  &--right {
     @include grid-right;
   }
 
-  @include modifier('center') {
+  &--center {
     @include grid-center;
   }
 
-  @include modifier('middle') {
-    [data-g] {
+  &--middle {
+    // sass-lint:disable-block no-combinators
+    > [data-g] {
       @include grid-item-middle;
     }
   }
 
-  @include modifier('bottom') {
-    [data-g] {
+  &--bottom {
+    // sass-lint:disable-block no-combinators
+    > [data-g] {
       @include grid-item-bottom;
     }
   }
 
-  @include modifier('debug') {
+  &--debug {
     @include grid-debug;
 
     [data-g] {

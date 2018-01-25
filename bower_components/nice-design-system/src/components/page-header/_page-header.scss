@@ -1,0 +1,47 @@
+////
+/// @group components
+////
+
+/// Page header component.
+/// Used at the top of a page to contain an h1 and optional
+/// lead intro paragraph and call-to-action.
+///
+/// @example html
+///   <header class="page-header">
+///     <h1 class="page-header__heading">
+///       Breast cancer
+///     </h1>
+///     <p class="page-header__lead">
+///       Everything NICE has produced on the topic of breast cancer.
+///       Includes related guidelines, NICE Pathways, quality standards and advice.
+///     </p>
+///     <p class="page-header__cta">
+///       <a href="/some-action.html">Register as a stakeholder</a>
+///     </p>
+///   </header>
+/// @since 0.4.0
+.page-header {
+  margin: rem(0 0 $spacing-x-large 0);
+
+  &__heading {
+    @include font-size(h1);
+    margin: rem(0 0 $spacing-small 0);
+  }
+
+  &__lead {
+    @include font-size(lead);
+    margin: rem(0 0 $spacing-small 0);
+  }
+
+  &__cta {
+    @include font-size(p);
+    display: block;
+    margin: 0;
+  }
+
+  @media print {
+    &__cta {
+      display: none;
+    }
+  }
+}

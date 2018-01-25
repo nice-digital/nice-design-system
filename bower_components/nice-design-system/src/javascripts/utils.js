@@ -4,6 +4,70 @@
  */
 
 /**
+ * Throttle events
+ * See https://remysharp.com/2010/07/21/throttling-function-calls
+ *
+ * @param      {Function}  func       The function to throttle
+ * @param      {Integer}  threshold  The threshhold period, in milliseconds
+ * @param      {Object}  scope   The context of the throttled function
+ * @return     {Function}  { The throttled function }
+ */
+export const throttle = function(fn: () => mixed, threshhold: number = 100, scope = null) {
+	let last,
+		deferTimer;
+
+	return function throttled() {
+		let context = scope || this,
+			now = +new Date,
+			args = arguments;
+
+		if (last && now < last + threshhold) {
+			// hold on to it
+			clearTimeout(deferTimer);
+			deferTimer = setTimeout(function() {
+				last = now;
+				fn.apply(context, args);
+			}, threshhold);
+		} else {
+			last = now;
+			fn.apply(context, args);
+		}
+	};
+};
+
+/**
+ * Debounce
+ * See http://unscriptable.com/2009/03/20/debouncing-javascript-methods/
+ *
+ * @param      {Function}  func       The function to debounce
+ * @param      {Integer}  execAsap   Whether to execute the function now
+ * @param      {Integer}  threshold  The detection period, in milliseconds
+ * @param      {Object}  scope  The context for the debounced function
+ * @return     {Function}  { The debounced function }
+ */
+export const debounce = function(func: () => mixed, execAsap: boolean = false, threshold: number = 100, scope = null) {
+	let timeout;
+
+	return function debounced() {
+		let context = scope || this,
+			args = arguments;
+
+		function delayed() {
+			if (!execAsap)
+				func.apply(context, args);
+			timeout = null;
+		}
+
+		if (timeout)
+			clearTimeout(timeout);
+		else if (execAsap)
+			func.apply(context, args);
+
+		timeout = setTimeout(delayed, threshold);
+	};
+};
+
+/**
  * Turns a string into a slug.
  * See {@link https://gist.github.com/mathewbyrne/1280286#gistcomment-1606270|this gist}.
  *
@@ -16,7 +80,7 @@
  *          slugify("A (string) to transform & slugify!");
  */
 export const slugify = (str: string): string => {
-	return str.toLowerCase().trim()
+	return $.trim(str).toLowerCase()
 		.replace(/\s+/g, "-")			// Replace spaces with -
 		.replace(/&/g, "-and-")			// Replace & with 'and'
 		.replace(/[^\w-]+/g, "")		// Remove all non-word chars
@@ -50,6 +114,8 @@ export const nextUniqueId = function (i) {
 }(0);
 
 export default {
+	throttle: throttle,
+	debounce: debounce,
 	slugify: slugify,
 	nextUniqueId: nextUniqueId
 };

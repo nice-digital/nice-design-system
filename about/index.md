@@ -7,9 +7,6 @@ nav: About
 inpagenav: false
 ---
 
-{{ page.description }}
-{:.lead}
-
 Its goal is to create a consistent, acccessible digital experience across all of NICE's services.
 
 It's a source for creating beautiful, consistent experiences across NICE's digital services. It's aimed at developers, designers and content editors and consists of:

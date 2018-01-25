@@ -1,18 +1,27 @@
 ---
 layout: sidebar
 title: Card
-description: A flexible component for displaying an item within a list
+description: A flexible component for displaying an item like news or guidance within a list
 ---
 
-Cards are flexible components for displaying items, usually within a list. They're used for guidance and search results. They consist of a heading and optional:
+Cards are flexible components for displaying items, usually within a list. 
+{:.lead}
+
+## Why?
+They're used for items like guidance, news and search results to give an easily scannable list.
+
+## Usage
+Cards consist of a heading and optional:
 
 - heading icon
-- body
-- metadata, including <a href="{{ site.baseurl }}{% link components/tag.md %}">tags</a>
+- summary
+- metadata, including <a href="{{ site.baseurl }}{% link components/tag.md %}">tags</a> and dates.
 
-Tags are usually used within a `list--unstyled`.
+Cards are usually used within an unstyled, unordered list (`ul.list--unstyled`).
 
-## Standard
+## Variants
+
+### Standard
 
 {% capture standard %}
 <article class="card" data-no-inpagenav>
@@ -26,7 +35,7 @@ Tags are usually used within a `list--unstyled`.
     <dl class="card__metadata">
         <div class="card__metadatum">
             <dt>
-                <span class="card__tag tag tag--consultation">
+                <span class="card__tag tag tag--consultation tag--flush">
                     In consultation
                 </span>
             </dt>
@@ -34,7 +43,7 @@ Tags are usually used within a `list--unstyled`.
         </div>
         <div class="card__metadatum">
             <dt>
-                <span class="card__tag tag tag--new">
+                <span class="card__tag tag tag--new tag--flush">
                     New
                 </span>
             </dt>
@@ -57,7 +66,7 @@ Tags are usually used within a `list--unstyled`.
 {% endcapture %}
 {% include example.html lang='html' body=standard %}
 
-## Card list
+### Card list
 
 {% capture standard %}
 <ul class="list--unstyled" data-no-inpagenav>
@@ -92,7 +101,7 @@ Tags are usually used within a `list--unstyled`.
             <dl class="card__metadata">
                 <div class="card__metadatum">
                     <dt>
-                        <span class="card__tag tag tag--consultation">
+                        <span class="card__tag tag tag--consultation tag--flush">
                             In consultation
                         </span>
                     </dt>

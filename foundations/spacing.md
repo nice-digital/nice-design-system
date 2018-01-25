@@ -7,7 +7,6 @@ description: Spacing between elements and vertical rhythm
 ## Introduction
 
 Keep a consistent vertical and horizontal rhythm between elements on a page.
-{:.lead}
 
 Spacing values should be applied both within a component and between components/sections of a page. Built in components come with spacing built in but can be overridden with classes where appropriate.
 
@@ -59,7 +58,20 @@ Where `{size}` is on a linear scale from *a* (small) via *d* (default/medium) to
 - `e` - for large margin/padding
 - `f` - for extra large margin/padding
 - `g` - for extra extra large margin/padding
-- 
+
+<!--
+| Width        | Top     | Right   | Bottom  |
+| ------------ | ------- | ------- | ------- |
+| 0            | `pt--0` | `pr--0` | `pb--0` |
+| a (xx-small) | `pt--a` | `pr--a` |
+| b (x-small)  | `pt--b` | `pr--b` |
+| c (small)    | `pt--c` | `pr--c` |
+| d (medium)   | `pt--d` | `pr--d` |
+| e (large)    | `pt--e` | `pr--e` |
+| f (x-large)  | `pt--f` | `pr--f` |
+| g (xx-large) | `pt--g` | `pr--g` |
+-->
+
 And `{breakpoint}` is optional and one of:
 
 - `xs`

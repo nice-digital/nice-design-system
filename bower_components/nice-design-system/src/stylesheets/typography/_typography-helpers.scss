@@ -57,43 +57,60 @@
 
 /// Applies font size and line-height for the given scale.
 /// @param $scale {Integer|Name} The integer ratio or named font-size.
+/// @param $important {Boolean} Whether to add an important declaration to the CSS rules.
 /// @example
 ///   .test {
 ///     @include font-size(-2);
 ///   }
 /// @example
 ///   .test {
-///     @include font-size(h1);
+///     @include font-size(h1, true);
 ///   }
 /// @since 0.1.0
-@mixin font-size($scale: 0) {
+@mixin font-size($scale: 0, $important: false) {
   $font-size: get-font-size($scale);
   $line-height: get-line-height($scale);
 
-  font-size: rem($font-size);
-  line-height: rem($line-height);
+  @if $important {
+    // sass-lint:disable no-important
+    font-size: rem($font-size) !important;
+    line-height: rem($line-height) !important;
+  }
+  @else {
+    font-size: rem($font-size);
+    line-height: rem($line-height);
+  }
 }
 
 /// Nice font: includes font size, line height, and margins.
 /// @param $scale {Integer|Name} The integer ratio or named font-size.
+/// @param $important {Boolean} Whether to add an important declaration to the CSS rules.
 /// @example
 ///   .test {
 ///     @include font(3);
 ///   }
 /// @example
 ///   .test {
-///     @include font(h1);
+///     @include font(h1, true);
 ///   }
 /// @since 0.1.0
-@mixin font($scale) {
-  @include font-size($scale);
+@mixin font($scale, $important: false) {
+  @include font-size($scale, $important);
 
   $scale-integer: get-scale-integer($scale);
   $font-map: map-get($font-sizes, $scale-integer);
 
-  font-weight: map-get($font-map, fw);
-  margin-bottom: rem(map-get($font-map, mb));
-  margin-top: rem(map-get($font-map, mt));
+  @if $important {
+    // sass-lint:disable no-important
+    font-weight: map-get($font-map, fw) !important;
+    margin-bottom: rem(map-get($font-map, mb)) !important;
+    margin-top: rem(map-get($font-map, mt)) !important;
+  }
+  @else {
+    font-weight: map-get($font-map, fw);
+    margin-bottom: rem(map-get($font-map, mb));
+    margin-top: rem(map-get($font-map, mt));
+  }
 }
 
 /// Lead paragraph style

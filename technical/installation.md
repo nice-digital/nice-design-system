@@ -42,7 +42,7 @@ Use the following HTML structure as a guide when creating new applications. It c
         Optional: Lato font from Google.
         Only include the required weights in production
     -->
-    <link href="//fonts.googleapis.com/css?family=Lato:200normal,200italic,300normal,300italic,400normal,400italic,700normal,700italic,900normal,900italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet" type="text/css" />
     <!--
         Add other links tags as needed eg:
             - rel="canonical" for Canonical URLs (https://support.google.com/webmasters/answer/139066?hl=en#2)
@@ -58,9 +58,13 @@ Use the following HTML structure as a guide when creating new applications. It c
 
     <!--
         Respond.js (https://github.com/scottjehl/Respond) to polyfill media queries in IE8.
+        ES5 Shim & Sham - for making ES3 browsers (IE8) ES5 compatible.
         Note: also include HTML shim (//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js) here if you don't in Modernizr.
     -->
     <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-shim.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.10/es5-sham.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
@@ -86,18 +90,15 @@ Use the following HTML structure as a guide when creating new applications. It c
     <!-- End Google Tag Manager -->
 
     <!-- BODY HERE -->
+    <main>
+    </main>
 
     <!-- jQuery (necessary for JavaScript plugins) -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- NICE TopHat for the main menu -->
     <script src="//cdn.nice.org.uk/V3/Scripts/nice/NICE.TopHat.dev.js"></script>
-    <!-- Appliaction javascript, with polyfilled IE version -->
-    <!--[if !IE]><!-->
-        <script src="/javascripts/app.js"></script>
-    <!--<![endif]-->
-    <!--[if IE]>
-        <script src="/javascripts/app.oldie.js"></script>
-    <![endif]-->
+    <!-- Application javascript, or Design System js -->
+    <script src="/javascripts/app.js"></script>
 </body>
 </html>
 {% endcapture %}

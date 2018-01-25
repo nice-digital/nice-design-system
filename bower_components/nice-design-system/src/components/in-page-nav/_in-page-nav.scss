@@ -4,15 +4,22 @@
 
 /// In page nav
 .in-page-nav {
+  margin: rem(0 0 $spacing-large);
 
   // The 'on this page' title
   &__title {
-    @include font-size(h2);
+    @include font-size(h4);
+    margin-top: 0;
   }
 
   // Lists (both root level and sub level)
   &__list {
+    list-style: disc;
     margin-left: em($spacing-medium);
+
+    .in-page-nav__list {
+      list-style: circle;
+    }
 
     [aria-hidden='true'] {
       display: none;
@@ -30,19 +37,20 @@
   }
 
   @include mq($from: md) {
+    margin: 0;
+
     // Docked to the top of the screen
     &--fixed {
       position: fixed;
       top: 0;
-    }
 
-    &__title {
-      @include font-size(h4);
-      margin-top: 0;
+      .in-page-nav__title {
+        margin-top: rem($spacing-small);
+      }
     }
 
     a {
-      &[aria-selected='true'] {
+      &[aria-current='location'] {
         font-weight: bold;
       }
     }

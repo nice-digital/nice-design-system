@@ -17,8 +17,10 @@
   margin: em(0 $spacing-small $spacing-small -4px); // Negative left margin to combat inline-block gaps
   padding: em($spacing-small $spacing-medium);
   position: relative;
+  text-align: left;
   text-decoration: none !important; // sass-lint:disable-line no-important
   vertical-align: top;
+  white-space: nowrap;
 
   &:first-child {
     margin-left: 0;
