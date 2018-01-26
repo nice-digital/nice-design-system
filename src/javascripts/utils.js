@@ -26,6 +26,22 @@ export const slugify = (str: string): string => {
 };
 
 /**
+ * Turns a dashed string into a camelCase string.
+ * See {@link https://jamesroberts.name/blog/2010/02/22/string-functions-for-javascript-trim-to-camel-case-to-dashed-and-to-underscore/|this page}.
+ *
+ * @param {string} str { The dashed string to camelCase }
+ * @returns {string} { The camelCased string }
+ *
+ * @example <caption>Example dashToCamel</caption>
+ *          import { dashToCamel } from "./utils";
+ *          // returns "somethingInCamelcase"
+ *          dashToCamel("something-in-camelcase");
+ */
+export const dashToCamel = (str: string): string => {
+	return str.replace(/(-[a-z])/g, function($1){return $1.toUpperCase().replace("-","");});
+};
+
+/**
  * Generates a unique id in the form prefix-n by incrementing a counter.
  * The first time this is called it will return "uid-1" then "uid-2" and so on.
  * See {@link http://stackoverflow.com/a/20302361|This StackOverflow answer}.
@@ -50,6 +66,7 @@ export const nextUniqueId = function (i) {
 }(0);
 
 export default {
-	slugify: slugify,
-	nextUniqueId: nextUniqueId
+	dashToCamel,
+	slugify,
+	nextUniqueId
 };

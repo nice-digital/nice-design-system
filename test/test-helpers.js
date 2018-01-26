@@ -12,6 +12,8 @@ const fs = require("fs"),
 
 const { JSDOM } = jsdom;
 
+import { dashToCamel } from "../src/javascripts/utils";
+
 /**
  * Loads and renders a component template from the given name, with the given data.
  * Assumes that the component had a macro inside with the same name as the component.
@@ -20,8 +22,9 @@ const { JSDOM } = jsdom;
  * @return {String}      The rendered component
  */
 function renderComponent(name, data) {
+	var camelName = dashToCamel(name);
 	var template = fs.readFileSync(path.join(__dirname, `../src/components/${ name }/${ name }.njk`), "utf8");
-	return nunjucks.renderString(`${ template}{{ ${ name }(content) }}"`, { content: data });
+	return nunjucks.renderString(`${ template}{{ ${ camelName }(content) }}"`, { content: data });
 }
 
 /**

@@ -1,6 +1,6 @@
 /* eslint-env node, mocha, jquery */
 
-import { slugify, nextUniqueId } from "../../src/javascripts/utils";
+import { slugify, dashToCamel, nextUniqueId } from "../../src/javascripts/utils";
 
 describe("Utils", function() {
 
@@ -52,6 +52,13 @@ describe("Utils", function() {
 			let s = slugify("dog *");
 
 			s.should.be.eql("dog");
+		});
+	});
+
+	describe("dashToCamel", function() {
+		it("camelCases a string separated by dashes", function() {
+			let s = dashToCamel("this-is-a-string-separated-by-dashes");
+			s.should.be.eql("thisIsAStringSeparatedByDashes");
 		});
 	});
 
