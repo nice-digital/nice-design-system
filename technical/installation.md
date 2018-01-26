@@ -10,8 +10,7 @@ Use the following HTML structure as a guide when creating new applications. It c
 
 {% capture template %}
 <!DOCTYPE html>
-<html lang="en-GB" class="no-js">
-<!-- no-js is replaced by Modernizr -->
+<html lang="en-GB" class="no-js"><!-- no-js is replaced by Modernizr -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -21,13 +20,14 @@ Use the following HTML structure as a guide when creating new applications. It c
         Any other head content must come *after* these tags
     -->
     <meta name="description" content="Description">
+    <meta name="theme-color" content="#004650">
     <!--
         Add other meta tags as needed eg:
-            - Theme colour
             - Dublin Core
             - RSS/Atom
             - Apple icons
             - MS Tile image/colour
+            - Open graph
     -->
 
     <title>Title</title>
@@ -37,10 +37,9 @@ Use the following HTML structure as a guide when creating new applications. It c
     <!--  Favicon -->
     <link rel="shortcut icon" href="/favicon.ico" />
     <!-- Main application css -->
-    <link rel="stylesheet" href="/stylesheets/app.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/stylesheets/app.css" type="text/css">
     <!--
-        Optional: Lato font from Google.
-        Only include the required weights in production
+        Lato font from Google. Only include the required weights.
     -->
     <link href="//fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet" type="text/css" />
     <!--
@@ -51,15 +50,15 @@ Use the following HTML structure as a guide when creating new applications. It c
     -->
 
     <!--
-        Modernizr: production builds should use a custom build with just the required rules rather than the full version.
-        Note: Including HTML 5 shim in Modernizr (https://modernizr.com/download?setclasses-shiv) means no need for a separate download
+        Modernizr for feature detection.
+        Prefer a custom build over straight from a CDN.
     -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="/modernizr.nice.min.js"></script>
 
     <!--
-        Respond.js (https://github.com/scottjehl/Respond) to polyfill media queries in IE8.
-        ES5 Shim & Sham - for making ES3 browsers (IE8) ES5 compatible.
-        Note: also include HTML shim (//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js) here if you don't in Modernizr.
+        - HTML shiv (//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js) for using HTML5 in IE8.
+        - Respond.js (https://github.com/scottjehl/Respond) to polyfill media queries in IE8.
+        - ES5 Shim & Sham - for making ES3 browsers (IE8) ES5 compatible.
     -->
     <!--[if lt IE 9]>
         <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -132,16 +131,16 @@ The following is the basic structure with important files mentioned. Please note
 node_modules/@nice-digital/design-system/
 ├── dist/
 │   ├── docs/
-│       ├── *
+│       ├── js
+│           ├── nice-design-system.json
+│       ├── sass
+│           ├── nice-design-system.json
 │   ├── javascripts/
+│           ├── modernizr.nice.min.js
 │           ├── nice.dev.js
 │           ├── nice.dev.map
 │           ├── nice.min.js
 │           ├── nice.min.map
-│           ├── nice.oldie.dev.js
-│           ├── nice.oldie.dev.map
-│           ├── nice.oldie.min.js
-│           ├── nice.oldie.min.map
 │   ├── stylesheets/
 │           ├── nice.css
 │           ├── nice.css.map
@@ -150,6 +149,7 @@ node_modules/@nice-digital/design-system/
 ├── src
 │   ├── assets/
 │           ├── favicon.ico
+│           ├── nice-logo-*.png
 │   ├── components/
 │           ├── *
 │   ├── javascripts/
@@ -159,7 +159,7 @@ node_modules/@nice-digital/design-system/
 │           ├── *
 │   ├── stylesheets/
 │           ├── .sass-lint.yml
-│           ├── index.scss
+│           ├── nice-design-system.scss
 │           ├── *
 {% endcapture %}
 {% include source.html lang='bash' body=npm title='directory structure' %}
@@ -178,7 +178,7 @@ CDN is [coming soon]({{ site.baseurl }}{% link about/roadmap.md %}) &hellip;
 ## Latest release
 
 - Use the latest release directly
-- Not recommended for production setups
+- not recommended for production setups
 
 <a href="{{ site.repository }}/releases/latest" class="btn">Latest release</a>
 
@@ -186,14 +186,16 @@ CDN is [coming soon]({{ site.baseurl }}{% link about/roadmap.md %}) &hellip;
 ## Download master ZIP
 
 - Download a ZIP of the latest code from master
-- Not recommended for production setups
+- not recommended for production setups
 
 <a href="{{ site.repository }}/archive/master.zip" class="btn">Download latest ZIP</a>
 
 
 ## Bower
 
-Bower support is [coming soon]({{ site.baseurl }}{% link about/roadmap.md %}) &hellip;
+[NICE Design System is on Bower](https://bower.io/search/?q=nice-design-system) however, it isn't the recommended installation method. Use npm instead.
+
+We create Git tags with each release so the Bower package version is always in sync with [Git releases](https://github.com/nhsevidence/nice-design-system/releases).
 
 
 ## Meteor
