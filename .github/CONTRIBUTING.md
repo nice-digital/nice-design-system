@@ -5,20 +5,26 @@ guidelines:
 
 ## Coding standards
 
-TODO: Standards and linting
+Follow our [ESLint](https://github.com/nhsevidence/nice-design-system/blob/master/src/javascripts/.eslintrc) and [Sass Lint](https://github.com/nhsevidence/nice-design-system/blob/master/src/stylesheets/.sass-lint.yml) rules for linting. Run `npm run lint` to check for any linting errors.
+
+If in doubt, follow the format of the surrounding code.
 
 ## Documentation
 
-TODO
+Keep all documentation e.g. comments and readmes up-to-date with any code changes.
 
 ## Tests
 
-TODO: Test
+Include thoughtfully-worded, well-structured Mocha tests. See the [test folder](https://github.com/nhsevidence/nice-design-system/tree/master/test#readme) for more info.
 
 ## Commit hygiene
 
-TODO: Git style guide like [gov uk's](https://github.com/alphagov/styleguides/blob/master/git.md)
+Follow [GOV.UK's Git style guide](https://github.com/alphagov/styleguides/blob/master/git.md).
 
 ## Versioning
 
-TODO
+We release versions from master using [SemVer](http://semver.org/) so your code shouldn't update the version number.
+
+### Breaking changes
+
+Mark any commits with breaking changes so that we can release a major version.
