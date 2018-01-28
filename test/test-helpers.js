@@ -21,7 +21,7 @@ const { JSDOM } = jsdom;
  */
 function renderComponent(name, data) {
 	var template = fs.readFileSync(path.join(__dirname, `../src/components/${ name }/${ name }.njk`), "utf8");
-	return nunjucks.renderString(`${ template}{{ ${ name }(content) }}"`, { content: data });
+	return nunjucks.renderString(`${ template}{{ ${ $.camelCase(name) }(content) }}"`, { content: data });
 }
 
 /**
