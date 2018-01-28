@@ -74,4 +74,14 @@ describe("Utils", function() {
 
 	});
 
+	describe('jQuery camelCase (private method)', () => {
+		it('is available as a method on the jQuery object', () => {
+			$.camelCase.should.be.a("function");
+		});
+		it("turns a kebab-case string into a camelCase string", ()=>{
+			var string = "this-is-kebab-case";
+			$.camelCase(string).should.equal("thisIsKebabCase");
+		})
+	});
+
 });
