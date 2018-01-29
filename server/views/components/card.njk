@@ -1,5 +1,5 @@
 {% extends "layouts/_layout.njk" %}
-{% set title = "CTA bar" %}
+{% set title = "Card" %}
 {% from "card/card.njk" import card %}
 
 {% block body %}
@@ -8,15 +8,44 @@
 
 		<h1>Card</h1>
 
+		<h2>Basic card</h2>
+
 		{{ card({ heading: { text: "This is a card heading" }, href: "https://www.nice.org.uk/", metadata: [ { key: "Published date", value: "March 2015", datetime: "2015-03" }, { key: "Metadata key", value: "Metadata value" } ] }) }}
 
-		<h2>Card with tag</h2>
+		<h2>Card (separator)</h2>
+
+		{{ card({ heading: { text: "This is a card heading" }, modifier: "separator", href: "https://www.nice.org.uk/", metadata: [ { key: "Published date", value: "March 2015", datetime: "2015-03" }, { key: "Metadata key", value: "Metadata value" } ] }) }}
+
+		<h2>With tag</h2>
 
 		{{ card({ heading: { text: "This is another heading" }, href: "https://www.nice.org.uk/", tag: { modifiers: ["new", "flush"], label: "New" }, metadata: [ { key: "Published date", value: "March 2015", datetime: "2015-03" }, { key: "Metadata key", value: "Metadata value" } ] }) }}
 
-		<h2>Card with multiple tags</h2>
+		<h2>With multiple tags</h2>
 
 		{{ card({ heading: { text: "The Prosigna gene expression profiling assay for assessing long‑term risk of breast cancer recurrence (MIB27)" }, href: "https://www.nice.org.uk/advice/mib27", tags: [{ modifiers: ["consultation", "flush"], label: "In consultation" }, { modifiers: ["new", "flush"], label: "New" }], metadata: [ { key: "Published date", value: "March 2015", datetime: "2015-03" } ] }) }}
+
+		<h2>With summary</h2>
+
+		{{ card({ heading: { text: "NICE final draft guidance recommends gene therapy for rare ‘bubble baby syndrome’" }, href: "https://www.nice.org.uk/news/article/nice-approves-gene-therapy-for-rare-bubble-baby-syndrome", summary: "Strimvelis, a treatment for an ultra-rare inherited immune deficiency condition that has been dubbed ‘bubble baby syndrome’ has been approved by NICE in final draft guidance.", metadata: [ { key: "Published", value: "03 January 2018", datetime: "2018-01-03" } ] }) }}
+
+		<h2>With image</h2>
+
+		<div class="grid">
+			<div data-g="12 md:6">
+				{{ card({ heading: { text: "NICE final draft guidance recommends gene therapy for rare ‘bubble baby syndrome’" }, href: "https://www.nice.org.uk/news/article/nice-approves-gene-therapy-for-rare-bubble-baby-syndrome", image: { source: "https://www.nice.org.uk/Media/Default/_Profiles/9d48f06b/fc168ad0/DNA%20-%20200x200-1.jpg?v=636443424909234740", alt: "DNA moleclule spiral" }, summary: "Strimvelis, a treatment for an ultra-rare inherited immune deficiency condition that has been dubbed ‘bubble baby syndrome’ has been approved by NICE in final draft guidance.", metadata: [ { key: "Published", value: "03 January 2018", datetime: "2018-01-03" } ] }) }}
+			</div>
+			<div data-g="12 md:6">
+				{{ card({ heading: { text: "Support people to make decisions if they have capacity but find it difficult, NICE says" }, href: "https://www.nice.org.uk/news/article/nice-approves-gene-therapy-for-rare-bubble-baby-syndrome", image: { source: "https://www.nice.org.uk/Media/Default/_Profiles/9d48f06b/b8bb6725/couple%20making%20decision%20-%20200x200.jpg?v=636493615990150776" }, summary: "Health and social care professionals should support people to make decisions who find it difficult, NICE says in new draft guidance.", metadata: [ { key: "Published", value: "20 December 2017", datetime: "2017-12-20" } ] }) }}
+			</div>
+			<div data-g="12 md:6">
+				{{ card({ heading: { text: "Newcastle University wins first NICE AdviSeME Prize" }, href: "https://www.nice.org.uk/news/article/nice-approves-gene-therapy-for-rare-bubble-baby-syndrome", image: { source: "https://www.nice.org.uk/Media/Default/_Profiles/9d48f06b/9cfd6a62/Melanoma%2001%20_200x200.jpg?v=636517818048369092" }, summary: "NICE Scientific Advice has announced that Newcastle University is the first winner of the NICE AdviSeME Prize for its novel prognostic skin cancer test.", metadata: [ { key: "Published", value: "17 January 2018", datetime: "2018-01-17" } ] }) }}
+			</div>
+			<div data-g="12 md:6">
+				{{ card({ heading: { text: "Mesh for vaginal wall prolapse should only be used in the context of research, says NICE" }, href: "https://www.nice.org.uk/news/article/nice-approves-gene-therapy-for-rare-bubble-baby-syndrome", image: { source: "https://www.nice.org.uk/Media/Default/_Profiles/9d48f06b/6a40a9c6/surgical%20team%20--%20200x200.jpg?v=636489232713891281", alt: "DNA moleclule spiral" }, summary: "Updated advice says current evidence on the safety of the procedure shows there are serious, but well-recognised safety concerns.", metadata: [ { key: "Published", value: "15 December 2017", datetime: "2017-12-15" } ] }) }}
+			</div>
+		</div>
+
+
 
 		<h2>List of cards</h1>
 
