@@ -49,7 +49,16 @@ export const nextUniqueId = function (i) {
 	};
 }(0);
 
+/**
+ * CamelCases a dash seperated string
+ * @param {string} str
+ */
+export const camelCase = function(str: string): string {
+	return $.camelCase(str);
+};
+
 export default {
 	slugify: slugify,
-	nextUniqueId: nextUniqueId
+	nextUniqueId: nextUniqueId,
+	camelCase: camelCase
 };

@@ -10,6 +10,8 @@ const fs = require("fs"),
 	nunjucks = require("nunjucks"),
 	jsdom = require("jsdom");
 
+const { camelCase } = require("./../src/javascripts/utils");
+
 const { JSDOM } = jsdom;
 
 /**
@@ -21,7 +23,7 @@ const { JSDOM } = jsdom;
  */
 function renderComponent(name, data) {
 	var template = fs.readFileSync(path.join(__dirname, `../src/components/${ name }/${ name }.njk`), "utf8");
-	return nunjucks.renderString(`${ template}{{ ${ $.camelCase(name) }(content) }}"`, { content: data });
+	return nunjucks.renderString(`${ template}{{ ${ camelCase(name) }(content) }}`, { content: data });
 }
 
 /**
