@@ -74,6 +74,12 @@ h1,
 h2,
 .h2 {
   @include h2;
+
+  // sass-lint:disable no-combinators
+  + h3,
+  + .h3 {
+    margin-top: 0;
+  }
 }
 
 h3,
