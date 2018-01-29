@@ -44,10 +44,10 @@ module.exports = grunt => {
 	r("test:teamcity", ["mochaTest:teamcity"]);
 
 	// For building before publishing to NPM etc
-	r("dist", ["env:dist", "clean:dist", "lint", "test", "sass:dist", "postcss:dist", "cssmin:dist", "docs", "webpack"]);
+	r("dist", ["env:dist", "clean:dist", "lint", "test", "sass:dist", "postcss:dist", "cssmin:dist", "docs", "modernizr", "webpack"]);
 
-	r("dist:teamcity", ["env:dist", "clean:dist", "lint", "test:teamcity", "sass:dist", "postcss:dist", "cssmin:dist", "docs", "webpack"]);
+	r("dist:teamcity", ["env:dist", "clean:dist", "lint", "test:teamcity", "sass:dist", "postcss:dist", "cssmin:dist", "docs", "modernizr", "webpack"]);
 
 	//For building locally
-	r("default", ["env:dev", "clean:temp", "lint", "test", "sass:temp", "postcss:temp", "cssmin:temp", "watch"]);
+	r("default", ["env:dev", "clean:temp", "lint", "test", "sass:temp", "postcss:temp", "cssmin:temp", "modernizr", "watch"]);
 };

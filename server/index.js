@@ -54,6 +54,7 @@ app.use(webpackMiddleware(compiler, { publicPath: "/javascripts/" }));
 app.use("/fonts", express.static(path.join(__dirname, "../node_modules/@nice-digital/icons/dist")));
 app.use(express.static(path.join(__dirname, "../temp")));
 app.use(express.static(path.join(__dirname, "../src/assets")));
+app.use("/javascripts", express.static(path.join(__dirname, "../dist/javascripts")));
 
 // Routes and middleware
 app.use(require("./controllers"));
