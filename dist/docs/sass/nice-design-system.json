@@ -2733,18 +2733,18 @@
       }
     },
     {
-      "description": "<p>Flexible card component for displaying\nguidance, news etc in a list. Consists\nof a heading, optional icon, optional body\ncopy, optional image and optional metadata.\nUsually used withing an unstyled list.</p>\n",
+      "description": "<p>Flexible card component for displaying\nguidance, news etc in a list.</p>\n<p>Consists of a heading, optional icon, optional\nbody copy, optional image and optional metadata.\nUsually used withing an unstyled list.</p>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--flush</code>  No margin</li>\n<li><code>--separator</code>  Add a line below</li>\n</ul>\n",
       "commentRange": {
         "start": 5,
-        "end": 11
+        "end": 16
       },
       "context": {
         "type": "css",
         "name": ".card",
-        "value": "border-bottom: 1px solid $colour-border;\n  padding: em($spacing-small 0);\n  position: relative;\n\n  &__heading {\n    @include font-size(0);\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      text-decoration: none;\n\n      &:hover {\n        text-decoration: underline;\n      }\n\n      &:before {\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: 100%;\n        z-index: 0;\n      }\n    }\n  }\n\n  &__icon {\n    margin: em(0 $spacing-x-small 0 0);\n  }\n\n  &__tag {\n    @include font-size(-1, true);\n  }\n\n  &__metadata {\n    @include font-size(-1);\n    color: $colour-nice-dark-grey;\n    display: inline-block;\n    margin: rem($spacing-x-small 0 0);\n    position: relative;\n    z-index: 1;\n  }\n\n  &__metadatum {\n    display: block;\n    margin: em($spacing-x-small $spacing-small 0 0);\n\n    dt,\n    dd {\n      display: inline-block;\n      margin: 0;\n    }\n  }\n\n  @include mq($from: sm) {\n    &__metadatum {\n      display: inline-block;\n      white-space: nowrap;\n    }\n  }",
+        "value": "overflow: hidden;\n  margin: rem(0 0 $spacing-large 0);\n  position: relative;\n\n  &--flush {\n    margin-bottom: 0;\n  }\n\n  &--separator,\n  .list--unstyled & {\n    border-bottom: 1px solid $colour-border;\n    margin: rem(0 0 $spacing-small 0);\n    padding: rem(0 0 $spacing-x-small 0);\n  }\n\n  &__header {\n    margin: rem(0 0 $spacing-x-small 0);\n  }\n\n  &__heading {\n    @include font-size(0);\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      text-decoration: none;\n\n      &:hover {\n        text-decoration: underline;\n      }\n\n      &:before {\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: 100%;\n        z-index: 0;\n      }\n    }\n  }\n\n  &__summary {\n    margin: rem(0 0 $spacing-x-small 0);\n  }\n\n  &__image {\n    display: block;\n    margin: rem(0 0 $spacing-x-small);\n  }\n\n  &__icon {\n    margin: rem(0 $spacing-x-small 0 0);\n  }\n\n  &__tag {\n    @include font-size(-1, true);\n  }\n\n  &__metadata {\n    @include font-size(-1);\n    color: $colour-nice-dark-grey;\n    display: inline-block;\n    margin: 0;\n    position: relative;\n    z-index: 1;\n  }\n\n  &__metadatum {\n    display: block;\n    margin: rem(0 $spacing-small $spacing-x-small 0);\n\n    dt,\n    dd {\n      display: inline-block;\n      margin: 0;\n    }\n  }\n\n  @include mq($from: xs) {\n    &__image {\n      float: left;\n      width: 30%;\n    }\n\n    &__text {\n      float: left;\n      padding-left: rem($spacing-medium);\n      width: 70%;\n    }\n  }\n\n  @include mq($from: sm) {\n    &__image {\n      width: 20%;\n    }\n\n    &__text {\n      width: 80%;\n    }\n\n    &__metadatum {\n      display: inline-block;\n      white-space: nowrap;\n    }\n  }\n\n  @include mq($from: md) {\n    &__image {\n      width: 30%;\n    }\n\n    &__text {\n      width: 70%;\n    }\n  }\n\n  @include mq($from: lg) {\n    &__image {\n      width: 25%;\n    }\n\n    &__text {\n      width: 75%;\n    }\n  }",
         "line": {
-          "start": 12,
-          "end": 77
+          "start": 17,
+          "end": 147
         }
       },
       "since": [
@@ -6794,7 +6794,7 @@
         "value": "&--separator {\n    border-bottom: 1px solid $colour-border;\n    padding-bottom: rem($spacing-x-small);\n  }",
         "line": {
           "start": 20,
-          "end": 98
+          "end": 104
         }
       },
       "group": [
@@ -8201,7 +8201,7 @@
       "context": {
         "type": "variable",
         "name": "font-sizes",
-        "value": "(\n  // sass-lint:disable-block space-around-operator\n  -2: (\n    fs: 12,\n    lh: 4 * 4,\n    fw: 400,\n    mb: $spacing-small,\n    mt: $spacing-small\n  ),\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 6,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 8,\n    lh: 4 * 10,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)",
+        "value": "(\n  // sass-lint:disable-block space-around-operator\n  -2: (\n    fs: 12,\n    lh: 4 * 4,\n    fw: 400,\n    mb: $spacing-small,\n    mt: $spacing-small\n  ),\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 6,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 8,\n    lh: 4 * 10,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)",
         "scope": "private",
         "line": {
           "start": 27,
@@ -8262,7 +8262,7 @@
       "groupName": {
         "typography": "Typography"
       },
-      "resolvedValue": "(\n  // sass-lint:disable-block space-around-operator\n  -2: (\n    fs: 12,\n    lh: 4 * 4,\n    fw: 400,\n    mb: $spacing-small,\n    mt: $spacing-small\n  ),\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 6,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 8,\n    lh: 4 * 10,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)"
+      "resolvedValue": "(\n  // sass-lint:disable-block space-around-operator\n  -2: (\n    fs: 12,\n    lh: 4 * 4,\n    fw: 400,\n    mb: $spacing-small,\n    mt: $spacing-small\n  ),\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 6,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 8,\n    lh: 4 * 10,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)"
     },
     {
       "description": "<p>Modular scale values</p>\n",
@@ -12094,18 +12094,18 @@
           }
         },
         {
-          "description": "<p>Flexible card component for displaying\nguidance, news etc in a list. Consists\nof a heading, optional icon, optional body\ncopy, optional image and optional metadata.\nUsually used withing an unstyled list.</p>\n",
+          "description": "<p>Flexible card component for displaying\nguidance, news etc in a list.</p>\n<p>Consists of a heading, optional icon, optional\nbody copy, optional image and optional metadata.\nUsually used withing an unstyled list.</p>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--flush</code>  No margin</li>\n<li><code>--separator</code>  Add a line below</li>\n</ul>\n",
           "commentRange": {
             "start": 5,
-            "end": 11
+            "end": 16
           },
           "context": {
             "type": "css",
             "name": ".card",
-            "value": "border-bottom: 1px solid $colour-border;\n  padding: em($spacing-small 0);\n  position: relative;\n\n  &__heading {\n    @include font-size(0);\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      text-decoration: none;\n\n      &:hover {\n        text-decoration: underline;\n      }\n\n      &:before {\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: 100%;\n        z-index: 0;\n      }\n    }\n  }\n\n  &__icon {\n    margin: em(0 $spacing-x-small 0 0);\n  }\n\n  &__tag {\n    @include font-size(-1, true);\n  }\n\n  &__metadata {\n    @include font-size(-1);\n    color: $colour-nice-dark-grey;\n    display: inline-block;\n    margin: rem($spacing-x-small 0 0);\n    position: relative;\n    z-index: 1;\n  }\n\n  &__metadatum {\n    display: block;\n    margin: em($spacing-x-small $spacing-small 0 0);\n\n    dt,\n    dd {\n      display: inline-block;\n      margin: 0;\n    }\n  }\n\n  @include mq($from: sm) {\n    &__metadatum {\n      display: inline-block;\n      white-space: nowrap;\n    }\n  }",
+            "value": "overflow: hidden;\n  margin: rem(0 0 $spacing-large 0);\n  position: relative;\n\n  &--flush {\n    margin-bottom: 0;\n  }\n\n  &--separator,\n  .list--unstyled & {\n    border-bottom: 1px solid $colour-border;\n    margin: rem(0 0 $spacing-small 0);\n    padding: rem(0 0 $spacing-x-small 0);\n  }\n\n  &__header {\n    margin: rem(0 0 $spacing-x-small 0);\n  }\n\n  &__heading {\n    @include font-size(0);\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      text-decoration: none;\n\n      &:hover {\n        text-decoration: underline;\n      }\n\n      &:before {\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: 100%;\n        z-index: 0;\n      }\n    }\n  }\n\n  &__summary {\n    margin: rem(0 0 $spacing-x-small 0);\n  }\n\n  &__image {\n    display: block;\n    margin: rem(0 0 $spacing-x-small);\n  }\n\n  &__icon {\n    margin: rem(0 $spacing-x-small 0 0);\n  }\n\n  &__tag {\n    @include font-size(-1, true);\n  }\n\n  &__metadata {\n    @include font-size(-1);\n    color: $colour-nice-dark-grey;\n    display: inline-block;\n    margin: 0;\n    position: relative;\n    z-index: 1;\n  }\n\n  &__metadatum {\n    display: block;\n    margin: rem(0 $spacing-small $spacing-x-small 0);\n\n    dt,\n    dd {\n      display: inline-block;\n      margin: 0;\n    }\n  }\n\n  @include mq($from: xs) {\n    &__image {\n      float: left;\n      width: 30%;\n    }\n\n    &__text {\n      float: left;\n      padding-left: rem($spacing-medium);\n      width: 70%;\n    }\n  }\n\n  @include mq($from: sm) {\n    &__image {\n      width: 20%;\n    }\n\n    &__text {\n      width: 80%;\n    }\n\n    &__metadatum {\n      display: inline-block;\n      white-space: nowrap;\n    }\n  }\n\n  @include mq($from: md) {\n    &__image {\n      width: 30%;\n    }\n\n    &__text {\n      width: 70%;\n    }\n  }\n\n  @include mq($from: lg) {\n    &__image {\n      width: 25%;\n    }\n\n    &__text {\n      width: 75%;\n    }\n  }",
             "line": {
-              "start": 12,
-              "end": 77
+              "start": 17,
+              "end": 147
             }
           },
           "since": [
@@ -16891,7 +16891,7 @@
             "value": "&--separator {\n    border-bottom: 1px solid $colour-border;\n    padding-bottom: rem($spacing-x-small);\n  }",
             "line": {
               "start": 20,
-              "end": 98
+              "end": 104
             }
           },
           "group": [
@@ -17602,7 +17602,7 @@
           "context": {
             "type": "variable",
             "name": "font-sizes",
-            "value": "(\n  // sass-lint:disable-block space-around-operator\n  -2: (\n    fs: 12,\n    lh: 4 * 4,\n    fw: 400,\n    mb: $spacing-small,\n    mt: $spacing-small\n  ),\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 6,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 8,\n    lh: 4 * 10,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)",
+            "value": "(\n  // sass-lint:disable-block space-around-operator\n  -2: (\n    fs: 12,\n    lh: 4 * 4,\n    fw: 400,\n    mb: $spacing-small,\n    mt: $spacing-small\n  ),\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 6,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 8,\n    lh: 4 * 10,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)",
             "scope": "private",
             "line": {
               "start": 27,
@@ -17663,7 +17663,7 @@
           "groupName": {
             "typography": "Typography"
           },
-          "resolvedValue": "(\n  // sass-lint:disable-block space-around-operator\n  -2: (\n    fs: 12,\n    lh: 4 * 4,\n    fw: 400,\n    mb: $spacing-small,\n    mt: $spacing-small\n  ),\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 6,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 8,\n    lh: 4 * 10,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)"
+          "resolvedValue": "(\n  // sass-lint:disable-block space-around-operator\n  -2: (\n    fs: 12,\n    lh: 4 * 4,\n    fw: 400,\n    mb: $spacing-small,\n    mt: $spacing-small\n  ),\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 6,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 8,\n    lh: 4 * 10,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)"
         }
       ]
     },

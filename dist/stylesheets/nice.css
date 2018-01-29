@@ -1,5 +1,5 @@
 /*!
- * NICE Design System 0.4.0 | 2018-01-25
+ * NICE Design System 0.4.1 | 2018-01-29
  * © Copyright NICE 2015-2018
  * Licensed under MIT (https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
  */
@@ -3894,6 +3894,11 @@ h2,
   margin-bottom: 1rem;
   margin-top: 32px;
   margin-top: 2rem; }
+  h2 + h3,
+  h2 + .h3,
+  .h2 + h3,
+  .h2 + .h3 {
+    margin-top: 0; }
 
 h3,
 .h3 {
@@ -3916,8 +3921,8 @@ h4,
   font-weight: 700;
   margin-bottom: 16px;
   margin-bottom: 1rem;
-  margin-top: 32px;
-  margin-top: 2rem; }
+  margin-top: 16px;
+  margin-top: 1rem; }
 
 h5,
 .h5 {
@@ -3928,8 +3933,8 @@ h5,
   font-weight: 700;
   margin-bottom: 16px;
   margin-bottom: 1rem;
-  margin-top: 32px;
-  margin-top: 2rem; }
+  margin-top: 16px;
+  margin-top: 1rem; }
 
 h6,
 .h6 {
@@ -3940,8 +3945,8 @@ h6,
   font-weight: 700;
   margin-bottom: 16px;
   margin-bottom: 1rem;
-  margin-top: 32px;
-  margin-top: 2rem; }
+  margin-top: 16px;
+  margin-top: 1rem; }
 
 ul,
 ol, .list {
@@ -4005,8 +4010,8 @@ ol, .list {
   font-family: "NICE Icons";
   font-style: normal;
   font-weight: normal;
-  src: url("/fonts/nice-icons.eot?787076375");
-  src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/nice-icons.woff2?787076375") format("woff2"), url("/fonts/nice-icons.woff?787076375") format("woff"), url("/fonts/nice-icons.ttf?787076375") format("truetype"), url("/fonts/nice-icons.svg?787076375#nice-icons") format("svg"); }
+  src: url("/fonts/nice-icons.eot?989389085");
+  src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/nice-icons.woff2?989389085") format("woff2"), url("/fonts/nice-icons.woff?989389085") format("woff"), url("/fonts/nice-icons.ttf?989389085") format("truetype"), url("/fonts/nice-icons.svg?989389085#nice-icons") format("svg"); }
 
 .icon {
   display: inline-block;
@@ -4272,9 +4277,22 @@ ol, .list {
     background: #e9e9e9; }
 
 .card {
-  border-bottom: 1px solid #adadad;
-  padding: 0.5em 0em;
+  overflow: hidden;
+  margin: 0px 0px 32px 0px;
+  margin: 0rem 0rem 2rem 0rem;
   position: relative; }
+  .card--flush {
+    margin-bottom: 0; }
+  .card--separator,
+  .list--unstyled .card {
+    border-bottom: 1px solid #adadad;
+    margin: 0px 0px 8px 0px;
+    margin: 0rem 0rem 0.5rem 0rem;
+    padding: 0px 0px 4px 0px;
+    padding: 0rem 0rem 0.25rem 0rem; }
+  .card__header {
+    margin: 0px 0px 4px 0px;
+    margin: 0rem 0rem 0.25rem 0rem; }
   .card__heading {
     font-size: 16px;
     font-size: 1rem;
@@ -4295,8 +4313,16 @@ ol, .list {
         top: 0;
         width: 100%;
         z-index: 0; }
+  .card__summary {
+    margin: 0px 0px 4px 0px;
+    margin: 0rem 0rem 0.25rem 0rem; }
+  .card__image {
+    display: block;
+    margin: 0px 0px 4px;
+    margin: 0rem 0rem 0.25rem; }
   .card__icon {
-    margin: 0em 0.25em 0em 0em; }
+    margin: 0px 4px 0px 0px;
+    margin: 0rem 0.25rem 0rem 0rem; }
   .card__tag {
     font-size: 14px !important;
     font-size: 0.875rem !important;
@@ -4309,21 +4335,44 @@ ol, .list {
     line-height: 1.25rem;
     color: #393939;
     display: inline-block;
-    margin: 4px 0px 0px;
-    margin: 0.25rem 0rem 0rem;
+    margin: 0;
     position: relative;
     z-index: 1; }
   .card__metadatum {
     display: block;
-    margin: 0.25em 0.5em 0em 0em; }
+    margin: 0px 8px 4px 0px;
+    margin: 0rem 0.5rem 0.25rem 0rem; }
     .card__metadatum dt,
     .card__metadatum dd {
       display: inline-block;
       margin: 0; }
+  @media (min-width: 25em) {
+    .card__image {
+      float: left;
+      width: 30%; }
+    .card__text {
+      float: left;
+      padding-left: 16px;
+      padding-left: 1rem;
+      width: 70%; } }
   @media (min-width: 37.5em) {
+    .card__image {
+      width: 20%; }
+    .card__text {
+      width: 80%; }
     .card__metadatum {
       display: inline-block;
       white-space: nowrap; } }
+  @media (min-width: 56.25em) {
+    .card__image {
+      width: 30%; }
+    .card__text {
+      width: 70%; } }
+  @media (min-width: 75em) {
+    .card__image {
+      width: 25%; }
+    .card__text {
+      width: 75%; } }
 
 .action-banner__container, .container, .hero__container {
   margin: auto;
