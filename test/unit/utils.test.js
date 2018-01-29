@@ -1,6 +1,6 @@
 /* eslint-env node, mocha, jquery */
 
-import { slugify, nextUniqueId } from "../../src/javascripts/utils";
+import { slugify, nextUniqueId, camelCase } from "../../src/javascripts/utils";
 
 describe("Utils", function() {
 
@@ -72,6 +72,13 @@ describe("Utils", function() {
 			b.should.be.eql(a + 1);
 		});
 
+	});
+
+	describe("camelCase", function() {
+		it("turns a kebab-case string into a camelCase string", function() {
+			var string = "this-is-kebab-case";
+			camelCase(string).should.equal("thisIsKebabCase");
+		});
 	});
 
 });
