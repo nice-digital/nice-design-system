@@ -17,6 +17,12 @@
 			{{ card.summary }}
 		</p>
 	{% endif %}
+	{% if card.author %}
+		<div class="card__author">
+			<span class="visually-hidden">Written by: </span>
+			{{ card.author }}
+		</div>
+	{% endif %}
 	{% if card.metadata %}
 		<dl class="card__metadata">
 			{% if card.tag %}

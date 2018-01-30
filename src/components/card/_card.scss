@@ -59,6 +59,12 @@
     }
   }
 
+  &__author {
+    @include font-size(-1);
+    color: $colour-nice-dark-grey;
+    margin: rem(0 0 $spacing-x-small 0);
+  }
+
   &__summary {
     margin: rem(0 0 $spacing-x-small 0);
   }
