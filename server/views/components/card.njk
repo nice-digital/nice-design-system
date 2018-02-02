@@ -12,6 +12,10 @@
 
 		{{ card({ heading: { text: "This is a card heading" }, href: "https://www.nice.org.uk/", metadata: [ { key: "Published date", value: "March 2015", datetime: "2015-03" }, { key: "Metadata key", value: "Metadata value" } ] }) }}
 
+		<h2>Basic card with author</h2>
+
+		{{ card({ heading: { text: "This is a card heading" }, href: "https://www.nice.org.uk/", author: "Jane Viner, chief nurse at Torbay and South Devon NHS Foundation Trust and NICE fellow", metadata: [ { key: "Published date", value: "March 2015", datetime: "2015-03" }, { key: "Metadata key", value: "Metadata value" } ] }) }}
+
 		<h2>Card (separator)</h2>
 
 		{{ card({ heading: { text: "This is a card heading" }, modifier: "separator", href: "https://www.nice.org.uk/", metadata: [ { key: "Published date", value: "March 2015", datetime: "2015-03" }, { key: "Metadata key", value: "Metadata value" } ] }) }}
@@ -28,11 +32,15 @@
 
 		{{ card({ heading: { text: "NICE final draft guidance recommends gene therapy for rare ‘bubble baby syndrome’" }, href: "https://www.nice.org.uk/news/article/nice-approves-gene-therapy-for-rare-bubble-baby-syndrome", summary: "Strimvelis, a treatment for an ultra-rare inherited immune deficiency condition that has been dubbed ‘bubble baby syndrome’ has been approved by NICE in final draft guidance.", metadata: [ { key: "Published", value: "03 January 2018", datetime: "2018-01-03" } ] }) }}
 
+		<h2>With summary and author</h2>
+
+		{{ card({ heading: { text: "NICE final draft guidance recommends gene therapy for rare ‘bubble baby syndrome’" }, href: "https://www.nice.org.uk/news/article/nice-approves-gene-therapy-for-rare-bubble-baby-syndrome", author: "Jane Viner, chief nurse at Torbay and South Devon NHS Foundation Trust and NICE fellow", summary: "Strimvelis, a treatment for an ultra-rare inherited immune deficiency condition that has been dubbed ‘bubble baby syndrome’ has been approved by NICE in final draft guidance.", metadata: [ { key: "Published", value: "03 January 2018", datetime: "2018-01-03" } ] }) }}
+
 		<h2>With image</h2>
 
 		<div class="grid">
 			<div data-g="12 md:6">
-				{{ card({ heading: { text: "NICE final draft guidance recommends gene therapy for rare ‘bubble baby syndrome’" }, href: "https://www.nice.org.uk/news/article/nice-approves-gene-therapy-for-rare-bubble-baby-syndrome", image: { source: "https://www.nice.org.uk/Media/Default/_Profiles/9d48f06b/fc168ad0/DNA%20-%20200x200-1.jpg?v=636443424909234740", alt: "DNA moleclule spiral" }, summary: "Strimvelis, a treatment for an ultra-rare inherited immune deficiency condition that has been dubbed ‘bubble baby syndrome’ has been approved by NICE in final draft guidance.", metadata: [ { key: "Published", value: "03 January 2018", datetime: "2018-01-03" } ] }) }}
+				{{ card({ heading: { text: "NICE final draft guidance recommends gene therapy for rare ‘bubble baby syndrome’" }, author: "Jane Viner, chief nurse at Torbay and South Devon NHS Foundation Trust and NICE fellow", href: "https://www.nice.org.uk/news/article/nice-approves-gene-therapy-for-rare-bubble-baby-syndrome", image: { source: "https://www.nice.org.uk/Media/Default/_Profiles/9d48f06b/fc168ad0/DNA%20-%20200x200-1.jpg?v=636443424909234740", alt: "DNA moleclule spiral" }, summary: "Strimvelis, a treatment for an ultra-rare inherited immune deficiency condition that has been dubbed ‘bubble baby syndrome’ has been approved by NICE in final draft guidance.", metadata: [ { key: "Published", value: "03 January 2018", datetime: "2018-01-03" } ] }) }}
 			</div>
 			<div data-g="12 md:6">
 				{{ card({ heading: { text: "Support people to make decisions if they have capacity but find it difficult, NICE says" }, href: "https://www.nice.org.uk/news/article/nice-approves-gene-therapy-for-rare-bubble-baby-syndrome", image: { source: "https://www.nice.org.uk/Media/Default/_Profiles/9d48f06b/b8bb6725/couple%20making%20decision%20-%20200x200.jpg?v=636493615990150776" }, summary: "Health and social care professionals should support people to make decisions who find it difficult, NICE says in new draft guidance.", metadata: [ { key: "Published", value: "20 December 2017", datetime: "2017-12-20" } ] }) }}
