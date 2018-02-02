@@ -17,14 +17,14 @@
 			{{ card.summary }}
 		</p>
 	{% endif %}
-	{% if card.author %}
-		<div class="card__author">
-			<span class="visually-hidden">Written by: </span>
-			{{ card.author }}
-		</div>
-	{% endif %}
-	{% if card.metadata %}
+	{% if card.metadata or card.author %}
 		<dl class="card__metadata">
+			{% if card.author %}
+				<div class="card__author">
+					<dt class="visually-hidden">Written by: </dt>
+					<dd>{{ card.author }}</dd>
+				</div>
+			{% endif %}
 			{% if card.tag %}
 				<div class="card__metadatum">
 					<dt>

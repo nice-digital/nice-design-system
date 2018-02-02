@@ -63,6 +63,11 @@
     @include font-size(-1);
     color: $colour-nice-dark-grey;
     margin: rem(0 0 $spacing-x-small 0);
+
+    dd {
+      display: block;
+      margin: 0;
+    }
   }
 
   &__summary {
