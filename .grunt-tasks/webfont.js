@@ -22,6 +22,7 @@ module.exports = {
 				facebook: 0xe012,
 				guidance: 0xe011,
 				hamburger: 0xe03d,
+				linkedin: 0xf0e1,
 				logo: 0xe01a,
 				"logo-name": 0xe01b,
 				minus: 0xe02a,

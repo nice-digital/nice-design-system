@@ -290,12 +290,14 @@ Icon | Name | Unicode | HTML | SASS
 <img src="src/chevron-up.svg" alt="chevron-up" height="50"> | chevron-up | e039 | `<span class="icon icon--chevron-up" aria-hidden="true"></span>` | `@include nice-icon(chevron-up);` 
 <img src="src/comment.svg" alt="comment" height="50"> | comment | f101 | `<span class="icon icon--comment" aria-hidden="true"></span>` | `@include nice-icon(comment);` 
 <img src="src/download.svg" alt="download" height="50"> | download | e006 | `<span class="icon icon--download" aria-hidden="true"></span>` | `@include nice-icon(download);` 
+<img src="src/email-closed.svg" alt="email-closed" height="50"> | email-closed | f102 | `<span class="icon icon--email-closed" aria-hidden="true"></span>` | `@include nice-icon(email-closed);` 
 <img src="src/evidence.svg" alt="evidence" height="50"> | evidence | e017 | `<span class="icon icon--evidence" aria-hidden="true"></span>` | `@include nice-icon(evidence);` 
 <img src="src/facebook-square.svg" alt="facebook-square" height="50"> | facebook-square | f082 | `<span class="icon icon--facebook-square" aria-hidden="true"></span>` | `@include nice-icon(facebook-square);` 
 <img src="src/facebook.svg" alt="facebook" height="50"> | facebook | e012 | `<span class="icon icon--facebook" aria-hidden="true"></span>` | `@include nice-icon(facebook);` 
 <img src="src/guidance.svg" alt="guidance" height="50"> | guidance | e011 | `<span class="icon icon--guidance" aria-hidden="true"></span>` | `@include nice-icon(guidance);` 
 <img src="src/hamburger.svg" alt="hamburger" height="50"> | hamburger | e03d | `<span class="icon icon--hamburger" aria-hidden="true"></span>` | `@include nice-icon(hamburger);` 
 <img src="src/linkedin-sign.svg" alt="linkedin-sign" height="50"> | linkedin-sign | f08c | `<span class="icon icon--linkedin-sign" aria-hidden="true"></span>` | `@include nice-icon(linkedin-sign);` 
+<img src="src/linkedin.svg" alt="linkedin" height="50"> | linkedin | f0e1 | `<span class="icon icon--linkedin" aria-hidden="true"></span>` | `@include nice-icon(linkedin);` 
 <img src="src/logo-name.svg" alt="logo-name" height="50"> | logo-name | e01b | `<span class="icon icon--logo-name" aria-hidden="true"></span>` | `@include nice-icon(logo-name);` 
 <img src="src/logo.svg" alt="logo" height="50"> | logo | e01a | `<span class="icon icon--logo" aria-hidden="true"></span>` | `@include nice-icon(logo);` 
 <img src="src/minus.svg" alt="minus" height="50"> | minus | e02a | `<span class="icon icon--minus" aria-hidden="true"></span>` | `@include nice-icon(minus);` 
@@ -308,7 +310,7 @@ Icon | Name | Unicode | HTML | SASS
 <img src="src/standards.svg" alt="standards" height="50"> | standards | e002 | `<span class="icon icon--standards" aria-hidden="true"></span>` | `@include nice-icon(standards);` 
 <img src="src/syndication.svg" alt="syndication" height="50"> | syndication | e013 | `<span class="icon icon--syndication" aria-hidden="true"></span>` | `@include nice-icon(syndication);` 
 <img src="src/trash.svg" alt="trash" height="50"> | trash | e020 | `<span class="icon icon--trash" aria-hidden="true"></span>` | `@include nice-icon(trash);` 
-<img src="src/twitter-square.svg" alt="twitter-square" height="50"> | twitter-square | f102 | `<span class="icon icon--twitter-square" aria-hidden="true"></span>` | `@include nice-icon(twitter-square);` 
+<img src="src/twitter-square.svg" alt="twitter-square" height="50"> | twitter-square | f103 | `<span class="icon icon--twitter-square" aria-hidden="true"></span>` | `@include nice-icon(twitter-square);` 
 <img src="src/twitter.svg" alt="twitter" height="50"> | twitter | e000 | `<span class="icon icon--twitter" aria-hidden="true"></span>` | `@include nice-icon(twitter);` 
 <img src="src/user.svg" alt="user" height="50"> | user | e01f | `<span class="icon icon--user" aria-hidden="true"></span>` | `@include nice-icon(user);` 
 <img src="src/warning.svg" alt="warning" height="50"> | warning | e04b | `<span class="icon icon--warning" aria-hidden="true"></span>` | `@include nice-icon(warning);` 
