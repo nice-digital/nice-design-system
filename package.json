@@ -1,6 +1,6 @@
 {
   "name": "@nice-digital/icons",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Icons for use in NICE Digital Services",
   "main": "index.js",
   "scripts": {
