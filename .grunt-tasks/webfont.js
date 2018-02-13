@@ -1,6 +1,18 @@
+const grunt = require("grunt"),
+	path = require("path");
+
+// Sorts
+var basePathSorter = (a, b) =>
+	path.basename(a).localeCompare(path.basename(b));
+
+// Gets SVG source files to use within the icon font.
+// We use this because the natural order includes sub folder in the path
+var getFiles = () =>
+	grunt.file.expand("src/**/*.svg").sort(basePathSorter);
+
 module.exports = {
 	dist: {
-		src: "src/*.svg",
+		src: getFiles(),
 		dest: "dist",
 		destScss: "dist",
 		options: {
