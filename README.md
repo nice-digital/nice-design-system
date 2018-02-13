@@ -287,6 +287,9 @@ Icon | Name | Unicode | HTML | SASS
 <img src="src/android.svg" alt="android" height="50"> | android | f17b | `<span class="icon icon--android" aria-hidden="true"></span>` | `@include nice-icon(android);` 
 <img src="src/apple.svg" alt="apple" height="50"> | apple | f179 | `<span class="icon icon--apple" aria-hidden="true"></span>` | `@include nice-icon(apple);` 
 <img src="src/calendar.svg" alt="calendar" height="50"> | calendar | e045 | `<span class="icon icon--calendar" aria-hidden="true"></span>` | `@include nice-icon(calendar);` 
+<img src="src/chevron-down.svg" alt="chevron-down" height="50"> | chevron-down | e03c | `<span class="icon icon--chevron-down" aria-hidden="true"></span>` | `@include nice-icon(chevron-down);` 
+<img src="src/chevron-left.svg" alt="chevron-left" height="50"> | chevron-left | e03b | `<span class="icon icon--chevron-left" aria-hidden="true"></span>` | `@include nice-icon(chevron-left);` 
+<img src="src/chevron-right.svg" alt="chevron-right" height="50"> | chevron-right | e03a | `<span class="icon icon--chevron-right" aria-hidden="true"></span>` | `@include nice-icon(chevron-right);` 
 <img src="src/chevron-up.svg" alt="chevron-up" height="50"> | chevron-up | e039 | `<span class="icon icon--chevron-up" aria-hidden="true"></span>` | `@include nice-icon(chevron-up);` 
 <img src="src/comment.svg" alt="comment" height="50"> | comment | f101 | `<span class="icon icon--comment" aria-hidden="true"></span>` | `@include nice-icon(comment);` 
 <img src="src/download.svg" alt="download" height="50"> | download | e006 | `<span class="icon icon--download" aria-hidden="true"></span>` | `@include nice-icon(download);` 
