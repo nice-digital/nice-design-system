@@ -2,6 +2,8 @@
 /// @group Icons
 ////
 
+// sass-lint:disable-all
+
 <%
 // This is a template for generating SASS for our icon font.
 // It generates:
@@ -39,7 +41,7 @@ $nice-font-base-path: '${ relativeFontPath }' !default;
 <% _.forEach(glyphs, function(glyph, index) { %>/// @prop {string} ${ glyph } [${ codepoints[index] }] - <span class="icon icon--${ glyph }" aria-hidden="true"></span>
 <% }); %>
 $nice-icons: (
-  <% _.forEach(glyphs, function(glyph, index) { %>${ glyph }: "${ codepoints[index] }"<% if (index < glyphs.length - 1) { %>,
+  <% _.forEach(glyphs, function(glyph, index) { %>${ glyph }: '${ codepoints[index] }'<% if (index < glyphs.length - 1) { %>,
   <% } %><% }); %>
 ) !default;
 
