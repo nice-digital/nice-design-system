@@ -11,6 +11,7 @@ module.exports = {
 				apple: 0xf179,
 				"facebook-square": 0xf082,
 				"linkedin-sign": 0xf08c,
+				"twitter-square": 0xf081,
 				"youtube-play": 0xf16a,
 				"youtube-square": 0xf166,
 				// NICE.Glyphs codepoints for backwards compatability
@@ -21,6 +22,7 @@ module.exports = {
 				"chevron-right": 0xe03a,
 				"chevron-up": 0xe039,
 				download: 0xe006,
+				"email-closed": 0xe014,
 				evidence: 0xe017,
 				facebook: 0xe012,
 				guidance: 0xe011,
