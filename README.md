@@ -143,7 +143,7 @@ module.exports = function(grunt) {
 		copy: {
 			icons: {
 				cwd: "node_modules/@nice-digital/icons/dist/",
-				src: ["*"],
+				src: ["*.{eot,woff,woff2,ttf,svg}"],
 				dest: "/fonts/",
 				expand: true,
 				flatten: true,,
