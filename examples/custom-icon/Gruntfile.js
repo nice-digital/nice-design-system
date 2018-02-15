@@ -10,7 +10,7 @@ module.exports = grunt => {
 			dist: {
 				src: [
 					"./icons/*.svg",
-					"./node_modules/@nice-digital/icons/src/*.svg"
+					"./node_modules/@nice-digital/icons/src/**/*.svg"
 				],
 				dest: "./dist/",
 				options: {
