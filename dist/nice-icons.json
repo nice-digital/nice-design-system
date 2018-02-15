@@ -68,6 +68,7 @@
 		"e005",
 		"e027",
 		"e001",
+		"f059",
 		"e009",
 		"e004",
 		"e008",
@@ -132,6 +133,7 @@
 		"src/pathways.svg",
 		"src/plus.svg",
 		"src/print.svg",
+		"src/fa/question-circle.svg",
 		"src/readnews.svg",
 		"src/search.svg",
 		"src/share.svg",
@@ -169,6 +171,7 @@
 		"pathways",
 		"plus",
 		"print",
+		"question-circle",
 		"readnews",
 		"search",
 		"share",
@@ -182,21 +185,21 @@
 		"youtube-play",
 		"youtube-square"
 	],
-	"hash": "5a56619581dcb9980350b9edffa7e397",
+	"hash": "d468daebbd907a575c117076cd7f1f86",
 	"fontFilename": "nice-icons",
 	"fontFamilyName": "NICE Icons",
-	"fontSrc1": "url(\"/fonts/nice-icons.eot?5a56619581dcb9980350b9edffa7e397\")",
-	"fontSrc2": "url(\"/fonts/nice-icons.eot?#iefix\") format(\"embedded-opentype\"),\n\t\turl(\"/fonts/nice-icons.woff2?5a56619581dcb9980350b9edffa7e397\") format(\"woff2\"),\n\t\turl(\"/fonts/nice-icons.woff?5a56619581dcb9980350b9edffa7e397\") format(\"woff\"),\n\t\turl(\"/fonts/nice-icons.ttf?5a56619581dcb9980350b9edffa7e397\") format(\"truetype\"),\n\t\turl(\"/fonts/nice-icons.svg?5a56619581dcb9980350b9edffa7e397#nice-icons\") format(\"svg\")",
+	"fontSrc1": "url(\"/fonts/nice-icons.eot?d468daebbd907a575c117076cd7f1f86\")",
+	"fontSrc2": "url(\"/fonts/nice-icons.eot?#iefix\") format(\"embedded-opentype\"),\n\t\turl(\"/fonts/nice-icons.woff2?d468daebbd907a575c117076cd7f1f86\") format(\"woff2\"),\n\t\turl(\"/fonts/nice-icons.woff?d468daebbd907a575c117076cd7f1f86\") format(\"woff\"),\n\t\turl(\"/fonts/nice-icons.ttf?d468daebbd907a575c117076cd7f1f86\") format(\"truetype\"),\n\t\turl(\"/fonts/nice-icons.svg?d468daebbd907a575c117076cd7f1f86#nice-icons\") format(\"svg\")",
 	"fontRawSrcs": [
 		[
-			"url(\"/fonts/nice-icons.eot?5a56619581dcb9980350b9edffa7e397\")"
+			"url(\"/fonts/nice-icons.eot?d468daebbd907a575c117076cd7f1f86\")"
 		],
 		[
 			"url(\"/fonts/nice-icons.eot?#iefix\") format(\"embedded-opentype\")",
-			"url(\"/fonts/nice-icons.woff2?5a56619581dcb9980350b9edffa7e397\") format(\"woff2\")",
-			"url(\"/fonts/nice-icons.woff?5a56619581dcb9980350b9edffa7e397\") format(\"woff\")",
-			"url(\"/fonts/nice-icons.ttf?5a56619581dcb9980350b9edffa7e397\") format(\"truetype\")",
-			"url(\"/fonts/nice-icons.svg?5a56619581dcb9980350b9edffa7e397#nice-icons\") format(\"svg\")"
+			"url(\"/fonts/nice-icons.woff2?d468daebbd907a575c117076cd7f1f86\") format(\"woff2\")",
+			"url(\"/fonts/nice-icons.woff?d468daebbd907a575c117076cd7f1f86\") format(\"woff\")",
+			"url(\"/fonts/nice-icons.ttf?d468daebbd907a575c117076cd7f1f86\") format(\"truetype\")",
+			"url(\"/fonts/nice-icons.svg?d468daebbd907a575c117076cd7f1f86#nice-icons\") format(\"svg\")"
 		]
 	],
 	"baseClass": "icon",

@@ -23,6 +23,7 @@ module.exports = {
 				apple: 0xf179,
 				"facebook-square": 0xf082,
 				"linkedin-sign": 0xf08c,
+				"question-circle": 0xf059,
 				"twitter-square": 0xf081,
 				"youtube-play": 0xf16a,
 				"youtube-square": 0xf166,

@@ -307,6 +307,7 @@ Icon | Name | Unicode | HTML | SASS
 <img src="src/pathways.svg" alt="pathways" height="50"> | pathways | e005 | `<span class="icon icon--pathways" aria-hidden="true"></span>` | `@include nice-icon(pathways);` 
 <img src="src/plus.svg" alt="plus" height="50"> | plus | e027 | `<span class="icon icon--plus" aria-hidden="true"></span>` | `@include nice-icon(plus);` 
 <img src="src/print.svg" alt="print" height="50"> | print | e001 | `<span class="icon icon--print" aria-hidden="true"></span>` | `@include nice-icon(print);` 
+<img src="src/fa/question-circle.svg" alt="question-circle" height="50"> | question-circle | f059 | `<span class="icon icon--question-circle" aria-hidden="true"></span>` | `@include nice-icon(question-circle);` 
 <img src="src/readnews.svg" alt="readnews" height="50"> | readnews | e009 | `<span class="icon icon--readnews" aria-hidden="true"></span>` | `@include nice-icon(readnews);` 
 <img src="src/search.svg" alt="search" height="50"> | search | e004 | `<span class="icon icon--search" aria-hidden="true"></span>` | `@include nice-icon(search);` 
 <img src="src/share.svg" alt="share" height="50"> | share | e008 | `<span class="icon icon--share" aria-hidden="true"></span>` | `@include nice-icon(share);` 
