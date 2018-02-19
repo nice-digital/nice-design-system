@@ -14,7 +14,14 @@ Use NICE Design System to build up from the [foundations]({{ site.baseurl }}{% l
 
 ## Designers
 
-If you're looking to create a basic wireframe, a detailed visual concept or prototype with code, we have the assets to help you deliver a consistent interface for NICE digital services. 
+If you’re looking to create a visual concept or prototype. Use our design kit, which contains all the foundations and componenets within an Axure file. Ensure that you have a clear understanding of what's already exists within the design system, and how and why to use them.
+
+[Make a prototype]({{ site.baseurl }}{% link technical/installation.md %}){:.btn}
+
+If none of the existing patterns work for the needs of your users. Look into either adapting an existing pattern, or creating a new one, of which we have setup a guide on how you would approach that.
+
+[Create or amend patterns]({{ site.baseurl }}{% link technical/installation.md %}){:.btn}
+
 
 ## Content team
 
