@@ -70,6 +70,16 @@ apt install ruby2.3 ruby2.3-dev ruby-switch
 
 ``` bash
 gem install bundler
+```
+
+If you get errors relating to the installation of `nokogiri` due to errors around `zlib is missing; necessary for building libxml2`, you can install the necessary library with
+
+``` bash
+sudo apt-get install zlib1g-dev
+```
+before continuing on to...
+
+``` bash
 cd /mnt/c/_src/nice-design-system-gh-pages # note the /mnt/c path mapped the c:/ drive on Windows
 bundle install
 bundle exec jekyll serve --force_polling
