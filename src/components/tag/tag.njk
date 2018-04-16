@@ -1,11 +1,17 @@
 {% macro tag(tag) %}
-	{% if tag.modifier %}
-		<{{ "a" if tag.href else "span" }} class="{{ tag.className if tag.className }} tag tag--{{ tag.modifier }}"{% if tag.href %} href="{{tag.href}}"{% endif %}>
-			{{ tag.label }}
-		</{{ "a" if tag.href else "span" }}>
-	{% else %}
-		<{{ "a" if tag.href else "span" }} class="{{ tag.className if tag.className }} tag{% for modifier in tag.modifiers %} tag--{{ modifier }}{% endfor %}"{% if tag.href %} href="{{tag.href}}"{% endif %}>
-			{{ tag.label }}
-		</{{ "a" if tag.href else "span" }}>
-	{% endif %}
+	{% set modifier %}
+		{% if tag.modifier %}
+			tag--{{ tag.modifier }}
+		{% else %}
+			{% for modifier in tag.modifiers %} tag--{{ modifier }}{% endfor %}
+		{% endif %}
+	{% endset %}
+
+	{% set tagName %}{{ "a" if tag.href else "span" }}{% endset %}
+
+	{% set href %}{% if tag.href %}href="{{tag.href}}"{% endif %}{% endset %}
+
+	<{{ tagName }} class="tag {{ modifier | trim }} {{ tag.className if tag.className }}" {{ href }}>
+		{{ tag.label }}
+	</{{ tagName }}>
 {% endmacro %}
