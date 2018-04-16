@@ -25,8 +25,24 @@
   font-weight: normal;
   margin: rem(0 0 $spacing-x-small 0);
   padding: em(0 $spacing-x-small);
+  position: relative;
   text-decoration: none;
   vertical-align: baseline;
+
+  // At-root directive with interpolation to target a tag
+  // See https://stackoverflow.com/a/25655130/486434
+  @at-root a#{&} {
+    color: $colour-nice-white;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:active {
+      top: em($spacing-xx-small);
+    }
+  }
 
   @media print {
     // sass-lint:disable-block no-important
