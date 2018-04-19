@@ -14,14 +14,18 @@
 			<li>Tag {{ tag({ label: "Tag" }) }}</li>
 			<li>New {{ tag({ label: "New", modifier: "new" }) }}</li>
 			<li>Updated {{ tag({ label: "Updated", modifier: "updated" }) }}</li>
+			<li>New and impact {{ tag({ label: "New", modifiers: ["new", "impact"] }) }}</li>
 			<li>In consultation {{ tag({ label: "In consultation", modifier: "consultation" }) }}</li>
 			<li>Alpha {{ tag({ label: "Alpha", modifier: "alpha" }) }}</li>
 			<li>Beta {{ tag({ label: "Beta", modifier: "beta" }) }}</li>
 			<li>Live {{ tag({ label: "Live", modifier: "live" }) }}</li>
+			<li>With class {{ tag({ label: "Uppercase", className: "text-uppercase" }) }}</li>
 			<li>Impact {{ tag({ label: "Impact", modifier: "impact" }) }}</li>
 			<li>Impact alpha {{ tag({ label: "Alpha", modifiers: ["impact", "alpha"] }) }}</li>
 			<li>Flush {{ tag({ label: "Flush (no margin)", modifier: "flush" }) }}</li>
 			<li><span class="h2">Super {{ tag({ label: "Super", modifier: "super" }) }}</span></li>
+			<li>{{ tag({ label: "Link", href: "#news" }) }}</li>
+			<li>{{ tag({ label: "Link (modifier)", modifier: "new", href: "#news" }) }}</li>
 		</ul>
 
 		<h2>Tag on a heading {{ tag({ label: "Live", modifiers: ["live", "super"] }) }}</h2>
