@@ -1,5 +1,5 @@
 /*!
- * NICE Design System 0.4.2 | 2018-02-02
+ * NICE Design System 0.4.3 | 2018-04-19
  * © Copyright NICE 2015-2018
  * Licensed under MIT (https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
  */
@@ -4010,8 +4010,8 @@ ol, .list {
   font-family: "NICE Icons";
   font-style: normal;
   font-weight: normal;
-  src: url("/fonts/nice-icons.eot?359721267");
-  src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/nice-icons.woff2?359721267") format("woff2"), url("/fonts/nice-icons.woff?359721267") format("woff"), url("/fonts/nice-icons.ttf?359721267") format("truetype"), url("/fonts/nice-icons.svg?359721267#nice-icons") format("svg"); }
+  src: url("/fonts/nice-icons.eot?819461251");
+  src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/nice-icons.woff2?819461251") format("woff2"), url("/fonts/nice-icons.woff?819461251") format("woff"), url("/fonts/nice-icons.ttf?819461251") format("truetype"), url("/fonts/nice-icons.svg?819461251#nice-icons") format("svg"); }
 
 .icon {
   display: inline-block;
@@ -4931,8 +4931,16 @@ table {
   margin: 0px 0px 4px 0px;
   margin: 0rem 0rem 0.25rem 0rem;
   padding: 0em 0.25em;
+  position: relative;
   text-decoration: none;
   vertical-align: baseline; }
+  a.tag {
+    color: #fff;
+    text-decoration: underline; }
+    a.tag:hover {
+      text-decoration: none; }
+    a.tag:active {
+      top: 0.125em; }
   @media print {
     .tag {
       background: none !important;
