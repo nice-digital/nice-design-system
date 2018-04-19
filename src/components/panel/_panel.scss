@@ -10,11 +10,13 @@
   margin: em($spacing-medium 0 $spacing-large);
   padding: em($spacing-medium);
 
-  :first-child {
+  // sass-lint:disable no-combinators
+  > :first-child {
     margin-top: 0;
   }
 
-  :last-child {
+  // sass-lint:disable no-combinators
+  > :last-child {
     margin-bottom: 0;
   }
 }
