@@ -1,0 +1,82 @@
+////
+/// @group components
+////
+
+/// Filter group consists of a title with a set of checkbox options.
+/// Used to filter searches or list views.
+/// @since 0.5.0
+.filter-group {
+  margin-bottom: rem($spacing-medium);
+
+  &__heading {
+    @include font-size(0);
+    appearance: none;
+    background: $colour-panel-default;
+    border: 0;
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+    padding: rem($spacing-small);
+    position: relative;
+    text-align: left;
+    width: 100%;
+
+    &:after {
+      @include nice-icon(chevron-up);
+      @include font-size(-1);
+      position: absolute;
+      right: rem($spacing-small);
+      top: rem($spacing-small);
+    }
+
+    &[aria-expanded='false']:after {
+      content: nice-icon(chevron-down);
+    }
+
+    &:hover {
+      background: $colour-nice-grey-2;
+
+      + .filter-group__options {
+        border-color: $colour-nice-grey-2;
+      }
+    }
+
+    &:focus {
+      @include default-focus-style;
+    }
+  }
+
+  &__count {
+    @include font-size(-1);
+    font-weight: normal;
+  }
+
+  &__options {
+    border: 2px solid $colour-panel-default;
+  }
+
+  &__label {
+    background: $colour-nice-white;
+    border-top: 1px solid $colour-panel-default;
+    cursor: pointer;
+    display: block;
+    line-height: 1.2;
+    padding: rem($spacing-small $spacing-small $spacing-small $spacing-large);
+
+    &:first-child {
+      border-top: 0;
+    }
+
+    &:hover {
+      background: $colour-body;
+    }
+
+    input {
+      float: left;
+      height: rem($spacing-medium);
+      margin-top: rem($spacing-xx-small);
+      margin-left: - rem($spacing-medium + $spacing-small);
+      width: rem($spacing-medium);
+    }
+  }
+}
