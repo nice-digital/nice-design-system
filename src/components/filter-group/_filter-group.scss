@@ -8,13 +8,17 @@
 /// Used to filter searches or lists of content.
 /// @since 0.5.0
 .filter-group {
-  margin-bottom: rem($spacing-medium);
+  margin-top: rem($spacing-medium);
+
+  &:first-child {
+    margin-top: 0;
+  }
 
   // Heading used for collapsing/expanding the filter group
   &__heading {
     @include font-size(0);
     appearance: none;
-    background: $colour-panel-default;
+    background: $colour-nice-grey-2;
     border: 0;
     cursor: pointer;
     display: block;
@@ -27,6 +31,7 @@
     &:after {
       @include nice-icon(chevron-up);
       @include font-size(-1);
+      color: $colour-icons;
       position: absolute;
       right: rem($spacing-small);
       top: rem($spacing-small);
@@ -37,11 +42,11 @@
     }
 
     &:hover {
-      background: $colour-nice-grey-2;
+      background: $colour-nice-grey-1;
 
       // sass-lint:disable no-combinators
       + .filter-group__options {
-        border-color: $colour-nice-grey-2;
+        border-color: $colour-nice-grey-1;
       }
     }
 
@@ -58,13 +63,17 @@
 
   // Wrapper for the options when filter is a list of checboxes
   &__options {
-    border: 2px solid $colour-panel-default;
+    border: rem($spacing-x-small) solid $colour-nice-grey-2;
+
+    &[aria-hidden='true'] {
+      display: none;
+    }
   }
 
   // Checkbox/radio button option (label)
   &__option {
     background: $colour-nice-white;
-    border-top: 1px solid $colour-panel-default;
+    border-top: 1px solid $colour-nice-grey-2;
     cursor: pointer;
     display: block;
     line-height: 1.2;
@@ -75,7 +84,7 @@
     }
 
     &:hover {
-      background: $colour-body;
+      background: $colour-nice-grey-3;
     }
 
     input {
@@ -84,6 +93,10 @@
       margin-left: - rem($spacing-medium + $spacing-small);
       margin-top: rem($spacing-xx-small);
       width: rem($spacing-medium);
+
+      &:focus {
+        @include default-focus-style;
+      }
     }
   }
 }
