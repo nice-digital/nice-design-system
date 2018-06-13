@@ -1,0 +1,34 @@
+{% extends "layouts/_layout.njk" %}
+{% set title = "Filter group" %}
+{% from "filter-group/filter-group.njk" import filterGroup %}
+
+{% block body %}
+
+	<div class="container">
+		<h1>Filter group</h1>
+
+		<h2>Set of checkboxes</h2>
+
+		<div class="grid">
+			<div data-g="12 md:4 lg:3">
+				{% set filterGroupContent = {
+						title: "Document type",
+						id: "document",
+						options: [
+							{ label: "Pathways", id: "pathways" },
+							{ label: "Guidance", id: "guidance", isSelected: true },
+							{ label: "Quality standards", id: "qs" },
+							{ label: "Advice", id: "advice", isSelected: true },
+							{ label: "Shared learning", id: "shared-learning" }
+						]
+					} %}
+
+				{{ filterGroup(filterGroupContent) }}
+			</div>
+			<div data-g="12 md:8 lg:9">
+			</div>
+		</div>
+
+	</div>
+
+{% endblock %}

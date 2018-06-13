@@ -116,7 +116,7 @@
     "webpack-dev-server": "^2.9.3"
   },
   "dependencies": {
-    "@nice-digital/icons": "^1.4.0",
+    "@nice-digital/icons": "^1.4.3",
     "keycode": "^2.1.7"
   },
   "engines": {

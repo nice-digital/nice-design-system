@@ -2,12 +2,15 @@
 /// @group components
 ////
 
-/// Filter group consists of a title with a set of checkbox options.
-/// Used to filter searches or list views.
+/// Filter group consist of a title with one of:
+///   - set of checkbox options
+///   - TODO e.g. free text, dates etc
+/// Used to filter searches or lists of content.
 /// @since 0.5.0
 .filter-group {
   margin-bottom: rem($spacing-medium);
 
+  // Heading used for collapsing/expanding the filter group
   &__heading {
     @include font-size(0);
     appearance: none;
@@ -36,6 +39,7 @@
     &:hover {
       background: $colour-nice-grey-2;
 
+      // sass-lint:disable no-combinators
       + .filter-group__options {
         border-color: $colour-nice-grey-2;
       }
@@ -46,16 +50,19 @@
     }
   }
 
+  // Shows the number of filtered options e.g. "2 selected"
   &__count {
     @include font-size(-1);
     font-weight: normal;
   }
 
+  // Wrapper for the options when filter is a list of checboxes
   &__options {
     border: 2px solid $colour-panel-default;
   }
 
-  &__label {
+  // Checkbox/radio button option (label)
+  &__option {
     background: $colour-nice-white;
     border-top: 1px solid $colour-panel-default;
     cursor: pointer;
@@ -74,8 +81,8 @@
     input {
       float: left;
       height: rem($spacing-medium);
-      margin-top: rem($spacing-xx-small);
       margin-left: - rem($spacing-medium + $spacing-small);
+      margin-top: rem($spacing-xx-small);
       width: rem($spacing-medium);
     }
   }
