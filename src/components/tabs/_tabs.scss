@@ -80,7 +80,7 @@
       z-index: 1;
     }
 
-    &[aria-selected="true"] {
+    &[aria-selected='true'] {
       background: $colour-panel-default;
       border-left: 1px solid $colour-border;
       border-right: 1px solid $colour-border;
