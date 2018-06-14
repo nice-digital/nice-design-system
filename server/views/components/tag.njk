@@ -26,6 +26,9 @@
 			<li><span class="h2">Super {{ tag({ label: "Super", modifier: "super" }) }}</span></li>
 			<li>{{ tag({ label: "Link", href: "#news" }) }}</li>
 			<li>{{ tag({ label: "Link (modifier)", modifier: "new", href: "#news" }) }}</li>
+			<li>Outline {{ tag({ label: "Removable with outline", modifier: "outline" }) }}</li>
+			<li>Outline and removable (button) {{ tag({ label: "Removable via button", modifier: "outline", remove: "button" }) }}</li>
+			<li>Outline and removable (link) {{ tag({ label: "Removable via link", modifier: "outline", remove: "/a-url-for removal" }) }}</li>
 		</ul>
 
 		<h2>Tag on a heading {{ tag({ label: "Live", modifiers: ["live", "super"] }) }}</h2>
