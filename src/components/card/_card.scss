@@ -15,8 +15,8 @@
 ///
 /// @since 0.3.1
 .card {
-  overflow: hidden;
   margin: rem(0 0 $spacing-large 0);
+  overflow: hidden;
   position: relative;
 
   &--flush {
