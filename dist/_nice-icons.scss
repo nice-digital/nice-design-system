@@ -57,6 +57,7 @@ $nice-font-base-path: '/fonts/' !default;
 /// @prop {string} print [e001] - <span class="icon icon--print" aria-hidden="true"></span>
 /// @prop {string} question-circle [f059] - <span class="icon icon--question-circle" aria-hidden="true"></span>
 /// @prop {string} readnews [e009] - <span class="icon icon--readnews" aria-hidden="true"></span>
+/// @prop {string} remove [e024] - <span class="icon icon--remove" aria-hidden="true"></span>
 /// @prop {string} search [e004] - <span class="icon icon--search" aria-hidden="true"></span>
 /// @prop {string} share [e008] - <span class="icon icon--share" aria-hidden="true"></span>
 /// @prop {string} standards [e002] - <span class="icon icon--standards" aria-hidden="true"></span>
@@ -95,6 +96,7 @@ $nice-icons: (
   print: 'e001',
   question-circle: 'f059',
   readnews: 'e009',
+  remove: 'e024',
   search: 'e004',
   share: 'e008',
   standards: 'e002',

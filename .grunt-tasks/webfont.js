@@ -48,6 +48,7 @@ module.exports = {
 				plus: 0xe027,
 				print: 0xe001,
 				readnews: 0xe009,
+				remove: 0xe024,
 				search: 0xe004,
 				share: 0xe008,
 				standards: 0xe002,
