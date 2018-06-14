@@ -2,6 +2,7 @@
 {% set title = "Filters" %}
 {% from "filter-group/filter-group.njk" import filterGroup %}
 {% from "filter-panel/filter-panel.njk" import filterPanel %}
+{% from "results-info/results-info.njk" import resultsInfo %}
 
 {% block body %}
 
@@ -10,7 +11,7 @@
 
 		<h2>Checkbox group in a filter panel</h2>
 
-		<div class="grid">
+		<div class="grid grid--loose">
 			<div data-g="12 sm:5 md:4 lg:3">
 
 				{% set filterGroupContent = {
@@ -29,7 +30,6 @@
 					{{ filterGroup(filterGroupContent) }}
 				{% endset %}
 				
-				
 				{% set filterPanelContent = {
 						title: "Filter",
 						body: filterPanelBody,
@@ -40,7 +40,14 @@
 
 			</div>
 			<div data-g="12 sm:7 md:8 lg:9">
-				Your list would go here
+
+				{% set resultsInfoContent = {
+						count: 99
+					} %}
+
+				{{ resultsInfo(resultsInfoContent) }}
+				
+				Your results will go here...
 			</div>
 		</div>
 
