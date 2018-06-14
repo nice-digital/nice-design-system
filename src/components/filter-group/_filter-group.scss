@@ -17,41 +17,45 @@
   // Heading used for collapsing/expanding the filter group
   &__heading {
     @include font-size(0);
-    appearance: none;
     background: $colour-nice-grey-2;
     border: 0;
-    cursor: pointer;
     display: block;
     font-weight: bold;
+    margin: 0;
     padding: rem($spacing-small);
     position: relative;
     text-align: left;
     width: 100%;
 
-    &:after {
-      @include nice-icon(chevron-up);
-      @include font-size(-1);
-      color: $colour-icons;
-      position: absolute;
-      right: rem($spacing-small);
-      top: rem($spacing-small);
-    }
+    @include when-is(button) {
+      appearance: none;
+      cursor: pointer;
 
-    &[aria-expanded='false']:after {
-      content: nice-icon(chevron-down);
-    }
-
-    &:hover {
-      background: $colour-nice-grey-1;
-
-      // sass-lint:disable no-combinators
-      + .filter-group__options {
-        border-color: $colour-nice-grey-1;
+      &:after {
+        @include nice-icon(chevron-up);
+        @include font-size(-1);
+        color: $colour-icons;
+        position: absolute;
+        right: rem($spacing-small);
+        top: rem($spacing-small);
       }
-    }
-
-    &:focus {
-      @include default-focus-style;
+  
+      &[aria-expanded='false']:after {
+        content: nice-icon(chevron-down);
+      }
+  
+      &:hover {
+        background: $colour-nice-grey-1;
+  
+        // sass-lint:disable no-combinators
+        + .filter-group__options {
+          border-color: $colour-nice-grey-1;
+        }
+      }
+  
+      &:focus {
+        @include default-focus-style;
+      }
     }
   }
 

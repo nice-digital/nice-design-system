@@ -5,36 +5,42 @@
 .filter-panel {
   margin: rem(0 0 $spacing-medium 0);
 
-  // Heading button to collapse/expand filter panel
+  // Heading can be one of:
+  // - heading for server side rendering for non-js
+  // - button to collapse/expand filter panel client side
   &__heading {
     @include font-size(h5);
-    appearance: none;
     background: $colour-nice-grey-2;
     border: 0;
-    cursor: pointer;
     display: block;
     font-weight: bold;
+    margin: 0;
     padding: rem($spacing-small);
     position: relative;
     text-align: left;
     width: 100%;
 
-    &:after {
-      @include nice-icon(chevron-up);
-      @include font-size(-1);
-      color: $colour-icons;
-      margin-top: - rem($spacing-small);
-      position: absolute;
-      right: rem($spacing-small);
-      top: 50%;
-    }
+    @include when-is(button) {
+      appearance: none;
+      cursor: pointer;
 
-    &[aria-expanded='false']:after {
-      content: nice-icon(chevron-down);
-    }
+      &:after {
+        @include nice-icon(chevron-up);
+        @include font-size(-1);
+        color: $colour-icons;
+        margin-top: - rem($spacing-small);
+        position: absolute;
+        right: rem($spacing-small);
+        top: 50%;
+      }
 
-    &:focus {
-      @include default-focus-style;
+      &[aria-expanded='false']:after {
+        content: nice-icon(chevron-down);
+      }
+
+      &:focus {
+        @include default-focus-style;
+      }
     }
   }
 
