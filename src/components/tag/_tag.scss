@@ -31,9 +31,7 @@ $nice-tag-border-radius: em($spacing-xx-small);
   text-decoration: none;
   vertical-align: baseline;
 
-  // At-root directive with interpolation to target a tag
-  // See https://stackoverflow.com/a/25655130/486434
-  @at-root a#{&} {
+  @include when-is(a) {
     color: $colour-nice-white;
     text-decoration: underline;
 
