@@ -60,10 +60,8 @@
   @include mq($from: sm) {
     &__heading {
       background: none;
-      cursor: default;
       margin-bottom: rem($spacing-medium);
       padding: 0;
-      pointer-events: none;
 
       @include when-is(button) {
         &:after {
