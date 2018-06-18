@@ -2741,7 +2741,7 @@
       "context": {
         "type": "css",
         "name": ".card",
-        "value": "overflow: hidden;\n  margin: rem(0 0 $spacing-large 0);\n  position: relative;\n\n  &--flush {\n    margin-bottom: 0;\n  }\n\n  &--separator,\n  .list--unstyled & {\n    border-bottom: 1px solid $colour-border;\n    margin: rem(0 0 $spacing-small 0);\n    padding: rem(0 0 $spacing-x-small 0);\n  }\n\n  &__header {\n    margin: rem(0 0 $spacing-x-small 0);\n  }\n\n  &__heading {\n    @include font-size(0);\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      text-decoration: none;\n\n      &:hover {\n        text-decoration: underline;\n      }\n\n      &:before {\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: 100%;\n        z-index: 0;\n      }\n    }\n  }\n\n  &__author {\n    @include font-size(-1);\n    color: $colour-nice-dark-grey;\n    margin: rem(0 0 $spacing-x-small 0);\n\n    dd {\n      display: block;\n      margin: 0;\n    }\n  }\n\n  &__summary {\n    margin: rem(0 0 $spacing-x-small 0);\n  }\n\n  &__image {\n    display: block;\n    margin: rem(0 0 $spacing-x-small);\n  }\n\n  &__icon {\n    margin: rem(0 $spacing-x-small 0 0);\n  }\n\n  &__tag {\n    @include font-size(-1, true);\n  }\n\n  &__metadata {\n    @include font-size(-1);\n    color: $colour-nice-dark-grey;\n    display: inline-block;\n    margin: 0;\n    position: relative;\n    z-index: 1;\n  }\n\n  &__metadatum {\n    display: block;\n    margin: rem(0 $spacing-small $spacing-x-small 0);\n\n    dt,\n    dd {\n      display: inline-block;\n      margin: 0;\n    }\n  }\n\n  @include mq($from: xs) {\n    &__image {\n      float: left;\n      width: 30%;\n    }\n\n    &__text {\n      float: left;\n      padding-left: rem($spacing-medium);\n      width: 70%;\n    }\n  }\n\n  @include mq($from: sm) {\n    &__image {\n      width: 20%;\n    }\n\n    &__text {\n      width: 80%;\n    }\n\n    &__metadatum {\n      display: inline-block;\n      white-space: nowrap;\n    }\n  }\n\n  @include mq($from: md) {\n    &__image {\n      width: 30%;\n    }\n\n    &__text {\n      width: 70%;\n    }\n  }\n\n  @include mq($from: lg) {\n    &__image {\n      width: 25%;\n    }\n\n    &__text {\n      width: 75%;\n    }\n  }",
+        "value": "margin: rem(0 0 $spacing-large 0);\n  overflow: hidden;\n  position: relative;\n\n  &--flush {\n    margin-bottom: 0;\n  }\n\n  &--separator,\n  .list--unstyled & {\n    border-bottom: 1px solid $colour-border;\n    margin: rem(0 0 $spacing-small 0);\n    padding: rem(0 0 $spacing-x-small 0);\n  }\n\n  &__header {\n    margin: rem(0 0 $spacing-x-small 0);\n  }\n\n  &__heading {\n    @include font-size(0);\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      text-decoration: none;\n\n      &:hover {\n        text-decoration: underline;\n      }\n\n      &:before {\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: 100%;\n        z-index: 0;\n      }\n    }\n  }\n\n  &__author {\n    @include font-size(-1);\n    color: $colour-nice-dark-grey;\n    margin: rem(0 0 $spacing-x-small 0);\n\n    dd {\n      display: block;\n      margin: 0;\n    }\n  }\n\n  &__summary {\n    margin: rem(0 0 $spacing-x-small 0);\n  }\n\n  &__image {\n    display: block;\n    margin: rem(0 0 $spacing-x-small);\n  }\n\n  &__icon {\n    margin: rem(0 $spacing-x-small 0 0);\n  }\n\n  &__tag {\n    @include font-size(-1, true);\n  }\n\n  &__metadata {\n    @include font-size(-1);\n    color: $colour-nice-dark-grey;\n    display: inline-block;\n    margin: 0;\n    position: relative;\n    z-index: 1;\n  }\n\n  &__metadatum {\n    display: block;\n    margin: rem(0 $spacing-small $spacing-x-small 0);\n\n    dt,\n    dd {\n      display: inline-block;\n      margin: 0;\n    }\n  }\n\n  @include mq($from: xs) {\n    &__image {\n      float: left;\n      width: 30%;\n    }\n\n    &__text {\n      float: left;\n      padding-left: rem($spacing-medium);\n      width: 70%;\n    }\n  }\n\n  @include mq($from: sm) {\n    &__image {\n      width: 20%;\n    }\n\n    &__text {\n      width: 80%;\n    }\n\n    &__metadatum {\n      display: inline-block;\n      white-space: nowrap;\n    }\n  }\n\n  @include mq($from: md) {\n    &__image {\n      width: 30%;\n    }\n\n    &__text {\n      width: 70%;\n    }\n  }\n\n  @include mq($from: lg) {\n    &__image {\n      width: 25%;\n    }\n\n    &__text {\n      width: 75%;\n    }\n  }",
         "line": {
           "start": 17,
           "end": 158
@@ -2835,6 +2835,38 @@
       "file": {
         "path": "components\\container\\_container.scss",
         "name": "_container.scss"
+      },
+      "groupName": {
+        "components": "Components"
+      }
+    },
+    {
+      "description": "<p>Filter group consist of a title with one of:</p>\n<ul>\n<li>set of checkbox options</li>\n<li>TODO e.g. free text, dates etc\nUsed to filter searches or lists of content.</li>\n</ul>\n",
+      "commentRange": {
+        "start": 5,
+        "end": 9
+      },
+      "context": {
+        "type": "css",
+        "name": ".filter-group",
+        "value": "margin-top: rem($spacing-medium);\n\n  &:first-child {\n    margin-top: 0;\n  }\n\n  // Heading used for collapsing/expanding the filter group\n  &__heading {\n    @include font-size(0);\n    background: $colour-nice-grey-2;\n    border: 0;\n    display: block;\n    font-weight: bold;\n    margin: 0;\n    padding: rem($spacing-small);\n    position: relative;\n    text-align: left;\n    width: 100%;\n\n    @include when-is(button) {\n      appearance: none;\n      cursor: pointer;\n\n      &:after {\n        @include nice-icon(chevron-up);\n        @include font-size(-1);\n        color: $colour-icons;\n        position: absolute;\n        right: rem($spacing-small);\n        top: rem($spacing-small);\n      }\n  \n      &[aria-expanded='false']:after {\n        content: nice-icon(chevron-down);\n      }\n  \n      &:hover {\n        background: $colour-nice-grey-1;\n  \n        // sass-lint:disable no-combinators\n        + .filter-group__options {\n          border-color: $colour-nice-grey-1;\n        }\n      }\n  \n      &:focus {\n        @include default-focus-style;\n      }\n    }\n  }\n\n  // Shows the number of filtered options e.g. \"2 selected\"\n  &__count {\n    @include font-size(-1);\n    font-weight: normal;\n  }\n\n  // Wrapper for the options when filter is a list of checboxes\n  &__options {\n    border: rem($spacing-x-small) solid $colour-nice-grey-2;\n\n    &[aria-hidden='true'] {\n      display: none;\n    }\n  }\n\n  // Checkbox/radio button option (label)\n  &__option {\n    background: $colour-nice-white;\n    border-top: 1px solid $colour-nice-grey-2;\n    cursor: pointer;\n    display: block;\n    line-height: 1.2;\n    padding: rem($spacing-small $spacing-small $spacing-small $spacing-large);\n\n    &:first-child {\n      border-top: 0;\n    }\n\n    &:hover {\n      background: $colour-nice-grey-3;\n    }\n\n    input {\n      float: left;\n      height: rem($spacing-medium);\n      margin-left: - rem($spacing-medium + $spacing-small);\n      margin-top: rem($spacing-xx-small);\n      width: rem($spacing-medium);\n\n      &:focus {\n        @include default-focus-style;\n      }\n    }\n  }",
+        "line": {
+          "start": 10,
+          "end": 107
+        }
+      },
+      "since": [
+        {
+          "version": "0.5.0"
+        }
+      ],
+      "group": [
+        "components"
+      ],
+      "access": "public",
+      "file": {
+        "path": "components\\filter-group\\_filter-group.scss",
+        "name": "_filter-group.scss"
       },
       "groupName": {
         "components": "Components"
@@ -3103,10 +3135,10 @@
       "context": {
         "type": "css",
         "name": ".panel",
-        "value": "background: $colour-panel-default;\n  margin: em($spacing-medium 0 $spacing-large);\n  padding: em($spacing-medium);\n\n  :first-child {\n    margin-top: 0;\n  }\n\n  :last-child {\n    margin-bottom: 0;\n  }",
+        "value": "background: $colour-panel-default;\n  margin: em($spacing-medium 0 $spacing-large);\n  padding: em($spacing-medium);\n\n  // sass-lint:disable no-combinators\n  > :first-child {\n    margin-top: 0;\n  }\n\n  // sass-lint:disable no-combinators\n  > :last-child {\n    margin-bottom: 0;\n  }",
         "line": {
           "start": 8,
-          "end": 33
+          "end": 35
         }
       },
       "since": [
@@ -3129,16 +3161,16 @@
     {
       "description": "<p>Modifier for the panel, to use a inverse (dark) background.\nAutmatically uses inverse links within it. Doesn&#39;t affect buttons\nthough, so any buttons within a dark panel should be <code>.btn.btn--light</code>.</p>\n",
       "commentRange": {
-        "start": 22,
-        "end": 27
+        "start": 24,
+        "end": 29
       },
       "context": {
         "type": "css",
         "name": ".panel--inverse",
         "value": "@include links-inverse;\n  background: $colour-panel-inverse;\n  color: $colour-text-inverse;",
         "line": {
-          "start": 28,
-          "end": 33
+          "start": 30,
+          "end": 35
         }
       },
       "require": [
@@ -3186,10 +3218,10 @@
           "context": {
             "type": "css",
             "name": ".tag",
-            "value": "@include font-size(0);\n  background-color: $colour-panel-inverse;\n  border-radius: em($spacing-xx-small);\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: normal;\n  margin: rem(0 0 $spacing-x-small 0);\n  padding: em(0 $spacing-x-small);\n  position: relative;\n  text-decoration: none;\n  vertical-align: baseline;\n\n  // At-root directive with interpolation to target a tag\n  // See https://stackoverflow.com/a/25655130/486434\n  @at-root a#{&} {\n    color: $colour-nice-white;\n    text-decoration: underline;\n\n    &:hover {\n      text-decoration: none;\n    }\n\n    &:active {\n      top: em($spacing-xx-small);\n    }\n  }\n\n  @media print {\n    // sass-lint:disable-block no-important\n    background: none !important;\n    color: $colour-true-black !important;\n    padding: 0 !important;\n  }\n\n  &--impact {\n    font-weight: 900;\n    letter-spacing: 1px;\n    padding: em($spacing-xx-small $spacing-small);\n    text-transform: uppercase;\n  }\n\n  &--super {\n    vertical-align: super;\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }\n\n  &--new {\n    background: $colour-guidance-new;\n  }\n\n  &--updated {\n    background: $colour-guidance-updated;\n  }\n\n  &--consultation {\n    background: $colour-guidance-consultation;\n  }\n\n  &--flush {\n    margin-bottom: 0;\n  }",
+            "value": "@include font-size(0);\n  background-color: $colour-panel-inverse;\n  border-radius: $nice-tag-border-radius;\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: normal;\n  margin: rem(0 0 $spacing-x-small 0);\n  padding: em(0 $spacing-x-small);\n  position: relative;\n  text-decoration: none;\n  vertical-align: baseline;\n\n  @include when-is(a) {\n    color: $colour-nice-white;\n    text-decoration: underline;\n\n    &:visited {\n      color: $colour-nice-white;\n    }\n\n    &:hover {\n      text-decoration: none;\n    }\n\n    &:active {\n      top: em($spacing-xx-small);\n    }\n  }\n\n  @media print {\n    // sass-lint:disable-block no-important\n    background: none !important;\n    color: $colour-true-black !important;\n    padding: 0 !important;\n  }\n\n  &--impact {\n    font-weight: 900;\n    letter-spacing: 1px;\n    padding: em($spacing-xx-small $spacing-small);\n    text-transform: uppercase;\n  }\n\n  &--super {\n    vertical-align: super;\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }\n\n  &--new {\n    background: $colour-guidance-new;\n  }\n\n  &--updated {\n    background: $colour-guidance-updated;\n  }\n\n  &--consultation {\n    background: $colour-guidance-consultation;\n  }\n\n  &--flush {\n    margin-bottom: 0;\n  }\n\n  &--outline {\n    @include font-size(-1);\n    background: $colour-nice-grey-3;\n    border: 1px solid $colour-border;\n    color: $colour-nice-dark-grey;\n    position: relative;\n  }\n\n  &__remove {\n    appearance: none;\n    background: 0;\n    border: 0;\n    color: $colour-nice-teal;\n    cursor: pointer;\n    margin-left: rem($spacing-x-small);\n    padding: 0;\n    text-decoration: none;\n\n    &:focus {\n      @include default-focus-style;\n    }\n\n    &:visited {\n      color: $colour-nice-teal;\n    }\n\n    &:hover,\n    &:active {\n      color: $colour-text;\n    }\n\n    &:hover:after {\n      background: rgba($colour-nice-black, .1);\n    }\n\n    &:after {\n      content: '';\n      border-radius: $nice-tag-border-radius;\n      display: block;\n      height: 100%;\n      left: 0;\n      position: absolute;\n      top: 0;\n      width: 100%;\n    }\n  }",
             "line": {
-              "start": 19,
-              "end": 96
+              "start": 21,
+              "end": 147
             }
           }
         }
@@ -3206,6 +3238,33 @@
       "file": {
         "path": "components\\phase-banner\\_phase-banner.scss",
         "name": "_phase-banner.scss"
+      },
+      "groupName": {
+        "components": "Components"
+      }
+    },
+    {
+      "description": "<p>Results info shows at the top of a list of results and\ncontains the count and sort options.</p>\n",
+      "commentRange": {
+        "start": 5,
+        "end": 6
+      },
+      "context": {
+        "type": "css",
+        "name": ".results-info",
+        "value": "@include clearfix;\n  margin: rem(0 0 $spacing-medium);\n\n  &__count {\n    @include font-size(h5);\n    font-weight: bold;\n    margin: rem(0 0 $spacing-small);\n  }\n\n  &__sort {\n    margin: 0;\n  }\n\n  &__filters {\n    clear: both;\n    list-style: none;\n    margin: 0;\n    padding-top: rem($spacing-small);\n  }\n\n  @include mq($from: sm) {\n    margin: rem(0 0 $spacing-medium);\n\n    &__count {\n      float: left;\n      margin: 0;\n      width: 50%;\n    }\n\n    &__sort {\n      float: right;\n      text-align: right;\n      width: 50%;\n    }\n\n    &__filter {\n      display: inline-block;\n      margin-right: rem($spacing-x-small);\n    }\n  }",
+        "line": {
+          "start": 7,
+          "end": 49
+        }
+      },
+      "group": [
+        "components"
+      ],
+      "access": "public",
+      "file": {
+        "path": "components\\results-info\\_results-info.scss",
+        "name": "_results-info.scss"
       },
       "groupName": {
         "components": "Components"
@@ -3247,7 +3306,7 @@
       "context": {
         "type": "css",
         "name": ".tabs",
-        "value": "margin: em($spacing-medium 0 $spacing-large);\n\n  // The list of tabs\n  &__list {\n    display: none;\n    list-style: none;\n    margin: 0;\n    padding: 0;\n    position: relative;\n    top: 1px; // To cover the border around the tabs content\n\n    .js & {\n      display: block;\n    }\n  }\n\n  // Individual tab\n  &__tab {\n    float: left;\n  }\n\n  // The button/link for the tab itself\n  &__tab-btn {\n    @include link-default;\n    background: 0;\n    border: 0;\n    border-left: 1px solid transparent;\n    border-right: 1px solid transparent;\n    cursor: pointer;\n    display: block;\n    margin: 0;\n    padding: em($spacing-medium $spacing-medium);\n    position: relative;\n\n    &:focus {\n      // Stop focus ring clipping\n      z-index: 1;\n    }\n\n    &[aria-selected=\"true\"] {\n      background: $colour-panel-default;\n      border-left: 1px solid $colour-border;\n      border-right: 1px solid $colour-border;\n      color: $colour-text;\n      text-decoration: none;\n\n      &:before {\n        // The -1px is to over the grey border round the tab\n        background: $colour-icons;\n        content: '';\n        height: em($spacing-x-small);\n        left: -1px;\n        position: absolute;\n        right: -1px;\n        top: 0;\n      }\n    }\n  }\n\n  // The tab content containing the tab panels\n  &__content {\n    clear: both;\n\n    .js & {\n      background: $colour-panel-default;\n      border: 1px solid $colour-border;\n      clear: both;\n      padding: em($spacing-medium);\n    }\n  }\n\n  // An individual tab content pane\n  &__pane {\n    margin-bottom: em($spacing-medium);\n\n    // Assume tabs will stack if no JS is available\n    .js & {\n      display: none;\n      margin-bottom: 0;\n\n      &--active {\n        display: block;\n      }\n    }\n\n    :first-child {\n      margin-top: 0;\n    }\n\n    :last-child {\n      margin-bottom: 0;\n    }\n  }",
+        "value": "margin: em($spacing-medium 0 $spacing-large);\n\n  // The list of tabs\n  &__list {\n    display: none;\n    list-style: none;\n    margin: 0;\n    padding: 0;\n    position: relative;\n    top: 1px; // To cover the border around the tabs content\n\n    .js & {\n      display: block;\n    }\n  }\n\n  // Individual tab\n  &__tab {\n    float: left;\n  }\n\n  // The button/link for the tab itself\n  &__tab-btn {\n    @include link-default;\n    background: 0;\n    border: 0;\n    border-left: 1px solid transparent;\n    border-right: 1px solid transparent;\n    cursor: pointer;\n    display: block;\n    margin: 0;\n    padding: em($spacing-medium $spacing-medium);\n    position: relative;\n\n    &:focus {\n      // Stop focus ring clipping\n      z-index: 1;\n    }\n\n    &[aria-selected='true'] {\n      background: $colour-panel-default;\n      border-left: 1px solid $colour-border;\n      border-right: 1px solid $colour-border;\n      color: $colour-text;\n      text-decoration: none;\n\n      &:before {\n        // The -1px is to over the grey border round the tab\n        background: $colour-icons;\n        content: '';\n        height: em($spacing-x-small);\n        left: -1px;\n        position: absolute;\n        right: -1px;\n        top: 0;\n      }\n    }\n  }\n\n  // The tab content containing the tab panels\n  &__content {\n    clear: both;\n\n    .js & {\n      background: $colour-panel-default;\n      border: 1px solid $colour-border;\n      clear: both;\n      padding: em($spacing-medium);\n    }\n  }\n\n  // An individual tab content pane\n  &__pane {\n    margin-bottom: em($spacing-medium);\n\n    // Assume tabs will stack if no JS is available\n    .js & {\n      display: none;\n      margin-bottom: 0;\n\n      &--active {\n        display: block;\n      }\n    }\n\n    :first-child {\n      margin-top: 0;\n    }\n\n    :last-child {\n      margin-bottom: 0;\n    }\n  }",
         "line": {
           "start": 43,
           "end": 138
@@ -3282,16 +3341,16 @@
     {
       "description": "<p>Tag component. Used for labelling items in lists\nand also used within alpha/beta phase banners.</p>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--impact</code> Bolder tag, used for higher impact</li>\n<li><code>--super</code>  Super aligned, useful for tagging headings</li>\n<li><code>--alpha</code> Alpha</li>\n<li><code>--beta</code>  Beta</li>\n<li><code>--live</code>  Live</li>\n<li><code>--new</code>  New</li>\n<li><code>--updated</code>  Updated</li>\n<li><code>--consultation</code>  In consultation</li>\n<li><code>--flush</code>  No margin</li>\n</ul>\n",
       "commentRange": {
-        "start": 5,
-        "end": 18
+        "start": 7,
+        "end": 20
       },
       "context": {
         "type": "css",
         "name": ".tag",
-        "value": "@include font-size(0);\n  background-color: $colour-panel-inverse;\n  border-radius: em($spacing-xx-small);\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: normal;\n  margin: rem(0 0 $spacing-x-small 0);\n  padding: em(0 $spacing-x-small);\n  position: relative;\n  text-decoration: none;\n  vertical-align: baseline;\n\n  // At-root directive with interpolation to target a tag\n  // See https://stackoverflow.com/a/25655130/486434\n  @at-root a#{&} {\n    color: $colour-nice-white;\n    text-decoration: underline;\n\n    &:hover {\n      text-decoration: none;\n    }\n\n    &:active {\n      top: em($spacing-xx-small);\n    }\n  }\n\n  @media print {\n    // sass-lint:disable-block no-important\n    background: none !important;\n    color: $colour-true-black !important;\n    padding: 0 !important;\n  }\n\n  &--impact {\n    font-weight: 900;\n    letter-spacing: 1px;\n    padding: em($spacing-xx-small $spacing-small);\n    text-transform: uppercase;\n  }\n\n  &--super {\n    vertical-align: super;\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }\n\n  &--new {\n    background: $colour-guidance-new;\n  }\n\n  &--updated {\n    background: $colour-guidance-updated;\n  }\n\n  &--consultation {\n    background: $colour-guidance-consultation;\n  }\n\n  &--flush {\n    margin-bottom: 0;\n  }",
+        "value": "@include font-size(0);\n  background-color: $colour-panel-inverse;\n  border-radius: $nice-tag-border-radius;\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: normal;\n  margin: rem(0 0 $spacing-x-small 0);\n  padding: em(0 $spacing-x-small);\n  position: relative;\n  text-decoration: none;\n  vertical-align: baseline;\n\n  @include when-is(a) {\n    color: $colour-nice-white;\n    text-decoration: underline;\n\n    &:visited {\n      color: $colour-nice-white;\n    }\n\n    &:hover {\n      text-decoration: none;\n    }\n\n    &:active {\n      top: em($spacing-xx-small);\n    }\n  }\n\n  @media print {\n    // sass-lint:disable-block no-important\n    background: none !important;\n    color: $colour-true-black !important;\n    padding: 0 !important;\n  }\n\n  &--impact {\n    font-weight: 900;\n    letter-spacing: 1px;\n    padding: em($spacing-xx-small $spacing-small);\n    text-transform: uppercase;\n  }\n\n  &--super {\n    vertical-align: super;\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }\n\n  &--new {\n    background: $colour-guidance-new;\n  }\n\n  &--updated {\n    background: $colour-guidance-updated;\n  }\n\n  &--consultation {\n    background: $colour-guidance-consultation;\n  }\n\n  &--flush {\n    margin-bottom: 0;\n  }\n\n  &--outline {\n    @include font-size(-1);\n    background: $colour-nice-grey-3;\n    border: 1px solid $colour-border;\n    color: $colour-nice-dark-grey;\n    position: relative;\n  }\n\n  &__remove {\n    appearance: none;\n    background: 0;\n    border: 0;\n    color: $colour-nice-teal;\n    cursor: pointer;\n    margin-left: rem($spacing-x-small);\n    padding: 0;\n    text-decoration: none;\n\n    &:focus {\n      @include default-focus-style;\n    }\n\n    &:visited {\n      color: $colour-nice-teal;\n    }\n\n    &:hover,\n    &:active {\n      color: $colour-text;\n    }\n\n    &:hover:after {\n      background: rgba($colour-nice-black, .1);\n    }\n\n    &:after {\n      content: '';\n      border-radius: $nice-tag-border-radius;\n      display: block;\n      height: 100%;\n      left: 0;\n      position: absolute;\n      top: 0;\n      width: 100%;\n    }\n  }",
         "line": {
-          "start": 19,
-          "end": 96
+          "start": 21,
+          "end": 147
         }
       },
       "since": [
@@ -5942,10 +6001,10 @@
           "context": {
             "type": "mixin",
             "name": "font-size",
-            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
+            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  } @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
             "line": {
               "start": 70,
-              "end": 83
+              "end": 82
             }
           }
         },
@@ -5954,10 +6013,10 @@
           "context": {
             "type": "mixin",
             "name": "font-size",
-            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
+            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  } @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
             "line": {
               "start": 70,
-              "end": 83
+              "end": 82
             }
           }
         },
@@ -5966,10 +6025,10 @@
           "context": {
             "type": "mixin",
             "name": "font-size",
-            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
+            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  } @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
             "line": {
               "start": 70,
-              "end": 83
+              "end": 82
             }
           }
         },
@@ -5978,10 +6037,10 @@
           "context": {
             "type": "mixin",
             "name": "font-size",
-            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
+            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  } @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
             "line": {
               "start": 70,
-              "end": 83
+              "end": 82
             }
           }
         },
@@ -5990,10 +6049,10 @@
           "context": {
             "type": "mixin",
             "name": "font",
-            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
             "line": {
-              "start": 97,
-              "end": 114
+              "start": 96,
+              "end": 112
             }
           }
         },
@@ -6002,10 +6061,10 @@
           "context": {
             "type": "mixin",
             "name": "font",
-            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
             "line": {
-              "start": 97,
-              "end": 114
+              "start": 96,
+              "end": 112
             }
           }
         },
@@ -6014,10 +6073,10 @@
           "context": {
             "type": "mixin",
             "name": "font",
-            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
             "line": {
-              "start": 97,
-              "end": 114
+              "start": 96,
+              "end": 112
             }
           }
         },
@@ -6026,10 +6085,10 @@
           "context": {
             "type": "mixin",
             "name": "font",
-            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
             "line": {
-              "start": 97,
-              "end": 114
+              "start": 96,
+              "end": 112
             }
           }
         },
@@ -6046,6 +6105,51 @@
           }
         }
       ],
+      "groupName": {
+        "helpers": "Helpers"
+      }
+    },
+    {
+      "description": "<p>Since the current way to qualify a class from within its ruleset is quite\nugly, here is a mixin providing a friendly API to do so.</p>\n",
+      "commentRange": {
+        "start": 63,
+        "end": 68
+      },
+      "context": {
+        "type": "mixin",
+        "name": "when-is",
+        "code": "\n  @at-root #{$element-selector + &} {\n    @content;\n  }\n",
+        "line": {
+          "start": 69,
+          "end": 73
+        }
+      },
+      "see": [],
+      "author": [
+        "<p>Hugo Giraudel</p>\n"
+      ],
+      "parameter": [
+        {
+          "type": "String",
+          "name": "element-selector",
+          "description": "<p>Element selector</p>\n"
+        }
+      ],
+      "since": [
+        {
+          "version": "0.5.0;"
+        }
+      ],
+      "group": [
+        "helpers"
+      ],
+      "access": "public",
+      "content": "",
+      "require": [],
+      "file": {
+        "path": "stylesheets\\helpers\\_helpers-utils.scss",
+        "name": "_helpers-utils.scss"
+      },
       "groupName": {
         "helpers": "Helpers"
       }
@@ -7163,10 +7267,10 @@
           "context": {
             "type": "mixin",
             "name": "font",
-            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
             "line": {
-              "start": 97,
-              "end": 114
+              "start": 96,
+              "end": 112
             }
           }
         }
@@ -7239,10 +7343,10 @@
           "context": {
             "type": "mixin",
             "name": "font-size",
-            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
+            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  } @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
             "line": {
               "start": 70,
-              "end": 83
+              "end": 82
             }
           }
         }
@@ -7315,10 +7419,10 @@
           "context": {
             "type": "mixin",
             "name": "font-size",
-            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
+            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  } @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
             "line": {
               "start": 70,
-              "end": 83
+              "end": 82
             }
           }
         }
@@ -7336,10 +7440,10 @@
       "context": {
         "type": "mixin",
         "name": "font-size",
-        "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
+        "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  } @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
         "line": {
           "start": 70,
-          "end": 83
+          "end": 82
         }
       },
       "parameter": [
@@ -7407,10 +7511,10 @@
           "context": {
             "type": "mixin",
             "name": "font",
-            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
             "line": {
-              "start": 97,
-              "end": 114
+              "start": 96,
+              "end": 112
             }
           }
         }
@@ -7422,16 +7526,16 @@
     {
       "description": "<p>Nice font: includes font size, line height, and margins.</p>\n",
       "commentRange": {
-        "start": 85,
-        "end": 96
+        "start": 84,
+        "end": 95
       },
       "context": {
         "type": "mixin",
         "name": "font",
-        "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+        "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
         "line": {
-          "start": 97,
-          "end": 114
+          "start": 96,
+          "end": 112
         }
       },
       "parameter": [
@@ -7577,8 +7681,8 @@
             "name": "lead",
             "code": "\n  @include font(lead);\n",
             "line": {
-              "start": 118,
-              "end": 120
+              "start": 116,
+              "end": 118
             }
           }
         }
@@ -7590,16 +7694,16 @@
     {
       "description": "<p>Lead paragraph style</p>\n",
       "commentRange": {
-        "start": 116,
-        "end": 117
+        "start": 114,
+        "end": 115
       },
       "context": {
         "type": "mixin",
         "name": "lead",
         "code": "\n  @include font(lead);\n",
         "line": {
-          "start": 118,
-          "end": 120
+          "start": 116,
+          "end": 118
         }
       },
       "since": [
@@ -8251,10 +8355,10 @@
           "context": {
             "type": "mixin",
             "name": "font",
-            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
             "line": {
-              "start": 97,
-              "end": 114
+              "start": 96,
+              "end": 112
             }
           }
         }
@@ -12102,7 +12206,7 @@
           "context": {
             "type": "css",
             "name": ".card",
-            "value": "overflow: hidden;\n  margin: rem(0 0 $spacing-large 0);\n  position: relative;\n\n  &--flush {\n    margin-bottom: 0;\n  }\n\n  &--separator,\n  .list--unstyled & {\n    border-bottom: 1px solid $colour-border;\n    margin: rem(0 0 $spacing-small 0);\n    padding: rem(0 0 $spacing-x-small 0);\n  }\n\n  &__header {\n    margin: rem(0 0 $spacing-x-small 0);\n  }\n\n  &__heading {\n    @include font-size(0);\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      text-decoration: none;\n\n      &:hover {\n        text-decoration: underline;\n      }\n\n      &:before {\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: 100%;\n        z-index: 0;\n      }\n    }\n  }\n\n  &__author {\n    @include font-size(-1);\n    color: $colour-nice-dark-grey;\n    margin: rem(0 0 $spacing-x-small 0);\n\n    dd {\n      display: block;\n      margin: 0;\n    }\n  }\n\n  &__summary {\n    margin: rem(0 0 $spacing-x-small 0);\n  }\n\n  &__image {\n    display: block;\n    margin: rem(0 0 $spacing-x-small);\n  }\n\n  &__icon {\n    margin: rem(0 $spacing-x-small 0 0);\n  }\n\n  &__tag {\n    @include font-size(-1, true);\n  }\n\n  &__metadata {\n    @include font-size(-1);\n    color: $colour-nice-dark-grey;\n    display: inline-block;\n    margin: 0;\n    position: relative;\n    z-index: 1;\n  }\n\n  &__metadatum {\n    display: block;\n    margin: rem(0 $spacing-small $spacing-x-small 0);\n\n    dt,\n    dd {\n      display: inline-block;\n      margin: 0;\n    }\n  }\n\n  @include mq($from: xs) {\n    &__image {\n      float: left;\n      width: 30%;\n    }\n\n    &__text {\n      float: left;\n      padding-left: rem($spacing-medium);\n      width: 70%;\n    }\n  }\n\n  @include mq($from: sm) {\n    &__image {\n      width: 20%;\n    }\n\n    &__text {\n      width: 80%;\n    }\n\n    &__metadatum {\n      display: inline-block;\n      white-space: nowrap;\n    }\n  }\n\n  @include mq($from: md) {\n    &__image {\n      width: 30%;\n    }\n\n    &__text {\n      width: 70%;\n    }\n  }\n\n  @include mq($from: lg) {\n    &__image {\n      width: 25%;\n    }\n\n    &__text {\n      width: 75%;\n    }\n  }",
+            "value": "margin: rem(0 0 $spacing-large 0);\n  overflow: hidden;\n  position: relative;\n\n  &--flush {\n    margin-bottom: 0;\n  }\n\n  &--separator,\n  .list--unstyled & {\n    border-bottom: 1px solid $colour-border;\n    margin: rem(0 0 $spacing-small 0);\n    padding: rem(0 0 $spacing-x-small 0);\n  }\n\n  &__header {\n    margin: rem(0 0 $spacing-x-small 0);\n  }\n\n  &__heading {\n    @include font-size(0);\n    font-weight: bold;\n    margin: 0;\n\n    a {\n      text-decoration: none;\n\n      &:hover {\n        text-decoration: underline;\n      }\n\n      &:before {\n        content: '';\n        display: block;\n        height: 100%;\n        left: 0;\n        position: absolute;\n        top: 0;\n        width: 100%;\n        z-index: 0;\n      }\n    }\n  }\n\n  &__author {\n    @include font-size(-1);\n    color: $colour-nice-dark-grey;\n    margin: rem(0 0 $spacing-x-small 0);\n\n    dd {\n      display: block;\n      margin: 0;\n    }\n  }\n\n  &__summary {\n    margin: rem(0 0 $spacing-x-small 0);\n  }\n\n  &__image {\n    display: block;\n    margin: rem(0 0 $spacing-x-small);\n  }\n\n  &__icon {\n    margin: rem(0 $spacing-x-small 0 0);\n  }\n\n  &__tag {\n    @include font-size(-1, true);\n  }\n\n  &__metadata {\n    @include font-size(-1);\n    color: $colour-nice-dark-grey;\n    display: inline-block;\n    margin: 0;\n    position: relative;\n    z-index: 1;\n  }\n\n  &__metadatum {\n    display: block;\n    margin: rem(0 $spacing-small $spacing-x-small 0);\n\n    dt,\n    dd {\n      display: inline-block;\n      margin: 0;\n    }\n  }\n\n  @include mq($from: xs) {\n    &__image {\n      float: left;\n      width: 30%;\n    }\n\n    &__text {\n      float: left;\n      padding-left: rem($spacing-medium);\n      width: 70%;\n    }\n  }\n\n  @include mq($from: sm) {\n    &__image {\n      width: 20%;\n    }\n\n    &__text {\n      width: 80%;\n    }\n\n    &__metadatum {\n      display: inline-block;\n      white-space: nowrap;\n    }\n  }\n\n  @include mq($from: md) {\n    &__image {\n      width: 30%;\n    }\n\n    &__text {\n      width: 70%;\n    }\n  }\n\n  @include mq($from: lg) {\n    &__image {\n      width: 25%;\n    }\n\n    &__text {\n      width: 75%;\n    }\n  }",
             "line": {
               "start": 17,
               "end": 158
@@ -12158,6 +12262,38 @@
           "file": {
             "path": "components\\container\\_container.scss",
             "name": "_container.scss"
+          },
+          "groupName": {
+            "components": "Components"
+          }
+        },
+        {
+          "description": "<p>Filter group consist of a title with one of:</p>\n<ul>\n<li>set of checkbox options</li>\n<li>TODO e.g. free text, dates etc\nUsed to filter searches or lists of content.</li>\n</ul>\n",
+          "commentRange": {
+            "start": 5,
+            "end": 9
+          },
+          "context": {
+            "type": "css",
+            "name": ".filter-group",
+            "value": "margin-top: rem($spacing-medium);\n\n  &:first-child {\n    margin-top: 0;\n  }\n\n  // Heading used for collapsing/expanding the filter group\n  &__heading {\n    @include font-size(0);\n    background: $colour-nice-grey-2;\n    border: 0;\n    display: block;\n    font-weight: bold;\n    margin: 0;\n    padding: rem($spacing-small);\n    position: relative;\n    text-align: left;\n    width: 100%;\n\n    @include when-is(button) {\n      appearance: none;\n      cursor: pointer;\n\n      &:after {\n        @include nice-icon(chevron-up);\n        @include font-size(-1);\n        color: $colour-icons;\n        position: absolute;\n        right: rem($spacing-small);\n        top: rem($spacing-small);\n      }\n  \n      &[aria-expanded='false']:after {\n        content: nice-icon(chevron-down);\n      }\n  \n      &:hover {\n        background: $colour-nice-grey-1;\n  \n        // sass-lint:disable no-combinators\n        + .filter-group__options {\n          border-color: $colour-nice-grey-1;\n        }\n      }\n  \n      &:focus {\n        @include default-focus-style;\n      }\n    }\n  }\n\n  // Shows the number of filtered options e.g. \"2 selected\"\n  &__count {\n    @include font-size(-1);\n    font-weight: normal;\n  }\n\n  // Wrapper for the options when filter is a list of checboxes\n  &__options {\n    border: rem($spacing-x-small) solid $colour-nice-grey-2;\n\n    &[aria-hidden='true'] {\n      display: none;\n    }\n  }\n\n  // Checkbox/radio button option (label)\n  &__option {\n    background: $colour-nice-white;\n    border-top: 1px solid $colour-nice-grey-2;\n    cursor: pointer;\n    display: block;\n    line-height: 1.2;\n    padding: rem($spacing-small $spacing-small $spacing-small $spacing-large);\n\n    &:first-child {\n      border-top: 0;\n    }\n\n    &:hover {\n      background: $colour-nice-grey-3;\n    }\n\n    input {\n      float: left;\n      height: rem($spacing-medium);\n      margin-left: - rem($spacing-medium + $spacing-small);\n      margin-top: rem($spacing-xx-small);\n      width: rem($spacing-medium);\n\n      &:focus {\n        @include default-focus-style;\n      }\n    }\n  }",
+            "line": {
+              "start": 10,
+              "end": 107
+            }
+          },
+          "since": [
+            {
+              "version": "0.5.0"
+            }
+          ],
+          "group": [
+            "components"
+          ],
+          "access": "public",
+          "file": {
+            "path": "components\\filter-group\\_filter-group.scss",
+            "name": "_filter-group.scss"
           },
           "groupName": {
             "components": "Components"
@@ -12426,10 +12562,10 @@
           "context": {
             "type": "css",
             "name": ".panel",
-            "value": "background: $colour-panel-default;\n  margin: em($spacing-medium 0 $spacing-large);\n  padding: em($spacing-medium);\n\n  :first-child {\n    margin-top: 0;\n  }\n\n  :last-child {\n    margin-bottom: 0;\n  }",
+            "value": "background: $colour-panel-default;\n  margin: em($spacing-medium 0 $spacing-large);\n  padding: em($spacing-medium);\n\n  // sass-lint:disable no-combinators\n  > :first-child {\n    margin-top: 0;\n  }\n\n  // sass-lint:disable no-combinators\n  > :last-child {\n    margin-bottom: 0;\n  }",
             "line": {
               "start": 8,
-              "end": 33
+              "end": 35
             }
           },
           "since": [
@@ -12452,16 +12588,16 @@
         {
           "description": "<p>Modifier for the panel, to use a inverse (dark) background.\nAutmatically uses inverse links within it. Doesn&#39;t affect buttons\nthough, so any buttons within a dark panel should be <code>.btn.btn--light</code>.</p>\n",
           "commentRange": {
-            "start": 22,
-            "end": 27
+            "start": 24,
+            "end": 29
           },
           "context": {
             "type": "css",
             "name": ".panel--inverse",
             "value": "@include links-inverse;\n  background: $colour-panel-inverse;\n  color: $colour-text-inverse;",
             "line": {
-              "start": 28,
-              "end": 33
+              "start": 30,
+              "end": 35
             }
           },
           "require": [
@@ -12509,10 +12645,10 @@
               "context": {
                 "type": "css",
                 "name": ".tag",
-                "value": "@include font-size(0);\n  background-color: $colour-panel-inverse;\n  border-radius: em($spacing-xx-small);\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: normal;\n  margin: rem(0 0 $spacing-x-small 0);\n  padding: em(0 $spacing-x-small);\n  position: relative;\n  text-decoration: none;\n  vertical-align: baseline;\n\n  // At-root directive with interpolation to target a tag\n  // See https://stackoverflow.com/a/25655130/486434\n  @at-root a#{&} {\n    color: $colour-nice-white;\n    text-decoration: underline;\n\n    &:hover {\n      text-decoration: none;\n    }\n\n    &:active {\n      top: em($spacing-xx-small);\n    }\n  }\n\n  @media print {\n    // sass-lint:disable-block no-important\n    background: none !important;\n    color: $colour-true-black !important;\n    padding: 0 !important;\n  }\n\n  &--impact {\n    font-weight: 900;\n    letter-spacing: 1px;\n    padding: em($spacing-xx-small $spacing-small);\n    text-transform: uppercase;\n  }\n\n  &--super {\n    vertical-align: super;\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }\n\n  &--new {\n    background: $colour-guidance-new;\n  }\n\n  &--updated {\n    background: $colour-guidance-updated;\n  }\n\n  &--consultation {\n    background: $colour-guidance-consultation;\n  }\n\n  &--flush {\n    margin-bottom: 0;\n  }",
+                "value": "@include font-size(0);\n  background-color: $colour-panel-inverse;\n  border-radius: $nice-tag-border-radius;\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: normal;\n  margin: rem(0 0 $spacing-x-small 0);\n  padding: em(0 $spacing-x-small);\n  position: relative;\n  text-decoration: none;\n  vertical-align: baseline;\n\n  @include when-is(a) {\n    color: $colour-nice-white;\n    text-decoration: underline;\n\n    &:visited {\n      color: $colour-nice-white;\n    }\n\n    &:hover {\n      text-decoration: none;\n    }\n\n    &:active {\n      top: em($spacing-xx-small);\n    }\n  }\n\n  @media print {\n    // sass-lint:disable-block no-important\n    background: none !important;\n    color: $colour-true-black !important;\n    padding: 0 !important;\n  }\n\n  &--impact {\n    font-weight: 900;\n    letter-spacing: 1px;\n    padding: em($spacing-xx-small $spacing-small);\n    text-transform: uppercase;\n  }\n\n  &--super {\n    vertical-align: super;\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }\n\n  &--new {\n    background: $colour-guidance-new;\n  }\n\n  &--updated {\n    background: $colour-guidance-updated;\n  }\n\n  &--consultation {\n    background: $colour-guidance-consultation;\n  }\n\n  &--flush {\n    margin-bottom: 0;\n  }\n\n  &--outline {\n    @include font-size(-1);\n    background: $colour-nice-grey-3;\n    border: 1px solid $colour-border;\n    color: $colour-nice-dark-grey;\n    position: relative;\n  }\n\n  &__remove {\n    appearance: none;\n    background: 0;\n    border: 0;\n    color: $colour-nice-teal;\n    cursor: pointer;\n    margin-left: rem($spacing-x-small);\n    padding: 0;\n    text-decoration: none;\n\n    &:focus {\n      @include default-focus-style;\n    }\n\n    &:visited {\n      color: $colour-nice-teal;\n    }\n\n    &:hover,\n    &:active {\n      color: $colour-text;\n    }\n\n    &:hover:after {\n      background: rgba($colour-nice-black, .1);\n    }\n\n    &:after {\n      content: '';\n      border-radius: $nice-tag-border-radius;\n      display: block;\n      height: 100%;\n      left: 0;\n      position: absolute;\n      top: 0;\n      width: 100%;\n    }\n  }",
                 "line": {
-                  "start": 19,
-                  "end": 96
+                  "start": 21,
+                  "end": 147
                 }
               }
             }
@@ -12529,6 +12665,33 @@
           "file": {
             "path": "components\\phase-banner\\_phase-banner.scss",
             "name": "_phase-banner.scss"
+          },
+          "groupName": {
+            "components": "Components"
+          }
+        },
+        {
+          "description": "<p>Results info shows at the top of a list of results and\ncontains the count and sort options.</p>\n",
+          "commentRange": {
+            "start": 5,
+            "end": 6
+          },
+          "context": {
+            "type": "css",
+            "name": ".results-info",
+            "value": "@include clearfix;\n  margin: rem(0 0 $spacing-medium);\n\n  &__count {\n    @include font-size(h5);\n    font-weight: bold;\n    margin: rem(0 0 $spacing-small);\n  }\n\n  &__sort {\n    margin: 0;\n  }\n\n  &__filters {\n    clear: both;\n    list-style: none;\n    margin: 0;\n    padding-top: rem($spacing-small);\n  }\n\n  @include mq($from: sm) {\n    margin: rem(0 0 $spacing-medium);\n\n    &__count {\n      float: left;\n      margin: 0;\n      width: 50%;\n    }\n\n    &__sort {\n      float: right;\n      text-align: right;\n      width: 50%;\n    }\n\n    &__filter {\n      display: inline-block;\n      margin-right: rem($spacing-x-small);\n    }\n  }",
+            "line": {
+              "start": 7,
+              "end": 49
+            }
+          },
+          "group": [
+            "components"
+          ],
+          "access": "public",
+          "file": {
+            "path": "components\\results-info\\_results-info.scss",
+            "name": "_results-info.scss"
           },
           "groupName": {
             "components": "Components"
@@ -12570,7 +12733,7 @@
           "context": {
             "type": "css",
             "name": ".tabs",
-            "value": "margin: em($spacing-medium 0 $spacing-large);\n\n  // The list of tabs\n  &__list {\n    display: none;\n    list-style: none;\n    margin: 0;\n    padding: 0;\n    position: relative;\n    top: 1px; // To cover the border around the tabs content\n\n    .js & {\n      display: block;\n    }\n  }\n\n  // Individual tab\n  &__tab {\n    float: left;\n  }\n\n  // The button/link for the tab itself\n  &__tab-btn {\n    @include link-default;\n    background: 0;\n    border: 0;\n    border-left: 1px solid transparent;\n    border-right: 1px solid transparent;\n    cursor: pointer;\n    display: block;\n    margin: 0;\n    padding: em($spacing-medium $spacing-medium);\n    position: relative;\n\n    &:focus {\n      // Stop focus ring clipping\n      z-index: 1;\n    }\n\n    &[aria-selected=\"true\"] {\n      background: $colour-panel-default;\n      border-left: 1px solid $colour-border;\n      border-right: 1px solid $colour-border;\n      color: $colour-text;\n      text-decoration: none;\n\n      &:before {\n        // The -1px is to over the grey border round the tab\n        background: $colour-icons;\n        content: '';\n        height: em($spacing-x-small);\n        left: -1px;\n        position: absolute;\n        right: -1px;\n        top: 0;\n      }\n    }\n  }\n\n  // The tab content containing the tab panels\n  &__content {\n    clear: both;\n\n    .js & {\n      background: $colour-panel-default;\n      border: 1px solid $colour-border;\n      clear: both;\n      padding: em($spacing-medium);\n    }\n  }\n\n  // An individual tab content pane\n  &__pane {\n    margin-bottom: em($spacing-medium);\n\n    // Assume tabs will stack if no JS is available\n    .js & {\n      display: none;\n      margin-bottom: 0;\n\n      &--active {\n        display: block;\n      }\n    }\n\n    :first-child {\n      margin-top: 0;\n    }\n\n    :last-child {\n      margin-bottom: 0;\n    }\n  }",
+            "value": "margin: em($spacing-medium 0 $spacing-large);\n\n  // The list of tabs\n  &__list {\n    display: none;\n    list-style: none;\n    margin: 0;\n    padding: 0;\n    position: relative;\n    top: 1px; // To cover the border around the tabs content\n\n    .js & {\n      display: block;\n    }\n  }\n\n  // Individual tab\n  &__tab {\n    float: left;\n  }\n\n  // The button/link for the tab itself\n  &__tab-btn {\n    @include link-default;\n    background: 0;\n    border: 0;\n    border-left: 1px solid transparent;\n    border-right: 1px solid transparent;\n    cursor: pointer;\n    display: block;\n    margin: 0;\n    padding: em($spacing-medium $spacing-medium);\n    position: relative;\n\n    &:focus {\n      // Stop focus ring clipping\n      z-index: 1;\n    }\n\n    &[aria-selected='true'] {\n      background: $colour-panel-default;\n      border-left: 1px solid $colour-border;\n      border-right: 1px solid $colour-border;\n      color: $colour-text;\n      text-decoration: none;\n\n      &:before {\n        // The -1px is to over the grey border round the tab\n        background: $colour-icons;\n        content: '';\n        height: em($spacing-x-small);\n        left: -1px;\n        position: absolute;\n        right: -1px;\n        top: 0;\n      }\n    }\n  }\n\n  // The tab content containing the tab panels\n  &__content {\n    clear: both;\n\n    .js & {\n      background: $colour-panel-default;\n      border: 1px solid $colour-border;\n      clear: both;\n      padding: em($spacing-medium);\n    }\n  }\n\n  // An individual tab content pane\n  &__pane {\n    margin-bottom: em($spacing-medium);\n\n    // Assume tabs will stack if no JS is available\n    .js & {\n      display: none;\n      margin-bottom: 0;\n\n      &--active {\n        display: block;\n      }\n    }\n\n    :first-child {\n      margin-top: 0;\n    }\n\n    :last-child {\n      margin-bottom: 0;\n    }\n  }",
             "line": {
               "start": 43,
               "end": 138
@@ -12605,16 +12768,16 @@
         {
           "description": "<p>Tag component. Used for labelling items in lists\nand also used within alpha/beta phase banners.</p>\n<p>BEM modifiers:</p>\n<ul>\n<li><code>--impact</code> Bolder tag, used for higher impact</li>\n<li><code>--super</code>  Super aligned, useful for tagging headings</li>\n<li><code>--alpha</code> Alpha</li>\n<li><code>--beta</code>  Beta</li>\n<li><code>--live</code>  Live</li>\n<li><code>--new</code>  New</li>\n<li><code>--updated</code>  Updated</li>\n<li><code>--consultation</code>  In consultation</li>\n<li><code>--flush</code>  No margin</li>\n</ul>\n",
           "commentRange": {
-            "start": 5,
-            "end": 18
+            "start": 7,
+            "end": 20
           },
           "context": {
             "type": "css",
             "name": ".tag",
-            "value": "@include font-size(0);\n  background-color: $colour-panel-inverse;\n  border-radius: em($spacing-xx-small);\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: normal;\n  margin: rem(0 0 $spacing-x-small 0);\n  padding: em(0 $spacing-x-small);\n  position: relative;\n  text-decoration: none;\n  vertical-align: baseline;\n\n  // At-root directive with interpolation to target a tag\n  // See https://stackoverflow.com/a/25655130/486434\n  @at-root a#{&} {\n    color: $colour-nice-white;\n    text-decoration: underline;\n\n    &:hover {\n      text-decoration: none;\n    }\n\n    &:active {\n      top: em($spacing-xx-small);\n    }\n  }\n\n  @media print {\n    // sass-lint:disable-block no-important\n    background: none !important;\n    color: $colour-true-black !important;\n    padding: 0 !important;\n  }\n\n  &--impact {\n    font-weight: 900;\n    letter-spacing: 1px;\n    padding: em($spacing-xx-small $spacing-small);\n    text-transform: uppercase;\n  }\n\n  &--super {\n    vertical-align: super;\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }\n\n  &--new {\n    background: $colour-guidance-new;\n  }\n\n  &--updated {\n    background: $colour-guidance-updated;\n  }\n\n  &--consultation {\n    background: $colour-guidance-consultation;\n  }\n\n  &--flush {\n    margin-bottom: 0;\n  }",
+            "value": "@include font-size(0);\n  background-color: $colour-panel-inverse;\n  border-radius: $nice-tag-border-radius;\n  color: $colour-text-inverse;\n  display: inline-block;\n  font-weight: normal;\n  margin: rem(0 0 $spacing-x-small 0);\n  padding: em(0 $spacing-x-small);\n  position: relative;\n  text-decoration: none;\n  vertical-align: baseline;\n\n  @include when-is(a) {\n    color: $colour-nice-white;\n    text-decoration: underline;\n\n    &:visited {\n      color: $colour-nice-white;\n    }\n\n    &:hover {\n      text-decoration: none;\n    }\n\n    &:active {\n      top: em($spacing-xx-small);\n    }\n  }\n\n  @media print {\n    // sass-lint:disable-block no-important\n    background: none !important;\n    color: $colour-true-black !important;\n    padding: 0 !important;\n  }\n\n  &--impact {\n    font-weight: 900;\n    letter-spacing: 1px;\n    padding: em($spacing-xx-small $spacing-small);\n    text-transform: uppercase;\n  }\n\n  &--super {\n    vertical-align: super;\n  }\n\n  &--alpha {\n    background-color: $colour-alpha;\n    color: $colour-text-inverse;\n  }\n\n  &--beta {\n    background-color: $colour-beta;\n    color: $colour-text-inverse;\n  }\n\n  &--live {\n    background-color: $colour-live;\n    color: $colour-text-inverse;\n  }\n\n  &--new {\n    background: $colour-guidance-new;\n  }\n\n  &--updated {\n    background: $colour-guidance-updated;\n  }\n\n  &--consultation {\n    background: $colour-guidance-consultation;\n  }\n\n  &--flush {\n    margin-bottom: 0;\n  }\n\n  &--outline {\n    @include font-size(-1);\n    background: $colour-nice-grey-3;\n    border: 1px solid $colour-border;\n    color: $colour-nice-dark-grey;\n    position: relative;\n  }\n\n  &__remove {\n    appearance: none;\n    background: 0;\n    border: 0;\n    color: $colour-nice-teal;\n    cursor: pointer;\n    margin-left: rem($spacing-x-small);\n    padding: 0;\n    text-decoration: none;\n\n    &:focus {\n      @include default-focus-style;\n    }\n\n    &:visited {\n      color: $colour-nice-teal;\n    }\n\n    &:hover,\n    &:active {\n      color: $colour-text;\n    }\n\n    &:hover:after {\n      background: rgba($colour-nice-black, .1);\n    }\n\n    &:after {\n      content: '';\n      border-radius: $nice-tag-border-radius;\n      display: block;\n      height: 100%;\n      left: 0;\n      position: absolute;\n      top: 0;\n      width: 100%;\n    }\n  }",
             "line": {
-              "start": 19,
-              "end": 96
+              "start": 21,
+              "end": 147
             }
           },
           "since": [
@@ -14151,6 +14314,51 @@
           }
         },
         {
+          "description": "<p>Since the current way to qualify a class from within its ruleset is quite\nugly, here is a mixin providing a friendly API to do so.</p>\n",
+          "commentRange": {
+            "start": 63,
+            "end": 68
+          },
+          "context": {
+            "type": "mixin",
+            "name": "when-is",
+            "code": "\n  @at-root #{$element-selector + &} {\n    @content;\n  }\n",
+            "line": {
+              "start": 69,
+              "end": 73
+            }
+          },
+          "see": [],
+          "author": [
+            "<p>Hugo Giraudel</p>\n"
+          ],
+          "parameter": [
+            {
+              "type": "String",
+              "name": "element-selector",
+              "description": "<p>Element selector</p>\n"
+            }
+          ],
+          "since": [
+            {
+              "version": "0.5.0;"
+            }
+          ],
+          "group": [
+            "helpers"
+          ],
+          "access": "public",
+          "content": "",
+          "require": [],
+          "file": {
+            "path": "stylesheets\\helpers\\_helpers-utils.scss",
+            "name": "_helpers-utils.scss"
+          },
+          "groupName": {
+            "helpers": "Helpers"
+          }
+        },
+        {
           "description": "<p>Portrait media query</p>\n",
           "commentRange": {
             "start": 9,
@@ -15613,10 +15821,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font-size",
-                "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
+                "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  } @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
                 "line": {
                   "start": 70,
-                  "end": 83
+                  "end": 82
                 }
               }
             },
@@ -15625,10 +15833,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font-size",
-                "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
+                "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  } @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
                 "line": {
                   "start": 70,
-                  "end": 83
+                  "end": 82
                 }
               }
             },
@@ -15637,10 +15845,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font-size",
-                "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
+                "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  } @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
                 "line": {
                   "start": 70,
-                  "end": 83
+                  "end": 82
                 }
               }
             },
@@ -15649,10 +15857,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font-size",
-                "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
+                "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  } @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
                 "line": {
                   "start": 70,
-                  "end": 83
+                  "end": 82
                 }
               }
             },
@@ -15661,10 +15869,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font",
-                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
                 "line": {
-                  "start": 97,
-                  "end": 114
+                  "start": 96,
+                  "end": 112
                 }
               }
             },
@@ -15673,10 +15881,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font",
-                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
                 "line": {
-                  "start": 97,
-                  "end": 114
+                  "start": 96,
+                  "end": 112
                 }
               }
             },
@@ -15685,10 +15893,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font",
-                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
                 "line": {
-                  "start": 97,
-                  "end": 114
+                  "start": 96,
+                  "end": 112
                 }
               }
             },
@@ -15697,10 +15905,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font",
-                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
                 "line": {
-                  "start": 97,
-                  "end": 114
+                  "start": 96,
+                  "end": 112
                 }
               }
             },
@@ -16358,10 +16566,10 @@
           "context": {
             "type": "mixin",
             "name": "font-size",
-            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
+            "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  } @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
             "line": {
               "start": 70,
-              "end": 83
+              "end": 82
             }
           },
           "parameter": [
@@ -16429,10 +16637,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font",
-                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
                 "line": {
-                  "start": 97,
-                  "end": 114
+                  "start": 96,
+                  "end": 112
                 }
               }
             }
@@ -16444,16 +16652,16 @@
         {
           "description": "<p>Nice font: includes font size, line height, and margins.</p>\n",
           "commentRange": {
-            "start": 85,
-            "end": 96
+            "start": 84,
+            "end": 95
           },
           "context": {
             "type": "mixin",
             "name": "font",
-            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
             "line": {
-              "start": 97,
-              "end": 114
+              "start": 96,
+              "end": 112
             }
           },
           "parameter": [
@@ -16599,8 +16807,8 @@
                 "name": "lead",
                 "code": "\n  @include font(lead);\n",
                 "line": {
-                  "start": 118,
-                  "end": 120
+                  "start": 116,
+                  "end": 118
                 }
               }
             }
@@ -16612,16 +16820,16 @@
         {
           "description": "<p>Lead paragraph style</p>\n",
           "commentRange": {
-            "start": 116,
-            "end": 117
+            "start": 114,
+            "end": 115
           },
           "context": {
             "type": "mixin",
             "name": "lead",
             "code": "\n  @include font(lead);\n",
             "line": {
-              "start": 118,
-              "end": 120
+              "start": 116,
+              "end": 118
             }
           },
           "since": [
@@ -17260,10 +17468,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font",
-                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
                 "line": {
-                  "start": 97,
-                  "end": 114
+                  "start": 96,
+                  "end": 112
                 }
               }
             }
@@ -17336,10 +17544,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font-size",
-                "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
+                "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  } @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
                 "line": {
                   "start": 70,
-                  "end": 83
+                  "end": 82
                 }
               }
             }
@@ -17412,10 +17620,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font-size",
-                "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  }\n  @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
+                "code": "\n  $font-size: get-font-size($scale);\n  $line-height: get-line-height($scale);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-size: rem($font-size) !important;\n    line-height: rem($line-height) !important;\n  } @else {\n    font-size: rem($font-size);\n    line-height: rem($line-height);\n  }\n",
                 "line": {
                   "start": 70,
-                  "end": 83
+                  "end": 82
                 }
               }
             }
@@ -17652,10 +17860,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font",
-                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  }\n  @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
                 "line": {
-                  "start": 97,
-                  "end": 114
+                  "start": 96,
+                  "end": 112
                 }
               }
             }
