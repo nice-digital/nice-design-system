@@ -35,6 +35,10 @@ $nice-tag-border-radius: em($spacing-xx-small);
     color: $colour-nice-white;
     text-decoration: underline;
 
+    &:visited {
+      color: $colour-nice-white;
+    }
+
     &:hover {
       text-decoration: none;
     }
@@ -113,6 +117,10 @@ $nice-tag-border-radius: em($spacing-xx-small);
 
     &:focus {
       @include default-focus-style;
+    }
+
+    &:visited {
+      color: $colour-nice-teal;
     }
 
     &:hover,
