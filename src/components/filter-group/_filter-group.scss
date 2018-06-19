@@ -35,24 +35,25 @@
         @include nice-icon(chevron-up);
         @include font-size(-1);
         color: $colour-icons;
+        line-height: normal; // IE 9/10 bug where rems on block psuedos collapse to 0
         position: absolute;
         right: rem($spacing-small);
         top: rem($spacing-small);
       }
-  
+
       &[aria-expanded='false']:after {
         content: nice-icon(chevron-down);
       }
-  
+
       &:hover {
         background: $colour-nice-grey-1;
-  
+
         // sass-lint:disable no-combinators
         + .filter-group__options {
           border-color: $colour-nice-grey-1;
         }
       }
-  
+
       &:focus {
         @include default-focus-style;
       }
