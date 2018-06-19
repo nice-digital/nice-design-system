@@ -1,5 +1,5 @@
 /*!
- * NICE Design System 0.5.0-beta.0 | 2018-06-18
+ * NICE Design System 0.5.0-beta.1 | 2018-06-19
  * © Copyright NICE 2015-2018
  * Licensed under MIT (https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
  */
@@ -4010,8 +4010,8 @@ ol, .list {
   font-family: "NICE Icons";
   font-style: normal;
   font-weight: normal;
-  src: url("/fonts/nice-icons.eot?886615835");
-  src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/nice-icons.woff2?886615835") format("woff2"), url("/fonts/nice-icons.woff?886615835") format("woff"), url("/fonts/nice-icons.ttf?886615835") format("truetype"), url("/fonts/nice-icons.svg?886615835#nice-icons") format("svg"); }
+  src: url("/fonts/nice-icons.eot?597940562");
+  src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/nice-icons.woff2?597940562") format("woff2"), url("/fonts/nice-icons.woff?597940562") format("woff"), url("/fonts/nice-icons.ttf?597940562") format("truetype"), url("/fonts/nice-icons.svg?597940562#nice-icons") format("svg"); }
 
 .icon {
   display: inline-block;
@@ -4454,6 +4454,7 @@ ol, .list {
         line-height: 20px;
         line-height: 1.25rem;
         color: #004650;
+        line-height: normal;
         position: absolute;
         right: 8px;
         right: 0.5rem;
