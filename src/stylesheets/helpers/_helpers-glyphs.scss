@@ -15,6 +15,7 @@
 /// @prop {String} less-than [003c] Less than symbol (<)
 /// @prop {String} plus [002b] Plus sign (+)
 /// @prop {String} punc-space [02008] Punctuation space (small, width of a comma)
+/// @prop {String} zero-width-space [0200B] Zero width space
 /// @since 0.1.0
 $nice-glyphs: (
   bullet: '2022',
@@ -24,7 +25,8 @@ $nice-glyphs: (
   left-double-quotation-mark: '201C',
   less-than: '003c',
   plus: '002b',
-  punc-space: '02008'
+  punc-space: '02008',
+  zero-width-space: '0200B'
   // Add more entity codes here as and when they're needed
 ) !default;
 
