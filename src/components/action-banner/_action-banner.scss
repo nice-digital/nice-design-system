@@ -14,12 +14,7 @@
   color: $colour-text-inverse;
   margin: em($spacing-large 0);
   padding: em($spacing-small 0);
-
-  &--subtle {
-    //@include links-default;
-    background: $colour-panel-default;
-    color: $colour-text;
-  }
+  position: relative;
 
   &__container {
     @extend %container;
@@ -47,6 +42,36 @@
     @include grid-item($middle: true);
   }
 
+  &__close {
+    appearance: none;
+    background: 0;
+    border: 0;
+    color: $colour-text-inverse;
+    cursor: pointer;
+    line-height: 1;
+    padding: rem($spacing-medium);
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+
+  &--subtle {
+    @include links-default;
+    background: $colour-panel-default;
+    color: $colour-text;
+
+    .action-banner__close {
+      color: $colour-text;
+    }
+  }
+
+  &--closeable {
+    .action-banner__title {
+      padding-right: rem($spacing-large); // Make toom for close button
+    }
+  }
+
   @include mq($from: md) {
     &__text {
       margin-bottom: 0;
@@ -56,6 +81,16 @@
     &__actions {
       text-align: right;
       width: percentage(1/4);
+    }
+
+    &--closeable {
+      .action-banner__title {
+        padding-right: 0;
+      }
+
+      .action-banner__actions {
+        padding-right: rem($spacing-medium);
+      }
     }
   }
 

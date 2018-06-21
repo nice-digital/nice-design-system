@@ -1,6 +1,6 @@
 {% macro actionBanner(actionBanner) %}
 
-	<section class="action-banner{% if actionBanner.modifier %} action-banner--{{ actionBanner.modifier }}{% endif %}">
+	<section class="action-banner{% if actionBanner.modifier %} action-banner--{{ actionBanner.modifier }}{% endif %}{% if actionBanner.closeable %} action-banner--closeable{% endif %}">
 		<div class="action-banner__container">
 			<div class="action-banner__inner">
 				<div class="action-banner__text">
@@ -8,7 +8,7 @@
 						{{ actionBanner.title }}
 					</h2>
 					<p class="action-banner__intro">
-						{{ actionBanner.body }}
+						{{ actionBanner.body | safe }}
 					</p>
 				</div>
 				<div class="action-banner__actions">
@@ -22,6 +22,12 @@
 						</button>
 					{% endif %}
 				</div>
+				{% if actionBanner.closeable %}
+					<button type="button" class="action-banner__close">
+						<span class="icon icon--remove" ara-hidden="true"></span>
+						<span class="visually-hidden">Close</span>
+					</button>
+				{% endif %}
 			</div>
 		</div>
 	</section>
