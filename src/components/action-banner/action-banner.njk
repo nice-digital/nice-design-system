@@ -1,6 +1,6 @@
 {% macro actionBanner(actionBanner) %}
 
-	<section class="action-banner">
+	<section class="action-banner{% if actionBanner.modifier %} action-banner--{{ actionBanner.modifier }}{% endif %}">
 		<div class="action-banner__container">
 			<div class="action-banner__inner">
 				<div class="action-banner__text">
@@ -12,9 +12,15 @@
 					</p>
 				</div>
 				<div class="action-banner__actions">
-					<a href="{{ actionBanner.cta.href }}" class="btn btn--inverse">
-						{{ actionBanner.cta.text }}
-					</a>
+					{% if actionBanner.cta.href %}
+						<a href="{{ actionBanner.cta.href }}" class="btn{% if actionBanner.cta.modifier %} btn--{{ actionBanner.cta.modifier }}{% endif %}">
+							{{ actionBanner.cta.text }}
+						</a>
+					{% else %}
+						<button type="btn" class="btn{% if actionBanner.cta.modifier %} btn--{{ actionBanner.cta.modifier }}{% endif %}">
+							{{ actionBanner.cta.text }}
+						</button>
+					{% endif %}
 				</div>
 			</div>
 		</div>

@@ -4,6 +4,8 @@
 
 /// Action banner component. Used to highlight
 /// and give context to a call-to-action.
+/// Modifiers:
+/// - subtle
 ///
 /// @since 0.3.1
 .action-banner {
@@ -12,6 +14,12 @@
   color: $colour-text-inverse;
   margin: em($spacing-large 0);
   padding: em($spacing-small 0);
+
+  &--subtle {
+    //@include links-default;
+    background: $colour-panel-default;
+    color: $colour-text;
+  }
 
   &__container {
     @extend %container;

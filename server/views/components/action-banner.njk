@@ -6,8 +6,30 @@
 
 	<div class="container">
 		<h1>Action banner</h1>
+
+		<h2>Normal</h2>
+
+		{{ actionBanner({
+			title: "This is a title",
+			body: "This is some body copy",
+			cta: {
+				text: "Link text",
+				href: "/button-href",
+				modifier: "inverse"
+			}
+		}) }}
+
+		<h2>Subtle</h2>
+
+		{{ actionBanner({
+			modifier: "subtle",
+			title: "This is a title",
+			body: "This is some body copy",
+			cta: {
+				text: "Button text",
+				modifier: "secondary"
+			}
+		}) }}
+
 	</div>
-
-	{{ actionBanner({ title: "This is a title", body: "This is some body copy", cta: { text: "Button text", href: "/button-href" } }) }}
-
 {% endblock %}
