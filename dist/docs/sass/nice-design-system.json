@@ -1159,8 +1159,8 @@
             "name": "link-inverse",
             "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 33,
-              "end": 55
+              "start": 40,
+              "end": 62
             }
           }
         }
@@ -1207,8 +1207,8 @@
             "name": "link-inverse",
             "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 33,
-              "end": 55
+              "start": 40,
+              "end": 62
             }
           }
         }
@@ -1255,8 +1255,8 @@
             "name": "link-inverse",
             "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 33,
-              "end": 55
+              "start": 40,
+              "end": 62
             }
           }
         }
@@ -1303,8 +1303,8 @@
             "name": "link-inverse",
             "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 33,
-              "end": 55
+              "start": 40,
+              "end": 62
             }
           }
         }
@@ -1351,8 +1351,8 @@
             "name": "link-inverse",
             "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 33,
-              "end": 55
+              "start": 40,
+              "end": 62
             }
           }
         }
@@ -1423,8 +1423,8 @@
             "name": "link-inverse",
             "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 33,
-              "end": 55
+              "start": 40,
+              "end": 62
             }
           }
         }
@@ -2541,18 +2541,18 @@
       "resolvedValue": "#557021"
     },
     {
-      "description": "<p>Action banner component. Used to highlight\nand give context to a call-to-action.</p>\n",
+      "description": "<p>Action banner component. Used to highlight\nand give context to a call-to-action.\nModifiers:</p>\n<ul>\n<li>subtle</li>\n</ul>\n",
       "commentRange": {
         "start": 5,
-        "end": 8
+        "end": 10
       },
       "context": {
         "type": "css",
         "name": ".action-banner",
-        "value": "@include links-inverse;\n  background: $colour-nice-cool-teal;\n  color: $colour-text-inverse;\n  margin: em($spacing-large 0);\n  padding: em($spacing-small 0);\n\n  &__container {\n    @extend %container;\n  }\n\n  &__inner {\n    @include grid;\n  }\n\n  &__text {\n    @include grid-item($middle: true);\n    margin-bottom: em($spacing-medium);\n  }\n\n  &__title {\n    @include font-size(3);\n    margin: em(0 0 $spacing-x-small);\n  }\n\n  &__intro {\n    margin: 0;\n  }\n\n  &__actions {\n    @include grid-item($middle: true);\n  }\n\n  @include mq($from: md) {\n    &__text {\n      margin-bottom: 0;\n      width: percentage(3/4);\n    }\n\n    &__actions {\n      text-align: right;\n      width: percentage(1/4);\n    }\n  }\n\n  @media print {\n    @include important(display, none);\n  }",
+        "value": "@include links-inverse;\n  background: $colour-nice-cool-teal;\n  color: $colour-text-inverse;\n  margin: em($spacing-large 0);\n  padding: em($spacing-small 0);\n  position: relative;\n\n  &__container {\n    @extend %container;\n  }\n\n  &__inner {\n    @include grid;\n  }\n\n  &__text {\n    @include grid-item($middle: true);\n    margin-bottom: em($spacing-medium);\n  }\n\n  &__title {\n    @include font-size(3);\n    margin: em(0 0 $spacing-x-small);\n  }\n\n  &__intro {\n    margin: 0;\n  }\n\n  &__actions {\n    @include grid-item($middle: true);\n  }\n\n  &__close {\n    appearance: none;\n    background: 0;\n    border: 0;\n    color: $colour-text-inverse;\n    cursor: pointer;\n    line-height: 1;\n    padding: rem($spacing-medium);\n    position: absolute;\n    right: 0;\n    top: 0;\n    z-index: 1;\n  }\n\n  &--subtle {\n    @include links-default;\n    background: $colour-panel-default;\n    color: $colour-text;\n\n    .action-banner__close {\n      color: $colour-text;\n    }\n  }\n\n  &--closeable {\n    .action-banner__title {\n      padding-right: rem($spacing-large); // Make toom for close button\n    }\n  }\n\n  @include mq($from: md) {\n    &__text {\n      margin-bottom: 0;\n      width: percentage(3/4);\n    }\n\n    &__actions {\n      text-align: right;\n      width: percentage(1/4);\n    }\n\n    &--closeable {\n      .action-banner__title {\n        padding-right: 0;\n      }\n\n      .action-banner__actions {\n        padding-right: rem($spacing-medium);\n      }\n    }\n  }\n\n  @media print {\n    @include important(display, none);\n  }",
         "line": {
-          "start": 9,
-          "end": 58
+          "start": 11,
+          "end": 101
         }
       },
       "since": [
@@ -4842,16 +4842,16 @@
       "description": "<p>A map of glyph name to code point (character entity reference).\nAvoids magic strings like <code>content: &#39;\\201C&#39;</code> within our SASS.\nUsual usage is via the <code>get-glyph</code> function, e.g. <code>get-glyph(greater-than)</code>.</p>\n",
       "commentRange": {
         "start": 5,
-        "end": 18
+        "end": 19
       },
       "context": {
         "type": "variable",
         "name": "nice-glyphs",
-        "value": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  hyphen-minus: '002d',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  plus: '002b',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
+        "value": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  hyphen-minus: '002d',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  plus: '002b',\n  punc-space: '02008',\n  zero-width-space: '0200B'\n  // Add more entity codes here as and when they're needed\n)",
         "scope": "default",
         "line": {
-          "start": 19,
-          "end": 29
+          "start": 20,
+          "end": 31
         }
       },
       "see": [
@@ -4862,8 +4862,8 @@
             "name": "get-glyph",
             "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
             "line": {
-              "start": 46,
-              "end": 59
+              "start": 48,
+              "end": 61
             }
           }
         }
@@ -4930,6 +4930,13 @@
           "default": "02008",
           "description": "<p>Punctuation space (small, width of a comma)</p>\n",
           "resolvedValue": "02008"
+        },
+        {
+          "type": "String",
+          "name": "zero-width-space",
+          "default": "0200B",
+          "description": "<p>Zero width space</p>\n",
+          "resolvedValue": "0200B"
         }
       ],
       "since": [
@@ -4953,8 +4960,8 @@
             "name": "get-glyph",
             "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
             "line": {
-              "start": 46,
-              "end": 59
+              "start": 48,
+              "end": 61
             }
           }
         },
@@ -4965,8 +4972,8 @@
             "name": "get-glyph",
             "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
             "line": {
-              "start": 46,
-              "end": 59
+              "start": 48,
+              "end": 61
             }
           }
         },
@@ -4977,8 +4984,8 @@
             "name": "get-glyph",
             "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
             "line": {
-              "start": 46,
-              "end": 59
+              "start": 48,
+              "end": 61
             }
           }
         }
@@ -4986,21 +4993,21 @@
       "groupName": {
         "helpers": "Helpers"
       },
-      "resolvedValue": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  hyphen-minus: '002d',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  plus: '002b',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)"
+      "resolvedValue": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  hyphen-minus: '002d',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  plus: '002b',\n  punc-space: '02008',\n  zero-width-space: '0200B'\n  // Add more entity codes here as and when they're needed\n)"
     },
     {
       "description": "<p>Gets a glyph code, or several, (character entity reference) from the\n<code>$nice-glyphs</code> map, matching the given <code>$names</code>. Usually used with the content\nproperty for psuedo elements, to avoid use of magic character reference strings.</p>\n",
       "commentRange": {
-        "start": 31,
-        "end": 45
+        "start": 33,
+        "end": 47
       },
       "context": {
         "type": "function",
         "name": "get-glyph",
         "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
         "line": {
-          "start": 46,
-          "end": 59
+          "start": 48,
+          "end": 61
         }
       },
       "parameter": [
@@ -5020,11 +5027,11 @@
           "context": {
             "type": "variable",
             "name": "nice-glyphs",
-            "value": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  hyphen-minus: '002d',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  plus: '002b',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
+            "value": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  hyphen-minus: '002d',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  plus: '002b',\n  punc-space: '02008',\n  zero-width-space: '0200B'\n  // Add more entity codes here as and when they're needed\n)",
             "scope": "default",
             "line": {
-              "start": 19,
-              "end": 29
+              "start": 20,
+              "end": 31
             }
           }
         }
@@ -5078,16 +5085,16 @@
     {
       "description": "<p>Output a BEM style glyph selector for each glyph in the map.\n  E.g. .glyph.glyph--bullet { content: &#39;\\2022&#39;; }\n  @since 0.1.0</p>\n",
       "commentRange": {
-        "start": 62,
-        "end": 64
+        "start": 64,
+        "end": 66
       },
       "context": {
         "type": "css",
         "name": ".glyph",
         "value": "@each $key, $value in $nice-glyphs {\n      &--#{$key} {\n        &::before {\n          content: unquote('\\'\\\\#{$value}\\'');\n        }\n      }\n    }",
         "line": {
-          "start": 65,
-          "end": 75
+          "start": 67,
+          "end": 77
         }
       },
       "group": [
@@ -6822,8 +6829,8 @@
             "name": "link-inverse",
             "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 33,
-              "end": 55
+              "start": 40,
+              "end": 62
             }
           }
         }
@@ -7787,6 +7794,58 @@
         "path": "stylesheets\\typography\\_typography-links.scss",
         "name": "_typography-links.scss"
       },
+      "usedBy": [
+        {
+          "description": "<p>Default links for use on a light background</p>\n",
+          "context": {
+            "type": "mixin",
+            "name": "links-default",
+            "code": "\n  a {\n    @include link-default;\n  }\n",
+            "line": {
+              "start": 32,
+              "end": 36
+            }
+          }
+        }
+      ],
+      "groupName": {
+        "typography": "Typography"
+      }
+    },
+    {
+      "description": "<p>Default links for use on a light background</p>\n",
+      "commentRange": {
+        "start": 30,
+        "end": 31
+      },
+      "context": {
+        "type": "mixin",
+        "name": "links-default",
+        "code": "\n  a {\n    @include link-default;\n  }\n",
+        "line": {
+          "start": 32,
+          "end": 36
+        }
+      },
+      "since": [
+        {
+          "version": "0.5.0"
+        }
+      ],
+      "group": [
+        "typography"
+      ],
+      "access": "public",
+      "require": [
+        {
+          "type": "mixin",
+          "name": "link-default"
+        }
+      ],
+      "file": {
+        "path": "stylesheets\\typography\\_typography-links.scss",
+        "name": "_typography-links.scss"
+      },
       "groupName": {
         "typography": "Typography"
       }
@@ -7794,16 +7853,16 @@
     {
       "description": "<p>Inverse link style for use on an inverse (dark) background</p>\n",
       "commentRange": {
-        "start": 31,
-        "end": 32
+        "start": 38,
+        "end": 39
       },
       "context": {
         "type": "mixin",
         "name": "link-inverse",
         "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
         "line": {
-          "start": 33,
-          "end": 55
+          "start": 40,
+          "end": 62
         }
       },
       "since": [
@@ -7857,8 +7916,8 @@
             "name": "links-inverse",
             "code": "\n  a {\n    @include link-inverse;\n  }\n",
             "line": {
-              "start": 59,
-              "end": 63
+              "start": 66,
+              "end": 70
             }
           }
         }
@@ -7870,16 +7929,16 @@
     {
       "description": "<p>Inverse links for use on a dark background</p>\n",
       "commentRange": {
-        "start": 57,
-        "end": 58
+        "start": 64,
+        "end": 65
       },
       "context": {
         "type": "mixin",
         "name": "links-inverse",
         "code": "\n  a {\n    @include link-inverse;\n  }\n",
         "line": {
-          "start": 59,
-          "end": 63
+          "start": 66,
+          "end": 70
         }
       },
       "since": [
@@ -7908,16 +7967,16 @@
     {
       "description": "<p>Inverse link for use on a dark background. Apply to an individual link.\nPrefer using <code>.inverse-links</code> on the container instead.</p>\n",
       "commentRange": {
-        "start": 69,
-        "end": 71
+        "start": 76,
+        "end": 78
       },
       "context": {
         "type": "css",
         "name": ".link--inverse",
         "value": "@include link-inverse;",
         "line": {
-          "start": 72,
-          "end": 83
+          "start": 79,
+          "end": 90
         }
       },
       "since": [
@@ -7940,16 +7999,16 @@
     {
       "description": "<p>Inverse links, for use on dark backgrounds e.g dark panels.\nUse this class on a containing element to apply to all links within it.</p>\n",
       "commentRange": {
-        "start": 76,
-        "end": 79
+        "start": 83,
+        "end": 86
       },
       "context": {
         "type": "css",
         "name": ".inverse-links",
         "value": "@include links-inverse;",
         "line": {
-          "start": 80,
-          "end": 83
+          "start": 87,
+          "end": 90
         }
       },
       "require": [],
@@ -8024,7 +8083,7 @@
         "value": "@extend %list;",
         "line": {
           "start": 22,
-          "end": 45
+          "end": 84
         }
       },
       "see": [
@@ -8036,7 +8095,7 @@
             "value": "list-style: none;\n  margin-left: 0;\n  padding: 0;",
             "line": {
               "start": 31,
-              "end": 45
+              "end": 84
             }
           }
         },
@@ -8048,7 +8107,7 @@
             "value": "li,\n  .list__item {\n    margin-bottom: rem($spacing-x-small);\n  }",
             "line": {
               "start": 39,
-              "end": 45
+              "end": 84
             }
           }
         }
@@ -8082,7 +8141,7 @@
         "value": "list-style: none;\n  margin-left: 0;\n  padding: 0;",
         "line": {
           "start": 31,
-          "end": 45
+          "end": 84
         }
       },
       "require": [
@@ -8121,12 +8180,44 @@
         "value": "li,\n  .list__item {\n    margin-bottom: rem($spacing-x-small);\n  }",
         "line": {
           "start": 39,
-          "end": 45
+          "end": 84
         }
       },
       "since": [
         {
           "version": "0.2.12"
+        }
+      ],
+      "group": [
+        "typography"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\typography\\_typography-lists.scss",
+        "name": "_typography-lists.scss"
+      },
+      "groupName": {
+        "typography": "Typography"
+      }
+    },
+    {
+      "description": "<p>Pipe separate list</p>\n",
+      "commentRange": {
+        "start": 46,
+        "end": 47
+      },
+      "context": {
+        "type": "css",
+        "name": ".list--piped",
+        "value": "list-style: none;\n  margin-left: 0;\n  padding: 0;\n\n  li,\n  .list__item {\n    display: inline-block;\n    margin-right: - rem(4);\n\n    a {\n      padding: rem($spacing-small);\n    }\n\n    &:after {\n      border-left: 1px solid $colour-icons;\n      content: get-glyph(zero-width-space);\n      display: inline-block;\n      margin: em(0 $spacing-small);\n      overflow: hidden;\n      text-indent: -99px;\n      vertical-align: middle;\n      width: 0;\n    }\n\n    &:first-child {\n      a {\n        padding-left: 0;\n      }\n    }\n\n    &:last-child:after {\n      display: none;\n    }\n  }",
+        "line": {
+          "start": 48,
+          "end": 84
+        }
+      },
+      "since": [
+        {
+          "version": "0.5.0"
         }
       ],
       "group": [
@@ -10620,8 +10711,8 @@
                 "name": "link-inverse",
                 "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 33,
-                  "end": 55
+                  "start": 40,
+                  "end": 62
                 }
               }
             }
@@ -10668,8 +10759,8 @@
                 "name": "link-inverse",
                 "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 33,
-                  "end": 55
+                  "start": 40,
+                  "end": 62
                 }
               }
             }
@@ -10716,8 +10807,8 @@
                 "name": "link-inverse",
                 "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 33,
-                  "end": 55
+                  "start": 40,
+                  "end": 62
                 }
               }
             }
@@ -10764,8 +10855,8 @@
                 "name": "link-inverse",
                 "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 33,
-                  "end": 55
+                  "start": 40,
+                  "end": 62
                 }
               }
             }
@@ -10812,8 +10903,8 @@
                 "name": "link-inverse",
                 "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 33,
-                  "end": 55
+                  "start": 40,
+                  "end": 62
                 }
               }
             }
@@ -10884,8 +10975,8 @@
                 "name": "link-inverse",
                 "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 33,
-                  "end": 55
+                  "start": 40,
+                  "end": 62
                 }
               }
             }
@@ -12006,18 +12097,18 @@
     "components": {
       "css": [
         {
-          "description": "<p>Action banner component. Used to highlight\nand give context to a call-to-action.</p>\n",
+          "description": "<p>Action banner component. Used to highlight\nand give context to a call-to-action.\nModifiers:</p>\n<ul>\n<li>subtle</li>\n</ul>\n",
           "commentRange": {
             "start": 5,
-            "end": 8
+            "end": 10
           },
           "context": {
             "type": "css",
             "name": ".action-banner",
-            "value": "@include links-inverse;\n  background: $colour-nice-cool-teal;\n  color: $colour-text-inverse;\n  margin: em($spacing-large 0);\n  padding: em($spacing-small 0);\n\n  &__container {\n    @extend %container;\n  }\n\n  &__inner {\n    @include grid;\n  }\n\n  &__text {\n    @include grid-item($middle: true);\n    margin-bottom: em($spacing-medium);\n  }\n\n  &__title {\n    @include font-size(3);\n    margin: em(0 0 $spacing-x-small);\n  }\n\n  &__intro {\n    margin: 0;\n  }\n\n  &__actions {\n    @include grid-item($middle: true);\n  }\n\n  @include mq($from: md) {\n    &__text {\n      margin-bottom: 0;\n      width: percentage(3/4);\n    }\n\n    &__actions {\n      text-align: right;\n      width: percentage(1/4);\n    }\n  }\n\n  @media print {\n    @include important(display, none);\n  }",
+            "value": "@include links-inverse;\n  background: $colour-nice-cool-teal;\n  color: $colour-text-inverse;\n  margin: em($spacing-large 0);\n  padding: em($spacing-small 0);\n  position: relative;\n\n  &__container {\n    @extend %container;\n  }\n\n  &__inner {\n    @include grid;\n  }\n\n  &__text {\n    @include grid-item($middle: true);\n    margin-bottom: em($spacing-medium);\n  }\n\n  &__title {\n    @include font-size(3);\n    margin: em(0 0 $spacing-x-small);\n  }\n\n  &__intro {\n    margin: 0;\n  }\n\n  &__actions {\n    @include grid-item($middle: true);\n  }\n\n  &__close {\n    appearance: none;\n    background: 0;\n    border: 0;\n    color: $colour-text-inverse;\n    cursor: pointer;\n    line-height: 1;\n    padding: rem($spacing-medium);\n    position: absolute;\n    right: 0;\n    top: 0;\n    z-index: 1;\n  }\n\n  &--subtle {\n    @include links-default;\n    background: $colour-panel-default;\n    color: $colour-text;\n\n    .action-banner__close {\n      color: $colour-text;\n    }\n  }\n\n  &--closeable {\n    .action-banner__title {\n      padding-right: rem($spacing-large); // Make toom for close button\n    }\n  }\n\n  @include mq($from: md) {\n    &__text {\n      margin-bottom: 0;\n      width: percentage(3/4);\n    }\n\n    &__actions {\n      text-align: right;\n      width: percentage(1/4);\n    }\n\n    &--closeable {\n      .action-banner__title {\n        padding-right: 0;\n      }\n\n      .action-banner__actions {\n        padding-right: rem($spacing-medium);\n      }\n    }\n  }\n\n  @media print {\n    @include important(display, none);\n  }",
             "line": {
-              "start": 9,
-              "end": 58
+              "start": 11,
+              "end": 101
             }
           },
           "since": [
@@ -14559,16 +14650,16 @@
         {
           "description": "<p>Output a BEM style glyph selector for each glyph in the map.\n  E.g. .glyph.glyph--bullet { content: &#39;\\2022&#39;; }\n  @since 0.1.0</p>\n",
           "commentRange": {
-            "start": 62,
-            "end": 64
+            "start": 64,
+            "end": 66
           },
           "context": {
             "type": "css",
             "name": ".glyph",
             "value": "@each $key, $value in $nice-glyphs {\n      &--#{$key} {\n        &::before {\n          content: unquote('\\'\\\\#{$value}\\'');\n        }\n      }\n    }",
             "line": {
-              "start": 65,
-              "end": 75
+              "start": 67,
+              "end": 77
             }
           },
           "group": [
@@ -15231,16 +15322,16 @@
           "description": "<p>A map of glyph name to code point (character entity reference).\nAvoids magic strings like <code>content: &#39;\\201C&#39;</code> within our SASS.\nUsual usage is via the <code>get-glyph</code> function, e.g. <code>get-glyph(greater-than)</code>.</p>\n",
           "commentRange": {
             "start": 5,
-            "end": 18
+            "end": 19
           },
           "context": {
             "type": "variable",
             "name": "nice-glyphs",
-            "value": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  hyphen-minus: '002d',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  plus: '002b',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
+            "value": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  hyphen-minus: '002d',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  plus: '002b',\n  punc-space: '02008',\n  zero-width-space: '0200B'\n  // Add more entity codes here as and when they're needed\n)",
             "scope": "default",
             "line": {
-              "start": 19,
-              "end": 29
+              "start": 20,
+              "end": 31
             }
           },
           "see": [
@@ -15251,8 +15342,8 @@
                 "name": "get-glyph",
                 "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
                 "line": {
-                  "start": 46,
-                  "end": 59
+                  "start": 48,
+                  "end": 61
                 }
               }
             }
@@ -15319,6 +15410,13 @@
               "default": "02008",
               "description": "<p>Punctuation space (small, width of a comma)</p>\n",
               "resolvedValue": "02008"
+            },
+            {
+              "type": "String",
+              "name": "zero-width-space",
+              "default": "0200B",
+              "description": "<p>Zero width space</p>\n",
+              "resolvedValue": "0200B"
             }
           ],
           "since": [
@@ -15342,8 +15440,8 @@
                 "name": "get-glyph",
                 "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
                 "line": {
-                  "start": 46,
-                  "end": 59
+                  "start": 48,
+                  "end": 61
                 }
               }
             },
@@ -15354,8 +15452,8 @@
                 "name": "get-glyph",
                 "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
                 "line": {
-                  "start": 46,
-                  "end": 59
+                  "start": 48,
+                  "end": 61
                 }
               }
             },
@@ -15366,8 +15464,8 @@
                 "name": "get-glyph",
                 "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
                 "line": {
-                  "start": 46,
-                  "end": 59
+                  "start": 48,
+                  "end": 61
                 }
               }
             }
@@ -15375,23 +15473,23 @@
           "groupName": {
             "helpers": "Helpers"
           },
-          "resolvedValue": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  hyphen-minus: '002d',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  plus: '002b',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)"
+          "resolvedValue": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  hyphen-minus: '002d',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  plus: '002b',\n  punc-space: '02008',\n  zero-width-space: '0200B'\n  // Add more entity codes here as and when they're needed\n)"
         }
       ],
       "function": [
         {
           "description": "<p>Gets a glyph code, or several, (character entity reference) from the\n<code>$nice-glyphs</code> map, matching the given <code>$names</code>. Usually used with the content\nproperty for psuedo elements, to avoid use of magic character reference strings.</p>\n",
           "commentRange": {
-            "start": 31,
-            "end": 45
+            "start": 33,
+            "end": 47
           },
           "context": {
             "type": "function",
             "name": "get-glyph",
             "code": "\n  $codes: '';\n\n  @each $name in $names {\n    @if map-has-key($nice-glyphs, $name) {\n      $code: map-get($nice-glyphs, $name);\n      $codes: $codes + '\\\\#{$code}';\n    } @else {\n      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';\n    }\n  }\n\n  @return unquote('\\'#{$codes}\\'');\n",
             "line": {
-              "start": 46,
-              "end": 59
+              "start": 48,
+              "end": 61
             }
           },
           "parameter": [
@@ -15411,11 +15509,11 @@
               "context": {
                 "type": "variable",
                 "name": "nice-glyphs",
-                "value": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  hyphen-minus: '002d',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  plus: '002b',\n  punc-space: '02008'\n  // Add more entity codes here as and when they're needed\n)",
+                "value": "(\n  bullet: '2022',\n  copyright: '00a9',\n  greater-than: '003e',\n  hyphen-minus: '002d',\n  left-double-quotation-mark: '201C',\n  less-than: '003c',\n  plus: '002b',\n  punc-space: '02008',\n  zero-width-space: '0200B'\n  // Add more entity codes here as and when they're needed\n)",
                 "scope": "default",
                 "line": {
-                  "start": 19,
-                  "end": 29
+                  "start": 20,
+                  "end": 31
                 }
               }
             }
@@ -16319,8 +16417,8 @@
                 "name": "link-inverse",
                 "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 33,
-                  "end": 55
+                  "start": 40,
+                  "end": 62
                 }
               }
             }
@@ -16913,6 +17011,58 @@
             "path": "stylesheets\\typography\\_typography-links.scss",
             "name": "_typography-links.scss"
           },
+          "usedBy": [
+            {
+              "description": "<p>Default links for use on a light background</p>\n",
+              "context": {
+                "type": "mixin",
+                "name": "links-default",
+                "code": "\n  a {\n    @include link-default;\n  }\n",
+                "line": {
+                  "start": 32,
+                  "end": 36
+                }
+              }
+            }
+          ],
+          "groupName": {
+            "typography": "Typography"
+          }
+        },
+        {
+          "description": "<p>Default links for use on a light background</p>\n",
+          "commentRange": {
+            "start": 30,
+            "end": 31
+          },
+          "context": {
+            "type": "mixin",
+            "name": "links-default",
+            "code": "\n  a {\n    @include link-default;\n  }\n",
+            "line": {
+              "start": 32,
+              "end": 36
+            }
+          },
+          "since": [
+            {
+              "version": "0.5.0"
+            }
+          ],
+          "group": [
+            "typography"
+          ],
+          "access": "public",
+          "require": [
+            {
+              "type": "mixin",
+              "name": "link-default"
+            }
+          ],
+          "file": {
+            "path": "stylesheets\\typography\\_typography-links.scss",
+            "name": "_typography-links.scss"
+          },
           "groupName": {
             "typography": "Typography"
           }
@@ -16920,16 +17070,16 @@
         {
           "description": "<p>Inverse link style for use on an inverse (dark) background</p>\n",
           "commentRange": {
-            "start": 31,
-            "end": 32
+            "start": 38,
+            "end": 39
           },
           "context": {
             "type": "mixin",
             "name": "link-inverse",
             "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 33,
-              "end": 55
+              "start": 40,
+              "end": 62
             }
           },
           "since": [
@@ -16983,8 +17133,8 @@
                 "name": "links-inverse",
                 "code": "\n  a {\n    @include link-inverse;\n  }\n",
                 "line": {
-                  "start": 59,
-                  "end": 63
+                  "start": 66,
+                  "end": 70
                 }
               }
             }
@@ -16996,16 +17146,16 @@
         {
           "description": "<p>Inverse links for use on a dark background</p>\n",
           "commentRange": {
-            "start": 57,
-            "end": 58
+            "start": 64,
+            "end": 65
           },
           "context": {
             "type": "mixin",
             "name": "links-inverse",
             "code": "\n  a {\n    @include link-inverse;\n  }\n",
             "line": {
-              "start": 59,
-              "end": 63
+              "start": 66,
+              "end": 70
             }
           },
           "since": [
@@ -17117,16 +17267,16 @@
         {
           "description": "<p>Inverse link for use on a dark background. Apply to an individual link.\nPrefer using <code>.inverse-links</code> on the container instead.</p>\n",
           "commentRange": {
-            "start": 69,
-            "end": 71
+            "start": 76,
+            "end": 78
           },
           "context": {
             "type": "css",
             "name": ".link--inverse",
             "value": "@include link-inverse;",
             "line": {
-              "start": 72,
-              "end": 83
+              "start": 79,
+              "end": 90
             }
           },
           "since": [
@@ -17149,16 +17299,16 @@
         {
           "description": "<p>Inverse links, for use on dark backgrounds e.g dark panels.\nUse this class on a containing element to apply to all links within it.</p>\n",
           "commentRange": {
-            "start": 76,
-            "end": 79
+            "start": 83,
+            "end": 86
           },
           "context": {
             "type": "css",
             "name": ".inverse-links",
             "value": "@include links-inverse;",
             "line": {
-              "start": 80,
-              "end": 83
+              "start": 87,
+              "end": 90
             }
           },
           "require": [],
@@ -17191,7 +17341,7 @@
             "value": "@extend %list;",
             "line": {
               "start": 22,
-              "end": 45
+              "end": 84
             }
           },
           "see": [
@@ -17203,7 +17353,7 @@
                 "value": "list-style: none;\n  margin-left: 0;\n  padding: 0;",
                 "line": {
                   "start": 31,
-                  "end": 45
+                  "end": 84
                 }
               }
             },
@@ -17215,7 +17365,7 @@
                 "value": "li,\n  .list__item {\n    margin-bottom: rem($spacing-x-small);\n  }",
                 "line": {
                   "start": 39,
-                  "end": 45
+                  "end": 84
                 }
               }
             }
@@ -17249,7 +17399,7 @@
             "value": "list-style: none;\n  margin-left: 0;\n  padding: 0;",
             "line": {
               "start": 31,
-              "end": 45
+              "end": 84
             }
           },
           "require": [
@@ -17288,12 +17438,44 @@
             "value": "li,\n  .list__item {\n    margin-bottom: rem($spacing-x-small);\n  }",
             "line": {
               "start": 39,
-              "end": 45
+              "end": 84
             }
           },
           "since": [
             {
               "version": "0.2.12"
+            }
+          ],
+          "group": [
+            "typography"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\typography\\_typography-lists.scss",
+            "name": "_typography-lists.scss"
+          },
+          "groupName": {
+            "typography": "Typography"
+          }
+        },
+        {
+          "description": "<p>Pipe separate list</p>\n",
+          "commentRange": {
+            "start": 46,
+            "end": 47
+          },
+          "context": {
+            "type": "css",
+            "name": ".list--piped",
+            "value": "list-style: none;\n  margin-left: 0;\n  padding: 0;\n\n  li,\n  .list__item {\n    display: inline-block;\n    margin-right: - rem(4);\n\n    a {\n      padding: rem($spacing-small);\n    }\n\n    &:after {\n      border-left: 1px solid $colour-icons;\n      content: get-glyph(zero-width-space);\n      display: inline-block;\n      margin: em(0 $spacing-small);\n      overflow: hidden;\n      text-indent: -99px;\n      vertical-align: middle;\n      width: 0;\n    }\n\n    &:first-child {\n      a {\n        padding-left: 0;\n      }\n    }\n\n    &:last-child:after {\n      display: none;\n    }\n  }",
+            "line": {
+              "start": 48,
+              "end": 84
+            }
+          },
+          "since": [
+            {
+              "version": "0.5.0"
             }
           ],
           "group": [
