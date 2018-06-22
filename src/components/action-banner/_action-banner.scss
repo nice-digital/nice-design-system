@@ -40,6 +40,10 @@
 
   &__actions {
     @include grid-item($middle: true);
+
+    .btn {
+      margin: 0;
+    }
   }
 
   &__close {
@@ -49,11 +53,19 @@
     color: $colour-text-inverse;
     cursor: pointer;
     line-height: 1;
-    padding: rem($spacing-medium);
+    padding: rem($spacing-small);
     position: absolute;
     right: 0;
     top: 0;
     z-index: 1;
+
+    &:hover {
+      background: rgba(0, 0, 0, .2);
+    }
+
+    &:focus {
+      @include default-focus-style;
+    }
   }
 
   &--subtle {
