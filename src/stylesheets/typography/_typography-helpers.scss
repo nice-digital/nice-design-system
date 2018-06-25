@@ -75,8 +75,7 @@
     // sass-lint:disable no-important
     font-size: rem($font-size) !important;
     line-height: rem($line-height) !important;
-  }
-  @else {
+  } @else {
     font-size: rem($font-size);
     line-height: rem($line-height);
   }
@@ -105,8 +104,7 @@
     font-weight: map-get($font-map, fw) !important;
     margin-bottom: rem(map-get($font-map, mb)) !important;
     margin-top: rem(map-get($font-map, mt)) !important;
-  }
-  @else {
+  } @else {
     font-weight: map-get($font-map, fw);
     margin-bottom: rem(map-get($font-map, mb));
     margin-top: rem(map-get($font-map, mt));

@@ -1,0 +1,56 @@
+{% extends "layouts/_layout.njk" %}
+{% set title = "Filters" %}
+{% from "filter-group/filter-group.njk" import filterGroup %}
+{% from "filter-panel/filter-panel.njk" import filterPanel %}
+{% from "results-info/results-info.njk" import resultsInfo %}
+
+{% block body %}
+
+	<div class="container">
+		<h1>Filters</h1>
+
+		<h2>Checkbox group in a filter panel</h2>
+
+		<div class="grid grid--loose">
+			<div data-g="12 sm:5 md:4 lg:3">
+
+				{% set filterGroupContent = {
+						title: "Document type",
+						id: "document",
+						options: [
+							{ label: "Pathways", id: "pathways" },
+							{ label: "Guidance", id: "guidance", isSelected: true },
+							{ label: "Quality standards", id: "qs" },
+							{ label: "Advice", id: "advice", isSelected: true },
+							{ label: "Shared learning", id: "shared-learning" }
+						]
+					} %}
+
+				{% set filterPanelBody %}
+					{{ filterGroup(filterGroupContent) }}
+				{% endset %}
+				
+				{% set filterPanelContent = {
+						title: "Filter",
+						body: filterPanelBody,
+						isExpanded: true
+					} %}
+
+				{{ filterPanel(filterPanelContent) }}
+
+			</div>
+			<div data-g="12 sm:7 md:8 lg:9">
+
+				{% set resultsInfoContent = {
+						count: 99
+					} %}
+
+				{{ resultsInfo(resultsInfoContent) }}
+				
+				Your results will go here...
+			</div>
+		</div>
+
+	</div>
+
+{% endblock %}

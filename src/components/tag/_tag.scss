@@ -2,6 +2,8 @@
 /// @group components
 ////
 
+$nice-tag-border-radius: em($spacing-xx-small);
+
 /// Tag component. Used for labelling items in lists
 /// and also used within alpha/beta phase banners.
 ///
@@ -19,7 +21,7 @@
 .tag {
   @include font-size(0);
   background-color: $colour-panel-inverse;
-  border-radius: em($spacing-xx-small);
+  border-radius: $nice-tag-border-radius;
   color: $colour-text-inverse;
   display: inline-block;
   font-weight: normal;
@@ -29,11 +31,13 @@
   text-decoration: none;
   vertical-align: baseline;
 
-  // At-root directive with interpolation to target a tag
-  // See https://stackoverflow.com/a/25655130/486434
-  @at-root a#{&} {
+  @include when-is(a) {
     color: $colour-nice-white;
     text-decoration: underline;
+
+    &:visited {
+      color: $colour-nice-white;
+    }
 
     &:hover {
       text-decoration: none;
@@ -91,5 +95,52 @@
 
   &--flush {
     margin-bottom: 0;
+  }
+
+  &--outline {
+    @include font-size(-1);
+    background: $colour-nice-grey-3;
+    border: 1px solid $colour-border;
+    color: $colour-nice-dark-grey;
+    position: relative;
+  }
+
+  &__remove {
+    appearance: none;
+    background: 0;
+    border: 0;
+    color: $colour-nice-teal;
+    cursor: pointer;
+    margin-left: rem($spacing-x-small);
+    padding: 0;
+    text-decoration: none;
+
+    &:focus {
+      @include default-focus-style;
+    }
+
+    &:visited {
+      color: $colour-nice-teal;
+    }
+
+    &:hover,
+    &:active {
+      color: $colour-text;
+    }
+
+    &:hover:after {
+      background: rgba($colour-nice-black, .1);
+    }
+
+    &:after {
+      content: '';
+      border-radius: $nice-tag-border-radius;
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
   }
 }

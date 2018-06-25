@@ -1,0 +1,78 @@
+////
+/// @group components
+////
+
+.filter-panel {
+  margin: rem(0 0 $spacing-medium 0);
+
+  // Heading can be one of:
+  // - heading for server side rendering for non-js
+  // - button to collapse/expand filter panel client side
+  &__heading {
+    @include font-size(h5);
+    background: $colour-nice-grey-2;
+    border: 0;
+    display: block;
+    font-weight: bold;
+    margin: 0;
+    padding: rem($spacing-small);
+    position: relative;
+    text-align: left;
+    width: 100%;
+
+    @include when-is(button) {
+      appearance: none;
+      cursor: pointer;
+
+      &:after {
+        @include nice-icon(chevron-up);
+        @include font-size(-1);
+        color: $colour-icons;
+        margin-top: - rem($spacing-small);
+        position: absolute;
+        right: rem($spacing-small);
+        top: 50%;
+      }
+
+      &[aria-expanded='false']:after {
+        content: nice-icon(chevron-down);
+      }
+
+      &:focus {
+        @include default-focus-style;
+      }
+    }
+  }
+
+  &__body {
+    background: $colour-panel-default;
+    padding: rem($spacing-medium);
+
+    &[aria-hidden='true'] {
+      display: none;
+    }
+  }
+
+  &__submit {
+    margin: rem($spacing-medium 0 0);
+  }
+
+  @include mq($from: sm) {
+    &__heading {
+      background: none;
+      margin-bottom: rem($spacing-medium);
+      padding: 0;
+
+      @include when-is(button) {
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    &__body {
+      background: none;
+      padding: 0;
+    }
+  }
+}
