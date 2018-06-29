@@ -174,3 +174,17 @@ Unstyled lists don't have bullets and can be uses for lists of links
 {% endcapture %}
 {% include example.html body=unstyled %}
 
+### Piped
+
+Use piped lists as an alternative to unstyled lists. Use them to display a finite number of links horizontally, for example guidance statuses. Use a maximum of 4 links:
+
+{% capture piped %}
+<ul class="list list--piped">
+    <li><a href="#">Published</a></li>
+    <li><a href="#">In consultation</a></li>
+    <li><a href="#">In development</a></li>
+    <li><a href="#">Proposed</a></li>
+</ul>
+{% endcapture %}
+{% include example.html body=piped %}
+
