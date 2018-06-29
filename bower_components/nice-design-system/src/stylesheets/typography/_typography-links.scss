@@ -27,6 +27,13 @@
     color: $colour-link-active;
   }
 }
+/// Default links for use on a light background
+/// @since 0.5.0
+@mixin links-default {
+  a {
+    @include link-default;
+  }
+}
 
 /// Inverse link style for use on an inverse (dark) background
 /// @since 0.3.1

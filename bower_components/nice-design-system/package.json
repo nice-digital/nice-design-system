@@ -1,6 +1,6 @@
 {
   "name": "@nice-digital/design-system",
-  "version": "0.4.0",
+  "version": "0.5.1",
   "description": "Your source for creating beautiful, consistent experiences across NICE",
   "keywords": [
     "css",
@@ -116,7 +116,7 @@
     "webpack-dev-server": "^2.9.3"
   },
   "dependencies": {
-    "@nice-digital/icons": "^1.4.0",
+    "@nice-digital/icons": "^1.5.0",
     "keycode": "^2.1.7"
   },
   "engines": {

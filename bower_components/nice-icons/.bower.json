@@ -27,14 +27,14 @@
     "dist/demo.html",
     "examples"
   ],
-  "version": "1.4.0",
-  "_release": "1.4.0",
+  "version": "1.5.0",
+  "_release": "1.5.0",
   "_resolution": {
     "type": "version",
-    "tag": "v1.4.0",
-    "commit": "5c26fd26f40d4ad94f1e267f16d4a150575367c6"
+    "tag": "v1.5.0",
+    "commit": "47d35719ec62767499e2727e96c53470b7f5490b"
   },
   "_source": "https://github.com/nhsevidence/nice-icons.git",
-  "_target": "^1.0.0",
+  "_target": "^1.5.0",
   "_originalSource": "nice-icons"
 }
