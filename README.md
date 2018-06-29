@@ -33,6 +33,8 @@ We recommend Docker as the image contains all the require dependencies so it's a
 
 Then navigate to [http://localhost:9001/nice-design-system/](http://localhost:9001/nice-design-system/).
 
+If you get the error "the input device is not a TTY. If you are using mintty, try prefixing the command with 'winpty'" then either ignore it, remove `-it` from docker-dev.sh or use a different shell e.g. GitBash.
+
 #### Docker for Windows
 
 If you're running [Docker for Windows](https://www.docker.com/docker-windows), make sure to:
