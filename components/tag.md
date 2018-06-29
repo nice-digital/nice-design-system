@@ -92,3 +92,33 @@ Tags have a small margin by default. Use the `.tag--flush` modifier to remove th
 </p>
 {% endcapture %}
 {% include example.html lang='html' body=flush %}
+
+### Outline
+
+Use the `.tag--outline` modifier for a tag with a border. Use outline tags with filtered lists to show the currently applied filters.
+
+{% capture outline %}
+<p>
+    This is an outline tag
+    <span class="tag tag--outline">Outline</span>
+</p>
+{% endcapture %}
+{% include example.html lang='html' body=outline %}
+
+### Removeable
+
+Use removeable tags when users need to be able to remove or dismiss a tag. Use with outline tags at the top of filtered lists to show the currently applied selections.
+
+{% capture removeable %}
+<p>
+    This is a removeable tag
+    <span class="tag tag--outline">
+        Removeable
+        <a href="{{ site.baseurl }}" class="tag__remove">
+            <span class="icon icon--remove" aria-hidden="true"></span>
+            <span class="visually-hidden">Remove this filter</span>
+        </a>
+    </span>
+</p>
+{% endcapture %}
+{% include example.html lang='html' body=removeable %}
