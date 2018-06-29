@@ -1,11 +1,6 @@
 source 'https://rubygems.org'
 
-group :development, :test do
-  gem 'jekyll', '~> 3.4.3'
-  gem 'jekyll-redirect-from', '~> 0.12.1'
-  gem 'jekyll-sitemap', '~> 1.0.0'
-  gem 'scss_lint', '~> 0.52.0'
-end
+gem 'github-pages', group: :jekyll_plugins
 
 # Timezone fix - https://jekyllrb.com/docs/windows/#timezone-management
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
