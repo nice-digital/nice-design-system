@@ -5,4 +5,4 @@ MSYS_NO_PATHCONV=1 docker run --rm \
   -v "$PWD":/usr/src/app \
   -p 9001:9001 \
   -it starefossen/github-pages \
-  jekyll serve -d /_gh_pages --watch --force_polling --incremental -H 0.0.0.0 -P 9001
+  jekyll serve --watch --force_polling --incremental -H 0.0.0.0 -P 9001
