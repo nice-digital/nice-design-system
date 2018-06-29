@@ -8,7 +8,7 @@ description: Banner for highlighting, and giving context to, a call-to-action
 Some calls-to-action are higher priority than others. An action banner gives a way of highlighting these CTAs. They can also be used to break up a page layout and give visual interest.
 
 ## Usage
-Action banners fill the available horizontal space and have their own built-in container. They usually live outside of any `.container` to fill the screen width.
+Action banners fill the available horizontal space and have their own built-in container. They usually live outside of any `.container` to fill the screen width. The action should be a button: choose the right type of button (primary, secondary etc) to match the CTA importance.
 - Use sparingly
 - use a maximum of 1 per page
 - use outside of `.container`
@@ -16,7 +16,9 @@ Action banners fill the available horizontal space and have their own built-in c
 
 ## Variants
 
-There's only 1 variant of an action banner:
+<h2>Default</h2>
+
+The default variant is strong and grabs users' attention. Use sparingly for important calls of action on a page that need extra context. Usually use with a `.btn.btn--inverse` button because of the dark background but can be used with a `.btn.btn--cta` for even more impact.
 
 {% capture example %}
 <section class="action-banner" data-no-inpagenav>
@@ -40,3 +42,30 @@ There's only 1 variant of an action banner:
 </section>
 {% endcapture %}
 {% include example.html lang='html' body=example %}
+
+<h2>Subtle</h2>
+
+Use the subtle variant when you need a call to action with context, but don't want to distract users. For example giving feedback on a page. Usually use with a `.btn.btn--secondary` button.
+
+{% capture subtle %}
+<section class="action-banner action-banner--subtle" data-no-inpagenav>
+    <div class="action-banner__container">
+        <div class="action-banner__inner">
+            <div class="action-banner__text">
+                <h2 class="action-banner__title">
+                    Try out our new layout for this page
+                </h2>
+                <p class="action-banner__intro">
+                    We’re trying to make it quicker and easier to find the information you’re looking for.
+                </p>
+            </div>
+            <div class="action-banner__actions">
+                <button type="button" class="btn btn--secondary">
+                    Try the new layout
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+{% endcapture %}
+{% include example.html lang='html' body=subtle %}
