@@ -15,6 +15,11 @@ layout: master
 		<p class="page-header__lead">
 			{{ page.lead | default: page.description }}
 		</p>
+		{% if page.headerCTA %}
+			<p class="page-header__cta">
+				<a href="{{ page.headerCTA.href }}" class="btn btn--cta">{{ page.headerCTA.text }}</a>
+			</p>
+		{% endif %}
 	</div>
 
 	<div class="page {% if page.inpagenav == false %}page--full{% endif %}">
