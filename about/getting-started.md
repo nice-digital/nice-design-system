@@ -2,6 +2,9 @@
 layout: sidebar
 title: Getting started
 description: Guides to getting started using NICE Design System
+headerCTA:
+    href: https://codepen.io/pen?template=mKvYJO
+    text: Try it on CodePen
 ---
 
 {{ site.product_name }} is the source for creating consistent, accessible and trustworthy services for NICE. It’s aimed at developers, designers and content editors. Please use our relevant guides below to get started:

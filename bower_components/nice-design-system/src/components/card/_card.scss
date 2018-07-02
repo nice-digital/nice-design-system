@@ -3,16 +3,36 @@
 ////
 
 /// Flexible card component for displaying
-/// guidance, news etc in a list. Consists
-/// of a heading, optional icon, optional body
-/// copy, optional image and optional metadata.
+/// guidance, news etc in a list.
+///
+/// Consists of a heading, optional icon, optional
+/// body copy, optional image and optional metadata.
 /// Usually used withing an unstyled list.
+///
+/// BEM modifiers:
+///   - `--flush`  No margin
+///   - `--separator`  Add a line below
 ///
 /// @since 0.3.1
 .card {
-  border-bottom: 1px solid $colour-border;
-  padding: em($spacing-small 0);
+  margin: rem(0 0 $spacing-large 0);
+  overflow: hidden;
   position: relative;
+
+  &--flush {
+    margin-bottom: 0;
+  }
+
+  &--separator,
+  .list--unstyled & {
+    border-bottom: 1px solid $colour-border;
+    margin: rem(0 0 $spacing-small 0);
+    padding: rem(0 0 $spacing-x-small 0);
+  }
+
+  &__header {
+    margin: rem(0 0 $spacing-x-small 0);
+  }
 
   &__heading {
     @include font-size(0);
@@ -39,8 +59,28 @@
     }
   }
 
+  &__author {
+    @include font-size(-1);
+    color: $colour-nice-dark-grey;
+    margin: rem(0 0 $spacing-x-small 0);
+
+    dd {
+      display: block;
+      margin: 0;
+    }
+  }
+
+  &__summary {
+    margin: rem(0 0 $spacing-x-small 0);
+  }
+
+  &__image {
+    display: block;
+    margin: rem(0 0 $spacing-x-small);
+  }
+
   &__icon {
-    margin: em(0 $spacing-x-small 0 0);
+    margin: rem(0 $spacing-x-small 0 0);
   }
 
   &__tag {
@@ -51,14 +91,14 @@
     @include font-size(-1);
     color: $colour-nice-dark-grey;
     display: inline-block;
-    margin: rem($spacing-x-small 0 0);
+    margin: 0;
     position: relative;
     z-index: 1;
   }
 
   &__metadatum {
     display: block;
-    margin: em($spacing-x-small $spacing-small 0 0);
+    margin: rem(0 $spacing-small $spacing-x-small 0);
 
     dt,
     dd {
@@ -67,10 +107,51 @@
     }
   }
 
+  @include mq($from: xs) {
+    &__image {
+      float: left;
+      width: 30%;
+    }
+
+    &__text {
+      float: left;
+      padding-left: rem($spacing-medium);
+      width: 70%;
+    }
+  }
+
   @include mq($from: sm) {
+    &__image {
+      width: 20%;
+    }
+
+    &__text {
+      width: 80%;
+    }
+
     &__metadatum {
       display: inline-block;
       white-space: nowrap;
+    }
+  }
+
+  @include mq($from: md) {
+    &__image {
+      width: 30%;
+    }
+
+    &__text {
+      width: 70%;
+    }
+  }
+
+  @include mq($from: lg) {
+    &__image {
+      width: 25%;
+    }
+
+    &__text {
+      width: 75%;
     }
   }
 }

@@ -4,6 +4,8 @@
 
 /// Action banner component. Used to highlight
 /// and give context to a call-to-action.
+/// Modifiers:
+/// - subtle
 ///
 /// @since 0.3.1
 .action-banner {
@@ -12,6 +14,7 @@
   color: $colour-text-inverse;
   margin: em($spacing-large 0);
   padding: em($spacing-small 0);
+  position: relative;
 
   &__container {
     @extend %container;
@@ -37,6 +40,48 @@
 
   &__actions {
     @include grid-item($middle: true);
+
+    .btn {
+      margin: 0;
+    }
+  }
+
+  &__close {
+    appearance: none;
+    background: 0;
+    border: 0;
+    color: $colour-text-inverse;
+    cursor: pointer;
+    line-height: 1;
+    padding: rem($spacing-small);
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+
+    &:hover {
+      background: rgba(0, 0, 0, .2);
+    }
+
+    &:focus {
+      @include default-focus-style;
+    }
+  }
+
+  &--subtle {
+    @include links-default;
+    background: $colour-panel-default;
+    color: $colour-text;
+
+    .action-banner__close {
+      color: $colour-text;
+    }
+  }
+
+  &--closeable {
+    .action-banner__title {
+      padding-right: rem($spacing-large); // Make toom for close button
+    }
   }
 
   @include mq($from: md) {
@@ -48,6 +93,16 @@
     &__actions {
       text-align: right;
       width: percentage(1/4);
+    }
+
+    &--closeable {
+      .action-banner__title {
+        padding-right: 0;
+      }
+
+      .action-banner__actions {
+        padding-right: rem($spacing-medium);
+      }
     }
   }
 

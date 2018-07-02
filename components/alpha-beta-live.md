@@ -31,7 +31,7 @@ Your banner must sit below the TopHat, and above the page breadcrumb. You should
 {% capture beta %}
 <p class="phase-banner">
     <span class="phase-banner__tag">
-        <span class="tag tag--impact tag--beta">Alpha</span>
+        <span class="tag tag--impact tag--beta">Beta</span>
     </span>
     <span class="phase-banner__label">
        This is a new service – your <a href="#">feedback</a> will help us to improve it.

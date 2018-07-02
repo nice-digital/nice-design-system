@@ -143,7 +143,7 @@ module.exports = function(grunt) {
 		copy: {
 			icons: {
 				cwd: "node_modules/@nice-digital/icons/dist/",
-				src: ["*"],
+				src: ["*.{eot,woff,woff2,ttf,svg}"],
 				dest: "/fonts/",
 				expand: true,
 				flatten: true,,
@@ -284,35 +284,42 @@ See the [custom-icon](examples/custom-icon) folder for a complete example of thi
 
 Icon | Name | Unicode | HTML | SASS 
 ---- | ---- | ---- | ---- | ---- 
-<img src="src/android.svg" alt="android" height="50"> | android | f17b | `<span class="icon icon--android" aria-hidden="true"></span>` | `@include nice-icon(android);` 
-<img src="src/apple.svg" alt="apple" height="50"> | apple | f179 | `<span class="icon icon--apple" aria-hidden="true"></span>` | `@include nice-icon(apple);` 
+<img src="src/fa/android.svg" alt="android" height="50"> | android | f17b | `<span class="icon icon--android" aria-hidden="true"></span>` | `@include nice-icon(android);` 
+<img src="src/fa/apple.svg" alt="apple" height="50"> | apple | f179 | `<span class="icon icon--apple" aria-hidden="true"></span>` | `@include nice-icon(apple);` 
 <img src="src/calendar.svg" alt="calendar" height="50"> | calendar | e045 | `<span class="icon icon--calendar" aria-hidden="true"></span>` | `@include nice-icon(calendar);` 
+<img src="src/chevron-down.svg" alt="chevron-down" height="50"> | chevron-down | e03c | `<span class="icon icon--chevron-down" aria-hidden="true"></span>` | `@include nice-icon(chevron-down);` 
+<img src="src/chevron-left.svg" alt="chevron-left" height="50"> | chevron-left | e03b | `<span class="icon icon--chevron-left" aria-hidden="true"></span>` | `@include nice-icon(chevron-left);` 
+<img src="src/chevron-right.svg" alt="chevron-right" height="50"> | chevron-right | e03a | `<span class="icon icon--chevron-right" aria-hidden="true"></span>` | `@include nice-icon(chevron-right);` 
 <img src="src/chevron-up.svg" alt="chevron-up" height="50"> | chevron-up | e039 | `<span class="icon icon--chevron-up" aria-hidden="true"></span>` | `@include nice-icon(chevron-up);` 
 <img src="src/comment.svg" alt="comment" height="50"> | comment | f101 | `<span class="icon icon--comment" aria-hidden="true"></span>` | `@include nice-icon(comment);` 
 <img src="src/download.svg" alt="download" height="50"> | download | e006 | `<span class="icon icon--download" aria-hidden="true"></span>` | `@include nice-icon(download);` 
+<img src="src/email-closed.svg" alt="email-closed" height="50"> | email-closed | e014 | `<span class="icon icon--email-closed" aria-hidden="true"></span>` | `@include nice-icon(email-closed);` 
 <img src="src/evidence.svg" alt="evidence" height="50"> | evidence | e017 | `<span class="icon icon--evidence" aria-hidden="true"></span>` | `@include nice-icon(evidence);` 
-<img src="src/facebook-square.svg" alt="facebook-square" height="50"> | facebook-square | f082 | `<span class="icon icon--facebook-square" aria-hidden="true"></span>` | `@include nice-icon(facebook-square);` 
+<img src="src/fa/facebook-square.svg" alt="facebook-square" height="50"> | facebook-square | f082 | `<span class="icon icon--facebook-square" aria-hidden="true"></span>` | `@include nice-icon(facebook-square);` 
 <img src="src/facebook.svg" alt="facebook" height="50"> | facebook | e012 | `<span class="icon icon--facebook" aria-hidden="true"></span>` | `@include nice-icon(facebook);` 
 <img src="src/guidance.svg" alt="guidance" height="50"> | guidance | e011 | `<span class="icon icon--guidance" aria-hidden="true"></span>` | `@include nice-icon(guidance);` 
 <img src="src/hamburger.svg" alt="hamburger" height="50"> | hamburger | e03d | `<span class="icon icon--hamburger" aria-hidden="true"></span>` | `@include nice-icon(hamburger);` 
-<img src="src/linkedin-sign.svg" alt="linkedin-sign" height="50"> | linkedin-sign | f08c | `<span class="icon icon--linkedin-sign" aria-hidden="true"></span>` | `@include nice-icon(linkedin-sign);` 
+<img src="src/fa/linkedin-sign.svg" alt="linkedin-sign" height="50"> | linkedin-sign | f08c | `<span class="icon icon--linkedin-sign" aria-hidden="true"></span>` | `@include nice-icon(linkedin-sign);` 
+<img src="src/linkedin.svg" alt="linkedin" height="50"> | linkedin | f0e1 | `<span class="icon icon--linkedin" aria-hidden="true"></span>` | `@include nice-icon(linkedin);` 
 <img src="src/logo-name.svg" alt="logo-name" height="50"> | logo-name | e01b | `<span class="icon icon--logo-name" aria-hidden="true"></span>` | `@include nice-icon(logo-name);` 
 <img src="src/logo.svg" alt="logo" height="50"> | logo | e01a | `<span class="icon icon--logo" aria-hidden="true"></span>` | `@include nice-icon(logo);` 
 <img src="src/minus.svg" alt="minus" height="50"> | minus | e02a | `<span class="icon icon--minus" aria-hidden="true"></span>` | `@include nice-icon(minus);` 
 <img src="src/pathways.svg" alt="pathways" height="50"> | pathways | e005 | `<span class="icon icon--pathways" aria-hidden="true"></span>` | `@include nice-icon(pathways);` 
 <img src="src/plus.svg" alt="plus" height="50"> | plus | e027 | `<span class="icon icon--plus" aria-hidden="true"></span>` | `@include nice-icon(plus);` 
 <img src="src/print.svg" alt="print" height="50"> | print | e001 | `<span class="icon icon--print" aria-hidden="true"></span>` | `@include nice-icon(print);` 
+<img src="src/fa/question-circle.svg" alt="question-circle" height="50"> | question-circle | f059 | `<span class="icon icon--question-circle" aria-hidden="true"></span>` | `@include nice-icon(question-circle);` 
 <img src="src/readnews.svg" alt="readnews" height="50"> | readnews | e009 | `<span class="icon icon--readnews" aria-hidden="true"></span>` | `@include nice-icon(readnews);` 
+<img src="src/remove.svg" alt="remove" height="50"> | remove | e024 | `<span class="icon icon--remove" aria-hidden="true"></span>` | `@include nice-icon(remove);` 
 <img src="src/search.svg" alt="search" height="50"> | search | e004 | `<span class="icon icon--search" aria-hidden="true"></span>` | `@include nice-icon(search);` 
 <img src="src/share.svg" alt="share" height="50"> | share | e008 | `<span class="icon icon--share" aria-hidden="true"></span>` | `@include nice-icon(share);` 
 <img src="src/standards.svg" alt="standards" height="50"> | standards | e002 | `<span class="icon icon--standards" aria-hidden="true"></span>` | `@include nice-icon(standards);` 
 <img src="src/syndication.svg" alt="syndication" height="50"> | syndication | e013 | `<span class="icon icon--syndication" aria-hidden="true"></span>` | `@include nice-icon(syndication);` 
 <img src="src/trash.svg" alt="trash" height="50"> | trash | e020 | `<span class="icon icon--trash" aria-hidden="true"></span>` | `@include nice-icon(trash);` 
-<img src="src/twitter-square.svg" alt="twitter-square" height="50"> | twitter-square | f102 | `<span class="icon icon--twitter-square" aria-hidden="true"></span>` | `@include nice-icon(twitter-square);` 
+<img src="src/fa/twitter-square.svg" alt="twitter-square" height="50"> | twitter-square | f081 | `<span class="icon icon--twitter-square" aria-hidden="true"></span>` | `@include nice-icon(twitter-square);` 
 <img src="src/twitter.svg" alt="twitter" height="50"> | twitter | e000 | `<span class="icon icon--twitter" aria-hidden="true"></span>` | `@include nice-icon(twitter);` 
 <img src="src/user.svg" alt="user" height="50"> | user | e01f | `<span class="icon icon--user" aria-hidden="true"></span>` | `@include nice-icon(user);` 
 <img src="src/warning.svg" alt="warning" height="50"> | warning | e04b | `<span class="icon icon--warning" aria-hidden="true"></span>` | `@include nice-icon(warning);` 
-<img src="src/youtube-play.svg" alt="youtube-play" height="50"> | youtube-play | f16a | `<span class="icon icon--youtube-play" aria-hidden="true"></span>` | `@include nice-icon(youtube-play);` 
-<img src="src/youtube-square.svg" alt="youtube-square" height="50"> | youtube-square | f166 | `<span class="icon icon--youtube-square" aria-hidden="true"></span>` | `@include nice-icon(youtube-square);` 
+<img src="src/fa/youtube-play.svg" alt="youtube-play" height="50"> | youtube-play | f16a | `<span class="icon icon--youtube-play" aria-hidden="true"></span>` | `@include nice-icon(youtube-play);` 
+<img src="src/fa/youtube-square.svg" alt="youtube-square" height="50"> | youtube-square | f166 | `<span class="icon icon--youtube-square" aria-hidden="true"></span>` | `@include nice-icon(youtube-square);` 
 
 <!-- END icons generated comment -->

@@ -42,3 +42,42 @@ ol {
     margin-bottom: rem($spacing-x-small);
   }
 }
+
+/// Pipe separate list
+/// @since 0.5.0
+.list--piped {
+  list-style: none;
+  margin-left: 0;
+  padding: 0;
+
+  li,
+  .list__item {
+    display: inline-block;
+    margin-right: - rem(4);
+
+    a {
+      padding: rem($spacing-small);
+    }
+
+    &:after {
+      border-left: 1px solid $colour-icons;
+      content: get-glyph(zero-width-space);
+      display: inline-block;
+      margin: em(0 $spacing-small);
+      overflow: hidden;
+      text-indent: -99px;
+      vertical-align: middle;
+      width: 0;
+    }
+
+    &:first-child {
+      a {
+        padding-left: 0;
+      }
+    }
+
+    &:last-child:after {
+      display: none;
+    }
+  }
+}

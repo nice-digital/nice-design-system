@@ -16,71 +16,81 @@ Cards consist of a heading and optional:
 
 Cards are usually used within an unstyled, unordered list (`ul.list--unstyled`).
 
+Cards have a default margin bottom but this can be overridden by using the `.card--flush` modifier. Alternatively use the [CSS spacing classes]({{ site.baseurl }}{% link foundations/spacing.md %}#css-classes) to override margins.
+
 ## Variants
+
+Cards can have a combination of headings, summary, image and metadata. So instead of distinct variants, here are some examples and use cases of cards.
 
 ### Standard
 
-{% capture standard %}
-<article class="card" data-no-inpagenav>
-    <header class="card__header">
-        <h3 class="card__heading">
-            <a href="https://www.nice.org.uk/">
-                Advanced breast cancer: diagnosis and treatment (CG81)
-            </a>
-        </h3>
-    </header>
-    <dl class="card__metadata">
-        <div class="card__metadatum">
-            <dt>
-                <span class="card__tag tag tag--consultation tag--flush">
-                    In consultation
-                </span>
-            </dt>
-            <dd class="visually-hidden">Yes</dd>
-        </div>
-        <div class="card__metadatum">
-            <dt>
-                <span class="card__tag tag tag--new tag--flush">
-                    New
-                </span>
-            </dt>
-            <dd class="visually-hidden">Yes</dd>
-        </div>
-        <div class="card__metadatum">
-            <dt>Date updated:</dt>
-            <dd>
-                <time datetime="2017-12">December 2017</time>
-            </dd>
-        </div>
-        <div class="card__metadatum">
-            <dt>Date created:</dt>
-            <dd>
-                <time datetime="2017-01">January 2017</time>
-            </dd>
-        </div>
-    </dl>
-</article>
-{% endcapture %}
-{% include example.html lang='html' body=standard %}
+Use a standard card layout for displaying things like guidance, advice, quality standards and shared learning in a list:
 
-### Card list
+- show the id of published guidance in brackets after the title
+- use the correct level of heading to maintain a correct document heading structure
+- use [tags]({{ site.baseurl }}{% link components/tag.md %}) in metadata to highlight important content
+- show relevant dates with the correct label
+- use a `time` tag with the correct `datetime` attribute to display dates.
 
 {% capture standard %}
-<ul class="list--unstyled" data-no-inpagenav>
+<ul class="list--unstyled">
     <li>
         <article class="card">
             <header class="card__header">
                 <h3 class="card__heading">
-                    <a href="https://www.nice.org.uk/">
-                        Early and locally advanced breast cancer: diagnosis and treatment (CG80)
+                    <a href="https://www.nice.org.uk/guidance/csg1">
+                        Improving outcomes in breast cancer (CSG1)
                     </a>
                 </h3>
             </header>
             <dl class="card__metadata">
                 <div class="card__metadatum">
-                    <dt>Date created:</dt>
+                    <dt class="visually-hidden">Product type:</dt>
                     <dd>
-                        <time datetime="2017-01">January 2017</time>
+                        Guidance
+                    </dd>
+                </div>
+                <div class="card__metadatum">
+                    <dt class="visually-hidden">Programme:</dt>
+                    <dd>
+                        Cancer service guideline
+                    </dd>
+                </div>
+                <div class="card__metadatum">
+                    <dt>Published date:</dt>
+                    <dd>
+                        <time datetime="2002-08-28">28 August 2002</time>
+                    </dd>
+                </div>
+            </dl>
+        </article>
+    </li>
+    <li>
+        <article class="card">
+            <header class="card__header">
+                <h3 class="card__heading">
+                    <a href="https://www.nice.org.uk/guidance/qs124">
+                        Suspected cancer (QS124)
+                    </a>
+                </h3>
+            </header>
+            <dl class="card__metadata">
+                <div class="card__metadatum">
+                    <dt class="visually-hidden">Product type:</dt>
+                    <dd>
+                        Quality standard
+                    </dd>
+                </div>
+                <div class="card__metadatum">
+                    <dt>Last updated:</dt>
+                    <dd>
+                        <time datetime="2017-12-05">5 December 2017</time>
+                    </dd>
+                </div>
+                <div class="card__metadatum">
+                    <dt>Published date:</dt>
+                    <dd>
+                        <time datetime="2016-06-30">30 June 2016</time>
                     </dd>
                 </div>
             </dl>
@@ -91,7 +101,7 @@ Cards are usually used within an unstyled, unordered list (`ul.list--unstyled`).
             <header class="card__header">
                 <h3 class="card__heading">
                     <a href="https://www.nice.org.uk/">
-                        Improving outcomes in breast cancer (CSG1)
+                        Breast cancer (advanced or metastatic) - lapatinib [ID20]
                     </a>
                 </h3>
             </header>
@@ -105,7 +115,19 @@ Cards are usually used within an unstyled, unordered list (`ul.list--unstyled`).
                     <dd class="visually-hidden">Yes</dd>
                 </div>
                 <div class="card__metadatum">
-                    <dt>Date created:</dt>
+                    <dt class="visually-hidden">Status:</dt>
+                    <dd>
+                        In development
+                    </dd>
+                </div>
+                <div class="card__metadatum">
+                    <dt class="visually-hidden">Programme:</dt>
+                    <dd>
+                        Technology appraisal guidance
+                    </dd>
+                </div>
+                <div class="card__metadatum">
+                    <dt>Published date:</dt>
                     <dd>
                         <time datetime="2017-01">January 2017</time>
                     </dd>
@@ -117,16 +139,22 @@ Cards are usually used within an unstyled, unordered list (`ul.list--unstyled`).
         <article class="card">
             <header class="card__header">
                 <h3 class="card__heading">
-                    <a href="https://www.nice.org.uk/">
-                        Suspected cancer: recognition and referral (NG12)
+                    <a href="https://www.nice.org.uk/sharedlearning/the-challenges-of-implementing-the-new-nice-guidance-for-suspected-cancer-recognition-and-referral">
+                        Overcoming the challenges of implementing the new NICE guidance for suspected cancer: recognition and referral
                     </a>
                 </h3>
             </header>
             <dl class="card__metadata">
                 <div class="card__metadatum">
-                    <dt>Date created:</dt>
+                    <dt class="visually-hidden">Product type:</dt>
                     <dd>
-                        <time datetime="2017-01">January 2017</time>
+                        Shared learning
+                    </dd>
+                </div>
+                <div class="card__metadatum">
+                    <dt>Published date:</dt>
+                    <dd>
+                        <time datetime="2017-01-08">8 January 2017</time>
                     </dd>
                 </div>
             </dl>
@@ -135,3 +163,60 @@ Cards are usually used within an unstyled, unordered list (`ul.list--unstyled`).
 </ul>
 {% endcapture %}
 {% include example.html lang='html' body=standard %}
+
+### With icon
+
+Use an icon to distinuish items in a list. Follow the rules around [icon usage]({{ site.baseurl }}{% link foundations/iconography.md %}).
+
+{% capture withIcon %}
+<article class="card">
+    <header class="card__header">
+        <h3 class="card__heading">
+            <a href="https://www.nice.org.uk/">
+                <span class="card__icon icon icon--pathways" aria-hidden="true"></span>
+                Advanced breast cancer: diagnosis and treatment
+            </a>
+        </h3>
+    </header>
+    <dl class="card__metadata">
+        <div class="card__metadatum">
+            <dt class="visually-hidden">Product type:</dt>
+            <dd>
+                Pathway
+            </dd>
+        </div>
+    </dl>
+</article>
+{% endcapture %}
+{% include example.html lang='html' body=withIcon %}
+
+### With summary and image
+
+Use summary and images for things like news and blogs. Use a relevant alternative text attribute to properly describe the image. The image stacks above the text on small screen widths.
+
+{% capture summaryImage %}
+<article class="card">
+    <img class="card__image" src="//via.placeholder.com/200x200" alt="A good, relevant alternative description">
+    <div class="card__text">
+        <header class="card__header">
+            <h3 class="card__heading">
+                <a href="https://www.nice.org.uk/news/article/nice-guidance-can-reduce-delays-in-hospital-discharge-raised-by-critical-report">
+                    NICE guidance can reduce delays in hospital discharge raised by critical report
+                </a>
+            </h3>
+        </header>
+        <p class="card__summary">
+            NICE urges hospitals and local authorities to redouble their efforts to reduce delays in discharging patients from hospitals, following criticism from MPs.
+        </p>
+        <dl class="card__metadata">
+            <div class="card__metadatum">
+                <dt>Date published:</dt>
+                <dd>
+                    <time datetime="2016-07-22">22 July 2016</time>
+                </dd>
+            </div>
+        </dl>
+    </div>
+</article>
+{% endcapture %}
+{% include example.html lang='html' body=summaryImage %}

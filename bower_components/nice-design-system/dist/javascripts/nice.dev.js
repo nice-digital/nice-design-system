@@ -1,5 +1,5 @@
 /*!
-NICE Design System 0.4.0 | 2018-01-25
+NICE Design System 0.5.1 | 2018-06-25
 © Copyright NICE 2015-2018
 Licensed under MIT (https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
 */
@@ -924,11 +924,20 @@ var nextUniqueId = exports.nextUniqueId = function (i) {
   };
 }(0);
 
+/**
+ * CamelCases a dash seperated string
+ * @param {string} str
+ */
+var camelCase = exports.camelCase = function camelCase(str) {
+  return $.camelCase(str);
+};
+
 exports["default"] = {
   throttle: throttle,
   debounce: debounce,
   slugify: slugify,
-  nextUniqueId: nextUniqueId
+  nextUniqueId: nextUniqueId,
+  camelCase: camelCase
 };
 
 /***/ }),

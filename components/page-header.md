@@ -1,0 +1,64 @@
+---
+layout: sidebar
+title: Page header
+description: Main heading and intro copy to introduce a page
+---
+
+## Why?
+Give a clear introduction to a page to explain the content on a page.
+
+## Usage
+Use underneath the breadcrumb inside a container and above the main content. Use a clear, short title and a concise intro to the contents of the page.
+
+## Variants
+
+### Default
+
+{% capture header %}
+<div class="page-header">
+    <h1 class="page-header__heading">
+        Page title
+    </h1>
+    <p class="page-header__lead">
+        Use a concise explanation of what the page is about
+    </p>
+</div>
+{% endcapture %}
+{% include example.html lang='html' body=header %}
+
+### With link
+
+{% capture withLink %}
+<div class="page-header">
+    <h1 class="page-header__heading">
+        Page title
+    </h1>
+    <p class="page-header__lead">
+        Use a concise explanation of what the page is about
+    </p>
+    <p class="page-header__cta">
+        <a href="#">A link</a>
+    </p>
+</div>
+{% endcapture %}
+{% include example.html lang='html' body=withLink %}
+
+### With call-to-action button
+
+Use a [call-to-action button]({{ site.baseurl }}{% link foundations/buttons.md %}#call-to-action-button) within a page header when there's a main action for the page.
+
+{% capture withCTA %}
+<div class="page-header">
+    <h1 class="page-header__heading">
+        Page title
+    </h1>
+    <p class="page-header__lead">
+        Use a concise explanation of what the page is about
+    </p>
+    <p class="page-header__cta">
+        <a href="#" class="btn btn--cta">A call to action</a>
+    </p>
+</div>
+{% endcapture %}
+{% include example.html lang='html' body=withCTA %}
+
