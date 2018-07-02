@@ -7,7 +7,7 @@ description: Headings, paragraphs, featured text, quotations, lists, links
 ## Basics
 
 - typography follows the rules from our [brand guidelines](https://www.nice.org.uk/brand/typography){:target="_blank"} with some web specific adaptations (for responsive etc)
-- we use Lato, which can be referenced or [downloaded from Google](https://fonts.google.com/specimen/Lato){:target="_blank"}
+- we use Lato, which can be referenced or [downloaded from Google](https://fonts.google.com/specimen/Lato?selection.family=Lato:400,400i,700,700i,900,900i){:target="_blank"}
 - follow [NICE's style guide](https://www.nice.org.uk/corporate/ecd1/){:target="_blank"} for writing.
 
 ### Usage
