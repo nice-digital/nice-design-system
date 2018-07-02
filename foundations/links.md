@@ -21,8 +21,11 @@ The wording of links is very important and should be contextual and meaningful. 
 
 ## Text links
 
+Links are designed by default to sit on a light background.
+
 - links within body copy should be blue and underlined
-- links without surrounding text should not have a full stop at the end.
+- links without surrounding text should not have a full stop at the end
+- use `@include links-default` in SASS to force link styles.
 
 {% capture textlinks %}
 <p>
@@ -36,24 +39,18 @@ The wording of links is very important and should be contextual and meaningful. 
 
 ## Inverse text links
 
-- for use on a dark background
-- use `.link--inverse` on an individual link
-- use `.inverse-links` on a containing element
-- use `%inverse-links` in SASS on custom dark background components.
+Use inverse links when they sit on a dark background. Components with dark modifiers have inverse links built in, for example [inverse panels]({{ site.baseurl }}{% link components/panel.md %}#inverse-dark-panel).
+
+- Use `.link--inverse` on an individual link
+- or use `.inverse-links` on a containing element
+- use `@include links-inverse` in SASS on custom dark background components.
 
 {% capture inverselinks %}
-<div class="panel panel--inverse">
-    <h3><a href="#">This is a heading 3</a></h3>
-    <p>
-        This is <a href="#">a link</a> in some body copy.
-    </p>
-</div>
-
-<div class="panel inverse-links" style="background: #393939;">
-    <p>
-        <a href="#">links on a</a>
-        <a href="#">dark background</a>
-    </p>
+<div class="pv--d ph--d inverse-links" style="background: #393939;">
+    <ul>
+        <li><a href="#">links on a</a></li>
+        <li><a href="#">dark background</a></li>
+    </ul>
 </div>
 
 <div class="panel" style="background: #393939;">
