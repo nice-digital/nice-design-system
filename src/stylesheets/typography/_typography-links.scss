@@ -28,6 +28,7 @@
   }
 }
 /// Default links for use on a light background
+/// @require {mixin} link-default
 /// @since 0.5.0
 @mixin links-default {
   a {
@@ -62,6 +63,7 @@
 }
 
 /// Inverse links for use on a dark background
+/// @require {mixin} link-inverse
 /// @since 0.3.1
 @mixin links-inverse {
   a {
@@ -82,7 +84,7 @@ a {
 
 /// Inverse links, for use on dark backgrounds e.g dark panels.
 /// Use this class on a containing element to apply to all links within it.
-/// @require %inverse-links
+/// @require {mixin} links-inverse
 /// @since 0.2.9
 .inverse-links {
   @include links-inverse;

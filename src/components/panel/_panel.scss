@@ -23,8 +23,8 @@
 
 /// Modifier for the panel, to use a inverse (dark) background.
 /// Autmatically uses inverse links within it. Doesn't affect buttons
-/// though, so any buttons within a dark panel should be `.btn.btn--light`.
-/// @require %inverse-links
+/// though, so any buttons within a dark panel should be `.btn.btn--inverse`.
+/// @require {mixin} links-inverse
 /// @require .panel
 /// @since 0.1.0
 .panel--inverse {
