@@ -16,7 +16,7 @@ Action banners fill the available horizontal space and have their own built-in c
 
 ## Variants
 
-<h2>Default</h2>
+### Default
 
 The default variant is strong and grabs users' attention. Use sparingly for important calls of action on a page that need extra context. Usually use with a `.btn.btn--inverse` button because of the dark background but can be used with a `.btn.btn--cta` for even more impact.
 
@@ -43,7 +43,7 @@ The default variant is strong and grabs users' attention. Use sparingly for impo
 {% endcapture %}
 {% include example.html lang='html' body=example %}
 
-<h2>Subtle</h2>
+### Subtle
 
 Use the subtle variant when you need a call to action with context, but don't want to distract users. For example giving feedback on a page. Usually use with a `.btn.btn--secondary` button.
 
