@@ -1,0 +1,12 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "@nice-digital/eslint-config/es6-flow"
+  ],
+  "globals": {
+  },
+  "root": true
+}

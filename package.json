@@ -4,10 +4,18 @@
   "description": "Icons for use in NICE Digital Services",
   "main": "index.js",
   "scripts": {
-    "start": "grunt dist --color",
+    "start": "npm run webfont",
+    "webfont": "grunt dist --color",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "grunt release-it --color",
-    "release:minor": "grunt release-it:minor --color"
+    "readme": "doctoc ./README.md && babel-node ./scripts/readme-replacer.js",
+    "lint": "eslint .",
+    "// Releasing": "",
+    "release": "np",
+    "release:major": "np major",
+    "release:minor": "np minor",
+    "release:patch": "np patch",
+    "// Lifecycle hooks": "",
+    "version": "npm run webfont && npm run readme"
   },
   "repository": {
     "type": "git",
@@ -16,7 +24,9 @@
   "keywords": [
     "nice",
     "icons",
-    "nhs"
+    "nhs",
+    "webfont",
+    "svg"
   ],
   "author": "NICE Digital Services (https://github.com/nhsevidence/nice-icons/graphs/contributors)",
   "contributors": [
@@ -32,11 +42,21 @@
     "dist",
     "src"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-release-it": "^1.0.1",
-    "grunt-replace": "^1.0.1",
-    "grunt-webfont": "^1.6.0",
-    "load-grunt-config": "^0.19.2"
+    "@nice-digital/eslint-config": "^1.0.2",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.6",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
+    "doctoc": "^1.3.1",
+    "eslint": "^5.1.0",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "grunt": "^1.0.3",
+    "grunt-webfont": "^1.7.1",
+    "load-grunt-config": "^0.19.2",
+    "np": "^3.0.4"
   }
 }

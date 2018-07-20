@@ -16,25 +16,26 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [Intro](#intro)
-  - [Guidance](#guidance)
-- [Usage](#usage)
-  - [Installation](#installation)
-  - [Build process](#build-process)
-  - [Serving font files](#serving-font-files)
-    - [Express](#express)
-    - [Grunt copy](#grunt-copy)
-    - [Visual Studio Copy Task](#visual-studio-copy-task)
-  - [Markup](#markup)
-  - [SASS](#sass)
-- [Development](#development)
-  - [Dependencies](#dependencies)
-  - [Commands](#commands)
-  - [Updating ToC](#updating-toc)
-  - [Releasing](#releasing)
-- [Creating icons](#creating-icons)
-- [Custom application icons](#custom-application-icons)
-- [Icons](#icons)
+- [NICE Icons](#nice-icons)
+	- [Intro](#intro)
+		- [Guidance](#guidance)
+	- [Usage](#usage)
+		- [Installation](#installation)
+		- [Build process](#build-process)
+		- [Serving font files](#serving-font-files)
+			- [Express](#express)
+			- [Grunt copy](#grunt-copy)
+			- [Visual Studio Copy Task](#visual-studio-copy-task)
+		- [Markup](#markup)
+		- [SASS](#sass)
+	- [Development](#development)
+		- [Dependencies](#dependencies)
+		- [Commands](#commands)
+		- [Updating the readme](#updating-the-readme)
+		- [Releasing](#releasing)
+	- [Creating icons](#creating-icons)
+	- [Custom application icons](#custom-application-icons)
+	- [Icons](#icons)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -72,11 +73,11 @@ However, follow the steps below if you need to use NICE Icons manually:
 
 ### Installation
 
-Install [NICE Icons from Yarn](https://yarnpkg.com/en/package/@nice-digital/icons):
+Install [NICE Icons from npm](https://www.npmjs.com/package/@nice-digital/icons):
 
-`yarn add @nice-digital/icons`
+`npm i @nice-digital/icons --save`
 
-> Note: if you prefer to use the [package from npm](https://www.npmjs.com/package/@nice-digital/icons) rather than yarn, run `npm i @nice-digital/icons` instead.
+> Note: if you prefer to use the [package from Yarn](https://yarnpkg.com/en/package/@nice-digital/icons) rather than yarn, run `yarn add @nice-digital/icons` instead.
 
 Source SVG files and dist files will then be available in *./node_modules/@nice-digital/icons*.
 
@@ -205,19 +206,19 @@ There are SASS constructs for advanced usage:
 ### Dependencies
 
 	TL;DR:
-		1. `yarn`
+		1. `npm i`
 		2. `npm start`
 
 To build the icon font on your local machine, first install:
 
 - [Node 6+](https://nodejs.org/en/download/)
-- [Yarn](https://yarnpkg.com/en/docs/install)
+- [npm 5+](https://www.npmjs.com/)
 
 Then before you can run any tasks, run the following from the command line to install dependencies:
 
-- `yarn`
+- `npm i`
 
-> Note: if you prefer to use npm rather than yarn, run `npm i` instead.
+> Note: if you prefer to use npm rather than yarn, run `yarn` instead.
 
 We use Grunt as a task runner hence the dependency on Node. If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide first.
 
@@ -235,17 +236,25 @@ Run `npm start` from the command line for development. This uses [grunt-webfont]
 - build a [JSON file](dist/nice-icons.json) of metadata for the font
 - create a [demo html](dist/demo.html) - use this for testing new icons.
 
-### Updating ToC
+### Updating the readme
 
 Run the following command to update the readme:
 
 ```sh
-npx doctoc ./readme.md
+npm run readme
 ```
+
+This will generate the table of icons from the readme and to update the ToC.
 
 ### Releasing
 
-Run `npm run release` from the command line to release a new patch version.  Run `npm run release:minor` to release a new minor version. This uses [grunt-release-it](.grunt-tasks/release-it.js) under the hood.
+Run `npm run release` from the command line to release the package in interactive mode. Or run one of:
+
+- `npm run release:major`
+- `npm run release:minor`
+- `npm run release:patch`
+
+This uses [np](https://www.npmjs.com/package/np) under the hood.
 
 > Note: Generate a [GitHub personal acccess token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) and set this as the environment variable GITHUB_TOKEN. E.g. `export GITHUB_TOKEN="abcde1234"`
 

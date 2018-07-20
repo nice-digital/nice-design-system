@@ -8,11 +8,10 @@ module.exports = grunt => {
 		pkg: grunt.file.readJSON("package.json"),
 		jitGrunt: {
 			staticMappings: {
-				releaseit: "grunt-release-it"
 			}
 		}
 	});
 
 	// For building before publishing to NPM etc
-	grunt.registerTask("dist", ["webfont:dist", "replace"]);
+	grunt.registerTask("dist", ["webfont:dist"]);
 };
