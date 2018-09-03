@@ -26,7 +26,7 @@
     text-decoration: none !important; // sass-lint:disable-line no-important
 
     .icon {
-      font-size: rem(48px);
+      @include font-size(h1);
     }
   }
 
@@ -133,7 +133,7 @@
     }
 
     .icon {
-      @include font-size(6);
+      @include font-size(h2);
       display: block;
       line-height: 1;
       margin: 0 auto em($spacing-x-small);
@@ -170,7 +170,7 @@
     display: inline-block;
 
     .icon {
-      @include font-size(4);
+      @include font-size(3);
       line-height: 1;
     }
   }
