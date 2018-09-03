@@ -31,6 +31,7 @@
 
   &__title {
     @include font-size(3);
+    color: $colour-text-inverse;
     margin: em(0 0 $spacing-x-small);
   }
 
@@ -72,6 +73,10 @@
     @include links-default;
     background: $colour-panel-default;
     color: $colour-text;
+
+    .action-banner__title {
+      color: $colour-text;
+    }
 
     .action-banner__close {
       color: $colour-text;

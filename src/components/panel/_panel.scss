@@ -31,4 +31,12 @@
   @include links-inverse;
   background: $colour-panel-inverse;
   color: $colour-text-inverse;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $colour-text-inverse;
+  }
 }
