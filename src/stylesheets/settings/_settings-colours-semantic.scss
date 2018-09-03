@@ -15,11 +15,15 @@ $colour-true-white: #fff;
 
 /// Page background colour
 /// @since 0.2.0
-$colour-body: #f5f5f5;
+$colour-body: #fafafa;
 
 /// Standard, primary body text colour
 /// @since 0.2.0
 $colour-text: $colour-nice-rich-black;
+
+/// Heading text colour
+/// @since 0.5.2
+$colour-headings: $colour-nice-black;
 
 /// Subtle text colour
 /// @since 0.2.0
