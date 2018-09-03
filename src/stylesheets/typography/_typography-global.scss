@@ -68,35 +68,22 @@ hr {
 
 p,
 .p {
-  @include font($scale: 0);
-  font-feature-settings: 'kern', 'onum', 'liga';
-  font-weight: normal;
-  max-width: 66ch;
+  @include p;
+}
 
-  &.lead {
-    @include font($scale: 1);
-
-    // TODO: Drop cap needs some work
-    &--drop-cap {
-      &:first-letter {
-        float: left;
-        font-size: 200%;
-        font-weight: 300;
-        padding: em(0 2px 0 0);
-      }
-    }
-  }
+.lead {
+  @include lead;
 }
 
 code {
   background: $colour-panel-default;
   border: 1px solid $colour-border;
-  border-radius: 2px;
+  border-radius: em($spacing-xx-small);
   color: $colour-text;
   display: inline-block;
   font-family: font-family(mono);
-  margin: em(0 0 2);
-  padding: em(0 4);
+  margin: em(0 0 $spacing-xx-small);
+  padding: em(0 $spacing-x-small);
 
   pre & {
     background: transparent;
@@ -109,7 +96,7 @@ code {
 mark,
 .mark {
   background-color: #fff999;
-  padding: em(4);
+  padding: em(0 $spacing-x-small);
 }
 
 /// Small
