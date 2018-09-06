@@ -2,42 +2,15 @@
 /// @group Typography
 ////
 
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6,
-.heading {
-  clear: both;
-  color: $colour-headings;
-  margin: 0;
-  max-width: 66ch;
-}
-
-/// Heading, BEM style.
-/// Modifiers:
-///   - separator: Border below
-.heading {
-  &--separator {
-    border-bottom: 1px solid $colour-border;
-    padding-bottom: rem($spacing-x-small);
-  }
-}
-
 /// Primary heading. Used for h1 tag but can be used directly
 /// for semantic classes for visual styling.
 /// @since 0.1.0
 @mixin h1 {
   @include font(h1);
+  clear: both;
   color: $colour-headings;
   font-weight: 900;
+  max-width: 66ch;
 }
 
 /// Secondary heading. Used for h2 tag but can be used directly
@@ -45,8 +18,10 @@ h6,
 /// @since 0.1.0
 @mixin h2 {
   @include font(h2);
+  clear: both;
   color: $colour-headings;
   font-weight: 700;
+  max-width: 66ch;
 }
 
 /// Tertiary heading. Used for h3 tag but can be used directly
@@ -54,8 +29,10 @@ h6,
 /// @since 0.1.0
 @mixin h3 {
   @include font(h3);
+  clear: both;
   color: $colour-headings;
   font-weight: 700;
+  max-width: 66ch;
 }
 
 /// Fourth level heading. Used for h4 tag but can be used directly
@@ -63,8 +40,10 @@ h6,
 /// @since 0.1.0
 @mixin h4 {
   @include font(h4);
+  clear: both;
   color: $colour-headings;
   font-weight: 700;
+  max-width: 66ch;
 }
 
 /// Fifth level heading. Used for h5 tag but can be used directly
@@ -72,8 +51,10 @@ h6,
 /// @since 0.1.0
 @mixin h5 {
   @include font(h5);
+  clear: both;
   color: $colour-headings;
   font-weight: 700;
+  max-width: 66ch;
 }
 
 /// Sixth level heading. Used for h6 tag but can be used directly
@@ -81,13 +62,21 @@ h6,
 /// @since 0.1.0
 @mixin h6 {
   @include font(h6);
+  clear: both;
   color: $colour-headings;
   font-weight: 700;
+  max-width: 66ch;
 }
 
 h1,
 .h1 {
   @include h1;
+
+  // sass-lint:disable no-combinators
+  + h2,
+  + .h2 {
+    margin-top: 0;
+  }
 }
 
 h2,

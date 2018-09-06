@@ -17,7 +17,7 @@
   @if map-has-key($named-font-sizes, $scale) {
     @return map-get($named-font-sizes, $scale);
   }
-  @elseif is-integer($scale) {
+  @else if is-integer($scale) {
     @return $scale;
   }
 
@@ -123,4 +123,5 @@
 @mixin lead {
   @include font(lead);
   font-weight: normal;
+  max-width: 66ch;
 }
