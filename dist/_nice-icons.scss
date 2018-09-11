@@ -53,7 +53,9 @@ $nice-font-base-path: '/fonts/' !default;
 /// @prop {string} logo [e01a] - <span class="icon icon--logo" aria-hidden="true"></span>
 /// @prop {string} minus [e02a] - <span class="icon icon--minus" aria-hidden="true"></span>
 /// @prop {string} pathways [e005] - <span class="icon icon--pathways" aria-hidden="true"></span>
+/// @prop {string} play [e028] - <span class="icon icon--play" aria-hidden="true"></span>
 /// @prop {string} plus [e027] - <span class="icon icon--plus" aria-hidden="true"></span>
+/// @prop {string} podcast [e00b] - <span class="icon icon--podcast" aria-hidden="true"></span>
 /// @prop {string} print [e001] - <span class="icon icon--print" aria-hidden="true"></span>
 /// @prop {string} question-circle [f059] - <span class="icon icon--question-circle" aria-hidden="true"></span>
 /// @prop {string} readnews [e009] - <span class="icon icon--readnews" aria-hidden="true"></span>
@@ -61,6 +63,7 @@ $nice-font-base-path: '/fonts/' !default;
 /// @prop {string} search [e004] - <span class="icon icon--search" aria-hidden="true"></span>
 /// @prop {string} share [e008] - <span class="icon icon--share" aria-hidden="true"></span>
 /// @prop {string} standards [e002] - <span class="icon icon--standards" aria-hidden="true"></span>
+/// @prop {string} stop [e043] - <span class="icon icon--stop" aria-hidden="true"></span>
 /// @prop {string} syndication [e013] - <span class="icon icon--syndication" aria-hidden="true"></span>
 /// @prop {string} trash [e020] - <span class="icon icon--trash" aria-hidden="true"></span>
 /// @prop {string} twitter-square [f081] - <span class="icon icon--twitter-square" aria-hidden="true"></span>
@@ -92,7 +95,9 @@ $nice-icons: (
   logo: 'e01a',
   minus: 'e02a',
   pathways: 'e005',
+  play: 'e028',
   plus: 'e027',
+  podcast: 'e00b',
   print: 'e001',
   question-circle: 'f059',
   readnews: 'e009',
@@ -100,6 +105,7 @@ $nice-icons: (
   search: 'e004',
   share: 'e008',
   standards: 'e002',
+  stop: 'e043',
   syndication: 'e013',
   trash: 'e020',
   twitter-square: 'f081',
