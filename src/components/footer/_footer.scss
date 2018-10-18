@@ -152,7 +152,6 @@
 
   &__heading {
     @include font-size(-1);
-    color: $colour-text-inverse;
     display: inline-block;
     font-weight: normal;
     margin: em(0 $spacing-small 0 0);

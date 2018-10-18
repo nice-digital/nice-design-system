@@ -29,24 +29,13 @@
   // Extra supplementary links etc
   &__extra {
     @include grid-item(12, $md: 4, $loose: true);
-
-    // sass-lint:disable-block no-universal-selectors
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: $colour-text-inverse;
-    }
   }
 
   &__title {
     @include h1;
-    color: $colour-text-inverse;
   }
 
   &__intro {
     @include lead;
-    color: $colour-text-inverse;
   }
 }

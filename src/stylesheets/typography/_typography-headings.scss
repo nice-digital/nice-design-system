@@ -8,7 +8,6 @@
 @mixin h1 {
   @include font(h1);
   clear: both;
-  color: $colour-headings;
   font-weight: 900;
   max-width: 66ch;
 }
@@ -19,7 +18,6 @@
 @mixin h2 {
   @include font(h2);
   clear: both;
-  color: $colour-headings;
   font-weight: 700;
   max-width: 66ch;
 }
@@ -30,7 +28,6 @@
 @mixin h3 {
   @include font(h3);
   clear: both;
-  color: $colour-headings;
   font-weight: 700;
   max-width: 66ch;
 }
@@ -41,7 +38,6 @@
 @mixin h4 {
   @include font(h4);
   clear: both;
-  color: $colour-headings;
   font-weight: 700;
   max-width: 66ch;
 }
@@ -52,7 +48,6 @@
 @mixin h5 {
   @include font(h5);
   clear: both;
-  color: $colour-headings;
   font-weight: 700;
   max-width: 66ch;
 }
@@ -63,7 +58,6 @@
 @mixin h6 {
   @include font(h6);
   clear: both;
-  color: $colour-headings;
   font-weight: 700;
   max-width: 66ch;
 }
