@@ -8,6 +8,7 @@
   margin: auto;
   max-width: rem(1170px);
   width: 96%;
+  width: calc(100% - #{rem($spacing-large)});
 }
 
 /// Container, used as a wrapper around sections within a page.
