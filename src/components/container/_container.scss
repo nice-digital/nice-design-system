@@ -6,7 +6,7 @@
 /// @since 0.1.0
 %container {
   margin: auto;
-  max-width: rem(1170px);
+  max-width: rem($nice-container-max-width);
   width: 96%;
   width: calc(100% - #{rem($spacing-large)});
 }
