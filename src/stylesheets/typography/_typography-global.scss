@@ -26,6 +26,7 @@
 
 html {
   font-size: rem($nice-root-font-size-min);
+  overflow-x: hidden;
 
   @include mq($from: $nice-root-font-size-min-breakpoint) {
     // sass-lint:disable-block no-duplicate-properties
