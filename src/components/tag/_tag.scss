@@ -133,8 +133,8 @@ $nice-tag-border-radius: em($spacing-xx-small);
     }
 
     &:after {
-      content: '';
       border-radius: $nice-tag-border-radius;
+      content: '';
       display: block;
       height: 100%;
       left: 0;

@@ -27,11 +27,6 @@
     margin-bottom: rem($spacing-large);
   }
 
-  // Extra supplementary links etc
-  &__extra {
-    //padding: rem(0 0 $spacing-medium);
-  }
-
   &__title {
     @include h1;
   }
