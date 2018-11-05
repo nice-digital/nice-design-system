@@ -3,22 +3,23 @@
 ////
 
 /// A map of named font sizes to their corresponding modular scale factor
-/// @prop {Integer} h1 [6] Heading 1
-/// @prop {Integer} h2 [5] Heading 2
-/// @prop {Integer} h3 [4] Heading 3
-/// @prop {Integer} h4 [3] Heading 4
-/// @prop {Integer} h5 [2] Heading 5
-/// @prop {Integer} h6 [1] Heading 6
+/// @prop {Integer} h1 [5] Heading 1
+/// @prop {Integer} h2 [4] Heading 2
+/// @prop {Integer} h3 [3] Heading 3
+/// @prop {Integer} h4 [2] Heading 4
+/// @prop {Integer} h5 [1] Heading 5
+/// @prop {Integer} h6 [0] Heading 6
+/// @prop {Integer} lead [2] Lead
 /// @prop {Integer} p [0] Paragraph
 /// @since 0.1.0
 $named-font-sizes: (
-  h1: 7,
-  h2: 6,
-  h3: 5,
-  h4: 4,
-  h5: 3,
-  h6: 2,
-  lead: 1,
+  h1: 5,
+  h2: 4,
+  h3: 3,
+  h4: 2,
+  h5: 1,
+  h6: 0,
+  lead: 2,
   p: 0
 );
 
@@ -28,80 +29,62 @@ $font-sizes: (
   // sass-lint:disable-block space-around-operator
   -2: (
     fs: 12,
-    lh: 4 * 4,
-    fw: 400,
+    lh: 18,
     mb: $spacing-small,
     mt: $spacing-small
   ),
   -1: (
     fs: 14,
-    lh: 4 * 5,
-    fw: 400,
+    lh: 20,
     mb: $spacing-medium,
     mt: $spacing-medium
   ),
-  // Paragraphs
+  // Paragraphs, h6
   0: (
-    fs: 4 * 4,
-    lh: 4 * 6,
-    fw: 400,
-    mb: $spacing-medium,
-    mt: $spacing-medium
-  ),
-  // Lead
-  1: (
-    fs: 4 * 5,
-    lh: 4 * 7,
-    fw: 400,
-    mb: $spacing-medium,
-    mt: $spacing-medium
-  ),
-  // h6
-  2: (
-    fs: 4 * 4,
-    lh: 4 * 5,
-    fw: 700,
+    fs: 16,
+    lh: 24,
     mb: $spacing-medium,
     mt: $spacing-medium
   ),
   // h5
-  3: (
-    fs: 4 * 5,
-    lh: 4 * 6,
-    fw: 700,
+  1: (
+    fs: 18,
+    lh: 24,
     mb: $spacing-medium,
     mt: $spacing-medium
   ),
-  // h4
-  4: (
-    fs: 4 * 6,
-    lh: 4 * 7,
-    fw: 700,
+  // Lead, h4
+  2: (
+    fs: 20,
+    lh: 28,
     mb: $spacing-medium,
     mt: $spacing-medium
   ),
   // h3
-  5: (
-    fs: 4 * 7,
-    lh: 4 * 8,
-    fw: 700,
+  3: (
+    fs: 28,
+    lh: 32,
     mb: $spacing-medium,
     mt: $spacing-large
   ),
   // h2
-  6: (
-    fs: 4 * 8,
-    lh: 4 * 10,
-    fw: 700,
+  4: (
+    fs: 36,
+    lh: 40,
     mb: $spacing-medium,
     mt: $spacing-large
   ),
   // h1
-  7: (
-    fs: 4 * 11,
-    lh: 4 * 12,
-    fw: 900,
+  5: (
+    fs: 44,
+    lh: 56,
     mb: $spacing-medium,
-    mt: 0,
+    mt: 0
+  ),
+  6: (
+    fs: 52,
+    lh: 60,
+    mb: $spacing-large,
+    mt: 0
   )
 );

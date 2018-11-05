@@ -713,49 +713,15 @@
       "resolvedValue": "#fff"
     },
     {
-      "description": "<p>Page background colour</p>\n",
+      "description": "<p>Page background colour. It&#39;s off-white in an attempt to make\ntext easier to read for those with &#39;visual stress&#39;, 50% of\nwhich happen to be dyslexic (British Dyslexia association), by\nreducing contrast. See <a href=\"https://ux.stackexchange.com/a/73918/92081\">https://ux.stackexchange.com/a/73918/92081</a>\nfor a more detailed explanation.</p>\n",
       "commentRange": {
         "start": 16,
-        "end": 17
-      },
-      "context": {
-        "type": "variable",
-        "name": "colour-body",
-        "value": "#fafafa",
-        "scope": "private",
-        "line": {
-          "start": 18,
-          "end": 18
-        }
-      },
-      "since": [
-        {
-          "version": "0.2.0"
-        }
-      ],
-      "group": [
-        "colors"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
-        "name": "_settings-colours-semantic.scss"
-      },
-      "groupName": {
-        "colors": "Colours"
-      },
-      "resolvedValue": "#fafafa"
-    },
-    {
-      "description": "<p>Standard, primary body text colour</p>\n",
-      "commentRange": {
-        "start": 20,
         "end": 21
       },
       "context": {
         "type": "variable",
-        "name": "colour-text",
-        "value": "$colour-nice-rich-black",
+        "name": "colour-body",
+        "value": "#f4f4f4",
         "scope": "private",
         "line": {
           "start": 22,
@@ -778,13 +744,47 @@
       "groupName": {
         "colors": "Colours"
       },
-      "resolvedValue": "#0e0e0e"
+      "resolvedValue": "#f4f4f4"
+    },
+    {
+      "description": "<p>Standard, primary body text colour. Off-black, to slightly reduce\ncontrast in an attempt to make text easier to read for those with\n&#39;visual stress&#39;, see also $colour-body.</p>\n",
+      "commentRange": {
+        "start": 24,
+        "end": 27
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-text",
+        "value": "$colour-nice-black",
+        "scope": "private",
+        "line": {
+          "start": 28,
+          "end": 28
+        }
+      },
+      "since": [
+        {
+          "version": "0.2.0"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#222"
     },
     {
       "description": "<p>Subtle text colour</p>\n",
       "commentRange": {
-        "start": 24,
-        "end": 25
+        "start": 30,
+        "end": 31
       },
       "context": {
         "type": "variable",
@@ -792,8 +792,8 @@
         "value": "$colour-nice-grey-1",
         "scope": "private",
         "line": {
-          "start": 26,
-          "end": 26
+          "start": 32,
+          "end": 32
         }
       },
       "since": [
@@ -817,8 +817,8 @@
     {
       "description": "<p>Inverse body text colour for use on dark background</p>\n",
       "commentRange": {
-        "start": 28,
-        "end": 29
+        "start": 34,
+        "end": 35
       },
       "context": {
         "type": "variable",
@@ -826,8 +826,8 @@
         "value": "$colour-nice-white",
         "scope": "private",
         "line": {
-          "start": 30,
-          "end": 30
+          "start": 36,
+          "end": 36
         }
       },
       "since": [
@@ -851,8 +851,8 @@
     {
       "description": "<p>Icons colour</p>\n",
       "commentRange": {
-        "start": 32,
-        "end": 33
+        "start": 38,
+        "end": 39
       },
       "context": {
         "type": "variable",
@@ -860,8 +860,8 @@
         "value": "$colour-nice-teal",
         "scope": "private",
         "line": {
-          "start": 34,
-          "end": 34
+          "start": 40,
+          "end": 40
         }
       },
       "since": [
@@ -885,8 +885,8 @@
     {
       "description": "<p>Link text colour</p>\n",
       "commentRange": {
-        "start": 39,
-        "end": 40
+        "start": 45,
+        "end": 46
       },
       "context": {
         "type": "variable",
@@ -894,8 +894,8 @@
         "value": "#005ea5",
         "scope": "private",
         "line": {
-          "start": 41,
-          "end": 41
+          "start": 47,
+          "end": 47
         }
       },
       "since": [
@@ -933,8 +933,8 @@
     {
       "description": "<p>Link hover colour</p>\n",
       "commentRange": {
-        "start": 43,
-        "end": 44
+        "start": 49,
+        "end": 50
       },
       "context": {
         "type": "variable",
@@ -942,8 +942,8 @@
         "value": "#2e8aca",
         "scope": "private",
         "line": {
-          "start": 45,
-          "end": 45
+          "start": 51,
+          "end": 51
         }
       },
       "since": [
@@ -981,8 +981,8 @@
     {
       "description": "<p>Link visited colour</p>\n",
       "commentRange": {
-        "start": 47,
-        "end": 48
+        "start": 53,
+        "end": 54
       },
       "context": {
         "type": "variable",
@@ -990,8 +990,8 @@
         "value": "#4c2c92",
         "scope": "private",
         "line": {
-          "start": 49,
-          "end": 49
+          "start": 55,
+          "end": 55
         }
       },
       "since": [
@@ -1029,8 +1029,8 @@
     {
       "description": "<p>Link active colour</p>\n",
       "commentRange": {
-        "start": 51,
-        "end": 52
+        "start": 57,
+        "end": 58
       },
       "context": {
         "type": "variable",
@@ -1038,8 +1038,8 @@
         "value": "$colour-text",
         "scope": "private",
         "line": {
-          "start": 53,
-          "end": 53
+          "start": 59,
+          "end": 59
         }
       },
       "since": [
@@ -1072,13 +1072,13 @@
       "groupName": {
         "colors": "Colours"
       },
-      "resolvedValue": "#0e0e0e"
+      "resolvedValue": "#222"
     },
     {
       "description": "<p>Link focus text colour</p>\n",
       "commentRange": {
-        "start": 55,
-        "end": 56
+        "start": 61,
+        "end": 62
       },
       "context": {
         "type": "variable",
@@ -1086,8 +1086,8 @@
         "value": "$colour-link",
         "scope": "private",
         "line": {
-          "start": 57,
-          "end": 57
+          "start": 63,
+          "end": 63
         }
       },
       "since": [
@@ -1125,8 +1125,8 @@
     {
       "description": "<p>Inverse link text colour</p>\n",
       "commentRange": {
-        "start": 62,
-        "end": 63
+        "start": 68,
+        "end": 69
       },
       "context": {
         "type": "variable",
@@ -1134,8 +1134,8 @@
         "value": "$colour-text-inverse",
         "scope": "private",
         "line": {
-          "start": 64,
-          "end": 64
+          "start": 70,
+          "end": 70
         }
       },
       "since": [
@@ -1159,8 +1159,8 @@
             "name": "link-inverse",
             "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 40,
-              "end": 62
+              "start": 41,
+              "end": 63
             }
           }
         }
@@ -1173,8 +1173,8 @@
     {
       "description": "<p>Inverse link hover text colour</p>\n",
       "commentRange": {
-        "start": 66,
-        "end": 67
+        "start": 72,
+        "end": 73
       },
       "context": {
         "type": "variable",
@@ -1182,8 +1182,8 @@
         "value": "$colour-nice-grey-2",
         "scope": "private",
         "line": {
-          "start": 68,
-          "end": 68
+          "start": 74,
+          "end": 74
         }
       },
       "since": [
@@ -1207,8 +1207,8 @@
             "name": "link-inverse",
             "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 40,
-              "end": 62
+              "start": 41,
+              "end": 63
             }
           }
         }
@@ -1221,8 +1221,8 @@
     {
       "description": "<p>Inverse link visited text colour. Same as normal inverse link colour to ensure minimum 4.5:1 colour contrast across various dark backgrounds.</p>\n",
       "commentRange": {
-        "start": 70,
-        "end": 71
+        "start": 76,
+        "end": 77
       },
       "context": {
         "type": "variable",
@@ -1230,8 +1230,8 @@
         "value": "$colour-link-inverse",
         "scope": "private",
         "line": {
-          "start": 72,
-          "end": 72
+          "start": 78,
+          "end": 78
         }
       },
       "since": [
@@ -1255,8 +1255,8 @@
             "name": "link-inverse",
             "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 40,
-              "end": 62
+              "start": 41,
+              "end": 63
             }
           }
         }
@@ -1269,8 +1269,8 @@
     {
       "description": "<p>Inverse link active text colour</p>\n",
       "commentRange": {
-        "start": 74,
-        "end": 75
+        "start": 80,
+        "end": 81
       },
       "context": {
         "type": "variable",
@@ -1278,8 +1278,8 @@
         "value": "$colour-link-inverse-hover",
         "scope": "private",
         "line": {
-          "start": 76,
-          "end": 76
+          "start": 82,
+          "end": 82
         }
       },
       "since": [
@@ -1303,8 +1303,8 @@
             "name": "link-inverse",
             "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 40,
-              "end": 62
+              "start": 41,
+              "end": 63
             }
           }
         }
@@ -1317,8 +1317,8 @@
     {
       "description": "<p>Inverse link focus text colour</p>\n",
       "commentRange": {
-        "start": 78,
-        "end": 79
+        "start": 84,
+        "end": 85
       },
       "context": {
         "type": "variable",
@@ -1326,8 +1326,8 @@
         "value": "$colour-link-inverse",
         "scope": "private",
         "line": {
-          "start": 80,
-          "end": 80
+          "start": 86,
+          "end": 86
         }
       },
       "since": [
@@ -1351,8 +1351,8 @@
             "name": "link-inverse",
             "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 40,
-              "end": 62
+              "start": 41,
+              "end": 63
             }
           }
         }
@@ -1365,8 +1365,8 @@
     {
       "description": "<p>Focus colour</p>\n",
       "commentRange": {
-        "start": 85,
-        "end": 86
+        "start": 91,
+        "end": 92
       },
       "context": {
         "type": "variable",
@@ -1374,8 +1374,8 @@
         "value": "#0092a6",
         "scope": "private",
         "line": {
-          "start": 87,
-          "end": 87
+          "start": 93,
+          "end": 93
         }
       },
       "since": [
@@ -1423,8 +1423,8 @@
             "name": "link-inverse",
             "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 40,
-              "end": 62
+              "start": 41,
+              "end": 63
             }
           }
         }
@@ -1437,8 +1437,8 @@
     {
       "description": "<p>Focus colour</p>\n",
       "commentRange": {
-        "start": 89,
-        "end": 90
+        "start": 95,
+        "end": 96
       },
       "context": {
         "type": "variable",
@@ -1446,8 +1446,8 @@
         "value": "$colour-link-inverse",
         "scope": "private",
         "line": {
-          "start": 91,
-          "end": 91
+          "start": 97,
+          "end": 97
         }
       },
       "since": [
@@ -1485,8 +1485,8 @@
     {
       "description": "<p>CTA button background colour</p>\n",
       "commentRange": {
-        "start": 96,
-        "end": 97
+        "start": 102,
+        "end": 103
       },
       "context": {
         "type": "variable",
@@ -1494,8 +1494,8 @@
         "value": "$colour-nice-purple",
         "scope": "private",
         "line": {
-          "start": 98,
-          "end": 98
+          "start": 104,
+          "end": 104
         }
       },
       "since": [
@@ -1519,8 +1519,8 @@
     {
       "description": "<p>CTA button hover colour</p>\n",
       "commentRange": {
-        "start": 100,
-        "end": 101
+        "start": 106,
+        "end": 107
       },
       "context": {
         "type": "variable",
@@ -1528,8 +1528,8 @@
         "value": "#260b2d",
         "scope": "private",
         "line": {
-          "start": 102,
-          "end": 102
+          "start": 108,
+          "end": 108
         }
       },
       "since": [
@@ -1553,8 +1553,8 @@
     {
       "description": "<p>CTA button text colour</p>\n",
       "commentRange": {
-        "start": 104,
-        "end": 105
+        "start": 110,
+        "end": 111
       },
       "context": {
         "type": "variable",
@@ -1562,8 +1562,8 @@
         "value": "$colour-nice-white",
         "scope": "private",
         "line": {
-          "start": 106,
-          "end": 106
+          "start": 112,
+          "end": 112
         }
       },
       "since": [
@@ -1587,8 +1587,8 @@
     {
       "description": "<p>Primary button background colour</p>\n",
       "commentRange": {
-        "start": 111,
-        "end": 112
+        "start": 117,
+        "end": 118
       },
       "context": {
         "type": "variable",
@@ -1596,8 +1596,8 @@
         "value": "$colour-nice-dark-grey",
         "scope": "private",
         "line": {
-          "start": 113,
-          "end": 113
+          "start": 119,
+          "end": 119
         }
       },
       "since": [
@@ -1621,8 +1621,8 @@
     {
       "description": "<p>Primary button hover colour</p>\n",
       "commentRange": {
-        "start": 115,
-        "end": 116
+        "start": 121,
+        "end": 122
       },
       "context": {
         "type": "variable",
@@ -1630,8 +1630,8 @@
         "value": "$colour-nice-rich-black",
         "scope": "private",
         "line": {
-          "start": 117,
-          "end": 117
+          "start": 123,
+          "end": 123
         }
       },
       "since": [
@@ -1655,8 +1655,8 @@
     {
       "description": "<p>Primary button text colour</p>\n",
       "commentRange": {
-        "start": 119,
-        "end": 120
+        "start": 125,
+        "end": 126
       },
       "context": {
         "type": "variable",
@@ -1664,8 +1664,8 @@
         "value": "$colour-nice-white",
         "scope": "private",
         "line": {
-          "start": 121,
-          "end": 121
+          "start": 127,
+          "end": 127
         }
       },
       "since": [
@@ -1689,8 +1689,8 @@
     {
       "description": "<p>Secondary button background colour</p>\n",
       "commentRange": {
-        "start": 126,
-        "end": 127
+        "start": 132,
+        "end": 133
       },
       "context": {
         "type": "variable",
@@ -1698,8 +1698,8 @@
         "value": "#666",
         "scope": "private",
         "line": {
-          "start": 128,
-          "end": 128
+          "start": 134,
+          "end": 134
         }
       },
       "since": [
@@ -1723,8 +1723,8 @@
     {
       "description": "<p>Secondary button hover colour</p>\n",
       "commentRange": {
-        "start": 130,
-        "end": 131
+        "start": 136,
+        "end": 137
       },
       "context": {
         "type": "variable",
@@ -1732,8 +1732,8 @@
         "value": "#333",
         "scope": "private",
         "line": {
-          "start": 132,
-          "end": 132
+          "start": 138,
+          "end": 138
         }
       },
       "since": [
@@ -1757,8 +1757,8 @@
     {
       "description": "<p>Primary button text colour</p>\n",
       "commentRange": {
-        "start": 134,
-        "end": 135
+        "start": 140,
+        "end": 141
       },
       "context": {
         "type": "variable",
@@ -1766,8 +1766,8 @@
         "value": "$colour-nice-white",
         "scope": "private",
         "line": {
-          "start": 136,
-          "end": 136
+          "start": 142,
+          "end": 142
         }
       },
       "since": [
@@ -1791,8 +1791,8 @@
     {
       "description": "<p>Inverse (light) button background colour</p>\n",
       "commentRange": {
-        "start": 141,
-        "end": 142
+        "start": 147,
+        "end": 148
       },
       "context": {
         "type": "variable",
@@ -1800,8 +1800,8 @@
         "value": "$colour-nice-white",
         "scope": "private",
         "line": {
-          "start": 143,
-          "end": 143
+          "start": 149,
+          "end": 149
         }
       },
       "since": [
@@ -1825,8 +1825,8 @@
     {
       "description": "<p>Inverse (light) button hover colour</p>\n",
       "commentRange": {
-        "start": 145,
-        "end": 146
+        "start": 151,
+        "end": 152
       },
       "context": {
         "type": "variable",
@@ -1834,8 +1834,8 @@
         "value": "$colour-nice-grey-3",
         "scope": "private",
         "line": {
-          "start": 147,
-          "end": 147
+          "start": 153,
+          "end": 153
         }
       },
       "since": [
@@ -1859,8 +1859,8 @@
     {
       "description": "<p>Inverse (light) button text colour</p>\n",
       "commentRange": {
-        "start": 149,
-        "end": 150
+        "start": 155,
+        "end": 156
       },
       "context": {
         "type": "variable",
@@ -1868,8 +1868,8 @@
         "value": "$colour-nice-rich-black",
         "scope": "private",
         "line": {
-          "start": 151,
-          "end": 151
+          "start": 157,
+          "end": 157
         }
       },
       "since": [
@@ -1893,8 +1893,8 @@
     {
       "description": "<p>Borders, seperators, rules, keylines etc.</p>\n",
       "commentRange": {
-        "start": 156,
-        "end": 157
+        "start": 162,
+        "end": 163
       },
       "context": {
         "type": "variable",
@@ -1902,8 +1902,8 @@
         "value": "$colour-nice-grey-1",
         "scope": "private",
         "line": {
-          "start": 158,
-          "end": 158
+          "start": 164,
+          "end": 164
         }
       },
       "since": [
@@ -1927,8 +1927,8 @@
     {
       "description": "",
       "commentRange": {
-        "start": 161,
-        "end": 161
+        "start": 167,
+        "end": 167
       },
       "context": {
         "type": "variable",
@@ -1936,8 +1936,8 @@
         "value": "$colour-nice-grey-3",
         "scope": "private",
         "line": {
-          "start": 162,
-          "end": 162
+          "start": 168,
+          "end": 168
         }
       },
       "since": [
@@ -1961,8 +1961,42 @@
     {
       "description": "",
       "commentRange": {
-        "start": 165,
-        "end": 165
+        "start": 171,
+        "end": 171
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-panel-default-border",
+        "value": "$colour-nice-grey-2",
+        "scope": "private",
+        "line": {
+          "start": 172,
+          "end": 172
+        }
+      },
+      "since": [
+        {
+          "version": "0.5.2"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#d6d6d6"
+    },
+    {
+      "description": "",
+      "commentRange": {
+        "start": 175,
+        "end": 175
       },
       "context": {
         "type": "variable",
@@ -1970,8 +2004,8 @@
         "value": "$colour-nice-dark-grey",
         "scope": "private",
         "line": {
-          "start": 166,
-          "end": 166
+          "start": 176,
+          "end": 176
         }
       },
       "since": [
@@ -1995,8 +2029,8 @@
     {
       "description": "<p>Agile lifecycle phase banner</p>\n",
       "commentRange": {
-        "start": 171,
-        "end": 172
+        "start": 181,
+        "end": 182
       },
       "context": {
         "type": "variable",
@@ -2004,8 +2038,8 @@
         "value": "#009ae9",
         "scope": "private",
         "line": {
-          "start": 173,
-          "end": 173
+          "start": 183,
+          "end": 183
         }
       },
       "since": [
@@ -2029,8 +2063,8 @@
     {
       "description": "<p>Discovery agile lifecycle phase</p>\n",
       "commentRange": {
-        "start": 175,
-        "end": 177
+        "start": 185,
+        "end": 187
       },
       "context": {
         "type": "variable",
@@ -2038,8 +2072,8 @@
         "value": "#b8008e",
         "scope": "private",
         "line": {
-          "start": 178,
-          "end": 178
+          "start": 188,
+          "end": 188
         }
       },
       "since": [
@@ -2064,8 +2098,8 @@
     {
       "description": "<p>Alpha badges and banners</p>\n",
       "commentRange": {
-        "start": 180,
-        "end": 182
+        "start": 190,
+        "end": 192
       },
       "context": {
         "type": "variable",
@@ -2073,8 +2107,8 @@
         "value": "#d5367f",
         "scope": "private",
         "line": {
-          "start": 183,
-          "end": 183
+          "start": 193,
+          "end": 193
         }
       },
       "since": [
@@ -2099,8 +2133,8 @@
     {
       "description": "<p>Beta badges and banners</p>\n",
       "commentRange": {
-        "start": 185,
-        "end": 187
+        "start": 195,
+        "end": 197
       },
       "context": {
         "type": "variable",
@@ -2108,8 +2142,8 @@
         "value": "#f47738",
         "scope": "private",
         "line": {
-          "start": 188,
-          "end": 188
+          "start": 198,
+          "end": 198
         }
       },
       "since": [
@@ -2134,8 +2168,8 @@
     {
       "description": "<p>Live badges and banners</p>\n",
       "commentRange": {
-        "start": 190,
-        "end": 192
+        "start": 200,
+        "end": 202
       },
       "context": {
         "type": "variable",
@@ -2143,8 +2177,8 @@
         "value": "#70a747",
         "scope": "private",
         "line": {
-          "start": 193,
-          "end": 193
+          "start": 203,
+          "end": 203
         }
       },
       "since": [
@@ -2169,8 +2203,8 @@
     {
       "description": "<p>Error text and border colour</p>\n",
       "commentRange": {
-        "start": 195,
-        "end": 196
+        "start": 205,
+        "end": 206
       },
       "context": {
         "type": "variable",
@@ -2178,8 +2212,8 @@
         "value": "#b10e1e",
         "scope": "private",
         "line": {
-          "start": 197,
-          "end": 197
+          "start": 207,
+          "end": 207
         }
       },
       "since": [
@@ -2203,8 +2237,8 @@
     {
       "description": "<p>Error background colour</p>\n",
       "commentRange": {
-        "start": 199,
-        "end": 200
+        "start": 209,
+        "end": 210
       },
       "context": {
         "type": "variable",
@@ -2212,8 +2246,8 @@
         "value": "#eac3c3",
         "scope": "private",
         "line": {
-          "start": 201,
-          "end": 201
+          "start": 211,
+          "end": 211
         }
       },
       "since": [
@@ -2237,8 +2271,8 @@
     {
       "description": "<p>Caution text and border colour</p>\n",
       "commentRange": {
-        "start": 203,
-        "end": 204
+        "start": 213,
+        "end": 214
       },
       "context": {
         "type": "variable",
@@ -2246,8 +2280,8 @@
         "value": "#9b722f",
         "scope": "private",
         "line": {
-          "start": 205,
-          "end": 205
+          "start": 215,
+          "end": 215
         }
       },
       "since": [
@@ -2271,8 +2305,8 @@
     {
       "description": "<p>Caution background colour</p>\n",
       "commentRange": {
-        "start": 207,
-        "end": 208
+        "start": 217,
+        "end": 218
       },
       "context": {
         "type": "variable",
@@ -2280,8 +2314,8 @@
         "value": "#ffdfa4",
         "scope": "private",
         "line": {
-          "start": 209,
-          "end": 209
+          "start": 219,
+          "end": 219
         }
       },
       "since": [
@@ -2305,8 +2339,8 @@
     {
       "description": "<p>Info text and border colour</p>\n",
       "commentRange": {
-        "start": 211,
-        "end": 212
+        "start": 221,
+        "end": 222
       },
       "context": {
         "type": "variable",
@@ -2314,8 +2348,8 @@
         "value": "#4a7f99",
         "scope": "private",
         "line": {
-          "start": 213,
-          "end": 213
+          "start": 223,
+          "end": 223
         }
       },
       "since": [
@@ -2339,8 +2373,8 @@
     {
       "description": "<p>Info background colour</p>\n",
       "commentRange": {
-        "start": 215,
-        "end": 216
+        "start": 225,
+        "end": 226
       },
       "context": {
         "type": "variable",
@@ -2348,8 +2382,8 @@
         "value": "#e6faff",
         "scope": "private",
         "line": {
-          "start": 217,
-          "end": 217
+          "start": 227,
+          "end": 227
         }
       },
       "since": [
@@ -2373,8 +2407,8 @@
     {
       "description": "<p>Success text and border colour</p>\n",
       "commentRange": {
-        "start": 219,
-        "end": 220
+        "start": 229,
+        "end": 230
       },
       "context": {
         "type": "variable",
@@ -2382,8 +2416,8 @@
         "value": "#3f8c5e",
         "scope": "private",
         "line": {
-          "start": 221,
-          "end": 221
+          "start": 231,
+          "end": 231
         }
       },
       "since": [
@@ -2407,8 +2441,8 @@
     {
       "description": "<p>Success background colour</p>\n",
       "commentRange": {
-        "start": 223,
-        "end": 224
+        "start": 233,
+        "end": 234
       },
       "context": {
         "type": "variable",
@@ -2416,8 +2450,8 @@
         "value": "#eff7eb",
         "scope": "private",
         "line": {
-          "start": 225,
-          "end": 225
+          "start": 235,
+          "end": 235
         }
       },
       "since": [
@@ -2441,8 +2475,8 @@
     {
       "description": "<p>New guidance colour</p>\n",
       "commentRange": {
-        "start": 230,
-        "end": 231
+        "start": 240,
+        "end": 241
       },
       "context": {
         "type": "variable",
@@ -2450,8 +2484,8 @@
         "value": "$colour-nice-purple",
         "scope": "private",
         "line": {
-          "start": 232,
-          "end": 232
+          "start": 242,
+          "end": 242
         }
       },
       "since": [
@@ -2475,8 +2509,8 @@
     {
       "description": "<p>Updated guidance colour</p>\n",
       "commentRange": {
-        "start": 234,
-        "end": 235
+        "start": 244,
+        "end": 245
       },
       "context": {
         "type": "variable",
@@ -2484,8 +2518,8 @@
         "value": "$colour-nice-blue-3",
         "scope": "private",
         "line": {
-          "start": 236,
-          "end": 236
+          "start": 246,
+          "end": 246
         }
       },
       "since": [
@@ -2509,8 +2543,8 @@
     {
       "description": "<p>In consultation guidance colour</p>\n",
       "commentRange": {
-        "start": 238,
-        "end": 239
+        "start": 248,
+        "end": 249
       },
       "context": {
         "type": "variable",
@@ -2518,8 +2552,8 @@
         "value": "#557021",
         "scope": "private",
         "line": {
-          "start": 240,
-          "end": 240
+          "start": 250,
+          "end": 250
         }
       },
       "since": [
@@ -2541,6 +2575,74 @@
       "resolvedValue": "#557021"
     },
     {
+      "description": "<p>Background colour for the hero component</p>\n",
+      "commentRange": {
+        "start": 255,
+        "end": 256
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-hero-background",
+        "value": "$colour-nice-teal-2",
+        "scope": "private",
+        "line": {
+          "start": 257,
+          "end": 257
+        }
+      },
+      "since": [
+        {
+          "version": "0.5.2"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#18646e"
+    },
+    {
+      "description": "<p>Colour for the border in the hero component</p>\n",
+      "commentRange": {
+        "start": 259,
+        "end": 260
+      },
+      "context": {
+        "type": "variable",
+        "name": "colour-hero-border",
+        "value": "$colour-nice-teal-3",
+        "scope": "private",
+        "line": {
+          "start": 261,
+          "end": 261
+        }
+      },
+      "since": [
+        {
+          "version": "0.5.2"
+        }
+      ],
+      "group": [
+        "colors"
+      ],
+      "access": "public",
+      "file": {
+        "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+        "name": "_settings-colours-semantic.scss"
+      },
+      "groupName": {
+        "colors": "Colours"
+      },
+      "resolvedValue": "#15434a"
+    },
+    {
       "description": "<p>Action banner component. Used to highlight\nand give context to a call-to-action.\nModifiers:</p>\n<ul>\n<li>subtle</li>\n</ul>\n",
       "commentRange": {
         "start": 5,
@@ -2549,10 +2651,10 @@
       "context": {
         "type": "css",
         "name": ".action-banner",
-        "value": "@include links-inverse;\n  background: $colour-nice-cool-teal;\n  color: $colour-text-inverse;\n  margin: em($spacing-large 0);\n  padding: em($spacing-small 0);\n  position: relative;\n\n  &__container {\n    @extend %container;\n  }\n\n  &__inner {\n    @include grid;\n  }\n\n  &__text {\n    @include grid-item($middle: true);\n    margin-bottom: em($spacing-medium);\n  }\n\n  &__title {\n    @include font-size(3);\n    margin: em(0 0 $spacing-x-small);\n  }\n\n  &__intro {\n    margin: 0;\n  }\n\n  &__actions {\n    @include grid-item($middle: true);\n\n    .btn {\n      margin: 0;\n    }\n  }\n\n  &__close {\n    appearance: none;\n    background: 0;\n    border: 0;\n    color: $colour-text-inverse;\n    cursor: pointer;\n    line-height: 1;\n    padding: rem($spacing-small);\n    position: absolute;\n    right: 0;\n    top: 0;\n    z-index: 1;\n\n    &:hover {\n      background: rgba(0, 0, 0, .2);\n    }\n\n    &:focus {\n      @include default-focus-style;\n    }\n  }\n\n  &--subtle {\n    @include links-default;\n    background: $colour-panel-default;\n    color: $colour-text;\n\n    .action-banner__close {\n      color: $colour-text;\n    }\n  }\n\n  &--closeable {\n    .action-banner__title {\n      padding-right: rem($spacing-large); // Make toom for close button\n    }\n  }\n\n  @include mq($from: md) {\n    &__text {\n      margin-bottom: 0;\n      width: percentage(3/4);\n    }\n\n    &__actions {\n      text-align: right;\n      width: percentage(1/4);\n    }\n\n    &--closeable {\n      .action-banner__title {\n        padding-right: 0;\n      }\n\n      .action-banner__actions {\n        padding-right: rem($spacing-medium);\n      }\n    }\n  }\n\n  @media print {\n    @include important(display, none);\n  }",
+        "value": "@include links-inverse;\n  background: $colour-nice-cool-teal;\n  color: $colour-text-inverse;\n  margin: em($spacing-large 0);\n  padding: em($spacing-small 0);\n  position: relative;\n\n  &__container {\n    @extend %container;\n  }\n\n  &__inner {\n    @include grid;\n  }\n\n  &__text {\n    @include grid-item($middle: true);\n    margin-bottom: em($spacing-medium);\n  }\n\n  &__title {\n    @include font-size(3);\n    color: $colour-text-inverse;\n    margin: em(0 0 $spacing-x-small);\n  }\n\n  &__intro {\n    margin: 0;\n  }\n\n  &__actions {\n    @include grid-item($middle: true);\n\n    .btn {\n      margin: 0;\n    }\n  }\n\n  &__close {\n    appearance: none;\n    background: 0;\n    border: 0;\n    color: $colour-text-inverse;\n    cursor: pointer;\n    line-height: 1;\n    padding: rem($spacing-small);\n    position: absolute;\n    right: 0;\n    top: 0;\n    z-index: 1;\n\n    &:hover {\n      background: rgba(0, 0, 0, .2);\n    }\n\n    &:focus {\n      @include default-focus-style;\n    }\n  }\n\n  &--subtle {\n    @include links-default;\n    background: $colour-panel-default;\n    color: $colour-text;\n\n    .action-banner__title {\n      color: $colour-text;\n    }\n\n    .action-banner__close {\n      color: $colour-text;\n    }\n  }\n\n  &--closeable {\n    .action-banner__title {\n      padding-right: rem($spacing-large); // Make toom for close button\n    }\n  }\n\n  @include mq($from: md) {\n    &__text {\n      margin-bottom: 0;\n      width: percentage(3/4);\n    }\n\n    &__actions {\n      text-align: right;\n      width: percentage(1/4);\n    }\n\n    &--closeable {\n      .action-banner__title {\n        padding-right: 0;\n      }\n\n      .action-banner__actions {\n        padding-right: rem($spacing-medium);\n      }\n    }\n  }\n\n  @media print {\n    @include important(display, none);\n  }",
         "line": {
           "start": 11,
-          "end": 113
+          "end": 118
         }
       },
       "since": [
@@ -2773,10 +2875,10 @@
       "context": {
         "type": "placeholder",
         "name": "container",
-        "code": "\n  margin: auto;\n  max-width: rem(1170px);\n  width: 96%;\n",
+        "code": "\n  margin: auto;\n  max-width: rem($nice-container-max-width);\n  width: 96%;\n  width: calc(100% - #{rem($spacing-large)});\n",
         "line": {
           "start": 7,
-          "end": 11
+          "end": 12
         }
       },
       "since": [
@@ -2792,6 +2894,18 @@
         {
           "type": "function",
           "name": "rem"
+        },
+        {
+          "type": "function",
+          "name": "rem"
+        },
+        {
+          "type": "variable",
+          "name": "nice-container-max-width"
+        },
+        {
+          "type": "variable",
+          "name": "spacing-large"
         }
       ],
       "file": {
@@ -2805,16 +2919,16 @@
     {
       "description": "<p>Container, used as a wrapper around sections within a page.\nUsually used to house grids.</p>\n",
       "commentRange": {
-        "start": 13,
-        "end": 21
+        "start": 14,
+        "end": 22
       },
       "context": {
         "type": "css",
         "name": ".container",
         "value": "@extend %container;\n\n  &--full {\n    max-width: 100%;\n    padding: 0 2%;\n    width: auto;\n  }",
         "line": {
-          "start": 22,
-          "end": 31
+          "start": 23,
+          "end": 32
         }
       },
       "example": [
@@ -2881,7 +2995,7 @@
       "context": {
         "type": "css",
         "name": ".site-footer",
-        "value": "@include links-inverse;\n  @include font-size(-1);\n  background: $colour-panel-inverse;\n  color: $colour-text-inverse;\n  margin-top: em($spacing-large);\n  padding: em($spacing-large 0);\n\n  @media print {\n    display: none;\n  }\n\n  p {\n    @include font-size(-1);\n  }\n\n  &__logo {\n    display: block;\n    margin: em(0 0 $spacing-large 0);\n    text-decoration: none !important; // sass-lint:disable-line no-important\n\n    .icon {\n      font-size: rem(48px);\n    }\n  }\n\n  &__services {\n    margin: em(0 0 $spacing-large 0);\n  }\n\n  &__social {\n    clear: both;\n    margin: em(0 0 $spacing-large 0);\n  }\n\n  &__nav {\n    clear: both;\n    margin: em(0 0 $spacing-large 0);\n  }\n\n  &__copyright {\n    margin: 0;\n    text-align: center;\n  }\n\n  @include mq($from: sm) {\n    &__logo {\n      float: left;\n      margin: em(0 $spacing-large $spacing-large 0);\n    }\n\n    &__services {\n      float: left;\n      margin: em(0 0 $spacing-large 0);\n    }\n\n    &__social {\n      clear: both;\n    }\n\n    &__copyright {\n      text-align: left;\n    }\n  }\n\n  @include mq($from: md) {\n\n    &__social {\n      clear: none;\n      float: right;\n    }\n  }",
+        "value": "@include links-inverse;\n  @include font-size(-1);\n  background: $colour-panel-inverse;\n  color: $colour-text-inverse;\n  margin-top: em($spacing-large);\n  padding: em($spacing-large 0);\n\n  @media print {\n    display: none;\n  }\n\n  p {\n    @include font-size(-1);\n  }\n\n  &__logo {\n    display: block;\n    margin: em(0 0 $spacing-large 0);\n    text-decoration: none !important; // sass-lint:disable-line no-important\n\n    .icon {\n      @include font-size(h1);\n    }\n  }\n\n  &__services {\n    margin: em(0 0 $spacing-large 0);\n  }\n\n  &__social {\n    clear: both;\n    margin: em(0 0 $spacing-large 0);\n  }\n\n  &__nav {\n    clear: both;\n    margin: em(0 0 $spacing-large 0);\n  }\n\n  &__copyright {\n    margin: 0;\n    text-align: center;\n  }\n\n  @include mq($from: sm) {\n    &__logo {\n      float: left;\n      margin: em(0 $spacing-large $spacing-large 0);\n    }\n\n    &__services {\n      float: left;\n      margin: em(0 0 $spacing-large 0);\n    }\n\n    &__social {\n      clear: both;\n    }\n\n    &__copyright {\n      text-align: left;\n    }\n  }\n\n  @include mq($from: md) {\n\n    &__social {\n      clear: none;\n      float: right;\n    }\n  }",
         "line": {
           "start": 7,
           "end": 222
@@ -2913,7 +3027,7 @@
       "context": {
         "type": "css",
         "name": ".services",
-        "value": "&__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  &__item {\n    border-bottom: 1px solid $colour-border;\n\n    &:first-child {\n      border-top: 1px solid $colour-border;\n    }\n\n    a {\n      @include font-size(-1);\n      color: $colour-panel-default;\n      display: block;\n      padding: em($spacing-small 0);\n      text-decoration: none;\n\n      &:hover {\n        color: $colour-text-inverse;\n      }\n    }\n\n    .icon {\n      @include font-size(1);\n      display: inline-block;\n      margin: em(0 $spacing-x-small 0 0);\n      vertical-align: middle;\n    }\n  }\n\n  @include mq($from: sm) {\n\n    &__item {\n      border: 0;\n      float: left;\n      text-align: center;\n      width: em(90px);\n\n      &:first-child {\n        border: 0;\n      }\n\n      a {\n        padding: em($spacing-x-small) 0 0;\n      }\n    }\n\n    .icon {\n      @include font-size(6);\n      display: block;\n      line-height: 1;\n      margin: 0 auto em($spacing-x-small);\n\n      // The following is needed for IE8 to go centrally aligned\n      &:before {\n        text-align: center;\n        width: 100%;\n      }\n    }\n  }",
+        "value": "&__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  &__item {\n    border-bottom: 1px solid $colour-border;\n\n    &:first-child {\n      border-top: 1px solid $colour-border;\n    }\n\n    a {\n      @include font-size(-1);\n      color: $colour-panel-default;\n      display: block;\n      padding: em($spacing-small 0);\n      text-decoration: none;\n\n      &:hover {\n        color: $colour-text-inverse;\n      }\n    }\n\n    .icon {\n      @include font-size(1);\n      display: inline-block;\n      margin: em(0 $spacing-x-small 0 0);\n      vertical-align: middle;\n    }\n  }\n\n  @include mq($from: sm) {\n\n    &__item {\n      border: 0;\n      float: left;\n      text-align: center;\n      width: em(90px);\n\n      &:first-child {\n        border: 0;\n      }\n\n      a {\n        padding: em($spacing-x-small) 0 0;\n      }\n    }\n\n    .icon {\n      @include font-size(h2);\n      display: block;\n      line-height: 1;\n      margin: 0 auto em($spacing-x-small);\n\n      // The following is needed for IE8 to go centrally aligned\n      &:before {\n        text-align: center;\n        width: 100%;\n      }\n    }\n  }",
         "line": {
           "start": 83,
           "end": 222
@@ -2940,7 +3054,7 @@
       "context": {
         "type": "css",
         "name": ".social-networks",
-        "value": "&__heading {\n    @include font-size(-1);\n    display: inline-block;\n    font-weight: normal;\n    margin: em(0 $spacing-small 0 0);\n    padding: 0;\n    vertical-align: top;\n  }\n\n  &__list {\n    display: inline;\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  &__item {\n    display: inline-block;\n\n    .icon {\n      @include font-size(4);\n      line-height: 1;\n    }\n  }\n\n  a {\n    display: block;\n    padding: em(0 $spacing-x-small);\n    text-decoration: none;\n  }",
+        "value": "&__heading {\n    @include font-size(-1);\n    display: inline-block;\n    font-weight: normal;\n    margin: em(0 $spacing-small 0 0);\n    padding: 0;\n    vertical-align: top;\n  }\n\n  &__list {\n    display: inline;\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  &__item {\n    display: inline-block;\n\n    .icon {\n      @include font-size(3);\n      line-height: 1;\n    }\n  }\n\n  a {\n    display: block;\n    padding: em(0 $spacing-x-small);\n    text-decoration: none;\n  }",
         "line": {
           "start": 151,
           "end": 222
@@ -2994,10 +3108,10 @@
       "context": {
         "type": "css",
         "name": ".hero",
-        "value": "@include links-inverse;\n  background: $colour-nice-teal-2;\n  color: $colour-text-inverse;\n  margin: em(0 0 $spacing-large);\n  overflow: hidden;\n  padding: em(0 0 $spacing-large);\n\n  &__container {\n    @extend %container;\n  }\n\n  &__body {\n    @include grid($loose: true);\n    margin-top: rem($spacing-large);\n  }\n\n  // The main container for the copy\n  &__copy {\n    @include grid-item(12, $md: 8, $loose: true);\n  }\n\n  // Extra supplementary links etc\n  &__extra {\n    @include grid-item(12, $md: 4, $loose: true);\n  }\n\n  &__title {\n    @include h1;\n  }\n\n  &__intro {\n    @include lead;\n  }",
+        "value": "@include links-inverse;\n  background: $colour-hero-background;\n  color: $colour-text-inverse;\n  margin: rem(0 0 $spacing-medium);\n  overflow: hidden;\n  //padding: rem(0 0 $spacing-large);\n\n  &__container {\n    @extend %container;\n  }\n\n  &__body {\n    @include clearfix;\n    margin-top: rem($spacing-large);\n    padding: rem(0 0 $spacing-large);\n  }\n\n  // Container for title, lead and actions\n  &__copy {\n    margin-bottom: rem($spacing-large);\n  }\n\n  // Extra supplementary links etc\n  &__extra {\n    //padding: rem(0 0 $spacing-medium);\n  }\n\n  &__title {\n    @include h1;\n  }\n\n  &__intro {\n    @include lead;\n  }\n\n  // Optional footer\n  &__footer {\n    border-top: rem($spacing-xx-small) solid $colour-hero-border;\n    padding: rem($spacing-medium 0);\n\n    p,\n    ul {\n      margin: 0;\n    }\n  }\n\n  @include mq($from: md) {\n    &__copy {\n      float: left;\n      margin-bottom: 0;\n      width: 55%;\n    }\n\n    &__extra {\n      float: right;\n      width: 35%;\n    }\n  }",
         "line": {
           "start": 7,
-          "end": 42
+          "end": 67
         }
       },
       "since": [
@@ -3135,10 +3249,10 @@
       "context": {
         "type": "css",
         "name": ".panel",
-        "value": "background: $colour-panel-default;\n  margin: em($spacing-medium 0 $spacing-large);\n  padding: em($spacing-medium);\n\n  // sass-lint:disable no-combinators\n  > :first-child {\n    margin-top: 0;\n  }\n\n  // sass-lint:disable no-combinators\n  > :last-child {\n    margin-bottom: 0;\n  }",
+        "value": "background: $colour-panel-default;\n  border: 1px solid $colour-panel-default-border; // To distinguish panel from off-grey body background\n  margin: em($spacing-medium 0 $spacing-large);\n  padding: em($spacing-medium);\n\n  // sass-lint:disable no-combinators\n  > :first-child {\n    margin-top: 0;\n  }\n\n  // sass-lint:disable no-combinators\n  > :last-child {\n    margin-bottom: 0;\n  }",
         "line": {
           "start": 8,
-          "end": 35
+          "end": 37
         }
       },
       "since": [
@@ -3159,21 +3273,26 @@
       }
     },
     {
-      "description": "<p>Modifier for the panel, to use a inverse (dark) background.\nAutmatically uses inverse links within it. Doesn&#39;t affect buttons\nthough, so any buttons within a dark panel should be <code>.btn.btn--light</code>.</p>\n",
+      "description": "<p>Modifier for the panel, to use a inverse (dark) background.\nAutmatically uses inverse links within it. Doesn&#39;t affect buttons\nthough, so any buttons within a dark panel should be <code>.btn.btn--inverse</code>.</p>\n",
       "commentRange": {
-        "start": 24,
-        "end": 29
+        "start": 25,
+        "end": 30
       },
       "context": {
         "type": "css",
         "name": ".panel--inverse",
-        "value": "@include links-inverse;\n  background: $colour-panel-inverse;\n  color: $colour-text-inverse;",
+        "value": "@include links-inverse;\n  background: $colour-panel-inverse;\n  border: 0;\n  color: $colour-text-inverse;",
         "line": {
-          "start": 30,
-          "end": 35
+          "start": 31,
+          "end": 37
         }
       },
       "require": [
+        {
+          "type": "mixin",
+          "name": "links-inverse",
+          "external": false
+        },
         {
           "type": "function",
           "name": ".panel",
@@ -5996,10 +6115,22 @@
           "context": {
             "type": "placeholder",
             "name": "container",
-            "code": "\n  margin: auto;\n  max-width: rem(1170px);\n  width: 96%;\n",
+            "code": "\n  margin: auto;\n  max-width: rem($nice-container-max-width);\n  width: 96%;\n  width: calc(100% - #{rem($spacing-large)});\n",
             "line": {
               "start": 7,
-              "end": 11
+              "end": 12
+            }
+          }
+        },
+        {
+          "description": "<p>Container placeholder.</p>\n",
+          "context": {
+            "type": "placeholder",
+            "name": "container",
+            "code": "\n  margin: auto;\n  max-width: rem($nice-container-max-width);\n  width: 96%;\n  width: calc(100% - #{rem($spacing-large)});\n",
+            "line": {
+              "start": 7,
+              "end": 12
             }
           }
         },
@@ -6056,10 +6187,10 @@
           "context": {
             "type": "mixin",
             "name": "font",
-            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
             "line": {
               "start": 96,
-              "end": 112
+              "end": 110
             }
           }
         },
@@ -6068,10 +6199,10 @@
           "context": {
             "type": "mixin",
             "name": "font",
-            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
             "line": {
               "start": 96,
-              "end": 112
+              "end": 110
             }
           }
         },
@@ -6080,10 +6211,10 @@
           "context": {
             "type": "mixin",
             "name": "font",
-            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
             "line": {
               "start": 96,
-              "end": 112
+              "end": 110
             }
           }
         },
@@ -6092,10 +6223,10 @@
           "context": {
             "type": "mixin",
             "name": "font",
-            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
             "line": {
               "start": 96,
-              "end": 112
+              "end": 110
             }
           }
         },
@@ -6626,6 +6757,20 @@
         "path": "stylesheets\\settings\\_settings-spacing.scss",
         "name": "_settings-spacing.scss"
       },
+      "usedBy": [
+        {
+          "description": "<p>Container placeholder.</p>\n",
+          "context": {
+            "type": "placeholder",
+            "name": "container",
+            "code": "\n  margin: auto;\n  max-width: rem($nice-container-max-width);\n  width: 96%;\n  width: calc(100% - #{rem($spacing-large)});\n",
+            "line": {
+              "start": 7,
+              "end": 12
+            }
+          }
+        }
+      ],
       "groupName": {
         "spacing": "Spacing"
       },
@@ -6829,8 +6974,8 @@
             "name": "link-inverse",
             "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 40,
-              "end": 62
+              "start": 41,
+              "end": 63
             }
           }
         }
@@ -6842,16 +6987,16 @@
     {
       "description": "<p>Mark</p>\n",
       "commentRange": {
-        "start": 108,
-        "end": 108
+        "start": 96,
+        "end": 96
       },
       "context": {
         "type": "css",
         "name": "mark,\n.mark",
-        "value": "background-color: #fff999;\n  padding: em(4);",
+        "value": "background-color: #fff999;\n  padding: em(0 $spacing-x-small);",
         "line": {
-          "start": 110,
-          "end": 120
+          "start": 98,
+          "end": 108
         }
       },
       "group": [
@@ -6869,16 +7014,16 @@
     {
       "description": "<p>Small</p>\n",
       "commentRange": {
-        "start": 115,
-        "end": 115
+        "start": 103,
+        "end": 103
       },
       "context": {
         "type": "css",
         "name": "small,\n.small",
         "value": "font-size: 85%;",
         "line": {
-          "start": 117,
-          "end": 120
+          "start": 105,
+          "end": 108
         }
       },
       "group": [
@@ -6894,45 +7039,18 @@
       }
     },
     {
-      "description": "<p>Heading, BEM style.\nModifiers:</p>\n<ul>\n<li>separator: Border below</li>\n</ul>\n",
-      "commentRange": {
-        "start": 17,
-        "end": 19
-      },
-      "context": {
-        "type": "css",
-        "name": ".heading",
-        "value": "&--separator {\n    border-bottom: 1px solid $colour-border;\n    padding-bottom: rem($spacing-x-small);\n  }",
-        "line": {
-          "start": 20,
-          "end": 104
-        }
-      },
-      "group": [
-        "typography"
-      ],
-      "access": "public",
-      "file": {
-        "path": "stylesheets\\typography\\_typography-headings.scss",
-        "name": "_typography-headings.scss"
-      },
-      "groupName": {
-        "typography": "Typography"
-      }
-    },
-    {
       "description": "<p>Primary heading. Used for h1 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
       "commentRange": {
-        "start": 27,
-        "end": 29
+        "start": 5,
+        "end": 7
       },
       "context": {
         "type": "mixin",
         "name": "h1",
-        "code": "\n  @include font(h1);\n",
+        "code": "\n  @include font(h1);\n  clear: both;\n  font-weight: 900;\n  max-width: 66ch;\n",
         "line": {
-          "start": 30,
-          "end": 32
+          "start": 8,
+          "end": 13
         }
       },
       "since": [
@@ -6961,16 +7079,16 @@
     {
       "description": "<p>Secondary heading. Used for h2 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
       "commentRange": {
-        "start": 34,
-        "end": 36
+        "start": 15,
+        "end": 17
       },
       "context": {
         "type": "mixin",
         "name": "h2",
-        "code": "\n  @include font(h2);\n",
+        "code": "\n  @include font(h2);\n  clear: both;\n  font-weight: 700;\n  max-width: 66ch;\n",
         "line": {
-          "start": 37,
-          "end": 39
+          "start": 18,
+          "end": 23
         }
       },
       "since": [
@@ -6999,16 +7117,16 @@
     {
       "description": "<p>Tertiary heading. Used for h3 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
       "commentRange": {
-        "start": 41,
-        "end": 43
+        "start": 25,
+        "end": 27
       },
       "context": {
         "type": "mixin",
         "name": "h3",
-        "code": "\n  @include font(h3);\n",
+        "code": "\n  @include font(h3);\n  clear: both;\n  font-weight: 700;\n  max-width: 66ch;\n",
         "line": {
-          "start": 44,
-          "end": 46
+          "start": 28,
+          "end": 33
         }
       },
       "since": [
@@ -7037,16 +7155,16 @@
     {
       "description": "<p>Fourth level heading. Used for h4 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
       "commentRange": {
-        "start": 48,
-        "end": 50
+        "start": 35,
+        "end": 37
       },
       "context": {
         "type": "mixin",
         "name": "h4",
-        "code": "\n  @include font(h4);\n",
+        "code": "\n  @include font(h4);\n  clear: both;\n  font-weight: 700;\n  max-width: 66ch;\n",
         "line": {
-          "start": 51,
-          "end": 53
+          "start": 38,
+          "end": 43
         }
       },
       "since": [
@@ -7075,16 +7193,16 @@
     {
       "description": "<p>Fifth level heading. Used for h5 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
       "commentRange": {
-        "start": 55,
-        "end": 57
+        "start": 45,
+        "end": 47
       },
       "context": {
         "type": "mixin",
         "name": "h5",
-        "code": "\n  @include font(h5);\n",
+        "code": "\n  @include font(h5);\n  clear: both;\n  font-weight: 700;\n  max-width: 66ch;\n",
         "line": {
-          "start": 58,
-          "end": 60
+          "start": 48,
+          "end": 53
         }
       },
       "since": [
@@ -7113,16 +7231,16 @@
     {
       "description": "<p>Sixth level heading. Used for h6 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
       "commentRange": {
-        "start": 62,
-        "end": 64
+        "start": 55,
+        "end": 57
       },
       "context": {
         "type": "mixin",
         "name": "h6",
-        "code": "\n  @include font(h6);\n",
+        "code": "\n  @include font(h6);\n  clear: both;\n  font-weight: 700;\n  max-width: 66ch;\n",
         "line": {
-          "start": 65,
-          "end": 67
+          "start": 58,
+          "end": 63
         }
       },
       "since": [
@@ -7202,7 +7320,7 @@
       "context": {
         "type": "function",
         "name": "get-scale-integer",
-        "code": "\n  @if map-has-key($named-font-sizes, $scale) {\n    @return map-get($named-font-sizes, $scale);\n  }\n  @elseif is-integer($scale) {\n    @return $scale;\n  }\n\n  @error '`$scale` must either be an integer or exist as a named font size in `$named-font-sizes`';\n",
+        "code": "\n  @if map-has-key($named-font-sizes, $scale) {\n    @return map-get($named-font-sizes, $scale);\n  }\n  @else if is-integer($scale) {\n    @return $scale;\n  }\n\n  @error '`$scale` must either be an integer or exist as a named font size in `$named-font-sizes`';\n",
         "line": {
           "start": 16,
           "end": 25
@@ -7274,10 +7392,10 @@
           "context": {
             "type": "mixin",
             "name": "font",
-            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
             "line": {
               "start": 96,
-              "end": 112
+              "end": 110
             }
           }
         }
@@ -7518,10 +7636,10 @@
           "context": {
             "type": "mixin",
             "name": "font",
-            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
             "line": {
               "start": 96,
-              "end": 112
+              "end": 110
             }
           }
         }
@@ -7539,10 +7657,10 @@
       "context": {
         "type": "mixin",
         "name": "font",
-        "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+        "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
         "line": {
           "start": 96,
-          "end": 112
+          "end": 110
         }
       },
       "parameter": [
@@ -7614,10 +7732,10 @@
           "context": {
             "type": "mixin",
             "name": "h1",
-            "code": "\n  @include font(h1);\n",
+            "code": "\n  @include font(h1);\n  clear: both;\n  font-weight: 900;\n  max-width: 66ch;\n",
             "line": {
-              "start": 30,
-              "end": 32
+              "start": 8,
+              "end": 13
             }
           }
         },
@@ -7626,10 +7744,10 @@
           "context": {
             "type": "mixin",
             "name": "h2",
-            "code": "\n  @include font(h2);\n",
+            "code": "\n  @include font(h2);\n  clear: both;\n  font-weight: 700;\n  max-width: 66ch;\n",
             "line": {
-              "start": 37,
-              "end": 39
+              "start": 18,
+              "end": 23
             }
           }
         },
@@ -7638,10 +7756,10 @@
           "context": {
             "type": "mixin",
             "name": "h3",
-            "code": "\n  @include font(h3);\n",
+            "code": "\n  @include font(h3);\n  clear: both;\n  font-weight: 700;\n  max-width: 66ch;\n",
             "line": {
-              "start": 44,
-              "end": 46
+              "start": 28,
+              "end": 33
             }
           }
         },
@@ -7650,10 +7768,10 @@
           "context": {
             "type": "mixin",
             "name": "h4",
-            "code": "\n  @include font(h4);\n",
+            "code": "\n  @include font(h4);\n  clear: both;\n  font-weight: 700;\n  max-width: 66ch;\n",
             "line": {
-              "start": 51,
-              "end": 53
+              "start": 38,
+              "end": 43
             }
           }
         },
@@ -7662,10 +7780,10 @@
           "context": {
             "type": "mixin",
             "name": "h5",
-            "code": "\n  @include font(h5);\n",
+            "code": "\n  @include font(h5);\n  clear: both;\n  font-weight: 700;\n  max-width: 66ch;\n",
             "line": {
-              "start": 58,
-              "end": 60
+              "start": 48,
+              "end": 53
             }
           }
         },
@@ -7674,10 +7792,22 @@
           "context": {
             "type": "mixin",
             "name": "h6",
-            "code": "\n  @include font(h6);\n",
+            "code": "\n  @include font(h6);\n  clear: both;\n  font-weight: 700;\n  max-width: 66ch;\n",
             "line": {
-              "start": 65,
-              "end": 67
+              "start": 58,
+              "end": 63
+            }
+          }
+        },
+        {
+          "description": "<p>Default paragraph style</p>\n",
+          "context": {
+            "type": "mixin",
+            "name": "p",
+            "code": "\n  @include font(p);\n  font-feature-settings: 'kern', 'onum', 'liga';\n  font-weight: normal;\n  max-width: 66ch;\n",
+            "line": {
+              "start": 114,
+              "end": 119
             }
           }
         },
@@ -7686,10 +7816,10 @@
           "context": {
             "type": "mixin",
             "name": "lead",
-            "code": "\n  @include font(lead);\n",
+            "code": "\n  @include font(lead);\n  font-weight: normal;\n  max-width: 66ch;\n",
             "line": {
-              "start": 116,
-              "end": 118
+              "start": 123,
+              "end": 127
             }
           }
         }
@@ -7699,18 +7829,56 @@
       }
     },
     {
+      "description": "<p>Default paragraph style</p>\n",
+      "commentRange": {
+        "start": 112,
+        "end": 113
+      },
+      "context": {
+        "type": "mixin",
+        "name": "p",
+        "code": "\n  @include font(p);\n  font-feature-settings: 'kern', 'onum', 'liga';\n  font-weight: normal;\n  max-width: 66ch;\n",
+        "line": {
+          "start": 114,
+          "end": 119
+        }
+      },
+      "since": [
+        {
+          "version": "0.5.2"
+        }
+      ],
+      "group": [
+        "typography"
+      ],
+      "access": "public",
+      "require": [
+        {
+          "type": "mixin",
+          "name": "font"
+        }
+      ],
+      "file": {
+        "path": "stylesheets\\typography\\_typography-helpers.scss",
+        "name": "_typography-helpers.scss"
+      },
+      "groupName": {
+        "typography": "Typography"
+      }
+    },
+    {
       "description": "<p>Lead paragraph style</p>\n",
       "commentRange": {
-        "start": 114,
-        "end": 115
+        "start": 121,
+        "end": 122
       },
       "context": {
         "type": "mixin",
         "name": "lead",
-        "code": "\n  @include font(lead);\n",
+        "code": "\n  @include font(lead);\n  font-weight: normal;\n  max-width: 66ch;\n",
         "line": {
-          "start": 116,
-          "end": 118
+          "start": 123,
+          "end": 127
         }
       },
       "since": [
@@ -7802,8 +7970,8 @@
             "name": "links-default",
             "code": "\n  a {\n    @include link-default;\n  }\n",
             "line": {
-              "start": 32,
-              "end": 36
+              "start": 33,
+              "end": 37
             }
           }
         }
@@ -7816,17 +7984,24 @@
       "description": "<p>Default links for use on a light background</p>\n",
       "commentRange": {
         "start": 30,
-        "end": 31
+        "end": 32
       },
       "context": {
         "type": "mixin",
         "name": "links-default",
         "code": "\n  a {\n    @include link-default;\n  }\n",
         "line": {
-          "start": 32,
-          "end": 36
+          "start": 33,
+          "end": 37
         }
       },
+      "require": [
+        {
+          "type": "mixin",
+          "name": "link-default",
+          "external": false
+        }
+      ],
       "since": [
         {
           "version": "0.5.0"
@@ -7836,12 +8011,6 @@
         "typography"
       ],
       "access": "public",
-      "require": [
-        {
-          "type": "mixin",
-          "name": "link-default"
-        }
-      ],
       "file": {
         "path": "stylesheets\\typography\\_typography-links.scss",
         "name": "_typography-links.scss"
@@ -7853,16 +8022,16 @@
     {
       "description": "<p>Inverse link style for use on an inverse (dark) background</p>\n",
       "commentRange": {
-        "start": 38,
-        "end": 39
+        "start": 39,
+        "end": 40
       },
       "context": {
         "type": "mixin",
         "name": "link-inverse",
         "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
         "line": {
-          "start": 40,
-          "end": 62
+          "start": 41,
+          "end": 63
         }
       },
       "since": [
@@ -7916,8 +8085,8 @@
             "name": "links-inverse",
             "code": "\n  a {\n    @include link-inverse;\n  }\n",
             "line": {
-              "start": 66,
-              "end": 70
+              "start": 68,
+              "end": 72
             }
           }
         }
@@ -7929,18 +8098,25 @@
     {
       "description": "<p>Inverse links for use on a dark background</p>\n",
       "commentRange": {
-        "start": 64,
-        "end": 65
+        "start": 65,
+        "end": 67
       },
       "context": {
         "type": "mixin",
         "name": "links-inverse",
         "code": "\n  a {\n    @include link-inverse;\n  }\n",
         "line": {
-          "start": 66,
-          "end": 70
+          "start": 68,
+          "end": 72
         }
       },
+      "require": [
+        {
+          "type": "mixin",
+          "name": "link-inverse",
+          "external": false
+        }
+      ],
       "since": [
         {
           "version": "0.3.1"
@@ -7950,16 +8126,36 @@
         "typography"
       ],
       "access": "public",
-      "require": [
-        {
-          "type": "mixin",
-          "name": "link-inverse"
-        }
-      ],
       "file": {
         "path": "stylesheets\\typography\\_typography-links.scss",
         "name": "_typography-links.scss"
       },
+      "usedBy": [
+        {
+          "description": "<p>Modifier for the panel, to use a inverse (dark) background.\nAutmatically uses inverse links within it. Doesn&#39;t affect buttons\nthough, so any buttons within a dark panel should be <code>.btn.btn--inverse</code>.</p>\n",
+          "context": {
+            "type": "css",
+            "name": ".panel--inverse",
+            "value": "@include links-inverse;\n  background: $colour-panel-inverse;\n  border: 0;\n  color: $colour-text-inverse;",
+            "line": {
+              "start": 31,
+              "end": 37
+            }
+          }
+        },
+        {
+          "description": "<p>Inverse links, for use on dark backgrounds e.g dark panels.\nUse this class on a containing element to apply to all links within it.</p>\n",
+          "context": {
+            "type": "css",
+            "name": ".inverse-links",
+            "value": "@include links-inverse;",
+            "line": {
+              "start": 89,
+              "end": 92
+            }
+          }
+        }
+      ],
       "groupName": {
         "typography": "Typography"
       }
@@ -7967,16 +8163,16 @@
     {
       "description": "<p>Inverse link for use on a dark background. Apply to an individual link.\nPrefer using <code>.inverse-links</code> on the container instead.</p>\n",
       "commentRange": {
-        "start": 76,
-        "end": 78
+        "start": 78,
+        "end": 80
       },
       "context": {
         "type": "css",
         "name": ".link--inverse",
         "value": "@include link-inverse;",
         "line": {
-          "start": 79,
-          "end": 90
+          "start": 81,
+          "end": 92
         }
       },
       "since": [
@@ -7999,19 +8195,25 @@
     {
       "description": "<p>Inverse links, for use on dark backgrounds e.g dark panels.\nUse this class on a containing element to apply to all links within it.</p>\n",
       "commentRange": {
-        "start": 83,
-        "end": 86
+        "start": 85,
+        "end": 88
       },
       "context": {
         "type": "css",
         "name": ".inverse-links",
         "value": "@include links-inverse;",
         "line": {
-          "start": 87,
-          "end": 90
+          "start": 89,
+          "end": 92
         }
       },
-      "require": [],
+      "require": [
+        {
+          "type": "mixin",
+          "name": "links-inverse",
+          "external": false
+        }
+      ],
       "since": [
         {
           "version": "0.2.9"
@@ -8268,60 +8470,67 @@
       "description": "<p>A map of named font sizes to their corresponding modular scale factor</p>\n",
       "commentRange": {
         "start": 5,
-        "end": 13
+        "end": 14
       },
       "context": {
         "type": "variable",
         "name": "named-font-sizes",
-        "value": "(\n  h1: 7,\n  h2: 6,\n  h3: 5,\n  h4: 4,\n  h5: 3,\n  h6: 2,\n  lead: 1,\n  p: 0\n)",
+        "value": "(\n  h1: 5,\n  h2: 4,\n  h3: 3,\n  h4: 2,\n  h5: 1,\n  h6: 0,\n  lead: 2,\n  p: 0\n)",
         "scope": "private",
         "line": {
-          "start": 14,
-          "end": 23
+          "start": 15,
+          "end": 24
         }
       },
       "property": [
         {
           "type": "Integer",
           "name": "h1",
-          "default": "6",
-          "description": "<p>Heading 1</p>\n",
-          "resolvedValue": "6"
-        },
-        {
-          "type": "Integer",
-          "name": "h2",
           "default": "5",
-          "description": "<p>Heading 2</p>\n",
+          "description": "<p>Heading 1</p>\n",
           "resolvedValue": "5"
         },
         {
           "type": "Integer",
-          "name": "h3",
+          "name": "h2",
           "default": "4",
-          "description": "<p>Heading 3</p>\n",
+          "description": "<p>Heading 2</p>\n",
           "resolvedValue": "4"
         },
         {
           "type": "Integer",
-          "name": "h4",
+          "name": "h3",
           "default": "3",
-          "description": "<p>Heading 4</p>\n",
+          "description": "<p>Heading 3</p>\n",
           "resolvedValue": "3"
         },
         {
           "type": "Integer",
-          "name": "h5",
+          "name": "h4",
           "default": "2",
-          "description": "<p>Heading 5</p>\n",
+          "description": "<p>Heading 4</p>\n",
           "resolvedValue": "2"
         },
         {
           "type": "Integer",
-          "name": "h6",
+          "name": "h5",
           "default": "1",
-          "description": "<p>Heading 6</p>\n",
+          "description": "<p>Heading 5</p>\n",
           "resolvedValue": "1"
+        },
+        {
+          "type": "Integer",
+          "name": "h6",
+          "default": "0",
+          "description": "<p>Heading 6</p>\n",
+          "resolvedValue": "0"
+        },
+        {
+          "type": "Integer",
+          "name": "lead",
+          "default": "2",
+          "description": "<p>Lead</p>\n",
+          "resolvedValue": "2"
         },
         {
           "type": "Integer",
@@ -8350,7 +8559,7 @@
           "context": {
             "type": "function",
             "name": "get-scale-integer",
-            "code": "\n  @if map-has-key($named-font-sizes, $scale) {\n    @return map-get($named-font-sizes, $scale);\n  }\n  @elseif is-integer($scale) {\n    @return $scale;\n  }\n\n  @error '`$scale` must either be an integer or exist as a named font size in `$named-font-sizes`';\n",
+            "code": "\n  @if map-has-key($named-font-sizes, $scale) {\n    @return map-get($named-font-sizes, $scale);\n  }\n  @else if is-integer($scale) {\n    @return $scale;\n  }\n\n  @error '`$scale` must either be an integer or exist as a named font size in `$named-font-sizes`';\n",
             "line": {
               "start": 16,
               "end": 25
@@ -8362,7 +8571,7 @@
           "context": {
             "type": "function",
             "name": "get-scale-integer",
-            "code": "\n  @if map-has-key($named-font-sizes, $scale) {\n    @return map-get($named-font-sizes, $scale);\n  }\n  @elseif is-integer($scale) {\n    @return $scale;\n  }\n\n  @error '`$scale` must either be an integer or exist as a named font size in `$named-font-sizes`';\n",
+            "code": "\n  @if map-has-key($named-font-sizes, $scale) {\n    @return map-get($named-font-sizes, $scale);\n  }\n  @else if is-integer($scale) {\n    @return $scale;\n  }\n\n  @error '`$scale` must either be an integer or exist as a named font size in `$named-font-sizes`';\n",
             "line": {
               "start": 16,
               "end": 25
@@ -8374,7 +8583,7 @@
           "context": {
             "type": "function",
             "name": "get-scale-integer",
-            "code": "\n  @if map-has-key($named-font-sizes, $scale) {\n    @return map-get($named-font-sizes, $scale);\n  }\n  @elseif is-integer($scale) {\n    @return $scale;\n  }\n\n  @error '`$scale` must either be an integer or exist as a named font size in `$named-font-sizes`';\n",
+            "code": "\n  @if map-has-key($named-font-sizes, $scale) {\n    @return map-get($named-font-sizes, $scale);\n  }\n  @else if is-integer($scale) {\n    @return $scale;\n  }\n\n  @error '`$scale` must either be an integer or exist as a named font size in `$named-font-sizes`';\n",
             "line": {
               "start": 16,
               "end": 25
@@ -8385,22 +8594,22 @@
       "groupName": {
         "typography": "Typography"
       },
-      "resolvedValue": "(\n  h1: 7,\n  h2: 6,\n  h3: 5,\n  h4: 4,\n  h5: 3,\n  h6: 2,\n  lead: 1,\n  p: 0\n)"
+      "resolvedValue": "(\n  h1: 5,\n  h2: 4,\n  h3: 3,\n  h4: 2,\n  h5: 1,\n  h6: 0,\n  lead: 2,\n  p: 0\n)"
     },
     {
       "description": "<p>Numeric font sizes</p>\n",
       "commentRange": {
-        "start": 25,
-        "end": 26
+        "start": 26,
+        "end": 27
       },
       "context": {
         "type": "variable",
         "name": "font-sizes",
-        "value": "(\n  // sass-lint:disable-block space-around-operator\n  -2: (\n    fs: 12,\n    lh: 4 * 4,\n    fw: 400,\n    mb: $spacing-small,\n    mt: $spacing-small\n  ),\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 6,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 8,\n    lh: 4 * 10,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)",
+        "value": "(\n  // sass-lint:disable-block space-around-operator\n  -2: (\n    fs: 12,\n    lh: 18,\n    mb: $spacing-small,\n    mt: $spacing-small\n  ),\n  -1: (\n    fs: 14,\n    lh: 20,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs, h6\n  0: (\n    fs: 16,\n    lh: 24,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h5\n  1: (\n    fs: 18,\n    lh: 24,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead, h4\n  2: (\n    fs: 20,\n    lh: 28,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h3\n  3: (\n    fs: 28,\n    lh: 32,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  4: (\n    fs: 36,\n    lh: 40,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  5: (\n    fs: 44,\n    lh: 56,\n    mb: $spacing-medium,\n    mt: 0\n  ),\n  6: (\n    fs: 52,\n    lh: 60,\n    mb: $spacing-large,\n    mt: 0\n  )\n)",
         "scope": "private",
         "line": {
-          "start": 27,
-          "end": 107
+          "start": 28,
+          "end": 90
         }
       },
       "since": [
@@ -8446,10 +8655,10 @@
           "context": {
             "type": "mixin",
             "name": "font",
-            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
             "line": {
               "start": 96,
-              "end": 112
+              "end": 110
             }
           }
         }
@@ -8457,7 +8666,7 @@
       "groupName": {
         "typography": "Typography"
       },
-      "resolvedValue": "(\n  // sass-lint:disable-block space-around-operator\n  -2: (\n    fs: 12,\n    lh: 4 * 4,\n    fw: 400,\n    mb: $spacing-small,\n    mt: $spacing-small\n  ),\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 6,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 8,\n    lh: 4 * 10,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)"
+      "resolvedValue": "(\n  // sass-lint:disable-block space-around-operator\n  -2: (\n    fs: 12,\n    lh: 18,\n    mb: $spacing-small,\n    mt: $spacing-small\n  ),\n  -1: (\n    fs: 14,\n    lh: 20,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs, h6\n  0: (\n    fs: 16,\n    lh: 24,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h5\n  1: (\n    fs: 18,\n    lh: 24,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead, h4\n  2: (\n    fs: 20,\n    lh: 28,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h3\n  3: (\n    fs: 28,\n    lh: 32,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  4: (\n    fs: 36,\n    lh: 40,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  5: (\n    fs: 44,\n    lh: 56,\n    mb: $spacing-medium,\n    mt: 0\n  ),\n  6: (\n    fs: 52,\n    lh: 60,\n    mb: $spacing-large,\n    mt: 0\n  )\n)"
     },
     {
       "description": "<p>Modular scale values</p>\n",
@@ -9600,6 +9809,54 @@
         "undefined": "Ungrouped"
       },
       "resolvedValue": "true"
+    },
+    {
+      "description": "<p>The maximum width of the default container, in pixels</p>\n",
+      "commentRange": {
+        "start": 107,
+        "end": 108
+      },
+      "context": {
+        "type": "variable",
+        "name": "nice-container-max-width",
+        "value": "1170",
+        "scope": "private",
+        "line": {
+          "start": 109,
+          "end": 109
+        }
+      },
+      "since": [
+        {
+          "version": "0.5.2"
+        }
+      ],
+      "access": "public",
+      "group": [
+        "undefined"
+      ],
+      "file": {
+        "path": "stylesheets\\settings\\_settings-variables.scss",
+        "name": "_settings-variables.scss"
+      },
+      "usedBy": [
+        {
+          "description": "<p>Container placeholder.</p>\n",
+          "context": {
+            "type": "placeholder",
+            "name": "container",
+            "code": "\n  margin: auto;\n  max-width: rem($nice-container-max-width);\n  width: 96%;\n  width: calc(100% - #{rem($spacing-large)});\n",
+            "line": {
+              "start": 7,
+              "end": 12
+            }
+          }
+        }
+      ],
+      "groupName": {
+        "undefined": "Ungrouped"
+      },
+      "resolvedValue": "1170"
     }
   ],
   "groups": {
@@ -10265,49 +10522,15 @@
           "resolvedValue": "#fff"
         },
         {
-          "description": "<p>Page background colour</p>\n",
+          "description": "<p>Page background colour. It&#39;s off-white in an attempt to make\ntext easier to read for those with &#39;visual stress&#39;, 50% of\nwhich happen to be dyslexic (British Dyslexia association), by\nreducing contrast. See <a href=\"https://ux.stackexchange.com/a/73918/92081\">https://ux.stackexchange.com/a/73918/92081</a>\nfor a more detailed explanation.</p>\n",
           "commentRange": {
             "start": 16,
-            "end": 17
-          },
-          "context": {
-            "type": "variable",
-            "name": "colour-body",
-            "value": "#fafafa",
-            "scope": "private",
-            "line": {
-              "start": 18,
-              "end": 18
-            }
-          },
-          "since": [
-            {
-              "version": "0.2.0"
-            }
-          ],
-          "group": [
-            "colors"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
-            "name": "_settings-colours-semantic.scss"
-          },
-          "groupName": {
-            "colors": "Colours"
-          },
-          "resolvedValue": "#fafafa"
-        },
-        {
-          "description": "<p>Standard, primary body text colour</p>\n",
-          "commentRange": {
-            "start": 20,
             "end": 21
           },
           "context": {
             "type": "variable",
-            "name": "colour-text",
-            "value": "$colour-nice-rich-black",
+            "name": "colour-body",
+            "value": "#f4f4f4",
             "scope": "private",
             "line": {
               "start": 22,
@@ -10330,13 +10553,47 @@
           "groupName": {
             "colors": "Colours"
           },
-          "resolvedValue": "#0e0e0e"
+          "resolvedValue": "#f4f4f4"
+        },
+        {
+          "description": "<p>Standard, primary body text colour. Off-black, to slightly reduce\ncontrast in an attempt to make text easier to read for those with\n&#39;visual stress&#39;, see also $colour-body.</p>\n",
+          "commentRange": {
+            "start": 24,
+            "end": 27
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-text",
+            "value": "$colour-nice-black",
+            "scope": "private",
+            "line": {
+              "start": 28,
+              "end": 28
+            }
+          },
+          "since": [
+            {
+              "version": "0.2.0"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#222"
         },
         {
           "description": "<p>Subtle text colour</p>\n",
           "commentRange": {
-            "start": 24,
-            "end": 25
+            "start": 30,
+            "end": 31
           },
           "context": {
             "type": "variable",
@@ -10344,8 +10601,8 @@
             "value": "$colour-nice-grey-1",
             "scope": "private",
             "line": {
-              "start": 26,
-              "end": 26
+              "start": 32,
+              "end": 32
             }
           },
           "since": [
@@ -10369,8 +10626,8 @@
         {
           "description": "<p>Inverse body text colour for use on dark background</p>\n",
           "commentRange": {
-            "start": 28,
-            "end": 29
+            "start": 34,
+            "end": 35
           },
           "context": {
             "type": "variable",
@@ -10378,8 +10635,8 @@
             "value": "$colour-nice-white",
             "scope": "private",
             "line": {
-              "start": 30,
-              "end": 30
+              "start": 36,
+              "end": 36
             }
           },
           "since": [
@@ -10403,8 +10660,8 @@
         {
           "description": "<p>Icons colour</p>\n",
           "commentRange": {
-            "start": 32,
-            "end": 33
+            "start": 38,
+            "end": 39
           },
           "context": {
             "type": "variable",
@@ -10412,8 +10669,8 @@
             "value": "$colour-nice-teal",
             "scope": "private",
             "line": {
-              "start": 34,
-              "end": 34
+              "start": 40,
+              "end": 40
             }
           },
           "since": [
@@ -10437,8 +10694,8 @@
         {
           "description": "<p>Link text colour</p>\n",
           "commentRange": {
-            "start": 39,
-            "end": 40
+            "start": 45,
+            "end": 46
           },
           "context": {
             "type": "variable",
@@ -10446,8 +10703,8 @@
             "value": "#005ea5",
             "scope": "private",
             "line": {
-              "start": 41,
-              "end": 41
+              "start": 47,
+              "end": 47
             }
           },
           "since": [
@@ -10485,8 +10742,8 @@
         {
           "description": "<p>Link hover colour</p>\n",
           "commentRange": {
-            "start": 43,
-            "end": 44
+            "start": 49,
+            "end": 50
           },
           "context": {
             "type": "variable",
@@ -10494,8 +10751,8 @@
             "value": "#2e8aca",
             "scope": "private",
             "line": {
-              "start": 45,
-              "end": 45
+              "start": 51,
+              "end": 51
             }
           },
           "since": [
@@ -10533,8 +10790,8 @@
         {
           "description": "<p>Link visited colour</p>\n",
           "commentRange": {
-            "start": 47,
-            "end": 48
+            "start": 53,
+            "end": 54
           },
           "context": {
             "type": "variable",
@@ -10542,8 +10799,8 @@
             "value": "#4c2c92",
             "scope": "private",
             "line": {
-              "start": 49,
-              "end": 49
+              "start": 55,
+              "end": 55
             }
           },
           "since": [
@@ -10581,8 +10838,8 @@
         {
           "description": "<p>Link active colour</p>\n",
           "commentRange": {
-            "start": 51,
-            "end": 52
+            "start": 57,
+            "end": 58
           },
           "context": {
             "type": "variable",
@@ -10590,8 +10847,8 @@
             "value": "$colour-text",
             "scope": "private",
             "line": {
-              "start": 53,
-              "end": 53
+              "start": 59,
+              "end": 59
             }
           },
           "since": [
@@ -10624,13 +10881,13 @@
           "groupName": {
             "colors": "Colours"
           },
-          "resolvedValue": "#0e0e0e"
+          "resolvedValue": "#222"
         },
         {
           "description": "<p>Link focus text colour</p>\n",
           "commentRange": {
-            "start": 55,
-            "end": 56
+            "start": 61,
+            "end": 62
           },
           "context": {
             "type": "variable",
@@ -10638,8 +10895,8 @@
             "value": "$colour-link",
             "scope": "private",
             "line": {
-              "start": 57,
-              "end": 57
+              "start": 63,
+              "end": 63
             }
           },
           "since": [
@@ -10677,8 +10934,8 @@
         {
           "description": "<p>Inverse link text colour</p>\n",
           "commentRange": {
-            "start": 62,
-            "end": 63
+            "start": 68,
+            "end": 69
           },
           "context": {
             "type": "variable",
@@ -10686,8 +10943,8 @@
             "value": "$colour-text-inverse",
             "scope": "private",
             "line": {
-              "start": 64,
-              "end": 64
+              "start": 70,
+              "end": 70
             }
           },
           "since": [
@@ -10711,8 +10968,8 @@
                 "name": "link-inverse",
                 "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 40,
-                  "end": 62
+                  "start": 41,
+                  "end": 63
                 }
               }
             }
@@ -10725,8 +10982,8 @@
         {
           "description": "<p>Inverse link hover text colour</p>\n",
           "commentRange": {
-            "start": 66,
-            "end": 67
+            "start": 72,
+            "end": 73
           },
           "context": {
             "type": "variable",
@@ -10734,8 +10991,8 @@
             "value": "$colour-nice-grey-2",
             "scope": "private",
             "line": {
-              "start": 68,
-              "end": 68
+              "start": 74,
+              "end": 74
             }
           },
           "since": [
@@ -10759,8 +11016,8 @@
                 "name": "link-inverse",
                 "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 40,
-                  "end": 62
+                  "start": 41,
+                  "end": 63
                 }
               }
             }
@@ -10773,8 +11030,8 @@
         {
           "description": "<p>Inverse link visited text colour. Same as normal inverse link colour to ensure minimum 4.5:1 colour contrast across various dark backgrounds.</p>\n",
           "commentRange": {
-            "start": 70,
-            "end": 71
+            "start": 76,
+            "end": 77
           },
           "context": {
             "type": "variable",
@@ -10782,8 +11039,8 @@
             "value": "$colour-link-inverse",
             "scope": "private",
             "line": {
-              "start": 72,
-              "end": 72
+              "start": 78,
+              "end": 78
             }
           },
           "since": [
@@ -10807,8 +11064,8 @@
                 "name": "link-inverse",
                 "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 40,
-                  "end": 62
+                  "start": 41,
+                  "end": 63
                 }
               }
             }
@@ -10821,8 +11078,8 @@
         {
           "description": "<p>Inverse link active text colour</p>\n",
           "commentRange": {
-            "start": 74,
-            "end": 75
+            "start": 80,
+            "end": 81
           },
           "context": {
             "type": "variable",
@@ -10830,8 +11087,8 @@
             "value": "$colour-link-inverse-hover",
             "scope": "private",
             "line": {
-              "start": 76,
-              "end": 76
+              "start": 82,
+              "end": 82
             }
           },
           "since": [
@@ -10855,8 +11112,8 @@
                 "name": "link-inverse",
                 "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 40,
-                  "end": 62
+                  "start": 41,
+                  "end": 63
                 }
               }
             }
@@ -10869,8 +11126,8 @@
         {
           "description": "<p>Inverse link focus text colour</p>\n",
           "commentRange": {
-            "start": 78,
-            "end": 79
+            "start": 84,
+            "end": 85
           },
           "context": {
             "type": "variable",
@@ -10878,8 +11135,8 @@
             "value": "$colour-link-inverse",
             "scope": "private",
             "line": {
-              "start": 80,
-              "end": 80
+              "start": 86,
+              "end": 86
             }
           },
           "since": [
@@ -10903,8 +11160,8 @@
                 "name": "link-inverse",
                 "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 40,
-                  "end": 62
+                  "start": 41,
+                  "end": 63
                 }
               }
             }
@@ -10917,8 +11174,8 @@
         {
           "description": "<p>Focus colour</p>\n",
           "commentRange": {
-            "start": 85,
-            "end": 86
+            "start": 91,
+            "end": 92
           },
           "context": {
             "type": "variable",
@@ -10926,8 +11183,8 @@
             "value": "#0092a6",
             "scope": "private",
             "line": {
-              "start": 87,
-              "end": 87
+              "start": 93,
+              "end": 93
             }
           },
           "since": [
@@ -10975,8 +11232,8 @@
                 "name": "link-inverse",
                 "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 40,
-                  "end": 62
+                  "start": 41,
+                  "end": 63
                 }
               }
             }
@@ -10989,8 +11246,8 @@
         {
           "description": "<p>Focus colour</p>\n",
           "commentRange": {
-            "start": 89,
-            "end": 90
+            "start": 95,
+            "end": 96
           },
           "context": {
             "type": "variable",
@@ -10998,8 +11255,8 @@
             "value": "$colour-link-inverse",
             "scope": "private",
             "line": {
-              "start": 91,
-              "end": 91
+              "start": 97,
+              "end": 97
             }
           },
           "since": [
@@ -11037,8 +11294,8 @@
         {
           "description": "<p>CTA button background colour</p>\n",
           "commentRange": {
-            "start": 96,
-            "end": 97
+            "start": 102,
+            "end": 103
           },
           "context": {
             "type": "variable",
@@ -11046,8 +11303,8 @@
             "value": "$colour-nice-purple",
             "scope": "private",
             "line": {
-              "start": 98,
-              "end": 98
+              "start": 104,
+              "end": 104
             }
           },
           "since": [
@@ -11071,8 +11328,8 @@
         {
           "description": "<p>CTA button hover colour</p>\n",
           "commentRange": {
-            "start": 100,
-            "end": 101
+            "start": 106,
+            "end": 107
           },
           "context": {
             "type": "variable",
@@ -11080,8 +11337,8 @@
             "value": "#260b2d",
             "scope": "private",
             "line": {
-              "start": 102,
-              "end": 102
+              "start": 108,
+              "end": 108
             }
           },
           "since": [
@@ -11105,8 +11362,8 @@
         {
           "description": "<p>CTA button text colour</p>\n",
           "commentRange": {
-            "start": 104,
-            "end": 105
+            "start": 110,
+            "end": 111
           },
           "context": {
             "type": "variable",
@@ -11114,8 +11371,8 @@
             "value": "$colour-nice-white",
             "scope": "private",
             "line": {
-              "start": 106,
-              "end": 106
+              "start": 112,
+              "end": 112
             }
           },
           "since": [
@@ -11139,8 +11396,8 @@
         {
           "description": "<p>Primary button background colour</p>\n",
           "commentRange": {
-            "start": 111,
-            "end": 112
+            "start": 117,
+            "end": 118
           },
           "context": {
             "type": "variable",
@@ -11148,8 +11405,8 @@
             "value": "$colour-nice-dark-grey",
             "scope": "private",
             "line": {
-              "start": 113,
-              "end": 113
+              "start": 119,
+              "end": 119
             }
           },
           "since": [
@@ -11173,8 +11430,8 @@
         {
           "description": "<p>Primary button hover colour</p>\n",
           "commentRange": {
-            "start": 115,
-            "end": 116
+            "start": 121,
+            "end": 122
           },
           "context": {
             "type": "variable",
@@ -11182,8 +11439,8 @@
             "value": "$colour-nice-rich-black",
             "scope": "private",
             "line": {
-              "start": 117,
-              "end": 117
+              "start": 123,
+              "end": 123
             }
           },
           "since": [
@@ -11207,8 +11464,8 @@
         {
           "description": "<p>Primary button text colour</p>\n",
           "commentRange": {
-            "start": 119,
-            "end": 120
+            "start": 125,
+            "end": 126
           },
           "context": {
             "type": "variable",
@@ -11216,8 +11473,8 @@
             "value": "$colour-nice-white",
             "scope": "private",
             "line": {
-              "start": 121,
-              "end": 121
+              "start": 127,
+              "end": 127
             }
           },
           "since": [
@@ -11241,8 +11498,8 @@
         {
           "description": "<p>Secondary button background colour</p>\n",
           "commentRange": {
-            "start": 126,
-            "end": 127
+            "start": 132,
+            "end": 133
           },
           "context": {
             "type": "variable",
@@ -11250,8 +11507,8 @@
             "value": "#666",
             "scope": "private",
             "line": {
-              "start": 128,
-              "end": 128
+              "start": 134,
+              "end": 134
             }
           },
           "since": [
@@ -11275,8 +11532,8 @@
         {
           "description": "<p>Secondary button hover colour</p>\n",
           "commentRange": {
-            "start": 130,
-            "end": 131
+            "start": 136,
+            "end": 137
           },
           "context": {
             "type": "variable",
@@ -11284,8 +11541,8 @@
             "value": "#333",
             "scope": "private",
             "line": {
-              "start": 132,
-              "end": 132
+              "start": 138,
+              "end": 138
             }
           },
           "since": [
@@ -11309,8 +11566,8 @@
         {
           "description": "<p>Primary button text colour</p>\n",
           "commentRange": {
-            "start": 134,
-            "end": 135
+            "start": 140,
+            "end": 141
           },
           "context": {
             "type": "variable",
@@ -11318,8 +11575,8 @@
             "value": "$colour-nice-white",
             "scope": "private",
             "line": {
-              "start": 136,
-              "end": 136
+              "start": 142,
+              "end": 142
             }
           },
           "since": [
@@ -11343,8 +11600,8 @@
         {
           "description": "<p>Inverse (light) button background colour</p>\n",
           "commentRange": {
-            "start": 141,
-            "end": 142
+            "start": 147,
+            "end": 148
           },
           "context": {
             "type": "variable",
@@ -11352,8 +11609,8 @@
             "value": "$colour-nice-white",
             "scope": "private",
             "line": {
-              "start": 143,
-              "end": 143
+              "start": 149,
+              "end": 149
             }
           },
           "since": [
@@ -11377,8 +11634,8 @@
         {
           "description": "<p>Inverse (light) button hover colour</p>\n",
           "commentRange": {
-            "start": 145,
-            "end": 146
+            "start": 151,
+            "end": 152
           },
           "context": {
             "type": "variable",
@@ -11386,8 +11643,8 @@
             "value": "$colour-nice-grey-3",
             "scope": "private",
             "line": {
-              "start": 147,
-              "end": 147
+              "start": 153,
+              "end": 153
             }
           },
           "since": [
@@ -11411,8 +11668,8 @@
         {
           "description": "<p>Inverse (light) button text colour</p>\n",
           "commentRange": {
-            "start": 149,
-            "end": 150
+            "start": 155,
+            "end": 156
           },
           "context": {
             "type": "variable",
@@ -11420,8 +11677,8 @@
             "value": "$colour-nice-rich-black",
             "scope": "private",
             "line": {
-              "start": 151,
-              "end": 151
+              "start": 157,
+              "end": 157
             }
           },
           "since": [
@@ -11445,8 +11702,8 @@
         {
           "description": "<p>Borders, seperators, rules, keylines etc.</p>\n",
           "commentRange": {
-            "start": 156,
-            "end": 157
+            "start": 162,
+            "end": 163
           },
           "context": {
             "type": "variable",
@@ -11454,8 +11711,8 @@
             "value": "$colour-nice-grey-1",
             "scope": "private",
             "line": {
-              "start": 158,
-              "end": 158
+              "start": 164,
+              "end": 164
             }
           },
           "since": [
@@ -11479,8 +11736,8 @@
         {
           "description": "",
           "commentRange": {
-            "start": 161,
-            "end": 161
+            "start": 167,
+            "end": 167
           },
           "context": {
             "type": "variable",
@@ -11488,8 +11745,8 @@
             "value": "$colour-nice-grey-3",
             "scope": "private",
             "line": {
-              "start": 162,
-              "end": 162
+              "start": 168,
+              "end": 168
             }
           },
           "since": [
@@ -11513,8 +11770,42 @@
         {
           "description": "",
           "commentRange": {
-            "start": 165,
-            "end": 165
+            "start": 171,
+            "end": 171
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-panel-default-border",
+            "value": "$colour-nice-grey-2",
+            "scope": "private",
+            "line": {
+              "start": 172,
+              "end": 172
+            }
+          },
+          "since": [
+            {
+              "version": "0.5.2"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#d6d6d6"
+        },
+        {
+          "description": "",
+          "commentRange": {
+            "start": 175,
+            "end": 175
           },
           "context": {
             "type": "variable",
@@ -11522,8 +11813,8 @@
             "value": "$colour-nice-dark-grey",
             "scope": "private",
             "line": {
-              "start": 166,
-              "end": 166
+              "start": 176,
+              "end": 176
             }
           },
           "since": [
@@ -11547,8 +11838,8 @@
         {
           "description": "<p>Agile lifecycle phase banner</p>\n",
           "commentRange": {
-            "start": 171,
-            "end": 172
+            "start": 181,
+            "end": 182
           },
           "context": {
             "type": "variable",
@@ -11556,8 +11847,8 @@
             "value": "#009ae9",
             "scope": "private",
             "line": {
-              "start": 173,
-              "end": 173
+              "start": 183,
+              "end": 183
             }
           },
           "since": [
@@ -11581,8 +11872,8 @@
         {
           "description": "<p>Discovery agile lifecycle phase</p>\n",
           "commentRange": {
-            "start": 175,
-            "end": 177
+            "start": 185,
+            "end": 187
           },
           "context": {
             "type": "variable",
@@ -11590,8 +11881,8 @@
             "value": "#b8008e",
             "scope": "private",
             "line": {
-              "start": 178,
-              "end": 178
+              "start": 188,
+              "end": 188
             }
           },
           "since": [
@@ -11616,8 +11907,8 @@
         {
           "description": "<p>Alpha badges and banners</p>\n",
           "commentRange": {
-            "start": 180,
-            "end": 182
+            "start": 190,
+            "end": 192
           },
           "context": {
             "type": "variable",
@@ -11625,8 +11916,8 @@
             "value": "#d5367f",
             "scope": "private",
             "line": {
-              "start": 183,
-              "end": 183
+              "start": 193,
+              "end": 193
             }
           },
           "since": [
@@ -11651,8 +11942,8 @@
         {
           "description": "<p>Beta badges and banners</p>\n",
           "commentRange": {
-            "start": 185,
-            "end": 187
+            "start": 195,
+            "end": 197
           },
           "context": {
             "type": "variable",
@@ -11660,8 +11951,8 @@
             "value": "#f47738",
             "scope": "private",
             "line": {
-              "start": 188,
-              "end": 188
+              "start": 198,
+              "end": 198
             }
           },
           "since": [
@@ -11686,8 +11977,8 @@
         {
           "description": "<p>Live badges and banners</p>\n",
           "commentRange": {
-            "start": 190,
-            "end": 192
+            "start": 200,
+            "end": 202
           },
           "context": {
             "type": "variable",
@@ -11695,8 +11986,8 @@
             "value": "#70a747",
             "scope": "private",
             "line": {
-              "start": 193,
-              "end": 193
+              "start": 203,
+              "end": 203
             }
           },
           "since": [
@@ -11721,8 +12012,8 @@
         {
           "description": "<p>Error text and border colour</p>\n",
           "commentRange": {
-            "start": 195,
-            "end": 196
+            "start": 205,
+            "end": 206
           },
           "context": {
             "type": "variable",
@@ -11730,8 +12021,8 @@
             "value": "#b10e1e",
             "scope": "private",
             "line": {
-              "start": 197,
-              "end": 197
+              "start": 207,
+              "end": 207
             }
           },
           "since": [
@@ -11755,8 +12046,8 @@
         {
           "description": "<p>Error background colour</p>\n",
           "commentRange": {
-            "start": 199,
-            "end": 200
+            "start": 209,
+            "end": 210
           },
           "context": {
             "type": "variable",
@@ -11764,8 +12055,8 @@
             "value": "#eac3c3",
             "scope": "private",
             "line": {
-              "start": 201,
-              "end": 201
+              "start": 211,
+              "end": 211
             }
           },
           "since": [
@@ -11789,8 +12080,8 @@
         {
           "description": "<p>Caution text and border colour</p>\n",
           "commentRange": {
-            "start": 203,
-            "end": 204
+            "start": 213,
+            "end": 214
           },
           "context": {
             "type": "variable",
@@ -11798,8 +12089,8 @@
             "value": "#9b722f",
             "scope": "private",
             "line": {
-              "start": 205,
-              "end": 205
+              "start": 215,
+              "end": 215
             }
           },
           "since": [
@@ -11823,8 +12114,8 @@
         {
           "description": "<p>Caution background colour</p>\n",
           "commentRange": {
-            "start": 207,
-            "end": 208
+            "start": 217,
+            "end": 218
           },
           "context": {
             "type": "variable",
@@ -11832,8 +12123,8 @@
             "value": "#ffdfa4",
             "scope": "private",
             "line": {
-              "start": 209,
-              "end": 209
+              "start": 219,
+              "end": 219
             }
           },
           "since": [
@@ -11857,8 +12148,8 @@
         {
           "description": "<p>Info text and border colour</p>\n",
           "commentRange": {
-            "start": 211,
-            "end": 212
+            "start": 221,
+            "end": 222
           },
           "context": {
             "type": "variable",
@@ -11866,8 +12157,8 @@
             "value": "#4a7f99",
             "scope": "private",
             "line": {
-              "start": 213,
-              "end": 213
+              "start": 223,
+              "end": 223
             }
           },
           "since": [
@@ -11891,8 +12182,8 @@
         {
           "description": "<p>Info background colour</p>\n",
           "commentRange": {
-            "start": 215,
-            "end": 216
+            "start": 225,
+            "end": 226
           },
           "context": {
             "type": "variable",
@@ -11900,8 +12191,8 @@
             "value": "#e6faff",
             "scope": "private",
             "line": {
-              "start": 217,
-              "end": 217
+              "start": 227,
+              "end": 227
             }
           },
           "since": [
@@ -11925,8 +12216,8 @@
         {
           "description": "<p>Success text and border colour</p>\n",
           "commentRange": {
-            "start": 219,
-            "end": 220
+            "start": 229,
+            "end": 230
           },
           "context": {
             "type": "variable",
@@ -11934,8 +12225,8 @@
             "value": "#3f8c5e",
             "scope": "private",
             "line": {
-              "start": 221,
-              "end": 221
+              "start": 231,
+              "end": 231
             }
           },
           "since": [
@@ -11959,8 +12250,8 @@
         {
           "description": "<p>Success background colour</p>\n",
           "commentRange": {
-            "start": 223,
-            "end": 224
+            "start": 233,
+            "end": 234
           },
           "context": {
             "type": "variable",
@@ -11968,8 +12259,8 @@
             "value": "#eff7eb",
             "scope": "private",
             "line": {
-              "start": 225,
-              "end": 225
+              "start": 235,
+              "end": 235
             }
           },
           "since": [
@@ -11993,8 +12284,8 @@
         {
           "description": "<p>New guidance colour</p>\n",
           "commentRange": {
-            "start": 230,
-            "end": 231
+            "start": 240,
+            "end": 241
           },
           "context": {
             "type": "variable",
@@ -12002,8 +12293,8 @@
             "value": "$colour-nice-purple",
             "scope": "private",
             "line": {
-              "start": 232,
-              "end": 232
+              "start": 242,
+              "end": 242
             }
           },
           "since": [
@@ -12027,8 +12318,8 @@
         {
           "description": "<p>Updated guidance colour</p>\n",
           "commentRange": {
-            "start": 234,
-            "end": 235
+            "start": 244,
+            "end": 245
           },
           "context": {
             "type": "variable",
@@ -12036,8 +12327,8 @@
             "value": "$colour-nice-blue-3",
             "scope": "private",
             "line": {
-              "start": 236,
-              "end": 236
+              "start": 246,
+              "end": 246
             }
           },
           "since": [
@@ -12061,8 +12352,8 @@
         {
           "description": "<p>In consultation guidance colour</p>\n",
           "commentRange": {
-            "start": 238,
-            "end": 239
+            "start": 248,
+            "end": 249
           },
           "context": {
             "type": "variable",
@@ -12070,8 +12361,8 @@
             "value": "#557021",
             "scope": "private",
             "line": {
-              "start": 240,
-              "end": 240
+              "start": 250,
+              "end": 250
             }
           },
           "since": [
@@ -12091,6 +12382,74 @@
             "colors": "Colours"
           },
           "resolvedValue": "#557021"
+        },
+        {
+          "description": "<p>Background colour for the hero component</p>\n",
+          "commentRange": {
+            "start": 255,
+            "end": 256
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-hero-background",
+            "value": "$colour-nice-teal-2",
+            "scope": "private",
+            "line": {
+              "start": 257,
+              "end": 257
+            }
+          },
+          "since": [
+            {
+              "version": "0.5.2"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#18646e"
+        },
+        {
+          "description": "<p>Colour for the border in the hero component</p>\n",
+          "commentRange": {
+            "start": 259,
+            "end": 260
+          },
+          "context": {
+            "type": "variable",
+            "name": "colour-hero-border",
+            "value": "$colour-nice-teal-3",
+            "scope": "private",
+            "line": {
+              "start": 261,
+              "end": 261
+            }
+          },
+          "since": [
+            {
+              "version": "0.5.2"
+            }
+          ],
+          "group": [
+            "colors"
+          ],
+          "access": "public",
+          "file": {
+            "path": "stylesheets\\settings\\_settings-colours-semantic.scss",
+            "name": "_settings-colours-semantic.scss"
+          },
+          "groupName": {
+            "colors": "Colours"
+          },
+          "resolvedValue": "#15434a"
         }
       ]
     },
@@ -12105,10 +12464,10 @@
           "context": {
             "type": "css",
             "name": ".action-banner",
-            "value": "@include links-inverse;\n  background: $colour-nice-cool-teal;\n  color: $colour-text-inverse;\n  margin: em($spacing-large 0);\n  padding: em($spacing-small 0);\n  position: relative;\n\n  &__container {\n    @extend %container;\n  }\n\n  &__inner {\n    @include grid;\n  }\n\n  &__text {\n    @include grid-item($middle: true);\n    margin-bottom: em($spacing-medium);\n  }\n\n  &__title {\n    @include font-size(3);\n    margin: em(0 0 $spacing-x-small);\n  }\n\n  &__intro {\n    margin: 0;\n  }\n\n  &__actions {\n    @include grid-item($middle: true);\n\n    .btn {\n      margin: 0;\n    }\n  }\n\n  &__close {\n    appearance: none;\n    background: 0;\n    border: 0;\n    color: $colour-text-inverse;\n    cursor: pointer;\n    line-height: 1;\n    padding: rem($spacing-small);\n    position: absolute;\n    right: 0;\n    top: 0;\n    z-index: 1;\n\n    &:hover {\n      background: rgba(0, 0, 0, .2);\n    }\n\n    &:focus {\n      @include default-focus-style;\n    }\n  }\n\n  &--subtle {\n    @include links-default;\n    background: $colour-panel-default;\n    color: $colour-text;\n\n    .action-banner__close {\n      color: $colour-text;\n    }\n  }\n\n  &--closeable {\n    .action-banner__title {\n      padding-right: rem($spacing-large); // Make toom for close button\n    }\n  }\n\n  @include mq($from: md) {\n    &__text {\n      margin-bottom: 0;\n      width: percentage(3/4);\n    }\n\n    &__actions {\n      text-align: right;\n      width: percentage(1/4);\n    }\n\n    &--closeable {\n      .action-banner__title {\n        padding-right: 0;\n      }\n\n      .action-banner__actions {\n        padding-right: rem($spacing-medium);\n      }\n    }\n  }\n\n  @media print {\n    @include important(display, none);\n  }",
+            "value": "@include links-inverse;\n  background: $colour-nice-cool-teal;\n  color: $colour-text-inverse;\n  margin: em($spacing-large 0);\n  padding: em($spacing-small 0);\n  position: relative;\n\n  &__container {\n    @extend %container;\n  }\n\n  &__inner {\n    @include grid;\n  }\n\n  &__text {\n    @include grid-item($middle: true);\n    margin-bottom: em($spacing-medium);\n  }\n\n  &__title {\n    @include font-size(3);\n    color: $colour-text-inverse;\n    margin: em(0 0 $spacing-x-small);\n  }\n\n  &__intro {\n    margin: 0;\n  }\n\n  &__actions {\n    @include grid-item($middle: true);\n\n    .btn {\n      margin: 0;\n    }\n  }\n\n  &__close {\n    appearance: none;\n    background: 0;\n    border: 0;\n    color: $colour-text-inverse;\n    cursor: pointer;\n    line-height: 1;\n    padding: rem($spacing-small);\n    position: absolute;\n    right: 0;\n    top: 0;\n    z-index: 1;\n\n    &:hover {\n      background: rgba(0, 0, 0, .2);\n    }\n\n    &:focus {\n      @include default-focus-style;\n    }\n  }\n\n  &--subtle {\n    @include links-default;\n    background: $colour-panel-default;\n    color: $colour-text;\n\n    .action-banner__title {\n      color: $colour-text;\n    }\n\n    .action-banner__close {\n      color: $colour-text;\n    }\n  }\n\n  &--closeable {\n    .action-banner__title {\n      padding-right: rem($spacing-large); // Make toom for close button\n    }\n  }\n\n  @include mq($from: md) {\n    &__text {\n      margin-bottom: 0;\n      width: percentage(3/4);\n    }\n\n    &__actions {\n      text-align: right;\n      width: percentage(1/4);\n    }\n\n    &--closeable {\n      .action-banner__title {\n        padding-right: 0;\n      }\n\n      .action-banner__actions {\n        padding-right: rem($spacing-medium);\n      }\n    }\n  }\n\n  @media print {\n    @include important(display, none);\n  }",
             "line": {
               "start": 11,
-              "end": 113
+              "end": 118
             }
           },
           "since": [
@@ -12323,16 +12682,16 @@
         {
           "description": "<p>Container, used as a wrapper around sections within a page.\nUsually used to house grids.</p>\n",
           "commentRange": {
-            "start": 13,
-            "end": 21
+            "start": 14,
+            "end": 22
           },
           "context": {
             "type": "css",
             "name": ".container",
             "value": "@extend %container;\n\n  &--full {\n    max-width: 100%;\n    padding: 0 2%;\n    width: auto;\n  }",
             "line": {
-              "start": 22,
-              "end": 31
+              "start": 23,
+              "end": 32
             }
           },
           "example": [
@@ -12399,7 +12758,7 @@
           "context": {
             "type": "css",
             "name": ".site-footer",
-            "value": "@include links-inverse;\n  @include font-size(-1);\n  background: $colour-panel-inverse;\n  color: $colour-text-inverse;\n  margin-top: em($spacing-large);\n  padding: em($spacing-large 0);\n\n  @media print {\n    display: none;\n  }\n\n  p {\n    @include font-size(-1);\n  }\n\n  &__logo {\n    display: block;\n    margin: em(0 0 $spacing-large 0);\n    text-decoration: none !important; // sass-lint:disable-line no-important\n\n    .icon {\n      font-size: rem(48px);\n    }\n  }\n\n  &__services {\n    margin: em(0 0 $spacing-large 0);\n  }\n\n  &__social {\n    clear: both;\n    margin: em(0 0 $spacing-large 0);\n  }\n\n  &__nav {\n    clear: both;\n    margin: em(0 0 $spacing-large 0);\n  }\n\n  &__copyright {\n    margin: 0;\n    text-align: center;\n  }\n\n  @include mq($from: sm) {\n    &__logo {\n      float: left;\n      margin: em(0 $spacing-large $spacing-large 0);\n    }\n\n    &__services {\n      float: left;\n      margin: em(0 0 $spacing-large 0);\n    }\n\n    &__social {\n      clear: both;\n    }\n\n    &__copyright {\n      text-align: left;\n    }\n  }\n\n  @include mq($from: md) {\n\n    &__social {\n      clear: none;\n      float: right;\n    }\n  }",
+            "value": "@include links-inverse;\n  @include font-size(-1);\n  background: $colour-panel-inverse;\n  color: $colour-text-inverse;\n  margin-top: em($spacing-large);\n  padding: em($spacing-large 0);\n\n  @media print {\n    display: none;\n  }\n\n  p {\n    @include font-size(-1);\n  }\n\n  &__logo {\n    display: block;\n    margin: em(0 0 $spacing-large 0);\n    text-decoration: none !important; // sass-lint:disable-line no-important\n\n    .icon {\n      @include font-size(h1);\n    }\n  }\n\n  &__services {\n    margin: em(0 0 $spacing-large 0);\n  }\n\n  &__social {\n    clear: both;\n    margin: em(0 0 $spacing-large 0);\n  }\n\n  &__nav {\n    clear: both;\n    margin: em(0 0 $spacing-large 0);\n  }\n\n  &__copyright {\n    margin: 0;\n    text-align: center;\n  }\n\n  @include mq($from: sm) {\n    &__logo {\n      float: left;\n      margin: em(0 $spacing-large $spacing-large 0);\n    }\n\n    &__services {\n      float: left;\n      margin: em(0 0 $spacing-large 0);\n    }\n\n    &__social {\n      clear: both;\n    }\n\n    &__copyright {\n      text-align: left;\n    }\n  }\n\n  @include mq($from: md) {\n\n    &__social {\n      clear: none;\n      float: right;\n    }\n  }",
             "line": {
               "start": 7,
               "end": 222
@@ -12431,7 +12790,7 @@
           "context": {
             "type": "css",
             "name": ".services",
-            "value": "&__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  &__item {\n    border-bottom: 1px solid $colour-border;\n\n    &:first-child {\n      border-top: 1px solid $colour-border;\n    }\n\n    a {\n      @include font-size(-1);\n      color: $colour-panel-default;\n      display: block;\n      padding: em($spacing-small 0);\n      text-decoration: none;\n\n      &:hover {\n        color: $colour-text-inverse;\n      }\n    }\n\n    .icon {\n      @include font-size(1);\n      display: inline-block;\n      margin: em(0 $spacing-x-small 0 0);\n      vertical-align: middle;\n    }\n  }\n\n  @include mq($from: sm) {\n\n    &__item {\n      border: 0;\n      float: left;\n      text-align: center;\n      width: em(90px);\n\n      &:first-child {\n        border: 0;\n      }\n\n      a {\n        padding: em($spacing-x-small) 0 0;\n      }\n    }\n\n    .icon {\n      @include font-size(6);\n      display: block;\n      line-height: 1;\n      margin: 0 auto em($spacing-x-small);\n\n      // The following is needed for IE8 to go centrally aligned\n      &:before {\n        text-align: center;\n        width: 100%;\n      }\n    }\n  }",
+            "value": "&__list {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  &__item {\n    border-bottom: 1px solid $colour-border;\n\n    &:first-child {\n      border-top: 1px solid $colour-border;\n    }\n\n    a {\n      @include font-size(-1);\n      color: $colour-panel-default;\n      display: block;\n      padding: em($spacing-small 0);\n      text-decoration: none;\n\n      &:hover {\n        color: $colour-text-inverse;\n      }\n    }\n\n    .icon {\n      @include font-size(1);\n      display: inline-block;\n      margin: em(0 $spacing-x-small 0 0);\n      vertical-align: middle;\n    }\n  }\n\n  @include mq($from: sm) {\n\n    &__item {\n      border: 0;\n      float: left;\n      text-align: center;\n      width: em(90px);\n\n      &:first-child {\n        border: 0;\n      }\n\n      a {\n        padding: em($spacing-x-small) 0 0;\n      }\n    }\n\n    .icon {\n      @include font-size(h2);\n      display: block;\n      line-height: 1;\n      margin: 0 auto em($spacing-x-small);\n\n      // The following is needed for IE8 to go centrally aligned\n      &:before {\n        text-align: center;\n        width: 100%;\n      }\n    }\n  }",
             "line": {
               "start": 83,
               "end": 222
@@ -12458,7 +12817,7 @@
           "context": {
             "type": "css",
             "name": ".social-networks",
-            "value": "&__heading {\n    @include font-size(-1);\n    display: inline-block;\n    font-weight: normal;\n    margin: em(0 $spacing-small 0 0);\n    padding: 0;\n    vertical-align: top;\n  }\n\n  &__list {\n    display: inline;\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  &__item {\n    display: inline-block;\n\n    .icon {\n      @include font-size(4);\n      line-height: 1;\n    }\n  }\n\n  a {\n    display: block;\n    padding: em(0 $spacing-x-small);\n    text-decoration: none;\n  }",
+            "value": "&__heading {\n    @include font-size(-1);\n    display: inline-block;\n    font-weight: normal;\n    margin: em(0 $spacing-small 0 0);\n    padding: 0;\n    vertical-align: top;\n  }\n\n  &__list {\n    display: inline;\n    list-style: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  &__item {\n    display: inline-block;\n\n    .icon {\n      @include font-size(3);\n      line-height: 1;\n    }\n  }\n\n  a {\n    display: block;\n    padding: em(0 $spacing-x-small);\n    text-decoration: none;\n  }",
             "line": {
               "start": 151,
               "end": 222
@@ -12512,10 +12871,10 @@
           "context": {
             "type": "css",
             "name": ".hero",
-            "value": "@include links-inverse;\n  background: $colour-nice-teal-2;\n  color: $colour-text-inverse;\n  margin: em(0 0 $spacing-large);\n  overflow: hidden;\n  padding: em(0 0 $spacing-large);\n\n  &__container {\n    @extend %container;\n  }\n\n  &__body {\n    @include grid($loose: true);\n    margin-top: rem($spacing-large);\n  }\n\n  // The main container for the copy\n  &__copy {\n    @include grid-item(12, $md: 8, $loose: true);\n  }\n\n  // Extra supplementary links etc\n  &__extra {\n    @include grid-item(12, $md: 4, $loose: true);\n  }\n\n  &__title {\n    @include h1;\n  }\n\n  &__intro {\n    @include lead;\n  }",
+            "value": "@include links-inverse;\n  background: $colour-hero-background;\n  color: $colour-text-inverse;\n  margin: rem(0 0 $spacing-medium);\n  overflow: hidden;\n  //padding: rem(0 0 $spacing-large);\n\n  &__container {\n    @extend %container;\n  }\n\n  &__body {\n    @include clearfix;\n    margin-top: rem($spacing-large);\n    padding: rem(0 0 $spacing-large);\n  }\n\n  // Container for title, lead and actions\n  &__copy {\n    margin-bottom: rem($spacing-large);\n  }\n\n  // Extra supplementary links etc\n  &__extra {\n    //padding: rem(0 0 $spacing-medium);\n  }\n\n  &__title {\n    @include h1;\n  }\n\n  &__intro {\n    @include lead;\n  }\n\n  // Optional footer\n  &__footer {\n    border-top: rem($spacing-xx-small) solid $colour-hero-border;\n    padding: rem($spacing-medium 0);\n\n    p,\n    ul {\n      margin: 0;\n    }\n  }\n\n  @include mq($from: md) {\n    &__copy {\n      float: left;\n      margin-bottom: 0;\n      width: 55%;\n    }\n\n    &__extra {\n      float: right;\n      width: 35%;\n    }\n  }",
             "line": {
               "start": 7,
-              "end": 42
+              "end": 67
             }
           },
           "since": [
@@ -12653,10 +13012,10 @@
           "context": {
             "type": "css",
             "name": ".panel",
-            "value": "background: $colour-panel-default;\n  margin: em($spacing-medium 0 $spacing-large);\n  padding: em($spacing-medium);\n\n  // sass-lint:disable no-combinators\n  > :first-child {\n    margin-top: 0;\n  }\n\n  // sass-lint:disable no-combinators\n  > :last-child {\n    margin-bottom: 0;\n  }",
+            "value": "background: $colour-panel-default;\n  border: 1px solid $colour-panel-default-border; // To distinguish panel from off-grey body background\n  margin: em($spacing-medium 0 $spacing-large);\n  padding: em($spacing-medium);\n\n  // sass-lint:disable no-combinators\n  > :first-child {\n    margin-top: 0;\n  }\n\n  // sass-lint:disable no-combinators\n  > :last-child {\n    margin-bottom: 0;\n  }",
             "line": {
               "start": 8,
-              "end": 35
+              "end": 37
             }
           },
           "since": [
@@ -12677,21 +13036,26 @@
           }
         },
         {
-          "description": "<p>Modifier for the panel, to use a inverse (dark) background.\nAutmatically uses inverse links within it. Doesn&#39;t affect buttons\nthough, so any buttons within a dark panel should be <code>.btn.btn--light</code>.</p>\n",
+          "description": "<p>Modifier for the panel, to use a inverse (dark) background.\nAutmatically uses inverse links within it. Doesn&#39;t affect buttons\nthough, so any buttons within a dark panel should be <code>.btn.btn--inverse</code>.</p>\n",
           "commentRange": {
-            "start": 24,
-            "end": 29
+            "start": 25,
+            "end": 30
           },
           "context": {
             "type": "css",
             "name": ".panel--inverse",
-            "value": "@include links-inverse;\n  background: $colour-panel-inverse;\n  color: $colour-text-inverse;",
+            "value": "@include links-inverse;\n  background: $colour-panel-inverse;\n  border: 0;\n  color: $colour-text-inverse;",
             "line": {
-              "start": 30,
-              "end": 35
+              "start": 31,
+              "end": 37
             }
           },
           "require": [
+            {
+              "type": "mixin",
+              "name": "links-inverse",
+              "external": false
+            },
             {
               "type": "function",
               "name": ".panel",
@@ -12899,10 +13263,10 @@
           "context": {
             "type": "placeholder",
             "name": "container",
-            "code": "\n  margin: auto;\n  max-width: rem(1170px);\n  width: 96%;\n",
+            "code": "\n  margin: auto;\n  max-width: rem($nice-container-max-width);\n  width: 96%;\n  width: calc(100% - #{rem($spacing-large)});\n",
             "line": {
               "start": 7,
-              "end": 11
+              "end": 12
             }
           },
           "since": [
@@ -12918,6 +13282,18 @@
             {
               "type": "function",
               "name": "rem"
+            },
+            {
+              "type": "function",
+              "name": "rem"
+            },
+            {
+              "type": "variable",
+              "name": "nice-container-max-width"
+            },
+            {
+              "type": "variable",
+              "name": "spacing-large"
             }
           ],
           "file": {
@@ -15907,10 +16283,22 @@
               "context": {
                 "type": "placeholder",
                 "name": "container",
-                "code": "\n  margin: auto;\n  max-width: rem(1170px);\n  width: 96%;\n",
+                "code": "\n  margin: auto;\n  max-width: rem($nice-container-max-width);\n  width: 96%;\n  width: calc(100% - #{rem($spacing-large)});\n",
                 "line": {
                   "start": 7,
-                  "end": 11
+                  "end": 12
+                }
+              }
+            },
+            {
+              "description": "<p>Container placeholder.</p>\n",
+              "context": {
+                "type": "placeholder",
+                "name": "container",
+                "code": "\n  margin: auto;\n  max-width: rem($nice-container-max-width);\n  width: 96%;\n  width: calc(100% - #{rem($spacing-large)});\n",
+                "line": {
+                  "start": 7,
+                  "end": 12
                 }
               }
             },
@@ -15967,10 +16355,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font",
-                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
                 "line": {
                   "start": 96,
-                  "end": 112
+                  "end": 110
                 }
               }
             },
@@ -15979,10 +16367,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font",
-                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
                 "line": {
                   "start": 96,
-                  "end": 112
+                  "end": 110
                 }
               }
             },
@@ -15991,10 +16379,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font",
-                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
                 "line": {
                   "start": 96,
-                  "end": 112
+                  "end": 110
                 }
               }
             },
@@ -16003,10 +16391,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font",
-                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
                 "line": {
                   "start": 96,
-                  "end": 112
+                  "end": 110
                 }
               }
             },
@@ -16210,6 +16598,20 @@
             "path": "stylesheets\\settings\\_settings-spacing.scss",
             "name": "_settings-spacing.scss"
           },
+          "usedBy": [
+            {
+              "description": "<p>Container placeholder.</p>\n",
+              "context": {
+                "type": "placeholder",
+                "name": "container",
+                "code": "\n  margin: auto;\n  max-width: rem($nice-container-max-width);\n  width: 96%;\n  width: calc(100% - #{rem($spacing-large)});\n",
+                "line": {
+                  "start": 7,
+                  "end": 12
+                }
+              }
+            }
+          ],
           "groupName": {
             "spacing": "Spacing"
           },
@@ -16417,8 +16819,8 @@
                 "name": "link-inverse",
                 "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
                 "line": {
-                  "start": 40,
-                  "end": 62
+                  "start": 41,
+                  "end": 63
                 }
               }
             }
@@ -16430,16 +16832,16 @@
         {
           "description": "<p>Primary heading. Used for h1 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
           "commentRange": {
-            "start": 27,
-            "end": 29
+            "start": 5,
+            "end": 7
           },
           "context": {
             "type": "mixin",
             "name": "h1",
-            "code": "\n  @include font(h1);\n",
+            "code": "\n  @include font(h1);\n  clear: both;\n  font-weight: 900;\n  max-width: 66ch;\n",
             "line": {
-              "start": 30,
-              "end": 32
+              "start": 8,
+              "end": 13
             }
           },
           "since": [
@@ -16468,16 +16870,16 @@
         {
           "description": "<p>Secondary heading. Used for h2 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
           "commentRange": {
-            "start": 34,
-            "end": 36
+            "start": 15,
+            "end": 17
           },
           "context": {
             "type": "mixin",
             "name": "h2",
-            "code": "\n  @include font(h2);\n",
+            "code": "\n  @include font(h2);\n  clear: both;\n  font-weight: 700;\n  max-width: 66ch;\n",
             "line": {
-              "start": 37,
-              "end": 39
+              "start": 18,
+              "end": 23
             }
           },
           "since": [
@@ -16506,16 +16908,16 @@
         {
           "description": "<p>Tertiary heading. Used for h3 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
           "commentRange": {
-            "start": 41,
-            "end": 43
+            "start": 25,
+            "end": 27
           },
           "context": {
             "type": "mixin",
             "name": "h3",
-            "code": "\n  @include font(h3);\n",
+            "code": "\n  @include font(h3);\n  clear: both;\n  font-weight: 700;\n  max-width: 66ch;\n",
             "line": {
-              "start": 44,
-              "end": 46
+              "start": 28,
+              "end": 33
             }
           },
           "since": [
@@ -16544,16 +16946,16 @@
         {
           "description": "<p>Fourth level heading. Used for h4 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
           "commentRange": {
-            "start": 48,
-            "end": 50
+            "start": 35,
+            "end": 37
           },
           "context": {
             "type": "mixin",
             "name": "h4",
-            "code": "\n  @include font(h4);\n",
+            "code": "\n  @include font(h4);\n  clear: both;\n  font-weight: 700;\n  max-width: 66ch;\n",
             "line": {
-              "start": 51,
-              "end": 53
+              "start": 38,
+              "end": 43
             }
           },
           "since": [
@@ -16582,16 +16984,16 @@
         {
           "description": "<p>Fifth level heading. Used for h5 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
           "commentRange": {
-            "start": 55,
-            "end": 57
+            "start": 45,
+            "end": 47
           },
           "context": {
             "type": "mixin",
             "name": "h5",
-            "code": "\n  @include font(h5);\n",
+            "code": "\n  @include font(h5);\n  clear: both;\n  font-weight: 700;\n  max-width: 66ch;\n",
             "line": {
-              "start": 58,
-              "end": 60
+              "start": 48,
+              "end": 53
             }
           },
           "since": [
@@ -16620,16 +17022,16 @@
         {
           "description": "<p>Sixth level heading. Used for h6 tag but can be used directly\nfor semantic classes for visual styling.</p>\n",
           "commentRange": {
-            "start": 62,
-            "end": 64
+            "start": 55,
+            "end": 57
           },
           "context": {
             "type": "mixin",
             "name": "h6",
-            "code": "\n  @include font(h6);\n",
+            "code": "\n  @include font(h6);\n  clear: both;\n  font-weight: 700;\n  max-width: 66ch;\n",
             "line": {
-              "start": 65,
-              "end": 67
+              "start": 58,
+              "end": 63
             }
           },
           "since": [
@@ -16735,10 +17137,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font",
-                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
                 "line": {
                   "start": 96,
-                  "end": 112
+                  "end": 110
                 }
               }
             }
@@ -16756,10 +17158,10 @@
           "context": {
             "type": "mixin",
             "name": "font",
-            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+            "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
             "line": {
               "start": 96,
-              "end": 112
+              "end": 110
             }
           },
           "parameter": [
@@ -16831,10 +17233,10 @@
               "context": {
                 "type": "mixin",
                 "name": "h1",
-                "code": "\n  @include font(h1);\n",
+                "code": "\n  @include font(h1);\n  clear: both;\n  font-weight: 900;\n  max-width: 66ch;\n",
                 "line": {
-                  "start": 30,
-                  "end": 32
+                  "start": 8,
+                  "end": 13
                 }
               }
             },
@@ -16843,10 +17245,10 @@
               "context": {
                 "type": "mixin",
                 "name": "h2",
-                "code": "\n  @include font(h2);\n",
+                "code": "\n  @include font(h2);\n  clear: both;\n  font-weight: 700;\n  max-width: 66ch;\n",
                 "line": {
-                  "start": 37,
-                  "end": 39
+                  "start": 18,
+                  "end": 23
                 }
               }
             },
@@ -16855,10 +17257,10 @@
               "context": {
                 "type": "mixin",
                 "name": "h3",
-                "code": "\n  @include font(h3);\n",
+                "code": "\n  @include font(h3);\n  clear: both;\n  font-weight: 700;\n  max-width: 66ch;\n",
                 "line": {
-                  "start": 44,
-                  "end": 46
+                  "start": 28,
+                  "end": 33
                 }
               }
             },
@@ -16867,10 +17269,10 @@
               "context": {
                 "type": "mixin",
                 "name": "h4",
-                "code": "\n  @include font(h4);\n",
+                "code": "\n  @include font(h4);\n  clear: both;\n  font-weight: 700;\n  max-width: 66ch;\n",
                 "line": {
-                  "start": 51,
-                  "end": 53
+                  "start": 38,
+                  "end": 43
                 }
               }
             },
@@ -16879,10 +17281,10 @@
               "context": {
                 "type": "mixin",
                 "name": "h5",
-                "code": "\n  @include font(h5);\n",
+                "code": "\n  @include font(h5);\n  clear: both;\n  font-weight: 700;\n  max-width: 66ch;\n",
                 "line": {
-                  "start": 58,
-                  "end": 60
+                  "start": 48,
+                  "end": 53
                 }
               }
             },
@@ -16891,10 +17293,22 @@
               "context": {
                 "type": "mixin",
                 "name": "h6",
-                "code": "\n  @include font(h6);\n",
+                "code": "\n  @include font(h6);\n  clear: both;\n  font-weight: 700;\n  max-width: 66ch;\n",
                 "line": {
-                  "start": 65,
-                  "end": 67
+                  "start": 58,
+                  "end": 63
+                }
+              }
+            },
+            {
+              "description": "<p>Default paragraph style</p>\n",
+              "context": {
+                "type": "mixin",
+                "name": "p",
+                "code": "\n  @include font(p);\n  font-feature-settings: 'kern', 'onum', 'liga';\n  font-weight: normal;\n  max-width: 66ch;\n",
+                "line": {
+                  "start": 114,
+                  "end": 119
                 }
               }
             },
@@ -16903,10 +17317,10 @@
               "context": {
                 "type": "mixin",
                 "name": "lead",
-                "code": "\n  @include font(lead);\n",
+                "code": "\n  @include font(lead);\n  font-weight: normal;\n  max-width: 66ch;\n",
                 "line": {
-                  "start": 116,
-                  "end": 118
+                  "start": 123,
+                  "end": 127
                 }
               }
             }
@@ -16916,18 +17330,56 @@
           }
         },
         {
+          "description": "<p>Default paragraph style</p>\n",
+          "commentRange": {
+            "start": 112,
+            "end": 113
+          },
+          "context": {
+            "type": "mixin",
+            "name": "p",
+            "code": "\n  @include font(p);\n  font-feature-settings: 'kern', 'onum', 'liga';\n  font-weight: normal;\n  max-width: 66ch;\n",
+            "line": {
+              "start": 114,
+              "end": 119
+            }
+          },
+          "since": [
+            {
+              "version": "0.5.2"
+            }
+          ],
+          "group": [
+            "typography"
+          ],
+          "access": "public",
+          "require": [
+            {
+              "type": "mixin",
+              "name": "font"
+            }
+          ],
+          "file": {
+            "path": "stylesheets\\typography\\_typography-helpers.scss",
+            "name": "_typography-helpers.scss"
+          },
+          "groupName": {
+            "typography": "Typography"
+          }
+        },
+        {
           "description": "<p>Lead paragraph style</p>\n",
           "commentRange": {
-            "start": 114,
-            "end": 115
+            "start": 121,
+            "end": 122
           },
           "context": {
             "type": "mixin",
             "name": "lead",
-            "code": "\n  @include font(lead);\n",
+            "code": "\n  @include font(lead);\n  font-weight: normal;\n  max-width: 66ch;\n",
             "line": {
-              "start": 116,
-              "end": 118
+              "start": 123,
+              "end": 127
             }
           },
           "since": [
@@ -17019,8 +17471,8 @@
                 "name": "links-default",
                 "code": "\n  a {\n    @include link-default;\n  }\n",
                 "line": {
-                  "start": 32,
-                  "end": 36
+                  "start": 33,
+                  "end": 37
                 }
               }
             }
@@ -17033,17 +17485,24 @@
           "description": "<p>Default links for use on a light background</p>\n",
           "commentRange": {
             "start": 30,
-            "end": 31
+            "end": 32
           },
           "context": {
             "type": "mixin",
             "name": "links-default",
             "code": "\n  a {\n    @include link-default;\n  }\n",
             "line": {
-              "start": 32,
-              "end": 36
+              "start": 33,
+              "end": 37
             }
           },
+          "require": [
+            {
+              "type": "mixin",
+              "name": "link-default",
+              "external": false
+            }
+          ],
           "since": [
             {
               "version": "0.5.0"
@@ -17053,12 +17512,6 @@
             "typography"
           ],
           "access": "public",
-          "require": [
-            {
-              "type": "mixin",
-              "name": "link-default"
-            }
-          ],
           "file": {
             "path": "stylesheets\\typography\\_typography-links.scss",
             "name": "_typography-links.scss"
@@ -17070,16 +17523,16 @@
         {
           "description": "<p>Inverse link style for use on an inverse (dark) background</p>\n",
           "commentRange": {
-            "start": 38,
-            "end": 39
+            "start": 39,
+            "end": 40
           },
           "context": {
             "type": "mixin",
             "name": "link-inverse",
             "code": "\n  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes\n  color: $colour-link-inverse;\n  text-decoration: underline;\n  text-decoration-skip: ink;\n\n  &:visited {\n    color: $colour-link-inverse-visited;\n  }\n\n  &:hover {\n    color: $colour-link-inverse-hover;\n  }\n\n  &:focus {\n    @include inverse-focus-style;\n    color: $colour-link-inverse-focus-text;\n  }\n\n  &:active {\n    color: $colour-link-inverse-active;\n  }\n",
             "line": {
-              "start": 40,
-              "end": 62
+              "start": 41,
+              "end": 63
             }
           },
           "since": [
@@ -17133,8 +17586,8 @@
                 "name": "links-inverse",
                 "code": "\n  a {\n    @include link-inverse;\n  }\n",
                 "line": {
-                  "start": 66,
-                  "end": 70
+                  "start": 68,
+                  "end": 72
                 }
               }
             }
@@ -17146,18 +17599,25 @@
         {
           "description": "<p>Inverse links for use on a dark background</p>\n",
           "commentRange": {
-            "start": 64,
-            "end": 65
+            "start": 65,
+            "end": 67
           },
           "context": {
             "type": "mixin",
             "name": "links-inverse",
             "code": "\n  a {\n    @include link-inverse;\n  }\n",
             "line": {
-              "start": 66,
-              "end": 70
+              "start": 68,
+              "end": 72
             }
           },
+          "require": [
+            {
+              "type": "mixin",
+              "name": "link-inverse",
+              "external": false
+            }
+          ],
           "since": [
             {
               "version": "0.3.1"
@@ -17167,16 +17627,36 @@
             "typography"
           ],
           "access": "public",
-          "require": [
-            {
-              "type": "mixin",
-              "name": "link-inverse"
-            }
-          ],
           "file": {
             "path": "stylesheets\\typography\\_typography-links.scss",
             "name": "_typography-links.scss"
           },
+          "usedBy": [
+            {
+              "description": "<p>Modifier for the panel, to use a inverse (dark) background.\nAutmatically uses inverse links within it. Doesn&#39;t affect buttons\nthough, so any buttons within a dark panel should be <code>.btn.btn--inverse</code>.</p>\n",
+              "context": {
+                "type": "css",
+                "name": ".panel--inverse",
+                "value": "@include links-inverse;\n  background: $colour-panel-inverse;\n  border: 0;\n  color: $colour-text-inverse;",
+                "line": {
+                  "start": 31,
+                  "end": 37
+                }
+              }
+            },
+            {
+              "description": "<p>Inverse links, for use on dark backgrounds e.g dark panels.\nUse this class on a containing element to apply to all links within it.</p>\n",
+              "context": {
+                "type": "css",
+                "name": ".inverse-links",
+                "value": "@include links-inverse;",
+                "line": {
+                  "start": 89,
+                  "end": 92
+                }
+              }
+            }
+          ],
           "groupName": {
             "typography": "Typography"
           }
@@ -17186,16 +17666,16 @@
         {
           "description": "<p>Mark</p>\n",
           "commentRange": {
-            "start": 108,
-            "end": 108
+            "start": 96,
+            "end": 96
           },
           "context": {
             "type": "css",
             "name": "mark,\n.mark",
-            "value": "background-color: #fff999;\n  padding: em(4);",
+            "value": "background-color: #fff999;\n  padding: em(0 $spacing-x-small);",
             "line": {
-              "start": 110,
-              "end": 120
+              "start": 98,
+              "end": 108
             }
           },
           "group": [
@@ -17213,16 +17693,16 @@
         {
           "description": "<p>Small</p>\n",
           "commentRange": {
-            "start": 115,
-            "end": 115
+            "start": 103,
+            "end": 103
           },
           "context": {
             "type": "css",
             "name": "small,\n.small",
             "value": "font-size: 85%;",
             "line": {
-              "start": 117,
-              "end": 120
+              "start": 105,
+              "end": 108
             }
           },
           "group": [
@@ -17238,45 +17718,18 @@
           }
         },
         {
-          "description": "<p>Heading, BEM style.\nModifiers:</p>\n<ul>\n<li>separator: Border below</li>\n</ul>\n",
-          "commentRange": {
-            "start": 17,
-            "end": 19
-          },
-          "context": {
-            "type": "css",
-            "name": ".heading",
-            "value": "&--separator {\n    border-bottom: 1px solid $colour-border;\n    padding-bottom: rem($spacing-x-small);\n  }",
-            "line": {
-              "start": 20,
-              "end": 104
-            }
-          },
-          "group": [
-            "typography"
-          ],
-          "access": "public",
-          "file": {
-            "path": "stylesheets\\typography\\_typography-headings.scss",
-            "name": "_typography-headings.scss"
-          },
-          "groupName": {
-            "typography": "Typography"
-          }
-        },
-        {
           "description": "<p>Inverse link for use on a dark background. Apply to an individual link.\nPrefer using <code>.inverse-links</code> on the container instead.</p>\n",
           "commentRange": {
-            "start": 76,
-            "end": 78
+            "start": 78,
+            "end": 80
           },
           "context": {
             "type": "css",
             "name": ".link--inverse",
             "value": "@include link-inverse;",
             "line": {
-              "start": 79,
-              "end": 90
+              "start": 81,
+              "end": 92
             }
           },
           "since": [
@@ -17299,19 +17752,25 @@
         {
           "description": "<p>Inverse links, for use on dark backgrounds e.g dark panels.\nUse this class on a containing element to apply to all links within it.</p>\n",
           "commentRange": {
-            "start": 83,
-            "end": 86
+            "start": 85,
+            "end": 88
           },
           "context": {
             "type": "css",
             "name": ".inverse-links",
             "value": "@include links-inverse;",
             "line": {
-              "start": 87,
-              "end": 90
+              "start": 89,
+              "end": 92
             }
           },
-          "require": [],
+          "require": [
+            {
+              "type": "mixin",
+              "name": "links-inverse",
+              "external": false
+            }
+          ],
           "since": [
             {
               "version": "0.2.9"
@@ -17578,7 +18037,7 @@
           "context": {
             "type": "function",
             "name": "get-scale-integer",
-            "code": "\n  @if map-has-key($named-font-sizes, $scale) {\n    @return map-get($named-font-sizes, $scale);\n  }\n  @elseif is-integer($scale) {\n    @return $scale;\n  }\n\n  @error '`$scale` must either be an integer or exist as a named font size in `$named-font-sizes`';\n",
+            "code": "\n  @if map-has-key($named-font-sizes, $scale) {\n    @return map-get($named-font-sizes, $scale);\n  }\n  @else if is-integer($scale) {\n    @return $scale;\n  }\n\n  @error '`$scale` must either be an integer or exist as a named font size in `$named-font-sizes`';\n",
             "line": {
               "start": 16,
               "end": 25
@@ -17650,10 +18109,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font",
-                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
                 "line": {
                   "start": 96,
-                  "end": 112
+                  "end": 110
                 }
               }
             }
@@ -17864,60 +18323,67 @@
           "description": "<p>A map of named font sizes to their corresponding modular scale factor</p>\n",
           "commentRange": {
             "start": 5,
-            "end": 13
+            "end": 14
           },
           "context": {
             "type": "variable",
             "name": "named-font-sizes",
-            "value": "(\n  h1: 7,\n  h2: 6,\n  h3: 5,\n  h4: 4,\n  h5: 3,\n  h6: 2,\n  lead: 1,\n  p: 0\n)",
+            "value": "(\n  h1: 5,\n  h2: 4,\n  h3: 3,\n  h4: 2,\n  h5: 1,\n  h6: 0,\n  lead: 2,\n  p: 0\n)",
             "scope": "private",
             "line": {
-              "start": 14,
-              "end": 23
+              "start": 15,
+              "end": 24
             }
           },
           "property": [
             {
               "type": "Integer",
               "name": "h1",
-              "default": "6",
-              "description": "<p>Heading 1</p>\n",
-              "resolvedValue": "6"
-            },
-            {
-              "type": "Integer",
-              "name": "h2",
               "default": "5",
-              "description": "<p>Heading 2</p>\n",
+              "description": "<p>Heading 1</p>\n",
               "resolvedValue": "5"
             },
             {
               "type": "Integer",
-              "name": "h3",
+              "name": "h2",
               "default": "4",
-              "description": "<p>Heading 3</p>\n",
+              "description": "<p>Heading 2</p>\n",
               "resolvedValue": "4"
             },
             {
               "type": "Integer",
-              "name": "h4",
+              "name": "h3",
               "default": "3",
-              "description": "<p>Heading 4</p>\n",
+              "description": "<p>Heading 3</p>\n",
               "resolvedValue": "3"
             },
             {
               "type": "Integer",
-              "name": "h5",
+              "name": "h4",
               "default": "2",
-              "description": "<p>Heading 5</p>\n",
+              "description": "<p>Heading 4</p>\n",
               "resolvedValue": "2"
             },
             {
               "type": "Integer",
-              "name": "h6",
+              "name": "h5",
               "default": "1",
-              "description": "<p>Heading 6</p>\n",
+              "description": "<p>Heading 5</p>\n",
               "resolvedValue": "1"
+            },
+            {
+              "type": "Integer",
+              "name": "h6",
+              "default": "0",
+              "description": "<p>Heading 6</p>\n",
+              "resolvedValue": "0"
+            },
+            {
+              "type": "Integer",
+              "name": "lead",
+              "default": "2",
+              "description": "<p>Lead</p>\n",
+              "resolvedValue": "2"
             },
             {
               "type": "Integer",
@@ -17946,7 +18412,7 @@
               "context": {
                 "type": "function",
                 "name": "get-scale-integer",
-                "code": "\n  @if map-has-key($named-font-sizes, $scale) {\n    @return map-get($named-font-sizes, $scale);\n  }\n  @elseif is-integer($scale) {\n    @return $scale;\n  }\n\n  @error '`$scale` must either be an integer or exist as a named font size in `$named-font-sizes`';\n",
+                "code": "\n  @if map-has-key($named-font-sizes, $scale) {\n    @return map-get($named-font-sizes, $scale);\n  }\n  @else if is-integer($scale) {\n    @return $scale;\n  }\n\n  @error '`$scale` must either be an integer or exist as a named font size in `$named-font-sizes`';\n",
                 "line": {
                   "start": 16,
                   "end": 25
@@ -17958,7 +18424,7 @@
               "context": {
                 "type": "function",
                 "name": "get-scale-integer",
-                "code": "\n  @if map-has-key($named-font-sizes, $scale) {\n    @return map-get($named-font-sizes, $scale);\n  }\n  @elseif is-integer($scale) {\n    @return $scale;\n  }\n\n  @error '`$scale` must either be an integer or exist as a named font size in `$named-font-sizes`';\n",
+                "code": "\n  @if map-has-key($named-font-sizes, $scale) {\n    @return map-get($named-font-sizes, $scale);\n  }\n  @else if is-integer($scale) {\n    @return $scale;\n  }\n\n  @error '`$scale` must either be an integer or exist as a named font size in `$named-font-sizes`';\n",
                 "line": {
                   "start": 16,
                   "end": 25
@@ -17970,7 +18436,7 @@
               "context": {
                 "type": "function",
                 "name": "get-scale-integer",
-                "code": "\n  @if map-has-key($named-font-sizes, $scale) {\n    @return map-get($named-font-sizes, $scale);\n  }\n  @elseif is-integer($scale) {\n    @return $scale;\n  }\n\n  @error '`$scale` must either be an integer or exist as a named font size in `$named-font-sizes`';\n",
+                "code": "\n  @if map-has-key($named-font-sizes, $scale) {\n    @return map-get($named-font-sizes, $scale);\n  }\n  @else if is-integer($scale) {\n    @return $scale;\n  }\n\n  @error '`$scale` must either be an integer or exist as a named font size in `$named-font-sizes`';\n",
                 "line": {
                   "start": 16,
                   "end": 25
@@ -17981,22 +18447,22 @@
           "groupName": {
             "typography": "Typography"
           },
-          "resolvedValue": "(\n  h1: 7,\n  h2: 6,\n  h3: 5,\n  h4: 4,\n  h5: 3,\n  h6: 2,\n  lead: 1,\n  p: 0\n)"
+          "resolvedValue": "(\n  h1: 5,\n  h2: 4,\n  h3: 3,\n  h4: 2,\n  h5: 1,\n  h6: 0,\n  lead: 2,\n  p: 0\n)"
         },
         {
           "description": "<p>Numeric font sizes</p>\n",
           "commentRange": {
-            "start": 25,
-            "end": 26
+            "start": 26,
+            "end": 27
           },
           "context": {
             "type": "variable",
             "name": "font-sizes",
-            "value": "(\n  // sass-lint:disable-block space-around-operator\n  -2: (\n    fs: 12,\n    lh: 4 * 4,\n    fw: 400,\n    mb: $spacing-small,\n    mt: $spacing-small\n  ),\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 6,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 8,\n    lh: 4 * 10,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)",
+            "value": "(\n  // sass-lint:disable-block space-around-operator\n  -2: (\n    fs: 12,\n    lh: 18,\n    mb: $spacing-small,\n    mt: $spacing-small\n  ),\n  -1: (\n    fs: 14,\n    lh: 20,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs, h6\n  0: (\n    fs: 16,\n    lh: 24,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h5\n  1: (\n    fs: 18,\n    lh: 24,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead, h4\n  2: (\n    fs: 20,\n    lh: 28,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h3\n  3: (\n    fs: 28,\n    lh: 32,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  4: (\n    fs: 36,\n    lh: 40,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  5: (\n    fs: 44,\n    lh: 56,\n    mb: $spacing-medium,\n    mt: 0\n  ),\n  6: (\n    fs: 52,\n    lh: 60,\n    mb: $spacing-large,\n    mt: 0\n  )\n)",
             "scope": "private",
             "line": {
-              "start": 27,
-              "end": 107
+              "start": 28,
+              "end": 90
             }
           },
           "since": [
@@ -18042,10 +18508,10 @@
               "context": {
                 "type": "mixin",
                 "name": "font",
-                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    font-weight: map-get($font-map, fw) !important;\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    font-weight: map-get($font-map, fw);\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
+                "code": "\n  @include font-size($scale, $important);\n\n  $scale-integer: get-scale-integer($scale);\n  $font-map: map-get($font-sizes, $scale-integer);\n\n  @if $important {\n    // sass-lint:disable no-important\n    margin-bottom: rem(map-get($font-map, mb)) !important;\n    margin-top: rem(map-get($font-map, mt)) !important;\n  } @else {\n    margin-bottom: rem(map-get($font-map, mb));\n    margin-top: rem(map-get($font-map, mt));\n  }\n",
                 "line": {
                   "start": 96,
-                  "end": 112
+                  "end": 110
                 }
               }
             }
@@ -18053,7 +18519,7 @@
           "groupName": {
             "typography": "Typography"
           },
-          "resolvedValue": "(\n  // sass-lint:disable-block space-around-operator\n  -2: (\n    fs: 12,\n    lh: 4 * 4,\n    fw: 400,\n    mb: $spacing-small,\n    mt: $spacing-small\n  ),\n  -1: (\n    fs: 14,\n    lh: 4 * 5,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs\n  0: (\n    fs: 4 * 4,\n    lh: 4 * 6,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead\n  1: (\n    fs: 4 * 5,\n    lh: 4 * 7,\n    fw: 400,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h6\n  2: (\n    fs: 4 * 4,\n    lh: 4 * 5,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h5\n  3: (\n    fs: 4 * 5,\n    lh: 4 * 6,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h4\n  4: (\n    fs: 4 * 6,\n    lh: 4 * 7,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h3\n  5: (\n    fs: 4 * 7,\n    lh: 4 * 8,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  6: (\n    fs: 4 * 8,\n    lh: 4 * 10,\n    fw: 700,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  7: (\n    fs: 4 * 11,\n    lh: 4 * 12,\n    fw: 900,\n    mb: $spacing-medium,\n    mt: 0,\n  )\n)"
+          "resolvedValue": "(\n  // sass-lint:disable-block space-around-operator\n  -2: (\n    fs: 12,\n    lh: 18,\n    mb: $spacing-small,\n    mt: $spacing-small\n  ),\n  -1: (\n    fs: 14,\n    lh: 20,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Paragraphs, h6\n  0: (\n    fs: 16,\n    lh: 24,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h5\n  1: (\n    fs: 18,\n    lh: 24,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // Lead, h4\n  2: (\n    fs: 20,\n    lh: 28,\n    mb: $spacing-medium,\n    mt: $spacing-medium\n  ),\n  // h3\n  3: (\n    fs: 28,\n    lh: 32,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h2\n  4: (\n    fs: 36,\n    lh: 40,\n    mb: $spacing-medium,\n    mt: $spacing-large\n  ),\n  // h1\n  5: (\n    fs: 44,\n    lh: 56,\n    mb: $spacing-medium,\n    mt: 0\n  ),\n  6: (\n    fs: 52,\n    lh: 60,\n    mb: $spacing-large,\n    mt: 0\n  )\n)"
         }
       ]
     },
@@ -19141,6 +19607,54 @@
             "undefined": "Ungrouped"
           },
           "resolvedValue": "true"
+        },
+        {
+          "description": "<p>The maximum width of the default container, in pixels</p>\n",
+          "commentRange": {
+            "start": 107,
+            "end": 108
+          },
+          "context": {
+            "type": "variable",
+            "name": "nice-container-max-width",
+            "value": "1170",
+            "scope": "private",
+            "line": {
+              "start": 109,
+              "end": 109
+            }
+          },
+          "since": [
+            {
+              "version": "0.5.2"
+            }
+          ],
+          "access": "public",
+          "group": [
+            "undefined"
+          ],
+          "file": {
+            "path": "stylesheets\\settings\\_settings-variables.scss",
+            "name": "_settings-variables.scss"
+          },
+          "usedBy": [
+            {
+              "description": "<p>Container placeholder.</p>\n",
+              "context": {
+                "type": "placeholder",
+                "name": "container",
+                "code": "\n  margin: auto;\n  max-width: rem($nice-container-max-width);\n  width: 96%;\n  width: calc(100% - #{rem($spacing-large)});\n",
+                "line": {
+                  "start": 7,
+                  "end": 12
+                }
+              }
+            }
+          ],
+          "groupName": {
+            "undefined": "Ungrouped"
+          },
+          "resolvedValue": "1170"
         }
       ],
       "function": [

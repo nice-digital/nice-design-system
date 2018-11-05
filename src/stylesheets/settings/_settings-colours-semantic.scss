@@ -13,13 +13,19 @@ $colour-true-white: #fff;
 
 // GLOBAL
 
-/// Page background colour
+/// Page background colour. It's off-white in an attempt to make
+/// text easier to read for those with 'visual stress', 50% of
+/// which happen to be dyslexic (British Dyslexia association), by
+/// reducing contrast. See https://ux.stackexchange.com/a/73918/92081
+/// for a more detailed explanation.
 /// @since 0.2.0
-$colour-body: #fafafa;
+$colour-body: #f4f4f4;
 
-/// Standard, primary body text colour
+/// Standard, primary body text colour. Off-black, to slightly reduce
+/// contrast in an attempt to make text easier to read for those with
+/// 'visual stress', see also $colour-body.
 /// @since 0.2.0
-$colour-text: $colour-nice-rich-black;
+$colour-text: $colour-nice-black;
 
 /// Subtle text colour
 /// @since 0.2.0
@@ -161,6 +167,10 @@ $colour-border: $colour-nice-grey-1;
 /// @since 0.2.0
 $colour-panel-default: $colour-nice-grey-3;
 
+// Default (light) panel border
+/// @since 0.5.2
+$colour-panel-default-border: $colour-nice-grey-2;
+
 // Inverse (dark) panels background
 /// @since 0.2.0
 $colour-panel-inverse: $colour-nice-dark-grey;
@@ -238,3 +248,14 @@ $colour-guidance-updated: $colour-nice-blue-3;
 /// In consultation guidance colour
 /// @since 0.3.0
 $colour-guidance-consultation: #557021;
+
+
+// HERO
+
+/// Background colour for the hero component
+/// @since 0.5.2
+$colour-hero-background: $colour-nice-teal-2;
+
+/// Colour for the border in the hero component
+/// @since 0.5.2
+$colour-hero-border: $colour-nice-teal-3;

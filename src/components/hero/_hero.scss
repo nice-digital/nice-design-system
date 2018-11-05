@@ -6,29 +6,25 @@
 /// @since 0.2.0
 .hero {
   @include links-inverse;
-  background: $colour-nice-teal-2;
+  background: $colour-hero-background;
   color: $colour-text-inverse;
-  margin: em(0 0 $spacing-large);
+  margin: rem(0 0 $spacing-medium);
   overflow: hidden;
-  padding: em(0 0 $spacing-large);
+  //padding: rem(0 0 $spacing-large);
 
   &__container {
     @extend %container;
   }
 
   &__body {
-    @include grid($loose: true);
+    @include clearfix;
     margin-top: rem($spacing-large);
+    padding: rem(0 0 $spacing-large);
   }
 
-  // The main container for the copy
+  // Container for title, lead and actions
   &__copy {
-    @include grid-item(12, $md: 8, $loose: true);
-  }
-
-  // Extra supplementary links etc
-  &__extra {
-    @include grid-item(12, $md: 4, $loose: true);
+    margin-bottom: rem($spacing-large);
   }
 
   &__title {
@@ -37,5 +33,29 @@
 
   &__intro {
     @include lead;
+  }
+
+  // Optional footer
+  &__footer {
+    border-top: rem($spacing-xx-small) solid $colour-hero-border;
+    padding: rem($spacing-medium 0);
+
+    p,
+    ul {
+      margin: 0;
+    }
+  }
+
+  @include mq($from: md) {
+    &__copy {
+      float: left;
+      margin-bottom: 0;
+      width: 55%;
+    }
+
+    &__extra {
+      float: right;
+      width: 35%;
+    }
   }
 }
