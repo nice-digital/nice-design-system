@@ -1,5 +1,5 @@
 /*!
- * NICE Design System 0.5.2-rc.1 | 2018-10-25
+ * NICE Design System 0.5.3 | 2018-11-05
  * © Copyright NICE 2015-2018
  * Licensed under MIT (https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
  */
@@ -4036,8 +4036,8 @@ ol, .list {
   font-family: "NICE Icons";
   font-style: normal;
   font-weight: normal;
-  src: url("/fonts/nice-icons.eot?247059553");
-  src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/nice-icons.woff2?247059553") format("woff2"), url("/fonts/nice-icons.woff?247059553") format("woff"), url("/fonts/nice-icons.ttf?247059553") format("truetype"), url("/fonts/nice-icons.svg?247059553#nice-icons") format("svg"); }
+  src: url("/fonts/nice-icons.eot?696054524");
+  src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/nice-icons.woff2?696054524") format("woff2"), url("/fonts/nice-icons.woff?696054524") format("woff"), url("/fonts/nice-icons.ttf?696054524") format("truetype"), url("/fonts/nice-icons.svg?696054524#nice-icons") format("svg"); }
 
 .icon {
   display: inline-block;
@@ -5299,8 +5299,8 @@ table {
     .tag__remove:hover:after {
       background: rgba(34, 34, 34, 0.1); }
     .tag__remove:after {
-      content: '';
       border-radius: 0.125em;
+      content: '';
       display: block;
       height: 100%;
       left: 0;
