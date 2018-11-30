@@ -1,0 +1,35 @@
+{
+  "name": "@nice-digital/nds-core",
+  "version": "1.0.0",
+  "description": "Core code for the NICE Design System",
+  "author": "Ian Routledge <ian.routledge@nice.org.uk>",
+  "contributors": [
+    "NICE Digital Services (https://www.nice.org.uk/digital)",
+    "Ian Routledge (http://ediblecode.com)"
+  ],
+  "homepage": "https://nhsevidence.github.io/nice-design-system/",
+  "license": "MIT",
+  "main": "lib/nds-core.js",
+  "directories": {
+    "lib": "lib",
+    "es": "es",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib",
+    "es"
+  ],
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhsevidence/nice-design-system.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/nhsevidence/nice-design-system/issues"
+  }
+}

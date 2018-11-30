@@ -8,9 +8,9 @@
     "//": "Banner is used for prepending to compiled JS and CSS",
     "banner": "NICE Design System ${ version } | ${ date }\n© Copyright NICE 2015-${ year }\nLicensed under MIT (https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)"
   },
-  "author": "NICE Digital Services (https://github.com/nhsevidence/nice-design-system/graphs/contributors)",
+  "author": "Ian Routledge <ian.routledge@nice.org.uk>",
   "contributors": [
-    "NICE Digital Services (https://www.nice.org.uk/)",
+    "NICE Digital Services (https://www.nice.org.uk/digital)",
     "Ian Routledge (http://ediblecode.com)"
   ],
   "license": "MIT",
