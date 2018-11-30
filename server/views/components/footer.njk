@@ -1,9 +1,0 @@
-{% extends "layouts/_layout.njk" %}
-{% set title = "Footer" %}
-{% from "footer/footer.njk" import footer %}
-
-{% block body %}
-
-	{{ footer({ year: moment().year() }) }}
-
-{% endblock %}
