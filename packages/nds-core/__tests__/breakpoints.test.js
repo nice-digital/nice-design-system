@@ -1,7 +1,7 @@
 /* eslint-env node, mocha, jquery */
 /* global sinon */
 
-import breakpoints, { matchesFrom } from "../../src/javascripts/breakpoints";
+import breakpoints, { matchesFrom } from "../src/breakpoints";
 
 describe("breakpoints", function() {
 
