@@ -2,27 +2,8 @@
   "name": "nice-design-system",
   "private": true,
   "version": "0.0.1",
-  "description": "Your source for creating beautiful, consistent experiences across NICE",
-  "keywords": [
-    "css",
-    "sass",
-    "mobile-first",
-    "responsive",
-    "front-end",
-    "framework",
-    "web",
-    "nice",
-    "nhs"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nhsevidence/nice-design-system.git"
-  },
-  "main": "src/javascripts/index.js",
-  "browser": "src/javascripts",
-  "scripts": {
-
-  },
+  "description": "Monorepo for the NICE Design System",
+  "scripts": {},
   "config": {
     "//": "Banner is used for prepending to compiled JS and CSS",
     "banner": "NICE Design System ${ version } | ${ date }\n© Copyright NICE 2015-${ year }\nLicensed under MIT (https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)"
@@ -34,7 +15,8 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@nice-digital/eslint-config": "^1.0.1"
+    "@nice-digital/eslint-config": "^1.0.1",
+    "lerna": "^3.5.1"
   },
   "dependencies": {
     "@nice-digital/icons": "^1.5.0"
