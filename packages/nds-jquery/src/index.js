@@ -1,11 +1,11 @@
 import pluginAutoLoader from "./plugin-autoloader";
-import Tabs from "./../components/tabs/tabs.js";
-import InPageNav from "./../components/in-page-nav/in-page-nav.js";
+import Tabs from "./tabs.js";
+import InPageNav from "./in-page-nav.js";
 import Tracker from "./tracker";
 import pluginizr from "./pluginizr";
 import eventr from "./eventr";
-import breakpoints from "./breakpoints";
-import utils from "./utils";
+import breakpoints from "../../nds-core/src/breakpoints";
+import utils from "../../nds-core/src/utils";
 
 let nice = {
 	init: (el: $) => {

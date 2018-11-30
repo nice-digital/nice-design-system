@@ -1,7 +1,7 @@
 /* eslint-env node, mocha, jquery */
 /* global sinon */
 
-import Tracker, { trackingLibrary, sendEvent, sendDataLayerEvent } from "../../src/javascripts/tracker";
+import Tracker, { trackingLibrary, sendEvent, sendDataLayerEvent } from "../src/tracker";
 
 describe("Tracker", function() {
 

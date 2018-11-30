@@ -1,6 +1,6 @@
 /* eslint-env node, mocha, jquery */
 
-import { slugify, nextUniqueId, camelCase } from "../../src/javascripts/utils";
+import { slugify, nextUniqueId, camelCase } from "../src/utils";
 
 describe("Utils", function() {
 

@@ -3,8 +3,8 @@
  * @module In page navigation
  */
 
-import pluginizr from "../../javascripts/pluginizr";
-import utils from "../../javascripts/utils";
+import pluginizr from "./pluginizr";
+import utils from "../../nds-core/src/utils";
 
 import template from "./in-page-nav.template.njk";
 

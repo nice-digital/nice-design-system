@@ -6,8 +6,8 @@
  */
 
 import keycode from "keycode";
-import pluginizr from "../../javascripts/pluginizr";
-import eventr from "../../javascripts/eventr";
+import pluginizr from "./pluginizr";
+import eventr from "./eventr";
 
 const Defaults = {
 	tabClass: "tabs__tab",

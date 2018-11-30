@@ -1,7 +1,7 @@
 /* eslint-env node, mocha, jquery */
 /* global sinon, should */
 
-import eventr, { delegate, undelegate } from "../../src/javascripts/eventr";
+import eventr, { delegate, undelegate } from "../src/eventr";
 
 describe("Delegate events", function() {
 
