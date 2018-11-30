@@ -1,0 +1,12 @@
+{
+    "files.exclude": {
+        "packages/*/es": true,
+        "packages/*/lib": true,
+        "packages/*/dist": true,
+        ".cache": true,
+        ".nyc_output": true,
+        "coverage": true,
+        "dist": true,
+        "temp": true
+    }
+}
