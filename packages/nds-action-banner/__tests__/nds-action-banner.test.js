@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-const ndsActionBanner = require('..');
+const ndsActionBanner = require("..");
 
-describe('@nice-digital/nds-action-banner', () => {
-    it('needs tests');
+describe("@nice-digital/nds-action-banner", () => {
+	it("needs tests");
 });
