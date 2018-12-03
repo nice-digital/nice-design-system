@@ -3,7 +3,10 @@
   "private": true,
   "version": "0.0.1",
   "description": "Monorepo for the NICE Design System",
-  "scripts": {},
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
   "config": {
     "//": "Banner is used for prepending to compiled JS and CSS",
     "banner": "NICE Design System ${ version } | ${ date }\n© Copyright NICE 2015-${ year }\nLicensed under MIT (https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)"
@@ -20,8 +23,15 @@
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@nice-digital/eslint-config": "^1.0.1",
+    "@storybook/addon-actions": "^4.0.11",
+    "@storybook/addon-knobs": "^4.0.11",
+    "@storybook/addon-links": "^4.0.11",
+    "@storybook/addon-viewport": "^4.0.11",
+    "@storybook/addons": "^4.0.11",
+    "@storybook/react": "^4.0.11",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.4",
     "cross-env": "^5.2.0",
     "eslint": "^5.9.0",
     "eslint-plugin-flowtype": "^3.2.0",
@@ -35,6 +45,8 @@
     "rimraf": "^2.6.2"
   },
   "dependencies": {
-    "@nice-digital/icons": "^1.5.0"
+    "@nice-digital/icons": "^1.5.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
   }
 }
