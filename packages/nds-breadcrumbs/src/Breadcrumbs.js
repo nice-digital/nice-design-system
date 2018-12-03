@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from "react";
+import "../scss/breadcrumbs.scss";
 
 type BreadcrumbsProps = {
 	title: string

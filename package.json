@@ -33,6 +33,7 @@
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
     "cross-env": "^5.2.0",
+    "css-loader": "^1.0.1",
     "eslint": "^5.9.0",
     "eslint-plugin-flowtype": "^3.2.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
@@ -42,7 +43,9 @@
     "jest": "^23.6.0",
     "lerna": "^3.5.1",
     "node-sass": "^4.10.0",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1"
   },
   "dependencies": {
     "@nice-digital/icons": "^1.5.0",

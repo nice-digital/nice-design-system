@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from "react";
+import "../scss/action-banner.scss";
 
 type ActionBannerProps = {
 	title: string

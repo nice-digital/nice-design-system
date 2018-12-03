@@ -32,6 +32,7 @@
     "url": "https://github.com/nhsevidence/nice-design-system/issues"
   },
   "dependencies": {
-    "@babel/cli": "^7.1.5"
+    "@babel/cli": "^7.1.5",
+    "@nice-digital/nds-core": "^1.0.0"
   }
 }
