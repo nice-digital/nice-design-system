@@ -9,7 +9,7 @@ type CardProps = {
 export default class Card extends Component<CardProps> {
 	render() {
 		return <div className="card">
-
+			card
 		</div>;
 	}
 }

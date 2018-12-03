@@ -9,7 +9,7 @@ type ButtonProps = {
 export default class Button extends Component<ButtonProps> {
 	render() {
 		return <button className="btn">
-
+			button
 		</button>;
 	}
 }

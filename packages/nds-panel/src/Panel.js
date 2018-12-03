@@ -8,7 +8,7 @@ type PanelProps = {
 export default class Panel extends Component<PanelProps> {
 	render() {
 		return <div className="panel">
-
+			panel
 		</div>;
 	}
 }

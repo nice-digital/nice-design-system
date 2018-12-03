@@ -8,7 +8,7 @@ type BreadcrumbsProps = {
 export default class Breadcrumbs extends Component<BreadcrumbsProps> {
 	render() {
 		return <div className="breadcrumbs">
-
+			breadcrumbs
 		</div>;
 	}
 }

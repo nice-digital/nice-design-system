@@ -7,8 +7,8 @@ type HeroProps = {
 
 export default class Hero extends Component<HeroProps> {
 	render() {
-		return <button className="hero">
-
-		</button>;
+		return <div className="hero">
+			hero
+		</div>;
 	}
 }
