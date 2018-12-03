@@ -8,7 +8,7 @@ type TagProps = {
 export default class Tag extends Component<TagProps> {
 	render() {
 		return <div className="tag">
-
+			tag
 		</div>;
 	}
 }
