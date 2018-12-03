@@ -1,0 +1,32 @@
+{
+  "name": "@nice-digital/nds-filters",
+  "version": "1.0.0",
+  "description": "Filter components for the NICE Design System",
+  "author": "Ian Routledge <ian.routledge@nice.org.uk>",
+  "homepage": "https://nhsevidence.github.io/nice-design-system/",
+  "license": "MIT",
+  "main": "lib/Filters.js",
+  "module": "es/Filters.js",
+  "style": "scss/filters.scss",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib",
+    "es"
+  ],
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhsevidence/nice-design-system.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/nhsevidence/nice-design-system/issues"
+  }
+}
