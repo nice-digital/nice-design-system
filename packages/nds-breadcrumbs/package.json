@@ -31,5 +31,8 @@
   },
   "bugs": {
     "url": "https://github.com/nhsevidence/nice-design-system/issues"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.1.5"
   }
 }
