@@ -79,9 +79,7 @@ $_sides: (
 @mixin _side($prop-abbrev, $prop-name, $breakpoint, $size, $length) {
 
   @each $side-key, $side-name in $_sides {
-
     .#{$prop-abbrev}#{$side-key}--#{$size}#{$breakpoint} {
-
       @if is-list($side-name) {
         @each $s in $side-name {
           @include _prop($prop-name, $length, $s);
@@ -89,7 +87,6 @@ $_sides: (
       } @else {
         @include _prop($prop-name, $length, $side-name);
       }
-
     }
   }
 }

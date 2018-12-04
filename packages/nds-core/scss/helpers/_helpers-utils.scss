@@ -23,6 +23,7 @@
   $divisor: strip-unit($base) * $multiplier;
 
   $em-vals: ();
+
   @each $val in $pixels {
     $val-in-ems: (strip-unit($val) / $divisor) * 1em;
     $em-vals: append($em-vals, $val-in-ems);
@@ -36,7 +37,6 @@
     @return $em-vals;
   }
 }
-
 
 /// Convert pixel-values to rem-values.
 /// @param {Number} $pixels - The px-value you wish to convert to rems. No px unit necessary (e.g. 20 is fine, so is 20px). Passing a list will result in a list of rem values (see examples).

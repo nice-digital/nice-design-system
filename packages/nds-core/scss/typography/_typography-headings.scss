@@ -62,15 +62,24 @@
   max-width: 66ch;
 }
 
-h1,
-.h1 {
-  @include h1;
+h6,
+.h6 {
+  @include h6;
+}
 
-  // sass-lint:disable no-combinators
-  + h2,
-  + .h2 {
-    margin-top: 0;
-  }
+h5,
+.h5 {
+  @include h5;
+}
+
+h4,
+.h4 {
+  @include h4;
+}
+
+h3,
+.h3 {
+  @include h3;
 }
 
 h2,
@@ -84,22 +93,13 @@ h2,
   }
 }
 
-h3,
-.h3 {
-  @include h3;
-}
+h1,
+.h1 {
+  @include h1;
 
-h4,
-.h4 {
-  @include h4;
-}
-
-h5,
-.h5 {
-  @include h5;
-}
-
-h6,
-.h6 {
-  @include h6;
+  // sass-lint:disable no-combinators
+  + h2,
+  + .h2 {
+    margin-top: 0;
+  }
 }

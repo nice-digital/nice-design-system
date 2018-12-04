@@ -130,10 +130,6 @@ $nice-tag-border-radius: em($spacing-xx-small);
       color: $colour-text;
     }
 
-    &:hover:after {
-      background: rgba($colour-nice-black, .1);
-    }
-
     &:after {
       border-radius: $nice-tag-border-radius;
       content: '';
@@ -143,6 +139,10 @@ $nice-tag-border-radius: em($spacing-xx-small);
       position: absolute;
       top: 0;
       width: 100%;
+    }
+
+    &:hover:after {
+      background: rgba($colour-nice-black, .1);
     }
   }
 }

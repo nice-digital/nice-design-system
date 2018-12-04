@@ -1,0 +1,27 @@
+{
+  "extends": "stylelint-config-standard",
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "rules": {
+		"at-rule-no-unknown": null,
+    "block-closing-brace-newline-after": [
+      "always", {
+        "ignoreAtRules": [ "if", "else" ]
+      }
+    ],
+    "scss/at-rule-no-unknown": true,
+		"selector-pseudo-element-colon-notation": "single",
+		"number-leading-zero": "never",
+		"declaration-empty-line-before": "never",
+		"at-rule-empty-line-before": null,
+    "scss/at-else-closing-brace-newline-after": "always-last-in-chain",
+    "scss/at-else-closing-brace-space-after": "always-intermediate",
+    "scss/at-else-empty-line-before": "never",
+    "scss/at-if-closing-brace-newline-after": "always-last-in-chain",
+    "scss/at-if-closing-brace-space-after": "always-intermediate"
+  },
+  "ignoreFiles": [
+	  "**/vendor/**/*.scss"
+  ]
+}

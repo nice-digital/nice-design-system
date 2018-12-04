@@ -67,7 +67,7 @@ $nice-glyphs: (
   .glyph {
     @each $key, $value in $nice-glyphs {
       &--#{$key} {
-        &::before {
+        &:before {
           content: unquote('\'\\#{$value}\'');
         }
       }

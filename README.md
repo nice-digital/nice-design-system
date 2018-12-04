@@ -232,3 +232,4 @@ OR you can use a copy command (with Grunt or similar) to copy the compiled asset
 - sass-lint -> style lint
 - dist folder
 - jquery versions
+- removed border-box mixin - assume we're using autoprefixer

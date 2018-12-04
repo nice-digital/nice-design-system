@@ -38,7 +38,6 @@
   width: auto;
 }
 
-
 //## Generic hide/show
 
 /// Display none.
@@ -74,7 +73,6 @@
 .invisible {
   visibility: hidden !important;
 }
-
 
 //## Orientation
 
@@ -113,6 +111,7 @@
 //  - .show-from-*
 
 $hide-selectors: ();
+
 @each $brkpnt-key, $brkpnt-value in $mq-breakpoints {
   // Show from
   $hide-selectors: append($hide-selectors, '.show-#{ $brkpnt-key }', comma);
@@ -144,13 +143,11 @@ $hide-selectors: ();
   }
 }
 
-
 //## Accessibility
 .show-focus,
 .visually-hidden {
   @include invisible;
 }
-
 
 //## Focus
 .show-focus {

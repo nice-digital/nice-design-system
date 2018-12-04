@@ -16,14 +16,12 @@
 @function get-scale-integer($scale) {
   @if map-has-key($named-font-sizes, $scale) {
     @return map-get($named-font-sizes, $scale);
-  }
-  @else if is-integer($scale) {
+  } @else if is-integer($scale) {
     @return $scale;
   }
 
   @error '`$scale` must either be an integer or exist as a named font size in `$named-font-sizes`';
 }
-
 
 /// Gets a numeric font size (in px) from a given scale multiplier.
 /// Usually not used directly - the font-size or font mixin is usually used instead.

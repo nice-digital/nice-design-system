@@ -10,9 +10,7 @@
  */
 
 @import 'grid-helpers',
-'grid-human';
-
-
+  'grid-human';
 
 @mixin generate-grid-classes($breakpoint: null) {
   $prefix: if($breakpoint, $breakpoint + ':', '');

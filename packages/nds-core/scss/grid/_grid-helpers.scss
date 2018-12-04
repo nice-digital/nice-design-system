@@ -133,7 +133,6 @@
         $cols: map-get($bp, cols);
         $push: map-get($bp, push);
         $pull: map-get($bp, pull);
-
         width: percentage($cols / 12);
         @if $push {
           left: percentage($push / 12);
@@ -141,7 +140,6 @@
         @if $pull {
           right: percentage($pull / 12);
         }
-
       } @else {
         @error '$bp must be an integer or a map';
       }
@@ -177,19 +175,19 @@
 ///   }
 /// @since 0.1.0
 @mixin grid-item($columns: 12,
-  $push: false,
-  $pull: false,
-  $gutterless: false,
-  $compact: false,
-  $loose: false,
-  $middle: false,
-  $bottom: false,
-  $debug: false,
-  $xs: false,
-  $sm: false,
-  $md: false,
-  $lg: false,
-  $xl: false) {
+$push: false,
+$pull: false,
+$gutterless: false,
+$compact: false,
+$loose: false,
+$middle: false,
+$bottom: false,
+$debug: false,
+$xs: false,
+$sm: false,
+$md: false,
+$lg: false,
+$xl: false) {
   @include border-box;
   direction: ltr;
   display: inline-block;
