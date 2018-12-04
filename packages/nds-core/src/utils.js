@@ -1,7 +1,20 @@
+// @flow
+
 /**
  * @module Utils
  * Utility functions
  */
+
+/**
+ * Trims whitespace characters from the start and end of a string.
+ * This utility method exists because String.prototype.trim is
+ * not supported in IE8.
+ *
+ * @param {string} str The string to trim
+ */
+export const trim = function (str: string) {
+	return str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, "");
+};
 
 /**
  * Throttle events
@@ -80,7 +93,7 @@ export const debounce = function(func: () => mixed, execAsap: boolean = false, t
  *          slugify("A (string) to transform & slugify!");
  */
 export const slugify = (str: string): string => {
-	return $.trim(str).toLowerCase()
+	return trim(str).toLowerCase()
 		.replace(/\s+/g, "-")			// Replace spaces with -
 		.replace(/&/g, "-and-")			// Replace & with 'and'
 		.replace(/[^\w-]+/g, "")		// Remove all non-word chars
@@ -114,11 +127,14 @@ export const nextUniqueId = function (i) {
 }(0);
 
 /**
- * CamelCases a dash seperated string
- * @param {string} str
+ * CamelCases a  string
+ * @param {string} str The string to camel case
  */
 export const camelCase = function(str: string): string {
-	return $.camelCase(str);
+	// See https://stackoverflow.com/a/2970667/486434
+	return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(letter, index) {
+		return index == 0 ? letter.toLowerCase() : letter.toUpperCase();
+	}).replace(/\s+/g, "");
 };
 
 export default {

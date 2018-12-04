@@ -5,7 +5,19 @@
   "description": "Monorepo for the NICE Design System",
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "// TESTS": "",
+    "test": "cross-env CI=true npm run test:unit && npm run lint && npm run flow",
+    "lint": "eslint ./packages/*/src/**/*.js",
+    "lint:fix": "eslint --fix ./packages/*/src/**/*.js",
+    "flow": "flow",
+    "// TRANSIPLE ES6": "",
+    "prebuild:lib": "lerna exec rimraf lib",
+    "build:lib": "lerna exec --scope=@nice-digital/nds-* --parallel -- babel src -d lib --source-maps --root-mode upward",
+    "build:lib:watch": "npm run build:lib -- -w",
+    "prebuild:es": "lerna exec rimraf es",
+    "build:es": "cross-env NODE_ENV=es lerna exec --scope=@nice-digital/nds-* --parallel -- babel src -d es --source-maps --root-mode upward",
+    "build:es:watch": "npm run build:es -- -w"
   },
   "config": {
     "//": "Banner is used for prepending to compiled JS and CSS",

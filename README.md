@@ -12,24 +12,26 @@
 <details>
 <summary><strong>Table of contents</strong></summary>
 
-- [What is it?](#what-is-it)
-- [Browser support](#browser-support)
-- [Project structure](#project-structure)
-- [Development](#development)
-	- [Getting started](#getting-started)
-		- [npm](#npm)
-		- [Grunt](#grunt)
-	- [JavaScript](#javascript)
-	- [SASS](#sass)
-	- [Icons](#icons)
-- [Test](#tests)
-- [Installation](#installation)
-	- [CDN](#nice-cdn)
-	- [Install with yarn](#install-with-yarn)
-	- [Usage](#usage)
-		- [From source](#from-source)
-		- [CDN](#cdn)
-		- [Precompiled](#precompiled)
+- [:art: NICE Design System](#art-nice-design-system)
+	- [What is it?](#what-is-it)
+	- [Browser support](#browser-support)
+	- [Accessibility](#accessibility)
+	- [Project structure](#project-structure)
+	- [Development](#development)
+		- [Getting started](#getting-started)
+			- [npm](#npm)
+			- [Grunt](#grunt)
+		- [JavaScript](#javascript)
+		- [SASS](#sass)
+		- [Icons](#icons)
+	- [Tests](#tests)
+	- [Installation](#installation)
+		- [Install with yarn](#install-with-yarn)
+		- [Usage](#usage)
+			- [From source](#from-source)
+			- [CDN](#cdn)
+			- [Precompiled](#precompiled)
+	- [Upgrading to 1.x from 0.x](#upgrading-to-1x-from-0x)
 </details>
 
 ## What is it?
@@ -222,3 +224,11 @@ and then reference it from your HTML as:
 ```
 
 OR you can use a copy command (with Grunt or similar) to copy the compiled assets out of the *node_modules* folder to somewhere where you can serve them.
+
+
+## Upgrading to 1.x from 0.x
+
+- SASS paths (~ with absolute paths)
+- sass-lint -> style lint
+- dist folder
+- jquery versions
