@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from "react";
+import * as React from "react";
 import { slugify } from "@nice-digital/nds-core/es/utils";
 import Tab from "./Tab";
 import "./../scss/tabs.scss";
@@ -25,7 +25,8 @@ export type TabsProps = {
 
 export type TabsState = {
 	index: number,
-	canUseDOM: boolean
+	canUseDOM: boolean,
+	focusActiveTabButton: boolean
 };
 
 /**
@@ -34,7 +35,7 @@ export type TabsState = {
  * @class Tabs
  * @extends {Component<TabsProps, TabsState>}
  */
-class Tabs extends Component<TabsProps, TabsState> {
+class Tabs extends React.Component<TabsProps, TabsState> {
 
 	constructor(props: TabsProps) {
 		super(props);
@@ -56,13 +57,14 @@ class Tabs extends Component<TabsProps, TabsState> {
 		};
 
 		this.handleTabButtonClick = this.handleTabButtonClick.bind(this);
-		this.handleTabKey = this.handleTabButtonKey.bind(this);
+		this.handleTabButtonKey = this.handleTabButtonKey.bind(this);
 	}
 
 	componentDidMount() {
 		this.setState({ canUseDOM: true });
 	}
 
+	/*::  handleTabButtonClick: void => void */
 	handleTabButtonClick(index: number) {
 		this.setState({
 			index: index,
@@ -70,7 +72,8 @@ class Tabs extends Component<TabsProps, TabsState> {
 		});
 	}
 
-	handleTabButtonKey(e, i: number) {
+	/*::  handleTabButtonKey: void => void */
+	handleTabButtonKey(e: KeyboardEvent, i: number) {
 		let newIndex = i;
 
 		switch(e.which) {
@@ -102,7 +105,7 @@ class Tabs extends Component<TabsProps, TabsState> {
 		});
 	}
 
-	getTabChildElements() {
+	getTabChildElements(): React.Element<typeof Tab>[] {
 		return React.Children.toArray(this.props.children)
 			.filter(c => c.type == Tab);
 	}
@@ -110,10 +113,12 @@ class Tabs extends Component<TabsProps, TabsState> {
 	render() {
 		const tabs = this.getTabChildElements();
 
+		console.log(tabs);
+
 		const getTabSlug = (title, id: ?string = null) => id || slugify(title);
 
 		return (
-			<div className={`tabs ${ this.state.canUseDOM ? "js" : null }`}>
+			<div className={`tabs${ this.state.canUseDOM ? " js" : "" }`}>
 				<ul className="tabs__list" role="tablist">
 					{
 						tabs.map((tab, i) => {

@@ -110,29 +110,32 @@
       background: $colour-panel-default;
       border: 1px solid $colour-border;
       clear: both;
-      padding: em($spacing-medium);
+      padding: rem($spacing-medium);
     }
   }
 
   // An individual tab content pane
   &__pane {
+    background: $colour-panel-default;
     margin-bottom: em($spacing-medium);
+    padding: rem($spacing-medium);
 
     // Assume tabs will stack if no JS is available
     .js & {
-      display: none;
       margin-bottom: 0;
+      padding: 0;
 
-      &--active {
-        display: block;
+      &[aria-hidden='true'] {
+        display: none;
       }
     }
 
-    :first-child {
+    // sass-lint:disable-block no-combinators
+    > :first-child {
       margin-top: 0;
     }
 
-    :last-child {
+    > :last-child {
       margin-bottom: 0;
     }
   }

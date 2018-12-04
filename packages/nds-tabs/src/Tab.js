@@ -1,12 +1,13 @@
 // @flow
-import React, { Component } from "react";
+import * as React from "react";
 
 type TabProps = {
 	id: ?string,
-	title: string
+	title: string,
+	children?: React.Node
 };
 
-export default class Tab extends Component<TabProps> {
+export default class Tab extends React.Component<TabProps> {
 	render() {
 		return null;
 	}

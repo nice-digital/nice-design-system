@@ -25,7 +25,7 @@ export const trim = function (str: string) {
  * @param      {Object}  scope   The context of the throttled function
  * @return     {Function}  { The throttled function }
  */
-export const throttle = function(fn: () => mixed, threshhold: number = 100, scope = null) {
+export const throttle = function(fn: () => mixed, threshhold: number = 100, scope: any = null) {
 	let last,
 		deferTimer;
 
@@ -58,7 +58,7 @@ export const throttle = function(fn: () => mixed, threshhold: number = 100, scop
  * @param      {Object}  scope  The context for the debounced function
  * @return     {Function}  { The debounced function }
  */
-export const debounce = function(func: () => mixed, execAsap: boolean = false, threshold: number = 100, scope = null) {
+export const debounce = function(func: () => mixed, execAsap: boolean = false, threshold: number = 100, scope: any = null) {
 	let timeout;
 
 	return function debounced() {
@@ -121,7 +121,7 @@ export const slugify = (str: string): string => {
  *          utils.nextUniqueId("prefix");
  */
 export const nextUniqueId = function (i) {
-	return function (prefix = "uid") {
+	return function (prefix: string = "uid") {
 		return `${ prefix }-${ ++i }`;
 	};
 }(0);

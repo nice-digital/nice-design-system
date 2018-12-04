@@ -1,12 +1,12 @@
 // @flow
-import React, { Component } from "react";
+import * as React from "react";
 import "../scss/action-banner.scss";
 
 type ActionBannerProps = {
 	title: string,
 	modifier: "subtle",
-	children: *,
-	cta: Element,
+	children: React.Node,
+	cta: React.Node,
 	closeable: boolean
 };
 

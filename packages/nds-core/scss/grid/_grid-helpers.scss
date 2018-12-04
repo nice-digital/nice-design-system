@@ -188,7 +188,7 @@ $sm: false,
 $md: false,
 $lg: false,
 $xl: false) {
-  @include border-box;
+  box-sizing: border-box;
   direction: ltr;
   display: inline-block;
   letter-spacing: normal;

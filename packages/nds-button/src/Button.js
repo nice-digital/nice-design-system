@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import * as React from "react";
 import "../scss/button.scss";
 
 type ButtonType = "anchor" | "button" | "submit" | "reset";
@@ -8,7 +8,8 @@ type ButtonPropsType = {
 	text: ?string,
 	href: ?string,
 	modifier: string,
-	type: ButtonType
+	type: ButtonType,
+	children: React.Node
 };
 
 const Button = (props: ButtonPropsType ) => {
