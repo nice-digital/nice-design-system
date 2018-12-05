@@ -26,7 +26,7 @@ module.exports = function (api) {
 		["@babel/transform-runtime", { useESModules: useESModules }]
 	];
 
-	const ignore = [".test.js", "/__tests__/", ".stories.js"];
+	const ignore = ["**/*.test.js", "__tests__", "**/*.stories.js"];
 
 	const env = {
 		test: {
