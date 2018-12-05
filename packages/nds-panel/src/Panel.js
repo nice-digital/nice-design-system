@@ -1,14 +1,15 @@
 // @flow
 import React, { Component } from "react";
+import "./../scss/panel.scss";
 
 type PanelProps = {
-	title: string
+	children: React.Node
 };
 
 export default class Panel extends Component<PanelProps> {
 	render() {
 		return <div className="panel">
-			panel
+			{this.props.children}
 		</div>;
 	}
 }
