@@ -1,0 +1,9 @@
+@import '../scss/core.scss';
+
+.grid-example-item {
+  background: $colour-nice-grey-3;
+  border: .25em solid $colour-nice-grey-1;
+  margin-bottom: .5em;
+  padding: .5em;
+  text-align: center;
+}
