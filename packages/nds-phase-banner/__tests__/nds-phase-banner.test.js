@@ -1,7 +1,9 @@
-'use strict';
+"use strict";
 
-const ndsPhaseBanner = require('..');
+import PhaseBanner from "../src/PhaseBanner";
 
-describe('@nice-digital/nds-phase-banner', () => {
-    it('needs tests');
+describe("@nice-digital/nds-phase-banner", () => {
+	it("Phase banner needs tests", () => {
+		expect(true).toBe(true);
+	});
 });

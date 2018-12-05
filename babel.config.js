@@ -1,9 +1,9 @@
 module.exports = function (api) {
 
-	const env = api.env();
+	const babelEnv = api.env();
 	api.cache.using(() => process.env.NODE_ENV);
 
-	const useESModules = (env === "es");
+	const useESModules = (babelEnv === "es");
 
 	const presets = [
 		[
@@ -16,7 +16,7 @@ module.exports = function (api) {
 		[
 			"@babel/preset-react",
 			{
-				development: env === "development",
+				development: babelEnv === "development",
 			}
 		],
 		"@babel/preset-flow"
@@ -28,9 +28,16 @@ module.exports = function (api) {
 
 	const ignore = [".test.js", "/__tests__/", ".stories.js"];
 
+	const env = {
+		test: {
+			plugins: ["@babel/plugin-transform-modules-commonjs"]
+		}
+	};
+
 	return {
 		presets,
 		plugins,
-		ignore
+		ignore,
+		env
 	};
 };

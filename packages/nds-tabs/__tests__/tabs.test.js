@@ -1,7 +1,9 @@
 "use strict";
 
-const ndsTabs = require("..");
+import Tabs from "../src/Tabs";
 
 describe("@nice-digital/nds-tabs", () => {
-	it("needs tests");
+	it("Tabs needs tests", () => {
+		expect(true).toBe(true);
+	});
 });

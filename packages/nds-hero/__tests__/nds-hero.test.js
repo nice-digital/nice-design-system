@@ -1,7 +1,9 @@
 "use strict";
 
-const ndsHero = require("..");
+import Hero from "../src/Hero";
 
 describe("@nice-digital/nds-hero", () => {
-	it("needs tests");
+	it("Hero needs tests", () => {
+		expect(true).toBe(true);
+	});
 });

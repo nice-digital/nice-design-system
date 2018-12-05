@@ -1,7 +1,9 @@
 "use strict";
 
-const ndsActionBanner = require("..");
+import ActionBanner from "../src/ActionBanner";
 
 describe("@nice-digital/nds-action-banner", () => {
-	it("needs tests");
+	it("Action banner needs tests", () => {
+		expect(true).toBe(true);
+	});
 });

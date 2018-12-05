@@ -1,7 +1,9 @@
 "use strict";
 
-const ndsMaintainRatio = require("..");
+import MaintainRatio from "../src/MaintainRatio";
 
 describe("@nice-digital/nds-maintain-ratio", () => {
-	it("needs tests");
+	it("Maintain ratio needs tests", () => {
+		expect(true).toBe(true);
+	});
 });

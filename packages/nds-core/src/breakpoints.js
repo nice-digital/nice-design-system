@@ -1,3 +1,5 @@
+// @flow
+
 /**
  * @module Breakpoints
  */

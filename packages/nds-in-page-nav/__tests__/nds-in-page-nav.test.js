@@ -1,7 +1,9 @@
 "use strict";
 
-const ndsInPageNav = require("..");
+import InPageNav from "../src/InPageNav";
 
 describe("@nice-digital/nds-in-page-nav", () => {
-	it("needs tests");
+	it("In page nav needs tests", () => {
+		expect(true).toBe(true);
+	});
 });

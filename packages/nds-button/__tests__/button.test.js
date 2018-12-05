@@ -1,7 +1,9 @@
 "use strict";
 
-const ndsButton = require("..");
+import Button from "../src/Button";
 
 describe("@nice-digital/nds-button", () => {
-	it("needs tests");
+	it("Button needs tests", () => {
+		expect(true).toBe(true);
+	});
 });

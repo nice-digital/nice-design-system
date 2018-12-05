@@ -1,7 +1,9 @@
 "use strict";
 
-const ndsBreadcrumbs = require("..");
+import Breadcrumbs from "../src/Breadcrumbs";
 
 describe("@nice-digital/nds-breadcrumbs", () => {
-	it("needs tests");
+	it("Breadcrumbs needs tests", () => {
+		expect(true).toBe(true);
+	});
 });

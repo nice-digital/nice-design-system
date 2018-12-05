@@ -1,7 +1,9 @@
 "use strict";
 
-const ndsCard = require("..");
+import Card from "../src/Card";
 
 describe("@nice-digital/nds-card", () => {
-	it("needs tests");
+	it("Card needs tests", () => {
+		expect(true).toBe(true);
+	});
 });

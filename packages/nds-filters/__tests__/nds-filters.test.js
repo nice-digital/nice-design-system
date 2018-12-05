@@ -1,7 +1,9 @@
 "use strict";
 
-const ndsFilters = require("..");
+import Filters from "../src/Filters";
 
 describe("@nice-digital/nds-filters", () => {
-	it("needs tests");
+	it("Filters needs tests", () => {
+		expect(true).toBe(true);
+	});
 });

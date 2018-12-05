@@ -1,7 +1,9 @@
 "use strict";
 
-const ndsTag = require("..");
+import Tag from "../src/Tag";
 
 describe("@nice-digital/nds-tag", () => {
-	it("needs tests");
+	it("Tag needs tests", () => {
+		expect(true).toBe(true);
+	});
 });

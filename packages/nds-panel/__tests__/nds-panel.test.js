@@ -1,7 +1,9 @@
 "use strict";
 
-const ndsPanel = require("..");
+import Panel from "../src/Panel";
 
 describe("@nice-digital/nds-panel", () => {
-	it("needs tests");
+	it("Panel needs tests", () => {
+		expect(true).toBe(true);
+	});
 });

@@ -1,7 +1,9 @@
 "use strict";
 
-const ndsPageHeader = require("..");
+import PageHeader from "../src/PageHeader";
 
 describe("@nice-digital/nds-page-header", () => {
-	it("needs tests");
+	it("Page header needs tests", () => {
+		expect(true).toBe(true);
+	});
 });
