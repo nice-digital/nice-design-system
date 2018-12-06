@@ -26,10 +26,6 @@ module.exports = function (api) {
 		["@babel/transform-runtime", { useESModules: useESModules }]
 	];
 
-	const ignore = [
-		"**/*.stories.js"
-	];
-
 	const env = {
 		test: {
 			plugins: ["@babel/plugin-transform-modules-commonjs"]
@@ -39,7 +35,6 @@ module.exports = function (api) {
 	return {
 		presets,
 		plugins,
-		ignore,
 		env
 	};
 };
