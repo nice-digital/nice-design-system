@@ -22,7 +22,8 @@
     "build:lib:watch": "npm run build:lib -- -w",
     "prebuild:es": "lerna exec rimraf es",
     "build:es": "cross-env NODE_ENV=es lerna exec --scope=@nice-digital/nds-* --parallel -- babel src -d es --source-maps --root-mode upward",
-    "build:es:watch": "npm run build:es -- -w"
+    "build:es:watch": "npm run build:es -- -w",
+    "build:watch": "concurrently -n build: npm:build:*:watch"
   },
   "config": {
     "//": "Banner is used for prepending to compiled JS and CSS",
@@ -51,6 +52,7 @@
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
+    "concurrently": "^4.1.0",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.1",
     "enzyme": "^3.7.0",
