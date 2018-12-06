@@ -5,12 +5,16 @@ module.exports = {
 	coveragePathIgnorePatterns: [
 		"stories\\.js"
 	],
-	testEnvironment: "node",
+	moduleNameMapper: {
+		"^.+\\.(css|less|scss)$": "identity-obj-proxy"
+	},
+	setupTestFrameworkScriptFile: "<rootDir>/scripts/jest/setup.js",
+	snapshotSerializers: [
+		"enzyme-to-json/serializer"
+	],
+	testEnvironment: "jsdom",
 	testPathIgnorePatterns: [
 		"<rootDir>/(?:.+?)/lib/",
 		"<rootDir>/(?:.+?)/es/"
-	],
-	moduleNameMapper: {
-		"^.+\\.(css|less|scss)$": "identity-obj-proxy"
-	}
+	]
 };

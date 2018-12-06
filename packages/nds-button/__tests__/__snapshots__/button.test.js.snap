@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@nice-digital/nds-button matches snapshot 1`] = `
+<Button
+  type="button"
+>
+  <button
+    className="btn"
+    type="button"
+  >
+    Example
+  </button>
+</Button>
+`;
