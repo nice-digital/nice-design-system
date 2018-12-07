@@ -3,7 +3,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
-import Tabs, { Tab } from "./Tabs";
+import Tabs, { Tab } from "../src/Tabs";
 
 storiesOf("Tabs", module)
 	.add("with some emoji", () => (

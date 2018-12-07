@@ -3,8 +3,8 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { withKnobs } from "@storybook/addon-knobs";
 
-import Card from "./Card";
+import Breadcrumbs from "../src/Breadcrumbs";
 
-storiesOf("Card", module)
+storiesOf("Breadcrumbs", module)
 	.addDecorator(withKnobs)
-	.add("Primary", () => <Card />);
+	.add("Primary", () => <Breadcrumbs />);

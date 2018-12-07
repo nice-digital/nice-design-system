@@ -3,7 +3,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { withKnobs, text, select, boolean } from "@storybook/addon-knobs";
 
-import ActionBanner from "./ActionBanner";
+import ActionBanner from "../src/ActionBanner";
 
 storiesOf("Action banner", module)
 	.addDecorator(withKnobs)
