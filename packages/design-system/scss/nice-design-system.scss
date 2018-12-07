@@ -1,0 +1,19 @@
+@charset 'utf-8';
+
+@import '~@nice-digital/nds-core/scss/core';
+
+// Components
+@import '~@nice-digital/nds-action-banner/scss/action-banner',
+  '~@nice-digital/nds-breadcrumbs/scss/breadcrumbs',
+  '~@nice-digital/nds-button/scss/button',
+  '~@nice-digital/nds-card/scss/card',
+  '~@nice-digital/nds-filters/scss/filters',
+  '~@nice-digital/nds-hero/scss/hero',
+  '~@nice-digital/nds-in-page-nav/scss/in-page-nav',
+  '~@nice-digital/nds-maintain-ratio/scss/maintain-ratio',
+  '~@nice-digital/nds-page-header/scss/page-header',
+  '~@nice-digital/nds-panel/scss/panel',
+  '~@nice-digital/nds-phase-banner/scss/phase-banner',
+  '~@nice-digital/nds-stacked-nav/scss/stacked-nav',
+  '~@nice-digital/nds-tabs/scss/tabs',
+  '~@nice-digital/nds-tag/scss/tag';

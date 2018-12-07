@@ -229,6 +229,7 @@ OR you can use a copy command (with Grunt or similar) to copy the compiled asset
 ## Upgrading to 1.x from 0.x
 
 - SASS paths (~ with absolute paths)
+- scss folder rather than stylesheets
 - sass-lint -> style lint
 - dist folder
 - jquery versions
