@@ -64,7 +64,7 @@ class Tabs extends React.Component<TabsProps, TabsState> {
 		this.setState({ canUseDOM: true });
 	}
 
-	/*::  handleTabButtonClick: void => void */
+	/*::  handleTabButtonClick: number => void */
 	handleTabButtonClick(index: number) {
 		this.setState({
 			index: index,
@@ -72,7 +72,7 @@ class Tabs extends React.Component<TabsProps, TabsState> {
 		});
 	}
 
-	/*::  handleTabButtonKey: void => void */
+	/*::  handleTabButtonKey: (KeyboardEvent, number) => void */
 	handleTabButtonKey(e: KeyboardEvent, i: number) {
 		let newIndex = i;
 
@@ -113,15 +113,14 @@ class Tabs extends React.Component<TabsProps, TabsState> {
 	render() {
 		const tabs = this.getTabChildElements();
 
-		console.log(tabs);
-
-		const getTabSlug = (title, id: ?string = null) => id || slugify(title);
+		const getTabSlug =
+			(title: string, id: ?string = null): string => id || slugify(title);
 
 		return (
 			<div className={`tabs${ this.state.canUseDOM ? " js" : "" }`}>
 				<ul className="tabs__list" role="tablist">
 					{
-						tabs.map((tab, i) => {
+						tabs.map((tab, i: number) => {
 							const tabSlug: string = getTabSlug(tab.props.title, tab.props.id);
 							const isTabActive: boolean = i === this.state.index;
 							return (
@@ -146,7 +145,7 @@ class Tabs extends React.Component<TabsProps, TabsState> {
 				</ul>
 				<div className="tabs__content">
 					{
-						tabs.map((tab, i) => {
+						tabs.map((tab, i: number) => {
 							const tabSlug: string = getTabSlug(tab.props.title, tab.props.id);
 							const isTabActive: boolean = i === this.state.index;
 							return (
