@@ -8,5 +8,14 @@
         "coverage": true,
         "dist": true,
         "temp": true
-    }
+    },
+    "vsicons.associations.folders": [
+      {
+        "icon": "storybook",
+        "extensions": ["__stories__"],
+        "format": "svg",
+        "filename": true
+      }
+    ],
+    "vsicons.customIconFolderPath": "./.vscode/"
 }
