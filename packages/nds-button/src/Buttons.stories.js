@@ -8,9 +8,10 @@ import Button from "./Button";
 
 storiesOf("Button", module)
 	.addDecorator(withKnobs)
-	.add("Primary", () => <Button text="Primary button" />)
-	.add("Secondary", () => <Button text="Secondary button" modifier="secondary" />)
-	.add("CTA", () => <Button text="CTA button" modifier="cta" />)
+	.add("Primary", () => <Button>Primary button</Button>)
+	.add("Secondary", () => <Button modifier="secondary">Secondary button</Button>)
+	.add("CTA", () => <Button modifier="cta">CTA button</Button>)
+	.add("Anchor", () => <Button type="anchor" href="/test-url" modifier="cta">Anchor</Button>)
 	.add("Customisable", () => {
 
 		const modifiers = {
