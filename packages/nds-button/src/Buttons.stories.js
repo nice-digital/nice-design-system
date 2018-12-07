@@ -17,11 +17,12 @@ storiesOf("Button", module)
 		const modifiers = {
 			Default: "",
 			Secondary: "secondary",
-			CTA: "cta"
+			CTA: "cta",
+			Inverse: "inverse"
 		};
 
 		const types = {
-			Default: "button",
+			Default: "",
 			Anchor: "anchor",
 			Submit: "submit",
 			Reset: "reset"
