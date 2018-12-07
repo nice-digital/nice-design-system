@@ -234,3 +234,4 @@ OR you can use a copy command (with Grunt or similar) to copy the compiled asset
 - dist folder
 - jquery versions
 - removed border-box mixin - assume we're using autoprefixer
+- removed footer component - part of TopHat v2
