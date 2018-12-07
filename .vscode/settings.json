@@ -12,7 +12,7 @@
     "vsicons.associations.folders": [
       {
         "icon": "storybook",
-        "extensions": ["__stories__"],
+        "extensions": ["__stories__", ".storybook"],
         "format": "svg",
         "filename": true
       }
