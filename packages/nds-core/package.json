@@ -33,7 +33,9 @@
   "bugs": {
     "url": "https://github.com/nhsevidence/nice-design-system/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@nice-digital/icons": "^1.6.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.2.0"
   }
