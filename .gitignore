@@ -61,3 +61,6 @@ temp
 packages/*/lib
 packages/*/es
 packages/*/dist
+
+# Jetstorm IDEs
+.idea
