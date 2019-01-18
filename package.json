@@ -6,6 +6,7 @@
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "dev": "lerna run --scope=dev-app start",
     "// TESTS": "",
     "test": "cross-env CI=true npm run test:unit && npm run lint && npm run flow",
     "test:unit": "jest",
