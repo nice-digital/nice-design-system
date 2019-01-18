@@ -1,0 +1,61 @@
+@import '~@nice-digital/nds-core/scss/core';
+////
+/// @group components
+////
+
+$radio-base-size: 32px;
+
+/// Radio
+.Radio {
+  &__input {
+    cursor: pointer;
+    height: $radio-base-size;
+    left: 0;
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: $radio-base-size;
+
+    &:checked + label:after { // sass-lint:disable-line force-pseudo-nesting pseudo-element
+      opacity: 1;
+    }
+
+    &:focus {
+      & + label:before { // sass-lint:disable-line force-pseudo-nesting pseudo-element
+        box-shadow: 0 0 0 ($radio-base-size / 16) $colour-border-focus;
+      }
+    }
+  }
+
+  &__label {
+    @include font-size(p);
+    display: block;
+    margin-bottom: rem($spacing-x-small);
+    cursor: pointer;
+    padding: ($radio-base-size / 8) 0;
+
+    &:before { // radio - outside circle
+      border: ($radio-base-size / 16) solid $colour-nice-black;
+      border-radius: 50%;
+      content: '';
+      height: $radio-base-size;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: $radio-base-size;
+    }
+
+    &:after { // radio - center dot
+      background: $colour-nice-black;
+      border-radius: 50%;
+      content: '';
+      height: ($radio-base-size / 2);
+      left: ($radio-base-size / 4);
+      opacity: 0;
+      position: absolute;
+      top: ($radio-base-size / 4);
+      width: ($radio-base-size / 2);
+    }
+  }
+}

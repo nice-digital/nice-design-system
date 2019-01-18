@@ -2,6 +2,6 @@
 
 const ndsRadio = require('..');
 
-describe('nds-radio', () => {
+describe('nds-forms', () => {
     it('needs tests');
 });
