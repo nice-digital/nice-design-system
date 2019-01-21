@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { Radio, RadioGroup } from "@nice-digital/nds-forms";
 
+import "./App.scss";
+
 class App extends Component {
 	render() {
 		return (
 			<div>
 				<h1>Radio Buttons</h1>
 
-				<RadioGroup legend="Example 1" group="example-1">
+				<RadioGroup legend="Example 1" group="example-1" help="This is some help text you can read.">
 					<Radio value="yes" checked>Yes</Radio>
 					<Radio value="no">No</Radio>
 					<Radio value="maybe">Maybe</Radio>

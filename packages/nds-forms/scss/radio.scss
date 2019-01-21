@@ -1,12 +1,32 @@
 @import '~@nice-digital/nds-core/scss/core';
-////
-/// @group components
-////
 
 $radio-base-size: 32px;
 
 /// Radio
 .Radio {
+  @include clearfix;
+  clear: left;
+  display: block;
+  padding-left: $radio-base-size * 1.4;
+  position: relative;
+
+  &--inline {
+    display: inline-block;
+    margin-right: rem($spacing-medium);
+
+    input {
+      margin-right: rem($spacing-x-small);
+    }
+  }
+
+  &--stacked {
+    margin-bottom: rem($spacing-small);
+
+    > .form__label {
+      display: inline;
+    }
+  }
+
   &__input {
     cursor: pointer;
     height: $radio-base-size;
@@ -17,12 +37,12 @@ $radio-base-size: 32px;
     top: 0;
     width: $radio-base-size;
 
-    &:checked + label:after { // sass-lint:disable-line force-pseudo-nesting pseudo-element
+    &:checked + label:after {
       opacity: 1;
     }
 
     &:focus {
-      & + label:before { // sass-lint:disable-line force-pseudo-nesting pseudo-element
+      & + label:before {
         box-shadow: 0 0 0 ($radio-base-size / 16) $colour-border-focus;
       }
     }
@@ -35,7 +55,7 @@ $radio-base-size: 32px;
     cursor: pointer;
     padding: ($radio-base-size / 8) 0;
 
-    &:before { // radio - outside circle
+    &:before { // outside circle
       border: ($radio-base-size / 16) solid $colour-nice-black;
       border-radius: 50%;
       content: '';
@@ -46,7 +66,7 @@ $radio-base-size: 32px;
       width: $radio-base-size;
     }
 
-    &:after { // radio - center dot
+    &:after { // center dot
       background: $colour-nice-black;
       border-radius: 50%;
       content: '';

@@ -19,15 +19,15 @@ export default class Radio extends Component<RadioProps> {
 		} = this.props;
 		const unique = group + "_" + value;
 		return (
-			<div>
-				<input
+			<div className="Radio">
+				<input className="Radio__input"
 					checked={checked}
 					type="radio"
 					id={unique}
 					name={group || ""}
 					{...input}
 				/>
-				<label htmlFor={unique}>
+				<label htmlFor={unique} className="Radio__label">
 					{children}
 				</label>
 			</div>

@@ -1,0 +1,15 @@
+@import "~@nice-digital/nds-core/scss/core";
+
+.Form {
+  &__fieldset {
+    border: rem($spacing-xx-small) solid $colour-border;
+    margin-bottom: rem($spacing-medium);
+    padding: rem($spacing-small);
+  }
+
+  &__legend {
+    @include font-size(h3);
+    font-weight: bold;
+    margin-bottom: rem($spacing-small);
+  }
+}
