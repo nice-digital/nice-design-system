@@ -1,0 +1,7 @@
+@import "~@nice-digital/nds-core/scss/core";
+
+.Textarea {
+  &__input {
+    height: 8em; // default textarea 8 characters tall
+  }
+}

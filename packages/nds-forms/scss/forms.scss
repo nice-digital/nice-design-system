@@ -12,4 +12,30 @@
     font-weight: bold;
     margin-bottom: rem($spacing-small);
   }
+
+  &__label {
+    @include font-size(p);
+    display: block;
+    margin-bottom: rem($spacing-x-small);
+  }
+
+  &__hint {
+    color: $colour-nice-dark-grey;
+    margin-top: rem($spacing-x-small);
+    margin-bottom: rem($spacing-x-small);
+  }
+
+  &__group {
+    margin-bottom: rem($spacing-small);
+  }
+
+  &__input {
+    border: rem($spacing-xx-small) solid $colour-border;
+    padding: rem($spacing-small);
+    width: 100%;
+
+    &:focus {
+      outline: $colour-border-focus rem($spacing-x-small) solid;
+    }
+  }
 }

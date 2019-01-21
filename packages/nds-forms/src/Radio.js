@@ -12,11 +12,6 @@ type RadioProps = {
 
 export default class Radio extends Component<RadioProps> {
 
-	constructor(props){
-		super(props);
-	}
-
-
 	render() {
 		return (
 			<div className="Radio">
