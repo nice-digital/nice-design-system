@@ -3,19 +3,24 @@ import React, { Component } from "react";
 
 type RadioGroupProps = {
 	children: any,
-	input: Object,
 	legend: string,
 	group: string,
+	help: string,
 };
 
 export default class RadioGroup extends Component<RadioGroupProps> {
+
+	constructor(props){
+		super(props);
+	}
+
 	render() {
 
-		const {help, input, group, legend, children} = this.props;
+		const {help, group, legend, children} = this.props;
 
-		const childrenWithProps = React.Children
+		const clonedChildren = React.Children
 			.map(children, child =>
-				React.cloneElement(child, {input, group}));
+				React.cloneElement(child, {group}));
 
 		return (
 			<fieldset className="Form__fieldset">
@@ -23,9 +28,9 @@ export default class RadioGroup extends Component<RadioGroupProps> {
 					{legend}
 				</legend>
 				{help &&
-					<p>{help}</p>
+					<p className="mt--0">{help}</p>
 				}
-				{childrenWithProps}
+				{clonedChildren}
 			</fieldset>
 		);
 	}

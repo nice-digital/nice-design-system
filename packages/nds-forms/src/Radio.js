@@ -6,29 +6,30 @@ type RadioProps = {
 	children: any,
 	input: Object,
 	group: string,
+	label: string,
+	value: string,
 };
 
 export default class Radio extends Component<RadioProps> {
+
+	constructor(props){
+		super(props);
+	}
+
+
 	render() {
-		const {
-			children,
-			group,
-			value,
-			input,
-			checked
-		} = this.props;
-		const unique = group + "_" + value;
 		return (
 			<div className="Radio">
-				<input className="Radio__input"
-					checked={checked}
+				<input
+					name={this.props.group}
 					type="radio"
-					id={unique}
-					name={group || ""}
-					{...input}
+					id={this.props.group + "_" + this.props.value}
+					className="Radio__input"
 				/>
-				<label htmlFor={unique} className="Radio__label">
-					{children}
+				<label
+					htmlFor={this.props.group + "_" + this.props.value}
+					className="Radio__label">
+					{this.props.label}
 				</label>
 			</div>
 		);

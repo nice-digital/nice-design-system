@@ -37,6 +37,11 @@ $radio-base-size: 32px;
     top: 0;
     width: $radio-base-size;
 
+    &:disabled + label:before,
+    &:disabled + label:after {
+      opacity: .3 !important;
+    }
+
     &:checked + label:after {
       opacity: 1;
     }
