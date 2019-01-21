@@ -1,22 +1,26 @@
 // @flow
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 
 type RadioGroupProps = {
-	inline: boolean,
-	className: string,
 	children: any,
 	input: Object,
+	legend: string,
+	group: string,
 };
 
 export default class RadioGroup extends Component<RadioGroupProps> {
 	render() {
-		const { inline, children, className, ...input } = this.props;
+
+		const {input, group, legend, children} = this.props;
+
+		const childrenWithProps = React.Children
+			.map(children, child =>
+				React.cloneElement(child, {input, group}));
+
 		return (
 			<fieldset>
-				<legend>
-					Legend here!
-				</legend>
-				{children}
+				<legend>{legend}</legend>
+				{childrenWithProps}
 			</fieldset>
 		);
 	}
