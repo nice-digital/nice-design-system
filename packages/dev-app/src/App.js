@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Radio, RadioGroup, Textarea, Input, Fieldset } from "@nice-digital/nds-forms";
+import { Radio, RadioGroup, Textarea, Input, Fieldset, Checkbox } from "@nice-digital/nds-forms";
 
 import "./App.scss";
 
@@ -7,6 +7,10 @@ class App extends Component {
 	render() {
 		return (
 			<div>
+
+				<Fieldset legend="Checkboxes">
+					<Checkbox />
+				</Fieldset>
 
 				<RadioGroup
 					legend="Radio buttons (stacked, default)"
@@ -28,23 +32,31 @@ class App extends Component {
 						unique="textarea-1"
 						label="Who do you think you are?"
 						value="Default value for textarea"/>
-
 					<Textarea
 						unique="textarea-1"
 						label="Who do you think you are?"
 						hint="This is some hint text you can read"
 						name="myCommentBox"/>
-
 					<Textarea
 						unique="textarea-1"
 						label="Who do you think you are?"
 						name="mySecondCommentBox"/>
 				</Fieldset>
 
-
 				<Fieldset legend="Inputs">
-					<Input type="text" hint="Please fill in the below"	label="This is the question label?"/>
-					<Input type="text" hint="Please fill in the below"	label="This is the question label?"/>
+					<Input
+						name="full-name"
+						type="text"
+						label="Full name"/>
+					<Input
+						name="email"
+						type="email"
+						label="Your email address"/>
+					<Input
+						name="password"
+						type="password"
+						hint="Your password must contain 4 special characters, 6 numbers, 12 letters and an emoji"
+						label="Password"/>
 				</Fieldset>
 
 			</div>
