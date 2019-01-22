@@ -3,26 +3,27 @@ import React, { Component } from "react";
 import "../scss/radio.scss";
 
 type RadioProps = {
-	children: any,
-	input: Object,
 	group: string,
 	label: string,
 	value: string,
+	inline: boolean,
 };
 
 export default class Radio extends Component<RadioProps> {
 
 	render() {
+		const { group, label, value, inline } = this.props;
+		const classNames = inline ? "Radio Radio--inline" : "Radio";
 		return (
-			<div className="Radio">
+			<div className={classNames}>
 				<input
-					name={this.props.group}
+					name={group}
 					type="radio"
-					id={this.props.group + "_" + this.props.value}
+					id={group + "_" + value}
 					className="Radio__input"
 				/>
 				<label
-					htmlFor={this.props.group + "_" + this.props.value}
+					htmlFor={group + "_" + value}
 					className="Radio__label">
 					{this.props.label}
 				</label>

@@ -9,6 +9,7 @@ $radio-base-size: 32px;
   display: block;
   padding-left: $radio-base-size * 1.4;
   position: relative;
+  margin-bottom: rem($spacing-small);
 
   &--inline {
     display: inline-block;
@@ -16,14 +17,6 @@ $radio-base-size: 32px;
 
     input {
       margin-right: rem($spacing-x-small);
-    }
-  }
-
-  &--stacked {
-    margin-bottom: rem($spacing-small);
-
-    > .form__label {
-      display: inline;
     }
   }
 

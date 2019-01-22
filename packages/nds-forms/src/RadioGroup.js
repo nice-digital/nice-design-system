@@ -6,21 +6,17 @@ type RadioGroupProps = {
 	legend: string,
 	group: string,
 	hint: string,
+	inline: boolean,
 };
 
 export default class RadioGroup extends Component<RadioGroupProps> {
 
-	constructor(props){
-		super(props);
-	}
-
 	render() {
-
-		const {hint, group, legend, children} = this.props;
+		const {inline, hint, group, legend, children} = this.props;
 
 		const clonedChildren = React.Children
 			.map(children, child =>
-				React.cloneElement(child, {group}));
+				React.cloneElement(child, {group, inline}));
 
 		return (
 			<fieldset className="Form__fieldset">
@@ -28,7 +24,7 @@ export default class RadioGroup extends Component<RadioGroupProps> {
 					{legend}
 				</legend>
 				{hint &&
-					<p className="Form__hint">{hint}</p>
+				<p className="Form__hint">{hint}</p>
 				}
 				{clonedChildren}
 			</fieldset>
