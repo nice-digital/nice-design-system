@@ -48,6 +48,7 @@ $radio-base-size: 32px;
 
   &__label {
     @include font-size(p);
+    font-weight: bold;
     display: block;
     margin-bottom: rem($spacing-x-small);
     cursor: pointer;

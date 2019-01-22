@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from "react";
+import Fieldset from "./Fieldset";
 
 type RadioGroupProps = {
 	children: any,
@@ -19,15 +20,10 @@ export default class RadioGroup extends Component<RadioGroupProps> {
 				React.cloneElement(child, {group, inline}));
 
 		return (
-			<fieldset className="Form__fieldset">
-				<legend className="Form__legend">
-					{legend}
-				</legend>
-				{hint &&
-				<p className="Form__hint">{hint}</p>
-				}
+			<Fieldset legend={legend}>
+				{hint && <p className="Form__hint">{hint}</p>}
 				{clonedChildren}
-			</fieldset>
+			</Fieldset>
 		);
 	}
 }

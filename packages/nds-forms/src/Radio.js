@@ -14,17 +14,19 @@ export default class Radio extends Component<RadioProps> {
 	render() {
 		const { group, label, value, inline } = this.props;
 		const classNames = inline ? "Radio Radio--inline" : "Radio";
+		const unique = group + "_" + value;
 		return (
 			<div className={classNames}>
 				<input
+					className="Radio__input"
 					name={group}
 					type="radio"
-					id={group + "_" + value}
-					className="Radio__input"
+					id={unique}
 				/>
+
 				<label
-					htmlFor={group + "_" + value}
-					className="Radio__label">
+					className="Radio__label"
+					htmlFor={unique}>
 					{this.props.label}
 				</label>
 			</div>

@@ -1,7 +1,33 @@
 @import "~@nice-digital/nds-core/scss/core";
 
 .Textarea {
+  margin-bottom: rem($spacing-medium);
+
+  &__label {
+    @include font-size(p);
+    font-weight: bold;
+    display: block;
+    margin-bottom: rem($spacing-x-small);
+  }
+
   &__input {
     height: 8em; // default textarea 8 characters tall
+    border: rem($spacing-xx-small) solid $colour-border;
+    padding: rem($spacing-small);
+    width: 100%;
+
+    &:focus {
+      outline: $colour-border-focus rem($spacing-x-small) solid;
+    }
+  }
+
+  &__hint {
+    color: $colour-nice-dark-grey;
+    margin-top: rem($spacing-x-small);
+    margin-bottom: rem($spacing-x-small);
+  }
+
+  &__group {
+    margin-bottom: rem($spacing-small);
   }
 }
