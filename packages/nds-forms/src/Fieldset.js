@@ -13,8 +13,8 @@ export default class Fieldset extends Component<FieldsetProps> {
 		const {legend, children} = this.props;
 
 		return (
-			<fieldset className="Fieldset">
-				<legend className="Fieldset__legend">
+			<fieldset className="fieldset">
+				<legend className="fieldset__legend">
 					{legend}
 				</legend>
 				{children}

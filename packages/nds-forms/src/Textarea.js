@@ -17,17 +17,17 @@ export default class Textarea extends Component<TextareaProps> {
 		const {label, unique, hint, value} = this.props;
 
 		return (
-			<div className="Textarea">
+			<div className="textarea">
 				<label
-					className="Textarea__label"
+					className="textarea__label"
 					htmlFor={unique}>
 					{label}
 				</label>
 
-				{hint && <p className="Textarea__hint">{hint}</p>}
+				{hint && <p className="form__hint">{hint}</p>}
 
 				<textarea
-					className="Textarea__input"
+					className="textarea__input"
 					id={unique}
 					name={name}>
 					{value}

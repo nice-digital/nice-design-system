@@ -2,28 +2,30 @@
 import React, { Component } from "react";
 import Fieldset from "./Fieldset";
 
-type RadioGroupProps = {
+type CheckboxGroupProps = {
 	children: any,
 	legend: string,
-	group: string,
 	hint: string,
+	name: string,
 	inline: boolean,
 };
 
-export default class RadioGroup extends Component<RadioGroupProps> {
+export default class CheckboxGroup extends Component<CheckboxGroupProps> {
 
 	render() {
-		const {inline, hint, group, legend, children} = this.props;
+
+		const {inline, legend, children, hint, name, ...rest} = this.props;
 
 		const clonedChildren = React.Children
 			.map(children, child =>
-				React.cloneElement(child, {group, inline}));
+				React.cloneElement(child, {name, inline, ...rest}));
 
 		return (
 			<Fieldset legend={legend}>
 				{hint && <p className="form__hint">{hint}</p>}
 				{clonedChildren}
 			</Fieldset>
+
 		);
 	}
 }

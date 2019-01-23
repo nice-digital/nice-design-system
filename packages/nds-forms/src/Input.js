@@ -18,10 +18,10 @@ export default class Input extends Component<InputProps> {
 		return (
 
 			<Fragment>
-				<div className="Input">
-					<label className="Input__label">{label}</label>
-					{hint && <p className="Input__hint">{hint}</p>}
-					<input name={name} className="Input__input" type={type}/>
+				<div className="input">
+					<label className="input__label">{label}</label>
+					{hint && <p className="form__hint">{hint}</p>}
+					<input name={name} className="input__input" type={type}/>
 				</div>
 			</Fragment>
 

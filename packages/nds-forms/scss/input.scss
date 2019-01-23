@@ -1,13 +1,7 @@
 @import "~@nice-digital/nds-core/scss/core";
 
-.Input {
+.input {
   margin-bottom: rem($spacing-medium);
-
-  &__hint {
-    color: $colour-nice-dark-grey;
-    margin-top: rem($spacing-x-small);
-    margin-bottom: rem($spacing-x-small);
-  }
 
   &__label {
     @include font-size(p);

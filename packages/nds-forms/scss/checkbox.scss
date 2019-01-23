@@ -1,3 +1,94 @@
-.Checkbox {
-  background: red;
+@import "~@nice-digital/nds-core/scss/core";
+
+$checkbox-size: 32px;
+
+.checkbox {
+  @include font-size(p);
+  display: block;
+  position: relative;
+  min-height: $checkbox-size;
+  margin-bottom: rem($spacing-medium);
+  padding-left: $checkbox-size * 1.4;
+
+  &--inline {
+    display: inline-block;
+    margin-right: rem($spacing-medium);
+
+    input {
+      margin-right: rem($spacing-x-small);
+    }
+  }
+
+  &:last-child,
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &__input {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: $checkbox-size;
+    height: $checkbox-size;
+    cursor: pointer;
+    opacity: 0;
+
+    &:focus + .checkbox__label:before {
+      outline: 3px solid transparent;
+      outline-offset: 3px;
+      box-shadow: 0 0 0 3px $colour-border-focus;
+    }
+
+    &:checked + .checkbox__label:after {
+      opacity: 1;
+    }
+
+    &:disabled {
+      cursor: default;
+
+      & + .checkbox__label {
+        cursor: default;
+        opacity: .5;
+      }
+    }
+  }
+
+  &__label { // stylelint-disable-line
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: rem($spacing-x-small);
+    cursor: pointer;
+    padding: ($checkbox-size / 8) 0;
+
+    &:before { // stylelint-disable-line
+      content: "";
+      box-sizing: border-box;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: $checkbox-size;
+      height: $checkbox-size;
+      border: 2px solid $colour-nice-black;
+      background: transparent;
+      // padding-bottom: 1px;
+    }
+
+    &:after { // stylelint-disable-line
+      content: "";
+      position: absolute;
+      top: $checkbox-size / 3.2;
+      left: $checkbox-size / 4;
+      width: $checkbox-size / 2;
+      height: $checkbox-size / 3.2;
+      transform: rotate(-45deg);
+      border: solid;
+      border-width: 0 0 4px 4px;
+      border-top-color: transparent;
+      opacity: 0;
+      background: transparent;
+    }
+  }
 }

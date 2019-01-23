@@ -12,22 +12,23 @@ type RadioProps = {
 export default class Radio extends Component<RadioProps> {
 
 	render() {
-		const { group, label, value, inline } = this.props;
-		const classNames = inline ? "Radio Radio--inline" : "Radio";
+		const {group, label, value, inline, ...rest} = this.props;
+		const classNames = inline ? "radio radio--inline" : "radio";
 		const unique = group + "_" + value;
 		return (
 			<div className={classNames}>
 				<input
-					className="Radio__input"
+					className="radio__input"
 					name={group}
 					type="radio"
 					id={unique}
+					{...rest}
 				/>
 
 				<label
-					className="Radio__label"
+					className="radio__label"
 					htmlFor={unique}>
-					{this.props.label}
+					{label}
 				</label>
 			</div>
 		);

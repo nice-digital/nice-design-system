@@ -1,6 +1,6 @@
 @import "~@nice-digital/nds-core/scss/core";
 
-.Textarea {
+.textarea {
   margin-bottom: rem($spacing-medium);
 
   &__label {
@@ -19,12 +19,6 @@
     &:focus {
       outline: $colour-border-focus rem($spacing-x-small) solid;
     }
-  }
-
-  &__hint {
-    color: $colour-nice-dark-grey;
-    margin-top: rem($spacing-x-small);
-    margin-bottom: rem($spacing-x-small);
   }
 
   &__group {

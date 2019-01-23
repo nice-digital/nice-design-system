@@ -1,6 +1,6 @@
 @import '~@nice-digital/nds-core/scss/core';
 
-.Fieldset {
+.fieldset {
   border: rem(1px) solid $colour-border;
   margin-bottom: rem($spacing-medium);
   padding: rem($spacing-small);
@@ -8,7 +8,6 @@
   &__legend {
     @include font-size(p);
     font-weight: bold;
-    margin-bottom: rem($spacing-small);
     padding-right: rem($spacing-x-small);
     padding-left: rem($spacing-x-small);
     margin-left: rem(-$spacing-x-small);

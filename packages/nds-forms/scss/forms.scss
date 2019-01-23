@@ -3,3 +3,11 @@
 @import "./input";
 @import "./radio";
 @import "./textarea";
+
+.form {
+  &__hint {
+    color: $colour-nice-dark-grey;
+    margin-top: rem($spacing-x-small);
+    margin-bottom: rem($spacing-small);
+  }
+}

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Radio, RadioGroup, Textarea, Input, Fieldset, Checkbox } from "@nice-digital/nds-forms";
+import { Radio, RadioGroup, Textarea, Input, Fieldset, Checkbox, CheckboxGroup } from "@nice-digital/nds-forms";
 
 import "./App.scss";
 
@@ -8,20 +8,28 @@ class App extends Component {
 		return (
 			<div>
 
-				<Fieldset legend="Checkboxes">
-					<Checkbox />
-				</Fieldset>
+				<CheckboxGroup legend="Checkboxes (stacked, default)" name="contact_preferences" hint="Hello here's a hint...">
+					<Checkbox label="Post" value="post" disabled checked/>
+					<Checkbox label="Email" value="email"/>
+					<Checkbox label="Telephone Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque in laboriosam maxime possimus rem. Cupiditate debitis dicta eaque illo laborum natus numquam possimus quas sint ut? Beatae corporis dolorem dolores eaque est explicabo fugit laboriosam quidem repellendus soluta? Nihil, reiciendis." value="phone"/>
+				</CheckboxGroup>
+
+				<CheckboxGroup inline legend="Checkboxes (inline)" name="contact_preferences" hint="Hello here's a hint...">
+					<Checkbox label="Post" value="post" disabled checked/>
+					<Checkbox label="Email" value="email"/>
+					<Checkbox label="Telephone Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque in laboriosam maxime possimus rem. Cupiditate debitis dicta eaque illo laborum natus numquam possimus quas sint ut? Beatae corporis dolorem dolores eaque est explicabo fugit laboriosam quidem repellendus soluta? Nihil, reiciendis." value="phone"/>
+				</CheckboxGroup>
 
 				<RadioGroup
 					legend="Radio buttons (stacked, default)"
 					group="group-1"
 					hint="This is some hint text you can read">
-					<Radio value="yes" label="Yes please!"/>
+					<Radio value="yes" label="Yes please!" data-track="no"/>
 					<Radio value="no" label="No thanks!"/>
 					<Radio value="maybe" label="Well maybe..? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea eaque explicabo, facere harum necessitatibus nulla optio pariatur rem! Aut blanditiis dolores expedita minima mollitia nostrum rem! Accusamus aliquid, distinctio facilis harum illum magni nemo pariatur provident sequi vel, voluptates voluptatum!"/>
 				</RadioGroup>
 
-				<RadioGroup legend="Radio buttons inline" group="group-2" hint="This is some hint text you can read" inline>
+				<RadioGroup legend="Radio buttons (inline)" group="group-2" hint="This is some hint text you can read" inline>
 					<Radio value="yes" label="Yes please!"/>
 					<Radio value="no" label="No thanks!"/>
 					<Radio value="maybe" label="Well maybe..?"/>

@@ -3,41 +3,33 @@ import React, { Component } from "react";
 import "../scss/checkbox.scss";
 
 type CheckboxProps = {
-
+	name: string,
+	label: string,
+	value: string,
+	inline: boolean,
 };
 
 export default class Checkbox extends Component<CheckboxProps> {
 
 	render() {
-		const unique = "checkbox";
-		const label = "test";
-
+		const {inline, name, label, value, ...rest} = this.props;
+		const unique = name + "_" + value;
+		const classNames = inline ? "checkbox checkbox--inline" : "checkbox";
 		return (
-			<div className="Checkbox">
+			<div className={classNames}>
 				<input
-					className="Checkbox__input"
 					type="checkbox"
+					className="checkbox__input"
 					id={unique}
+					name={name}
+					value={value}
+					{...rest}
 				/>
-
 				<label
-					className="Checkbox__input"
+					className="checkbox__label"
 					htmlFor={unique}>
 					{label}
 				</label>
-
-				<h3>Set</h3>
-
-				<div>
-					<input type="checkbox" id="coding" name="interest" value="coding" checked/>
-					<label htmlFor="coding">Coding</label>
-				</div>
-
-				<div>
-					<input type="checkbox" id="music" name="interest" value="music"/>
-					<label htmlFor="music">Music</label>
-				</div>
-
 			</div>
 		);
 	}
