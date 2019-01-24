@@ -1,12 +1,14 @@
 @import "~@nice-digital/nds-core/scss/core";
-@import "./fieldset";
-@import "./input";
-@import "./radio";
-@import "./textarea";
 
 .form {
   &__hint {
     color: $colour-nice-dark-grey;
+    margin-top: rem($spacing-x-small);
+    margin-bottom: rem($spacing-small);
+  }
+  &__error {
+    color: $colour-error;
+    font-weight: bold;
     margin-top: rem($spacing-x-small);
     margin-bottom: rem($spacing-small);
   }

@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from "react";
+import classnames from "classnames";
 import "../scss/textarea.scss";
 
 type TextareaProps = {
@@ -8,16 +9,22 @@ type TextareaProps = {
 	hint: string,
 	value: string,
 	name: string,
+	error: boolean,
+	errorMessage: string,
 };
 
 export default class Textarea extends Component<TextareaProps> {
 
 	render() {
 
-		const {label, unique, hint, value} = this.props;
+		const {error, errorMessage, label, unique, hint, value} = this.props;
+		const classNames = classnames({
+			"textarea" : true,
+			"textarea--error": error
+		});
 
 		return (
-			<div className="textarea">
+			<div className={classNames}>
 				<label
 					className="textarea__label"
 					htmlFor={unique}>
@@ -25,6 +32,8 @@ export default class Textarea extends Component<TextareaProps> {
 				</label>
 
 				{hint && <p className="form__hint">{hint}</p>}
+
+				{error && <p className="form__error">{errorMessage}</p>}
 
 				<textarea
 					className="textarea__input"

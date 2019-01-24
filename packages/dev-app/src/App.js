@@ -23,7 +23,7 @@ class App extends Component {
 					legend="Radio buttons (stacked, default)"
 					group="group-1"
 					hint="This is some hint text you can read">
-					<Radio value="yes" label="Yes please!" data-track="no"/>
+					<Radio error value="yes" label="Yes please!" data-track="no"/>
 					<Radio value="no" label="No thanks!"/>
 					<Radio value="maybe" label="Well maybe..? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea eaque explicabo, facere harum necessitatibus nulla optio pariatur rem! Aut blanditiis dolores expedita minima mollitia nostrum rem! Accusamus aliquid, distinctio facilis harum illum magni nemo pariatur provident sequi vel, voluptates voluptatum!"/>
 				</RadioGroup>
@@ -36,6 +36,8 @@ class App extends Component {
 
 				<Fieldset legend="Textarea">
 					<Textarea
+						error
+						errorMessage="This is an error message"
 						unique="textarea-1"
 						label="Who do you think you are?"
 						value="Default value for textarea"/>
@@ -56,6 +58,8 @@ class App extends Component {
 						type="text"
 						label="Full name"/>
 					<Input
+						error
+						errorMessage="This is an error message"
 						name="email"
 						type="email"
 						label="Your email address"/>

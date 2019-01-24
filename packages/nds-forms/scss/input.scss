@@ -3,6 +3,10 @@
 .input {
   margin-bottom: rem($spacing-medium);
 
+  &--error .input__input {
+    outline: $colour-error rem($spacing-x-small) solid;
+  }
+
   &__label {
     @include font-size(p);
     font-weight: bold;

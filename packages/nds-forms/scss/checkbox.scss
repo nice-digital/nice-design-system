@@ -10,10 +10,12 @@ $checkbox-size: 32px;
   margin-bottom: rem($spacing-medium);
   padding-left: $checkbox-size * 1.4;
 
-  &--error {
-    background-color: $colour-error-background;
-    border-color: $colour-nice-white;
-    outline: $colour-error rem($spacing-x-small) solid;
+  &--error .checkbox__label,
+  &--error .checkbox__label {
+    color: $colour-error;
+    &:before {
+      outline: $colour-error rem($spacing-x-small) solid;
+    }
   }
 
   &--inline {

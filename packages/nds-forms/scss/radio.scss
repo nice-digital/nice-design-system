@@ -11,6 +11,14 @@ $radio-base-size: 32px;
   position: relative;
   margin-bottom: rem($spacing-small);
 
+  &--error .radio__label,
+  &--error .radio__label {
+    color: $colour-error;
+    &:before {
+      border: $colour-error rem($spacing-x-small) solid;
+    }
+  }
+
   &--inline {
     display: inline-block;
     margin-right: rem($spacing-medium);
