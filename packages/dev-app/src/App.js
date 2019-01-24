@@ -10,14 +10,14 @@ class App extends Component {
 
 				<CheckboxGroup legend="Checkboxes (stacked, default)" name="contact_preferences" hint="Hello here's a hint...">
 					<Checkbox label="Post" value="post" disabled checked/>
-					<Checkbox label="Email" value="email"/>
+					<Checkbox label="Email" value="email" error/>
 					<Checkbox label="Telephone Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque in laboriosam maxime possimus rem. Cupiditate debitis dicta eaque illo laborum natus numquam possimus quas sint ut? Beatae corporis dolorem dolores eaque est explicabo fugit laboriosam quidem repellendus soluta? Nihil, reiciendis." value="phone"/>
 				</CheckboxGroup>
 
-				<CheckboxGroup inline legend="Checkboxes (inline)" name="contact_preferences" hint="Hello here's a hint...">
+				<CheckboxGroup inline legend="Checkboxes (inline)" name="contact_preferences-2" hint="Hello here's a hint...">
 					<Checkbox label="Post" value="post" disabled checked/>
 					<Checkbox label="Email" value="email"/>
-					<Checkbox label="Telephone Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque in laboriosam maxime possimus rem. Cupiditate debitis dicta eaque illo laborum natus numquam possimus quas sint ut? Beatae corporis dolorem dolores eaque est explicabo fugit laboriosam quidem repellendus soluta? Nihil, reiciendis." value="phone"/>
+					<Checkbox label="Telephone Lorem ipsum dolor sit amet, consectetur adipisicing elit." value="phone"/>
 				</CheckboxGroup>
 
 				<RadioGroup

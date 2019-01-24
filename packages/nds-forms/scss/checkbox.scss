@@ -10,6 +10,12 @@ $checkbox-size: 32px;
   margin-bottom: rem($spacing-medium);
   padding-left: $checkbox-size * 1.4;
 
+  &--error {
+    background-color: $colour-error-background;
+    border-color: $colour-nice-white;
+    outline: $colour-error rem($spacing-x-small) solid;
+  }
+
   &--inline {
     display: inline-block;
     margin-right: rem($spacing-medium);
@@ -73,7 +79,6 @@ $checkbox-size: 32px;
       height: $checkbox-size;
       border: 2px solid $colour-nice-black;
       background: transparent;
-      // padding-bottom: 1px;
     }
 
     &:after { // stylelint-disable-line
