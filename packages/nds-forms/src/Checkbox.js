@@ -16,7 +16,6 @@ export default class Checkbox extends Component<CheckboxProps> {
 	render() {
 		const {error, inline, name, label, value, ...rest} = this.props;
 		const unique = name + "_" + value;
-		// const classNames = inline ? "checkbox checkbox--inline" : "checkbox";
 		const classNames = classnames({
 			"checkbox": true,
 			"checkbox--inline": inline,

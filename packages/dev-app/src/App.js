@@ -1,13 +1,12 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Radio, RadioGroup, Textarea, Input, Fieldset, Checkbox, CheckboxGroup } from "@nice-digital/nds-forms";
-
 import "./App.scss";
+
 
 class App extends Component {
 	render() {
 		return (
-			<div>
-
+			<Fragment>
 				<CheckboxGroup legend="Checkboxes (stacked, default)" name="contact_preferences" hint="Hello here's a hint...">
 					<Checkbox label="Post" value="post" disabled checked/>
 					<Checkbox label="Email" value="email" error/>
@@ -65,9 +64,8 @@ class App extends Component {
 						type="password"
 						hint="Your password must contain 4 special characters, 6 numbers, 12 letters and an emoji"
 						label="Password"/>
-				</Fieldset>
-
-			</div>
+				</Fieldset> 
+			</Fragment>
 		);
 	}
 }
