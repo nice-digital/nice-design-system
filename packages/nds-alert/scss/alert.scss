@@ -1,0 +1,29 @@
+@import '~@nice-digital/nds-core/scss/core';
+
+.alert {
+  @include font-size(p);
+  padding: rem($spacing-medium);
+  border: 3px solid;
+  margin-bottom: rem($spacing-medium);
+  font-weight: bold;
+
+  &--info {
+    background-color: $colour-info-background;
+    border-color: $colour-info;
+  }
+
+  &--caution {
+    background-color: $colour-caution-background;
+    border-color: $colour-caution;
+  }
+
+  &--error {
+    background-color: $colour-error-background;
+    border-color: $colour-error;
+  }
+
+  &--success {
+    background-color: $colour-success-background;
+    border-color: $colour-success;
+  }
+}

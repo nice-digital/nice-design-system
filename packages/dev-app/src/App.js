@@ -1,12 +1,29 @@
 import React, { Component, Fragment } from "react";
 import { Radio, RadioGroup, Textarea, Input, Fieldset, Checkbox, CheckboxGroup } from "@nice-digital/nds-forms";
+import Alert from "@nice-digital/nds-alert";
 import "./App.scss";
-
 
 class App extends Component {
 	render() {
 		return (
-			<Fragment>
+			<main>
+
+				<Alert type="info">
+					The information you provide on this form will be used by us to administer your NICE account. For more information about how we process your data, see our <a href="#">privacy notice</a>.
+				</Alert>
+
+				<Alert type="caution">
+					Note: if you do not receive an activation email please check your spam folder.
+				</Alert>
+
+				<Alert type="error">
+					Oops, something went wrong. If you used autocomplete try completing the form manually.
+				</Alert>
+
+				<Alert type="success">
+					Thank you, your account was activated successfully. If this page does not automatically refresh, <a href="#">refresh the page</a>.
+				</Alert>
+
 				<CheckboxGroup legend="Checkboxes (stacked, default)" name="contact_preferences" hint="Hello here's a hint...">
 					<Checkbox label="Post" value="post" disabled checked/>
 					<Checkbox label="Email" value="email" error/>
@@ -68,8 +85,8 @@ class App extends Component {
 						type="password"
 						hint="Your password must contain 4 special characters, 6 numbers, 12 letters and an emoji"
 						label="Password"/>
-				</Fieldset> 
-			</Fragment>
+				</Fieldset>
+			</main>
 		);
 	}
 }
