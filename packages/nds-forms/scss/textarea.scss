@@ -4,7 +4,7 @@
   margin-bottom: rem($spacing-medium);
 
   &--error .textarea__input {
-    outline: $colour-error rem($spacing-x-small) solid;
+    @include default-error-style;
   }
 
   &__label {
@@ -21,7 +21,7 @@
     width: 100%;
 
     &:focus {
-      outline: $colour-border-focus rem($spacing-x-small) solid;
+      @include default-focus-style;
     }
   }
 
