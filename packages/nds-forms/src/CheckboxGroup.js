@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Fieldset from "./Fieldset";
 
 type CheckboxGroupProps = {
-	children: any,
+	children: React.ReactNode,
 	legend: string,
 	hint: string,
 	name: string,

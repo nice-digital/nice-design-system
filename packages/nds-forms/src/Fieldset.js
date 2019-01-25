@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import "./../scss/fieldset.scss";
 
 type FieldsetProps = {
-	children: any,
+	children: React.Node,
 	legend: string,
 };
 

@@ -1,7 +1,7 @@
 // @flow
 import React, { Component } from "react";
-import "../scss/checkbox.scss";
 import classnames from "classnames";
+import "../scss/checkbox.scss";
 
 type CheckboxProps = {
 	name: string,

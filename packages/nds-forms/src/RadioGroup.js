@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Fieldset from "./Fieldset";
 
 type RadioGroupProps = {
-	children: any,
+	children: React.Node,
 	legend: string,
 	group: string,
 	hint: string,

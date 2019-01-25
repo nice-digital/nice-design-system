@@ -4,13 +4,13 @@ import classnames from "classnames";
 import "../scss/textarea.scss";
 
 type TextareaProps = {
+	error: boolean,
+	errorMessage: string,
 	label: string,
 	unique: string,
 	hint: string,
 	value: string,
 	name: string,
-	error: boolean,
-	errorMessage: string,
 };
 
 export default class Textarea extends Component<TextareaProps> {
