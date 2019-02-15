@@ -15,6 +15,10 @@
   "files": [
     "lib"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nhsevidence/nice-design-system.git"
@@ -31,5 +35,6 @@
   "dependencies": {
     "@nice-digital/nds-core": "^1.0.1-alpha.0",
     "classnames": "^2.2.6"
-  }
+  },
+  "gitHead": "219eb95773dd5cbd7b43653fc86cc12dc496bb59"
 }
