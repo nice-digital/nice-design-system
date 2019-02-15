@@ -1,6 +1,6 @@
 {
   "name": "@nice-digital/design-system",
-  "version": "1.0.0",
+  "version": "1.0.1-alpha.0",
   "description": "Your source for quickly creating consistent on-brand NICE digital services",
   "author": "Ian Routledge <ian.routledge@nice.org.uk>",
   "homepage": "https://nhsevidence.github.io/nice-design-system/",
@@ -27,20 +27,20 @@
     "url": "https://github.com/nhsevidence/nice-design-system/issues"
   },
   "dependencies": {
-    "@nice-digital/nds-action-banner": "^1.0.0",
-    "@nice-digital/nds-breadcrumbs": "^1.0.0",
-    "@nice-digital/nds-button": "^1.0.0",
-    "@nice-digital/nds-card": "^1.0.0",
-    "@nice-digital/nds-core": "^1.0.0",
-    "@nice-digital/nds-filters": "^1.0.0",
-    "@nice-digital/nds-hero": "^1.0.0",
-    "@nice-digital/nds-in-page-nav": "^1.0.0",
-    "@nice-digital/nds-maintain-ratio": "^1.0.0",
-    "@nice-digital/nds-page-header": "^1.0.0",
-    "@nice-digital/nds-panel": "^1.0.0",
-    "@nice-digital/nds-phase-banner": "^1.0.0",
-    "@nice-digital/nds-stacked-nav": "^1.0.0",
-    "@nice-digital/nds-tabs": "^1.0.0",
-    "@nice-digital/nds-tag": "^1.0.0"
+    "@nice-digital/nds-action-banner": "^1.0.1-alpha.0",
+    "@nice-digital/nds-breadcrumbs": "^1.0.1-alpha.0",
+    "@nice-digital/nds-button": "^1.0.1-alpha.0",
+    "@nice-digital/nds-card": "^1.0.1-alpha.0",
+    "@nice-digital/nds-core": "^1.0.1-alpha.0",
+    "@nice-digital/nds-filters": "^1.0.1-alpha.0",
+    "@nice-digital/nds-hero": "^1.0.1-alpha.0",
+    "@nice-digital/nds-in-page-nav": "^1.0.1-alpha.0",
+    "@nice-digital/nds-maintain-ratio": "^1.0.1-alpha.0",
+    "@nice-digital/nds-page-header": "^1.0.1-alpha.0",
+    "@nice-digital/nds-panel": "^1.0.1-alpha.0",
+    "@nice-digital/nds-phase-banner": "^1.0.1-alpha.0",
+    "@nice-digital/nds-stacked-nav": "^1.0.1-alpha.0",
+    "@nice-digital/nds-tabs": "^1.0.1-alpha.0",
+    "@nice-digital/nds-tag": "^1.0.1-alpha.0"
   }
 }
