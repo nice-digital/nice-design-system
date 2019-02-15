@@ -1,0 +1,31 @@
+@import "~@nice-digital/nds-core/scss/core";
+
+.textarea {
+  margin-bottom: rem($spacing-medium);
+
+  &--error .textarea__input {
+    @include default-error-style;
+  }
+
+  &__label {
+    @include font-size(p);
+    font-weight: bold;
+    display: block;
+    margin-bottom: rem($spacing-x-small);
+  }
+
+  &__input {
+    height: 8em; // default textarea 8 characters tall
+    border: rem($spacing-xx-small) solid $colour-border;
+    padding: rem($spacing-small);
+    width: 100%;
+
+    &:focus {
+      @include default-focus-style;
+    }
+  }
+
+  &__group {
+    margin-bottom: rem($spacing-small);
+  }
+}

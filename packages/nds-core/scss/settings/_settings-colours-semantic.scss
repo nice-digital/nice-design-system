@@ -134,7 +134,7 @@ $colour-btn-secondary-hover: #333;
 /// @since 0.2.2
 $colour-btn-secondary-text: $colour-nice-white;
 
-// INVERSE BUTTONS
+// LIGHT BUTTONS
 
 /// Inverse (light) button background colour
 /// @since 0.2.2
@@ -150,9 +150,13 @@ $colour-btn-inverse-text: $colour-nice-rich-black;
 
 // BACKGROUNDS/BORDERS
 
-/// Borders, seperators, rules, keylines etc.
+/// Borders, separators, rules, keylines etc.
 /// @since 0.2.0
 $colour-border: $colour-nice-grey-1;
+
+/// Focused Borders, separators, rules, keylines etc.
+/// @since 0.4.2
+$colour-border-focus: $colour-nice-blue-3;
 
 // Default (light) panel background, tabs etc
 /// @since 0.2.0

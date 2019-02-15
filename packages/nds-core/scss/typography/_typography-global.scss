@@ -4,11 +4,19 @@
 
 @include default-box-sixing;
 
-/// The default focus style used for elements like anchors and buttons
+/// The default focus style used for elements like anchors and buttons. rounded version used for elements that have a border radius
+/// @param {Boolean} $rounded whether to use box shadow for border (outline can't be styled to have radius corners)
 /// @output the default focus styles ie background colour and outline
 /// @since 0.1.0
-@mixin default-focus-style {
-  outline: 3px solid $colour-focus;
+@mixin default-focus-style($rounded: false) {
+  @if $rounded {
+    box-shadow: 0 0 0 rem($spacing-x-small) $colour-focus;
+    outline: $spacing-x-small solid transparent;
+    outline-offset: $spacing-x-small;
+  }
+  @else {
+    outline: rem($spacing-x-small) solid $colour-focus;
+  }
 }
 
 /// The inverse focus style used for elements like anchors and buttons
@@ -16,7 +24,23 @@
 /// @output the inverse focus styles ie background colour and outline
 /// @since 0.3.1
 @mixin inverse-focus-style {
-  outline: 3px solid $colour-focus-inverse;
+  outline: rem($spacing-x-small) solid $colour-focus-inverse;
+}
+
+/// The highlight style used for elements like inputs and textareas
+/// if there's an error on the field
+/// @param {Boolean} $rounded whether to use box shadow for border (outline can't be styled to have radius corners)
+/// @output default styling for form elements in an errored state
+/// @since 1.0
+@mixin default-error-style($rounded: false) {
+  @if $rounded {
+    box-shadow: 0 0 0 rem($spacing-x-small) $colour-error;
+    outline: $spacing-x-small solid transparent;
+    outline-offset: $spacing-x-small;
+  } 
+  @else {
+    outline: rem($spacing-x-small) solid $colour-error;
+  }
 }
 
 .nice-tophat {
