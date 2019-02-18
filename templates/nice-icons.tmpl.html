@@ -33,9 +33,11 @@
 			   -moz-column-gap:20px;
 			        column-gap:20px;
 			}
+		.icons__item {
+			margin: 0 0 10px 0;
+		}
 		.icons__item,
 		.icons__item .<%= baseClass %> {
-			line-height:2em;
 			cursor:pointer;
 			}
 		.icons__item:hover {
@@ -84,6 +86,8 @@
 	<body>
 		<h1><%= fontFamilyName %> demo</h1>
 
+		<h2>Webfont</h2>
+
 		<div class="icons" id="icons">
 			<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { var glyph = glyphs[glyphIdx] %>
 				<div class="icons__item" data-name="<%= glyph %>">
@@ -92,15 +96,27 @@
 			<% } %>
 		</div>
 
-		<h1>Usage</h1>
+		<h3>Usage</h3>
 		<pre><code>&lt;span class=&quot;<%= baseClass %> <%= classPrefix %><span id="name">name</span>&quot;&gt;&lt;/span&gt;</code></pre>
+
+		<h2>SVGs</h2>
+
+		<div class="icons" id="icons">
+			<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { var glyph = glyphs[glyphIdx] %>
+				<div class="icons__item" data-name="<%= glyph %>">
+					<object data="../src/<%= glyph %>.svg" class="icon icons__img" type="image/svg+xml"></object>
+					<%= glyph %>
+				</div>
+			<% } %>
+		</div>
 
 		<script>
 		(function() {
 			document.getElementById('icons').onclick = function(e) {
 				e = e || window.event;
 				var name = e.target.getAttribute('data-name') || e.target.parentNode.getAttribute('data-name');
-				document.getElementById('name').innerHTML = name;
+				if(name)
+					document.getElementById('name').innerHTML = name;
 			}
 		})();
 		</script>

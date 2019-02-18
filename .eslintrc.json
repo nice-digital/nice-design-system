@@ -6,6 +6,7 @@
   "extends": [
     "@nice-digital/eslint-config/es6-flow"
   ],
+  "parser": "babel-eslint",
   "globals": {
   },
   "root": true

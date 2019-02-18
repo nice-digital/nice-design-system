@@ -8,7 +8,7 @@ const express = require("express"),
 sass.render({
 	file: path.join(__dirname, "./app.scss"),
 	includePaths: [
-		path.join(__dirname, "./node_modules/@nice-digital/icons/dist")
+		path.join(__dirname, "./node_modules/@nice-digital/icons/scss")
 	]
 }, function(err, result) {
 	if (err) {

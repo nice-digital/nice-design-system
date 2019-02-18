@@ -59,3 +59,8 @@ typings/
 
 # Jetbrains IDEs
 .idea
+
+lib
+dist
+scss
+es6

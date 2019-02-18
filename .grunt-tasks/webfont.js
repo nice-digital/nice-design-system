@@ -35,6 +35,7 @@ module.exports = {
 			htmlDemo: true,
 			htmlDemoTemplate: "templates/nice-icons.tmpl.html",
 			htmlDemoFilename: "demo",
+			destScss: "./scss/",
 			destHtml: "./dist/",
 			optimize: false,
 			relativeFontPath: "/fonts",

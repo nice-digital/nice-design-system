@@ -1,0 +1,12 @@
+{
+	"expandProps": "end",
+	"icon": true,
+	"replaceAttrValues": {
+		"#000": "{props.colour || 'currentColor'}"
+	},
+	"svgo": true,
+	"svgProps": {
+		"className": "icon",
+		"aria-hidden": true
+	}
+}
