@@ -24,7 +24,9 @@
     "prebuild:es": "lerna exec rimraf es",
     "build:es": "cross-env NODE_ENV=es lerna exec --scope=@nice-digital/nds-* --parallel -- babel src -d es --source-maps --root-mode upward",
     "build:es:watch": "npm run build:es -- -w",
-    "build:watch": "concurrently -n build: npm:build:*:watch"
+    "build:watch": "concurrently -n build: npm:build:*:watch",
+    "// LIFECYCLE": "",
+    "prepublish": "npm run build:lib"
   },
   "config": {
     "//": "Banner is used for prepending to compiled JS and CSS",
