@@ -1,6 +1,6 @@
 {
   "name": "@nice-digital/nds-forms",
-  "version": "1.0.3-alpha.0",
+  "version": "1.0.4-alpha.0",
   "description": "Form components for the NICE Design System",
   "author": "Warren Keith <warren.keith@nice.org.uk>",
   "homepage": "https://github.com/nhsevidence/nice-design-system#readme",
@@ -35,7 +35,7 @@
     "@babel/cli": "^7.2.0"
   },
   "dependencies": {
-    "@nice-digital/nds-core": "^1.0.2-alpha.0",
+    "@nice-digital/nds-core": "^1.0.3-alpha.0",
     "classnames": "^2.2.6"
   },
   "gitHead": "219eb95773dd5cbd7b43653fc86cc12dc496bb59"
