@@ -14,7 +14,8 @@
   },
   "files": [
     "lib",
-    "es"
+    "es",
+    "scss"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
