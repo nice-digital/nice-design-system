@@ -1,5 +1,5 @@
 // @flow
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import classnames from "classnames";
 import "./../scss/input.scss";
 
@@ -16,25 +16,21 @@ export default class Input extends Component<InputProps> {
 
 	render() {
 
-		const { error, errorMessage, label, hint, type } = this.props;
+		const { error, errorMessage, label, hint, type, ...rest } = this.props;
 		const classNames = classnames({
 			"input": true,
 			"input--error": error,
 		});
 		return (
+			<div className={classNames}>
+				<label className="input__label">{label}</label>
 
-			<Fragment>
-				<div className={classNames}>
-					<label className="input__label">{label}</label>
+				{hint && <p className="form__hint">{hint}</p>}
 
-					{hint && <p className="form__hint">{hint}</p>}
-					
-					{error && <p className="form__error">{errorMessage}</p>}
-					
-					<input name={name} className="input__input" type={type}/>
-				</div>
-			</Fragment>
+				{error && <p className="form__error">{errorMessage}</p>}
 
+				<input name={name} className="input__input" type={type} {...rest} />
+			</div>
 		);
 	}
 }
