@@ -32,7 +32,7 @@
       - [Express](#express)
       - [Grunt copy](#grunt-copy)
       - [Visual Studio Copy Task](#visual-studio-copy-task)
-	  - [Webpack](#webpack)
+      - [Webpack](#webpack)
     - [Markup](#markup)
     - [SASS](#sass)
 - [Development](#development)
@@ -403,7 +403,7 @@ Icon | Name | Unicode | HTML | SASS
 <img src="src/android.svg" alt="android" height="50"> | android | f17b | `<span class="icon icon--android" aria-hidden="true"></span>` | `@include nice-icon(android);` 
 <img src="src/apple.svg" alt="apple" height="50"> | apple | f179 | `<span class="icon icon--apple" aria-hidden="true"></span>` | `@include nice-icon(apple);` 
 <img src="src/calendar.svg" alt="calendar" height="50"> | calendar | e045 | `<span class="icon icon--calendar" aria-hidden="true"></span>` | `@include nice-icon(calendar);` 
-<img src="src/check.svg" alt="check" height="50"> | check | f102 | `<span class="icon icon--check" aria-hidden="true"></span>` | `@include nice-icon(check);` 
+<img src="src/check.svg" alt="check" height="50"> | check | f00c | `<span class="icon icon--check" aria-hidden="true"></span>` | `@include nice-icon(check);` 
 <img src="src/chevron-down.svg" alt="chevron-down" height="50"> | chevron-down | e03c | `<span class="icon icon--chevron-down" aria-hidden="true"></span>` | `@include nice-icon(chevron-down);` 
 <img src="src/chevron-left.svg" alt="chevron-left" height="50"> | chevron-left | e03b | `<span class="icon icon--chevron-left" aria-hidden="true"></span>` | `@include nice-icon(chevron-left);` 
 <img src="src/chevron-right.svg" alt="chevron-right" height="50"> | chevron-right | e03a | `<span class="icon icon--chevron-right" aria-hidden="true"></span>` | `@include nice-icon(chevron-right);` 
@@ -420,6 +420,7 @@ Icon | Name | Unicode | HTML | SASS
 <img src="src/hamburger.svg" alt="hamburger" height="50"> | hamburger | e03d | `<span class="icon icon--hamburger" aria-hidden="true"></span>` | `@include nice-icon(hamburger);` 
 <img src="src/linkedin-sign.svg" alt="linkedin-sign" height="50"> | linkedin-sign | f08c | `<span class="icon icon--linkedin-sign" aria-hidden="true"></span>` | `@include nice-icon(linkedin-sign);` 
 <img src="src/linkedin.svg" alt="linkedin" height="50"> | linkedin | f0e1 | `<span class="icon icon--linkedin" aria-hidden="true"></span>` | `@include nice-icon(linkedin);` 
+<img src="src/logo-full.svg" alt="logo-full" height="50"> | logo-full | e01c | `<span class="icon icon--logo-full" aria-hidden="true"></span>` | `@include nice-icon(logo-full);` 
 <img src="src/logo-name.svg" alt="logo-name" height="50"> | logo-name | e01b | `<span class="icon icon--logo-name" aria-hidden="true"></span>` | `@include nice-icon(logo-name);` 
 <img src="src/logo.svg" alt="logo" height="50"> | logo | e01a | `<span class="icon icon--logo" aria-hidden="true"></span>` | `@include nice-icon(logo);` 
 <img src="src/minus.svg" alt="minus" height="50"> | minus | e02a | `<span class="icon icon--minus" aria-hidden="true"></span>` | `@include nice-icon(minus);` 
