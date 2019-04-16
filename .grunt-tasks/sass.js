@@ -14,13 +14,13 @@ module.exports = {
 	dist: {
 		options: {
 			sourceMap: true,
-			includePaths: ["src/stylesheets", "node_modules/@nice-digital/icons/dist"],
+			includePaths: ["packages/design-system/scss", "node_modules/@nice-digital/icons/scss"],
 			outputStyle: "nested",
 			sourceMapContents: true
 		},
 		files: {
-			"dist/stylesheets/nice.css": "src/stylesheets/nice-design-system.scss",
-			"dist/stylesheets/nice.min.css": "src/stylesheets/nice-design-system.scss"
+			"dist/stylesheets/nice.css": "nice-design-system.scss",
+			"dist/stylesheets/nice.min.css": "nice-design-system.scss"
 		}
 	}
 };

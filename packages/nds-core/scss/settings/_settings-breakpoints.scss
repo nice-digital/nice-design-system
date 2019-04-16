@@ -1,0 +1,26 @@
+
+/// Extra small break point
+/// @since 0.2.0
+$nice-breakpoint-xs: 400px !default;
+
+/// 'Small' break point. Roughly portrait tablets.
+/// @since 0.2.0
+$nice-breakpoint-sm: 600px !default;
+
+/// 'Medium' break point. Roughly landscape tablets.
+/// @since 0.2.0
+$nice-breakpoint-md: 900px !default;
+
+/// 'Large' break point. Roughly 'dektops'.
+/// @since 0.2.0
+$nice-breakpoint-lg: 1200px !default;
+
+/// 'Extra large' break point for wide screens
+/// @since 0.2.0
+$nice-breakpoint-xl: 1600px !default;
+
+/// Whether the site is responsive. Setting to false will disable
+/// generation of the responsie grid selectors.
+/// True by default.
+/// @since 0.2.0
+$nice-responsive: true !default;

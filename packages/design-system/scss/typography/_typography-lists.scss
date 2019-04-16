@@ -2,14 +2,6 @@
 /// @group Typography
 ////
 
-/// List placeholder
-/// @since 0.1.0
-%list {
-  font-feature-settings: 'kern', 'onum', 'liga';
-  margin-left: rem($spacing-medium);
-  padding: 0;
-}
-
 ul,
 ol {
   @extend %list;

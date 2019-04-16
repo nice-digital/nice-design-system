@@ -235,3 +235,8 @@ OR you can use a copy command (with Grunt or similar) to copy the compiled asset
 - jquery versions
 - removed border-box mixin - assume we're using autoprefixer
 - removed footer component - part of TopHat v2
+- removed `important` mixin - overkill
+- TopHat hide print style is removed
+- removed default-box-sixing - now applied directly to html element
+- removed remove-mz-focus-inner mixin
+- removed hacks folder

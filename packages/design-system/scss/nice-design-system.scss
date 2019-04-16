@@ -1,6 +1,17 @@
 @charset 'utf-8';
 
+// Import all the core variables, functions and mixins
 @import '~@nice-digital/nds-core/scss/core';
+
+// Vendor
+@import '~normalize.css/normalize';
+
+@import 'helpers/helpers',
+  'layout/layout',
+  'typography/typography';
+
+// Icons - from nice-icons module
+@import '~@nice-digital/icons/scss/nice-icons';
 
 // Components
 @import '~@nice-digital/nds-action-banner/scss/action-banner',

@@ -5,24 +5,24 @@
 .show-print,
 .show-print--i,
 .show-print-ib {
-  @include important(display, none);
+  display: none !important;
 }
 
 @media print {
   .show-print {
-    @include important(display, block);
+    display: block !important;
   }
 
   .show-print--i {
-    @include important(display, inline);
+    display: inline !important;
   }
 
   .show-print--ib {
-    @include important(display, inline-block);
+    display: inline-block !important;
   }
 
   .hide-print {
-    @include important(display, none);
+    display: none !important;
   }
 }
 
@@ -31,15 +31,11 @@
 // Source: https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css
 @if $nice-output-default-print-styles {
   @media print {
-    // sass-lint:disable no-qualifying-elements
-    // sass-lint:disable no-universal-selectors
-    // sass-lint:disable no-combinators
-
     * {
-      @include important(text-shadow, none);
-      @include important(color, $colour-true-black); // Black prints faster: h5bp.com/s
-      @include important(background, transparent);
-      @include important(box-shadow, none);
+      background: transparent !important;
+      box-shadow: none !important;
+      color: $colour-true-black !important; // Black prints faster: h5bp.com/s
+      text-shadow: none !important;
     }
 
     body:before {
@@ -87,7 +83,7 @@
     }
 
     img {
-      @include important(max-width, 100%);
+      max-width: 100% !important;
     }
 
     @page {
@@ -104,10 +100,6 @@
     h2,
     h3 {
       page-break-after: avoid;
-    }
-
-    .nice-tophat {
-      display: none;
     }
   }
 }

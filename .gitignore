@@ -64,3 +64,6 @@ packages/*/dist
 
 # Jetstorm IDEs
 .idea
+
+# Bash stackdump logs
+*.stackdump

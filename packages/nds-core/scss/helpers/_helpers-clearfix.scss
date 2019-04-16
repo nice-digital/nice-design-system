@@ -21,9 +21,3 @@
 %clearfix {
   @include clearfix;
 }
-
-/// Clearfix class
-/// @since 0.1.0
-.clearfix {
-  @extend %clearfix;
-}

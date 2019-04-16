@@ -2,40 +2,10 @@
 /// @group grid
 ////
 
-@import 'container';
-
 /*!
  * Grid borrowed from https://github.com/csswizardry/csswizardry-grids
  * with a different API over the top
  */
-
-@import 'grid-helpers',
-  'grid-human';
-
-@mixin generate-grid-classes($breakpoint: null) {
-  $prefix: if($breakpoint, $breakpoint + ':', '');
-
-  // Width classes
-  @for $index from 1 through 12 {
-    [data-g~='#{ $prefix }#{ $index }'] {
-      width: percentage($index / 12);
-    }
-  }
-
-  // Push/ pull classes
-  @for $index from 0 through 12 {
-    [data-g~='#{ $prefix }push:#{ $index }'] {
-      left: percentage($index / 12);
-    }
-
-    [data-g~='#{ $prefix }pull:#{ $index }'] {
-      right: percentage($index / 12);
-    }
-  }
-
-  // Human class names like  one-whole
-  @include human-grid-names($prefix);
-}
 
 /// Grid item default selector.
 /// Use within a `.grid`.
@@ -81,7 +51,6 @@
   &--gutterless {
     @include grid-gutterless;
 
-    // sass-lint:disable-block no-combinators
     > [data-g] {
       @include grid-item-gutterless;
     }
@@ -90,7 +59,6 @@
   &--compact {
     @include grid-compact;
 
-    // sass-lint:disable-block no-combinators
     > [data-g] {
       @include grid-item-compact;
     }
@@ -99,7 +67,6 @@
   &--loose {
     @include grid-loose;
 
-    // sass-lint:disable-block no-combinators
     > [data-g] {
       @include grid-item-loose;
     }
@@ -114,14 +81,12 @@
   }
 
   &--middle {
-    // sass-lint:disable-block no-combinators
     > [data-g] {
       @include grid-item-middle;
     }
   }
 
   &--bottom {
-    // sass-lint:disable-block no-combinators
     > [data-g] {
       @include grid-item-bottom;
     }

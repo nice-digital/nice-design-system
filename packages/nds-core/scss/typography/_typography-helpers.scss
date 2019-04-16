@@ -70,7 +70,6 @@
   $line-height: get-line-height($scale);
 
   @if $important {
-    // sass-lint:disable no-important
     font-size: rem($font-size) !important;
     line-height: rem($line-height) !important;
   } @else {
@@ -98,7 +97,6 @@
   $font-map: map-get($font-sizes, $scale-integer);
 
   @if $important {
-    // sass-lint:disable no-important
     margin-bottom: rem(map-get($font-map, mb)) !important;
     margin-top: rem(map-get($font-map, mt)) !important;
   } @else {
@@ -122,4 +120,29 @@
   @include font(lead);
   font-weight: normal;
   max-width: 66ch;
+}
+
+/// List placeholder
+/// @since 0.1.0
+%list {
+  font-feature-settings: 'kern', 'onum', 'liga';
+  margin-left: rem($spacing-medium);
+  padding: 0;
+}
+
+// TODO: default-error-style probably belongs elsewhere?
+
+/// The highlight style used for elements like inputs and textareas
+/// if there's an error on the field
+/// @param {Boolean} $rounded whether to use box shadow for border (outline can't be styled to have radius corners)
+/// @output default styling for form elements in an errored state
+/// @since 1.0
+@mixin default-error-style($rounded: false) {
+  @if $rounded {
+    box-shadow: 0 0 0 rem($spacing-x-small) $colour-error;
+    outline: $spacing-x-small solid transparent;
+    outline-offset: $spacing-x-small;
+  } @else {
+    outline: rem($spacing-x-small) solid $colour-error;
+  }
 }
