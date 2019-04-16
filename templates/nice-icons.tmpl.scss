@@ -101,8 +101,8 @@ $${ fontBaseName }: (
   font-family: "${ fontFamilyName }";
   font-style: normal;
   font-weight: normal;
-  src: ${ fontSrc1.replace(new RegExp(hash + "\"", "g"), "\" + $" + fontBaseName + "-no-cache").replace(/"\/fonts\//g, "$nice-font-base-path + \"") };
-  src: ${ fontSrc2.replace(new RegExp(hash + "\"", "g"), "\" + $" + fontBaseName + "-no-cache").replace(/"\/fonts\//g, "$nice-font-base-path + \"").replace(new RegExp(hash + "#", "g"), "\" + $" + fontBaseName + "-no-cache + \"#") };
+  src: ${ fontSrc1.replace(new RegExp(hash + "\"", "g"), "\" + $" + fontBaseName + "-no-cache").replace(/"\/fonts\//g, "$" + fontBaseName + "-base-path + \"") };
+  src: ${ fontSrc2.replace(new RegExp(hash + "\"", "g"), "\" + $" + fontBaseName + "-no-cache").replace(/"\/fonts\//g, "$" + fontBaseName + "-base-path + \"").replace(new RegExp(hash + "#", "g"), "\" + $" + fontBaseName + "-no-cache + \"#") };
 }
 
 svg.icon {

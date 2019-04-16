@@ -15,35 +15,36 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [Intro](#intro)
-  - [Guidance](#guidance)
-- [Upgrading from 1.x to 2.x](#upgrading-from-1x-to-2x)
-  - [What's new in v2.x?](#whats-new-in-v2x)
-- [Installation](#installation)
-  - [Include sass](#include-sass)
-    - [Environment variable](#environment-variable)
-    - [includePaths](#includepaths)
-    - [Tilde import](#tilde-import)
-- [Usage](#usage)
-  - [React](#react)
-    - [Browser support](#browser-support)
-  - [Webfont](#webfont)
-    - [Serving font files](#serving-font-files)
-      - [Express](#express)
-      - [Grunt copy](#grunt-copy)
-      - [Visual Studio Copy Task](#visual-studio-copy-task)
-      - [Webpack](#webpack)
-    - [Markup](#markup)
-    - [SASS](#sass)
-- [Development](#development)
-  - [Dependencies](#dependencies)
-  - [Commands](#commands)
-  - [Updating the readme](#updating-the-readme)
-  - [Releasing](#releasing)
-- [Creating icons](#creating-icons)
-- [Custom application icons](#custom-application-icons)
-- [Icons](#icons)
-- [License](#license)
+- [NICE Icons](#nice-icons)
+	- [Intro](#intro)
+		- [Guidance](#guidance)
+	- [Upgrading from 1.x to 2.x](#upgrading-from-1x-to-2x)
+		- [What's new in v2.x?](#whats-new-in-v2x)
+	- [Installation](#installation)
+		- [Include sass](#include-sass)
+			- [Environment variable](#environment-variable)
+			- [includePaths](#includepaths)
+			- [Tilde import](#tilde-import)
+	- [Usage](#usage)
+		- [React](#react)
+			- [Browser support](#browser-support)
+		- [Webfont](#webfont)
+			- [Serving font files](#serving-font-files)
+				- [Express](#express)
+				- [Grunt copy](#grunt-copy)
+				- [Visual Studio Copy Task](#visual-studio-copy-task)
+				- [Webpack](#webpack)
+			- [Markup](#markup)
+			- [SASS](#sass)
+	- [Development](#development)
+		- [Dependencies](#dependencies)
+		- [Commands](#commands)
+		- [Updating the readme](#updating-the-readme)
+		- [Releasing](#releasing)
+	- [Creating icons](#creating-icons)
+	- [Custom application icons](#custom-application-icons)
+	- [Icons](#icons)
+	- [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -67,7 +68,7 @@ Avoid unnecessary decoration - only use icons if there’s a real user need:
 The following are breaking changes from v1 to v2:
 
 - the generated SASS file is at a new path - now at */scss* rather than *dist/* to be consistent with other packages
-- the SASS base path variable `$nice-icons-base-path` is now `$nice-icons-base-path`
+- the SASS base path variable `$nice-font-base-path` is now `$nice-icons-base-path`
 - the SASS mixin `icon-base` is now `nice-icons-base`
 - there are no nested folders within src
 - dropped `speak: none` CSS property
