@@ -4,9 +4,12 @@
   "version": "0.0.1",
   "description": "Monorepo for the NICE Design System",
   "scripts": {
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
     "dev": "npm run build:es && lerna run --scope=dev-app start",
+    "// STORYBOOK": "",
+    "storybook": "start-storybook -p 6006",
+    "storybook:build": "build-storybook",
+    "// LERNA": "",
+    "bootstrap": "lerna bootstrap --hoist",
     "// TESTS": "",
     "test": "cross-env CI=true npm run test:unit && npm run lint && npm run flow",
     "test:unit": "jest",
@@ -14,7 +17,7 @@
     "// LINTING": "",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint ./packages/*/src/**/*.js",
-    "lint:fix": "npm run lint:js -- --fix",
+    "lint:js:fix": "npm run lint:js -- --fix",
     "lint:scss": "stylelint packages/**/*.scss",
     "flow": "flow",
     "// TRANSIPLE ES6": "",
@@ -26,7 +29,8 @@
     "build:es:watch": "npm run build:es -- -w",
     "build:watch": "concurrently -n build: npm:build:*:watch",
     "// LIFECYCLE": "",
-    "prepublish": "npm run build:lib"
+    "postinstall": "npm run bootstrap",
+    "prepublish": "npm run build:lib && npm run build:es"
   },
   "config": {
     "//": "Banner is used for prepending to compiled JS and CSS",
