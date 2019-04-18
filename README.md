@@ -3,7 +3,6 @@
 > Your source for quickly creating consistent on-brand NICE digital services.
 
 [![npm](https://img.shields.io/npm/v/@nice-digital/design-system.svg)](https://www.npmjs.com/package/@nice-digital/design-system)
-[![Bower](https://img.shields.io/bower/v/nice-design-system.svg)](http://bower.io/search?q=nice-design-system)
 [![GitHub release](https://img.shields.io/github/release/nhsevidence/nice-design-system.svg)](https://github.com/nhsevidence/nice-design-system)
 [![License](https://img.shields.io/github/license/nhsevidence/nice-design-system.svg)](https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
 [![Dependencies](https://img.shields.io/david/nhsevidence/nice-design-system.svg)](https://david-dm.org/nhsevidence/nice-design-system)
@@ -84,7 +83,7 @@ See https://www.nice.org.uk/accessibility for more information on NICE's policy.
 
 	TL;DR:
 		1. `yarn`
-		3. `npm start`
+		2. `npm start`
 
 To run the dev server and tests on your local machine, first install:
 
@@ -160,8 +159,6 @@ See the [test](test) folder for more information.
 Then follow the [usage](#usage) steps below...
 
 > Note: if you prefer to use npm rather than yarn, run npm `npm i @nice-digital/design-system --save` instead.
-
-> Note: The [Design System is on Bower](https://bower.io/search/?q=nice-design-system), but this installation method is unsupported.
 
 The installed package contains:
 
@@ -240,3 +237,5 @@ OR you can use a copy command (with Grunt or similar) to copy the compiled asset
 - removed default-box-sixing - now applied directly to html element
 - removed remove-mz-focus-inner mixin
 - removed hacks folder
+- recommend npm rather than yarn
+- drop support for Bower
