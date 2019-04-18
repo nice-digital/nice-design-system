@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "description": "Monorepo for the NICE Design System",
   "scripts": {
+    "start": "npm run dev",
     "dev": "npm run build:es && lerna run --scope=dev-app start",
     "// STORYBOOK": "",
     "storybook": "start-storybook -p 6006",
