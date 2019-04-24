@@ -48,7 +48,6 @@
       &:hover {
         background: $colour-nice-grey-1;
 
-        // sass-lint:disable no-combinators
         + .filter-group__options {
           border-color: $colour-nice-grey-1;
         }

@@ -1,8 +1,8 @@
-@import '~@nice-digital/nds-core/scss/core';
-
 ////
 /// @group components
 ////
+
+@import '~@nice-digital/nds-core/scss/core';
 
 /// Tabbed navigational structure.
 /// Works without JavaScript - the tab buttons disappear and the tab
@@ -130,7 +130,6 @@
       }
     }
 
-    // sass-lint:disable-block no-combinators
     > :first-child {
       margin-top: 0;
     }

@@ -1,0 +1,18 @@
+////
+/// @group components
+////
+
+/// Container placeholder.
+/// @since 1.0.0
+@mixin container {
+  margin: auto;
+  max-width: rem($nice-container-max-width);
+  width: 96%; // Fallback for non-calc browsers e.g. IE8, see https://caniuse.com/#feat=calc
+  width: calc(100% - #{rem($spacing-large)});
+}
+
+/// Container placeholder.
+/// @since 0.1.0
+%container {
+  @include container;
+}

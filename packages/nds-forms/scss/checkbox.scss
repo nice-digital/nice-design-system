@@ -13,9 +13,11 @@ $checkbox-size: rem($spacing-large);
   &--error .checkbox__label,
   &--error .checkbox__label {
     color: $colour-error;
+
     &:before {
       @include default-error-style;
     }
+
     &:after {
       color: $colour-nice-black;
     }
@@ -94,7 +96,7 @@ $checkbox-size: rem($spacing-large);
       transform: rotate(-45deg);
       border: solid;
       border-width: 0 0 rem($spacing-x-small) rem($spacing-x-small);
-      border-top-color: transparent; // IE11 bug  
+      border-top-color: transparent; // IE11 bug
       opacity: 0;
       background: transparent;
     }

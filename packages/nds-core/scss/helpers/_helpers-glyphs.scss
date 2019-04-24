@@ -59,18 +59,3 @@ $nice-glyphs: (
 
   @return unquote('\'#{$codes}\'');
 }
-
-@if $nice-output-glyph-classes {
-  /// Output a BEM style glyph selector for each glyph in the map.
-  /// E.g. .glyph.glyph--bullet { content: '\2022'; }
-  /// @since 0.1.0
-  .glyph {
-    @each $key, $value in $nice-glyphs {
-      &--#{$key} {
-        &:before {
-          content: unquote('\'\\#{$value}\'');
-        }
-      }
-    }
-  }
-}

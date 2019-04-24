@@ -5,10 +5,10 @@
 /// Default link style for use on a normal (light) background
 /// @since 0.3.1
 @mixin link-default {
-  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes
+  -webkit-tap-highlight-color: rgba($colour-focus, .333);
   color: $colour-link;
   text-decoration: underline;
-  text-decoration-skip: ink;
+  text-decoration-skip: auto;
 
   &:visited {
     color: $colour-link-visited;
@@ -39,10 +39,10 @@
 /// Inverse link style for use on an inverse (dark) background
 /// @since 0.3.1
 @mixin link-inverse {
-  -webkit-tap-highlight-color: rgba($colour-focus, .333); // sass-lint:disable-line no-vendor-prefixes
+  -webkit-tap-highlight-color: rgba($colour-focus, .333);
   color: $colour-link-inverse;
   text-decoration: underline;
-  text-decoration-skip: ink;
+  text-decoration-skip: auto;
 
   &:visited {
     color: $colour-link-inverse-visited;
@@ -69,23 +69,4 @@
   a {
     @include link-inverse;
   }
-}
-
-a {
-  @include link-default;
-}
-
-/// Inverse link for use on a dark background. Apply to an individual link.
-/// Prefer using `.inverse-links` on the container instead.
-/// @since 0.2.9
-.link--inverse {
-  @include link-inverse;
-}
-
-/// Inverse links, for use on dark backgrounds e.g dark panels.
-/// Use this class on a containing element to apply to all links within it.
-/// @require {mixin} links-inverse
-/// @since 0.2.9
-.inverse-links {
-  @include links-inverse;
 }

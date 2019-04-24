@@ -1,0 +1,9 @@
+////
+/// @group helpers
+////
+
+/// Clearfix class
+/// @since 0.1.0
+.clearfix {
+  @include clearfix;
+}

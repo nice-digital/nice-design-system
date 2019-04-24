@@ -1,0 +1,17 @@
+// SASS MQ OVERRIDES
+
+// A map of breakpoints (name: px) required for SASS MQ
+$mq-breakpoints: (
+  xs: $nice-breakpoint-xs,
+  sm: $nice-breakpoint-sm,
+  md: $nice-breakpoint-md,
+  lg: $nice-breakpoint-lg,
+  xl: $nice-breakpoint-xl
+);
+
+// Base font size
+$mq-base-font-size: $nice-base-font-size * 1px;
+
+$mq-static-breakpoint: lg;
+
+$mq-responsive: $nice-responsive;

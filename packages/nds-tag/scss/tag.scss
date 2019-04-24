@@ -1,8 +1,8 @@
-@import '~@nice-digital/nds-core/scss/core';
-
 ////
 /// @group components
 ////
+
+@import '~@nice-digital/nds-core/scss/core';
 
 $nice-tag-border-radius: em($spacing-xx-small);
 
@@ -51,7 +51,6 @@ $nice-tag-border-radius: em($spacing-xx-small);
   }
 
   @media print {
-    // sass-lint:disable-block no-important
     background: none !important;
     color: $colour-true-black !important;
     padding: 0 !important;

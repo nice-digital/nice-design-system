@@ -1,8 +1,8 @@
-@import '~@nice-digital/nds-core/scss/core';
-
 ////
 /// @group components
 ////
+
+@import '~@nice-digital/nds-core/scss/core';
 
 /// A panel is a container for visually separating content.
 /// Often used within a sidebar.
@@ -13,12 +13,10 @@
   margin: em($spacing-medium 0 $spacing-large);
   padding: em($spacing-medium);
 
-  // sass-lint:disable no-combinators
   > :first-child {
     margin-top: 0;
   }
 
-  // sass-lint:disable no-combinators
   > :last-child {
     margin-bottom: 0;
   }

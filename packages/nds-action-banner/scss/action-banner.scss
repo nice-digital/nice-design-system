@@ -1,8 +1,9 @@
-@import '~@nice-digital/nds-core/scss/core';
-
 ////
 /// @group components
 ////
+
+@import '~@nice-digital/nds-core/scss/core';
+@import '~@nice-digital/icons/scss/nice-icons';
 
 /// Action banner component. Used to highlight
 /// and give context to a call-to-action.
@@ -114,6 +115,6 @@
   }
 
   @media print {
-    @include important(display, none);
+    display: none !important;
   }
 }

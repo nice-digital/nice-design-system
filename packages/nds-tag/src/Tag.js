@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from "react";
+import "./../scss/tag.scss";
 
 type TagProps = {
 	title: string
