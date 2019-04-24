@@ -1,14 +1,14 @@
-const path = require("path");
+// See https://storybook.js.org/docs/configurations/custom-webpack-config/#full-control-mode
+const path = require('path');
 
-// See https://storybook.js.org/configurations/custom-webpack-config/#extend-mode
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.scss$/,
-        loaders: ["style-loader", "css-loader", "sass-loader"],
-        include: path.resolve(__dirname, "../")
-      }
-    ]
-  }
+module.exports = async ({ config, mode }) => {
+
+	const scssRule = config.module.rules.find((rule) => rule.test.toString() == /\.(scss|sass)$/);
+
+	// Assume the loaders are style loader, css loader and sass loader in that order
+	const scssLoader = scssRule.use[3];
+
+	scssLoader.options.data = "$nice-icons-base-path: '/';";
+
+  return config;
 };
