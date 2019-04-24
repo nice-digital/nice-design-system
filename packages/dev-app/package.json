@@ -26,10 +26,11 @@
     "react-scripts": "2.1.8"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm run copy-nice-icons && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "copy-nice-icons": "copyfiles -f \"node_modules/@nice-digital/icons/dist/*.{eot,svg,ttf,woff,woff2}\" \"public/fonts\""
   },
   "eslintConfig": {
     "extends": "react-app"
