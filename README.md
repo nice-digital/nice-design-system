@@ -63,6 +63,8 @@ Run `npm start` and `test:unit:watch` for development. However, there are other 
 | Task | Description |
 | ---- | ----------- |
 | `npm start`           				| Runs a server for local development and watches for changes |
+| `npm run bootstrap`    				| Runs `lerna bootstrap` under the hood |
+| `npm run publish`    					| Runs `lerna publish` under the hood |
 | `npm run storybook`           | Runs the storybook web app locally |
 | `npm run storybook:build`     | Builds a compiled storybook site |
 | `npm test`            				| Lints JS and SCSS and runs JS unit tests |

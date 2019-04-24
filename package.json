@@ -11,6 +11,7 @@
     "storybook:build": "build-storybook",
     "// LERNA": "",
     "bootstrap": "lerna bootstrap --hoist --nohoist=babel-*",
+    "publish": "lerna publish",
     "// TESTS": "",
     "test": "cross-env CI=true npm run test:unit && npm run lint && npm run flow",
     "test:unit": "jest",
