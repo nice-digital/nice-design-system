@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { Radio, RadioGroup, Textarea, Input, Fieldset, Checkbox, CheckboxGroup } from "@nice-digital/nds-forms";
 import Alert from "@nice-digital/nds-alert";
 import ActionBanner from "@nice-digital/nds-action-banner";
@@ -25,7 +25,7 @@ class App extends Component {
 				<h1>NICE Design System dev app</h1>
 
 				<h2>Action banner</h2>
-				<ActionBanner title="This is an action banner" closeable={true} cta={<button type="button" class="btn">Test CTA</button>}>
+				<ActionBanner title="This is an action banner" closeable={true} cta={<Button modifier="inverse">Test CTA</Button>}>
 					<p>With some body copy</p>
 				</ActionBanner>
 
