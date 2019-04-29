@@ -69,6 +69,9 @@
   // Wrapper for the options when filter is a list of checboxes
   &__options {
     border: rem($spacing-x-small) solid $colour-nice-grey-2;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
 
     &[aria-hidden='true'] {
       display: none;
