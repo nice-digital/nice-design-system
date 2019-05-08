@@ -10,6 +10,11 @@
 .filter-group {
   margin-top: rem($spacing-medium);
   padding: 0;
+  border: 0;
+
+  legend {
+    @include invisible();
+  }
 
   &:first-child {
     margin-top: 0;
