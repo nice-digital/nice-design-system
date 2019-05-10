@@ -1,5 +1,5 @@
 /*!
-NICE Design System 0.5.4 | 2019-05-10
+NICE Design System 0.5.5 | 2019-05-10
 © Copyright NICE 2015-2019
 Licensed under MIT (https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
 */
