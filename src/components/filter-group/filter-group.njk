@@ -10,13 +10,14 @@
 			{% endif %}
 		</button>
 
-		<div role="group" id="group-{{ filterGroup.id }}" aria-labelledby="group-title-{{ filterGroup.id }}" class="filter-group__options">
+		<fieldset id="group-{{ filterGroup.id }}" class="filter-group__options">
+		<legend>{{filterGroup.title}}</legend>
 			{% for option in filterGroup.options %}
 				<label for="filter_{{ filterGroup.id }}_{{option.id}}" class="filter-group__option">
 					<input id="filter_{{ filterGroup.id }}_{{option.id}}" type="checkbox" name="{{ filterGroup.id }}" value="{{option.id}}" aria-controls="results-info-count" {{ "checked=\"checked\"" if option.isSelected }} />
 					{{option.label}}
 				</label>
 			{% endfor %}
-		</div>
-    </div>
+		</fieldset>
+	</div>
 {% endmacro %}
