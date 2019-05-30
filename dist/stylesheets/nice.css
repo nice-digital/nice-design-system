@@ -1,6 +1,6 @@
 /*!
- * NICE Design System 0.5.3 | 2018-11-05
- * © Copyright NICE 2015-2018
+ * NICE Design System 0.5.8 | 2019-05-21
+ * © Copyright NICE 2015-2019
  * Licensed under MIT (https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
  */
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
@@ -4036,8 +4036,8 @@ ol, .list {
   font-family: "NICE Icons";
   font-style: normal;
   font-weight: normal;
-  src: url("/fonts/nice-icons.eot?696054524");
-  src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/nice-icons.woff2?696054524") format("woff2"), url("/fonts/nice-icons.woff?696054524") format("woff"), url("/fonts/nice-icons.ttf?696054524") format("truetype"), url("/fonts/nice-icons.svg?696054524#nice-icons") format("svg"); }
+  src: url("/fonts/nice-icons.eot?588462385");
+  src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/nice-icons.woff2?588462385") format("woff2"), url("/fonts/nice-icons.woff?588462385") format("woff"), url("/fonts/nice-icons.ttf?588462385") format("truetype"), url("/fonts/nice-icons.svg?588462385#nice-icons") format("svg"); }
 
 .icon {
   display: inline-block;
@@ -4493,6 +4493,15 @@ ol, .list {
 .filter-group {
   margin-top: 16px;
   margin-top: 1rem; }
+  .filter-group legend {
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    overflow: hidden;
+    width: 1px; }
+  .filter-group fieldset {
+    margin: 0;
+    padding: 0; }
   .filter-group:first-child {
     margin-top: 0; }
   .filter-group__heading {

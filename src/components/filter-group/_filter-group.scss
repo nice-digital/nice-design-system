@@ -10,6 +10,15 @@
 .filter-group {
   margin-top: rem($spacing-medium);
 
+  legend {
+    @include invisible();
+  }
+
+  fieldset {
+    margin: 0;
+    padding: 0;
+  }
+
   &:first-child {
     margin-top: 0;
   }
@@ -69,7 +78,6 @@
   // Wrapper for the options when filter is a list of checboxes
   &__options {
     border: rem($spacing-x-small) solid $colour-nice-grey-2;
-
     &[aria-hidden='true'] {
       display: none;
     }
