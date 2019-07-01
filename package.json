@@ -103,7 +103,7 @@
     "node-common-errors": "^0.4.0",
     "nunjucks": "^3.2.0",
     "nunjucks-loader": "^2.4.8",
-    "nyc": "^11.3.0",
+    "nyc": "^14.1.1",
     "pixrem": "^4.0.1",
     "postcss-banner": "^3.0.0",
     "serve-favicon": "^2.4.2",
@@ -113,7 +113,7 @@
     "time-grunt": "^1.4.0",
     "webpack": "^3.8.1",
     "webpack-dev-middleware": "^1.10.2",
-    "webpack-dev-server": "^2.9.3"
+    "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
     "@nice-digital/icons": "^1.5.0",
