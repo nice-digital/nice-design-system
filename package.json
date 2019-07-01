@@ -80,7 +80,7 @@
     "grunt-eslint": "^20.1.0",
     "grunt-express-server": "^0.5.3",
     "grunt-mocha-test": "^0.13.2",
-    "grunt-modernizr": "^1.0.3",
+    "grunt-modernizr": "^2.0.1",
     "grunt-newer": "^1.2.0",
     "grunt-postcss": "^0.9.0",
     "grunt-release-it": "^1.0.1",
