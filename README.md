@@ -15,36 +15,35 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [NICE Icons](#nice-icons)
-	- [Intro](#intro)
-		- [Guidance](#guidance)
-	- [Upgrading from 1.x to 2.x](#upgrading-from-1x-to-2x)
-		- [What's new in v2.x?](#whats-new-in-v2x)
-	- [Installation](#installation)
-		- [Include sass](#include-sass)
-			- [Environment variable](#environment-variable)
-			- [includePaths](#includepaths)
-			- [Tilde import](#tilde-import)
-	- [Usage](#usage)
-		- [React](#react)
-			- [Browser support](#browser-support)
-		- [Webfont](#webfont)
-			- [Serving font files](#serving-font-files)
-				- [Express](#express)
-				- [Grunt copy](#grunt-copy)
-				- [Visual Studio Copy Task](#visual-studio-copy-task)
-				- [Webpack](#webpack)
-			- [Markup](#markup)
-			- [SASS](#sass)
-	- [Development](#development)
-		- [Dependencies](#dependencies)
-		- [Commands](#commands)
-		- [Updating the readme](#updating-the-readme)
-		- [Releasing](#releasing)
-	- [Creating icons](#creating-icons)
-	- [Custom application icons](#custom-application-icons)
-	- [Icons](#icons)
-	- [License](#license)
+- [Intro](#intro)
+  - [Guidance](#guidance)
+- [Upgrading from 1.x to 2.x](#upgrading-from-1x-to-2x)
+  - [What's new in v2.x?](#whats-new-in-v2x)
+- [Installation](#installation)
+  - [Include sass](#include-sass)
+    - [Environment variable](#environment-variable)
+    - [includePaths](#includepaths)
+    - [Tilde import](#tilde-import)
+- [Usage](#usage)
+  - [React](#react)
+    - [Browser support](#browser-support)
+  - [Webfont](#webfont)
+    - [Serving font files](#serving-font-files)
+      - [Express](#express)
+      - [Grunt copy](#grunt-copy)
+      - [Visual Studio Copy Task](#visual-studio-copy-task)
+      - [Webpack](#webpack)
+    - [Markup](#markup)
+    - [SASS](#sass)
+- [Development](#development)
+  - [Dependencies](#dependencies)
+  - [Commands](#commands)
+  - [Updating the readme](#updating-the-readme)
+  - [Releasing](#releasing)
+- [Creating icons](#creating-icons)
+- [Custom application icons](#custom-application-icons)
+- [Icons](#icons)
+- [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -419,6 +418,7 @@ Icon | Name | Unicode | HTML | SASS
 <img src="src/google-plus.svg" alt="google-plus" height="50"> | google-plus | f0d5 | `<span class="icon icon--google-plus" aria-hidden="true"></span>` | `@include nice-icon(google-plus);` 
 <img src="src/guidance.svg" alt="guidance" height="50"> | guidance | e011 | `<span class="icon icon--guidance" aria-hidden="true"></span>` | `@include nice-icon(guidance);` 
 <img src="src/hamburger.svg" alt="hamburger" height="50"> | hamburger | e03d | `<span class="icon icon--hamburger" aria-hidden="true"></span>` | `@include nice-icon(hamburger);` 
+<img src="src/instagram.svg" alt="instagram" height="50"> | instagram | f16d | `<span class="icon icon--instagram" aria-hidden="true"></span>` | `@include nice-icon(instagram);` 
 <img src="src/linkedin-sign.svg" alt="linkedin-sign" height="50"> | linkedin-sign | f08c | `<span class="icon icon--linkedin-sign" aria-hidden="true"></span>` | `@include nice-icon(linkedin-sign);` 
 <img src="src/linkedin.svg" alt="linkedin" height="50"> | linkedin | f0e1 | `<span class="icon icon--linkedin" aria-hidden="true"></span>` | `@include nice-icon(linkedin);` 
 <img src="src/logo-full.svg" alt="logo-full" height="50"> | logo-full | e01c | `<span class="icon icon--logo-full" aria-hidden="true"></span>` | `@include nice-icon(logo-full);` 

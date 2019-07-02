@@ -5,6 +5,7 @@ module.exports = {
 	"facebook-square": 0xf082,
 	"google-plus": 0xf0d5,
 	"google-plus-square": 0xf0d4,
+	instagram: 0xf16d,
 	"linkedin-sign": 0xf08c,
 	"question-circle": 0xf059,
 	"twitter-square": 0xf081,
