@@ -51,21 +51,21 @@
     "access": "public"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/node": "^7.2.2",
-    "@babel/preset-env": "^7.3.1",
+    "@babel/cli": "^7.4.4",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@nice-digital/eslint-config": "^1.0.3",
-    "@svgr/cli": "^4.1.0",
-    "babel-eslint": "^10.0.1",
+    "@svgr/cli": "^4.3.1",
+    "babel-eslint": "^10.0.2",
     "doctoc": "^1.4.0",
-    "eslint": "^5.13.0",
-    "eslint-plugin-flowtype": "^3.4.1",
-    "grunt": "^1.0.3",
+    "eslint": "^6.0.1",
+    "eslint-plugin-flowtype": "^3.11.1",
+    "grunt": "^1.0.4",
     "grunt-webfont": "^1.7.2",
-    "load-grunt-config": "^1.0.1",
-    "np": "^4.0.2"
+    "load-grunt-config": "^2.0.0",
+    "np": "^5.0.3"
   },
   "peerDependencies": {
     "react": ">=15"
