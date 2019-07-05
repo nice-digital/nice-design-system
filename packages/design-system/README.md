@@ -1,78 +1,84 @@
 # `@nice-digital/design-system`
 
-> TODO: description
+> Your source for quickly creating consistent on-brand NICE digital services.
 
-## Usage
+[![npm](https://img.shields.io/npm/v/@nice-digital/design-system.svg)](https://www.npmjs.com/package/@nice-digital/design-system)
+[![GitHub release](https://img.shields.io/github/release/nhsevidence/nice-design-system.svg)](https://github.com/nhsevidence/nice-design-system)
+[![License](https://img.shields.io/github/license/nhsevidence/nice-design-system.svg)](https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
+[![Dependencies](https://img.shields.io/david/nhsevidence/nice-design-system.svg)](https://david-dm.org/nhsevidence/nice-design-system)
+[![Dev dependencies](https://img.shields.io/david/dev/nhsevidence/nice-design-system.svg)](https://david-dm.org/nhsevidence/nice-design-system?type=dev)
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
-```
-const designSystem = require('@nice-digital/design-system');
+<details>
+<summary><strong>Table of contents</strong></summary>
 
-// TODO: DEMONSTRATE API
-```
+- [`@nice-digital/design-system`](#nice-digitaldesign-system)
+	- [Required software](#Required-software)
+	- [Installation](#Installation)
+	- [Usage](#Usage)
+		- [SCSS](#SCSS)
+		- [Precompiled](#Precompiled)
+		- [CDN](#CDN)
+</details>
+
+## Required software
+
+Install [Node](https://nodejs.org/en/download/) >= 6.9.0 and npm >= 5. Chose LTS from the Node download page.
 
 ## Installation
 
-### Install with yarn
+Install the NICE Design System npm package into your project by running the following on the command line:
 
-[yarn](https://yarnpkg.com/en/package/@nice-digital/design-system) is the recommended way of installing the NICE Design System into your project. Run the following from the command line to install it as a dependency:
+```sh
+npm i @nice-digital/design-system --save
+```
 
-`yarn add @nice-digital/design-system -D`
+Then follow the [usage](#usage) steps below:
 
-Then follow the [usage](#usage) steps below...
+## Usage
 
-> Note: if you prefer to use npm rather than yarn, run npm `npm i @nice-digital/design-system --save` instead.
+This package is the 'kitchen sink' package which gives you access to all styles, components and icons. It references [@nice-digital/nds-core](packages/nds-core#readme), [@nice-digital/icons](https://github.com/nhsevidence/nice-icons#readme) and all the [component packages](packages).
 
 The installed package contains:
 
-- source SASS
-- pre-compiled (dist) CSS
-- source (ES6) JavaScript
-- pre-compiled (dist) JavaScript
+- source SCSS
+- pre-compiled (dist) CSS and JavaScript
 - static assets like favicon and logo.
 
-Note: The icon font is referenced as a dependency from [@nice-digital/icons](https://github.com/nhsevidence/nice-icons#readme).
+> Note: Install and reference components directly if you don't need the full kitchen sink, for example [tabs](packages/nds-tabs).
 
-### Usage
+### SCSS
 
-#### From source
+Import the NICE Design System into your application:
 
-The yarn/npm package contains the source code as well as the precompiled assets.
-
-See the [stylesheets directory](src/stylesheets#installation) for further information on how to build from SASS source in your project.
-
-See the [javascripts directory](src/javascripts#installation) for further information on how to build from JavaScript source in your project.
-
-#### CDN
-
-- Useful for rapid prototyping
-- no need for CSS/JS build steps: just reference the pre-compiled CSS/JS
-- uses compiled CSS so loses the benefit of SASS mixins, function and variables
-- you get everything: you can’t pick and choose just what you need
-- not recommended for production setups.
-
-*CDN is coming soon…*
-
-#### Precompiled
-
-Not recommended for production, but useful for quick prototypes, the npm package includes a dist folder with precompiled assets.
-
-You can reference directly if you have the correct permissions:
-
-```html
-<!-- Font from Google & compiled/minified CSS -->
-<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700" rel="stylesheet">
-<link rel="stylesheet" href="/node_modules/@nice-digital/design-system/dist/stylesheets/nice.min.css">
-
-<!-- jQuery from CDN & compiled/minified JavaScript -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="/node_modules/@nice-digital/design-system/dist/javascripts/nice.min.js"></script>
+```scss
+@import '~@nice-digital/design-system/scss/nice-design-system';
 ```
 
-OR if you're using express you can use the dist folder as a static directory:
+This gives you everything: core (mixins, functions, variables, placeholders), CSS resets, icon font, default styles and all components. Visit the [documentation site](https://nhsevidence.github.io/nice-design-system/technical/sass/documentation/) for full details on what's available in the SCSS.
 
-```javascript
+You can then start using the SCSS from the NICE Design System, for example:
+
+```scss
+.something {
+  color: $colour-nice-teal;
+  margin: rem($spacing-large);
+}
+```
+
+> Note: we use tildes in SCSS import paths, which works out of the box with sass-loader in webpack. Use [node-sass-tilde-importer](https://www.npmjs.com/package/node-sass-tilde-importer) if you're using node-sass directly.
+
+### Precompiled
+
+The [@nice-digital/design-system](https://www.npmjs.com/package/@nice-digital/design-system) npm package includes a dist folder with pre-compiled assets (CSS and JS). These are useful for quick prototypes, but aren't recommended for production because:
+
+- it uses compiled CSS so you lose the benefit of all the SCSS mixins, function and variables
+- you get everything: you can’t pick and choose just what you need.
+
+Use the dist folder as a static directory with [Express](https://expressjs.com/) to serve these precompiled files:
+
+```js
 app.use(express.static(__dirname + "/node_modules/@nice-digital/design-system/dist/"));
-app.use(express.static(__dirname + "/node_modules/@nice-digital/icons/dist/"));
 ```
 
 and then reference it from your HTML as:
@@ -82,4 +88,10 @@ and then reference it from your HTML as:
 <script src="/javascripts/nice.min.js"></script>
 ```
 
-OR you can use a copy command (with Grunt or similar) to copy the compiled assets out of the *node_modules* folder to somewhere where you can serve them.
+> Note: you'll probably also need to serve the nice-icons icon font if you're doing this: `app.use(express.static(__dirname + "/node_modules/@nice-digital/icons/dist/"));`.
+
+Alternatively, use a script to copy the precompiled assets out of the *node_modules* folder to somewhere where you can serve them.
+
+### CDN
+
+We are planning on publishing the [precompiled](#precompiled) version of the Design System to the NICE CDN. Watch this space.
