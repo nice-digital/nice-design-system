@@ -36,11 +36,11 @@
     "url": "https://github.com/nhsevidence/nice-design-system/issues"
   },
   "dependencies": {
-    "@nice-digital/icons": "^2.0.1",
+    "@nice-digital/icons": "^2.1.1",
     "sass-mq": "^5.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.0"
+    "@babel/cli": "^7.5.0"
   },
   "gitHead": "219eb95773dd5cbd7b43653fc86cc12dc496bb59"
 }

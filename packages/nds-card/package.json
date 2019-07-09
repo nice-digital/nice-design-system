@@ -35,7 +35,7 @@
     "@nice-digital/nds-core": "^1.0.4-alpha.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.0"
+    "@babel/cli": "^7.5.0"
   },
   "gitHead": "219eb95773dd5cbd7b43653fc86cc12dc496bb59"
 }
