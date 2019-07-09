@@ -34,7 +34,7 @@ It is a replacement for [NICE.Bootstrap](https://github.com/nhsevidence/NICE.Boo
 ### Quick start
 
 	TL;DR:
-		1. Install Node 6+
+		1. Install Node 8.9+
 		2. `npm i`
 		3. `npm start`
 		4. http://localhost:3000/
@@ -43,7 +43,7 @@ It is a replacement for [NICE.Bootstrap](https://github.com/nhsevidence/NICE.Boo
 
 To run the design system site and tests locally, first install the required dependencies:
 
-- [Node 6+](https://nodejs.org/en/download/)
+- [Node 8.9+](https://nodejs.org/en/download/)
 - [npm 5+](https://www.npmjs.com/)
 
 Then before you can run any tasks, run `npm i` from the command line to install dependencies from npm. This will also 'link local packages together and install remaining package dependencies'.
@@ -98,3 +98,4 @@ These are the following breaking changes from 0.x to 1.x:
 - recommend npm rather than yarn
 - drop support for Bower
 - remove grunt and use npm scripts
+- Node 8.9+ requried for local development (because CSS modules 3 requires 8.9+)

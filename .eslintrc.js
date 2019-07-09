@@ -1,22 +1,25 @@
 module.exports = {
-	"parser": "babel-eslint",
-	"extends": [
+	parser: "babel-eslint",
+	extends: [
 		"@nice-digital/eslint-config/es6",
 		"plugin:react/recommended",
 		"plugin:flowtype/recommended"
 	],
-	"plugins": [
-		"flowtype"
-	],
-	"env": {
-		"es6": true
+	settings: {
+		react: {
+			version: "detect"
+		}
 	},
-	"overrides": [
+	plugins: ["flowtype"],
+	env: {
+		es6: true
+	},
+	overrides: [
 		{
-			"files": ["**.test.js"],
-			"env": {
-				"jest": true,
-				"browser": true
+			files: ["**.test.js"],
+			env: {
+				jest: true,
+				browser: true
 			}
 		}
 	]

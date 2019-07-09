@@ -1,21 +1,29 @@
 {
-    "files.exclude": {
-        "packages/*/es": true,
-        "packages/*/lib": true,
-        "packages/*/dist": true,
-        ".cache": true,
-        ".nyc_output": true,
-        "coverage": true,
-        "dist": true,
-        "temp": true
-    },
-    "vsicons.associations.folders": [
-      {
-        "icon": "storybook",
-        "extensions": ["__stories__", ".storybook"],
-        "format": "svg",
-        "filename": true
-      }
-    ],
-    "vsicons.customIconFolderPath": "./.vscode/"
+	"editor.formatOnSave": true,
+	"editor.rulers": [80],
+	"prettier.endOfLine": "lf",
+	"files.eol": "\n",
+	"sasslint.enable": false,
+	"css.validate": false,
+	"less.validate": false,
+	"scss.validate": false,
+	"files.exclude": {
+		"packages/*/es": true,
+		"packages/*/lib": true,
+		"packages/*/dist": true,
+		".cache": true,
+		".nyc_output": true,
+		"coverage": true,
+		"dist": true,
+		"temp": true
+	},
+	"vsicons.associations.folders": [
+		{
+			"icon": "storybook",
+			"extensions": ["__stories__", ".storybook"],
+			"format": "svg",
+			"filename": true
+		}
+	],
+	"vsicons.customIconFolderPath": "./.vscode/"
 }
