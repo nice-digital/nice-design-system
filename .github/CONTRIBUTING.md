@@ -1,11 +1,11 @@
-# Contribution Guidelines
+# Contribution guidelines
 
 We welcome patches to NICE Design System, as long as you follow these
 guidelines:
 
 ## Coding standards
 
-Follow our [ESLint](https://github.com/nhsevidence/nice-design-system/blob/master/src/javascripts/.eslintrc) and [Sass Lint](https://github.com/nhsevidence/nice-design-system/blob/master/src/stylesheets/.sass-lint.yml) rules for linting. Run `npm run lint` to check for any linting errors.
+Follow our ESLint, Prettier and stylelint rules for linting. Run `npm run lint` to check for any linting errors.
 
 If in doubt, follow the format of the surrounding code.
 
@@ -15,11 +15,11 @@ Keep all documentation e.g. comments and readmes up-to-date with any code change
 
 ## Tests
 
-Include thoughtfully-worded, well-structured Mocha tests. See the [test folder](https://github.com/nhsevidence/nice-design-system/tree/master/test#readme) for more info.
+Include thoughtfully-worded, well-structured Jest tests.
 
 ## Commit hygiene
 
-Follow [GOV.UK's Git style guide](https://github.com/alphagov/styleguides/blob/master/git.md).
+Follow [The GDS Way Git style guide](https://gds-way.cloudapps.digital/standards/git.html) wherever possible.
 
 ## Versioning
 
