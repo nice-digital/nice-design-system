@@ -1,0 +1,12 @@
+{
+	"recommendations": [
+		"EditorConfig.EditorConfig",
+		"dbaeumer.vscode-eslint",
+		"andys8.jest-snippets",
+		"eg2.vscode-npm-script",
+		"christian-kohler.npm-intellisense",
+		"christian-kohler.path-intellisense",
+		"esbenp.prettier-vscode",
+		"shinnn.stylelint"
+	]
+}
