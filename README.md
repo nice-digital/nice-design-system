@@ -101,4 +101,5 @@ These are the following breaking changes from 0.x to 1.x:
 - drop support for Bower
 - remove grunt and use npm scripts
 - Node 8.9+ requried for local development (because CSS modules 3 requires 8.9+)
-- Drop support for Sublime as an IDE - prefer vscode
+- drop support for Sublime as an IDE - prefer vscode
+- removed nunjucks templates, we now recommend using React components.
