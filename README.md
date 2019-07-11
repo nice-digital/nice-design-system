@@ -31,6 +31,8 @@ It is a replacement for [NICE.Bootstrap](https://github.com/nhsevidence/NICE.Boo
 
 ## Development
 
+We recommend using vscode as the IDE when developing with the NICE Design System. We have a set of [recommended extensions](.vscode/extensions.json) you should install to make development easier. You should be prompted to install these when opening the folder in vscode.
+
 ### Quick start
 
 	TL;DR:
@@ -99,3 +101,4 @@ These are the following breaking changes from 0.x to 1.x:
 - drop support for Bower
 - remove grunt and use npm scripts
 - Node 8.9+ requried for local development (because CSS modules 3 requires 8.9+)
+- Drop support for Sublime as an IDE - prefer vscode
