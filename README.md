@@ -70,6 +70,7 @@ Run `npm start` and `test:unit:watch` for development. However, there are other 
 | ---------------------------- | ----------------------------------------------------------- |
 | `npm start`                  | Runs a server for local development and watches for changes |
 | `npm run bootstrap`          | Runs `lerna bootstrap` under the hood                       |
+| `npm run lerna`              | Runs `lerna` under the hood                                 |
 | `npm run publish`            | Runs `lerna publish` under the hood                         |
 | `npm run storybook`          | Runs the storybook web app locally                          |
 | `npm run storybook:build`    | Builds a compiled storybook site                            |
@@ -80,6 +81,8 @@ Run `npm start` and `test:unit:watch` for development. However, there are other 
 | `npm run lint`               | Lints both JS and SCSS                                      |
 | `npm run lint:js`            | Lints just JS                                               |
 | `npm run lint:scss`          | Lints just SCSS                                             |
+
+> Note: because lerna is installed locally, you can use `npm run lerna -- ` to run lerna commands, for example `npm run lerna -- add @nice-digital/icons --scope=@nice-digital/nds-filters`
 
 ## Upgrading to 1.x from 0.x
 
