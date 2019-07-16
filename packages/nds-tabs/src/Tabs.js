@@ -1,5 +1,6 @@
-// @flow
-import * as React from "react";
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+
 import { slugify } from "@nice-digital/nds-core/es/utils";
 import Tab from "./Tab";
 import "./../scss/tabs.scss";
@@ -12,32 +13,15 @@ const keyCodes = {
 	/**
 	 * Code for the left key (37)
 	 * @type Number
-	*/
+	 */
 	left: 37,
 	up: 38,
 	right: 39,
 	down: 40
 };
 
-export type TabsProps = {
-	children: React.ChildrenArray<React.Element<typeof Tab>>
-};
-
-export type TabsState = {
-	index: number,
-	canUseDOM: boolean,
-	focusActiveTabButton: boolean
-};
-
-/**
- * Tabs component
- *
- * @class Tabs
- * @extends {Component<TabsProps, TabsState>}
- */
-class Tabs extends React.Component<TabsProps, TabsState> {
-
-	constructor(props: TabsProps) {
+class Tabs extends Component {
+	constructor(props) {
 		super(props);
 
 		this.state = {
@@ -64,30 +48,26 @@ class Tabs extends React.Component<TabsProps, TabsState> {
 		this.setState({ canUseDOM: true });
 	}
 
-	/*::  handleTabButtonClick: number => void */
-	handleTabButtonClick(index: number) {
+	handleTabButtonClick(index) {
 		this.setState({
 			index: index,
 			focusActiveTabButton: true
 		});
 	}
 
-	/*::  handleTabButtonKey: (KeyboardEvent, number) => void */
-	handleTabButtonKey(e: KeyboardEvent, i: number) {
+	handleTabButtonKey(e, i) {
 		let newIndex = i;
 
-		switch(e.which) {
+		switch (e.which) {
 			case keyCodes.left:
 			case keyCodes.up:
 				newIndex--;
-				if(newIndex < 0)
-					newIndex = this.getTabChildElements().length - 1;
+				if (newIndex < 0) newIndex = this.getTabChildElements().length - 1;
 				break;
 			case keyCodes.right:
 			case keyCodes.down:
 				newIndex++;
-				if(newIndex >= this.getTabChildElements().length)
-					newIndex = 0;
+				if (newIndex >= this.getTabChildElements().length) newIndex = 0;
 				break;
 			case keyCodes.home:
 				newIndex = 0;
@@ -99,74 +79,80 @@ class Tabs extends React.Component<TabsProps, TabsState> {
 				break;
 		}
 
-		newIndex != i && this.setState({
-			index: newIndex,
-			focusActiveTabButton: true
-		});
+		newIndex != i &&
+			this.setState({
+				index: newIndex,
+				focusActiveTabButton: true
+			});
 	}
 
-	getTabChildElements(): React.Element<typeof Tab>[] {
-		return React.Children.toArray(this.props.children)
-			.filter(c => c.type == Tab);
+	getTabChildElements() {
+		return React.Children.toArray(this.props.children).filter(
+			c => c.type == Tab
+		);
 	}
 
 	render() {
 		const tabs = this.getTabChildElements();
 
-		const getTabSlug =
-			(title: string, id: ?string = null): string => id || slugify(title);
+		const getTabSlug = (title: string, id: ?string = null): string =>
+			id || slugify(title);
 
 		return (
-			<div className={`tabs${ this.state.canUseDOM ? " js" : "" }`}>
+			<div className={`tabs${this.state.canUseDOM ? " js" : ""}`}>
 				<ul className="tabs__list" role="tablist">
-					{
-						tabs.map((tab, i: number) => {
-							const tabSlug: string = getTabSlug(tab.props.title, tab.props.id);
-							const isTabActive: boolean = i === this.state.index;
-							return (
-								<li className="tabs__tab"
-									key={tabSlug}
-									role="presentation">
-									<button className="tabs__tab-btn"
-										type="button"
-										role="tab"
-										id={`tab-button-${tabSlug}`}
-										aria-controls={`tab-pane-${tabSlug}`}
-										aria-selected={isTabActive}
-										onClick={() => this.handleTabButtonClick(i)}
-										onKeyDown={(e) => this.handleTabButtonKey(e, i)}
-										ref={(btn) => { this.state.focusActiveTabButton && isTabActive && btn && btn.focus(); }}>
-										{ tab.props.title }
-									</button>
-								</li>
-							);
-						})
-					}
+					{tabs.map((tab, i) => {
+						const tabSlug = getTabSlug(tab.props.title, tab.props.id);
+						const isTabActive = i === this.state.index;
+						return (
+							<li className="tabs__tab" key={tabSlug} role="presentation">
+								<button
+									className="tabs__tab-btn"
+									type="button"
+									role="tab"
+									id={`tab-button-${tabSlug}`}
+									aria-controls={`tab-pane-${tabSlug}`}
+									aria-selected={isTabActive}
+									onClick={() => this.handleTabButtonClick(i)}
+									onKeyDown={e => this.handleTabButtonKey(e, i)}
+									ref={btn => {
+										this.state.focusActiveTabButton &&
+											isTabActive &&
+											btn &&
+											btn.focus();
+									}}
+								>
+									{tab.props.title}
+								</button>
+							</li>
+						);
+					})}
 				</ul>
 				<div className="tabs__content">
-					{
-						tabs.map((tab, i: number) => {
-							const tabSlug: string = getTabSlug(tab.props.title, tab.props.id);
-							const isTabActive: boolean = i === this.state.index;
-							return (
-								<div className="tabs__pane"
-									key={tabSlug}
-									role="tabpanel"
-									id={`tab-pane-${tabSlug}`}
-									aria-labelledby={`tab-button-${tabSlug}`}
-									aria-hidden={!isTabActive}>
-									{tab.props.children}
-								</div>
-							);
-						})
-					}
+					{tabs.map((tab, i) => {
+						const tabSlug = getTabSlug(tab.props.title, tab.props.id);
+						const isTabActive = i === this.state.index;
+						return (
+							<div
+								className="tabs__pane"
+								key={tabSlug}
+								role="tabpanel"
+								id={`tab-pane-${tabSlug}`}
+								aria-labelledby={`tab-button-${tabSlug}`}
+								aria-hidden={!isTabActive}
+							>
+								{tab.props.children}
+							</div>
+						);
+					})}
 				</div>
 			</div>
 		);
 	}
 }
 
-export {
-	Tabs as default,
-	Tab
+Tabs.propTypes = {
+	children: PropTypes.oneOfType([PropTypes.arrayOf(Tab), Tab]).isRequired
 };
+
+export { Tabs as default, Tab };

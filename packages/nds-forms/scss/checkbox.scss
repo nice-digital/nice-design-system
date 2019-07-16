@@ -1,4 +1,4 @@
-@import "~@nice-digital/nds-core/scss/core";
+@import '~@nice-digital/nds-core/scss/core';
 
 $checkbox-size: rem($spacing-large);
 
@@ -60,12 +60,13 @@ $checkbox-size: rem($spacing-large);
 
       & + .checkbox__label {
         cursor: default;
-        opacity: .5;
+        opacity: 0.5;
       }
     }
   }
 
-  &__label { // stylelint-disable-line
+  &__label {
+    // stylelint-disable-line
     font-size: 1rem;
     line-height: 1.5rem;
     font-weight: bold;
@@ -74,8 +75,9 @@ $checkbox-size: rem($spacing-large);
     cursor: pointer;
     padding: rem($spacing-x-small) 0;
 
-    &:before { // outside square // stylelint-disable-line
-      content: "";
+    &:before {
+      // outside square // stylelint-disable-line
+      content: '';
       box-sizing: border-box;
       position: absolute;
       top: 0;
@@ -86,8 +88,9 @@ $checkbox-size: rem($spacing-large);
       background: transparent;
     }
 
-    &:after { // inside check / tick // stylelint-disable-line
-      content: "";
+    &:after {
+      // inside check / tick // stylelint-disable-line
+      content: '';
       position: absolute;
       top: rem($spacing-small);
       left: rem($spacing-small);

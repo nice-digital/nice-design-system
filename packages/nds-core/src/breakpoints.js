@@ -1,5 +1,3 @@
-// @flow
-
 /**
  * @module Breakpoints
  */
@@ -31,16 +29,13 @@ const breakpoints = {
 const matchesFrom = (breakpointName: string) => {
 	let breakpointPx = breakpoints[breakpointName];
 
-	if(!breakpointPx) {
-		throw new Error(`Breakpoint ${ breakpointName } does not exist`);
+	if (!breakpointPx) {
+		throw new Error(`Breakpoint ${breakpointName} does not exist`);
 	}
 
 	// Assume matchMedia is polyfilled elsewhere
 	// Convert to ems to match the media query if the browser's root font-size isn't 16
-	return window.matchMedia(`(min-width: ${ breakpointPx / 16 }em)`).matches;
+	return window.matchMedia(`(min-width: ${breakpointPx / 16}em)`).matches;
 };
 
-export {
-	breakpoints as default,
-	matchesFrom
-};
+export { breakpoints as default, matchesFrom };

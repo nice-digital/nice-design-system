@@ -43,10 +43,11 @@
   position: relative;
 
   &__item,
-  iframe,
-  embed,
-  object,
-  video {
+  > iframe,
+  > embed,
+  > object,
+  > video,
+  > img {
     border: 0;
     bottom: 0;
     height: 100%;

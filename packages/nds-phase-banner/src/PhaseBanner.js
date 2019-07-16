@@ -1,23 +1,33 @@
-// @flow
-import React, { Component } from "react";
+import React from "react";
+import PropTypes from "prop-types";
+import Tag from "@nice-digital/nds-tag";
+
 import "./../scss/phase-banner.scss";
 
-type PhaseBannerProps = {
-	title: string
+export const PhaseBanner = props => {
+	const { alpha, beta, children } = props;
+
+	return (
+		<p className="phase-banner">
+			<span className="phase-banner__tag">
+				<Tag impact alpha={alpha} beta={beta}>
+					{alpha ? "Alpha" : "Beta"}
+				</Tag>
+			</span>
+			<span className="phase-banner__label">{children}</span>
+		</p>
+	);
 };
 
-export default class PhaseBanner extends Component<PhaseBannerProps> {
-	render() {
-		return (
-			<p className="phase-banner">
-				<span className="phase-banner__tag">
-					<span className="tag tag--impact tag--alpha">Alpha</span>
-				</span>
-				<span className="phase-banner__label">
-					This is a new service – your <a href="#">feedback</a> will help us to
-					improve it.
-				</span>
-			</p>
-		);
-	}
-}
+PhaseBanner.propTypes = {
+	alpha: PropTypes.bool,
+	beta: PropTypes.bool,
+	children: PropTypes.oneOfType([
+		PropTypes.arrayOf(PropTypes.node),
+		PropTypes.node
+	]).isRequired
+};
+
+PhaseBanner.defaultProps = {};
+
+export default PhaseBanner;

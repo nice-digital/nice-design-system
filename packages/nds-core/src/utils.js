@@ -1,5 +1,3 @@
-// @flow
-
 /**
  * @module Utils
  * Utility functions
@@ -12,7 +10,7 @@
  *
  * @param {string} str The string to trim
  */
-export const trim = function (str: string) {
+export const trim = function(str) {
 	return str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, "");
 };
 
@@ -25,13 +23,12 @@ export const trim = function (str: string) {
  * @param      {Object}  scope   The context of the throttled function
  * @return     {Function}  { The throttled function }
  */
-export const throttle = function(fn: () => mixed, threshhold: number = 100, scope: any = null) {
-	let last,
-		deferTimer;
+export const throttle = function(fn, threshhold = 100, scope = null) {
+	let last, deferTimer;
 
 	return function throttled() {
 		let context = scope || this,
-			now = +new Date,
+			now = +new Date(),
 			args = arguments;
 
 		if (last && now < last + threshhold) {
@@ -58,7 +55,12 @@ export const throttle = function(fn: () => mixed, threshhold: number = 100, scop
  * @param      {Object}  scope  The context for the debounced function
  * @return     {Function}  { The debounced function }
  */
-export const debounce = function(func: () => mixed, execAsap: boolean = false, threshold: number = 100, scope: any = null) {
+export const debounce = function(
+	func,
+	execAsap = false,
+	threshold = 100,
+	scope = null
+) {
 	let timeout;
 
 	return function debounced() {
@@ -66,15 +68,12 @@ export const debounce = function(func: () => mixed, execAsap: boolean = false, t
 			args = arguments;
 
 		function delayed() {
-			if (!execAsap)
-				func.apply(context, args);
+			if (!execAsap) func.apply(context, args);
 			timeout = null;
 		}
 
-		if (timeout)
-			clearTimeout(timeout);
-		else if (execAsap)
-			func.apply(context, args);
+		if (timeout) clearTimeout(timeout);
+		else if (execAsap) func.apply(context, args);
 
 		timeout = setTimeout(delayed, threshold);
 	};
@@ -92,14 +91,15 @@ export const debounce = function(func: () => mixed, execAsap: boolean = false, t
  *          // returns "a-string-to-transform-and-slugify"
  *          slugify("A (string) to transform & slugify!");
  */
-export const slugify = (str: string): string => {
-	return trim(str).toLowerCase()
-		.replace(/\s+/g, "-")			// Replace spaces with -
-		.replace(/&/g, "-and-")			// Replace & with 'and'
-		.replace(/[^\w-]+/g, "")		// Remove all non-word chars
-		.replace(/^-+/g, "")			// Trim dashes from the start
-		.replace(/-+$/g, "")			// Trim dashes from the end
-		.replace(/-{2,}/g, "-");		// Replace multiple - with single -
+export const slugify = str => {
+	return trim(str)
+		.toLowerCase()
+		.replace(/\s+/g, "-") // Replace spaces with -
+		.replace(/&/g, "-and-") // Replace & with 'and'
+		.replace(/[^\w-]+/g, "") // Remove all non-word chars
+		.replace(/^-+/g, "") // Trim dashes from the start
+		.replace(/-+$/g, "") // Trim dashes from the end
+		.replace(/-{2,}/g, "-"); // Replace multiple - with single -
 };
 
 /**
@@ -120,22 +120,24 @@ export const slugify = (str: string): string => {
  *          // returns "prefix-1"
  *          utils.nextUniqueId("prefix");
  */
-export const nextUniqueId = function (i) {
-	return function (prefix: string = "uid") {
-		return `${ prefix }-${ ++i }`;
+export const nextUniqueId = (function(i) {
+	return function(prefix = "uid") {
+		return `${prefix}-${++i}`;
 	};
-}(0);
+})(0);
 
 /**
  * CamelCases a  string
  * @param {string} str The string to camel case
  */
-export const camelCase = function(str: string): string {
+export const camelCase = function(str) {
 	str = str.split("-").join(" "); // To support kebab-case
 	// See https://stackoverflow.com/a/2970667/486434
-	return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(letter, index) {
-		return index == 0 ? letter.toLowerCase() : letter.toUpperCase();
-	}).replace(/\s+/g, "");
+	return str
+		.replace(/(?:^\w|[A-Z]|\b\w)/g, function(letter, index) {
+			return index == 0 ? letter.toLowerCase() : letter.toUpperCase();
+		})
+		.replace(/\s+/g, "");
 };
 
 export default {

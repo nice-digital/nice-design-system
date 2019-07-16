@@ -1,14 +1,19 @@
-// @flow
-import * as React from "react";
+import React from "react";
+import PropTypes from "prop-types";
 
-type TabProps = {
-	id: ?string,
-	title: string,
-	children?: React.Node
+export const Tab = props => {
+	return null;
 };
 
-export default class Tab extends React.Component<TabProps> {
-	render() {
-		return null;
-	}
-}
+Tab.propTypes = {
+	id: PropTypes.string,
+	title: PropTypes.string.isRequired,
+	children: PropTypes.oneOfType([
+		PropTypes.arrayOf(PropTypes.node),
+		PropTypes.node
+	]).isRequired
+};
+
+Tab.defaultProps = {};
+
+export default Tab;

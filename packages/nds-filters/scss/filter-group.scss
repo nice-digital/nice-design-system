@@ -2,6 +2,9 @@
 /// @group components
 ////
 
+@import '~@nice-digital/nds-core/scss/core';
+@import '~@nice-digital/icons/scss/nice-icons';
+
 /// Filter group consist of a title with one of:
 ///   - set of checkbox options
 ///   - TODO e.g. free text, dates etc
@@ -94,7 +97,7 @@
     input {
       float: left;
       height: rem($spacing-medium);
-      margin-left: - rem($spacing-medium + $spacing-small);
+      margin-left: -rem($spacing-medium + $spacing-small);
       margin-top: rem($spacing-xx-small);
       width: rem($spacing-medium);
 

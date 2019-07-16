@@ -2,6 +2,9 @@
 /// @group components
 ////
 
+@import '~@nice-digital/nds-core/scss/core';
+@import '~@nice-digital/icons/scss/nice-icons';
+
 .filter-panel {
   margin: rem(0 0 $spacing-medium 0);
 
@@ -28,7 +31,7 @@
         @include nice-icon(chevron-up);
         @include font-size(-1);
         color: $colour-icons;
-        margin-top: - rem($spacing-small);
+        margin-top: -rem($spacing-small);
         position: absolute;
         right: rem($spacing-small);
         top: 50%;

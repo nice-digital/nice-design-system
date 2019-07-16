@@ -1,15 +1,24 @@
-// @flow
-import * as React from "react";
+import React from "react";
+import PropTypes from "prop-types";
+
 import "./../scss/panel.scss";
 
-type PanelProps = {
-	children: React.Node
+export const Panel = props => {
+	const { children, ...rest } = props;
+	return (
+		<div {...rest} className="panel">
+			{children}
+		</div>
+	);
 };
 
-export default class Panel extends React.Component<PanelProps> {
-	render() {
-		return <div className="panel">
-			{this.props.children}
-		</div>;
-	}
-}
+Panel.propTypes = {
+	children: PropTypes.oneOfType([
+		PropTypes.arrayOf(PropTypes.node),
+		PropTypes.node
+	]).isRequired
+};
+
+Panel.defaultProps = {};
+
+export default Panel;

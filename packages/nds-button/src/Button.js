@@ -1,47 +1,45 @@
-// @flow
 import * as React from "react";
+import PropTypes from "prop-types";
+import classnames from "classnames";
+
 import "../scss/button.scss";
 
-type ButtonType = "anchor" | "button" | "submit" | "reset";
-type ModifierClassType = "secondary" | "cta" | "inverse";
+const Button = props => {
+	const { modifier, href, children, type, ...attributes } = { ...props };
 
-type ButtonPropsType = {
-	href: ?string,
-	modifier: ?ModifierClassType,
-	type: ?ButtonType,
-	children: React.Node
-};
-
-const Button = (props: ButtonPropsType ) => {
-
-	const { modifier, href, children, type, ...renderProps} = {...props };
-
-	if(modifier && !Button.modifiers[modifier]) {
-		const allowedModifiers: string = Object.keys(Button.modifiers).join(", ");
-		throw new Error(`Expected modifier to be one of ${allowedModifiers} but found '${ modifier }'`);
+	if (modifier && !Button.modifiers.some(m => m === modifier)) {
+		throw new Error(
+			`Expected modifier to be one of '${Button.modifiers.join(
+				"', '"
+			)}' but found '${modifier}'`
+		);
 	}
 
-	const modifierClass: string = modifier ? ` btn--${modifier}` : "",
-		className: string = "btn" + modifierClass;
+	const Tag = type === "anchor" || href ? "a" : "button";
 
-	if(type === "anchor")
-		return <a href={href}
-			className={className}
-			{...renderProps}>
-			{ children }
-		</a>;
+	if (Tag === "button") attributes.type = type;
+	else {
+		attributes.href = href;
+	}
 
-	return <button type={type}
-		className={className}
-		{...renderProps}>
-		{ children }
-	</button>;
+	attributes.className = classnames({
+		btn: true,
+		[`btn--${modifier}`]: modifier
+	});
+
+	return <Tag {...attributes}>{children}</Tag>;
 };
 
-Button.modifiers = {
-	"cta": "cta",
-	"secondary": "secondary",
-	"inverse": "inverse"
+Button.modifiers = ["cta", "secondary", "inverse"];
+
+Button.propTypes = {
+	href: PropTypes.string,
+	modifier: PropTypes.oneOf(Button.modifiers),
+	type: PropTypes.oneOf(["anchor", "button", "submit", "reset"]),
+	children: PropTypes.oneOfType([
+		PropTypes.arrayOf(PropTypes.node),
+		PropTypes.node
+	]).isRequired
 };
 
 Button.defaultProps = {

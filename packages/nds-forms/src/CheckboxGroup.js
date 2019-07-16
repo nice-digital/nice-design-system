@@ -1,31 +1,32 @@
-// @flow
-import React, { Component } from "react";
+import React from "react";
+import PropTypes from "prop-types";
+
+import Checkbox from "./Checkbox";
 import Fieldset from "./Fieldset";
 
-type CheckboxGroupProps = {
-	children: React.ReactNode,
-	legend: string,
-	hint: string,
-	name: string,
-	inline: boolean,
+import "./../scss/forms.scss";
+
+export const CheckboxGroup = props => {
+	const { inline, legend, children, hint, name, ...rest } = props;
+
+	const clonedChildren = React.Children.map(children, child =>
+		React.cloneElement(child, { name, inline, ...rest })
+	);
+
+	return (
+		<Fieldset legend={legend}>
+			{hint && <p className="form__hint">{hint}</p>}
+			{clonedChildren}
+		</Fieldset>
+	);
 };
 
-export default class CheckboxGroup extends Component<CheckboxGroupProps> {
+CheckboxGroup.propTypes = {
+	children: PropTypes.arrayOf(Checkbox).isRequired,
+	legend: PropTypes.node.isRequired,
+	name: PropTypes.string.isRequired,
+	hint: PropTypes.node,
+	inline: PropTypes.bool
+};
 
-	render() {
-
-		const {inline, legend, children, hint, name, ...rest} = this.props;
-
-		const clonedChildren = React.Children
-			.map(children, child =>
-				React.cloneElement(child, {name, inline, ...rest}));
-
-		return (
-			<Fieldset legend={legend}>
-				{hint && <p className="form__hint">{hint}</p>}
-				{clonedChildren}
-			</Fieldset>
-
-		);
-	}
-}
+export default CheckboxGroup;

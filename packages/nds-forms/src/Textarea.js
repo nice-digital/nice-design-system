@@ -1,47 +1,45 @@
-// @flow
-import React, { Component } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import classnames from "classnames";
+
 import "../scss/textarea.scss";
 
-type TextareaProps = {
-	error: boolean,
-	errorMessage: string,
-	label: string,
-	unique: string,
-	hint: string,
-	value: string,
-	name: string,
+export const Textarea = props => {
+	const { error, errorMessage, label, unique, hint, value } = props;
+
+	const classNames = classnames({
+		textarea: true,
+		"textarea--error": error
+	});
+
+	return (
+		<div className={classNames}>
+			<label className="textarea__label" htmlFor={unique}>
+				{label}
+			</label>
+
+			{hint && <p className="form__hint">{hint}</p>}
+
+			{error && <p className="form__error">{errorMessage}</p>}
+
+			<textarea
+				className="textarea__input"
+				id={unique}
+				name={name}
+				defaultValue={value}
+			/>
+		</div>
+	);
 };
 
-export default class Textarea extends Component<TextareaProps> {
+Textarea.propTypes = {
+	error: PropTypes.bool,
+	errorMessage: PropTypes.string,
+	label: PropTypes.string.isRequired,
+	unique: PropTypes.string,
+	hint: PropTypes.string,
+	value: PropTypes.string,
+	name: PropTypes.string.isRequired
+};
 
-	render() {
-
-		const {error, errorMessage, label, unique, hint, value} = this.props;
-		const classNames = classnames({
-			"textarea" : true,
-			"textarea--error": error
-		});
-
-		return (
-			<div className={classNames}>
-				<label
-					className="textarea__label"
-					htmlFor={unique}>
-					{label}
-				</label>
-
-				{hint && <p className="form__hint">{hint}</p>}
-
-				{error && <p className="form__error">{errorMessage}</p>}
-
-				<textarea
-					className="textarea__input"
-					id={unique}
-					name={name}>
-					{value}
-				</textarea>
-			</div>
-		);
-	}
-}
+export default Textarea;

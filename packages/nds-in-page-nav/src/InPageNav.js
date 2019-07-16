@@ -1,14 +1,14 @@
-// @flow
-import React, { Component } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 
-type InPageNavProps = {
-	title: string
+import "./../scss/in-page-nav.scss";
+
+export const InPageNav = props => {
+	return <p>TODO</p>;
 };
 
-export default class InPageNav extends Component<InPageNavProps> {
-	render() {
-		return <div className="in-page-nav">
-			in page nav
-		</div>;
-	}
-}
+InPageNav.propTypes = {};
+
+InPageNav.defaultProps = {};
+
+export default InPageNav;

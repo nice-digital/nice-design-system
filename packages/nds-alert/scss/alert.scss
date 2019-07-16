@@ -7,6 +7,18 @@
   margin-bottom: rem($spacing-medium);
   font-weight: bold;
 
+  p {
+    font-weight: bold;
+  }
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
   &--info {
     background-color: $colour-info-background;
     border-color: $colour-info;
