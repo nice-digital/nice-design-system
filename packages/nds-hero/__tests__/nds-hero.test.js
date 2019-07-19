@@ -3,7 +3,5 @@
 import Hero from "../src/Hero";
 
 describe("@nice-digital/nds-hero", () => {
-	it("Hero needs tests", () => {
-		expect(true).toBe(true);
-	});
+	test.todo("add hero component tests");
 });

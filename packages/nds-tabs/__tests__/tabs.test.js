@@ -3,7 +3,5 @@
 import Tabs from "../src/Tabs";
 
 describe("@nice-digital/nds-tabs", () => {
-	it("Tabs needs tests", () => {
-		expect(true).toBe(true);
-	});
+	test.todo("add tabs component tests");
 });

@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-const ndsAlert = require('..');
+const ndsAlert = require("..");
 
-describe('nds-alert', () => {
-    it('needs tests');
+describe("nds-alert", () => {
+	test.todo("add alert component tests");
 });

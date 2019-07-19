@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-const ndsRadio = require('..');
+const ndsRadio = require("..");
 
-describe('nds-forms', () => {
-    it('needs tests');
+describe("nds-forms", () => {
+	test.todo("add radio component tests");
 });

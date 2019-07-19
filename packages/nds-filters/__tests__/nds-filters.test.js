@@ -3,7 +3,5 @@
 import Filters from "../src/Filters";
 
 describe("@nice-digital/nds-filters", () => {
-	it("Filters needs tests", () => {
-		expect(true).toBe(true);
-	});
+	test.todo("add filter component tests");
 });

@@ -3,7 +3,5 @@
 import InPageNav from "../src/InPageNav";
 
 describe("@nice-digital/nds-in-page-nav", () => {
-	it("In page nav needs tests", () => {
-		expect(true).toBe(true);
-	});
+	test.todo("add in page nav component tests");
 });
