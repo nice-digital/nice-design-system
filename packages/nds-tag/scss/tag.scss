@@ -141,7 +141,7 @@ $nice-tag-border-radius: em($spacing-xx-small);
     }
 
     &:hover:after {
-      background: rgba($colour-nice-black, .1);
+      background: rgba($colour-nice-black, 0.1);
     }
   }
 }
