@@ -2277,7 +2277,7 @@
       "context": {
         "type": "variable",
         "name": "colour-caution",
-        "value": "#835f24",
+        "value": "#9b722f",
         "scope": "private",
         "line": {
           "start": 215,
@@ -2300,7 +2300,7 @@
       "groupName": {
         "colors": "Colours"
       },
-      "resolvedValue": "#835f24"
+      "resolvedValue": "#9b722f"
     },
     {
       "description": "<p>Caution background colour</p>\n",
@@ -12086,7 +12086,7 @@
           "context": {
             "type": "variable",
             "name": "colour-caution",
-            "value": "#835f24",
+            "value": "#9b722f",
             "scope": "private",
             "line": {
               "start": 215,
@@ -12109,7 +12109,7 @@
           "groupName": {
             "colors": "Colours"
           },
-          "resolvedValue": "#835f24"
+          "resolvedValue": "#9b722f"
         },
         {
           "description": "<p>Caution background colour</p>\n",
