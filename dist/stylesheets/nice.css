@@ -1,5 +1,5 @@
 /*!
- * NICE Design System 0.5.8 | 2019-05-21
+ * NICE Design System 0.6.0 | 2019-08-08
  * © Copyright NICE 2015-2019
  * Licensed under MIT (https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
  */
@@ -4036,8 +4036,8 @@ ol, .list {
   font-family: "NICE Icons";
   font-style: normal;
   font-weight: normal;
-  src: url("/fonts/nice-icons.eot?588462385");
-  src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/nice-icons.woff2?588462385") format("woff2"), url("/fonts/nice-icons.woff?588462385") format("woff"), url("/fonts/nice-icons.ttf?588462385") format("truetype"), url("/fonts/nice-icons.svg?588462385#nice-icons") format("svg"); }
+  src: url("/fonts/nice-icons.eot?762096818");
+  src: url("/fonts/nice-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/nice-icons.woff2?762096818") format("woff2"), url("/fonts/nice-icons.woff?762096818") format("woff"), url("/fonts/nice-icons.ttf?762096818") format("truetype"), url("/fonts/nice-icons.svg?762096818#nice-icons") format("svg"); }
 
 .icon {
   display: inline-block;
