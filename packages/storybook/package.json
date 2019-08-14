@@ -19,7 +19,7 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -s ./node_modules/@nice-digital/icons/dist/",
     "build-storybook": "build-storybook"
   },
   "bugs": {
@@ -27,7 +27,9 @@
   },
   "dependencies": {
     "@nice-digital/design-system": "^1.0.6-alpha.0",
-    "@nice-digital/nds-radio": "^1.0.7-alpha.0"
+    "@nice-digital/icons": "^2.1.1",
+    "@nice-digital/nds-radio": "^1.0.7-alpha.0",
+    "@types/storybook__react": "^4.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

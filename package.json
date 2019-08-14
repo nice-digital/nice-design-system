@@ -7,7 +7,7 @@
     "start": "npm run dev",
     "dev": "concurrently \"npm run build:es:watch\" \"lerna run --scope=dev-app start\"",
     "// STORYBOOK": "",
-    "storybook": "lerna run --scope=storybook start-storybook -p 6006 -s ./node_modules/@nice-digital/icons/dist/",
+    "storybook": "lerna run --scope=storybook storybook",
     "storybook:build": "lerna run --scope=storybook build-storybook",
     "// LERNA": "",
     "lerna": "lerna",

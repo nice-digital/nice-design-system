@@ -67,3 +67,4 @@ packages/*/dist
 
 # Bash stackdump logs
 *.stackdump
+packages/storybook/storybook-static
