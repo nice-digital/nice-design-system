@@ -1,30 +1,64 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "../scss/card.scss";
 
 export const Card = props => {
-	// TODO: Create proper render method
+
+	const {
+		headingText,
+		destination,
+		linkType: LinkType = "a",
+		headingTag: HeadingTag = "p"
+	} = props.heading;
+
+	const {
+		metadata
+	} = props;
+
+	const linkProps = {};
+
+	if ( LinkType === "a" ) {
+		linkProps.href = destination;
+	} else {
+		linkProps.to = destination;
+	}
+
 	return (
 		<article className="card">
 			<header className="card__header">
-				<h3 className="card__heading">
-					<a href="https://www.nice.org.uk/">
-						<span
-							className="card__icon icon icon--pathways"
-							aria-hidden="true"
-						/>
-						Advanced breast cancer: diagnosis and treatment
-					</a>
-				</h3>
+				<HeadingTag className="card__heading">
+					<LinkType {...linkProps}>
+						{headingText}
+					</LinkType>
+				</HeadingTag>
 			</header>
+			{metadata && metadata.length &&
 			<dl className="card__metadata">
-				<div className="card__metadatum">
-					<dt className="visually-hidden">Product type:</dt>
-					<dd>Pathway</dd>
-				</div>
+				{metadata.map((item, idx) => (
+					<div key={`item${idx}`} className="card__metadatum">
+						<dt className="visually-hidden">{item.label}</dt>
+						<dd>{item.value}</dd>
+					</div>
+				))
+				}
 			</dl>
+			}
 		</article>
 	);
 };
 
 export default Card;
+
+Card.propTypes = {
+	metadata: PropTypes.arrayOf(PropTypes.shape({
+		label: PropTypes.node.isRequired,
+		value: PropTypes.node.isRequired,
+	})),
+	heading: PropTypes.shape({
+		headingText: PropTypes.node,
+		destination: PropTypes.node,
+		linkType: PropTypes.node,
+		headingTag: PropTypes.node
+	}),
+};

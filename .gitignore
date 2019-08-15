@@ -68,3 +68,4 @@ packages/*/dist
 # Bash stackdump logs
 *.stackdump
 packages/storybook/storybook-static
+.DS_Store
