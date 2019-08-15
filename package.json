@@ -7,7 +7,7 @@
     "start": "npm run dev",
     "dev": "concurrently \"npm run build:es:watch\" \"lerna run --scope=dev-app start\"",
     "// STORYBOOK": "",
-    "storybook": "lerna run --scope=storybook storybook",
+    "storybook": "lerna run --stream --scope=storybook storybook",
     "storybook:build": "lerna run --scope=storybook build-storybook",
     "// LERNA": "",
     "lerna": "lerna",
