@@ -3,6 +3,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 
 import { Card } from "@nice-digital/nds-card";
+import { Tag } from "@nice-digital/nds-tag";
 
 const ListWrapper = props => (
 	<ul className="list--unstyled">{props.children}</ul>
@@ -10,11 +11,23 @@ const ListWrapper = props => (
 
 const FakeLink = props => {
 	return (
-		<fakelink className="fakelink" {...props}>
+		<a className="non-standard-link-type-example" {...props}>
 			{props.children}
-		</fakelink>
+		</a>
 	);
 };
+
+const successTag = () => <Tag alpha>Success!</Tag>;
+
+const meta = [
+	{
+		label: "Email address",
+		value: "john.smith@hungrykipper.com"
+	},
+	{
+		value: successTag
+	}
+];
 
 const nonAnchorLink = () => {
 	const headingProps = {
@@ -23,10 +36,9 @@ const nonAnchorLink = () => {
 		linkType: FakeLink,
 		headerTag: "h3"
 	};
-	const metaProps = {};
 	return (
 		<ListWrapper>
-			<Card heading={headingProps} meta={metaProps} />
+			<Card heading={headingProps} metadata={meta} />
 		</ListWrapper>
 	);
 };
