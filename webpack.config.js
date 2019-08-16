@@ -8,8 +8,15 @@ const _ = require("lodash"),
 	StringReplacePlugin = require("string-replace-webpack-plugin");
 
 const pkg = require("./package.json"),
-	banner = _.template(pkg.config.banner)({ version: pkg.version, date: moment().format("YYYY-MM-DD"), year: moment().format("YYYY") }),
-	bannerPlugin = new webpack.BannerPlugin({ banner: `/*!\n${banner}\n*/\n`, raw: true });
+	banner = _.template(pkg.config.banner)({
+		version: pkg.version,
+		date: moment().format("YYYY-MM-DD"),
+		year: moment().format("YYYY")
+	}),
+	bannerPlugin = new webpack.BannerPlugin({
+		banner: `/*!\n${banner}\n*/\n`,
+		raw: true
+	});
 
 const baseConfig = {
 	entry: ["./src/javascripts/index"],
@@ -79,7 +86,7 @@ const webpackModules = {
 			loader: "eslint-loader",
 			options: {
 				ignorePath: "src/javascripts/.eslintignore",
-				configFile: "src/javascripts/.eslintrc",
+				configFile: "src/javascripts/.eslintrc"
 			}
 		},
 		{
@@ -105,13 +112,13 @@ const webpackModules = {
 					// See https://github.com/mozilla/nunjucks/issues/520
 					{
 						pattern: /global\.MutationObserver/g,
-						replacement: function () {
+						replacement: function() {
 							return "window.MutationObserver";
 						}
 					},
 					{
 						pattern: /global\.WebKitMutationObserver/g,
-						replacement: function () {
+						replacement: function() {
 							return "window.WebKitMutationObserver";
 						}
 					}
@@ -121,9 +128,7 @@ const webpackModules = {
 	]
 };
 
-
 module.exports = [
-
 	// Dev mode
 	_.merge({}, baseConfig, {
 		name: "nice.dev",
