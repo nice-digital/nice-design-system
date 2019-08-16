@@ -28,12 +28,13 @@ var def = JSON.parse(fs.readFileSync(".sassdocrc", "utf8"));
 const applyDefaults = ctx =>
 	extend({}, def, ctx, {
 		groups: extend(def.groups, ctx.groups),
-		display: extend(def.display, ctx.display),
+		display: extend(def.display, ctx.display)
 	});
 
-module.exports = function (dest, ctx) {
+module.exports = function(dest, ctx) {
 	ctx = applyDefaults(ctx);
-	sassdocExtras(ctx,
+	sassdocExtras(
+		ctx,
 		"description",
 		"markdown",
 		"display",
@@ -50,7 +51,13 @@ module.exports = function (dest, ctx) {
 		byGroupAndType: sassdocExtras.byGroupAndType(ctx.data)
 	};
 
-	fs.writeFileSync(path.join(dest, "nice-design-system.json"), JSON.stringify(ctx.data, null, 2), "utf-8");
+	fs.writeFileSync(
+		path.join(dest, "nice-design-system.json"),
+		JSON.stringify(ctx.data, null, 2),
+		"utf-8"
+	);
 
-	return new Promise(function(resolve, reject) { resolve(); });
+	return new Promise(function(resolve, reject) {
+		resolve();
+	});
 };

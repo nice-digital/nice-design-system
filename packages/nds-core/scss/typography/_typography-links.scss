@@ -5,10 +5,10 @@
 /// Default link style for use on a normal (light) background
 /// @since 0.3.1
 @mixin link-default {
-  -webkit-tap-highlight-color: rgba($colour-focus, .333);
+  -webkit-tap-highlight-color: rgba($colour-focus, 0.333);
   color: $colour-link;
   text-decoration: underline;
-  text-decoration-skip: auto;
+  text-decoration-skip-ink: auto;
 
   &:visited {
     color: $colour-link-visited;
@@ -39,10 +39,10 @@
 /// Inverse link style for use on an inverse (dark) background
 /// @since 0.3.1
 @mixin link-inverse {
-  -webkit-tap-highlight-color: rgba($colour-focus, .333);
+  -webkit-tap-highlight-color: rgba($colour-focus, 0.333);
   color: $colour-link-inverse;
   text-decoration: underline;
-  text-decoration-skip: auto;
+  text-decoration-skip-ink: auto;
 
   &:visited {
     color: $colour-link-inverse-visited;

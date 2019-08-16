@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import {
-	Radio,
 	RadioGroup,
 	Textarea,
 	Input,
@@ -8,6 +7,7 @@ import {
 	Checkbox,
 	CheckboxGroup
 } from "@nice-digital/nds-forms";
+import { Radio } from "@nice-digital/nds-radio";
 import Alert from "@nice-digital/nds-alert";
 import ActionBanner from "@nice-digital/nds-action-banner";
 import { Breadcrumbs, Breadcrumb } from "@nice-digital/nds-breadcrumbs";
@@ -28,7 +28,125 @@ class App extends Component {
 	render() {
 		return (
 			<main>
-				<h1>NICE Design System dev app</h1>
+				<RadioGroup
+					legend="Radio buttons (stacked, default)"
+					name="group-1"
+					hint="This is some hint text you can read"
+				>
+					<Radio
+						error
+						value="yes"
+						label="Yes please!"
+						unique="radio1-yes"
+						data-track="no"
+					/>
+					<Radio value="no" label="No thanks!" unique="radio1-no" />
+					<Radio
+						value="maybe"
+						unique="radio1-maybe"
+						label="Well maybe..? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea eaque explicabo, facere harum necessitatibus nulla optio pariatur rem! Aut blanditiis dolores expedita minima mollitia nostrum rem! Accusamus aliquid, distinctio facilis harum illum magni nemo pariatur provident sequi vel, voluptates voluptatum!"
+					/>
+				</RadioGroup>
+
+				<RadioGroup
+					legend="Radio buttons (inline)"
+					name="group-2"
+					hint="This is some hint text you can read"
+					inline
+				>
+					<Radio value="yes" label="Yes please!" unique="radio2-yes" />
+					<Radio value="no" label="No thanks!" unique="radio2-no" error />
+					<Radio value="maybe" label="Well maybe..?" unique="radio2-maybe" />
+				</RadioGroup>
+
+				<CheckboxGroup
+					legend="Checkboxes (stacked, default)"
+					name="contact_preferences"
+					hint="Hello here's a hint..."
+				>
+					<Checkbox
+						label="Can we contact you?"
+						value="contact"
+						unique="check-contact"
+						disabled
+						checked
+					/>
+					<Checkbox
+						label="Do you agree to our privacy policy?"
+						value="privacy"
+						unique="check-privacy"
+						error
+					/>
+					<Checkbox
+						label="Do you agree to our terms and conditions?"
+						value="terms"
+						unique="check-terms"
+					/>
+				</CheckboxGroup>
+
+				<CheckboxGroup
+					inline
+					legend="Checkboxes (inline)"
+					name="contact_preferences-2"
+					hint="Hello here's a hint..."
+				>
+					<Checkbox
+						label="Post"
+						value="post"
+						unique="check-post"
+						disabled
+						checked
+					/>
+					<Checkbox label="Email" value="email" unique="check-email" error />
+					<Checkbox label="Telephone" unique="check-phone" value="phone" />
+				</CheckboxGroup>
+
+				<Fieldset legend="Textarea">
+					<Textarea
+						error
+						errorMessage="This is an error message"
+						unique="textarea-1"
+						label="Who do you think you are?"
+						value="Default value for textarea"
+						name="whoDoYouThinkYouAre"
+					/>
+					<Textarea
+						unique="textarea-2"
+						label="Who do you think you are?"
+						hint="This is some hint text you can read"
+						name="myCommentBox"
+					/>
+					<Textarea
+						unique="textarea-3"
+						label="Who do you think you are?"
+						name="mySecondCommentBox"
+					/>
+				</Fieldset>
+
+				<Fieldset legend="Inputs">
+					<Input
+						name="full-name"
+						unique="full-name"
+						type="text"
+						label="Full name"
+					/>
+					<Input
+						error
+						errorMessage="This is an error message"
+						name="email"
+						type="email"
+						unique="email"
+						label="Your email address"
+					/>
+					<Input
+						name="password"
+						type="password"
+						unique="pwd"
+						hint="Your password must contain 4 special characters, 6 numbers, 12 letters and an emoji"
+						label="Password"
+					/>
+					<Input name="number" type="number" unique="number" label="Number" />
+				</Fieldset>
 
 				<h2>Action banner</h2>
 				<ActionBanner
@@ -154,126 +272,6 @@ class App extends Component {
 					Thank you, your account was activated successfully. If this page does
 					not automatically refresh, <a href="/">refresh the page</a>.
 				</Alert>
-
-				<CheckboxGroup
-					legend="Checkboxes (stacked, default)"
-					name="contact_preferences"
-					hint="Hello here's a hint..."
-				>
-					<Checkbox
-						label="Can we contact you?"
-						value="contact"
-						unique="check-contact"
-						disabled
-						checked
-					/>
-					<Checkbox
-						label="Do you agree to our privacy policy?"
-						value="privacy"
-						unique="check-privacy"
-						error
-					/>
-					<Checkbox
-						label="Do you agree to our terms and conditions?"
-						value="terms"
-						unique="check-terms"
-					/>
-				</CheckboxGroup>
-
-				<CheckboxGroup
-					inline
-					legend="Checkboxes (inline)"
-					name="contact_preferences-2"
-					hint="Hello here's a hint..."
-				>
-					<Checkbox
-						label="Post"
-						value="post"
-						unique="check-post"
-						disabled
-						checked
-					/>
-					<Checkbox label="Email" value="email" unique="check-email" error />
-					<Checkbox label="Telephone" unique="check-phone" value="phone" />
-				</CheckboxGroup>
-
-				<RadioGroup
-					legend="Radio buttons (stacked, default)"
-					name="group-1"
-					hint="This is some hint text you can read"
-				>
-					<Radio
-						error
-						value="yes"
-						label="Yes please!"
-						unique="radio1-yes"
-						data-track="no"
-					/>
-					<Radio value="no" label="No thanks!" unique="radio1-no" />
-					<Radio
-						value="maybe"
-						unique="radio1-maybe"
-						label="Well maybe..? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea eaque explicabo, facere harum necessitatibus nulla optio pariatur rem! Aut blanditiis dolores expedita minima mollitia nostrum rem! Accusamus aliquid, distinctio facilis harum illum magni nemo pariatur provident sequi vel, voluptates voluptatum!"
-					/>
-				</RadioGroup>
-
-				<RadioGroup
-					legend="Radio buttons (inline)"
-					name="group-2"
-					hint="This is some hint text you can read"
-					inline
-				>
-					<Radio value="yes" label="Yes please!" unique="radio2-yes" />
-					<Radio value="no" label="No thanks!" unique="radio2-no" error />
-					<Radio value="maybe" label="Well maybe..?" unique="radio2-maybe" />
-				</RadioGroup>
-
-				<Fieldset legend="Textarea">
-					<Textarea
-						error
-						errorMessage="This is an error message"
-						unique="textarea-1"
-						label="Who do you think you are?"
-						value="Default value for textarea"
-						name="whoDoYouThinkYouAre"
-					/>
-					<Textarea
-						unique="textarea-2"
-						label="Who do you think you are?"
-						hint="This is some hint text you can read"
-						name="myCommentBox"
-					/>
-					<Textarea
-						unique="textarea-3"
-						label="Who do you think you are?"
-						name="mySecondCommentBox"
-					/>
-				</Fieldset>
-
-				<Fieldset legend="Inputs">
-					<Input
-						name="full-name"
-						unique="full-name"
-						type="text"
-						label="Full name"
-					/>
-					<Input
-						error
-						errorMessage="This is an error message"
-						name="email"
-						type="email"
-						unique="email"
-						label="Your email address"
-					/>
-					<Input
-						name="password"
-						type="password"
-						unique="pwd"
-						hint="Your password must contain 4 special characters, 6 numbers, 12 letters and an emoji"
-						label="Password"
-					/>
-					<Input name="number" type="number" unique="number" label="Number" />
-				</Fieldset>
 			</main>
 		);
 	}

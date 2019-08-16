@@ -18,6 +18,7 @@
     "@nice-digital/nds-page-header": "^1.0.4-alpha.0",
     "@nice-digital/nds-panel": "^1.0.4-alpha.0",
     "@nice-digital/nds-phase-banner": "^1.0.4-alpha.0",
+    "@nice-digital/nds-radio": "^1.0.7-alpha.0",
     "@nice-digital/nds-stacked-nav": "^1.0.4-alpha.0",
     "@nice-digital/nds-tabs": "^1.0.4-alpha.0",
     "@nice-digital/nds-tag": "^1.0.4-alpha.0",
