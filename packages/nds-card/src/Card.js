@@ -30,14 +30,12 @@ export const Card = props => {
 			{metadata && metadata.length && (
 				<dl className="card__metadata">
 					{metadata.map((item, idx) => {
-						// if the value is a function, presume that it's some JSX we want to render
 						return (
 							<div key={`item${idx}`} className="card__metadatum">
-								{typeof item.value === "function" ? (
-									<dd>{item.value()}</dd>
-								) : (
-									<dd>{item.value}</dd>
+								{item.label && (
+									<dt className="visually-hidden">{item.label}</dt>
 								)}
+								<dd>{item.value}</dd>
 							</div>
 						);
 					})}
@@ -51,7 +49,7 @@ export default Card;
 
 Card.propTypes = {
 	heading: PropTypes.shape({
-		headingText: PropTypes.node,
+		headingText: PropTypes.node.isRequired,
 		destination: PropTypes.node,
 		linkType: PropTypes.node,
 		headingTag: PropTypes.node

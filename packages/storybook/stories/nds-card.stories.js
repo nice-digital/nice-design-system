@@ -17,7 +17,7 @@ const FakeLink = props => {
 	);
 };
 
-const successTag = () => <Tag alpha>Success!</Tag>;
+const successTag = <Tag alpha>Success!</Tag>;
 
 const meta = [
 	{
