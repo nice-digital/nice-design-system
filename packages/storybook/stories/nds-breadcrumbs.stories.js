@@ -9,7 +9,6 @@ import { Breadcrumbs, Breadcrumb } from "@nice-digital/nds-breadcrumbs";
 const homeOnly = () => {
 	return (
 		<Breadcrumbs>
-			test
 			<Breadcrumb to="https://www.nice.org.uk">NICE</Breadcrumb>
 		</Breadcrumbs>
 	);
