@@ -1,24 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import "../scss/card.scss";
 
 export const Card = props => {
-
 	const {
 		headingText,
 		destination,
-		linkType: LinkType = "a",
+		linkTag: LinkTag,
 		headingTag: HeadingTag = "p"
 	} = props.heading;
 
-	const {
-		metadata
-	} = props;
+	const { metadata } = props;
 
 	const linkProps = {};
 
-	if ( LinkType === "a" ) {
+	if (LinkTag && LinkTag === "a") {
 		linkProps.href = destination;
 	} else {
 		linkProps.to = destination;
@@ -28,22 +24,27 @@ export const Card = props => {
 		<article className="card">
 			<header className="card__header">
 				<HeadingTag className="card__heading">
-					<LinkType {...linkProps}>
-						{headingText}
-					</LinkType>
+					{LinkTag ? (
+						<LinkTag {...linkProps}>{headingText}</LinkTag>
+					) : (
+						headingText
+					)}
 				</HeadingTag>
 			</header>
-			{metadata && metadata.length &&
-			<dl className="card__metadata">
-				{metadata.map((item, idx) => (
-					<div key={`item${idx}`} className="card__metadatum">
-						<dt className="visually-hidden">{item.label}</dt>
-						<dd>{item.value}</dd>
-					</div>
-				))
-				}
-			</dl>
-			}
+			{metadata && metadata.length && (
+				<dl className="card__metadata">
+					{metadata.map((item, idx) => {
+						return (
+							<div key={`item${idx}`} className="card__metadatum">
+								{item.label && (
+									<dt className="visually-hidden">{item.label}</dt>
+								)}
+								<dd>{item.value}</dd>
+							</div>
+						);
+					})}
+				</dl>
+			)}
 		</article>
 	);
 };
@@ -51,14 +52,16 @@ export const Card = props => {
 export default Card;
 
 Card.propTypes = {
-	metadata: PropTypes.arrayOf(PropTypes.shape({
-		label: PropTypes.node.isRequired,
-		value: PropTypes.node.isRequired,
-	})),
 	heading: PropTypes.shape({
-		headingText: PropTypes.node,
+		headingText: PropTypes.node.isRequired,
 		destination: PropTypes.node,
-		linkType: PropTypes.node,
+		linkTag: PropTypes.node,
 		headingTag: PropTypes.node
 	}),
+	metadata: PropTypes.arrayOf(
+		PropTypes.shape({
+			label: PropTypes.node,
+			value: PropTypes.node.isRequired
+		})
+	)
 };
