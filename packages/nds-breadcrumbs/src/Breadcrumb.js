@@ -2,25 +2,32 @@ import React from "react";
 import PropTypes from "prop-types";
 
 export const Breadcrumb = props => {
-	const { tag, href, children, ...attributes } = props;
-	const LinkTag = tag || "a";
+	const { tag, to, children, ...attributes } = props;
+
+	const innerTagProps = {
+		...attributes
+	};
+
+	let InnerHtmlTag = "span";
+
+	if (to) {
+		InnerHtmlTag = tag || "a";
+		innerTagProps[InnerHtmlTag === "a" ? "href" : "to"] = to;
+	}
+
 	return (
 		<li className="breadcrumbs__crumb">
-			<LinkTag href={href} {...attributes}>
-				{children}
-			</LinkTag>
+			<InnerHtmlTag {...innerTagProps}>{children}</InnerHtmlTag>
 		</li>
 	);
 };
 
 Breadcrumb.propTypes = {
-	tag: PropTypes.string, // Allow tag to be customised for custom routing integration
+	tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]), // Allow tag to be customised for custom routing integration
 	children: PropTypes.string.isRequired,
-	href: PropTypes.string.isRequired
+	to: PropTypes.string
 };
 
 Breadcrumb.defaultProps = {
 	tag: "a"
 };
-
-export default Breadcrumb;

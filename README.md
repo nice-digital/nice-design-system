@@ -12,15 +12,15 @@
 <details>
 <summary><strong>Table of contents</strong></summary>
 
-- [:art: NICE Design System](#art-NICE-Design-System)
-	- [What is it?](#What-is-it)
-	- [Development](#Development)
-		- [Quick start](#Quick-start)
-		- [Slow start](#Slow-start)
-		- [Storybook](#Storybook)
-		- [Tests](#Tests)
-		- [Commands](#Commands)
-	- [Upgrading to 1.x from 0.x](#Upgrading-to-1x-from-0x)
+- [:art: NICE Design System](#art-nice-design-system)
+	- [What is it?](#what-is-it)
+	- [Development](#development)
+		- [Quick start](#quick-start)
+		- [Slow start](#slow-start)
+		- [Storybook](#storybook)
+		- [Tests](#tests)
+		- [Commands](#commands)
+	- [Upgrading to 1.x from 0.x](#upgrading-to-1x-from-0x)
 </details>
 
 ## What is it?
@@ -61,6 +61,12 @@ Next, run `npm start` from the command line to run a server for local developmen
 ### Tests
 
 All the components have tests, written in Jest. Run `test:unit:watch` to run unit tests and watch for changes.
+
+To run tests for a just a single component, run the following:
+
+```sh
+npm run test:unit:watch -- breadcrumbs
+```
 
 ### Commands
 
