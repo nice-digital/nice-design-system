@@ -4,7 +4,7 @@
   "description": "> TODO: description",
   "author": "Warren Keith <warren.keith@nice.org.uk>",
   "homepage": "https://github.com/nhsevidence/nice-design-system#readme",
-  "license": "ISC",
+  "license": "MIT",
   "main": "lib/storybook.js",
   "directories": {
     "lib": "lib",
