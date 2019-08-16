@@ -6,7 +6,7 @@ export const Card = props => {
 	const {
 		headingText,
 		destination,
-		linkType: LinkType = "a",
+		linkTag: LinkTag,
 		headingTag: HeadingTag = "p"
 	} = props.heading;
 
@@ -14,7 +14,7 @@ export const Card = props => {
 
 	const linkProps = {};
 
-	if (LinkType === "a") {
+	if (LinkTag && LinkTag === "a") {
 		linkProps.href = destination;
 	} else {
 		linkProps.to = destination;
@@ -24,7 +24,11 @@ export const Card = props => {
 		<article className="card">
 			<header className="card__header">
 				<HeadingTag className="card__heading">
-					<LinkType {...linkProps}>{headingText}</LinkType>
+					{LinkTag ? (
+						<LinkTag {...linkProps}>{headingText}</LinkTag>
+					) : (
+						headingText
+					)}
 				</HeadingTag>
 			</header>
 			{metadata && metadata.length && (
@@ -51,7 +55,7 @@ Card.propTypes = {
 	heading: PropTypes.shape({
 		headingText: PropTypes.node.isRequired,
 		destination: PropTypes.node,
-		linkType: PropTypes.node,
+		linkTag: PropTypes.node,
 		headingTag: PropTypes.node
 	}),
 	metadata: PropTypes.arrayOf(
