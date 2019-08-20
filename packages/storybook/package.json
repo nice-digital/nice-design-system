@@ -1,6 +1,7 @@
 {
   "name": "storybook",
   "version": "1.0.1-alpha.0",
+  "private": true,
   "description": "> TODO: description",
   "author": "Warren Keith <warren.keith@nice.org.uk>",
   "homepage": "https://github.com/nhsevidence/nice-design-system#readme",
@@ -44,5 +45,6 @@
     "@storybook/preset-scss": "^1.0.2",
     "@storybook/react": "^5.1.11",
     "babel-loader": "^8.0.6"
-  }
+  },
+  "gitHead": "a4db68f43916ad6c4cb19612e10aae200e80b5a8"
 }
