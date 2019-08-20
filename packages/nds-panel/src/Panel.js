@@ -20,5 +20,3 @@ Panel.propTypes = {
 };
 
 Panel.defaultProps = {};
-
-export default Panel;
