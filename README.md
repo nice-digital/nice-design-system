@@ -77,7 +77,7 @@ Run `npm start` and `test:unit:watch` for development. However, there are other 
 | `npm start`                  | Runs a server for local development and watches for changes |
 | `npm run bootstrap`          | Runs `lerna bootstrap` under the hood                       |
 | `npm run lerna`              | Runs `lerna` under the hood                                 |
-| `npm run publish`            | Runs `lerna publish` under the hood                         |
+| `npm run release`            | Runs `lerna publish` under the hood                         |
 | `npm run storybook`          | Runs the storybook web app locally                          |
 | `npm run storybook:build`    | Builds a compiled storybook site                            |
 | `npm test`                   | Lints JS and SCSS and runs JS unit tests                    |
@@ -98,10 +98,10 @@ First, make sure you're logged in to npm on the command line by running `npm who
 
 Next, check you have access to the @nice-digital org on npm by running `npm org ls nice-digital USERNAME`. It should list your username and role. You should have at least the *developers* role, which wiLl give you write access.
 
-Then run `npm run publish` to publish to npm. This runs `lerna publish` under the hood, which means you can pass in [additional command arguments](https://github.com/lerna/lerna/tree/master/commands/publish#readme). For example to release to npm with an alpha [dist tag](https://docs.npmjs.com/cli/dist-tag), run the following:
+Then run `npm run release` to publish to npm. This runs `lerna publish` under the hood, which means you can pass in [additional command arguments](https://github.com/lerna/lerna/tree/master/commands/publish#readme). For example to release to npm with an alpha [dist tag](https://docs.npmjs.com/cli/dist-tag), run the following:
 
 ```sh
-npm run publish -- --dist-tag alpha
+npm run release -- --dist-tag alpha
 ```
 
 ## Upgrading to 1.x from 0.x

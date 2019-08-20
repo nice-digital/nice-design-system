@@ -12,7 +12,7 @@
     "// LERNA": "",
     "lerna": "lerna",
     "bootstrap": "lerna bootstrap --hoist",
-    "publish": "lerna publish",
+    "release": "lerna publish",
     "// TESTS": "",
     "test": "cross-env CI=true npm run test:unit && npm run lint",
     "test:unit": "jest",
