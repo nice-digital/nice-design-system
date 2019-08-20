@@ -90,6 +90,20 @@ Run `npm start` and `test:unit:watch` for development. However, there are other 
 
 > Note: because lerna is installed locally, you can use `npm run lerna -- ` to run lerna commands, for example `npm run lerna -- add @nice-digital/icons --scope=@nice-digital/nds-filters`
 
+#### Publishing to npm
+
+First, make sure you're logged in to npm on the command line by running `npm whoami`.
+
+> Please make sure 2FA is enabled on your account for at least auth, and preferably writes as well.
+
+Next, check you have access to the @nice-digital org on npm by running `npm org ls nice-digital USERNAME`. It should list your username and role. You should have at least the *developers* role, which wiLl give you write access.
+
+Then run `npm run publish` to publish to npm. This runs `lerna publish` under the hood, which means you can pass in [additional command arguments](https://github.com/lerna/lerna/tree/master/commands/publish#readme). For example to release to npm with an alpha [dist tag](https://docs.npmjs.com/cli/dist-tag), run the following:
+
+```sh
+npm run publish -- --dist-tag alpha
+```
+
 ## Upgrading to 1.x from 0.x
 
 These are the following breaking changes from 0.x to 1.x:
