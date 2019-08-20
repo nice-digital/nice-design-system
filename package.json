@@ -33,7 +33,8 @@
     "build:es:watch": "npm run build:es -- -w",
     "build:watch": "concurrently -n build: npm:build:*:watch",
     "// LIFECYCLE": "",
-    "postinstall": "npm run bootstrap"
+    "postinstall": "npm run bootstrap",
+    "prepublishOnly": "npm run build:lib && npm run build:es"
   },
   "config": {
     "//": "Banner is used for prepending to compiled JS and CSS",
