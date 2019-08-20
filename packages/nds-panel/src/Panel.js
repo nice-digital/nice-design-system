@@ -16,7 +16,8 @@ Panel.propTypes = {
 	children: PropTypes.oneOfType([
 		PropTypes.arrayOf(PropTypes.node),
 		PropTypes.node
-	]).isRequired
+	]).isRequired,
+	variant: PropTypes.oneOf(["default", "impact", "primary"]),
 };
 
-Panel.defaultProps = {};
+Panel.defaultProps = {variant:"default"};
