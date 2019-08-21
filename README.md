@@ -20,6 +20,7 @@
 		- [Storybook](#storybook)
 		- [Tests](#tests)
 		- [Commands](#commands)
+			- [Publishing to npm](#publishing-to-npm)
 	- [Upgrading to 1.x from 0.x](#upgrading-to-1x-from-0x)
 </details>
 
@@ -125,4 +126,6 @@ These are the following breaking changes from 0.x to 1.x:
 - remove grunt and use npm scripts
 - Node 8.9+ requried for local development (because CSS modules 3 requires 8.9+)
 - drop support for Sublime as an IDE - prefer vscode
-- removed nunjucks templates, we now recommend using React components.
+- removed nunjucks templates, we now recommend using React components
+- removed the inverse panel
+- moved `$colour-panel-default` and `$colour-panel-default-border` into the panel package and renamed `$colour-panel-default` to `$colour-panel-default-background`.

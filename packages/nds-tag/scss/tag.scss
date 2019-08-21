@@ -22,7 +22,7 @@ $nice-tag-border-radius: em($spacing-xx-small);
 /// @since 0.3.1
 .tag {
   @include font-size(0);
-  background-color: $colour-panel-inverse;
+  background-color: $colour-nice-dark-grey;
   border-radius: $nice-tag-border-radius;
   color: $colour-text-inverse;
   display: inline-block;

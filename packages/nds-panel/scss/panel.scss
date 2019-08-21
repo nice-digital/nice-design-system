@@ -4,11 +4,35 @@
 
 @import '~@nice-digital/nds-core/scss/core';
 
+// Default (light) panel background colour
+/// @since 1.0.0
+$colour-panel-default-background: $colour-nice-grey-3;
+
+// Default (light) panel border colour
+/// @since 0.5.2
+$colour-panel-default-border: $colour-nice-grey-2;
+
+// Impact panel background colour
+/// @since 1.0.0
+$colour-panel-impact-background: $colour-nice-blue-3;
+
+// Impact panel border colour
+/// @since 1.0.0
+$colour-panel-impact-border: $colour-nice-blue-2;
+
+// Primary panel background colour
+/// @since 1.0.0
+$colour-panel-primary-background: $colour-nice-white;
+
+// Primary panel border colour
+/// @since 1.0.0
+$colour-panel-primary-border: $colour-nice-ice-teal;
+
 /// A panel is a container for visually separating content.
 /// Often used within a sidebar.
 /// @since 0.1.0
 .panel {
-  background: $colour-panel-default;
+  background: $colour-panel-default-background;
   border: 1px solid $colour-panel-default-border; // To distinguish panel from off-grey body background
   margin: em($spacing-medium 0 $spacing-large);
   padding: em($spacing-medium);
@@ -22,15 +46,25 @@
   }
 }
 
-/// Modifier for the panel, to use a inverse (dark) background.
+/// Modifier for an impact panel, to house key content and calls-to-action for a page.
+/// Autmatically uses inverse links within it..
+/// @require {mixin} links-inverse
+/// @require .panel
+/// @since 1.0.0
+.panel--impact {
+  @include links-inverse;
+  background: $colour-panel-impact-background;
+  border: 1px solid $colour-panel-impact-border;
+  color: $colour-text-inverse;
+}
+
+/// Modifier for a primary panel.
 /// Autmatically uses inverse links within it. Doesn't affect buttons
 /// though, so any buttons within a dark panel should be `.btn.btn--inverse`.
 /// @require {mixin} links-inverse
 /// @require .panel
-/// @since 0.1.0
-.panel--inverse {
-  @include links-inverse;
-  background: $colour-panel-inverse;
-  border: 0;
-  color: $colour-text-inverse;
+/// @since 1.0.0
+.panel--primary {
+  background: $colour-panel-primary-background;
+  border: 3px solid $colour-panel-primary-border;
 }
