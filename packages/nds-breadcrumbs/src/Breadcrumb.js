@@ -23,7 +23,7 @@ export const Breadcrumb = props => {
 };
 
 Breadcrumb.propTypes = {
-	tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]), // Allow tag to be customised for custom routing integration
+	tag: PropTypes.elementType, // Allow tag to be customised for custom routing integration
 	children: PropTypes.string.isRequired,
 	to: PropTypes.string
 };
