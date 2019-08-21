@@ -7,7 +7,7 @@ export const Card = props => {
 		headingText,
 		destination,
 		linkTag: LinkTag,
-		headingTag: HeadingTag = "p"
+		headingTag: HeadingTag = "p",
 	} = props.heading;
 
 	const { metadata } = props;
@@ -55,13 +55,13 @@ Card.propTypes = {
 	heading: PropTypes.shape({
 		headingText: PropTypes.node.isRequired,
 		destination: PropTypes.node,
-		linkTag: PropTypes.node,
-		headingTag: PropTypes.node
+		linkTag: PropTypes.elementType,
+		headingTag: PropTypes.elementType,
 	}),
 	metadata: PropTypes.arrayOf(
 		PropTypes.shape({
 			label: PropTypes.node,
-			value: PropTypes.node.isRequired
-		})
-	)
+			value: PropTypes.node.isRequired,
+		}),
+	),
 };
