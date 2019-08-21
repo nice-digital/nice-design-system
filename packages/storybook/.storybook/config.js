@@ -1,5 +1,12 @@
-import { configure } from "@storybook/react";
-import './stories.scss';
+import React from "react";
+import { configure, addDecorator } from "@storybook/react";
+import "./stories.scss";
+
+// Wrap all stories in a container
+const wrapperDecorator = storyFn => (
+	<div className="container">{storyFn()}</div>
+);
+addDecorator(wrapperDecorator);
 
 const req = require.context("../stories", true, /\.stories\.js$/);
 function loadStories() {
