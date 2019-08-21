@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Panel should match snapshot for default panel 1`] = `
+<div
+  className="panel"
+>
+  Some panel content
+</div>
+`;
