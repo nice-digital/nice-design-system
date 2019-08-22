@@ -6,34 +6,34 @@
 
 // Default (light) panel background colour
 /// @since 1.0.0
-$colour-panel-default-background: $colour-nice-grey-3;
+$nds-colour-panel-default-background: $colour-nice-grey-3;
 
 // Default (light) panel border colour
 /// @since 0.5.2
-$colour-panel-default-border: $colour-nice-grey-2;
+$nds-colour-panel-default-border: $colour-nice-grey-2;
 
 // Impact panel background colour
 /// @since 1.0.0
-$colour-panel-impact-background: $colour-nice-blue-3;
+$nds-colour-panel-impact-background: $colour-nice-blue-3;
 
 // Impact panel border colour
 /// @since 1.0.0
-$colour-panel-impact-border: $colour-nice-blue-2;
+$nds-colour-panel-impact-border: $colour-nice-blue-2;
 
 // Primary panel background colour
 /// @since 1.0.0
-$colour-panel-primary-background: $colour-nice-white;
+$nds-colour-panel-primary-background: $colour-nice-white;
 
 // Primary panel border colour
 /// @since 1.0.0
-$colour-panel-primary-border: $colour-nice-ice-teal;
+$nds-colour-panel-primary-border: $colour-nice-ice-teal;
 
 /// A panel is a container for visually separating content.
 /// Often used within a sidebar.
 /// @since 0.1.0
 .panel {
-  background: $colour-panel-default-background;
-  border: 1px solid $colour-panel-default-border; // To distinguish panel from off-grey body background
+  background: $nds-colour-panel-default-background;
+  border: 1px solid $nds-colour-panel-default-border; // To distinguish panel from off-grey body background
   margin: em($spacing-medium 0 $spacing-large);
   padding: em($spacing-medium);
 
@@ -53,8 +53,8 @@ $colour-panel-primary-border: $colour-nice-ice-teal;
 /// @since 1.0.0
 .panel--impact {
   @include links-inverse;
-  background: $colour-panel-impact-background;
-  border: 1px solid $colour-panel-impact-border;
+  background: $nds-colour-panel-impact-background;
+  border: 1px solid $nds-colour-panel-impact-border;
   color: $colour-text-inverse;
 }
 
@@ -65,6 +65,6 @@ $colour-panel-primary-border: $colour-nice-ice-teal;
 /// @require .panel
 /// @since 1.0.0
 .panel--primary {
-  background: $colour-panel-primary-background;
-  border: 3px solid $colour-panel-primary-border;
+  background: $nds-colour-panel-primary-background;
+  border: 3px solid $nds-colour-panel-primary-border;
 }
