@@ -2,6 +2,7 @@
 import React from "react";
 
 import { storiesOf } from "@storybook/react";
+import { text, select } from "@storybook/addon-knobs";
 
 import { Panel } from "@nice-digital/nds-panel";
 
@@ -66,4 +67,30 @@ storiesOf("Panel", module)
 				</Panel>
 			</aside>
 		</div>
-	));
+	))
+	.add("Try it out", () => {
+		const HeadingTag = select(
+			"Heading level",
+			{
+				h2: "h2",
+				h3: "h3",
+				h4: "h4"
+			},
+			"h2"
+		);
+
+		return (
+			<Panel
+				variant={select("Variant", Panel.variants)}
+				className={text("Additional class(es)", "mt--0")}
+			>
+				<HeadingTag>{text("Heading text", "Lorem ipsum")}</HeadingTag>
+				<p>
+					{text(
+						"Body text",
+						"Dolor sit amet, consectetur adipiscing elit. Sed at mauris tortor. Nunc ligula nulla, egestas eget risus vitae, interdum dapibus urna."
+					)}
+				</p>
+			</Panel>
+		);
+	});
