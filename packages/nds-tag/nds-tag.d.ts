@@ -2,7 +2,7 @@ declare module "@nice-digital/nds-tag" {
 	import React = require("react");
 
 	export interface TagProps {
-		children: JSX.Element[] | JSX.Element | string;
+		children: React.ReactNode;
 		/** Use tags to denote service phase */
 		alpha?: boolean;
 		/** Use tags to denote service phase */
@@ -26,6 +26,4 @@ declare module "@nice-digital/nds-tag" {
 	}
 
 	export const Tag: React.FC<TagProps>;
-
-	export default Tag;
 }

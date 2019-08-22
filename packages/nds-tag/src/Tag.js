@@ -49,7 +49,3 @@ Tag.propTypes = {
 		PropTypes.node
 	]).isRequired
 };
-
-Tag.defaultProps = {};
-
-export default Tag;
