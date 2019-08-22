@@ -3,8 +3,16 @@ declare module "@nice-digital/nds-panel" {
 
 	export interface PanelProps {
 		children: React.ReactNode;
-		variant?: "default" | "primary" | "impact";
+		variant?: "supporting" | "primary" | "impact";
 	}
 
-	export const Panel: React.FC<PanelProps>;
+	interface PanelComponent extends React.FC<PanelProps> {
+		variants: {
+			supporting: "supporting";
+			impact: "impact";
+			primary: "primary";
+		};
+	}
+
+	export const Panel: PanelComponent;
 }
