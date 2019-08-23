@@ -4,38 +4,76 @@ import classnames from "classnames";
 
 import "../scss/button.scss";
 
-const Button = props => {
-	const { modifier, href, children, type, ...attributes } = { ...props };
+export const Button = props => {
+	const {
+		variant,
+		to,
+		elementType,
+		children,
+		buttonType,
+		className,
+		...attributes
+	} = props;
 
-	if (modifier && !Button.modifiers.some(m => m === modifier)) {
+	const possibleVariants = Object.keys(Button.variants);
+	if (variant && !possibleVariants.some(m => m === variant)) {
 		throw new Error(
-			`Expected modifier to be one of '${Button.modifiers.join(
+			`Expected variant to be one of '${possibleVariants.join(
 				"', '"
-			)}' but found '${modifier}'`
+			)}' but found '${variant}'`
 		);
 	}
 
-	const Tag = type === "anchor" || href ? "a" : "button";
+	const ButtonTagType = elementType || (to ? "a" : "button"),
+		buttonProps = {};
 
-	if (Tag === "button") attributes.type = type;
-	else {
-		attributes.href = href;
+	if (to) {
+		buttonProps[ButtonTagType === "a" ? "href" : "to"] = to;
+	} else if (ButtonTagType === "button") {
+		buttonProps.type = buttonType || Button.types.button;
 	}
 
-	attributes.className = classnames({
+	buttonProps.className = classnames({
 		btn: true,
-		[`btn--${modifier}`]: modifier
+		[`btn--${variant}`]: variant !== Button.variants.primary,
+		[className]: !!className
 	});
 
-	return <Tag {...attributes}>{children}</Tag>;
+	return (
+		<ButtonTagType {...buttonProps} {...attributes}>
+			{children}
+		</ButtonTagType>
+	);
 };
 
-Button.modifiers = ["cta", "secondary", "inverse"];
+Button.types = {
+	button: "button",
+	submit: "submit",
+	reset: "reset"
+};
+
+Button.variants = {
+	cta: "cta",
+	primary: "primary",
+	secondary: "secondary",
+	inverse: "inverse"
+};
 
 Button.propTypes = {
-	href: PropTypes.string,
-	modifier: PropTypes.oneOf(Button.modifiers),
-	type: PropTypes.oneOf(["anchor", "button", "submit", "reset"]),
+	to: PropTypes.string,
+	variant: PropTypes.oneOf([
+		Button.variants.primary,
+		Button.variants.cta,
+		Button.variants.secondary,
+		Button.variants.inverse
+	]),
+	buttonType: PropTypes.oneOf([
+		Button.types.button,
+		Button.types.submit,
+		Button.types.reset
+	]),
+	elementType: PropTypes.elementType,
+	className: PropTypes.string,
 	children: PropTypes.oneOfType([
 		PropTypes.arrayOf(PropTypes.node),
 		PropTypes.node
@@ -43,7 +81,5 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-	type: "button"
+	variant: "primary"
 };
-
-export default Button;
