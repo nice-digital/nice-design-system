@@ -1,47 +1,79 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import RemoveIcon from "@nice-digital/icons/lib/Remove";
+
 import "../scss/action-banner.scss";
 
-export const ActionBanner = props => {
-	const classes = ["action-banner"];
+export class ActionBanner extends React.Component {
+	constructor(props) {
+		super(props);
 
-	if (props.modifier) classes.push(`action-banner--${props.modifier}`);
+		this.state = {
+			isClosed: false
+		};
 
-	if (props.closeable) classes.push("action-banner--closeable");
+		this.closeClickHandler = this.closeClickHandler.bind(this);
+	}
 
-	return (
-		<section className={classes.join(" ")}>
-			<div className="action-banner__container">
-				<div className="action-banner__inner">
-					<div className="action-banner__text">
-						<h2 className="action-banner__title">{props.title}</h2>
-						<p className="action-banner__intro">{props.children}</p>
+	closeClickHandler() {
+		this.setState({
+			isClosed: true
+		});
+
+		if (typeof this.props.onClosing === "function") this.props.onClosing(this);
+		else throw new Error("The onClosing prop should be a function");
+	}
+
+	render() {
+		if (this.state.isClosed) return null;
+
+		const { variant, onClosing, title, children, cta } = this.props;
+
+		const classes = ["action-banner"];
+
+		if (variant && variant !== "default")
+			classes.push(`action-banner--${variant}`);
+
+		if (onClosing) classes.push("action-banner--closeable");
+
+		return (
+			<section className={classes.join(" ")}>
+				<div className="action-banner__container">
+					<div className="action-banner__inner">
+						<div className="action-banner__text">
+							<h2 className="action-banner__title">{title}</h2>
+							{children && <p className="action-banner__intro">{children}</p>}
+						</div>
+						{cta && <div className="action-banner__actions">{cta}</div>}
+						{onClosing && (
+							<button
+								type="button"
+								className="action-banner__close"
+								onClick={this.closeClickHandler}
+							>
+								<RemoveIcon />
+								<span className="visually-hidden">Close {title}</span>
+							</button>
+						)}
 					</div>
-					{props.cta && (
-						<div className="action-banner__actions">{props.cta}</div>
-					)}
-					{props.closeable && (
-						<button type="button" className="action-banner__close">
-							<span className="icon icon--remove" ara-hidden="true"></span>
-							<span className="visually-hidden">Close</span>
-						</button>
-					)}
 				</div>
-			</div>
-		</section>
-	);
-};
+			</section>
+		);
+	}
+}
 
 ActionBanner.propTypes = {
 	title: PropTypes.string.isRequired,
-	modifier: PropTypes.oneOf(["subtle"]),
+	variant: PropTypes.oneOf(["default", "subtle"]),
 	children: PropTypes.oneOfType([
 		PropTypes.arrayOf(PropTypes.node),
 		PropTypes.node
 	]).isRequired,
 	cta: PropTypes.node,
-	closeable: PropTypes.bool
+	onClosing: PropTypes.func
 };
 
-export default ActionBanner;
+ActionBanner.defaultProps = {
+	variant: "default"
+};

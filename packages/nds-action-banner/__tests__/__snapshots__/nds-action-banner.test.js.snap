@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActionBanner should match snapshot for closeable subtle action banner 1`] = `
+<section
+  className="action-banner action-banner--subtle action-banner--closeable"
+>
+  <div
+    className="action-banner__container"
+  >
+    <div
+      className="action-banner__inner"
+    >
+      <div
+        className="action-banner__text"
+      >
+        <h2
+          className="action-banner__title"
+        >
+          Some title
+        </h2>
+        <p
+          className="action-banner__intro"
+        >
+          Some body
+        </p>
+      </div>
+      <div
+        className="action-banner__actions"
+      >
+        <a
+          href="/test"
+        >
+          Some CTA
+        </a>
+      </div>
+      <button
+        className="action-banner__close"
+        onClick={[Function]}
+        type="button"
+      >
+        <SvgRemove />
+        <span
+          className="visually-hidden"
+        >
+          Close 
+          Some title
+        </span>
+      </button>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`ActionBanner should match snapshot for default action banner 1`] = `
+<section
+  className="action-banner"
+>
+  <div
+    className="action-banner__container"
+  >
+    <div
+      className="action-banner__inner"
+    >
+      <div
+        className="action-banner__text"
+      >
+        <h2
+          className="action-banner__title"
+        >
+          Some title
+        </h2>
+        <p
+          className="action-banner__intro"
+        >
+          Some body
+        </p>
+      </div>
+      <div
+        className="action-banner__actions"
+      >
+        <a
+          href="/test"
+        >
+          Some CTA
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+`;

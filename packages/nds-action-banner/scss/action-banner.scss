@@ -5,6 +5,22 @@
 @import '~@nice-digital/nds-core/scss/core';
 @import '~@nice-digital/icons/scss/nice-icons';
 
+// Default action banner background colour
+/// @since 1.0.0
+$nds-action-banner-default-background: $colour-nice-cool-teal;
+
+// Subtle default banner border colour
+/// @since 1.0.0
+$nds-action-banner-default-border: $colour-nice-black;
+
+// Subtle action banner background colour
+/// @since 1.0.0
+$nds-action-banner-subtle-background: $colour-nice-grey-3;
+
+// Subtle action banner border colour
+/// @since 1.0.0
+$nds-action-banner-subtle-border: $colour-nice-grey-2;
+
 /// Action banner component. Used to highlight
 /// and give context to a call-to-action.
 /// Modifiers:
@@ -13,7 +29,8 @@
 /// @since 0.3.1
 .action-banner {
   @include links-inverse;
-  background: $colour-nice-cool-teal;
+  background: $nds-action-banner-default-background;
+  border: 1px solid $nds-action-banner-default-border;
   color: $colour-text-inverse;
   margin: em($spacing-large 0);
   padding: em($spacing-small 0);
@@ -47,6 +64,11 @@
 
     .btn {
       margin: 0;
+
+      &:focus {
+        // Override default button focus because we're on a dark background
+        @include inverse-focus-style;
+      }
     }
   }
 
@@ -64,17 +86,18 @@
     z-index: 1;
 
     &:hover {
-      background: rgba(0, 0, 0, .2);
+      background: rgba(0, 0, 0, 0.2);
     }
 
     &:focus {
-      @include default-focus-style;
+      @include inverse-focus-style;
     }
   }
 
   &--subtle {
     @include links-default;
-    background: $colour-panel-default;
+    background: $nds-action-banner-subtle-background;
+    border: 1px solid $nds-action-banner-subtle-border;
     color: $colour-text;
 
     .action-banner__title {
@@ -84,11 +107,20 @@
     .action-banner__close {
       color: $colour-text;
     }
+
+    .action-banner__actions {
+      .btn {
+        &:focus {
+          // Return focus back to default now we're on a light background
+          @include default-focus-style;
+        }
+      }
+    }
   }
 
   &--closeable {
     .action-banner__title {
-      padding-right: rem($spacing-large); // Make toom for close button
+      padding-right: rem($spacing-large); // Make room for close button
     }
   }
 
@@ -115,6 +147,7 @@
   }
 
   @media print {
+    // It doesn't make any sense to print an action banner
     display: none !important;
   }
 }

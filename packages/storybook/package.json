@@ -29,6 +29,7 @@
   "dependencies": {
     "@nice-digital/design-system": "^1.0.12-alpha.0",
     "@nice-digital/icons": "^2.1.1",
+    "@nice-digital/nds-action-banner": "^1.0.7-alpha.0",
     "@nice-digital/nds-breadcrumbs": "^1.0.7-alpha.0",
     "@nice-digital/nds-button": "^1.0.7-alpha.0",
     "@nice-digital/nds-card": "^1.0.7-alpha.0",
