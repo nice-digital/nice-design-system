@@ -1,11 +1,22 @@
 import React from "react";
-import { configure, addDecorator } from "@storybook/react";
+import { configure, addDecorator, addParameters } from "@storybook/react";
 import { withKnobs } from "@storybook/addon-knobs";
+import { withA11y } from "@storybook/addon-a11y";
+import niceTheme from "./nice-theme";
 
 import "./stories.scss";
 
+addParameters({
+	options: {
+		theme: niceTheme
+	}
+});
+
 // Knobs everywhere!
 addDecorator(withKnobs);
+
+// Check accessibility in stories
+addDecorator(withA11y);
 
 // Wrap all stories in a container
 const wrapperDecorator = storyFn => (
