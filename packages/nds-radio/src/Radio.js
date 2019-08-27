@@ -5,7 +5,15 @@ import "../scss/radio.scss";
 
 export class Radio extends Component {
 	render() {
-		const { error, group, label, value, inline, ...rest } = this.props;
+		const {
+			disabled,
+			error,
+			group,
+			label,
+			value,
+			inline,
+			...rest
+		} = this.props;
 		const classNames = classnames({
 			radio: true,
 			"radio--inline": inline,
@@ -15,6 +23,7 @@ export class Radio extends Component {
 		return (
 			<div className={classNames}>
 				<input
+					disabled={disabled}
 					className="radio__input"
 					name={group}
 					type="radio"
@@ -30,13 +39,14 @@ export class Radio extends Component {
 }
 
 Radio.propTypes = {
-	error: PropTypes.bool,
-	group: PropTypes.string,
-	label: PropTypes.string,
-	value: PropTypes.string,
-	inline: PropTypes.bool,
 	children: PropTypes.oneOfType([
 		PropTypes.arrayOf(PropTypes.node),
 		PropTypes.node
-	])
+	]),
+	disabled: PropTypes.bool,
+	error: PropTypes.bool,
+	group: PropTypes.string.isRequired,
+	inline: PropTypes.bool,
+	label: PropTypes.string.isRequired,
+	value: PropTypes.string.isRequired
 };
