@@ -7,7 +7,7 @@ export const Card = props => {
 		headingText,
 		destination,
 		linkTag: LinkTag,
-		headingTag: HeadingTag = "p",
+		headingTag: HeadingTag = "p"
 	} = props.heading;
 
 	const { metadata } = props;
@@ -34,6 +34,7 @@ export const Card = props => {
 			{metadata && metadata.length && (
 				<dl className="card__metadata">
 					{metadata.map((item, idx) => {
+						if (!item.value) return null;
 						return (
 							<div key={`item${idx}`} className="card__metadatum">
 								{item.label && (
@@ -56,12 +57,12 @@ Card.propTypes = {
 		headingText: PropTypes.node.isRequired,
 		destination: PropTypes.node,
 		linkTag: PropTypes.elementType,
-		headingTag: PropTypes.elementType,
+		headingTag: PropTypes.elementType
 	}),
 	metadata: PropTypes.arrayOf(
 		PropTypes.shape({
 			label: PropTypes.node,
-			value: PropTypes.node.isRequired,
-		}),
-	),
+			value: PropTypes.node.isRequired
+		})
+	)
 };
