@@ -88,19 +88,19 @@ const customisable = () => {
 		<ListWrapper>
 			<Card
 				heading={{
-					headingText: text("headingText", "Card heading text"),
-					destination: text("destination", "/about/"),
-					linkTag: text("linkTag", "a" || "a"),
-					headingTag: text("headingTag", "h1" || "h1")
+					headingText: text("headingText", "Card heading text", "Heading"),
+					destination: text("destination", "/about/", "Heading"),
+					linkTag: text("linkTag", "a" || "a", "Heading"),
+					headingTag: text("headingTag", "h1" || "h1", "Heading")
 				}}
 				metadata={[
 					{
-						value: text("Metadata 1 label", "Label"),
-						label: text("Metadata 1 value", "Value")
+						value: text("Metadata 1 label", "Label", "Metadata"),
+						label: text("Metadata 1 value", "Value", "Metadata")
 					},
 					{
-						value: text("Metadata 2 label", "Label"),
-						label: text("Metadata 2 value", "Value")
+						value: text("Metadata 2 label", "Label", "Metadata"),
+						label: text("Metadata 2 value", "Value", "Metadata")
 					}
 				]}
 			/>
