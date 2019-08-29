@@ -44,6 +44,6 @@ Radio.propTypes = {
 	error: PropTypes.bool,
 	group: PropTypes.string.isRequired,
 	inline: PropTypes.bool,
-	label: PropTypes.string.isRequired,
+	label: PropTypes.string,
 	value: PropTypes.string.isRequired
 };
