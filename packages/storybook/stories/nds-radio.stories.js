@@ -6,7 +6,12 @@ import { storiesOf } from "@storybook/react";
 import { text, boolean } from "@storybook/addon-knobs";
 import { Radio } from "@nice-digital/nds-radio";
 
-const RadioDefault = () => <Radio label="Yes" />;
+const RadioDefault = () => (
+	<div>
+		<Radio label="Yes, please." value="yes" group="my-group" />
+		<Radio label="No, thank you." value="no" group="my-group" defaultChecked />
+	</div>
+);
 
 const RadioError = () => (
 	<Radio value="error" label="Error!" error={true} group="my-group" />
@@ -27,7 +32,7 @@ const RadioCustomise = () => (
 	<div>
 		<Radio
 			value="yes"
-			label="Yes, please"
+			label="Yes, please."
 			group="my-group"
 			inline={boolean("Inline")}
 		/>
@@ -48,11 +53,3 @@ storiesOf("Radio", module)
 	.add("Disabled", RadioDisabled)
 	.add("Inline", RadioInline)
 	.add("Try it out", RadioCustomise);
-
-// children?: React.ReactNode;
-// 	disabled?: boolean;
-// 	error?: boolean;
-// 	group: string;
-// 	inline?: boolean;
-// 	label: string;
-// 	value: string;

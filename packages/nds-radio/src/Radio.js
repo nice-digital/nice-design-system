@@ -14,6 +14,7 @@ export class Radio extends Component {
 			inline,
 			...rest
 		} = this.props;
+		if (!value || value === "") return null;
 		const classNames = classnames({
 			radio: true,
 			"radio--inline": inline,
@@ -31,7 +32,7 @@ export class Radio extends Component {
 					{...rest}
 				/>
 				<label className="radio__label" htmlFor={unique}>
-					{label}
+					{label ? label : value}
 				</label>
 			</div>
 		);
@@ -39,10 +40,6 @@ export class Radio extends Component {
 }
 
 Radio.propTypes = {
-	children: PropTypes.oneOfType([
-		PropTypes.arrayOf(PropTypes.node),
-		PropTypes.node
-	]),
 	disabled: PropTypes.bool,
 	error: PropTypes.bool,
 	group: PropTypes.string.isRequired,

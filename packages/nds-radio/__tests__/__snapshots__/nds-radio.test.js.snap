@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot with some default attributes 1`] = `
+<div
+  className="radio"
+>
+  <input
+    className="radio__input"
+    disabled={false}
+    id="radio-group_yes"
+    name="radio-group"
+    type="radio"
+  />
+  <label
+    className="radio__label"
+    htmlFor="radio-group_yes"
+  >
+    Yes, please.
+  </label>
+</div>
+`;
