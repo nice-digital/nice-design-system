@@ -8,7 +8,14 @@ class App extends Component {
 	render() {
 		return (
 			<main>
-				<Checkbox />
+				<p>Contact preferences</p>
+				<Checkbox label="Email" value="email" name="contact-preference" />
+				<Checkbox
+					label="Telephone"
+					value="telephone"
+					name="contact-preference"
+				/>
+				<Checkbox label="Text Message" value="sms" name="contact-preference" />
 			</main>
 		);
 	}
