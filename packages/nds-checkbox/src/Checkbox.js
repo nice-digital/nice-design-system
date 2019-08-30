@@ -5,7 +5,7 @@ import classnames from "classnames";
 import "../scss/checkbox.scss";
 
 export const Checkbox = props => {
-	const { error, inline, name, label, value, ...rest } = props;
+	const { error, inline, name, label, value, hint, ...rest } = props;
 	if (!value) return null;
 	const unique = name + "_" + value;
 	const classNames = classnames({
@@ -14,19 +14,27 @@ export const Checkbox = props => {
 		"checkbox--error": error
 	});
 	return (
-		<div className={classNames}>
-			<input
-				type="checkbox"
-				className="checkbox__input"
-				id={unique}
-				name={name}
-				value={value}
-				{...rest}
-			/>
-			<label className="checkbox__label" htmlFor={unique}>
-				{label ? label : value}
-			</label>
-		</div>
+		<>
+			{error && error.length && (
+				<p className="checkbox__error-message">{error}</p>
+			)}
+			<div className={classNames}>
+				<div>
+					<input
+						type="checkbox"
+						className="checkbox__input"
+						id={unique}
+						name={name}
+						value={value}
+						{...rest}
+					/>
+					<label className="checkbox__label" htmlFor={unique}>
+						{label ? label : value}
+					</label>
+					{hint && <span className="checkbox__hint">{hint}</span>}
+				</div>
+			</div>
+		</>
 	);
 };
 
@@ -35,7 +43,8 @@ Checkbox.propTypes = {
 	label: PropTypes.node.isRequired,
 	value: PropTypes.string,
 	inline: PropTypes.bool,
-	error: PropTypes.bool
+	error: PropTypes.string,
+	hint: PropTypes.string
 };
 
 export default Checkbox;

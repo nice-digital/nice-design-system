@@ -21,6 +21,13 @@ describe("Checkbox", () => {
 		expect(toJson(wrapper)).toMatchSnapshot();
 	});
 
+	it("should match snapshot with hint text supplied", () => {
+		const wrapper = shallow(
+			<Checkbox {...props} hint="This is a hint to appear." />
+		);
+		expect(toJson(wrapper)).toMatchSnapshot();
+	});
+
 	it("should not render a checkbox control if it doesn't have a value", () => {
 		const localProps = Object.assign({}, props);
 		localProps.value = "";
@@ -40,9 +47,16 @@ describe("Checkbox", () => {
 		const localProps = Object.assign({}, props);
 		localProps.error = true;
 		const wrapper = shallow(<Checkbox {...localProps} />);
-		console.log(wrapper.html());
 		const parent = wrapper.find("div.checkbox--error");
 		expect(parent.length).toEqual(1);
+	});
+
+	it("should add dispaly error text above the control if an error string is supplied", () => {
+		const localProps = Object.assign({}, props);
+		localProps.error = "Error message here.";
+		const wrapper = shallow(<Checkbox {...localProps} />);
+		const parent = wrapper.find("p.checkbox__error-message");
+		expect(parent.text()).toEqual("Error message here!");
 	});
 
 	it("should pass through any additional attributes supplied", () => {

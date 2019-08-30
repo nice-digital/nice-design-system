@@ -26,7 +26,7 @@ $checkbox-size: rem($spacing-large);
   &--inline {
     display: inline-block;
     margin-right: rem($spacing-medium);
-
+    vertical-align: top;
     input {
       margin-right: rem($spacing-x-small);
     }
@@ -103,5 +103,16 @@ $checkbox-size: rem($spacing-large);
       opacity: 0;
       background: transparent;
     }
+  }
+
+  &__hint {
+    color: $colour-nice-dark-grey;
+    margin-top: rem($spacing-x-small);
+    margin-bottom: rem($spacing-small);
+  }
+
+  &__error-message {
+    color: $colour-error;
+    font-weight: bold;
   }
 }

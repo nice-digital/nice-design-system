@@ -61,6 +61,21 @@ The label for the single input.
 <Checkbox label="yes" name="contact-permission" label="Yes, please." />
 ```
 
+##### hint
+
+- Type: `string`
+
+Any hint or help text that should be rendered underneath the checkbox and label
+
+```js
+<Checkbox
+	label="yes"
+	name="contact-permission"
+	label="Yes, please."
+	hint="You can unsubscribe at any time"
+/>
+```
+
 ##### disabled
 
 - Type: `boolean`
@@ -73,12 +88,27 @@ Prop to control whether the disabled attribute is present on the input.
 
 ##### error
 
-- Type: `boolean`
+- Type: `string`
 
-Prop to control whether an error class (and styling) is applied to the input, label and container.
+Prop to control whether an error class (and styling) is applied to the input, label and container. If `true` is supplied then the error styling is applied, if a `string` is supplied, an error message is rendered.
 
 ```js
 <Checkbox label="yes" name="contact-permission" error={true} />
+<Checkbox label="yes" name="contact-permission" error="Please check the terms and conditions" />
+```
+
+##### hint
+
+- Type: `string`
+
+Add hint text underneath the label
+
+```js
+<Checkbox
+	label="yes"
+	name="contact-permission"
+	hint="You can unsubscribe at any time."
+/>
 ```
 
 ##### inline
