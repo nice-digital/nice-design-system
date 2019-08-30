@@ -3,7 +3,7 @@ declare module "@nice-digital/nds-checkbox" {
 
 	export interface Props {
 		name: string;
-		label: React.ReactNode;
+		label?: React.ReactNode;
 		value: string;
 		inline?: boolean;
 		error?: boolean;

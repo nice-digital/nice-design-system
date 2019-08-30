@@ -6,6 +6,7 @@ import "../scss/checkbox.scss";
 
 export const Checkbox = props => {
 	const { error, inline, name, label, value, ...rest } = props;
+	if (!value) return null;
 	const unique = name + "_" + value;
 	const classNames = classnames({
 		checkbox: true,
@@ -23,16 +24,16 @@ export const Checkbox = props => {
 				{...rest}
 			/>
 			<label className="checkbox__label" htmlFor={unique}>
-				{label}
+				{label ? label : value}
 			</label>
 		</div>
 	);
 };
 
 Checkbox.propTypes = {
-	name: PropTypes.string,
+	name: PropTypes.string.isRequired,
 	label: PropTypes.node.isRequired,
-	value: PropTypes.string.isRequired,
+	value: PropTypes.string,
 	inline: PropTypes.bool,
 	error: PropTypes.bool
 };
