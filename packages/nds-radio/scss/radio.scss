@@ -21,6 +21,7 @@ $radio-base-size: rem($spacing-large);
   &--inline {
     display: inline-block;
     margin-right: rem($spacing-medium);
+    vertical-align: top;
 
     input {
       margin-right: rem($spacing-x-small);
@@ -85,5 +86,16 @@ $radio-base-size: rem($spacing-large);
       top: rem($spacing-small);
       width: rem($spacing-medium);
     }
+  }
+
+  &__hint {
+    color: $colour-nice-dark-grey;
+    margin-top: rem($spacing-x-small);
+    margin-bottom: rem($spacing-small);
+  }
+
+  &__error-message {
+    color: $colour-error;
+    font-weight: bold;
   }
 }

@@ -7,8 +7,9 @@ export class Radio extends Component {
 	render() {
 		const {
 			disabled,
+			hint,
 			error,
-			group,
+			name,
 			label,
 			value,
 			inline,
@@ -20,30 +21,37 @@ export class Radio extends Component {
 			"radio--inline": inline,
 			"radio--error": error
 		});
-		const unique = `${group}_${value}`;
+		const unique = `${name}_${value}`;
 		return (
-			<div className={classNames}>
-				<input
-					disabled={disabled}
-					className="radio__input"
-					name={group}
-					type="radio"
-					id={unique}
-					{...rest}
-				/>
-				<label className="radio__label" htmlFor={unique}>
-					{label ? label : value}
-				</label>
-			</div>
+			<>
+				{error && error.length && (
+					<p className="radio__error-message">{error}</p>
+				)}
+				<div className={classNames}>
+					<input
+						disabled={disabled}
+						className="radio__input"
+						name={name}
+						type="radio"
+						id={unique}
+						{...rest}
+					/>
+					<label className="radio__label" htmlFor={unique}>
+						{label ? label : value}
+					</label>
+					{hint && <span className="checkbox__hint">{hint}</span>}
+				</div>
+			</>
 		);
 	}
 }
 
 Radio.propTypes = {
 	disabled: PropTypes.bool,
-	error: PropTypes.bool,
-	group: PropTypes.string.isRequired,
+	error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+	name: PropTypes.string.isRequired,
 	inline: PropTypes.bool,
 	label: PropTypes.string,
-	value: PropTypes.string.isRequired
+	value: PropTypes.string.isRequired,
+	hint: PropTypes.string
 };

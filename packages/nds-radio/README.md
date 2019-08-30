@@ -22,9 +22,9 @@ Import the `Radio` component from the package and use within JSX:
 import React from "react";
 import { Radio } from "@nice-digital/nds-radio";
 
-// The mimimum to be supplied for the input to render is a value
+// The mimimum to be supplied for the input to render is a value and a name
 
-<Radio value="yes" />;
+<Radio value="yes" name="my-group" />;
 ```
 
 > Note: The React component automatically imports the SCSS, so there's no need to import the SCSS directly yourself.
@@ -38,17 +38,17 @@ import { Radio } from "@nice-digital/nds-radio";
 The value for the single input.
 
 ```js
-<Radio label="yes" group="my-group" />
+<Radio label="yes" name="my-group" />
 ```
 
-##### group
+##### name
 
 - Type: `string` (required)
 
 The name attribute on the single input, to put radio controls into single-choice groups.
 
 ```js
-<Radio label="yes" group="my-group" />
+<Radio label="yes" name="my-group" />
 ```
 
 ##### label
@@ -58,7 +58,22 @@ The name attribute on the single input, to put radio controls into single-choice
 The label for the single input.
 
 ```js
-<Radio label="yes" group="my-group" label="Yes, please." />
+<Radio label="yes" name="my-group" label="Yes, please." />
+```
+
+##### hint
+
+- Type: `string`
+
+Any hint or help text that should be rendered underneath the radio and label
+
+```js
+<Radio
+	value="yes"
+	name="my-group"
+	label="Yes, please."
+	hint="You can unsubscribe at any time"
+/>
 ```
 
 ##### disabled
@@ -68,17 +83,18 @@ The label for the single input.
 Prop to control whether the disabled attribute is present on the input.
 
 ```js
-<Radio label="yes" group="my-group" disabled={true} />
+<Radio label="yes" name="my-group" disabled={true} />
 ```
 
 ##### error
 
-- Type: `boolean`
+- Type: `string` | `boolean`
 
-Prop to control whether an error class (and styling) is applied to the input, label and container.
+Prop to control whether an error class (and styling) is applied to the input, label and container. If `true` is supplied then the error styling is applied, if a `string` is supplied, the error styling is applied and an error message is rendered.
 
 ```js
-<Radio label="yes" group="my-group" error={true} />
+<Radio label="yes" name="my-group" error={true} />
+<Radio label="yes" name="my-group" error="Please check the terms and conditions" />
 ```
 
 ##### inline
@@ -89,8 +105,8 @@ Prop to control whether the container recieves a class to set it inline. All rad
 
 ```js
 <div>
-	<Radio label="yes" group="my-group" inline={true} />
-	<Radio label="no" group="my-group" inline={true} />
+	<Radio label="yes" name="my-group" inline={true} />
+	<Radio label="no" name="my-group" inline={true} />
 </div>
 ```
 
@@ -103,7 +119,7 @@ const otherProps = {
 	"data-testing": true,
 	"qa-selection": "radio button"
 }
-<Radio label="yes" group="my-group" {...otherProps}  />
+<Radio label="yes" name="my-group" {...otherProps}  />
 ```
 
 ### SCSS
@@ -123,6 +139,23 @@ If you're not using [React](#react), then include the [SCSS as above](#scss) and
 	<input class="radio__input" name="my-group" type="radio" id="my-group_yes" />
 	<label class="radio__label" for="my-group_yes">
 		Yes, please.
+	</label>
+</div>
+```
+
+Error example:
+
+```html
+<p class="radio__error-message">Error message text here.</p>
+<div class="radio radio--error">
+	<input
+		class="radio__input"
+		type="radio"
+		id="my-group_error"
+		name="my-group"
+	/>
+	<label class="radio__label" for="my-group_error">
+		Error!
 	</label>
 </div>
 ```
