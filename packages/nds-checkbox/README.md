@@ -85,7 +85,7 @@ Prop to control whether an error class (and styling) is applied to the input, la
 
 - Type: `boolean`
 
-Prop to control whether the container recieves a class to set it inline. All radios in the group would need this prop.
+Prop to control whether the container recieves a class to set it visually inline. All checkboxes in the group would need this prop.
 
 ```js
 <div>
@@ -120,6 +120,23 @@ If you're not using [React](#react), then include the [SCSS as above](#scss) and
 
 ```html
 <div class="checkbox">
+	<input
+		type="checkbox"
+		class="checkbox__input"
+		id="contact-preference_email"
+		name="contact-preference"
+		value="email"
+	/>
+	<label class="checkbox__label" for="contact-preference_email">
+		Email
+	</label>
+</div>
+```
+
+Error state:
+
+```html
+<div class="checkbox checkbox--error">
 	<input
 		type="checkbox"
 		class="checkbox__input"
