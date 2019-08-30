@@ -43,7 +43,7 @@ describe("Radio", () => {
         const localProps = Object.assign({}, props);
         localProps.error = true;
         const wrapper = shallow(<Radio {...localProps} />);
-        const parent = wrapper.find("input[disabled]");
+        const parent = wrapper.find("div.radio--error");
         expect(parent.length).toEqual(1);
     });
 
