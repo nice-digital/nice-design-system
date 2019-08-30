@@ -88,9 +88,9 @@ Prop to control whether the disabled attribute is present on the input.
 
 ##### error
 
-- Type: `string`
+- Type: `string` | `boolean`
 
-Prop to control whether an error class (and styling) is applied to the input, label and container. If `true` is supplied then the error styling is applied, if a `string` is supplied, an error message is rendered.
+Prop to control whether an error class (and styling) is applied to the input, label and container. If `true` is supplied then the error styling is applied, if a `string` is supplied, the error styling is applied and an error message is rendered.
 
 ```js
 <Checkbox label="yes" name="contact-permission" error={true} />

@@ -1,7 +1,7 @@
 declare module "@nice-digital/nds-checkbox" {
 	import React = require("react");
 
-	export interface Props {
+	export interface CheckboxProps {
 		/** The name attribute for the checkbox */
 		name: string;
 		/** The label for the checkbox. If none supplied will use the value */
@@ -16,5 +16,5 @@ declare module "@nice-digital/nds-checkbox" {
 		hint?: string;
 	}
 
-	export const Checkbox: React.FC<Props>;
+	export const Checkbox: React.FC<CheckboxProps>;
 }
