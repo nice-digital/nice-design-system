@@ -13,10 +13,11 @@
     "lib": "lib",
     "test": "__tests__"
   },
-  "files": [
+   "files": [
     "lib",
     "es",
-    "scss"
+    "scss",
+    "*.d.ts"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",

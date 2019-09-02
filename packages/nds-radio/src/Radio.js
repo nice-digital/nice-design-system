@@ -5,38 +5,53 @@ import "../scss/radio.scss";
 
 export class Radio extends Component {
 	render() {
-		const { error, group, label, value, inline, ...rest } = this.props;
+		const {
+			disabled,
+			hint,
+			error,
+			name,
+			label,
+			value,
+			inline,
+			...rest
+		} = this.props;
+		if (!value || value === "") return null;
 		const classNames = classnames({
 			radio: true,
 			"radio--inline": inline,
 			"radio--error": error
 		});
-		const unique = `${group}_${value}`;
+		const unique = `${name}_${value}`;
 		return (
-			<div className={classNames}>
-				<input
-					className="radio__input"
-					name={group}
-					type="radio"
-					id={unique}
-					{...rest}
-				/>
-				<label className="radio__label" htmlFor={unique}>
-					{label}
-				</label>
-			</div>
+			<>
+				{error && error.length && (
+					<p className="radio__error-message">{error}</p>
+				)}
+				<div className={classNames}>
+					<input
+						disabled={disabled}
+						className="radio__input"
+						name={name}
+						type="radio"
+						id={unique}
+						{...rest}
+					/>
+					<label className="radio__label" htmlFor={unique}>
+						{label ? label : value}
+					</label>
+					{hint && <span className="checkbox__hint">{hint}</span>}
+				</div>
+			</>
 		);
 	}
 }
 
 Radio.propTypes = {
-	error: PropTypes.bool,
-	group: PropTypes.string,
-	label: PropTypes.string,
-	value: PropTypes.string,
+	disabled: PropTypes.bool,
+	error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+	name: PropTypes.string.isRequired,
 	inline: PropTypes.bool,
-	children: PropTypes.oneOfType([
-		PropTypes.arrayOf(PropTypes.node),
-		PropTypes.node
-	])
+	label: PropTypes.string,
+	value: PropTypes.string.isRequired,
+	hint: PropTypes.string
 };
