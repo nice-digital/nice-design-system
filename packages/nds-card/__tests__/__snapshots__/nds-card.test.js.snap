@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should match snapshot with some default attributes 1`] = `
+<article
+  className="card"
+>
+  <header
+    className="card__header"
+  >
+    <p
+      className="card__heading"
+    >
+      <a
+        href="/about"
+      >
+        Card heading text
+      </a>
+    </p>
+  </header>
+  <dl
+    className="card__metadata"
+  >
+    <div
+      className="card__metadatum"
+      key="item0"
+    >
+      <dt
+        className="visually-hidden"
+      >
+        Email address
+      </dt>
+      <dd>
+        john.smith@email.com
+      </dd>
+    </div>
+    <div
+      className="card__metadatum"
+      key="item1"
+    >
+      <dt
+        className="visually-hidden"
+      >
+        Email address
+      </dt>
+      <dd>
+        sarah.smith@email.com
+      </dd>
+    </div>
+  </dl>
+</article>
+`;

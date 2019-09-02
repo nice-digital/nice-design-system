@@ -2,6 +2,7 @@
 import React from "react";
 
 import { storiesOf } from "@storybook/react";
+import { withKnobs, text } from "@storybook/addon-knobs";
 
 import { Card } from "@nice-digital/nds-card";
 import { Tag } from "@nice-digital/nds-tag";
@@ -82,21 +83,35 @@ const fullCardWithComponentMeta = () => {
 	);
 };
 
-const successTag = <Tag alpha>Success!</Tag>;
-
-const meta = [
-	{
-		label: "Email address",
-		value: "john.smith@hungrykipper.com"
-	},
-	{
-		value: successTag
-	}
-];
+const customisable = () => {
+	return (
+		<ListWrapper>
+			<Card
+				heading={{
+					headingText: text("headingText", "Card heading text", "Heading"),
+					destination: text("destination", "/about/", "Heading"),
+					linkTag: text("linkTag", "a" || "a", "Heading"),
+					headingTag: text("headingTag", "h1" || "h1", "Heading")
+				}}
+				metadata={[
+					{
+						value: text("Metadata 1 label", "Label", "Metadata"),
+						label: text("Metadata 1 value", "Value", "Metadata")
+					},
+					{
+						value: text("Metadata 2 label", "Label", "Metadata"),
+						label: text("Metadata 2 value", "Value", "Metadata")
+					}
+				]}
+			/>
+		</ListWrapper>
+	);
+};
 
 storiesOf("Card", module)
+	.addDecorator(withKnobs)
 	.add("Heading only, no link", headingOnly)
 	.add("H1 heading with link", headingOnlyLink)
 	.add("Custom link type", nonAnchorLink)
-	.add("Full card with added component in metadata", fullCardWithComponentMeta);
-// .add("Full card with component for metadata", fullCardWithComponentMeta);
+	.add("Full card with added component in metadata", fullCardWithComponentMeta)
+	.add("Customisable", customisable);
