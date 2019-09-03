@@ -6,9 +6,13 @@ import "./../scss/formgroup.scss";
 export const FormGroup = props => {
 	const { groupError, inline, legend, children, hint, name, ...rest } = props;
 
-	const clonedChildren = React.Children.map(children, child =>
-		React.cloneElement(child, { name, inline, ...rest })
-	);
+	const clonedChildren = React.Children.map(children, child => {
+		return React.cloneElement(child, {
+			name,
+			inline,
+			...rest
+		});
+	});
 
 	const classes = classnames({
 		formgroup: true,
@@ -27,9 +31,10 @@ export const FormGroup = props => {
 
 FormGroup.propTypes = {
 	children: PropTypes.arrayOf(PropTypes.node).isRequired,
-	legend: PropTypes.node.isRequired,
-	name: PropTypes.string.isRequired,
-	hint: PropTypes.node,
+	legend: PropTypes.node,
+	name: PropTypes.string,
+	hint: PropTypes.string,
+	error: PropTypes.string,
 	inline: PropTypes.bool,
 	groupError: PropTypes.bool | PropTypes.string
 };
