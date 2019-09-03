@@ -4,7 +4,7 @@ declare module "@nice-digital/nds-radio" {
 	export interface RadioProps {
 		disabled?: boolean;
 		error?: boolean | string;
-		name: string;
+		name?: string;
 		inline?: boolean;
 		label?: string;
 		value: string;

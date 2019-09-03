@@ -49,7 +49,7 @@ export class Radio extends Component {
 Radio.propTypes = {
 	disabled: PropTypes.bool,
 	error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-	name: PropTypes.string.isRequired,
+	name: PropTypes.string,
 	inline: PropTypes.bool,
 	label: PropTypes.string,
 	value: PropTypes.string.isRequired,

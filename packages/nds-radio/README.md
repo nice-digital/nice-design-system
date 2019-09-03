@@ -22,9 +22,9 @@ Import the `Radio` component from the package and use within JSX:
 import React from "react";
 import { Radio } from "@nice-digital/nds-radio";
 
-// The mimimum to be supplied for the input to render is a value and a name
+// The mimimum to be supplied for the input to render is a value
 
-<Radio value="yes" name="my-group" />;
+<Radio value="yes" />;
 ```
 
 > Note: The React component automatically imports the SCSS, so there's no need to import the SCSS directly yourself.
@@ -43,7 +43,7 @@ The value for the single input.
 
 ##### name
 
-- Type: `string` (required)
+- Type: `string`
 
 The name attribute on the single input, to put radio controls into single-choice groups.
 
