@@ -24,9 +24,13 @@
     "@nice-digital/nds-tabs": "^1.0.7-alpha.0",
     "@nice-digital/nds-tag": "^1.0.7-alpha.0",
     "@types/faker": "^4.1.5",
+    "@types/history": "^4.7.3",
+    "@types/react-router-dom": "^4.3.5",
     "faker": "^4.1.0",
+    "history": "^4.9.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1"
   },
   "scripts": {
