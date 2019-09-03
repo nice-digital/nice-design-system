@@ -30,11 +30,11 @@ export const FormGroup = props => {
 };
 
 FormGroup.propTypes = {
-	children: PropTypes.arrayOf(PropTypes.node).isRequired,
+	children: PropTypes.node.isRequired,
 	legend: PropTypes.node,
 	name: PropTypes.string,
 	hint: PropTypes.string,
 	error: PropTypes.string,
 	inline: PropTypes.bool,
-	groupError: PropTypes.bool | PropTypes.string
+	groupError: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 };

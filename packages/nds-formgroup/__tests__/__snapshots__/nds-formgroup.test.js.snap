@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormGroup should match the snapshot when all possible props are passed 1`] = `
+<fieldset
+  className="formgroup"
+>
+  <legend
+    className="formgroup__legend"
+  >
+    This is the legend text
+  </legend>
+  <p
+    className="formgroup__error-message"
+  >
+    This is the error text
+  </p>
+  <p
+    className="formgroup__hint"
+  >
+    This is the hint text
+  </p>
+  <span
+    inline={false}
+    name="group-name"
+  >
+    Render
+  </span>
+</fieldset>
+`;
+
+exports[`FormGroup should match the snapshot when no props are passed 1`] = `
+<fieldset
+  className="formgroup formgroup--no-legend"
+>
+  <span>
+    Render
+  </span>
+</fieldset>
+`;
