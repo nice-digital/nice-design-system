@@ -56,7 +56,7 @@ describe("Checkbox", () => {
 		localProps.error = "Error message here.";
 		const wrapper = shallow(<Checkbox {...localProps} />);
 		const parent = wrapper.find("p.checkbox__error-message");
-		expect(parent.text()).toEqual("Error message here!");
+		expect(parent.text()).toEqual("Error message here.");
 	});
 
 	it("should pass through any additional attributes supplied", () => {

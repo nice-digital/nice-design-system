@@ -43,7 +43,7 @@ Checkbox.propTypes = {
 	label: PropTypes.node.isRequired,
 	value: PropTypes.string,
 	inline: PropTypes.bool,
-	error: PropTypes.string,
+	error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
 	hint: PropTypes.string
 };
 
