@@ -9,7 +9,7 @@ addDecorator(withKnobs);
 
 // Wrap all stories in a container
 const wrapperDecorator = storyFn => (
-	<div className="container">{storyFn()}</div>
+	<div className="container pt--d">{storyFn()}</div>
 );
 addDecorator(wrapperDecorator);
 
