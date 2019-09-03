@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox should match snapshot with hint text supplied 1`] = `
+<div
+  className="checkbox"
+>
+  <input
+    className="checkbox__input"
+    id="contact-preference_email"
+    name="contact-preference"
+    type="checkbox"
+    value="email"
+  />
+  <label
+    className="checkbox__label"
+    htmlFor="contact-preference_email"
+  >
+    Email
+  </label>
+  <span
+    className="checkbox__hint"
+  >
+    This is a hint to appear.
+  </span>
+</div>
+`;
+
+exports[`Checkbox should match snapshot with some default attributes 1`] = `
+<div
+  className="checkbox"
+>
+  <input
+    className="checkbox__input"
+    id="contact-preference_email"
+    name="contact-preference"
+    type="checkbox"
+    value="email"
+  />
+  <label
+    className="checkbox__label"
+    htmlFor="contact-preference_email"
+  >
+    Email
+  </label>
+</div>
+`;
