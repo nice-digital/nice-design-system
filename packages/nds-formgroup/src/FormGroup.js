@@ -34,7 +34,6 @@ FormGroup.propTypes = {
 	legend: PropTypes.node,
 	name: PropTypes.string,
 	hint: PropTypes.string,
-	error: PropTypes.string,
 	inline: PropTypes.bool,
-	groupError: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+	groupError: PropTypes.string
 };
