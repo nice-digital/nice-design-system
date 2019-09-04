@@ -34,6 +34,7 @@
     "@nice-digital/nds-button": "^1.0.7-alpha.0",
     "@nice-digital/nds-card": "^1.0.7-alpha.0",
     "@nice-digital/nds-checkbox": "^1.0.12-alpha.0",
+    "@nice-digital/nds-formgroup": "^1.0.0",
     "@nice-digital/nds-panel": "^1.0.10-alpha.0",
     "@nice-digital/nds-radio": "^1.0.12-alpha.0",
     "@nice-digital/nds-tag": "^1.0.7-alpha.0",

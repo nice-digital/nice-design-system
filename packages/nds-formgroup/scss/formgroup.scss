@@ -1,9 +1,13 @@
 @import '~@nice-digital/nds-core/scss/core';
 
-.fieldset {
+.formgroup {
   border: rem(1px) solid $colour-border;
   margin-bottom: rem($spacing-medium);
   padding: rem($spacing-small);
+
+  &--no-legend {
+    border: none;
+  }
 
   &__legend {
     @include font-size(p);
@@ -11,5 +15,16 @@
     padding-right: rem($spacing-x-small);
     padding-left: rem($spacing-x-small);
     margin-left: rem(-$spacing-x-small);
+  }
+
+  &__hint {
+    color: $colour-nice-dark-grey;
+    margin-top: rem($spacing-x-small);
+  }
+
+  &__error-message {
+    color: $colour-error;
+    font-weight: bold;
+    margin-top: rem($spacing-x-small);
   }
 }

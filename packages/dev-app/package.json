@@ -12,6 +12,7 @@
     "@nice-digital/nds-checkbox": "^1.0.12-alpha.0",
     "@nice-digital/nds-core": "^1.0.7-alpha.0",
     "@nice-digital/nds-filters": "^1.0.7-alpha.0",
+    "@nice-digital/nds-formgroup": "^1.0.0",
     "@nice-digital/nds-forms": "^1.0.12-alpha.0",
     "@nice-digital/nds-hero": "^1.0.7-alpha.0",
     "@nice-digital/nds-in-page-nav": "^1.0.7-alpha.0",
@@ -24,9 +25,13 @@
     "@nice-digital/nds-tabs": "^1.0.7-alpha.0",
     "@nice-digital/nds-tag": "^1.0.7-alpha.0",
     "@types/faker": "^4.1.5",
+    "@types/history": "^4.7.3",
+    "@types/react-router-dom": "^4.3.5",
     "faker": "^4.1.0",
+    "history": "^4.9.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1"
   },
   "scripts": {
