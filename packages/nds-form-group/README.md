@@ -1,15 +1,15 @@
-# `@nice-digital/nds-formgroup`
+# `@nice-digital/nds-form-group`
 
 > Form Group component for the NICE Design System
 
-- [`@nice-digital/nds-formgroup`](#nice-digitalformgroup) - [Installation](#installation) - [Usage](#usage) - [React](#react) - [Props](#props) - [SCSS](#scss) - [HTML](#html)
+- [`@nice-digital/nds-form-group`](#nice-digitalformgroup) - [Installation](#installation) - [Usage](#usage) - [React](#react) - [Props](#props) - [SCSS](#scss) - [HTML](#html)
 
 ## Installation
 
 Install Node, and then:
 
 ```sh
-npm i @nice-digital/nds-formgroup --save
+npm i @nice-digital/nds-form-group --save
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ Import the `FormGroup` component from the package and use within JSX:
 
 ```jsx
 import React from "react";
-import { FormGroup } from "@nice-digital/nds-formgroup";
+import { FormGroup } from "@nice-digital/nds-form-group";
 
 <FormGroup
 	legend="How would you like us to contact you?"
@@ -129,7 +129,7 @@ Render styled error text below the legend and above the inputs. Use the `error` 
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-formgroup/scss/formgroup";
+@import "~@nice-digital/nds-form-group/scss/form-group";
 ```
 
 ### HTML
@@ -139,8 +139,8 @@ If you're not using [React](#react), then include the [SCSS as above](#scss) and
 Legend example:
 
 ```html
-<fieldset class="formgroup">
-	<legend class="formgroup__legend">
+<fieldset class="form-group">
+	<legend class="form-group__legend">
 		Are you happy for us to contact you in the future?
 	</legend>
 	<input type="checkbox" />
@@ -150,11 +150,11 @@ Legend example:
 Error example:
 
 ```html
-<fieldset class="formgroup">
-	<legend class="formgroup__legend">
+<fieldset class="form-group">
+	<legend class="form-group__legend">
 		Are you happy for us to contact you in the future?
 	</legend>
-	<p class="formgroup__error-message">
+	<p class="form-group__error-message">
 		Please choose at least one contact method
 	</p>
 	<input type="checkbox" />
@@ -164,12 +164,12 @@ Error example:
 Hint example:
 
 ```html
-<fieldset class="formgroup">
-	<legend class="formgroup__legend">
+<fieldset class="form-group">
+	<legend class="form-group__legend">
 		Are you happy for us to contact you in the future?
 	</legend>
-	<p class="formgroup__hint">We promise not to contact you too often!</p>
-	<p class="formgroup__error-message">
+	<p class="form-group__hint">We promise not to contact you too often!</p>
+	<p class="form-group__error-message">
 		Please choose at least one contact method
 	</p>
 	<input type="checkbox" />

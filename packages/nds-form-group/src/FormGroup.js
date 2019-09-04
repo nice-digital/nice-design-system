@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
-import "./../scss/formgroup.scss";
+import "./../scss/form-group.scss";
 
 export const FormGroup = props => {
 	const { groupError, inline, legend, children, hint, name, ...rest } = props;
@@ -15,15 +15,15 @@ export const FormGroup = props => {
 	});
 
 	const classes = classnames({
-		formgroup: true,
-		"formgroup--no-legend": legend ? false : true
+		"form-group": true,
+		"form-group--no-legend": legend ? false : true
 	});
 
 	return (
 		<fieldset className={classes}>
-			{legend && <legend className="formgroup__legend">{legend}</legend>}
-			{groupError && <p className="formgroup__error-message">{groupError}</p>}
-			{hint && <p className="formgroup__hint">{hint}</p>}
+			{legend && <legend className="form-group__legend">{legend}</legend>}
+			{groupError && <p className="form-group__error-message">{groupError}</p>}
+			{hint && <p className="form-group__hint">{hint}</p>}
 			{clonedChildren}
 		</fieldset>
 	);

@@ -2,20 +2,20 @@
 
 exports[`FormGroup should match the snapshot when all possible props are passed 1`] = `
 <fieldset
-  className="formgroup"
+  className="form-group"
 >
   <legend
-    className="formgroup__legend"
+    className="form-group__legend"
   >
     This is the legend text
   </legend>
   <p
-    className="formgroup__error-message"
+    className="form-group__error-message"
   >
     This is the error text
   </p>
   <p
-    className="formgroup__hint"
+    className="form-group__hint"
   >
     This is the hint text
   </p>
@@ -30,7 +30,7 @@ exports[`FormGroup should match the snapshot when all possible props are passed 
 
 exports[`FormGroup should match the snapshot when no props are passed 1`] = `
 <fieldset
-  className="formgroup formgroup--no-legend"
+  className="form-group form-group--no-legend"
 >
   <span>
     Render

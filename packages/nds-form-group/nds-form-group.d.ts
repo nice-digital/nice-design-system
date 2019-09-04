@@ -1,4 +1,4 @@
-declare module "@nice-digital/nds-formgroup" {
+declare module "@nice-digital/nds-form-group" {
 	import React = require("react");
 
 	export interface FormGroupProps {
