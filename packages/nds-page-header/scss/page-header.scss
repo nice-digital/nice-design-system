@@ -25,6 +25,12 @@
 .page-header {
   margin: rem(0 0 $spacing-x-large 0);
 
+  &__pre-heading {
+    display: block;
+    margin: rem(0);
+    @include font-size(h5);
+  }
+
   &__heading {
     @include font-size(h1);
     margin: rem(0 0 $spacing-small 0);
