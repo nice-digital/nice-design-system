@@ -11,6 +11,7 @@
   "main": "lib/PageHeader.js",
   "module": "es/PageHeader.js",
   "style": "scss/page-header.scss",
+  "types": "nds-page-header.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
