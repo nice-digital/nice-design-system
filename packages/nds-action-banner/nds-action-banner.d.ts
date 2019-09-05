@@ -9,7 +9,5 @@ declare module "@nice-digital/nds-action-banner" {
 		onClosing?: (element: React.ReactElement) => void;
 	}
 
-	interface ActionBannerComponent extends React.Component<ActionBannerProps> {}
-
-	export const ActionBanner: ActionBannerComponent;
+	export class ActionBanner extends React.Component<ActionBannerProps> {}
 }
