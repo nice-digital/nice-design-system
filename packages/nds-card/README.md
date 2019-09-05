@@ -2,7 +2,7 @@
 
 > Card component for the NICE Design System
 
-- [`@nice-digital/nds-card`](#nice-digitalcard) - [Installation](#installation) - [Usage](#usage) - [React](#react) - [Props](#props) - [children](#children) - [title](#title) - [variant](#variant) - [cta](#cta) - [onClosing](#onclosing) - [SCSS](#scss) - [HTML](#html)
+- [`@nice-digital/nds-card`](#nice-digitalcard) - [Installation](#installation) - [Usage](#usage) - [React](#react) - [Props](#props) - [SCSS](#scss) - [HTML](#html)
 
 ## Installation
 

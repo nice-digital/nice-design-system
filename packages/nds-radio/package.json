@@ -8,15 +8,16 @@
   "types": "nds-radio.d.ts",
   "main": "lib/Radio.js",
   "module": "es/Radio.js",
-  "scss": "scss/Radio.scss",
+  "scss": "scss/radio.scss",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
-  "files": [
+   "files": [
     "lib",
     "es",
-    "scss"
+    "scss",
+    "*.d.ts"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",

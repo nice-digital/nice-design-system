@@ -1,45 +1,29 @@
 import React, { Component } from "react";
-import Faker from "faker";
-
-import { Tag } from "@nice-digital/nds-tag";
-import { Card } from "@nice-digital/nds-card";
-import { CardProps } from "@nice-digital/nds-card";
+// import Faker from "faker";
+import { Router, Route, Link } from "react-router-dom";
+import { createBrowserHistory } from "history";
+import { Checkbox } from "@nice-digital/nds-checkbox";
+import { FormGroupView } from "./views/FormGroupView";
+import { PageHeaderView } from "./views/PageHeaderView";
 import "./App.scss";
 
-const data = (): Array<CardProps> => {
-	let data = [];
-	for (let index = 0; index < 15; index++) {
-		data.push({
-			heading: {
-				headingText: Faker.company.catchPhrase()
-			},
-			metadata: [
-				{
-					value: <Tag>{Faker.database.engine()}</Tag>
-				},
-				{
-					value: Faker.company.bsBuzz()
-				},
-				{
-					value: Faker.company.bsNoun()
-				}
-			]
-		});
-	}
-	return data;
-};
+const browserHistory = createBrowserHistory();
 
 class App extends Component {
 	render() {
 		return (
-			<main>
-				<h1>Card</h1>
-				<ul className="list--unstyled">
-					{data().map((item: CardProps) => (
-						<Card {...item} />
-					))}
-				</ul>
-			</main>
+			<Router history={browserHistory}>
+				<nav>
+					<p>
+						<Link to="/formgroup">FormGroup</Link> |{" "}
+						<Link to="/pageheader">Page Header</Link>
+					</p>
+				</nav>
+				<main>
+					<Route path="/formgroup" component={FormGroupView} />
+					<Route path="/pageheader" component={PageHeaderView} />
+				</main>
+			</Router>
 		);
 	}
 }
