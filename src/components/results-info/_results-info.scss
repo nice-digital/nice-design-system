@@ -5,13 +5,13 @@
 /// Results info shows at the top of a list of results and
 /// contains the count and sort options.
 .results-info {
-  @include clearfix;
-  margin: rem(0 0 $spacing-medium);
+  @include nds-clearfix;
+  margin: rem(0 0 $nds-spacing-medium);
 
   &__count {
-    @include font-size(h5);
+    @include nds-font-size(h5);
     font-weight: bold;
-    margin: rem(0 0 $spacing-small);
+    margin: rem(0 0 $nds-spacing-small);
   }
 
   &__sort {
@@ -22,11 +22,11 @@
     clear: both;
     list-style: none;
     margin: 0;
-    padding-top: rem($spacing-small);
+    padding-top: rem($nds-spacing-small);
   }
 
   @include mq($from: sm) {
-    margin: rem(0 0 $spacing-medium);
+    margin: rem(0 0 $nds-spacing-medium);
 
     &__count {
       float: left;
@@ -42,7 +42,7 @@
 
     &__filter {
       display: inline-block;
-      margin-right: rem($spacing-x-small);
+      margin-right: rem($nds-spacing-x-small);
     }
   }
 }

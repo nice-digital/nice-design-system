@@ -29,12 +29,12 @@
 // Printing
 // -------------------------
 // Source: https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css
-@if $nice-output-default-print-styles {
+@if $nds-output-default-print-styles {
   @media print {
     * {
       background: transparent !important;
       box-shadow: none !important;
-      color: $colour-true-black !important; // Black prints faster: h5bp.com/s
+      color: $nds-colour-true-black !important; // Black prints faster: h5bp.com/s
       text-shadow: none !important;
     }
 

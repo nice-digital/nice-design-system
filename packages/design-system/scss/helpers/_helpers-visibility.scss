@@ -43,11 +43,11 @@
 .hide-portrait {
   display: block !important;
 
-  @include landscape {
+  @include nds-landscape {
     display: block !important;
   }
 
-  @include portrait {
+  @include nds-portrait {
     display: none !important;
   }
 }
@@ -57,11 +57,11 @@
 .show-portrait {
   display: none !important;
 
-  @include landscape {
+  @include nds-landscape {
     display: none !important;
   }
 
-  @include portrait {
+  @include nds-portrait {
     display: block !important;
   }
 }
@@ -108,13 +108,13 @@ $hide-selectors: ();
 //## Accessibility
 .show-focus,
 .visually-hidden {
-  @include invisible;
+  @include nds-invisible;
 }
 
 //## Focus
 .show-focus {
   &:active,
   &:focus {
-    @include invisible-off;
+    @include nds-invisible-off;
   }
 }

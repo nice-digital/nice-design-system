@@ -2,16 +2,16 @@
 
 // A map of breakpoints (name: px) required for SASS MQ
 $mq-breakpoints: (
-  xs: $nice-breakpoint-xs,
-  sm: $nice-breakpoint-sm,
-  md: $nice-breakpoint-md,
-  lg: $nice-breakpoint-lg,
-  xl: $nice-breakpoint-xl
+  xs: $nds-breakpoint-xs,
+  sm: $nds-breakpoint-sm,
+  md: $nds-breakpoint-md,
+  lg: $nds-breakpoint-lg,
+  xl: $nds-breakpoint-xl
 );
 
 // Base font size
-$mq-base-font-size: $nice-base-font-size * 1px;
+$mq-base-font-size: $nds-base-font-size * 1px;
 
 $mq-static-breakpoint: lg;
 
-$mq-responsive: $nice-responsive;
+$mq-responsive: $nds-responsive;

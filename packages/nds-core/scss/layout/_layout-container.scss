@@ -4,15 +4,15 @@
 
 /// Container placeholder.
 /// @since 1.0.0
-@mixin container {
+@mixin nds-container {
   margin: auto;
-  max-width: rem($nice-container-max-width);
+  max-width: rem($nds-container-max-width);
   width: 96%; // Fallback for non-calc browsers e.g. IE8, see https://caniuse.com/#feat=calc
-  width: calc(100% - #{rem($spacing-large)});
+  width: calc(100% - #{rem($nds-spacing-large)});
 }
 
 /// Container placeholder.
 /// @since 0.1.0
-%container {
-  @include container;
+%nds-container {
+  @include nds-container;
 }

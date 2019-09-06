@@ -7,19 +7,19 @@
 
 // Default action banner background colour
 /// @since 1.0.0
-$nds-action-banner-default-background: $colour-nice-cool-teal;
+$nds-action-banner-default-background: $nds-colour-nice-cool-teal;
 
 // Subtle default banner border colour
 /// @since 1.0.0
-$nds-action-banner-default-border: $colour-nice-black;
+$nds-action-banner-default-border: $nds-colour-nice-black;
 
 // Subtle action banner background colour
 /// @since 1.0.0
-$nds-action-banner-subtle-background: $colour-nice-grey-3;
+$nds-action-banner-subtle-background: $nds-colour-nice-grey-3;
 
 // Subtle action banner border colour
 /// @since 1.0.0
-$nds-action-banner-subtle-border: $colour-nice-grey-2;
+$nds-action-banner-subtle-border: $nds-colour-nice-grey-2;
 
 /// Action banner component. Used to highlight
 /// and give context to a call-to-action.
@@ -28,31 +28,31 @@ $nds-action-banner-subtle-border: $colour-nice-grey-2;
 ///
 /// @since 0.3.1
 .action-banner {
-  @include links-inverse;
+  @include nds-links-inverse;
   background: $nds-action-banner-default-background;
   border: 1px solid $nds-action-banner-default-border;
-  color: $colour-text-inverse;
-  margin: em($spacing-large 0);
-  padding: em($spacing-small 0);
+  color: $nds-colour-text-inverse;
+  margin: em($nds-spacing-large 0);
+  padding: em($nds-spacing-small 0);
   position: relative;
 
   &__container {
-    @extend %container;
+    @extend %nds-container;
   }
 
   &__inner {
-    @include grid;
+    @include nds-grid;
   }
 
   &__text {
-    @include grid-item($middle: true);
-    margin-bottom: em($spacing-medium);
+    @include nds-grid-item($middle: true);
+    margin-bottom: em($nds-spacing-medium);
   }
 
   &__title {
-    @include font-size(3);
-    color: $colour-text-inverse;
-    margin: em(0 0 $spacing-x-small);
+    @include nds-font-size(3);
+    color: $nds-colour-text-inverse;
+    margin: em(0 0 $nds-spacing-x-small);
   }
 
   &__intro {
@@ -60,14 +60,14 @@ $nds-action-banner-subtle-border: $colour-nice-grey-2;
   }
 
   &__actions {
-    @include grid-item($middle: true);
+    @include nds-grid-item($middle: true);
 
     .btn {
       margin: 0;
 
       &:focus {
         // Override default button focus because we're on a dark background
-        @include inverse-focus-style;
+        @include nds-inverse-focus-style;
       }
     }
   }
@@ -76,10 +76,10 @@ $nds-action-banner-subtle-border: $colour-nice-grey-2;
     appearance: none;
     background: 0;
     border: 0;
-    color: $colour-text-inverse;
+    color: $nds-colour-text-inverse;
     cursor: pointer;
     line-height: 1;
-    padding: rem($spacing-small);
+    padding: rem($nds-spacing-small);
     position: absolute;
     right: 0;
     top: 0;
@@ -90,29 +90,29 @@ $nds-action-banner-subtle-border: $colour-nice-grey-2;
     }
 
     &:focus {
-      @include inverse-focus-style;
+      @include nds-inverse-focus-style;
     }
   }
 
   &--subtle {
-    @include links-default;
+    @include nds-links-default;
     background: $nds-action-banner-subtle-background;
     border: 1px solid $nds-action-banner-subtle-border;
-    color: $colour-text;
+    color: $nds-colour-text;
 
     .action-banner__title {
-      color: $colour-text;
+      color: $nds-colour-text;
     }
 
     .action-banner__close {
-      color: $colour-text;
+      color: $nds-colour-text;
     }
 
     .action-banner__actions {
       .btn {
         &:focus {
           // Return focus back to default now we're on a light background
-          @include default-focus-style;
+          @include nds-default-focus-style;
         }
       }
     }
@@ -120,7 +120,7 @@ $nds-action-banner-subtle-border: $colour-nice-grey-2;
 
   &--closeable {
     .action-banner__title {
-      padding-right: rem($spacing-large); // Make room for close button
+      padding-right: rem($nds-spacing-large); // Make room for close button
     }
   }
 
@@ -141,7 +141,7 @@ $nds-action-banner-subtle-border: $colour-nice-grey-2;
       }
 
       .action-banner__actions {
-        padding-right: rem($spacing-medium);
+        padding-right: rem($nds-spacing-medium);
       }
     }
   }

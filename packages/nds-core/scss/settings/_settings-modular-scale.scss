@@ -17,7 +17,7 @@
 /// @prop {Number} major-second[1.125]
 /// @prop {Number} minor-second[1.066666667]
 /// @since 0.1.0
-$scales: (
+$nds-scales: (
   golden: 1.618034,
   double-octave: 4 / 1,
   major-twelfth: 3 / 1,
@@ -38,14 +38,14 @@ $scales: (
 );
 
 /// Gets a module scale ratio with the given name. Looks
-/// inside the $scales map to find a ratio.
+/// inside the $nds-scales map to find a ratio.
 /// @param $scale The name of the scale
 /// @returns {Number} The numeric scale ratio for the given name
 /// @since 0.1.0
-@function get-ratio($scale) {
-  @if map-has-key($scales, $scale) {
-    @return map-get($scales, $scale);
+@function nds-get-ratio($scale) {
+  @if map-has-key($nds-scales, $scale) {
+    @return map-get($nds-scales, $scale);
   } @else {
-    @error 'Scale with name #{$scale} could not be found in the $scales map';
+    @error 'Scale with name #{$scale} could not be found in the $nds-scales map';
   }
 }

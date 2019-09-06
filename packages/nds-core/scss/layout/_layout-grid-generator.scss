@@ -12,7 +12,7 @@ $human-grid-names: (
 
 $human-number-names: (one, two, three, four);
 
-@mixin human-grid-names($prefix) {
+@mixin nds-human-grid-names($prefix) {
   [data-g~='#{ $prefix }one-whole'] {
     width: 100%;
   }
@@ -48,7 +48,7 @@ $human-number-names: (one, two, three, four);
   }
 }
 
-@mixin generate-grid-classes($breakpoint: null) {
+@mixin nds-generate-grid-classes($breakpoint: null) {
   $prefix: if($breakpoint, $breakpoint + ':', '');
 
   // Width classes
@@ -70,5 +70,5 @@ $human-number-names: (one, two, three, four);
   }
 
   // Human class names like  one-whole
-  @include human-grid-names($prefix);
+  @include nds-human-grid-names($prefix);
 }

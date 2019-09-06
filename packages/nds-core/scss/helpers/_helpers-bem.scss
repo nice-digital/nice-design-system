@@ -7,7 +7,7 @@
 /// @param {String} $element - Element's name
 /// @link https://css-tricks.com/snippets/sass/bem-mixins/
 /// @since 0.1.0
-@mixin element($element) {
+@mixin nds-element($element) {
   &__#{$element} {
     @content;
   }
@@ -18,7 +18,7 @@
 /// @param {String} $modifier - Modifier's name
 /// @link https://css-tricks.com/snippets/sass/bem-mixins/
 /// @since 0.1.0
-@mixin modifier($modifier) {
+@mixin nds-modifier($modifier) {
   &--#{$modifier} {
     @content;
   }
@@ -26,7 +26,7 @@
 
 /// @alias element
 /// @since 0.1.0
-@mixin e($element) {
+@mixin nds-e($element) {
   &__#{$element} {
     @content;
   }
@@ -34,7 +34,7 @@
 
 /// @alias modifier
 /// @since 0.1.0
-@mixin m($modifier) {
+@mixin nds-m($modifier) {
   &--#{$modifier} {
     @content;
   }

@@ -5,16 +5,16 @@
 /// Blockquote style
 /// @since 0.1.0
 .quote {
-  @include font-size(lead);
-  border-left: em($spacing-x-small) solid $colour-nice-teal;
+  @include nds-font-size(lead);
+  border-left: em($nds-spacing-x-small) solid $nds-colour-nice-teal;
   font-weight: normal;
-  margin: rem($spacing-large 0);
-  padding: rem(0 0 0 $spacing-xx-large);
+  margin: rem($nds-spacing-large 0);
+  padding: rem(0 0 0 $nds-spacing-xx-large);
   position: relative;
 
   &:before {
-    color: $colour-nice-teal;
-    content: get-glyph(left-double-quotation-mark);
+    color: $nds-colour-nice-teal;
+    content: nds-get-glyph(left-double-quotation-mark);
     display: block;
     font-family: Arial, sans-serif;
     font-size: 5rem;
@@ -24,10 +24,10 @@
     position: absolute;
     text-align: center;
     top: 0;
-    width: rem($spacing-xx-large);
+    width: rem($nds-spacing-xx-large);
 
     @media print {
-      color: $colour-true-black;
+      color: $nds-colour-true-black;
     }
   }
 
@@ -37,7 +37,7 @@
 
   footer,
   cite {
-    @include font-size($scale: 0);
+    @include nds-font-size($scale: 0);
     font-style: normal;
   }
 }

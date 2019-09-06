@@ -6,7 +6,7 @@
 
 // Tables
 // ==========================================================================
-$colour-border: #ccc;
+$nds-colour-border: #ccc;
 
 table {
   border-collapse: collapse;
@@ -15,9 +15,9 @@ table {
 
   th,
   td {
-    //@include core-19;
-    border-bottom: 1px solid $colour-border;
-    color: $colour-text;
+    //@mixin nds-core-19;
+    border-bottom: 1px solid $nds-colour-border;
+    color: $nds-colour-text;
     padding: em(12, 19) em(20, 19) em(9, 19) 0;
     text-align: left;
   }
@@ -35,7 +35,7 @@ table {
   // scss-lint:disable QualifyingElement
   td {
     &.numeric {
-      //@include core-16($tabular-numbers: true);
+      //@mixin nds-core-16($tabular-numbers: true);
       text-align: right;
     }
   }

@@ -20,7 +20,7 @@
 /// Requires inline-block or block for proper styling
 /// @since 0.1.0
 .text-truncate {
-  @include text-truncate;
+  @include nds-text-truncate;
 }
 
 /// Align text left
@@ -100,5 +100,5 @@
 /// centrally via auto left/right margins
 /// @since 0.1.0
 .center-block {
-  @include center-block;
+  @include nds-center-block;
 }

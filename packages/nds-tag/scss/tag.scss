@@ -4,7 +4,7 @@
 
 @import '~@nice-digital/nds-core/scss/core';
 
-$nice-tag-border-radius: em($spacing-xx-small);
+$nds-tag-border-radius: em($nds-spacing-xx-small);
 
 /// Tag component. Used for labelling items in lists
 /// and also used within alpha/beta phase banners.
@@ -21,14 +21,14 @@ $nice-tag-border-radius: em($spacing-xx-small);
 ///   - `--flush`  No margin
 /// @since 0.3.1
 .tag {
-  @include font-size(0);
-  background-color: $colour-nice-dark-grey;
-  border-radius: $nice-tag-border-radius;
-  color: $colour-text-inverse;
+  @include nds-font-size(0);
+  background-color: $nds-colour-nice-dark-grey;
+  border-radius: $nds-tag-border-radius;
+  color: $nds-colour-text-inverse;
   display: inline-block;
   font-weight: normal;
-  margin: rem(0 0 $spacing-x-small 0);
-  padding: em(0 $spacing-x-small);
+  margin: rem(0 0 $nds-spacing-x-small 0);
+  padding: em(0 $nds-spacing-x-small);
   position: relative;
   text-decoration: none;
   vertical-align: baseline;
@@ -36,7 +36,7 @@ $nice-tag-border-radius: em($spacing-xx-small);
   &--impact {
     font-weight: 900;
     letter-spacing: 1px;
-    padding: em($spacing-xx-small $spacing-small);
+    padding: em($nds-spacing-xx-small $nds-spacing-small);
     text-transform: uppercase;
   }
 
@@ -45,30 +45,30 @@ $nice-tag-border-radius: em($spacing-xx-small);
   }
 
   &--alpha {
-    background-color: $colour-alpha;
-    color: $colour-text-inverse;
+    background-color: $nds-colour-alpha;
+    color: $nds-colour-text-inverse;
   }
 
   &--beta {
-    background-color: $colour-beta;
-    color: $colour-text-inverse;
+    background-color: $nds-colour-beta;
+    color: $nds-colour-text-inverse;
   }
 
   &--live {
-    background-color: $colour-live;
-    color: $colour-text-inverse;
+    background-color: $nds-colour-live;
+    color: $nds-colour-text-inverse;
   }
 
   &--new {
-    background: $colour-guidance-new;
+    background: $nds-colour-guidance-new;
   }
 
   &--updated {
-    background: $colour-guidance-updated;
+    background: $nds-colour-guidance-updated;
   }
 
   &--consultation {
-    background: $colour-guidance-consultation;
+    background: $nds-colour-guidance-consultation;
   }
 
   &--flush {
@@ -76,10 +76,10 @@ $nice-tag-border-radius: em($spacing-xx-small);
   }
 
   &--outline {
-    @include font-size(-1);
-    background: $colour-nice-grey-3;
-    border: 1px solid $colour-border;
-    color: $colour-nice-dark-grey;
+    @include nds-font-size(-1);
+    background: $nds-colour-nice-grey-3;
+    border: 1px solid $nds-colour-border;
+    color: $nds-colour-nice-dark-grey;
     position: relative;
   }
 
@@ -87,27 +87,27 @@ $nice-tag-border-radius: em($spacing-xx-small);
     appearance: none;
     background: 0;
     border: 0;
-    color: $colour-nice-teal;
+    color: $nds-colour-nice-teal;
     cursor: pointer;
-    margin-left: rem($spacing-x-small);
+    margin-left: rem($nds-spacing-x-small);
     padding: 0;
     text-decoration: none;
 
     &:focus {
-      @include default-focus-style;
+      @include nds-default-focus-style;
     }
 
     &:visited {
-      color: $colour-nice-teal;
+      color: $nds-colour-nice-teal;
     }
 
     &:hover,
     &:active {
-      color: $colour-text;
+      color: $nds-colour-text;
     }
 
     &:after {
-      border-radius: $nice-tag-border-radius;
+      border-radius: $nds-tag-border-radius;
       content: '';
       display: block;
       height: 100%;
@@ -118,16 +118,16 @@ $nice-tag-border-radius: em($spacing-xx-small);
     }
 
     &:hover:after {
-      background: rgba($colour-nice-black, 0.1);
+      background: rgba($nds-colour-nice-black, 0.1);
     }
   }
 
-  @include when-is(a) {
-    color: $colour-nice-white;
+  @include nds-when-is(a) {
+    color: $nds-colour-nice-white;
     text-decoration: underline;
 
     &:visited {
-      color: $colour-nice-white;
+      color: $nds-colour-nice-white;
     }
 
     &:hover {
@@ -135,13 +135,13 @@ $nice-tag-border-radius: em($spacing-xx-small);
     }
 
     &:active {
-      top: em($spacing-xx-small);
+      top: em($nds-spacing-xx-small);
     }
   }
 
   @media print {
     background: none !important;
-    color: $colour-true-black !important;
+    color: $nds-colour-true-black !important;
     padding: 0 !important;
   }
 }

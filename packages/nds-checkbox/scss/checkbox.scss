@@ -2,14 +2,14 @@
 
 // stylelint-disable no-descending-specificity
 
-$nds-checkbox-size: rem($spacing-large);
+$nds-checkbox-size: rem($nds-spacing-large);
 
 .checkbox {
-  @include font-size(p);
+  @include nds-font-size(p);
   display: block;
-  margin-bottom: rem($spacing-medium);
+  margin-bottom: rem($nds-spacing-medium);
   min-height: $nds-checkbox-size;
-  padding-left: $nds-checkbox-size + rem($spacing-medium);
+  padding-left: $nds-checkbox-size + rem($nds-spacing-medium);
   position: relative;
 
   &:last-child,
@@ -23,12 +23,12 @@ $nds-checkbox-size: rem($spacing-large);
     font-size: 1rem;
     font-weight: bold;
     line-height: 1.5rem;
-    margin-bottom: rem($spacing-x-small);
-    padding: rem($spacing-x-small) 0;
+    margin-bottom: rem($nds-spacing-x-small);
+    padding: rem($nds-spacing-x-small) 0;
 
     &:before {
       background: transparent;
-      border: rem($spacing-xx-small) solid $colour-nice-black;
+      border: rem($nds-spacing-xx-small) solid $nds-colour-nice-black;
       box-sizing: border-box;
       // outside square // stylelint-disable-line
       content: '';
@@ -43,16 +43,16 @@ $nds-checkbox-size: rem($spacing-large);
       background: transparent;
       border: solid;
       border-top-color: transparent; // IE11 bug
-      border-width: 0 0 rem($spacing-x-small) rem($spacing-x-small);
+      border-width: 0 0 rem($nds-spacing-x-small) rem($nds-spacing-x-small);
       // inside check / tick // stylelint-disable-line
       content: '';
       height: $nds-checkbox-size / 3; // this is the short end of the checkmark;
-      left: rem($spacing-small);
+      left: rem($nds-spacing-small);
       opacity: 0;
       position: absolute;
-      top: rem($spacing-small);
+      top: rem($nds-spacing-small);
       transform: rotate(-45deg);
-      width: rem($spacing-medium);
+      width: rem($nds-spacing-medium);
     }
   }
 
@@ -67,7 +67,7 @@ $nds-checkbox-size: rem($spacing-large);
     z-index: 1;
 
     &:focus + .checkbox__label:before {
-      @include default-focus-style;
+      @include nds-default-focus-style;
     }
 
     &:checked + .checkbox__label:after {
@@ -85,34 +85,34 @@ $nds-checkbox-size: rem($spacing-large);
   }
 
   &__hint {
-    color: $colour-nice-dark-grey;
-    margin-bottom: rem($spacing-small);
-    margin-top: rem($spacing-x-small);
+    color: $nds-colour-nice-dark-grey;
+    margin-bottom: rem($nds-spacing-small);
+    margin-top: rem($nds-spacing-x-small);
   }
 
   &__error-message {
-    color: $colour-error;
+    color: $nds-colour-error;
     font-weight: bold;
   }
 
   &--error .checkbox__label {
-    color: $colour-error;
+    color: $nds-colour-error;
 
     &:before {
-      @include default-error-style;
+      @include nds-default-error-style;
     }
 
     &:after {
-      color: $colour-nice-black;
+      color: $nds-colour-nice-black;
     }
   }
 
   &--inline {
     display: inline-block;
-    margin-right: rem($spacing-medium);
+    margin-right: rem($nds-spacing-medium);
     vertical-align: top;
     input {
-      margin-right: rem($spacing-x-small);
+      margin-right: rem($nds-spacing-x-small);
     }
   }
 }
