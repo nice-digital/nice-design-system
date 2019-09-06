@@ -34,7 +34,7 @@ import { Alert } from "@nice-digital/nds-alert";
 
 - Type: `ReactNode` (required)
 
-The body content of the alert.
+The body content of the alert. Can receive any markup.
 
 ```jsx
 <Alert>
