@@ -33,29 +33,6 @@ $nice-tag-border-radius: em($spacing-xx-small);
   text-decoration: none;
   vertical-align: baseline;
 
-  @include when-is(a) {
-    color: $colour-nice-white;
-    text-decoration: underline;
-
-    &:visited {
-      color: $colour-nice-white;
-    }
-
-    &:hover {
-      text-decoration: none;
-    }
-
-    &:active {
-      top: em($spacing-xx-small);
-    }
-  }
-
-  @media print {
-    background: none !important;
-    color: $colour-true-black !important;
-    padding: 0 !important;
-  }
-
   &--impact {
     font-weight: 900;
     letter-spacing: 1px;
@@ -143,5 +120,28 @@ $nice-tag-border-radius: em($spacing-xx-small);
     &:hover:after {
       background: rgba($colour-nice-black, 0.1);
     }
+  }
+
+  @include when-is(a) {
+    color: $colour-nice-white;
+    text-decoration: underline;
+
+    &:visited {
+      color: $colour-nice-white;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:active {
+      top: em($spacing-xx-small);
+    }
+  }
+
+  @media print {
+    background: none !important;
+    color: $colour-true-black !important;
+    padding: 0 !important;
   }
 }

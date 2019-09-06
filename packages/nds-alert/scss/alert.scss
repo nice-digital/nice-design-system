@@ -2,10 +2,10 @@
 
 .alert {
   @include font-size(p);
-  padding: rem($spacing-medium);
   border: 3px solid;
-  margin-bottom: rem($spacing-medium);
   font-weight: bold;
+  margin-bottom: rem($spacing-medium);
+  padding: rem($spacing-medium);
 
   p {
     font-weight: bold;

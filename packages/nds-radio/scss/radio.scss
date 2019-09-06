@@ -6,27 +6,9 @@ $radio-base-size: rem($spacing-large);
   @include clearfix;
   clear: left;
   display: block;
+  margin-bottom: rem($spacing-small);
   padding-left: $radio-base-size + rem($spacing-medium);
   position: relative;
-  margin-bottom: rem($spacing-small);
-
-  &--error .radio__label,
-  &--error .radio__label {
-    color: $colour-error;
-    &:before {
-      @include default-error-style(true);
-    }
-  }
-
-  &--inline {
-    display: inline-block;
-    margin-right: rem($spacing-medium);
-    vertical-align: top;
-
-    input {
-      margin-right: rem($spacing-x-small);
-    }
-  }
 
   &__input {
     cursor: pointer;
@@ -56,10 +38,10 @@ $radio-base-size: rem($spacing-large);
 
   &__label {
     @include font-size(p);
-    font-weight: bold;
-    display: block;
-    margin-bottom: rem($spacing-x-small);
     cursor: pointer;
+    display: block;
+    font-weight: bold;
+    margin-bottom: rem($spacing-x-small);
     padding: rem($spacing-x-small) 0;
 
     &:before {
@@ -90,12 +72,30 @@ $radio-base-size: rem($spacing-large);
 
   &__hint {
     color: $colour-nice-dark-grey;
-    margin-top: rem($spacing-x-small);
     margin-bottom: rem($spacing-small);
+    margin-top: rem($spacing-x-small);
   }
 
   &__error-message {
     color: $colour-error;
     font-weight: bold;
+  }
+
+  &--error .radio__label,
+  &--error .radio__label {
+    color: $colour-error;
+    &:before {
+      @include default-error-style(true);
+    }
+  }
+
+  &--inline {
+    display: inline-block;
+    margin-right: rem($spacing-medium);
+    vertical-align: top;
+
+    input {
+      margin-right: rem($spacing-x-small);
+    }
   }
 }

@@ -39,8 +39,16 @@
 ///     <div class="test__item">item</div>
 ///   </div>
 /// @since 0.1.0
-@mixin grid($reverse: false, $gutterless: false, $compact: false, $loose: false, $right: false, $center: false, $debug: false) {
-  letter-spacing: -.31em; // Remove whitespace caused by `inline-block` elements
+@mixin grid(
+  $reverse: false,
+  $gutterless: false,
+  $compact: false,
+  $loose: false,
+  $right: false,
+  $center: false,
+  $debug: false
+) {
+  letter-spacing: -0.31em; // Remove whitespace caused by `inline-block` elements
   list-style: none; // Allow the grid system to be used on lists.
   margin: 0; // Remove any margins that might affect the grid system.
   margin-left: -$nice-grid-gutter; // Apply a negative `margin-left` to negate the columns’ gutters.
@@ -174,20 +182,27 @@
 ///     @include grid-item(12, $md: 8, $lg: (cols: 7, push: 1), $loose: true);
 ///   }
 /// @since 0.1.0
-@mixin grid-item($columns: 12,
-$push: false,
-$pull: false,
-$gutterless: false,
-$compact: false,
-$loose: false,
-$middle: false,
-$bottom: false,
-$debug: false,
-$xs: false,
-$sm: false,
-$md: false,
-$lg: false,
-$xl: false) {
+@mixin grid-item(
+  $columns: 12,
+  $push: false,
+  $pull: false,
+  $gutterless: false,
+  $compact: false,
+  $loose: false,
+  $middle: false,
+  $bottom: false,
+  $debug: false,
+  $xs: false,
+  $sm: false,
+  $md: false,
+  $lg: false,
+  $xl: false
+) {
+  @include _grid-item-breakpoint($xs, xs);
+  @include _grid-item-breakpoint($sm, sm);
+  @include _grid-item-breakpoint($md, md);
+  @include _grid-item-breakpoint($lg, lg);
+  @include _grid-item-breakpoint($xl, xl);
   box-sizing: border-box;
   direction: ltr;
   display: inline-block;
@@ -226,12 +241,6 @@ $xl: false) {
   @if $bottom {
     @include grid-item-bottom;
   }
-
-  @include _grid-item-breakpoint($xs, xs);
-  @include _grid-item-breakpoint($sm, sm);
-  @include _grid-item-breakpoint($md, md);
-  @include _grid-item-breakpoint($lg, lg);
-  @include _grid-item-breakpoint($xl, xl);
 }
 
 /// Gutterless grids have all the properties of regular grids, minus any spacing.

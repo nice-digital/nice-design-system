@@ -20,6 +20,7 @@ html {
   }
 
   @include mq($from: $nice-root-font-size-min-breakpoint) {
+    // stylelint-disable-block function-calc-no-unspaced-operator
     // Fallback halfway between max and min for older browsers that don't support calc
     font-size: rem(
       $nice-root-font-size-min +

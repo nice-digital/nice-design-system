@@ -27,7 +27,7 @@ $nice-glyphs: (
   plus: '002b',
   punc-space: '02008',
   zero-width-space: '0200B'
-  // Add more entity codes here as and when they're needed
+    // Add more entity codes here as and when they're needed
 ) !default;
 
 /// Gets a glyph code, or several, (character entity reference) from the
@@ -57,5 +57,5 @@ $nice-glyphs: (
     }
   }
 
-  @return unquote('\'#{$codes}\'');
+  @return unquote("'#{$codes}'");
 }

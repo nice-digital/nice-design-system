@@ -64,8 +64,14 @@ $_sides: (
   r: right,
   b: bottom,
   l: left,
-  h: (left, right),
-  v: (bottom, top)
+  h: (
+    left,
+    right
+  ),
+  v: (
+    bottom,
+    top
+  )
 );
 
 @mixin _prop($prop-name, $length, $side: '') {
@@ -75,7 +81,6 @@ $_sides: (
 }
 
 @mixin _side($prop-abbrev, $prop-name, $breakpoint, $size, $length) {
-
   @each $side-key, $side-name in $_sides {
     .#{$prop-abbrev}#{$side-key}--#{$size}#{$breakpoint} {
       @if is-list($side-name) {

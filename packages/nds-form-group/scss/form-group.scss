@@ -12,9 +12,9 @@
   &__legend {
     @include font-size(p);
     font-weight: bold;
-    padding-right: rem($spacing-x-small);
-    padding-left: rem($spacing-x-small);
     margin-left: rem(-$spacing-x-small);
+    padding-left: rem($spacing-x-small);
+    padding-right: rem($spacing-x-small);
   }
 
   &__hint {

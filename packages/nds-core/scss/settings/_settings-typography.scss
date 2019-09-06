@@ -81,53 +81,47 @@ $named-font-sizes: (
 /// @since 0.2.0
 $font-sizes: (
   -2: (
-    fs: 12,
-    lh: 18,
-    mb: $spacing-small,
-    mt: $spacing-small
-  ),
+      fs: 12,
+      lh: 18,
+      mb: $spacing-small,
+      mt: $spacing-small
+    ),
   -1: (
-    fs: 14,
-    lh: 20,
-    mb: $spacing-medium,
-    mt: $spacing-medium
-  ),
-  // Paragraphs, h6
+      fs: 14,
+      lh: 20,
+      mb: $spacing-medium,
+      mt: $spacing-medium
+    ),
   0: (
     fs: 16,
     lh: 24,
     mb: $spacing-medium,
     mt: $spacing-medium
   ),
-  // h5
   1: (
     fs: 18,
     lh: 24,
     mb: $spacing-medium,
     mt: $spacing-medium
   ),
-  // Lead, h4
   2: (
     fs: 20,
     lh: 28,
     mb: $spacing-medium,
     mt: $spacing-medium
   ),
-  // h3
   3: (
     fs: 28,
     lh: 32,
     mb: $spacing-medium,
     mt: $spacing-large
   ),
-  // h2
   4: (
     fs: 36,
     lh: 40,
     mb: $spacing-medium,
     mt: $spacing-large
   ),
-  // h1
   5: (
     fs: 44,
     lh: 56,

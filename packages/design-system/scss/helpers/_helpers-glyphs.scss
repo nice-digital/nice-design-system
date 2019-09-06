@@ -10,7 +10,7 @@
     @each $key, $value in $nice-glyphs {
       &--#{$key} {
         &:before {
-          content: unquote('\'\\#{$value}\'');
+          content: unquote("'\\#{$value}'");
         }
       }
     }

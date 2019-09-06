@@ -10,12 +10,7 @@ $human-grid-names: (
   fifth: 5
 );
 
-$human-number-names: (
-  one,
-  two,
-  three,
-  four
-);
+$human-number-names: (one, two, three, four);
 
 @mixin human-grid-names($prefix) {
   [data-g~='#{ $prefix }one-whole'] {
@@ -25,10 +20,13 @@ $human-number-names: (
   // Generate selectors for human grid width names like one-quarter, two-thirds etc
   @each $fraction-name, $fraction-value in $human-grid-names {
     @for $index from 1 through max($fraction-value - 1, 1) {
-
       @if $index != $fraction-value {
         $human-number: nth($human-number-names, $index); // E.g. two
-        $plural: if($index > 1, 's', ''); // Pluralize if necessary e.g. quarters
+        $plural: if(
+          $index > 1,
+          's',
+          ''
+        ); // Pluralize if necessary e.g. quarters
 
         $fraction: '#{ $human-number }-#{ $fraction-name }#{ $plural }';
 
@@ -51,22 +49,22 @@ $human-number-names: (
 }
 
 @mixin generate-grid-classes($breakpoint: null) {
-  $prefix: if($breakpoint, $breakpoint + ":", "");
+  $prefix: if($breakpoint, $breakpoint + ':', '');
 
   // Width classes
   @for $index from 1 through 12 {
-    [data-g~="#{ $prefix }#{ $index }"] {
+    [data-g~='#{ $prefix }#{ $index }'] {
       width: percentage($index / 12);
     }
   }
 
   // Push/ pull classes
   @for $index from 0 through 12 {
-    [data-g~="#{ $prefix }push:#{ $index }"] {
+    [data-g~='#{ $prefix }push:#{ $index }'] {
       left: percentage($index / 12);
     }
 
-    [data-g~="#{ $prefix }pull:#{ $index }"] {
+    [data-g~='#{ $prefix }pull:#{ $index }'] {
       right: percentage($index / 12);
     }
   }

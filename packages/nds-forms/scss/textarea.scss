@@ -1,22 +1,18 @@
-@import "~@nice-digital/nds-core/scss/core";
+@import '~@nice-digital/nds-core/scss/core';
 
 .textarea {
   margin-bottom: rem($spacing-medium);
 
-  &--error .textarea__input {
-    @include default-error-style;
-  }
-
   &__label {
     @include font-size(p);
-    font-weight: bold;
     display: block;
+    font-weight: bold;
     margin-bottom: rem($spacing-x-small);
   }
 
   &__input {
-    height: 8em; // default textarea 8 characters tall
     border: rem($spacing-xx-small) solid $colour-border;
+    height: 8em; // default textarea 8 characters tall
     padding: rem($spacing-small);
     width: 100%;
 
@@ -27,5 +23,9 @@
 
   &__group {
     margin-bottom: rem($spacing-small);
+  }
+
+  &--error .textarea__input {
+    @include default-error-style;
   }
 }

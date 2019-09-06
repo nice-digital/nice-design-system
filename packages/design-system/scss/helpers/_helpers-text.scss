@@ -38,8 +38,8 @@
 /// Align text right
 /// @since 0.1.0
 .text-right {
-  text-align: right !important;
   max-width: 100%; // Because of max character width on paragraphs
+  text-align: right !important;
 }
 
 // TODO: Responsive text alignment

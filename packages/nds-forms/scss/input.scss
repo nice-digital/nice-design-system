@@ -1,16 +1,12 @@
-@import "~@nice-digital/nds-core/scss/core";
+@import '~@nice-digital/nds-core/scss/core';
 
 .input {
   margin-bottom: rem($spacing-medium);
 
-  &--error .input__input {
-    @include default-error-style;
-  }
-
   &__label {
     @include font-size(p);
-    font-weight: bold;
     display: block;
+    font-weight: bold;
     margin-bottom: rem($spacing-x-small);
   }
 
@@ -22,5 +18,9 @@
     &:focus {
       @include default-focus-style;
     }
+  }
+
+  &--error .input__input {
+    @include default-error-style;
   }
 }

@@ -91,10 +91,9 @@
 ///   }
 /// @since 0.1.0
 @mixin font($scale, $important: false) {
-  @include font-size($scale, $important);
-
   $scale-integer: get-scale-integer($scale);
   $font-map: map-get($font-sizes, $scale-integer);
+  @include font-size($scale, $important);
 
   @if $important {
     margin-bottom: rem(map-get($font-map, mb)) !important;

@@ -2,11 +2,6 @@
 /// @group grid
 ////
 
-/*!
- * Grid borrowed from https://github.com/csswizardry/csswizardry-grids
- * with a different API over the top
- */
-
 /// Grid item default selector.
 /// Use within a `.grid`.
 /// Use the value of the data attribute to specify the grid item widths
@@ -43,6 +38,8 @@
 ///   </div>
 .grid {
   @include grid;
+
+  @include generate-grid-classes;
 
   &--rev {
     @include grid-reverse;
@@ -108,8 +105,6 @@
       @include grid-item-debug;
     }
   }
-
-  @include generate-grid-classes;
 
   @if $nice-responsive {
     @each $brkpnt-key, $brkpnt-value in $mq-breakpoints {
