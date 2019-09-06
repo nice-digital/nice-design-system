@@ -2,11 +2,6 @@
 /// @group Typography
 ////
 
-.nice-tophat {
-  // Remove the pesky margin below tophat
-  margin-bottom: 0 !important;
-}
-
 html {
   box-sizing: border-box;
   font-size: rem($nds-root-font-size-min);

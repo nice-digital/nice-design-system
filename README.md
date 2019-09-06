@@ -117,7 +117,7 @@ These are the following breaking changes from 0.x to 1.x:
 - removed border-box mixin - assume we're using autoprefixer
 - removed footer component - part of TopHat v2
 - removed `important` mixin - overkill
-- TopHat hide print style is removed
+- dropped styling overrides for TopHat: hiding on print and bottom margin override are removed
 - removed default-box-sixing - now applied directly to html element
 - removed remove-mz-focus-inner mixin
 - removed hacks folder
