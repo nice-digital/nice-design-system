@@ -43,7 +43,7 @@
 ///   </div>
 /// @since 0.1.0
 .tabs {
-  margin: em($nds-spacing-medium 0 $nds-spacing-large);
+  margin: em(0 0 $nds-spacing-large);
 
   // The list of tabs
   &__list {
