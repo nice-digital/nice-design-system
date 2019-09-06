@@ -34,7 +34,7 @@ $nds-colour-panel-primary-border: $nds-colour-nice-ice-teal;
 .panel {
   background: $nds-colour-panel-default-background;
   border: 1px solid $nds-colour-panel-default-border; // To distinguish panel from off-grey body background
-  margin: em($nds-spacing-medium 0 $nds-spacing-large);
+  margin: em(0 0 $nds-spacing-large);
   padding: em($nds-spacing-medium);
 
   > :first-child {
