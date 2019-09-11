@@ -18,6 +18,7 @@ declare module "@nice-digital/nds-stacked-nav" {
 		isCurrent?: boolean;
 		label: React.ReactNode;
 		linkTag?: React.ReactNode;
+		hint?: string;
 	}
 
 	export interface StackedNavProps {

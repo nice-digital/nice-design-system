@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StackedNav should match snapshot with supplied props 1`] = `
+<nav
+  aria-label="Stacked Nav Heading"
+  className="stacked-nav"
+>
+  <Heading
+    label="Stacked Nav Heading"
+    labelTag="h1"
+  />
+  <ul
+    className="stacked-nav__list"
+  >
+    <Link
+      destination="#"
+      isCurrent={true}
+      key="key-0"
+      label="Form Group"
+      linkTag="a"
+    />
+    <Link
+      destination="#"
+      hint="This is a piece of hint text, what do you reckon?"
+      isCurrent={false}
+      key="key-1"
+      label="Page Header"
+      linkTag="a"
+    />
+    <Link
+      destination="#"
+      isCurrent={false}
+      key="key-2"
+      label="Link Three"
+      linkTag="a"
+    />
+  </ul>
+</nav>
+`;
+
+exports[`StackedNav should not render a heading if none is supplied 1`] = `
+<nav
+  className="stacked-nav"
+>
+  <ul
+    className="stacked-nav__list"
+  >
+    <Link
+      destination="#"
+      isCurrent={true}
+      key="key-0"
+      label="Form Group"
+      linkTag="a"
+    />
+    <Link
+      destination="#"
+      hint="This is a piece of hint text, what do you reckon?"
+      isCurrent={false}
+      key="key-1"
+      label="Page Header"
+      linkTag="a"
+    />
+    <Link
+      destination="#"
+      isCurrent={false}
+      key="key-2"
+      label="Link Three"
+      linkTag="a"
+    />
+  </ul>
+</nav>
+`;
+
+exports[`StackedNav should not render a links block container if none are supplied 1`] = `
+<nav
+  aria-label="Stacked Nav Heading"
+  className="stacked-nav"
+>
+  <Heading
+    label="Stacked Nav Heading"
+    labelTag="h1"
+  />
+</nav>
+`;
+
+exports[`StackedNav should not render links if none are supplied 1`] = `
+<nav
+  aria-label="Stacked Nav Heading"
+  className="stacked-nav"
+>
+  <Heading
+    label="Stacked Nav Heading"
+    labelTag="h1"
+  />
+</nav>
+`;

@@ -16,12 +16,23 @@
   &__root {
     @include font-size(h6);
     border-bottom: 1px solid $colour-border;
+    display: block;
     font-weight: bold;
     margin: 0;
-
+    max-width: none;
+    position: relative;
+    text-decoration: none;
     a {
       color: $colour-text;
     }
+    &--no-link {
+      padding: em($spacing-small);
+    }
+  }
+
+  &__hint {
+    color: $colour-text;
+    display: block;
   }
 
   &__list {

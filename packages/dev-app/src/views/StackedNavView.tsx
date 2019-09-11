@@ -3,26 +3,30 @@ import { StackedNav } from "@nice-digital/nds-stacked-nav";
 import { Link } from "react-router-dom";
 
 const heading = {
-	label: "This is the heading title",
-	labelTag: "h1"
+	label: "Stacked Nav Heading",
+	labelTag: "h1",
+	link: {
+		destination: "/heading-link/",
+		linkTag: "a"
+	}
 };
 
 const links = [
 	{
-		label: "This is a label",
-		destination: "/hello/",
-		isCurrent: true,
-		linkTag: "a"
-	},
-	{
-		label: "Navigate to formgroup",
+		label: "Form Group",
 		destination: "/formgroup",
 		isCurrent: false,
 		linkTag: Link
 	},
 	{
-		label: "This is the third label",
-		destination: "/hello-there-again/",
+		label: "Page Header",
+		destination: "/pageheader",
+		isCurrent: false,
+		linkTag: Link
+	},
+	{
+		label: "Link Three",
+		destination: "/page-three/",
 		isCurrent: false,
 		linkTag: "a"
 	}
