@@ -23,26 +23,26 @@
 ///   </header>
 /// @since 0.4.0
 .page-header {
-  margin: rem(0 0 $spacing-x-large 0);
+  margin: rem(0 0 $nds-spacing-x-large 0);
 
   &__pre-heading {
-    @include font-size(h5);
+    @include nds-font-size(h5);
     display: block;
     margin: rem(0);
   }
 
   &__heading {
-    @include font-size(h1);
-    margin: rem(0 0 $spacing-small 0);
+    @include nds-font-size(h1);
+    margin: rem(0 0 $nds-spacing-small 0);
   }
 
   &__lead {
-    @include font-size(lead);
-    margin: rem(0 0 $spacing-small 0);
+    @include nds-font-size(lead);
+    margin: rem(0 0 $nds-spacing-small 0);
   }
 
   &__cta {
-    @include font-size(p);
+    @include nds-font-size(p);
     display: block;
     margin: 0;
   }

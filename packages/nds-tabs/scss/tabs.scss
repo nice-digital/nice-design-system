@@ -43,7 +43,7 @@
 ///   </div>
 /// @since 0.1.0
 .tabs {
-  margin: em($spacing-medium 0 $spacing-large);
+  margin: em(0 0 $nds-spacing-large);
 
   // The list of tabs
   &__list {
@@ -66,7 +66,7 @@
 
   // The button/link for the tab itself
   &__tab-btn {
-    @include link-default;
+    @include nds-link-default;
     background: 0;
     border: 0;
     border-left: 1px solid transparent;
@@ -74,7 +74,7 @@
     cursor: pointer;
     display: block;
     margin: 0;
-    padding: em($spacing-medium $spacing-medium);
+    padding: em($nds-spacing-medium $nds-spacing-medium);
     position: relative;
 
     &:focus {
@@ -83,17 +83,17 @@
     }
 
     &[aria-selected='true'] {
-      background: $colour-panel-default;
-      border-left: 1px solid $colour-border;
-      border-right: 1px solid $colour-border;
-      color: $colour-text;
+      background: $nds-colour-panel-default;
+      border-left: 1px solid $nds-colour-border;
+      border-right: 1px solid $nds-colour-border;
+      color: $nds-colour-text;
       text-decoration: none;
 
       &:before {
         // The -1px is to over the grey border round the tab
-        background: $colour-icons;
+        background: $nds-colour-icons;
         content: '';
-        height: em($spacing-x-small);
+        height: em($nds-spacing-x-small);
         left: -1px;
         position: absolute;
         right: -1px;
@@ -107,18 +107,18 @@
     clear: both;
 
     .js & {
-      background: $colour-panel-default;
-      border: 1px solid $colour-border;
+      background: $nds-colour-panel-default;
+      border: 1px solid $nds-colour-border;
       clear: both;
-      padding: rem($spacing-medium);
+      padding: rem($nds-spacing-medium);
     }
   }
 
   // An individual tab content pane
   &__pane {
-    background: $colour-panel-default;
-    margin-bottom: em($spacing-medium);
-    padding: rem($spacing-medium);
+    background: $nds-colour-panel-default;
+    margin-bottom: em($nds-spacing-medium);
+    padding: rem($nds-spacing-medium);
 
     // Assume tabs will stack if no JS is available
     .js & {

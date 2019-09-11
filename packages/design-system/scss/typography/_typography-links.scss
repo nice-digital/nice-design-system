@@ -3,14 +3,14 @@
 ////
 
 a {
-  @include link-default;
+  @include nds-link-default;
 }
 
 /// Inverse link for use on a dark background. Apply to an individual link.
 /// Prefer using `.inverse-links` on the container instead.
 /// @since 0.2.9
 .link--inverse {
-  @include link-inverse;
+  @include nds-link-inverse;
 }
 
 /// Inverse links, for use on dark backgrounds e.g dark panels.
@@ -18,5 +18,5 @@ a {
 /// @require {mixin} links-inverse
 /// @since 0.2.9
 .inverse-links {
-  @include links-inverse;
+  @include nds-links-inverse;
 }

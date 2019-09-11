@@ -5,8 +5,8 @@
 /// Primary heading. Used for h1 tag but can be used directly
 /// for semantic classes for visual styling.
 /// @since 0.1.0
-@mixin h1 {
-  @include font(h1);
+@mixin nds-h1 {
+  @include nds-font(h1);
   clear: both;
   font-weight: 900;
   max-width: 66ch;
@@ -15,8 +15,8 @@
 /// Secondary heading. Used for h2 tag but can be used directly
 /// for semantic classes for visual styling.
 /// @since 0.1.0
-@mixin h2 {
-  @include font(h2);
+@mixin nds-h2 {
+  @include nds-font(h2);
   clear: both;
   font-weight: 700;
   max-width: 66ch;
@@ -25,8 +25,8 @@
 /// Tertiary heading. Used for h3 tag but can be used directly
 /// for semantic classes for visual styling.
 /// @since 0.1.0
-@mixin h3 {
-  @include font(h3);
+@mixin nds-h3 {
+  @include nds-font(h3);
   clear: both;
   font-weight: 700;
   max-width: 66ch;
@@ -35,8 +35,8 @@
 /// Fourth level heading. Used for h4 tag but can be used directly
 /// for semantic classes for visual styling.
 /// @since 0.1.0
-@mixin h4 {
-  @include font(h4);
+@mixin nds-h4 {
+  @include nds-font(h4);
   clear: both;
   font-weight: 700;
   max-width: 66ch;
@@ -45,8 +45,8 @@
 /// Fifth level heading. Used for h5 tag but can be used directly
 /// for semantic classes for visual styling.
 /// @since 0.1.0
-@mixin h5 {
-  @include font(h5);
+@mixin nds-h5 {
+  @include nds-font(h5);
   clear: both;
   font-weight: 700;
   max-width: 66ch;
@@ -55,8 +55,8 @@
 /// Sixth level heading. Used for h6 tag but can be used directly
 /// for semantic classes for visual styling.
 /// @since 0.1.0
-@mixin h6 {
-  @include font(h6);
+@mixin nds-h6 {
+  @include nds-font(h6);
   clear: both;
   font-weight: 700;
   max-width: 66ch;

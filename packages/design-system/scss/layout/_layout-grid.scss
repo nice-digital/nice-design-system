@@ -16,7 +16,7 @@
 ///     <div data-g="12 xs:6 md:4 lg:one-quarter xl:2">Grid item</div>
 ///   </div>
 [data-g] {
-  @include grid-item;
+  @include nds-grid-item;
 }
 
 /// Grid class for the grid wrapper. Expects direct children to be `[data-g]`
@@ -37,79 +37,79 @@
 ///     <div data-g="12 xs:6 md:4 lg:3 xl:2">Grid item</div>
 ///   </div>
 .grid {
-  @include grid;
+  @include nds-grid;
 
-  @include generate-grid-classes;
+  @include nds-generate-grid-classes;
 
   &--rev {
-    @include grid-reverse;
+    @include nds-grid-reverse;
   }
 
   &--gutterless {
-    @include grid-gutterless;
+    @include nds-grid-gutterless;
 
     > [data-g] {
-      @include grid-item-gutterless;
+      @include nds-grid-item-gutterless;
     }
   }
 
   &--compact {
-    @include grid-compact;
+    @include nds-grid-compact;
 
     > [data-g] {
-      @include grid-item-compact;
+      @include nds-grid-item-compact;
     }
   }
 
   &--loose {
-    @include grid-loose;
+    @include nds-grid-loose;
 
     > [data-g] {
-      @include grid-item-loose;
+      @include nds-grid-item-loose;
     }
   }
 
   &--right {
-    @include grid-right;
+    @include nds-grid-right;
   }
 
   &--center {
-    @include grid-center;
+    @include nds-grid-center;
   }
 
   &--middle {
     > [data-g] {
-      @include grid-item-middle;
+      @include nds-grid-item-middle;
     }
   }
 
   &--bottom {
     > [data-g] {
-      @include grid-item-bottom;
+      @include nds-grid-item-bottom;
     }
   }
 
   &--debug {
-    @include grid-debug;
+    @include nds-grid-debug;
 
     [data-g] {
-      @include grid-item-debug;
+      @include nds-grid-item-debug;
     }
   }
 
   // Add debug grid to body to show an outline on all grids
   .debug-grid & {
-    @include grid-debug;
+    @include nds-grid-debug;
 
     [data-g] {
-      @include grid-item-debug;
+      @include nds-grid-item-debug;
     }
   }
 
-  @if $nice-responsive {
+  @if $nds-responsive {
     @each $brkpnt-key, $brkpnt-value in $mq-breakpoints {
       @include mq($from: $brkpnt-key) {
-        @include generate-grid-classes($brkpnt-key);
+        @include nds-generate-grid-classes($brkpnt-key);
       }
     }
   }

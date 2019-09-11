@@ -6,27 +6,27 @@
 
 // Default (light) panel background colour
 /// @since 1.0.0
-$nds-colour-panel-default-background: $colour-nice-grey-3;
+$nds-colour-panel-default-background: $nds-colour-nice-grey-3;
 
 // Default (light) panel border colour
 /// @since 0.5.2
-$nds-colour-panel-default-border: $colour-nice-grey-2;
+$nds-colour-panel-default-border: $nds-colour-nice-grey-2;
 
 // Impact panel background colour
 /// @since 1.0.0
-$nds-colour-panel-impact-background: $colour-nice-blue-3;
+$nds-colour-panel-impact-background: $nds-colour-nice-blue-3;
 
 // Impact panel border colour
 /// @since 1.0.0
-$nds-colour-panel-impact-border: $colour-nice-blue-2;
+$nds-colour-panel-impact-border: $nds-colour-nice-blue-2;
 
 // Primary panel background colour
 /// @since 1.0.0
-$nds-colour-panel-primary-background: $colour-nice-white;
+$nds-colour-panel-primary-background: $nds-colour-nice-white;
 
 // Primary panel border colour
 /// @since 1.0.0
-$nds-colour-panel-primary-border: $colour-nice-ice-teal;
+$nds-colour-panel-primary-border: $nds-colour-nice-ice-teal;
 
 /// A panel is a container for visually separating content.
 /// Often used within a sidebar.
@@ -34,8 +34,8 @@ $nds-colour-panel-primary-border: $colour-nice-ice-teal;
 .panel {
   background: $nds-colour-panel-default-background;
   border: 1px solid $nds-colour-panel-default-border; // To distinguish panel from off-grey body background
-  margin: em($spacing-medium 0 $spacing-large);
-  padding: em($spacing-medium);
+  margin: em(0 0 $nds-spacing-large);
+  padding: em($nds-spacing-medium);
 
   > :first-child {
     margin-top: 0;
@@ -52,10 +52,10 @@ $nds-colour-panel-primary-border: $colour-nice-ice-teal;
 /// @require .panel
 /// @since 1.0.0
 .panel--impact {
-  @include links-inverse;
+  @include nds-links-inverse;
   background: $nds-colour-panel-impact-background;
   border: 1px solid $nds-colour-panel-impact-border;
-  color: $colour-text-inverse;
+  color: $nds-colour-text-inverse;
 }
 
 /// Modifier for a primary panel.

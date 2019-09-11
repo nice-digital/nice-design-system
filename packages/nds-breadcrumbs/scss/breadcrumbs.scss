@@ -8,18 +8,18 @@
 /// See https://www.w3.org/WAI/WCAG20/Techniques/working-examples/G65/ex3.html
 /// @since 0.1.0
 .breadcrumbs {
-  @include font-size(0);
+  @include nds-font-size(0);
   list-style: none;
-  margin: em($spacing-small 0 $spacing-large);
+  margin: em($nds-spacing-small 0 $nds-spacing-large);
   padding: 0;
 
   &__crumb {
     display: inline-block;
 
     &:before {
-      content: get-glyph(greater-than);
+      content: nds-get-glyph(greater-than);
       font-size: 80%;
-      margin: em(0 $spacing-x-small);
+      margin: em(0 $nds-spacing-x-small);
     }
 
     &:first-child:before {
@@ -28,7 +28,7 @@
   }
 
   a {
-    color: $colour-text;
+    color: $nds-colour-text;
     text-decoration: underline;
 
     &:hover {
@@ -36,11 +36,11 @@
     }
 
     &:focus {
-      color: $colour-link-focus-text;
+      color: $nds-colour-link-focus-text;
     }
 
     &:active {
-      color: $colour-link-active;
+      color: $nds-colour-link-active;
     }
   }
 }

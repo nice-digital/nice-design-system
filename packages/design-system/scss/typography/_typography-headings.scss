@@ -4,27 +4,27 @@
 
 h6,
 .h6 {
-  @include h6;
+  @include nds-h6;
 }
 
 h5,
 .h5 {
-  @include h5;
+  @include nds-h5;
 }
 
 h4,
 .h4 {
-  @include h4;
+  @include nds-h4;
 }
 
 h3,
 .h3 {
-  @include h3;
+  @include nds-h3;
 }
 
 h2,
 .h2 {
-  @include h2;
+  @include nds-h2;
 
   + h3,
   + .h3 {
@@ -34,7 +34,7 @@ h2,
 
 h1,
 .h1 {
-  @include h1;
+  @include nds-h1;
 
   + h2,
   + .h2 {

@@ -11,7 +11,7 @@
 /// Used to filter searches or lists of content.
 /// @since 0.5.0
 .filter-group {
-  margin-top: rem($spacing-medium);
+  margin-top: rem($nds-spacing-medium);
 
   &:first-child {
     margin-top: 0;
@@ -19,29 +19,29 @@
 
   // Heading used for collapsing/expanding the filter group
   &__heading {
-    @include font-size(0);
-    background: $colour-nice-grey-2;
+    @include nds-font-size(0);
+    background: $nds-colour-nice-grey-2;
     border: 0;
     display: block;
     font-weight: bold;
     margin: 0;
-    padding: rem($spacing-small);
+    padding: rem($nds-spacing-small);
     position: relative;
     text-align: left;
     width: 100%;
 
-    @include when-is(button) {
+    @include nds-when-is(button) {
       appearance: none;
       cursor: pointer;
 
       &:after {
         @include nice-icon(chevron-up);
-        @include font-size(-1);
-        color: $colour-icons;
+        @include nds-font-size(-1);
+        color: $nds-colour-icons;
         line-height: normal; // IE 9/10 bug where rems on block psuedos collapse to 0
         position: absolute;
-        right: rem($spacing-small);
-        top: rem($spacing-small);
+        right: rem($nds-spacing-small);
+        top: rem($nds-spacing-small);
       }
 
       &[aria-expanded='false']:after {
@@ -49,28 +49,28 @@
       }
 
       &:hover {
-        background: $colour-nice-grey-1;
+        background: $nds-colour-nice-grey-1;
 
         + .filter-group__options {
-          border-color: $colour-nice-grey-1;
+          border-color: $nds-colour-nice-grey-1;
         }
       }
 
       &:focus {
-        @include default-focus-style;
+        @include nds-default-focus-style;
       }
     }
   }
 
   // Shows the number of filtered options e.g. "2 selected"
   &__count {
-    @include font-size(-1);
+    @include nds-font-size(-1);
     font-weight: normal;
   }
 
   // Wrapper for the options when filter is a list of checboxes
   &__options {
-    border: rem($spacing-x-small) solid $colour-nice-grey-2;
+    border: rem($nds-spacing-x-small) solid $nds-colour-nice-grey-2;
 
     &[aria-hidden='true'] {
       display: none;
@@ -79,30 +79,33 @@
 
   // Checkbox/radio button option (label)
   &__option {
-    background: $colour-nice-white;
-    border-top: 1px solid $colour-nice-grey-2;
+    background: $nds-colour-nice-white;
+    border-top: 1px solid $nds-colour-nice-grey-2;
     cursor: pointer;
     display: block;
     line-height: 1.2;
-    padding: rem($spacing-small $spacing-small $spacing-small $spacing-large);
+    padding: rem(
+      $nds-spacing-small $nds-spacing-small $nds-spacing-small
+        $nds-spacing-large
+    );
 
     &:first-child {
       border-top: 0;
     }
 
     &:hover {
-      background: $colour-nice-grey-3;
+      background: $nds-colour-nice-grey-3;
     }
 
     input {
       float: left;
-      height: rem($spacing-medium);
-      margin-left: -rem($spacing-medium + $spacing-small);
-      margin-top: rem($spacing-xx-small);
-      width: rem($spacing-medium);
+      height: rem($nds-spacing-medium);
+      margin-left: -rem($nds-spacing-medium + $nds-spacing-small);
+      margin-top: rem($nds-spacing-xx-small);
+      width: rem($nds-spacing-medium);
 
       &:focus {
-        @include default-focus-style;
+        @include nds-default-focus-style;
       }
     }
   }

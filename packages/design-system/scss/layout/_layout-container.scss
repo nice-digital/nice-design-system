@@ -12,7 +12,7 @@
 ///   </div>
 /// @since 0.1.0
 .container {
-  @include container;
+  @include nds-container;
 
   &--full {
     max-width: 100%;

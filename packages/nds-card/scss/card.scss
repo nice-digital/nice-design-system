@@ -17,7 +17,7 @@
 ///
 /// @since 0.3.1
 .card {
-  margin: rem(0 0 $spacing-large 0);
+  margin: rem(0 0 $nds-spacing-large 0);
   overflow: hidden;
   position: relative;
 
@@ -27,17 +27,17 @@
 
   &--separator,
   .list--unstyled & {
-    border-bottom: 1px solid $colour-border;
-    margin: rem(0 0 $spacing-small 0);
-    padding: rem(0 0 $spacing-x-small 0);
+    border-bottom: 1px solid $nds-colour-border;
+    margin: rem(0 0 $nds-spacing-small 0);
+    padding: rem(0 0 $nds-spacing-x-small 0);
   }
 
   &__header {
-    margin: rem(0 0 $spacing-x-small 0);
+    margin: rem(0 0 $nds-spacing-x-small 0);
   }
 
   &__heading {
-    @include font-size(0);
+    @include nds-font-size(0);
     font-weight: bold;
     margin: 0;
 
@@ -62,9 +62,9 @@
   }
 
   &__author {
-    @include font-size(-1);
-    color: $colour-nice-dark-grey;
-    margin: rem(0 0 $spacing-x-small 0);
+    @include nds-font-size(-1);
+    color: $nds-colour-nice-dark-grey;
+    margin: rem(0 0 $nds-spacing-x-small 0);
 
     dd {
       display: block;
@@ -73,25 +73,25 @@
   }
 
   &__summary {
-    margin: rem(0 0 $spacing-x-small 0);
+    margin: rem(0 0 $nds-spacing-x-small 0);
   }
 
   &__image {
     display: block;
-    margin: rem(0 0 $spacing-x-small);
+    margin: rem(0 0 $nds-spacing-x-small);
   }
 
   &__icon {
-    margin: rem(0 $spacing-x-small 0 0);
+    margin: rem(0 $nds-spacing-x-small 0 0);
   }
 
   &__tag {
-    @include font-size(-1, true);
+    @include nds-font-size(-1, true);
   }
 
   &__metadata {
-    @include font-size(-1);
-    color: $colour-nice-dark-grey;
+    @include nds-font-size(-1);
+    color: $nds-colour-nice-dark-grey;
     display: inline-block;
     margin: 0;
     position: relative;
@@ -100,7 +100,7 @@
 
   &__metadatum {
     display: block;
-    margin: rem(0 $spacing-small $spacing-x-small 0);
+    margin: rem(0 $nds-spacing-small $nds-spacing-x-small 0);
 
     dt,
     dd {
@@ -117,7 +117,7 @@
 
     &__text {
       float: left;
-      padding-left: rem($spacing-medium);
+      padding-left: rem($nds-spacing-medium);
       width: 70%;
     }
   }

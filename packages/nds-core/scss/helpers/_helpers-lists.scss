@@ -5,14 +5,14 @@
 /// Shortcut for getting the first item from a list
 /// @link http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/#selecting-values-from-list
 /// @since 0.1.0
-@function first($list) {
+@function nds-first($list) {
   @return nth($list, 1);
 }
 
 /// Shortcut for getting the last item from a list
 /// @link http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/#selecting-values-from-list
 /// @since 0.1.0
-@function last($list) {
+@function nds-last($list) {
   @return nth($list, length($list));
 }
 
@@ -34,7 +34,7 @@
 /// @return {Number | Null}
 ///
 /// @since 0.1.0
-@function last-index($list, $value) {
+@function nds-last-index($list, $value) {
   @for $i from length($list) through 1 {
     @if nth($list, $i) == $value {
       @return $i;

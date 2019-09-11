@@ -1,26 +1,26 @@
 @import '~@nice-digital/nds-core/scss/core';
 
 .input {
-  margin-bottom: rem($spacing-medium);
+  margin-bottom: rem($nds-spacing-medium);
 
   &__label {
-    @include font-size(p);
+    @include nds-font-size(p);
     display: block;
     font-weight: bold;
-    margin-bottom: rem($spacing-x-small);
+    margin-bottom: rem($nds-spacing-x-small);
   }
 
   &__input {
-    border: rem($spacing-xx-small) solid $colour-border;
-    padding: rem($spacing-small);
+    border: rem($nds-spacing-xx-small) solid $nds-colour-border;
+    padding: rem($nds-spacing-small);
     width: 100%;
 
     &:focus {
-      @include default-focus-style;
+      @include nds-default-focus-style;
     }
   }
 
   &--error .input__input {
-    @include default-error-style;
+    @include nds-default-error-style;
   }
 }

@@ -4,7 +4,7 @@
 
 /// A map of glyph name to code point (character entity reference).
 /// Avoids magic strings like `content: '\201C'` within our SASS.
-/// Usual usage is via the `get-glyph` function, e.g. `get-glyph(greater-than)`.
+/// Usual usage is via the `get-glyph` function, e.g. `nds-get-glyph(greater-than)`.
 /// @see get-glyph
 /// @link https://css-tricks.com/snippets/html/glyphs/
 /// @prop {String} bullet [2022] Bullet (•)
@@ -17,7 +17,7 @@
 /// @prop {String} punc-space [02008] Punctuation space (small, width of a comma)
 /// @prop {String} zero-width-space [0200B] Zero width space
 /// @since 0.1.0
-$nice-glyphs: (
+$nds-glyphs: (
   bullet: '2022',
   copyright: '00a9',
   greater-than: '003e',
@@ -31,29 +31,29 @@ $nice-glyphs: (
 ) !default;
 
 /// Gets a glyph code, or several, (character entity reference) from the
-/// `$nice-glyphs` map, matching the given `$names`. Usually used with the content
+/// `$nds-glyphs` map, matching the given `$names`. Usually used with the content
 /// property for psuedo elements, to avoid use of magic character reference strings.
 /// @param {argList} $names The name(s) of the glyph(s) to get
 /// @returns {string} The character entity reference code(s) as a string, e.g. '\201C' or '\02008\029C9'
-/// @see $nice-glyphs
+/// @see $nds-glyphs
 /// @since 0.1.0
 /// @example Single glyph
 ///   .rule {
-///     content: get-glyph(greater-than);
+///     content: nds-get-glyph(greater-than);
 ///   }
 /// @example Multiple glyphs together
 ///   .rule {
-///     content: get-glyph(punc-space, box-box);
+///     content: nds-get-glyph(punc-space, box-box);
 ///   }
-@function get-glyph($names...) {
+@function nds-get-glyph($names...) {
   $codes: '';
 
   @each $name in $names {
-    @if map-has-key($nice-glyphs, $name) {
-      $code: map-get($nice-glyphs, $name);
+    @if map-has-key($nds-glyphs, $name) {
+      $code: map-get($nds-glyphs, $name);
       $codes: $codes + '\\#{$code}';
     } @else {
-      @error 'Glyph with name #{$name} could not be found in the $nice-glyphs map';
+      @error 'Glyph with name #{$name} could not be found in the $nds-glyphs map';
     }
   }
 

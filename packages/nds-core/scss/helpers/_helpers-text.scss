@@ -5,7 +5,7 @@
 /// Text truncate
 /// Requires inline-block or block for proper styling
 /// @since 0.1.0
-@mixin text-truncate {
+@mixin nds-text-truncate {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -14,7 +14,7 @@
 /// Set and element to display as block and align
 /// centrally via auto left/right margins
 /// @since 0.1.0
-@mixin center-block {
+@mixin nds-center-block {
   display: block;
   margin-left: auto;
   margin-right: auto;

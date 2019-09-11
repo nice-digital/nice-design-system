@@ -4,6 +4,7 @@ import { Router, Route, Link } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import { FormGroupView } from "./views/FormGroupView";
 import { PageHeaderView } from "./views/PageHeaderView";
+import { AlertView } from "./views/AlertView";
 import { StackedNavView } from "./views/StackedNavView";
 import "./App.scss";
 
@@ -14,6 +15,11 @@ class App extends Component {
 		return (
 			<Router history={browserHistory}>
 				<nav>
+					<p>
+						<Link to="/formgroup">FormGroup</Link> |{" "}
+						<Link to="/pageheader">Page Header</Link> |{" "}
+						<Link to="/alert">Alert</Link>
+					</p>
 					<ul>
 						<li>
 							<Link to="/formgroup">Form Group</Link>
@@ -29,6 +35,7 @@ class App extends Component {
 				<main>
 					<Route path="/formgroup" component={FormGroupView} />
 					<Route path="/pageheader" component={PageHeaderView} />
+					<Route path="/alert" component={AlertView} />
 					<Route path="/stackednav" component={StackedNavView} />
 				</main>
 			</Router>

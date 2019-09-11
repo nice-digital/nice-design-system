@@ -7,18 +7,18 @@
 /// Button
 /// @since 0.1.0
 .btn {
-  @include font-size(0);
+  @include nds-font-size(0);
   appearance: none;
-  background: $colour-btn-primary;
-  border: em(1px) solid $colour-btn-primary-text;
+  background: $nds-colour-btn-primary;
+  border: em(1px) solid $nds-colour-btn-primary-text;
   border-radius: 0;
-  color: $colour-btn-primary-text;
+  color: $nds-colour-btn-primary-text;
   cursor: pointer;
   display: inline-block;
   margin: em(
-    0 $spacing-small $spacing-small -4px
+    0 $nds-spacing-small $nds-spacing-small -4px
   ); // Negative left margin to combat inline-block gaps
-  padding: em($spacing-small $spacing-medium);
+  padding: em($nds-spacing-small $nds-spacing-medium);
   position: relative;
   text-align: left;
   text-decoration: none !important;
@@ -30,24 +30,24 @@
   }
 
   &:visited {
-    color: $colour-btn-primary-text;
+    color: $nds-colour-btn-primary-text;
   }
 
   &:hover {
-    background: $colour-btn-primary-hover;
-    color: $colour-btn-primary-text;
+    background: $nds-colour-btn-primary-hover;
+    color: $nds-colour-btn-primary-text;
     text-decoration: none;
   }
 
   &:focus {
-    @include default-focus-style;
-    background: $colour-btn-primary;
-    border-color: $colour-focus-inverse;
-    color: $colour-btn-primary-text;
+    @include nds-default-focus-style;
+    background: $nds-colour-btn-primary;
+    border-color: $nds-colour-focus-inverse;
+    color: $nds-colour-btn-primary-text;
   }
 
   &:active {
-    background: $colour-btn-primary-hover;
+    background: $nds-colour-btn-primary-hover;
     text-decoration: none;
     top: em(2px);
   }
@@ -70,74 +70,74 @@
 /// CTA/prominent button
 /// @since 0.2.0
 .btn--cta {
-  background: $colour-btn-cta;
-  border: em(1px) solid $colour-btn-cta-text;
-  color: $colour-btn-cta-text;
+  background: $nds-colour-btn-cta;
+  border: em(1px) solid $nds-colour-btn-cta-text;
+  color: $nds-colour-btn-cta-text;
 
   &:visited {
-    color: $colour-btn-cta-text;
+    color: $nds-colour-btn-cta-text;
   }
 
   &:hover {
-    background: $colour-btn-cta-hover;
-    color: $colour-btn-cta-text;
+    background: $nds-colour-btn-cta-hover;
+    color: $nds-colour-btn-cta-text;
   }
 
   &:focus {
-    background: $colour-btn-cta-hover;
+    background: $nds-colour-btn-cta-hover;
   }
 
   &:active {
-    background: $colour-btn-cta-hover;
+    background: $nds-colour-btn-cta-hover;
   }
 }
 
 /// Secondary button
 /// @since 0.2.0
 .btn--secondary {
-  background: $colour-btn-secondary;
-  border: em(1px) solid $colour-btn-secondary-text;
-  color: $colour-btn-secondary-text;
+  background: $nds-colour-btn-secondary;
+  border: em(1px) solid $nds-colour-btn-secondary-text;
+  color: $nds-colour-btn-secondary-text;
 
   &:visited {
-    color: $colour-btn-secondary-text;
+    color: $nds-colour-btn-secondary-text;
   }
 
   &:hover {
-    background: $colour-btn-secondary-hover;
-    color: $colour-btn-secondary-text;
+    background: $nds-colour-btn-secondary-hover;
+    color: $nds-colour-btn-secondary-text;
   }
 
   &:focus {
-    background: $colour-btn-secondary-hover;
+    background: $nds-colour-btn-secondary-hover;
   }
 
   &:active {
-    background: $colour-btn-secondary-hover;
+    background: $nds-colour-btn-secondary-hover;
   }
 }
 
 /// Inverse (light) button, for use on inverse (dark) panels/sections
 /// @since 0.2.0
 .btn--inverse {
-  background: $colour-btn-inverse;
-  border: em(1px) solid $colour-btn-inverse-text;
-  color: $colour-btn-inverse-text !important;
+  background: $nds-colour-btn-inverse;
+  border: em(1px) solid $nds-colour-btn-inverse-text;
+  color: $nds-colour-btn-inverse-text !important;
 
   &:visited {
-    color: $colour-btn-inverse-text;
+    color: $nds-colour-btn-inverse-text;
   }
 
   &:hover {
-    background: $colour-btn-inverse-hover;
-    color: $colour-btn-inverse-text;
+    background: $nds-colour-btn-inverse-hover;
+    color: $nds-colour-btn-inverse-text;
   }
 
   &:focus {
-    background: $colour-btn-inverse-hover;
+    background: $nds-colour-btn-inverse-hover;
   }
 
   &:active {
-    background: $colour-btn-inverse-hover;
+    background: $nds-colour-btn-inverse-hover;
   }
 }

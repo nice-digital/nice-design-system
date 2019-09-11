@@ -7,40 +7,40 @@
 /// Hero banner component.
 /// @since 0.2.0
 .hero {
-  @include links-inverse;
-  background: $colour-hero-background;
-  color: $colour-text-inverse;
-  margin: rem(0 0 $spacing-medium);
+  @include nds-links-inverse;
+  background: $nds-colour-hero-background;
+  color: $nds-colour-text-inverse;
+  margin: rem(0 0 $nds-spacing-medium);
   overflow: hidden;
-  //padding: rem(0 0 $spacing-large);
+  //padding: rem(0 0 $nds-spacing-large);
 
   &__container {
-    @extend %container;
+    @extend %nds-container;
   }
 
   &__body {
-    @include clearfix;
-    margin-top: rem($spacing-large);
-    padding: rem(0 0 $spacing-large);
+    @include nds-clearfix;
+    margin-top: rem($nds-spacing-large);
+    padding: rem(0 0 $nds-spacing-large);
   }
 
   // Container for title, lead and actions
   &__copy {
-    margin-bottom: rem($spacing-large);
+    margin-bottom: rem($nds-spacing-large);
   }
 
   &__title {
-    @include h1;
+    @include nds-h1;
   }
 
   &__intro {
-    @include lead;
+    @include nds-lead;
   }
 
   // Optional footer
   &__footer {
-    border-top: rem($spacing-xx-small) solid $colour-hero-border;
-    padding: rem($spacing-medium 0);
+    border-top: rem($nds-spacing-xx-small) solid $nds-colour-hero-border;
+    padding: rem($nds-spacing-medium 0);
 
     p,
     ul {
