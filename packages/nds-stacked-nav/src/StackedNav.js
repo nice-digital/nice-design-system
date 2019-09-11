@@ -6,12 +6,13 @@ import "./../scss/stacked-nav.scss";
 const Heading = props => {
 	const { labelTag: LabelTag = "p", label, link } = props;
 	if (link) {
-		const linkProps = {};
 		const { linkTag: LinkTag = "a", isCurrent, destination } = link;
-		linkProps["aria-current"] = isCurrent ? "page" : "false";
-		if (LinkTag && LinkTag === "a") {
+		const linkProps = {
+			"aria-current": isCurrent ? "page" : "false"
+		};
+		if (LinkTag === "a") {
 			linkProps.href = destination;
-		} else if (LinkTag) {
+		} else {
 			linkProps.to = destination;
 		}
 		return (
