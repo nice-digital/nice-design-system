@@ -71,19 +71,7 @@ exports[`StackedNav should not render a heading if none is supplied 1`] = `
 </nav>
 `;
 
-exports[`StackedNav should not render a links block container if none are supplied 1`] = `
-<nav
-  aria-label="Stacked Nav Heading"
-  className="stacked-nav"
->
-  <Heading
-    label="Stacked Nav Heading"
-    labelTag="h1"
-  />
-</nav>
-`;
-
-exports[`StackedNav should not render links if none are supplied 1`] = `
+exports[`StackedNav should not render a links block container if one isn't supplied 1`] = `
 <nav
   aria-label="Stacked Nav Heading"
   className="stacked-nav"

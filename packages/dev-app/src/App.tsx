@@ -15,11 +15,6 @@ class App extends Component {
 		return (
 			<Router history={browserHistory}>
 				<nav>
-					<p>
-						<Link to="/formgroup">FormGroup</Link> |{" "}
-						<Link to="/pageheader">Page Header</Link> |{" "}
-						<Link to="/alert">Alert</Link>
-					</p>
 					<ul>
 						<li>
 							<Link to="/formgroup">Form Group</Link>
@@ -30,13 +25,16 @@ class App extends Component {
 						<li>
 							<Link to="/stackednav">Stacked Nav</Link>
 						</li>
+						<li>
+							<Link to="/alert">Alert</Link>
+						</li>
 					</ul>
 				</nav>
 				<main>
 					<Route path="/formgroup" component={FormGroupView} />
 					<Route path="/pageheader" component={PageHeaderView} />
-					<Route path="/alert" component={AlertView} />
 					<Route path="/stackednav" component={StackedNavView} />
+					<Route path="/alert" component={AlertView} />
 				</main>
 			</Router>
 		);

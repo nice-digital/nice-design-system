@@ -30,8 +30,11 @@
   }
 
   &__hint {
-    color: $colour-text;
+    color: $nds-colour-text;
     display: block;
+    & :active {
+      color: $nds-colour-nice-white;
+    }
   }
 
   &__list {
@@ -74,6 +77,9 @@
     &:active {
       background: $nds-colour-icons;
       color: $nds-colour-link-inverse;
+      span {
+        color: $nds-colour-nice-white;
+      }
     }
   }
 

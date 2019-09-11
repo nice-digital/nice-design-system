@@ -2,7 +2,6 @@
 import React from "react";
 
 import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
 
 import { StackedNav } from "@nice-digital/nds-stacked-nav";
 
@@ -23,7 +22,7 @@ const links = [
 		destination: "#",
 		isCurrent: false,
 		linkTag: "a",
-		hint: "This is a piece of hint text, what do you reckon?"
+		hint: "This is some hint text."
 	},
 	{
 		label: "Link Three",
@@ -33,7 +32,7 @@ const links = [
 	}
 ];
 
-const headingOnly = () => <StackedNav heading={heading} links={links} />;
+const headingOnly = <StackedNav heading={heading} links={links} />;
 
 const linkHeading = Object.assign(
 	{},
@@ -47,11 +46,9 @@ const linkHeading = Object.assign(
 	heading
 );
 
-const headingWithLink = () => (
-	<StackedNav heading={linkHeading} links={links} />
-);
+const headingWithLink = <StackedNav heading={linkHeading} links={links} />;
 
-const noHeading = () => <StackedNav links={links} />;
+const noHeading = <StackedNav links={links} />;
 
 storiesOf("Stacked Nav", module)
 	.add("Heading label only", headingOnly)
