@@ -16,133 +16,121 @@ npm i @nice-digital/nds-stacked-nav --save
 
 ### React
 
-Import the `StackedNav` component from the package and use with JSX:
+Import the `StackedNav` and `StackedNavLink` components from the package and use with JSX:
 
 ```jsx
 import React from "react";
-import { StackedNav } from "@nice-digital/nds-stacked-nav";
+import { StackedNav, StackedNavLinks } from "@nice-digital/nds-stacked-nav";
 import { Link } from "react-router-dom";
 
+<StackedNav label="Explore our site" labelTag="h2">
+	<StackedNavLink to="/about">About Page</StackedNavLink>
+	<StackedNavLink to="/contact">Contact Page</StackedNavLink>
+</StackedNav>
+
 <StackedNav
-	heading={
-		label: "Find other content",
-		labelTag: "h2"
-	}
-	links={
-		[
-			{
-				label: "About",
-				linkTag: "a", // a regular anchor tag
-				destination: "/about/"
-			},
-			{
-				label: "Internal router page",
-				linkTag: Link, // as imported above
-				isCurrent: true,
-				destination: "/internal-router-page",
-			}
-		]
-	}
-/>
+	label="Explore our site"
+	labelTag="h3"
+	link={{ destination: "/sitemap", isCurrent: true, linkTag: Link }}
+>
+	<StackedNavLink to="/about" />
+	<StackedNavLink to="/contact" />
+</StackedNav>
 ```
 
 > Note: The React component automatically imports the SCSS, so there's no need to import the SCSS directly yourself.
 
 #### Props
 
-##### heading
+##### `<StackedNav />`
 
-- Type: `object`
+###### label
 
-An object to construct the title of the stacked nav component. The only required field is `label`.
+- Type: `string`
 
-```js
-const heading = {
-	label: "Stacked Nav Heading",
-	labelTag: "h2",
-	link: {
-		linkTag: "a",
-		destination: "/about/",
-		isCurrent: true
-	}
-};
-```
+The text that appears as the component's heading. If the `label` is omitted, the heading section of the component will not render at all.
 
-##### heading.label
-
-- Type: `string` (required)
-
-The text that appears as the component's heading.
-
-##### heading.labelTag
+###### labelTag
 
 - Type: `string`
 - Default: `p`
 
 The tag that you would like to use to wrap the label for the heading. The default is a paragraph tag which implies no heirarchial structure.
 
-##### heading.link
+###### link
 
 - Type: `object`
 - Default: `null`
 
 An object to describe an optional link for the heading of the stacked nav component.
 
-##### heading.link.linkTag
+###### link.linkTag
 
 - Type: `string`
 - Default: `a`
 
 The tag that you would like to use for the heading link. By default it's an HTMLAnchorElement and will result in something like `<a href="/destination">Stacked Nav Heading</a>` but you can pass a custom router link tag such as `Link` to result in `<Link to="/destination">Stacked Nav Heading</Link>`.
 
-##### heading.link.destination
+###### link.destination
 
 - Type: `string`
 - Default: `null`
 
 A string to represent the destination if the heading is a link.
 
-##### heading.link.isCurrent
+###### link.isCurrent
 
 - Type: `boolean`
 - Default: `false`
 
 A boolean value to determine whether the link should have style and ARIA attributes to show that it is currently active.
 
-##### links
+##### `<StackedNavLink />`
 
-- Type `Array<link>`
+###### children
 
-The links prop should be an array of items to render in a single column in the body of the stacked nav component. Each link item can consist of the following properties:
+- Type: `string`
 
-##### links[].label
+Can be used instead of the label property.
 
-- Type: `string` (required)
+> The label property takes precedence over a child string
 
-The value that appears as the link's text.
+```jsx
+<StackedNavLink>About Page</StackedNavLink>
+```
 
-##### links[].linkTag
+###### label
+
+- Type: `string`
+
+The value that appears as the link's text, takes precedence over a supplied child.
+
+```jsx
+<StackedNavLink label="This will appear!">This won't appear</StackedNavLink>
+```
+
+###### linkTag
 
 - Type: `string`
 - Default: `a`
 
 The tag that you would like to use for the link. By default it's an HTMLAnchorElement and will result in something like `<a href="/destination">Destination</a>` but you can pass a custom router link tag such as `Link` to result in `<Link to="/destination">Destination</Link>`.
 
-##### links[].destination
+###### destination
 
 - Type: `string`
 - Default: `null`
 
 A string to represent the destination if the element is a link.
 
-##### links[].isCurrent
+###### isCurrent
 
 - Type: `boolean`
 - Default: `false`
 
 A boolean value to determine whether the link should have style and ARIA attributes to show that it is currently active.
 
-##### links[].hint
+###### hint
 
 - Type: `string`
 - Default: `null`
@@ -168,7 +156,7 @@ If you're not using [React](#react), then include the [SCSS as above](#scss) and
 	</h1>
 	<ul class="stacked-nav__list">
 		<li class="stacked-nav__list-item">
-			<a aria-current="page" href="/page-one/">Link One</a>
+			<a aria-current="true" href="/page-one/">Link One</a>
 		</li>
 		<li class="stacked-nav__list-item">
 			<a href="/page-two/">Link Two</a>

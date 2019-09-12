@@ -1,8 +1,8 @@
 import React from "react";
-import { StackedNav } from "@nice-digital/nds-stacked-nav";
+import { StackedNav, StackedNavLink } from "@nice-digital/nds-stacked-nav";
 import { Link } from "react-router-dom";
 
-const heading = {
+const headingProps = {
 	label: "Stacked Nav Heading",
 	labelTag: "h1",
 	link: {
@@ -37,7 +37,14 @@ export const StackedNavView = () => {
 		<div className="container pt--d">
 			<div className="grid">
 				<div data-g="4">
-					<StackedNav heading={heading} links={links} />
+					<StackedNav>
+						{links.map((item, index) => (
+							<StackedNavLink key={`item${index}`} {...item} />
+						))}
+						<StackedNavLink destination="/hello">
+							This is a child not a label
+						</StackedNavLink>
+					</StackedNav>
 				</div>
 				<div data-g="8">
 					<h1>Stacked Nav</h1>

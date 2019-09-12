@@ -38,10 +38,18 @@ Heading.propTypes = {
 	})
 };
 
-const Link = props => {
-	const { hint, destination, isCurrent, label, linkTag: LinkTag = "a" } = props;
+export const StackedNavLink = props => {
+	const {
+		hint,
+		destination,
+		isCurrent,
+		linkTag: LinkTag = "a",
+		children
+	} = props;
+	const label = props.label || children;
+	if (!label) return null;
 	const linkProps = {};
-	linkProps["aria-current"] = isCurrent ? "page" : "false";
+	linkProps["aria-current"] = isCurrent ? "true" : "false";
 	if (LinkTag === "a") {
 		linkProps.href = destination;
 	} else if (LinkTag) {
@@ -63,31 +71,35 @@ const Link = props => {
 	);
 };
 
-Link.propTypes = {
+StackedNavLink.propTypes = {
 	destination: PropTypes.node,
 	isCurrent: PropTypes.bool,
-	label: PropTypes.node.isRequired,
+	label: PropTypes.node,
 	linkTag: PropTypes.elementType,
-	hint: PropTypes.node
+	hint: PropTypes.node,
+	children: PropTypes.oneOfType([PropTypes.string])
 };
 
 export const StackedNav = props => {
-	const { heading, links } = props;
+	const { label, labelTag, link, children } = props;
 	return (
-		<nav className="stacked-nav" aria-label={heading && heading.label}>
-			{heading && <Heading {...heading} />}
-			{links && links.length && (
-				<ul className="stacked-nav__list">
-					{links.map((link, index) => (
-						<Link {...link} key={`key-${index}`} />
-					))}
-				</ul>
-			)}
+		<nav className="stacked-nav" aria-label={label && label}>
+			{label && <Heading label={label} labelTag={labelTag} link={link} />}
+			{children && <ul className="stacked-nav__list">{children}</ul>}
 		</nav>
 	);
 };
 
 StackedNav.propTypes = {
-	heading: PropTypes.shape(Heading.propTypes),
-	links: PropTypes.arrayOf(PropTypes.shape(Link.propTypes))
+	label: PropTypes.node,
+	labelTag: PropTypes.elementType,
+	link: PropTypes.shape({
+		destination: PropTypes.string,
+		isCurrent: PropTypes.bool,
+		linkTag: PropTypes.node
+	}),
+	children: PropTypes.oneOfType([
+		PropTypes.arrayOf(StackedNavLink),
+		PropTypes.objectOf(StackedNavLink)
+	])
 };
