@@ -52,7 +52,7 @@ The text that appears as the component's heading. If the `label` is omitted, the
 
 ###### labelTag
 
-- Type: `string`
+- Type: `React.ElementType`
 - Default: `p`
 
 The tag that you would like to use to wrap the label for the heading. The default is a paragraph tag which implies no heirarchial structure.
@@ -66,7 +66,7 @@ An object to describe an optional link for the heading of the stacked nav compon
 
 ###### link.linkTag
 
-- Type: `string`
+- Type: `React.ElementType`
 - Default: `a`
 
 The tag that you would like to use for the heading link. By default it's an HTMLAnchorElement and will result in something like `<a href="/destination">Stacked Nav Heading</a>` but you can pass a custom router link tag such as `Link` to result in `<Link to="/destination">Stacked Nav Heading</Link>`.
@@ -111,7 +111,7 @@ The value that appears as the link's text, takes precedence over a supplied chil
 
 ###### linkTag
 
-- Type: `string`
+- Type: `React.ElementType`
 - Default: `a`
 
 The tag that you would like to use for the link. By default it's an HTMLAnchorElement and will result in something like `<a href="/destination">Destination</a>` but you can pass a custom router link tag such as `Link` to result in `<Link to="/destination">Destination</Link>`.
