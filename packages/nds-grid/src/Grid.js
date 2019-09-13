@@ -60,8 +60,10 @@ Grid.verticalAlignment = {
 };
 
 Grid.propTypes = {
-	children: PropTypes.oneOfType([PropTypes.arrayOf(GridItem), GridItem])
-		.isRequired,
+	children: PropTypes.oneOfType([
+		PropTypes.arrayOf(PropTypes.element),
+		PropTypes.element
+	]).isRequired,
 	reverse: PropTypes.bool,
 	horizontalAlignment: PropTypes.oneOf([
 		Grid.horizontalAlignment.left,
@@ -74,7 +76,7 @@ Grid.propTypes = {
 		Grid.verticalAlignment.bottom
 	]),
 	gutter: PropTypes.oneOf([
-		Grid.gutter.default,
+		Grid.gutter.standard,
 		Grid.gutter.none,
 		Grid.gutter.compact,
 		Grid.gutter.loose

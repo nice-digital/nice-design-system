@@ -16,35 +16,40 @@ export const GridItem = props => {
 		...rest
 	} = props;
 
-	let gridCols = cols.toString();
+	let gridColsAttr = [cols.toString()];
 
-	if (push) gridCols += " push:" + push;
-	if (pull) gridCols += " pull:" + pull;
+	if (push) gridColsAttr.push("push:" + push);
+	if (pull) gridColsAttr.push("pull:" + pull);
 
-	if (xs) {
-		gridCols += " xs:" + xs;
-	}
-	if (sm) {
-		gridCols += " sm:" + sm;
-	}
-	if (md) {
-		gridCols += " md:" + md;
-	}
-	if (lg) {
-		gridCols += " lg:" + lg;
-	}
-	if (xl) {
-		gridCols += " xl:" + xl;
-	}
+	const bpGridDefs = { xs, sm, md, lg, xl };
+	const mapBpToAttr = bp => {
+		const bpGridDef = bpGridDefs[bp];
+
+		if (!bpGridDef) return null;
+
+		// E.g. "xs:6"
+		if (typeof bpGridDef === "number") return bp + ":" + bpGridDef;
+
+		// E.g. "xs:6 xs:push:3"
+		const { cols, pull, push } = bpGridDef;
+		let gridDefAttr = bp + ":" + cols;
+		if (pull) gridDefAttr += ` ${bp}:pull:${pull}`;
+		if (push) gridDefAttr += ` ${bp}:push:${push}`;
+		return gridDefAttr;
+	};
+	gridColsAttr = gridColsAttr
+		.concat(Object.keys(bpGridDefs).map(mapBpToAttr))
+		.filter(col => col)
+		.join(" ");
 
 	return (
-		<div data-g={gridCols} className={className} {...rest}>
+		<div data-g={gridColsAttr} className={className} {...rest}>
 			{children}
 		</div>
 	);
 };
 
-const GridItemBreakPointPropType = PropTypes.oneOf([
+const breakpointPropType = PropTypes.oneOfType([
 	PropTypes.number,
 	PropTypes.shape({
 		cols: PropTypes.number.isRequired,
@@ -61,10 +66,10 @@ GridItem.propTypes = {
 	cols: PropTypes.number.isRequired,
 	push: PropTypes.number,
 	pull: PropTypes.number,
-	xs: GridItemBreakPointPropType,
-	sm: GridItemBreakPointPropType,
-	md: GridItemBreakPointPropType,
-	lg: GridItemBreakPointPropType,
-	xl: GridItemBreakPointPropType,
+	xs: breakpointPropType,
+	sm: breakpointPropType,
+	md: breakpointPropType,
+	lg: breakpointPropType,
+	xl: breakpointPropType,
 	className: PropTypes.string
 };
