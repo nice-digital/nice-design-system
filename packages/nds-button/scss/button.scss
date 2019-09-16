@@ -15,6 +15,7 @@
   color: $nds-colour-btn-primary-text;
   cursor: pointer;
   display: inline-block;
+  font-family: inherit;
   margin: em(
     0 $nds-spacing-small $nds-spacing-small -4px
   ); // Negative left margin to combat inline-block gaps
