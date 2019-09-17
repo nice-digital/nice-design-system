@@ -8,6 +8,7 @@
   "author": "Ian Routledge <ian.routledge@nice.org.uk>",
   "homepage": "https://nhsevidence.github.io/nice-design-system/",
   "license": "MIT",
+  "types":"nds-hero.d.ts",
   "main": "lib/Hero.js",
   "module": "es/Hero.js",
   "style": "scss/hero.scss",
@@ -18,7 +19,8 @@
   "files": [
     "lib",
     "es",
-    "scss"
+    "scss",
+    "*.d.ts"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",

@@ -6,6 +6,7 @@ import { Checkbox } from "@nice-digital/nds-checkbox";
 import { FormGroupView } from "./views/FormGroupView";
 import { PageHeaderView } from "./views/PageHeaderView";
 import { AlertView } from "./views/AlertView";
+import { HeroView } from "./views/HeroView";
 import "./App.scss";
 
 const browserHistory = createBrowserHistory();
@@ -18,13 +19,14 @@ class App extends Component {
 					<p>
 						<Link to="/formgroup">FormGroup</Link> |{" "}
 						<Link to="/pageheader">Page Header</Link> |{" "}
-						<Link to="/alert">Alert</Link>
+						<Link to="/alert">Alert</Link> | <Link to="/hero">Hero</Link>
 					</p>
 				</nav>
 				<main>
 					<Route path="/formgroup" component={FormGroupView} />
 					<Route path="/pageheader" component={PageHeaderView} />
 					<Route path="/alert" component={AlertView} />
+					<Route path="/hero" component={HeroView} />
 				</main>
 			</Router>
 		);
