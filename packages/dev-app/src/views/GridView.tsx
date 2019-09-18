@@ -51,6 +51,15 @@ export const GridView = () => {
 					<GridCellExample text="5/6" />
 				</GridItem>
 			</Grid>
+			<h2>Custom element</h2>
+			<Grid elementType="ul">
+				<GridItem cols={6} elementType="li">
+					<GridCellExample text="li" />
+				</GridItem>
+				<GridItem cols={6} elementType="li">
+					<GridCellExample text="li" />
+				</GridItem>
+			</Grid>
 			<h2>Nested</h2>
 			<Grid>
 				<GridItem cols={6}>
