@@ -70,6 +70,8 @@ storiesOf("Grid", module)
 								<Grid>
 									<GridItem cols={6}>
 										<GridCellExample text="½" />
+									</GridItem>
+									<GridItem cols={6}>
 										<GridCellExample text="½" />
 									</GridItem>
 								</Grid>
