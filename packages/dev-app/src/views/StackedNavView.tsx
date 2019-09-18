@@ -1,43 +1,42 @@
 import React from "react";
-import { StackedNav, StackedNavLink } from "@nice-digital/nds-stacked-nav";
+import {
+	StackedNav,
+	StackedNavLink,
+	StackedNavProps
+} from "@nice-digital/nds-stacked-nav";
 import { Link } from "react-router-dom";
-
-const headingProps = {
-	label: "Stacked Nav Heading",
-	labelTag: "h1",
-	link: {
-		destination: "/heading-link/",
-		linkTag: "a"
-	}
-};
 
 const links = [
 	{
 		label: "Form Group",
 		destination: "/formgroup",
 		isCurrent: false,
-		linkTag: Link
+		elementType: Link
 	},
 	{
 		label: "Page Header",
 		destination: "/pageheader",
 		isCurrent: false,
-		linkTag: Link
+		elementType: Link
 	},
 	{
 		label: "Link Three",
 		destination: "/page-three/",
-		isCurrent: false,
-		linkTag: "a"
+		isCurrent: false
 	}
 ];
+
+const headingProps: StackedNavProps = {
+	label: "Stacked Nav Heading",
+	elementType: "h1"
+};
 
 export const StackedNavView = () => {
 	return (
 		<div className="container pt--d">
 			<div className="grid">
 				<div data-g="4">
-					<StackedNav>
+					<StackedNav {...headingProps}>
 						{links.map((item, index) => (
 							<StackedNavLink key={`item${index}`} {...item} />
 						))}

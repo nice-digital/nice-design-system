@@ -7,53 +7,53 @@ import { StackedNav, StackedNavLink } from "@nice-digital/nds-stacked-nav";
 
 const heading = {
 	label: "Stacked Nav Heading",
-	labelTag: "h1"
+	elementType: "h1"
 };
 
 const links = [
 	{
 		label: "Form Group",
 		destination: "#",
-		linkTag: "a"
+		elementType: "a"
 	},
 	{
 		label: "Page Header",
 		destination: "#",
 		isCurrent: true,
-		linkTag: "a",
+		elementType: "a",
 		hint: "This is some hint text and this page is current."
 	},
 	{
 		label: "Link Three",
 		destination: "#",
 		isCurrent: false,
-		linkTag: "a"
+		elementType: "a"
 	}
 ];
 
 const headingAndLinks = () => (
-	<StackedNav heading={heading}>
+	<StackedNav {...heading}>
 		{links.map((item, index) => (
 			<StackedNavLink {...item} key={`nav${index}`} />
 		))}
 	</StackedNav>
 );
 
-const headingOnly = () => <StackedNav heading={heading} />;
+const headingOnly = () => <StackedNav {...heading} />;
 
 const linkHeading = Object.assign(
 	{},
 	{
 		link: {
 			destination: "/heading-link/",
-			linkTag: "a",
+			elementType: "a",
 			isCurrent: true
 		}
 	},
 	heading
 );
 
-const headingWithLink = () => <StackedNav heading={linkHeading} />;
+const headingWithLink = () => <StackedNav {...linkHeading} />;
 
 const noHeading = () => (
 	<StackedNav>

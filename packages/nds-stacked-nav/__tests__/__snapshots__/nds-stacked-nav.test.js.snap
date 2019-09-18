@@ -6,42 +6,42 @@ exports[`StackedNav should match snapshot with supplied props 1`] = `
   className="stacked-nav"
 >
   <Heading
+    elementType="h1"
     label="Stacked Nav Heading"
-    labelTag="h1"
   />
   <ul
     className="stacked-nav__list"
   >
     <StackedNavLink
       destination="#"
+      elementType="a"
       isCurrent={true}
       key="idx0"
       label="Form Group"
-      linkTag="a"
     />
     <StackedNavLink
       destination="#"
+      elementType="a"
       hint="This is a piece of hint text"
       key="idx1"
       label="Page Header"
-      linkTag="a"
     />
     <StackedNavLink
       destination="#"
+      elementType="a"
       key="idx2"
       label="Link Three"
-      linkTag="a"
     />
     <StackedNavLink
       destination="#"
+      elementType="a"
       key="idx3"
       label="Link Four"
-      linkTag="a"
     />
     <StackedNavLink
       destination="#"
+      elementType="a"
       key="idx4"
-      linkTag="a"
     />
   </ul>
 </nav>

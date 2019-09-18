@@ -50,7 +50,7 @@ import { Link } from "react-router-dom";
 
 The text that appears as the component's heading. If the `label` is omitted, the heading section of the component will not render at all.
 
-###### labelTag
+###### elementType
 
 - Type: `React.ElementType`
 - Default: `p`
@@ -64,7 +64,7 @@ The tag that you would like to use to wrap the label for the heading. The defaul
 
 An object to describe an optional link for the heading of the stacked nav component.
 
-###### link.linkTag
+###### link.elementType
 
 - Type: `React.ElementType`
 - Default: `a`
@@ -109,7 +109,7 @@ The value that appears as the link's text, takes precedence over a supplied chil
 <StackedNavLink label="This will appear!">This won't appear</StackedNavLink>
 ```
 
-###### linkTag
+###### elementType
 
 - Type: `React.ElementType`
 - Default: `a`

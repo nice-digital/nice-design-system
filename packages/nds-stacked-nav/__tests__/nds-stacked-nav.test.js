@@ -6,7 +6,7 @@ import { StackedNav, StackedNavLink } from "../src/StackedNav";
 
 const heading = {
 	label: "Stacked Nav Heading",
-	labelTag: "h1"
+	elementType: "h1"
 };
 
 const links = [
@@ -14,27 +14,27 @@ const links = [
 		label: "Form Group",
 		destination: "#",
 		isCurrent: true,
-		linkTag: "a"
+		elementType: "a"
 	},
 	{
 		label: "Page Header",
 		destination: "#",
-		linkTag: "a",
+		elementType: "a",
 		hint: "This is a piece of hint text"
 	},
 	{
 		label: "Link Three",
 		destination: "#",
-		linkTag: "a"
+		elementType: "a"
 	},
 	{
 		label: "Link Four",
 		destination: "#",
-		linkTag: "a"
+		elementType: "a"
 	},
 	{
 		destination: "#",
-		linkTag: "a"
+		elementType: "a"
 	}
 ];
 
@@ -68,7 +68,7 @@ describe("StackedNav", () => {
 
 	it("should render a custom tag when passed to the header", () => {
 		const localHeading = Object.assign({}, heading, {
-			labelTag: "h6"
+			elementType: "h6"
 		});
 		const wrapper = mount(<StackedNav {...localHeading} />);
 		expect(wrapper.find("h6")).toHaveLength(1);

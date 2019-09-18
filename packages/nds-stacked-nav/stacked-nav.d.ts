@@ -5,21 +5,21 @@ declare module "@nice-digital/nds-stacked-nav" {
 		destination?: string;
 		isCurrent?: boolean;
 		label?: React.ReactNode;
-		linkTag?: React.ReactNode;
+		elementType?: React.ElementType | string;
 		hint?: string;
 		children?: string;
 	}
 
 	export interface StackedNavProps {
 		label?: React.ReactNode;
-		labelTag?: React.ReactNode;
+		elementType?: React.ElementType;
 		link?: HeadingLink;
 	}
 
 	interface HeadingLink {
 		destination: string;
 		isCurrent?: boolean;
-		linkTag?: React.ReactNode;
+		elementType?: React.ElementType | string;
 	}
 
 	export const StackedNav: React.FC<StackedNavProps>;
