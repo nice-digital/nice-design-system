@@ -89,4 +89,13 @@ describe("GridItem", () => {
 		);
 		expect(wrapper.find("[data-g]").props()["aria-label"]).toEqual("test");
 	});
+
+	it("should use elementType prop as rendered DOM node type", () => {
+		const wrapper = shallow(
+			<GridItem cols={6} elementType="li">
+				Test
+			</GridItem>
+		);
+		expect(wrapper.find("[data-g]").type()).toEqual("li");
+	});
 });

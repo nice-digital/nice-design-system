@@ -3,6 +3,7 @@
 exports[`GridItem should match snapshot 1`] = `
 <GridItem
   cols={6}
+  elementType="div"
 >
   <div
     data-g="6"

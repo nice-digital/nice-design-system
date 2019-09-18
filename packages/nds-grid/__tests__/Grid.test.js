@@ -136,4 +136,13 @@ describe("Grid", () => {
 		);
 		expect(wrapper.find(".grid").props().className).toEqual("grid mt--d");
 	});
+
+	it("should use elementType prop as rendered DOM node type", () => {
+		const wrapper = shallow(
+			<Grid elementType="ul">
+				<GridItem cols={6}>Test</GridItem>
+			</Grid>
+		);
+		expect(wrapper.find(".grid").type()).toEqual("ul");
+	});
 });
