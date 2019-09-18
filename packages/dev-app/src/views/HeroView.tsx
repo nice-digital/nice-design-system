@@ -6,7 +6,7 @@ const Cta = () => <Button variant="cta">Hello!</Button>;
 
 const Extra = (
 	<>
-		<h2>Extra stuff here</h2>
+		<h2 className="h4">Extras column</h2>
 		<ul>
 			<li>A list item</li>
 			<li>Another list item</li>
@@ -21,7 +21,7 @@ export const HeroView = () => {
 	return (
 		<>
 			<Hero
-				title="this is the title"
+				title="This is the title"
 				intro="This is a hero intro that should explain in a few words what the
 				site is about"
 				actions={<Cta />}

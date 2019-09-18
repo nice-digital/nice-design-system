@@ -23,7 +23,7 @@ export const Hero = props => {
 
 Hero.propTypes = {
 	actions: PropTypes.node,
-	title: PropTypes.node,
+	extra: PropTypes.node,
 	intro: PropTypes.node,
-	extra: PropTypes.node
+	title: PropTypes.node.isRequired
 };
