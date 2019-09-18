@@ -20,49 +20,51 @@ const FakeLink = props => {
 };
 
 const headingOnly = () => {
-	const headingProps = {
+	const props = {
 		headingText: "Hello there"
 	};
 	return (
 		<ListWrapper>
-			<Card heading={headingProps} />
+			<Card {...props} />
 		</ListWrapper>
 	);
 };
 
 const headingOnlyLink = () => {
-	const headingProps = {
+	const props = {
 		headingText: "Hello there",
-		destination: "/",
-		linkTag: "a",
-		headerTag: "h1"
+		elementType: "h1",
+		link: {
+			destination: "/",
+			elementType: "a"
+		}
 	};
 	return (
 		<ListWrapper>
-			<Card heading={headingProps} />
+			<Card {...props} />
 		</ListWrapper>
 	);
 };
 
 const nonAnchorLink = () => {
-	const headingProps = {
+	const props = {
 		headingText: "This card has a custom link tag",
-		destination: "/test",
-		linkTag: FakeLink,
-		headerTag: "h3"
+		elementType: "h3",
+		link: {
+			destination: "/test",
+			elementType: FakeLink
+		}
 	};
 	return (
 		<ListWrapper>
-			<Card heading={headingProps} />
+			<Card {...props} />
 		</ListWrapper>
 	);
 };
 
 const fullCardWithComponentMeta = () => {
 	const fullProps = {
-		heading: {
-			headingText: "Full card with component in metadata"
-		},
+		headingText: "Full card with component in metadata",
 		metadata: [
 			{
 				value: <Tag alpha>Component as value</Tag>
@@ -87,11 +89,11 @@ const customisable = () => {
 	return (
 		<ListWrapper>
 			<Card
-				heading={{
-					headingText: text("headingText", "Card heading text", "Heading"),
-					destination: text("destination", "/about/", "Heading"),
-					linkTag: text("linkTag", "a" || "a", "Heading"),
-					headingTag: text("headingTag", "h1" || "h1", "Heading")
+				headingText={text("headingText", "Card heading text", "Heading")}
+				elementType={text("elementType", "h1" || "h1", "Heading")}
+				link={{
+					destination: text("link.destination", "/about/", "Heading"),
+					elementType: text("link.elementType", "a" || "a", "Heading")
 				}}
 				metadata={[
 					{
