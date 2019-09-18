@@ -13,6 +13,7 @@ export const GridItem = props => {
 		lg,
 		xl,
 		className,
+		elementType: GridItemElementType,
 		...rest
 	} = props;
 
@@ -43,9 +44,9 @@ export const GridItem = props => {
 		.join(" ");
 
 	return (
-		<div data-g={gridColsAttr} className={className} {...rest}>
+		<GridItemElementType data-g={gridColsAttr} className={className} {...rest}>
 			{children}
-		</div>
+		</GridItemElementType>
 	);
 };
 
@@ -71,5 +72,10 @@ GridItem.propTypes = {
 	md: breakpointPropType,
 	lg: breakpointPropType,
 	xl: breakpointPropType,
-	className: PropTypes.string
+	className: PropTypes.string,
+	elementType: PropTypes.elementType
+};
+
+GridItem.defaultProps = {
+	elementType: "div"
 };

@@ -15,12 +15,15 @@
 					- [gutter](#gutter)
 					- [debug](#debug)
 					- [className](#classname)
+					- [elementType](#elementtype)
 				- [GridItem](#griditem)
 					- [children](#children-1)
 					- [cols](#cols)
 					- [push](#push)
 					- [pull](#pull)
 					- [xs, sm, md, lg, xl](#xs-sm-md-lg-xl)
+					- [className](#classname-1)
+					- [elementType](#elementtype-1)
 		- [SCSS](#scss)
 		- [HTML](#html)
 
@@ -105,6 +108,13 @@ Puts coloured debug outlines round grid and grid items to enable debugging layou
 
 Additional classes to render on the grid element. Useful for margin classes e.g. `mt--d`.
 
+###### elementType
+
+- Type: `React.ElementType`
+- Default: `div`
+
+A custom tag type for the grid. Useful if semantically your grid is a `ul` or `ol`. Defaults to a normal HTMLDivElement. Example: `<Grid elementType="ul"></Grid>`.
+
 ##### GridItem
 
 ###### children
@@ -137,12 +147,19 @@ The number of columns (1-11) to pull this grid item on the smallest screen size.
 
 The grid definition at the breakpoint. Use a number to span that number of columns, or pass an object to configure cols, push and/or pull.
 
-####### className
+###### className
 
 - Type: `string`
 - Default: `""`
 
 Additional classes to render on the grid item element. Useful for margin classes e.g. `mt--d`.
+
+###### elementType
+
+- Type: `React.ElementType`
+- Default: `div`
+
+A custom tag type for the grid item. Useful if semantically your grid is a `ul` or `ol`. Defaults to a normal HTMLDivElement. Example: `<GridItem elementType="ul"></GridItem>`.
 
 ### SCSS
 

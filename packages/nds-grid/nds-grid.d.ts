@@ -35,8 +35,11 @@ declare module "@nice-digital/nds-grid" {
 		xl?: BreakPointGridDefinition;
 		/** Additional classes to add to the grid, for example mt--e */
 		className?: string;
+		/** The type of DOM node to render for the grid item. Leave blank to default to div. */
+		elementType?: React.ElementType;
 	}
 
+	/** An item within the grid than spans up to 12 columnns */
 	export const GridItem: React.FC<GridItemProps>;
 
 	export interface GridProps {
@@ -54,27 +57,29 @@ declare module "@nice-digital/nds-grid" {
 		debug?: boolean;
 		/** Additional classes to add to the grid, for example mt--e */
 		className?: string;
+		/** The type of DOM node to render for the grid. Leave blank to default to div. */
+		elementType?: React.ElementType;
+	}
+
+	interface GridComponent extends React.FC<GridProps> {
+		gutter: {
+			none: "none";
+			standard: "standard";
+			compact: "compact";
+			loose: "loose";
+		};
+		horizontalAlignment: {
+			left: "left";
+			center: "center";
+			right: "right";
+		};
+		verticalAlignment: {
+			top: "top";
+			middle: "middle";
+			bottom: "bottom";
+		};
 	}
 
 	/** A mobile first, 12 columns grid component */
-	export const Grid: React.FC<GridProps>;
-
-	Grid.gutter = {
-		none: "none",
-		standard: "standard",
-		compact: "compact",
-		loose: "loose"
-	};
-
-	Grid.horizontalAlignment = {
-		left: "left",
-		center: "center",
-		right: "right"
-	};
-
-	Grid.verticalAlignment = {
-		top: "top",
-		middle: "middle",
-		bottom: "bottom"
-	};
+	export const Grid: GridComponent;
 }

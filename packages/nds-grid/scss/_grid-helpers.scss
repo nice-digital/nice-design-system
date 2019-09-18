@@ -130,7 +130,8 @@
 /// @see grid-item-debug
 /// @since 0.1.0
 @mixin nds-grid-debug {
-  outline: 4px dashed red;
+  outline: rem($nds-spacing-xx-small) dashed red;
+  outline-offset: rem($nds-spacing-x-small);
 }
 
 // Helper mixin for outputting breakpoints within a custom grid item.
@@ -279,7 +280,7 @@
 /// @see grid-debug
 /// @since 0.1.0
 @mixin nds-grid-item-debug {
-  outline: 2px dashed blue;
+  outline: rem($nds-spacing-xx-small) dashed blue;
 }
 
 @mixin nds-generate-grid-classes($breakpoint: null) {

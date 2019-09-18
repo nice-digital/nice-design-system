@@ -17,6 +17,7 @@ export const Grid = props => {
 		verticalAlignment,
 		debug,
 		className,
+		elementType: GridElementType,
 		...rest
 	} = props;
 
@@ -34,9 +35,9 @@ export const Grid = props => {
 		[className]: className
 	});
 	return (
-		<div className={classNames} {...rest}>
+		<GridElementType className={classNames} {...rest}>
 			{children}
-		</div>
+		</GridElementType>
 	);
 };
 
@@ -82,12 +83,14 @@ Grid.propTypes = {
 		Grid.gutter.loose
 	]),
 	debug: PropTypes.bool,
-	className: PropTypes.string
+	className: PropTypes.string,
+	elementType: PropTypes.elementType
 };
 
 Grid.defaultProps = {
 	reverse: false,
 	gutter: Grid.gutter.standard,
 	horizontalAlignment: Grid.horizontalAlignment.left,
-	verticalAlignment: Grid.verticalAlignment.top
+	verticalAlignment: Grid.verticalAlignment.top,
+	elementType: "div"
 };
