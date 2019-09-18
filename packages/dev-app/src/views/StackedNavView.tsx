@@ -45,7 +45,10 @@ export const StackedNavView = () => {
 						</StackedNavLink>
 					</StackedNav>
 				</div>
-				<div data-g="8">
+				<div data-g="4">
+					<StackedNav />
+				</div>
+				<div data-g="4">
 					<h1>Stacked Nav</h1>
 					<p>
 						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa

@@ -77,7 +77,7 @@ StackedNavLink.propTypes = {
 	label: PropTypes.node,
 	elementType: PropTypes.elementType,
 	hint: PropTypes.node,
-	children: PropTypes.oneOfType([PropTypes.string])
+	children: PropTypes.node
 };
 
 export const StackedNav = props => {
@@ -101,5 +101,5 @@ StackedNav.propTypes = {
 	children: PropTypes.oneOfType([
 		PropTypes.arrayOf(StackedNavLink),
 		PropTypes.objectOf(StackedNavLink)
-	])
+	]).isRequired
 };

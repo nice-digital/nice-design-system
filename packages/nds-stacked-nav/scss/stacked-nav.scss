@@ -54,7 +54,8 @@
     position: relative;
     text-decoration: none;
 
-    &[aria-current='true'] {
+    &[aria-current='true'],
+    &[aria-current='page'] {
       background: $nds-colour-nice-grey-3;
       font-weight: bold;
 

@@ -151,12 +151,15 @@ If you're not using [React](#react), then include the [SCSS as above](#scss) and
 
 ```html
 <nav class="stacked-nav" aria-label="Stacked Nav Heading">
-	<h1 class="stacked-nav__root">
+	<p class="stacked-nav__root">
 		<a href="/heading-link/">Stacked Nav Heading</a>
-	</h1>
+	</p>
 	<ul class="stacked-nav__list">
 		<li class="stacked-nav__list-item">
 			<a aria-current="true" href="/page-one/">Link One</a>
+			<span class="stacked-nav__hint">
+				This is some hint text and this page is current.
+			</span>
 		</li>
 		<li class="stacked-nav__list-item">
 			<a href="/page-two/">Link Two</a>

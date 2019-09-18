@@ -70,7 +70,13 @@ describe("StackedNav", () => {
 		const localHeading = Object.assign({}, heading, {
 			elementType: "h6"
 		});
-		const wrapper = mount(<StackedNav {...localHeading} />);
+		const wrapper = mount(
+			<StackedNav {...localHeading}>
+				{links.map((item, index) => (
+					<StackedNavLink key={`idx${index}`} {...item} />
+				))}
+			</StackedNav>
+		);
 		expect(wrapper.find("h6")).toHaveLength(1);
 	});
 
