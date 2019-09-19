@@ -4,6 +4,8 @@ import classnames from "classnames";
 
 import "../scss/alert.scss";
 
+const allowedTypes = ["info", "caution", "error", "success"];
+
 export const Alert = props => {
 	const { children, type, ...rest } = props;
 	const classNames = classnames({
@@ -18,7 +20,7 @@ export const Alert = props => {
 };
 
 Alert.propTypes = {
-	type: PropTypes.oneOf(["info", "caution", "error", "success"]),
+	type: PropTypes.oneOf(allowedTypes),
 	children: PropTypes.oneOfType([
 		PropTypes.arrayOf(PropTypes.node),
 		PropTypes.node
@@ -28,5 +30,3 @@ Alert.propTypes = {
 Alert.defaultProps = {
 	type: "info"
 };
-
-export default Alert;
