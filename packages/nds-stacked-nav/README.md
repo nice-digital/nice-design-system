@@ -20,18 +20,18 @@ Import the `StackedNav` and `StackedNavLink` components from the package and use
 
 ```jsx
 import React from "react";
-import { StackedNav, StackedNavLinks } from "@nice-digital/nds-stacked-nav";
+import { StackedNav, StackedNavLink } from "@nice-digital/nds-stacked-nav";
 import { Link } from "react-router-dom";
 
-<StackedNav label="Explore our site" labelTag="h2">
+<StackedNav label="Explore our site" elementType="h2">
 	<StackedNavLink to="/about">About Page</StackedNavLink>
 	<StackedNavLink to="/contact">Contact Page</StackedNavLink>
 </StackedNav>
 
 <StackedNav
 	label="Explore our site"
-	labelTag="h3"
-	link={{ destination: "/sitemap", isCurrent: true, linkTag: Link }}
+	elementType="h3"
+	link={{ destination: "/sitemap", isCurrent: true, elementType: Link }}
 >
 	<StackedNavLink to="/about" />
 	<StackedNavLink to="/contact" />
@@ -101,7 +101,7 @@ Can be used instead of the label property.
 
 ###### label
 
-- Type: `string`
+- Type: `React.ElementType`
 
 The value that appears as the link's text, takes precedence over a supplied child.
 
@@ -132,7 +132,7 @@ A boolean value to determine whether the link should have style and ARIA attribu
 
 ###### hint
 
-- Type: `string`
+- Type: `React.ElementType`
 - Default: `null`
 
 A string can be passed to the `hint` property to display some additional text underneath the main label (but still inside the link element).

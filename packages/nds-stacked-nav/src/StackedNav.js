@@ -72,7 +72,7 @@ export const StackedNavLink = props => {
 };
 
 StackedNavLink.propTypes = {
-	destination: PropTypes.node,
+	destination: PropTypes.string,
 	isCurrent: PropTypes.bool,
 	label: PropTypes.node,
 	elementType: PropTypes.elementType,

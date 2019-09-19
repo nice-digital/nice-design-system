@@ -10,13 +10,13 @@ declare module "@nice-digital/nds-stacked-nav" {
 		label?: React.ReactNode;
 		elementType?: React.ElementType;
 		link?: HeadingLink;
-		children?: Array<StackedNavLink>;
+		children?: Array<StackedNavLinkProps>;
 	}
 
 	interface BaseStackedNavLinkProps {
 		destination?: string;
 		isCurrent?: boolean;
-		hint?: string;
+		hint?: React.ElementType;
 		elementType?: React.ElementType | string;
 	}
 
