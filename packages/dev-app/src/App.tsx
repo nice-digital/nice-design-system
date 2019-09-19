@@ -4,6 +4,7 @@ import { Router, Route, Link } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import { FormGroupView } from "./views/FormGroupView";
 import { PageHeaderView } from "./views/PageHeaderView";
+import { GridView } from "./views/GridView";
 import { AlertView } from "./views/AlertView";
 import { StackedNavView } from "./views/StackedNavView";
 import "./App.scss";
@@ -28,6 +29,9 @@ class App extends Component {
 						<li>
 							<Link to="/alert">Alert</Link>
 						</li>
+						<li>
+							<Link to="/grid">Grid</Link>
+						</li>
 					</ul>
 				</nav>
 				<main>
@@ -35,6 +39,7 @@ class App extends Component {
 					<Route path="/pageheader" component={PageHeaderView} />
 					<Route path="/stackednav" component={StackedNavView} />
 					<Route path="/alert" component={AlertView} />
+					<Route path="/grid" component={GridView} />
 				</main>
 			</Router>
 		);

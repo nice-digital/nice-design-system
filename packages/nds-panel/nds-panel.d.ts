@@ -7,7 +7,7 @@ declare module "@nice-digital/nds-panel" {
 	}
 
 	interface PanelComponent extends React.FC<PanelProps> {
-		variants: {
+		variant: {
 			supporting: "supporting";
 			impact: "impact";
 			primary: "primary";
