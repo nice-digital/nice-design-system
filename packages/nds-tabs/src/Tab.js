@@ -1,7 +1,6 @@
-import React from "react";
 import PropTypes from "prop-types";
 
-export const Tab = props => {
+export const Tab = () => {
 	return null;
 };
 
@@ -15,5 +14,3 @@ Tab.propTypes = {
 };
 
 Tab.defaultProps = {};
-
-export default Tab;

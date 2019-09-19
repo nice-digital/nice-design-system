@@ -6,6 +6,7 @@ import { FormGroupView } from "./views/FormGroupView";
 import { PageHeaderView } from "./views/PageHeaderView";
 import { GridView } from "./views/GridView";
 import { AlertView } from "./views/AlertView";
+import { TabsView } from "./views/TabsView";
 import "./App.scss";
 
 const browserHistory = createBrowserHistory();
@@ -27,12 +28,16 @@ class App extends Component {
 					<li>
 						<Link to="/alert">Alert</Link>
 					</li>
+					<li>
+						<Link to="/tabs">Tabs</Link>
+					</li>
 				</ul>
 				<main className="container">
 					<Route path="/formgroup" component={FormGroupView} />
 					<Route path="/pageheader" component={PageHeaderView} />
 					<Route path="/alert" component={AlertView} />
 					<Route path="/grid" component={GridView} />
+					<Route path="/tabs" component={TabsView} />
 				</main>
 			</Router>
 		);

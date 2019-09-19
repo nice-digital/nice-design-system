@@ -1,7 +1,6 @@
-"use strict";
-
+import React from "react";
 import Tabs from "../src/Tabs";
 
-describe("@nice-digital/nds-tabs", () => {
+describe("Tabs", () => {
 	test.todo("add tabs component tests");
 });

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-
 import { slugify } from "@nice-digital/nds-core/es/utils";
-import Tab from "./Tab";
+import { Tab } from "./Tab";
+export { Tab };
 import "./../scss/tabs.scss";
 
 const keyCodes = {
@@ -20,7 +20,7 @@ const keyCodes = {
 	down: 40
 };
 
-class Tabs extends Component {
+export class Tabs extends Component {
 	constructor(props) {
 		super(props);
 
@@ -39,23 +39,20 @@ class Tabs extends Component {
 			 */
 			focusActiveTabButton: false
 		};
-
-		this.handleTabButtonClick = this.handleTabButtonClick.bind(this);
-		this.handleTabButtonKey = this.handleTabButtonKey.bind(this);
 	}
 
 	componentDidMount() {
 		this.setState({ canUseDOM: true });
 	}
 
-	handleTabButtonClick(index) {
+	handleTabButtonClick = index => {
 		this.setState({
 			index: index,
 			focusActiveTabButton: true
 		});
-	}
+	};
 
-	handleTabButtonKey(e, i) {
+	handleTabButtonKey = (e, i) => {
 		let newIndex = i;
 
 		switch (e.which) {
@@ -84,7 +81,7 @@ class Tabs extends Component {
 				index: newIndex,
 				focusActiveTabButton: true
 			});
-	}
+	};
 
 	getTabChildElements() {
 		return React.Children.toArray(this.props.children).filter(
@@ -95,8 +92,7 @@ class Tabs extends Component {
 	render() {
 		const tabs = this.getTabChildElements();
 
-		const getTabSlug = (title: string, id: ?string = null): string =>
-			id || slugify(title);
+		const getTabSlug = (title, id = null) => id || slugify(title);
 
 		return (
 			<div className={`tabs${this.state.canUseDOM ? " js" : ""}`}>
@@ -154,5 +150,3 @@ class Tabs extends Component {
 Tabs.propTypes = {
 	children: PropTypes.oneOfType([PropTypes.arrayOf(Tab), Tab]).isRequired
 };
-
-export { Tabs as default, Tab };
