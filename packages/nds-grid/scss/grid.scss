@@ -2,6 +2,20 @@
 /// @group grid
 ////
 
+@import '_grid-helpers';
+
+/// The width of the default spacing between grid items, in rems
+/// @since 0.2.0
+$nds-grid-gutter: 1rem * ($nds-spacing-medium / $nds-base-font-size) !default;
+
+/// The width of the spacing between grid items in a compact grid, in rems
+/// @since 0.2.0
+$nds-grid-gutter-compact: 1rem * ($nds-spacing-small / $nds-base-font-size) !default;
+
+/// The width of the spacing between grid items in a loose grid, in rems
+/// @since 0.2.0
+$nds-grid-gutter-loose: 1rem * ($nds-spacing-large / $nds-base-font-size) !default;
+
 /// Grid item default selector.
 /// Use within a `.grid`.
 /// Use the value of the data attribute to specify the grid item widths
@@ -10,10 +24,10 @@
 ///
 /// @example html HTML usage
 ///   <div class="grid">
-///     <div data-g="12 xs:6 md:4 lg:one-quarter xl:2">Grid item</div>
-///     <div data-g="12 xs:6 md:4 lg:one-quarter xl:2">Grid item</div>
-///     <div data-g="12 xs:6 md:4 lg:one-quarter xl:2">Grid item</div>
-///     <div data-g="12 xs:6 md:4 lg:one-quarter xl:2">Grid item</div>
+///     <div data-g="12 xs:6 md:4 lg:3 xl:2">Grid item</div>
+///     <div data-g="12 xs:6 md:4 lg:3 xl:2">Grid item</div>
+///     <div data-g="12 xs:6 md:4 lg:3 xl:2">Grid item</div>
+///     <div data-g="12 xs:6 md:4 lg:3 xl:2">Grid item</div>
 ///   </div>
 [data-g] {
   @include nds-grid-item;

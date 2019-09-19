@@ -20,7 +20,7 @@ addDecorator(withA11y);
 
 // Wrap all stories in a container
 const wrapperDecorator = storyFn => (
-	<div className="container pt--d">{storyFn()}</div>
+	<div className="container pv--d">{storyFn()}</div>
 );
 addDecorator(wrapperDecorator);
 

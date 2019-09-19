@@ -9,10 +9,10 @@ export const Panel = props => {
 	const panelClasses = ["panel"];
 
 	switch (variant) {
-		case Panel.variants.impact:
+		case Panel.variant.impact:
 			panelClasses.push("panel--impact");
 			break;
-		case Panel.variants.primary:
+		case Panel.variant.primary:
 			panelClasses.push("panel--primary");
 			break;
 		default:
@@ -28,7 +28,7 @@ export const Panel = props => {
 	);
 };
 
-Panel.variants = {
+Panel.variant = {
 	supporting: "supporting",
 	impact: "impact",
 	primary: "primary"
@@ -40,11 +40,11 @@ Panel.propTypes = {
 		PropTypes.node
 	]).isRequired,
 	variant: PropTypes.oneOf([
-		Panel.variants.supporting,
-		Panel.variants.impact,
-		Panel.variants.primary
+		Panel.variant.supporting,
+		Panel.variant.impact,
+		Panel.variant.primary
 	]),
 	className: PropTypes.string
 };
 
-Panel.defaultProps = { variant: Panel.variants.supporting };
+Panel.defaultProps = { variant: Panel.variant.supporting };
