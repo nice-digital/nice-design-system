@@ -4,6 +4,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { text, select } from "@storybook/addon-knobs";
 
+import { Grid, GridItem } from "@nice-digital/nds-grid";
 import { Panel } from "@nice-digital/nds-panel";
 
 storiesOf("Panel", module)
@@ -58,15 +59,17 @@ storiesOf("Panel", module)
 		</Panel>
 	))
 	.add("In a grid", () => (
-		<div className="grid">
-			<div data-g="12 md:8">Main content would go here</div>
-			<aside data-g="12 md:4">
+		<Grid>
+			<GridItem cols={12} md={8}>
+				Main content would go here
+			</GridItem>
+			<GridItem cols={12} md={4} elementType="aside">
 				<Panel className="mt--0">
 					<h2 className="h3">Primary panel</h2>
 					<p>An example of a supporting panel in aside bar</p>
 				</Panel>
-			</aside>
-		</div>
+			</GridItem>
+		</Grid>
 	))
 	.add("Try it out", () => {
 		const HeadingTag = select(
@@ -81,7 +84,7 @@ storiesOf("Panel", module)
 
 		return (
 			<Panel
-				variant={select("Variant", Panel.variants)}
+				variant={select("Variant", Panel.variant)}
 				className={text("Additional class(es)", "mt--0")}
 			>
 				<HeadingTag>{text("Heading text", "Lorem ipsum")}</HeadingTag>

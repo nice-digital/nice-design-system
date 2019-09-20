@@ -33,7 +33,7 @@ FormGroup.propTypes = {
 	children: PropTypes.node.isRequired,
 	legend: PropTypes.node,
 	name: PropTypes.string,
-	hint: PropTypes.string,
+	hint: PropTypes.node,
 	inline: PropTypes.bool,
 	groupError: PropTypes.string
 };

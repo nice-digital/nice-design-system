@@ -2,34 +2,32 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../scss/card.scss";
 
-export const Card = props => {
-	const {
-		headingText,
-		destination,
-		linkTag: LinkTag,
-		headingTag: HeadingTag = "p"
-	} = props.heading;
-
-	const { metadata } = props;
-
-	const linkProps = {};
-
-	if (LinkTag && LinkTag === "a") {
-		linkProps.href = destination;
+const CardHeader = props => {
+	const { headingText, elementType: HeadingTag = "p", link } = props;
+	let linkProps = {};
+	if (link) {
+		const { elementType: LinkTag = "a", destination } = link;
+		if (LinkTag === "a") {
+			linkProps.href = destination;
+		} else {
+			linkProps.to = destination;
+		}
+		return (
+			<HeadingTag className="card__heading">
+				<LinkTag {...linkProps}>{headingText}</LinkTag>
+			</HeadingTag>
+		);
 	} else {
-		linkProps.to = destination;
+		return <HeadingTag className="card__heading">{headingText}</HeadingTag>;
 	}
+};
 
+export const Card = props => {
+	const { metadata } = props;
 	return (
 		<article className="card">
 			<header className="card__header">
-				<HeadingTag className="card__heading">
-					{LinkTag ? (
-						<LinkTag {...linkProps}>{headingText}</LinkTag>
-					) : (
-						headingText
-					)}
-				</HeadingTag>
+				<CardHeader {...props} />
 			</header>
 			{metadata && metadata.length && (
 				<dl className="card__metadata">
@@ -50,14 +48,12 @@ export const Card = props => {
 	);
 };
 
-export default Card;
-
 Card.propTypes = {
-	heading: PropTypes.shape({
-		headingText: PropTypes.node.isRequired,
+	headingText: PropTypes.node.isRequired,
+	elementType: PropTypes.elementType,
+	link: PropTypes.shape({
 		destination: PropTypes.node,
-		linkTag: PropTypes.elementType,
-		headingTag: PropTypes.elementType
+		elementType: PropTypes.elementType
 	}),
 	metadata: PropTypes.arrayOf(
 		PropTypes.shape({

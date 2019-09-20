@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StackedNav should match snapshot with supplied props 1`] = `
+<nav
+  aria-label="Stacked Nav Heading"
+  className="stacked-nav"
+>
+  <Heading
+    elementType="h1"
+    label="Stacked Nav Heading"
+  />
+  <ul
+    className="stacked-nav__list"
+  >
+    <StackedNavLink
+      destination="#"
+      elementType="a"
+      isCurrent={true}
+      key="idx0"
+      label="Form Group"
+    />
+    <StackedNavLink
+      destination="#"
+      elementType="a"
+      hint="This is a piece of hint text"
+      key="idx1"
+      label="Page Header"
+    />
+    <StackedNavLink
+      destination="#"
+      elementType="a"
+      key="idx2"
+      label="Link Three"
+    />
+    <StackedNavLink
+      destination="#"
+      elementType="a"
+      key="idx3"
+      label="Link Four"
+    />
+    <StackedNavLink
+      destination="#"
+      elementType="a"
+      key="idx4"
+    />
+  </ul>
+</nav>
+`;

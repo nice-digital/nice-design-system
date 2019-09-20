@@ -24,11 +24,11 @@ import { Card } from "@nice-digital/nds-card";
 import { MySuperComponent } from "./components/MySuperComponent";
 
 <Card
-	heading={
-		headingText: "Card title",
-		destination: "/about/",
-		linkTag "a",
-		headingTag: "h1",
+	headingText="Card title"
+	elementType="h1"
+	link={
+		destination: "/destination",
+		elementType: "a"
 	}
 	metadata=[
 		{
@@ -42,17 +42,17 @@ import { MySuperComponent } from "./components/MySuperComponent";
 />
 
 <Card
-	heading={
-		headingText: "Card title",
-		destination: "/about/",
-		linkTag "a",
-		headingTag: "h1",
+	headingText="Card title"
+	elementType="h1"
+	link={
+		destination: "/destination",
+		elementType: "a"
 	}
 />
 
-// The mimimum to be supplied is heading.headingText
+// The mimimum to be supplied is headingText
 
-<Card heading={headingText: "Card title"} />
+<Card headingText="Card title" />
 
 ```
 
@@ -60,47 +60,32 @@ import { MySuperComponent } from "./components/MySuperComponent";
 
 #### Props
 
-##### heading
-
-- Type: `object`
-
-An object to describe the structure of the heading part of the card, the props of which are described below.
-
-```js
-const heading = {
-	headingText: "Card heading text",
-	destination: "/destination",
-	linkTag: "a",
-	headingTag: "h1"
-};
-```
-
-##### heading.headingText
+##### headingText
 
 - Type: `string` (required)
 
 The text that appears as the card's heading.
 
-##### heading.destination
+##### elementType
+
+- Type: `React.ElementType`
+- Default: `p`
+
+This can be used if you wish the card heading tag to be more structurally meaningful tag. By default it's a `p` tag, so `<p>Card heading text</p>` but you can pass another tag such as a `h3` to result in `<h3>Card heading text</h3>`.
+
+##### link.destination
 
 - Type: `string`
 - Default: `null`
 
 A string to represent the destination if the card heading is a link.
 
-##### heading.linkTag
+##### link.elementType
 
-- Type: `string`
+- Type: `React.ElementType`
 - Default: `a`
 
 The tag that you would like to use for the heading link. By default it's an HTMLAnchorElement and will result in something like `<a href="/destination">Card heading text</a>` but you can pass a custom router link tag such as `Link` to result in `<Link to="/destination">Card heading text</Link>`.
-
-##### heading.headingTag
-
-- Type: `string`
-- Default: `p`
-
-This can be used if you wish the card heading tag to be more structurally suggestive tag. By default it's a `p` tag, so `<p>Card heading text</p>` but you can pass another tag such as a `h3` to result in `<h3>Card heading text</h3>`.
 
 ##### metadata
 

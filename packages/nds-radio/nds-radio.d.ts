@@ -6,7 +6,7 @@ declare module "@nice-digital/nds-radio" {
 		error?: boolean | string;
 		name?: string;
 		inline?: boolean;
-		label?: string;
+		label?: React.ReactNode;
 		value: string;
 		hint?: string;
 	}
