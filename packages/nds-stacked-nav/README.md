@@ -33,8 +33,8 @@ import { Link } from "react-router-dom";
 	elementType="h3"
 	link={{ destination: "/sitemap", isCurrent: true, elementType: Link }}
 >
-	<StackedNavLink to="/about" />
-	<StackedNavLink to="/contact" />
+	<StackedNavLink to="/about" label="About Page"/>
+	<StackedNavLink to="/contact" label="Contact Page"/>
 </StackedNav>
 ```
 
@@ -93,7 +93,7 @@ A boolean value to determine whether the link should have style and ARIA attribu
 
 Can be used instead of the label property.
 
-> The label property takes precedence over a child string
+> The label property takes precedence over a child string, and if using TypeScript it will prevent you from supplying both.
 
 ```jsx
 <StackedNavLink>About Page</StackedNavLink>
