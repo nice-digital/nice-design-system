@@ -22,16 +22,20 @@ declare module "@nice-digital/nds-stacked-nav" {
 
 	interface ChildStackedNavLinkProps extends BaseStackedNavLinkProps {
 		children: React.ReactNode;
+		label?: never;
 	}
 
 	interface LabelStackedNavLinkProps extends BaseStackedNavLinkProps {
 		label: React.ReactNode;
+		children?: never;
 	}
 
-	export type StackedNavLinkProps =
-		| ChildStackedNavLinkProps
-		| LabelStackedNavLinkProps;
+	type StackedNavLinkType = React.FC<
+		ChildStackedNavLinkProps | LabelStackedNavLinkProps
+	>;
 
-	export const StackedNav: React.FC<StackedNavProps>;
-	export const StackedNavLink: React.FC<StackedNavLinkProps>;
+	type StackedNavPropType = React.FC<StackedNavProps>;
+
+	export const StackedNav: StackedNavPropType;
+	export const StackedNavLink: StackedNavLinkType;
 }
