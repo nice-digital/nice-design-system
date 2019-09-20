@@ -1,6 +1,6 @@
 {
   "name": "storybook",
-  "version": "1.0.7-alpha.0",
+  "version": "1.0.8-alpha.0",
   "private": true,
   "description": "> TODO: description",
   "author": "Warren Keith <warren.keith@nice.org.uk>",
@@ -37,7 +37,7 @@
     "@nice-digital/nds-checkbox": "^1.0.13-alpha.0",
     "@nice-digital/nds-core": "^1.0.8-alpha.0",
     "@nice-digital/nds-form-group": "^1.0.1-alpha.0",
-    "@nice-digital/nds-grid": "^1.0.1-alpha.0",
+    "@nice-digital/nds-grid": "^1.0.2-alpha.0",
     "@nice-digital/nds-page-header": "^1.0.8-alpha.0",
     "@nice-digital/nds-panel": "^1.0.11-alpha.0",
     "@nice-digital/nds-radio": "^1.0.13-alpha.0",
