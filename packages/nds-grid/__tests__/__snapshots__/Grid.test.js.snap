@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid should match snapshot 1`] = `
+<Grid
+  elementType="div"
+  gutter="standard"
+  horizontalAlignment="left"
+  reverse={false}
+  verticalAlignment="top"
+>
+  <div
+    className="grid"
+  >
+    <GridItem
+      cols={6}
+      elementType="div"
+    >
+      <div
+        data-g="6"
+      >
+        Test
+      </div>
+    </GridItem>
+    <GridItem
+      cols={6}
+      elementType="div"
+    >
+      <div
+        data-g="6"
+      >
+        Test
+      </div>
+    </GridItem>
+  </div>
+</Grid>
+`;

@@ -14,6 +14,7 @@
     "@nice-digital/nds-filters": "^1.0.7-alpha.0",
     "@nice-digital/nds-form-group": "^1.0.0",
     "@nice-digital/nds-forms": "^1.0.12-alpha.0",
+    "@nice-digital/nds-grid": "^1.0.0",
     "@nice-digital/nds-hero": "^1.0.7-alpha.0",
     "@nice-digital/nds-in-page-nav": "^1.0.7-alpha.0",
     "@nice-digital/nds-maintain-ratio": "^1.0.7-alpha.0",

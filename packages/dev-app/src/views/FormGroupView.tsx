@@ -1,7 +1,6 @@
 import React from "react";
 import { FormGroup } from "@nice-digital/nds-form-group";
 import { Radio } from "@nice-digital/nds-radio";
-import { Checkbox } from "@nice-digital/nds-checkbox";
 
 export const FormGroupView = () => {
 	return (

@@ -2,6 +2,8 @@
 /// @group grid
 ////
 
+@import '~@nice-digital/nds-core/scss/core';
+
 /// Grid mixin for applying to custom classes when creating a custom component
 /// and creating 'semantic' (sensible) class names.
 ///
@@ -128,7 +130,8 @@
 /// @see grid-item-debug
 /// @since 0.1.0
 @mixin nds-grid-debug {
-  outline: 4px dashed red;
+  outline: rem($nds-spacing-xx-small) dashed red;
+  outline-offset: rem($nds-spacing-x-small);
 }
 
 // Helper mixin for outputting breakpoints within a custom grid item.
@@ -277,5 +280,27 @@
 /// @see grid-debug
 /// @since 0.1.0
 @mixin nds-grid-item-debug {
-  outline: 2px dashed blue;
+  outline: rem($nds-spacing-xx-small) dashed blue;
+}
+
+@mixin nds-generate-grid-classes($breakpoint: null) {
+  $prefix: if($breakpoint, $breakpoint + ':', '');
+
+  // Width classes
+  @for $index from 1 through 12 {
+    [data-g~='#{ $prefix }#{ $index }'] {
+      width: percentage($index / 12);
+    }
+  }
+
+  // Push/ pull classes
+  @for $index from 0 through 12 {
+    [data-g~='#{ $prefix }push:#{ $index }'] {
+      left: percentage($index / 12);
+    }
+
+    [data-g~='#{ $prefix }pull:#{ $index }'] {
+      right: percentage($index / 12);
+    }
+  }
 }

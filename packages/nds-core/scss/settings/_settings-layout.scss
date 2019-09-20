@@ -5,15 +5,3 @@
 /// The maximum width of the default container, in pixels
 /// @since 0.5.2
 $nds-container-max-width: 1170;
-
-/// The width of the default spacing between grid items
-/// @since 0.2.0
-$nds-grid-gutter: 1em * ($nds-spacing-medium / 16) !default;
-
-/// The width of the spacing between grid items in a compact grid
-/// @since 0.2.0
-$nds-grid-gutter-compact: 1em * ($nds-spacing-small / 16) !default;
-
-/// The width of the spacing between grid items in a loose grid
-/// @since 0.2.0
-$nds-grid-gutter-loose: 1em * ($nds-spacing-large / 16) !default;

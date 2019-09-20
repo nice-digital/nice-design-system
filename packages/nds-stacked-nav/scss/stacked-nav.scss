@@ -18,9 +18,22 @@
     border-bottom: 1px solid $nds-colour-border;
     font-weight: bold;
     margin: 0;
-
+    max-width: none;
+    position: relative;
+    text-decoration: none;
     a {
       color: $nds-colour-text;
+    }
+    &--no-link {
+      padding: em($nds-spacing-small);
+    }
+  }
+
+  &__hint {
+    color: $nds-colour-text;
+    display: block;
+    & :active {
+      color: $nds-colour-nice-white;
     }
   }
 
@@ -41,6 +54,7 @@
     position: relative;
     text-decoration: none;
 
+    &[aria-current='true'],
     &[aria-current='page'] {
       background: $nds-colour-nice-grey-3;
       font-weight: bold;
@@ -64,6 +78,9 @@
     &:active {
       background: $nds-colour-icons;
       color: $nds-colour-link-inverse;
+      span {
+        color: $nds-colour-nice-white;
+      }
     }
   }
 
