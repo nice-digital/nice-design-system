@@ -13,32 +13,6 @@ const myCallsToAction = (
 	</>
 );
 
-const secondaryLinks = (
-	<>
-		<h2 className="h4">Quick links</h2>
-		<ul className="list list--unstyled">
-			<li>
-				<a href="#">Page One</a>
-			</li>
-			<li>
-				<a href="#">Page Two</a>
-			</li>
-			<li>
-				<a href="#">Page Three</a>
-			</li>
-			<li>
-				<a href="#">Page Four</a>
-			</li>
-			<li>
-				<a href="#">Page Five</a>
-			</li>
-			<li>
-				<a href="#">Page Six</a>
-			</li>
-		</ul>
-	</>
-);
-
 storiesOf("Hero", module)
 	.add("Title only", () => <Hero title="Page Title" />)
 	.add("Title and intro", () => (
@@ -62,6 +36,27 @@ storiesOf("Hero", module)
 			intro="This is a hero intro that should explain in a few words what the
 	site is about"
 			actions={myCallsToAction}
-			extra={secondaryLinks}
-		/>
+		>
+			<h2 className="h4">Quick links</h2>
+			<ul className="list list--unstyled">
+				<li>
+					<a href="#">Page One</a>
+				</li>
+				<li>
+					<a href="#">Page Two</a>
+				</li>
+				<li>
+					<a href="#">Page Three</a>
+				</li>
+				<li>
+					<a href="#">Page Four</a>
+				</li>
+				<li>
+					<a href="#">Page Five</a>
+				</li>
+				<li>
+					<a href="#">Page Six</a>
+				</li>
+			</ul>
+		</Hero>
 	));

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import "../scss/hero.scss";
 
 export const Hero = props => {
-	const { title, intro, actions, extra } = props;
+	const { title, intro, actions, children } = props;
 	return (
 		<div className="hero">
 			<div className="hero__container">
@@ -14,7 +14,7 @@ export const Hero = props => {
 						{intro && <p className="hero__intro">{intro}</p>}
 						{actions && <div className="hero__actions">{actions}</div>}
 					</div>
-					{extra && <div className="hero__extra">{extra}</div>}
+					{children && <div className="hero__extra">{children}</div>}
 				</div>
 			</div>
 		</div>
@@ -23,7 +23,7 @@ export const Hero = props => {
 
 Hero.propTypes = {
 	actions: PropTypes.node,
-	extra: PropTypes.node,
+	children: PropTypes.node,
 	intro: PropTypes.node,
 	title: PropTypes.node.isRequired
 };

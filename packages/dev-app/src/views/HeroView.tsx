@@ -4,29 +4,27 @@ import { Button } from "@nice-digital/nds-button";
 
 const Cta = () => <Button variant="cta">Hello!</Button>;
 
-const Extra = (
-	<>
-		<h2 className="h4">Extras column</h2>
-		<ul>
-			<li>A list item</li>
-			<li>Another list item</li>
-			<li>
-				<a href="#">A link</a>
-			</li>
-		</ul>
-	</>
-);
-
 export const HeroView = () => {
 	return (
 		<>
 			<Hero
 				title="This is the title"
-				intro="This is a hero intro that should explain in a few words what the
-				site is about"
+				intro="This is a hero intro"
 				actions={<Cta />}
-				extra={Extra}
-			/>
+			>
+				<h2 className="h4">Quick Links</h2>
+				<ul className="list--unstyled">
+					<li>
+						<a href="#">One</a>
+					</li>
+					<li>
+						<a href="#">Two</a>
+					</li>
+					<li>
+						<a href="#">Three</a>
+					</li>
+				</ul>
+			</Hero>
 		</>
 	);
 };

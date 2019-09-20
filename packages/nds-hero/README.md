@@ -73,14 +73,14 @@ const myCallsToAction = (
 <Hero title="Page title" actions={myCallsToAction} />;
 ```
 
-##### extra
+##### children
 
 - Type: `React.ReactNode`
 
-Extra space on the right-hand side of the component for up to 6 links, or other supporting text.
+If you supply child markup it will render in the extra space on the right-hand side of the component.
 
 ```js
-const secondaryLinks = (
+<Hero title="Page title">
 	<ul>
 		<li>
 			<a href="#">Page One</a>
@@ -101,8 +101,7 @@ const secondaryLinks = (
 			<a href="#">Page Six</a>
 		</li>
 	</ul>
-);
-<Hero title="Page title" extra={secondaryLinks} />;
+</Hero>
 ```
 
 ### SCSS

@@ -43,10 +43,8 @@ export const StackedNavView = () => {
 						<StackedNavLink destination="/hello">
 							This is a child not a label
 						</StackedNavLink>
+						<StackedNavLink label="test" />
 					</StackedNav>
-				</div>
-				<div data-g="4">
-					<StackedNav />
 				</div>
 				<div data-g="4">
 					<h1>Stacked Nav</h1>
