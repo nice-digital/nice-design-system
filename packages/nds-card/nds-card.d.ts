@@ -1,11 +1,9 @@
 declare module "@nice-digital/nds-card" {
 	import React = require("react");
 
-	interface CardHeadingProps {
-		headingText: string;
+	interface CardHeadingLinkProps {
 		destination?: string;
-		linkTag?: React.ElementType;
-		headingTag?: React.ElementType;
+		elementType?: React.ElementType;
 	}
 
 	interface CardMetaDataProps {
@@ -14,7 +12,9 @@ declare module "@nice-digital/nds-card" {
 	}
 
 	export interface CardProps {
-		heading: CardHeadingProps;
+		headingText: string;
+		elementType?: React.ElementType;
+		link?: CardHeadingLinkProps;
 		metadata?: Array<CardMetaDataProps>;
 	}
 

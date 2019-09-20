@@ -26,10 +26,11 @@ exports[`Breadcrumb should use tag prop to render custom link tag 1`] = `
 <li
   className="breadcrumbs__crumb"
 >
-  <CustomLink
-    to="/"
+  <a
+    href="/"
+    tag={[Function]}
   >
     Home
-  </CustomLink>
+  </a>
 </li>
 `;

@@ -51,7 +51,7 @@ Radio.propTypes = {
 	error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 	name: PropTypes.string,
 	inline: PropTypes.bool,
-	label: PropTypes.string,
+	label: PropTypes.node,
 	value: PropTypes.string.isRequired,
 	hint: PropTypes.string
 };

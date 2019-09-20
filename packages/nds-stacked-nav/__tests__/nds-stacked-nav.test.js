@@ -61,11 +61,6 @@ describe("StackedNav", () => {
 		expect(toJson(wrapper)).toMatchSnapshot();
 	});
 
-	it("should not render a ul if no links are supplied", () => {
-		const wrapper = shallow(<StackedNav {...heading} />);
-		expect(wrapper.find("ul")).toHaveLength(0);
-	});
-
 	it("should render a custom tag when passed to the header", () => {
 		const localHeading = Object.assign({}, heading, {
 			elementType: "h6"

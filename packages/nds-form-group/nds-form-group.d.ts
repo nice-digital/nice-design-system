@@ -4,7 +4,7 @@ declare module "@nice-digital/nds-form-group" {
 	export interface FormGroupProps {
 		inline?: boolean;
 		name?: string;
-		hint?: string;
+		hint?: React.ReactNode;
 		legend?: string;
 		children: React.ReactNode;
 		groupError?: string | boolean;

@@ -2,20 +2,7 @@
 
 > Breadcrumbs component for the NICE Design System
 
-- [`@nice-digital/nds-breadcrumbs`](#nice-digitalnds-breadcrumbs)
-	- [Installation](#installation)
-	- [Usage](#usage)
-		- [React](#react)
-			- [Routing](#routing)
-			- [Props](#props)
-				- [Breadcrumbs](#breadcrumbs)
-					- [children](#children)
-				- [Breadcrumb](#breadcrumb)
-					- [to](#to)
-					- [tag](#tag)
-					- [children](#children-1)
-		- [SCSS](#scss)
-		- [HTML](#html)
+- [`@nice-digital/nds-breadcrumbs`](#nice-digitalnds-breadcrumbs) - [Installation](#installation) - [Usage](#usage) - [React](#react) - [Routing](#routing) - [Props](#props) - [Breadcrumbs](#breadcrumbs) - [children](#children) - [Breadcrumb](#breadcrumb) - [to](#to) - [elementType](#elementtype) - [children](#children-1) - [SCSS](#scss) - [HTML](#html)
 
 ## Installation
 
@@ -39,7 +26,7 @@ import { Breadcrumbs, Breadcrumb } from "@nice-digital/nds-breadcrumbs";
 	<Breadcrumb to="https://www.nice.org.uk">NICE</Breadcrumb>
 	<Breadcrumb to="/">CKS</Breadcrumb>
 	<Breadcrumb>Topics</Breadcrumb>
-</Breadcrumbs>
+</Breadcrumbs>;
 ```
 
 > Note: The React component automatically imports the SCSS, so there's no need to import the SCSS directly yourself.
@@ -55,9 +42,11 @@ import { Breadcrumbs, Breadcrumb } from "@nice-digital/nds-breadcrumbs";
 
 <Breadcrumbs>
 	<Breadcrumb to="https://www.nice.org.uk">NICE</Breadcrumb>
-	<Breadcrumb to="/" tag={Link}>CKS</Breadcrumb>
+	<Breadcrumb to="/" tag={Link}>
+		CKS
+	</Breadcrumb>
 	<Breadcrumb>Topics</Breadcrumb>
-</Breadcrumbs>
+</Breadcrumbs>;
 ```
 
 #### Props
@@ -78,10 +67,10 @@ The indvidual breadcrumb items
 
 The URL the breadcrumb links to
 
-###### tag
+###### elementType
 
-- Type: `null`, `React.ReactNode`
-- Default: `"a"` 
+- Type: `null`, `React.ElementType`
+- Default: `"a"`
 
 A custom tag type. Defaults to a normal HTMLAnchorElement. Use this prop to use custom routing.
 
@@ -91,13 +80,12 @@ A custom tag type. Defaults to a normal HTMLAnchorElement. Use this prop to use 
 
 The text of the breadcrumb
 
-
 ### SCSS
 
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import '~@nice-digital/nds-breadcrumbs/scss/breadcrumbs';
+@import "~@nice-digital/nds-breadcrumbs/scss/breadcrumbs";
 ```
 
 ### HTML
