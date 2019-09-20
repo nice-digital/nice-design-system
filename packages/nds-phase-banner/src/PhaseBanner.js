@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Tag from "@nice-digital/nds-tag";
+import { Tag } from "@nice-digital/nds-tag";
 
 import "./../scss/phase-banner.scss";
 
@@ -29,5 +29,3 @@ PhaseBanner.propTypes = {
 };
 
 PhaseBanner.defaultProps = {};
-
-export default PhaseBanner;
