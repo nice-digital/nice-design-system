@@ -1,6 +1,6 @@
 {
   "name": "@nice-digital/nds-alert",
-  "version": "1.0.8-alpha.0",
+  "version": "1.0.9-alpha.0",
   "description": "Alert component for the NICE Design System",
   "keywords": [
     "alert"
@@ -37,7 +37,7 @@
     "url": "https://github.com/nhsevidence/nice-design-system/issues"
   },
   "dependencies": {
-    "@nice-digital/nds-core": "^1.0.7-alpha.0",
+    "@nice-digital/nds-core": "^1.0.8-alpha.0",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2"
   },
