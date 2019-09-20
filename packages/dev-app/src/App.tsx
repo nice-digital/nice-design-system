@@ -6,6 +6,7 @@ import { FormGroupView } from "./views/FormGroupView";
 import { PageHeaderView } from "./views/PageHeaderView";
 import { GridView } from "./views/GridView";
 import { AlertView } from "./views/AlertView";
+import { StackedNavView } from "./views/StackedNavView";
 import "./App.scss";
 
 const browserHistory = createBrowserHistory();
@@ -14,23 +15,29 @@ class App extends Component {
 	render() {
 		return (
 			<Router history={browserHistory}>
-				<ul className="container">
-					<li>
-						<Link to="/formgroup">FormGroup</Link>
-					</li>
-					<li>
-						<Link to="/pageheader">Page Header</Link>
-					</li>
-					<li>
-						<Link to="/grid">Grid</Link>
-					</li>
-					<li>
-						<Link to="/alert">Alert</Link>
-					</li>
-				</ul>
-				<main className="container">
+				<nav>
+					<ul>
+						<li>
+							<Link to="/formgroup">Form Group</Link>
+						</li>
+						<li>
+							<Link to="/pageheader">Page Header</Link>
+						</li>
+						<li>
+							<Link to="/stackednav">Stacked Nav</Link>
+						</li>
+						<li>
+							<Link to="/alert">Alert</Link>
+						</li>
+						<li>
+							<Link to="/grid">Grid</Link>
+						</li>
+					</ul>
+				</nav>
+				<main>
 					<Route path="/formgroup" component={FormGroupView} />
 					<Route path="/pageheader" component={PageHeaderView} />
+					<Route path="/stackednav" component={StackedNavView} />
 					<Route path="/alert" component={AlertView} />
 					<Route path="/grid" component={GridView} />
 				</main>
