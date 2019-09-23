@@ -8,6 +8,7 @@ import { GridView } from "./views/GridView";
 import { AlertView } from "./views/AlertView";
 import { StackedNavView } from "./views/StackedNavView";
 import { CardView } from "./views/CardView";
+import { ButtonView } from "./views/ButtonView";
 import "./App.scss";
 
 const browserHistory = createBrowserHistory();
@@ -36,6 +37,9 @@ class App extends Component {
 						<li>
 							<Link to="/card">Card</Link>
 						</li>
+						<li>
+							<Link to="/button">Button</Link>
+						</li>
 					</ul>
 				</nav>
 				<main>
@@ -45,6 +49,7 @@ class App extends Component {
 					<Route path="/alert" component={AlertView} />
 					<Route path="/grid" component={GridView} />
 					<Route path="/card" component={CardView} />
+					<Route path="/button" component={ButtonView} />
 				</main>
 			</Router>
 		);
