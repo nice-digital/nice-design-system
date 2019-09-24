@@ -8,6 +8,7 @@ import { GridView } from "./views/GridView";
 import { AlertView } from "./views/AlertView";
 import { StackedNavView } from "./views/StackedNavView";
 import { CardView } from "./views/CardView";
+import { ButtonView } from "./views/ButtonView";
 import { HeroView } from "./views/HeroView";
 import "./App.scss";
 
@@ -38,6 +39,9 @@ class App extends Component {
 							<Link to="/card">Card</Link>
 						</li>
 						<li>
+							<Link to="/button">Button</Link>
+						</li>
+						<li>
 							<Link to="/hero">Hero</Link>
 						</li>
 					</ul>
@@ -50,6 +54,7 @@ class App extends Component {
 					<Route path="/hero" component={HeroView} />
 					<Route path="/grid" component={GridView} />
 					<Route path="/card" component={CardView} />
+					<Route path="/button" component={ButtonView} />
 				</main>
 			</Router>
 		);
