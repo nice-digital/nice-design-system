@@ -5,14 +5,21 @@ import { shallow, mount } from "enzyme";
 import toJson from "enzyme-to-json";
 import { Hero } from "../src/Hero";
 
-const actions = () => (
+const actions = (
 	<>
 		<a href="page-one">Go to page one</a>
 		<a href="page-two">Go to page two</a>
 	</>
 );
 
-const extras = () => (
+const header = <p>Header content</p>;
+
+const footer = {
+	elementType: "aside",
+	content: <p>Footer content</p>
+};
+
+const extras = (
 	<>
 		<h2>Quick links</h2>
 		<ul>
@@ -44,21 +51,21 @@ describe("Hero", () => {
 			<Hero
 				title="Welcoming title"
 				intro="Introduction text"
-				actions={actions()}
-				extra={extras()}
-			/>
+				actions={actions}
+				header={header}
+				footer={footer}
+			>
+				{extras}
+			</Hero>
 		);
 		expect(toJson(wrapper)).toMatchSnapshot();
 	});
 
 	it("should pass any number of child components via actions and extra props ", () => {
 		const wrapper = mount(
-			<Hero
-				title="Welcoming title"
-				intro="Introduction text"
-				actions={actions()}
-				extra={extras()}
-			/>
+			<Hero title="Welcoming title" intro="Introduction text" actions={actions}>
+				{extras}
+			</Hero>
 		);
 		const anchor = wrapper.find("a[href='page-two']");
 		expect(anchor).toHaveLength(2);

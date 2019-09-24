@@ -9,9 +9,14 @@
   @include nds-links-inverse;
   background: $nds-colour-hero-background;
   color: $nds-colour-text-inverse;
-  margin: rem(0 0 $nds-spacing-medium);
+  left: calc(50%);
+  margin-bottom: rem($nds-spacing-medium);
+  margin-left: -50vw;
+  margin-right: -50vw;
   overflow: hidden;
-  //padding: rem(0 0 $nds-spacing-large);
+  position: relative;
+  right: calc(50%);
+  width: 100vw;
 
   &__container {
     @extend %nds-container;
