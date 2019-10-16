@@ -76,13 +76,13 @@ exports[`Hero should match the snapshot with props 1`] = `
         </ul>
       </div>
     </div>
-    <aside
+    <div
       className="hero__footer"
     >
       <p>
         Footer content
       </p>
-    </aside>
+    </div>
   </div>
 </div>
 `;

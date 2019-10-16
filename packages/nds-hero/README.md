@@ -116,42 +116,13 @@ If you supply child markup it will render in the extra space on the right-hand s
 
 ##### footer
 
-- Type: `object`
-
-Object to construct Optional styled footer area.
-
-```js
-const myFooter = {
-	content: <p>Here is some footer content</p>
-}
-<Hero title="The title" footer={myFooter}>
-```
-
-###### footer.elementType
-
-- Type: `React.ElementType`
-- Default: `div`
-
-The tag that you would like to use for the footer element. Defaults to `div` if not supplied.
-
-```js
-const myFooter = {
-	elementType: "section",
-	content: <p>Here is some footer content</p>
-}
-<Hero title="The title" footer={myFooter}>
-```
-
-###### footer.content
-
 - Type: `React.ReactNode`
 
 Content for the footer. Accepts any valid react node.
 
 ```js
-const myFooter = {
-	content: <p>Here is some footer content</p>
-}
+const myFooter = <p>Here is some footer content</p>;
+
 <Hero title="The title" footer={myFooter}>
 ```
 
@@ -199,7 +170,7 @@ If you're not using [React](#react), then include the [SCSS as above](#scss) and
 					<li><a href="#">A link</a></li>
 				</ul>
 			</div>
-			<span class="hero__footer" aria-labelledby="new-updated">
+			<div class="hero__footer" aria-labelledby="new-updated">
 				<h2 class="h5 mv--0 show--ib mr--d" id="new-updated">
 					New&nbsp;and updated products:
 				</h2>
@@ -207,21 +178,18 @@ If you're not using [React](#react), then include the [SCSS as above](#scss) and
 					<li>
 						<a href="/guidance/date"
 							><span class="visually-hidden">New and updated products </span
-							><span class="text-uppercase">t</span>his month</a
-						>
+							><span class="text-uppercase">t</span>his month</a>
 					</li>
 					<li>
 						<a href="/guidance/lastmonth"
 							><span class="visually-hidden">New and updated products </span
-							><span class="text-uppercase">l</span>ast month</a
-						>
+							><span class="text-uppercase">l</span>ast month</a>
 					</li>
 					<li>
 						<a href="/guidance/last6months"
 							><span class="visually-hidden"
 								>New and updated products in the </span
-							><span class="text-uppercase">l</span>ast 6 months</a
-						>
+							><span class="text-uppercase">l</span>ast 6 months</a>
 					</li>
 				</ul>
 			</span>

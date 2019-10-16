@@ -14,10 +14,7 @@ const actions = (
 
 const header = <p>Header content</p>;
 
-const footer = {
-	elementType: "aside",
-	content: <p>Footer content</p>
-};
+const footer = <p>Footer content</p>;
 
 const extras = (
 	<>

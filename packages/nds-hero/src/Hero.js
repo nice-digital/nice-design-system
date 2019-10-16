@@ -5,10 +5,6 @@ import "../scss/hero.scss";
 
 export const Hero = props => {
 	const { actions, children, footer, header, intro, title } = props;
-	let Footer;
-	if (footer && footer.content) {
-		Footer = footer.elementType || "div";
-	}
 	return (
 		<div className="hero">
 			<div className="hero__container">
@@ -21,7 +17,7 @@ export const Hero = props => {
 					</div>
 					{children && <div className="hero__extra">{children}</div>}
 				</div>
-				{footer && <Footer className="hero__footer">{footer.content}</Footer>}
+				{footer && <div className="hero__footer">{footer}</div>}
 			</div>
 		</div>
 	);
@@ -30,10 +26,7 @@ export const Hero = props => {
 Hero.propTypes = {
 	actions: PropTypes.node,
 	children: PropTypes.node,
-	footer: PropTypes.shape({
-		elementType: PropTypes.elementType,
-		content: PropTypes.node.isRequired
-	}),
+	footer: PropTypes.node,
 	header: PropTypes.node,
 	intro: PropTypes.node,
 	title: PropTypes.node.isRequired

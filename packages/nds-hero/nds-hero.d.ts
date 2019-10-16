@@ -4,11 +4,8 @@ declare module "@nice-digital/nds-hero" {
 	export interface HeroProps {
 		actions?: React.ReactNode;
 		extra?: React.ReactNode;
-		footer?: {
-			elementType?: React.ElementType;
-			content: React.ReactNode;
-		};
-		header?: ReactNode;
+		footer?: React.ReactNode;
+		header?: React.ReactNode;
 		intro?: React.ReactNode;
 		title: React.ReactNode;
 	}
