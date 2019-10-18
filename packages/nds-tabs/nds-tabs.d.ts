@@ -3,7 +3,7 @@ declare module "@nice-digital/nds-tabs" {
 
 	export interface TabProps {
 		id?: string;
-		title: React.ReactNode;
+		title: string;
 		children: React.ReactNode;
 	}
 

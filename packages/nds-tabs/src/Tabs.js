@@ -5,7 +5,7 @@ import { Tab } from "./Tab";
 export { Tab };
 import "./../scss/tabs.scss";
 
-const keyCodes = {
+export const keyCodes = {
 	enter: 13,
 	space: 32,
 	end: 35,
@@ -45,14 +45,14 @@ export class Tabs extends Component {
 		this.setState({ canUseDOM: true });
 	}
 
-	handleTabButtonClick = index => {
+	handleTabButtonClick(index) {
 		this.setState({
 			index: index,
 			focusActiveTabButton: true
 		});
-	};
+	}
 
-	handleTabButtonKey = (e, i) => {
+	handleTabButtonKey(e, i) {
 		let newIndex = i;
 
 		switch (e.which) {
@@ -81,7 +81,7 @@ export class Tabs extends Component {
 				index: newIndex,
 				focusActiveTabButton: true
 			});
-	};
+	}
 
 	getTabChildElements() {
 		return React.Children.toArray(this.props.children).filter(
@@ -95,11 +95,16 @@ export class Tabs extends Component {
 		const getTabSlug = (title, id = null) => id || slugify(title);
 
 		return (
-			<div className={`tabs${this.state.canUseDOM ? " js" : ""}`}>
+			<div
+				className={`tabs${this.state.canUseDOM ? " js" : ""}`}
+				{...this.props}
+			>
 				<ul className="tabs__list" role="tablist">
 					{tabs.map((tab, i) => {
-						const tabSlug = getTabSlug(tab.props.title, tab.props.id);
+						const { title, id, ...rest } = tab.props;
+						const tabSlug = getTabSlug(title, id);
 						const isTabActive = i === this.state.index;
+
 						return (
 							<li className="tabs__tab" key={tabSlug} role="presentation">
 								<button
@@ -118,7 +123,7 @@ export class Tabs extends Component {
 											btn.focus();
 									}}
 								>
-									{tab.props.title}
+									{title}
 								</button>
 							</li>
 						);
@@ -126,7 +131,8 @@ export class Tabs extends Component {
 				</ul>
 				<div className="tabs__content">
 					{tabs.map((tab, i) => {
-						const tabSlug = getTabSlug(tab.props.title, tab.props.id);
+						const { children, title, id, ...rest } = tab.props;
+						const tabSlug = getTabSlug(title, id);
 						const isTabActive = i === this.state.index;
 						return (
 							<div
@@ -136,8 +142,9 @@ export class Tabs extends Component {
 								id={`tab-pane-${tabSlug}`}
 								aria-labelledby={`tab-button-${tabSlug}`}
 								aria-hidden={!isTabActive}
+								{...rest}
 							>
-								{tab.props.children}
+								{children}
 							</div>
 						);
 					})}

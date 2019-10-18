@@ -12,5 +12,3 @@ Tab.propTypes = {
 		PropTypes.node
 	]).isRequired
 };
-
-Tab.defaultProps = {};

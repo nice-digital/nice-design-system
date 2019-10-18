@@ -4,7 +4,7 @@ import { Tabs, Tab } from "@nice-digital/nds-tabs";
 export const TabsView = () => {
 	return (
 		<Tabs>
-			<Tab title="tab 1">
+			<Tab title="Hello">
 				<h3>Hello</h3>
 			</Tab>
 			<Tab title="tasb 2">again!</Tab>
