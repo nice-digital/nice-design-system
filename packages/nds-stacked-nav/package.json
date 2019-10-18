@@ -1,6 +1,6 @@
 {
   "name": "@nice-digital/nds-stacked-nav",
-  "version": "1.0.7-alpha.0",
+  "version": "1.0.10-alpha.0",
   "description": "Stacked navigation component for the NICE Design System",
   "keywords": [
     "navigation"
@@ -11,6 +11,7 @@
   "main": "lib/StackedNav.js",
   "module": "es/StackedNav.js",
   "style": "scss/stacked-nav.scss",
+  "types": "stacked-nav.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -18,7 +19,8 @@
   "files": [
     "lib",
     "es",
-    "scss"
+    "scss",
+    "*.d.ts"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
@@ -35,7 +37,7 @@
     "url": "https://github.com/nhsevidence/nice-design-system/issues"
   },
   "dependencies": {
-    "@nice-digital/nds-core": "^1.0.7-alpha.0",
+    "@nice-digital/nds-core": "^1.0.10-alpha.0",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {

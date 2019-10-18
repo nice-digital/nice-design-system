@@ -6,6 +6,10 @@ import { FormGroupView } from "./views/FormGroupView";
 import { PageHeaderView } from "./views/PageHeaderView";
 import { GridView } from "./views/GridView";
 import { AlertView } from "./views/AlertView";
+import { StackedNavView } from "./views/StackedNavView";
+import { CardView } from "./views/CardView";
+import { ButtonView } from "./views/ButtonView";
+import { HeroView } from "./views/HeroView";
 import { TabsView } from "./views/TabsView";
 import "./App.scss";
 
@@ -17,17 +21,29 @@ class App extends Component {
 			<Router history={browserHistory}>
 				<ul className="container">
 					<li>
-						<Link to="/formgroup">FormGroup</Link>
-					</li>
-					<li>
-						<Link to="/pageheader">Page Header</Link>
-					</li>
-					<li>
-						<Link to="/grid">Grid</Link>
-					</li>
-					<li>
-						<Link to="/alert">Alert</Link>
-					</li>
+							<Link to="/formgroup">Form Group</Link>
+						</li>
+						<li>
+							<Link to="/pageheader">Page Header</Link>
+						</li>
+						<li>
+							<Link to="/stackednav">Stacked Nav</Link>
+						</li>
+						<li>
+							<Link to="/alert">Alert</Link>
+						</li>
+						<li>
+							<Link to="/grid">Grid</Link>
+						</li>
+						<li>
+							<Link to="/card">Card</Link>
+						</li>
+						<li>
+							<Link to="/button">Button</Link>
+						</li>
+						<li>
+							<Link to="/hero">Hero</Link>
+						</li>
 					<li>
 						<Link to="/tabs">Tabs</Link>
 					</li>
@@ -35,8 +51,12 @@ class App extends Component {
 				<main className="container">
 					<Route path="/formgroup" component={FormGroupView} />
 					<Route path="/pageheader" component={PageHeaderView} />
+					<Route path="/stackednav" component={StackedNavView} />
 					<Route path="/alert" component={AlertView} />
+					<Route path="/hero" component={HeroView} />
 					<Route path="/grid" component={GridView} />
+					<Route path="/card" component={CardView} />
+					<Route path="/button" component={ButtonView} />
 					<Route path="/tabs" component={TabsView} />
 				</main>
 			</Router>

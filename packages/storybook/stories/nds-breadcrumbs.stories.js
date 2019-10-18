@@ -38,7 +38,7 @@ const CustomLink = props => (
 const customTag = () => {
 	return (
 		<Breadcrumbs>
-			<Breadcrumb to="https://www.nice.org.uk" tag={CustomLink}>
+			<Breadcrumb to="https://www.nice.org.uk" elementType={CustomLink}>
 				NICE
 			</Breadcrumb>
 			<Breadcrumb>CKS</Breadcrumb>

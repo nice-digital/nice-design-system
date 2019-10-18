@@ -1,7 +1,8 @@
 declare module "@nice-digital/nds-button" {
 	import React = require("react");
 
-	interface ButtonProps {
+	interface ButtonProps
+		extends React.HTMLProps<HTMLButtonElement | HTMLAnchorElement> {
 		/** The destination URL if this is an anchor */
 		to?: string;
 		variant?: "primary" | "cta" | "secondary" | "inverse";

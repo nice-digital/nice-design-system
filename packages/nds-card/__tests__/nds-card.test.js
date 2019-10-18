@@ -1,14 +1,17 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 import toJson from "enzyme-to-json";
 
 import { Card } from "../src/Card";
+import { Link, MemoryRouter } from "react-router-dom";
 
 const headingProps = {
 	headingText: "Card heading text",
-	destination: "/about",
-	linkTag: "a",
-	headerTag: "h1"
+	elementType: "h1",
+	link: {
+		destination: "/about",
+		elementType: "a"
+	}
 };
 const metadataProps = [
 	{
@@ -22,7 +25,7 @@ const metadataProps = [
 ];
 
 const props = {
-	heading: headingProps,
+	...headingProps,
 	metadata: metadataProps
 };
 
@@ -46,22 +49,26 @@ describe("Card", () => {
 		const localMetadataProps = [...metadataProps];
 		localMetadataProps[0].value = "";
 		const wrapper = shallow(
-			<Card heading={headingProps} metadata={localMetadataProps} />
+			<Card {...headingProps} metadata={localMetadataProps} />
 		);
 		expect(wrapper.find(".card__metadatum")).toHaveLength(1);
 	});
 
-	it("should render an href attribute if the linkTag is an anchor", () => {
-		const wrapper = shallow(<Card heading={headingProps} />);
+	it("should render an href attribute if the elementType is an anchor", () => {
+		const wrapper = mount(<Card {...headingProps} />);
 		const anchor = wrapper.find("a");
 		expect(anchor.props()["href"]).toEqual("/about");
 	});
 
-	it("should render a 'to' attribute if the linkTag is anything other than an anchor", () => {
+	it("should render a 'to' attribute if the elementType is anything other than an anchor", () => {
 		const localHeadingProps = Object.assign({}, headingProps);
-		localHeadingProps.linkTag = "Link";
-		const wrapper = shallow(<Card heading={localHeadingProps} />);
-		const anchor = wrapper.find("Link");
+		localHeadingProps.link.elementType = Link;
+		const wrapper = mount(
+			<MemoryRouter>
+				<Card {...localHeadingProps} />
+			</MemoryRouter>
+		);
+		const anchor = wrapper.find(Link);
 		expect(anchor.props()["to"]).toEqual("/about");
 	});
 });

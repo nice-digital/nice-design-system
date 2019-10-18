@@ -12,13 +12,7 @@
 <details>
 <summary><strong>Table of contents</strong></summary>
 
-- [`@nice-digital/design-system`](#nice-digitaldesign-system)
-	- [Required software](#Required-software)
-	- [Installation](#Installation)
-	- [Usage](#Usage)
-		- [SCSS](#SCSS)
-		- [Precompiled](#Precompiled)
-		- [CDN](#CDN)
+- [`@nice-digital/design-system`](#nice-digitaldesign-system) - [Required software](#Required-software) - [Installation](#Installation) - [Usage](#Usage) - [SCSS](#SCSS) - [Precompiled](#Precompiled) - [CDN](#CDN)
   </details>
 
 ## Required software
@@ -56,6 +50,12 @@ Import the NICE Design System into your application:
 ```
 
 This gives you everything: core (mixins, functions, variables, placeholders), CSS resets, icon font, default styles and all components. Visit the [documentation site](https://nhsevidence.github.io/nice-design-system/technical/sass/documentation/) for full details on what's available in the SCSS.
+
+If you want the design system without all of the components you can install the base styling:
+
+```scss
+@import "~@nice-digital/design-system/scss/base";
+```
 
 You can then start using the SCSS from the NICE Design System, for example:
 
