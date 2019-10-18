@@ -47,6 +47,16 @@ const formattedTitle = (
 <Hero title={formattedTitle} />;
 ```
 
+##### header
+
+- Type: `React.ReactNode`
+
+Optional space at the top of the component to allow the insertion of `Breadcrumb` or `PhaseBanner` components.
+
+```js
+<Hero title="The title" header={<PhaseBanner phase="alpha" />}>
+```
+
 ##### intro
 
 - Type: `React.ReactNode`
@@ -104,6 +114,18 @@ If you supply child markup it will render in the extra space on the right-hand s
 </Hero>
 ```
 
+##### footer
+
+- Type: `React.ReactNode`
+
+Content for the footer. Accepts any valid react node.
+
+```js
+const myFooter = <p>Here is some footer content</p>;
+
+<Hero title="The title" footer={myFooter}>
+```
+
 ### SCSS
 
 If you're not using [React](#react), then import the SCSS directly into your application by:
@@ -119,6 +141,16 @@ If you're not using [React](#react), then include the [SCSS as above](#scss) and
 ```html
 <div class="hero">
 	<div class="hero__container">
+		<nav aria-label="Breadcrumbs" role="navigation">
+			<ol class="breadcrumbs">
+				<li class="breadcrumbs__crumb">
+					<a href="https://www.nice.org.uk">NICE</a>
+				</li>
+				<li class="breadcrumbs__crumb">
+					<span>CKS</span>
+				</li>
+			</ol>
+		</nav>
 		<div class="hero__body">
 			<div class="hero__copy">
 				<h1 class="hero__title">This is the title</h1>
@@ -138,6 +170,29 @@ If you're not using [React](#react), then include the [SCSS as above](#scss) and
 					<li><a href="#">A link</a></li>
 				</ul>
 			</div>
+			<div class="hero__footer" aria-labelledby="new-updated">
+				<h2 class="h5 mv--0 show--ib mr--d" id="new-updated">
+					New&nbsp;and updated products:
+				</h2>
+				<ul class="list list--piped show--ib">
+					<li>
+						<a href="/guidance/date"
+							><span class="visually-hidden">New and updated products </span
+							><span class="text-uppercase">t</span>his month</a>
+					</li>
+					<li>
+						<a href="/guidance/lastmonth"
+							><span class="visually-hidden">New and updated products </span
+							><span class="text-uppercase">l</span>ast month</a>
+					</li>
+					<li>
+						<a href="/guidance/last6months"
+							><span class="visually-hidden"
+								>New and updated products in the </span
+							><span class="text-uppercase">l</span>ast 6 months</a>
+					</li>
+				</ul>
+			</span>
 		</div>
 	</div>
 </div>
