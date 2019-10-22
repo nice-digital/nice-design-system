@@ -1,6 +1,6 @@
 # `@nice-digital/nds-tabs`
 
-> Tabs component for the NICE Design System
+> Tabs component for the NICE Design System, based on the <a target="_blank" rel="noopener" href="https://www.w3.org/TR/wai-aria-practices/#tabpanel">W3C WAI-ARIA Authoring Practices 1.1</a>.
 
 - [`@nice-digital/nds-tabs`](#nice-digitalnds-tabs) - [Installation](#installation) - [Usage](#usage) - [React](#react) - [Props](#props) - [SCSS](#scss) - [HTML](#html)
 
@@ -51,7 +51,7 @@ The `Tabs` component will only accept children of type `Tab`. Any other supplied
 
 ##### other props
 
-The `Tabs` component will spread any props across the containing `div` element.
+The `Tabs` component will spread any props across the tab panel's containing `div` element.
 
 #### `Tab` Props
 
@@ -59,13 +59,13 @@ The `Tabs` component will spread any props across the containing `div` element.
 
 - Type: `React.node`
 
-Children supplied to the `Tab` component will be displayed as the content of the tab.
+Children supplied to the `Tab` component will be displayed as the content of the tab panel.
 
 ##### title
 
 - Type: `string` (required)
 
-The label of the tab button. If no ID is supplied, the title will be slugified to generate an ID.
+The title of the tab button.
 
 ```jsx
 <Tabs>
@@ -82,9 +82,9 @@ The label of the tab button. If no ID is supplied, the title will be slugified t
 
 ##### id
 
-- Type: `string` (required)
+- Type: `string`
 
-Use a custom ID attribute for tab button.
+Use a custom ID attribute for tab button. If no ID is supplied, the title will be slugified to generate an ID.
 
 ```jsx
 <Tabs>
@@ -101,7 +101,7 @@ Use a custom ID attribute for tab button.
 
 ##### other props
 
-Any other props will be cascaded to the tab area container, not the button.
+Any other props will be cascaded to the tab panel, not the button.
 
 ### SCSS
 
@@ -113,37 +113,21 @@ If you're not using [React](#react), then import the SCSS directly into your app
 
 ### HTML
 
-If you're not using [React](#react), then include the [SCSS as above](#scss) and use the HTML:
+If you're not using [React](#react), then include the [SCSS as above](#scss) and use the HTML as below. Tab controls and panels, along with their respective ARIA roles and states will be applied by the plugin.
 
 ```html
-<div class="tabs" data-tabs>
-	<ul class="tabs__list" role="tablist">
-		<li class="tabs__tab" role="presentation">
-			<button class="tabs__tab-btn" type="button" role="tab">
-				Tab 1
-			</button>
-		</li>
-		<li class="tabs__tab" role="presentation">
-			<button class="tabs__tab-btn" type="button" role="tab">
-				Tab 2
-			</button>
-		</li>
-		<li class="tabs__tab" role="presentation">
-			<button class="tabs__tab-btn" type="button" role="tab">
-				Tab 3
-			</button>
-		</li>
-	</ul>
-	<div class="tabs__content">
-		<div class="tabs__pane" role="tabpanel">
-			Content for tab 1
-		</div>
-		<div class="tabs__pane" role="tabpanel">
-			Content for tab 2
-		</div>
-		<div class="tabs__pane" role="tabpanel">
-			Content for tab 3
-		</div>
+<div data-tabs>
+	<div>
+		<h3>Tab 1 Title</h3>
+		<p>Tab 1 panel</p>
+	</div>
+	<div>
+		<h3>Tab 2 Title</h3>
+		<p>Tab 2 panel</p>
+	</div>
+	<div>
+		<h3>Tab 3 Title</h3>
+		<p>Tab 3 panel</p>
 	</div>
 </div>
 ```

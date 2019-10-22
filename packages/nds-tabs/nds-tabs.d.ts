@@ -10,7 +10,7 @@ declare module "@nice-digital/nds-tabs" {
 	export const Tab: React.FC<TabProps>;
 
 	export interface TabsProps {
-		children: React.ReactNode<Tab> | React.ReactNode<Tab>[];
+		children: React.ReactNode | React.ReactNode[];
 	}
 
 	export const Tabs: React.FC<TabsProps>;

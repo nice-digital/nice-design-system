@@ -40,9 +40,7 @@ import { Panel } from "@nice-digital/nds-panel";
 
 > Note: The React component automatically imports the SCSS, so there's no need to import the SCSS directly yourself.
 
-#### Tabs Props
-
-- none
+#### Props
 
 ##### children
 
@@ -77,44 +75,13 @@ If you're not using [React](#react), then import the SCSS directly into your app
 If you're not using [React](#react), then include the [SCSS as above](#scss) and use the HTML:
 
 ```html
-<div class="tabs" data-tabs>
-	<ul class="tabs__list" role="tablist">
-		<li class="tabs__tab" role="presentation">
-			<button class="tabs__tab-btn" type="button" role="tab">
-				Tab 1
-			</button>
-		</li>
-		<li class="tabs__tab" role="presentation">
-			<button class="tabs__tab-btn" type="button" role="tab">
-				Tab 2
-			</button>
-		</li>
-		<li class="tabs__tab" role="presentation">
-			<button class="tabs__tab-btn" type="button" role="tab">
-				Tab 3
-			</button>
-		</li>
-	</ul>
-	<div class="tabs__content">
-		<div class="tabs__pane" role="tabpanel">
-			Content for tab 1
-		</div>
-		<div class="tabs__pane" role="tabpanel">
-			Content for tab 2
-		</div>
-		<div class="tabs__pane" role="tabpanel">
-			Content for tab 3
-		</div>
-	</div>
+<div class="panel">
+	Default (supporting) panel
+</div>
+<div class="panel panel--impact">
+	Impact panel
+</div>
+<div class="panel panel--primary">
+	Primary panel
 </div>
 ```
-
-### JAVASCRIPT
-
-For the tabs to function you must import the `Tabs` module from `nds-jquery`
-
-```js
-const Tabs = require("@nice-digital/nds-jquery");
-```
-
-The `data-tabs` attribute present on the containing div will initialise the plugin on page load.
