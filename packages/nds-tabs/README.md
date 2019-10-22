@@ -150,4 +150,4 @@ If you're not using [React](#react), then include the [SCSS as above](#scss) and
 
 ### JavaScript
 
-> Todo
+> TODO: JavaScript jQuery plugin
