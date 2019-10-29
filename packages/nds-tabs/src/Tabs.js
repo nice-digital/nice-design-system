@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-
 import { slugify } from "@nice-digital/nds-core/es/utils";
-import Tab from "./Tab";
+import { Tab } from "./Tab";
+export { Tab };
 import "./../scss/tabs.scss";
 
-const keyCodes = {
+export const keyCodes = {
 	enter: 13,
 	space: 32,
 	end: 35,
@@ -20,7 +20,7 @@ const keyCodes = {
 	down: 40
 };
 
-class Tabs extends Component {
+export class Tabs extends Component {
 	constructor(props) {
 		super(props);
 
@@ -39,9 +39,6 @@ class Tabs extends Component {
 			 */
 			focusActiveTabButton: false
 		};
-
-		this.handleTabButtonClick = this.handleTabButtonClick.bind(this);
-		this.handleTabButtonKey = this.handleTabButtonKey.bind(this);
 	}
 
 	componentDidMount() {
@@ -95,15 +92,19 @@ class Tabs extends Component {
 	render() {
 		const tabs = this.getTabChildElements();
 
-		const getTabSlug = (title: string, id: ?string = null): string =>
-			id || slugify(title);
+		const getTabSlug = (title, id = null) => id || slugify(title);
 
 		return (
-			<div className={`tabs${this.state.canUseDOM ? " js" : ""}`}>
+			<div
+				className={`tabs${this.state.canUseDOM ? " js" : ""}`}
+				{...this.props}
+			>
 				<ul className="tabs__list" role="tablist">
 					{tabs.map((tab, i) => {
-						const tabSlug = getTabSlug(tab.props.title, tab.props.id);
+						const { title, id, ...rest } = tab.props;
+						const tabSlug = getTabSlug(title, id);
 						const isTabActive = i === this.state.index;
+
 						return (
 							<li className="tabs__tab" key={tabSlug} role="presentation">
 								<button
@@ -122,7 +123,7 @@ class Tabs extends Component {
 											btn.focus();
 									}}
 								>
-									{tab.props.title}
+									{title}
 								</button>
 							</li>
 						);
@@ -130,7 +131,8 @@ class Tabs extends Component {
 				</ul>
 				<div className="tabs__content">
 					{tabs.map((tab, i) => {
-						const tabSlug = getTabSlug(tab.props.title, tab.props.id);
+						const { children, title, id, ...rest } = tab.props;
+						const tabSlug = getTabSlug(title, id);
 						const isTabActive = i === this.state.index;
 						return (
 							<div
@@ -140,8 +142,9 @@ class Tabs extends Component {
 								id={`tab-pane-${tabSlug}`}
 								aria-labelledby={`tab-button-${tabSlug}`}
 								aria-hidden={!isTabActive}
+								{...rest}
 							>
-								{tab.props.children}
+								{children}
 							</div>
 						);
 					})}
@@ -154,5 +157,3 @@ class Tabs extends Component {
 Tabs.propTypes = {
 	children: PropTypes.oneOfType([PropTypes.arrayOf(Tab), Tab]).isRequired
 };
-
-export { Tabs as default, Tab };

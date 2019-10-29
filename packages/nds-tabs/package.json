@@ -8,6 +8,7 @@
   "main": "lib/Tabs.js",
   "module": "es/Tabs.js",
   "style": "scss/tabs.scss",
+  "types": "nds-tabs.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -15,7 +16,8 @@
   "files": [
     "lib",
     "es",
-    "scss"
+    "scss",
+    "*.d.ts"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",

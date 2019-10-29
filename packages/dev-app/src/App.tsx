@@ -10,6 +10,7 @@ import { StackedNavView } from "./views/StackedNavView";
 import { CardView } from "./views/CardView";
 import { ButtonView } from "./views/ButtonView";
 import { HeroView } from "./views/HeroView";
+import { TabsView } from "./views/TabsView";
 import "./App.scss";
 
 const browserHistory = createBrowserHistory();
@@ -18,9 +19,8 @@ class App extends Component {
 	render() {
 		return (
 			<Router history={browserHistory}>
-				<nav>
-					<ul>
-						<li>
+				<ul className="container">
+					<li>
 							<Link to="/formgroup">Form Group</Link>
 						</li>
 						<li>
@@ -44,9 +44,11 @@ class App extends Component {
 						<li>
 							<Link to="/hero">Hero</Link>
 						</li>
-					</ul>
-				</nav>
-				<main>
+					<li>
+						<Link to="/tabs">Tabs</Link>
+					</li>
+				</ul>
+				<main className="container">
 					<Route path="/formgroup" component={FormGroupView} />
 					<Route path="/pageheader" component={PageHeaderView} />
 					<Route path="/stackednav" component={StackedNavView} />
@@ -55,6 +57,7 @@ class App extends Component {
 					<Route path="/grid" component={GridView} />
 					<Route path="/card" component={CardView} />
 					<Route path="/button" component={ButtonView} />
+					<Route path="/tabs" component={TabsView} />
 				</main>
 			</Router>
 		);

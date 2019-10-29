@@ -2,16 +2,7 @@
 
 > Panel component for the NICE Design System
 
-- [`@nice-digital/nds-panel`](#nice-digitalnds-panel)
-	- [Installation](#installation)
-	- [Usage](#usage)
-		- [React](#react)
-			- [Props](#props)
-				- [children](#children)
-				- [variant](#variant)
-				- [className](#classname)
-		- [SCSS](#scss)
-		- [HTML](#html)
+- [`@nice-digital/nds-panel`](#nice-digitalnds-panel) - [Installation](#installation) - [Usage](#usage) - [React](#react) - [Props](#props) - [children](#children) - [variant](#variant) - [className](#classname) - [SCSS](#scss) - [HTML](#html)
 
 ## Installation
 
@@ -76,7 +67,7 @@ Additional CSS classes to apply to the panel, e.g. `mt--0` to remove the top mar
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import '~@nice-digital/nds-panel/scss/panel';
+@import "~@nice-digital/nds-panel/scss/panel";
 ```
 
 ### HTML
