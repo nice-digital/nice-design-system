@@ -7,7 +7,7 @@ export const TabsView = () => {
 			<Tab title="Hello">
 				<h3>Hello</h3>
 			</Tab>
-			<Tab title="tasb 2">again!</Tab>
+			<Tab title="There">There!</Tab>
 		</Tabs>
 	);
 };
