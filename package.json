@@ -6,6 +6,10 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "concurrently \"npm run build:es:watch\" \"lerna run --scope=dev-app start\"",
+    "// DOCUMENTATION": "",
+    "docs:dev": "lerna run --stream --scope=docs start",
+    "docs:build": "lerna run --stream --scope=docs build",
+    "docs:serve": "lerna run --stream --scope=docs serve",
     "// STORYBOOK": "",
     "storybook": "lerna run --stream --scope=storybook storybook",
     "storybook:build": "lerna run --scope=storybook build-storybook",
