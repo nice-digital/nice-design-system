@@ -2,26 +2,30 @@
   "name": "docs",
   "version": "1.0.0",
   "private": true,
-  "description": "> TODO: description",
-  "author": "Warren Keith <warrenkeith@gmail.com>",
-  "homepage": "https://github.com/nhsevidence/nice-design-system#readme",
-  "license": "ISC",
-  "main": "lib/docs.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
+  "description": "Gatsby documentation site for the NICE Design System",
+  "dependencies": {
+    "gatsby": "^2.17.6",
+    "gatsby-image": "^2.2.30",
+    "gatsby-plugin-manifest": "^2.2.25",
+    "gatsby-plugin-offline": "^3.0.17",
+    "gatsby-plugin-react-helmet": "^3.1.13",
+    "gatsby-plugin-sharp": "^2.2.34",
+    "gatsby-source-filesystem": "^2.1.35",
+    "gatsby-transformer-sharp": "^2.3.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-helmet": "^5.2.1"
   },
-  "files": [
-    "lib"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nhsevidence/nice-design-system.git"
+  "devDependencies": {
+    "prettier": "^1.18.2",
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
-  },
-  "bugs": {
-    "url": "https://github.com/nhsevidence/nice-design-system/issues"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   }
 }
