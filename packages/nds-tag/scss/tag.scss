@@ -19,6 +19,10 @@ $nds-tag-border-radius: em($nds-spacing-xx-small);
 ///   - `--updated`  Updated
 ///   - `--consultation`  In consultation
 ///   - `--flush`  No margin
+///   - `--info`  Info
+///   - `--caution`  Caution
+///   - `--success`  Success
+///   - `--error`  Error
 /// @since 0.3.1
 .tag {
   @include nds-font-size(0);
@@ -46,17 +50,14 @@ $nds-tag-border-radius: em($nds-spacing-xx-small);
 
   &--alpha {
     background-color: $nds-colour-alpha;
-    color: $nds-colour-text-inverse;
   }
 
   &--beta {
     background-color: $nds-colour-beta;
-    color: $nds-colour-text-inverse;
   }
 
   &--live {
-    background-color: $nds-colour-live;
-    color: $nds-colour-text-inverse;
+    background-color: $nds-colour-success;
   }
 
   &--new {
@@ -69,6 +70,22 @@ $nds-tag-border-radius: em($nds-spacing-xx-small);
 
   &--consultation {
     background: $nds-colour-guidance-consultation;
+  }
+
+  &--info {
+    background: $nds-colour-info;
+  }
+
+  &--caution {
+    background: $nds-colour-caution;
+  }
+
+  &--error {
+    background: $nds-colour-error;
+  }
+
+  &--success {
+    background: $nds-colour-success;
   }
 
   &--flush {

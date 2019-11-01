@@ -17,6 +17,14 @@ declare module "@nice-digital/nds-tag" {
 		isNew?: boolean;
 		/** Use tags to denote service phase */
 		live?: boolean;
+		/** Use tags to denote status of information */
+		info?: boolean;
+		/** Use tags to denote status of error */
+		error?: boolean;
+		/** Use tags to denote status of success */
+		success?: boolean;
+		/** Use tags to denote status of caution */
+		caution?: boolean;
 		/** Use the .tag--outline modifier for a tag with a border. Use outline tags with filtered lists to show the currently applied filters. */
 		outline?: boolean;
 		/** Use tags to denote the status of guidance in lists etc */
