@@ -4,10 +4,10 @@
 
 [![npm](https://img.shields.io/npm/v/@nice-digital/design-system.svg)](https://www.npmjs.com/package/@nice-digital/design-system)
 [![Bower](https://img.shields.io/bower/v/nice-design-system.svg)](http://bower.io/search?q=nice-design-system)
-[![GitHub release](https://img.shields.io/github/release/nhsevidence/nice-design-system.svg)](https://github.com/nhsevidence/nice-design-system)
-[![License](https://img.shields.io/github/license/nhsevidence/nice-design-system.svg)](https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
-[![Dependencies](https://img.shields.io/david/nhsevidence/nice-design-system.svg)](https://david-dm.org/nhsevidence/nice-design-system)
-[![Dev dependencies](https://img.shields.io/david/dev/nhsevidence/nice-design-system.svg)](https://david-dm.org/nhsevidence/nice-design-system?type=dev)
+[![GitHub release](https://img.shields.io/github/release/nice-digital/nice-design-system.svg)](https://github.com/nice-digital/nice-design-system)
+[![License](https://img.shields.io/github/license/nice-digital/nice-design-system.svg)](https://github.com/nice-digital/nice-design-system/blob/master/LICENSE)
+[![Dependencies](https://img.shields.io/david/nice-digital/nice-design-system.svg)](https://david-dm.org/nice-digital/nice-design-system)
+[![Dev dependencies](https://img.shields.io/david/dev/nice-digital/nice-design-system.svg)](https://david-dm.org/nice-digital/nice-design-system?type=dev)
 
 <details>
 <summary><strong>Table of contents</strong></summary>
@@ -34,7 +34,7 @@
 
 ## What is it?
 
-NICE Design System is a replacement for [NICE.Bootstrap](https://github.com/nhsevidence/NICE.Bootstrap/). It's a design system, front-end toolkit and pattern library for rapidly building modern, accessible web apps that are consistent with the NICE brand guidelines.
+NICE Design System is a replacement for [NICE.Bootstrap](https://github.com/nice-digital/NICE.Bootstrap/). It's a design system, front-end toolkit and pattern library for rapidly building modern, accessible web apps that are consistent with the NICE brand guidelines.
 
 ## Browser support
 
@@ -141,7 +141,7 @@ See the [stylesheets](src/stylesheets#readme) folder for more information.
 
 ### Icons
 
-Icons are used via a separate package, [NICE Icons](https://github.com/nhsevidence/nice-icons#readme).
+Icons are used via a separate package, [NICE Icons](https://github.com/nice-digital/nice-icons#readme).
 
 ## Tests
 
@@ -169,7 +169,7 @@ The installed package contains:
 - pre-compiled (dist) JavaScript
 - static assets like favicon and logo.
 
-Note: The icon font is referenced as a dependency from [@nice-digital/icons](https://github.com/nhsevidence/nice-icons#readme).
+Note: The icon font is referenced as a dependency from [@nice-digital/icons](https://github.com/nice-digital/nice-icons#readme).
 
 ### Usage
 
