@@ -72,3 +72,6 @@ components/*/dist
 *.stackdump
 packages/storybook/storybook-static
 .DS_Store
+
+# From gatsby docs
+/packages/docs/public/
