@@ -23,11 +23,12 @@ const CardHeader = props => {
 };
 
 export const Card = props => {
-	const { metadata } = props;
+	const { metadata, headingText, elementType, link, containerElementType: ContainerType = "article", ...rest } = props;
+	const headerProps = { headingText, elementType, link };
 	return (
-		<article className="card">
+		<ContainerType className="card" {...rest}>
 			<header className="card__header">
-				<CardHeader {...props} />
+				<CardHeader {...headerProps} />
 			</header>
 			{metadata && metadata.length && (
 				<dl className="card__metadata">
@@ -44,11 +45,12 @@ export const Card = props => {
 					})}
 				</dl>
 			)}
-		</article>
+		</ContainerType>
 	);
 };
 
 Card.propTypes = {
+	containerElementType: PropTypes.elementType,
 	headingText: PropTypes.node.isRequired,
 	elementType: PropTypes.elementType,
 	link: PropTypes.shape({

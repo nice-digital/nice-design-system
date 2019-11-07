@@ -2,6 +2,7 @@ import React from "react";
 import { Card, CardProps } from "@nice-digital/nds-card";
 
 const props: CardProps = {
+	containerElementType: "main",
 	headingText: "Hello",
 	elementType: "h1",
 	link: {
@@ -23,7 +24,7 @@ const props: CardProps = {
 export const CardView = () => {
 	return (
 		<>
-			<Card {...props} />
+			<Card {...props} data-qa-selector="cardy"/>
 		</>
 	);
 };

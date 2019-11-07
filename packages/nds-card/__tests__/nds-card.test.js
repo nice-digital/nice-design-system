@@ -40,6 +40,19 @@ describe("Card", () => {
 		expect(toJson(wrapper)).toMatchSnapshot();
 	});
 
+	it("should pass extra props to the containing element", () => {
+		const localProps = Object.assign({}, props, {
+			"data-tracker": "my-tracker"
+		});
+		const wrapper = shallow(<Card {...localProps} />);
+		expect(wrapper.props()["data-tracker"]).toEqual("my-tracker");
+	});
+
+	it("should create a card with the containing element type as supplied", () => {
+		const wrapper = shallow(<Card headingText="My Heading" containerElementType="li"/>);
+		expect(wrapper.find("li").length).toEqual(1);
+	});
+
 	it("should render each metadata item with a value", () => {
 		const wrapper = shallow(<Card {...props} />);
 		expect(wrapper.find(".card__metadatum")).toHaveLength(2);

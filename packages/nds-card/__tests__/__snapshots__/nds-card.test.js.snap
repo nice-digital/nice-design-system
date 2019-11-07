@@ -16,18 +16,6 @@ exports[`Card should match snapshot with some default attributes 1`] = `
           "elementType": "a",
         }
       }
-      metadata={
-        Array [
-          Object {
-            "label": "Email address",
-            "value": "john.smith@email.com",
-          },
-          Object {
-            "label": "Email address",
-            "value": "sarah.smith@email.com",
-          },
-        ]
-      }
     />
   </header>
   <dl
