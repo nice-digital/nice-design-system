@@ -14,65 +14,68 @@ declare module "@nice-digital/nds-tag" {
 		removeable?: boolean;
 	}
 
-	interface UpdatedColour extends BaseTagProps {
+	interface UpdatedColour {
 		/** Use tags to denote the status of guidance in lists etc */
-		updated?: boolean;
+		updated: boolean;
 	}
 
-	interface AlphaColour extends BaseTagProps {
+	interface AlphaColour {
 		/** Use tags to denote service phase */
-		alpha?: boolean;
+		alpha: boolean;
 	}
 
-	interface BetaColour extends BaseTagProps {
+	interface BetaColour {
 		/** Use tags to denote service phase */
-		beta?: boolean;
+		beta: boolean;
 	}
 
-	interface ConsultationColour extends BaseTagProps {
+	interface ConsultationColour {
 		/** Use tags to denote the status of guidance in lists etc */
-		consultation?: boolean;
+		consultation: boolean;
 	}
 
-	interface IsNewColour extends BaseTagProps {
+	interface IsNewColour {
 		/** Use tags to denote the status of guidance in lists etc */
-		isNew?: boolean;
+		isNew: boolean;
 	}
 
-	interface LiveColour extends BaseTagProps {
+	interface LiveColour {
 		/** Use tags to denote service phase */
-		live?: boolean;
+		live: boolean;
 	}
 
-	interface InfoColour extends BaseTagProps {
+	interface InfoColour {
 		/** Use tags to denote status of information */
-		info?: boolean;
+		info: boolean;
 	}
 
-	interface ErrorColour extends BaseTagProps {
+	interface ErrorColour {
 		/** Use tags to denote status of error */
-		error?: boolean;
+		error: boolean;
 	}
 
-	interface SuccessColour extends BaseTagProps {
+	interface SuccessColour {
 		/** Use tags to denote status of success */
-		success?: boolean;
+		success: boolean;
 	}
-	interface CautionColour extends BaseTagProps {
+	interface CautionColour {
 		/** Use tags to denote status of caution */
-		caution?: boolean;
+		caution: boolean;
 	}
 
-	type TagProps = (UpdatedColour
-		| AlphaColour
-		| BetaColour
-		| ConsultationColour
-		| IsNewColour
-		| LiveColour
-		| InfoColour
-		| ErrorColour
-		| SuccessColour
-		| CautionColour);
+	type TagProps = BaseTagProps &
+		(
+			| {}
+			| UpdatedColour
+			| AlphaColour
+			| BetaColour
+			| ConsultationColour
+			| IsNewColour
+			| LiveColour
+			| InfoColour
+			| ErrorColour
+			| SuccessColour
+			| CautionColour);
 
 	export const Tag: React.FC<TagProps>;
 }

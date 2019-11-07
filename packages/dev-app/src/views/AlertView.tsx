@@ -7,7 +7,7 @@ export const AlertView = () => {
 		<>
 			<Alert>
 				<h3>Alert title</h3>
-				<Tag error info>HellO!</Tag>
+				<Tag caution>Caution</Tag>
 				<p>
 					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet
 					inventore maxime repellendus dolorem incidunt tempora a aspernatur
