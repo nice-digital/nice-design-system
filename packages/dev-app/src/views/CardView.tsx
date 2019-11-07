@@ -2,9 +2,9 @@ import React from "react";
 import { Card, CardProps } from "@nice-digital/nds-card";
 
 const props: CardProps = {
-	containerElementType: "main",
+	elementType: "main",
 	headingText: "Hello",
-	elementType: "h1",
+	headerElementType: "h1",
 	link: {
 		destination: "/about",
 		elementType: "a"

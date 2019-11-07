@@ -67,7 +67,7 @@ import { MySuperComponent } from "./components/MySuperComponent";
 
 The text that appears as the card's heading.
 
-##### containerElementType
+##### elementType
 
 - Type: `React.ElementType`
 - Default: `article`
@@ -76,11 +76,11 @@ This can be used if you wish the card container tag to be more structurally mean
 
 ```jsx
 <ul>
-    <Card containerElementType="li" headingText="My list card" />
+    <Card elementType="li" headingText="My list card" />
 </ul>
 ```
 
-##### elementType
+##### headerElementType
 
 - Type: `React.ElementType`
 - Default: `p`

@@ -8,7 +8,7 @@ exports[`Card should match snapshot with some default attributes 1`] = `
     className="card__header"
   >
     <CardHeader
-      elementType="h1"
+      headerElementType="h1"
       headingText="Card heading text"
       link={
         Object {

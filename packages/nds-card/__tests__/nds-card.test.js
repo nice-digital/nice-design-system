@@ -7,7 +7,7 @@ import { Link, MemoryRouter } from "react-router-dom";
 
 const headingProps = {
 	headingText: "Card heading text",
-	elementType: "h1",
+	headerElementType: "h1",
 	link: {
 		destination: "/about",
 		elementType: "a"
@@ -49,7 +49,7 @@ describe("Card", () => {
 	});
 
 	it("should create a card with the containing element type as supplied", () => {
-		const wrapper = shallow(<Card headingText="My Heading" containerElementType="li"/>);
+		const wrapper = shallow(<Card headingText="My Heading" elementType="li"/>);
 		expect(wrapper.find("li").length).toEqual(1);
 	});
 
