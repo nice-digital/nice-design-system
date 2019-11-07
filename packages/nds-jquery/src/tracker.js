@@ -62,11 +62,11 @@ export function trackingLibrary(): string {
  * 	};
  */
 export function sendEvent(category: string,
-													action: string,
-													label: ?string = "",
-													value: ?number,
-													callback: ?() => void = null,
-													nonInteraction: boolean = false): Promise {
+	action: string,
+	label: ?string = "",
+	value: ?number,
+	callback: ?() => void = null,
+	nonInteraction: boolean = false): Promise {
 
 	if(trackingLibrary() == TagManager)
 		return sendDataLayerEvent(category, action, label, value, callback);
@@ -92,10 +92,10 @@ export function sendEvent(category: string,
  * @return {Promise}			A promise resolved when the track has fired
  */
 export function sendDataLayerEvent(category: string,
-																	 action: string,
-																	 label: ?string = "",
-																	 value: ?number = null,
-																	 callback: ?() => void = null): Promise {
+	action: string,
+	label: ?string = "",
+	value: ?number = null,
+	callback: ?() => void = null): Promise {
 
 	if(trackingLibrary() !== TagManager) {
 		return new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
@@ -137,10 +137,10 @@ export function sendDataLayerEvent(category: string,
  * @return {Promise}			A promise resolved when the track has fired
  */
 export function sendUniversalEvent(category: string,
-																	 action: string,
-																	 label: ?string = "",
-																	 value: ?number = null,
-																	 callback: ?() => void = null): Promise {
+	action: string,
+	label: ?string = "",
+	value: ?number = null,
+	callback: ?() => void = null): Promise {
 
 	if(trackingLibrary() !== Universal) {
 		return new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
@@ -172,10 +172,10 @@ export function sendUniversalEvent(category: string,
 
 
 export function sendClassicEvent(category: string,
-																 action: string,
-																 label: ?string = "",
-																 value: ?number = null,
-																 callback: ?() => void = null): Promise {
+	action: string,
+	label: ?string = "",
+	value: ?number = null,
+	callback: ?() => void = null): Promise {
 
 	if(trackingLibrary() !== Classic) {
 		return new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
