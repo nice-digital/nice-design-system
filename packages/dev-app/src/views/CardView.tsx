@@ -4,7 +4,7 @@ import { Card, CardProps } from "@nice-digital/nds-card";
 const props: CardProps = {
 	elementType: "main",
 	headingText: "Hello",
-	headerElementType: "h1",
+	headingElementType: "h1",
 	link: {
 		destination: "/about",
 		elementType: "a"

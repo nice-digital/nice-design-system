@@ -7,7 +7,7 @@ import { Link, MemoryRouter } from "react-router-dom";
 
 const headingProps = {
 	headingText: "Card heading text",
-	headerElementType: "h1",
+	headingElementType: "h1",
 	link: {
 		destination: "/about",
 		elementType: "a"

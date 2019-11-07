@@ -14,7 +14,7 @@ declare module "@nice-digital/nds-card" {
 	export interface CardProps {
 		headingText: string;
 		elementType?: React.ElementType;
-		headerElementType?: React.ElementType;
+		headingElementType?: React.ElementType;
 		link?: CardHeadingLinkProps;
 		metadata?: Array<CardMetaDataProps>;
 	}

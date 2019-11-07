@@ -80,7 +80,7 @@ This can be used if you wish the card container tag to be more structurally mean
 </ul>
 ```
 
-##### headerElementType
+##### headingElementType
 
 - Type: `React.ElementType`
 - Default: `p`
