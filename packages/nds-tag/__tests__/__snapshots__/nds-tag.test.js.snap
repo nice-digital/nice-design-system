@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tag should match snapshot for a supplied type 1`] = `
+<span
+  className="tag tag--alpha"
+>
+  tag content 3
+</span>
+`;
+
+exports[`Tag should match snapshot for default tag 1`] = `
+<span
+  className="tag"
+>
+  tag content 2
+</span>
+`;
