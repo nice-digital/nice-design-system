@@ -24,8 +24,9 @@ import { Card } from "@nice-digital/nds-card";
 import { MySuperComponent } from "./components/MySuperComponent";
 
 <Card
+    elementType="li"
 	headingText="Card title"
-	elementType="h1"
+	headingElementType="h1"
 	link={
 		destination: "/destination",
 		elementType: "a"
@@ -43,7 +44,7 @@ import { MySuperComponent } from "./components/MySuperComponent";
 
 <Card
 	headingText="Card title"
-	elementType="h1"
+	headingElementType="h1"
 	link={
 		destination: "/destination",
 		elementType: "a"
@@ -67,6 +68,19 @@ import { MySuperComponent } from "./components/MySuperComponent";
 The text that appears as the card's heading.
 
 ##### elementType
+
+- Type: `React.ElementType`
+- Default: `article`
+
+This can be used if you wish the card container tag to be more structurally meaningful tag. By default it's an `article` tag. You could for example set the card to be an `li` tag if your card is nested inside a `ul`.
+
+```jsx
+<ul>
+	<Card elementType="li" headingText="My list card" />
+</ul>
+```
+
+##### headingElementType
 
 - Type: `React.ElementType`
 - Default: `p`
