@@ -7,5 +7,9 @@ module.exports = {
 	setupFilesAfterEnv: ["<rootDir>/scripts/jest/setup.js"],
 	snapshotSerializers: ["enzyme-to-json/serializer"],
 	testEnvironment: "jsdom",
-	testPathIgnorePatterns: ["<rootDir>/(?:.+?)/lib/", "<rootDir>/(?:.+?)/es/"]
+	testPathIgnorePatterns: [
+		"<rootDir>/(?:.+?)/lib/",
+		"<rootDir>/(?:.+?)/es/",
+		".cache"
+	]
 };
