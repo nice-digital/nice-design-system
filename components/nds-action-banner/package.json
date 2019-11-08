@@ -39,7 +39,8 @@
   "dependencies": {
     "@nice-digital/icons": "^2.1.1",
     "@nice-digital/nds-core": "^1.0.10-alpha.0",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "react": "^16.11.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0"
