@@ -15,7 +15,12 @@ export const Tag = props => {
 		consultation,
 		impact,
 		flush,
-		outline
+		outline,
+		info,
+		error,
+		success,
+		caution,
+		...rest
 	} = props;
 
 	const classNames = classnames({
@@ -28,10 +33,18 @@ export const Tag = props => {
 		"tag--consultation": consultation,
 		"tag--impact": impact,
 		"tag--flush": flush,
-		"tag--outline": outline
+		"tag--outline": outline,
+		"tag--info": info,
+		"tag--error": error,
+		"tag--success": success,
+		"tag--caution": caution
 	});
 
-	return <span className={classNames}>{children}</span>;
+	return (
+		<span className={classNames} {...rest}>
+			{children}
+		</span>
+	);
 };
 
 Tag.propTypes = {
@@ -44,8 +57,28 @@ Tag.propTypes = {
 	impact: PropTypes.bool,
 	flush: PropTypes.bool,
 	outline: PropTypes.bool,
+	info: PropTypes.bool,
+	error: PropTypes.bool,
+	success: PropTypes.bool,
+	caution: PropTypes.bool,
 	children: PropTypes.oneOfType([
 		PropTypes.arrayOf(PropTypes.node),
 		PropTypes.node
 	]).isRequired
+};
+
+Tag.variants = {
+	alpha: "alpha",
+	beta: "beta",
+	live: "live",
+	isNew: "isNew",
+	updated: "updated",
+	consultation: "consultation",
+	impact: "impact",
+	flush: "flush",
+	outline: "outline",
+	info: "info",
+	error: "error",
+	success: "success",
+	caution: "caution"
 };

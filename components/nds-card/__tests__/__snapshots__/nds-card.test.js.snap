@@ -8,25 +8,13 @@ exports[`Card should match snapshot with some default attributes 1`] = `
     className="card__header"
   >
     <CardHeader
-      elementType="h1"
+      headingElementType="h1"
       headingText="Card heading text"
       link={
         Object {
           "destination": "/about",
           "elementType": "a",
         }
-      }
-      metadata={
-        Array [
-          Object {
-            "label": "Email address",
-            "value": "john.smith@email.com",
-          },
-          Object {
-            "label": "Email address",
-            "value": "sarah.smith@email.com",
-          },
-        ]
       }
     />
   </header>

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "../scss/card.scss";
 
 const CardHeader = props => {
-	const { headingText, elementType: HeadingTag = "p", link } = props;
+	const { headingText, headingElementType: HeadingTag = "p", link } = props;
 	let linkProps = {};
 	if (link) {
 		const { elementType: LinkTag = "a", destination } = link;
@@ -23,11 +23,12 @@ const CardHeader = props => {
 };
 
 export const Card = props => {
-	const { metadata } = props;
+	const { metadata, headingText, headingElementType, link, elementType: ContainerType = "article", ...rest } = props;
+	const headerProps = { headingText, headingElementType, link };
 	return (
-		<article className="card">
+		<ContainerType className="card" {...rest}>
 			<header className="card__header">
-				<CardHeader {...props} />
+				<CardHeader {...headerProps} />
 			</header>
 			{metadata && metadata.length && (
 				<dl className="card__metadata">
@@ -44,13 +45,14 @@ export const Card = props => {
 					})}
 				</dl>
 			)}
-		</article>
+		</ContainerType>
 	);
 };
 
 Card.propTypes = {
-	headingText: PropTypes.node.isRequired,
 	elementType: PropTypes.elementType,
+	headingElementType: PropTypes.elementType,
+	headingText: PropTypes.node.isRequired,
 	link: PropTypes.shape({
 		destination: PropTypes.node,
 		elementType: PropTypes.elementType
