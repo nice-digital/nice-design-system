@@ -24,9 +24,9 @@ import { Card } from "@nice-digital/nds-card";
 import { MySuperComponent } from "./components/MySuperComponent";
 
 <Card
-    containerElementType="li"
+    elementType="li"
 	headingText="Card title"
-	elementType="h1"
+	headingElementType="h1"
 	link={
 		destination: "/destination",
 		elementType: "a"
@@ -44,7 +44,7 @@ import { MySuperComponent } from "./components/MySuperComponent";
 
 <Card
 	headingText="Card title"
-	elementType="h1"
+	headingElementType="h1"
 	link={
 		destination: "/destination",
 		elementType: "a"
@@ -76,7 +76,7 @@ This can be used if you wish the card container tag to be more structurally mean
 
 ```jsx
 <ul>
-    <Card elementType="li" headingText="My list card" />
+	<Card elementType="li" headingText="My list card" />
 </ul>
 ```
 
