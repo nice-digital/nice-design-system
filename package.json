@@ -54,7 +54,7 @@
     "node": ">= 8.9.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.0",
+    "@babel/core": "^7.5.5",
     "@babel/plugin-transform-modules-commonjs": "^7.5.0",
     "@babel/preset-env": "^7.5.0",
     "@babel/preset-react": "^7.0.0",
@@ -83,7 +83,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.8.0",
     "lerna": "^3.15.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.0",
     "prettier": "^1.18.2",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.1.0",
