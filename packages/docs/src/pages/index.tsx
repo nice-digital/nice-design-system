@@ -1,23 +1,24 @@
 import React from "react";
+import Layout from "../components/layout";
 import { Hero } from "@nice-digital/nds-hero";
+import { Link } from "gatsby";
+import SEO from "../components/seo";
 
 const IndexPage = () => (
-	<div>
-		<Hero title="NICE Design System" intro="If you build it, they will come">
-			<ul className="list--unstyled">
+	<Layout>
+		<SEO title="Welcome" />
+		<Hero
+			title="NICE Design System"
+			intro="Your source for quickly creating consistent on-brand NICE digital services"
+		>
+			<h2 className="h4">Quick links</h2>
+			<ul className="list list--unstyled list--loose">
 				<li>
-					<a href="#">About the system</a>
-				</li>
-				<li>
-					<a href="#">How to use</a>
-				</li>
-				<li>
-					<a href="#">Feedback &amp; contributing</a>
+					<Link to="/about">About</Link>
 				</li>
 			</ul>
 		</Hero>
-		<p>It might work one day...</p>
-	</div>
+	</Layout>
 );
 
 export default IndexPage;
