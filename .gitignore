@@ -61,6 +61,9 @@ temp
 packages/*/lib
 packages/*/es
 packages/*/dist
+components/*/lib
+components/*/es
+components/*/dist
 
 # Jetstorm IDEs
 .idea
@@ -69,3 +72,6 @@ packages/*/dist
 *.stackdump
 packages/storybook/storybook-static
 .DS_Store
+
+# From gatsby docs
+/packages/docs/public/
