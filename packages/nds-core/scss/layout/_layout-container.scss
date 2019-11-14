@@ -8,7 +8,7 @@
   margin: auto;
   max-width: rem($nds-container-max-width);
   width: 96%; // Fallback for non-calc browsers e.g. IE8, see https://caniuse.com/#feat=calc
-  width: calc(100% - #{rem($nds-container-gutter)});
+  width: calc(100% - #{rem($nds-container-gutter * 2)});
 }
 
 /// Container placeholder.
