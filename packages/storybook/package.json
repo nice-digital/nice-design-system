@@ -47,7 +47,8 @@
     "@nice-digital/nds-tag": "^1.0.10-alpha.0",
     "@storybook/addon-a11y": "^5.1.11",
     "@storybook/addon-storysource": "^5.1.11",
-    "@types/storybook__react": "^4.0.2"
+    "@types/storybook__react": "^4.0.2",
+    "react": "^16.11.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

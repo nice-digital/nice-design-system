@@ -11,6 +11,7 @@ import { CardView } from "./views/CardView";
 import { ButtonView } from "./views/ButtonView";
 import { HeroView } from "./views/HeroView";
 import { TabsView } from "./views/TabsView";
+import { TagsView } from "./views/TagsView";
 import "./App.scss";
 
 const browserHistory = createBrowserHistory();
@@ -21,31 +22,34 @@ class App extends Component {
 			<Router history={browserHistory}>
 				<ul className="container">
 					<li>
-							<Link to="/formgroup">Form Group</Link>
-						</li>
-						<li>
-							<Link to="/pageheader">Page Header</Link>
-						</li>
-						<li>
-							<Link to="/stackednav">Stacked Nav</Link>
-						</li>
-						<li>
-							<Link to="/alert">Alert</Link>
-						</li>
-						<li>
-							<Link to="/grid">Grid</Link>
-						</li>
-						<li>
-							<Link to="/card">Card</Link>
-						</li>
-						<li>
-							<Link to="/button">Button</Link>
-						</li>
-						<li>
-							<Link to="/hero">Hero</Link>
-						</li>
+						<Link to="/formgroup">Form Group</Link>
+					</li>
+					<li>
+						<Link to="/pageheader">Page Header</Link>
+					</li>
+					<li>
+						<Link to="/stackednav">Stacked Nav</Link>
+					</li>
+					<li>
+						<Link to="/alert">Alert</Link>
+					</li>
+					<li>
+						<Link to="/grid">Grid</Link>
+					</li>
+					<li>
+						<Link to="/card">Card</Link>
+					</li>
+					<li>
+						<Link to="/button">Button</Link>
+					</li>
+					<li>
+						<Link to="/hero">Hero</Link>
+					</li>
 					<li>
 						<Link to="/tabs">Tabs</Link>
+					</li>
+					<li>
+						<Link to="/tags">Tags</Link>
 					</li>
 				</ul>
 				<main className="container">
@@ -58,6 +62,7 @@ class App extends Component {
 					<Route path="/card" component={CardView} />
 					<Route path="/button" component={ButtonView} />
 					<Route path="/tabs" component={TabsView} />
+					<Route path="/tags" component={TagsView} />
 				</main>
 			</Router>
 		);

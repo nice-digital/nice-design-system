@@ -6,6 +6,10 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "concurrently \"npm run build:es:watch\" \"lerna run --scope=dev-app start\"",
+    "// DOCUMENTATION": "",
+    "docs:dev": "lerna run --stream --scope=@nice-digital/design-system-documentation start",
+    "docs:build": "lerna run --stream --scope=@nice-digital/design-system-documentation build",
+    "docs:serve": "lerna run --stream --scope=@nice-digital/design-system-documentation serve",
     "// STORYBOOK": "",
     "storybook": "lerna run --stream --scope=storybook storybook",
     "storybook:build": "lerna run --scope=storybook build-storybook",
@@ -50,7 +54,7 @@
     "node": ">= 8.9.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.0",
+    "@babel/core": "^7.5.5",
     "@babel/plugin-transform-modules-commonjs": "^7.5.0",
     "@babel/preset-env": "^7.5.0",
     "@babel/preset-react": "^7.0.0",
@@ -79,7 +83,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.8.0",
     "lerna": "^3.15.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.0",
     "prettier": "^1.18.2",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.1.0",
@@ -94,7 +98,7 @@
   },
   "dependencies": {
     "@nice-digital/icons": "^2.1.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
   }
 }

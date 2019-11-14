@@ -19,6 +19,7 @@
 		- [Slow start](#slow-start)
 		- [Storybook](#storybook)
 		- [Tests](#tests)
+		- [Documentation](#documentation)
 		- [Commands](#commands)
 			- [Publishing to npm](#publishing-to-npm)
 	- [Upgrading to 1.x from 0.x](#upgrading-to-1x-from-0x)
@@ -69,6 +70,10 @@ To run tests for a just a single component, run the following:
 npm run test:unit:watch -- breadcrumbs
 ```
 
+### Documentation
+
+The docs site is built with [Gatsby](https://www.gatsbyjs.org/), a state site generator that uses React. You can use `npm run docs:dev` to run locally with live reloading. See the [Commands](#commands) table for other commands.
+
 ### Commands
 
 Run `npm start` and `test:unit:watch` for development. However, there are other npm scripts available to be run for other tasks:
@@ -88,6 +93,9 @@ Run `npm start` and `test:unit:watch` for development. However, there are other 
 | `npm run lint`               | Lints both JS and SCSS                                      |
 | `npm run lint:js`            | Lints just JS                                               |
 | `npm run lint:scss`          | Lints just SCSS                                             |
+| `npm run docs:dev`          | Start development server for Gatsby documentation site                                             |
+| `npm run docs:serve`          | Serve the built docs site locally for testing                                             |
+| `npm run docs:build`          | Build out the docs static site for deployment                                             |
 
 > Note: because lerna is installed locally, you can use `npm run lerna -- ` to run lerna commands, for example `npm run lerna -- add @nice-digital/icons --scope=@nice-digital/nds-filters`
 
