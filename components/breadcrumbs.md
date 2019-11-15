@@ -23,14 +23,14 @@ There's only 1 variant of breadcrumbs:
     </p>
     <ol class="breadcrumbs" aria-labelledby="breadcrumb-label" itemscope itemtype="http://schema.org/BreadcrumbList">
         <li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-            <a href="https://www.nice.org.uk/" itemprop="name">
-                Home
+            <a href="https://www.nice.org.uk/" itemprop="item">
+                <span itemprop="name">Home</span>
             </a>
             <meta itemprop="position" content="1">
         </li>
         <li class="breadcrumbs__crumb" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-            <a href="https://www.nice.org.uk/guidance" itemprop="name">
-                NICE Guidance
+            <a href="https://www.nice.org.uk/guidance" itemprop="item">
+                <span itemprop="name">NICE Guidance</span>
             </a>
             <meta itemprop="position" content="2">
         </li>
