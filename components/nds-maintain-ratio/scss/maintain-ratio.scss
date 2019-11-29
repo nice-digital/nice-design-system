@@ -42,19 +42,17 @@
   padding: 0;
   position: relative;
 
-  &__item,
-  > iframe,
-  > embed,
-  > object,
-  > video,
-  > img {
-    border: 0;
-    bottom: 0;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
+  // Modifier class for enlarging the first child element
+  &--stretch > {
+    :first-child {
+      border: 0;
+      bottom: 0;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
   }
 
   // Modifier class for 21:9 aspect ratio

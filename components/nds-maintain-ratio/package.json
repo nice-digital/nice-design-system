@@ -8,6 +8,7 @@
   "main": "lib/MaintainRatio.js",
   "module": "es/MaintainRatio.js",
   "style": "scss/maintain-ratio.scss",
+  "types": "nds-maintain-ratio.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -15,7 +16,8 @@
   "files": [
     "lib",
     "es",
-    "scss"
+    "scss",
+    "*.d.ts"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
