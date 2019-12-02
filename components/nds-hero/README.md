@@ -2,7 +2,7 @@
 
 > Page hero component for the NICE Design System
 
-- [`@nice-digital/nds-card`](#nice-digitalnds-hero) - [Installation](#installation) - [Usage](#usage) - [React](#react) - [Props](#props) - [SCSS](#scss) - [HTML](#html)
+- [`@nice-digital/nds-hero`](#nice-digitalnds-hero) - [Installation](#installation) - [Usage](#usage) - [React](#react) - [Props](#props) - [SCSS](#scss) - [HTML](#html)
 
 ## Installation
 

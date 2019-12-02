@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`nds-maintain-ratio should match the snapshot with no options 1`] = `
+<div
+  className="maintain-ratio maintain-ratio--16-9"
+>
+  <p>
+    Test
+  </p>
+</div>
+`;

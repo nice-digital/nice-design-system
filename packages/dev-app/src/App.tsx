@@ -12,6 +12,7 @@ import { ButtonView } from "./views/ButtonView";
 import { HeroView } from "./views/HeroView";
 import { TabsView } from "./views/TabsView";
 import { TagsView } from "./views/TagsView";
+import { MaintainRatioView } from "./views/MaintainRatioView";
 import "./App.scss";
 
 const browserHistory = createBrowserHistory();
@@ -51,6 +52,9 @@ class App extends Component {
 					<li>
 						<Link to="/tags">Tags</Link>
 					</li>
+					<li>
+						<Link to="/maintain-ratio">Maintain Ratio</Link>
+					</li>
 				</ul>
 				<main className="container">
 					<Route path="/formgroup" component={FormGroupView} />
@@ -63,6 +67,7 @@ class App extends Component {
 					<Route path="/button" component={ButtonView} />
 					<Route path="/tabs" component={TabsView} />
 					<Route path="/tags" component={TagsView} />
+					<Route path="/maintain-ratio" component={MaintainRatioView} />
 				</main>
 			</Router>
 		);
