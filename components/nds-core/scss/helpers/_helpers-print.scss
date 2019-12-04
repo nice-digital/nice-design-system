@@ -23,6 +23,15 @@
   }
 }
 
+///Remove an appended link URL
+/// @output removes content attribute
+/// @since 1.0.0
+@mixin nds-no-appended-print-link {
+  &:after {
+    content: none !important;
+  }
+}
+
 ///Helper for including print styling
 /// @output CSS to wrap a media query with content
 /// @since 1.0.0
