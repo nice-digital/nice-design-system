@@ -13,6 +13,8 @@ import { HeroView } from "./views/HeroView";
 import { TabsView } from "./views/TabsView";
 import { TagsView } from "./views/TagsView";
 import { MaintainRatioView } from "./views/MaintainRatioView";
+import { PrintView } from "./views/PrintView";
+import { BreadcrumbsView } from "./views/BreadcrumbsView";
 import "./App.scss";
 
 const browserHistory = createBrowserHistory();
@@ -21,7 +23,7 @@ class App extends Component {
 	render() {
 		return (
 			<Router history={browserHistory}>
-				<ul className="container">
+				<ul className="container hide-print">
 					<li>
 						<Link to="/formgroup">Form Group</Link>
 					</li>
@@ -55,6 +57,12 @@ class App extends Component {
 					<li>
 						<Link to="/maintain-ratio">Maintain Ratio</Link>
 					</li>
+					<li>
+						<Link to="/print">Print</Link>
+					</li>
+					<li>
+						<Link to="/breadcrumbs">Breadcrumbs</Link>
+					</li>
 				</ul>
 				<main className="container">
 					<Route path="/formgroup" component={FormGroupView} />
@@ -68,6 +76,8 @@ class App extends Component {
 					<Route path="/tabs" component={TabsView} />
 					<Route path="/tags" component={TagsView} />
 					<Route path="/maintain-ratio" component={MaintainRatioView} />
+					<Route path="/print" component={PrintView} />
+					<Route path="/breadcrumbs" component={BreadcrumbsView} />
 				</main>
 			</Router>
 		);
