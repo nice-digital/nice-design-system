@@ -31,22 +31,23 @@
       text-decoration: underline;
     }
 
+    // Don't show links in headings
+    // stylelint-disable no-descending-specificity
+    h1 a,
+    h2 a,
+    h3 a,
+    h4 a,
+    h5 a,
+    h6 a {
+      @include nds-no-appended-print-link;
+    }
+
     a[href]:after {
       content: ' (' attr(href) ')';
     }
 
     a.show-link[href]:after {
       content: ' (' attr(href) ')';
-    }
-
-    // Don't show links in headings
-    h1 a[href]:after,
-    h2 a[href]:after,
-    h3 a[href]:after,
-    h4 a[href]:after,
-    h5 a[href]:after,
-    h6 a[href]:after {
-      content: '';
     }
 
     abbr[title]:after {
