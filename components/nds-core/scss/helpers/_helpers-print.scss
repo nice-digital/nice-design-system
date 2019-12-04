@@ -13,12 +13,21 @@
   }
 }
 
-//// Only show the element when printing (not for other media)
+///Only show the element when printing (not for other media)
 /// @output the CSS to hide on all media except print
 /// @since 1.0.0
 @mixin nds-show-print {
   display: none !important;
   @media print {
     display: block !important;
+  }
+}
+
+///Helper for including print styling
+/// @output CSS to wrap a media query with content
+/// @since 1.0.0
+@mixin nds-print {
+  @media print {
+    @content;
   }
 }
