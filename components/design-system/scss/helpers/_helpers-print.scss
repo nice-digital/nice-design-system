@@ -46,10 +46,6 @@
       content: ' (' attr(href) ')';
     }
 
-    a.show-link[href]:after {
-      content: ' (' attr(href) ')';
-    }
-
     abbr[title]:after {
       content: ' (' attr(title) ')';
     }

@@ -28,6 +28,7 @@ $nds-action-banner-subtle-border: $nds-colour-nice-grey-2;
 ///
 /// @since 0.3.1
 .action-banner {
+  @include nds-hide-print;
   @include nds-links-inverse;
   background: $nds-action-banner-default-background;
   border: 1px solid $nds-action-banner-default-border;
@@ -143,10 +144,5 @@ $nds-action-banner-subtle-border: $nds-colour-nice-grey-2;
         right: rem($nds-spacing-x-large);
       }
     }
-  }
-
-  @media print {
-    // It doesn't make any sense to print an action banner
-    display: none !important;
   }
 }

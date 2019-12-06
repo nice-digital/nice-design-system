@@ -42,14 +42,9 @@
   }
 
   &__cta {
+    @include nds-hide-print;
     @include nds-font-size(p);
     display: block;
     margin: 0;
-  }
-
-  @media print {
-    &__cta {
-      display: none;
-    }
   }
 }
