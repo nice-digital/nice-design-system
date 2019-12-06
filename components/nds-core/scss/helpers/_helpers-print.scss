@@ -26,7 +26,7 @@
 ///Remove an appended link URL
 /// @output removes content attribute
 /// @since 1.0.0
-@mixin nds-no-appended-print-link {
+@mixin nds-remove-appended-print-link {
   @media print {
     &:after {
       content: none !important;

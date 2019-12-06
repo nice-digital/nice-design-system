@@ -10,8 +10,8 @@
   @include nds-hide-print;
 }
 
-.no-appended-print-link {
-  @include nds-no-appended-print-link;
+.remove-appended-print-link {
+  @include nds-remove-appended-print-link;
 }
 
 // Printing
@@ -39,7 +39,7 @@
     h4 a,
     h5 a,
     h6 a {
-      @include nds-no-appended-print-link;
+      @include nds-remove-appended-print-link;
     }
 
     a[href]:after {
