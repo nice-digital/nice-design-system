@@ -9,6 +9,7 @@
 /// @since 0.1.0
 .breadcrumbs {
   @include nds-font-size(0);
+  @include nds-hide-print;
   list-style: none;
   margin: em($nds-spacing-small 0 $nds-spacing-large);
   padding: 0;

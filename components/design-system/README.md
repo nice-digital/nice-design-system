@@ -17,7 +17,7 @@
 
 ## Required software
 
-Install [Node](https://nodejs.org/en/download/) >= 6.9.0 and npm >= 5. Chose LTS from the Node download page.
+Install [Node](https://nodejs.org/en/download/) >= 6.9.0 and npm >= 5. Choose LTS from the Node download page.
 
 ## Installation
 
@@ -51,6 +51,10 @@ Import the NICE Design System into your application:
 
 This gives you everything: core (mixins, functions, variables, placeholders), CSS resets, icon font, default styles and all components. Visit the [documentation site](https://nhsevidence.github.io/nice-design-system/technical/sass/documentation/) for full details on what's available in the SCSS.
 
+#### Problems with tilde (~) imports?
+
+We use tildes in SCSS import paths, which works out of the box with sass-loader in webpack. Use [node-sass-tilde-importer](https://www.npmjs.com/package/node-sass-tilde-importer) if you're using node-sass directly, or [grunt-sass-tilde-importer](https://www.npmjs.com/package/grunt-sass-tilde-importer).
+
 If you want the design system without all of the components you can install the base styling:
 
 ```scss
@@ -65,8 +69,6 @@ You can then start using the SCSS from the NICE Design System, for example:
 	margin: rem($spacing-large);
 }
 ```
-
-> Note: we use tildes in SCSS import paths, which works out of the box with sass-loader in webpack. Use [node-sass-tilde-importer](https://www.npmjs.com/package/node-sass-tilde-importer) if you're using node-sass directly.
 
 If you want to import the design system into a CSS module you can scope the import globally:
 
