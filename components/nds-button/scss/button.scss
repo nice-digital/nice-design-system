@@ -25,6 +25,9 @@
   text-decoration: none !important;
   vertical-align: top;
   white-space: nowrap;
+  @media print {
+    white-space: normal;
+  }
 
   &:first-child {
     margin-left: 0;
