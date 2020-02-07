@@ -45,7 +45,7 @@ ol {
   li,
   .list__item {
     display: inline-block;
-    margin-right: -rem(4);
+    margin-right: rem(-4);
 
     a {
       padding: rem($nds-spacing-small);

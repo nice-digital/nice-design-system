@@ -2,8 +2,10 @@
 /// @group components
 ////
 
-/// Results info shows at the top of a list of results and
+/// Filter summary info shows at the top of a list of results and
 /// contains the count and sort options.
+/// .results-info deprecated in 1.0.0, use .filter-summary
+.filter-summary,
 .results-info {
   @include nds-clearfix;
   margin: rem(0 0 $nds-spacing-medium);
