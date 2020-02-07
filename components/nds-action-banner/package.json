@@ -1,6 +1,6 @@
 {
   "name": "@nice-digital/nds-action-banner",
-  "version": "1.0.12-alpha.0",
+  "version": "1.0.13-alpha.0",
   "description": "Action banner component for the NICE Design System",
   "keywords": [
     "banner"
@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@nice-digital/icons": "^2.1.1",
-    "@nice-digital/nds-core": "^1.0.12-alpha.0",
+    "@nice-digital/nds-core": "^1.0.13-alpha.0",
     "prop-types": "^15.7.2",
     "react": "^16.11.0"
   },
