@@ -5,3 +5,6 @@ node_modules
 dist/*
 !.grunt-tasks*
 dev-app
+
+lib
+es

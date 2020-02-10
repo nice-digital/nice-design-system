@@ -23,7 +23,14 @@ const CardHeader = props => {
 };
 
 export const Card = props => {
-	const { metadata, headingText, headingElementType, link, elementType: ContainerType = "article", ...rest } = props;
+	const {
+		metadata,
+		headingText,
+		headingElementType,
+		link,
+		elementType: ContainerType = "article",
+		...rest
+	} = props;
 	const headerProps = { headingText, headingElementType, link };
 	return (
 		<ContainerType className="card" {...rest}>

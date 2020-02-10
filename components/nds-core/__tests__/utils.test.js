@@ -3,9 +3,7 @@
 import { slugify, nextUniqueId, camelCase } from "../src/utils";
 
 describe("Utils", function() {
-
 	describe("slugify", function() {
-
 		it("lowercases the input", function() {
 			let s = slugify("DOGBONE");
 
@@ -56,22 +54,20 @@ describe("Utils", function() {
 	});
 
 	describe("nextUniqueId", function() {
-
-		it("prefixes with 'uid' by default", function () {
+		it("prefixes with 'uid' by default", function() {
 			expect(nextUniqueId().indexOf("uid-")).toEqual(0);
 		});
 
-		it("prefixes with the given prefix", function () {
+		it("prefixes with the given prefix", function() {
 			expect(nextUniqueId("test").indexOf("test-")).toEqual(0);
 		});
 
-		it("increments counter on subsequent calls", function () {
+		it("increments counter on subsequent calls", function() {
 			let a = Number(nextUniqueId().match(/\d+/)[0]),
 				b = Number(nextUniqueId().match(/\d+/)[0]);
 
 			expect(b).toEqual(a + 1);
 		});
-
 	});
 
 	describe("camelCase", function() {
@@ -85,5 +81,4 @@ describe("Utils", function() {
 			expect(camelCase("this-is-kebab-case")).toEqual("thisIsKebabCase");
 		});
 	});
-
 });
