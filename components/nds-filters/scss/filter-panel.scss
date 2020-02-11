@@ -31,7 +31,7 @@
         @include nice-icon(chevron-up);
         @include nds-font-size(-1);
         color: $nds-colour-icons;
-        margin-top: -rem($nds-spacing-small);
+        margin-top: rem(-$nds-spacing-small);
         position: absolute;
         right: rem($nds-spacing-small);
         top: 50%;

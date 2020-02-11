@@ -35,15 +35,13 @@ export function getPlugins() {
  * 	$(".selector").test("aMethod", 99);
  * 	var value = $(".selector").test("getValue");
  */
-export default (pluginName: string, Plugin) => {
-
+export default (pluginName, Plugin) => {
 	plugins.push({ name: pluginName, pluginClass: Plugin }); // Store this registered plugin
 
 	const dataName = `__${pluginName}`,
 		old = $.fn[pluginName];
 
 	$.fn[pluginName] = function(options) {
-
 		const args = arguments;
 
 		// TODO: Destory plugin by removing the data
@@ -55,7 +53,11 @@ export default (pluginName: string, Plugin) => {
 					$.data(el, dataName, new Plugin(el, options));
 				}
 			});
-		} else if (typeof options === "string" && options[0] !== "_" && options !== "init") {
+		} else if (
+			typeof options === "string" &&
+			options[0] !== "_" &&
+			options !== "init"
+		) {
 			// _* methods as these are private by convention
 
 			// Assume $(".selector").plugin("methodName", anArg, anotherArg)
@@ -69,8 +71,10 @@ export default (pluginName: string, Plugin) => {
 
 			// No arguments and starting with 'get' means a getter which breaks chainability
 			if (methodArgs.length == 0 && /^get.+$/.test(methodName)) {
-				if(this.length > 1) {
-					$.error(`Cannot call a getter '${ methodName }' on a collection of elements`);
+				if (this.length > 1) {
+					$.error(
+						`Cannot call a getter '${methodName}' on a collection of elements`
+					);
 					return;
 				}
 				var instance = $.data(this[0], dataName);
@@ -79,10 +83,13 @@ export default (pluginName: string, Plugin) => {
 				// Invoke the speficied method on each selected element
 				return this.each(function() {
 					var instance = $.data(this, dataName);
-					if (instance instanceof Plugin && typeof instance[methodName] === "function") {
+					if (
+						instance instanceof Plugin &&
+						typeof instance[methodName] === "function"
+					) {
 						instance[methodName].apply(instance, methodArgs);
 					} else {
-						$.error(`Method '${ methodName }' could not be found`);
+						$.error(`Method '${methodName}' could not be found`);
 					}
 				});
 			}
@@ -90,9 +97,9 @@ export default (pluginName: string, Plugin) => {
 	};
 
 	// Expose the plugins"s defaults so plugin users can see them
-	if(Plugin.defaults && typeof Plugin.defaults === "function")
+	if (Plugin.defaults && typeof Plugin.defaults === "function")
 		$.fn[pluginName].defaults = Plugin.defaults();
 
 	// No conflict
-	$.fn[pluginName].noConflict = () => $.fn[pluginName] = old;
+	$.fn[pluginName].noConflict = () => ($.fn[pluginName] = old);
 };

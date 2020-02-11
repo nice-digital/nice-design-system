@@ -25,5 +25,12 @@
 			"filename": true
 		}
 	],
-	"vsicons.customIconFolderPath": "./.vscode/"
+	"vsicons.customIconFolderPath": "./.vscode/",
+	"workbench.colorCustomizations": {
+		"editorCursor.foreground": "#0f0",
+		"terminalCursor.foreground": "#0f0",
+		"activityBar.background": "#1B3137",
+		"titleBar.activeBackground": "#26444D",
+		"titleBar.activeForeground": "#F9FCFC"
+	}
 }

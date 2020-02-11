@@ -56,25 +56,24 @@ const EventNamespace = "delegateEvents";
  * @throws {Error} If instanceevents isn't a function
  */
 export function delegate(instance) {
-	if(!instance) {
+	if (!instance) {
 		$.error("Instance must be non-null");
 	}
-	if(!instance.$el) {
+	if (!instance.$el) {
 		$.error("Instance.$el must be non-null");
 	}
-	if(!instance.events || typeof instance.events !== "function") {
+	if (!instance.events || typeof instance.events !== "function") {
 		$.error("Instance.events must be a function");
 	}
 
 	let events = instance.events();
 
-	if(!events) return instance;
+	if (!events) return instance;
 
 	for (var key in events) {
 		let method = events[key];
 
-		if (typeof method !== "function")
-			method = instance[method];
+		if (typeof method !== "function") method = instance[method];
 
 		if (!method) {
 			$.error("Method could not be found");
@@ -84,7 +83,11 @@ export function delegate(instance) {
 			eventName = match[1],
 			selector = match[2];
 
-		instance.$el.on(`${ eventName }.${ EventNamespace }`, selector, $.proxy(method, instance));
+		instance.$el.on(
+			`${eventName}.${EventNamespace}`,
+			selector,
+			$.proxy(method, instance)
+		);
 	}
 
 	return instance;
@@ -96,13 +99,13 @@ export function delegate(instance) {
  * @return {Object}          The instance
  */
 export function undelegate(instance) {
-	if(!instance) {
+	if (!instance) {
 		$.error("Instance must be non-null");
 	}
-	if(!instance.$el) {
+	if (!instance.$el) {
 		$.error("Instance.$el must be non-null");
 	}
-	instance.$el.off(`.${ EventNamespace }`);
+	instance.$el.off(`.${EventNamespace}`);
 	return instance;
 }
 

@@ -6,15 +6,16 @@ import { getPlugins } from "./pluginizr";
 const ModuleNameRegex = /([^/.]*)\.js$/i;
 
 // Constructs a module object - parses a key (path) into a module name
-let getModuleObj =
-	(key: string) => ({ key: key, name: key.match(ModuleNameRegex, "")[1] });
+let getModuleObj = key => ({
+	key: key,
+	name: key.match(ModuleNameRegex, "")[1]
+});
 
 // Require and return a module
-let requireModule =
-	(module, localRequire) => {
-		localRequire(module.key);
-		return module;
-	};
+let requireModule = (module, localRequire) => {
+	localRequire(module.key);
+	return module;
+};
 
 /// Load all plugins from the given require context.
 /// @example
@@ -22,17 +23,18 @@ let requireModule =
 /// 	pluginAutoLoader.load(require.context("./", true, /\.js$/));
 export function load(localRequire) {
 	// Build a list from which to auto-load
-	localRequire.keys()
+	localRequire
+		.keys()
 		.filter(k => k !== "./experience.js") // Ignore experience as it's our entry point so treated differently
 		.map(getModuleObj)
-		.map((module) => requireModule(module, localRequire))
+		.map(module => requireModule(module, localRequire))
 		.filter(m => m.name in $.fn); // Now the module is loaded, only care about ones that are a plugin
 }
 
-export function findPlugins($context: $) {
-	getPlugins().forEach(plugin => { // Load any plugins automatically
-		$(`[data-${ plugin.name }]`, $context || $(document)).each((i, el) => {
-
+export function findPlugins($context) {
+	getPlugins().forEach(plugin => {
+		// Load any plugins automatically
+		$(`[data-${plugin.name}]`, $context || $(document)).each((i, el) => {
 			var $el = $(el),
 				options;
 
@@ -40,11 +42,10 @@ export function findPlugins($context: $) {
 			// e.g. data-plugin-test="true" data-plugin-something-else="1" becomes:
 			// { test: true, somethingElse: 1 }
 			[].forEach.call(el.attributes, function(attr) {
-
-				var match = attr.name.match(new RegExp(`^data-(${ plugin.name }-.+)`));
+				var match = attr.name.match(new RegExp(`^data-(${plugin.name}-.+)`));
 				if (match && match.length === 2) {
 					var attrName = $.camelCase(match[1]),
-						propName = $.camelCase(match[1].replace(`${ plugin.name }-`, ""));
+						propName = $.camelCase(match[1].replace(`${plugin.name}-`, ""));
 					options = options || {};
 					options[propName] = $el.data(attrName); // Use jquery's data because it parses types
 				}

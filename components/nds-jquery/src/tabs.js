@@ -19,12 +19,11 @@ const Defaults = {
 
 // Generate unique id amongst tabs
 // See http://stackoverflow.com/a/20302361
-const uid = function (i) {
-	return function () {
-		return "tabs-" + (++i);
+const uid = (function(i) {
+	return function() {
+		return "tabs-" + ++i;
 	};
-}(0);
-
+})(0);
 
 /**
  * @class Tabs
@@ -32,14 +31,12 @@ const uid = function (i) {
  * @link https://www.w3.org/TR/2013/WD-wai-aria-practices-20130307/#tabpanel
  */
 export default class Tabs {
-
 	static defaults() {
 		return Defaults;
 	}
 
 	constructor(element, options) {
-		if(!element)
-			throw new Error("Element must be non-null");
+		if (!element) throw new Error("Element must be non-null");
 
 		this.el = element;
 		this.$el = $(element);
@@ -51,7 +48,8 @@ export default class Tabs {
 			var tabId = uid(),
 				paneId = uid();
 
-			$(el).find(`.${ this.options.tabButtonClass }`)
+			$(el)
+				.find(`.${this.options.tabButtonClass}`)
 				.prop("id", tabId)
 				.attr("aria-controls", paneId);
 
@@ -59,7 +57,6 @@ export default class Tabs {
 				.eq(i)
 				.prop("id", paneId)
 				.attr("aria-labelledby", tabId);
-
 		});
 
 		this.delegate();
@@ -69,17 +66,16 @@ export default class Tabs {
 
 	events() {
 		return {
-			[`click .${ this.options.tabButtonClass }`]: "_handleTabBtnClick",
-			[`keydown .${ this.options.tabButtonClass }`]: "_handleTabBtnKeydown",
-			[`keydown .${ this.options.tabPaneClass }`]: "_handlePaneKeydown"
+			[`click .${this.options.tabButtonClass}`]: "_handleTabBtnClick",
+			[`keydown .${this.options.tabButtonClass}`]: "_handleTabBtnKeydown",
+			[`keydown .${this.options.tabPaneClass}`]: "_handlePaneKeydown"
 		};
 	}
 
 	/// Gets the 0-based index of the currently selected tab
 	getCurrentIndex() {
-		return this
-			._getTabs()
-			.filter(`.${ this.options.tabActiveClass }`)
+		return this._getTabs()
+			.filter(`.${this.options.tabActiveClass}`)
 			.index();
 	}
 
@@ -89,17 +85,17 @@ export default class Tabs {
 	activate(index: number, focus: ?boolean = true) {
 		var $selectedTabBtn = this._getTabs()
 			.removeClass(this.options.tabActiveClass)
-			.find(`.${ this.options.tabButtonClass }`)
+			.find(`.${this.options.tabButtonClass}`)
 			.attr("aria-expanded", false)
 			.attr("aria-selected", false)
 			.end()
 			.eq(index)
 			.addClass(this.options.tabActiveClass)
-			.find(`.${ this.options.tabButtonClass }`)
+			.find(`.${this.options.tabButtonClass}`)
 			.attr("aria-expanded", true)
 			.attr("aria-selected", true);
 
-		if(focus === true) {
+		if (focus === true) {
 			$selectedTabBtn.focus();
 		}
 
@@ -119,7 +115,7 @@ export default class Tabs {
 	 */
 	next() {
 		var currentIndex = this.getCurrentIndex();
-		if(currentIndex === this._getTabs().length - 1) {
+		if (currentIndex === this._getTabs().length - 1) {
 			return this.first();
 		} else {
 			return this.activate(currentIndex + 1);
@@ -132,7 +128,7 @@ export default class Tabs {
 	 */
 	previous() {
 		var currentIndex = this.getCurrentIndex();
-		if(currentIndex === 0) {
+		if (currentIndex === 0) {
 			return this.last();
 		} else {
 			return this.activate(currentIndex - 1);
@@ -159,12 +155,12 @@ export default class Tabs {
 
 	// Gets the tab elements
 	_getTabs(): $ {
-		return $(`.${ this.options.tabClass }`, this.$el);
+		return $(`.${this.options.tabClass}`, this.$el);
 	}
 
 	// Gets the tab pane elements
 	_getTabPanes(): $ {
-		return $(`.${ this.options.tabPaneClass }`, this.$el);
+		return $(`.${this.options.tabPaneClass}`, this.$el);
 	}
 
 	// Handle clicking on a tab
@@ -172,15 +168,14 @@ export default class Tabs {
 		e.preventDefault();
 
 		var index = $(e.currentTarget)
-			.closest(`.${ this.options.tabClass }`)
+			.closest(`.${this.options.tabClass}`)
 			.index();
 		this.activate(index);
 	}
 
 	// Enable keyboard control of the tabs
 	_handleTabBtnKeydown(e) {
-		switch(keycode(e.which))
-		{
+		switch (keycode(e.which)) {
 			// Go backwards one tab
 			case "left":
 			case "up":
@@ -216,7 +211,11 @@ export default class Tabs {
 			case "space":
 				e.preventDefault();
 				e.stopPropagation();
-				this.activate($(e.currentTarget).closest(`.${ this.options.tabClass }`).index());
+				this.activate(
+					$(e.currentTarget)
+						.closest(`.${this.options.tabClass}`)
+						.index()
+				);
 				break;
 			default:
 				break;
@@ -225,12 +224,12 @@ export default class Tabs {
 
 	// Focus the current tab btn on a ctrl+up or ctrl+left when in a tab pane
 	_handlePaneKeydown(e) {
-		if($.inArray(keycode(e.which), ["up", "left"]) > -1 && e.ctrlKey) {
+		if ($.inArray(keycode(e.which), ["up", "left"]) > -1 && e.ctrlKey) {
 			e.preventDefault();
 			e.stopPropagation();
 
 			var tabId = $(e.currentTarget).attr("aria-labelledby");
-			$(`#${ tabId }`).focus();
+			$(`#${tabId}`).focus();
 		}
 	}
 }

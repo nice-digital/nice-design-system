@@ -2,3 +2,7 @@ package.json
 public
 package-lock.json
 .cache
+
+lib
+es
+vendor

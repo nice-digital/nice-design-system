@@ -49,7 +49,7 @@ describe("Card", () => {
 	});
 
 	it("should create a card with the containing element type as supplied", () => {
-		const wrapper = shallow(<Card headingText="My Heading" elementType="li"/>);
+		const wrapper = shallow(<Card headingText="My Heading" elementType="li" />);
 		expect(wrapper.find("li").length).toEqual(1);
 	});
 

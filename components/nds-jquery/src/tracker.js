@@ -25,14 +25,12 @@ const TagManager = "TagManager",
 
 // Gets the name of tracking library available
 export function trackingLibrary(): string {
-	if(window.dataLayer && typeof window.dataLayer.push === "function")
+	if (window.dataLayer && typeof window.dataLayer.push === "function")
 		return TagManager;
 
-	if (window._gaq && typeof window._gaq.push === "function")
-		return Classic;
+	if (window._gaq && typeof window._gaq.push === "function") return Classic;
 
-	if(typeof window.ga === "function")
-		return Universal;
+	if (typeof window.ga === "function") return Universal;
 
 	return "";
 }
@@ -61,24 +59,38 @@ export function trackingLibrary(): string {
  * 		// Error tracking
  * 	};
  */
-export function sendEvent(category: string,
-	action: string,
-	label: ?string = "",
-	value: ?number,
-	callback: ?() => void = null,
-	nonInteraction: boolean = false): Promise {
-
-	if(trackingLibrary() == TagManager)
+export function sendEvent(
+	category,
+	action,
+	label = "",
+	value,
+	callback = null,
+	nonInteraction = false
+): Promise {
+	if (trackingLibrary() == TagManager)
 		return sendDataLayerEvent(category, action, label, value, callback);
-	else if(trackingLibrary() == Universal)
-		return sendUniversalEvent(category, action, label, value, callback, nonInteraction);
-	else if(trackingLibrary() == Classic)
-		return sendClassicEvent(category, action, label, value, callback, nonInteraction);
+	else if (trackingLibrary() == Universal)
+		return sendUniversalEvent(
+			category,
+			action,
+			label,
+			value,
+			callback,
+			nonInteraction
+		);
+	else if (trackingLibrary() == Classic)
+		return sendClassicEvent(
+			category,
+			action,
+			label,
+			value,
+			callback,
+			nonInteraction
+		);
 
 	const msg = "No tracking library available",
 		err = new Error(msg);
-	if(typeof callback === "function")
-		callback(err);
+	if (typeof callback === "function") callback(err);
 	return Promise.reject(err);
 }
 
@@ -91,17 +103,18 @@ export function sendEvent(category: string,
  * @param  {Function} callback 	Callback
  * @return {Promise}			A promise resolved when the track has fired
  */
-export function sendDataLayerEvent(category: string,
-	action: string,
-	label: ?string = "",
-	value: ?number = null,
-	callback: ?() => void = null): Promise {
-
-	if(trackingLibrary() !== TagManager) {
-		return new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
+export function sendDataLayerEvent(
+	category,
+	action,
+	label = "",
+	value = null,
+	callback = null
+): Promise {
+	if (trackingLibrary() !== TagManager) {
+		return new Promise((resolve, reject) => {
+			// eslint-disable-line no-unused-vars
 			const msg = "Google Tag Manager is not available";
-			if(typeof callback === "function")
-				callback(msg);
+			if (typeof callback === "function") callback(msg);
 			reject(msg);
 		});
 	}
@@ -113,13 +126,11 @@ export function sendDataLayerEvent(category: string,
 		eventLabel: label
 	};
 
-	if (value)
-		data.eventValue = value;
+	if (value) data.eventValue = value;
 
 	return new Promise(resolve => {
 		data.eventCallback = () => {
-			if(typeof callback === "function")
-				callback();
+			if (typeof callback === "function") callback();
 			resolve();
 		};
 
@@ -136,25 +147,25 @@ export function sendDataLayerEvent(category: string,
  * @param  {Function} callback 	Callback
  * @return {Promise}			A promise resolved when the track has fired
  */
-export function sendUniversalEvent(category: string,
-	action: string,
-	label: ?string = "",
-	value: ?number = null,
-	callback: ?() => void = null): Promise {
-
-	if(trackingLibrary() !== Universal) {
-		return new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
+export function sendUniversalEvent(
+	category,
+	action,
+	label = "",
+	value = null,
+	callback = null
+): Promise {
+	if (trackingLibrary() !== Universal) {
+		return new Promise((resolve, reject) => {
+			// eslint-disable-line no-unused-vars
 			const msg = "Universal Analytics is not available";
-			if(typeof callback === "function")
-				callback(msg);
+			if (typeof callback === "function") callback(msg);
 			reject(msg);
 		});
 	}
 
 	return new Promise(resolve => {
 		var cb = () => {
-			if(typeof callback === "function")
-				callback();
+			if (typeof callback === "function") callback();
 			resolve();
 		};
 
@@ -169,27 +180,25 @@ export function sendUniversalEvent(category: string,
 	});
 }
 
-
-
-export function sendClassicEvent(category: string,
-	action: string,
-	label: ?string = "",
-	value: ?number = null,
-	callback: ?() => void = null): Promise {
-
-	if(trackingLibrary() !== Classic) {
-		return new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
+export function sendClassicEvent(
+	category,
+	action,
+	label = "",
+	value = null,
+	callback = null
+): Promise {
+	if (trackingLibrary() !== Classic) {
+		return new Promise((resolve, reject) => {
+			// eslint-disable-line no-unused-vars
 			const msg = "Classic Analytics is not available";
-			if(typeof callback === "function")
-				callback(msg);
+			if (typeof callback === "function") callback(msg);
 			reject(msg);
 		});
 	}
 
 	return new Promise(resolve => {
 		var cb = () => {
-			if(typeof callback === "function")
-				callback();
+			if (typeof callback === "function") callback();
 			resolve();
 		};
 
@@ -202,14 +211,12 @@ export function sendClassicEvent(category: string,
 /// Base on the old NICE.EventTracking.js.
 /// @link //cdn.nice.org.uk/V3/Scripts/nice/NICE.EventTracking.js
 export default class Tracker {
-
 	static defaults() {
 		return Defaults;
 	}
 
 	constructor(element, options) {
-		if(!element)
-			throw new Error("Element must be non-null");
+		if (!element) throw new Error("Element must be non-null");
 
 		this.el = element;
 		this.$el = $(element);
@@ -221,7 +228,7 @@ export default class Tracker {
 
 	events() {
 		return {
-			[`click.tracker ${ this.options.trackSelectors.join(",") }`]: "_handleTrack"
+			[`click.tracker ${this.options.trackSelectors.join(",")}`]: "_handleTrack"
 		};
 	}
 
