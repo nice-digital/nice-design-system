@@ -121,9 +121,9 @@
   max-width: 66ch;
 }
 
-/// List placeholder
+/// Base list style
 /// @since 0.1.0
-%nds-list {
+@mixin nds-list {
   font-feature-settings: 'kern', 'onum', 'liga';
   margin-left: rem($nds-spacing-medium);
   padding: 0;

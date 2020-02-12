@@ -19,7 +19,7 @@
   width: 100vw;
 
   &__container {
-    @extend %nds-container;
+    @include nds-container;
   }
 
   &__body {

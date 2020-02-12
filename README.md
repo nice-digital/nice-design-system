@@ -37,11 +37,11 @@ We recommend using vscode as the IDE when developing with the NICE Design System
 
 ### Quick start
 
-	TL;DR:
-		1. Install Node 8.9+
-		2. `npm i`
-		3. `npm start`
-		4. http://localhost:3000/
+    TL;DR:
+    	1. Install Node 8.9+
+    	2. `npm i`
+    	3. `npm start`
+    	4. http://localhost:3000/
 
 ### Slow start
 
@@ -93,9 +93,9 @@ Run `npm start` and `test:unit:watch` for development. However, there are other 
 | `npm run lint`               | Lints both JS and SCSS                                      |
 | `npm run lint:js`            | Lints just JS                                               |
 | `npm run lint:scss`          | Lints just SCSS                                             |
-| `npm run docs:dev`          | Start development server for Gatsby documentation site                                             |
-| `npm run docs:serve`          | Serve the built docs site locally for testing                                             |
-| `npm run docs:build`          | Build out the docs static site for deployment                                             |
+| `npm run docs:dev`           | Start development server for Gatsby documentation site      |
+| `npm run docs:serve`         | Serve the built docs site locally for testing               |
+| `npm run docs:build`         | Build out the docs static site for deployment               |
 
 > Note: because lerna is installed locally, you can use `npm run lerna -- ` to run lerna commands, for example `npm run lerna -- add @nice-digital/icons --scope=@nice-digital/nds-filters`
 
@@ -136,6 +136,7 @@ These are the following breaking changes from 0.x to 1.x:
 - drop support for Sublime as an IDE - prefer vscode
 - removed nunjucks templates, we now recommend using React components
 - removed the inverse panel
-- prefixed all mixin, functions, variables and placeholder classes with *nds-* e.g. `%container` is now `%nds-container`
+- prefixed all mixin, functions, variables and classes with _nds-_ e.g. `container` is now `nds-container`
 - moved component-specific colour variables out of core into their respective component SCSS. Also renamed appropriately e.g.`$colour-panel-default` and `$colour-panel-default-border` are now in @nice-digital/nds-panel and renamed to `$nds-colour-panel-default-background` and `$nds-colour-panel-default-border`
-- removed `nds-element` and `nds-modifier` and their aliases `nds-e` and `nds-m` as they were never used.
+- removed `nds-element` and `nds-modifier` and their aliases `nds-e` and `nds-m` as they were never used
+- Removed all placeholders and replaced with mixins

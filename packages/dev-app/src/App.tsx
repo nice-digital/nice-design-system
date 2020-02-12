@@ -23,7 +23,7 @@ class App extends Component {
 	render() {
 		return (
 			<Router history={browserHistory}>
-				<ul className="container hide-print">
+				<ul className="container hide-print list list--unstyled">
 					<li>
 						<Link to="/formgroup">Form Group</Link>
 					</li>

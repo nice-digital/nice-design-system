@@ -10,9 +10,3 @@
   width: 96%; // Fallback for non-calc browsers e.g. IE8, see https://caniuse.com/#feat=calc
   width: calc(100% - #{rem($nds-container-gutter * 2)});
 }
-
-/// Container placeholder.
-/// @since 0.1.0
-%nds-container {
-  @include nds-container;
-}
