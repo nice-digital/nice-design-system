@@ -4,7 +4,7 @@
 
 ul,
 ol {
-  @extend %nds-list;
+  @include nds-list;
 }
 
 /// Base list class. Can be used with various modifiers.
@@ -12,7 +12,7 @@ ol {
 /// @see .list--loose
 /// @since 0.1.0
 .list {
-  @extend %nds-list;
+  @include nds-list;
 }
 
 /// Unstyled list modifier - remove bullets, padding etc.

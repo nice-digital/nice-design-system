@@ -38,7 +38,7 @@ $nds-action-banner-subtle-border: $nds-colour-nice-grey-2;
   position: relative;
 
   &__container {
-    @extend %nds-container;
+    @include nds-container;
   }
 
   &__text {
