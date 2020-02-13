@@ -2,6 +2,7 @@ package.json
 public
 package-lock.json
 .cache
+*.md
 
 lib
 es
