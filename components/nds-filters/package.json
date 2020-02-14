@@ -5,6 +5,7 @@
   "author": "Ian Routledge <ian.routledge@nice.org.uk>",
   "homepage": "https://nhsevidence.github.io/nice-design-system/",
   "license": "MIT",
+  "types": "nds-filters.d.ts",
   "main": "lib/Filters.js",
   "module": "es/Filters.js",
   "style": "scss/filters.scss",

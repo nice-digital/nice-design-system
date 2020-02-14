@@ -15,6 +15,7 @@ import { TagsView } from "./views/TagsView";
 import { MaintainRatioView } from "./views/MaintainRatioView";
 import { PrintView } from "./views/PrintView";
 import { BreadcrumbsView } from "./views/BreadcrumbsView";
+import { FiltersView } from "./views/FiltersView";
 import "./App.scss";
 
 const browserHistory = createBrowserHistory();
@@ -63,6 +64,9 @@ class App extends Component {
 					<li>
 						<Link to="/breadcrumbs">Breadcrumbs</Link>
 					</li>
+					<li>
+						<Link to="/filters">Filters</Link>
+					</li>
 				</ul>
 				<main className="container">
 					<Route path="/formgroup" component={FormGroupView} />
@@ -78,6 +82,7 @@ class App extends Component {
 					<Route path="/maintain-ratio" component={MaintainRatioView} />
 					<Route path="/print" component={PrintView} />
 					<Route path="/breadcrumbs" component={BreadcrumbsView} />
+					<Route path="/filters" component={FiltersView} />
 				</main>
 			</Router>
 		);

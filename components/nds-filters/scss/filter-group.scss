@@ -5,6 +5,44 @@
 @import '~@nice-digital/nds-core/scss/core';
 @import '~@nice-digital/icons/scss/nice-icons';
 
+@mixin _filter-group-heading-button {
+  appearance: none;
+  background: $nds-colour-nice-grey-2;
+  border: 0;
+  color: $nds-colour-text;
+  cursor: pointer;
+  display: block;
+  font-weight: bold;
+  line-height: 1.5;
+  max-width: 100%;
+  padding: rem($nds-spacing-small);
+  text-align: left;
+  text-decoration: none;
+  width: 100%;
+
+  &:after {
+    @include nice-icon(chevron-up);
+    @include nds-font-size(-1);
+    color: $nds-colour-icons;
+    line-height: normal; // IE 9/10 bug where rems on block psuedos collapse to 0
+    position: absolute;
+    right: rem($nds-spacing-small);
+    top: rem($nds-spacing-small);
+  }
+
+  &[aria-expanded='false']:after {
+    content: nice-icon(chevron-down);
+  }
+
+  &:hover {
+    background: $nds-colour-nice-grey-1;
+  }
+
+  &:focus {
+    @include nds-default-focus-style;
+  }
+}
+
 /// Filter group consist of a title with one of:
 ///   - set of checkbox options
 ///   - TODO e.g. free text, dates etc
@@ -26,57 +64,6 @@
     margin-top: 0;
   }
 
-  // Heading used for collapsing/expanding the filter group
-  &__heading {
-    @include nds-font-size(0);
-    background: $nds-colour-nice-grey-2;
-    border: 0;
-    display: block;
-    font-weight: bold;
-    margin: 0;
-    padding: rem($nds-spacing-small);
-    position: relative;
-    text-align: left;
-    width: 100%;
-
-    @include nds-when-is(button) {
-      appearance: none;
-      cursor: pointer;
-
-      &:after {
-        @include nice-icon(chevron-up);
-        @include nds-font-size(-1);
-        color: $nds-colour-icons;
-        line-height: normal; // IE 9/10 bug where rems on block psuedos collapse to 0
-        position: absolute;
-        right: rem($nds-spacing-small);
-        top: rem($nds-spacing-small);
-      }
-
-      &[aria-expanded='false']:after {
-        content: nice-icon(chevron-down);
-      }
-
-      &:hover {
-        background: $nds-colour-nice-grey-1;
-
-        + .filter-group__options {
-          border-color: $nds-colour-nice-grey-1;
-        }
-      }
-
-      &:focus {
-        @include nds-default-focus-style;
-      }
-    }
-  }
-
-  // Shows the number of filtered options e.g. "2 selected"
-  &__count {
-    @include nds-font-size(-1);
-    font-weight: normal;
-  }
-
   // Wrapper for the options when filter is a list of checboxes
   &__options {
     border: rem($nds-spacing-x-small) solid $nds-colour-nice-grey-2;
@@ -86,10 +73,54 @@
     }
   }
 
+  // Heading used for collapsing/expanding the filter group
+  &__heading {
+    @include nds-font-size(0);
+    background: $nds-colour-nice-grey-2;
+    border: 0;
+    display: block;
+    font-weight: bold;
+    margin: 0;
+    max-width: 100%;
+    padding: 0;
+    position: relative;
+    text-align: left;
+    width: 100%;
+
+    a,
+    button {
+      @include _filter-group-heading-button;
+    }
+
+    &:hover {
+      + .filter-group__options {
+        border-color: $nds-colour-nice-grey-1;
+      }
+    }
+
+    @include nds-when-is(button) {
+      @include _filter-group-heading-button;
+    }
+
+    @include nds-when-is(a) {
+      @include _filter-group-heading-button;
+    }
+  }
+
+  // Shows the number of filtered options e.g. "2 selected"
+  &__count {
+    @include nds-font-size(-1);
+    display: block;
+    font-weight: normal;
+  }
+
+  // DEPRECTAED: Use filter-option.scss instead
+  // This is here for backwards compat but may be removed in the future
   // Checkbox/radio button option (label)
   &__option {
     background: $nds-colour-nice-white;
     border-top: 1px solid $nds-colour-nice-grey-2;
+    color: $nds-colour-text;
     cursor: pointer;
     display: block;
     line-height: 1.2;
@@ -97,10 +128,7 @@
       $nds-spacing-small $nds-spacing-small $nds-spacing-small
         $nds-spacing-large
     );
-
-    &:first-child {
-      border-top: 0;
-    }
+    text-decoration: none;
 
     &:hover {
       background: $nds-colour-nice-grey-3;
