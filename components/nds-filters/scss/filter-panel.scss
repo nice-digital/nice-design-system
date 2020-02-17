@@ -6,7 +6,19 @@
 @import '~@nice-digital/icons/scss/nice-icons';
 
 @mixin _filter-panel-heading-button {
+  @include nds-font-size(h5);
+  appearance: none;
+  background: $nds-colour-nice-grey-2;
+  border: 0;
+  color: $nds-colour-text;
   cursor: pointer;
+  display: block;
+  font-weight: bold;
+  padding: rem($nds-spacing-small);
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  width: 100%;
 
   &:after {
     @include nice-icon(chevron-up);
@@ -42,25 +54,15 @@
   // - button to collapse/expand filter panel client side
   // - anchor if you're progressively enhancing
   &__heading {
-    @include nds-font-size(h5);
-    appearance: none;
-    background: $nds-colour-nice-grey-2;
-    border: 0;
-    color: $nds-colour-text;
-    display: block;
-    font-weight: bold;
     margin: 0;
-    padding: rem($nds-spacing-small);
-    position: relative;
-    text-align: left;
-    text-decoration: none;
-    width: 100%;
+    padding: 0;
 
-    @include nds-when-is(button) {
+    a,
+    button {
       @include _filter-panel-heading-button;
     }
 
-    @include nds-when-is(a) {
+    @include nds-when-is(a, button) {
       @include _filter-panel-heading-button;
     }
   }
@@ -84,13 +86,11 @@
       margin-bottom: rem($nds-spacing-medium);
       padding: 0;
 
-      @include nds-when-is(button) {
-        &:after {
-          display: none;
-        }
-      }
+      a,
+      button {
+        background: none;
+        padding: 0;
 
-      @include nds-when-is(a) {
         &:after {
           display: none;
         }

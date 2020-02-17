@@ -63,18 +63,23 @@
 /// ugly, here is a mixin providing a friendly API to do so.
 /// @see https://css-tricks.com/snippets/sass/mixin-to-qualify-a-selector/
 /// @author Hugo Giraudel
-/// @param {String} $element-selector - Element selector
+/// @param {String} $element-selectors - Element selector(s)
 /// @since 0.5.0;
 /// @example
 ///   .something {
 ///     color: red;
 
-///     @include nds-when-is(a) {
+///     @include nds-when-is(a, button) {
 ///       color: blue;
 ///     }
 ///   }
-@mixin nds-when-is($element-selector) {
-  @at-root #{$element-selector + &} {
+@mixin nds-when-is($element-selectors...) {
+  $selectors: ();
+  @each $element-selector in $element-selectors {
+    $selectors: append($selectors, $element-selector + &);
+  }
+
+  @at-root #{zip($selectors)} {
     @content;
   }
 }

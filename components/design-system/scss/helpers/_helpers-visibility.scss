@@ -118,3 +118,7 @@ $hide-selectors: ();
     @include nds-invisible-off;
   }
 }
+
+.relative {
+  position: relative;
+}

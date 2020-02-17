@@ -98,11 +98,7 @@
       }
     }
 
-    @include nds-when-is(button) {
-      @include _filter-group-heading-button;
-    }
-
-    @include nds-when-is(a) {
+    @include nds-when-is(a, button) {
       @include _filter-group-heading-button;
     }
   }
@@ -114,9 +110,9 @@
     font-weight: normal;
   }
 
-  // DEPRECTAED: Use filter-option.scss instead
-  // This is here for backwards compat but may be removed in the future
   // Checkbox/radio button option (label)
+  // DEPRECTAED: Use filter-option.scss (i.e. .filter__option) instead
+  // This is here for backwards compat but may be removed in the future
   &__option {
     background: $nds-colour-nice-white;
     border-top: 1px solid $nds-colour-nice-grey-2;
@@ -143,6 +139,7 @@
 
       &:focus {
         @include nds-default-focus-style;
+        z-index: 1;
       }
     }
   }

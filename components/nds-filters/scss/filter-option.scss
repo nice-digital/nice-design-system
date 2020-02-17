@@ -20,8 +20,6 @@
 
   // An option can be an anchor or a label
   &:hover,
-  &:visited,
-  &:active,
   &:focus {
     color: $nds-colour-text;
   }
@@ -39,6 +37,7 @@
 
     &:focus {
       @include nds-default-focus-style;
+      z-index: 1;
     }
   }
 
@@ -51,10 +50,10 @@
       cursor: pointer;
       height: rem($nds-spacing-medium);
       left: rem($nds-spacing-small);
+      margin-top: rem($nds-spacing-xx-small);
       pointer-events: none;
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      top: rem($nds-spacing-small);
       width: rem($nds-spacing-medium);
     }
 
@@ -66,24 +65,35 @@
       content: '';
       cursor: pointer;
       height: 0.4rem;
-      left: 0.8rem;
+      left: 0.7rem;
       opacity: 0;
       pointer-events: none;
       position: absolute;
-      top: 45%;
-      transform: rotate(-45deg) translateY(-50%);
+      top: 0.85rem;
+      transform: rotate(-45deg);
       width: 0.7rem;
     }
   }
 
-  input:focus + &__text {
+  input:focus ~ &__text {
     &:before {
       @include nds-default-focus-style;
     }
   }
-  input:checked + &__text {
+  input:checked ~ &__text {
     &:after {
       opacity: 1;
+    }
+  }
+
+  @include nds-when-is(a) {
+    &:focus {
+      z-index: 1;
+    }
+
+    &:visited,
+    &:active {
+      color: $nds-colour-text;
     }
   }
 }

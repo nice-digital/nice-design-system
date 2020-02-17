@@ -33,19 +33,15 @@ export class FilterPanel extends Component {
 
 		return (
 			<div className={`filter-panel ${className}`}>
-				{canUseDOM ? (
-					<button
-						type="button"
-						className="filter-panel__heading"
-						aria-expanded={isExpanded}
+				<h2 className="filter-panel__heading">
+					<a
+						href="#filter-panel-body"
+						aria-expanded="true"
 						aria-controls="filter-panel-body"
-						onClick={this.handleClick}
 					>
 						{heading}
-					</button>
-				) : (
-					<h2 className="filter-panel__heading">{heading}</h2>
-				)}
+					</a>
+				</h2>
 				<div
 					id="filter-panel-body"
 					className="filter-panel__body"
