@@ -24,7 +24,7 @@ const props: CardProps = {
 export const CardView = () => {
 	return (
 		<>
-			<Card {...props} data-qa-selector="cardy"/>
+			<Card {...props} data-qa-selector="cardy" />
 		</>
 	);
 };
