@@ -95,6 +95,15 @@
           display: none;
         }
       }
+
+      @include nds-when-is(a, button) {
+        background: none;
+        padding: 0;
+
+        &:after {
+          display: none;
+        }
+      }
     }
 
     &__body {
