@@ -19,31 +19,29 @@ export class FilterPanel extends Component {
 		this.setState({ canUseDOM: true });
 	}
 
-	handleClick() {
+	handleClick(e) {
+		e.preventDefault();
+
 		this.setState(prevState => ({
 			isExpanded: !prevState.isExpanded
 		}));
 	}
 
 	render() {
-		const { title, children, className } = this.props;
+		const { heading = "Filter", children, className } = this.props;
 		const { canUseDOM, isExpanded } = this.state;
 
 		return (
 			<div className={`filter-panel ${className}`}>
-				{canUseDOM ? (
-					<button
-						type="button"
-						className="filter-panel__heading"
-						aria-expanded={isExpanded}
+				<h2 className="filter-panel__heading">
+					<a
+						href="#filter-panel-body"
+						aria-expanded="true"
 						aria-controls="filter-panel-body"
-						onClick={this.handleClick}
 					>
-						{title}
-					</button>
-				) : (
-					<h2 className="filter-panel__heading">{title}</h2>
-				)}
+						{heading}
+					</a>
+				</h2>
 				<div
 					id="filter-panel-body"
 					className="filter-panel__body"
@@ -67,7 +65,7 @@ FilterPanel.propTypes = {
 		PropTypes.node
 	]).isRequired,
 	className: PropTypes.string,
-	title: PropTypes.node
+	heading: PropTypes.string
 };
 
 FilterPanel.defaultProps = {

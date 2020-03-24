@@ -17,8 +17,8 @@
 ///
 /// @since 0.3.1
 .card {
+  @include nds-clearfix;
   margin: rem(0 0 $nds-spacing-large 0);
-  overflow: hidden;
   position: relative;
 
   &--flush {
@@ -28,25 +28,27 @@
   &--separator,
   .list--unstyled & {
     border-bottom: 1px solid $nds-colour-border;
-    margin: rem(0 0 $nds-spacing-small 0);
-    padding: rem(0 0 $nds-spacing-x-small 0);
+    margin: rem(0 0 $nds-spacing-medium 0);
+    padding: rem(0 0 $nds-spacing-medium 0);
+  }
+
+  mark {
+    background: transparent;
+    font-weight: bold;
+    padding: 0;
   }
 
   &__header {
-    margin: rem(0 0 $nds-spacing-x-small 0);
+    margin: rem(0 0 $nds-spacing-small 0);
   }
 
   &__heading {
-    @include nds-font-size(0);
+    @include nds-font-size(1);
     font-weight: bold;
     margin: 0;
 
     a {
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
+      text-decoration: underline;
 
       &:before {
         content: '';
@@ -73,7 +75,7 @@
   }
 
   &__summary {
-    margin: rem(0 0 $nds-spacing-x-small 0);
+    margin: rem(0 0 $nds-spacing-small 0);
   }
 
   &__image {
@@ -100,12 +102,16 @@
 
   &__metadatum {
     display: block;
-    margin: rem(0 $nds-spacing-small $nds-spacing-x-small 0);
+    margin: rem(0 $nds-spacing-medium $nds-spacing-x-small 0);
 
     dt,
     dd {
       display: inline-block;
       margin: 0;
+    }
+
+    dt {
+      margin-right: rem($nds-spacing-x-small);
     }
   }
 
