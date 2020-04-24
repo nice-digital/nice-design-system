@@ -76,6 +76,10 @@
 
   &__summary {
     margin: rem(0 0 $nds-spacing-small 0);
+
+    a {
+      position: relative;
+    }
   }
 
   &__image {
