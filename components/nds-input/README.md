@@ -2,17 +2,18 @@
 
 > Form input component for the NICE Design System
 
-- [`@nice-digital/nds-button`](#nice-digitalnds-button)
+- [`@nice-digital/nds-input`](#nice-digitalnds-input)
 	- [Installation](#installation)
 	- [Usage](#usage)
 		- [React](#react)
 			- [Props](#props)
-				- [children](#children)
-				- [variant](#variant)
-				- [buttonType](#buttontype)
-				- [to](#to)
-				- [elementType](#elementtype)
-				- [className](#classname)
+				- [error](#error)
+				- [errorMessage](#errormessage)
+				- [hint](#hint)
+				- [inputRef](#inputref)
+				- [label](#label)
+				- [name](#name)
+				- [type](#type)
 		- [SCSS](#scss)
 		- [HTML](#html)
 
@@ -21,95 +22,96 @@
 Install Node, and then:
 
 ```sh
-npm i @nice-digital/nds-button --save
+npm i @nice-digital/nds-input --save
 ```
 
 ## Usage
 
 ### React
 
-Import the `Button` components from the package and use within JSX:
+Import the `Input` components from the package and use within JSX:
 
 ```jsx
 import React from "react";
-import { Button } from "@nice-digital/nds-button";
+import { Input } from "@nice-digital/nds-input";
 
-<Button>
-	A default (primary) button
-</Button>
+<Input label="First name" name="firstname" />
 
-<Button variant="cta" buttonType="submit">
-	A CTA submit button
-</Button>
+<Input
+    label="Surname"
+    name="surname"
+    error={true}
+    errorMessage="This field is required"
+/>
 
-<Button variant="secondary" className="mt--e">
-	A secondary button, with an additional class
-</Button>
+<Input
+    label="Age on 1st September"
+    name="age"
+    hint="Please enter in full years"
+/>
 
-<Button variant="inverse">
-	Am inverse button
-</Button>
+import { register } from "react-hook-form";
+<Input label="With ref" name="ref" inputRef={register} />
 
-<Button to="/test">
-	An anchor button
-</Button>
-
-<Button to="/test" elementType={Link}>
-	An anchor button, with custom routing
-</Button>
 ```
 
 > Note: The React component automatically imports the SCSS, so there's no need to import the SCSS directly yourself.
 
 #### Props
 
-##### children
+##### error
 
-- Type: `ReactNode`
+- Type: `boolean`
+- Default: `false`
 
-The body of the button
+Whether the component is in its error state. Adds classes to apply styling.
 
-##### variant
-
-- Type: `"primary"` | `"cta"` | `"secondary"` | `"inverse"`
-- Default: `"primary"`
-
-The variant of the button. Leave blank to default to a primary button.
-
-##### buttonType
-
-- Type: `"button"` | `"submit"` | `"reset"`
-- Default: `"button"`
-
-The type of the button. Leave blank to default to _button_ or if you're using the to attribute for a link.
-
-##### to
+##### errorMessage
 
 - Type: `string`
-- Default: `null`
 
-Destination URL if this is an anchor button. If you're using custom routing, use the `elementType` prop to pass in a custom tag type.
+Error message to display inline.
 
-##### elementType
-
-- Type: `React.ElementType`
-- Default: `null`
-
-A custom tag type for the button, when it's an anchor. Defaults to a normal HTMLAnchorElement. Use this prop to use custom routing e.g. `<Button to="/test" elementType={Link}>Text</Button>`.
-
-##### className
+##### hint
 
 - Type: `string`
-- Default: `""`
 
-Additional CSS classes to apply to the button, e.g. `mt--e` to add a top margin.
+Display extra help text above the input field.
+
+##### inputRef
+
+- Type: `React.Ref`
+- Default: `null`
+
+Allow parent access to the ref property of the `input` element.
+
+##### label
+
+- Type: `React.ReactNode` (required)
+
+The content of the `label` element.
+
+##### name
+
+- Type: `string` (required)
+
+Input element `name` property.
+
+##### type
+
+- Type: `string`
+- Default: "text"
+
+##### Anything else
+
+Any other props passed to `<Input />` will be cascaded to the input element.x
 
 ### SCSS
 
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import '~@nice-digital/nds-button/scss/button';
+@import '~@nice-digital/nds-input/scss/input';
 ```
 
 ### HTML
@@ -117,16 +119,19 @@ If you're not using [React](#react), then import the SCSS directly into your app
 If you're not using [React](#react), then include the [SCSS as above](#scss) and use the HTML:
 
 ```html
-<button type="button" class="btn">
-	Default (primary) button
-</button>
-<button type="submit" class="btn btn--cta">
-	CTA submit button
-</button>
-<button type="reset" class="btn btn--secondary">
-	Secondary reset button
-</button>
-<a href="/test" class="btn btn--inverse">
-	Inverse anchor button
-</a>
+<div class="input input--error">
+    <label class="input__label">
+        First name
+    </label>
+    <p class="form__hint">
+        Please enter your name
+    </p>
+    <p class="form__error">
+        This field is required
+    </p>
+    <input  name="firstname" 
+            class="input__input" 
+            type="text"
+    >
+</div>
 ```

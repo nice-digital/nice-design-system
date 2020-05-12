@@ -1,32 +1,32 @@
 declare module "@nice-digital/nds-input" {
 	import React = require("react");
 
-	interface ButtonProps
-		extends React.HTMLProps<HTMLButtonElement | HTMLAnchorElement> {
-		/** The destination URL if this is an anchor */
-		to?: string;
-		variant?: "primary" | "cta" | "secondary" | "inverse";
-		buttonType?: "button" | "submit" | "reset";
-		/** A custom element type to be rendered as the tag, useful for custom routing */
-		elementType?: React.ElementType;
-		/** Additional classes e.g. margin modifiers like "mt--0" */
-		className?: string;
-		children: React.ReactNode;
+	export interface InputProps {
+		error?: boolean;
+		errorMessage?: string;
+		hint?: string;
+		inputRef?: React.Ref<HTMLElement>;
+		label: string;
+		name: string;
+		type?:
+			| "color"
+			| "date"
+			| "datetime-local"
+			| "email"
+			| "file"
+			| "hidden"
+			| "image"
+			| "month"
+			| "number"
+			| "range"
+			| "password"
+			| "search"
+			| "tel"
+			| "text"
+			| "time"
+			| "url"
+			| "week";
 	}
 
-	interface ButtonComponent extends React.FC<ButtonProps> {
-		types: {
-			button: "button";
-			submit: "submit";
-			reset: "reset";
-		};
-		variants: {
-			cta: "cta";
-			primary: "primary";
-			secondary: "secondary";
-			inverse: "inverse";
-		};
-	}
-
-	export const Button: ButtonComponent;
+	export const Input: React.FC<InputProps>;
 }

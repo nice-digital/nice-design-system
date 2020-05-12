@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@nice-digital/nds-input should match snapshot 1`] = `
+<div
+  className="input input--error"
+>
+  <label
+    className="input__label"
+    htmlFor="name"
+  >
+    Label
+  </label>
+  <p
+    className="input__hint"
+  >
+    Hint
+  </p>
+  <p
+    className="input__error"
+  >
+    Error
+  </p>
+  <input
+    className="input__input"
+    id="name"
+    name="name"
+    type="text"
+  />
+</div>
+`;

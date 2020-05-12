@@ -14,6 +14,16 @@
     margin-bottom: rem($nds-spacing-x-small);
   }
 
+  &__hint {
+    margin-top: 0;
+  }
+
+  &__error {
+    color: $nds-colour-error;
+    font-weight: bold;
+    margin-top: 0;
+  }
+
   &__input {
     border: rem($nds-spacing-xx-small) solid $nds-colour-border;
     padding: rem($nds-spacing-small);
@@ -24,7 +34,9 @@
     }
   }
 
-  &--error .input__input {
-    @include nds-default-error-style;
+  &--error {
+    .input__input {
+      @include nds-default-error-style;
+    }
   }
 }

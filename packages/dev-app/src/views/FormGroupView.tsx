@@ -8,7 +8,14 @@ export const FormGroupView = () => {
 		<>
 			<h1>Form Group View</h1>
 			<FormGroup legend="Input field">
-				<Input type="text" label="First name" hint="Enter your given name"/>
+				<Input
+					name="first_name"
+					type="text"
+					label="First name"
+					hint="Enter your given name"
+					error={true}
+					errorMessage="This field is required"
+				/>
 			</FormGroup>
 			<FormGroup
 				inline
