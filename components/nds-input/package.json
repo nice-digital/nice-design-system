@@ -1,7 +1,7 @@
 {
   "name": "@nice-digital/nds-input",
   "version": "1.0.0",
-  "description": "Button component for the NICE Design System",
+  "description": "Input component for the NICE Design System",
   "author": "Warren Keith <warren.keith@nice.org.uk>",
   "homepage": "https://nice-digital.github.io/nice-design-system/",
   "license": "MIT",
