@@ -75,3 +75,4 @@ packages/storybook/storybook-static
 
 # From gatsby docs
 /packages/docs/public/
+.netlify

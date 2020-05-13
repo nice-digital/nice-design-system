@@ -1,11 +1,22 @@
 import React from "react";
 import { FormGroup } from "@nice-digital/nds-form-group";
 import { Radio } from "@nice-digital/nds-radio";
+import { Textarea } from "@nice-digital/nds-textarea";
 
 export const FormGroupView = () => {
 	return (
 		<>
 			<h1>Form Group View</h1>
+			<FormGroup legend="Text area hey">
+				<Textarea
+					label="Your address"
+					name="textarea"
+					hint="Please enter your postal address"
+					error={true}
+					errorMessage="Argh!"
+					defaultValue="hello there"
+				/>
+			</FormGroup>
 			<FormGroup
 				inline
 				name="my-group"
