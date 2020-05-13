@@ -11,16 +11,18 @@
     @include nds-font-size(p);
     display: block;
     font-weight: bold;
-    margin-bottom: rem($nds-spacing-x-small);
+    margin-bottom: rem($nds-spacing-small);
   }
 
   &__hint {
+    margin-bottom: rem($nds-spacing-small);
     margin-top: 0;
   }
 
   &__error {
     color: $nds-colour-error;
     font-weight: bold;
+    margin-bottom: rem($nds-spacing-small);
     margin-top: 0;
   }
 

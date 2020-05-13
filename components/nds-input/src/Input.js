@@ -6,6 +6,7 @@ import "./../scss/input.scss";
 
 export const Input = props => {
 	const {
+		defaultValue,
 		name,
 		inputRef,
 		error,
@@ -32,6 +33,7 @@ export const Input = props => {
 				className="input__input"
 				id={name}
 				type={type}
+				defaultValue={defaultValue}
 				{...rest}
 			/>
 		</div>
@@ -43,6 +45,7 @@ Input.propTypes = {
 		PropTypes.func,
 		PropTypes.shape({ current: PropTypes.object })
 	]),
+	defaultValue: PropTypes.string,
 	error: PropTypes.bool,
 	errorMessage: PropTypes.string,
 	label: PropTypes.string.isRequired,

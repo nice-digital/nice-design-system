@@ -7,6 +7,7 @@
 	- [Usage](#usage)
 		- [React](#react)
 			- [Props](#props)
+				- [defaultValue](#defaultValue)
 				- [error](#error)
 				- [errorMessage](#errormessage)
 				- [hint](#hint)
@@ -58,6 +59,12 @@ import { register } from "react-hook-form";
 > Note: The React component automatically imports the SCSS, so there's no need to import the SCSS directly yourself.
 
 #### Props
+
+##### defaultValue
+
+- Type: `string`
+
+Pass a value for the input to be initially populated with.
 
 ##### error
 
