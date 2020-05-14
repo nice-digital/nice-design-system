@@ -1,3 +1,4 @@
-import Textarea from "./Textarea";
+import { Input } from "@nice-digital/nds-input";
+import { Textarea } from "@nice-digital/nds-textarea";
 
-export { Textarea };
+export { Input, Textarea };
