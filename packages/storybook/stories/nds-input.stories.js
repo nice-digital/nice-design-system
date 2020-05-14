@@ -6,6 +6,26 @@ import { storiesOf } from "@storybook/react";
 import { text, boolean, select } from "@storybook/addon-knobs";
 import { Input } from "@nice-digital/nds-input";
 
+const inputTypes = [
+	"color",
+	"date",
+	"datetime-local",
+	"email",
+	"file",
+	"hidden",
+	"image",
+	"month",
+	"number",
+	"range",
+	"password",
+	"search",
+	"tel",
+	"text",
+	"time",
+	"url",
+	"week"
+];
+
 const Basic = () => <Input label="First Name" name="firstname" />;
 const Hint = () => (
 	<Input
@@ -30,6 +50,7 @@ const TryItOut = () => (
 		errorMessage={text("Error message", "There was a problem with this field")}
 		error={boolean("Error")}
 		hint={text("Hint", "Only enter your first name")}
+		type={select("Input type", inputTypes, "text")}
 	/>
 );
 
