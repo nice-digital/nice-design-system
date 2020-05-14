@@ -5,7 +5,6 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { text, boolean, select } from "@storybook/addon-knobs";
 import { Input } from "@nice-digital/nds-input";
-// import { FormGroup } from "@nice-digital/nds-form-group";
 
 const Basic = () => <Input label="First Name" name="firstname" />;
 const Hint = () => (
@@ -13,6 +12,7 @@ const Hint = () => (
 		label="First Name"
 		name="firstname"
 		hint="Only enter your first name"
+		defaultValue="Already populated"
 	/>
 );
 const Error = () => (
