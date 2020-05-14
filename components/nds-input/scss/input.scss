@@ -1,3 +1,7 @@
+////
+/// @group components
+////
+
 @import '~@nice-digital/nds-core/scss/core';
 
 .input {
@@ -7,7 +11,19 @@
     @include nds-font-size(p);
     display: block;
     font-weight: bold;
-    margin-bottom: rem($nds-spacing-x-small);
+    margin-bottom: rem($nds-spacing-small);
+  }
+
+  &__hint {
+    margin-bottom: rem($nds-spacing-small);
+    margin-top: 0;
+  }
+
+  &__error {
+    color: $nds-colour-error;
+    font-weight: bold;
+    margin-bottom: rem($nds-spacing-small);
+    margin-top: 0;
   }
 
   &__input {
@@ -20,7 +36,9 @@
     }
   }
 
-  &--error .input__input {
-    @include nds-default-error-style;
+  &--error {
+    .input__input {
+      @include nds-default-error-style;
+    }
   }
 }

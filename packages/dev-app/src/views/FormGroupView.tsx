@@ -1,11 +1,22 @@
 import React from "react";
 import { FormGroup } from "@nice-digital/nds-form-group";
 import { Radio } from "@nice-digital/nds-radio";
+import { Input } from "@nice-digital/nds-input";
 
 export const FormGroupView = () => {
 	return (
 		<>
 			<h1>Form Group View</h1>
+			<FormGroup legend="Input field">
+				<Input
+					name="first_name"
+					type="text"
+					label="First name"
+					hint="Enter your given name"
+					error={true}
+					errorMessage="This field is required"
+				/>
+			</FormGroup>
 			<FormGroup
 				inline
 				name="my-group"
