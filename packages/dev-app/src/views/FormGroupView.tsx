@@ -2,6 +2,7 @@ import React from "react";
 import { FormGroup } from "@nice-digital/nds-form-group";
 import { Radio } from "@nice-digital/nds-radio";
 import { Input } from "@nice-digital/nds-input";
+import { Textarea } from "@nice-digital/nds-textarea";
 
 export const FormGroupView = () => {
 	return (
@@ -15,6 +16,16 @@ export const FormGroupView = () => {
 					hint="Enter your given name"
 					error={true}
 					errorMessage="This field is required"
+				/>
+			</FormGroup>
+			<FormGroup legend="Text area hey">
+				<Textarea
+					label="Your address"
+					name="textarea"
+					hint="Please enter your postal address"
+					error={true}
+					errorMessage="Argh!"
+					defaultValue="hello there"
 				/>
 			</FormGroup>
 			<FormGroup

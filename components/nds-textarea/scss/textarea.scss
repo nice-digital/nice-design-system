@@ -7,10 +7,22 @@
     @include nds-font-size(p);
     display: block;
     font-weight: bold;
-    margin-bottom: rem($nds-spacing-x-small);
+    margin-bottom: rem($nds-spacing-small);
   }
 
-  &__input {
+  &__hint {
+    margin-bottom: rem($nds-spacing-small);
+    margin-top: 0;
+  }
+
+  &__error {
+    color: $nds-colour-error;
+    font-weight: bold;
+    margin-bottom: rem($nds-spacing-small);
+    margin-top: 0;
+  }
+
+  &__textarea {
     border: rem($nds-spacing-xx-small) solid $nds-colour-border;
     height: 8em; // default textarea 8 characters tall
     padding: rem($nds-spacing-small);
@@ -21,11 +33,9 @@
     }
   }
 
-  &__group {
-    margin-bottom: rem($nds-spacing-small);
-  }
-
-  &--error .textarea__input {
-    @include nds-default-error-style;
+  &--error {
+    .textarea__textarea {
+      @include nds-default-error-style;
+    }
   }
 }

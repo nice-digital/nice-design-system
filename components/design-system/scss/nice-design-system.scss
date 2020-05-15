@@ -1,4 +1,4 @@
-@charset 'utf-8';
+@charset "utf-8";
 // Import all the core variables, functions and mixins
 @import './base.scss';
 
@@ -8,8 +8,8 @@
   '~@nice-digital/nds-checkbox/scss/checkbox',
   '~@nice-digital/nds-core/scss/core', '~@nice-digital/nds-filters/scss/filters',
   '~@nice-digital/nds-form-group/scss/form-group',
-  '~@nice-digital/nds-forms/scss/forms', '~@nice-digital/nds-grid/scss/grid',
-  '~@nice-digital/nds-hero/scss/hero',
+  '~@nice-digital/nds-textarea/scss/textarea',
+  '~@nice-digital/nds-grid/scss/grid', '~@nice-digital/nds-hero/scss/hero',
   '~@nice-digital/nds-in-page-nav/scss/in-page-nav',
   '~@nice-digital/nds-maintain-ratio/scss/maintain-ratio',
   '~@nice-digital/nds-page-header/scss/page-header',
