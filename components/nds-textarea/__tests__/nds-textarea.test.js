@@ -21,7 +21,7 @@ describe("@nice-digital/nds-textarea", () => {
 		shallow(<Textarea {...props} />);
 	});
 
-	it("should render a input tag", () => {
+	it("should render a textarea tag", () => {
 		const wrapper = shallow(<Textarea {...props} />);
 		expect(wrapper.find("textarea").length).toEqual(1);
 	});
@@ -31,7 +31,7 @@ describe("@nice-digital/nds-textarea", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it("should pass down a ref to the input", () => {
+	it("should pass down a ref to the textarea", () => {
 		const myRefFunction = jest.fn(node => node.nodeName);
 		mount(<Textarea {...props} textareaRef={myRefFunction} />);
 		expect(myRefFunction).toReturnWith("TEXTAREA");
