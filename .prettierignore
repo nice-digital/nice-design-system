@@ -7,3 +7,5 @@ package-lock.json
 lib
 es
 vendor
+*.bundle.js
+packages/storybook/storybook-static
