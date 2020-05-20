@@ -61,11 +61,17 @@ import { MySuperComponent } from "./components/MySuperComponent";
 
 #### Props
 
+##### children
+
+- Type: `React.ReactNode`
+
+Any children from the component will be rendered as a summary.
+
 ##### headingText
 
-- Type: `string` (required)
+- Type: `React.ReactNode` (required)
 
-The text that appears as the card's heading.
+The text that appears as the card's heading. Markup can be passed in for additional formatting.
 
 ##### elementType
 
@@ -79,6 +85,26 @@ This can be used if you wish the card container tag to be more structurally mean
 	<Card elementType="li" headingText="My list card" />
 </ul>
 ```
+
+##### image
+
+- Type: `Image`
+
+An object to supply a `src` and `alt` for the image tag.
+
+##### Image
+
+###### src
+
+- Type: `string`
+
+The url of an image
+
+###### alt
+
+- Type: `string`
+
+The alt attribute for the image
 
 ##### headingElementType
 

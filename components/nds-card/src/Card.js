@@ -28,38 +28,51 @@ export const Card = props => {
 		headingText,
 		headingElementType,
 		link,
+		image,
+		children,
 		elementType: ContainerType = "article",
 		...rest
 	} = props;
 	const headerProps = { headingText, headingElementType, link };
 	return (
 		<ContainerType className="card" {...rest}>
-			<header className="card__header">
-				<CardHeader {...headerProps} />
-			</header>
-			{metadata && metadata.length && (
-				<dl className="card__metadata">
-					{metadata.map((item, idx) => {
-						if (!item.value) return null;
-						return (
-							<div key={`item${idx}`} className="card__metadatum">
-								{item.label && (
-									<dt className="visually-hidden">{item.label}</dt>
-								)}
-								<dd>{item.value}</dd>
-							</div>
-						);
-					})}
-				</dl>
+			{image && image.src && (
+				<img className="card__image" src={image.src} alt={image.alt} />
 			)}
+			<div className="card__text">
+				<header className="card__header">
+					<CardHeader {...headerProps} />
+				</header>
+				{children && <div className="card__summary">{children}</div>}
+				{metadata && metadata.length && (
+					<dl className="card__metadata">
+						{metadata.map((item, idx) => {
+							if (!item.value) return null;
+							return (
+								<div key={`item${idx}`} className="card__metadatum">
+									{item.label && (
+										<dt className="visually-hidden">{item.label}</dt>
+									)}
+									<dd>{item.value}</dd>
+								</div>
+							);
+						})}
+					</dl>
+				)}
+			</div>
 		</ContainerType>
 	);
 };
 
 Card.propTypes = {
+	children: PropTypes.node,
 	elementType: PropTypes.elementType,
 	headingElementType: PropTypes.elementType,
 	headingText: PropTypes.node.isRequired,
+	image: PropTypes.shape({
+		src: PropTypes.string,
+		alt: PropTypes.string
+	}),
 	link: PropTypes.shape({
 		destination: PropTypes.node,
 		elementType: PropTypes.elementType

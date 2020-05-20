@@ -2,12 +2,16 @@ import React from "react";
 import { Card, CardProps } from "@nice-digital/nds-card";
 
 const props: CardProps = {
-	elementType: "main",
-	headingText: "Hello",
+	elementType: "li",
+	headingText: "Hey",
 	headingElementType: "h1",
 	link: {
 		destination: "/about",
 		elementType: "a"
+	},
+	image: {
+		src: "http://placehold.it/200x200",
+		alt: "alt text here!"
 	},
 	metadata: [
 		{
@@ -23,8 +27,18 @@ const props: CardProps = {
 
 export const CardView = () => {
 	return (
-		<>
-			<Card {...props} data-qa-selector="cardy" />
-		</>
+		<ul className={"list--unstyled"}>
+			<Card {...props} data-qa-selector="cardy">
+				<p>
+					This is a <b>paragraph</b>
+				</p>
+			</Card>
+			<Card {...props} data-qa-selector="cardy">
+				<p>This is a paragraph</p>
+			</Card>
+			<Card {...props} data-qa-selector="cardy">
+				<p>This is a paragraph</p>
+			</Card>
+		</ul>
 	);
 };

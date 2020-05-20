@@ -63,7 +63,7 @@ const nonAnchorLink = () => {
 };
 
 const fullCardWithComponentMeta = () => {
-	const fullProps = {
+	const props = {
 		headingText: "Full card with component in metadata",
 		metadata: [
 			{
@@ -80,7 +80,33 @@ const fullCardWithComponentMeta = () => {
 	};
 	return (
 		<ListWrapper>
-			<Card {...fullProps} />
+			<Card {...props}>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
+					accusantium assumenda blanditiis culpa in nesciunt optio quibusdam
+					sunt voluptatum. Aut blanditiis ex excepturi pariatur porro provident
+					quos repellat tempora. Voluptas?
+				</p>
+			</Card>
+		</ListWrapper>
+	);
+};
+
+const imageAndSummary = () => {
+	const fullProps = {
+		headingText: "Image and summary"
+	};
+	return (
+		<ListWrapper>
+			<Card
+				{...fullProps}
+				image={{
+					src: "http://placehold.it/200x200",
+					alt: "Some engaging alt text"
+				}}
+			>
+				<p>Any children passed to the card will be rendered as a summary.</p>
+			</Card>
 		</ListWrapper>
 	);
 };
@@ -90,22 +116,30 @@ const customisable = () => {
 		<ListWrapper>
 			<Card
 				headingText={text("headingText", "Card heading text", "Heading")}
-				elementType={text("elementType", "h1" || "h1", "Heading")}
+				elementType={text("elementType", "article" || "article", "Heading")}
 				link={{
 					destination: text("link.destination", "/about/", "Heading"),
 					elementType: text("link.elementType", "a" || "a", "Heading")
 				}}
 				metadata={[
 					{
-						value: text("Metadata 1 label", "Label", "Metadata"),
-						label: text("Metadata 1 value", "Value", "Metadata")
+						label: text("Metadata 1 label", "Label", "Metadata"),
+						value: text("Metadata 1 value", "Value", "Metadata")
 					},
 					{
-						value: text("Metadata 2 label", "Label", "Metadata"),
-						label: text("Metadata 2 value", "Value", "Metadata")
+						label: text("Metadata 2 label", "Label", "Metadata"),
+						value: text("Metadata 2 value", "Value", "Metadata")
 					}
 				]}
-			/>
+			>
+				<p>
+					{text(
+						"Summary",
+						"Summary text (wrapped in a p tag for the purpose of demonstration).",
+						"Summary"
+					)}
+				</p>
+			</Card>
 		</ListWrapper>
 	);
 };
@@ -115,5 +149,6 @@ storiesOf("Card", module)
 	.add("Heading only, no link", headingOnly)
 	.add("H1 heading with link", headingOnlyLink)
 	.add("Custom link type", nonAnchorLink)
+	.add("Image and summary", imageAndSummary)
 	.add("Full card with added component in metadata", fullCardWithComponentMeta)
 	.add("Customisable", customisable);
