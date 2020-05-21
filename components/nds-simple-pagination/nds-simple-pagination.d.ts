@@ -11,5 +11,5 @@ declare module "@nice-digital/nds-simple-pagination" {
 		hint?: string;
 	}
 
-	export const SimplePagination: React.FC<SimplePaginationProps>;
+	export const SimplePagination: React.FC<any>;
 }
