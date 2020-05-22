@@ -11,17 +11,12 @@ declare module "@nice-digital/nds-card" {
 		value: React.ReactNode;
 	}
 
-	interface CardImageProps {
-		src: string;
-		alt?: string;
-	}
-
 	export interface CardProps {
 		children?: React.ReactNode;
 		elementType?: React.ElementType;
 		headingElementType?: React.ElementType;
 		headingText: React.ReactNode;
-		image?: CardImageProps;
+		image?: React.ReactNode<image>;
 		link?: CardHeadingLinkProps;
 		metadata?: Array<CardMetaDataProps>;
 	}

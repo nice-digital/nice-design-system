@@ -1,4 +1,5 @@
 import React from "react";
+import classnames from "classnames";
 import PropTypes from "prop-types";
 import "../scss/card.scss";
 
@@ -28,7 +29,7 @@ export const Card = props => {
 		headingText,
 		headingElementType,
 		link,
-		image,
+		image: Image,
 		children,
 		elementType: ContainerType = "article",
 		...rest
@@ -36,9 +37,10 @@ export const Card = props => {
 	const headerProps = { headingText, headingElementType, link };
 	return (
 		<ContainerType className="card" {...rest}>
-			{image && image.src && (
-				<img className="card__image" src={image.src} alt={image.alt} />
-			)}
+			{Image &&
+				React.cloneElement(Image, {
+					className: classnames(Image.props.className, "card__image")
+				})}
 			<div className="card__text">
 				<header className="card__header">
 					<CardHeader {...headerProps} />
@@ -69,10 +71,7 @@ Card.propTypes = {
 	elementType: PropTypes.elementType,
 	headingElementType: PropTypes.elementType,
 	headingText: PropTypes.node.isRequired,
-	image: PropTypes.shape({
-		src: PropTypes.string,
-		alt: PropTypes.string
-	}),
+	image: PropTypes.node,
 	link: PropTypes.shape({
 		destination: PropTypes.node,
 		elementType: PropTypes.elementType

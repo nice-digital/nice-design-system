@@ -9,10 +9,7 @@ const props: CardProps = {
 		destination: "/about",
 		elementType: "a"
 	},
-	image: {
-		src: "http://placehold.it/200x200",
-		alt: "alt text here!"
-	},
+	image: <img src="http://placehold.it/200x200" alt="placeholder image" />,
 	metadata: [
 		{
 			label: "email",
