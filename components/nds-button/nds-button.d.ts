@@ -5,7 +5,7 @@ declare module "@nice-digital/nds-button" {
 		extends React.HTMLProps<HTMLButtonElement | HTMLAnchorElement> {
 		/** The destination URL if this is an anchor */
 		to?: string;
-		variant?: "primary" | "cta" | "secondary" | "inverse";
+		variant?: "primary" | "cta" | "secondary" | "inverse" | "unstyled";
 		buttonType?: "button" | "submit" | "reset";
 		/** A custom element type to be rendered as the tag, useful for custom routing */
 		elementType?: React.ElementType;
@@ -25,6 +25,7 @@ declare module "@nice-digital/nds-button" {
 			primary: "primary";
 			secondary: "secondary";
 			inverse: "inverse";
+			unstyled: "unstyled";
 		};
 	}
 
