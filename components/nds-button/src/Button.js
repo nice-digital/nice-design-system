@@ -56,8 +56,7 @@ Button.variants = {
 	cta: "cta",
 	primary: "primary",
 	secondary: "secondary",
-	inverse: "inverse",
-	unstyled: "unstyled"
+	inverse: "inverse"
 };
 
 Button.propTypes = {
@@ -66,8 +65,7 @@ Button.propTypes = {
 		Button.variants.primary,
 		Button.variants.cta,
 		Button.variants.secondary,
-		Button.variants.inverse,
-		Button.variants.unstyled
+		Button.variants.inverse
 	]),
 	buttonType: PropTypes.oneOf([
 		Button.types.button,

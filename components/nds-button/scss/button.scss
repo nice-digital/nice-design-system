@@ -56,11 +56,6 @@
     top: em(2px);
   }
 
-  &--unstyled {
-    background: none;
-    color: $nds-colour-link;
-  }
-
   // Disabled button styles
   &--disabled,
   &.disabled,
