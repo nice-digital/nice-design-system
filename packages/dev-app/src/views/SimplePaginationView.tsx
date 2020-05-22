@@ -1,37 +1,32 @@
 import React from "react";
 import { SimplePagination } from "@nice-digital/nds-simple-pagination";
-import d from "./../data/search-response.json";
+// import d from "./../data/search-response.json";
+
+import test from "../data/demo-data.json";
 
 export const SimplePaginationView = () => {
-	const { Next, Previous } = d.PagerLinks;
-	console.log(d);
-
 	const handleChange = (action: string) => {
 		console.log(action);
 	};
 
 	const props = {
 		// @ts-ignore
-		previousPageLink: (Previous && Previous.fullUrl) || "#back",
-		nextPageLink: Next && Next.fullUrl,
+		previousPageLink: "#back",
+		nextPageLink: "#forward",
 		handlePageEvent: handleChange,
 		currentPage: 1,
-		totalPages: 3,
-		nextAriaLabel: "Go to the next page of results",
-		previousAriaLabel: "Go to the previous page of results"
+		totalPages: 3
 	};
 
 	return (
 		<>
 			<h1>Simple pagination</h1>
-
-			<SimplePagination {...props}>
-				<ul>
-					{d.Documents.map(item => (
-						<li key={item.Id}>{item.Title}</li>
-					))}
-				</ul>
-			</SimplePagination>
+			<ul className="list">
+				{test.map(item => (
+					<li key={item._id}>{item.name}</li>
+				))}
+			</ul>
+			<SimplePagination {...props} />
 		</>
 	);
 };
