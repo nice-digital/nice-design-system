@@ -37,13 +37,7 @@ describe("Card", () => {
 
 	it("should match snapshot with some default attributes", () => {
 		const wrapper = shallow(
-			<Card
-				{...props}
-				image={{
-					src: "http://placehold.it/200x200",
-					alt: "Some engaging alt text"
-				}}
-			>
+			<Card {...props} image={<img src="test.png" alt="Cute dog" />}>
 				<p>Some summary text</p>
 			</Card>
 		);

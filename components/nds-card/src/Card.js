@@ -1,7 +1,6 @@
 import React, { cloneElement } from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
-import { deepMap } from "react-children-utilities";
 import "../scss/card.scss";
 
 const CardHeader = props => {
@@ -24,30 +23,13 @@ const CardHeader = props => {
 	}
 };
 
-function createImage(imageElement) {
-	return cloneElement(imageElement, {
-		className: classnames(imageElement.props.className, "card__image")
-	});
-}
-
-function AddClassToImage(element) {
-	if (element.type === "img") return createImage(element);
-	const { children } = element.props;
-	return deepMap(children, child => {
-		if (child && child.type === "img") {
-			return createImage(child);
-		}
-		return child;
-	});
-}
-
 export const Card = props => {
 	const {
 		metadata,
 		headingText,
 		headingElementType,
 		link,
-		image: Image,
+		image,
 		children,
 		elementType: ContainerType = "article",
 		...rest
@@ -55,7 +37,7 @@ export const Card = props => {
 	const headerProps = { headingText, headingElementType, link };
 	return (
 		<ContainerType className="card" {...rest}>
-			{Image && AddClassToImage(Image)}
+			{image && <div className="card__image">{image}</div>}
 			<div className="card__text">
 				<header className="card__header">
 					<CardHeader {...headerProps} />

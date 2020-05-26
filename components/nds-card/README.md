@@ -27,6 +27,7 @@ import { MySuperComponent } from "./components/MySuperComponent";
     elementType="li"
 	headingText="Card title"
 	headingElementType="h1"
+    image={<img src="image.png" alt=""/>}
 	link={
 		destination: "/destination",
 		elementType: "a"
@@ -88,23 +89,13 @@ This can be used if you wish the card container tag to be more structurally mean
 
 ##### image
 
-- Type: `Image`
+- Type: `React.ReactNode`
 
-An object to supply a `src` and `alt` for the image tag.
+Pass in the image tag directly, or if using a framework, the containing image component or wrapper.
 
-##### Image
-
-###### src
-
-- Type: `string`
-
-The url of an image
-
-###### alt
-
-- Type: `string`
-
-The alt attribute for the image
+```jsx
+<Card elementType="li" headingText="My list card" image={<img alt="" src="image.png" />} />
+```
 
 ##### headingElementType
 
@@ -161,6 +152,8 @@ If you're not using [React](#react), then include the [SCSS as above](#scss) and
 
 ```html
 <article class="card">
+    <div class="card__image">
+        <img src="image.png" alt=""></div>
 	<header class="card__header">
 		<p class="card__heading">Full card with component in metadata</p>
 	</header>

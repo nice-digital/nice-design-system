@@ -100,10 +100,12 @@ const imageAndSummary = () => {
 		<ListWrapper>
 			<Card
 				{...fullProps}
-				image={{
-					src: "http://placehold.it/200x200",
-					alt: "Some engaging alt text"
-				}}
+				image={
+					<img
+						src="http://placehold.it/200x200?text=image"
+						alt="Some engaging alt text"
+					/>
+				}
 			>
 				<p>Any children passed to the card will be rendered as a summary.</p>
 			</Card>

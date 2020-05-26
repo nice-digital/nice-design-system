@@ -4,11 +4,14 @@ exports[`Card should match snapshot with some default attributes 1`] = `
 <article
   className="card"
 >
-  <img
-    alt="Some engaging alt text"
+  <div
     className="card__image"
-    src="http://placehold.it/200x200"
-  />
+  >
+    <img
+      alt="Cute dog"
+      src="test.png"
+    />
+  </div>
   <div
     className="card__text"
   >
