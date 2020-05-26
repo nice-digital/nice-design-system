@@ -9,7 +9,6 @@ const props: CardProps = {
 		destination: "/about",
 		elementType: "a"
 	},
-	image: <img src="http://placehold.it/200x200" alt="placeholder image" />,
 	metadata: [
 		{
 			label: "email",
@@ -22,18 +21,48 @@ const props: CardProps = {
 	]
 };
 
+const image = (
+	<span>
+		<img
+			src="http://placehold.it/200x200"
+			alt="placeholder"
+			className="monkey"
+		/>
+	</span>
+);
+
+const image2 = (
+	<div>
+		<span>
+			<div>
+				<span>
+					<div>
+						<img
+							src="http://placehold.it/200x200"
+							alt="hey"
+							className="dont-get-rid-of-me"
+						/>
+					</div>
+				</span>
+			</div>
+		</span>
+	</div>
+);
+
+const image3 = <img src="http://placehold.it/200x200" alt="placeholder" />;
+
 export const CardView = () => {
 	return (
 		<ul className={"list--unstyled"}>
-			<Card {...props} data-qa-selector="cardy">
+			<Card {...props} image={image} data-qa-selector="cardy">
 				<p>
 					This is a <b>paragraph</b>
 				</p>
 			</Card>
-			<Card {...props} data-qa-selector="cardy">
+			<Card {...props} image={image2} data-qa-selector="cardy">
 				<p>This is a paragraph</p>
 			</Card>
-			<Card {...props} data-qa-selector="cardy">
+			<Card {...props} image={image3} data-qa-selector="cardy">
 				<p>This is a paragraph</p>
 			</Card>
 		</ul>
