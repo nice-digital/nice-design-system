@@ -75,16 +75,17 @@
   }
 
   &__summary {
-    margin: rem(0 0 $nds-spacing-small 0);
-
     a {
       position: relative;
     }
   }
 
   &__image {
-    display: block;
-    margin: rem(0 0 $nds-spacing-x-small);
+    img {
+      width: 100%;
+      display: block;
+      margin: rem(0 0 $nds-spacing-x-small);
+    }
   }
 
   &__icon {
