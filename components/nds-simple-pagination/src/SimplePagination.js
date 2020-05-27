@@ -3,25 +3,48 @@ import PropTypes from "prop-types";
 
 import "./../scss/simple-pagination.scss";
 
-export const SimplePagination = props => {
-	function handleEvent(e, action) {
-		e.preventDefault();
-		props.handlePageEvent(action);
+const Link = ({ text, ariaLabel, destination, elementType: LinkTag = "a" }) => {
+	let linkProps = {
+		className: "simple-pagination__link",
+		"aria-label": ariaLabel
+	};
+	if (LinkTag === "a") {
+		linkProps.href = destination;
+	} else {
+		linkProps.to = destination;
 	}
+	return (
+		<span className="simple-pagination__link-wrapper">
+			<LinkTag {...linkProps}>{text}</LinkTag>{" "}
+		</span>
+	);
+};
 
+export const SimplePagination = props => {
 	const {
-		nextPageLink,
-		previousPageLink,
 		currentPage,
 		totalPages,
-		nextAriaLabel,
-		previousAriaLabel,
-		nextLinkText,
-		previousLinkText
+		nextPageLink,
+		previousPageLink,
+		...rest
 	} = props;
 
+	const nextLinkProps = {
+		text: "Next page",
+		ariaLabel: "Go to next page",
+		destination: nextPageLink && nextPageLink.destination,
+		elementType: nextPageLink && nextPageLink.elementType
+	};
+
+	const previousLinkProps = {
+		text: "Previous page",
+		ariaLabel: "Go to previous page",
+		destination: previousPageLink && previousPageLink.destination,
+		elementType: previousPageLink && previousPageLink.elementType
+	};
+
 	return (
-		<div className="simple-pagination">
+		<div className="simple-pagination" {...rest}>
 			{currentPage && (
 				<p>
 					Page <b>{currentPage}</b>{" "}
@@ -32,53 +55,31 @@ export const SimplePagination = props => {
 					)}
 				</p>
 			)}
-			<nav aria-label="Pagination navigation">
-				<span className="simple-pagination__link-wrapper">
-					{nextPageLink && (
-						<a
-							className="simple-pagination__link"
-							href={nextPageLink}
-							onClick={e => handleEvent(e, "next")}
-							aria-label={nextAriaLabel}
-						>
-							{nextLinkText}
-						</a>
-					)}
-				</span>
-				{previousPageLink && (
-					<span className="simple-pagination__link-wrapper">
-						<a
-							className="simple-pagination__link"
-							href={previousPageLink}
-							onClick={e => handleEvent(e, "previous")}
-							aria-label={previousAriaLabel}
-						>
-							{previousLinkText}
-						</a>
-					</span>
-				)}
-			</nav>
+			{(nextPageLink || previousPageLink) && (
+				<nav aria-label="Pagination">
+					{nextPageLink && <Link {...nextLinkProps} />}
+					{previousPageLink && <Link {...previousLinkProps} />}
+				</nav>
+			)}
 		</div>
 	);
 };
 
+const LinkPropTypes = PropTypes.shape({
+	destination: PropTypes.node,
+	element: PropTypes.elementType
+});
+
 SimplePagination.propTypes = {
-	nextLinkText: PropTypes.string.isRequired,
-	previousLinkText: PropTypes.string.isRequired,
-	nextPageLink: PropTypes.string || PropTypes.bool,
-	previousPageLink: PropTypes.string || PropTypes.bool,
-	currentPage: PropTypes.number,
-	totalPages: PropTypes.number,
-	nextAriaLabel: PropTypes.string.isRequired,
-	previousAriaLabel: PropTypes.string.isRequired,
-	handlePageEvent: PropTypes.func.isRequired
+	currentPage: PropTypes.number.isRequired,
+	nextPageLink: LinkPropTypes,
+	previousPageLink: LinkPropTypes,
+	totalPages: PropTypes.number
 };
 
 SimplePagination.defaultProps = {
-	nextPageLink: true,
-	previousPageLink: true,
-	nextAriaLabel: "Next page",
-	previousAriaLabel: "Previous page",
-	nextLinkText: "Next page",
-	previousLinkText: "Previous page"
+	currentPage: 1,
+	totalPages: null,
+	nextPageLink: null,
+	previousPageLink: null
 };

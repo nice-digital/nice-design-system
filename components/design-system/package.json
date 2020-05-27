@@ -50,6 +50,7 @@
     "@nice-digital/nds-page-header": "^1.0.20-alpha.0",
     "@nice-digital/nds-panel": "^1.0.23-alpha.0",
     "@nice-digital/nds-phase-banner": "^1.0.20-alpha.0",
+    "@nice-digital/nds-simple-pagination": "^1.0.0",
     "@nice-digital/nds-stacked-nav": "^1.0.20-alpha.0",
     "@nice-digital/nds-tabs": "^1.0.20-alpha.0",
     "@nice-digital/nds-tag": "^1.0.20-alpha.0",

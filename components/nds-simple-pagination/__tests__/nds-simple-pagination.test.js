@@ -1,7 +1,53 @@
-"use strict";
+import React from "react";
+import { shallow, mount } from "enzyme";
+import toJson from "enzyme-to-json";
 
 import { SimplePagination } from "../src/SimplePagination";
+import { Link, MemoryRouter } from "react-router-dom";
 
-describe("@nice-digital/nds-simple-pagination", () => {
-	it("needs tests");
+const props = {
+	totalPages: 3,
+	currentPage: 1,
+	nextPageLink: {
+		destination: "/next",
+		elementType: Link
+	},
+	previousPageLink: {
+		destination: "#previous"
+	}
+};
+
+describe("Simple Pagination", () => {
+	it("should render without crashing", () => {
+		const wrapper = shallow(<SimplePagination />);
+		expect(wrapper).toHaveLength(1);
+	});
+
+	it("should match snapshot with some default attributes", () => {
+		const wrapper = shallow(<SimplePagination {...props} />);
+		expect(toJson(wrapper)).toMatchSnapshot();
+	});
+
+	it("should default to an anchor if no elementType is provided", () => {
+		const wrapper = mount(
+			<MemoryRouter>
+				<SimplePagination {...props} />
+			</MemoryRouter>
+		);
+		const previousLink = wrapper.find("a[href='#previous']");
+		expect(previousLink.length).toEqual(1);
+	});
+
+	it("should pass extra props to the container element", () => {
+		const localProps = Object.assign({}, props, {
+			"data-tracker": "my-tracker"
+		});
+		const wrapper = shallow(<SimplePagination {...localProps} />);
+		expect(wrapper.props()["data-tracker"]).toEqual("my-tracker");
+	});
+
+	it("should default to 'page 1' only if no props are provided", () => {
+		const wrapper = shallow(<SimplePagination />);
+		expect(wrapper.html()).toMatchSnapshot();
+	});
 });

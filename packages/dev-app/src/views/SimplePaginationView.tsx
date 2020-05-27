@@ -1,21 +1,29 @@
 import React from "react";
 import { SimplePagination } from "@nice-digital/nds-simple-pagination";
+import { Link } from "react-router-dom";
 // import d from "./../data/search-response.json";
 
 import test from "../data/demo-data.json";
 
-export const SimplePaginationView = () => {
-	const handleChange = (action: string) => {
-		console.log(action);
-	};
+function handleClick(action: string) {
+	alert("clicked! " + action);
+}
 
+const MyCustomHandler = () => {
+	return <button onClick={e => handleClick("next")}>Next</button>;
+};
+
+export const SimplePaginationView = () => {
 	const props = {
-		// @ts-ignore
-		previousPageLink: "#back",
-		nextPageLink: "#forward",
-		handlePageEvent: handleChange,
 		currentPage: 1,
-		totalPages: 3
+		totalPages: 4,
+		nextPageLink: {
+			elementType: MyCustomHandler,
+			destination: "#test"
+		},
+		previousPageLink: {
+			destination: "#hello"
+		}
 	};
 
 	return (
