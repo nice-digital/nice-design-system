@@ -4,49 +4,68 @@ exports[`Card should match snapshot with some default attributes 1`] = `
 <article
   className="card"
 >
-  <header
-    className="card__header"
+  <div
+    className="card__image"
   >
-    <CardHeader
-      headingElementType="h1"
-      headingText="Card heading text"
-      link={
-        Object {
-          "destination": "/about",
-          "elementType": "a",
-        }
-      }
+    <img
+      alt="Cute dog"
+      src="test.png"
     />
-  </header>
-  <dl
-    className="card__metadata"
+  </div>
+  <div
+    className="card__text"
   >
-    <div
-      className="card__metadatum"
-      key="item0"
+    <header
+      className="card__header"
     >
-      <dt
-        className="visually-hidden"
-      >
-        Email address
-      </dt>
-      <dd>
-        john.smith@email.com
-      </dd>
-    </div>
+      <CardHeader
+        headingElementType="h1"
+        headingText="Card heading text"
+        link={
+          Object {
+            "destination": "/about",
+            "elementType": "a",
+          }
+        }
+      />
+    </header>
     <div
-      className="card__metadatum"
-      key="item1"
+      className="card__summary"
     >
-      <dt
-        className="visually-hidden"
-      >
-        Email address
-      </dt>
-      <dd>
-        sarah.smith@email.com
-      </dd>
+      <p>
+        Some summary text
+      </p>
     </div>
-  </dl>
+    <dl
+      className="card__metadata"
+    >
+      <div
+        className="card__metadatum"
+        key="item0"
+      >
+        <dt
+          className="visually-hidden"
+        >
+          Email address
+        </dt>
+        <dd>
+          john.smith@email.com
+        </dd>
+      </div>
+      <div
+        className="card__metadatum"
+        key="item1"
+      >
+        <dt
+          className="visually-hidden"
+        >
+          Email address
+        </dt>
+        <dd>
+          sarah.smith@email.com
+        </dd>
+      </div>
+    </dl>
+  </div>
 </article>
 `;

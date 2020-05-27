@@ -2,8 +2,8 @@ import React from "react";
 import { Card, CardProps } from "@nice-digital/nds-card";
 
 const props: CardProps = {
-	elementType: "main",
-	headingText: "Hello",
+	elementType: "li",
+	headingText: "Hey",
 	headingElementType: "h1",
 	link: {
 		destination: "/about",
@@ -21,10 +21,50 @@ const props: CardProps = {
 	]
 };
 
+const image = (
+	<span>
+		<img
+			src="http://placehold.it/200x200"
+			alt="placeholder"
+			className="monkey"
+		/>
+	</span>
+);
+
+const image2 = (
+	<div>
+		<span>
+			<div>
+				<span>
+					<div>
+						<img
+							src="http://placehold.it/200x200"
+							alt="hey"
+							className="dont-get-rid-of-me"
+						/>
+					</div>
+				</span>
+			</div>
+		</span>
+	</div>
+);
+
+const image3 = <img src="http://placehold.it/200x200" alt="placeholder" />;
+
 export const CardView = () => {
 	return (
-		<>
-			<Card {...props} data-qa-selector="cardy" />
-		</>
+		<ul className={"list--unstyled"}>
+			<Card {...props} image={image} data-qa-selector="cardy">
+				<p>
+					This is a <b>paragraph</b>
+				</p>
+			</Card>
+			<Card {...props} image={image2} data-qa-selector="cardy">
+				<p>This is a paragraph</p>
+			</Card>
+			<Card {...props} image={image3} data-qa-selector="cardy">
+				<p>This is a paragraph</p>
+			</Card>
+		</ul>
 	);
 };

@@ -27,6 +27,7 @@ import { MySuperComponent } from "./components/MySuperComponent";
     elementType="li"
 	headingText="Card title"
 	headingElementType="h1"
+    image={<img src="image.png" alt=""/>}
 	link={
 		destination: "/destination",
 		elementType: "a"
@@ -61,11 +62,17 @@ import { MySuperComponent } from "./components/MySuperComponent";
 
 #### Props
 
+##### children
+
+- Type: `React.ReactNode`
+
+Any children from the component will be rendered as a summary.
+
 ##### headingText
 
-- Type: `string` (required)
+- Type: `React.ReactNode` (required)
 
-The text that appears as the card's heading.
+The text that appears as the card's heading. Markup can be passed in for additional formatting.
 
 ##### elementType
 
@@ -78,6 +85,16 @@ This can be used if you wish the card container tag to be more structurally mean
 <ul>
 	<Card elementType="li" headingText="My list card" />
 </ul>
+```
+
+##### image
+
+- Type: `React.ReactNode`
+
+Pass in the image tag directly, or if using a framework, the containing image component or wrapper.
+
+```jsx
+<Card elementType="li" headingText="My list card" image={<img alt="" src="image.png" />} />
 ```
 
 ##### headingElementType
@@ -135,6 +152,8 @@ If you're not using [React](#react), then include the [SCSS as above](#scss) and
 
 ```html
 <article class="card">
+    <div class="card__image">
+        <img src="image.png" alt=""></div>
 	<header class="card__header">
 		<p class="card__heading">Full card with component in metadata</p>
 	</header>
