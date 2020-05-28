@@ -50,4 +50,11 @@ describe("Simple Pagination", () => {
 		const wrapper = shallow(<SimplePagination />);
 		expect(wrapper.html()).toMatchSnapshot();
 	});
+
+	it("should merge any additional classes on to the existing wrapper class", () => {
+		const wrapper = shallow(<SimplePagination className="testing hello" />);
+		expect(wrapper.props()["className"]).toEqual(
+			"simple-pagination testing hello"
+		);
+	});
 });

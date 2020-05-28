@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Simple Pagination should default to 'page 1' only if no props are provided 1`] = `"<div class=\\"simple-pagination\\"><p>Page <b>1</b> </p></div>"`;
+exports[`Simple Pagination should default to 'page 1' only if no props are provided 1`] = `"<div class=\\"simple-pagination\\"><p>Page <b>1</b></p></div>"`;
 
 exports[`Simple Pagination should match snapshot with some default attributes 1`] = `
 <div
@@ -21,7 +21,6 @@ exports[`Simple Pagination should match snapshot with some default attributes 1`
     aria-label="Pagination"
   >
     <Link
-      ariaLabel="Go to next page"
       destination="/next"
       elementType={
         Object {
@@ -40,7 +39,6 @@ exports[`Simple Pagination should match snapshot with some default attributes 1`
       text="Next page"
     />
     <Link
-      ariaLabel="Go to previous page"
       destination="#previous"
       text="Previous page"
     />

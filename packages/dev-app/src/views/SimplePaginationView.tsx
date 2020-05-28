@@ -29,9 +29,6 @@ export const SimplePaginationView = () => {
 
 	return (
 		<>
-			<Panel variant="impact">
-				<p>testing</p>
-			</Panel>
 			<h1>Simple pagination</h1>
 			<ul className="list">
 				{test.map(item => (

@@ -48,14 +48,14 @@ The total pages you want to display. If this is omitted, only the current page w
 
 ##### nextPageLink
 
-- Type: `PageLink` | `null`
+- Type: `PageLink`
 - Default: `null`
 
 An object to describe the destination, element or action you want to supply to the 'next' pagination link.
 
 ##### previousPageLink
 
-- Type: `PageLink` | `null`
+- Type: `PageLink`
 - Default: `null`
 
 An object to describe the destination, element or action you want to supply to the 'previous' pagination link.
@@ -71,7 +71,7 @@ A string to represent the destination if you're supplying a traditional "link". 
 - Type: `React.elementType`
 - Default: `"a"`
 
-Here you can pass a custom link type such as `Link` from `react-router` or `gatsby`. If no `elementType` is provided, it will default to an anchor tag.
+Here you can pass a custom link type such as `Link` from react-router or gatsby. If no `elementType` is provided, it will default to an anchor tag.
 
 ### SCSS
 
