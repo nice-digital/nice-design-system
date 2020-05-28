@@ -11,6 +11,7 @@ declare module "@nice-digital/nds-simple-pagination" {
 		totalPages?: number;
 		nextPageLink: PageLinkProps | null;
 		previousPageLink: PageLinkProps | null;
+		[prop: string]: any;
 	}
 
 	export const SimplePagination: React.FC<SimplePaginationProps>;

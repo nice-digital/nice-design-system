@@ -33,7 +33,12 @@ import { SimplePagination } from "@nice-digital/nds-simple-pagination";
 
 - Type:`number` (required)
 
-The current page number you wish to be displayed.
+The current (1-based) page number you wish to be displayed.
+
+```jsx
+// First page of the set
+<SimplePagination currentPage={1} />
+```
 
 ##### totalPages
 
