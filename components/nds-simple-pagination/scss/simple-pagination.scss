@@ -1,0 +1,16 @@
+@import '~@nice-digital/nds-core/scss/core';
+
+.simple-pagination {
+  &__link-wrapper {
+    display: block;
+    margin-top: rem($nds-spacing-medium);
+    margin-bottom: rem($nds-spacing-medium);
+  }
+  &__link {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    padding: rem($nds-spacing-small);
+    margin: -(rem($nds-spacing-small));
+  }
+}
