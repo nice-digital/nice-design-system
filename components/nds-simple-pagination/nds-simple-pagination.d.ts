@@ -9,8 +9,8 @@ declare module "@nice-digital/nds-simple-pagination" {
 	export interface SimplePaginationProps {
 		currentPage: number;
 		totalPages?: number;
-		nextPageLink: PageLinkProps | null;
-		previousPageLink: PageLinkProps | null;
+		nextPageLink?: PageLinkProps;
+		previousPageLink?: PageLinkProps;
 		[prop: string]: any;
 	}
 
