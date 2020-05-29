@@ -1,5 +1,4 @@
-import React, { cloneElement } from "react";
-import classnames from "classnames";
+import React from "react";
 import PropTypes from "prop-types";
 import "../scss/card.scss";
 
@@ -23,6 +22,15 @@ const CardHeader = props => {
 	}
 };
 
+CardHeader.propTypes = {
+	headingElementType: PropTypes.elementType,
+	headingText: PropTypes.node.isRequired,
+	link: PropTypes.shape({
+		destination: PropTypes.node.isRequired,
+		elementType: PropTypes.elementType
+	})
+};
+
 const CardBody = props => {
 	const { metadata, headingText, headingElementType, link, summary } = props;
 	const headerProps = { headingText, headingElementType, link };
@@ -31,7 +39,7 @@ const CardBody = props => {
 			<header className="card__header">
 				<CardHeader {...headerProps} />
 			</header>
-			<p className="card__summary">{summary}</p>
+			{summary && <p className="card__summary">{summary}</p>}
 			{metadata && metadata.length && (
 				<dl className="card__metadata">
 					{metadata.map((item, idx) => {
@@ -49,6 +57,17 @@ const CardBody = props => {
 			)}
 		</>
 	);
+};
+
+CardBody.propTypes = {
+	summary: PropTypes.node,
+	metadata: PropTypes.arrayOf(
+		PropTypes.shape({
+			label: PropTypes.node,
+			value: PropTypes.node.isRequired
+		})
+	),
+	...CardHeader.propTypes
 };
 
 export const Card = props => {
@@ -86,19 +105,7 @@ export const Card = props => {
 };
 
 Card.propTypes = {
-	children: PropTypes.node,
 	elementType: PropTypes.elementType,
-	headingElementType: PropTypes.elementType,
-	headingText: PropTypes.node.isRequired,
 	image: PropTypes.node,
-	link: PropTypes.shape({
-		destination: PropTypes.node,
-		elementType: PropTypes.elementType
-	}),
-	metadata: PropTypes.arrayOf(
-		PropTypes.shape({
-			label: PropTypes.node,
-			value: PropTypes.node.isRequired
-		})
-	)
+	...CardBody.propTypes
 };
