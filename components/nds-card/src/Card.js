@@ -23,6 +23,34 @@ const CardHeader = props => {
 	}
 };
 
+const CardBody = props => {
+	const { metadata, headingText, headingElementType, link, summary } = props;
+	const headerProps = { headingText, headingElementType, link };
+	return (
+		<>
+			<header className="card__header">
+				<CardHeader {...headerProps} />
+			</header>
+			<p className="card__summary">{summary}</p>
+			{metadata && metadata.length && (
+				<dl className="card__metadata">
+					{metadata.map((item, idx) => {
+						if (!item.value) return null;
+						return (
+							<div key={`item${idx}`} className="card__metadatum">
+								{item.label && (
+									<dt className="visually-hidden">{item.label}</dt>
+								)}
+								<dd>{item.value}</dd>
+							</div>
+						);
+					})}
+				</dl>
+			)}
+		</>
+	);
+};
+
 export const Card = props => {
 	const {
 		metadata,
@@ -30,35 +58,29 @@ export const Card = props => {
 		headingElementType,
 		link,
 		image,
-		children,
+		summary,
 		elementType: ContainerType = "article",
 		...rest
 	} = props;
-	const headerProps = { headingText, headingElementType, link };
+	const cardBodyProps = {
+		metadata,
+		headingText,
+		headingElementType,
+		link,
+		summary
+	};
 	return (
 		<ContainerType className="card" {...rest}>
-			{image && <div className="card__image">{image}</div>}
-			<div className="card__text">
-				<header className="card__header">
-					<CardHeader {...headerProps} />
-				</header>
-				{children && <div className="card__summary">{children}</div>}
-				{metadata && metadata.length && (
-					<dl className="card__metadata">
-						{metadata.map((item, idx) => {
-							if (!item.value) return null;
-							return (
-								<div key={`item${idx}`} className="card__metadatum">
-									{item.label && (
-										<dt className="visually-hidden">{item.label}</dt>
-									)}
-									<dd>{item.value}</dd>
-								</div>
-							);
-						})}
-					</dl>
-				)}
-			</div>
+			{image ? (
+				<>
+					<div className="card__image">{image}</div>
+					<div className="card__text">
+						<CardBody {...cardBodyProps} />
+					</div>
+				</>
+			) : (
+				<CardBody {...cardBodyProps} />
+			)}
 		</ContainerType>
 	);
 };

@@ -11,7 +11,7 @@ declare module "@nice-digital/nds-filters" {
 	export interface FilterGroupProps {
 		heading: string;
 		id?: string;
-		collapseByDefault?: bool;
+		collapseByDefault?: boolean;
 		selectedCount: number;
 		children: React.ReactNode;
 	}
@@ -19,10 +19,9 @@ declare module "@nice-digital/nds-filters" {
 	export const FilterGroup: React.ComponentType<FilterGroupProps>;
 
 	export interface FilterOptionProps {
-		isSelected: bool;
+		isSelected: boolean;
 		children: string;
 		value?: string;
-		children: string;
 		onChanged: () => void;
 	}
 

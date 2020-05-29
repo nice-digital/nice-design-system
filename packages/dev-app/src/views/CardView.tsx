@@ -54,17 +54,10 @@ const image3 = <img src="http://placehold.it/200x200" alt="placeholder" />;
 export const CardView = () => {
 	return (
 		<ul className={"list--unstyled"}>
-			<Card {...props} image={image} data-qa-selector="cardy">
-				<p>
-					This is a <b>paragraph</b>
-				</p>
-			</Card>
-			<Card {...props} image={image2} data-qa-selector="cardy">
-				<p>This is a paragraph</p>
-			</Card>
-			<Card {...props} image={image3} data-qa-selector="cardy">
-				<p>This is a paragraph</p>
-			</Card>
+			<Card {...props} data-qa-selector="cardy" summary="This is a paragraph" />
+
+			<Card {...props} image={image2} data-qa-selector="cardy" />
+			<Card {...props} image={image3} data-qa-selector="cardy" />
 		</ul>
 	);
 };

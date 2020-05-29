@@ -53,7 +53,9 @@ const nonAnchorLink = () => {
 		link: {
 			destination: "/test",
 			elementType: FakeLink
-		}
+		},
+		summary:
+			"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium assumenda blanditiis culpa in nesciunt optio quibusdam		sunt voluptatum. Aut blanditiis ex excepturi pariatur porro provident		quos repellat tempora. Voluptas?"
 	};
 	return (
 		<ListWrapper>
@@ -80,14 +82,7 @@ const fullCardWithComponentMeta = () => {
 	};
 	return (
 		<ListWrapper>
-			<Card {...props}>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
-					accusantium assumenda blanditiis culpa in nesciunt optio quibusdam
-					sunt voluptatum. Aut blanditiis ex excepturi pariatur porro provident
-					quos repellat tempora. Voluptas?
-				</p>
-			</Card>
+			<Card {...props} />
 		</ListWrapper>
 	);
 };
@@ -133,15 +128,12 @@ const customisable = () => {
 						value: text("Metadata 2 value", "Value", "Metadata")
 					}
 				]}
-			>
-				<p>
-					{text(
-						"Summary",
-						"Summary text (wrapped in a p tag for the purpose of demonstration).",
-						"Summary"
-					)}
-				</p>
-			</Card>
+				summary={text(
+					"Summary",
+					"Summary text (wrapped in a p tag for the purpose of demonstration).",
+					"Summary"
+				)}
+			/>
 		</ListWrapper>
 	);
 };
