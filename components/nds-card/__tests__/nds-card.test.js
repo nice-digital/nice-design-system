@@ -58,14 +58,14 @@ describe("Card", () => {
 	});
 
 	it("should render each metadata item with a value", () => {
-		const wrapper = shallow(<Card {...props} />);
+		const wrapper = mount(<Card {...props} />);
 		expect(wrapper.find(".card__metadatum")).toHaveLength(2);
 	});
 
 	it("should not render an a metadata item without a value", () => {
 		const localMetadataProps = [...metadataProps];
 		localMetadataProps[0].value = "";
-		const wrapper = shallow(
+		const wrapper = mount(
 			<Card {...headingProps} metadata={localMetadataProps} />
 		);
 		expect(wrapper.find(".card__metadatum")).toHaveLength(1);

@@ -44,7 +44,9 @@ declare module "@nice-digital/nds-grid" {
 
 	export interface GridProps {
 		/** Grid item elements */
-		children: React.ReactElement<GridItem>[] | React.ReactElement<GridItem>;
+		children:
+			| React.ReactElement<React.FC<GridItemProps>>[]
+			| React.ReactElement<React.FC<GridItemProps>>;
 		/** Renders grid items in the opposite way to the source order */
 		reverse?: boolean;
 		/** The horizontal alignment of items within the grid, when there are empty columns. Leave blank to default to left. */

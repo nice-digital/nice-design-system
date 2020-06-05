@@ -15,57 +15,28 @@ exports[`Card should match snapshot with some default attributes 1`] = `
   <div
     className="card__text"
   >
-    <header
-      className="card__header"
-    >
-      <CardHeader
-        headingElementType="h1"
-        headingText="Card heading text"
-        link={
-          Object {
-            "destination": "/about",
-            "elementType": "a",
-          }
+    <CardBody
+      headingElementType="h1"
+      headingText="Card heading text"
+      link={
+        Object {
+          "destination": "/about",
+          "elementType": "a",
         }
-      />
-    </header>
-    <div
-      className="card__summary"
-    >
-      <p>
-        Some summary text
-      </p>
-    </div>
-    <dl
-      className="card__metadata"
-    >
-      <div
-        className="card__metadatum"
-        key="item0"
-      >
-        <dt
-          className="visually-hidden"
-        >
-          Email address
-        </dt>
-        <dd>
-          john.smith@email.com
-        </dd>
-      </div>
-      <div
-        className="card__metadatum"
-        key="item1"
-      >
-        <dt
-          className="visually-hidden"
-        >
-          Email address
-        </dt>
-        <dd>
-          sarah.smith@email.com
-        </dd>
-      </div>
-    </dl>
+      }
+      metadata={
+        Array [
+          Object {
+            "label": "Email address",
+            "value": "john.smith@email.com",
+          },
+          Object {
+            "label": "Email address",
+            "value": "sarah.smith@email.com",
+          },
+        ]
+      }
+    />
   </div>
 </article>
 `;

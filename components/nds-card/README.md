@@ -62,11 +62,11 @@ import { MySuperComponent } from "./components/MySuperComponent";
 
 #### Props
 
-##### children
+##### summary
 
-- Type: `React.ReactNode`
+- Type: `string`
 
-Any children from the component will be rendered as a summary.
+Provide a string that will be passed into a `p` tag as a card summary.
 
 ##### headingText
 
@@ -153,23 +153,50 @@ If you're not using [React](#react), then include the [SCSS as above](#scss) and
 ```html
 <article class="card">
     <div class="card__image">
-        <img src="image.png" alt=""></div>
-	<header class="card__header">
-		<p class="card__heading">Full card with component in metadata</p>
-	</header>
-	<dl class="card__metadata">
-		<div class="card__metadatum">
-			<dd>
-				<marquee>Custom HTML</marquee>
-			</dd>
-		</div>
-		<div class="card__metadatum">
-			<dd>Value</dd>
-		</div>
-		<div class="card__metadatum">
-			<dt class="visually-hidden">Email address</dt>
-			<dd>Value with a label</dd>
-		</div>
-	</dl>
+        <img src="image.png" alt="">
+    </div>
+    <div class="card__text">
+        <header class="card__header">
+            <p class="card__heading">Full card with component in metadata</p>
+        </header>
+        <dl class="card__metadata">
+            <div class="card__metadatum">
+                <dd>
+                    <marquee>Custom HTML</marquee>
+                </dd>
+            </div>
+            <div class="card__metadatum">
+                <dd>Value</dd>
+            </div>
+            <div class="card__metadatum">
+                <dt class="visually-hidden">Email address</dt>
+                <dd>Value with a label</dd>
+            </div>
+        </dl>
+    </div>
 </article>
 ```
+
+If you're not including an image, exclude the `.card__text` div as shown here:
+
+```html
+<article class="card">
+    <header class="card__header">
+        <p class="card__heading">Full card with component in metadata</p>
+    </header>
+    <dl class="card__metadata">
+        <div class="card__metadatum">
+            <dd>
+                <marquee>Custom HTML</marquee>
+            </dd>
+        </div>
+        <div class="card__metadatum">
+            <dd>Value</dd>
+        </div>
+        <div class="card__metadatum">
+            <dt class="visually-hidden">Email address</dt>
+            <dd>Value with a label</dd>
+        </div>
+    </dl>
+</article>
+``` 
