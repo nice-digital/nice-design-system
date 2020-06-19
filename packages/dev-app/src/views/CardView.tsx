@@ -58,6 +58,15 @@ export const CardView = () => {
 
 			<Card {...props} image={image2} data-qa-selector="cardy" />
 			<Card {...props} image={image3} data-qa-selector="cardy" />
+			<Card {...props} image={image3} summary="Is this in a paragraph?" />
+			<Card
+				headingText="Card title"
+				summary={
+					<span>
+						My <b>lightly formatted</b> summary
+					</span>
+				}
+			/>
 		</ul>
 	);
 };

@@ -30,6 +30,24 @@ const headingOnly = () => {
 	);
 };
 
+const formattedSummary = () => {
+	const props = {
+		headingText: "Hello there"
+	};
+	return (
+		<ListWrapper>
+			<Card
+				{...props}
+				summary={
+					<span>
+						This is a <b>bold</b> move
+					</span>
+				}
+			/>
+		</ListWrapper>
+	);
+};
+
 const headingOnlyLink = () => {
 	const props = {
 		headingText: "Hello there",
@@ -144,5 +162,6 @@ storiesOf("Card", module)
 	.add("H1 heading with link", headingOnlyLink)
 	.add("Custom link type", nonAnchorLink)
 	.add("Image and summary", imageAndSummary)
+	.add("Formatted summary", formattedSummary)
 	.add("Full card with added component in metadata", fullCardWithComponentMeta)
 	.add("Customisable", customisable);
