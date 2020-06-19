@@ -64,9 +64,15 @@ import { MySuperComponent } from "./components/MySuperComponent";
 
 ##### summary
 
-- Type: `string`
+- Type: `React.ReactNode`
 
-Provide a string that will be passed into a `p` tag as a card summary.
+Provide a valid React node that will be passed into a `p` tag for the card summary. To conform with the design system, don't pass any block level elements in.
+
+```jsx
+<Card headingText="Card title" summary="My card summary" />
+<Card headingText="Card title" summary={<span>My <b>lightly formatted</b> summary</span>} />
+
+```
 
 ##### headingText
 

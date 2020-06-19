@@ -1,5 +1,6 @@
 declare module "@nice-digital/nds-stacked-nav" {
 	import React = require("react");
+
 	interface HeadingLink {
 		destination: string;
 		isCurrent?: boolean;
@@ -10,7 +11,7 @@ declare module "@nice-digital/nds-stacked-nav" {
 		label?: React.ReactNode;
 		elementType?: React.ElementType;
 		link?: HeadingLink;
-		children?: Array<StackedNavLinkProps>;
+		children?: Array<StackedNavLink>;
 	}
 
 	interface BaseStackedNavLinkProps {

@@ -36,10 +36,19 @@ describe("Card", () => {
 	});
 
 	it("should match snapshot with some default attributes", () => {
-		const wrapper = shallow(
-			<Card {...props} image={<img src="test.png" alt="Cute dog" />}>
-				<p>Some summary text</p>
-			</Card>
+		const wrapper = mount(
+			<>
+				<Card {...props} summary="I'm just a string" />
+				<Card
+					{...props}
+					image={<img src="test.png" alt="Cute dog" />}
+					summary={
+						<span>
+							how <b>bold</b> of you
+						</span>
+					}
+				/>
+			</>
 		);
 		expect(toJson(wrapper)).toMatchSnapshot();
 	});
