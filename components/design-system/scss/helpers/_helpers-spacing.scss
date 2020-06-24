@@ -40,6 +40,10 @@
 //  - `mt--c` - small margin top
 //  - `pl--c-md` - small padding left from medium breakpoints upwards.
 
+/// Set to `false` to not output all the spacing modifier classes
+/// @since 1.0.0
+$nds-include-spacing-modifiers: true !default;
+
 // A map of spacing value
 $_spacings: (
   0: 0,
@@ -106,10 +110,12 @@ $_sides: (
   }
 }
 
-@include _properties;
+@if $nds-include-spacing-modifiers {
+  @include _properties;
 
-@each $breakpoint-name, $breakpoint-value in $mq-breakpoints {
-  @include mq($from: $breakpoint-name) {
-    @include _properties('-#{$breakpoint-name}');
+  @each $breakpoint-name, $breakpoint-value in $mq-breakpoints {
+    @include mq($from: $breakpoint-name) {
+      @include _properties('-#{$breakpoint-name}');
+    }
   }
 }
