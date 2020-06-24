@@ -1,6 +1,6 @@
 {
   "name": "storybook",
-  "version": "1.0.26-alpha.0",
+  "version": "1.0.27-alpha.0",
   "private": true,
   "description": "> TODO: description",
   "author": "Warren Keith <warren.keith@nice.org.uk>",
@@ -27,7 +27,7 @@
     "url": "https://github.com/nhsevidence/nice-design-system/issues"
   },
   "dependencies": {
-    "@nice-digital/design-system": "^1.0.31-alpha.0",
+    "@nice-digital/design-system": "^1.0.32-alpha.0",
     "@nice-digital/icons": "^2.1.1",
     "@nice-digital/nds-action-banner": "^1.0.20-alpha.0",
     "@nice-digital/nds-alert": "^1.0.21-alpha.0",
