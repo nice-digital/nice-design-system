@@ -1,6 +1,6 @@
 {
   "name": "@nice-digital/design-system",
-  "version": "1.0.32-alpha.0",
+  "version": "1.0.33-alpha.0",
   "description": "Your source for quickly creating consistent on-brand NICE digital services",
   "author": "Ian Routledge <ian.routledge@nice.org.uk>",
   "homepage": "https://nhsevidence.github.io/nice-design-system/",
@@ -34,7 +34,7 @@
     "@nice-digital/icons": "^2.1.1",
     "@nice-digital/nds-action-banner": "^1.0.20-alpha.0",
     "@nice-digital/nds-alert": "^1.0.21-alpha.0",
-    "@nice-digital/nds-breadcrumbs": "^1.0.20-alpha.0",
+    "@nice-digital/nds-breadcrumbs": "^1.0.21-alpha.0",
     "@nice-digital/nds-button": "^1.0.21-alpha.0",
     "@nice-digital/nds-card": "^1.0.24-alpha.0",
     "@nice-digital/nds-checkbox": "^1.0.25-alpha.0",
