@@ -76,9 +76,9 @@ A custom tag type. Defaults to a normal HTMLAnchorElement. Use this prop to use 
 
 ###### children
 
-- Type: `string`
+- Type: `React.ReactNode`
 
-The text of the breadcrumb
+The text of the breadcrumb. Can accept any valid React node, but should be limited to a string to conform with the design system.
 
 ### SCSS
 
