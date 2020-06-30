@@ -2,7 +2,7 @@ declare module "@nice-digital/nds-breadcrumbs" {
 	import React = require("react");
 
 	export interface BreadcrumbProps {
-		children: string;
+		children: React.ReactNode;
 		to?: string;
 		elementType?: React.ElementType;
 	}
