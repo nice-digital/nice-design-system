@@ -2,6 +2,8 @@
 /// @group components
 ////
 
+// stylelint-disable no-descending-specificity
+
 @import '~@nice-digital/nds-core/scss/core';
 
 /// Stacked navigation component.
@@ -48,6 +50,10 @@
     border-top: 1px solid $nds-colour-border;
   }
 
+  &__content-wrapper {
+    display: block;
+  }
+
   a {
     color: $nds-colour-link;
     display: block;
@@ -82,6 +88,20 @@
       span {
         color: $nds-colour-nice-white;
       }
+    }
+  }
+
+  &__nested {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    // First nested element
+    .stacked-nav__content-wrapper {
+      padding-left: rem($nds-spacing-medium) !important;
+    }
+    // Second nested element
+    ul .stacked-nav__content-wrapper {
+      padding-left: rem($nds-spacing-medium * 2) !important;
     }
   }
 }

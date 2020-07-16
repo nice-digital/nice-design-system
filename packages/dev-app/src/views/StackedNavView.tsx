@@ -32,11 +32,30 @@ const headingProps: StackedNavProps = {
 };
 
 export const StackedNavView = () => {
+	const subNav2 = (
+		<>
+			<StackedNavLink hint="Hinty hinty">Six</StackedNavLink>
+			<StackedNavLink isCurrent={true}>
+				This is a really long name right here, I wonder what it's going to do!?
+				There's just no telling.
+			</StackedNavLink>
+			<StackedNavLink>Eight</StackedNavLink>
+		</>
+	);
+	const subNav = (
+		<>
+			<StackedNavLink nested={subNav2}>Three</StackedNavLink>
+			<StackedNavLink destination="/monkey">Four</StackedNavLink>
+			<StackedNavLink>Five</StackedNavLink>
+		</>
+	);
 	return (
 		<div className="container pt--d">
 			<div className="grid">
 				<div data-g="4">
 					<StackedNav {...headingProps}>
+						<StackedNavLink destination="/testing">Testing</StackedNavLink>
+
 						{links.map((item, index) => (
 							<StackedNavLink key={`item${index}`} {...item} />
 						))}
@@ -58,6 +77,12 @@ export const StackedNavView = () => {
 						nihil laudantium? Incidunt alias suscipit officiis tempore odio!
 						Quod, sunt commodi?
 					</p>
+				</div>
+				<div data-g="4">
+					<StackedNav>
+						<StackedNavLink nested={subNav}>One</StackedNavLink>
+						<StackedNavLink>Two</StackedNavLink>
+					</StackedNav>
 				</div>
 			</div>
 		</div>

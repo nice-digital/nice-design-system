@@ -63,8 +63,28 @@ const noHeading = () => (
 	</StackedNav>
 );
 
+const setOfLinksToNest = (
+	<>
+		<StackedNavLink hint="hint text">Nested link one</StackedNavLink>
+		<StackedNavLink
+			nested={
+				<StackedNavLink hint="hint text">Deep nested link</StackedNavLink>
+			}
+		>
+			Nested link two
+		</StackedNavLink>
+	</>
+);
+
+const nestedElements = () => (
+	<StackedNav>
+		<StackedNavLink nested={setOfLinksToNest}>Top level</StackedNavLink>
+	</StackedNav>
+);
+
 storiesOf("Stacked Nav", module)
 	.add("Heading and links", headingAndLinks)
 	.add("Heading label only", headingOnly)
 	.add("Heading with current", headingWithLink)
-	.add("Links only", noHeading);
+	.add("Links only", noHeading)
+	.add("With nested elements", nestedElements);

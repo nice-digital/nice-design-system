@@ -87,6 +87,12 @@ A boolean value to determine whether the link should have style and ARIA attribu
 
 ##### `<StackedNavLink />`
 
+###### nested
+
+- Type: `StackedNavLink` | `Array<StackedNavLink>`
+
+Pass one or more `<StackedNavLink>` elements into the `nested` property to create a visually and semantically nested block of links. Only styling provision for two levels deep, avoid nesting further and look into separating the blocks of nav into multiple units.
+
 ###### children
 
 - Type: `string`
@@ -132,7 +138,7 @@ A boolean value to determine whether the link should have style and ARIA attribu
 
 ###### hint
 
-- Type: `React.ElementType`
+- Type: `React.ReactNode`
 - Default: `null`
 
 A string can be passed to the `hint` property to display some additional text underneath the main label (but still inside the link element).

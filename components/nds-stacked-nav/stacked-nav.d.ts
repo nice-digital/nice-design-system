@@ -7,18 +7,23 @@ declare module "@nice-digital/nds-stacked-nav" {
 		elementType?: React.ElementType | string;
 	}
 
+	export interface StackedNavNestProps {
+		children: React.ReactNode;
+	}
+
 	export interface StackedNavProps {
 		label?: React.ReactNode;
 		elementType?: React.ElementType;
 		link?: HeadingLink;
-		children?: Array<StackedNavLink>;
+		children?: StackedNavLink | StackedNavLink[];
 	}
 
 	interface BaseStackedNavLinkProps {
 		destination?: string;
 		isCurrent?: boolean;
-		hint?: React.ElementType;
+		hint?: React.ReactNode;
 		elementType?: React.ElementType | string;
+		nested?: StackedNavLink | StackedNavLink[];
 	}
 
 	interface ChildStackedNavLinkProps extends BaseStackedNavLinkProps {
