@@ -134,4 +134,14 @@ describe("StackedNav", () => {
 				.text()
 		).toEqual("Two");
 	});
+
+	it("should pass any additionally supplied props to the parent nav", () => {
+		const wrapper = mount(
+			<StackedNav data-test="true">
+				<StackedNavLink label="One">Two</StackedNavLink>
+				<StackedNavLink>Two</StackedNavLink>
+			</StackedNav>
+		);
+		expect(wrapper.props()["data-test"]).toEqual("true");
+	});
 });

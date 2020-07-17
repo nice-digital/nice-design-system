@@ -79,7 +79,7 @@ export const StackedNavView = () => {
 					</p>
 				</div>
 				<div data-g="4">
-					<StackedNav>
+					<StackedNav aria-label="My amazing list" className="mt--d monkey">
 						<StackedNavLink nested={subNav}>One</StackedNavLink>
 						<StackedNavLink>Two</StackedNavLink>
 					</StackedNav>

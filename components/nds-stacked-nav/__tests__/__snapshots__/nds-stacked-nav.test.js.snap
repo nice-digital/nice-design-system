@@ -6,7 +6,6 @@ exports[`StackedNav should match snapshot with supplied nested links 1`] = `
   label="Stacked Nav Heading"
 >
   <nav
-    aria-label="Stacked Nav Heading"
     className="stacked-nav"
   >
     <Heading
@@ -112,7 +111,6 @@ exports[`StackedNav should match snapshot with supplied nested links 1`] = `
 
 exports[`StackedNav should match snapshot with supplied props 1`] = `
 <nav
-  aria-label="Stacked Nav Heading"
   className="stacked-nav"
 >
   <Heading

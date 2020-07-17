@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classnames from "classnames";
 
 import "./../scss/stacked-nav.scss";
 
@@ -86,9 +87,10 @@ StackedNavLink.propTypes = {
 };
 
 export const StackedNav = props => {
-	const { label, elementType, link, children } = props;
+	const { label, elementType, link, children, className, ...rest } = props;
+	const classNames = classnames(["stacked-nav", className]);
 	return (
-		<nav className="stacked-nav" aria-label={label && label}>
+		<nav className={classNames} {...rest}>
 			{label && <Heading label={label} elementType={elementType} link={link} />}
 			{children && <ul className="stacked-nav__list">{children}</ul>}
 		</nav>
@@ -97,6 +99,7 @@ export const StackedNav = props => {
 
 StackedNav.propTypes = {
 	label: PropTypes.node,
+	className: PropTypes.string,
 	elementType: PropTypes.elementType,
 	link: PropTypes.shape({
 		destination: PropTypes.string,
