@@ -54,15 +54,9 @@ export const StackedNavView = () => {
 			<div className="grid">
 				<div data-g="4">
 					<StackedNav {...headingProps}>
-						<StackedNavLink destination="/testing">Testing</StackedNavLink>
-
 						{links.map((item, index) => (
 							<StackedNavLink key={`item${index}`} {...item} />
 						))}
-						<StackedNavLink destination="/hello">
-							This is a child not a label
-						</StackedNavLink>
-						<StackedNavLink label="test" />
 					</StackedNav>
 				</div>
 				<div data-g="4">
@@ -80,8 +74,7 @@ export const StackedNavView = () => {
 				</div>
 				<div data-g="4">
 					<StackedNav aria-label="My amazing list" className="mt--d monkey">
-						<StackedNavLink nested={subNav}>One</StackedNavLink>
-						<StackedNavLink>Two</StackedNavLink>
+						<p>hello</p>
 					</StackedNav>
 				</div>
 			</div>
