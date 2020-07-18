@@ -38,6 +38,14 @@ const links = [
 	}
 ];
 
+const subNav = (
+	<>
+		<StackedNavLink>Nested nav one</StackedNavLink>
+		<StackedNavLink>Nested nav two</StackedNavLink>
+		<StackedNavLink>Nested nav three</StackedNavLink>
+	</>
+);
+
 describe("StackedNav", () => {
 	it("should render without crashing", () => {
 		const wrapper = shallow(
@@ -56,6 +64,15 @@ describe("StackedNav", () => {
 				{links.map((item, index) => (
 					<StackedNavLink key={`idx${index}`} {...item} />
 				))}
+			</StackedNav>
+		);
+		expect(toJson(wrapper)).toMatchSnapshot();
+	});
+
+	it("should match snapshot with supplied nested links", () => {
+		const wrapper = mount(
+			<StackedNav {...heading}>
+				<StackedNavLink {...links[0]} nested={subNav} />
 			</StackedNav>
 		);
 		expect(toJson(wrapper)).toMatchSnapshot();
@@ -116,5 +133,15 @@ describe("StackedNav", () => {
 				.last()
 				.text()
 		).toEqual("Two");
+	});
+
+	it("should pass any additionally supplied props to the parent nav", () => {
+		const wrapper = mount(
+			<StackedNav data-test="true">
+				<StackedNavLink label="One">Two</StackedNavLink>
+				<StackedNavLink>Two</StackedNavLink>
+			</StackedNav>
+		);
+		expect(wrapper.props()["data-test"]).toEqual("true");
 	});
 });

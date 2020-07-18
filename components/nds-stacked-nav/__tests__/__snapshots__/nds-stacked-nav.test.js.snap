@@ -1,8 +1,116 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`StackedNav should match snapshot with supplied nested links 1`] = `
+<StackedNav
+  elementType="h1"
+  label="Stacked Nav Heading"
+>
+  <nav
+    className="stacked-nav"
+  >
+    <Heading
+      elementType="h1"
+      label="Stacked Nav Heading"
+    >
+      <h1
+        className="stacked-nav__root stacked-nav__root--no-link"
+      >
+        Stacked Nav Heading
+      </h1>
+    </Heading>
+    <ul
+      className="stacked-nav__list"
+    >
+      <StackedNavLink
+        destination="#"
+        elementType="a"
+        isCurrent={true}
+        label="Form Group"
+        nested={
+          <React.Fragment>
+            <StackedNavLink>
+              Nested nav one
+            </StackedNavLink>
+            <StackedNavLink>
+              Nested nav two
+            </StackedNavLink>
+            <StackedNavLink>
+              Nested nav three
+            </StackedNavLink>
+          </React.Fragment>
+        }
+      >
+        <li
+          className="stacked-nav__list-item"
+        >
+          <a
+            aria-current="true"
+            href="#"
+          >
+            <span
+              className="stacked-nav__content-wrapper"
+            >
+              Form Group
+            </span>
+          </a>
+          <ul
+            className="stacked-nav__nested"
+          >
+            <StackedNavLink>
+              <li
+                className="stacked-nav__list-item"
+              >
+                <a
+                  aria-current="false"
+                >
+                  <span
+                    className="stacked-nav__content-wrapper"
+                  >
+                    Nested nav one
+                  </span>
+                </a>
+              </li>
+            </StackedNavLink>
+            <StackedNavLink>
+              <li
+                className="stacked-nav__list-item"
+              >
+                <a
+                  aria-current="false"
+                >
+                  <span
+                    className="stacked-nav__content-wrapper"
+                  >
+                    Nested nav two
+                  </span>
+                </a>
+              </li>
+            </StackedNavLink>
+            <StackedNavLink>
+              <li
+                className="stacked-nav__list-item"
+              >
+                <a
+                  aria-current="false"
+                >
+                  <span
+                    className="stacked-nav__content-wrapper"
+                  >
+                    Nested nav three
+                  </span>
+                </a>
+              </li>
+            </StackedNavLink>
+          </ul>
+        </li>
+      </StackedNavLink>
+    </ul>
+  </nav>
+</StackedNav>
+`;
+
 exports[`StackedNav should match snapshot with supplied props 1`] = `
 <nav
-  aria-label="Stacked Nav Heading"
   className="stacked-nav"
 >
   <Heading

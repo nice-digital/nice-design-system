@@ -50,6 +50,12 @@ import { Link } from "react-router-dom";
 
 The text that appears as the component's heading. If the `label` is omitted, the heading section of the component will not render at all.
 
+###### className
+
+- Type: `string`
+
+Any additional classes that you would like applied to the `nav` container
+
 ###### elementType
 
 - Type: `React.ElementType`
@@ -63,6 +69,10 @@ The tag that you would like to use to wrap the label for the heading. The defaul
 - Default: `null`
 
 An object to describe an optional link for the heading of the stacked nav component.
+
+##### additional props
+
+Any additional props are spread on to the `nav` element,useful for accessibility or data attributes.
 
 ###### link.elementType
 
@@ -86,6 +96,12 @@ A string to represent the destination if the heading is a link.
 A boolean value to determine whether the link should have style and ARIA attributes to show that it is currently active.
 
 ##### `<StackedNavLink />`
+
+###### nested
+
+- Type: `StackedNavLink` | `Array<StackedNavLink>`
+
+Pass one or more `<StackedNavLink>` elements into the `nested` property to create a visually and semantically nested block of links. Only styling provision for two levels deep, avoid nesting further and look into separating the blocks of nav into multiple units.
 
 ###### children
 
@@ -132,7 +148,7 @@ A boolean value to determine whether the link should have style and ARIA attribu
 
 ###### hint
 
-- Type: `React.ElementType`
+- Type: `React.ReactNode`
 - Default: `null`
 
 A string can be passed to the `hint` property to display some additional text underneath the main label (but still inside the link element).
