@@ -2,6 +2,9 @@
 // Import all the core variables, functions and mixins
 @import './base.scss';
 
+// Icons - from nice-icons module
+@import '~@nice-digital/icons/scss/nice-icons';
+
 @import '~@nice-digital/nds-action-banner/scss/action-banner',
   '~@nice-digital/nds-breadcrumbs/scss/breadcrumbs',
   '~@nice-digital/nds-button/scss/button', '~@nice-digital/nds-card/scss/card',
