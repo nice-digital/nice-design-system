@@ -2,103 +2,107 @@
 /// @group helpers
 ////
 
-// ## Alignment
+$nds-output-text-classes: true !default;
 
-/// Justified text alignment
-/// @since 0.1.0
-.text-justify {
-  text-align: justify !important;
-}
+@if $nds-output-text-classes {
+  // ## Alignment
 
-/// Stop text from wrapping
-/// @since 0.1.0
-.text-nowrap {
-  white-space: nowrap !important;
-}
+  /// Justified text alignment
+  /// @since 0.1.0
+  .text-justify {
+    text-align: justify !important;
+  }
 
-/// Truncate text with an ellipsis.
-/// Requires inline-block or block for proper styling
-/// @since 0.1.0
-.text-truncate {
-  @include nds-text-truncate;
-}
+  /// Stop text from wrapping
+  /// @since 0.1.0
+  .text-nowrap {
+    white-space: nowrap !important;
+  }
 
-/// Align text left
-/// @since 0.1.0
-.text-left {
-  text-align: left !important;
-}
+  /// Truncate text with an ellipsis.
+  /// Requires inline-block or block for proper styling
+  /// @since 0.1.0
+  .text-truncate {
+    @include nds-text-truncate;
+  }
 
-/// Align text right
-/// @since 0.1.0
-.text-center {
-  text-align: center !important;
-}
+  /// Align text left
+  /// @since 0.1.0
+  .text-left {
+    text-align: left !important;
+  }
 
-/// Align text right
-/// @since 0.1.0
-.text-right {
-  max-width: 100%; // Because of max character width on paragraphs
-  text-align: right !important;
-}
+  /// Align text right
+  /// @since 0.1.0
+  .text-center {
+    text-align: center !important;
+  }
 
-// TODO: Responsive text alignment
+  /// Align text right
+  /// @since 0.1.0
+  .text-right {
+    max-width: 100%; // Because of max character width on paragraphs
+    text-align: right !important;
+  }
 
-// ## Transformation
+  // TODO: Responsive text alignment
 
-/// Lowercase text
-/// @since 0.1.0
-.text-lowercase {
-  text-transform: lowercase !important;
-}
+  // ## Transformation
 
-/// Uppercase text
-/// @since 0.1.0
-.text-uppercase {
-  text-transform: uppercase !important;
-}
+  /// Lowercase text
+  /// @since 0.1.0
+  .text-lowercase {
+    text-transform: lowercase !important;
+  }
 
-/// Capitalized text
-/// @since 0.0.1
-.text-capitalize {
-  text-transform: capitalize !important;
-}
+  /// Uppercase text
+  /// @since 0.1.0
+  .text-uppercase {
+    text-transform: uppercase !important;
+  }
 
-// ## Font weight/italics
+  /// Capitalized text
+  /// @since 0.0.1
+  .text-capitalize {
+    text-transform: capitalize !important;
+  }
 
-/// Normal font weight
-/// @since 0.1.0
-.font-weight-normal {
-  font-weight: normal;
-}
+  // ## Font weight/italics
 
-/// Bold font weight
-/// @since 0.1.0
-.font-weight-bold {
-  font-weight: bold;
-}
+  /// Normal font weight
+  /// @since 0.1.0
+  .font-weight-normal {
+    font-weight: normal;
+  }
 
-/// Italic font style
-/// @since 0.1.0
-.font-italic {
-  font-style: italic;
-}
+  /// Bold font weight
+  /// @since 0.1.0
+  .font-weight-bold {
+    font-weight: bold;
+  }
 
-/// Quick left float
-/// @since 0.1.0
-.left {
-  float: left;
-}
+  /// Italic font style
+  /// @since 0.1.0
+  .font-italic {
+    font-style: italic;
+  }
 
-/// Quick right float
-/// @since 0.1.0
-.right {
-  float: right;
-}
+  /// Quick left float
+  /// @since 0.1.0
+  .left {
+    float: left;
+  }
 
-/// Set and element to display as block and align
-/// centrally via auto left/right margins
-/// @since 0.1.0
-.center-block {
-  @include nds-center-block;
+  /// Quick right float
+  /// @since 0.1.0
+  .right {
+    float: right;
+  }
+
+  /// Set and element to display as block and align
+  /// centrally via auto left/right margins
+  /// @since 0.1.0
+  .center-block {
+    @include nds-center-block;
+  }
 }
