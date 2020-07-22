@@ -12,6 +12,7 @@
   @include nds-hide-print;
   list-style: none;
   margin: em($nds-spacing-small 0 $nds-spacing-large);
+  max-width: 100%;
   padding: 0;
 
   &__crumb {

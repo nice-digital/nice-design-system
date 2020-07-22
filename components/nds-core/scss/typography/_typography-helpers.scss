@@ -126,6 +126,7 @@
 @mixin nds-list {
   font-feature-settings: 'kern', 'onum', 'liga';
   margin-left: rem($nds-spacing-medium);
+  max-width: 66ch;
   padding: 0;
 }
 
