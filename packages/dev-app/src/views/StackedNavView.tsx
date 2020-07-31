@@ -53,9 +53,13 @@ export const StackedNavView = () => {
 		<div className="container pt--d">
 			<div className="grid">
 				<div data-g="4">
-					<StackedNav {...headingProps}>
+					<StackedNav {...headingProps} data-tracking="nav-wrapper">
 						{links.map((item, index) => (
-							<StackedNavLink key={`item${index}`} {...item} />
+							<StackedNavLink
+								data-tracking="nav-element"
+								key={`item${index}`}
+								{...item}
+							/>
 						))}
 					</StackedNav>
 				</div>
