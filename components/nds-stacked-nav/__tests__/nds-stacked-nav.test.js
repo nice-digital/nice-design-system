@@ -135,13 +135,21 @@ describe("StackedNav", () => {
 		).toEqual("Two");
 	});
 
-	it("should pass any additionally supplied props to the parent nav", () => {
+	it("should pass any additionally supplied props to the parent nav and to the child link", () => {
 		const wrapper = mount(
 			<StackedNav data-test="true">
-				<StackedNavLink label="One">Two</StackedNavLink>
+				<StackedNavLink label="One" data-another-test="true">
+					Two
+				</StackedNavLink>
 				<StackedNavLink>Two</StackedNavLink>
 			</StackedNav>
 		);
 		expect(wrapper.props()["data-test"]).toEqual("true");
+		expect(
+			wrapper
+				.find("li")
+				.first()
+				.props()["data-another-test"]
+		).toEqual("true");
 	});
 });

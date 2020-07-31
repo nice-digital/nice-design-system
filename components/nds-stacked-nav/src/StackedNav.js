@@ -46,7 +46,8 @@ export const StackedNavLink = props => {
 		isCurrent,
 		elementType: ElementType = "a",
 		children,
-		nested
+		nested,
+		...rest
 	} = props;
 	const label = props.label || children;
 	if (!label) return null;
@@ -58,7 +59,7 @@ export const StackedNavLink = props => {
 		linkProps.to = destination;
 	}
 	return (
-		<li className="stacked-nav__list-item">
+		<li className="stacked-nav__list-item" {...rest}>
 			<ElementType {...linkProps}>
 				<span className="stacked-nav__content-wrapper">
 					{hint ? (
