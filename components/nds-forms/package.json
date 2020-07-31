@@ -1,6 +1,6 @@
 {
   "name": "@nice-digital/nds-forms",
-  "version": "1.0.27-alpha.0",
+  "version": "1.0.28-alpha.0",
   "description": "DEPRECATED! Use @nice-digital/nds-input and @nice-digital/nds-textarea",
   "author": "Warren Keith <warren.keith@nice.org.uk>",
   "homepage": "https://github.com/nhsevidence/nice-design-system#readme",
@@ -37,8 +37,8 @@
     "@babel/cli": "^7.5.0"
   },
   "dependencies": {
-    "@nice-digital/nds-input": "^1.0.3-alpha.0",
-    "@nice-digital/nds-textarea": "^1.0.3-alpha.0"
+    "@nice-digital/nds-input": "^1.0.4-alpha.0",
+    "@nice-digital/nds-textarea": "^1.0.4-alpha.0"
   },
   "gitHead": "a4db68f43916ad6c4cb19612e10aae200e80b5a8"
 }
