@@ -15,35 +15,36 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [Intro](#intro)
-  - [Guidance](#guidance)
-- [Upgrading from 1.x to 2.x](#upgrading-from-1x-to-2x)
-  - [What's new in v2.x?](#whats-new-in-v2x)
-- [Installation](#installation)
-  - [Include sass](#include-sass)
-    - [Environment variable](#environment-variable)
-    - [includePaths](#includepaths)
-    - [Tilde import](#tilde-import)
-- [Usage](#usage)
-  - [React](#react)
-    - [Browser support](#browser-support)
-  - [Webfont](#webfont)
-    - [Serving font files](#serving-font-files)
-      - [Express](#express)
-      - [Grunt copy](#grunt-copy)
-      - [Visual Studio Copy Task](#visual-studio-copy-task)
-      - [Webpack](#webpack)
-    - [Markup](#markup)
-    - [SASS](#sass)
-- [Development](#development)
-  - [Dependencies](#dependencies)
-  - [Commands](#commands)
-  - [Updating the readme](#updating-the-readme)
-  - [Releasing](#releasing)
-- [Creating icons](#creating-icons)
-- [Custom application icons](#custom-application-icons)
-- [Icons](#icons)
-- [License](#license)
+- [NICE Icons](#nice-icons)
+	- [Intro](#intro)
+		- [Guidance](#guidance)
+	- [Upgrading from 1.x to 2.x](#upgrading-from-1x-to-2x)
+		- [What's new in v2.x?](#whats-new-in-v2x)
+	- [Installation](#installation)
+		- [Include sass](#include-sass)
+			- [Environment variable](#environment-variable)
+			- [includePaths](#includepaths)
+			- [Tilde import](#tilde-import)
+	- [Usage](#usage)
+		- [React](#react)
+			- [Browser support](#browser-support)
+		- [Webfont](#webfont)
+			- [Serving font files](#serving-font-files)
+				- [Express](#express)
+				- [Grunt copy](#grunt-copy)
+				- [Visual Studio Copy Task](#visual-studio-copy-task)
+				- [Webpack](#webpack)
+			- [Markup](#markup)
+			- [SASS](#sass)
+	- [Development](#development)
+		- [Dependencies](#dependencies)
+		- [Commands](#commands)
+		- [Updating the readme](#updating-the-readme)
+		- [Releasing](#releasing)
+	- [Creating icons](#creating-icons)
+	- [Custom application icons](#custom-application-icons)
+	- [Icons](#icons)
+	- [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -71,7 +72,8 @@ The following are breaking changes from v1 to v2:
 - the SASS mixin `icon-base` is now `nice-icons-base`
 - there are no nested folders within src
 - dropped `speak: none` CSS property
-- dropped support for usage via Bower.
+- dropped support for usage via Bower
+- use Node 10, and npm 6.8+.
 
 ### What's new in v2.x?
 
@@ -303,8 +305,8 @@ There are SASS constructs for advanced usage:
 
 To build the icon font on your local machine, first install:
 
-- [Node 6+](https://nodejs.org/en/download/)
-- [npm 5+](https://www.npmjs.com/)
+- [Node 10+](https://nodejs.org/en/download/)
+- [npm 6.8+](https://www.npmjs.com/)
 
 Then before you can run any tasks, run the following from the command line to install dependencies:
 
