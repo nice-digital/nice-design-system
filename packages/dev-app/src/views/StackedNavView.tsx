@@ -26,11 +26,6 @@ const links = [
 	}
 ];
 
-const headingProps: StackedNavProps = {
-	label: "Stacked Nav Heading",
-	elementType: "h1"
-};
-
 export const StackedNavView = () => {
 	const subNav2 = (
 		<>
@@ -53,7 +48,11 @@ export const StackedNavView = () => {
 		<div className="container pt--d">
 			<div className="grid">
 				<div data-g="4">
-					<StackedNav {...headingProps} data-tracking="nav-wrapper">
+					<StackedNav
+						label="Stacked Nav Heading"
+						elementType="h1"
+						data-tracking="nav-wrapper"
+					>
 						{links.map((item, index) => (
 							<StackedNavLink
 								data-tracking="nav-element"
@@ -77,8 +76,15 @@ export const StackedNavView = () => {
 					</p>
 				</div>
 				<div data-g="4">
-					<StackedNav aria-label="My amazing list" className="mt--d monkey">
-						<p>hello</p>
+					<StackedNav aria-label="My amazing list" className="mt--f monkey">
+						{links.map((item, index) => (
+							<StackedNavLink
+								className="mt--f monkey"
+								data-tracking="nav-element"
+								key={`item${index}`}
+								{...item}
+							/>
+						))}
 					</StackedNav>
 				</div>
 			</div>
