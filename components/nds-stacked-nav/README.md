@@ -153,6 +153,10 @@ A boolean value to determine whether the link should have style and ARIA attribu
 
 A string can be passed to the `hint` property to display some additional text underneath the main label (but still inside the link element).
 
+##### additional props
+
+Any additional props are spread on to the `li` element, useful for accessibility or data attributes.
+
 ### SCSS
 
 If you're not using [React](#react), then import the SCSS directly into your application by:

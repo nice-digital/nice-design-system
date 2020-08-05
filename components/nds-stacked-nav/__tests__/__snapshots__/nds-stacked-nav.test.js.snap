@@ -42,6 +42,7 @@ exports[`StackedNav should match snapshot with supplied nested links 1`] = `
       >
         <li
           className="stacked-nav__list-item"
+          label="Form Group"
         >
           <a
             aria-current="true"

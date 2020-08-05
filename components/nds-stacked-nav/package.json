@@ -1,6 +1,6 @@
 {
   "name": "@nice-digital/nds-stacked-nav",
-  "version": "1.0.24-alpha.0",
+  "version": "1.0.26-alpha.0",
   "description": "Stacked navigation component for the NICE Design System",
   "keywords": [
     "navigation"
@@ -37,7 +37,7 @@
     "url": "https://github.com/nhsevidence/nice-design-system/issues"
   },
   "dependencies": {
-    "@nice-digital/nds-core": "^1.0.21-alpha.0",
+    "@nice-digital/nds-core": "^1.0.22-alpha.0",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
     "react": "^16.11.0"
