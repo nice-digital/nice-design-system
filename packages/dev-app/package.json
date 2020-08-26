@@ -1,15 +1,15 @@
 {
   "name": "dev-app",
-  "version": "0.1.43-alpha.0",
+  "version": "0.1.44-alpha.0",
   "private": true,
   "dependencies": {
-    "@nice-digital/design-system": "^1.0.41-alpha.0",
+    "@nice-digital/design-system": "^1.0.42-alpha.0",
     "@nice-digital/global-nav": "github:nice-digital/global-nav",
     "@nice-digital/nds-action-banner": "^1.0.23-alpha.0",
     "@nice-digital/nds-alert": "^1.0.24-alpha.0",
     "@nice-digital/nds-breadcrumbs": "^1.0.25-alpha.0",
     "@nice-digital/nds-button": "^1.0.24-alpha.0",
-    "@nice-digital/nds-card": "^1.0.27-alpha.0",
+    "@nice-digital/nds-card": "^1.0.28-alpha.0",
     "@nice-digital/nds-checkbox": "^1.0.28-alpha.0",
     "@nice-digital/nds-core": "^1.0.23-alpha.0",
     "@nice-digital/nds-filters": "^1.0.26-alpha.0",
