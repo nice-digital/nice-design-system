@@ -1,6 +1,6 @@
 {
   "name": "@nice-digital/nds-phase-banner",
-  "version": "1.0.22-alpha.0",
+  "version": "1.0.23-alpha.0",
   "description": "Phase banner component for the NICE Design System",
   "keywords": [
     "alpha",
@@ -36,8 +36,8 @@
     "url": "https://github.com/nhsevidence/nice-design-system/issues"
   },
   "dependencies": {
-    "@nice-digital/nds-core": "^1.0.22-alpha.0",
-    "@nice-digital/nds-tag": "^1.0.22-alpha.0",
+    "@nice-digital/nds-core": "^1.0.23-alpha.0",
+    "@nice-digital/nds-tag": "^1.0.23-alpha.0",
     "prop-types": "^15.7.2",
     "react": "^16.11.0"
   },
