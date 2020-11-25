@@ -8,6 +8,6 @@
 	"svgProps": {
 		"className": "icon",
 		"aria-hidden": true,
-		"focusable": true
+		"focusable": false
 	}
 }
