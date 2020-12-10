@@ -16,7 +16,7 @@ interface ISEO {
 	title: string;
 }
 
-function SEO(props: ISEO): React.ReactElement {
+function Seo(props: ISEO): React.ReactElement {
 	const { lang = "en", description = "", meta = [], title } = props;
 
 	const { site } = useStaticQuery(
@@ -37,7 +37,7 @@ function SEO(props: ISEO): React.ReactElement {
 
 	return (
 		<Helmet
-			htmlAttributes={{lang}}
+			htmlAttributes={{ lang }}
 			title={title}
 			titleTemplate={`%s | ${site.siteMetadata.title}`}
 			meta={[
@@ -78,4 +78,4 @@ function SEO(props: ISEO): React.ReactElement {
 	);
 }
 
-export default SEO;
+export default Seo;

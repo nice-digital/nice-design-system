@@ -1,0 +1,66 @@
+---
+title: Helpers
+description: Useful helper classes for common tasks
+type: foundations
+---
+
+## Floats
+
+Quickly float elements with `.left` or `.right`. Clear floats on a parent element with the `.clearfix` class.
+
+```
+<div class="clearfix">
+    <div class="left">Floated left</div>
+    <div class="right">Floated right</div>
+</div>
+```
+
+There is also a `clearfix()` mixin for use with custom components:
+
+```
+.example {
+    @include clearfix;
+}
+```
+
+## Center block
+
+Set an element to `display: block` and center via `margin: auto`. Available as a mixin (`@include center-block;`) and class (`.center-block`).
+
+```
+<div class="center-block text-center" style="background: #eee; width: 200px;">
+    Center block
+</div>
+```
+
+## Text alignment
+
+Change the text alignment of an element by adding `.text-left`, `.text-right`, `.text-center` or `.text-justify` to an element.
+
+```
+<p class="text-left">This is some left aligned text</p>
+<p class="text-right">This is some right aligned text</p>
+<p class="text-center">This is some center aligned text</p>
+<p class="text-justify">This is some justified text</p>
+```
+
+## Text wrapping
+
+Use `.text-nowrap` to keep text on one line and stop it from wrapping, and use `.text-truncate` to add an an ellipsis to text that overflows its container.
+
+```
+<div style="background: #eee; width: 80px;">
+    <p class="text-nowrap">This is some text that doesn't wrap</p>
+    <p class="text-truncate">This is some truncated text</p>
+</div>
+```
+
+## Text transformation
+
+Transform the casing of text by adding `.text-lowercase`, `.text-uppercase`, or `.text-capitalize` to an element.
+
+```
+<p class="text-lowercase">Lowercased text.</p>
+<p class="text-uppercase">Uppercased text.</p>
+<p class="text-capitalize">Capitalized text.</p>
+```
