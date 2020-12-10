@@ -12,9 +12,10 @@ const slugify = require("slugify");
 module.exports.onCreateNode = ({ node, actions }) => {
 	const { createNodeField } = actions;
 	if (node.internal.type === "Mdx") {
-		const slug = slugify(node.frontmatter.title).toLowerCase();
-		const arr = path.dirname(node.fileAbsolutePath).split("/");
-		const type = arr.splice(arr.length - 2, 1)[0] || null;
+		const slug =
+			node.frontmatter.path || slugify(node.frontmatter.title).toLowerCase();
+		const type = node.frontmatter.type;
+		const path = node.frontmatter.path;
 		createNodeField({
 			node,
 			name: "slug",
@@ -25,6 +26,7 @@ module.exports.onCreateNode = ({ node, actions }) => {
 			name: "type",
 			value: type
 		});
+		createNodeField({ node, name: "path", value: path });
 	}
 };
 
@@ -39,6 +41,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
 						fields {
 							slug
 							type
+							path
 						}
 					}
 				}
@@ -46,10 +49,10 @@ module.exports.createPages = async ({ graphql, actions }) => {
 		}
 	`);
 	response.data.allMdx.edges.forEach(edge => {
-		const { slug, type } = edge.node.fields;
+		const { slug, type, path } = edge.node.fields;
 		createPage({
 			component: template,
-			path: `/${type}/${slug}`,
+			path,
 			context: {
 				slug,
 				type

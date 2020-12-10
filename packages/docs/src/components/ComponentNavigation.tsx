@@ -16,6 +16,8 @@ type ResponseType = {
 					id: string;
 					fields: {
 						type: string;
+						slug: string;
+						path: string | undefined;
 					};
 					frontmatter: {
 						title: string;
@@ -54,20 +56,29 @@ export function ComponentNavigation(
 	);
 
 	const { section, currentId } = props;
+
 	return (
 		<StackedNav label={capitalise(section)}>
-			{navigation.map(({ node }) => {
-				return (
-					<StackedNavLink
-						isCurrent={node.id === currentId}
-						key={node.id}
-						destination={`/${node.slug}`}
-						elementType={Link}
-					>
-						{node.frontmatter.title}
-					</StackedNavLink>
-				);
-			})}
+			{navigation.map(
+				({
+					node: {
+						slug,
+						id,
+						frontmatter: { title }
+					}
+				}) => {
+					return (
+						<StackedNavLink
+							isCurrent={id === currentId}
+							key={id}
+							destination={"/" + slug}
+							elementType={Link}
+						>
+							{title}
+						</StackedNavLink>
+					);
+				}
+			)}
 		</StackedNav>
 	);
 }
