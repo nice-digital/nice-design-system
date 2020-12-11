@@ -4,6 +4,7 @@ import { Grid, GridItem } from "@nice-digital/nds-grid";
 import { PageHeader } from "@nice-digital/nds-page-header";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
+import Seo from "../../components/Seo";
 import Wrapper from "./Wrapper";
 import { ComponentNavigation } from "../ComponentNavigation";
 
@@ -45,13 +46,16 @@ export default function ComponentDetailLayout(
 	const { body, fields, frontmatter, id } = props.data.mdx;
 	return (
 		<Wrapper>
+			<Seo title={frontmatter.title} description={frontmatter.description} />
 			<PageHeader heading={frontmatter.title} lead={frontmatter.description} />
-			<Grid gutter="loose">
-				<GridItem cols={3}>
+				<GridItem cols={2}>
 					<ComponentNavigation currentId={id} section={fields.type} />
 				</GridItem>
-				<GridItem cols={9}>
+				<GridItem cols={8}>
 					<MDXRenderer>{body}</MDXRenderer>
+				</GridItem>
+				<GridItem cols={2}>
+					<p>In page nav</p>
 				</GridItem>
 			</Grid>
 		</Wrapper>

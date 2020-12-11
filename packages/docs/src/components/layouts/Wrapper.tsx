@@ -1,6 +1,6 @@
 import React from "react";
 import { Header, Footer } from "@nice-digital/global-nav";
-import "../main.scss";
+import "../../styles/main.scss";
 
 interface ILayout {
 	children: React.ReactNode;

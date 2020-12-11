@@ -5,7 +5,8 @@ import { capitalise } from "../utils";
 
 type ComponentNavigationType = {
 	section: string;
-	currentId: string;
+	currentId?: string | undefined;
+	pathname?: string;
 };
 
 type ResponseType = {
@@ -31,7 +32,7 @@ type ResponseType = {
 
 export function ComponentNavigation(
 	props: ComponentNavigationType
-): React.ReactNode {
+): React.ReactElement {
 	const response: ResponseType = useStaticQuery(graphql`
 		{
 			allMdx {
@@ -55,10 +56,17 @@ export function ComponentNavigation(
 		(edge: any) => edge.node.fields.type === props.section
 	);
 
-	const { section, currentId } = props;
+	const { section, currentId, pathname } = props;
 
 	return (
-		<StackedNav label={capitalise(section)}>
+		<StackedNav
+			label={capitalise(section)}
+			link={{
+				elementType: Link,
+				destination: `/${section}`,
+				isCurrent: pathname === `/${section}`
+			}}
+		>
 			{navigation.map(
 				({
 					node: {
