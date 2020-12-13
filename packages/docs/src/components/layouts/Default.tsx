@@ -7,7 +7,7 @@ import Seo from "../../components/partials/Seo";
 import Wrapper from "./Wrapper";
 import { ComponentNavigation } from "../partials/ComponentNavigation";
 
-type ComponentDetailLayoutType = {
+type DefaultType = {
 	data: {
 		mdx: {
 			frontmatter: {
@@ -39,30 +39,18 @@ export const query = graphql`
 	}
 `;
 
-export default function ComponentDetailLayout(
-	props: ComponentDetailLayoutType
-) {
-	const { body, fields, frontmatter, id } = props.data.mdx;
+export default function Default(props: DefaultType) {
+	const {
+		body,
+		fields,
+		frontmatter: { title, description },
+		id
+	} = props.data.mdx;
 	return (
 		<Wrapper className="pt--e">
-			<Seo title={frontmatter.title} description={frontmatter.description} />
-			<Grid gutter="loose">
-				<GridItem cols={12}>
-					<PageHeader
-						heading={frontmatter.title}
-						lead={frontmatter.description}
-					/>
-				</GridItem>
-				<GridItem cols={2}>
-					<ComponentNavigation currentId={id} section={fields.section} />
-				</GridItem>
-				<GridItem cols={8}>
-					<MDXRenderer>{body}</MDXRenderer>
-				</GridItem>
-				<GridItem cols={2}>
-					<p>In page nav</p>
-				</GridItem>
-			</Grid>
+			<h1 data-attr={id}>{title}</h1>
+			<p className="lead">{description}</p>
+			<MDXRenderer>{body}</MDXRenderer>
 		</Wrapper>
 	);
 }

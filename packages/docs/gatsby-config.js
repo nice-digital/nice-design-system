@@ -6,11 +6,6 @@ module.exports = {
 		author: "@nice-digital"
 	},
 	plugins: [
-		"gatsby-plugin-mdx",
-		"gatsby-transformer-remark",
-		"gatsby-plugin-typescript",
-		"gatsby-plugin-sass",
-		"gatsby-plugin-react-helmet",
 		{
 			resolve: "gatsby-source-filesystem",
 			options: {
@@ -33,6 +28,11 @@ module.exports = {
 				path: `${__dirname}/src/content`
 			}
 		},
+		"gatsby-plugin-mdx",
+		"gatsby-transformer-remark",
+		"gatsby-plugin-typescript",
+		"gatsby-plugin-sass",
+		"gatsby-plugin-react-helmet",
 		"gatsby-transformer-sharp",
 		"gatsby-plugin-sharp",
 		{

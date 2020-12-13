@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import { StackedNav, StackedNavLink } from "@nice-digital/nds-stacked-nav";
-import { capitalise } from "../utils";
+import { capitalise } from "../../utils";
 
 type ComponentNavigationType = {
 	section: string;
@@ -16,14 +16,12 @@ type ResponseType = {
 				node: {
 					id: string;
 					fields: {
-						type: string;
-						slug: string;
-						path: string | undefined;
+						section: string;
 					};
 					frontmatter: {
 						title: string;
+						path: string;
 					};
-					slug: string;
 				};
 			}
 		];
@@ -40,12 +38,12 @@ export function ComponentNavigation(
 					node {
 						id
 						fields {
-							type
+							section
 						}
 						frontmatter {
 							title
+							path
 						}
-						slug
 					}
 				}
 			}
@@ -53,7 +51,7 @@ export function ComponentNavigation(
 	`);
 
 	const navigation = response.allMdx.edges.filter(
-		(edge: any) => edge.node.fields.type === props.section
+		(edge: any) => edge.node.fields.section === props.section
 	);
 
 	const { section, currentId, pathname } = props;
@@ -70,16 +68,15 @@ export function ComponentNavigation(
 			{navigation.map(
 				({
 					node: {
-						slug,
 						id,
-						frontmatter: { title }
+						frontmatter: { title, path }
 					}
 				}) => {
 					return (
 						<StackedNavLink
 							isCurrent={id === currentId}
 							key={id}
-							destination={"/" + slug}
+							destination={path}
 							elementType={Link}
 						>
 							{title}
