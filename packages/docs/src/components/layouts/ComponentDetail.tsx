@@ -5,7 +5,7 @@ import { PageHeader } from "@nice-digital/nds-page-header";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Seo from "../../components/partials/Seo";
 import Wrapper from "./Wrapper";
-import { ComponentNavigation } from "../partials/ComponentNavigation";
+import { TowerNavigation } from "../partials/TowerNavigation";
 
 type ComponentDetailLayoutType = {
 	data: {
@@ -13,11 +13,9 @@ type ComponentDetailLayoutType = {
 			frontmatter: {
 				title: string;
 				description: string;
-			};
-			id: string;
-			fields: {
 				section: string;
 			};
+			id: string;
 			body: string;
 		};
 	};
@@ -30,8 +28,6 @@ export const query = graphql`
 			frontmatter {
 				title
 				description
-			}
-			fields {
 				section
 			}
 			body
@@ -42,19 +38,24 @@ export const query = graphql`
 export default function ComponentDetailLayout(
 	props: ComponentDetailLayoutType
 ) {
-	const { body, fields, frontmatter, id } = props.data.mdx;
+	const {
+		body,
+		frontmatter: { title, description, section },
+		id
+	} = props.data.mdx;
 	return (
 		<Wrapper className="pt--e">
-			<Seo title={frontmatter.title} description={frontmatter.description} />
+			<Seo title={title} description={description} />
 			<Grid gutter="loose">
 				<GridItem cols={12}>
-					<PageHeader
-						heading={frontmatter.title}
-						lead={frontmatter.description}
-					/>
+					<PageHeader heading={title} lead={description} />
 				</GridItem>
 				<GridItem cols={2}>
-					<ComponentNavigation currentId={id} section={fields.section} />
+					<TowerNavigation
+						currentId={id}
+						section={section}
+						hasRootLink={true}
+					/>
 				</GridItem>
 				<GridItem cols={8}>
 					<MDXRenderer>{body}</MDXRenderer>

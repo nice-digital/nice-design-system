@@ -6,22 +6,10 @@ module.exports.onCreateNode = ({ node, actions }) => {
 	if (node.internal.type === "Mdx") {
 		const slug =
 			node.frontmatter.path || slugify(node.frontmatter.title).toLowerCase();
-		const section = node.frontmatter.section;
-		const path = node.frontmatter.path;
 		createNodeField({
 			node,
 			name: "slug",
 			value: slug
-		});
-		createNodeField({
-			node,
-			name: "section",
-			value: section
-		});
-		createNodeField({
-			node,
-			name: "path",
-			value: path
 		});
 	}
 };
@@ -35,11 +23,11 @@ module.exports.createPages = async ({ graphql, actions }) => {
 					node {
 						fields {
 							slug
-							section
-							path
 						}
 						frontmatter {
 							template
+							section
+							path
 						}
 					}
 				}
@@ -47,22 +35,28 @@ module.exports.createPages = async ({ graphql, actions }) => {
 		}
 	`);
 
-	response.data.allMdx.edges.forEach(edge => {
-		const { slug, section, path } = edge.node.fields;
-		const { template } = edge.node.frontmatter;
-		createPage({
-			component: templates[template || "default"],
-			path,
-			context: {
-				slug,
-				section
+	response.data.allMdx.edges.forEach(
+		({
+			node: {
+				fields: { slug },
+				frontmatter: { template, section, path }
 			}
-		});
-	});
+		}) => {
+			createPage({
+				component: templates[template || "default"],
+				path,
+				context: {
+					slug,
+					section
+				}
+			});
+		}
+	);
 };
 
 const templates = {
 	default: path.resolve("./src/components/layouts/Default.tsx"),
-	overview: path.resolve("./src/components/layouts/ComponentOverview.tsx"),
-	component: path.resolve("./src/components/layouts/ComponentDetail.tsx")
+	overview: path.resolve("./src/components/layouts/Overview.tsx"),
+	component: path.resolve("./src/components/layouts/ComponentDetail.tsx"),
+	generalSidenav: path.resolve("./src/components/layouts/GeneralSidenav.tsx")
 };

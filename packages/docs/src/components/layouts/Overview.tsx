@@ -3,7 +3,7 @@ import { Grid, GridItem } from "@nice-digital/nds-grid";
 import { PageHeader } from "@nice-digital/nds-page-header";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Link, graphql } from "gatsby";
-import { ComponentNavigation } from "../partials/ComponentNavigation";
+import { TowerNavigation } from "../partials/TowerNavigation";
 import { OverviewGrid } from "../partials/OverviewGrid";
 import Seo from "../../components/partials/Seo";
 import Wrapper from "../../components/layouts/Wrapper";
@@ -39,7 +39,7 @@ type OverviewTypes = {
 	};
 };
 
-export default function ComponentsOverview(props: OverviewTypes) {
+export default function Overview(props: OverviewTypes) {
 	const {
 		location: { pathname }
 	} = props;
@@ -59,7 +59,11 @@ export default function ComponentsOverview(props: OverviewTypes) {
 			</Grid>
 			<Grid gutter="loose">
 				<GridItem cols={12} sm={3} md={2}>
-					<ComponentNavigation section={overview} pathname={pathname} />
+					<TowerNavigation
+						section={overview}
+						pathname={pathname}
+						hasRootLink={true}
+					/>
 				</GridItem>
 				<GridItem cols={12} sm={9} md={10}>
 					<OverviewGrid section={overview} />

@@ -1,8 +1,9 @@
 ---
 title: About the NICE Design System
 description: NICE Design System is a set of reusable patterns, documentation and guidelines for rapid product development.
-type: about
+section: about
 path: /about
+template: generalSidenav
 ---
 
 Its goal is to create a consistent, accessible digital experience across all of NICE's services.
@@ -16,55 +17,55 @@ It's a source for creating beautiful, consistent experiences across NICE's digit
 
 It is a re-work of NICE's original adaptation of Bootstrap, known as [NICE.Bootstrap](https://github.com/nhsevidence/NICE.Bootstrap){:target="_blank"}.
 
-<a href="{{ site.baseurl }}{% link about/roadmap.md %}" class="btn">View the roadmap</a>
+<a href="{{ site.baseurl }}{% link about/roadmap.md %}" className="btn">View the roadmap</a>
 
 <h2>Our aims and principles</h2>
 
-<ul class="grid">
+<ul className="grid">
     <li data-g="12 sm:6 md:4 lg:3">
-        <h3 class="h6">Tested and testable</h3>
+        <h3 className="h6">Tested and testable</h3>
         <p>
             JavaScript written in a testable way with unit tests. Responsive testing. Set of manual accessibility tests.
         </p>
     </li>
     <li data-g="12 sm:6 md:4 lg:3">
-        <h3 class="h6">Tooling doesn’t in the way of the code</h3>
+        <h3 className="h6">Tooling doesn’t in the way of the code</h3>
         <p>
             It's all about the code so using different IDEs or platforms for dev shouldn't get in the way of building things.
         </p>
     </li>
     <li data-g="12 sm:6 md:4 lg:3">
-        <h3 class="h6">Easy to maintain and extend</h3>
+        <h3 className="h6">Easy to maintain and extend</h3>
         <p>
             It should be a living thing that gets improved and extended so it's got to be easy for developers to pick up and work on.
         </p>
     </li>
     <li data-g="12 sm:6 md:4 lg:3">
-        <h3 class="h6">Easy to use and consume</h3>
+        <h3 className="h6">Easy to use and consume</h3>
         <p>
             It should be easy to integrate the NICE Design System into any application with just a few commands, for example via NPM, Bower, or Meteor's Atmosphere.
         </p>
     </li>
     <li data-g="12 sm:6 md:4 lg:3">
-        <h3 class="h6">Accessible</h3>
+        <h3 className="h6">Accessible</h3>
         <p>
             We aim to conform to <a href="https://www.nice.org.uk/accessibility" target="_blank" rel="noopener external">WCAG 2.0 Level AA</a> and follow the <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/intro.html#introduction-fourprincs-head" target="_blank" rel="noopener external">4 principles of accessibility</a> of perceivable, operable, understandable, and robust for our content.
         </p>
     </li>
     <li data-g="12 sm:6 md:4 lg:3">
-        <h3 class="h6">Modern</h3>
+        <h3 className="h6">Modern</h3>
         <p>
             But not just modern for the sake of being modern. There are some amazing modern web technologies that we use to try and make great experiences.
         </p>
     </li>
     <li data-g="12 sm:6 md:4 lg:3">
-        <h3 class="h6">Modular</h3>
+        <h3 className="h6">Modular</h3>
         <p>
             You shouldn't be forced to include everything - pick and choose exactly what you need which means lightweight&hellip;
         </p>
     </li>
     <li data-g="12 sm:6 md:4 lg:3">
-        <h3 class="h6">Lightweight</h3>
+        <h3 className="h6">Lightweight</h3>
         <p>
             It's not a monolithic framework with every design pattern NICE have ever used - it's lightweight 'starter for 10' that gives just enough of a framework and as a result is lightweight and quick loading.
         </p>
@@ -74,7 +75,8 @@ It is a re-work of NICE's original adaptation of Bootstrap, known as [NICE.Boots
 
 ## Who is it for?
 
-<div class="grid">
+
+<div className="grid">
 
     <div data-g="12 md:4">
         <h3>Developers</h3>
@@ -82,7 +84,7 @@ It is a re-work of NICE's original adaptation of Bootstrap, known as [NICE.Boots
             Either quickly rapidly prototype using a compiled version, or integrate it into your app and use it as a solid base.
         </p>
         <p>
-            <a class="btn" href="{{ site.baseurl }}{% link technical/installation.md %}">Install</a>
+            <a className="btn" href="{{ site.baseurl }}{% link technical/installation.md %}">Install</a>
         </p>
     </div>
 

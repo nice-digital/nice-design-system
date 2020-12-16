@@ -1,0 +1,22 @@
+---
+title: Technical
+lead: Technical documentation and code style guides for creating NICE digital services
+section: technical
+path: /technical
+template: overview
+---
+
+import { Grid, GridItem } from "@nice-digital/nds-grid";
+import { TowerNavigation } from "../../components/partials/TowerNavigation";
+
+<Grid gutter="loose">
+    <GridItem cols={6}>
+        <TowerNavigation
+            section={"technical"}
+            hasRootLink={true}
+        />
+    </GridItem>
+    <GridItem cols={6}>
+        Right
+    </GridItem>
+</Grid>

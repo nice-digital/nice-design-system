@@ -3,10 +3,11 @@ import { graphql, Link, useStaticQuery } from "gatsby";
 import { StackedNav, StackedNavLink } from "@nice-digital/nds-stacked-nav";
 import { capitalise } from "../../utils";
 
-type ComponentNavigationType = {
+type TowerNavigationType = {
 	section: string;
 	currentId?: string | undefined;
 	pathname?: string;
+	hasRootLink?: boolean;
 };
 
 type ResponseType = {
@@ -28,21 +29,19 @@ type ResponseType = {
 	};
 };
 
-export function ComponentNavigation(
-	props: ComponentNavigationType
+export function TowerNavigation(
+	props: TowerNavigationType
 ): React.ReactElement {
 	const response: ResponseType = useStaticQuery(graphql`
 		{
-			allMdx {
+			allMdx(sort: { fields: frontmatter___title }) {
 				edges {
 					node {
 						id
-						fields {
-							section
-						}
 						frontmatter {
 							title
 							path
+							section
 						}
 					}
 				}
@@ -51,20 +50,24 @@ export function ComponentNavigation(
 	`);
 
 	const navigation = response.allMdx.edges.filter(
-		(edge: any) => edge.node.fields.section === props.section
+		(edge: any) => edge.node.frontmatter.section === props.section
 	);
 
-	const { section, currentId, pathname } = props;
+	const { section, currentId, pathname, hasRootLink } = props;
+
+	const labelProps = {
+		label: capitalise(section),
+		link: hasRootLink
+			? {
+					elementType: Link,
+					destination: `/${section}`,
+					isCurrent: pathname === `/${section}`
+			  }
+			: undefined
+	};
 
 	return (
-		<StackedNav
-			label={capitalise(section)}
-			link={{
-				elementType: Link,
-				destination: `/${section}`,
-				isCurrent: pathname === `/${section}`
-			}}
-		>
+		<StackedNav {...labelProps}>
 			{navigation.map(
 				({
 					node: {
