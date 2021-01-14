@@ -601,21 +601,16 @@ type MdxEdge {
 }
 
 type MdxFields {
-	path: String
-	section: String
 	slug: String
 }
 
 type MdxFrontmatter {
 	description: String
 	headerCTA: MdxFrontmatterHeaderCTA
-	lead: String
-	overview: String
 	path: String
 	section: String
 	template: String
 	title: String!
-	type: String
 }
 
 type MdxFrontmatterHeaderCTA {
@@ -670,7 +665,7 @@ type Query {
 	mdx(body: StringQueryOperatorInput, children: NodeFilterListInput, excerpt: StringQueryOperatorInput, fields: MdxFieldsFilterInput, fileAbsolutePath: StringQueryOperatorInput, frontmatter: MdxFrontmatterFilterInput, headings: MdxHeadingMdxFilterListInput, html: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, mdxAST: JSONQueryOperatorInput, parent: NodeFilterInput, rawBody: StringQueryOperatorInput, slug: StringQueryOperatorInput, tableOfContents: JSONQueryOperatorInput, timeToRead: IntQueryOperatorInput, wordCount: MdxWordCountFilterInput): Mdx
 	site(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, host: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, pathPrefix: StringQueryOperatorInput, polyfill: BooleanQueryOperatorInput, port: IntQueryOperatorInput, siteMetadata: SiteSiteMetadataFilterInput): Site
 	siteBuildMetadata(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput): SiteBuildMetadata
-	sitePage(children: NodeFilterListInput, component: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, componentPath: StringQueryOperatorInput, context: SitePageContextFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, internalComponentName: StringQueryOperatorInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, matchPath: StringQueryOperatorInput, parent: NodeFilterInput, path: StringQueryOperatorInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput): SitePage
+	sitePage(children: NodeFilterListInput, component: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, componentPath: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, internalComponentName: StringQueryOperatorInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, matchPath: StringQueryOperatorInput, parent: NodeFilterInput, path: StringQueryOperatorInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput): SitePage
 	sitePlugin(browserAPIs: StringQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, name: StringQueryOperatorInput, nodeAPIs: StringQueryOperatorInput, packageJson: SitePluginPackageJsonFilterInput, parent: NodeFilterInput, pluginFilepath: StringQueryOperatorInput, pluginOptions: SitePluginPluginOptionsFilterInput, resolve: StringQueryOperatorInput, ssrAPIs: StringQueryOperatorInput, version: StringQueryOperatorInput): SitePlugin
 }
 
@@ -766,7 +761,6 @@ type SitePage implements Node {
 	component: String!
 	componentChunkName: String!
 	componentPath: String
-	context: SitePageContext
 	id: ID!
 	internal: Internal!
 	internalComponentName: String!
@@ -785,11 +779,6 @@ type SitePageConnection {
 	nodes: [SitePage!]!
 	pageInfo: PageInfo!
 	totalCount: Int!
-}
-
-type SitePageContext {
-	section: String
-	slug: String
 }
 
 type SitePageEdge {
@@ -1161,20 +1150,15 @@ enum FileFieldsEnum {
 	childMdx___children___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
 	childMdx___children___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
 	childMdx___excerpt @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-	childMdx___fields___path @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-	childMdx___fields___section @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
 	childMdx___fields___slug @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
 	childMdx___fileAbsolutePath
 	childMdx___frontmatter___description
 	childMdx___frontmatter___headerCTA___href
 	childMdx___frontmatter___headerCTA___text
-	childMdx___frontmatter___lead
-	childMdx___frontmatter___overview
 	childMdx___frontmatter___path
 	childMdx___frontmatter___section
 	childMdx___frontmatter___template
 	childMdx___frontmatter___title
-	childMdx___frontmatter___type
 	childMdx___headings @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
 	childMdx___headings___depth @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
 	childMdx___headings___value @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
@@ -1675,20 +1659,15 @@ enum MdxFieldsEnum {
 	children___parent___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
 	children___parent___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
 	excerpt @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-	fields___path @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-	fields___section @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
 	fields___slug @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
 	fileAbsolutePath
 	frontmatter___description
 	frontmatter___headerCTA___href
 	frontmatter___headerCTA___text
-	frontmatter___lead
-	frontmatter___overview
 	frontmatter___path
 	frontmatter___section
 	frontmatter___template
 	frontmatter___title
-	frontmatter___type
 	headings @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
 	headings___depth @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
 	headings___value @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
@@ -1989,8 +1968,6 @@ enum SitePageFieldsEnum {
 	component
 	componentChunkName
 	componentPath
-	context___section
-	context___slug
 	id
 	internalComponentName
 	internal___content
@@ -2589,8 +2566,6 @@ input MarkdownWordCountFilterInput {
 }
 
 input MdxFieldsFilterInput {
-	path: StringQueryOperatorInput
-	section: StringQueryOperatorInput
 	slug: StringQueryOperatorInput
 }
 
@@ -2617,13 +2592,10 @@ input MdxFilterInput {
 input MdxFrontmatterFilterInput {
 	description: StringQueryOperatorInput
 	headerCTA: MdxFrontmatterHeaderCTAFilterInput
-	lead: StringQueryOperatorInput
-	overview: StringQueryOperatorInput
 	path: StringQueryOperatorInput
 	section: StringQueryOperatorInput
 	template: StringQueryOperatorInput
 	title: StringQueryOperatorInput
-	type: StringQueryOperatorInput
 }
 
 input MdxFrontmatterHeaderCTAFilterInput {
@@ -2705,17 +2677,11 @@ input SiteFilterInput {
 	siteMetadata: SiteSiteMetadataFilterInput
 }
 
-input SitePageContextFilterInput {
-	section: StringQueryOperatorInput
-	slug: StringQueryOperatorInput
-}
-
 input SitePageFilterInput {
 	children: NodeFilterListInput
 	component: StringQueryOperatorInput
 	componentChunkName: StringQueryOperatorInput
 	componentPath: StringQueryOperatorInput
-	context: SitePageContextFilterInput
 	id: StringQueryOperatorInput
 	internal: InternalFilterInput
 	internalComponentName: StringQueryOperatorInput

@@ -51,7 +51,11 @@ export default function ComponentDetailLayout(
 					<PageHeader heading={title} lead={description} />
 				</GridItem>
 				<GridItem cols={2}>
-					<TowerNavigation currentId={id} section={section} />
+					<TowerNavigation
+						currentId={id}
+						section={section}
+						hasRootLink={false}
+					/>
 				</GridItem>
 				<GridItem cols={8}>
 					<MDXRenderer>{body}</MDXRenderer>

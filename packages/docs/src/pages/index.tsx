@@ -34,7 +34,7 @@ export default function IndexPage(props: any) {
 						<a
 							href="https://github.com/nice-digital/nice-design-system/issues"
 							target="_blank"
-							rel="noreferrer"
+							rel="noreferrer noopener"
 						>
 							let us know
 						</a>
@@ -50,7 +50,7 @@ export default function IndexPage(props: any) {
 							href="https://github.com/nice-digital/nice-design-system"
 							className="btn"
 							target="_blank"
-							rel="noreferrer"
+							rel="noreferrer noopener"
 						>
 							View it on Github
 						</a>

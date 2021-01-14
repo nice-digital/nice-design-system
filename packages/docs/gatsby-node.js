@@ -1,15 +1,16 @@
 const path = require("path");
 const slugify = require("slugify");
 
-module.exports.onCreateNode = ({ node, actions }) => {
+const { createFilePath } = require("gatsby-source-filesystem");
+
+module.exports.onCreateNode = ({ node, actions, getNode }) => {
 	const { createNodeField } = actions;
 	if (node.internal.type === "Mdx") {
-		const slug =
-			node.frontmatter.path || slugify(node.frontmatter.title).toLowerCase();
+		const value = createFilePath({ node, getNode });
 		createNodeField({
 			node,
 			name: "slug",
-			value: slug
+			value
 		});
 	}
 };
@@ -27,7 +28,6 @@ module.exports.createPages = async ({ graphql, actions }) => {
 						frontmatter {
 							template
 							section
-							path
 						}
 					}
 				}
@@ -39,15 +39,17 @@ module.exports.createPages = async ({ graphql, actions }) => {
 		({
 			node: {
 				fields: { slug },
-				frontmatter: { template, section, path }
+				frontmatter: { template }
 			}
 		}) => {
+			const urlSegments = slug.split("/").filter(item => item);
 			createPage({
 				component: templates[template || "default"],
-				path,
+				path: slug,
 				context: {
 					slug,
-					section
+					sectionRegex: `/${urlSegments[0]}/[a-z]/`,
+					urlSegments
 				}
 			});
 		}

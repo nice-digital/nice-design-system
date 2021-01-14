@@ -17,7 +17,6 @@ type ResponseType = {
 					id: string;
 					frontmatter: {
 						title: string;
-						path: string;
 						description: string;
 						section: string;
 					};
@@ -36,10 +35,12 @@ export function OverviewGrid(
 				edges {
 					node {
 						id
+						fields {
+							slug
+						}
 						frontmatter {
 							title
 							description
-							path
 							section
 						}
 					}
@@ -58,12 +59,13 @@ export function OverviewGrid(
 				({
 					node: {
 						id,
-						frontmatter: { path, title, description }
+						fields: { slug: string },
+						frontmatter: { title, description }
 					}
 				}) => (
 					<GridItem key={id} cols={6} sm={4} md={3} elementType="li">
 						<h2 className="h4">
-							<Link to={path}>{title}</Link>
+							<Link to={slug}>{title}</Link>
 						</h2>
 						<p>{description}</p>
 					</GridItem>

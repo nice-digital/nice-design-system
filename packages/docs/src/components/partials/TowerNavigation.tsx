@@ -17,11 +17,11 @@ type ResponseType = {
 				node: {
 					id: string;
 					fields: {
-						section: string;
+						slug: string;
 					};
 					frontmatter: {
 						title: string;
-						path: string;
+						section: string;
 					};
 				};
 			}
@@ -40,8 +40,10 @@ export function TowerNavigation(
 						id
 						frontmatter {
 							title
-							path
 							section
+						}
+						fields {
+							slug
 						}
 					}
 				}
@@ -72,14 +74,15 @@ export function TowerNavigation(
 				({
 					node: {
 						id,
-						frontmatter: { title, path }
+						frontmatter: { title },
+						fields: { slug }
 					}
 				}) => {
 					return (
 						<StackedNavLink
 							isCurrent={id === currentId}
 							key={id}
-							destination={path}
+							destination={slug}
 							elementType={Link}
 						>
 							{title}
