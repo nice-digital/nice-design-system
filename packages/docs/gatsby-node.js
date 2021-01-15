@@ -27,7 +27,6 @@ module.exports.createPages = async ({ graphql, actions }) => {
 						}
 						frontmatter {
 							template
-							section
 						}
 					}
 				}
@@ -43,13 +42,20 @@ module.exports.createPages = async ({ graphql, actions }) => {
 			}
 		}) => {
 			const urlSegments = slug.split("/").filter(item => item);
+
+			const sectionRegex = () => {
+				if (urlSegments.length === 3) {
+					return `/${urlSegments[0]}/${urlSegments[1]}/`;
+				}
+				return `/${urlSegments[0]}/`;
+			};
+
 			createPage({
 				component: templates[template || "default"],
 				path: slug,
 				context: {
 					slug,
-					sectionRegex: `/${urlSegments[0]}/[a-z]/`,
-					urlSegments
+					sectionRegex: `${slug}(?:[^\\/]+\\/)?$`
 				}
 			});
 		}
@@ -59,6 +65,5 @@ module.exports.createPages = async ({ graphql, actions }) => {
 const templates = {
 	default: path.resolve("./src/components/layouts/Default.tsx"),
 	overview: path.resolve("./src/components/layouts/Overview.tsx"),
-	component: path.resolve("./src/components/layouts/ComponentDetail.tsx"),
-	generalSidenav: path.resolve("./src/components/layouts/GeneralSidenav.tsx")
+	detail: path.resolve("./src/components/layouts/Detail.tsx")
 };

@@ -1,27 +1,25 @@
 import React from "react";
+import { graphql, Link } from "gatsby";
 import { Grid, GridItem } from "@nice-digital/nds-grid";
 import { PageHeader } from "@nice-digital/nds-page-header";
-import { MDXRenderer } from "gatsby-plugin-mdx";
-import { Link, graphql } from "gatsby";
 import { StackedNav, StackedNavLink } from "@nice-digital/nds-stacked-nav";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 import Seo from "../../components/partials/Seo";
-import Wrapper from "../../components/layouts/Wrapper";
+import Wrapper from "./Wrapper";
 
-type OverviewTypes = {
-	location: {
-		pathname: string;
-	};
-	pathContext: {
-		sectionRegex: string;
-	};
+type ComponentDetailLayoutType = {
 	data: {
 		mdx: {
 			frontmatter: {
 				title: string;
 				description: string;
+				inpagenav: boolean;
 			};
 			id: string;
 			body: string;
+			fields: {
+				slug: string;
+			};
 		};
 		allMdx: {
 			nodes: [
@@ -33,6 +31,7 @@ type OverviewTypes = {
 					frontmatter: {
 						title: string;
 						description: string;
+						navTitle: string;
 					};
 				}
 			];
@@ -42,12 +41,15 @@ type OverviewTypes = {
 
 export const query = graphql`
 	query($slug: String!, $sectionRegex: String!) {
-		# Main page query
 		mdx(fields: { slug: { eq: $slug } }) {
 			id
 			frontmatter {
 				title
 				description
+				inpagenav
+			}
+			fields {
+				slug
 			}
 			body
 		}
@@ -64,82 +66,63 @@ export const query = graphql`
 				frontmatter {
 					title
 					description
+					navTitle
 				}
 			}
 		}
 	}
 `;
 
-export default function Overview(props: OverviewTypes) {
+export default function ComponentDetailLayout(
+	props: ComponentDetailLayoutType
+) {
 	const {
-		id,
 		body,
-		frontmatter: { title, description }
+		frontmatter: { title, description, inpagenav = false },
+		id,
+		fields: { slug }
 	} = props.data.mdx;
 
 	const { nodes } = props.data.allMdx;
 
 	return (
 		<Wrapper className="pt--e">
-			<pre>Overview.tsx</pre>
-			<Grid>
+			<pre>Detail.tsx</pre>
+			<Seo title={title} description={description} />
+			<Grid gutter="loose">
 				<GridItem cols={12}>
 					<PageHeader heading={title} lead={description} />
 				</GridItem>
-			</Grid>
-			<Grid gutter="loose">
-				<GridItem cols={12} sm={3} md={2}>
+				<GridItem cols={2}>
 					<StackedNav>
 						{nodes.map(
-							({ id: childId, fields: { slug }, frontmatter: { title } }) => {
+							({
+								id: navId,
+								fields: { slug },
+								frontmatter: { title, navTitle }
+							}) => {
 								return (
 									<StackedNavLink
-										isCurrent={childId === id}
-										key={childId}
+										isCurrent={navId === id}
+										key={id + slug}
 										destination={slug}
 										elementType={Link}
 									>
-										{title}
+										{navTitle ? navTitle : title}
 									</StackedNavLink>
 								);
 							}
 						)}
 					</StackedNav>
 				</GridItem>
-
-				<GridItem cols={12} sm={9} md={10}>
-					{body && <MDXRenderer>{body}</MDXRenderer>}
-					<Grid
-						gutter="loose"
-						elementType="ul"
-						className="list--unstyled width-100"
-					>
-						{nodes.map(
-							({
-								id: childId,
-								fields: { slug },
-								frontmatter: { title, description }
-							}) => {
-								// Exclude yourself from this list, unlike the nav. Empty return object necessary for component typing at the moment.
-								if (id === childId) return <></>;
-								return (
-									<GridItem
-										key={childId}
-										cols={6}
-										sm={4}
-										md={3}
-										elementType="li"
-									>
-										<h2 className="h4">
-											<Link to={slug}>{title}</Link>
-										</h2>
-										<p>{description}</p>
-									</GridItem>
-								);
-							}
-						)}
-					</Grid>
+				<GridItem cols={8}>
+					<MDXRenderer>{body}</MDXRenderer>
 				</GridItem>
+				{inpagenav && (
+					<GridItem cols={2}>
+						<p>In page nav goes here</p>
+					</GridItem>
+				)}
 			</Grid>
 		</Wrapper>
 	);

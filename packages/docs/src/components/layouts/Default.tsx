@@ -1,11 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Grid, GridItem } from "@nice-digital/nds-grid";
-import { PageHeader } from "@nice-digital/nds-page-header";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import Seo from "../../components/partials/Seo";
 import Wrapper from "./Wrapper";
-import { TowerNavigation } from "../partials/TowerNavigation";
 
 type DefaultType = {
 	data: {
@@ -13,7 +9,6 @@ type DefaultType = {
 			frontmatter: {
 				title: string;
 				description: string;
-				section: string;
 			};
 			id: string;
 			body: string;
