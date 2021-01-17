@@ -6,14 +6,9 @@ import { Link, graphql } from "gatsby";
 import { StackedNav, StackedNavLink } from "@nice-digital/nds-stacked-nav";
 import Seo from "../../components/partials/Seo";
 import Wrapper from "../../components/layouts/Wrapper";
+import { Navigation } from "../partials/Navigation";
 
 type OverviewTypes = {
-	location: {
-		pathname: string;
-	};
-	pathContext: {
-		sectionRegex: string;
-	};
 	data: {
 		mdx: {
 			frontmatter: {
@@ -22,14 +17,13 @@ type OverviewTypes = {
 			};
 			id: string;
 			body: string;
+			slug: string;
 		};
 		allMdx: {
 			nodes: [
 				{
 					id: string;
-					fields: {
-						slug: string;
-					};
+					slug: string;
 					frontmatter: {
 						title: string;
 						description: string;
@@ -41,9 +35,9 @@ type OverviewTypes = {
 };
 
 export const query = graphql`
-	query($slug: String!, $sectionRegex: String!) {
-		# Main page query
-		mdx(fields: { slug: { eq: $slug } }) {
+	query($slug: String!) {
+		mdx(slug: { eq: $slug }) {
+			slug
 			id
 			frontmatter {
 				title
@@ -51,16 +45,10 @@ export const query = graphql`
 			}
 			body
 		}
-		# Query to generate the navigation from
-		allMdx(
-			sort: { fields: [frontmatter___sort, frontmatter___title] }
-			filter: { slug: { regex: $sectionRegex } }
-		) {
+		allMdx(sort: { fields: [frontmatter___sort, frontmatter___title] }) {
 			nodes {
 				id
-				fields {
-					slug
-				}
+				slug
 				frontmatter {
 					title
 					description
@@ -90,20 +78,18 @@ export default function Overview(props: OverviewTypes) {
 			<Grid gutter="loose">
 				<GridItem cols={12} sm={3} md={2}>
 					<StackedNav>
-						{nodes.map(
-							({ id: childId, fields: { slug }, frontmatter: { title } }) => {
-								return (
-									<StackedNavLink
-										isCurrent={childId === id}
-										key={childId}
-										destination={slug}
-										elementType={Link}
-									>
-										{title}
-									</StackedNavLink>
-								);
-							}
-						)}
+						{nodes.map(({ slug, id: childId, frontmatter: { title } }) => {
+							return (
+								<StackedNavLink
+									isCurrent={childId === id}
+									key={childId}
+									destination={slug}
+									elementType={Link}
+								>
+									{title}
+								</StackedNavLink>
+							);
+						})}
 					</StackedNav>
 				</GridItem>
 
@@ -115,11 +101,7 @@ export default function Overview(props: OverviewTypes) {
 						className="list--unstyled width-100"
 					>
 						{nodes.map(
-							({
-								id: childId,
-								fields: { slug },
-								frontmatter: { title, description }
-							}) => {
+							({ id: childId, slug, frontmatter: { title, description } }) => {
 								// Exclude yourself from this list, unlike the nav. Empty return object necessary for component typing at the moment.
 								if (id === childId) return <></>;
 								return (

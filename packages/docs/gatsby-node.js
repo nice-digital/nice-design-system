@@ -1,19 +1,6 @@
 const path = require("path");
-const slugify = require("slugify");
 
-const { createFilePath } = require("gatsby-source-filesystem");
-
-module.exports.onCreateNode = ({ node, actions, getNode }) => {
-	const { createNodeField } = actions;
-	if (node.internal.type === "Mdx") {
-		const value = createFilePath({ node, getNode });
-		createNodeField({
-			node,
-			name: "slug",
-			value
-		});
-	}
-};
+// const { createFilePath } = require("gatsby-source-filesystem");
 
 module.exports.createPages = async ({ graphql, actions }) => {
 	const { createPage } = actions;
@@ -22,9 +9,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
 			allMdx {
 				edges {
 					node {
-						fields {
-							slug
-						}
+						slug
 						frontmatter {
 							template
 						}
@@ -37,25 +22,15 @@ module.exports.createPages = async ({ graphql, actions }) => {
 	response.data.allMdx.edges.forEach(
 		({
 			node: {
-				fields: { slug },
+				slug,
 				frontmatter: { template }
 			}
 		}) => {
-			const urlSegments = slug.split("/").filter(item => item);
-
-			const sectionRegex = () => {
-				if (urlSegments.length === 3) {
-					return `/${urlSegments[0]}/${urlSegments[1]}/`;
-				}
-				return `/${urlSegments[0]}/`;
-			};
-
 			createPage({
 				component: templates[template || "default"],
 				path: slug,
 				context: {
-					slug,
-					sectionRegex: `${slug}(?:[^\\/]+\\/)?$`
+					slug
 				}
 			});
 		}

@@ -18,7 +18,7 @@ type DefaultType = {
 
 export const query = graphql`
 	query($slug: String!) {
-		mdx(fields: { slug: { eq: $slug } }) {
+		mdx(slug: { eq: $slug }) {
 			id
 			frontmatter {
 				title

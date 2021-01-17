@@ -15,23 +15,20 @@ type ComponentDetailLayoutType = {
 				description: string;
 				inpagenav: boolean;
 			};
+			slug: string;
 			id: string;
 			body: string;
-			fields: {
-				slug: string;
-			};
 		};
 		allMdx: {
 			nodes: [
 				{
+					slug: string;
 					id: string;
-					fields: {
-						slug: string;
-					};
 					frontmatter: {
 						title: string;
 						description: string;
-						navTitle: string;
+						navigationLabel: string;
+						sort: number;
 					};
 				}
 			];
@@ -40,33 +37,28 @@ type ComponentDetailLayoutType = {
 };
 
 export const query = graphql`
-	query($slug: String!, $sectionRegex: String!) {
-		mdx(fields: { slug: { eq: $slug } }) {
+	query($slug: String!) {
+		mdx(slug: { eq: $slug }) {
+			slug
 			id
 			frontmatter {
 				title
 				description
 				inpagenav
-			}
-			fields {
-				slug
+				sort
 			}
 			body
 		}
 		# Query to generate the navigation from
-		allMdx(
-			sort: { fields: [frontmatter___sort, frontmatter___title] }
-			filter: { slug: { regex: $sectionRegex } }
-		) {
+		allMdx(sort: { fields: [frontmatter___sort, frontmatter___title] }) {
 			nodes {
 				id
-				fields {
-					slug
-				}
+				slug
 				frontmatter {
 					title
 					description
-					navTitle
+					navigationLabel
+					sort
 				}
 			}
 		}
@@ -79,8 +71,7 @@ export default function ComponentDetailLayout(
 	const {
 		body,
 		frontmatter: { title, description, inpagenav = false },
-		id,
-		fields: { slug }
+		id
 	} = props.data.mdx;
 
 	const { nodes } = props.data.allMdx;
@@ -98,8 +89,8 @@ export default function ComponentDetailLayout(
 						{nodes.map(
 							({
 								id: navId,
-								fields: { slug },
-								frontmatter: { title, navTitle }
+								slug,
+								frontmatter: { title, navigationLabel }
 							}) => {
 								return (
 									<StackedNavLink
@@ -108,7 +99,7 @@ export default function ComponentDetailLayout(
 										destination={slug}
 										elementType={Link}
 									>
-										{navTitle ? navTitle : title}
+										{navigationLabel ? navigationLabel : title}
 									</StackedNavLink>
 								);
 							}
@@ -118,10 +109,12 @@ export default function ComponentDetailLayout(
 				<GridItem cols={8}>
 					<MDXRenderer>{body}</MDXRenderer>
 				</GridItem>
-				{inpagenav && (
+				{inpagenav ? (
 					<GridItem cols={2}>
 						<p>In page nav goes here</p>
 					</GridItem>
+				) : (
+					<></>
 				)}
 			</Grid>
 		</Wrapper>

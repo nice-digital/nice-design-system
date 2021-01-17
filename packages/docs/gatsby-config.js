@@ -31,7 +31,12 @@ module.exports = {
 				path: `${__dirname}/src/content`
 			}
 		},
-		"gatsby-plugin-mdx",
+		{
+			resolve: "gatsby-plugin-mdx"
+			// options: {
+			// 	plugins: ["@pauliescanlon/gatsby-mdx-routes"]
+			// }
+		},
 		"gatsby-transformer-remark",
 		"gatsby-plugin-typescript",
 		"gatsby-plugin-sass",
