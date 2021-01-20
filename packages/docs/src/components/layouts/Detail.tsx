@@ -6,6 +6,7 @@ import { StackedNav, StackedNavLink } from "@nice-digital/nds-stacked-nav";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Seo from "../../components/partials/Seo";
 import Wrapper from "./Wrapper";
+import { Navigation } from "../partials/Navigation";
 
 type ComponentDetailLayoutType = {
 	data: {
@@ -45,7 +46,6 @@ export const query = graphql`
 				title
 				description
 				inpagenav
-				sort
 			}
 			body
 		}
@@ -70,6 +70,7 @@ export default function ComponentDetailLayout(
 ) {
 	const {
 		body,
+		slug,
 		frontmatter: { title, description, inpagenav = false },
 		id
 	} = props.data.mdx;
@@ -85,26 +86,27 @@ export default function ComponentDetailLayout(
 					<PageHeader heading={title} lead={description} />
 				</GridItem>
 				<GridItem cols={2}>
-					<StackedNav>
-						{nodes.map(
-							({
-								id: navId,
-								slug,
-								frontmatter: { title, navigationLabel }
-							}) => {
-								return (
-									<StackedNavLink
-										isCurrent={navId === id}
-										key={id + slug}
-										destination={slug}
-										elementType={Link}
-									>
-										{navigationLabel ? navigationLabel : title}
-									</StackedNavLink>
-								);
-							}
-						)}
-					</StackedNav>
+					<Navigation currentSlug={slug} currentId={id} />
+					{/*<StackedNav>*/}
+					{/*	{nodes.map(*/}
+					{/*		({*/}
+					{/*			id: navId,*/}
+					{/*			slug,*/}
+					{/*			frontmatter: { title, navigationLabel }*/}
+					{/*		}) => {*/}
+					{/*			return (*/}
+					{/*				<StackedNavLink*/}
+					{/*					isCurrent={navId === id}*/}
+					{/*					key={id + slug}*/}
+					{/*					destination={slug}*/}
+					{/*					elementType={Link}*/}
+					{/*				>*/}
+					{/*					{navigationLabel ? navigationLabel : title}*/}
+					{/*				</StackedNavLink>*/}
+					{/*			);*/}
+					{/*		}*/}
+					{/*	)}*/}
+					{/*</StackedNav>*/}
 				</GridItem>
 				<GridItem cols={8}>
 					<MDXRenderer>{body}</MDXRenderer>

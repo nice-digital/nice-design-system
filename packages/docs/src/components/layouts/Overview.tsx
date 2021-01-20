@@ -62,6 +62,7 @@ export default function Overview(props: OverviewTypes) {
 	const {
 		id,
 		body,
+		slug,
 		frontmatter: { title, description }
 	} = props.data.mdx;
 
@@ -77,20 +78,7 @@ export default function Overview(props: OverviewTypes) {
 			</Grid>
 			<Grid gutter="loose">
 				<GridItem cols={12} sm={3} md={2}>
-					<StackedNav>
-						{nodes.map(({ slug, id: childId, frontmatter: { title } }) => {
-							return (
-								<StackedNavLink
-									isCurrent={childId === id}
-									key={childId}
-									destination={slug}
-									elementType={Link}
-								>
-									{title}
-								</StackedNavLink>
-							);
-						})}
-					</StackedNav>
+					<Navigation currentSlug={slug} currentId={id} />
 				</GridItem>
 
 				<GridItem cols={12} sm={9} md={10}>
