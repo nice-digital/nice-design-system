@@ -19,7 +19,7 @@ test("Return own slug and relevant siblings (without grandchildren) if there are
 	expect(
 		navigationGenerator(
 			data,
-			"e85398c4-6efe-574a-9a3d-481686124c74",
+			"647c2a57-17da-59b8-94a5-80d9dde1e394",
 			"technical/javascript"
 		)
 	).toMatchSnapshot();

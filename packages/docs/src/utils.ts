@@ -17,8 +17,8 @@ export function capitalise(string: string): string | null {
  * @param item A graphql response object
  * @param this The slug to match against
  */
-export function slugMatches(this: string, item: ResponseObjectType) {
-	const parentSlug = this;
+export function slugMatches(item: ResponseObjectType) {
+	const parentSlug: string = this;
 	return item.slug.indexOf(parentSlug) === 0;
 }
 
@@ -29,8 +29,8 @@ export function slugMatches(this: string, item: ResponseObjectType) {
  * @param this The current item's ID to assess whether current
  * @return object
  */
-export function formatList(this: string, item: ResponseObjectType) {
-	const currentId = this;
+export function formatList(item: ResponseObjectType) {
+	const currentId: string = this;
 	return {
 		label: item.frontmatter.navigationLabel || item.frontmatter.title,
 		destination: item.slug,
@@ -45,8 +45,8 @@ export function formatList(this: string, item: ResponseObjectType) {
  * @param this { number } The current slug's length
  * @return { boolean } Is a sibling or a direct child
  */
-export function isSiblingOrDirectChild(this: number, item: ResponseObjectType) {
-	const currentSlugLength = this;
+export function isSiblingOrDirectChild(item: ResponseObjectType) {
+	const currentSlugLength: number = this;
 	const itemSlugLength = item.slug.split("/").filter(i => i).length;
 	return (
 		itemSlugLength === currentSlugLength || // we're at the same "level"
@@ -60,8 +60,8 @@ export function isSiblingOrDirectChild(this: number, item: ResponseObjectType) {
  * @param this { number } The current slug's length
  * @return { boolean } Is a direct child
  */
-export function isDirectChild(this: number, item: ResponseObjectType) {
-	const currentSlugLength = this;
+export function isDirectChild(item: ResponseObjectType) {
+	const currentSlugLength: number = this;
 	const itemSlugLength = item.slug.split("/").filter(i => i).length;
 	return (
 		itemSlugLength === currentSlugLength + 1 // or at one "level" below
