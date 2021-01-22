@@ -2,11 +2,11 @@ import React from "react";
 import { Grid, GridItem } from "@nice-digital/nds-grid";
 import { PageHeader } from "@nice-digital/nds-page-header";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import { Link, graphql } from "gatsby";
-import { StackedNav, StackedNavLink } from "@nice-digital/nds-stacked-nav";
+import { graphql } from "gatsby";
 import Seo from "../../components/partials/Seo";
 import Wrapper from "../../components/layouts/Wrapper";
-import { Navigation } from "../partials/Navigation";
+import { Navigation } from "../partials/navigation/Navigation";
+import { OverviewGrid } from "../partials/overview-grid/OverviewGrid";
 
 type OverviewTypes = {
 	data: {
@@ -45,7 +45,7 @@ export const query = graphql`
 			}
 			body
 		}
-		allMdx(sort: { fields: [frontmatter___sort, frontmatter___title] }) {
+		allMdx(sort: { fields: [frontmatter___order, frontmatter___title] }) {
 			nodes {
 				id
 				slug
@@ -70,7 +70,6 @@ export default function Overview(props: OverviewTypes) {
 
 	return (
 		<Wrapper className="pt--e">
-			<pre>Overview.tsx</pre>
 			<Grid>
 				<GridItem cols={12}>
 					<PageHeader heading={title} lead={description} />
@@ -80,35 +79,9 @@ export default function Overview(props: OverviewTypes) {
 				<GridItem cols={12} sm={3} md={2}>
 					<Navigation currentSlug={slug} currentId={id} />
 				</GridItem>
-
 				<GridItem cols={12} sm={9} md={10}>
 					{body && <MDXRenderer>{body}</MDXRenderer>}
-					<Grid
-						gutter="loose"
-						elementType="ul"
-						className="list--unstyled width-100"
-					>
-						{nodes.map(
-							({ id: childId, slug, frontmatter: { title, description } }) => {
-								// Exclude yourself from this list, unlike the nav. Empty return object necessary for component typing at the moment.
-								if (id === childId) return <></>;
-								return (
-									<GridItem
-										key={childId}
-										cols={6}
-										sm={4}
-										md={3}
-										elementType="li"
-									>
-										<h2 className="h4">
-											<Link to={slug}>{title}</Link>
-										</h2>
-										<p>{description}</p>
-									</GridItem>
-								);
-							}
-						)}
-					</Grid>
+					<OverviewGrid currentSlug={slug} />
 				</GridItem>
 			</Grid>
 		</Wrapper>

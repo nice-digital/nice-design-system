@@ -1,4 +1,4 @@
-import navigationGenerator from "./navigation-generator";
+import { navigationGenerator } from "./navigation-generator";
 import data from "./sample-nav-response.json";
 
 test("Return nothing when nothing matches", () => {
@@ -11,6 +11,16 @@ test("Return own slug and relevant siblings if there are no children", () => {
 			data,
 			"e85398c4-6efe-574a-9a3d-481686124c74",
 			"about/roadmap"
+		)
+	).toMatchSnapshot();
+});
+
+test("Return own slug and relevant siblings (without grandchildren) if there are no children", () => {
+	expect(
+		navigationGenerator(
+			data,
+			"e85398c4-6efe-574a-9a3d-481686124c74",
+			"technical/javascript"
 		)
 	).toMatchSnapshot();
 });

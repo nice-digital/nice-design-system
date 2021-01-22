@@ -2,7 +2,7 @@ const path = require("path");
 
 // const { createFilePath } = require("gatsby-source-filesystem");
 
-module.exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
 	const { createPage } = actions;
 	const response = await graphql(`
 		query {
@@ -11,7 +11,10 @@ module.exports.createPages = async ({ graphql, actions }) => {
 					node {
 						slug
 						frontmatter {
+							title
 							template
+							description
+							order
 						}
 					}
 				}
@@ -19,22 +22,15 @@ module.exports.createPages = async ({ graphql, actions }) => {
 		}
 	`);
 
-	response.data.allMdx.edges.forEach(
-		({
-			node: {
-				slug,
-				frontmatter: { template }
+	response.data.allMdx.edges.forEach(({ node: { slug, frontmatter } }) => {
+		createPage({
+			component: templates[frontmatter.template || "default"],
+			path: slug,
+			context: {
+				slug
 			}
-		}) => {
-			createPage({
-				component: templates[template || "default"],
-				path: slug,
-				context: {
-					slug
-				}
-			});
-		}
-	);
+		});
+	});
 };
 
 const templates = {

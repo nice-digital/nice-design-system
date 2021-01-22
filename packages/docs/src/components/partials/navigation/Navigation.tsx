@@ -1,27 +1,26 @@
 import React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import { StackedNav, StackedNavLink } from "@nice-digital/nds-stacked-nav";
-import { capitalise } from "../../utils";
 import { navigationGenerator } from "./navigation-generator";
 
 type NavigationType = {
 	currentSlug: string;
 	currentId: string;
-	// hasRootLink?: boolean;
+};
+
+export type ResponseObjectType = {
+	id: string;
+	slug: string;
+	frontmatter: {
+		title: string;
+		navigationLabel: string;
+		order: number;
+	};
 };
 
 type ResponseType = {
 	allMdx: {
-		nodes: [
-			{
-				id: string;
-				slug: string;
-				frontmatter: {
-					title: string;
-					navigationLabel: string;
-				};
-			}
-		];
+		nodes: ResponseObjectType[];
 	};
 };
 
@@ -35,15 +34,12 @@ export function Navigation(props: NavigationType): React.ReactElement {
 					frontmatter {
 						navigationLabel
 						title
+						order
 					}
 				}
 			}
 		}
 	`);
-
-	// const navigation = response.allMdx.nodes.filter(
-	// 	(node: any) => node.frontmatter.section === props.section
-	// );
 
 	const allNavigation = response.allMdx.nodes;
 
@@ -53,20 +49,18 @@ export function Navigation(props: NavigationType): React.ReactElement {
 
 	return (
 		<StackedNav>
-			{allNavigation.map(
-				({ id, slug, frontmatter: { title, navigationLabel } }) => {
-					return (
-						<StackedNavLink
-							isCurrent={id === currentId}
-							key={id}
-							destination={"/" + slug}
-							elementType={Link}
-						>
-							{navigationLabel ? navigationLabel : title}
-						</StackedNavLink>
-					);
-				}
-			)}
+			{navigation.map(({ label, destination, isCurrent }) => {
+				return (
+					<StackedNavLink
+						isCurrent={!!isCurrent}
+						key={destination}
+						destination={`/${destination}`}
+						elementType={Link}
+					>
+						{label}
+					</StackedNavLink>
+				);
+			})}
 		</StackedNav>
 	);
 }
