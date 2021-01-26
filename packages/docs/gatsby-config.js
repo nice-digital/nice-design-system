@@ -1,7 +1,7 @@
 module.exports = {
-	// flags: {
-	// 	PRESERVE_WEBPACK_CACHE: true
-	// },
+	flags: {
+		PRESERVE_WEBPACK_CACHE: true
+	},
 	siteMetadata: {
 		title: "NICE Design System",
 		description:
