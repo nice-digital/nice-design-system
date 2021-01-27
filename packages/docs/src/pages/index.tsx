@@ -6,6 +6,7 @@ import { PhaseBanner } from "@nice-digital/nds-phase-banner";
 import { graphql, Link } from "gatsby";
 import Seo from "../components/partials/Seo";
 import Wrapper from "../components/layouts/Wrapper";
+import { Breadcrumbs, Breadcrumb } from "@nice-digital/nds-breadcrumbs";
 
 export const query = graphql`
 	{
@@ -15,6 +16,11 @@ export const query = graphql`
 					path
 					id
 				}
+			}
+		}
+		site {
+			siteMetadata {
+				homeLabel
 			}
 		}
 	}
@@ -28,18 +34,25 @@ export default function IndexPage(props: any) {
 				title="NICE Design System"
 				intro="Your source for quickly creating consistent on-brand NICE digital services"
 				header={
-					<PhaseBanner phase="alpha">
-						NICE Design System is in development. This means it is not feature
-						complete and there may be issues. Find any? Please,{" "}
-						<a
-							href="https://github.com/nice-digital/nice-design-system/issues"
-							target="_blank"
-							rel="noreferrer noopener"
-						>
-							let us know
-						</a>
-						!
-					</PhaseBanner>
+					<>
+						<PhaseBanner phase="alpha">
+							NICE Design System is in development. This means it is not feature
+							complete and there may be issues. Find any? Please,{" "}
+							<a
+								href="https://github.com/nice-digital/nice-design-system/issues"
+								target="_blank"
+								rel="noreferrer noopener"
+							>
+								let us know
+							</a>
+							!
+						</PhaseBanner>
+						<Breadcrumbs>
+							<Breadcrumb to="/" elementType={Link}>
+								{props.data.site.siteMetadata.homeLabel}
+							</Breadcrumb>
+						</Breadcrumbs>
+					</>
 				}
 				actions={
 					<>

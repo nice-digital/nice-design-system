@@ -1,25 +1,28 @@
 import React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
+import slugify from "slugify";
 
 type BreadcrumbsType = {
 	currentSlug: string;
-	currentId: string;
 };
 
 export type ResponseObjectType = {
-	id: string;
 	slug: string;
 	frontmatter: {
 		title: string;
 		navigationLabel: string;
-		order: number;
 	};
 };
 
 type ResponseType = {
 	allMdx: {
 		nodes: ResponseObjectType[];
+	};
+	site: {
+		siteMetadata: {
+			homeLabel: string;
+		};
 	};
 };
 
@@ -28,37 +31,52 @@ export function BreadcrumbWrapper(props: BreadcrumbsType): React.ReactElement {
 		{
 			allMdx {
 				nodes {
-					id
 					slug
 					frontmatter {
 						navigationLabel
 						title
-						order
 					}
+				}
+			}
+			site {
+				siteMetadata {
+					homeLabel
 				}
 			}
 		}
 	`);
 
-	const allNavigation = response.allMdx.nodes;
+	const pageList = response.allMdx.nodes;
 
 	const { currentSlug } = props;
+	const { homeLabel } = response.site.siteMetadata;
 
-	const crumbs = generateSpliceCrumbs(currentSlug);
+	const crumbs = generateBreadcrumbs(currentSlug, homeLabel).map(
+		getBreadcrumbLabel,
+		pageList
+	);
 
-	const CrumbElements = crumbs.map(({ destination, label }) => (
-		<Breadcrumb key={label} to={destination}>
-			{label}
+	const CrumbElements = crumbs.map((item: LinkType) => (
+		<Breadcrumb key={item.label} to={item.destination} elementType={Link}>
+			{item.label}
 		</Breadcrumb>
 	));
 
 	return <Breadcrumbs>{CrumbElements}</Breadcrumbs>;
 }
 
-function generateSpliceCrumbs(slug: string): LinksType {
-	if (!slug) return [];
-	let links = [];
-	const segments = slug.split("/").filter(i => i);
+function generateBreadcrumbs(
+	currentSlug: string,
+	homeLabel: string
+): LinksType {
+	if (!currentSlug) return [];
+	let links = [
+		{
+			label: homeLabel,
+			destination: "/"
+		}
+	];
+	const segments = currentSlug.split("/").filter(i => i);
 	for (let i = 0; i < segments.length; i++) {
 		const item = {
 			label: segments[i].charAt(0).toUpperCase() + segments[i].slice(1),
@@ -67,6 +85,25 @@ function generateSpliceCrumbs(slug: string): LinksType {
 		links.push(item);
 	}
 	return links;
+}
+
+function getBreadcrumbLabel(link: LinkType) {
+	if (link.destination === "/") return link;
+	const pageList = this;
+	const match = pageList.filter((item: ResponseObjectType) => {
+		console.log(
+			`comparing "/${slugify(item.slug)} with "${slugify(link.destination)}`
+		);
+		return slugify(item.slug) === slugify(link.destination);
+	});
+
+	if (!match.length) {
+		debugger;
+		return link;
+	}
+	link.label =
+		match[0].frontmatter.navigationLabel || match[0].frontmatter.title;
+	return link;
 }
 
 type LinksType = Array<LinkType>;

@@ -4,8 +4,8 @@ module.exports = {
 	},
 	siteMetadata: {
 		title: "NICE Design System",
-		description:
-			"Your source for quickly creating consistent on-brand NICE digital services",
+		homeLabel: "Design System",
+		description: "Create consistent and on-brand digital services",
 		author: "@nice-digital"
 	},
 	plugins: [
