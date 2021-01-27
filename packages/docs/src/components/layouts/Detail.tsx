@@ -6,8 +6,9 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import Seo from "../../components/partials/Seo";
 import Wrapper from "./Wrapper";
 import { Navigation } from "../partials/navigation/Navigation";
+import { BreadcrumbWrapper } from "../partials/breadcrumbs/BreadcrumbWrapper";
 
-type ComponentDetailLayoutType = {
+type DetailLayoutType = {
 	data: {
 		mdx: {
 			frontmatter: {
@@ -37,9 +38,7 @@ export const query = graphql`
 	}
 `;
 
-export default function ComponentDetailLayout(
-	props: ComponentDetailLayoutType
-) {
+export default function DetailLayout(props: DetailLayoutType) {
 	const {
 		body,
 		slug,
@@ -47,11 +46,18 @@ export default function ComponentDetailLayout(
 		id
 	} = props.data.mdx;
 
+	const crumbs = slug.split("/").filter(i => i);
+
+	crumbs.forEach(item => {
+		console.log(item);
+	});
+
 	return (
-		<Wrapper className="pt--e">
+		<Wrapper>
 			<Seo title={title} description={description} />
 			<Grid gutter="loose">
 				<GridItem cols={12}>
+					<BreadcrumbWrapper currentSlug={slug} currentId={id} />
 					<PageHeader heading={title} lead={description} />
 				</GridItem>
 				<GridItem cols={2}>

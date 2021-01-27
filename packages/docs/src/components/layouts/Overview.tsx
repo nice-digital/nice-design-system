@@ -7,6 +7,7 @@ import Seo from "../../components/partials/Seo";
 import Wrapper from "../../components/layouts/Wrapper";
 import { Navigation } from "../partials/navigation/Navigation";
 import { OverviewGrid } from "../partials/overview-grid/OverviewGrid";
+import { BreadcrumbWrapper } from "../partials/breadcrumbs/BreadcrumbWrapper";
 
 type OverviewTypes = {
 	data: {
@@ -69,9 +70,10 @@ export default function Overview(props: OverviewTypes) {
 	const { nodes } = props.data.allMdx;
 
 	return (
-		<Wrapper className="pt--e">
+		<Wrapper>
 			<Grid>
 				<GridItem cols={12}>
+					<BreadcrumbWrapper currentSlug={slug} />
 					<PageHeader heading={title} lead={description} />
 				</GridItem>
 			</Grid>
