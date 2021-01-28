@@ -46,24 +46,18 @@ export default function DetailLayout(props: DetailLayoutType) {
 		id
 	} = props.data.mdx;
 
-	const crumbs = slug.split("/").filter(i => i);
-
-	crumbs.forEach(item => {
-		console.log(item);
-	});
-
 	return (
 		<Wrapper>
 			<Seo title={title} description={description} />
 			<Grid gutter="loose">
 				<GridItem cols={12}>
-					<BreadcrumbWrapper currentSlug={slug} currentId={id} />
+					<BreadcrumbWrapper currentSlug={slug} />
 					<PageHeader heading={title} lead={description} />
 				</GridItem>
-				<GridItem cols={2}>
+				<GridItem cols={12} sm={2}>
 					<Navigation currentSlug={slug} currentId={id} />
 				</GridItem>
-				<GridItem cols={8}>
+				<GridItem cols={12} sm={inpagenav ? 8 : 10}>
 					<MDXRenderer>{body}</MDXRenderer>
 				</GridItem>
 				{inpagenav ? (

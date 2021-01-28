@@ -56,11 +56,16 @@ export function BreadcrumbWrapper(props: BreadcrumbsType): React.ReactElement {
 		pageList
 	);
 
-	const CrumbElements = crumbs.map((item: LinkType) => (
-		<Breadcrumb key={item.label} to={item.destination} elementType={Link}>
-			{item.label}
-		</Breadcrumb>
-	));
+	const CrumbElements = crumbs.map((item: LinkType, index: number) => {
+		if (index + 1 === crumbs.length) {
+			item.destination = "";
+		}
+		return (
+			<Breadcrumb key={item.label} to={item.destination} elementType={Link}>
+				{item.label}
+			</Breadcrumb>
+		);
+	});
 
 	return <Breadcrumbs>{CrumbElements}</Breadcrumbs>;
 }
@@ -91,14 +96,10 @@ function getBreadcrumbLabel(link: LinkType) {
 	if (link.destination === "/") return link;
 	const pageList = this;
 	const match = pageList.filter((item: ResponseObjectType) => {
-		console.log(
-			`comparing "/${slugify(item.slug)} with "${slugify(link.destination)}`
-		);
 		return slugify(item.slug) === slugify(link.destination);
 	});
 
 	if (!match.length) {
-		debugger;
 		return link;
 	}
 	link.label =
