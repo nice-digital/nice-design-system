@@ -11,11 +11,9 @@ import { Breadcrumbs, Breadcrumb } from "@nice-digital/nds-breadcrumbs";
 export const query = graphql`
 	{
 		allSitePage {
-			edges {
-				node {
-					path
-					id
-				}
+			nodes {
+				path
+				id
 			}
 		}
 		site {
@@ -28,8 +26,29 @@ export const query = graphql`
 	}
 `;
 
-export default function IndexPage(props: any) {
+type IndexProps = {
+	data: {
+		site: {
+			siteMetadata: {
+				homeLabel: string;
+				title: string;
+				description: string;
+			};
+		};
+		allSitePage: {
+			nodes: Array<PageType>;
+		};
+	};
+};
+
+type PageType = {
+	id: string;
+	path: string;
+};
+
+export default function IndexPage(props: IndexProps): React.ReactElement {
 	const { homeLabel, title, description } = props.data.site.siteMetadata;
+	const { nodes: pages } = props.data.allSitePage;
 	return (
 		<Wrapper>
 			<Seo title="Home" description={description} />
@@ -59,8 +78,8 @@ export default function IndexPage(props: any) {
 			<Grid>
 				<GridItem cols={12}>
 					<ul>
-						{props.data.allSitePage.edges.map((edge: any) => {
-							let { id, path } = edge.node;
+						{pages.map((page: PageType) => {
+							const { id, path } = page;
 							return (
 								<li key={id}>
 									<Link to={path}>{path}</Link>
