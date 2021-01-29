@@ -17,9 +17,8 @@ export function capitalise(string: string): string | null {
  * @param item A graphql response object
  * @param this The slug to match against
  */
-export function slugMatches(item: ResponseObjectType) {
-	const parentSlug: string = this;
-	return item.slug.indexOf(parentSlug) === 0;
+export function slugMatches(this: string, item: ResponseObjectType): boolean {
+	return item.slug.indexOf(this) === 0;
 }
 
 /**
@@ -29,12 +28,15 @@ export function slugMatches(item: ResponseObjectType) {
  * @param this The current item's ID to assess whether current
  * @return object
  */
-export function formatList(item: ResponseObjectType) {
-	const currentId: string = this;
+export function formatList(
+	this: string,
+	item: ResponseObjectType
+): { label: string; destination: string; isCurrent: boolean; order: number } {
+	// yes we need separate type definitions
 	return {
 		label: item.frontmatter.navigationLabel || item.frontmatter.title,
 		destination: item.slug,
-		isCurrent: item.id === currentId,
+		isCurrent: item.id === this,
 		order: item.frontmatter.order || 999
 	};
 }
@@ -45,12 +47,13 @@ export function formatList(item: ResponseObjectType) {
  * @param this { number } The current slug's length
  * @return { boolean } Is a sibling or a direct child
  */
-export function isSiblingOrDirectChild(item: ResponseObjectType) {
-	const currentSlugLength: number = this;
+export function isSiblingOrDirectChild(
+	this: number,
+	item: ResponseObjectType
+): boolean {
 	const itemSlugLength = item.slug.split("/").filter(i => i).length;
 	return (
-		itemSlugLength === currentSlugLength || // we're at the same "level"
-		itemSlugLength === currentSlugLength + 1 // or at one "level" below
+		itemSlugLength === this || itemSlugLength === this + 1 // we're at the same "level" // or at one "level" below
 	);
 }
 
@@ -60,10 +63,9 @@ export function isSiblingOrDirectChild(item: ResponseObjectType) {
  * @param this { number } The current slug's length
  * @return { boolean } Is a direct child
  */
-export function isDirectChild(item: ResponseObjectType) {
-	const currentSlugLength: number = this;
+export function isDirectChild(this: number, item: ResponseObjectType): boolean {
 	const itemSlugLength = item.slug.split("/").filter(i => i).length;
 	return (
-		itemSlugLength === currentSlugLength + 1 // or at one "level" below
+		itemSlugLength === this + 1 // or at one "level" below
 	);
 }

@@ -1,9 +1,9 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import { Grid, GridItem } from "@nice-digital/nds-grid";
 import { PageHeader } from "@nice-digital/nds-page-header";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import Seo from "../../components/partials/Seo";
+import Seo from "../../components/partials/seo/Seo";
 import Wrapper from "./Wrapper";
 import { Navigation } from "../partials/navigation/Navigation";
 import { BreadcrumbWrapper } from "../partials/breadcrumbs/BreadcrumbWrapper";
@@ -38,7 +38,9 @@ export const query = graphql`
 	}
 `;
 
-export default function DetailLayout(props: DetailLayoutType) {
+export default function DetailLayout(
+	props: DetailLayoutType
+): React.ReactElement {
 	const {
 		body,
 		slug,
@@ -61,9 +63,7 @@ export default function DetailLayout(props: DetailLayoutType) {
 					<MDXRenderer>{body}</MDXRenderer>
 				</GridItem>
 				{inpagenav ? (
-					<GridItem cols={2}>
-						<p>In page nav goes here</p>
-					</GridItem>
+					<GridItem cols={2}>{/*placeholder for in page nav*/}</GridItem>
 				) : (
 					<></>
 				)}

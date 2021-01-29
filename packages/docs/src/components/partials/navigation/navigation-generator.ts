@@ -17,7 +17,7 @@ export function navigationGenerator(
 	navigation: ResponseObjectType[],
 	currentId: string,
 	currentSlug: string
-) {
+): resultsType {
 	let results: resultsType = [];
 
 	// get all the entries that start with the current slug

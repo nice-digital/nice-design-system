@@ -41,7 +41,7 @@ export function OverviewGrid(props: OverviewGridType): React.ReactElement {
 		}
 	`);
 
-	let results: ResponseObjectType[] = [];
+	let results: ResponseObjectType[];
 
 	const allItems = response.allMdx.nodes;
 

@@ -29,7 +29,7 @@ export const query = graphql`
 	}
 `;
 
-export default function Default(props: DefaultType) {
+export default function Default(props: DefaultType): React.ReactElement {
 	const {
 		body,
 		frontmatter: { title, description },

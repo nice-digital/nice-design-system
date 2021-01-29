@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from "gatsby";
 interface ISEO {
 	description?: string;
 	lang?: string;
-	meta?: any;
+	meta?: never;
 	title: string;
 }
 

@@ -75,7 +75,7 @@ function generateBreadcrumbs(
 	homeLabel: string
 ): LinksType {
 	if (!currentSlug) return [];
-	let links = [
+	const links = [
 		{
 			label: homeLabel,
 			destination: "/"
@@ -92,10 +92,9 @@ function generateBreadcrumbs(
 	return links;
 }
 
-function getBreadcrumbLabel(link: LinkType) {
+function getBreadcrumbLabel(this: Array<ResponseObjectType>, link: LinkType) {
 	if (link.destination === "/") return link;
-	const pageList = this;
-	const match = pageList.filter((item: ResponseObjectType) => {
+	const match = this.filter((item: ResponseObjectType) => {
 		return slugify(item.slug) === slugify(link.destination);
 	});
 

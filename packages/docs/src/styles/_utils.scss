@@ -2,3 +2,7 @@
   max-width: 100%;
   width: 100%;
 }
+
+[data-g] > *:first-child {
+  margin-top: 0;
+}

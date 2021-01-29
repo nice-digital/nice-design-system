@@ -1,6 +1,14 @@
 const path = require("path");
 
-// const { createFilePath } = require("gatsby-source-filesystem");
+exports.createSchemaCustomization = ({ actions }) => {
+	const { createTypes } = actions;
+	const typeDefs = `
+    type AuthorJson implements Node {
+      joinedAt: Date
+    }
+  `;
+	createTypes(typeDefs);
+};
 
 exports.createPages = async ({ graphql, actions }) => {
 	const { createPage } = actions;

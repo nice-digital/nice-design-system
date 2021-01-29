@@ -3,7 +3,7 @@ import { Grid, GridItem } from "@nice-digital/nds-grid";
 import { PageHeader } from "@nice-digital/nds-page-header";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { graphql } from "gatsby";
-import Seo from "../../components/partials/Seo";
+import Seo from "../../components/partials/seo/Seo";
 import Wrapper from "../../components/layouts/Wrapper";
 import { Navigation } from "../partials/navigation/Navigation";
 import { OverviewGrid } from "../partials/overview-grid/OverviewGrid";
@@ -20,18 +20,6 @@ type OverviewTypes = {
 			body: string;
 			slug: string;
 		};
-		allMdx: {
-			nodes: [
-				{
-					id: string;
-					slug: string;
-					frontmatter: {
-						title: string;
-						description: string;
-					};
-				}
-			];
-		};
 	};
 };
 
@@ -46,20 +34,10 @@ export const query = graphql`
 			}
 			body
 		}
-		allMdx(sort: { fields: [frontmatter___order, frontmatter___title] }) {
-			nodes {
-				id
-				slug
-				frontmatter {
-					title
-					description
-				}
-			}
-		}
 	}
 `;
 
-export default function Overview(props: OverviewTypes) {
+export default function Overview(props: OverviewTypes): React.ReactElement {
 	const {
 		id,
 		body,
@@ -67,10 +45,9 @@ export default function Overview(props: OverviewTypes) {
 		frontmatter: { title, description }
 	} = props.data.mdx;
 
-	const { nodes } = props.data.allMdx;
-
 	return (
 		<Wrapper>
+			<Seo title={title} description={description} />
 			<Grid>
 				<GridItem cols={12}>
 					<BreadcrumbWrapper currentSlug={slug} />
