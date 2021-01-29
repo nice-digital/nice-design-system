@@ -1,5 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { Grid, GridItem } from "@nice-digital/nds-grid";
+import { PageHeader } from "@nice-digital/nds-page-header";
+import { BreadcrumbWrapper } from "../partials/breadcrumbs/BreadcrumbWrapper";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Wrapper from "./Wrapper";
 
@@ -9,7 +12,9 @@ type DefaultType = {
 			frontmatter: {
 				title: string;
 				description: string;
+				inpagenav: boolean;
 			};
+			slug: string;
 			id: string;
 			body: string;
 		};
@@ -19,10 +24,12 @@ type DefaultType = {
 export const query = graphql`
 	query($slug: String!) {
 		mdx(slug: { eq: $slug }) {
+			slug
 			id
 			frontmatter {
 				title
 				description
+				inpagenav
 			}
 			body
 		}
@@ -32,14 +39,21 @@ export const query = graphql`
 export default function Default(props: DefaultType): React.ReactElement {
 	const {
 		body,
-		frontmatter: { title, description },
-		id
+		frontmatter: { title, description, inpagenav },
+		id,
+		slug
 	} = props.data.mdx;
 	return (
-		<Wrapper className="pt--e">
-			<h1 data-attr={id}>{title}</h1>
-			<p className="lead">{description}</p>
-			<MDXRenderer>{body}</MDXRenderer>
+		<Wrapper>
+			<Grid gutter="loose">
+				<GridItem cols={12}>
+					<BreadcrumbWrapper currentSlug={slug} />
+					<PageHeader heading={title} lead={description} />
+				</GridItem>
+				<GridItem cols={12} sm={inpagenav ? 8 : 10}>
+					<MDXRenderer>{body}</MDXRenderer>
+				</GridItem>
+			</Grid>
 		</Wrapper>
 	);
 }
