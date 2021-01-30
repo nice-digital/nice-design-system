@@ -11,3 +11,6 @@ es
 
 # Remove false linting errors from type definitions
 **/*.d.ts
+
+
+packages/docs/public/**/*.*

@@ -39,7 +39,8 @@
     "react": "^16.11.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.5.0"
+    "@babel/cli": "^7.5.0",
+    "classnames": "^2.2.6"
   },
   "gitHead": "a4db68f43916ad6c4cb19612e10aae200e80b5a8"
 }

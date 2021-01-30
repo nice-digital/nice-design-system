@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import "./../scss/simple-pagination.scss";
@@ -64,16 +64,12 @@ export const SimplePagination = props => {
 	);
 };
 
-const LinkPropTypes = PropTypes.shape({
-	destination: PropTypes.node,
-	element: PropTypes.elementType
-});
-
 SimplePagination.propTypes = {
 	currentPage: PropTypes.number.isRequired,
-	nextPageLink: LinkPropTypes,
-	previousPageLink: LinkPropTypes,
-	totalPages: PropTypes.number
+	nextPageLink: PropTypes.objectOf(Link),
+	previousPageLink: PropTypes.objectOf(Link),
+	totalPages: PropTypes.number,
+	className: PropTypes.string
 };
 
 SimplePagination.defaultProps = {
@@ -81,4 +77,10 @@ SimplePagination.defaultProps = {
 	totalPages: null,
 	nextPageLink: null,
 	previousPageLink: null
+};
+
+Link.propTypes = {
+	text: PropTypes.string,
+	destination: PropTypes.string,
+	elementType: PropTypes.elementType
 };

@@ -9,3 +9,4 @@ es
 vendor
 *.bundle.js
 packages/storybook/storybook-static
+packages/docs/.netlify/state.json

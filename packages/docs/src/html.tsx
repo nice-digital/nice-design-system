@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function HTML(props) {
+export default function HTML(props: any): React.ReactElement {
 	return (
 		<html {...props.htmlAttributes}>
 			<head>

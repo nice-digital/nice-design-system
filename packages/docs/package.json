@@ -9,6 +9,7 @@
 		"@mdx-js/react": "^1.5.1",
 		"@nice-digital/design-system": "^1.0.42-alpha.0",
 		"@nice-digital/global-nav": "github:nice-digital/global-nav",
+		"@nice-digital/nds-stacked-nav": "^1.0.27-alpha.0",
 		"@types/classnames": "^2.2.11",
 		"@types/react-helmet": "^5.0.14",
 		"classnames": "^2.2.6",

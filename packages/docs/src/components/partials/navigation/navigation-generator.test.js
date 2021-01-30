@@ -1,5 +1,3 @@
-//
-
 import { navigationGenerator } from "./navigation-generator";
 import data from "./sample-nav-response.json";
 

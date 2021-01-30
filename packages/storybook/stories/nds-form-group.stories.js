@@ -3,7 +3,7 @@
 import React from "react";
 
 import { storiesOf } from "@storybook/react";
-import { text, boolean, select } from "@storybook/addon-knobs";
+import { text, boolean } from "@storybook/addon-knobs";
 import { FormGroup } from "@nice-digital/nds-form-group";
 import { Radio } from "@nice-digital/nds-radio";
 import { Checkbox } from "@nice-digital/nds-checkbox";
