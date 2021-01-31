@@ -1,48 +1,44 @@
 {
-  "name": "@nice-digital/nds-breadcrumbs",
-  "version": "1.0.25-alpha.0",
-  "description": "Breadcrumbs component for the NICE Design System",
-  "keywords": [
-    "breadcrumbs"
-  ],
-  "author": "Ian Routledge <ian.routledge@nice.org.uk>",
-  "homepage": "https://nhsevidence.github.io/nice-design-system/",
-  "license": "MIT",
-  "main": "lib/Breadcrumbs.js",
-  "module": "es/Breadcrumbs.js",
-  "style": "scss/breadcrumbs.scss",
-  "types": "nds-breadcrumbs.d.ts",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "lib",
-    "es",
-    "scss",
-    "*.d.ts"
-  ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nhsevidence/nice-design-system.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
-  },
-  "bugs": {
-    "url": "https://github.com/nhsevidence/nice-design-system/issues"
-  },
-  "dependencies": {
-    "@nice-digital/nds-core": "^1.0.23-alpha.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.11.0"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.5.0"
-  },
-  "gitHead": "a4db68f43916ad6c4cb19612e10aae200e80b5a8"
+	"name": "@nice-digital/nds-breadcrumbs",
+	"version": "1.0.25-alpha.0",
+	"description": "Breadcrumbs component for the NICE Design System",
+	"keywords": [
+		"breadcrumbs"
+	],
+	"author": "Ian Routledge <ian.routledge@nice.org.uk>",
+	"homepage": "https://nhsevidence.github.io/nice-design-system/",
+	"license": "MIT",
+	"main": "lib/Breadcrumbs.js",
+	"module": "es/Breadcrumbs.js",
+	"style": "scss/breadcrumbs.scss",
+	"types": "nds-breadcrumbs.d.ts",
+	"directories": {
+		"lib": "lib",
+		"test": "__tests__"
+	},
+	"files": [
+		"lib",
+		"es",
+		"scss",
+		"*.d.ts"
+	],
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/",
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nhsevidence/nice-design-system.git"
+	},
+	"bugs": {
+		"url": "https://github.com/nhsevidence/nice-design-system/issues"
+	},
+	"dependencies": {
+		"prop-types": "^15.7.2",
+		"react": "^16.11.0"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.5.0"
+	},
+	"gitHead": "a4db68f43916ad6c4cb19612e10aae200e80b5a8"
 }
