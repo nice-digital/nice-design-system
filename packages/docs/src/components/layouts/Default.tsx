@@ -15,7 +15,6 @@ type DefaultType = {
 				inpagenav: boolean;
 			};
 			slug: string;
-			id: string;
 			body: string;
 		};
 	};
@@ -25,7 +24,6 @@ export const query = graphql`
 	query($slug: String!) {
 		mdx(slug: { eq: $slug }) {
 			slug
-			id
 			frontmatter {
 				title
 				description
@@ -40,7 +38,6 @@ export default function Default(props: DefaultType): React.ReactElement {
 	const {
 		body,
 		frontmatter: { title, description, inpagenav },
-		id,
 		slug
 	} = props.data.mdx;
 	return (

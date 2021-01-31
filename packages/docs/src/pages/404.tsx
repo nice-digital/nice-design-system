@@ -1,10 +1,10 @@
 import React from "react";
 import { Grid, GridItem } from "@nice-digital/nds-grid";
+import { Breadcrumbs, Breadcrumb } from "@nice-digital/nds-breadcrumbs";
+import { PageHeader } from "@nice-digital/nds-page-header";
 import { graphql, Link } from "gatsby";
 import Seo from "../components/partials/seo/Seo";
 import Wrapper from "../components/layouts/Wrapper";
-import { Breadcrumbs, Breadcrumb } from "@nice-digital/nds-breadcrumbs";
-import { PageHeader } from "@nice-digital/nds-page-header";
 
 interface I404 {
 	data: {

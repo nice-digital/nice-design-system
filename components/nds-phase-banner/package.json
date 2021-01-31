@@ -12,6 +12,7 @@
   "main": "lib/PhaseBanner.js",
   "module": "es/PhaseBanner.js",
   "style": "scss/phase-banner.scss",
+  "types": "nds-phase-banner.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -19,7 +20,8 @@
   "files": [
     "lib",
     "es",
-    "scss"
+    "scss",
+    "*.d.ts"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
