@@ -34,9 +34,11 @@
 		"url": "https://github.com/nhsevidence/nice-design-system/issues"
 	},
 	"dependencies": {
-		"prop-types": "^15.7.2",
-		"react": "^16.11.0"
-	},
+		"prop-types": "^15.7.2"
+  },
+  "peerDependencies": {
+    "react": "^16.11.0"
+  },
 	"devDependencies": {
 		"@babel/cli": "^7.5.0"
 	},

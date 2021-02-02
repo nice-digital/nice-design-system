@@ -36,7 +36,9 @@
   "dependencies": {
     "@nice-digital/nds-core": "^1.0.23-alpha.0",
     "classnames": "^2.2.6",
-    "prop-types": "^15.7.2",
+    "prop-types": "^15.7.2"
+  },
+  "peerDependencies": {
     "react": "^16.11.0"
   },
   "devDependencies": {

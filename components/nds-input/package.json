@@ -36,11 +36,13 @@
   "dependencies": {
     "@nice-digital/nds-core": "^1.0.23-alpha.0",
     "prop-types": "^15.7.2",
-    "classnames": "^2.2.6",
-    "react": "^16.11.0"
+    "classnames": "^2.2.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0"
+  },
+  "peerDependencies": {
+    "react": "^16.11.0"
   },
   "gitHead": "a4db68f43916ad6c4cb19612e10aae200e80b5a8"
 }
