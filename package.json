@@ -40,9 +40,7 @@
 		"build:es:watch": "npm run build:es -- -w",
 		"build:watch": "concurrently -n build: npm:build:*:watch",
 		"// LIFECYCLE": "",
-		"prepublishOnly": "npm run build:lib && npm run build:es",
-		"// MAINTENANCE": "",
-		"nuke": "concurrently \"lerna clean --y\" \"rimraf ./node_modules\" \"rimraf package-lock.json\""
+		"prepublishOnly": "npm run build:lib && npm run build:es"
 	},
 	"config": {
 		"//": "Banner is used for prepending to compiled JS and CSS",
