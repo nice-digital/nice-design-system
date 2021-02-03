@@ -40,7 +40,6 @@
 		"build:es:watch": "npm run build:es -- -w",
 		"build:watch": "concurrently -n build: npm:build:*:watch",
 		"// LIFECYCLE": "",
-		"postinstall": "npm run bootstrap",
 		"prepublishOnly": "npm run build:lib && npm run build:es",
 		"// MAINTENANCE": "",
 		"nuke": "concurrently \"lerna clean --y\" \"rimraf ./node_modules\" \"rimraf package-lock.json\""
