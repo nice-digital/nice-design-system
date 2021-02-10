@@ -1,15 +1,14 @@
 module.exports = {
+	flags: {
+		PRESERVE_WEBPACK_CACHE: true
+	},
 	siteMetadata: {
 		title: "NICE Design System",
-		description:
-			"Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.",
-		author: "@gatsbyjs"
+		homeLabel: "Design System",
+		description: "Create consistent and on-brand digital services",
+		author: "@nice-digital"
 	},
 	plugins: [
-		"gatsby-plugin-mdx",
-		"gatsby-plugin-typescript",
-		"gatsby-plugin-sass",
-		"gatsby-plugin-react-helmet",
 		{
 			resolve: "gatsby-source-filesystem",
 			options: {
@@ -17,6 +16,26 @@ module.exports = {
 				path: `${__dirname}/src/images`
 			}
 		},
+		{
+			resolve: "gatsby-source-filesystem",
+			options: {
+				name: "data",
+				path: `${__dirname}/src/pages`,
+				ignore: ["**/.*"]
+			}
+		},
+		{
+			resolve: "gatsby-source-filesystem",
+			options: {
+				name: "content",
+				path: `${__dirname}/src/content`
+			}
+		},
+		{ resolve: "gatsby-plugin-mdx" },
+		"gatsby-transformer-remark",
+		"gatsby-plugin-typescript",
+		"gatsby-plugin-sass",
+		"gatsby-plugin-react-helmet",
 		"gatsby-transformer-sharp",
 		"gatsby-plugin-sharp",
 		{

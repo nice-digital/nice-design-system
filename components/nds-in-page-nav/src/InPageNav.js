@@ -1,9 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import "./../scss/in-page-nav.scss";
 
-export const InPageNav = props => {
+export const InPageNav = () => {
 	return <p>TODO</p>;
 };
 

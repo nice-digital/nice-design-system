@@ -1,0 +1,77 @@
+---
+title: Action banner
+description: Banner for highlighting, and giving context to, a call-to-action
+inpagenav: false
+template: detail
+---
+
+## Why?
+
+Some calls-to-action are higher priority than others. An action banner gives a way of highlighting these CTAs. They can also be used to break up a page layout and give visual interest.
+
+## Usage
+
+Action banners fill the available horizontal space and have their own built-in container. They usually live outside of any `.container` to fill the screen width. The action should be a button: choose the right type of button (primary, secondary etc) to match the CTA importance.
+
+- Use sparingly
+- use a maximum of 1 per page
+- use outside of `.container`
+- follow the rules for <a href="{{ site.baseurl }}{% link foundations/buttons.md %}">buttons</a>.
+
+## Variants
+
+### Default
+
+The default variant is strong and grabs users' attention. Use sparingly for important calls of action on a page that need extra context. Usually use with a `.btn.btn--inverse` button because of the dark background but can be used with a `.btn.btn--cta` for even more impact.
+
+```html
+<section class="action-banner" data-no-inpagenav>
+	<div class="action-banner__container">
+		<div class="action-banner__inner">
+			<div class="action-banner__text">
+				<h2 class="action-banner__title">
+					Register as a stakeholder
+				</h2>
+				<p class="action-banner__intro">
+					Stakeholders can comment on draft guidance and participate in
+					workshops and events.
+				</p>
+			</div>
+			<div class="action-banner__actions">
+				<a
+					href="https://www.nice.org.uk/get-involved/stakeholder-registration"
+					class="btn btn--inverse"
+				>
+					Register
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+```
+
+### Subtle
+
+Use the subtle variant when you need a call to action with context, but don't want to distract users. For example giving feedback on a page. Usually use with a `.btn.btn--secondary` button.
+
+```
+<section class="action-banner action-banner--subtle" data-no-inpagenav>
+    <div class="action-banner__container">
+        <div class="action-banner__inner">
+            <div class="action-banner__text">
+                <h2 class="action-banner__title">
+                    Try out our new layout for this page
+                </h2>
+                <p class="action-banner__intro">
+                    We’re trying to make it quicker and easier to find the information you’re looking for.
+                </p>
+            </div>
+            <div class="action-banner__actions">
+                <button type="button" class="btn btn--secondary">
+                    Try the new layout
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+```

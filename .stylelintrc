@@ -41,6 +41,7 @@
 		"order/properties-alphabetical-order": true
 	},
   "ignoreFiles": [
-	  "**/vendor/**/*.scss"
+	  "**/vendor/**/*.scss",
+	  "**/*.md"
   ]
 }

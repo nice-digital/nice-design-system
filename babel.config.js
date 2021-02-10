@@ -1,9 +1,8 @@
-module.exports = function (api) {
-
+module.exports = function(api) {
 	const babelEnv = api.env();
 	api.cache.using(() => process.env.NODE_ENV);
 
-	const useESModules = (babelEnv === "es");
+	const useESModules = babelEnv === "es";
 
 	const presets = [
 		[
@@ -16,10 +15,11 @@ module.exports = function (api) {
 		[
 			"@babel/preset-react",
 			{
-				development: babelEnv === "development",
+				development: babelEnv === "development"
 			}
 		],
-		"@babel/preset-flow"
+		"@babel/preset-flow",
+		"@babel/preset-typescript"
 	];
 
 	const plugins = [

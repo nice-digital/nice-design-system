@@ -1,7 +1,7 @@
 import React from "react";
 
 import { storiesOf } from "@storybook/react";
-import { text, select, boolean } from "@storybook/addon-knobs";
+import { select, boolean } from "@storybook/addon-knobs";
 import imageSample from "./assets/image-sample.png";
 import videoSample from "./assets/video-sample.mp4";
 import pdfSample from "./assets/pdf-sample.pdf";

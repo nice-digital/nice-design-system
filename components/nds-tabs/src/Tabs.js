@@ -101,7 +101,7 @@ export class Tabs extends Component {
 			>
 				<ul className="tabs__list" role="tablist">
 					{tabs.map((tab, i) => {
-						const { title, id, ...rest } = tab.props;
+						const { title, id } = tab.props;
 						const tabSlug = getTabSlug(title, id);
 						const isTabActive = i === this.state.index;
 
