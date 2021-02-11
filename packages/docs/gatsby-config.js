@@ -31,7 +31,12 @@ module.exports = {
 				path: `${__dirname}/src/content`
 			}
 		},
-		{ resolve: "gatsby-plugin-mdx" },
+		{
+			resolve: "gatsby-plugin-mdx",
+			options: {
+				gatsbyRemarkPlugins: ["gatsby-remark-autolink-headers"]
+			}
+		},
 		"gatsby-transformer-remark",
 		"gatsby-plugin-typescript",
 		"gatsby-plugin-sass",

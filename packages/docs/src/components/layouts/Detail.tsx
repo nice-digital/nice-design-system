@@ -7,6 +7,7 @@ import Seo from "../../components/partials/seo/Seo";
 import Wrapper from "./Wrapper";
 import { Navigation } from "../partials/navigation/Navigation";
 import { BreadcrumbWrapper } from "../partials/breadcrumbs/BreadcrumbWrapper";
+import { InPageNav } from "../partials/inpagenav/InPageNav";
 
 type DetailLayoutType = {
 	data: {
@@ -16,6 +17,9 @@ type DetailLayoutType = {
 				description: string;
 				inpagenav: boolean;
 			};
+			tableOfContents: {
+				items: TableOfContentsItemType[];
+			};
 			slug: string;
 			id: string;
 			body: string;
@@ -23,6 +27,11 @@ type DetailLayoutType = {
 	};
 };
 
+type TableOfContentsItemType = {
+	title: string;
+	url: string;
+	items: TableOfContentsItemType[] | undefined;
+};
 export const query = graphql`
 	query($slug: String!) {
 		mdx(slug: { eq: $slug }) {
@@ -33,6 +42,7 @@ export const query = graphql`
 				description
 				inpagenav
 			}
+			tableOfContents
 			body
 		}
 	}
