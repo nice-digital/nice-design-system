@@ -16,6 +16,8 @@ type DetailLayoutType = {
 				title: string;
 				description: string;
 				inpagenav: boolean;
+				storybook: string;
+				npm: string;
 			};
 			tableOfContents: {
 				items: TableOfContentsItemType[];
@@ -32,6 +34,7 @@ type TableOfContentsItemType = {
 	url: string;
 	items: TableOfContentsItemType[] | undefined;
 };
+
 export const query = graphql`
 	query($slug: String!) {
 		mdx(slug: { eq: $slug }) {
@@ -41,6 +44,8 @@ export const query = graphql`
 				title
 				description
 				inpagenav
+				storybook
+				npm
 			}
 			tableOfContents
 			body
@@ -54,8 +59,9 @@ export default function DetailLayout(
 	const {
 		body,
 		slug,
-		frontmatter: { title, description, inpagenav = false },
-		id
+		frontmatter: { title, description, inpagenav = false, storybook, npm },
+		id,
+		tableOfContents: { items }
 	} = props.data.mdx;
 
 	return (
@@ -70,10 +76,14 @@ export default function DetailLayout(
 					<Navigation currentSlug={slug} currentId={id} />
 				</GridItem>
 				<GridItem cols={12} sm={inpagenav ? 8 : 10}>
+					{npm && <p>NPM!</p>}
+					{storybook && <p>storybook!</p>}
 					<MDXRenderer>{body}</MDXRenderer>
 				</GridItem>
 				{inpagenav ? (
-					<GridItem cols={2}>{/*placeholder for in page nav*/}</GridItem>
+					<GridItem cols={2}>
+						<InPageNav items={items} />
+					</GridItem>
 				) : (
 					<></>
 				)}
