@@ -41,9 +41,8 @@ export const PrevNext = props => {
 		<div className={classnames("prev-next", className)} {...rest}>
 			{(nextPageLink || previousPageLink) && (
 				<nav aria-label="Previous and next pages">
-					{previousPageLink && <Link {...previousLinkProps} />}
-
 					{nextPageLink && <Link {...nextLinkProps} />}
+					{previousPageLink && <Link {...previousLinkProps} />}
 				</nav>
 			)}
 		</div>
@@ -51,17 +50,8 @@ export const PrevNext = props => {
 };
 
 PrevNext.propTypes = {
-	/**
-	 * Object to represent the next page link
-	 */
 	nextPageLink: PropTypes.objectOf(Link),
-	/**
-		Object to represent the previous page link
-	 */
 	previousPageLink: PropTypes.objectOf(Link),
-	/**
-	 * Any additional classes to be passed to the parent div
-	 */
 	className: PropTypes.string
 };
 

@@ -1,38 +1,22 @@
 import React from "react";
+import { text } from "@storybook/addon-knobs";
+import { storiesOf } from "@storybook/react";
 import { PrevNext } from "@nice-digital/nds-prev-next";
 
-const Template = args => <PrevNext {...args} />;
+const TryItOut = () => (
+	<PrevNext
+		nextPageLink={{
+			text: text("Text", "To the next page", "Next page link"),
+			destination: text("Destination", "#", "Next page link"),
+			intro: text("Intro", "Next page", "Next page link")
+		}}
+		previousPageLink={{
+			text: text("Text", "To the previous page", "Previous page link"),
+			destination: text("Destination", "#", "Previous page link"),
+			intro: text("Intro", "Previous page", "Previous page link")
+		}}
+		className={text("Additional classes", "", "Other")}
+	/>
+);
 
-export const Standard = Template.bind({});
-
-Standard.args = {
-	nextPageLink: {
-		text: "Next page here",
-		destination: "#",
-		intro: "Custom next page text"
-	},
-	previousPageLink: {
-		text: "Previous page here",
-		destination: "#"
-	},
-	className: ""
-};
-
-export default {
-	title: "Components/Previous and Next",
-	component: PrevNext
-	// Can't do this yet
-	// argTypes: {
-	// 	className: { control: "text" },
-	// 	nextPageLink: {
-	// 		text: { control: "text" },
-	// 		destination: { control: "text" },
-	// 		intro: { control: "text" }
-	// 	},
-	// 	previousPageLink: {
-	// 		text: { control: "text" },
-	// 		destination: { control: "text" },
-	// 		intro: { control: "text" }
-	// 	}
-	// }
-};
+storiesOf("Components/Previous & Next", module).add("Try it out", TryItOut);
