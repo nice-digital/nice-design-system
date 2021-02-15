@@ -94,7 +94,7 @@ const CheckboxCustomise = () => (
 	</div>
 );
 
-storiesOf("Checkbox", module)
+storiesOf("Foundations/Checkbox", module)
 	.add("Default", CheckboxDefault)
 	.add("Inline", CheckboxInline)
 	.add("Hint", CheckboxHint)

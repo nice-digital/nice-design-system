@@ -46,7 +46,7 @@ const customTag = () => {
 	);
 };
 
-storiesOf("Breadcrumbs", module)
+storiesOf("Components/Breadcrumbs", module)
 	.add("Home only", homeOnly)
 	.add("Two levels", twoLevels)
 	.add("Custom link tag", customTag);

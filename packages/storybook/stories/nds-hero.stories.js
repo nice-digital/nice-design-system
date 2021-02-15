@@ -13,7 +13,7 @@ const myCallsToAction = (
 	</>
 );
 
-storiesOf("Hero", module)
+storiesOf("Components/Hero", module)
 	.add("Title only", () => <Hero title="Page Title" />)
 	.add("Title and intro", () => (
 		<Hero

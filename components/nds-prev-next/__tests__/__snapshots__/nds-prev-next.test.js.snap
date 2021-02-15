@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Previous & Next should match snapshot with both links supplied 1`] = `
+<div
+  className="prev-next"
+>
+  <nav
+    aria-label="Previous and next pages"
+  >
+    <Link
+      destination="/alert"
+      intro="Previous page"
+      text="Alert"
+    />
+    <Link
+      destination="/pageheader"
+      elementType={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "displayName": "Link",
+          "propTypes": Object {
+            "innerRef": [Function],
+            "onClick": [Function],
+            "replace": [Function],
+            "target": [Function],
+            "to": [Function],
+          },
+          "render": [Function],
+        }
+      }
+      intro="Show me the next one"
+      text="Page Header"
+    />
+  </nav>
+</div>
+`;
+
+exports[`Previous & Next should match snapshot with one link supplied 1`] = `
+<div
+  className="prev-next"
+>
+  <nav
+    aria-label="Previous and next pages"
+  >
+    <Link
+      destination="/alert"
+      intro="Previous page"
+      text="Alert"
+    />
+  </nav>
+</div>
+`;

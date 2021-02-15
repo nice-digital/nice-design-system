@@ -69,7 +69,7 @@ const RadioCustomise = () => (
 	</div>
 );
 
-storiesOf("Radio", module)
+storiesOf("Foundations/Radio", module)
 	.add("Default", RadioDefault)
 	.add("Error", RadioError)
 	.add("Error with message", RadioErrorWithMessage)

@@ -6,7 +6,7 @@ import { action } from "@storybook/addon-actions";
 
 import { Button } from "@nice-digital/nds-button";
 
-storiesOf("Button", module)
+storiesOf("Foundations/Button", module)
 	.addDecorator(withKnobs)
 	.add("CTA", () => <Button variant="cta">CTA button</Button>)
 	.add("Primary", () => <Button>Primary button</Button>)

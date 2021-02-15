@@ -15,7 +15,7 @@ const contentOptions = {
 	Object: <object type="application/pdf" data={pdfSample} />
 };
 
-storiesOf("Maintain Ratio", module).add("Try it out", () => {
+storiesOf("Foundations/Maintain Ratio", module).add("Try it out", () => {
 	const content = select("Child content", Object.keys(contentOptions), "Image");
 	const ratio = select("Ratios", MaintainRatio.ratios);
 	const props = {

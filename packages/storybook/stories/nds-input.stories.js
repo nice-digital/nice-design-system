@@ -54,7 +54,7 @@ const TryItOut = () => (
 	/>
 );
 
-storiesOf("Input", module)
+storiesOf("Foundations/Input", module)
 	.add("Basic", Basic)
 	.add("Hint", Hint)
 	.add("Error", Error)
