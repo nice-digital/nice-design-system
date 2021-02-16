@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { Grid, GridItem } from "@nice-digital/nds-grid";
 import { PageHeader } from "@nice-digital/nds-page-header";
+import { Button } from "@nice-digital/nds-button";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Seo from "../../components/partials/seo/Seo";
 import Wrapper from "./Wrapper";
@@ -76,8 +77,29 @@ export default function DetailLayout(
 					<Navigation currentSlug={slug} currentId={id} />
 				</GridItem>
 				<GridItem cols={12} sm={inpagenav ? 8 : 10}>
-					{npm && <p>NPM!</p>}
-					{storybook && <p>storybook!</p>}
+					{(storybook || npm) && (
+						<p>
+							{storybook && (
+								<Button
+									elementType="a"
+									to={`/storybook/${storybook}`}
+									target="_blank"
+								>
+									View in Storybook
+								</Button>
+							)}
+							{npm && (
+								<Button
+									elementType="a"
+									to={`https://www.npmjs.com/package/${npm}`}
+									target="_blank"
+									rel="noreferrer nofollow"
+								>
+									View on NPM
+								</Button>
+							)}
+						</p>
+					)}
 					<MDXRenderer>{body}</MDXRenderer>
 				</GridItem>
 				{inpagenav ? (
