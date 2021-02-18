@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-// import classnames from "classnames";
+import classnames from "classnames";
 
 import "./../scss/horizontal-nav.scss";
 
@@ -17,11 +17,13 @@ export const HorizontalNavLink = ({
 	isCurrent = false,
 	destination,
 	elementType: ElementType = "a",
-	children
+	children,
+	className,
+	...rest
 }) => {
 	const props = {
 		"aria-current": isCurrent,
-		className: "horizontal-nav__link"
+		className: classnames("horizontal-nav__link", className)
 	};
 	if (ElementType === "a") {
 		props.href = destination;
@@ -30,7 +32,9 @@ export const HorizontalNavLink = ({
 	}
 	return (
 		<li className="horizontal-nav__item">
-			<ElementType {...props}>{children || title}</ElementType>
+			<ElementType {...props} {...rest}>
+				{children || title}
+			</ElementType>
 		</li>
 	);
 };
@@ -44,5 +48,6 @@ HorizontalNavLink.propTypes = {
 	title: PropTypes.string,
 	isCurrent: PropTypes.bool,
 	destination: PropTypes.string,
-	elementType: PropTypes.element
+	elementType: PropTypes.element,
+	className: PropTypes.string
 };

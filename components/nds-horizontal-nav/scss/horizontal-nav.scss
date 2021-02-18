@@ -7,32 +7,70 @@
 @import '~@nice-digital/nds-core/scss/core';
 
 .horizontal-nav {
+  margin-bottom: rem($nds-spacing-large);
   &__list {
-    border-bottom: rem(3) solid $nds-colour-nice-black;
+    align-items: stretch;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     list-style: none;
     margin: 0;
     max-width: 100%;
+    @include mq($from: sm) {
+      border-bottom: 3px solid $nds-colour-nice-black;
+      flex-direction: row;
+    }
   }
   &__item {
-    margin: 0 rem($nds-spacing-small);
-    text-align: center;
+    margin: 0;
     &:first-of-type {
       margin-left: 0;
     }
-    &:last-of-type {
-      margin-right: 0;
+    @include mq($from: sm) {
+      align-items: stretch;
+      display: flex;
+      margin: 0 rem($nds-spacing-small);
+      text-align: center;
+    }
+    @include mq($until: sm) {
+      border-top: 1px solid $nds-colour-border;
+      &:first-of-type {
+        border-top: none;
+      }
     }
   }
   &__link {
     display: block;
-    padding: rem($nds-spacing-small) rem($nds-spacing-medium);
+    line-height: 1em;
+    margin-bottom: -1px; // to ensure there's no rendered gap between the bottom border and the border across the page
+    padding: rem($nds-spacing-medium);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
     &[aria-current='true'] {
-      border-bottom: rem(6) solid $nds-colour-nice-black;
+      background-color: $nds-colour-nice-grey-3;
+      border-bottom: 4px solid $nds-colour-nice-black;
       color: $nds-colour-nice-black;
       font-weight: bold;
-      text-decoration: none;
+      @include mq($from: md) {
+        background-color: unset;
+      }
     }
+    @include mq($until: sm) {
+      &:active {
+        background-color: $nds-colour-nice-teal;
+        color: $nds-colour-nice-white;
+      }
+    }
+    @include mq($from: sm) {
+      padding: rem($nds-spacing-medium) rem($nds-spacing-small);
+    }
+    @include mq($from: md) {
+      padding: rem($nds-spacing-medium);
+    }
+  }
+  @include mq($until: sm) {
+    border: 1px solid $nds-colour-border;
   }
 }

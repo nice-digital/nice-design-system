@@ -1,4 +1,3 @@
-/* eslint react/prop-types: 0 */
 import React from "react";
 import {
 	HorizontalNav,
@@ -6,37 +5,29 @@ import {
 } from "@nice-digital/nds-horizontal-nav";
 
 import { storiesOf } from "@storybook/react";
+import { text, boolean } from "@storybook/addon-knobs";
 
 const links = [
 	{
 		title: "Guidance",
 		destination: "#",
-		isCurrent: false,
-		elementType: "a"
+		isCurrent: true
 	},
 	{
 		title: "Tools and resources",
-		destination: "#",
-		isCurrent: true,
-		elementType: "a"
+		destination: "#"
 	},
 	{
 		title: "Information for the public",
-		destination: "#",
-		isCurrent: false,
-		elementType: "a"
+		destination: "#"
 	},
 	{
 		title: "Evidence",
-		destination: "#",
-		isCurrent: false,
-		elementType: "a"
+		destination: "#"
 	},
 	{
 		title: "History",
-		destination: "#",
-		isCurrent: false,
-		elementType: "a"
+		destination: "#"
 	}
 ];
 
@@ -48,4 +39,33 @@ const Default = () => (
 	</HorizontalNav>
 );
 
-storiesOf("Components/Horizontal Nav", module).add("Default", Default);
+const TryItOut = () => (
+	<HorizontalNav>
+		<HorizontalNavLink
+			isCurrent={boolean("Current active", true, "First link")}
+			className={text("Additional classes", "", "First link")}
+			data-track={text(
+				"Additional data attribute",
+				"for-tracking-purposes",
+				"First link"
+			)}
+		>
+			{text("Text", "Example", "First link")}
+		</HorizontalNavLink>
+		<HorizontalNavLink
+			isCurrent={boolean("Current active", false, "Second link")}
+			className={text("Additional classes", "", "Second link")}
+			data-track={text(
+				"Additional data attribute",
+				"for-tracking-purposes",
+				"Second link"
+			)}
+		>
+			{text("Text", "Example", "Second link")}
+		</HorizontalNavLink>
+	</HorizontalNav>
+);
+
+storiesOf("Components/Horizontal Nav", module)
+	.add("Default", Default)
+	.add("Try it out", TryItOut);
