@@ -43,12 +43,6 @@ describe("Previous & Next", () => {
 		expect(anchor.props()["href"]).toEqual("/alert");
 	});
 
-	it("link should render an href attribute if the elementType is an anchor", () => {
-		const wrapper = mount(<PrevNext previousPageLink={previousPageLink} />);
-		const anchor = wrapper.find("a");
-		expect(anchor.props()["href"]).toEqual("/alert");
-	});
-
 	it("should pass extra props to the containing element", () => {
 		const wrapper = shallow(
 			<PrevNext nextPageLink={nextPageLink} data-tracker="my-tracker" />

@@ -96,7 +96,7 @@ Text that you would like to appear if different from "Next page" or "Previous pa
 />
 ```
 
-##### classname
+##### className
 
 - Type: `string`
 
