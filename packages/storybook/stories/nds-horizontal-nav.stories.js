@@ -50,7 +50,7 @@ const TryItOut = () => (
 				"First link"
 			)}
 		>
-			{text("Text", "Example", "First link")}
+			{text("Title", "Example", "First link")}
 		</HorizontalNavLink>
 		<HorizontalNavLink
 			isCurrent={boolean("Current active", false, "Second link")}
@@ -61,7 +61,7 @@ const TryItOut = () => (
 				"Second link"
 			)}
 		>
-			{text("Text", "Example", "Second link")}
+			{text("Title", "Example", "Second link")}
 		</HorizontalNavLink>
 	</HorizontalNav>
 );

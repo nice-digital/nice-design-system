@@ -4,9 +4,9 @@ import classnames from "classnames";
 
 import "./../scss/horizontal-nav.scss";
 
-export const HorizontalNav = ({ children, ...rest }) => {
+export const HorizontalNav = ({ className, children, ...rest }) => {
 	return (
-		<nav className="horizontal-nav" {...rest}>
+		<nav className={classnames("horizontal-nav", className)} {...rest}>
 			<ul className="horizontal-nav__list">{children}</ul>
 		</nav>
 	);
@@ -33,21 +33,22 @@ export const HorizontalNavLink = ({
 	return (
 		<li className="horizontal-nav__item">
 			<ElementType {...props} {...rest}>
-				{children || title}
+				{title || children || destination || "No Link"}
 			</ElementType>
 		</li>
 	);
 };
 
 HorizontalNav.propTypes = {
-	children: PropTypes.node
+	children: PropTypes.node,
+	className: PropTypes.string
 };
 
 HorizontalNavLink.propTypes = {
 	children: PropTypes.node,
 	title: PropTypes.string,
 	isCurrent: PropTypes.bool,
-	destination: PropTypes.string,
-	elementType: PropTypes.element,
+	destination: PropTypes.string.isRequired,
+	elementType: PropTypes.elementType,
 	className: PropTypes.string
 };
