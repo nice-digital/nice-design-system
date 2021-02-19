@@ -18,6 +18,7 @@ import { BreadcrumbsView } from "./views/BreadcrumbsView";
 import { FiltersView } from "./views/FiltersView";
 import { DeprecatedFormsView } from "./views/DeprecatedFormsView";
 import { SimplePaginationView } from "./views/SimplePaginationView";
+import { TableView } from "./views/TableView";
 import "./App.scss";
 
 const browserHistory = createBrowserHistory();
@@ -75,6 +76,9 @@ class App extends Component {
 					<li>
 						<Link to="/simple-pagination">Simple pagination</Link>
 					</li>
+					<li>
+						<Link to="/table">Table</Link>
+					</li>
 				</ul>
 				<main className="container">
 					<Route path="/formgroup" component={FormGroupView} />
@@ -93,6 +97,7 @@ class App extends Component {
 					<Route path="/filters" component={FiltersView} />
 					<Route path="/dep-forms" component={DeprecatedFormsView} />
 					<Route path="/simple-pagination" component={SimplePaginationView} />
+					<Route path="/table" component={TableView} />
 				</main>
 			</Router>
 		);
