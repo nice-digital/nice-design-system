@@ -1,7 +1,5 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
-// import toJson from "enzyme-to-json";
-
 import { HorizontalNav, HorizontalNavLink } from "../src/HorizontalNav";
 import { Link } from "react-router-dom";
 import toJson from "enzyme-to-json";
