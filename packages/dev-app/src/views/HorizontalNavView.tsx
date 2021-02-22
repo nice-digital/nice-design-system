@@ -39,15 +39,6 @@ const links = [
 	}
 ];
 
-const linksRealistic = [
-	{ title: "Guidance", destination: "#" },
-	{ title: "Tools and resources", destination: "#" },
-	{ title: "Information for the public", destination: "#" },
-	{ title: "Evidence", destination: "#", isCurrent: true },
-	{ title: "History", destination: "#" },
-	{ title: "How we developed this guidance", destination: "#" }
-];
-
 export const HorizontalNavView = () => {
 	return (
 		<HorizontalNav aria-label={"Secondary navigation"}>
