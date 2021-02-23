@@ -8,11 +8,6 @@ exports[`Previous & Next should match snapshot with both links supplied 1`] = `
     aria-label="Previous and next pages"
   >
     <Link
-      destination="/alert"
-      intro="Previous page"
-      text="Alert"
-    />
-    <Link
       destination="/pageheader"
       elementType={
         Object {
@@ -30,6 +25,11 @@ exports[`Previous & Next should match snapshot with both links supplied 1`] = `
       }
       intro="Show me the next one"
       text="Page Header"
+    />
+    <Link
+      destination="/alert"
+      intro="Previous page"
+      text="Alert"
     />
   </nav>
 </div>

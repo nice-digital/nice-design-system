@@ -28,6 +28,7 @@ export const PrevNextView = () => {
 					intro: "Show me the next one"
 				}}
 				previousPageLink={{
+					text: "Required",
 					destination: "/alert",
 					elementType: Link
 				}}
