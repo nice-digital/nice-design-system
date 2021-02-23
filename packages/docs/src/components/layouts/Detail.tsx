@@ -10,7 +10,7 @@ import { Navigation } from "../partials/navigation/Navigation";
 import { BreadcrumbWrapper } from "../partials/breadcrumbs/BreadcrumbWrapper";
 import { InPageNav } from "../partials/inpagenav/InPageNav";
 
-const npmPath = "https://www.npmjs.com/package/";
+const npmPath = "https://www.npmjs.com/package/@nice-digital/";
 const storybookPath = "/storybook/?path=/story/";
 
 type DetailLayoutType = {
