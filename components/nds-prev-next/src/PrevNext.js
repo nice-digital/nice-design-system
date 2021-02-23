@@ -25,14 +25,14 @@ export const PrevNext = props => {
 
 	const nextLinkProps = {
 		intro: nextPageLink?.intro || "Next page",
-		text: nextPageLink?.text || nextPageLink?.destination,
+		text: nextPageLink?.text,
 		destination: nextPageLink?.destination,
 		elementType: nextPageLink?.elementType
 	};
 
 	const previousLinkProps = {
 		intro: previousPageLink?.intro || "Previous page",
-		text: previousPageLink?.text || previousPageLink?.destination,
+		text: previousPageLink?.text,
 		destination: previousPageLink?.destination,
 		elementType: previousPageLink?.elementType
 	};
@@ -56,7 +56,7 @@ PrevNext.propTypes = {
 };
 
 Link.propTypes = {
-	text: PropTypes.string,
+	text: PropTypes.string.isRequired,
 	destination: PropTypes.string.isRequired,
 	elementType: PropTypes.elementType,
 	intro: PropTypes.string
