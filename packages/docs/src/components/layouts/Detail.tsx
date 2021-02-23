@@ -10,6 +10,9 @@ import { Navigation } from "../partials/navigation/Navigation";
 import { BreadcrumbWrapper } from "../partials/breadcrumbs/BreadcrumbWrapper";
 import { InPageNav } from "../partials/inpagenav/InPageNav";
 
+const npmPath = "https://www.npmjs.com/package/";
+const storybookPath = "/storybook/?path=/story/";
+
 type DetailLayoutType = {
 	data: {
 		mdx: {
@@ -82,7 +85,7 @@ export default function DetailLayout(
 							{storybook && (
 								<Button
 									elementType="a"
-									to={`/storybook/${storybook}`}
+									to={storybookPath + storybook}
 									target="_blank"
 								>
 									View in Storybook
@@ -91,7 +94,7 @@ export default function DetailLayout(
 							{npm && (
 								<Button
 									elementType="a"
-									to={`https://www.npmjs.com/package/${npm}`}
+									to={npmPath + npm}
 									target="_blank"
 									rel="noreferrer nofollow"
 								>
