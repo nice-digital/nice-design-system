@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Horizontal Nav Component should match the default snapshot 1`] = `
+<nav
+  className="horizontal-nav"
+>
+  <ul
+    className="horizontal-nav__list"
+  >
+    <HorizontalNavLink
+      className="monkey"
+      data-track="monkey"
+      destination="/formgroup"
+      isCurrent={false}
+      key="Form Group"
+      title="Form Group"
+    />
+    <HorizontalNavLink
+      className="monkey"
+      data-track="monkey"
+      destination="/pageheader"
+      elementType={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "displayName": "Link",
+          "propTypes": Object {
+            "innerRef": [Function],
+            "onClick": [Function],
+            "replace": [Function],
+            "target": [Function],
+            "to": [Function],
+          },
+          "render": [Function],
+        }
+      }
+      isCurrent={true}
+      key="Page Header"
+      title="Page Header"
+    />
+    <HorizontalNavLink
+      className="monkey"
+      data-track="monkey"
+      destination="/stackednav"
+      elementType={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "displayName": "Link",
+          "propTypes": Object {
+            "innerRef": [Function],
+            "onClick": [Function],
+            "replace": [Function],
+            "target": [Function],
+            "to": [Function],
+          },
+          "render": [Function],
+        }
+      }
+      isCurrent={false}
+      key="Stacked Nav"
+      title="Stacked Nav"
+    />
+    <HorizontalNavLink
+      className="monkey"
+      data-track="monkey"
+      destination="/alert"
+      elementType={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "displayName": "Link",
+          "propTypes": Object {
+            "innerRef": [Function],
+            "onClick": [Function],
+            "replace": [Function],
+            "target": [Function],
+            "to": [Function],
+          },
+          "render": [Function],
+        }
+      }
+      isCurrent={false}
+      key="Alert"
+      title="Alert"
+    />
+    <HorizontalNavLink
+      className="monkey"
+      data-track="monkey"
+      destination="/grid"
+      elementType={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "displayName": "Link",
+          "propTypes": Object {
+            "innerRef": [Function],
+            "onClick": [Function],
+            "replace": [Function],
+            "target": [Function],
+            "to": [Function],
+          },
+          "render": [Function],
+        }
+      }
+      isCurrent={false}
+      key="Grid"
+      title="Grid"
+    />
+  </ul>
+</nav>
+`;

@@ -25,7 +25,7 @@ import { Alert } from "@nice-digital/nds-alert";
 <Alert type="caution">
 	<h3>Important Notice</h3> // type defaults to 'info' if not supplied
 	<p>Please read the below for more information.</p>
-<7/Alert>;
+</Alert>;
 ```
 
 #### Props
