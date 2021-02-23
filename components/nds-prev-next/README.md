@@ -67,10 +67,9 @@ A string to represent the destination of the link.
 
 ##### nextPageLink.text
 
-- Type: `string`
-- Default: string supplied to `destination`
+- Type: `string` (required)
 
-The text that the link will be applied to. If none is supplied, the text will be the `destination` string
+The text that the link will be applied to. Usually the title of the resource the link will go to.
 
 ##### nextPageLink.elementType
 
