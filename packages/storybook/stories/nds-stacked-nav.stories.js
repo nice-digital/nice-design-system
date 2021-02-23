@@ -82,7 +82,7 @@ const nestedElements = () => (
 	</StackedNav>
 );
 
-storiesOf("Stacked Nav", module)
+storiesOf("Components/Stacked Nav", module)
 	.add("Heading and links", headingAndLinks)
 	.add("Heading label only", headingOnly)
 	.add("Heading with current", headingWithLink)

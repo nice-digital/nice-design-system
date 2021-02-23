@@ -6,7 +6,7 @@ import { text, select } from "@storybook/addon-knobs";
 
 import { Alert } from "@nice-digital/nds-alert";
 
-storiesOf("Alert", module)
+storiesOf("Components/Alert", module)
 	.add("Info", () => (
 		<Alert type="info">
 			<h1>Info alert</h1>

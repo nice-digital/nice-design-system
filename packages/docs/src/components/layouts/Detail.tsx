@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { Grid, GridItem } from "@nice-digital/nds-grid";
 import { PageHeader } from "@nice-digital/nds-page-header";
+import { Button } from "@nice-digital/nds-button";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Seo from "../../components/partials/seo/Seo";
 import Wrapper from "./Wrapper";
@@ -16,6 +17,8 @@ type DetailLayoutType = {
 				title: string;
 				description: string;
 				inpagenav: boolean;
+				storybook: string;
+				npm: string;
 			};
 			tableOfContents: {
 				items: TableOfContentsItemType[];
@@ -32,6 +35,7 @@ type TableOfContentsItemType = {
 	url: string;
 	items: TableOfContentsItemType[] | undefined;
 };
+
 export const query = graphql`
 	query($slug: String!) {
 		mdx(slug: { eq: $slug }) {
@@ -41,6 +45,8 @@ export const query = graphql`
 				title
 				description
 				inpagenav
+				storybook
+				npm
 			}
 			tableOfContents
 			body
@@ -54,8 +60,9 @@ export default function DetailLayout(
 	const {
 		body,
 		slug,
-		frontmatter: { title, description, inpagenav = false },
-		id
+		frontmatter: { title, description, inpagenav = false, storybook, npm },
+		id,
+		tableOfContents: { items }
 	} = props.data.mdx;
 
 	return (
@@ -70,10 +77,35 @@ export default function DetailLayout(
 					<Navigation currentSlug={slug} currentId={id} />
 				</GridItem>
 				<GridItem cols={12} sm={inpagenav ? 8 : 10}>
+					{(storybook || npm) && (
+						<p>
+							{storybook && (
+								<Button
+									elementType="a"
+									to={`/storybook/${storybook}`}
+									target="_blank"
+								>
+									View in Storybook
+								</Button>
+							)}
+							{npm && (
+								<Button
+									elementType="a"
+									to={`https://www.npmjs.com/package/${npm}`}
+									target="_blank"
+									rel="noreferrer nofollow"
+								>
+									View on NPM
+								</Button>
+							)}
+						</p>
+					)}
 					<MDXRenderer>{body}</MDXRenderer>
 				</GridItem>
 				{inpagenav ? (
-					<GridItem cols={2}>{/*placeholder for in page nav*/}</GridItem>
+					<GridItem cols={2}>
+						<InPageNav items={items} />
+					</GridItem>
 				) : (
 					<></>
 				)}

@@ -19,6 +19,7 @@ import { FiltersView } from "./views/FiltersView";
 import { DeprecatedFormsView } from "./views/DeprecatedFormsView";
 import { SimplePaginationView } from "./views/SimplePaginationView";
 import { HorizontalNavView } from "./views/HorizontalNavView";
+import { PrevNextView } from "./views/PrevNextView";
 import "./App.scss";
 
 const browserHistory = createBrowserHistory();
@@ -79,6 +80,9 @@ class App extends Component {
 					<li>
 						<Link to="/horizontal-nav">Horizontal Nav</Link>
 					</li>
+					<li>
+					    <Link to="/prev-next">Previous and Next</Link>
+					</li>
 				</ul>
 				<main className="container">
 					<Route path="/formgroup" component={FormGroupView} />
@@ -97,6 +101,7 @@ class App extends Component {
 					<Route path="/filters" component={FiltersView} />
 					<Route path="/dep-forms" component={DeprecatedFormsView} />
 					<Route path="/simple-pagination" component={SimplePaginationView} />
+					<Route path="/prev-next" component={PrevNextView} />
 					<Route path="/horizontal-nav" component={HorizontalNavView} />
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit.

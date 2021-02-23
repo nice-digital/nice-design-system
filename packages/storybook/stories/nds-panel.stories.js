@@ -7,7 +7,7 @@ import { text, select } from "@storybook/addon-knobs";
 import { Grid, GridItem } from "@nice-digital/nds-grid";
 import { Panel } from "@nice-digital/nds-panel";
 
-storiesOf("Panel", module)
+storiesOf("Components/Panel", module)
 	.add("Default (supporting)", () => (
 		<Panel>
 			<h2 className="h3">Default (supporting) panel</h2>

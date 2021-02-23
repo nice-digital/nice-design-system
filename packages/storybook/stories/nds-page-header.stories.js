@@ -42,7 +42,7 @@ const Customise = () => (
 	/>
 );
 
-storiesOf("Page Header", module)
+storiesOf("Components/Page Header", module)
 	.add("Heading", Heading)
 	.add("Pre-heading", Preheading)
 	.add("Lead", Lead)

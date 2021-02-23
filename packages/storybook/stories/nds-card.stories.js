@@ -156,7 +156,7 @@ const customisable = () => {
 	);
 };
 
-storiesOf("Card", module)
+storiesOf("Components/Card", module)
 	.addDecorator(withKnobs)
 	.add("Heading only, no link", headingOnly)
 	.add("H1 heading with link", headingOnlyLink)

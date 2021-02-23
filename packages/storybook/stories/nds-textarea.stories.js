@@ -35,7 +35,7 @@ const TryItOut = () => (
 	/>
 );
 
-storiesOf("Textarea", module)
+storiesOf("Foundations/Textarea", module)
 	.add("Basic", Basic)
 	.add("Hint", Hint)
 	.add("Error", Error)

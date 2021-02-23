@@ -16,7 +16,7 @@ const GridCellExample = ({ text, children }) => (
 	</div>
 );
 
-storiesOf("Grid", module)
+storiesOf("Foundations/Grid", module)
 	.addDecorator(withKnobs)
 	.add("Basics", () => (
 		<>

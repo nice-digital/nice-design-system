@@ -5,7 +5,7 @@ import { text, select } from "@storybook/addon-knobs";
 
 import { Tag } from "@nice-digital/nds-tag";
 
-storiesOf("Tag", module).add("Try it out", () => {
+storiesOf("Foundations/Tag", module).add("Try it out", () => {
 	const variant = select("Variant", Tag.variants);
 	const props = {
 		[variant]: true

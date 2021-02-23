@@ -7,7 +7,7 @@ import { action } from "@storybook/addon-actions";
 import { ActionBanner } from "@nice-digital/nds-action-banner";
 import { Button } from "@nice-digital/nds-button";
 
-storiesOf("Action banner", module)
+storiesOf("Components/Action banner", module)
 	.addDecorator(withKnobs)
 	.add("Default", () => {
 		return (

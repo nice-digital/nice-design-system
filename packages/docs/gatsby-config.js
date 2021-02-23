@@ -34,7 +34,15 @@ module.exports = {
 		{
 			resolve: "gatsby-plugin-mdx",
 			options: {
-				gatsbyRemarkPlugins: ["gatsby-remark-autolink-headers"]
+				gatsbyRemarkPlugins: [
+					{
+						resolve: "gatsby-remark-autolink-headers",
+						options: {
+							offsetY: "100",
+							className: "permalink-icon"
+						}
+					}
+				]
 			}
 		},
 		"gatsby-transformer-remark",
