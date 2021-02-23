@@ -53,20 +53,6 @@ The component will only return the surrounding table tag. The rest of the table 
 
 Any additional classes you would like cascading to the `table` tag.
 
-##### striped
-
-- Type: `boolean`
-- Default: `false`
-
-Apply CSS to apply alternating stripes on the body table rows. Must use `tbody` for this styling to be applied. 
-
-##### bordered
-
-- Type: `boolean`
-- Default: `false`
-
-Apply CSS to create a border around the outside of the table
-
 ### SCSS
 
 If you're not using [React](#react), then import the SCSS directly into your application by:
@@ -80,7 +66,7 @@ If you're not using [React](#react), then import the SCSS directly into your app
 If you're not using [React](#react), then include the [SCSS as above](#scss) and use the HTML:
 
 ```html
-<table class="table table--striped table--bordered">
+<table class="table">
   <tbody>
     <tr>
       <td>Data!</td>

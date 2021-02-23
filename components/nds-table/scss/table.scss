@@ -8,24 +8,14 @@
 
 .table {
   background: $nds-colour-true-white;
+  border: 1px solid $nds-colour-border;
   border-collapse: collapse;
   margin: rem(0 0 $nds-spacing-medium);
   max-width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
   width: 100% !important; // Important because some tables come in from the feed with widths in style attributes
-  &--bordered {
-    border: 1px solid $nds-colour-border;
-  }
-  &--striped {
-    tbody {
-      tr {
-        &:nth-child(even) > td {
-          background-color: $nds-colour-nice-grey-3;
-        }
-      }
-    }
-  }
+
   th {
     vertical-align: bottom;
   }
@@ -65,6 +55,9 @@
     tr {
       &:last-child td {
         border-bottom: 0;
+      }
+      &:nth-child(even) > td {
+        background-color: $nds-colour-nice-grey-3;
       }
     }
   }

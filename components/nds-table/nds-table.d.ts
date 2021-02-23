@@ -3,8 +3,6 @@ declare module "@nice-digital/nds-table" {
 
 	export interface TableProps {
 		className?: string;
-		striped?: boolean;
-		bordered?: boolean;
 		children: React.ReactNode;
 	}
 

@@ -4,7 +4,7 @@ import { Table } from "@nice-digital/nds-table";
 export const TableView = () => {
 	return (
 		<div style={{ padding: "2rem" }}>
-			<Table bordered>
+			<Table>
 				<thead>
 					<tr>
 						<th>Header One</th>

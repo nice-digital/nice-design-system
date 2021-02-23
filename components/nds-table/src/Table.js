@@ -5,12 +5,10 @@ import classnames from "classnames";
 import "../scss/table.scss";
 
 export const Table = props => {
-	const { striped, bordered, className, children, ...attributes } = props;
+	const { className, children, ...attributes } = props;
 
 	const classNames = classnames({
 		table: true,
-		"table--striped": striped,
-		"table--bordered": bordered,
 		[className]: className && true
 	});
 
@@ -22,8 +20,6 @@ export const Table = props => {
 };
 
 Table.propTypes = {
-	bordered: PropTypes.bool,
-	striped: PropTypes.bool,
 	className: PropTypes.string,
 	children: PropTypes.node.isRequired
 };
