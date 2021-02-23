@@ -1,0 +1,116 @@
+---
+title: Horizontal navigation
+description: A navigation menu to navigate to different high level pages or sections
+template: detail
+storybook: ?path=/story/components-horizontal-nav
+inpagenav: true
+---
+
+import { HorizontalNav, HorizontalNavLink } from "@nice-digital/nds-horizontal-nav";
+
+<HorizontalNav className="panel">
+	<HorizontalNavLink destination="#">
+		Link One
+	</HorizontalNavLink>
+	<HorizontalNavLink destination="#" isCurrent={true}>
+		Link Two
+	</HorizontalNavLink>
+	<HorizontalNavLink destination="#">
+		Link Three
+	</HorizontalNavLink>
+</HorizontalNav>
+
+## What is it?
+
+A navigation menu for use on the guidance, advice pages and other pages as needed. The purpose is to allow users to navigate to different sections of content. The sections should be distinct and stand alone.
+
+As with other types of navigation it should allow users to clearly understand:
+
+- Where am i now?
+- Where can i go?
+- Where have I been?
+
+On guidance pages it is the main navigation method, used to move to top level sections. Sections will also potentially have a side menu (using stacked navigation pattern) within them to allow users to navigate to sub-sections.
+
+## Why use it?
+
+When you have different discrete sections of content that users need to navigate between. Each section should be distinct and make sense on its own. Don’t use for switching between related content that makes sense on the same page - use the tabs component for this instead.
+
+## When to use
+
+The Horizontal navigation allows users to see at a glance what navigation options are available. It is best used in situations where:
+
+### Maximum amount of space is needed for content
+
+Horizontal navigation sits above the content. This means the whole width of the page is available for content underneath. This compares to the stacked navigation component which sits alongside content and takes up a portion of the content area.
+
+### Primary and secondary navigation needed
+
+Horizontal navigation is useful to use as a primary navigation component, sitting above content that also needs secondary navigation. The Horizontal nav sits above content which implies a higher position in the content hierarchy,
+
+## When not to use
+
+Horizontal navigation is limited by the amount of space across the screen. For this reason it doesn’t work as well in situations where the navigation items take up lots of horizontal space or the navigation isn’t clearly defined and could grow in future.
+
+Don’t use when:
+
+- There are lots of links in the navigation
+- There are long navigations links
+- The menu structure could grow in future beyond the width of the screen.
+
+### Don’t use when you should use tabs
+
+Use tabs to switch between related content on the same page. Horizontal navigation should be used to move between different pages of content.
+
+Use tabs to alternate between views within the same context, not to navigate to different areas. This is the single most important point, because staying in place while alternating views is the reason we have tabs in the first place.
+
+https://www.nngroup.com/articles/tabs-used-right/
+
+## Usage
+
+### Positioning
+
+The Horizontal nav should appear above the content it relates to.
+
+### Content
+
+Avoid long link text. Link text should be as simple as possible, one or two words.
+
+Use 5-6 links maximum. On desktop the Horizontal navigation shouldn’t be wider than the screen width.
+
+### Ordering of links
+
+Links should be ordered left-right in order of importance/usefulness. Most useful link first/left, least useful last/right.
+
+### Accessibility
+
+All colours used meet accessibility requirements.
+
+Tap target meets minimum size requirements (44 x 44 pixels).
+
+## Research
+
+We conducted some click tests to sense check the pattern made sense to users.
+
+Users were asked to navigate to content that sat under the IFP link in the Horizontal nav.
+
+### Desktop pattern
+
+7/10 users clicked the correct nav element with the first click.
+
+### Mobile pattern
+
+7/10 users clicked the correct nav element with the first click.
+
+NICE users - [Results of click tests for the HST prototype](https://nicedigital.atlassian.net/wiki/spaces/OI/pages/1907687610/Click+tests+of+HST+prototype#Test-2---Navigate-to-IFP)
+
+
+## Horizontal vs Stacked (Vertical) navigation
+
+When to use the horizontal pattern and when to use the stacked Vertical pattern.
+
+| Vertical nav good to use when:                                                                                            | Horizontal nav good to use when:                                                                 |
+|---------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| Menu items with long link text. For example guidance page titles: ‘6. Evaluation committee members and NICE project team’ | Short navigation text.                                                                           |
+| Lots of navigation items - large menus.  Vertical navigation stacks vertically so infinite amount of space to take up.    | Small number of navigation items. Horizontal nav restricted to width of screen.                  |
+|                                                                                                                           | Content that needs full width of page Nav sits above content, allows content to span full width. |
