@@ -42,6 +42,7 @@
     "@nice-digital/nds-radio": "1.0.29-alpha.0",
     "@nice-digital/nds-simple-pagination": "^1.0.4-alpha.0",
     "@nice-digital/nds-stacked-nav": "^1.0.27-alpha.0",
+    "@nice-digital/nds-table": "^1.0.0-alpha.0",
     "@nice-digital/nds-tabs": "^1.0.23-alpha.0",
     "@nice-digital/nds-tag": "^1.0.23-alpha.0",
     "@nice-digital/nds-textarea": "^1.0.5-alpha.0"

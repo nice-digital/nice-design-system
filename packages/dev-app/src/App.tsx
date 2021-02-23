@@ -19,6 +19,7 @@ import { FiltersView } from "./views/FiltersView";
 import { DeprecatedFormsView } from "./views/DeprecatedFormsView";
 import { SimplePaginationView } from "./views/SimplePaginationView";
 import { HorizontalNavView } from "./views/HorizontalNavView";
+import { TableView } from "./views/TableView";
 import "./App.scss";
 
 const browserHistory = createBrowserHistory();
@@ -77,6 +78,9 @@ class App extends Component {
 						<Link to="/simple-pagination">Simple pagination</Link>
 					</li>
 					<li>
+						<Link to="/table">Table</Link>
+					</li>
+					<li>
 						<Link to="/horizontal-nav">Horizontal Nav</Link>
 					</li>
 				</ul>
@@ -97,6 +101,7 @@ class App extends Component {
 					<Route path="/filters" component={FiltersView} />
 					<Route path="/dep-forms" component={DeprecatedFormsView} />
 					<Route path="/simple-pagination" component={SimplePaginationView} />
+					<Route path="/table" component={TableView} />
 					<Route path="/horizontal-nav" component={HorizontalNavView} />
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit.

@@ -1,0 +1,64 @@
+// stylelint-disable no-descending-specificity
+
+////
+/// @group components
+////
+
+@import '~@nice-digital/nds-core/scss/core';
+
+.table {
+  background: $nds-colour-true-white;
+  border: 1px solid $nds-colour-border;
+  border-collapse: collapse;
+  margin: rem(0 0 $nds-spacing-medium);
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100% !important; // Important because some tables come in from the feed with widths in style attributes
+
+  th {
+    vertical-align: bottom;
+  }
+
+  td {
+    vertical-align: top;
+  }
+
+  td,
+  th {
+    border: 1px solid $nds-colour-border;
+    padding: rem($nds-spacing-small);
+    text-align: left;
+
+    &:first-child {
+      border-left: 0;
+    }
+
+    &:last-child {
+      border-right: 0;
+    }
+
+    p {
+      margin-top: 0;
+    }
+  }
+
+  thead,
+  :not(thead) + tbody,
+  tbody {
+    tr:first-child th {
+      border-top: 0;
+    }
+  }
+
+  tbody {
+    tr {
+      &:last-child td {
+        border-bottom: 0;
+      }
+      &:nth-child(even) > td {
+        background-color: $nds-colour-nice-grey-3;
+      }
+    }
+  }
+}

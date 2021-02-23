@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table should match the snapshot 1`] = `
+<table
+  className="table table--striped table--bordered"
+>
+  <tr>
+    <td>
+      One
+    </td>
+  </tr>
+</table>
+`;
+
+exports[`Table should merge container classes when additional className supplied 1`] = `
+<table
+  className="table mt--d"
+>
+  <tr>
+    <td>
+      One
+    </td>
+  </tr>
+</table>
+`;
