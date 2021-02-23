@@ -18,7 +18,7 @@ describe("Table", () => {
 
 	it("should match the snapshot", () => {
 		const wrapper = shallow(
-			<Table striped bordered>
+			<Table>
 				<tr>
 					<td>One</td>
 				</tr>

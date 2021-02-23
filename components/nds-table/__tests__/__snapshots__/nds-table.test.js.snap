@@ -2,7 +2,7 @@
 
 exports[`Table should match the snapshot 1`] = `
 <table
-  className="table table--striped table--bordered"
+  className="table"
 >
   <tr>
     <td>

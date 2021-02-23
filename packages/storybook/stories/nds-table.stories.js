@@ -5,12 +5,9 @@ import { boolean } from "@storybook/addon-knobs";
 
 import { Table } from "@nice-digital/nds-table";
 
-storiesOf("Foundations/Table", module).add("Try it out", () => {
+storiesOf("Foundations/Table", module).add("Default", () => {
 	return (
-		<Table
-			striped={boolean("Striped", false)}
-			bordered={boolean("Bordered", false)}
-		>
+		<Table>
 			<thead>
 				<tr>
 					<th>Header One</th>
