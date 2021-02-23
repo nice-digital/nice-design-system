@@ -1,16 +1,32 @@
 ---
 title: Previous and Next
 navigationLabel: Previous & Next
-description: A way for users to navigation into previous or next pages of content.
+description: A way for users to navigate to previous or next pages in a sequence of content.
+inpagenav: true
 template: detail
+storybook: ?path=/story/components-previous-next
 ---
+
+import { PrevNext } from "@nice-digital/nds-prev-next"
+
+<div className="panel panel--default pb--0">
+<PrevNext
+	nextPageLink={{
+		text: "Page Header",
+		destination: "#",
+	}}
+	previousPageLink={{
+		text: "Alert",
+		destination: "#",
+	}}
+/>
+</div>
 
 ## Why?
 
 When you need a simple way for users to move back and forwards through related pages of content. Can be used as well as other navigation (such as the stacked navigation component) to reinforce navigation options and give users a couple of ways to move between pages of content.
 
 The links are placed at the bottom of the page to allows users to navigate on after reading the end of the page content. This has the benefit of keeping a navigation option visible when a side menu or primary horizontal menu might be off screen.
-
 
 ## Usage
 
@@ -37,17 +53,6 @@ For example:
 Do not use previous and next links on pages which aren't grouped together or related as this is likely to confuse users.
 
 Don’t use previous and next links on multiple pages of results or lists or data tables. Use pagination patterns for this instead. Pagination patterns contain extra information such as displaying the number of items/results and ability to change the number of results that help users with this type of content.
-
-
-### Variants
-
-#### Default
-
-#### In context
-
-### Link states
-
-### Spacing
 
 ### Accessibility
 

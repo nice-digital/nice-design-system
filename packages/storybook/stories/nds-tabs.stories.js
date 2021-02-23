@@ -4,7 +4,7 @@ import { storiesOf } from "@storybook/react";
 
 import { Tabs, Tab } from "@nice-digital/nds-tabs";
 
-storiesOf("Tabs", module).add("Default", () => (
+storiesOf("Components/Tabs", module).add("Default", () => (
 	<Tabs>
 		<Tab title="Tab 1">
 			<p>Here is some content for the first tab</p>

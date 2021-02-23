@@ -16,7 +16,7 @@ const NextAndPrevious = (
 	/>
 );
 
-storiesOf("Simple Pagination", module)
+storiesOf("Components/Simple Pagination", module)
 	.add("Default", () => Default)
 	.add("With total pages", () => WithTotalPages)
 	.add("Next and previous", () => NextAndPrevious);

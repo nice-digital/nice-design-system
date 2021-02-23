@@ -78,7 +78,7 @@ const TryItOut = () => (
 	</FormGroup>
 );
 
-storiesOf("Form Group", module)
+storiesOf("Foundations/Form Group", module)
 	.add("Default", Default)
 	.add("Inline", Inline)
 	.add("Error", Error)
