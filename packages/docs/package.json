@@ -21,6 +21,7 @@
 		"@nice-digital/nds-forms": "^1.0.29-alpha.0",
 		"@nice-digital/nds-grid": "^1.0.19-alpha.0",
 		"@nice-digital/nds-hero": "^1.0.23-alpha.0",
+		"@nice-digital/nds-horizontal-nav": "^1.0.0-alpha.0",
 		"@nice-digital/nds-in-page-nav": "^1.0.23-alpha.0",
 		"@nice-digital/nds-input": "^1.0.5-alpha.0",
 		"@nice-digital/nds-maintain-ratio": "^1.0.23-alpha.0",
