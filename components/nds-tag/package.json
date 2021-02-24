@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-tag",
-	"version": "1.0.23-alpha.0",
+	"version": "1.1.0",
 	"description": "Tag component for the NICE Design System",
 	"keywords": [
 		"tag"
@@ -34,15 +34,14 @@
 		"url": "https://github.com/nhsevidence/nice-design-system/issues"
 	},
 	"dependencies": {
-    "prop-types": "^15.7.2",
-    "classnames": "^2.2.6"
-  },
-  "peerDependencies": {
-    "react": "^16.11.0"
-  },
+		"classnames": "^2.2.6",
+		"prop-types": "^15.7.2"
+	},
+	"peerDependencies": {
+		"react": "^16.11.0"
+	},
 	"devDependencies": {
 		"@babel/cli": "^7.5.0"
-
 	},
 	"gitHead": "a4db68f43916ad6c4cb19612e10aae200e80b5a8"
 }

@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-horizontal-nav",
-	"version": "1.0.0-alpha.0",
+	"version": "1.0.0",
 	"description": "Horizontal navigation component for the NICE Design System",
 	"keywords": [
 		"navigation"
@@ -36,10 +36,10 @@
 	"dependencies": {
 		"classnames": "^2.2.6",
 		"prop-types": "^15.7.2"
-  },
-  "peerDependencies": {
-    "react": "^16.11.0"
-  },
+	},
+	"peerDependencies": {
+		"react": "^16.11.0"
+	},
 	"devDependencies": {
 		"@babel/cli": "^7.5.0"
 	},

@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-breadcrumbs",
-	"version": "1.0.25-alpha.0",
+	"version": "1.1.0",
 	"description": "Breadcrumbs component for the NICE Design System",
 	"keywords": [
 		"breadcrumbs"
@@ -35,10 +35,10 @@
 	},
 	"dependencies": {
 		"prop-types": "^15.7.2"
-  },
-  "peerDependencies": {
-    "react": "^16.11.0"
-  },
+	},
+	"peerDependencies": {
+		"react": "^16.11.0"
+	},
 	"devDependencies": {
 		"@babel/cli": "^7.5.0"
 	},

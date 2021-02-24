@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-action-banner",
-	"version": "1.0.23-alpha.0",
+	"version": "1.1.0",
 	"description": "Action banner component for the NICE Design System",
 	"keywords": [
 		"banner"
@@ -36,10 +36,10 @@
 	"dependencies": {
 		"@nice-digital/icons": "^2.1.1",
 		"prop-types": "^15.7.2"
-  },
-  "peerDependencies": {
-    "react": "^16.11.0"
-  },
+	},
+	"peerDependencies": {
+		"react": "^16.11.0"
+	},
 	"devDependencies": {
 		"@babel/cli": "^7.5.0"
 	},

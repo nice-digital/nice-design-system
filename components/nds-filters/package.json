@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-filters",
-	"version": "1.0.26-alpha.0",
+	"version": "1.1.0",
 	"description": "Filter components for the NICE Design System",
 	"author": "Ian Routledge <ian.routledge@nice.org.uk>",
 	"homepage": "https://nhsevidence.github.io/nice-design-system/",
@@ -16,8 +16,8 @@
 	"files": [
 		"lib",
 		"es",
-    "scss",
-    "*.d.ts"
+		"scss",
+		"*.d.ts"
 	],
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org/",
@@ -33,10 +33,10 @@
 	"dependencies": {
 		"@nice-digital/icons": "^2.1.1",
 		"prop-types": "^15.7.2"
-  },
-  "peerDependencies": {
-    "react": "^16.11.0"
-  },
+	},
+	"peerDependencies": {
+		"react": "^16.11.0"
+	},
 	"devDependencies": {
 		"@babel/cli": "^7.5.0"
 	},
