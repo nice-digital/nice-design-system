@@ -1,3 +1,5 @@
+:warning: This is the readme for v0. See https://design-system.nice.org.uk/ for the v1 documentation.
+
 # :art: NICE Design System
 
 > Your source for quickly creating consistent on-brand NICE digital services.
