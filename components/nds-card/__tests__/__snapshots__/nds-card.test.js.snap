@@ -1,0 +1,268 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should match snapshot with some default attributes 1`] = `
+Array [
+  <Card
+    headingElementType="h1"
+    headingText="Card heading text"
+    link={
+      Object {
+        "destination": "/about",
+        "elementType": "a",
+      }
+    }
+    metadata={
+      Array [
+        Object {
+          "label": "Email address",
+          "value": "john.smith@email.com",
+        },
+        Object {
+          "label": "Email address",
+          "value": "sarah.smith@email.com",
+        },
+      ]
+    }
+    summary="I'm just a string"
+  >
+    <article
+      className="card"
+    >
+      <CardBody
+        headingElementType="h1"
+        headingText="Card heading text"
+        link={
+          Object {
+            "destination": "/about",
+            "elementType": "a",
+          }
+        }
+        metadata={
+          Array [
+            Object {
+              "label": "Email address",
+              "value": "john.smith@email.com",
+            },
+            Object {
+              "label": "Email address",
+              "value": "sarah.smith@email.com",
+            },
+          ]
+        }
+        summary="I'm just a string"
+      >
+        <header
+          className="card__header"
+        >
+          <CardHeader
+            headingElementType="h1"
+            headingText="Card heading text"
+            link={
+              Object {
+                "destination": "/about",
+                "elementType": "a",
+              }
+            }
+          >
+            <h1
+              className="card__heading"
+            >
+              <a
+                href="/about"
+              >
+                Card heading text
+              </a>
+            </h1>
+          </CardHeader>
+        </header>
+        <p
+          className="card__summary"
+        >
+          I'm just a string
+        </p>
+        <dl
+          className="card__metadata"
+        >
+          <div
+            className="card__metadatum"
+            key="item0"
+          >
+            <dt
+              className="visually-hidden"
+            >
+              Email address
+            </dt>
+            <dd>
+              john.smith@email.com
+            </dd>
+          </div>
+          <div
+            className="card__metadatum"
+            key="item1"
+          >
+            <dt
+              className="visually-hidden"
+            >
+              Email address
+            </dt>
+            <dd>
+              sarah.smith@email.com
+            </dd>
+          </div>
+        </dl>
+      </CardBody>
+    </article>
+  </Card>,
+  <Card
+    headingElementType="h1"
+    headingText="Card heading text"
+    image={
+      <img
+        alt="Cute dog"
+        src="test.png"
+      />
+    }
+    link={
+      Object {
+        "destination": "/about",
+        "elementType": "a",
+      }
+    }
+    metadata={
+      Array [
+        Object {
+          "label": "Email address",
+          "value": "john.smith@email.com",
+        },
+        Object {
+          "label": "Email address",
+          "value": "sarah.smith@email.com",
+        },
+      ]
+    }
+    summary={
+      <span>
+        how 
+        <b>
+          bold
+        </b>
+         of you
+      </span>
+    }
+  >
+    <article
+      className="card"
+    >
+      <div
+        className="card__image"
+      >
+        <img
+          alt="Cute dog"
+          src="test.png"
+        />
+      </div>
+      <div
+        className="card__text"
+      >
+        <CardBody
+          headingElementType="h1"
+          headingText="Card heading text"
+          link={
+            Object {
+              "destination": "/about",
+              "elementType": "a",
+            }
+          }
+          metadata={
+            Array [
+              Object {
+                "label": "Email address",
+                "value": "john.smith@email.com",
+              },
+              Object {
+                "label": "Email address",
+                "value": "sarah.smith@email.com",
+              },
+            ]
+          }
+          summary={
+            <span>
+              how 
+              <b>
+                bold
+              </b>
+               of you
+            </span>
+          }
+        >
+          <header
+            className="card__header"
+          >
+            <CardHeader
+              headingElementType="h1"
+              headingText="Card heading text"
+              link={
+                Object {
+                  "destination": "/about",
+                  "elementType": "a",
+                }
+              }
+            >
+              <h1
+                className="card__heading"
+              >
+                <a
+                  href="/about"
+                >
+                  Card heading text
+                </a>
+              </h1>
+            </CardHeader>
+          </header>
+          <p
+            className="card__summary"
+          >
+            <span>
+              how 
+              <b>
+                bold
+              </b>
+               of you
+            </span>
+          </p>
+          <dl
+            className="card__metadata"
+          >
+            <div
+              className="card__metadatum"
+              key="item0"
+            >
+              <dt
+                className="visually-hidden"
+              >
+                Email address
+              </dt>
+              <dd>
+                john.smith@email.com
+              </dd>
+            </div>
+            <div
+              className="card__metadatum"
+              key="item1"
+            >
+              <dt
+                className="visually-hidden"
+              >
+                Email address
+              </dt>
+              <dd>
+                sarah.smith@email.com
+              </dd>
+            </div>
+          </dl>
+        </CardBody>
+      </div>
+    </article>
+  </Card>,
+]
+`;

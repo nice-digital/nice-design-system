@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumbs should match snapshot for multiple levels 1`] = `
+<Fragment>
+  <nav
+    aria-label="Breadcrumbs"
+    role="navigation"
+  >
+    <ol
+      className="breadcrumbs"
+    >
+      <Breadcrumb
+        elementType="a"
+        to="/"
+      >
+        Home
+      </Breadcrumb>
+      <Breadcrumb
+        elementType="a"
+        to="/topics/"
+      >
+        Topics
+      </Breadcrumb>
+      <Breadcrumb
+        elementType="a"
+      >
+        Page
+      </Breadcrumb>
+    </ol>
+  </nav>
+  <script
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "{
+  \\"@context\\": \\"http://schema.org\\",
+  \\"@type\\": \\"BreadcrumbList\\",
+  \\"itemListElement\\": [
+    {
+      \\"@type\\": \\"ListItem\\",
+      \\"position\\": 1,
+      \\"item\\": {
+        \\"@id\\": \\"/\\",
+        \\"name\\": \\"Home\\"
+      }
+    },
+    {
+      \\"@type\\": \\"ListItem\\",
+      \\"position\\": 2,
+      \\"item\\": {
+        \\"@id\\": \\"/topics/\\",
+        \\"name\\": \\"Topics\\"
+      }
+    },
+    {
+      \\"@type\\": \\"ListItem\\",
+      \\"position\\": 3,
+      \\"item\\": {
+        \\"name\\": \\"Page\\"
+      }
+    }
+  ]
+}",
+      }
+    }
+    type="application/ld+json"
+  />
+</Fragment>
+`;
+
+exports[`Breadcrumbs should match snapshot for single level 1`] = `
+<Fragment>
+  <nav
+    aria-label="Breadcrumbs"
+    role="navigation"
+  >
+    <ol
+      className="breadcrumbs"
+    >
+      <Breadcrumb
+        elementType="a"
+        to="/"
+      >
+        Home
+      </Breadcrumb>
+      <Breadcrumb
+        elementType="a"
+      >
+        Page
+      </Breadcrumb>
+    </ol>
+  </nav>
+  <script
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "{
+  \\"@context\\": \\"http://schema.org\\",
+  \\"@type\\": \\"BreadcrumbList\\",
+  \\"itemListElement\\": [
+    {
+      \\"@type\\": \\"ListItem\\",
+      \\"position\\": 1,
+      \\"item\\": {
+        \\"@id\\": \\"/\\",
+        \\"name\\": \\"Home\\"
+      }
+    },
+    {
+      \\"@type\\": \\"ListItem\\",
+      \\"position\\": 2,
+      \\"item\\": {
+        \\"name\\": \\"Page\\"
+      }
+    }
+  ]
+}",
+      }
+    }
+    type="application/ld+json"
+  />
+</Fragment>
+`;
+
+exports[`Breadcrumbs should minify json ld in production 1`] = `
+<script
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "{\\"@context\\":\\"http://schema.org\\",\\"@type\\":\\"BreadcrumbList\\",\\"itemListElement\\":[{\\"@type\\":\\"ListItem\\",\\"position\\":1,\\"item\\":{\\"@id\\":\\"/\\",\\"name\\":\\"Home\\"}},{\\"@type\\":\\"ListItem\\",\\"position\\":2,\\"item\\":{\\"name\\":\\"Page\\"}}]}",
+    }
+  }
+  type="application/ld+json"
+/>
+`;

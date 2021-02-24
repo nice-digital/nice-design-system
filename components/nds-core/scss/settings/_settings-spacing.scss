@@ -1,0 +1,43 @@
+////
+/// @group spacing
+////
+
+/// Extra extra small spacing
+/// @since 0.2.0
+$nds-spacing-xx-small: 2;
+
+/// Extra small spacing
+/// @since 0.2.0
+$nds-spacing-x-small: 4;
+
+/// Small spacing
+/// @since 0.2.0
+$nds-spacing-small: 8;
+
+/// Medium spacing
+/// @since 0.2.0
+$nds-spacing-medium: 16;
+
+/// Large spacing
+/// @since 0.2.0
+$nds-spacing-large: 32;
+
+/// Extra large spacing
+/// @since 0.2.0
+$nds-spacing-x-large: 48;
+
+/// Extra extra large spacing
+/// @since 0.2.0
+$nds-spacing-xx-large: 64;
+
+/// A map of spacing values
+/// @since 0.2.15
+$nds-spacings: (
+  xx-small: $nds-spacing-xx-small,
+  x-small: $nds-spacing-x-small,
+  small: $nds-spacing-small,
+  medium: $nds-spacing-medium,
+  large: $nds-spacing-large,
+  x-large: $nds-spacing-x-large,
+  xx-large: $nds-spacing-xx-large
+);

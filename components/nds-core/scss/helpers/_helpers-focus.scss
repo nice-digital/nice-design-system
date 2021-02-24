@@ -1,0 +1,25 @@
+////
+/// @group helpers
+////
+
+/// The default focus style used for elements like anchors and buttons. rounded version used for elements that have a border radius
+/// @param {Boolean} $rounded whether to use box shadow for border (outline can't be styled to have radius corners)
+/// @output the default focus styles ie background colour and outline
+/// @since 0.1.0
+@mixin nds-default-focus-style($rounded: false) {
+  @if $rounded {
+    box-shadow: 0 0 0 rem($nds-spacing-x-small) $nds-colour-focus;
+    outline: $nds-spacing-x-small solid transparent;
+    outline-offset: $nds-spacing-x-small;
+  } @else {
+    outline: rem($nds-spacing-x-small) solid $nds-colour-focus;
+  }
+}
+
+/// The inverse focus style used for elements like anchors and buttons
+/// on an inverse (dark) background
+/// @output the inverse focus styles ie background colour and outline
+/// @since 0.3.1
+@mixin nds-inverse-focus-style {
+  outline: rem($nds-spacing-x-small) solid $nds-colour-focus-inverse;
+}

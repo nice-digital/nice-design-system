@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumb should match snapshot for anchor 1`] = `
+<li
+  className="breadcrumbs__crumb"
+>
+  <a
+    href="/"
+  >
+    Home
+  </a>
+</li>
+`;
+
+exports[`Breadcrumb should match snapshot for no location 1`] = `
+<li
+  className="breadcrumbs__crumb"
+>
+  <span>
+    Home
+  </span>
+</li>
+`;
+
+exports[`Breadcrumb should use tag prop to render custom link tag 1`] = `
+<li
+  className="breadcrumbs__crumb"
+>
+  <a
+    href="/"
+    tag={[Function]}
+  >
+    Home
+  </a>
+</li>
+`;

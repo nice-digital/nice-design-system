@@ -1,0 +1,60 @@
+@import '~@nice-digital/nds-core/scss/core';
+
+////
+/// @group components
+////
+
+/// In page nav
+.in-page-nav {
+  margin: rem(0 0 $nds-spacing-large);
+
+  // The 'on this page' title
+  &__title {
+    @include nds-font-size(h4);
+    margin-top: 0;
+  }
+
+  // Lists (both root level and sub level)
+  &__list {
+    list-style: disc;
+    margin-left: em($nds-spacing-medium);
+
+    .in-page-nav__list {
+      list-style: circle;
+    }
+
+    [aria-hidden='true'] {
+      display: none;
+    }
+  }
+
+  a {
+    &:visited {
+      color: $nds-colour-link;
+    }
+
+    &:focus {
+      background: none;
+    }
+  }
+
+  @include mq($from: md) {
+    margin: 0;
+
+    // Docked to the top of the screen
+    &--fixed {
+      position: fixed;
+      top: 0;
+
+      .in-page-nav__title {
+        margin-top: rem($nds-spacing-small);
+      }
+    }
+
+    a {
+      &[aria-current='location'] {
+        font-weight: bold;
+      }
+    }
+  }
+}

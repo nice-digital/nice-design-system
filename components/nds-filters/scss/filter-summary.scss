@@ -1,0 +1,50 @@
+////
+/// @group components
+////
+
+/// Filter summary info shows at the top of a list of results and
+/// contains the count and sort options.
+/// .results-info deprecated in 1.0.0, use .filter-summary
+.filter-summary,
+.results-info {
+  @include nds-clearfix;
+  margin: rem(0 0 $nds-spacing-medium);
+
+  &__count {
+    @include nds-font-size(h5);
+    font-weight: bold;
+    margin: rem(0 0 $nds-spacing-small);
+  }
+
+  &__sort {
+    margin: 0;
+  }
+
+  &__filters {
+    clear: both;
+    list-style: none;
+    margin: 0;
+    padding-top: rem($nds-spacing-small);
+  }
+
+  @include mq($from: sm) {
+    margin: rem(0 0 $nds-spacing-medium);
+
+    &__count {
+      float: left;
+      margin: 0;
+      width: 50%;
+    }
+
+    &__sort {
+      float: right;
+      text-align: right;
+      width: 50%;
+    }
+
+    &__filter {
+      display: inline-block;
+      margin-right: rem($nds-spacing-x-small);
+    }
+  }
+}

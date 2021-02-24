@@ -1,0 +1,48 @@
+////
+/// @group components
+////
+
+@import '~@nice-digital/nds-core/scss/core';
+
+/// breadcrumbs
+/// See https://www.w3.org/WAI/WCAG20/Techniques/working-examples/G65/ex3.html
+/// @since 0.1.0
+.breadcrumbs {
+  @include nds-font-size(0);
+  @include nds-hide-print;
+  list-style: none;
+  margin: em($nds-spacing-small 0 $nds-spacing-large);
+  max-width: 100%;
+  padding: 0;
+
+  &__crumb {
+    display: inline-block;
+
+    &:before {
+      content: nds-get-glyph(greater-than);
+      font-size: 80%;
+      margin: em(0 $nds-spacing-x-small);
+    }
+
+    &:first-child:before {
+      display: none;
+    }
+  }
+
+  a {
+    color: $nds-colour-text;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:focus {
+      color: $nds-colour-link-focus-text;
+    }
+
+    &:active {
+      color: $nds-colour-link-active;
+    }
+  }
+}

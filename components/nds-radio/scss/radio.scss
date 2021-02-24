@@ -1,0 +1,101 @@
+@import '~@nice-digital/nds-core/scss/core';
+
+$radio-base-size: rem($nds-spacing-large);
+
+.radio {
+  @include nds-clearfix;
+  clear: left;
+  display: block;
+  margin-bottom: rem($nds-spacing-small);
+  padding-left: $radio-base-size + rem($nds-spacing-medium);
+  position: relative;
+
+  &__input {
+    cursor: pointer;
+    height: $radio-base-size;
+    left: 0;
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: $radio-base-size;
+
+    &:disabled + label:before,
+    &:disabled + label:after {
+      opacity: 0.3 !important;
+    }
+
+    &:checked + label:after {
+      opacity: 1;
+    }
+
+    &:focus {
+      & + label:before {
+        @include nds-default-focus-style(true);
+      }
+    }
+  }
+
+  &__label {
+    @include nds-font-size(p);
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+    margin-bottom: rem($nds-spacing-x-small);
+    padding: rem($nds-spacing-x-small) 0;
+
+    &:before {
+      // outside circle
+      border: rem($nds-spacing-xx-small) solid $nds-colour-nice-black;
+      border-radius: 50%;
+      content: '';
+      height: $radio-base-size;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: $radio-base-size;
+    }
+
+    &:after {
+      // center dot
+      background: $nds-colour-nice-black;
+      border-radius: 50%;
+      content: '';
+      height: rem($nds-spacing-medium);
+      left: rem($nds-spacing-small);
+      opacity: 0;
+      position: absolute;
+      top: rem($nds-spacing-small);
+      width: rem($nds-spacing-medium);
+    }
+  }
+
+  &__hint {
+    color: $nds-colour-nice-dark-grey;
+    margin-bottom: rem($nds-spacing-small);
+    margin-top: rem($nds-spacing-x-small);
+  }
+
+  &__error-message {
+    color: $nds-colour-error;
+    font-weight: bold;
+  }
+
+  &--error .radio__label,
+  &--error .radio__label {
+    color: $nds-colour-error;
+    &:before {
+      @include nds-default-error-style(true);
+    }
+  }
+
+  &--inline {
+    display: inline-block;
+    margin-right: rem($nds-spacing-medium);
+    vertical-align: top;
+
+    input {
+      margin-right: rem($nds-spacing-x-small);
+    }
+  }
+}

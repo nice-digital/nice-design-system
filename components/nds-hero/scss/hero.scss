@@ -1,0 +1,67 @@
+@import '~@nice-digital/nds-core/scss/core';
+////
+/// @group components
+////
+
+/// Hero banner component.
+/// @since 0.2.0
+.hero {
+  @include nds-links-inverse;
+  background: $nds-colour-hero-background;
+  color: $nds-colour-text-inverse;
+  left: calc(50%);
+  margin-bottom: rem($nds-spacing-large);
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  position: relative;
+  right: calc(50%);
+  width: 100vw;
+
+  &__container {
+    @include nds-container;
+  }
+
+  &__body {
+    @include nds-clearfix;
+    margin-top: rem($nds-spacing-large);
+    padding: rem(0 0 $nds-spacing-large);
+  }
+
+  // Container for title, lead and actions
+  &__copy {
+    margin-bottom: rem($nds-spacing-large);
+  }
+
+  &__title {
+    @include nds-h1;
+  }
+
+  &__intro {
+    @include nds-lead;
+  }
+
+  // Optional footer
+  &__footer {
+    border-top: rem($nds-spacing-xx-small) solid $nds-colour-hero-border;
+    padding: rem($nds-spacing-medium 0);
+
+    p,
+    ul {
+      margin: 0;
+    }
+  }
+
+  @include mq($from: md) {
+    &__copy {
+      float: left;
+      margin-bottom: 0;
+      width: 55%;
+    }
+
+    &__extra {
+      float: right;
+      width: 35%;
+    }
+  }
+}

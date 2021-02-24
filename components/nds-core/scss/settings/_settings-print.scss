@@ -1,0 +1,5 @@
+/// Whether to output a default set of generic print styles for things
+/// like avoiding page breaks after headings etc. If you disabled this,
+/// be sure to add your own print styles.
+/// @since 0.2.0
+$nds-output-default-print-styles: true !default;

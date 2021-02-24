@@ -1,0 +1,12 @@
+////
+/// @group components
+////
+
+/// Container placeholder.
+/// @since 1.0.0
+@mixin nds-container {
+  margin: auto;
+  max-width: rem($nds-container-max-width);
+  width: 96%; // Fallback for non-calc browsers e.g. IE8, see https://caniuse.com/#feat=calc
+  width: calc(100% - #{rem($nds-container-gutter * 2)});
+}

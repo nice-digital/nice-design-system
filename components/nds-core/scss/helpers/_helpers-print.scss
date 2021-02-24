@@ -1,0 +1,35 @@
+////
+/// @group helpers
+////
+
+/// Styles to hide and show under the print media query
+
+/// Hide the element when printing
+/// @output the CSS to hide on the print stylesheet
+/// @since 1.0.0
+@mixin nds-hide-print {
+  @media print {
+    display: none !important;
+  }
+}
+
+///Only show the element when printing (not for other media)
+/// @output the CSS to hide on all media except print
+/// @since 1.0.0
+@mixin nds-show-print {
+  display: none !important;
+  @media print {
+    display: block !important;
+  }
+}
+
+///Remove an appended link URL
+/// @output removes content attribute
+/// @since 1.0.0
+@mixin nds-remove-appended-print-link {
+  @media print {
+    &:after {
+      content: none !important;
+    }
+  }
+}

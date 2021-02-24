@@ -1,0 +1,17 @@
+@import '~@nice-digital/nds-core/scss/core';
+
+.prev-next {
+  &__link {
+    display: block;
+    margin-bottom: 1rem;
+    text-decoration: none;
+  }
+  &__link-intro {
+    display: block;
+    font-weight: bold;
+  }
+  &__link-text {
+    display: block;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "name": "@nice-digital/nds-grid",
+  "version": "1.0.19-alpha.0",
+  "description": "Grid component for the NICE Design System",
+  "keywords": [
+    "grid"
+  ],
+  "author": "Ian Routledge <ian.routledge@nice.org.uk>",
+  "homepage": "https://nhsevidence.github.io/nice-design-system/",
+  "license": "MIT",
+  "main": "lib/Grid.js",
+  "module": "es/Grid.js",
+  "style": "scss/grid.scss",
+  "types": "nds-grid.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib",
+    "es",
+    "scss",
+    "*.d.ts"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhsevidence/nice-design-system.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/nhsevidence/nice-design-system/issues"
+  },
+  "dependencies": {
+    "@nice-digital/nds-core": "^1.0.23-alpha.0",
+    "classnames": "^2.2.6",
+    "prop-types": "^15.7.2"
+  },
+  "peerDependencies": {
+    "react": "^16.11.0"
+  }
+}

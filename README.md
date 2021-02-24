@@ -1,224 +1,142 @@
 # :art: NICE Design System
 
-> Your source for quickly creating consistent on-brand NICE digital services.
+> Lerna-managed monorepo for the NICE Design System
 
 [![npm](https://img.shields.io/npm/v/@nice-digital/design-system.svg)](https://www.npmjs.com/package/@nice-digital/design-system)
-[![Bower](https://img.shields.io/bower/v/nice-design-system.svg)](http://bower.io/search?q=nice-design-system)
-[![GitHub release](https://img.shields.io/github/release/nice-digital/nice-design-system.svg)](https://github.com/nice-digital/nice-design-system)
-[![License](https://img.shields.io/github/license/nice-digital/nice-design-system.svg)](https://github.com/nice-digital/nice-design-system/blob/master/LICENSE)
-[![Dependencies](https://img.shields.io/david/nice-digital/nice-design-system.svg)](https://david-dm.org/nice-digital/nice-design-system)
-[![Dev dependencies](https://img.shields.io/david/dev/nice-digital/nice-design-system.svg)](https://david-dm.org/nice-digital/nice-design-system?type=dev)
+[![GitHub release](https://img.shields.io/github/release/nhsevidence/nice-design-system.svg)](https://github.com/nhsevidence/nice-design-system)
+[![License](https://img.shields.io/github/license/nhsevidence/nice-design-system.svg)](https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
+[![Dependencies](https://img.shields.io/david/nhsevidence/nice-design-system.svg)](https://david-dm.org/nhsevidence/nice-design-system)
+[![Dev dependencies](https://img.shields.io/david/dev/nhsevidence/nice-design-system.svg)](https://david-dm.org/nhsevidence/nice-design-system?type=dev)
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
 <details>
 <summary><strong>Table of contents</strong></summary>
 
-- [What is it?](#what-is-it)
-- [Browser support](#browser-support)
-- [Project structure](#project-structure)
-- [Development](#development)
-	- [Getting started](#getting-started)
-		- [npm](#npm)
-		- [Grunt](#grunt)
-	- [JavaScript](#javascript)
-	- [SASS](#sass)
-	- [Icons](#icons)
-- [Test](#tests)
-- [Installation](#installation)
-	- [CDN](#nice-cdn)
-	- [Install with yarn](#install-with-yarn)
-	- [Usage](#usage)
-		- [From source](#from-source)
-		- [CDN](#cdn)
-		- [Precompiled](#precompiled)
+- [:art: NICE Design System](#art-nice-design-system)
+	- [What is it?](#what-is-it)
+	- [Development](#development)
+		- [Quick start](#quick-start)
+		- [Slow start](#slow-start)
+		- [Storybook](#storybook)
+		- [Tests](#tests)
+		- [Documentation](#documentation)
+		- [Commands](#commands)
+			- [Publishing to npm](#publishing-to-npm)
+	- [Upgrading to 1.x from 0.x](#upgrading-to-1x-from-0x)
 </details>
 
 ## What is it?
 
-NICE Design System is a replacement for [NICE.Bootstrap](https://github.com/nice-digital/NICE.Bootstrap/). It's a design system, front-end toolkit and pattern library for rapidly building modern, accessible web apps that are consistent with the NICE brand guidelines.
+NICE Design System is a pattern library, front-end toolkit and set of guidelines for rapidly building modern, accessible digital services that are consistent with the NICE brand guidelines.
 
-## Browser support
-
-| IE/Edge | Chrome | Firefox | Safari | Safari (iOS) | Android | 
-| ------- | ------ | ------- | ------ | ------------ | ------- |
-| ![Internet Explorer](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.2.0/internet-explorer/internet-explorer_48x48.png) | ![Chrome](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.2.0/chrome/chrome_48x48.png) | ![Firefox](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.2.0/firefox/firefox_48x48.png) | ![Safari](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.2.0/safari/safari_48x48.png) | ![Safari (iOS)](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.2.0/safari-ios/safari-ios_48x48.png) | ![Android](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/35.2.0/android/android_48x48.png) |
-| 8+ | 52+ | 47+ | Latest | Latest | Latest |
-
-And all other modern browsers
-
-We support IE8 because of our audience - traffic to nice.org.uk as of 22/09/2016:
-
-- 15.80% - IE11
-- 5.08% - IE8
-- 2.61% - IE9
-- 1.78% - IE10
-- 0.56% - IE7
-
-To support older IE we have separate builds of our JS and CSS.
-
-## Accessibility
-
-NICE Design System has been built with accessibility in mind and is built to conform to WCAG 2.0 AA. 
-
-See https://www.nice.org.uk/accessibility for more information on NICE's policy.
-
-## Project structure
-
-| Folder | Description |
-| ---- | ----------- |
-| [.github](.github) | [Github templates folder](https://help.github.com/articles/helping-people-contribute-to-your-project/) |
-| [.grunt-tasks](.grunt-tasks) | Grunt task configs loaded in from Gruntfile.js |
-| [dist](dist) | Built files for distribution with each new version |
-| [src](src) | The main source |
-| - [src/assets](src/assets) | Common static assets |
-| - [src/components](src/components) | Components (SASS/JS/Nunjucks view/test) |
-| - [src/javascripts](src/javascripts) | Main JavaScript source + [JSDoc config](src/javascripts/.jsdoc.json) and [ESLint config](src/javascripts/.eslintrc) |
-| - [src/stylesheets](src/stylesheets) | Main SASS + [SASS Lint config](src/stylesheets/.sass-lint.yml) + [SASS Doc custom theme](src/stylesheets/.sassdoc-nice-theme.js) |
-| [server](server) | Express dev server, views etc for testing and building components |
-| [test](test) | Test setup and unit tests |
+It is a replacement for [NICE.Bootstrap](https://github.com/nhsevidence/NICE.Bootstrap/).
 
 ## Development
 
-### Getting started
+We recommend using vscode as the IDE when developing with the NICE Design System. We have a set of [recommended extensions](.vscode/extensions.json) you should install to make development easier. You should be prompted to install these when opening the folder in vscode.
 
-	TL;DR:
-		1. `yarn`
-		3. `npm start`
+### Quick start
 
-To run the dev server and tests on your local machine, first install:
+    TL;DR:
+    	1. Install Node 8.9+
+    	2. `npm i`
+    	3. `npm start`
+    	4. http://localhost:3000/
 
-- [Node 6+](https://nodejs.org/en/download/)
-- [Yarn](https://yarnpkg.com/en/docs/install)
+### Slow start
 
-Then before you can run any tasks, run the following from the command line to install dependencies:
+To run the design system site and tests locally, first install the required dependencies:
 
-- `yarn`
+- [Node 8.9+](https://nodejs.org/en/download/)
+- [npm 5+](https://www.npmjs.com/)
 
-> Note: if you prefer to use npm rather than yarn, run `npm i` instead.
+Then before you can run any tasks, run `npm i` from the command line to install dependencies from npm. This will also 'link local packages together and install remaining package dependencies'.
 
-We use Grunt as a task runner hence the dependency on Node. If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide first.
+> Want to know more details? This runs `lerna bootstrap` under the hood as a `postinstall` command - see [the lerna bootstrap docs](https://github.com/lerna/lerna/tree/master/commands/bootstrap#readme) for more info.
 
-Run `npm start` from the command line for development which will:
+Next, run `npm start` from the command line to run a server for local development, and view http://localhost:3000/ in a browser.
 
-- run tests
-- lint JavaScript and SCSS
-- build the required assets (JS/CSS/web fonts)
-- serve the development site
-- watch for change to source files
+### Storybook
 
-There are also other commands you can run:
+[Storybook](https://storybook.js.org/) is an open source tool for developing UI components in isolation. Run it locally by running `npm run storybook` on the command line. Edit *.stories.js* files to manage storybook stories.
 
-#### npm
+### Tests
 
-Run `npm start` and `npm run test:watch` for development. However, there are other npm scripts available to be run for other tasks:
+All the components have tests, written in Jest. Run `test:unit:watch` to run unit tests and watch for changes.
 
-| Task | Description |
-| ---- | ----------- |
-| `npm start`           | Simply runs `grunt` under the hood |
-| `npm run dist`           | Builds the projects in distribution mode for release |
-| `npm run dist:teamcity`           | Builds the projects in distribution mode for release via teamcity |
-| `npm test`            | Runs JS tests |
-| `npm test:teamcity`            | Runs JS tests (with the [mocha-teamcity-reporter](https://www.npmjs.com/package/mocha-teamcity-reporter))|
-| `npm run test:watch`  | Runs JS test tests (with [min reporter](https://github.com/mochajs/mocha/blob/master/lib/reporters/min.js)) and watches for changes. Useful to run in development alongside grunt. |
-| `npm run test:coverage`  | Runs JS test tests and generates a coverage report with [Istanbul](https://istanbul.js.org/) into the *coverage* folder |
-| `test:coverage:teamcity` | Runs JS test tests and generates a coverage report with [Istanbul](https://istanbul.js.org/) (using the [mocha-teamcity-reporter](https://www.npmjs.com/package/mocha-teamcity-reporter)). |
-| `npm run lint`        | Lints SASS and JS (uses `grunt lint` under the hood) |
+To run tests for a just a single component, run the following:
 
-| `npm run release`        | Builds the assets in dist mode, increments package.json patch version, pushes a new git tag, creates a GitHub release (with release notes from commits since last release) and creates an npm release. |
-| `npm run release:minor` | Does the same as release but with a minor version |
-
-
-#### Grunt
-
-Some of the npm scripts use Grunt tasks under the hood. These Grunt tasks (and aliases) can be run directly e.g. `grunt lint`. However, we recommend using the npm scripts themselves. See the task aliases in [Gruntfile.js#L35-L47](Gruntfile.js) for more information.
-
-### JavaScript
-
-See the [javascript](src/javascripts#readme) folder for more information.
-
-### SASS
-
-See the [stylesheets](src/stylesheets#readme) folder for more information.
-
-### Icons
-
-Icons are used via a separate package, [NICE Icons](https://github.com/nice-digital/nice-icons#readme).
-
-## Tests
-
-See the [test](test) folder for more information.
-
-## Installation
-
-### Install with yarn
-
-[yarn](https://yarnpkg.com/en/package/@nice-digital/design-system) is the recommended way of installing the NICE Design System into your project. Run the following from the command line to install it as a dependency:
-
-`yarn add @nice-digital/design-system -D`
-
-Then follow the [usage](#usage) steps below...
-
-> Note: if you prefer to use npm rather than yarn, run npm `npm i @nice-digital/design-system --save` instead.
-
-> Note: The [Design System is on Bower](https://bower.io/search/?q=nice-design-system), but this installation method is unsupported.
-
-The installed package contains:
-
-- source SASS
-- pre-compiled (dist) CSS
-- source (ES6) JavaScript
-- pre-compiled (dist) JavaScript
-- static assets like favicon and logo.
-
-Note: The icon font is referenced as a dependency from [@nice-digital/icons](https://github.com/nice-digital/nice-icons#readme).
-
-### Usage
-
-#### From source
-
-The yarn/npm package contains the source code as well as the precompiled assets.
-
-See the [stylesheets directory](src/stylesheets#installation) for further information on how to build from SASS source in your project.
-
-See the [javascripts directory](src/javascripts#installation) for further information on how to build from JavaScript source in your project.
-
-#### CDN
-
-- Useful for rapid prototyping
-- no need for CSS/JS build steps: just reference the pre-compiled CSS/JS
-- uses compiled CSS so loses the benefit of SASS mixins, function and variables
-- you get everything: you can’t pick and choose just what you need
-- not recommended for production setups.
-
-*CDN is coming soon…*
-
-#### Precompiled
-
-Not recommended for production, but useful for quick prototypes, the npm package includes a dist folder with precompiled assets.
-
-You can reference directly if you have the correct permissions:
-
-```html
-<!-- Font from Google & compiled/minified CSS -->
-<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700" rel="stylesheet">
-<link rel="stylesheet" href="/node_modules/@nice-digital/design-system/dist/stylesheets/nice.min.css">
-
-<!-- jQuery from CDN & compiled/minified JavaScript -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="/node_modules/@nice-digital/design-system/dist/javascripts/nice.min.js"></script>
+```sh
+npm run test:unit:watch -- breadcrumbs
 ```
 
-OR if you're using express you can use the dist folder as a static directory:
+### Documentation
 
-```javascript
-app.use(express.static(__dirname + "/node_modules/@nice-digital/design-system/dist/"));
-app.use(express.static(__dirname + "/node_modules/@nice-digital/icons/dist/"));
+The docs site is built with [Gatsby](https://www.gatsbyjs.org/), a state site generator that uses React. You can use `npm run docs:dev` to run locally with live reloading. See the [Commands](#commands) table for other commands.
+
+### Commands
+
+Run `npm start` and `test:unit:watch` for development. However, there are other npm scripts available to be run for other tasks:
+
+| Task                         | Description                                                 |
+| ---------------------------- | ----------------------------------------------------------- |
+| `npm start`                  | Runs a server for local development and watches for changes |
+| `npm run bootstrap`          | Runs `lerna bootstrap` under the hood                       |
+| `npm run lerna`              | Runs `lerna` under the hood                                 |
+| `npm run release`            | Runs `lerna publish` under the hood                         |
+| `npm run storybook`          | Runs the storybook web app locally                          |
+| `npm run storybook:build`    | Builds a compiled storybook site                            |
+| `npm test`                   | Lints JS and SCSS and runs JS unit tests                    |
+| `npm run test:unit`          | Runs JS unit tests                                          |
+| `npm run test:unit:watch`    | Runs JS test tests and watches for changes to re-run tests  |
+| `npm run test:unit:coverage` | Runs JS test tests and generates a coverage report          |
+| `npm run lint`               | Lints both JS and SCSS                                      |
+| `npm run lint:js`            | Lints just JS                                               |
+| `npm run lint:scss`          | Lints just SCSS                                             |
+| `npm run docs:dev`           | Start development server for Gatsby documentation site      |
+| `npm run docs:serve`         | Serve the built docs site locally for testing               |
+| `npm run docs:build`         | Build out the docs static site for deployment               |
+
+> Note: because lerna is installed locally, you can use `npm run lerna -- ` to run lerna commands, for example `npm run lerna -- add @nice-digital/icons --scope=@nice-digital/nds-filters`
+
+#### Publishing to npm
+
+First, make sure you're logged in to npm on the command line by running `npm whoami`.
+
+> Please make sure 2FA is enabled on your account for at least auth, and preferably writes as well.
+
+Next, check you have access to the @nice-digital org on npm by running `npm org ls nice-digital USERNAME`. It should list your username and role. You should have at least the *developers* role, which wiLl give you write access.
+
+Then run `npm run release` to publish to npm. This runs `lerna publish` under the hood, which means you can pass in [additional command arguments](https://github.com/lerna/lerna/tree/master/commands/publish#readme). For example to release to npm with an alpha [dist tag](https://docs.npmjs.com/cli/dist-tag), run the following:
+
+```sh
+npm run release -- --dist-tag alpha
 ```
 
-and then reference it from your HTML as:
+## Upgrading to 1.x from 0.x
 
-```html
-<link rel="stylesheet" href="/stylesheets/nice.min.css" type="text/css">
-<script src="/javascripts/nice.min.js"></script>
-```
+These are the following breaking changes from 0.x to 1.x:
 
-OR you can use a copy command (with Grunt or similar) to copy the compiled assets out of the *node_modules* folder to somewhere where you can serve them.
+- SASS paths (~ with absolute paths)
+- scss folder rather than stylesheets
+- sass-lint -> style lint
+- dist folder??
+- jquery versions
+- removed border-box mixin - assume we're using autoprefixer
+- removed footer component - part of TopHat v2
+- removed `important` mixin - overkill
+- dropped styling overrides for TopHat: hiding on print and bottom margin override are removed
+- removed default-box-sixing - now applied directly to html element
+- removed remove-mz-focus-inner mixin
+- removed hacks folder
+- recommend npm rather than yarn
+- drop support for Bower
+- remove grunt and use npm scripts
+- Node 8.9+ requried for local development (because CSS modules 3 requires 8.9+)
+- drop support for Sublime as an IDE - prefer vscode
+- removed nunjucks templates, we now recommend using React components
+- removed the inverse panel
+- prefixed all mixin, functions, variables and classes with _nds-_ e.g. `container` is now `nds-container`
+- moved component-specific colour variables out of core into their respective component SCSS. Also renamed appropriately e.g.`$colour-panel-default` and `$colour-panel-default-border` are now in @nice-digital/nds-panel and renamed to `$nds-colour-panel-default-background` and `$nds-colour-panel-default-border`
+- removed `nds-element` and `nds-modifier` and their aliases `nds-e` and `nds-m` as they were never used
+- Removed all placeholders and replaced with mixins

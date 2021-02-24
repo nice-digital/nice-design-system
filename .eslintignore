@@ -1,0 +1,16 @@
+# /node_modules/* and /bower_components/* ignored by default
+# See http://eslint.org/docs/user-guide/configuring#ignoring-files-and-directories
+
+node_modules
+dist/*
+!.grunt-tasks*
+dev-app
+
+lib
+es
+
+# Remove false linting errors from type definitions
+**/*.d.ts
+
+
+packages/docs/public/**/*.*

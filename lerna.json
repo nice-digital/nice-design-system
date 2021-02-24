@@ -1,0 +1,7 @@
+{
+	"command": {
+		"bootstrap": { "npmClientArgs": ["--no-package-lock"] }
+	},
+	"packages": ["components/*", "packages/*"],
+	"version": "independent"
+}

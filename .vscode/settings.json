@@ -1,0 +1,24 @@
+{
+	"editor.formatOnSave": true,
+	"editor.rulers": [80],
+	"prettier.endOfLine": "lf",
+	"files.eol": "\n",
+	"css.validate": false,
+	"less.validate": false,
+	"scss.validate": false,
+	"files.exclude": {
+		"packages/*/es": true,
+		"packages/*/lib": true,
+		"packages/*/dist": true,
+		".cache": true,
+		".nyc_output": true,
+		"coverage": true,
+		"dist": true,
+		"temp": true
+	},
+	"workbench.colorCustomizations": {
+		"activityBar.background": "#45503B",
+		"titleBar.activeBackground": "#45503B",
+		"titleBar.activeForeground": "#F9FCFC"
+	}
+}

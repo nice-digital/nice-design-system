@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageHeader should allow a component to be passed as a prop 1`] = `
+<div
+  className="page-header"
+>
+  <h1
+    className="page-header__heading"
+  >
+    This is our heading
+  </h1>
+  <p
+    className="page-header__cta"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Click Me
+    </button>
+  </p>
+</div>
+`;
+
+exports[`PageHeader should match the snapshot with all props supplied 1`] = `
+<div
+  className="page-header"
+>
+  <h1
+    className="page-header__heading"
+  >
+    <span
+      className="page-header__pre-heading"
+    >
+      Systemic lupus erythematosus
+    </span>
+    Products
+  </h1>
+  <p
+    className="page-header__lead"
+  >
+    A list of all our products on systemic lupus erythematosus
+  </p>
+  <p
+    className="page-header__cta"
+  >
+    See more below
+  </p>
+</div>
+`;
+
+exports[`PageHeader should match the snapshot with only required heading prop supplied 1`] = `
+<div
+  className="page-header"
+>
+  <h1
+    className="page-header__heading"
+  >
+    This is our heading
+  </h1>
+</div>
+`;

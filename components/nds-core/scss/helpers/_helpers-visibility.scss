@@ -1,0 +1,37 @@
+////
+/// @group helpers
+////
+
+//## Mixins
+
+/// Portrait media query
+@mixin nds-portrait {
+  @media screen and (orientation: portrait) {
+    @content;
+  }
+}
+
+/// Landscape media query
+@mixin nds-landscape {
+  @media screen and (orientation: landscape) {
+    @content;
+  }
+}
+
+/// Makes an element visually hidden, but still accessible to keyboards and assistive devices.
+@mixin nds-invisible {
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+}
+
+/// Reverses the CSS output created by the `invisible()` mixin.
+@mixin nds-invisible-off {
+  clip: auto;
+  height: auto;
+  overflow: visible;
+  position: static !important;
+  width: auto;
+}

@@ -1,0 +1,148 @@
+////
+/// @group Typography
+////
+
+/// Gets a font family from the `$nds-font-families` map, given a name
+/// @param {String} $stack The stack name e.g. sans, serif or mono
+/// @since 0.1.0
+@function nds-get-font-family($stack) {
+  $result: map-get($nds-font-families, $stack);
+  @return unquote($result);
+}
+
+/// Gets a numeric scale
+/// @param $scale {Integer|Name} The integer ratio or named font-size.
+/// @since 0.1.0
+@function nds-get-scale-integer($scale) {
+  @if map-has-key($nds-named-font-sizes, $scale) {
+    @return map-get($nds-named-font-sizes, $scale);
+  } @else if is-integer($scale) {
+    @return $scale;
+  }
+
+  @error '`$scale` must either be an integer or exist as a named font size in `$nds-named-font-sizes`';
+}
+
+/// Gets a numeric font size (in px) from a given scale multiplier.
+/// Usually not used directly - the font-size or font mixin is usually used instead.
+/// @param $scale {Integer|Name} The integer ratio or named font-size.
+/// @return {Number} Numeric font size (in px)
+/// @example
+///   $font-size: nds-get-font-size(2)
+/// @example
+///   $font-size: nds-get-font-size(h1)
+/// @since 0.1.0
+@function nds-get-font-size($scale) {
+  $scale-integer: nds-get-scale-integer($scale);
+  $font-map: map-get($nds-font-sizes, $scale-integer);
+  @return map-get($font-map, fs);
+}
+
+/// Gets a numeric line height (in px) from a given scale multiplier.
+/// Usually not used directly - the font-size or font mixin is usually used instead.
+/// @param $scale {Integer|Name} The integer ratio or named font-size.
+/// @return {Number} Numeric line-height (in px)
+/// @example
+///   $line-height: nds-get-line-height(2)
+/// @example
+///   $line-height: nds-get-line-height(h1)
+/// @since 0.1.0
+@function nds-get-line-height($scale) {
+  $scale-integer: nds-get-scale-integer($scale);
+  $font-map: map-get($nds-font-sizes, $scale-integer);
+  @return map-get($font-map, lh);
+}
+
+/// Applies font size and line-height for the given scale.
+/// @param $scale {Integer|Name} The integer ratio or named font-size.
+/// @param $important {Boolean} Whether to add an important declaration to the CSS rules.
+/// @example
+///   .test {
+///     @include nds-font-size(-2);
+///   }
+/// @example
+///   .test {
+///     @include nds-font-size(h1, true);
+///   }
+/// @since 0.1.0
+@mixin nds-font-size($scale: 0, $important: false) {
+  $font-size: nds-get-font-size($scale);
+  $line-height: nds-get-line-height($scale);
+
+  @if $important {
+    font-size: rem($font-size) !important;
+    line-height: rem($line-height) !important;
+  } @else {
+    font-size: rem($font-size);
+    line-height: rem($line-height);
+  }
+}
+
+/// Nice font: includes font size, line height, and margins.
+/// @param $scale {Integer|Name} The integer ratio or named font-size.
+/// @param $important {Boolean} Whether to add an important declaration to the CSS rules.
+/// @example
+///   .test {
+///     @include nds-font(3);
+///   }
+/// @example
+///   .test {
+///     @include nds-font(h1, true);
+///   }
+/// @since 0.1.0
+@mixin nds-font($scale, $important: false) {
+  $scale-integer: nds-get-scale-integer($scale);
+  $font-map: map-get($nds-font-sizes, $scale-integer);
+  @include nds-font-size($scale, $important);
+
+  @if $important {
+    margin-bottom: rem(map-get($font-map, mb)) !important;
+    margin-top: rem(map-get($font-map, mt)) !important;
+  } @else {
+    margin-bottom: rem(map-get($font-map, mb));
+    margin-top: rem(map-get($font-map, mt));
+  }
+}
+
+/// Default paragraph style
+/// @since 0.5.2
+@mixin nds-p {
+  @include nds-font(p);
+  font-feature-settings: 'kern', 'onum', 'liga';
+  font-weight: normal;
+  max-width: 66ch;
+}
+
+/// Lead paragraph style
+/// @since 0.2.12
+@mixin nds-lead {
+  @include nds-font(lead);
+  font-weight: normal;
+  max-width: 66ch;
+}
+
+/// Base list style
+/// @since 0.1.0
+@mixin nds-list {
+  font-feature-settings: 'kern', 'onum', 'liga';
+  margin-left: rem($nds-spacing-medium);
+  max-width: 66ch;
+  padding: 0;
+}
+
+// TODO: default-error-style probably belongs elsewhere?
+
+/// The highlight style used for elements like inputs and textareas
+/// if there's an error on the field
+/// @param {Boolean} $rounded whether to use box shadow for border (outline can't be styled to have radius corners)
+/// @output default styling for form elements in an errored state
+/// @since 1.0
+@mixin nds-default-error-style($rounded: false) {
+  @if $rounded {
+    box-shadow: 0 0 0 rem($nds-spacing-x-small) $nds-colour-error;
+    outline: $nds-spacing-x-small solid transparent;
+    outline-offset: $nds-spacing-x-small;
+  } @else {
+    outline: rem($nds-spacing-x-small) solid $nds-colour-error;
+  }
+}

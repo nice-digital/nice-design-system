@@ -1,0 +1,114 @@
+////
+/// @group components
+////
+
+@import '~@nice-digital/nds-core/scss/core';
+@import '~@nice-digital/icons/scss/nice-icons';
+
+@mixin _filter-panel-heading-button {
+  @include nds-font-size(h5);
+  appearance: none;
+  background: $nds-colour-nice-grey-2;
+  border: 0;
+  color: $nds-colour-text;
+  cursor: pointer;
+  display: block;
+  font-weight: bold;
+  padding: rem($nds-spacing-small);
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  width: 100%;
+
+  &:after {
+    @include nice-icon(chevron-up);
+    @include nds-font-size(-1);
+    color: $nds-colour-icons;
+    margin-top: rem(-$nds-spacing-small);
+    position: absolute;
+    right: rem($nds-spacing-small);
+    top: 50%;
+  }
+
+  &[aria-expanded='false']:after {
+    content: nice-icon(chevron-down);
+  }
+
+  &:visited,
+  &:hover,
+  &:active,
+  &:focus {
+    color: $nds-colour-text;
+  }
+
+  &:focus {
+    @include nds-default-focus-style;
+  }
+}
+
+.filter-panel {
+  margin: rem(0 0 $nds-spacing-medium 0);
+
+  // Heading can be one of:
+  // - heading for server side rendering for non-js
+  // - button to collapse/expand filter panel client side
+  // - anchor if you're progressively enhancing
+  &__heading {
+    margin: 0;
+    padding: 0;
+
+    a,
+    button {
+      @include _filter-panel-heading-button;
+    }
+
+    @include nds-when-is(a, button) {
+      @include _filter-panel-heading-button;
+    }
+  }
+
+  &__body {
+    background: $nds-colour-nice-grey-3;
+    padding: rem($nds-spacing-medium);
+
+    &[aria-hidden='true'] {
+      display: none;
+    }
+  }
+
+  &__submit {
+    margin: rem($nds-spacing-medium 0 0);
+  }
+
+  @include mq($from: sm) {
+    &__heading {
+      background: none;
+      margin-bottom: rem($nds-spacing-medium);
+      padding: 0;
+
+      a,
+      button {
+        background: none;
+        padding: 0;
+
+        &:after {
+          display: none;
+        }
+      }
+
+      @include nds-when-is(a, button) {
+        background: none;
+        padding: 0;
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    &__body {
+      background: none;
+      padding: 0;
+    }
+  }
+}

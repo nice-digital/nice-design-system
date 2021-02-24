@@ -1,0 +1,101 @@
+////
+/// @group helpers
+////
+
+.show-print {
+  @include nds-show-print;
+}
+
+.hide-print {
+  @include nds-hide-print;
+}
+
+.remove-appended-print-link {
+  @include nds-remove-appended-print-link;
+}
+
+// Printing
+// -------------------------
+// Source: https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css
+@if $nds-output-default-print-styles {
+  @media print {
+    * {
+      background: transparent !important;
+      box-shadow: none !important;
+      color: $nds-colour-true-black !important; // Black prints faster: h5bp.com/s
+      text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+      text-decoration: underline;
+    }
+
+    // Don't show links in headings
+    // stylelint-disable no-descending-specificity
+    h1 a,
+    h2 a,
+    h3 a,
+    h4 a,
+    h5 a,
+    h6 a {
+      @include nds-remove-appended-print-link;
+    }
+
+    a[href]:after {
+      content: ' (' attr(href) ')';
+    }
+
+    abbr[title]:after {
+      content: ' (' attr(title) ')';
+    }
+
+    // Don't show links for images, or javascript/internal links
+    .ir a:after,
+    a[href^='javascript:']:after,
+    a[href^='#']:after {
+      content: '';
+    }
+
+    pre,
+    blockquote {
+      border: 1px solid #999;
+      page-break-inside: avoid;
+    }
+
+    thead {
+      display: table-header-group; // h5bp.com/t
+    }
+
+    tr,
+    img {
+      page-break-inside: avoid;
+    }
+
+    img {
+      max-width: 100% !important;
+    }
+
+    // Hide all images that don't have, or have a blank, alt attribute
+    img:not([alt]),
+    img[alt=''] {
+      @include nds-hide-print;
+    }
+
+    @page {
+      margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+      orphans: 3;
+      widows: 3;
+    }
+
+    h2,
+    h3 {
+      page-break-after: avoid;
+    }
+  }
+}

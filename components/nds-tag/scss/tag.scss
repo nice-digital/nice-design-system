@@ -1,0 +1,164 @@
+////
+/// @group components
+////
+
+@import '~@nice-digital/nds-core/scss/core';
+
+$nds-tag-border-radius: em($nds-spacing-xx-small);
+
+/// Tag component. Used for labelling items in lists
+/// and also used within alpha/beta phase banners.
+///
+/// BEM modifiers:
+///   - `--impact` Bolder tag, used for higher impact
+///   - `--super`  Super aligned, useful for tagging headings
+///   - `--alpha` Alpha
+///   - `--beta`  Beta
+///   - `--live`  Live
+///   - `--new`  New
+///   - `--updated`  Updated
+///   - `--consultation`  In consultation
+///   - `--flush`  No margin
+///   - `--info`  Info
+///   - `--caution`  Caution
+///   - `--success`  Success
+///   - `--error`  Error
+/// @since 0.3.1
+.tag {
+  @include nds-font-size(0);
+  background-color: $nds-colour-nice-dark-grey;
+  border-radius: $nds-tag-border-radius;
+  color: $nds-colour-text-inverse;
+  display: inline-block;
+  font-weight: normal;
+  margin: rem(0 0 $nds-spacing-x-small 0);
+  padding: em(0 $nds-spacing-x-small);
+  position: relative;
+  text-decoration: none;
+  vertical-align: baseline;
+
+  &--impact {
+    font-weight: 900;
+    letter-spacing: 1px;
+    padding: em($nds-spacing-xx-small $nds-spacing-small);
+    text-transform: uppercase;
+  }
+
+  &--super {
+    vertical-align: super;
+  }
+
+  &--alpha {
+    background-color: $nds-colour-alpha;
+  }
+
+  &--beta {
+    background-color: $nds-colour-beta;
+  }
+
+  &--live {
+    background-color: $nds-colour-live;
+  }
+
+  &--new {
+    background: $nds-colour-guidance-new;
+  }
+
+  &--updated {
+    background: $nds-colour-guidance-updated;
+  }
+
+  &--consultation {
+    background: $nds-colour-guidance-consultation;
+  }
+
+  &--info {
+    background: $nds-colour-info;
+  }
+
+  &--caution {
+    background: $nds-colour-caution;
+  }
+
+  &--error {
+    background: $nds-colour-error;
+  }
+
+  &--success {
+    background: $nds-colour-success;
+  }
+
+  &--flush {
+    margin-bottom: 0;
+  }
+
+  &--outline {
+    @include nds-font-size(-1);
+    background: $nds-colour-nice-grey-3;
+    border: 1px solid $nds-colour-border;
+    color: $nds-colour-nice-dark-grey;
+    position: relative;
+  }
+
+  &__remove {
+    appearance: none;
+    background: 0;
+    border: 0;
+    color: $nds-colour-nice-teal;
+    cursor: pointer;
+    margin-left: rem($nds-spacing-x-small);
+    padding: 0;
+    text-decoration: none;
+
+    &:focus {
+      @include nds-default-focus-style;
+    }
+
+    &:visited {
+      color: $nds-colour-nice-teal;
+    }
+
+    &:hover,
+    &:active {
+      color: $nds-colour-text;
+    }
+
+    &:after {
+      border-radius: $nds-tag-border-radius;
+      content: '';
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    &:hover:after {
+      background: rgba($nds-colour-nice-black, 0.1);
+    }
+  }
+
+  @include nds-when-is(a) {
+    color: $nds-colour-nice-white;
+    text-decoration: underline;
+
+    &:visited {
+      color: $nds-colour-nice-white;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:active {
+      top: em($nds-spacing-xx-small);
+    }
+  }
+
+  @media print {
+    background: none !important;
+    color: $nds-colour-true-black !important;
+    padding: 0 !important;
+  }
+}

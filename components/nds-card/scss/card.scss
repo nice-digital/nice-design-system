@@ -1,0 +1,171 @@
+////
+/// @group components
+////
+
+@import '~@nice-digital/nds-core/scss/core';
+
+/// Flexible card component for displaying
+/// guidance, news etc in a list.
+///
+/// Consists of a heading, optional icon, optional
+/// body copy, optional image and optional metadata.
+/// Usually used withing an unstyled list.
+///
+/// BEM modifiers:
+///   - `--flush`  No margin
+///   - `--separator`  Add a line below
+///
+/// @since 0.3.1
+.card {
+  @include nds-clearfix;
+  margin: rem(0 0 $nds-spacing-large 0);
+  position: relative;
+
+  &--flush {
+    margin-bottom: 0;
+  }
+
+  &--separator,
+  .list--unstyled & {
+    border-bottom: 1px solid $nds-colour-border;
+    margin: rem(0 0 $nds-spacing-medium 0);
+    padding: rem(0 0 $nds-spacing-medium 0);
+  }
+
+  mark {
+    background: transparent;
+    font-weight: bold;
+    padding: 0;
+  }
+
+  &__header {
+    margin: rem(0 0 $nds-spacing-small 0);
+  }
+
+  &__heading {
+    @include nds-font-size(1);
+    font-weight: bold;
+    margin: 0;
+
+    a {
+      text-decoration: underline;
+
+      &:before {
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 0;
+      }
+    }
+  }
+
+  &__author {
+    @include nds-font-size(-1);
+    color: $nds-colour-nice-dark-grey;
+    margin: rem(0 0 $nds-spacing-x-small 0);
+
+    dd {
+      display: block;
+      margin: 0;
+    }
+  }
+
+  &__summary {
+    margin: rem(0 0 $nds-spacing-small 0);
+    a {
+      position: relative;
+    }
+  }
+
+  &__image {
+    img {
+      display: block;
+      margin: rem(0 0 $nds-spacing-x-small);
+      width: 100%;
+    }
+  }
+
+  &__icon {
+    margin: rem(0 $nds-spacing-x-small 0 0);
+  }
+
+  &__tag {
+    @include nds-font-size(-1, true);
+  }
+
+  &__metadata {
+    @include nds-font-size(-1);
+    color: $nds-colour-nice-dark-grey;
+    display: inline-block;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__metadatum {
+    display: block;
+    margin: rem(0 $nds-spacing-medium $nds-spacing-x-small 0);
+
+    dt,
+    dd {
+      display: inline-block;
+      margin: 0;
+    }
+
+    dt {
+      margin-right: rem($nds-spacing-x-small);
+    }
+  }
+
+  @include mq($from: xs) {
+    &__image {
+      float: left;
+      width: 30%;
+    }
+
+    &__text {
+      float: left;
+      padding-left: rem($nds-spacing-medium);
+      width: 70%;
+    }
+  }
+
+  @include mq($from: sm) {
+    &__image {
+      width: 20%;
+    }
+
+    &__text {
+      width: 80%;
+    }
+
+    &__metadatum {
+      display: inline-block;
+      white-space: nowrap;
+    }
+  }
+
+  @include mq($from: md) {
+    &__image {
+      width: 30%;
+    }
+
+    &__text {
+      width: 70%;
+    }
+  }
+
+  @include mq($from: lg) {
+    &__image {
+      width: 25%;
+    }
+
+    &__text {
+      width: 75%;
+    }
+  }
+}

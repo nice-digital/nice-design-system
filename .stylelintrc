@@ -1,0 +1,47 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-prettier/recommended"],
+  "plugins": [
+    "stylelint-scss",
+		"stylelint-order"
+  ],
+	"rules": {
+		"at-rule-no-unknown": null,
+		"scss/at-rule-no-unknown": true,
+		"block-closing-brace-newline-after": [
+			"always",
+			{
+				"ignoreAtRules": ["if", "else"]
+			}
+		],
+		"selector-pseudo-element-colon-notation": "single",
+		"number-leading-zero": "always",
+		"declaration-empty-line-before": "never",
+		"at-rule-empty-line-before": null,
+		"scss/at-else-closing-brace-newline-after": "always-last-in-chain",
+		"scss/at-else-closing-brace-space-after": "always-intermediate",
+		"scss/at-else-empty-line-before": "never",
+		"scss/at-if-closing-brace-newline-after": "always-last-in-chain",
+		"scss/at-if-closing-brace-space-after": "always-intermediate",
+		"order/order": [
+			"dollar-variables",
+			"custom-properties",
+			{
+				"type": "at-rule",
+				"name": "include",
+				"hasBlock": false
+			},
+			"declarations",
+			"rules",
+			{
+				"type": "at-rule",
+				"name": "include",
+				"hasBlock": true
+			}
+		],
+		"order/properties-alphabetical-order": true
+	},
+  "ignoreFiles": [
+	  "**/vendor/**/*.scss",
+	  "**/*.md"
+  ]
+}

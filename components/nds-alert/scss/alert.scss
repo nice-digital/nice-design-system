@@ -1,0 +1,41 @@
+@import '~@nice-digital/nds-core/scss/core';
+
+.alert {
+  @include nds-font-size(p);
+  border: 3px solid;
+  font-weight: bold;
+  margin-bottom: rem($nds-spacing-medium);
+  padding: rem($nds-spacing-medium);
+
+  p {
+    font-weight: bold;
+  }
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  &--info {
+    background-color: $nds-colour-info-background;
+    border-color: $nds-colour-info;
+  }
+
+  &--caution {
+    background-color: $nds-colour-caution-background;
+    border-color: $nds-colour-caution;
+  }
+
+  &--error {
+    background-color: $nds-colour-error-background;
+    border-color: $nds-colour-error;
+  }
+
+  &--success {
+    background-color: $nds-colour-success-background;
+    border-color: $nds-colour-success;
+  }
+}

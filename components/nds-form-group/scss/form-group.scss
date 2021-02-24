@@ -1,0 +1,30 @@
+@import '~@nice-digital/nds-core/scss/core';
+
+.form-group {
+  border: rem(1px) solid $nds-colour-border;
+  margin-bottom: rem($nds-spacing-medium);
+  padding: rem($nds-spacing-small);
+
+  &--no-legend {
+    border: none;
+  }
+
+  &__legend {
+    @include nds-font-size(p);
+    font-weight: bold;
+    margin-left: rem(-$nds-spacing-x-small);
+    padding-left: rem($nds-spacing-x-small);
+    padding-right: rem($nds-spacing-x-small);
+  }
+
+  &__hint {
+    color: $nds-colour-nice-dark-grey;
+    margin-top: rem($nds-spacing-x-small);
+  }
+
+  &__error-message {
+    color: $nds-colour-error;
+    font-weight: bold;
+    margin-top: rem($nds-spacing-x-small);
+  }
+}
