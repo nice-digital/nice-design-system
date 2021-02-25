@@ -1,7 +1,6 @@
 import React from "react";
 import { Hero } from "@nice-digital/nds-hero";
 import { Grid, GridItem } from "@nice-digital/nds-grid";
-import { PhaseBanner } from "@nice-digital/nds-phase-banner";
 import { Breadcrumbs, Breadcrumb } from "@nice-digital/nds-breadcrumbs";
 import { graphql, Link } from "gatsby";
 import Seo from "../components/partials/seo/Seo";
@@ -56,18 +55,6 @@ export default function IndexPage(props: IndexProps): React.ReactElement {
 				intro={description}
 				header={
 					<>
-						<PhaseBanner alpha>
-							NICE Design System is in development. This means it is not feature
-							complete and there may be issues. If you find any, please,{" "}
-							<a
-								href="https://github.com/nice-digital/nice-design-system/issues"
-								target="_blank"
-								rel="noreferrer noopener"
-							>
-								let us know
-							</a>
-							!
-						</PhaseBanner>
 						<Breadcrumbs>
 							<Breadcrumb>{homeLabel}</Breadcrumb>
 						</Breadcrumbs>
@@ -75,7 +62,49 @@ export default function IndexPage(props: IndexProps): React.ReactElement {
 				}
 			/>
 			<Grid>
+				<GridItem cols={12} sm={4}>
+					<h2>Source</h2>
+					<p>
+						<a href="https://github.com/nice-digital/nice-design-system">
+							View the source on Github
+						</a>
+						.
+					</p>
+				</GridItem>
+				<GridItem cols={12} sm={4}>
+					<h2>Storybook</h2>
+					<p>
+						<a href="/storybook">Storybook</a> is an interactive gallery of all
+						of the components and elements that make up the design system.
+					</p>
+				</GridItem>
+				<GridItem cols={12} sm={4}>
+					<h2>Get involved</h2>
+					<p>
+						Contributions to the design system are always welcome. They can take
+						the form of{" "}
+						<a
+							rel="noreferrer"
+							href="https://github.com/nice-digital/nice-design-system/issues"
+						>
+							raising issues
+						</a>
+						, research, and{" "}
+						<a
+							rel="noreferrer"
+							target="_blank"
+							href="https://github.com/nice-digital/nice-design-system/discussions"
+						>
+							discussions
+						</a>{" "}
+						as well as code contributions via pull requests.
+					</p>
+				</GridItem>
+			</Grid>
+			<hr />
+			<Grid>
 				<GridItem cols={12}>
+					<h2>Sitemap</h2>
 					<ul>
 						{pages.map((page: PageType) => {
 							const { id, path } = page;
