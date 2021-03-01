@@ -79,6 +79,7 @@ export default function IndexPage(props: IndexProps): React.ReactElement {
 				of the design system, along with this new documentation which will be
 				added to in the coming weeks.
 			</p>
+			<p>The first port of call for help with using the design system is to create a new post on the <a rel="noreferrer" target="_blank" href="https://github.com/nice-digital/nice-design-system/discussions">Github project discussion board</a>. We're reserving Github issues for bugs (where things aren't doing what you expect them to) and conversations around how to implement an agreed feature.</p>
 			<hr />
 			<Grid gutter={"loose"}>
 				<GridItem cols={12} sm={4}>
