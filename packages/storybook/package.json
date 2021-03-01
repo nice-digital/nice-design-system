@@ -1,6 +1,6 @@
 {
   "name": "storybook",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "private": true,
   "description": "> TODO: description",
   "author": "Warren Keith <warren.keith@nice.org.uk>",
@@ -19,7 +19,7 @@
     "url": "git+https://github.com/nhsevidence/nice-design-system.git"
   },
   "dependencies": {
-    "@nice-digital/design-system": "^1.1.1",
+    "@nice-digital/design-system": "^1.1.2",
     "@nice-digital/nds-action-banner": "^1.1.0",
     "@nice-digital/nds-alert": "^1.1.0",
     "@nice-digital/nds-breadcrumbs": "^1.1.0",
@@ -30,8 +30,8 @@
     "@nice-digital/nds-filters": "^1.1.0",
     "@nice-digital/nds-form-group": "^1.1.1",
     "@nice-digital/nds-forms": "^1.1.0",
-    "@nice-digital/nds-grid": "^1.1.1",
-    "@nice-digital/nds-hero": "^1.1.1",
+    "@nice-digital/nds-grid": "^1.1.2",
+    "@nice-digital/nds-hero": "^1.1.2",
     "@nice-digital/nds-horizontal-nav": "^1.0.0",
     "@nice-digital/nds-in-page-nav": "^1.1.1",
     "@nice-digital/nds-input": "^1.1.1",
@@ -42,9 +42,9 @@
     "@nice-digital/nds-prev-next": "^1.0.1",
     "@nice-digital/nds-radio": "^1.1.0",
     "@nice-digital/nds-simple-pagination": "^1.1.1",
-    "@nice-digital/nds-stacked-nav": "^1.1.0",
+    "@nice-digital/nds-stacked-nav": "^1.1.1",
     "@nice-digital/nds-table": "^1.0.1",
-    "@nice-digital/nds-tabs": "^1.1.1",
+    "@nice-digital/nds-tabs": "^1.1.2",
     "@nice-digital/nds-tag": "^1.1.0",
     "@nice-digital/nds-textarea": "^1.1.1"
   },
