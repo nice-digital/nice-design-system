@@ -54,7 +54,7 @@
   list-style: none; // Allow the grid system to be used on lists.
   margin: 0; // Remove any margins that might affect the grid system.
   margin-left: -$nds-grid-gutter; // Apply a negative `margin-left` to negate the columns’ gutters.
-  max-width: 100%; // To override the 66ch max width on lists
+  max-width: none; // To override the 66ch max width on lists
   padding: 0; // Remove any paddings that might affect the grid system.
 
   @if $reverse {

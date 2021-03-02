@@ -23,6 +23,7 @@ ol {
 .list--unstyled {
   list-style: none;
   margin-left: 0;
+  max-width: none; // To override max-width of 66ch set on lists
   padding: 0;
 }
 
