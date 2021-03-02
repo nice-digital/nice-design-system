@@ -12,25 +12,19 @@ export const Callout = ({ className, children, ...rest }) => {
 	);
 };
 
-export const Body = ({ children, ...rest }) => {
+export const CalloutBody = ({ children, className, ...rest }) => {
 	return (
-		<div className="callout__body" {...rest}>
+		<div className={classnames("callout__body", className)} {...rest}>
 			{children}
 		</div>
 	);
 };
 
-export const Image = ({ src, alt, className, ...rest }) => {
-	const imageProps = {
-		src,
-		alt,
-		className: classnames("callout__image", className),
-		...rest
-	};
+export const CalloutImage = ({ className, children, ...rest }) => {
 	return (
-		<MaintainRatio ratio="16:9">
-			<img {...imageProps} />
-		</MaintainRatio>
+		<div className={classnames("callout__image", className)} {...rest}>
+			<MaintainRatio ratio="16:9">{children}</MaintainRatio>
+		</div>
 	);
 };
 
@@ -39,14 +33,12 @@ Callout.propTypes = {
 	className: PropTypes.string
 };
 
-Image.propTypes = {
-	src: PropTypes.string,
-	alt: PropTypes.string,
-	className: PropTypes.string,
-	rest: PropTypes.object
+CalloutImage.propTypes = {
+	children: PropTypes.node,
+	className: PropTypes.string
 };
 
-Body.propTypes = {
+CalloutBody.propTypes = {
 	children: PropTypes.node,
 	className: PropTypes.string
 };
