@@ -1,6 +1,6 @@
 {
   "name": "@nice-digital/nds-grid",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Grid component for the NICE Design System",
   "keywords": [
     "grid"
