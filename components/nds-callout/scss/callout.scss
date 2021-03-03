@@ -8,21 +8,24 @@
   background: $nds-colour-nice-white;
   height: auto;
   margin-bottom: rem($nds-spacing-large);
+  position: relative;
   &__image img {
     width: 100%;
   }
   &__body {
-    padding: 1rem;
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+    padding: rem($nds-spacing-medium);
+    > :first-child {
       margin-top: 0;
+    }
+    > :last-child {
+      margin-bottom: 0;
     }
     a {
       text-decoration: none;
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
       &:before {
         content: '';
         display: block;

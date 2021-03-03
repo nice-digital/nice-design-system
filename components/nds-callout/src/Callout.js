@@ -29,16 +29,16 @@ export const CalloutImage = ({ className, children, ...rest }) => {
 };
 
 Callout.propTypes = {
-	children: PropTypes.node,
+	children: PropTypes.node.isRequired,
 	className: PropTypes.string
 };
 
 CalloutImage.propTypes = {
-	children: PropTypes.node,
+	children: PropTypes.node.isRequired,
 	className: PropTypes.string
 };
 
 CalloutBody.propTypes = {
-	children: PropTypes.node,
+	children: PropTypes.node.isRequired,
 	className: PropTypes.string
 };
