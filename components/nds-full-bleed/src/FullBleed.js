@@ -11,10 +11,6 @@ export const FullBleed = ({
 	light,
 	...rest
 }) => {
-	const contentClasses = classnames([
-		"full-bleed__content",
-		padding && "full-bleed--padding-" + padding
-	]);
 	return (
 		<div
 			className={classnames(
@@ -29,7 +25,14 @@ export const FullBleed = ({
 					{BackgroundImage}
 				</div>
 			)}
-			<div className={contentClasses}>{children}</div>
+			<div
+				className={classnames([
+					"full-bleed__content",
+					padding && "full-bleed__content--padding-" + padding
+				])}
+			>
+				{children}
+			</div>
 		</div>
 	);
 };

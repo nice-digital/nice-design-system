@@ -28,13 +28,13 @@ $paddingSizes: (
   }
   &__image {
     img {
+      pointer-events: none;
       position: absolute;
       width: 100%;
       z-index: -1;
       @supports (object-fit: cover) {
         height: 100%;
         object-fit: cover;
-        pointer-events: none;
       }
     }
   }
