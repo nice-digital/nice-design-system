@@ -1,0 +1,30 @@
+////
+/// @group components
+////
+
+@import '~@nice-digital/nds-core/scss/core';
+
+.full-bleed {
+  background: $nds-colour-nice-white;
+  background: red;
+  //left: calc(50%);
+  //margin-bottom: rem($nds-spacing-large);
+  //margin-left: -50vw;
+  //margin-right: -50vw;
+  //overflow: hidden;
+  //right: calc(50%);
+  left: 50%;
+  margin-left: -50vw;
+  position: relative;
+  width: 100vw;
+  &__image img {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  * {
+    z-index: 2;
+  }
+}
