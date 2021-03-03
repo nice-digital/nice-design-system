@@ -4,27 +4,41 @@
 
 @import '~@nice-digital/nds-core/scss/core';
 
+$paddingSizes: (
+  'small': 1,
+  'medium': 3,
+  'large': 6
+);
+
 .full-bleed {
-  background: $nds-colour-nice-white;
-  background: red;
-  //left: calc(50%);
-  //margin-bottom: rem($nds-spacing-large);
-  //margin-left: -50vw;
-  //margin-right: -50vw;
-  //overflow: hidden;
-  //right: calc(50%);
+  background-color: $nds-colour-nice-teal;
+  @each $paddingSize, $size in $paddingSizes {
+    &--padding-#{$paddingSize} {
+      padding: (rem($nds-spacing-large) * $size) 0;
+    }
+  }
   left: 50%;
   margin-left: -50vw;
+  overflow: hidden;
   position: relative;
   width: 100vw;
-  &__image img {
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 1;
+  z-index: 0;
+  &--light {
+    color: white;
   }
-  * {
-    z-index: 2;
+  &__image {
+    img {
+      position: absolute;
+      width: 100%;
+      z-index: -1;
+      @supports (object-fit: cover) {
+        height: 100%;
+        object-fit: cover;
+        pointer-events: none;
+      }
+    }
+  }
+  &__content {
+    z-index: 1;
   }
 }

@@ -5,7 +5,8 @@ declare module "@nice-digital/nds-full-bleed" {
 		children: React.ReactNode;
 		className?: string;
 		backgroundImage?: React.ReactNode;
-		padding?: 1 | 2 | 3 | 4 | 5 | 6;
+		padding?: "small" | "medium" | "large";
+		light?: boolean;
 	}
 
 	export const FullBleed: React.FC<FullBleedProps>;

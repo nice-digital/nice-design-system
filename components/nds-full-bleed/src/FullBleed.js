@@ -7,14 +7,29 @@ export const FullBleed = ({
 	backgroundImage: BackgroundImage,
 	className,
 	children,
+	padding,
+	light,
 	...rest
 }) => {
+	const contentClasses = classnames([
+		"full-bleed__content",
+		padding && "full-bleed--padding-" + padding
+	]);
 	return (
-		<div className={classnames("full-bleed", className)} {...rest}>
-			{BackgroundImage && (
-				<div className="full-bleed__image">{BackgroundImage}</div>
+		<div
+			className={classnames(
+				"full-bleed",
+				className,
+				light && "full-bleed--light"
 			)}
-			{children}
+			{...rest}
+		>
+			{BackgroundImage && (
+				<div className="full-bleed__image" aria-hidden="true">
+					{BackgroundImage}
+				</div>
+			)}
+			<div className={contentClasses}>{children}</div>
 		</div>
 	);
 };
@@ -23,5 +38,6 @@ FullBleed.propTypes = {
 	children: PropTypes.node,
 	className: PropTypes.string,
 	backgroundImage: PropTypes.node,
-	padding: PropTypes.oneOf([1, 2, 3, 4, 5, 6])
+	padding: PropTypes.oneOf(["small", "medium", "large"]),
+	light: PropTypes.bool
 };
