@@ -2,36 +2,7 @@
 /// @group grid
 ////
 
-@import '_grid-helpers';
-
-/// The width of the default spacing between grid items, in rems
-/// @since 0.2.0
-$nds-grid-gutter: 1rem * ($nds-spacing-medium / $nds-base-font-size) !default;
-
-/// The width of the spacing between grid items in a compact grid, in rems
-/// @since 0.2.0
-$nds-grid-gutter-compact: 1rem * ($nds-spacing-small / $nds-base-font-size) !default;
-
-/// The width of the spacing between grid items in a loose grid, in rems
-/// @since 0.2.0
-$nds-grid-gutter-loose: 1rem * ($nds-spacing-large / $nds-base-font-size) !default;
-
-/// Grid item default selector.
-/// Use within a `.grid`.
-/// Use the value of the data attribute to specify the grid item widths
-/// mobile first. E.g "n w:m" where *n* and *m* are the number of columns and *w*
-/// is the name of the breakpoint.
-///
-/// @example html HTML usage
-///   <div class="grid">
-///     <div data-g="12 xs:6 md:4 lg:3 xl:2">Grid item</div>
-///     <div data-g="12 xs:6 md:4 lg:3 xl:2">Grid item</div>
-///     <div data-g="12 xs:6 md:4 lg:3 xl:2">Grid item</div>
-///     <div data-g="12 xs:6 md:4 lg:3 xl:2">Grid item</div>
-///   </div>
-[data-g] {
-  @include nds-grid-item;
-}
+@import 'grid-settings';
 
 /// Grid class for the grid wrapper. Expects direct children to be `[data-g]`
 /// grid items. Use modifiers to affect grid behaviour as shown below:
@@ -51,80 +22,125 @@ $nds-grid-gutter-loose: 1rem * ($nds-spacing-large / $nds-base-font-size) !defau
 ///     <div data-g="12 xs:6 md:4 lg:3 xl:2">Grid item</div>
 ///   </div>
 .grid {
-  @include nds-grid;
+  --nds-grid-gutter: #{$nds-grid-gutter};
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style: none; // Allow the grid system to be used on lists.
+  margin: 0 -#{$nds-grid-gutter / 2};
+  max-width: none; // To override the 66ch max width on lists
+  padding: 0; // Remove any paddings that might affect the grid system.
+  width: calc(100% + #{$nds-grid-gutter});
 
-  @include nds-generate-grid-classes;
+  // Fallback to fixed gutter grid in IE11, but use CSS vars where supported.
+  // IE11 doesn't support custom properties: https://caniuse.com/css-variables
+  @supports ((--a: 0)) {
+    margin: 0 calc(var(--nds-grid-gutter) / -2);
+    width: calc(100% + var(--nds-grid-gutter));
+  }
 
   &--rev {
-    @include nds-grid-reverse;
+    flex-direction: row-reverse;
   }
 
   &--gutterless {
-    @include nds-grid-gutterless;
-
-    > [data-g] {
-      @include nds-grid-item-gutterless;
-    }
+    --nds-grid-gutter: #{0rem}; // Used in calc so needs units
   }
 
   &--compact {
-    @include nds-grid-compact;
-
-    > [data-g] {
-      @include nds-grid-item-compact;
-    }
+    --nds-grid-gutter: #{$nds-grid-gutter-compact};
   }
 
   &--loose {
-    @include nds-grid-loose;
-
-    > [data-g] {
-      @include nds-grid-item-loose;
-    }
+    --nds-grid-gutter: #{$nds-grid-gutter-loose};
   }
 
   &--right {
-    @include nds-grid-right;
+    justify-content: flex-end;
   }
 
   &--center {
-    @include nds-grid-center;
+    justify-content: center;
   }
 
   &--middle {
-    > [data-g] {
-      @include nds-grid-item-middle;
-    }
+    align-items: center;
   }
 
   &--bottom {
-    > [data-g] {
-      @include nds-grid-item-bottom;
+    align-items: flex-end;
+  }
+
+  .debug-grid &,
+  &--debug,
+  .grid--debug & {
+    outline: rem($nds-spacing-xx-small) dashed red;
+    outline-offset: rem($nds-spacing-x-small);
+  }
+}
+
+/// Grid item default selector.
+/// Use within a `.grid`.
+/// Use the value of the data attribute to specify the grid item widths
+/// mobile first. E.g "n w:m" where *n* and *m* are the number of columns and *w*
+/// is the name of the breakpoint.
+///
+/// @example html HTML usage
+///   <div class="grid">
+///     <div data-g="12 xs:6 md:4 lg:3 xl:2">Grid item</div>
+///     <div data-g="12 xs:6 md:4 lg:3 xl:2">Grid item</div>
+///     <div data-g="12 xs:6 md:4 lg:3 xl:2">Grid item</div>
+///     <div data-g="12 xs:6 md:4 lg:3 xl:2">Grid item</div>
+///   </div>
+[data-g] {
+  // Auto flex-basis with separate basis for IE11 because of https://github.com/philipwalton/flexbugs#flexbug-8
+  flex: 0 0 auto;
+  flex-basis: calc(100% - #{$nds-grid-gutter});
+  margin: 0 #{$nds-grid-gutter / 2} #{$nds-grid-gutter} #{$nds-grid-gutter / 2};
+  position: relative;
+
+  @supports ((--a: 0)) {
+    --grid-item-width: 100%;
+    flex-basis: calc(
+      var(--grid-item-width) * 0.999 - var(--nds-grid-gutter)
+    ) !important; // Need to round down slightly because FireFox calculates the width slightly > 100% at certain screen sizes
+    margin: 0 calc(var(--nds-grid-gutter) / 2) var(--nds-grid-gutter)
+      calc(var(--nds-grid-gutter) / 2) !important;
+  }
+
+  .debug-grid &,
+  .grid--debug & {
+    outline: rem($nds-spacing-xx-small) dashed blue;
+  }
+}
+
+@mixin _nds-generate-grid-items($prefix: null) {
+  $prefix: if($prefix, $prefix + ':', '');
+
+  @for $index from 1 through 12 {
+    [data-g~='#{ $prefix }#{ $index }'] {
+      --grid-item-width: #{percentage($index / 12)};
+      flex-basis: calc(#{percentage($index / 12)} - #{$nds-grid-gutter});
     }
   }
 
-  &--debug {
-    @include nds-grid-debug;
-
-    [data-g] {
-      @include nds-grid-item-debug;
+  @for $index from 0 through 12 {
+    [data-g~='#{ $prefix }push:#{ $index }'] {
+      left: percentage($index / 12);
+    }
+    [data-g~='#{ $prefix }pull:#{ $index }'] {
+      right: percentage($index / 12);
     }
   }
+}
 
-  // Add debug grid to body to show an outline on all grids
-  .debug-grid & {
-    @include nds-grid-debug;
+@include _nds-generate-grid-items;
 
-    [data-g] {
-      @include nds-grid-item-debug;
-    }
-  }
-
-  @if $nds-responsive {
-    @each $brkpnt-key, $brkpnt-value in $mq-breakpoints {
-      @include mq($from: $brkpnt-key) {
-        @include nds-generate-grid-classes($brkpnt-key);
-      }
+@if $nds-responsive {
+  @each $brkpnt-key, $brkpnt-value in $mq-breakpoints {
+    @include mq($from: $brkpnt-key) {
+      @include _nds-generate-grid-items($brkpnt-key);
     }
   }
 }
