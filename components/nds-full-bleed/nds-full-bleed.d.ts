@@ -4,7 +4,11 @@ declare module "@nice-digital/nds-full-bleed" {
 	export interface FullBleedProps {
 		children: React.ReactNode;
 		className?: string;
-		backgroundImage?: React.ReactNode;
+		backgroundImage?: {
+			src?: string;
+			elementType?: React.ElementType;
+			className?: string;
+		};
 		padding?: "small" | "medium" | "large";
 		light?: boolean;
 	}

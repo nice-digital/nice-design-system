@@ -1,7 +1,3 @@
-////
-/// @group components
-////
-
 @import '~@nice-digital/nds-core/scss/core';
 
 $paddingSizes: (
@@ -12,11 +8,8 @@ $paddingSizes: (
 
 .full-bleed {
   background-color: $nds-colour-nice-teal;
-  @each $paddingSize, $size in $paddingSizes {
-    &--padding-#{$paddingSize} {
-      padding: (rem($nds-spacing-large) * $size) 0;
-    }
-  }
+  background-position: center center;
+  background-size: cover;
   left: 50%;
   margin-left: -50vw;
   overflow: hidden;
@@ -27,18 +20,23 @@ $paddingSizes: (
     color: white;
   }
   &__image {
-    img {
-      pointer-events: none;
-      position: absolute;
-      width: 100%;
-      z-index: -1;
-      @supports (object-fit: cover) {
-        height: 100%;
-        object-fit: cover;
-      }
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    // Lovely little IE11 hack. Hide the image tag background in IE11
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      display: none;
     }
   }
   &__content {
     z-index: 1;
+    @each $paddingSize, $size in $paddingSizes {
+      &--padding-#{$paddingSize} {
+        padding: (rem($nds-spacing-large) * $size) 0;
+      }
+    }
   }
 }

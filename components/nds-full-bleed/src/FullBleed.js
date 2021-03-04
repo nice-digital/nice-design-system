@@ -4,15 +4,26 @@ import "../scss/full-bleed.scss";
 import classnames from "classnames";
 
 export const FullBleed = ({
-	backgroundImage: BackgroundImage,
+	backgroundImage = null,
 	className,
 	children,
 	padding,
 	light,
 	...rest
 }) => {
+	const {
+		src,
+		elementType: ElementType = "img",
+		className: imgClassName,
+		...imgRest
+	} = backgroundImage;
 	return (
 		<div
+			style={
+				src && {
+					backgroundImage: `url("${src}")`
+				}
+			}
 			className={classnames(
 				"full-bleed",
 				className,
@@ -20,10 +31,13 @@ export const FullBleed = ({
 			)}
 			{...rest}
 		>
-			{BackgroundImage && (
-				<div className="full-bleed__image" aria-hidden="true">
-					{BackgroundImage}
-				</div>
+			{backgroundImage && (
+				<ElementType
+					src={src}
+					className={classnames("full-bleed__image", imgClassName)}
+					aria-hidden="true"
+					{...imgRest}
+				/>
 			)}
 			<div
 				className={classnames([
@@ -40,7 +54,11 @@ export const FullBleed = ({
 FullBleed.propTypes = {
 	children: PropTypes.node,
 	className: PropTypes.string,
-	backgroundImage: PropTypes.node,
+	backgroundImage: PropTypes.shape({
+		src: PropTypes.string,
+		elementType: PropTypes.elementType,
+		className: PropTypes.string
+	}),
 	padding: PropTypes.oneOf(["small", "medium", "large"]),
 	light: PropTypes.bool
 };
