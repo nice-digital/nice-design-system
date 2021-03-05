@@ -189,6 +189,24 @@ export const GridView = () => {
 					<GridCellExample text="push 1" />
 				</GridItem>
 			</Grid>
+			<h3>Equal height</h3>
+			<p>Add height: 100% to children</p>
+			<Grid equalHeight>
+				<GridItem cols={6}>
+					<GridCellExample
+						text={
+							<div>
+								deep
+								<br />
+								grid
+							</div>
+						}
+					/>
+				</GridItem>
+				<GridItem cols={6}>
+					<GridCellExample text="fills height" />
+				</GridItem>
+			</Grid>
 			<h3>Middle</h3>
 			<Grid verticalAlignment="middle">
 				<GridItem cols={6}>
@@ -232,6 +250,14 @@ export const GridView = () => {
 					<GridCellExample text="🐛" />
 				</GridItem>
 			</Grid>
+			<h2>Defensive warnings</h2>
+			<div data-g="12">A grid item not in a grid</div>
+			<div className="grid">
+				<div>A grid with a child that isn't an item</div>
+			</div>
+			<div className="grid">
+				<div data-g="12">An only child</div>
+			</div>
 		</>
 	);
 };

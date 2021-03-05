@@ -9,6 +9,7 @@
 ///
 /// Modifiers:
 ///   - `rev` - Reverses the grid direction from natural source order
+///   - `equal-heigh` - Sets children of grid items to fill the vertical space with 100% height
 ///   - `gutterless` - Removes spacing and gutters from the grid
 ///   - `compact` - Uses tighter spacing and gutters
 ///   - `loose` - Uses looser spacing and gutters
@@ -72,6 +73,18 @@
     align-items: flex-end;
   }
 
+  &--equal-height > [data-g] > * {
+    height: 100%;
+  }
+
+  // Defensive warning for grids with children that aren't items
+  > :not([data-g]) {
+    --error: 'Grids (`.grid`) should only have grid items (`[data-g]`) as direct children';
+    background: $nds-colour-error-background;
+    cursor: help;
+    outline: rem($nds-spacing-x-small) solid $nds-colour-error;
+  }
+
   .debug-grid &,
   &--debug,
   .grid--debug & {
@@ -94,19 +107,36 @@
 ///     <div data-g="12 xs:6 md:4 lg:3 xl:2">Grid item</div>
 ///   </div>
 [data-g] {
-  // Auto flex-basis with separate basis for IE11 because of https://github.com/philipwalton/flexbugs#flexbug-8
+  // Auto flex-basis with separate property for IE11 because of https://github.com/philipwalton/flexbugs#flexbug-8
   flex: 0 0 auto;
+  // Fixed gutters fallback for IE11, due to lack of custom property support:
   flex-basis: calc(100% - #{$nds-grid-gutter});
   margin: 0 #{$nds-grid-gutter / 2} #{$nds-grid-gutter} #{$nds-grid-gutter / 2};
   position: relative;
 
   @supports ((--a: 0)) {
     --grid-item-width: 100%;
+    // Need to round down slightly because FireFox calculates the width slightly
+    // more 100% at certain screen sizes because of sub-pixel rendering (maybe?)
     flex-basis: calc(
       var(--grid-item-width) * 0.999 - var(--nds-grid-gutter)
-    ) !important; // Need to round down slightly because FireFox calculates the width slightly > 100% at certain screen sizes
+    ) !important;
     margin: 0 calc(var(--nds-grid-gutter) / 2) var(--nds-grid-gutter)
       calc(var(--nds-grid-gutter) / 2) !important;
+  }
+
+  // Defensive warning for grid items not directly inside grids
+  // See https://github.com/nice-digital/nice-design-system/issues/73
+  :not(.grid) > & {
+    --error: 'Put grid items (`[data-g]`) directly inside a `.grid`';
+    background: $nds-colour-error-background;
+    cursor: help;
+    outline: rem($nds-spacing-x-small) solid $nds-colour-error;
+  }
+
+  // Warning for single grid items within a grid
+  &:only-child {
+    --warn: 'Did you mean to just have a single item within a grid?';
   }
 
   .debug-grid &,
@@ -121,6 +151,7 @@
   @for $index from 1 through 12 {
     [data-g~='#{ $prefix }#{ $index }'] {
       --grid-item-width: #{percentage($index / 12)};
+      // IE 11 fallback, due to lack of custom property support:
       flex-basis: calc(#{percentage($index / 12)} - #{$nds-grid-gutter});
     }
   }

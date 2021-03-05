@@ -49,6 +49,8 @@ declare module "@nice-digital/nds-grid" {
 			| React.ReactElement<React.FC<GridItemProps>>;
 		/** Renders grid items in the opposite way to the source order */
 		reverse?: boolean;
+		/** Make children of grid items ahve 100% height to fill the vertical space */
+		equalHeight?: boolean;
 		/** The horizontal alignment of items within the grid, when there are empty columns. Leave blank to default to left. */
 		horizontalAlignment?: "left" | "center" | "right";
 		/** The vertical alignment of items within the grid. Leave blank to default to top. */
