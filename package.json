@@ -40,6 +40,8 @@
 		"build:es": "cross-env NODE_ENV=es lerna exec --scope=@nice-digital/nds-* --parallel -- babel src -d es --source-maps --root-mode upward",
 		"build:es:watch": "npm run build:es -- -w",
 		"build:watch": "concurrently -n build: npm:build:*:watch",
+		"// BUILD CSS": "",
+		"build:css": "lerna run --scope=@nice-digital/design-system build-css",
 		"// LIFECYCLE": "",
 		"prepublishOnly": "npm run build:lib && npm run build:es"
 	},
@@ -132,6 +134,7 @@
 		"lerna": "^3.20.2",
 		"lodash": "^4.17.20",
 		"node-sass": "^4.13.0",
+		"node-sass-tilde-importer": "^1.0.2",
 		"prettier": "^1.18.2",
 		"prop-types": "^15.7.2",
 		"react": "^16.11.0",

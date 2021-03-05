@@ -25,7 +25,8 @@
     "url": "git+https://github.com/nhsevidence/nice-design-system.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build-css": "node-sass ./scss/nice-design-system.scss --importer=./../../node_modules/node-sass-tilde-importer dist/bundle.css"
   },
   "bugs": {
     "url": "https://github.com/nhsevidence/nice-design-system/issues"
