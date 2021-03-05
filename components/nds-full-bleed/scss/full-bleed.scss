@@ -1,5 +1,6 @@
 @import '~@nice-digital/nds-core/scss/core';
 
+// Multipliers of $nds-spacing-large
 $paddingSizes: (
   'small': 1,
   'medium': 3,
@@ -7,7 +8,7 @@ $paddingSizes: (
 );
 
 .full-bleed {
-  background-color: $nds-colour-nice-teal;
+  background-color: $nds-colour-nice-white;
   background-position: center center;
   background-size: cover;
   left: 50%;
@@ -17,26 +18,12 @@ $paddingSizes: (
   width: 100vw;
   z-index: 0;
   &--light {
+    background-color: $nds-colour-nice-teal;
     color: white;
   }
-  &__image {
-    height: 100%;
-    object-fit: cover;
-    pointer-events: none;
-    position: absolute;
-    width: 100%;
-    z-index: -1;
-    // Lovely little IE11 hack. Hide the image tag background in IE11
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      display: none;
-    }
-  }
-  &__content {
-    z-index: 1;
-    @each $paddingSize, $size in $paddingSizes {
-      &--padding-#{$paddingSize} {
-        padding: (rem($nds-spacing-large) * $size) 0;
-      }
+  @each $paddingSize, $size in $paddingSizes {
+    &--padding-#{$paddingSize} {
+      padding: (rem($nds-spacing-large) * $size) 0;
     }
   }
 }

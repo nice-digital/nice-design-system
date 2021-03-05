@@ -6,6 +6,8 @@ template: detail
 inpagenav: true
 ---
 
+import { Alert } from "@nice-digital/nds-alert";
+
 So you're looking to create a new component for the design system? If you haven't used them before, Lerna and the monorepo structure can be a bit intimidating at first so this guide will hopefully just give you the bits you need.
 
 ## Scaffold your component
@@ -25,9 +27,22 @@ Either way, the structure you want to end up with is roughly this:
   - [my-component.scss](.\nds-my-component\scss\my-component.scss)
 - [src/](.\nds-my-component\src)
   - [MyComponent.js](.\nds-my-component\src\MyComponent.js)
-- [**tests**/](.\nds-my-component__tests__)
+- [\_\_tests\_\_](.\nds-my-component__tests__)
   - [nds-my-component.test.js](.\nds-my-component__tests__\nds-my-component.test.js)
 
+<Alert>
+	<p><b>Info!</b></p>
+	<p>A checklist of parts that make up one of our components would look like this:</p>
+	<ul>
+		<li>package.json</li>
+		<li>Component</li>
+		<li>Types</li>
+		<li>Tests</li>
+		<li>Stories</li>
+		<li>Documentation page (stub it out at least)</li>
+		<li>readme.md</li>
+	</ul>
+</Alert>
 Once you've scaffolded your component, you need to do a few bits to get the rest of the design system packages aware of it.
 
 There are two ways to do this. You can either:
@@ -40,7 +55,7 @@ Whichever way you go you need to remember to **add any SCSS dependency to the de
 Either way, when you're done, you should be able to import your new component into the documentation, Storybook, or dev-app packages as expected.
 
 ```jsx
-import { MyComponent } from "@nice-digital/nds-my-component";
+		import { MyComponent } from "@nice-digital/nds-my-component";
 ```
 
 ### Coming soon

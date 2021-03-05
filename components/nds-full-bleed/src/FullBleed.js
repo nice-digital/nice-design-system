@@ -4,49 +4,28 @@ import "../scss/full-bleed.scss";
 import classnames from "classnames";
 
 export const FullBleed = ({
-	backgroundImage = null,
+	backgroundImage = undefined,
 	className,
 	children,
-	padding,
+	padding = "small",
 	light,
 	...rest
 }) => {
-	const {
-		src,
-		elementType: ElementType = "img",
-		className: imgClassName,
-		...imgRest
-	} = backgroundImage;
+	const style = backgroundImage
+		? { style: { backgroundImage: `url("${backgroundImage}")` } }
+		: undefined;
 	return (
 		<div
-			style={
-				src && {
-					backgroundImage: `url("${src}")`
-				}
-			}
+			{...style}
 			className={classnames(
 				"full-bleed",
 				className,
-				light && "full-bleed--light"
+				light && "full-bleed--light",
+				padding && "full-bleed--padding-" + padding
 			)}
 			{...rest}
 		>
-			{backgroundImage && (
-				<ElementType
-					src={src}
-					className={classnames("full-bleed__image", imgClassName)}
-					aria-hidden="true"
-					{...imgRest}
-				/>
-			)}
-			<div
-				className={classnames([
-					"full-bleed__content",
-					padding && "full-bleed__content--padding-" + padding
-				])}
-			>
-				{children}
-			</div>
+			{children}
 		</div>
 	);
 };
@@ -54,11 +33,7 @@ export const FullBleed = ({
 FullBleed.propTypes = {
 	children: PropTypes.node,
 	className: PropTypes.string,
-	backgroundImage: PropTypes.shape({
-		src: PropTypes.string,
-		elementType: PropTypes.elementType,
-		className: PropTypes.string
-	}),
+	backgroundImage: PropTypes.string,
 	padding: PropTypes.oneOf(["small", "medium", "large"]),
 	light: PropTypes.bool
 };

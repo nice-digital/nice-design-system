@@ -6,12 +6,10 @@ export const FullBleedView = () => {
 		<>
 			<p>there's a paragraph here</p>
 			<FullBleed
+				className="monkey"
+				padding="large"
 				light={true}
-				padding="small"
-				backgroundImage={{
-					src:
-						"https://images.unsplash.com/photo-1591398834690-54927a83deba?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80"
-				}}
+				backgroundImage="https://images.unsplash.com/photo-1591398834690-54927a83deba?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80"
 			>
 				<div className="container">
 					<h3 className="mt--0">Alert title</h3>
