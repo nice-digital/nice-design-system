@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import "../scss/page-header.scss";
 
 export const PageHeader = props => {
-	const { heading, lead, cta, preheading } = props;
+	const { heading, lead, metadata, cta, preheading } = props;
 
 	return (
 		<div className="page-header">
@@ -14,7 +14,16 @@ export const PageHeader = props => {
 				)}
 				{heading}
 			</h1>
+
 			{lead && <p className="page-header__lead">{lead}</p>}
+
+			{metadata && (
+				<ul className="page-header__metadata">
+					{metadata.map((metadatum, i) => (
+						<li key={i}>{metadatum}</li>
+					))}
+				</ul>
+			)}
 
 			{cta && <p className="page-header__cta">{cta}</p>}
 		</div>
@@ -30,6 +39,7 @@ PageHeader.propTypes = {
 		PropTypes.arrayOf(PropTypes.node),
 		PropTypes.node
 	]),
+	metadata: PropTypes.arrayOf([PropTypes.node]),
 	preheading: PropTypes.oneOfType([
 		PropTypes.arrayOf(PropTypes.node),
 		PropTypes.node

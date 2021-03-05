@@ -64,6 +64,22 @@ Lead text serves as a short introduction to the page, rendered as a paragraph.
 />
 ```
 
+##### metadata
+
+- Type: `Array<React.node>`
+
+```jsx
+<PageHeader
+	heading="Cerliponase alfa for treating neuronal ceroid lipofuscinosis type 2"
+	metadata={[
+		"Highly specialised technologies guidance",
+		"HST12",
+		"Last updated: 29 October 2019",
+		"Last updated: 29 October 2019"
+	]}
+/>
+```
+
 ##### cta
 
 - Type: `React.node`
@@ -101,6 +117,12 @@ If you're not using [React](#react), then include the [SCSS as above](#scss) and
 	<p class="page-header__lead">
 		A list of all our products on systemic lupus erythematosus
 	</p>
+	<ul class="page-header__metadata" aria-label="Some relevant label for the metadata">
+		<li>Highly specialised technologies guidance</li>
+		<li>HST12</li>
+		<li>Last updated: 29 October 2019</li>
+		<li>Last updated: 29 October 201</li>
+	</ul>
 	<p class="page-header__cta">
 		<button>Find out more now</button>
 	</p>
