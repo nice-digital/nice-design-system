@@ -19,7 +19,10 @@ $paddingSizes: (
   z-index: 0;
   &--light {
     background-color: $nds-colour-nice-teal;
-    color: white;
+    color: $nds-colour-nice-white;
+    a {
+      color: $nds-colour-nice-white;
+    }
   }
   @each $paddingSize, $size in $paddingSizes {
     &--padding-#{$paddingSize} {
