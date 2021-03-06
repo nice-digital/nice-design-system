@@ -15,36 +15,35 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [NICE Icons](#nice-icons)
-	- [Intro](#intro)
-		- [Guidance](#guidance)
-	- [Upgrading from 1.x to 2.x](#upgrading-from-1x-to-2x)
-		- [What's new in v2.x?](#whats-new-in-v2x)
-	- [Installation](#installation)
-		- [Include sass](#include-sass)
-			- [Environment variable](#environment-variable)
-			- [includePaths](#includepaths)
-			- [Tilde import](#tilde-import)
-	- [Usage](#usage)
-		- [React](#react)
-			- [Browser support](#browser-support)
-		- [Webfont](#webfont)
-			- [Serving font files](#serving-font-files)
-				- [Express](#express)
-				- [Grunt copy](#grunt-copy)
-				- [Visual Studio Copy Task](#visual-studio-copy-task)
-				- [Webpack](#webpack)
-			- [Markup](#markup)
-			- [SASS](#sass)
-	- [Development](#development)
-		- [Dependencies](#dependencies)
-		- [Commands](#commands)
-		- [Updating the readme](#updating-the-readme)
-		- [Releasing](#releasing)
-	- [Creating icons](#creating-icons)
-	- [Custom application icons](#custom-application-icons)
-	- [Icons](#icons)
-	- [License](#license)
+- [Intro](#intro)
+  - [Guidance](#guidance)
+- [Upgrading from 1.x to 2.x](#upgrading-from-1x-to-2x)
+  - [What's new in v2.x?](#whats-new-in-v2x)
+- [Installation](#installation)
+  - [Include sass](#include-sass)
+    - [Environment variable](#environment-variable)
+    - [includePaths](#includepaths)
+    - [Tilde import](#tilde-import)
+- [Usage](#usage)
+  - [React](#react)
+    - [Browser support](#browser-support)
+  - [Webfont](#webfont)
+    - [Serving font files](#serving-font-files)
+      - [Express](#express)
+      - [Grunt copy](#grunt-copy)
+      - [Visual Studio Copy Task](#visual-studio-copy-task)
+      - [Webpack](#webpack)
+    - [Markup](#markup)
+    - [SASS](#sass)
+- [Development](#development)
+  - [Dependencies](#dependencies)
+  - [Commands](#commands)
+  - [Updating the readme](#updating-the-readme)
+  - [Releasing](#releasing)
+- [Creating icons](#creating-icons)
+- [Custom application icons](#custom-application-icons)
+- [Icons](#icons)
+- [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -359,6 +358,8 @@ This uses [np](https://www.npmjs.com/package/np) under the hood.
 
 We provide a [Figma file](NICE Icons.fig) with the source of all icons. Upload this into Figma and add a new Page for each icon.
 
+> Note: [Figma](https://www.figma.com/) is an online (and desktop) design and wireframing-type application. We're using it here in the context of a vector drawing tool, like Adobe Illustrator. The steps below will essentially take you through opening the existing project file with all the icons in, adding a new one in the "right" way (so it's a standard format with all of the other icons), exporting your new icon as an SVG to add to the repo, and re-saving the project file ready for the next person.
+
 Follow the following steps to create a new SVG in Figma:
 
 1.  Add page with the correct name eg "Address book"
@@ -423,6 +424,7 @@ Icon | Name | Unicode | HTML | SASS
 <img src="src/instagram.svg" alt="instagram" height="50"> | instagram | f16d | `<span class="icon icon--instagram" aria-hidden="true"></span>` | `@include nice-icon(instagram);` 
 <img src="src/linkedin-sign.svg" alt="linkedin-sign" height="50"> | linkedin-sign | f08c | `<span class="icon icon--linkedin-sign" aria-hidden="true"></span>` | `@include nice-icon(linkedin-sign);` 
 <img src="src/linkedin.svg" alt="linkedin" height="50"> | linkedin | f0e1 | `<span class="icon icon--linkedin" aria-hidden="true"></span>` | `@include nice-icon(linkedin);` 
+<img src="src/location.svg" alt="location" height="50"> | location | f102 | `<span class="icon icon--location" aria-hidden="true"></span>` | `@include nice-icon(location);` 
 <img src="src/logo-full.svg" alt="logo-full" height="50"> | logo-full | e01c | `<span class="icon icon--logo-full" aria-hidden="true"></span>` | `@include nice-icon(logo-full);` 
 <img src="src/logo-name.svg" alt="logo-name" height="50"> | logo-name | e01b | `<span class="icon icon--logo-name" aria-hidden="true"></span>` | `@include nice-icon(logo-name);` 
 <img src="src/logo.svg" alt="logo" height="50"> | logo | e01a | `<span class="icon icon--logo" aria-hidden="true"></span>` | `@include nice-icon(logo);` 
