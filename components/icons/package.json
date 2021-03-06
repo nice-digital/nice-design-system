@@ -1,0 +1,77 @@
+{
+  "name": "@nice-digital/icons",
+  "version": "2.1.7",
+  "description": "Icons for use in NICE Digital Services",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run webfont && npm run svgr",
+    "svgr": "svgr -d es6 src && npm run es5ify",
+    "es5ify": "babel es6 -d lib",
+    "webfont": "grunt dist --color",
+    "test": "echo \"No tests :)\" && exit 0",
+    "readme": "doctoc ./README.md && babel-node ./scripts/readme-replacer.js",
+    "lint": "eslint .",
+    "// Releasing": "",
+    "release": "np",
+    "release:major": "np major",
+    "release:minor": "np minor",
+    "release:patch": "np patch",
+    "// Lifecycle hooks": "",
+    "prepublishOnly": "npm start && npm run readme"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhsevidence/nice-icons.git"
+  },
+  "keywords": [
+    "nice",
+    "icons",
+    "nhs",
+    "webfont",
+    "svg"
+  ],
+  "author": "NICE Digital Services (https://github.com/nhsevidence/nice-icons/graphs/contributors)",
+  "contributors": [
+    "NICE Digital Services (https://www.nice.org.uk/)",
+    "Ian Routledge (http://ediblecode.com)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nhsevidence/nice-icons/issues"
+  },
+  "homepage": "https://github.com/nhsevidence/nice-icons#readme",
+  "files": [
+    "dist",
+    "es6",
+    "lib",
+    "scss",
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-flow": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "@nice-digital/eslint-config": "^1.0.3",
+    "@svgr/cli": "^5.1.0",
+    "babel-eslint": "^10.0.3",
+    "doctoc": "^1.4.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-flowtype": "^4.6.0",
+    "grunt": "^1.0.4",
+    "grunt-webfont": "^1.7.2",
+    "load-grunt-config": "^3.0.1",
+    "np": "^5.2.1"
+  },
+  "peerDependencies": {
+    "react": ">=15"
+  },
+  "engines": {
+    "node": ">= 10.0.0",
+    "npm": ">= 6.8.0"
+  }
+}
