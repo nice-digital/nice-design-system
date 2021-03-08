@@ -39,7 +39,7 @@ PageHeader.propTypes = {
 		PropTypes.arrayOf(PropTypes.node),
 		PropTypes.node
 	]),
-	metadata: PropTypes.arrayOf([PropTypes.node]),
+	metadata: PropTypes.arrayOf(PropTypes.node),
 	preheading: PropTypes.oneOfType([
 		PropTypes.arrayOf(PropTypes.node),
 		PropTypes.node
