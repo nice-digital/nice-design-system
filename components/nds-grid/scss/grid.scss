@@ -111,7 +111,7 @@
   flex: 0 0 auto;
   // Fixed gutters fallback for IE11, due to lack of custom property support:
   flex-basis: calc(100% - #{$nds-grid-gutter});
-  margin: 0 #{$nds-grid-gutter / 2} #{$nds-grid-gutter} #{$nds-grid-gutter / 2};
+  margin: 0 #{$nds-grid-gutter / 2};
   position: relative;
 
   @supports ((--a: 0)) {
@@ -121,8 +121,7 @@
     flex-basis: calc(
       var(--grid-item-width) * 0.999 - var(--nds-grid-gutter)
     ) !important;
-    margin: 0 calc(var(--nds-grid-gutter) / 2) var(--nds-grid-gutter)
-      calc(var(--nds-grid-gutter) / 2) !important;
+    margin: 0 calc(var(--nds-grid-gutter) / 2) !important;
   }
 
   // Defensive warning for grid items not directly inside grids
