@@ -9,7 +9,7 @@
 ///
 /// Modifiers:
 ///   - `rev` - Reverses the grid direction from natural source order
-///   - `equal-heigh` - Sets children of grid items to fill the vertical space with 100% height
+///   - `equal-height` - Sets children of grid items to fill the vertical space with 100% height
 ///   - `gutterless` - Removes spacing and gutters from the grid
 ///   - `compact` - Uses tighter spacing and gutters
 ///   - `loose` - Uses looser spacing and gutters
@@ -17,6 +17,7 @@
 ///   - `center` - Horizontally center aligned grid items
 ///   - `middle` - Vertically middle aligned grid items
 ///   - `bottom` - Bottom aligned grid items
+///   - `debug` - Adds outlines for debugging grids and grid items
 ///
 /// @example html
 ///   <div class="grid">
