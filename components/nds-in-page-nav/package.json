@@ -1,6 +1,6 @@
 {
   "name": "@nice-digital/nds-in-page-nav",
-  "version": "1.1.1",
+  "version": "1.2.0-alpha.0",
   "description": "In page navigation component for the NICE Design System",
   "author": "Ian Routledge <ian.routledge@nice.org.uk>",
   "homepage": "https://nhsevidence.github.io/nice-design-system/",
