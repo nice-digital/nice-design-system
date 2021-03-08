@@ -43,31 +43,27 @@
 
   &__metadata {
     @include nds-font-size(lead);
+    display: flex;
+    flex-direction: column;
     list-style: none;
     margin: rem(0 0 $nds-spacing-small 0);
     max-width: none;
     padding: 0;
 
-    li {
-      display: block;
+    @include mq($from: md) {
+      flex-direction: row;
+      flex-wrap: wrap;
 
-      @include mq($from: md) {
-        display: inline-block;
+      li {
+        display: flex;
+        flex-direction: row;
         white-space: nowrap;
 
         &:after {
-          border-left: 1px solid $nds-colour-icons;
+          background: $nds-colour-icons;
           content: nds-get-glyph(zero-width-space);
-          display: inline-block;
           margin: em(0 $nds-spacing-small);
-          overflow: hidden;
-          text-indent: -99px;
-          vertical-align: middle;
-          width: 0;
-        }
-
-        &:first-child {
-          padding-left: 0;
+          width: 1px;
         }
 
         &:last-child:after {
