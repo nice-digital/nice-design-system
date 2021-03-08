@@ -15,11 +15,13 @@ export const PageHeaderView = () => {
 				heading="Cerliponase alfa for treating neuronal ceroid lipofuscinosis type 2"
 				metadata={[
 					"Highly specialised technologies guidance",
-					"HST12",
+					<>
+						<span className="visually-hidden">Reference number: </span>HST12
+					</>,
 					"Last updated: 29 October 2019",
 					"Last updated: 29 October 2019"
 				]}
-				cta={<a href="#">Register as a stakeholder</a>}
+				cta={<a href="/pageheader">Register as a stakeholder</a>}
 			/>
 		</>
 	);
