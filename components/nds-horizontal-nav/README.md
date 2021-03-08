@@ -4,12 +4,10 @@
 
 - [`@nice-digital/nds-horizontal-nav`](#nice-digitalhorizontalnav)
 - [Installation](#installation)
-- [Usage](#usage) 
-- [React](#react) 
-- [Props](#props) 
-	- [Props for HorizontalNav](#props-for-horizontalnav)
-	- [Props for HorizontalNavLink](#props-for-horizontalnavlink)
-- [SCSS](#scss) 
+- [Usage](#usage)
+- [React](#react)
+- [Props](#props) - [Props for HorizontalNav](#props-for-horizontalnav) - [Props for HorizontalNavLink](#props-for-horizontalnavlink)
+- [SCSS](#scss)
 - [HTML](#html)
 
 ## Installation
@@ -29,17 +27,18 @@ Import the `HorizontalNav` and `HorizontalNavLink` components from the package a
 ```jsx
 import React from "react";
 import { Link } from "react-router-dom";
-import { HorizontalNav, HorizontalNavLink } from "@nice-digital/nds-horizontal-nav";
+import {
+	HorizontalNav,
+	HorizontalNavLink
+} from "@nice-digital/nds-horizontal-nav";
 
 <HorizontalNav aria-label="My navigation">
-  <HorizontalNavLink isCurrent="true" destination="/about-us">
-      About
-  </HorizontalNavLink>			
-  <HorizontalNavLink destination="/contact">
-      Contact
-  </HorizontalNavLink>
-  <HorizontalNavLink destination="/" elementType={Link} title="Homepage"/>
-</HorizontalNav>
+	<HorizontalNavLink isCurrent="true" destination="/about-us">
+		About
+	</HorizontalNavLink>
+	<HorizontalNavLink destination="/contact">Contact</HorizontalNavLink>
+	<HorizontalNavLink destination="/" elementType={Link} title="Homepage" />
+</HorizontalNav>;
 ```
 
 > Note: The React component automatically imports the SCSS, so there's no need to import the SCSS directly yourself.
@@ -60,7 +59,7 @@ Any additional props will be spread across the container.
 
 ```jsx
 <HorizontalNav data-track="track-this" aria-label="Secondary navigation">
-  ...
+	...
 </HorizontalNav>
 ```
 
@@ -74,14 +73,14 @@ Any additional props will be spread across the container.
 Required! A string to represent the destination if the element is a link.
 
 ```jsx
-<HorizontalNavLink destination="/about-us"/>
+<HorizontalNavLink destination="/about-us" />
 ```
 
 will result in
 
 ```html
 <li class="horizontal-nav__item">
-  <a class="horizontal-nav__link" href="/about-us">/about-us</a>
+	<a class="horizontal-nav__link" href="/about-us">/about-us</a>
 </li>
 ```
 
@@ -98,7 +97,9 @@ Can be used instead of the title property for the link text
 The value that appears as the link's text, takes precedence over a supplied child.
 
 ```jsx
-<HorizontalNavLink title="This will appear!">This won't appear</HorizontalNavLink>
+<HorizontalNavLink title="This will appear!">
+	This won't appear
+</HorizontalNavLink>
 ```
 
 ##### elementType
@@ -107,7 +108,6 @@ The value that appears as the link's text, takes precedence over a supplied chil
 - Default: `a`
 
 The tag that you would like to use for the link. By default it's an HTMLAnchorElement and will result in something like `<a href="/destination">Destination</a>` but you can pass a custom router link tag such as `Link` to result in `<Link to="/destination">Destination</Link>`.
-
 
 ##### isCurrent
 
@@ -134,26 +134,26 @@ If you're not using [React](#react), then include the [SCSS as above](#scss) and
 
 ```html
 <nav class="horizontal-nav">
-  <ul class="horizontal-nav__list">
-    <li class="horizontal-nav__item">
-      <a aria-current="true" class="horizontal-nav__link" href="#">Guidance</a>
-    </li>
-    <li class="horizontal-nav__item">
-      <a class="horizontal-nav__link" href="#">
-        Tools and resources
-      </a>
-    </li>
-    <li class="horizontal-nav__item">
-      <a class="horizontal-nav__link" href="#">
-        Information for the public
-      </a>
-    </li>
-    <li class="horizontal-nav__item">
-      <a class="horizontal-nav__link" href="#">Evidence</a>
-    </li>
-    <li class="horizontal-nav__item">
-      <a class="horizontal-nav__link" href="#">History</a>
-    </li>
-  </ul>
+	<ul class="horizontal-nav__list">
+		<li class="horizontal-nav__item">
+			<a aria-current="true" class="horizontal-nav__link" href="#">Guidance</a>
+		</li>
+		<li class="horizontal-nav__item">
+			<a class="horizontal-nav__link" href="#">
+				Tools and resources
+			</a>
+		</li>
+		<li class="horizontal-nav__item">
+			<a class="horizontal-nav__link" href="#">
+				Information for the public
+			</a>
+		</li>
+		<li class="horizontal-nav__item">
+			<a class="horizontal-nav__link" href="#">Evidence</a>
+		</li>
+		<li class="horizontal-nav__item">
+			<a class="horizontal-nav__link" href="#">History</a>
+		</li>
+	</ul>
 </nav>
 ```
