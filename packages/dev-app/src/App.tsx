@@ -21,6 +21,7 @@ import { SimplePaginationView } from "./views/SimplePaginationView";
 import { PrevNextView } from "./views/PrevNextView";
 import { HorizontalNavView } from "./views/HorizontalNavView";
 import { TableView } from "./views/TableView";
+import { FullBleedView } from "./views/FullBleedView";
 import { CalloutView } from "./views/CalloutView";
 import "./App.scss";
 
@@ -91,6 +92,7 @@ class App extends Component {
 					<li>
 						<Link to="/callout">Callout</Link>
 					</li>
+<li><Link to="/full-bleed">Full Bleed</Link></li>
 				</ul>
 				<main className="container">
 					<Route path="/formgroup" component={FormGroupView} />
@@ -113,16 +115,17 @@ class App extends Component {
 					<Route path="/table" component={TableView} />
 					<Route path="/horizontal-nav" component={HorizontalNavView} />
 					<Route path="/callout" component={CalloutView} />
-					<p>
-						Some paragraph content for context. Lorem ipsum dolor sit amet,
-						consectetur adipisicing elit. Consequatur minima molestiae nisi qui,
-						reprehenderit tempora! Amet consequuntur ducimus illum incidunt
-						maxime molestiae possimus quae quasi quisquam ratione reprehenderit,
-						soluta, ullam unde voluptate voluptatibus. Aliquam atque blanditiis
-						dolorem eius eos esse facere facilis fugit illo labore laboriosam
-						laborum maiores necessitatibus nostrum quasi, recusandae
-						reprehenderit sit.
-					</p>
+<Route path="/full-bleed" component={FullBleedView} />
+	<p>
+						Some paragraph content for context. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Consequatur minima molestiae nisi qui, reprehenderit tempora! Amet
+						consequuntur ducimus illum incidunt maxime molestiae possimus quae
+						quasi quisquam ratione reprehenderit, soluta, ullam unde voluptate
+						voluptatibus. Aliquam atque blanditiis dolorem eius eos esse facere
+						facilis fugit illo labore laboriosam laborum maiores necessitatibus
+						nostrum quasi, recusandae reprehenderit sit.
+					</p>				
+					
 				</main>
 			</Router>
 		);

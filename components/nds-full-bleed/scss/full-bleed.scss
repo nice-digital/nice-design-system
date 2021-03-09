@@ -1,0 +1,32 @@
+@import '~@nice-digital/nds-core/scss/core';
+
+// Multipliers of $nds-spacing-large
+$paddingSizes: (
+  'small': 1,
+  'medium': 3,
+  'large': 6
+);
+
+.full-bleed {
+  background-color: $nds-colour-nice-white;
+  background-position: center center;
+  background-size: cover;
+  left: 50%;
+  margin-left: -50vw;
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  z-index: 0;
+  &--light {
+    background-color: $nds-colour-nice-teal;
+    color: $nds-colour-nice-white;
+    a {
+      color: $nds-colour-nice-white;
+    }
+  }
+  @each $paddingSize, $size in $paddingSizes {
+    &--padding-#{$paddingSize} {
+      padding: (rem($nds-spacing-large) * $size) 0;
+    }
+  }
+}
