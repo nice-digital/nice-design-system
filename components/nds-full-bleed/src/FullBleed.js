@@ -31,7 +31,7 @@ export const FullBleed = ({
 };
 
 FullBleed.propTypes = {
-	children: PropTypes.node,
+	children: PropTypes.node.isRequired,
 	className: PropTypes.string,
 	backgroundImage: PropTypes.string,
 	padding: PropTypes.oneOf(["small", "medium", "large"]),

@@ -43,6 +43,7 @@ import { Grid, GridItem } from "@nice-digital/nds-grid";
 				<p>This content is aligned to the grid</p>
 			</GridItem>
 		</Grid>
+	</div>
 </FullBleed>
 ```
 
@@ -56,7 +57,7 @@ The children will make up the contents of the full bleed component.
 
 #### className
 
-- Type: `React.ReactNode`
+- Type: `string`
 - Default: `"default"`
 
 Any additional classes you would like to apply to the container.
@@ -83,6 +84,16 @@ The amount of padding added to the top and bottom of the full bleed area.
 If set to `true`, the `light` setting will change the colour of the text content to white text and without a background image, display solid primary background.
 
 By default the text content is NICE black and the background is NICE white.
+
+##### Other props
+
+Any additional props will be spread across the component container.
+
+```jsx
+<FullBleed data-track="track-this">
+	<p>Content here</p>
+</FullBleed>
+```
 
 ### SCSS
 
