@@ -8,6 +8,7 @@ dev-app
 
 lib
 es
+es6
 
 # Remove false linting errors from type definitions
 **/*.d.ts
