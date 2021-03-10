@@ -1,6 +1,7 @@
 @import '~@nice-digital/nds-core/scss/core';
 
 .prev-next {
+  @include nds-hide-print;
   &__link {
     display: block;
     margin-bottom: 1rem;
