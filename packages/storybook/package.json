@@ -1,6 +1,6 @@
 {
   "name": "storybook",
-  "version": "1.2.0-alpha.1",
+  "version": "1.2.0-alpha.2",
   "private": true,
   "description": "> TODO: description",
   "author": "Warren Keith <warren.keith@nice.org.uk>",
@@ -19,7 +19,7 @@
     "url": "git+https://github.com/nhsevidence/nice-design-system.git"
   },
   "dependencies": {
-    "@nice-digital/design-system": "^1.2.0-alpha.1",
+    "@nice-digital/design-system": "^1.2.0-alpha.2",
     "@nice-digital/nds-action-banner": "^1.1.0",
     "@nice-digital/nds-alert": "^1.1.0",
     "@nice-digital/nds-breadcrumbs": "^1.1.0",
@@ -31,7 +31,7 @@
     "@nice-digital/nds-filters": "^1.1.0",
     "@nice-digital/nds-form-group": "^1.1.1",
     "@nice-digital/nds-forms": "^1.1.0",
-    "@nice-digital/nds-grid": "^1.2.0-alpha.0",
+    "@nice-digital/nds-grid": "^1.2.0-alpha.1",
     "@nice-digital/nds-hero": "^1.1.2",
     "@nice-digital/nds-horizontal-nav": "^1.1.0-alpha.0",
     "@nice-digital/nds-in-page-nav": "^1.2.0-alpha.0",
