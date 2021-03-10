@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 export const GridItem = props => {
 	const {
 		children,
-		cols,
+		cols = 12,
 		push,
 		pull,
 		xs,
@@ -13,7 +13,7 @@ export const GridItem = props => {
 		lg,
 		xl,
 		className,
-		elementType: GridItemElementType,
+		elementType: GridItemElementType = "div",
 		...rest
 	} = props;
 
@@ -64,7 +64,7 @@ GridItem.propTypes = {
 		PropTypes.arrayOf(PropTypes.node),
 		PropTypes.node
 	]).isRequired,
-	cols: PropTypes.number.isRequired,
+	cols: PropTypes.number,
 	push: PropTypes.number,
 	pull: PropTypes.number,
 	xs: breakpointPropType,
@@ -74,8 +74,4 @@ GridItem.propTypes = {
 	xl: breakpointPropType,
 	className: PropTypes.string,
 	elementType: PropTypes.elementType
-};
-
-GridItem.defaultProps = {
-	elementType: "div"
 };

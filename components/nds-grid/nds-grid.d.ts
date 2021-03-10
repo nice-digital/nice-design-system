@@ -18,7 +18,7 @@ declare module "@nice-digital/nds-grid" {
 		/** Contents of the grid item */
 		children: React.ReactNode;
 		/** The number of columns for the first (smallest) screen size */
-		cols: Columns;
+		cols?: Columns;
 		/** The number of columns to pull the grid item for the first (smallest) screen size */
 		pull?: PullOrPush;
 		/** The number of columns to push the grid item for the first (smallest) screen size */
