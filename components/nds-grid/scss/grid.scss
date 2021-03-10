@@ -108,21 +108,20 @@
 ///     <div data-g="12 xs:6 md:4 lg:3 xl:2">Grid item</div>
 ///   </div>
 [data-g] {
-  // Auto flex-basis with separate property for IE11 because of https://github.com/philipwalton/flexbugs#flexbug-8
+  // Auto flex-basis with separate width property for IE11 because of https://github.com/philipwalton/flexbugs#flexbug-8
   flex: 0 0 auto;
-  // Fixed gutters fallback for IE11, due to lack of custom property support:
-  flex-basis: calc(100% - #{$nds-grid-gutter});
   margin: 0 #{$nds-grid-gutter / 2};
   position: relative;
+  // Fixed gutters fallback for IE11, due to lack of custom property support:
+  width: calc(100% - #{$nds-grid-gutter});
 
   @supports ((--a: 0)) {
     --grid-item-width: 100%;
-    // Need to round down slightly because FireFox calculates the width slightly
-    // more 100% at certain screen sizes because of sub-pixel rendering (maybe?)
-    flex-basis: calc(
-      var(--grid-item-width) * 0.999 - var(--nds-grid-gutter)
-    ) !important;
     margin: 0 calc(var(--nds-grid-gutter) / 2) !important;
+    // Slightly hacky 0.1px because of subpixel rounding e.g. https://bugzilla.mozilla.org/show_bug.cgi?id=1323735
+    width: calc(
+      var(--grid-item-width) - var(--nds-grid-gutter) - 0.1px
+    ) !important;
   }
 
   // Defensive warning for grid items not directly inside grids
@@ -152,7 +151,7 @@
     [data-g~='#{ $prefix }#{ $index }'] {
       --grid-item-width: #{percentage($index / 12)};
       // IE 11 fallback, due to lack of custom property support:
-      flex-basis: calc(#{percentage($index / 12)} - #{$nds-grid-gutter});
+      width: calc(#{percentage($index / 12)} - #{$nds-grid-gutter});
     }
   }
 
