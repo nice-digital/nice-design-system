@@ -5,8 +5,10 @@ import classnames from "classnames";
 import "../scss/grid.scss";
 
 import { GridItem } from "./GridItem";
-
 export { GridItem };
+
+import { Container } from "./Container";
+export { Container };
 
 export const Grid = props => {
 	const {

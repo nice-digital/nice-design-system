@@ -1,0 +1,31 @@
+import React from "react";
+import PropTypes from "prop-types";
+import classnames from "classnames";
+
+export const Container = props => {
+	const {
+		children,
+		className,
+		elementType: ElementType,
+		fullWidth,
+		...rest
+	} = props;
+
+	const classes = classnames("container", className);
+
+	return (
+		<ElementType className={classes} {...rest}>
+			{children}
+		</ElementType>
+	);
+};
+
+Container.propTypes = {
+	children: PropTypes.oneOfType([
+		PropTypes.arrayOf(PropTypes.node),
+		PropTypes.node
+	]).isRequired,
+	className: PropTypes.string,
+	elementType: PropTypes.elementType,
+	fullWidth: PropTypes.bool
+};
