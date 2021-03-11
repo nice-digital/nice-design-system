@@ -25,7 +25,7 @@ export const Breadcrumbs = ({ children }) => {
 		"@context": "http://schema.org",
 		"@type": "BreadcrumbList",
 		itemListElement: children.length
-			? children.map(getBreadcrumbJsonLdItem)
+			? children.filter(Boolean).map(getBreadcrumbJsonLdItem)
 			: getBreadcrumbJsonLdItem(children)
 	};
 
