@@ -16,7 +16,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/nice-digital/nice-icons.git"
+		"url": "git+https://github.com/nhsevidence/nice-design-system.git"
 	},
 	"keywords": [
 		"nice",
@@ -25,16 +25,16 @@
 		"webfont",
 		"svg"
 	],
-	"author": "NICE Digital Services (https://github.com/nice-digital/nice-icons/graphs/contributors)",
+	"author": "NICE Digital Services (https://github.com/nice-digital/nice-design-system/graphs/contributors)",
 	"contributors": [
 		"NICE Digital Services (https://www.nice.org.uk/)",
 		"Ian Routledge (http://ediblecode.com)"
 	],
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/nice-digital/nice-icons/issues"
+		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
-	"homepage": "https://github.com/nice-digital/nice-icons#readme",
+	"homepage": "https://design-system.nice.org.uk",
 	"files": [
 		"dist",
 		"es6",
