@@ -1,0 +1,55 @@
+{
+	"name": "@nice-digital/icons",
+	"version": "2.1.7",
+	"description": "Icons for use in NICE Digital Services",
+	"main": "index.js",
+	"scripts": {
+		"start": "npm run webfont && npm run svgr",
+		"svgr": "svgr -d es6 src && npm run es5ify",
+		"es5ify": "babel es6 -d lib",
+		"webfont": "grunt dist --color",
+		"test": "echo \"No tests :)\" && exit 0",
+		"readme": "doctoc ./README.md && babel-node ./scripts/readme-replacer.js",
+		"lint": "eslint .",
+		"// Lifecycle hooks": "",
+		"prepublishOnly": "npm start && npm run readme"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nhsevidence/nice-design-system.git"
+	},
+	"keywords": [
+		"nice",
+		"icons",
+		"nhs",
+		"webfont",
+		"svg"
+	],
+	"author": "NICE Digital Services (https://github.com/nice-digital/nice-design-system/graphs/contributors)",
+	"contributors": [
+		"NICE Digital Services (https://www.nice.org.uk/)",
+		"Ian Routledge (http://ediblecode.com)"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/nice-digital/nice-design-system/issues"
+	},
+	"homepage": "https://design-system.nice.org.uk",
+	"files": [
+		"dist",
+		"es6",
+		"lib",
+		"scss",
+		"src"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"peerDependencies": {
+		"react": ">=15"
+	},
+	"engines": {
+		"node": ">= 10.0.0",
+		"npm": ">= 6.8.0"
+	}
+}
