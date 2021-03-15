@@ -4,7 +4,7 @@
   "private": true,
   "description": "> TODO: description",
   "author": "Warren Keith <warren.keith@nice.org.uk>",
-  "homepage": "https://github.com/nhsevidence/nice-design-system#readme",
+  "homepage": "https://github.com/nice-digital/nice-design-system#readme",
   "license": "MIT",
   "main": "lib/storybook.js",
   "directories": {
@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nhsevidence/nice-design-system.git"
+    "url": "git+https://github.com/nice-digital/nice-design-system.git"
   },
   "dependencies": {
     "@nice-digital/design-system": "^1.2.0-alpha.2",
@@ -56,7 +56,7 @@
     "build-storybook": "build-storybook"
   },
   "bugs": {
-    "url": "https://github.com/nhsevidence/nice-design-system/issues"
+    "url": "https://github.com/nice-digital/nice-design-system/issues"
   },
   "gitHead": "a4db68f43916ad6c4cb19612e10aae200e80b5a8"
 }

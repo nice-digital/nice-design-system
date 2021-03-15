@@ -3,7 +3,7 @@
   "version": "1.2.0-alpha.2",
   "description": "Your source for quickly creating consistent on-brand NICE digital services",
   "author": "Ian Routledge <ian.routledge@nice.org.uk>",
-  "homepage": "https://nhsevidence.github.io/nice-design-system/",
+  "homepage": "https://design-system.nice.org.uk/",
   "license": "MIT",
   "main": "lib/design-system.js",
   "style": "scss/nice-design-system.scss",
@@ -22,14 +22,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nhsevidence/nice-design-system.git"
+    "url": "git+https://github.com/nice-digital/nice-design-system.git"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
     "build-css": "node-sass ./scss/nice-design-system.scss --importer=./../../node_modules/node-sass-tilde-importer dist/bundle.css"
   },
   "bugs": {
-    "url": "https://github.com/nhsevidence/nice-design-system/issues"
+    "url": "https://github.com/nice-digital/nice-design-system/issues"
   },
   "dependencies": {
     "@nice-digital/icons": "^2.1.1",

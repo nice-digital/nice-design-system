@@ -7,7 +7,7 @@
 		"NICE Digital Services (https://www.nice.org.uk/digital)",
 		"Ian Routledge (http://ediblecode.com)"
 	],
-	"homepage": "https://nhsevidence.github.io/nice-design-system/",
+	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "lib/core.js",
 	"module": "es/core.js",
@@ -27,10 +27,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/nhsevidence/nice-design-system.git"
+		"url": "git+https://github.com/nice-digital/nice-design-system.git"
 	},
 	"bugs": {
-		"url": "https://github.com/nhsevidence/nice-design-system/issues"
+		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
 		"@nice-digital/icons": "^2.1.1",

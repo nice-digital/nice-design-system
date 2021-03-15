@@ -3,10 +3,10 @@
 > Lerna-managed monorepo for the NICE Design System
 
 [![npm](https://img.shields.io/npm/v/@nice-digital/design-system.svg)](https://www.npmjs.com/package/@nice-digital/design-system)
-[![GitHub release](https://img.shields.io/github/release/nhsevidence/nice-design-system.svg)](https://github.com/nhsevidence/nice-design-system)
-[![License](https://img.shields.io/github/license/nhsevidence/nice-design-system.svg)](https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
-[![Dependencies](https://img.shields.io/david/nhsevidence/nice-design-system.svg)](https://david-dm.org/nhsevidence/nice-design-system)
-[![Dev dependencies](https://img.shields.io/david/dev/nhsevidence/nice-design-system.svg)](https://david-dm.org/nhsevidence/nice-design-system?type=dev)
+[![GitHub release](https://img.shields.io/github/release/nice-digital/nice-design-system.svg)](https://github.com/nice-digital/nice-design-system)
+[![License](https://img.shields.io/github/license/nice-digital/nice-design-system.svg)](https://github.com/nice-digital/nice-design-system/blob/master/LICENSE)
+[![Dependencies](https://img.shields.io/david/nice-digital/nice-design-system.svg)](https://david-dm.org/nice-digital/nice-design-system)
+[![Dev dependencies](https://img.shields.io/david/dev/nice-digital/nice-design-system.svg)](https://david-dm.org/nice-digital/nice-design-system?type=dev)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
 <details>
@@ -29,7 +29,7 @@
 
 NICE Design System is a pattern library, front-end toolkit and set of guidelines for rapidly building modern, accessible digital services that are consistent with the NICE brand guidelines.
 
-It is a replacement for [NICE.Bootstrap](https://github.com/nhsevidence/NICE.Bootstrap/).
+It is a replacement for [NICE.Bootstrap](https://github.com/nice-digital/NICE.Bootstrap/).
 
 ## Development
 
