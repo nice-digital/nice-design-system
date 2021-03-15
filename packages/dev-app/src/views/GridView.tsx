@@ -8,15 +8,19 @@ const GridCellExample = ({ text, children }: any) => (
 	</div>
 );
 
+const test = false;
+
 export const GridView = () => {
 	return (
 		<>
 			<h1>Grid</h1>
 			<h2>Basics</h2>
 			<Grid>
-				<GridItem cols={12}>
-					<GridCellExample text="💯" />
-				</GridItem>
+				{test && (
+					<GridItem cols={12}>
+						<GridCellExample text="💯" />
+					</GridItem>
+				)}
 				<GridItem cols={12}>
 					<GridCellExample text="💯" />
 				</GridItem>

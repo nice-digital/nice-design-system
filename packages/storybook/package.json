@@ -31,6 +31,7 @@
     "@nice-digital/nds-filters": "^1.1.0",
     "@nice-digital/nds-form-group": "^1.1.1",
     "@nice-digital/nds-forms": "^1.1.0",
+		"@nice-digital/nds-full-bleed": "^1.0.0",
     "@nice-digital/nds-grid": "^1.2.0-alpha.1",
     "@nice-digital/nds-hero": "^1.1.2",
     "@nice-digital/nds-horizontal-nav": "^1.1.0-alpha.0",

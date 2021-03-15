@@ -42,11 +42,11 @@ declare module "@nice-digital/nds-grid" {
 	/** An item within the grid than spans up to 12 columnns */
 	export const GridItem: React.FC<GridItemProps>;
 
+	type ValidGridItemProps = GridItem | null | undefined;
+
 	export interface GridProps {
 		/** Grid item elements */
-		children:
-			| React.ReactElement<React.FC<GridItemProps>>[]
-			| React.ReactElement<React.FC<GridItemProps>>;
+		children: ValidGridItemProps[] | ValidGridItemProps;
 		/** Renders grid items in the opposite way to the source order */
 		reverse?: boolean;
 		/** Make children of grid items ahve 100% height to fill the vertical space */
