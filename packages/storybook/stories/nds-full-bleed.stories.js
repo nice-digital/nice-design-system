@@ -7,7 +7,9 @@ import { Grid, GridItem } from "@nice-digital/nds-grid";
 
 const NoOptions = () => (
 	<FullBleed>
-		<p>Any markup can go inside the container, but you'll need a container</p>
+		<p>
+			Any markup can go inside the container, but you&apos;ll need a container
+		</p>
 	</FullBleed>
 );
 
