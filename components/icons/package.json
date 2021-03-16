@@ -16,7 +16,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/nhsevidence/nice-design-system.git"
+		"url": "git+https://github.com/nice-digital/nice-design-system.git"
 	},
 	"keywords": [
 		"nice",

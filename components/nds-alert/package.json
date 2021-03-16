@@ -6,7 +6,7 @@
 		"alert"
 	],
 	"author": "Warren Keith <warren.keith@nice.org.uk>",
-	"homepage": "https://nhsevidence.github.io/nice-design-system/",
+	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "lib/Alert.js",
 	"module": "es/Alert.js",
@@ -28,10 +28,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/nhsevidence/nice-design-system.git"
+		"url": "git+https://github.com/nice-digital/nice-design-system.git"
 	},
 	"bugs": {
-		"url": "https://github.com/nhsevidence/nice-design-system/issues"
+		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
 		"classnames": "^2.2.6",

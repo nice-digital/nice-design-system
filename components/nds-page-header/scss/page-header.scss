@@ -41,6 +41,38 @@
     margin: rem(0 0 $nds-spacing-small 0);
   }
 
+  &__metadata {
+    @include nds-font-size(lead);
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: rem(0 0 $nds-spacing-small 0);
+    max-width: none;
+    padding: 0;
+
+    @include mq($from: md) {
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      li {
+        display: flex;
+        flex-direction: row;
+        white-space: nowrap;
+
+        &:after {
+          background: $nds-colour-icons;
+          content: nds-get-glyph(zero-width-space);
+          margin: em(0 $nds-spacing-small);
+          width: 1px;
+        }
+
+        &:last-child:after {
+          display: none;
+        }
+      }
+    }
+  }
+
   &__cta {
     @include nds-hide-print;
     @include nds-font-size(p);

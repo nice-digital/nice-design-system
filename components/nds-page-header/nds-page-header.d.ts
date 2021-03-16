@@ -5,6 +5,7 @@ declare module "@nice-digital/nds-page-header" {
 		preheading?: React.ReactNode;
 		heading: React.ReactNode;
 		lead?: React.ReactNode;
+		metadata?: React.ReactNode[];
 		cta?: React.ReactNode;
 	}
 

@@ -3,10 +3,10 @@
 > Your source for quickly creating consistent on-brand NICE digital services.
 
 [![npm](https://img.shields.io/npm/v/@nice-digital/design-system.svg)](https://www.npmjs.com/package/@nice-digital/design-system)
-[![GitHub release](https://img.shields.io/github/release/nhsevidence/nice-design-system.svg)](https://github.com/nhsevidence/nice-design-system)
-[![License](https://img.shields.io/github/license/nhsevidence/nice-design-system.svg)](https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
-[![Dependencies](https://img.shields.io/david/nhsevidence/nice-design-system.svg)](https://david-dm.org/nhsevidence/nice-design-system)
-[![Dev dependencies](https://img.shields.io/david/dev/nhsevidence/nice-design-system.svg)](https://david-dm.org/nhsevidence/nice-design-system?type=dev)
+[![GitHub release](https://img.shields.io/github/release/nice-digital/nice-design-system.svg)](https://github.com/nice-digital/nice-design-system)
+[![License](https://img.shields.io/github/license/nice-digital/nice-design-system.svg)](https://github.com/nice-digital/nice-design-system/blob/master/LICENSE)
+[![Dependencies](https://img.shields.io/david/nice-digital/nice-design-system.svg)](https://david-dm.org/nice-digital/nice-design-system)
+[![Dev dependencies](https://img.shields.io/david/dev/nice-digital/nice-design-system.svg)](https://david-dm.org/nice-digital/nice-design-system?type=dev)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
 <details>
@@ -31,7 +31,7 @@ Then follow the [usage](#usage) steps below:
 
 ## Usage
 
-This package is the 'kitchen sink' package which gives you access to all styles, components and icons. It references [@nice-digital/nds-core](packages/nds-core#readme), [@nice-digital/icons](https://github.com/nhsevidence/nice-icons#readme) and all the [component packages](packages).
+This package is the 'kitchen sink' package which gives you access to all styles, components and icons. It references [@nice-digital/nds-core](packages/nds-core#readme), [@nice-digital/icons](https://github.com/nice-digital/nice-icons#readme) and all the [component packages](packages).
 
 The installed package contains:
 
@@ -49,7 +49,7 @@ Import the NICE Design System into your application:
 @import "~@nice-digital/design-system/scss/nice-design-system";
 ```
 
-This gives you everything: core (mixins, functions, variables, placeholders), CSS resets, icon font, default styles and all components. Visit the [documentation site](https://nhsevidence.github.io/nice-design-system/technical/sass/documentation/) for full details on what's available in the SCSS.
+This gives you everything: core (mixins, functions, variables, placeholders), CSS resets, icon font, default styles and all components. Visit the [documentation site](https://design-system.nice.org.uk/technical/sass/documentation/) for full details on what's available in the SCSS.
 
 #### Problems with tilde (~) imports?
 

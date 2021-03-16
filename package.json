@@ -55,7 +55,7 @@
 	},
 	"config": {
 		"//": "Banner is used for prepending to compiled JS and CSS",
-		"banner": "NICE Design System ${ version } | ${ date }\n© Copyright NICE 2015-${ year }\nLicensed under MIT (https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)"
+		"banner": "NICE Design System ${ version } | ${ date }\n© Copyright NICE 2015-${ year }\nLicensed under MIT (https://github.com/nice-digital/nice-design-system/blob/master/LICENSE)"
 	},
 	"author": "Ian Routledge <ian.routledge@nice.org.uk>",
 	"contributors": [

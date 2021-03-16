@@ -41,6 +41,7 @@ ol {
 .list--piped {
   list-style: none;
   margin-left: 0;
+  max-width: none; // To override the default 66ch max width
   padding: 0;
 
   li,

@@ -12,6 +12,7 @@ export const Grid = props => {
 	const {
 		children,
 		reverse,
+		equalHeight,
 		gutter,
 		horizontalAlignment,
 		verticalAlignment,
@@ -24,6 +25,7 @@ export const Grid = props => {
 	const classNames = classnames({
 		grid: true,
 		"grid--rev": reverse,
+		"grid--equal-height": equalHeight,
 		"grid--gutterless": gutter === Grid.gutter.none,
 		"grid--compact": gutter === Grid.gutter.compact,
 		"grid--loose": gutter === Grid.gutter.loose,
@@ -66,6 +68,7 @@ Grid.propTypes = {
 		PropTypes.element
 	]).isRequired,
 	reverse: PropTypes.bool,
+	equalHeight: PropTypes.bool,
 	horizontalAlignment: PropTypes.oneOf([
 		Grid.horizontalAlignment.left,
 		Grid.horizontalAlignment.center,
@@ -89,6 +92,7 @@ Grid.propTypes = {
 
 Grid.defaultProps = {
 	reverse: false,
+	equalHeight: false,
 	gutter: Grid.gutter.standard,
 	horizontalAlignment: Grid.horizontalAlignment.left,
 	verticalAlignment: Grid.verticalAlignment.top,

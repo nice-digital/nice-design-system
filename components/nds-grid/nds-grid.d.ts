@@ -18,7 +18,7 @@ declare module "@nice-digital/nds-grid" {
 		/** Contents of the grid item */
 		children: React.ReactNode;
 		/** The number of columns for the first (smallest) screen size */
-		cols: Columns;
+		cols?: Columns;
 		/** The number of columns to pull the grid item for the first (smallest) screen size */
 		pull?: PullOrPush;
 		/** The number of columns to push the grid item for the first (smallest) screen size */
@@ -49,6 +49,8 @@ declare module "@nice-digital/nds-grid" {
 		children: ValidGridItemProps[] | ValidGridItemProps;
 		/** Renders grid items in the opposite way to the source order */
 		reverse?: boolean;
+		/** Make children of grid items ahve 100% height to fill the vertical space */
+		equalHeight?: boolean;
 		/** The horizontal alignment of items within the grid, when there are empty columns. Leave blank to default to left. */
 		horizontalAlignment?: "left" | "center" | "right";
 		/** The vertical alignment of items within the grid. Leave blank to default to top. */
