@@ -23,7 +23,11 @@ const Lead = () => (
 const Metadata = () => (
 	<PageHeader
 		heading="Cerliponase alfa for treating neuronal ceroid lipofuscinosis type 2"
-		metadata={["Highly specialised technologies guidance", "HST", "Published date: 27 November 2019 "]}
+		metadata={[
+			"Highly specialised technologies guidance",
+			"HST",
+			"Published date: 27 November 2019 "
+		]}
 	/>
 );
 

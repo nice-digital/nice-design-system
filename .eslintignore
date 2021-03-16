@@ -15,3 +15,5 @@ es6
 
 
 packages/docs/public/**/*.*
+
+components/icons/templates/nice-icons.tmpl.js

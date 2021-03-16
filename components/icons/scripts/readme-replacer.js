@@ -9,26 +9,26 @@ const fs = require("fs"),
 	path = require("path");
 
 // The file path to the readme to edit
-const readmePath: string = path.join(__dirname, "../README.md");
+const readmePath = path.join(__dirname, "../README.md");
 
 // The json file describing the
 const font = require("./../dist/nice-icons.json");
 
 
-const commentRegex: RegExp = /<!-- START icons.*-->([\s\S]*)<!-- END icons .*-->/gm;
+const commentRegex = /<!-- START icons.*-->([\s\S]*)<!-- END icons .*-->/gm;
 
-const startComment: string = "<!-- START icons generated comment -->\r\n<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN COMMAND TO UPDATE -->\r\n\r\n";
-const endComment: string = "\r\n<!-- END icons generated comment -->";
+const startComment = "<!-- START icons generated comment -->\r\n<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN COMMAND TO UPDATE -->\r\n\r\n";
+const endComment = "\r\n<!-- END icons generated comment -->";
 
-const tableHead: string = "Icon | Name | Unicode | HTML | SASS \r\n---- | ---- | ---- | ---- | ---- \r\n";
+const tableHead = "Icon | Name | Unicode | HTML | SASS \r\n---- | ---- | ---- | ---- | ---- \r\n";
 
 /**
  * Gets table of icons in markdown
  *
  * @returns {string} The new markdown, with table of icons
  */
-const getContent = (): string => {
-	var tableBody: string = "";
+const getContent = () => {
+	var tableBody = "";
 
 	// Turn list of icons into markdown table
 	for (var i = 0; i < font.glyphs.length; i++) {
@@ -51,7 +51,7 @@ const getContent = (): string => {
  * @param {Error} err Error, if any
  * @param {string} readme The contents of the file
  */
-const handleReadFile = (err, readme: string) => {
+const handleReadFile = (err, readme) => {
 	if(err) throw err;
 
 	readme = readme.replace(commentRegex, getContent());
@@ -65,7 +65,7 @@ const handleReadFile = (err, readme: string) => {
  * @param {string} file The path of the file
  * @param {string} readme The file contents to save
  */
-const saveToFile = (file: string, readme: string) => {
+const saveToFile = (file, readme) => {
 	fs.writeFile(file, readme, (err) => {
 		if (err) throw err;
 		console.info(`Replaced ${ font.glyphs.length } icons in ${ file }`);
