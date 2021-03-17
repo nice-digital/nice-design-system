@@ -1,4 +1,5 @@
 import React from "react";
+import classnames from "classnames";
 import PropTypes from "prop-types";
 
 import "./../scss/panel.scss";
@@ -6,23 +7,14 @@ import "./../scss/panel.scss";
 export const Panel = props => {
 	const { children, variant, className, ...rest } = props;
 
-	const panelClasses = ["panel"];
-
-	switch (variant) {
-		case Panel.variant.impact:
-			panelClasses.push("panel--impact");
-			break;
-		case Panel.variant.primary:
-			panelClasses.push("panel--primary");
-			break;
-		default:
-			break;
-	}
-
-	if (className) panelClasses.push(className);
+	const classes = classnames([
+		"panel",
+		className,
+		variant && "panel--" + variant
+	]);
 
 	return (
-		<div className={panelClasses.join(" ")} {...rest}>
+		<div className={classes} {...rest}>
 			{children}
 		</div>
 	);
@@ -31,7 +23,9 @@ export const Panel = props => {
 Panel.variant = {
 	supporting: "supporting",
 	impact: "impact",
-	primary: "primary"
+	primary: "primary",
+	inverse: "inverse",
+	"impact-alt": "impact-alt"
 };
 
 Panel.propTypes = {
@@ -42,7 +36,9 @@ Panel.propTypes = {
 	variant: PropTypes.oneOf([
 		Panel.variant.supporting,
 		Panel.variant.impact,
-		Panel.variant.primary
+		Panel.variant.primary,
+		Panel.variant.inverse,
+		Panel.variant["impact-alt"]
 	]),
 	className: PropTypes.string
 };

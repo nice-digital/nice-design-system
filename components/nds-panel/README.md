@@ -50,7 +50,7 @@ The body of the panel
 
 ##### variant
 
-- Type: `"impact"` | `"primary"`
+- Type: `"impact"` | `"primary"` | `"inverse"` | `"impact-alt"`
 - Default: `""`
 
 The type of panel. Leave blank to default to a supporting panel.

@@ -11,6 +11,8 @@ declare module "@nice-digital/nds-panel" {
 			supporting: "supporting";
 			impact: "impact";
 			primary: "primary";
+			inverse: "inverse";
+			"impact-alt": "impact-alt";
 		};
 	}
 
