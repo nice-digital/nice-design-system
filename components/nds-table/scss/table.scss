@@ -6,6 +6,7 @@
 
 @import '~@nice-digital/nds-core/scss/core';
 
+table,
 .table {
   background: $nds-colour-true-white;
   border: 1px solid $nds-colour-border;
@@ -14,7 +15,7 @@
   max-width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
-  width: 100% !important; // Important because some tables come in from the feed with widths in style attributes
+  width: 100% !important;
 
   th {
     vertical-align: bottom;
