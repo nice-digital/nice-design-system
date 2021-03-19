@@ -17,6 +17,7 @@
 
   &__crumb {
     display: inline-block;
+    margin-bottom: 0;
 
     &:before {
       content: nds-get-glyph(greater-than);
