@@ -33,7 +33,7 @@ describe("Panel", () => {
 				Some panel content
 			</Panel>
 		);
-		expect(wrapper.props()["className"]).toEqual("panel panel--primary mt--0");
+		expect(wrapper.props()["className"]).toEqual("panel mt--0 panel--primary");
 	});
 
 	it("should pass arbitrary prop into panel div", () => {

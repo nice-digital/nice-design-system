@@ -10,7 +10,7 @@ export const Panel = props => {
 	const classes = classnames([
 		"panel",
 		className,
-		variant && "panel--" + variant
+		variant ? "panel--" + variant : "panel--supporting"
 	]);
 
 	return (
@@ -42,5 +42,3 @@ Panel.propTypes = {
 	]),
 	className: PropTypes.string
 };
-
-Panel.defaultProps = { variant: Panel.variant.supporting };
