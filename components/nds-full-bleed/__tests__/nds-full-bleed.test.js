@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow, mount } from "enzyme";
+import { shallow } from "enzyme";
 import { FullBleed } from "../src/FullBleed";
 import toJson from "enzyme-to-json";
 

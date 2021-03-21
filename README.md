@@ -3,10 +3,10 @@
 > Lerna-managed monorepo for the NICE Design System
 
 [![npm](https://img.shields.io/npm/v/@nice-digital/design-system.svg)](https://www.npmjs.com/package/@nice-digital/design-system)
-[![GitHub release](https://img.shields.io/github/release/nhsevidence/nice-design-system.svg)](https://github.com/nhsevidence/nice-design-system)
-[![License](https://img.shields.io/github/license/nhsevidence/nice-design-system.svg)](https://github.com/nhsevidence/nice-design-system/blob/master/LICENSE)
-[![Dependencies](https://img.shields.io/david/nhsevidence/nice-design-system.svg)](https://david-dm.org/nhsevidence/nice-design-system)
-[![Dev dependencies](https://img.shields.io/david/dev/nhsevidence/nice-design-system.svg)](https://david-dm.org/nhsevidence/nice-design-system?type=dev)
+[![GitHub release](https://img.shields.io/github/release/nice-digital/nice-design-system.svg)](https://github.com/nice-digital/nice-design-system)
+[![License](https://img.shields.io/github/license/nice-digital/nice-design-system.svg)](https://github.com/nice-digital/nice-design-system/blob/master/LICENSE)
+[![Dependencies](https://img.shields.io/david/nice-digital/nice-design-system.svg)](https://david-dm.org/nice-digital/nice-design-system)
+[![Dev dependencies](https://img.shields.io/david/dev/nice-digital/nice-design-system.svg)](https://david-dm.org/nice-digital/nice-design-system?type=dev)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
 <details>
@@ -29,7 +29,7 @@
 
 NICE Design System is a pattern library, front-end toolkit and set of guidelines for rapidly building modern, accessible digital services that are consistent with the NICE brand guidelines.
 
-It is a replacement for [NICE.Bootstrap](https://github.com/nhsevidence/NICE.Bootstrap/).
+It is a replacement for [NICE.Bootstrap](https://github.com/nice-digital/NICE.Bootstrap/).
 
 ## Development
 
@@ -140,3 +140,4 @@ These are the following breaking changes from 0.x to 1.x:
 - moved component-specific colour variables out of core into their respective component SCSS. Also renamed appropriately e.g.`$colour-panel-default` and `$colour-panel-default-border` are now in @nice-digital/nds-panel and renamed to `$nds-colour-panel-default-background` and `$nds-colour-panel-default-border`
 - removed `nds-element` and `nds-modifier` and their aliases `nds-e` and `nds-m` as they were never used
 - Removed all placeholders and replaced with mixins
+- Removed grid mixins: either use the grid in markup or use your own custom grid with flexbox etc in CSS.

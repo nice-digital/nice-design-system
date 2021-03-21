@@ -1,7 +1,7 @@
 import React from "react";
 
 import { storiesOf } from "@storybook/react";
-import { withKnobs, text, select } from "@storybook/addon-knobs";
+import { withKnobs, text } from "@storybook/addon-knobs";
 import { Grid, GridItem } from "@nice-digital/nds-grid";
 import { Callout, CalloutBody, CalloutImage } from "@nice-digital/nds-callout";
 

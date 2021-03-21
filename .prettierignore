@@ -10,3 +10,6 @@ vendor
 *.bundle.js
 packages/storybook/storybook-static
 packages/docs/.netlify/state.json
+
+# Generated icons SCSS
+components/icons/scss/_nice-icons.scss

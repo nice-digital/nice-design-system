@@ -9,10 +9,13 @@ declare module "@nice-digital/nds-breadcrumbs" {
 
 	export const Breadcrumb: React.FC<BreadcrumbProps>;
 
+	type ValidBreadcrumbProp =
+		| React.ReactElement<BreadcrumbProps>
+		| null
+		| undefined;
+
 	export interface BreadcrumbsProps {
-		children:
-			| React.ReactElement<BreadcrumbProps>[]
-			| React.ReactElement<BreadcrumbProps>;
+		children: ValidBreadcrumbProp[] | ValidBreadcrumbProp;
 	}
 
 	export const Breadcrumbs: React.FC<BreadcrumbsProps>;

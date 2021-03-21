@@ -42,6 +42,7 @@
 	},
   "ignoreFiles": [
 	  "**/vendor/**/*.scss",
-	  "**/*.md"
+	  "**/*.md",
+	  "components/icons/templates/nice-icons.tmpl.scss",
   ]
 }

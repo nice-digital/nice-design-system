@@ -32,7 +32,7 @@ export default create({
 	inputBorderRadius: 2,
 
 	brandTitle: "NICE Design System storybook",
-	brandUrl: "https://github.com/nhsevidence/nice-design-system",
+	brandUrl: "https://github.com/nice-digital/nice-design-system",
 	brandImage:
 		"https://www.nice.org.uk/Media/Default/About/Branding-guidelines/Logos/logo-short3.png"
 });

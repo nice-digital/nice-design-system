@@ -1,12 +1,12 @@
 {
 	"name": "@nice-digital/nds-tag",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"description": "Tag component for the NICE Design System",
 	"keywords": [
 		"tag"
 	],
 	"author": "Ian Routledge <ian.routledge@nice.org.uk>",
-	"homepage": "https://nhsevidence.github.io/nice-design-system/",
+	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "lib/Tag.js",
 	"module": "es/Tag.js",
@@ -28,10 +28,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/nhsevidence/nice-design-system.git"
+		"url": "git+https://github.com/nice-digital/nice-design-system.git"
 	},
 	"bugs": {
-		"url": "https://github.com/nhsevidence/nice-design-system/issues"
+		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
 		"classnames": "^2.2.6",

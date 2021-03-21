@@ -20,6 +20,17 @@ const Lead = () => (
 	/>
 );
 
+const Metadata = () => (
+	<PageHeader
+		heading="Cerliponase alfa for treating neuronal ceroid lipofuscinosis type 2"
+		metadata={[
+			"Highly specialised technologies guidance",
+			"HST",
+			"Published date: 27 November 2019 "
+		]}
+	/>
+);
+
 const CtaButton = <Button>Find out more about this topic</Button>;
 
 const CTA = () => (
@@ -46,5 +57,6 @@ storiesOf("Components/Page Header", module)
 	.add("Heading", Heading)
 	.add("Pre-heading", Preheading)
 	.add("Lead", Lead)
+	.add("Metadata", Metadata)
 	.add("Call-to-action", CTA)
 	.add("Try it out", Customise);

@@ -8,9 +8,12 @@ dev-app
 
 lib
 es
+es6
 
 # Remove false linting errors from type definitions
 **/*.d.ts
 
 
 packages/docs/public/**/*.*
+
+components/icons/templates/nice-icons.tmpl.js

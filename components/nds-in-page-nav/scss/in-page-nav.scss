@@ -40,8 +40,12 @@
 
   @include mq($from: md) {
     margin: 0;
+    position: sticky;
+    top: rem($nds-spacing-small);
 
-    // Docked to the top of the screen
+    // Fixed modifier for a JS implementation.
+    // Ideally we use the position: sticky option but if we _really_ need a JS
+    // fallback then we can apply this class.
     &--fixed {
       position: fixed;
       top: 0;
