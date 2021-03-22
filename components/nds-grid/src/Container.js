@@ -6,12 +6,16 @@ export const Container = props => {
 	const {
 		children,
 		className,
-		elementType: ElementType,
+		elementType: ElementType = "div",
 		fullWidth,
 		...rest
 	} = props;
 
-	const classes = classnames("container", className);
+	const classes = classnames([
+		"container",
+		fullWidth && "container--full",
+		className
+	]);
 
 	return (
 		<ElementType className={classes} {...rest}>

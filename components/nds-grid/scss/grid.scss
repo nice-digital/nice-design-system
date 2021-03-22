@@ -1,8 +1,28 @@
+@import '~@nice-digital/nds-core/scss/core';
+
 ////
 /// @group grid
 ////
 
 @import 'grid-settings';
+
+/// Container, used as a wrapper around sections within a page.
+/// Usually used to house grids.
+///
+/// @example
+///   <div class="container">
+///     <div class="grid">
+///     </div>
+///   </div>
+/// @since 0.1.0
+.container {
+  @include nds-container;
+  &--full {
+    max-width: 100%;
+    padding: 0 2%;
+    width: auto;
+  }
+}
 
 /// Grid class for the grid wrapper. Expects direct children to be `[data-g]`
 /// grid items. Use modifiers to affect grid behaviour as shown below:
