@@ -7,23 +7,28 @@
 	- [Usage](#usage)
 		- [React](#react)
 			- [Props](#props)
+			    - [Container](#container)
+			        - [children](#children)
+			        - [className](#classname)
+			        - [elementType](#elementtype)
+			        - [fullWidth](#fullwidth)
 				- [Grid](#grid)
-					- [children](#children)
+					- [children](#children-1)
 					- [reverse](#reverse)
 					- [horizontalAlignment](#horizontalalignment)
 					- [verticalAlignment](#verticalalignment)
 					- [gutter](#gutter)
 					- [debug](#debug)
-					- [className](#classname)
-					- [elementType](#elementtype)
+					- [className](#classname-1)
+					- [elementType](#elementtype-1)
 				- [GridItem](#griditem)
-					- [children](#children-1)
+					- [children](#children-2)
 					- [cols](#cols)
 					- [push](#push)
 					- [pull](#pull)
 					- [xs, sm, md, lg, xl](#xs-sm-md-lg-xl)
-					- [className](#classname-1)
-					- [elementType](#elementtype-1)
+					- [className](#classname-2)
+					- [elementType](#elementtype-2)
 		- [SCSS](#scss)
 		- [HTML](#html)
 
@@ -43,18 +48,49 @@ Import the `Grid` and `GridItem` components from the package and use within JSX:
 
 ```jsx
 import React from "react";
-import { Grid, GridItem } from "@nice-digital/nds-grid";
+import { Container, Grid, GridItem } from "@nice-digital/nds-grid";
 
-<Grid>
-	<GridItem cols={12} sm={{ cols: 6, push: 2 }}>
-		Some grid content
-	</GridItem>
-</Grid>
+<Container>
+	<Grid>
+		<GridItem cols={12} sm={{ cols: 6, push: 2 }}>
+			Some grid content
+		</GridItem>
+	</Grid>
+</Container>
 ```
 
 > Note: The React component automatically imports the SCSS, so there's no need to import the SCSS directly yourself.
 
 #### Props
+
+##### Container
+
+###### children
+
+- Type: `React.Node` | `React.Node[]` (required)
+
+The content to render inside the grid.
+
+###### className
+
+- Type: `string`
+- Default: `""`
+
+Additional classes to render on the container element. Useful for margin classes e.g. `mt--d`.
+
+###### elementType
+
+- Type: `React.ElementType`
+- Default: `div`
+
+A custom tag type for the container. Useful if the container covers the whole of the page's unique content, i.e. `elementType="main"`.
+
+###### fullWidth
+
+- Type: `boolean`
+- Default: `false`
+
+An option to override the default `max-width` of the container (`$nds-container-max-width`), and set it to 98% of the parent (or viewport's) width.
 
 ##### Grid
 
@@ -69,7 +105,7 @@ The grid items to render within the grid
 - Type: `boolean` | `null`
 - Default: `false`
 
-Reverses the rendered order of grid items from their natural DOM order. Can be useful for rendering a menu first on mobile, but on the right hand side on side devices. Leave blank to default to the natual DOM order.
+Reverses the rendered order of grid items from their natural DOM order. Can be useful for rendering a menu first on mobile, but on the right hand side on side devices. Leave blank to default to the natural DOM order.
 
 > Use with caution! Be careful not to introduce an illogical, confusing tab order when using a reverse grid.
 
@@ -174,8 +210,10 @@ If you're not using [React](#react), then import the SCSS directly into your app
 If you're not using [React](#react), then include the [SCSS as above](#scss) and use the HTML, for example:
 
 ```html
-<div class="grid grid-reverse grid--middle">
-	<div data-g="12 xs:6 xs:push:2">Some grid item content</div>
-	<div data-g="12 xs:6 xs:push:2 sm:12">Some grid item content</div>
+<div class="container">
+	<div class="grid grid-reverse grid--middle">
+		<div data-g="12 xs:6 xs:push:2">Some grid item content</div>
+		<div data-g="12 xs:6 xs:push:2 sm:12">Some grid item content</div>
+	</div>
 </div>
 ```
