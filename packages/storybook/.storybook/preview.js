@@ -5,7 +5,7 @@ import "./stories.scss";
 
 // Wrap all stories in a container
 const wrapperDecorator = storyFn => (
-	<div className="container pv--d" id="wrap-storybook">
+	<div className="pv--d" id="wrap-storybook">
 		{storyFn()}
 	</div>
 );
