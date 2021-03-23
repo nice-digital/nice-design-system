@@ -68,3 +68,18 @@ $nds-colour-panel-primary-border: $nds-colour-nice-ice-teal;
   background: $nds-colour-panel-primary-background;
   border: 3px solid $nds-colour-panel-primary-border;
 }
+
+.panel--inverse {
+  background: $nds-colour-nice-teal;
+  color: $nds-colour-text-inverse;
+}
+
+.panel--impact-alt {
+  background: $nds-colour-nice-teal;
+  background: linear-gradient(
+    333deg,
+    $nds-colour-nice-teal-3 0%,
+    $nds-colour-nice-teal-1 100%
+  );
+  color: $nds-colour-text-inverse;
+}

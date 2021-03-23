@@ -3,7 +3,7 @@ declare module "@nice-digital/nds-panel" {
 
 	export interface PanelProps {
 		children: React.ReactNode;
-		variant?: "supporting" | "primary" | "impact";
+		variant?: "supporting" | "primary" | "impact" | "inverse" | "impact-alt";
 	}
 
 	interface PanelComponent extends React.FC<PanelProps> {
@@ -11,6 +11,8 @@ declare module "@nice-digital/nds-panel" {
 			supporting: "supporting";
 			impact: "impact";
 			primary: "primary";
+			inverse: "inverse";
+			"impact-alt": "impact-alt";
 		};
 	}
 

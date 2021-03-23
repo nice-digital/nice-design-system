@@ -1,9 +1,9 @@
 ---
 title: Panel
 description: Blocks to highlight or separate content
-
 template: detail
-
+storybook: components-panel
+npm: nds-panel
 ---
 
 ## Why?
@@ -16,25 +16,15 @@ Use panels in side panel as an aside from the main content, or to group related 
 
 Panels have a default padding and remove the margin top/bottom from the first/last children to maintain consistent padding.
 
-Panels have a margin above and below by default to separate from the surrounding content. Use with <a href="{{ site.baseurl }}{% link foundations/spacing.md %}#css-classes">spacing CSS classes</a> e.g. `mb--e` or `mt--0` to adjust the margins if necessary.
+Panels have a margin above and below by default to separate from the surrounding content.
 
 ## Variants
 
-### Default (light) panel
+You can choose from the default panel and four additional variations:
 
-```
-<div class="panel">
-    <p>This is a default panel</p>
-</div>
-```
+- Primary
+- Impact
+- Impact (alternative)
+- Inverse
 
-### Inverse (dark) panel
-
-```
-<div class="panel panel--inverse">
-    <p>This is a dark panel. <a href="">Links are inverted automatically</a>.</p>
-    <p>
-        <a href="#" class="btn btn--inverse">Inverse button</a>
-    </p>
-</div>
-```
+For examples of the variants and for examples of the HTML to use, see Storybook.
