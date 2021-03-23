@@ -9,8 +9,8 @@ export const Panel = props => {
 
 	const classes = classnames([
 		"panel",
-		className,
-		variant ? "panel--" + variant : "panel--supporting"
+		variant && "panel--" + variant,
+		className
 	]);
 
 	return (
@@ -21,7 +21,6 @@ export const Panel = props => {
 };
 
 Panel.variant = {
-	supporting: "supporting",
 	impact: "impact",
 	primary: "primary",
 	inverse: "inverse",

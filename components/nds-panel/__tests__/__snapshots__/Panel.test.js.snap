@@ -2,7 +2,7 @@
 
 exports[`Panel should match snapshot for default panel 1`] = `
 <div
-  className="panel panel--supporting"
+  className="panel"
 >
   Some panel content
 </div>

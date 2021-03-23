@@ -23,7 +23,7 @@ import React from "react";
 import { Panel } from "@nice-digital/nds-panel";
 
 <Panel>
-	<h2>A default (supporting) panel</h2>
+	<h2>A default panel</h2>
 	<p>For signposting supporting or additional information</p>
 </Panel>
 
@@ -53,7 +53,7 @@ The body of the panel
 - Type: `"impact"` | `"primary"` | `"inverse"` | `"impact-alt"`
 - Default: `""`
 
-The type of panel. Leave blank to default to a supporting panel.
+The type of panel.
 
 ##### className
 
@@ -76,7 +76,7 @@ If you're not using [React](#react), then include the [SCSS as above](#scss) and
 
 ```html
 <div class="panel">
-	Default (supporting) panel
+	Default panel
 </div>
 <div class="panel panel--impact">
 	Impact panel
