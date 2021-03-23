@@ -1,8 +1,28 @@
+@import '~@nice-digital/nds-core/scss/core';
+
 ////
 /// @group grid
 ////
 
 @import 'grid-settings';
+
+/// Container, used as a wrapper around sections within a page.
+/// Usually used to house grids.
+///
+/// @example
+///   <div class="container">
+///     <div class="grid">
+///     </div>
+///   </div>
+/// @since 0.1.0
+.container {
+  @include nds-container;
+  &--full {
+    max-width: 100%;
+    padding: 0 2%;
+    width: auto;
+  }
+}
 
 /// Grid class for the grid wrapper. Expects direct children to be `[data-g]`
 /// grid items. Use modifiers to affect grid behaviour as shown below:
@@ -30,7 +50,8 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   list-style: none; // Allow the grid system to be used on lists.
-  margin: 0 -#{$nds-grid-gutter / 2};
+  margin-left: -#{$nds-grid-gutter / 2};
+  margin-right: -#{$nds-grid-gutter / 2};
   max-width: none; // To override the 66ch max width on lists
   padding: 0; // Remove any paddings that might affect the grid system.
   width: calc(100% + #{$nds-grid-gutter});
@@ -38,7 +59,8 @@
   // Fallback to fixed gutter grid in IE11, but use CSS vars where supported.
   // IE11 doesn't support custom properties: https://caniuse.com/css-variables
   @supports ((--a: 0)) {
-    margin: 0 calc(var(--nds-grid-gutter) / -2);
+    margin-left: calc(var(--nds-grid-gutter) / -2);
+    margin-right: calc(var(--nds-grid-gutter) / -2);
     width: calc(100% + var(--nds-grid-gutter));
   }
 
@@ -110,14 +132,16 @@
 [data-g] {
   // Auto flex-basis with separate width property for IE11 because of https://github.com/philipwalton/flexbugs#flexbug-8
   flex: 0 0 auto;
-  margin: 0 #{$nds-grid-gutter / 2};
+  margin-left: #{$nds-grid-gutter / 2};
+  margin-right: #{$nds-grid-gutter / 2};
   position: relative;
   // Fixed gutters fallback for IE11, due to lack of custom property support:
   width: calc(100% - #{$nds-grid-gutter});
 
   @supports ((--a: 0)) {
     --grid-item-width: 100%;
-    margin: 0 calc(var(--nds-grid-gutter) / 2) !important;
+    margin-left: calc(var(--nds-grid-gutter) / 2) !important;
+    margin-right: calc(var(--nds-grid-gutter) / 2) !important;
     // Slightly hacky 0.1px because of subpixel rounding e.g. https://bugzilla.mozilla.org/show_bug.cgi?id=1323735
     width: calc(
       var(--grid-item-width) - var(--nds-grid-gutter) - 0.1px

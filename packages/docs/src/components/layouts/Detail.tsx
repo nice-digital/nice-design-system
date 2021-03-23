@@ -12,6 +12,8 @@ import { InPageNav } from "../partials/inpagenav/InPageNav";
 
 const npmPath = "https://www.npmjs.com/package/@nice-digital/";
 const storybookPath = "/storybook/?path=/story/";
+const githubPath =
+	"https://github.com/nice-digital/nice-design-system/blob/main/";
 
 type DetailLayoutType = {
 	data: {
@@ -22,6 +24,7 @@ type DetailLayoutType = {
 				inpagenav: boolean;
 				storybook: string;
 				npm: string;
+				github: string;
 			};
 			tableOfContents: {
 				items: TableOfContentsItemType[];
@@ -50,6 +53,7 @@ export const query = graphql`
 				inpagenav
 				storybook
 				npm
+				github
 			}
 			tableOfContents
 			body
@@ -63,7 +67,14 @@ export default function DetailLayout(
 	const {
 		body,
 		slug,
-		frontmatter: { title, description, inpagenav = false, storybook, npm },
+		frontmatter: {
+			title,
+			description,
+			inpagenav = false,
+			storybook,
+			npm,
+			github
+		},
 		id,
 		tableOfContents: { items }
 	} = props.data.mdx;
@@ -80,7 +91,7 @@ export default function DetailLayout(
 					<Navigation currentSlug={slug} currentId={id} />
 				</GridItem>
 				<GridItem cols={12} sm={inpagenav ? 8 : 10}>
-					{(storybook || npm) && (
+					{(storybook || npm || github) && (
 						<p>
 							{storybook && (
 								<Button
@@ -99,6 +110,16 @@ export default function DetailLayout(
 									rel="noreferrer nofollow"
 								>
 									View on NPM
+								</Button>
+							)}
+							{github && (
+								<Button
+									elementType="a"
+									to={githubPath + github}
+									target="_blank"
+									rel="noreferrer nofollow"
+								>
+									View Source on Github
 								</Button>
 							)}
 						</p>

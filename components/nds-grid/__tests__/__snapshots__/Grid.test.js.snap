@@ -3,6 +3,7 @@
 exports[`Grid should match snapshot 1`] = `
 <Grid
   elementType="div"
+  equalHeight={false}
   gutter="standard"
   horizontalAlignment="left"
   reverse={false}
@@ -13,7 +14,6 @@ exports[`Grid should match snapshot 1`] = `
   >
     <GridItem
       cols={6}
-      elementType="div"
     >
       <div
         data-g="6"
@@ -23,7 +23,6 @@ exports[`Grid should match snapshot 1`] = `
     </GridItem>
     <GridItem
       cols={6}
-      elementType="div"
     >
       <div
         data-g="6"

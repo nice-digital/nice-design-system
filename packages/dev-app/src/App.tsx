@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import Faker from "faker";
 import { Router, Route, Link } from "react-router-dom";
 import { createBrowserHistory } from "history";
+import { Container } from "@nice-digital/nds-grid";
 import { FormGroupView } from "./views/FormGroupView";
 import { PageHeaderView } from "./views/PageHeaderView";
 import { GridView } from "./views/GridView";
@@ -92,9 +93,11 @@ class App extends Component {
 					<li>
 						<Link to="/callout">Callout</Link>
 					</li>
-<li><Link to="/full-bleed">Full Bleed</Link></li>
+					<li>
+						<Link to="/full-bleed">Full Bleed</Link>
+					</li>
 				</ul>
-				<main className="container">
+				<Container>
 					<Route path="/formgroup" component={FormGroupView} />
 					<Route path="/pageheader" component={PageHeaderView} />
 					<Route path="/stackednav" component={StackedNavView} />
@@ -115,18 +118,18 @@ class App extends Component {
 					<Route path="/table" component={TableView} />
 					<Route path="/horizontal-nav" component={HorizontalNavView} />
 					<Route path="/callout" component={CalloutView} />
-<Route path="/full-bleed" component={FullBleedView} />
-	<p>
-						Some paragraph content for context. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-						Consequatur minima molestiae nisi qui, reprehenderit tempora! Amet
-						consequuntur ducimus illum incidunt maxime molestiae possimus quae
-						quasi quisquam ratione reprehenderit, soluta, ullam unde voluptate
-						voluptatibus. Aliquam atque blanditiis dolorem eius eos esse facere
-						facilis fugit illo labore laboriosam laborum maiores necessitatibus
-						nostrum quasi, recusandae reprehenderit sit.
-					</p>				
-					
-				</main>
+					<Route path="/full-bleed" component={FullBleedView} />
+					<p>
+						Some paragraph content for context. Lorem ipsum dolor sit amet,
+						consectetur adipisicing elit. Consequatur minima molestiae nisi qui,
+						reprehenderit tempora! Amet consequuntur ducimus illum incidunt
+						maxime molestiae possimus quae quasi quisquam ratione reprehenderit,
+						soluta, ullam unde voluptate voluptatibus. Aliquam atque blanditiis
+						dolorem eius eos esse facere facilis fugit illo labore laboriosam
+						laborum maiores necessitatibus nostrum quasi, recusandae
+						reprehenderit sit.
+					</p>
+				</Container>
 			</Router>
 		);
 	}
