@@ -69,7 +69,7 @@ import { Container, Grid, GridItem } from "@nice-digital/nds-grid";
 
 - Type: `React.Node` | `React.Node[]` (required)
 
-The content to render inside the grid.
+The content to render inside the container.
 
 ###### className
 

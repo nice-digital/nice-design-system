@@ -90,7 +90,7 @@ declare module "@nice-digital/nds-grid" {
 	export interface ContainerProps {
 		/** Contents for the container element */
 		children: React.ReactNode;
-		/** Additional classes to add to the grid */
+		/** Additional classes to add to the container */
 		className?: string;
 		/** Allow the container to defy the max-width and extend to the edges of the viewport */
 		fullWidth?: boolean;
