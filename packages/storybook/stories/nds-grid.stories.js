@@ -2,10 +2,10 @@
 import React from "react";
 
 import { storiesOf } from "@storybook/react";
-import { withKnobs } from "@storybook/addon-knobs";
+import { withKnobs, boolean } from "@storybook/addon-knobs";
 
 import { PageHeader } from "@nice-digital/nds-page-header";
-import { Grid, GridItem } from "@nice-digital/nds-grid";
+import { Container, Grid, GridItem } from "@nice-digital/nds-grid";
 
 import "./grid.stories.scss";
 
@@ -19,7 +19,7 @@ const GridCellExample = ({ text, children }) => (
 storiesOf("Foundations/Grid", module)
 	.addDecorator(withKnobs)
 	.add("Basics", () => (
-		<>
+		<Container>
 			<PageHeader
 				heading="Basics"
 				lead={
@@ -67,8 +67,19 @@ storiesOf("Foundations/Grid", module)
 					<GridCellExample text="5/6" />
 				</GridItem>
 			</Grid>
-		</>
+		</Container>
 	))
+	.add("Container", () => {
+		return (
+			<Container fullWidth={boolean("fullWidth", false)}>
+				<h1>Title</h1>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit,
+					rem.
+				</p>
+			</Container>
+		);
+	})
 	.add("Custom elements", () => (
 		<>
 			<PageHeader

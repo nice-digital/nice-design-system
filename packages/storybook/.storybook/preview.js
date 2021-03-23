@@ -3,9 +3,9 @@ import { configure, addDecorator } from "@storybook/react";
 
 import "./stories.scss";
 
-// Wrap all stories in a container
+// wrap-storybook is the root for the HTML add-on to take markup from
 const wrapperDecorator = storyFn => (
-	<div className="container pv--d" id="wrap-storybook">
+	<div className="pv--d" id="wrap-storybook">
 		{storyFn()}
 	</div>
 );
