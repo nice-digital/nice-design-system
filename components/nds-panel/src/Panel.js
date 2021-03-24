@@ -21,6 +21,7 @@ export const Panel = props => {
 };
 
 Panel.variant = {
+	default: "",
 	impact: "impact",
 	primary: "primary",
 	inverse: "inverse",
