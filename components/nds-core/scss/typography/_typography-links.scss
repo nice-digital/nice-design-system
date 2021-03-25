@@ -66,8 +66,7 @@
 /// @require {mixin} link-inverse
 /// @since 0.3.1
 @mixin nds-links-inverse {
-  a,
-  button {
+  a {
     @include nds-link-inverse;
   }
 }

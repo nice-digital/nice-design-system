@@ -53,6 +53,7 @@ $nds-colour-panel-primary-border: $nds-colour-nice-ice-teal;
 /// @since 1.0.0
 .panel--impact {
   @include nds-links-inverse;
+  @include nds-inverse-button-focus;
   background: $nds-colour-panel-impact-background;
   border: 1px solid $nds-colour-panel-impact-border;
   color: $nds-colour-text-inverse;
@@ -71,12 +72,14 @@ $nds-colour-panel-primary-border: $nds-colour-nice-ice-teal;
 
 .panel--inverse {
   @include nds-links-inverse;
+  @include nds-inverse-button-focus;
   background: $nds-colour-nice-teal;
   color: $nds-colour-text-inverse;
 }
 
 .panel--impact-alt {
   @include nds-links-inverse;
+  @include nds-inverse-button-focus;
   background: $nds-colour-nice-teal;
   background: linear-gradient(
     333deg,

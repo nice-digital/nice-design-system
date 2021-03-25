@@ -56,17 +56,14 @@ $nds-action-banner-subtle-border: $nds-colour-nice-grey-2;
   }
 
   &__actions {
+    @include nds-inverse-button-focus;
     .btn {
       margin: 0;
-
-      &:focus {
-        // Override default button focus because we're on a dark background
-        @include nds-inverse-focus-style;
-      }
     }
   }
 
   &__close {
+    @include nds-inverse-button-focus;
     appearance: none;
     background: 0;
     border: 0;
@@ -103,12 +100,7 @@ $nds-action-banner-subtle-border: $nds-colour-nice-grey-2;
     }
 
     .action-banner__actions {
-      .btn {
-        &:focus {
-          // Return focus back to default now we're on a light background
-          @include nds-default-focus-style;
-        }
-      }
+      @include nds-default-button-focus;
     }
   }
 
