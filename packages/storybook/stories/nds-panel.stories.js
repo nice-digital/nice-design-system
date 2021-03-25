@@ -89,10 +89,9 @@ storiesOf("Components/Panel", module)
 			>
 				<HeadingTag>{text("Heading text", "Lorem ipsum")}</HeadingTag>
 				<p>
-					{text(
-						"Body text",
-						"Dolor sit amet, consectetur adipiscing elit. Sed at mauris tortor. Nunc ligula nulla, egestas eget risus vitae, interdum dapibus urna."
-					)}
+					<a href="#">Here's a link</a> for testing purposes. Dolor sit amet,
+					consectetur adipiscing elit. Sed at mauris tortor. Nunc ligula nulla,
+					egestas eget risus vitae, interdum dapibus urna.
 				</p>
 			</Panel>
 		);
