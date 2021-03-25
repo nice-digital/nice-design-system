@@ -12,6 +12,7 @@ $nds-colour-table-row-even: $nds-colour-nice-grey-3;
 
 table,
 .table {
+  border: 0;
   border-collapse: collapse;
   display: block; // Allows table to scroll horizontally in tandem with overflow-x
   margin: rem(0 0 $nds-spacing-medium);
