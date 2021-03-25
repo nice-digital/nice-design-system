@@ -6,6 +6,7 @@ import { text, select } from "@storybook/addon-knobs";
 
 import { Grid, GridItem } from "@nice-digital/nds-grid";
 import { Panel } from "@nice-digital/nds-panel";
+import { Button } from "@nice-digital/nds-button";
 
 storiesOf("Components/Panel", module)
 	.add("Default (supporting)", () => (
@@ -89,9 +90,12 @@ storiesOf("Components/Panel", module)
 			>
 				<HeadingTag>{text("Heading text", "Lorem ipsum")}</HeadingTag>
 				<p>
-					<a href="#">Here's a link</a> for testing purposes. Dolor sit amet,
-					consectetur adipiscing elit. Sed at mauris tortor. Nunc ligula nulla,
-					egestas eget risus vitae, interdum dapibus urna.
+					<a href="#">Here&apos;s a link</a> for testing purposes. Dolor sit
+					amet, consectetur adipiscing elit. Sed at mauris tortor. Nunc ligula
+					nulla, egestas eget risus vitae, interdum dapibus urna.
+				</p>
+				<p>
+					<Button>Here&apos;s a button</Button>
 				</p>
 			</Panel>
 		);

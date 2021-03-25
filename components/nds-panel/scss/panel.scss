@@ -71,14 +71,12 @@ $nds-colour-panel-primary-border: $nds-colour-nice-ice-teal;
 
 .panel--inverse {
   @include nds-links-inverse;
-  @include nds-inverse-focus-style;
   background: $nds-colour-nice-teal;
   color: $nds-colour-text-inverse;
 }
 
 .panel--impact-alt {
   @include nds-links-inverse;
-  @include nds-inverse-focus-style;
   background: $nds-colour-nice-teal;
   background: linear-gradient(
     333deg,

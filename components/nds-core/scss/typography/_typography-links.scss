@@ -69,4 +69,7 @@
   a {
     @include nds-link-inverse;
   }
+  button {
+    @include nds-link-inverse;
+  }
 }
