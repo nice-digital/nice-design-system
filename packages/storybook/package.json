@@ -1,6 +1,6 @@
 {
   "name": "storybook",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "private": true,
   "description": "> TODO: description",
   "author": "Warren Keith <warren.keith@nice.org.uk>",
@@ -19,7 +19,7 @@
     "url": "git+https://github.com/nice-digital/nice-design-system.git"
   },
   "dependencies": {
-    "@nice-digital/design-system": "^1.2.1",
+    "@nice-digital/design-system": "^1.2.2",
     "@nice-digital/nds-action-banner": "^1.2.1",
     "@nice-digital/nds-alert": "^1.2.0",
     "@nice-digital/nds-breadcrumbs": "^1.2.1",
@@ -39,13 +39,13 @@
     "@nice-digital/nds-input": "^1.2.1",
     "@nice-digital/nds-maintain-ratio": "^1.2.1",
     "@nice-digital/nds-page-header": "^1.2.1",
-    "@nice-digital/nds-panel": "^1.2.1",
+    "@nice-digital/nds-panel": "^1.2.2",
     "@nice-digital/nds-phase-banner": "^1.2.1",
     "@nice-digital/nds-prev-next": "^1.1.1",
     "@nice-digital/nds-radio": "^1.2.0",
     "@nice-digital/nds-simple-pagination": "^1.2.1",
     "@nice-digital/nds-stacked-nav": "^1.2.1",
-    "@nice-digital/nds-table": "^1.1.1",
+    "@nice-digital/nds-table": "^1.1.2",
     "@nice-digital/nds-tabs": "^1.2.1",
     "@nice-digital/nds-tag": "^1.2.0",
     "@nice-digital/nds-textarea": "^1.2.1"
