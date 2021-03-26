@@ -23,3 +23,21 @@
 @mixin nds-inverse-focus-style {
   outline: rem($nds-spacing-x-small) solid $nds-colour-focus-inverse;
 }
+
+@mixin nds-default-button-focus {
+  .btn,
+  button {
+    &:focus {
+      @include nds-default-focus-style;
+    }
+  }
+}
+
+@mixin nds-inverse-button-focus {
+  .btn,
+  button {
+    &:focus {
+      @include nds-inverse-focus-style;
+    }
+  }
+}

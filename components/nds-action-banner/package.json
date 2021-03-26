@@ -34,6 +34,7 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
+		"@nice-digital/nds-core": "^1.2.1",
 		"@nice-digital/icons": "^2.2.1",
 		"prop-types": "^15.7.2"
 	},
