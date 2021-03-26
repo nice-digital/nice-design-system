@@ -1,6 +1,6 @@
 {
   "name": "@nice-digital/nds-simple-pagination",
-  "version": "1.2.2-alpha.0",
+  "version": "1.2.2",
   "description": "Simple pagination component for the NICE Design System",
   "author": "Warren Keith <w@rren.dev>",
   "keywords": [
@@ -37,7 +37,7 @@
     "url": "https://github.com/nice-digital/nice-design-system/issues"
   },
   "dependencies": {
-    "@nice-digital/nds-core": "^1.2.2-alpha.0",
+    "@nice-digital/nds-core": "^1.2.2",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2"
   },
