@@ -21,6 +21,11 @@ export const GridView = () => {
 						<GridCellExample text="💯" />
 					</GridItem>
 				)}
+				{test ? (
+					<GridItem cols={12}>
+						<GridCellExample text="💯" />
+					</GridItem>
+				) : null}
 				<GridItem cols={12}>
 					<GridCellExample text="💯" />
 				</GridItem>
