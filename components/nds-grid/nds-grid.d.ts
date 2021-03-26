@@ -43,7 +43,7 @@ declare module "@nice-digital/nds-grid" {
 	export const GridItem: React.FC<GridItemProps>;
 
 	type ValidGridItemProps =
-		| React.ReactElement<GridItem>
+		| React.ReactElement<typeof GridItem>
 		| boolean
 		| null
 		| undefined;
