@@ -1,5 +1,5 @@
 import React from "react";
-import classnames from "classnames";
+import { Container } from "@nice-digital/nds-grid";
 import { Header, Footer } from "@nice-digital/global-nav";
 import "../../styles/main.scss";
 
@@ -9,15 +9,14 @@ interface ILayout {
 }
 
 const Wrapper = (props: ILayout): React.ReactElement => {
-	const classes = props.className
-		? classnames("container", props.className)
-		: "container";
 	return (
-		<>
+		<div {...props}>
 			<Header search={false} />
-			<div className={classes}>{props.children}</div>
+			<Container>
+				{props.children}
+			</Container>
 			<Footer />
-		</>
+		</div>
 	);
 };
 
