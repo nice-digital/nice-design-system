@@ -1,6 +1,6 @@
 import slugify from "slugify";
 
-const numberPrefixRegex = /^\d+\s*/;
+const numberPrefixRegex = /^\s*\d+\s*/;
 
 /**
  * Generates a unique id for the given heading HTML element and sets its id attribute
