@@ -1,5 +1,7 @@
 import slugify from "slugify";
 
+const numberPrefixRegex = /^\d+\s*/;
+
 /**
  * Generates a unique id for the given heading HTML element and sets its id attribute
  * @param {HTMLHeadingElement} headingEl
@@ -8,7 +10,13 @@ import slugify from "slugify";
 export const generateHeadingId = headingEl => {
 	if (headingEl.id) return headingEl.id;
 
-	const slug = slugify(headingEl.textContent || headingEl.innerText, {
+	// Remove numbers from start of string before slugifying to make sure we have a valid id
+	const text = (headingEl.textContent || headingEl.innerText).replace(
+		numberPrefixRegex,
+		""
+	);
+
+	const slug = slugify(text, {
 		lower: true,
 		strict: true
 	});

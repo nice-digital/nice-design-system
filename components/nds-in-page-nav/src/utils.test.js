@@ -53,6 +53,15 @@ describe("utils", () => {
 			expect(heading).toHaveProperty("id", "test-with-brackets-item");
 		});
 
+		it("should remove prefixed numbers to generate slugified id", () => {
+			const heading = document.createElement("h3");
+			heading.textContent = "4 Consideration of the evidence";
+
+			generateHeadingId(heading);
+
+			expect(heading).toHaveProperty("id", "consideration-of-the-evidence");
+		});
+
 		it("should generate unique id for multiple headings with same text", () => {
 			const firstHeading = document.createElement("h2");
 			firstHeading.textContent = "Test";
