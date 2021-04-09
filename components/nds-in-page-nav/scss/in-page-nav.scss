@@ -53,13 +53,13 @@
 
     &__list {
       .in-page-nav__list {
-        display: none;
+        height: 0;
+        overflow: hidden;
       }
 
-      &:focus-within {
-        .in-page-nav__list {
-          display: block;
-        }
+      .in-page-nav__list:focus-within {
+        height: auto;
+        overflow: visible;
       }
     }
 
@@ -68,10 +68,11 @@
         font-weight: bold;
       }
 
-      &[aria-current='location'],
+      &[aria-current],
       &:focus {
         + .in-page-nav__list {
-          display: block;
+          height: auto;
+          overflow: visible;
         }
       }
     }

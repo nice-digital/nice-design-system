@@ -8,15 +8,17 @@
   "main": "lib/InPageNav.js",
   "module": "es/InPageNav.js",
   "style": "scss/in-page-nav.scss",
+	"types": "in-page-nav.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "lib",
-    "es",
-    "scss"
-  ],
+		"lib",
+		"es",
+		"scss",
+		"*.d.ts"
+	],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"

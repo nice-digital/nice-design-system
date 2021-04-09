@@ -1,36 +1,34 @@
-import React, { useEffect, useState, useCallback } from "react";
+/* eslint-disable no-mixed-spaces-and-tabs */
+/* eslint-disable indent */
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import throttle from "lodash.throttle";
 
 import { buildLinkTree, getActiveHeadingId } from "./utils";
+import { InPageNavLink } from "./InPageNavLink";
 
 import "./../scss/in-page-nav.scss";
 
-import { InPageNavLink } from "./InPageNavLink";
-
 export const InPageNav = ({
+	className,
 	headingsContainerSelector = "body",
 	headingsSelector = "h2, h3",
 	headingsExcludeSelector = "",
-	scrollTolerance = 100,
+	scrollTolerance = 50, // In pixels
 	...rest
 }) => {
 	const [activeHeadingId, setActiveHeadingId] = useState(null);
 	const [linkTree, setlinkTree] = useState([]);
 
-	const scrollHandler = useCallback(
-		throttle(() => {
-			setActiveHeadingId(getActiveHeadingId(linkTree, scrollTolerance));
-		}, 100),
-		[linkTree]
-	);
-
+	// Build the tree if links to use in the nav, from the headings found on the page
 	useEffect(() => {
-		const headingstoExclude = Array.prototype.slice.call(
-			document
-				.querySelector(headingsContainerSelector)
-				.querySelectorAll(headingsExcludeSelector)
-		);
+		const headingstoExclude = headingsExcludeSelector
+			? Array.prototype.slice.call(
+					document
+						.querySelector(headingsContainerSelector)
+						.querySelectorAll(headingsExcludeSelector)
+			  )
+			: [];
 
 		const headingsToUse = Array.prototype.slice
 			.call(
@@ -41,30 +39,45 @@ export const InPageNav = ({
 			.filter(el => !headingstoExclude.includes(el));
 
 		setlinkTree(buildLinkTree(headingsToUse));
-		setActiveHeadingId(getActiveHeadingId(linkTree, scrollTolerance));
-		window.addEventListener("scroll", scrollHandler);
 
 		return () => {
 			setlinkTree([]);
-			setActiveHeadingId(null);
-			window.removeEventListener("scroll", scrollHandler);
 		};
 	}, [headingsContainerSelector, headingsSelector, headingsExcludeSelector]);
+
+	// Now that we've built the tree of links, work out which is active based on scroll position
+	useEffect(() => {
+		const scrollHandler = throttle(() => {
+			setActiveHeadingId(getActiveHeadingId(linkTree, scrollTolerance));
+		}, 100);
+
+		setActiveHeadingId(getActiveHeadingId(linkTree, scrollTolerance));
+		window.addEventListener("scroll", scrollHandler, { passive: true });
+
+		return () => {
+			setActiveHeadingId(null);
+			window.removeEventListener("scroll", scrollHandler, { passive: true });
+		};
+	}, [linkTree]);
 
 	if (linkTree.length === 0) return null;
 
 	return (
-		<nav className="in-page-nav" aria-labelledby="inpagenav-title" {...rest}>
+		<nav
+			className={["in-page-nav", className].join(" ")}
+			aria-labelledby="inpagenav-title"
+			{...rest}
+		>
 			<h2 id="inpagenav-title" className="in-page-nav__title">
 				On this page
 			</h2>
 			<ol
 				className="in-page-nav__list"
-				aria-label="Jump links to sections on this page"
+				aria-label="Jump to sections on this page"
 			>
 				{linkTree.map(link => (
 					<InPageNavLink
-						key={link}
+						key={link.href}
 						link={link}
 						activeHeadingId={activeHeadingId}
 					/>
@@ -75,6 +88,7 @@ export const InPageNav = ({
 };
 
 InPageNav.propTypes = {
+	className: PropTypes.string,
 	headingsContainerSelector: PropTypes.string,
 	headingsSelector: PropTypes.string,
 	headingsExcludeSelector: PropTypes.string,
