@@ -42,7 +42,11 @@ declare module "@nice-digital/nds-grid" {
 	/** An item within the grid than spans up to 12 columnns */
 	export const GridItem: React.FC<GridItemProps>;
 
-	type ValidGridItemProps = GridItem | null | undefined;
+	type ValidGridItemProps =
+		| React.ReactElement<typeof GridItem>
+		| boolean
+		| null
+		| undefined;
 
 	export interface GridProps {
 		/** Grid item elements */
