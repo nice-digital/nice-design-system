@@ -92,8 +92,6 @@ export const getActiveHeadingId = (linkTree, scrollTolerance) => {
 		})
 		.filter(({ y }) => y - scrollTolerance <= 0);
 
-	console.log(linkTree);
-
 	if (headingsAboveViewport.length === 0) return null;
 
 	return headingsAboveViewport.reduce((prev, current) => {

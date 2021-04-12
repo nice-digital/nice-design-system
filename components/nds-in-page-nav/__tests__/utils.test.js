@@ -1,4 +1,8 @@
-import { buildLinkTree, generateHeadingId, getActiveHeadingId } from "./utils";
+import {
+	buildLinkTree,
+	generateHeadingId,
+	getActiveHeadingId
+} from "../src/utils";
 
 const linkTree = [
 	{

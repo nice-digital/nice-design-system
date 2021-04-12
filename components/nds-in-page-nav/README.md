@@ -15,6 +15,7 @@
 			- [Other props](#other-props)
 		- [SCSS](#scss)
 		- [HTML](#html)
+			- [niceorg client](#niceorg-client)
 
 ## Installation
 
@@ -96,10 +97,33 @@ If you're not using [React](#react), then import the SCSS directly into your app
 
 ### HTML
 
-If you're not using [React](#react), then include the [SCSS as above](#scss) but you'll have to provide your own implentation.
+If you're not using [React](#react), then include the [SCSS as above](#scss) but you'll have to provide your own implentation. The exception to this is within [niceorg client (NOC)](https://github.com/nice-digital/niceorg-client):
 
-The exception to this is within [niceorg client](https://github.com/nice-digital/niceorg-client). That includes a wrapper around the react component so the in page nav can be loaded declaratively, for example:
+#### niceorg client
+
+[niceorg client (NOC)](https://github.com/nice-digital/niceorg-client) is a library of front-end assets (both CSS and JS) shared between Guidance Web and the 'corporate' website (front-end of Orchard). Load the NOC JavaScript (see NOC readme) to include a wrapper around the in-page-nav react component. This allows the in page nav component to be loaded declaratively, for example:
 
 ```html
-<div data-in-page-nav data-in-page-nav-headings-container-selector="body"></div>
+<div data-in-page-nav></div>
+```
+
+The `data-in-page-nav` attribute is all that's needed to render a default in page nav. This will look inside `main` for `h2` and `h3` headings by default. Use data attributes to configiure the props to be passed in. For example `data-in-page-nav-headings-container-selector` maps to the `headingsContainerSelector` prop.
+
+> Note: This renders a React component under the hood and parses kebab-case data attributes into a props object.
+
+A basic customisation might be to change the target element:
+
+```html
+<div data-in-page-nav data-in-page-nav-headings-container-selector="main"></div>
+```
+
+Or with all possible options:
+
+```html
+<div
+	data-in-page-nav
+	data-in-page-nav-headings-container-selector="main"
+	data-in-page-nav-headings-selector="h2, h3"
+	data-in-page-nav-headings-exclude-selector=".js-ignore"
+	data-in-page-nav-scroll-tolerance="50"></div>
 ```

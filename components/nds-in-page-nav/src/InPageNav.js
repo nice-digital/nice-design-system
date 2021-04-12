@@ -11,7 +11,7 @@ import "./../scss/in-page-nav.scss";
 
 export const InPageNav = ({
 	className,
-	headingsContainerSelector = "body",
+	headingsContainerSelector = "main",
 	headingsSelector = "h2, h3",
 	headingsExcludeSelector = "",
 	scrollTolerance = 50, // In pixels
@@ -22,23 +22,23 @@ export const InPageNav = ({
 
 	// Build the tree if links to use in the nav, from the headings found on the page
 	useEffect(() => {
-		const headingstoExclude = headingsExcludeSelector
-			? Array.prototype.slice.call(
-					document
-						.querySelector(headingsContainerSelector)
-						.querySelectorAll(headingsExcludeSelector)
-			  )
-			: [];
+		const headingsContainerElement = document.querySelector(
+			headingsContainerSelector
+		);
 
-		const headingsToUse = Array.prototype.slice
-			.call(
-				document
-					.querySelector(headingsContainerSelector)
-					.querySelectorAll(headingsSelector)
-			)
-			.filter(el => !headingstoExclude.includes(el));
+		if (headingsContainerElement) {
+			const headingstoExclude = headingsExcludeSelector
+				? Array.prototype.slice.call(
+						headingsContainerElement.querySelectorAll(headingsExcludeSelector)
+				  )
+				: [];
 
-		setlinkTree(buildLinkTree(headingsToUse));
+			const headingsToUse = Array.prototype.slice
+				.call(headingsContainerElement.querySelectorAll(headingsSelector))
+				.filter(el => !headingstoExclude.includes(el));
+
+			setlinkTree(buildLinkTree(headingsToUse));
+		}
 
 		return () => {
 			setlinkTree([]);

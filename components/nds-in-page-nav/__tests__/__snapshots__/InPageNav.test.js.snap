@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InPageNav should match snapshot 1`] = `
+<InPageNav>
+  <nav
+    aria-labelledby="inpagenav-title"
+    className="in-page-nav "
+  >
+    <h2
+      className="in-page-nav__title"
+      id="inpagenav-title"
+    >
+      On this page
+    </h2>
+    <ol
+      aria-label="Jump to sections on this page"
+      className="in-page-nav__list"
+    >
+      <InPageNavLink
+        activeHeadingId="a-heading-3"
+        key="#a-heading-2"
+        link={
+          Object {
+            "href": "#a-heading-2",
+            "subLinks": Array [
+              Object {
+                "href": "#a-heading-3",
+                "subLinks": Array [],
+                "title": "A heading 3",
+              },
+            ],
+            "title": "A heading 2",
+          }
+        }
+      >
+        <li
+          className="in-page-nav__item"
+        >
+          <a
+            aria-current="true"
+            href="#a-heading-2"
+            id="inpagenav-a-heading-2"
+          >
+            A heading 2
+          </a>
+          <ol
+            aria-labelledby="inpagenav-a-heading-2"
+            className="in-page-nav__list"
+          >
+            <InPageNavLink
+              activeHeadingId="a-heading-3"
+              key="#a-heading-3"
+              link={
+                Object {
+                  "href": "#a-heading-3",
+                  "subLinks": Array [],
+                  "title": "A heading 3",
+                }
+              }
+            >
+              <li
+                className="in-page-nav__item"
+              >
+                <a
+                  aria-current="location"
+                  href="#a-heading-3"
+                  id="inpagenav-a-heading-3"
+                >
+                  A heading 3
+                </a>
+              </li>
+            </InPageNavLink>
+          </ol>
+        </li>
+      </InPageNavLink>
+    </ol>
+  </nav>
+</InPageNav>
+`;
