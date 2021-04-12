@@ -27,7 +27,7 @@ storiesOf("Components/Callout", module)
 	.add("Default (unrestricted width)", () => (
 		<Callout>
 			<CalloutImage>
-				<img src="https://placehold.it/800x450?text=Callout" alt={""} />
+				<img src="http://placehold.it/800x450?text=Callout" alt={""} />
 			</CalloutImage>
 			<CalloutBody>
 				<h2 className="h4">
@@ -50,7 +50,7 @@ storiesOf("Components/Callout", module)
 								<CalloutImage>
 									<img
 										alt={item.title}
-										src={`https://placehold.it/800x450?text=Callout ${index +
+										src={`http://placehold.it/800x450?text=Callout ${index +
 											1}`}
 									/>
 								</CalloutImage>
@@ -82,7 +82,7 @@ storiesOf("Components/Callout", module)
 								alt=""
 								src={text(
 									"Image source",
-									"https://placehold.it/800x450?text=Callout"
+									"http://placehold.it/800x450?text=Callout"
 								)}
 							/>
 						</CalloutImage>

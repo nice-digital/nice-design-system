@@ -231,6 +231,50 @@ storiesOf("Foundations/Grid", module)
 			</Grid>
 		</>
 	))
+
+	.add("Equal height child elements", () => (
+		<>
+			<Grid equalHeight>
+				<GridItem cols={3}>
+					<div style={{ color: "white", background: "red" }}>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+							congue suscipit magna vel ultrices.
+						</p>
+					</div>
+				</GridItem>
+				<GridItem cols={3}>
+					<div style={{ color: "white", background: "green" }}>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+							congue suscipit magna vel ultrices. Sed sagittis sodales lorem,
+							quis rutrum nunc condimentum vitae. Sed dapibus nisi ac tellus
+							condimentum pretium eu eu est. Cras cursus urna leo, at porta eros
+							sollicitudin at. Morbi condimentum mollis erat sit amet iaculis.
+							Morbi sit amet velit id nunc vulputate fringilla sit amet a augue.
+							Phasellus ut augue non turpis aliquam volutpat.
+						</p>
+					</div>
+				</GridItem>
+				<GridItem cols={3}>
+					<div style={{ color: "white", background: "blue" }}>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+							congue suscipit magna vel ultrices. Sed sagittis sodales lorem,
+							quis rutrum nunc condimentum vitae. Sed dapibus nisi ac tellus
+							condimentum pretium eu eu est. Cras cursus urna leo, at porta eros
+							sollicitudin at.
+						</p>
+					</div>
+				</GridItem>
+				<GridItem cols={3}>
+					<div style={{ color: "white", background: "rebeccapurple" }}>
+						<p>Lorem.</p>
+					</div>
+				</GridItem>
+			</Grid>
+		</>
+	))
 	.add("Other features", () => (
 		<>
 			<PageHeader
