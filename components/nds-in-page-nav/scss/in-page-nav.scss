@@ -22,10 +22,6 @@
     .in-page-nav__list {
       list-style: circle;
     }
-
-    [aria-hidden='true'] {
-      display: none;
-    }
   }
 
   a {
@@ -55,9 +51,29 @@
       }
     }
 
+    &__list {
+      .in-page-nav__list {
+        height: 0;
+        overflow: hidden;
+      }
+
+      .in-page-nav__list:focus-within {
+        height: auto;
+        overflow: visible;
+      }
+    }
+
     a {
       &[aria-current='location'] {
         font-weight: bold;
+      }
+
+      &[aria-current],
+      &:focus {
+        + .in-page-nav__list {
+          height: auto;
+          overflow: visible;
+        }
       }
     }
   }

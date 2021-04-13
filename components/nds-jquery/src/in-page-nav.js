@@ -4,7 +4,7 @@
  */
 
 import pluginizr from "./pluginizr";
-import utils from "../../nds-core/src/utils";
+import utils from "@nice-digital/nds-core/es/utils";
 
 import template from "./in-page-nav.template.njk";
 

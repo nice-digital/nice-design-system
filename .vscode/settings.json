@@ -1,6 +1,7 @@
 {
 	"editor.formatOnSave": true,
 	"editor.rulers": [80],
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"prettier.endOfLine": "lf",
 	"files.eol": "\n",
 	"css.validate": false,
