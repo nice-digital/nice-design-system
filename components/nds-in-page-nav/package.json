@@ -37,7 +37,7 @@
     "@nice-digital/nds-core": "^1.2.4",
     "lodash.throttle": "^4.1.1",
     "prop-types": "^15.7.2",
-    "slugify": "^1.5.0"
+    "slugify": "1.4.7"
   },
   "peerDependencies": {
     "react": "^16.11.0"
