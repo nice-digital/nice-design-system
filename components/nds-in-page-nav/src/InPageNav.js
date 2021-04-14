@@ -35,7 +35,7 @@ export const InPageNav = ({
 
 			const headingsToUse = Array.prototype.slice
 				.call(headingsContainerElement.querySelectorAll(headingsSelector))
-				.filter(el => !headingstoExclude.includes(el));
+				.filter(el => headingstoExclude.indexOf(el) === -1);
 
 			setlinkTree(buildLinkTree(headingsToUse));
 		}
