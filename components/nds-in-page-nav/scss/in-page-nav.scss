@@ -17,7 +17,8 @@
   // Lists (both root level and sub level)
   &__list {
     list-style: disc;
-    margin-left: em($nds-spacing-medium);
+    margin: 0;
+    padding-left: em($nds-spacing-medium + $nds-spacing-xx-small);
 
     .in-page-nav__list {
       list-style: circle;
@@ -36,43 +37,42 @@
 
   @include mq($from: md) {
     margin: 0;
-    position: sticky;
-    top: rem($nds-spacing-small);
 
-    // Fixed modifier for a JS implementation.
-    // Ideally we use the position: sticky option but if we _really_ need a JS
-    // fallback then we can apply this class.
-    &--fixed {
-      position: fixed;
+    @supports (position: sticky) {
+      display: flex;
+      flex-direction: column;
+      max-height: 100vh;
+      padding-top: rem($nds-spacing-small);
+      position: sticky;
       top: 0;
 
-      .in-page-nav__title {
-        margin-top: rem($nds-spacing-small);
-      }
-    }
+      &__list {
+        flex-grow: 1;
+        overflow: auto;
+        scrollbar-width: thin;
 
-    &__list {
-      .in-page-nav__list {
-        height: 0;
-        overflow: hidden;
-      }
+        .in-page-nav__list {
+          height: 0;
+          overflow: hidden;
+        }
 
-      .in-page-nav__list:focus-within {
-        height: auto;
-        overflow: visible;
-      }
-    }
-
-    a {
-      &[aria-current='location'] {
-        font-weight: bold;
-      }
-
-      &[aria-current],
-      &:focus {
-        + .in-page-nav__list {
+        .in-page-nav__list:focus-within {
           height: auto;
           overflow: visible;
+        }
+      }
+
+      a {
+        &[aria-current='location'] {
+          font-weight: bold;
+        }
+
+        &[aria-current],
+        &:focus {
+          + .in-page-nav__list {
+            height: auto;
+            overflow: visible;
+          }
         }
       }
     }
