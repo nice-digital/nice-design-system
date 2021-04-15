@@ -5,8 +5,14 @@ import { InPageNav } from "@nice-digital/nds-in-page-nav";
 
 export const InPageNavView = () => {
 	return (
-		<Grid>
-			<GridItem cols={8}>
+		<Grid reverse>
+			<GridItem cols={12} md={4}>
+				<InPageNav
+					headingsContainerSelector=".in-page-nav-target"
+					headingsExcludeSelector=".ignore"
+				/>
+			</GridItem>
+			<GridItem cols={12} md={8}>
 				<h2>Excluded heading</h2>
 				<p>The above heading is outside of the target element.</p>
 				<div className="in-page-nav-target">
@@ -31,6 +37,15 @@ export const InPageNavView = () => {
 						turkey ribeye pork belly.
 					</p>
 					<h2>Cured meats</h2>
+					<h2>Cured meats</h2>
+					<h2>Cured meats</h2>
+					<h2>Cured meats</h2>
+					<h2>Cured meats</h2>
+					<h2>Cured meats</h2>
+					<h2>Cured meats</h2>
+					<h2>Cured meats</h2>
+					<h2>Cured meats</h2>
+					<h2>Cured meats</h2>
 					<h3>Pastrami</h3>
 					<p>
 						Pastrami shankle ham, tenderloin bresaola pork chop doner pork belly
@@ -54,12 +69,6 @@ export const InPageNavView = () => {
 						prop so should be excluded from the in page nav.
 					</p>
 				</div>
-			</GridItem>
-			<GridItem cols={4}>
-				<InPageNav
-					headingsContainerSelector=".in-page-nav-target"
-					headingsExcludeSelector=".ignore"
-				/>
 			</GridItem>
 		</Grid>
 	);
