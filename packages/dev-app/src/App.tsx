@@ -101,6 +101,7 @@ class App extends Component {
 						<Link to="/tags">Tags</Link>
 					</li>
 				</ul>
+				<hr />
 				<Container>
 					<Route path="/alert" component={AlertView} />
 					<Route path="/breadcrumbs" component={BreadcrumbsView} />
