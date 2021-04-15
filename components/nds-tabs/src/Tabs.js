@@ -58,11 +58,13 @@ export class Tabs extends Component {
 		switch (e.which) {
 			case keyCodes.left:
 			case keyCodes.up:
+				e.preventDefault();
 				newIndex--;
 				if (newIndex < 0) newIndex = this.getTabChildElements().length - 1;
 				break;
 			case keyCodes.right:
 			case keyCodes.down:
+				e.preventDefault();
 				newIndex++;
 				if (newIndex >= this.getTabChildElements().length) newIndex = 0;
 				break;
@@ -144,7 +146,11 @@ export class Tabs extends Component {
 								aria-hidden={!isTabActive}
 								{...rest}
 							>
-								{children}
+								{typeof children === "string" ? (
+									<div dangerouslySetInnerHTML={{ __html: children }} />
+								) : (
+									children
+								)}
 							</div>
 						);
 					})}

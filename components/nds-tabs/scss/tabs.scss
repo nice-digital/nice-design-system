@@ -71,12 +71,13 @@
     @include nds-link-default;
     background: 0;
     border: 0;
+    border-bottom: 1px solid transparent;
     border-left: 1px solid transparent;
     border-right: 1px solid transparent;
     cursor: pointer;
     display: block;
-    margin: 0;
-    padding: em($nds-spacing-medium $nds-spacing-medium);
+    margin-bottom: rem($nds-spacing-small);
+    padding: em($nds-spacing-small $nds-spacing-small);
     position: relative;
 
     &:focus {
@@ -86,6 +87,7 @@
 
     &[aria-selected='true'] {
       background: $nds-colour-nice-grey-3;
+      border-bottom: 1px solid $nds-colour-border;
       border-left: 1px solid $nds-colour-border;
       border-right: 1px solid $nds-colour-border;
       color: $nds-colour-text;
@@ -101,6 +103,21 @@
         right: -1px;
         top: 0;
       }
+
+      @include mq($from: sm) {
+        border-bottom: none;
+        margin: 0;
+      }
+    }
+
+    @include mq($from: sm) {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding: em($nds-spacing-medium $nds-spacing-small);
+    }
+
+    @include mq($from: md) {
+      padding: em($nds-spacing-medium);
     }
   }
 

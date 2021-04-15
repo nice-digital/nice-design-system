@@ -17,6 +17,16 @@ const wrapper = mount(
 	</Tabs>
 );
 
+function getStringMarkup() {
+	return "<h2 id='stringy'><p>hello</p></h2>";
+}
+
+const stringWrapper = mount(
+	<Tabs>
+		<Tab title="My Tab Title">{getStringMarkup()}</Tab>
+	</Tabs>
+);
+
 describe("Tabs", () => {
 	it("should render without crashing", () => {
 		expect(wrapper).toHaveLength(1);
@@ -24,6 +34,10 @@ describe("Tabs", () => {
 
 	it("should match the snapshot with default content", () => {
 		expect(toJson(wrapper)).toMatchSnapshot();
+	});
+
+	it("should render a string of markup if the child is not a react object", () => {
+		expect(stringWrapper.render().find("h2").length).toEqual(1);
 	});
 
 	it("should activate the second tab when tab 2 button is clicked", () => {
