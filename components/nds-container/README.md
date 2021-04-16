@@ -2,7 +2,7 @@
 
 > Container component for the NICE Design System
 
-- [`@nice-digital/nds-grid`](#nice-digitalnds-container)
+- [`@nice-digital/nds-container`](#nice-digitalnds-container)
 	- [Installation](#installation)
 	- [Usage](#usage)
 		- [React](#react)
