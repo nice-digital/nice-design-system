@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import Faker from "faker";
 import { Router, Route, Link } from "react-router-dom";
 import { createBrowserHistory } from "history";
-import { Container } from "@nice-digital/nds-grid";
+import { Container } from "@nice-digital/nds-container";
 import { FormGroupView } from "./views/FormGroupView";
 import { PageHeaderView } from "./views/PageHeaderView";
 import { GridView } from "./views/GridView";

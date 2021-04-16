@@ -2,15 +2,9 @@ import React from "react";
 import { shallow, mount } from "enzyme";
 import toJson from "enzyme-to-json";
 
-import { Container, Grid, GridItem } from "../src/Grid";
+import { Container } from "../src/Container";
 
-const Content = () => (
-	<Grid>
-		<GridItem>
-			<p>Test</p>
-		</GridItem>
-	</Grid>
-);
+const Content = () => <p>Test</p>;
 
 describe("Container", () => {
 	it("should render without crashing", () => {
