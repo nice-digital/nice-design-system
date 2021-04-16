@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { slugify } from "@nice-digital/nds-core/es/utils";
 import { Tab } from "./Tab";
-export { Tab };
 import "./../scss/tabs.scss";
+export { Tab };
 
 export const keyCodes = {
 	enter: 13,
@@ -78,7 +78,7 @@ export class Tabs extends Component {
 				break;
 		}
 
-		newIndex != i &&
+		newIndex !== i &&
 			this.setState({
 				index: newIndex,
 				focusActiveTabButton: true
@@ -87,7 +87,7 @@ export class Tabs extends Component {
 
 	getTabChildElements() {
 		return React.Children.toArray(this.props.children).filter(
-			c => c.type == Tab
+			c => c.type === Tab
 		);
 	}
 
