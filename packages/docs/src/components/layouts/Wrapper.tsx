@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "@nice-digital/nds-grid";
+import { Container } from "@nice-digital/nds-container";
 import { Header, Footer } from "@nice-digital/global-nav";
 import "../../styles/main.scss";
 
@@ -12,9 +12,7 @@ const Wrapper = (props: ILayout): React.ReactElement => {
 	return (
 		<div {...props}>
 			<Header search={false} />
-			<Container>
-				{props.children}
-			</Container>
+			<Container>{props.children}</Container>
 			<Footer />
 		</div>
 	);

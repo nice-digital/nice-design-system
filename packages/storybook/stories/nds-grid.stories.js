@@ -5,7 +5,8 @@ import { storiesOf } from "@storybook/react";
 import { withKnobs, boolean } from "@storybook/addon-knobs";
 
 import { PageHeader } from "@nice-digital/nds-page-header";
-import { Container, Grid, GridItem } from "@nice-digital/nds-grid";
+import { Container } from "@nice-digital/nds-container";
+import { Grid, GridItem } from "@nice-digital/nds-grid";
 
 import "./grid.stories.scss";
 
@@ -69,17 +70,6 @@ storiesOf("Foundations/Grid", module)
 			</Grid>
 		</Container>
 	))
-	.add("Container", () => {
-		return (
-			<Container fullWidth={boolean("fullWidth", false)}>
-				<h1>Title</h1>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit,
-					rem.
-				</p>
-			</Container>
-		);
-	})
 	.add("Custom elements", () => (
 		<>
 			<PageHeader

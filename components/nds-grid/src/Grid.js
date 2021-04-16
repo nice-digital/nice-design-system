@@ -1,11 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
-import { Container } from "./Container";
 import { GridItem } from "./GridItem";
 import "../scss/grid.scss";
 export { GridItem };
-export { Container };
 
 export const Grid = props => {
 	const {

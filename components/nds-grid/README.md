@@ -7,11 +7,6 @@
 	- [Usage](#usage)
 		- [React](#react)
 			- [Props](#props)
-			    - [Container](#container)
-			        - [children](#children)
-			        - [className](#classname)
-			        - [elementType](#elementtype)
-			        - [fullWidth](#fullwidth)
 				- [Grid](#grid)
 					- [children](#children-1)
 					- [reverse](#reverse)
@@ -48,49 +43,19 @@ Import the `Grid` and `GridItem` components from the package and use within JSX:
 
 ```jsx
 import React from "react";
-import { Container, Grid, GridItem } from "@nice-digital/nds-grid";
+import { Grid, GridItem } from "@nice-digital/nds-grid";
 
-<Container>
-	<Grid>
-		<GridItem cols={12} sm={{ cols: 6, push: 2 }}>
-			Some grid content
-		</GridItem>
-	</Grid>
-</Container>
+<Grid>
+	<GridItem cols={12} sm={{ cols: 6, push: 2 }}>
+		Some grid content
+	</GridItem>
+</Grid>
+
 ```
 
 > Note: The React component automatically imports the SCSS, so there's no need to import the SCSS directly yourself.
 
 #### Props
-
-##### Container
-
-###### children
-
-- Type: `React.Node` | `React.Node[]` (required)
-
-The content to render inside the container.
-
-###### className
-
-- Type: `string`
-- Default: `""`
-
-Additional classes to render on the container element. Useful for margin classes e.g. `mt--d`.
-
-###### elementType
-
-- Type: `React.ElementType`
-- Default: `div`
-
-A custom tag type for the container. Useful if the container covers the whole of the page's unique content, i.e. `elementType="main"`.
-
-###### fullWidth
-
-- Type: `boolean`
-- Default: `false`
-
-An option to override the default `max-width` of the container (`$nds-container-max-width`), and set it to 98% of the parent (or viewport's) width.
 
 ##### Grid
 
@@ -210,10 +175,8 @@ If you're not using [React](#react), then import the SCSS directly into your app
 If you're not using [React](#react), then include the [SCSS as above](#scss) and use the HTML, for example:
 
 ```html
-<div class="container">
-	<div class="grid grid-reverse grid--middle">
-		<div data-g="12 xs:6 xs:push:2">Some grid item content</div>
-		<div data-g="12 xs:6 xs:push:2 sm:12">Some grid item content</div>
-	</div>
+<div class="grid grid-reverse grid--middle">
+	<div data-g="12 xs:6 xs:push:2">Some grid item content</div>
+	<div data-g="12 xs:6 xs:push:2 sm:12">Some grid item content</div>
 </div>
 ```

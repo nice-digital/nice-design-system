@@ -1,6 +1,7 @@
 import React from "react";
 import { InPageNav } from "@nice-digital/nds-in-page-nav";
-import { Grid, GridItem, Container } from "@nice-digital/nds-grid";
+import { Container } from "@nice-digital/nds-container";
+import { Grid, GridItem } from "@nice-digital/nds-grid";
 
 import { storiesOf } from "@storybook/react";
 
