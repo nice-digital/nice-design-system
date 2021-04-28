@@ -49,11 +49,13 @@
       &__list {
         flex-grow: 1;
         overflow: auto;
+        padding-top: rem($nds-spacing-x-small);
         scrollbar-width: thin;
 
         .in-page-nav__list {
           height: 0;
           overflow: hidden;
+          padding-top: 0;
         }
 
         .in-page-nav__list:focus-within {
