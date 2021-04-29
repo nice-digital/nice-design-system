@@ -1,0 +1,52 @@
+---
+title: Using the JavaScript components outside of React
+navigationLabel: JS outside React
+description: How to use components with JavaScript in a non-React application
+template: detail
+---
+
+import { Alert } from "@nice-digital/nds-alert";
+
+Inside React, it's all pretty straightforward - you import the component you wish to use and all the necessary styling and interactivity comes with it.
+
+If you want to use a component outside of React, within a static HTML file or inside the content editor of a CMS for example, all you need is the HTML and as long as the CSS is present, everything works.
+
+When it comes to the interactive components (such as the In Page Nav or Tabs components), we also need the JavaScript that enables the interactivity.
+
+Our approach to this is to:
+- Load a lightweight script on the page
+- search the page for mention of a component that requires interactivity
+- at that point load the necessary JavaScript for that component to work
+- analyse the markup for data attributes
+- turn those data attributes into properties for the React component
+- mount a small React application in the place where the original markup was.
+
+## How it works
+
+When you include the `app.js` JavaScript file in your page, a small script is loaded. The purpose of this script is to search the markup for data attributes that match the name of a component.
+
+```html
+<main>
+	<h1>My brand new page</h1>
+	<p>There are three things I think are really important when creating a design system.</p>
+	<div data-tabs>
+		<div data-tab-title="Important thing one">Tab One content</div>
+		<div data-tab-title="Important thing two">Tab Two content</div>
+		<div data-tab-title="Important thing three">Tab Three content</div>
+	</div>
+</main>
+```
+
+In this instance the `app.js` script will find the `div` node with the data attribute of "data-tabs".
+
+The `app.js` script will then load a separate module that contains amongst others, three main parts:
+- React
+- the React version of the component in question
+- a small adapater that looks at the structure of the markup on the page and converts the data attributes it finds into properties to pass to the React component.
+
+The main benefit of this approach is that we only have to author the component once, in React, and write a small adapter that will get the required bits of information from the markup to pass to the component.
+
+<Alert info>
+	<h3 class="h5">Using interactive components in Orchard</h3>
+	<p>If the content item you're editing has "niceorg client" selected for the page style, then the required JavaScript is already in place and you only need to supply the HTML in the required structure as is shown on the relevant component detail page.</p>
+</Alert>

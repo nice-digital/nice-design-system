@@ -6,6 +6,8 @@ import { isDirectChild, slugMatches } from "../../../utils";
 
 type OverviewGridType = {
 	currentSlug: string;
+	headingElement: React.ElementType;
+	headingClassname: string;
 };
 
 export type ResponseObjectType = {
@@ -45,7 +47,11 @@ export function OverviewGrid(props: OverviewGridType): React.ReactElement {
 
 	const allItems = response.allMdx.nodes;
 
-	const { currentSlug } = props;
+	const {
+		currentSlug,
+		headingElement: HeadingElement = "h2",
+		headingClassname = "h4"
+	} = props;
 
 	const arr = currentSlug.split("/").filter(i => i);
 
@@ -61,9 +67,9 @@ export function OverviewGrid(props: OverviewGridType): React.ReactElement {
 				({ id: childId, slug, frontmatter: { title, description } }) => {
 					return (
 						<GridItem key={childId} cols={6} sm={4} md={3} elementType="li">
-							<h2 className="h4">
+							<HeadingElement className={headingClassname}>
 								<Link to={`/${slug}`}>{title}</Link>
-							</h2>
+							</HeadingElement>
 							<p>{description}</p>
 						</GridItem>
 					);
