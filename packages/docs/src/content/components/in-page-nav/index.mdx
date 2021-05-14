@@ -2,17 +2,19 @@
 title: In-page navigation
 navigationLabel: In-page nav
 description: Allows users to navigate to specific sections, within long pages of content, across any screen size.
-
+npm: nds-in-page-nav
 template: detail
 storybook: components-in-page-nav
 inpagenav: true
 ---
 
+import { Alert } from "@nice-digital/nds-alert"
+
 ## Why?
 
 Allows users to navigate to specific sections, within long pages of content, across any screen size.
 
-## Usage
+## When?
 
 If applied correctly, in-page links can be beneficial to users who need to find information on long scrolling content page. They also have the potential to confuse users as they do not meet the expected outcome that a typical link performs ie taking the user to a new page. Please consider the following:
 
@@ -24,3 +26,45 @@ Other usage notes:
 - ensure clear links and headings are clear to the user as these act as reference point for what the content is and where they’re taken to
 - positioned to the far right on larger screens
 - positioned below the main page title on small screens.
+
+## How?
+
+### React
+
+Detailed instructions for using the component in React can be found on NPM, see the link at the top of the page.
+
+### HTML
+
+Make sure the CSS and JS is loaded into your page. If you're using this on nice.org.uk and "niceorg-client" is selected then the CSS and JS will already be available.
+
+The basic version of the in-page-nav only requires the below data attribute to initialise on the page, with the __default__ settings, which can be overridden with data attributes.
+
+#### Available settings
+
+| Option                      	| Data Attribute                                 	| Description                                                                                                                                               	| Default 	| Example                                                                                          	|
+|-----------------------------	|------------------------------------------------	|-----------------------------------------------------------------------------------------------------------------------------------------------------------	|---------	|--------------------------------------------------------------------------------------------------	|
+| Headings container selector 	| `data-in-page-nav-headings-container-selector` 	| This is a CSS-style selector for the scope of the page that you want the in-page-nav to use as its context.                                               	| `main`  	| `<div data-in-page-nav data-in-page-nav-headings-container-selector='.my-container'></div>`      	|
+| Headings to include         	| `data-in-page-nav-headings-selector`           	| Control for which headings you'd like to be included in the navigation. Defaults to `h2` and `h3`.                                                        	| `h2, h3` 	| `<div data-in-page-nav data-in-page-nav-headings-selector='h4, h5'></div>`                        	|
+| Headings to exclude         	| `data-in-page-nav-headings-exclude-selector`   	| Any CSS-style selectors you'd like to exclude.                                                                                                            	| none    	| `<div data-in-page-nav data-in-page-nav-headings-exclude-selector='.exclude-me-from-nav'></div>` 	|
+| Scroll tolerance            	| `data-in-page-nav-scroll-tolerance`            	| This is a pixel value to determine how close to the top of the viewport a heading has to be in order to be considered "active" and therefore highlighted. 	| `50`    	| `<div data-in-page-nav data-in-page-nav-scroll-tolerance='100'></div>`                           	|
+
+#### Basic implementation
+
+```html
+<div data-in-page-nav></div>
+```
+
+#### With all possible options
+```html
+<div
+	data-in-page-nav
+	data-in-page-nav-headings-container-selector="main"
+	data-in-page-nav-headings-selector="h2, h3"
+	data-in-page-nav-headings-exclude-selector=".js-ignore"
+	data-in-page-nav-scroll-tolerance="50">
+</div>
+```
+
+<Alert>
+	<p>To clarify, the markup for the navigation will be automatically generated! No markup is required between the `div` tags.</p>
+</Alert>

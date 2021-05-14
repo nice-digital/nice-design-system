@@ -3,12 +3,12 @@ import { graphql } from "gatsby";
 import { Grid, GridItem } from "@nice-digital/nds-grid";
 import { PageHeader } from "@nice-digital/nds-page-header";
 import { Button } from "@nice-digital/nds-button";
+import { InPageNav } from "@nice-digital/nds-in-page-nav";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Seo from "../../components/partials/seo/Seo";
 import Wrapper from "./Wrapper";
 import { Navigation } from "../partials/navigation/Navigation";
 import { BreadcrumbWrapper } from "../partials/breadcrumbs/BreadcrumbWrapper";
-import { InPageNav } from "../partials/inpagenav/InPageNav";
 
 const npmPath = "https://www.npmjs.com/package/@nice-digital/";
 const storybookPath = "/storybook/?path=/story/";
@@ -82,15 +82,13 @@ export default function DetailLayout(
 	return (
 		<Wrapper>
 			<Seo title={title} description={description} />
+			<BreadcrumbWrapper currentSlug={slug} />
+			<PageHeader heading={title} lead={description} />
 			<Grid gutter="loose">
-				<GridItem cols={12}>
-					<BreadcrumbWrapper currentSlug={slug} />
-					<PageHeader heading={title} lead={description} />
-				</GridItem>
-				<GridItem cols={12} sm={2}>
+				<GridItem sm={2}>
 					<Navigation currentSlug={slug} currentId={id} />
 				</GridItem>
-				<GridItem cols={12} sm={inpagenav ? 8 : 10}>
+				<GridItem sm={inpagenav ? 8 : 10}>
 					{(storybook || npm || github) && (
 						<p>
 							{storybook && (
@@ -124,11 +122,13 @@ export default function DetailLayout(
 							)}
 						</p>
 					)}
-					<MDXRenderer>{body}</MDXRenderer>
+					<main>
+						<MDXRenderer>{body}</MDXRenderer>
+					</main>
 				</GridItem>
 				{inpagenav ? (
-					<GridItem cols={2}>
-						<InPageNav items={items} />
+					<GridItem sm={2}>
+						<InPageNav />
 					</GridItem>
 				) : (
 					<></>
