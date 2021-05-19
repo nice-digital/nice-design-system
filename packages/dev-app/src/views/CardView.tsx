@@ -53,20 +53,36 @@ const image3 = <img src="http://placehold.it/200x200" alt="placeholder" />;
 
 export const CardView = () => {
 	return (
-		<ul className={"list--unstyled"}>
-			<Card {...props} data-qa-selector="cardy" summary="This is a paragraph" />
+		<>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet
+				asperiores aspernatur <mark>autem</mark> cum doloremque illum impedit
+				magnam, nam nihil qui quis, repellat veniam. Animi iure nulla optio
+				rerum voluptates.
+			</p>
+			<ul className={"list--unstyled"}>
+				<Card
+					{...props}
+					data-qa-selector="cardy"
+					summary="This is a paragraph"
+				/>
 
-			<Card {...props} image={image2} data-qa-selector="cardy" />
-			<Card {...props} image={image3} data-qa-selector="cardy" />
-			<Card {...props} image={image3} summary="Is this in a paragraph?" />
-			<Card
-				headingText="Card title"
-				summary={
-					<span>
-						My <b>lightly formatted</b> summary
-					</span>
-				}
-			/>
-		</ul>
+				<Card {...props} image={image2} data-qa-selector="cardy" />
+				<Card {...props} image={image3} data-qa-selector="cardy" />
+				<Card {...props} image={image3} summary="Is this in a paragraph?" />
+				<Card
+					headingText={
+						<a href="#">
+							This is a <mark>search</mark> result
+						</a>
+					}
+					summary={
+						<span>
+							My <b>lightly formatted</b> summary
+						</span>
+					}
+				/>
+			</ul>
+		</>
 	);
 };
