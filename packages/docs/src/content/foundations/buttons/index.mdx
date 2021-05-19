@@ -105,3 +105,21 @@ If you need to show a close relationship between multiple buttons, used grouped 
     <button type="button" class="btn btn--secondary">Secondary action</button>
 </p>
 ```
+
+## A/B test - April 2021
+We undertook an A/B test in April 2021 after feedback from user research revealed some users don’t recognise buttons as buttons. If a user is unclear on button functionality due to it being fully 'flat', they are unlikely to click it. An A/B test may reveal the best design combination to indicate clickable buttons to users. 
+| Original    | Variation 1 | Variation 2     |
+| :---        | :---        | :---          |
+| Flat        | Solid shadow, 3 pixel radius       | Blurred shadow, 3 pixel radius   |
+
+The primary goal of the test was to increase clicks of buttons, counted using ‘many per session’ logic. 
+We estimated a 3 week test duration, at a 3% baseline conversion rate and an expected 450,000 total sessions across the three variants. 
+
+| Variant         | Experiment sessions | Calculated conversion rate |
+| :---            | ---:                | ---:        |
+| Original        | 152,123             | 6.24%       |
+| Solid shadow    | 152,301             | 6.45%       |
+| Blur shadow     | 153,451             | 6.57%       |
+
+After analysing performance in respect to other conversions and user attributes, we concluded variant 2, Blur shadow, was the winner.
+
