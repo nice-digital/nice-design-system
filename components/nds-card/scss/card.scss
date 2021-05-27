@@ -50,6 +50,11 @@
     a {
       text-decoration: underline;
 
+      mark {
+        background-color: $nds-colour-mark;
+        color: $nds-colour-link;
+      }
+
       &:before {
         content: '';
         display: block;
