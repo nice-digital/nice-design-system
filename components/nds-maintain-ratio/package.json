@@ -1,6 +1,6 @@
 {
   "name": "@nice-digital/nds-maintain-ratio",
-  "version": "1.2.5",
+  "version": "1.2.6-alpha.0",
   "description": "Maintain ratio component for the NICE Design System",
   "author": "Ian Routledge <ian.routledge@nice.org.uk>",
   "homepage": "https://design-system.nice.org.uk/",

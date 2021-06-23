@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-radio",
-	"version": "1.2.4",
+	"version": "1.2.5-alpha.0",
 	"description": "Radio button component for the NICE Design System",
 	"author": "Warren Keith <warren.keith@nice.org.uk>",
 	"homepage": "https://github.com/nice-digital/nice-design-system#readme",
