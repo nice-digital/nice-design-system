@@ -2,6 +2,8 @@ declare module "@nice-digital/nds-container" {
 	import React = require("react");
 
 	export interface ContainerProps {
+		/** Allow any additional props to be passed and applied to the container */
+		[prop: string]: unknown;
 		/** Contents for the container element */
 		children: React.ReactNode;
 		/** Additional classes to add to the container */
