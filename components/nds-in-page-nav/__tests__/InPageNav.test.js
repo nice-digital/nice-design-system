@@ -25,7 +25,9 @@ describe("InPageNav", () => {
 		const inPageNavContainer = document.createElement("div");
 		document.body.appendChild(inPageNavContainer);
 
-		const wrapper = mount(<InPageNav />, { attachTo: inPageNavContainer });
+		const wrapper = mount(<InPageNav data-track={false} />, {
+			attachTo: inPageNavContainer
+		});
 		wrapper.update();
 		expect(toJson(wrapper)).toMatchSnapshot();
 	});

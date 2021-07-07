@@ -2,7 +2,6 @@ declare module "@nice-digital/nds-stacked-nav" {
 	import React = require("react");
 
 	interface HeadingLink {
-		[prop: string]: unknown;
 		destination: string;
 		isCurrent?: boolean;
 		elementType?: React.ElementType | string;

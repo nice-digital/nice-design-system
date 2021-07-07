@@ -29,4 +29,19 @@ describe("FullBleed component", () => {
 		);
 		expect(toJson(wrapper)).toMatchSnapshot();
 	});
+
+	it("should spread additional props onto the container", () => {
+		const wrapper = shallow(
+			<FullBleed
+				className="monkey"
+				padding="large"
+				light={true}
+				backgroundImage="image.jpg"
+				data-track={false}
+			>
+				<p>content</p>
+			</FullBleed>
+		);
+		expect(wrapper.find("div.full-bleed").props()["data-track"]).toEqual(false);
+	});
 });

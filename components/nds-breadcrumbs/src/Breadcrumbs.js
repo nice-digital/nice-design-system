@@ -6,7 +6,7 @@ import "../scss/breadcrumbs.scss";
 
 export { Breadcrumb };
 
-const stringify = (data: any) => {
+const stringify = data => {
 	if (process.env.NODE_ENV === "production") return JSON.stringify(data);
 	return JSON.stringify(data, null, 2);
 };
@@ -20,7 +20,7 @@ const getBreadcrumbJsonLdItem = (breadcrumb, index = 0) => ({
 	}
 });
 
-export const Breadcrumbs = ({ children }) => {
+export const Breadcrumbs = ({ children, ...rest }) => {
 	const jsonLdData = {
 		"@context": "http://schema.org",
 		"@type": "BreadcrumbList",
@@ -31,7 +31,7 @@ export const Breadcrumbs = ({ children }) => {
 
 	return (
 		<>
-			<nav aria-label="Breadcrumbs" role="navigation">
+			<nav aria-label="Breadcrumbs" role="navigation" {...rest}>
 				<ol className="breadcrumbs">{children}</ol>
 			</nav>
 			<script

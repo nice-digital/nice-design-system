@@ -2,7 +2,6 @@ declare module "@nice-digital/nds-prev-next" {
 	import * as React from "react";
 
 	interface PrevNextLink {
-		[prop: string]: unknown;
 		text: string;
 		destination: string;
 		elementType?: React.ElementType;
