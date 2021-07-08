@@ -26,7 +26,7 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build-css": "node-sass ./scss/nice-design-system.scss --importer=./../../node_modules/node-sass-tilde-importer dist/bundle.css"
+    "build-css": "sass ./scss/nice-design-system.scss --load-path=node_modules dist/bundle.css"
   },
   "bugs": {
     "url": "https://github.com/nice-digital/nice-design-system/issues"
