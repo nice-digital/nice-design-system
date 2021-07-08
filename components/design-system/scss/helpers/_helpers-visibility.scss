@@ -1,6 +1,15 @@
 @use '@nice-digital/nds-core/scss/helpers/helpers-visibility' as *;
 @use '@nice-digital/nds-core/scss/settings/settings-mq' as *;
-@use 'sass-mq/mq' as *;
+@use '@nice-digital/nds-core/scss/settings/settings-breakpoints' as *;
+@use 'sass-mq/mq' as mediaQ;
+
+$mq-breakpoints: (
+  xs: $nds-breakpoint-xs,
+  sm: $nds-breakpoint-sm,
+  md: $nds-breakpoint-md,
+  lg: $nds-breakpoint-lg,
+  xl: $nds-breakpoint-xl
+);
 
 ////
 /// @group helpers
@@ -101,7 +110,7 @@ $nds-output-visibility-classes: true !default;
   }
 
   @each $brkpnt-key, $brkpnt-value in $mq-breakpoints {
-    @include mq($from: $brkpnt-key) {
+    @include mediaQ.mq($from: $brkpnt-key) {
       .show-#{ $brkpnt-key } {
         display: block !important;
       }

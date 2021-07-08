@@ -12,6 +12,8 @@ $mq-breakpoints: (
   xl: $nds-breakpoint-xl
 );
 
+$breakpoints: $mq-breakpoints;
+
 // Base font size
 $mq-base-font-size: $nds-base-font-size * 1px;
 
