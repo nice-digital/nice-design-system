@@ -1,3 +1,6 @@
+@use './settings-breakpoints' as *;
+@use './settings-spacing' as *;
+
 /// Baseline, in pixels
 /// @since 0.2.0
 $nds-baseline: 4 !default;

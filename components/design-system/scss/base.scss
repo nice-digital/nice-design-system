@@ -4,7 +4,7 @@
 @use 'normalize.css/normalize.css';
 
 // import all the core variables, functions and mixins
-@use '@nice-digital/nds-core/scss/core';
+// @forward '@nice-digital/nds-core/scss/core';
 
 @use 'helpers/helpers';
 @use 'typography/typography';

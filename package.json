@@ -167,8 +167,5 @@
 		"stylelint-prettier": "^1.1.1",
 		"stylelint-scss": "^3.9.0",
 		"typescript": "^3.5.3"
-	},
-	"dependencies": {
-		"sass-mq": "^5.0.1"
 	}
 }

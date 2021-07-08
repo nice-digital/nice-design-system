@@ -1,3 +1,6 @@
+@use './settings-breakpoints' as *;
+@use './settings-typography' as *;
+
 // SASS MQ OVERRIDES
 
 // A map of breakpoints (name: px) required for SASS MQ

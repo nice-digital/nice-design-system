@@ -1,7 +1,6 @@
-@use 'settings/settings';
-@use 'vendor/vendor';
-@use 'helpers/helpers';
-@use 'layout/layout';
-@use 'typography/typography';
-
-// @use '~sass-mq/mq';
+@forward 'settings/settings';
+@forward 'vendor/vendor';
+@forward 'helpers/helpers';
+@forward 'layout/layout';
+@forward 'typography/typography';
+@import 'sass-mq/mq';
