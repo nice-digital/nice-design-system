@@ -1,48 +1,49 @@
 {
-  "name": "@nice-digital/nds-maintain-ratio",
-  "version": "1.2.5",
-  "description": "Maintain ratio component for the NICE Design System",
-  "author": "Ian Routledge <ian.routledge@nice.org.uk>",
-  "homepage": "https://design-system.nice.org.uk/",
-  "license": "MIT",
-  "main": "lib/MaintainRatio.js",
-  "module": "es/MaintainRatio.js",
-  "style": "scss/maintain-ratio.scss",
-  "types": "nds-maintain-ratio.d.ts",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "lib",
-    "es",
-    "scss",
-    "*.d.ts"
-  ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nice-digital/nice-design-system.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
-  },
-  "bugs": {
-    "url": "https://github.com/nice-digital/nice-design-system/issues"
-  },
-  "dependencies": {
-    "@nice-digital/nds-core": "^1.2.5",
-    "prop-types": "^15.7.2"
-  },
-  "peerDependencies": {
-    "react": "^16.11.0"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.5.0",
-    "classnames": "^2.2.6"
-  },
-  "gitHead": "a4db68f43916ad6c4cb19612e10aae200e80b5a8"
+	"name": "@nice-digital/nds-maintain-ratio",
+	"version": "1.2.5",
+	"description": "Maintain ratio component for the NICE Design System",
+	"author": "Ian Routledge <ian.routledge@nice.org.uk>",
+	"homepage": "https://design-system.nice.org.uk/",
+	"license": "MIT",
+	"main": "lib/MaintainRatio.js",
+	"module": "es/MaintainRatio.js",
+	"style": "scss/maintain-ratio.scss",
+	"types": "nds-maintain-ratio.d.ts",
+	"directories": {
+		"lib": "lib",
+		"test": "__tests__"
+	},
+	"files": [
+		"lib",
+		"es",
+		"scss",
+		"*.d.ts"
+	],
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/",
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nice-digital/nice-design-system.git"
+	},
+	"scripts": {
+		"test": "echo \"Error: run tests from root\" && exit 1"
+	},
+	"bugs": {
+		"url": "https://github.com/nice-digital/nice-design-system/issues"
+	},
+	"dependencies": {
+		"@nice-digital/nds-core": "^1.2.5",
+		"prop-types": "^15.7.2"
+	},
+	"peerDependencies": {
+		"react": "^16 || ^17",
+		"react-dom": "^16 || ^17"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.5.0",
+		"classnames": "^2.2.6"
+	},
+	"gitHead": "a4db68f43916ad6c4cb19612e10aae200e80b5a8"
 }

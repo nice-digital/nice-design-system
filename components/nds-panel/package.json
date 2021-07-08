@@ -37,7 +37,8 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"peerDependencies": {
-		"react": "^16.11.0"
+		"react": "^16 || ^17",
+		"react-dom": "^16 || ^17"
 	},
 	"dependencies": {
 		"@nice-digital/nds-core": "^1.2.5",
