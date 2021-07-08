@@ -18,7 +18,7 @@ html {
     // Fallback halfway between max and min for older browsers that don't support calc
     font-size: rem(
       $nds-root-font-size-min +
-        ($nds-root-font-size-max - $nds-root-font-size-min) / 2
+        ($nds-root-font-size-max - $nds-root-font-size-min) * 0.5
     );
     // Follows "fluid typography" rules: https://www.google.co.uk/search?q=fluid%20typography%20vw
     // ie scales font-size linearly between 2 breakpoints.

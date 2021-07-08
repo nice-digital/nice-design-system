@@ -17,24 +17,26 @@
 /// @prop {Number} major-second[1.125]
 /// @prop {Number} minor-second[1.066666667]
 /// @since 0.1.0
+@use "sass:math";
+
 $nds-scales: (
   golden: 1.618034,
-  double-octave: 4 / 1,
-  major-twelfth: 3 / 1,
-  major-eleventh: 8 / 3,
-  major-tenth: 5 / 2,
-  octave: 2 / 1,
-  major-seventh: 15 / 8,
-  minor-seventh: 16 / 9,
-  major-sixth: 5 / 3,
-  minor-sixth: 8 / 5,
-  fifth: 3 / 2,
-  augmented-fourth: sqrt(2) / 1,
-  fourth: 4 / 3,
-  major-third: 5 / 4,
-  minor-third: 6 / 5,
-  major-second: 9 / 8,
-  minor-second: 16 / 15
+  double-octave: math.div(4, 1),
+  major-twelfth: math.div(3, 1),
+  major-eleventh: math.div(8, 3),
+  major-tenth: 5 * 0.5,
+  octave: math.div(2, 1),
+  major-seventh: 15 * 0.125,
+  minor-seventh: math.div(16, 9),
+  major-sixth: math.div(5, 3),
+  minor-sixth: 8 * 0.2,
+  fifth: 3 * 0.5,
+  augmented-fourth: math.div(sqrt(2), 1),
+  fourth: math.div(4, 3),
+  major-third: 5 * 0.25,
+  minor-third: 6 * 0.2,
+  major-second: 9 * 0.125,
+  minor-second: math.div(16, 15)
 );
 
 /// Gets a module scale ratio with the given name. Looks

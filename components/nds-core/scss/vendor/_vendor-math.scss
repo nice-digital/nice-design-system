@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @function power ($x, $n) {
     $ret: 1;
 
@@ -7,7 +9,7 @@
         }
     } @else {
         @for $i from $n to 0 {
-            $ret: $ret / $x;
+            $ret: math.div($ret, $x);
         }
     }
 
@@ -32,7 +34,7 @@
     $ret: 0;
 
     @for $n from 0 to 25 {
-        $ret: $ret + power(-1, $n) * power($x, 2 * $n + 1) / factorial(2 * $n + 1);
+        $ret: $ret + math.div(power(-1, $n) * power($x, 2 * $n + 1), factorial(2 * $n + 1));
     }
 
     @return $ret;
@@ -42,7 +44,7 @@
     $ret: 0;
 
     @for $n from 0 to 25 {
-        $ret: $ret + power(-1, $n) * power($x, 2 * $n) / factorial(2 * $n);
+        $ret: $ret + math.div(power(-1, $n) * power($x, 2 * $n), factorial(2 * $n));
     }
 
     @return $ret;
@@ -52,7 +54,7 @@
     $ret: 0;
 
     @for $n from 0 to 25 {
-        $ret: $ret + power($x, $n) / factorial($n);
+        $ret: $ret + math.div(power($x, $n), factorial($n));
     }
 
     @return $ret;
@@ -64,7 +66,7 @@
     $dx: .001;
 
     @while $n <= $x {
-        $ret: $ret + $dx / $n;
+        $ret: $ret + math.div($dx, $n);
 
         $n: $n + $dx;
     }
