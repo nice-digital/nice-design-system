@@ -7,11 +7,12 @@ declare module "@nice-digital/nds-horizontal-nav" {
 
 	export interface HorizontalNavLinkProps {
 		children?: React.ReactNode;
-		title?: string;
-		isCurrent?: boolean;
+		className?: string;
 		destination: string;
 		elementType?: React.ReactHTMLElement<any> | React.ReactNode;
-		className?: string;
+		isCurrent?: boolean;
+		method?: string;
+		title?: string;
 	}
 
 	export const HorizontalNav: React.FC<HorizontalNavProps>;
