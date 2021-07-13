@@ -156,7 +156,7 @@ describe("@nice-digital/nds-button", () => {
 		});
 	});
 
-	describe.only("should render the appropriate link method for the supplied elementType and method", () => {
+	describe("should render the appropriate link method for the supplied elementType and method", () => {
 		const wrapper = mount(
 			<MemoryRouter>
 				<Button method="pigeon" to="/one" className="one">

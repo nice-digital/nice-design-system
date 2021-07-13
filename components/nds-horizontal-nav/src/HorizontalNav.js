@@ -23,11 +23,10 @@ export const HorizontalNavLink = ({
 	...rest
 }) => {
 	// Would like to make method a required prop in the future but not possible without a breaking change
-	const navMethod = method || (ElementType === "a" && "href") || "to";
 	const props = {
 		"aria-current": isCurrent,
 		className: classnames("horizontal-nav__link", className),
-		[navMethod]: destination
+		[method || (ElementType === "a" && "href") || "to"]: destination
 	};
 	return (
 		<li className="horizontal-nav__item">

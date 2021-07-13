@@ -4,6 +4,7 @@ declare module "@nice-digital/nds-card" {
 	interface CardHeadingLinkProps {
 		destination?: string;
 		elementType?: React.ElementType;
+		method?: string;
 	}
 
 	interface CardMetaDataProps {

@@ -4,17 +4,19 @@ import "../scss/card.scss";
 
 const CardHeader = props => {
 	const { headingText, headingElementType: HeadingTag = "p", link } = props;
+
 	let linkProps = {};
+
 	if (link) {
-		const { elementType: LinkTag = "a", destination } = link;
-		if (LinkTag === "a") {
-			linkProps.href = destination;
-		} else {
-			linkProps.to = destination;
-		}
+		const { elementType: ElementType = "a", destination, method } = link;
+
+		linkProps = {
+			[method || (ElementType === "a" && "href") || "to"]: destination
+		};
+
 		return (
 			<HeadingTag className="card__heading">
-				<LinkTag {...linkProps}>{headingText}</LinkTag>
+				<ElementType {...linkProps}>{headingText}</ElementType>
 			</HeadingTag>
 		);
 	} else {
@@ -27,7 +29,8 @@ CardHeader.propTypes = {
 	headingText: PropTypes.node.isRequired,
 	link: PropTypes.shape({
 		destination: PropTypes.node.isRequired,
-		elementType: PropTypes.elementType
+		elementType: PropTypes.elementType,
+		method: PropTypes.string
 	})
 };
 
