@@ -38,6 +38,39 @@ describe("Simple Pagination", () => {
 		expect(previousLink.length).toEqual(1);
 	});
 
+	it("should use a custom navigation attribute if supplied", () => {
+		const localProps = Object.assign({}, props, {
+			previousPageLink: {
+				destination: "#previous",
+				method: "pigeon"
+			}
+		});
+		const wrapper = mount(
+			<MemoryRouter>
+				<SimplePagination {...localProps} />
+			</MemoryRouter>
+		);
+		const previousLink = wrapper.find("a[pigeon='#previous']");
+		expect(previousLink.length).toEqual(1);
+	});
+
+	it("should fallback to `to` if not an anchor and method not supplied", () => {
+		const CustomLinkElementType = () => null;
+		const localProps = Object.assign({}, props, {
+			previousPageLink: {
+				destination: "#previous",
+				elementType: CustomLinkElementType
+			}
+		});
+		const wrapper = mount(
+			<MemoryRouter>
+				<SimplePagination {...localProps} />
+			</MemoryRouter>
+		);
+		const previousLink = wrapper.find(CustomLinkElementType);
+		expect(previousLink.props()["to"]).toEqual("#previous");
+	});
+
 	it("should pass extra props to the container element", () => {
 		const localProps = Object.assign({}, props, {
 			"data-tracker": "my-tracker"

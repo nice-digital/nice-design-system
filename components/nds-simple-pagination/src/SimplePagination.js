@@ -3,20 +3,29 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import "./../scss/simple-pagination.scss";
 
-const Link = ({ text, destination, elementType: LinkTag = "a" }) => {
+const Link = ({
+	text,
+	destination,
+	elementType: ElementType = "a",
+	method
+}) => {
 	let linkProps = {
-		className: "simple-pagination__link"
+		className: "simple-pagination__link",
+		[method || (ElementType === "a" && "href") || "to"]: destination
 	};
-	if (LinkTag === "a") {
-		linkProps.href = destination;
-	} else {
-		linkProps.to = destination;
-	}
+
 	return (
 		<span className="simple-pagination__link-wrapper">
-			<LinkTag {...linkProps}>{text}</LinkTag>{" "}
+			<ElementType {...linkProps}>{text}</ElementType>{" "}
 		</span>
 	);
+};
+
+Link.propTypes = {
+	text: PropTypes.string,
+	destination: PropTypes.string,
+	elementType: PropTypes.elementType,
+	method: PropTypes.string
 };
 
 export const SimplePagination = props => {
@@ -32,13 +41,15 @@ export const SimplePagination = props => {
 	const nextLinkProps = {
 		text: "Next page",
 		destination: nextPageLink && nextPageLink.destination,
-		elementType: nextPageLink && nextPageLink.elementType
+		elementType: nextPageLink && nextPageLink.elementType,
+		method: nextPageLink && nextPageLink.method
 	};
 
 	const previousLinkProps = {
 		text: "Previous page",
 		destination: previousPageLink && previousPageLink.destination,
-		elementType: previousPageLink && previousPageLink.elementType
+		elementType: previousPageLink && previousPageLink.elementType,
+		method: previousPageLink && previousPageLink.method
 	};
 
 	return (
@@ -77,10 +88,4 @@ SimplePagination.defaultProps = {
 	totalPages: null,
 	nextPageLink: null,
 	previousPageLink: null
-};
-
-Link.propTypes = {
-	text: PropTypes.string,
-	destination: PropTypes.string,
-	elementType: PropTypes.elementType
 };
