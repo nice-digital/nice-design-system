@@ -49,6 +49,11 @@ export const StackedNavView = () => {
 			<div className="grid">
 				<div data-g="4">
 					<StackedNav
+						link={{
+							destination: "/print",
+							isCurrent: true,
+							method: "pigeon"
+						}}
 						label="Stacked Nav Heading"
 						elementType="h1"
 						data-tracking="nav-wrapper"
@@ -62,24 +67,11 @@ export const StackedNavView = () => {
 						))}
 					</StackedNav>
 				</div>
+
 				<div data-g="4">
-					<h1>Stacked Nav</h1>
-					<p>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
-						expedita dolore quasi id suscipit placeat ad est at, ex, modi quia
-						quod error, voluptas ipsam magni vitae inventore beatae consequatur.
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
-						nihil laudantium? Incidunt alias suscipit officiis tempore odio!
-						Quod, sunt commodi?
-					</p>
-				</div>
-				<div data-g="4">
-					<StackedNav aria-label="My amazing list" className="mt--f monkey">
+					<StackedNav>
 						{links.map((item, index) => (
 							<StackedNavLink
-								className="mt--f monkey"
 								data-tracking="nav-element"
 								key={`item${index}`}
 								{...item}
