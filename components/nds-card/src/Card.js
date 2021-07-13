@@ -50,7 +50,9 @@ const CardBody = props => {
 						return (
 							<div key={`item${idx}`} className="card__metadatum">
 								{item.label && (
-									<dt className="visually-hidden">{item.label}</dt>
+									<dt className={!item.visibleLabel && "visually-hidden"}>
+										{item.label}
+									</dt>
 								)}
 								<dd>{item.value}</dd>
 							</div>
@@ -67,7 +69,8 @@ CardBody.propTypes = {
 	metadata: PropTypes.arrayOf(
 		PropTypes.shape({
 			label: PropTypes.node,
-			value: PropTypes.node.isRequired
+			value: PropTypes.node.isRequired,
+			visibleLabel: PropTypes.bool
 		})
 	),
 	...CardHeader.propTypes

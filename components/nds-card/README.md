@@ -151,6 +151,12 @@ This is the key of the key-value pair that describe the metadata item. An exampl
 
 This is the value of the metadata that is printed to the page. This will accept a string or any valid React node, such as another component.
 
+###### visibleLabel
+
+- Type: `boolean`
+- Default: `false`
+
+By default the key side of the key-value pairs of metadata are visually hidden but present in the markup. Set `visibleLable` to `true` to show the key.
 ### SCSS
 
 If you're not using [React](#react), then import the SCSS directly into your application by:

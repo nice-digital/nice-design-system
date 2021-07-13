@@ -10,6 +10,7 @@ declare module "@nice-digital/nds-card" {
 	interface CardMetaDataProps {
 		label?: string;
 		value: React.ReactNode;
+		visibleLabel?: boolean;
 	}
 
 	export interface CardProps {

@@ -4,6 +4,7 @@ import toJson from "enzyme-to-json";
 
 import { Card } from "../src/Card";
 import { Link, MemoryRouter } from "react-router-dom";
+import { isExportDeclaration } from "typescript";
 
 const headingProps = {
 	headingText: "Card heading text",
@@ -118,5 +119,31 @@ describe("Card", () => {
 		);
 		const anchor = wrapper.find(Link);
 		expect(anchor.props()["pigeon"]).toEqual("/about");
+	});
+
+	it("should not hide label if a metadatum has a visibleLabel property", () => {
+		const wrapper = mount(
+			<Card
+				headingText="Hello"
+				metadata={[
+					{
+						label: "Email address",
+						value: "test@test.com"
+					},
+					{
+						label: "Published on",
+						value: "27 May 2012",
+						visibleLabel: true
+					},
+					{
+						label: "Reviewed on",
+						value: "27 May 2022",
+						visibleLabel: false
+					}
+				]}
+			/>
+		);
+		expect(wrapper.find("dt.visually-hidden").length).toEqual(2);
+		expect(wrapper.find("dt").length).toEqual(3);
 	});
 });
