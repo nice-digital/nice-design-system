@@ -6,12 +6,13 @@ import "../scss/button.scss";
 
 export const Button = props => {
 	const {
-		variant,
+		variant = "primary",
 		to,
 		elementType,
 		children,
 		buttonType,
 		className,
+		method,
 		...attributes
 	} = props;
 
@@ -24,11 +25,11 @@ export const Button = props => {
 		);
 	}
 
-	const ButtonTagType = elementType || (to ? "a" : "button"),
-		buttonProps = {};
+	const ButtonTagType = elementType || (to ? "a" : "button");
+	const buttonProps = {};
 
 	if (to) {
-		buttonProps[ButtonTagType === "a" ? "href" : "to"] = to;
+		buttonProps[method || (ButtonTagType === "a" && "href") || "to"] = to;
 	} else if (ButtonTagType === "button") {
 		buttonProps.type = buttonType || Button.types.button;
 	}
@@ -77,9 +78,6 @@ Button.propTypes = {
 	children: PropTypes.oneOfType([
 		PropTypes.arrayOf(PropTypes.node),
 		PropTypes.node
-	]).isRequired
-};
-
-Button.defaultProps = {
-	variant: "primary"
+	]).isRequired,
+	method: PropTypes.string
 };

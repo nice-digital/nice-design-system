@@ -12,6 +12,7 @@
 				- [buttonType](#buttontype)
 				- [to](#to)
 				- [elementType](#elementtype)
+				- [method](#method)
 				- [className](#classname)
 		- [SCSS](#scss)
 		- [HTML](#html)
@@ -96,6 +97,13 @@ Destination URL if this is an anchor button. If you're using custom routing, use
 - Default: `null`
 
 A custom tag type for the button, when it's an anchor. Defaults to a normal HTMLAnchorElement. Use this prop to use custom routing e.g. `<Button to="/test" elementType={Link}>Text</Button>`.
+
+##### method
+
+- Type: `string | null`
+- Default: `null`
+
+If the button is a link or element with a navigation purpose, this allows the specifying of a method to activate the link. If an canchose is supplied, the default method is a `href` attribute for the destination. Other routers may use another prop, such as `to`. This allows you to stipulate any possible required attribute name. If no `method` is provided and the `elementType` is an anchor (or an `elementType` is not supplied) then the `method` will default to `href`. If the `elementType` is not an anchor and no method is supplied, the `method` will default to `to`.
 
 ##### className
 
