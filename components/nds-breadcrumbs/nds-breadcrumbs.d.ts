@@ -5,6 +5,7 @@ declare module "@nice-digital/nds-breadcrumbs" {
 		children: React.ReactNode;
 		to?: string;
 		elementType?: React.ElementType;
+		method?: string;
 	}
 
 	export const Breadcrumb: React.FC<BreadcrumbProps>;
