@@ -60,12 +60,18 @@ describe("Hero", () => {
 
 	it("should pass any number of child components via actions and extra props ", () => {
 		const wrapper = mount(
-			<Hero title="Welcoming title" intro="Introduction text" actions={actions}>
+			<Hero
+				title="Welcoming title"
+				intro="Introduction text"
+				actions={actions}
+				data-track={false}
+			>
 				{extras}
 			</Hero>
 		);
 		const anchor = wrapper.find("a[href='page-two']");
 		expect(anchor).toHaveLength(2);
 		expect(anchor.last().text()).toEqual("Go to page two");
+		expect(wrapper.find("div.hero").props()["data-track"]).toEqual(false);
 	});
 });

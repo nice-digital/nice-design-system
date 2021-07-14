@@ -11,7 +11,7 @@ describe("Callout component", () => {
 
 	it("should match the snapshot", () => {
 		const wrapper = mount(
-			<Callout>
+			<Callout data-track={false}>
 				<CalloutImage>
 					<img src="test.jpg" alt="" />
 				</CalloutImage>

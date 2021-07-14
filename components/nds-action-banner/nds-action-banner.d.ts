@@ -2,6 +2,7 @@ declare module "@nice-digital/nds-action-banner" {
 	import React = require("react");
 
 	export interface ActionBannerProps {
+		[prop: string]: unknown;
 		children: React.ReactNode;
 		title: string;
 		variant?: "default" | "subtle";

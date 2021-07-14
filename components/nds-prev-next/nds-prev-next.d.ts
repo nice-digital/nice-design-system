@@ -10,6 +10,7 @@ declare module "@nice-digital/nds-prev-next" {
 	}
 
 	interface PrevNextProps {
+		[prop: string]: unknown;
 		previousPageLink?: PrevNextLink;
 		nextPageLink?: PrevNextLink;
 	}

@@ -34,4 +34,11 @@ describe("PageHeader", () => {
 		);
 		expect(toJson(wrapper)).toMatchSnapshot();
 	});
+
+	it("should pass additional props to the container", () => {
+		const wrapper = shallow(
+			<PageHeader heading="This is our heading" data-track={false} />
+		);
+		expect(wrapper.find("div").props()["data-track"]).toEqual(false);
+	});
 });

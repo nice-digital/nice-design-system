@@ -1,10 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`InPageNav should match snapshot 1`] = `
-<InPageNav>
+<InPageNav
+  data-track={false}
+>
   <nav
     aria-labelledby="inpagenav-title"
     className="in-page-nav "
+    data-track={false}
   >
     <h2
       className="in-page-nav__title"

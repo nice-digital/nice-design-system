@@ -2,6 +2,7 @@ declare module "@nice-digital/nds-hero" {
 	import React = require("react");
 
 	export interface HeroProps {
+		[prop: string]: unknown;
 		actions?: React.ReactNode;
 		extra?: React.ReactNode;
 		footer?: React.ReactNode;

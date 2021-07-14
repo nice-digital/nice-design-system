@@ -36,4 +36,9 @@ describe("@nice-digital/nds-textarea", () => {
 		mount(<Textarea {...props} textareaRef={myRefFunction} />);
 		expect(myRefFunction).toReturnWith("TEXTAREA");
 	});
+
+	it("should cascade additional props to the container", () => {
+		const wrapper = shallow(<Textarea {...props} data-track={false} />);
+		expect(wrapper.find("textarea").props()["data-track"]).toEqual(false);
+	});
 });

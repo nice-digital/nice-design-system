@@ -28,7 +28,7 @@ export class ActionBanner extends React.Component {
 	render() {
 		if (this.state.isClosed) return null;
 
-		const { variant, onClosing, title, children, cta } = this.props;
+		const { variant, onClosing, title, children, cta, ...rest } = this.props;
 
 		const classes = ["action-banner"];
 
@@ -38,7 +38,7 @@ export class ActionBanner extends React.Component {
 		if (onClosing) classes.push("action-banner--closeable");
 
 		return (
-			<section className={classes.join(" ")}>
+			<section className={classes.join(" ")} {...rest}>
 				<div className="action-banner__container">
 					<div className="action-banner__inner">
 						<div className="action-banner__text">

@@ -2,6 +2,7 @@ declare module "@nice-digital/nds-filters" {
 	import React = require("react");
 
 	export interface FilterPanelProps {
+		[prop: string]: unknown;
 		className?: string;
 		heading: string;
 	}
@@ -9,6 +10,7 @@ declare module "@nice-digital/nds-filters" {
 	export const FilterPanel: React.ComponentType<FilterPanelProps>;
 
 	export interface FilterGroupProps {
+		[prop: string]: unknown;
 		heading: string;
 		id?: string;
 		collapseByDefault?: boolean;
@@ -19,6 +21,7 @@ declare module "@nice-digital/nds-filters" {
 	export const FilterGroup: React.ComponentType<FilterGroupProps>;
 
 	export interface FilterOptionProps {
+		[prop: string]: unknown;
 		isSelected: boolean;
 		children: string;
 		value?: string;

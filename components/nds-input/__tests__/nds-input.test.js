@@ -36,4 +36,9 @@ describe("@nice-digital/nds-input", () => {
 		mount(<Input {...props} inputRef={myRefFunction} />);
 		expect(myRefFunction).toReturnWith("INPUT");
 	});
+
+	it("should pass down additional props to the input", () => {
+		const wrapper = mount(<Input {...props} data-track={false} />);
+		expect(wrapper.find("input").props()["data-track"]).toEqual(false);
+	});
 });

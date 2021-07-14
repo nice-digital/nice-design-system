@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-prev-next",
-	"version": "1.1.5",
+	"version": "1.1.6-alpha.0",
 	"description": "Previous and next navigation component for the NICE Design System",
 	"author": "Warren Keith <w@rren.dev>",
 	"keywords": [

@@ -2,6 +2,8 @@ declare module "@nice-digital/nds-tag" {
 	import React = require("react");
 
 	interface BaseTagProps {
+		/** Allow any additional props to be passed and applied to the tag */
+		[prop: string]: unknown;
 		/** Content of the tag */
 		children: React.ReactNode;
 		/**	Tags have a small margin by default. Use the .tag--flush modifier to remove the margin */

@@ -5,10 +5,10 @@ import { Tag } from "@nice-digital/nds-tag";
 import "./../scss/phase-banner.scss";
 
 export const PhaseBanner = props => {
-	const { alpha, beta, children } = props;
+	const { alpha, beta, children, ...rest } = props;
 
 	return (
-		<p className="phase-banner">
+		<p className="phase-banner" {...rest}>
 			<span className="phase-banner__tag">
 				<Tag impact alpha={alpha} beta={beta}>
 					{alpha ? "Alpha" : "Beta"}
