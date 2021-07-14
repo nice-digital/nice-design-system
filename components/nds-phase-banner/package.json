@@ -1,6 +1,6 @@
 {
   "name": "@nice-digital/nds-phase-banner",
-  "version": "1.2.5",
+  "version": "1.2.6-alpha.0",
   "description": "Phase banner component for the NICE Design System",
   "keywords": [
     "alpha",
@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@nice-digital/nds-core": "^1.2.5",
-    "@nice-digital/nds-tag": "^1.2.4",
+    "@nice-digital/nds-tag": "^1.2.5-alpha.0",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {

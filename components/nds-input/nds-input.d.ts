@@ -2,6 +2,7 @@ declare module "@nice-digital/nds-input" {
 	import React = require("react");
 
 	export interface InputProps {
+		[prop: string]: unknown;
 		defaultValue?: string;
 		error?: boolean;
 		errorMessage?: string;

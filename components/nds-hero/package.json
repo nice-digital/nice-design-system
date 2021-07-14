@@ -1,6 +1,6 @@
 {
   "name": "@nice-digital/nds-hero",
-  "version": "1.2.5",
+  "version": "1.2.6-alpha.0",
   "description": "Hero component for the NICE Design System",
   "keywords": [
     "hero"

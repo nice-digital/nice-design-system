@@ -86,4 +86,18 @@ describe("Tabs", () => {
 		});
 		expect(wrapper.state().index).toEqual(2);
 	});
+
+	it("should cascade additional props to the tabs and individual tab containers", () => {
+		const newWrapper = mount(
+			<Tabs data-track={false}>
+				<Tab title="Tab 1" data-track={true}>
+					<p>Tab one content</p>
+				</Tab>
+			</Tabs>
+		);
+		expect(newWrapper.find("div.tabs").props()["data-track"]).toEqual(false);
+		expect(newWrapper.find("div.tabs__pane").props()["data-track"]).toEqual(
+			true
+		);
+	});
 });

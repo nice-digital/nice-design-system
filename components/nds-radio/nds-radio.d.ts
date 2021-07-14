@@ -2,6 +2,7 @@ declare module "@nice-digital/nds-radio" {
 	import React = require("react");
 
 	export interface RadioProps {
+		[prop: string]: unknown;
 		disabled?: boolean;
 		error?: boolean | string;
 		name?: string;

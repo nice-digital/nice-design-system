@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-alert",
-	"version": "1.2.4",
+	"version": "1.2.5-alpha.0",
 	"description": "Alert component for the NICE Design System",
 	"keywords": [
 		"alert"

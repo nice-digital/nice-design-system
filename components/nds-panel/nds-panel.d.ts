@@ -2,6 +2,7 @@ declare module "@nice-digital/nds-panel" {
 	import React = require("react");
 
 	export interface PanelProps {
+		[prop: string]: unknown;
 		children: React.ReactNode;
 		variant?: "supporting" | "primary" | "impact" | "inverse" | "impact-alt";
 	}

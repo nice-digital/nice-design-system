@@ -52,4 +52,14 @@ describe("Breadcrumbs", () => {
 		);
 		expect(toJson(wrapper.find("script"))).toMatchSnapshot();
 	});
+
+	it("should spread additional props onto the container", () => {
+		const wrapper = shallow(
+			<Breadcrumbs data-track={false}>
+				<Breadcrumb to="/">Home</Breadcrumb>
+				<Breadcrumb>Page</Breadcrumb>
+			</Breadcrumbs>
+		);
+		expect(wrapper.find("nav").props()["data-track"]).toEqual(false);
+	});
 });

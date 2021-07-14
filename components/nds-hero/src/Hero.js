@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 import "../scss/hero.scss";
 
 export const Hero = props => {
-	const { actions, children, footer, header, intro, title } = props;
+	const { actions, children, footer, header, intro, title, ...rest } = props;
 	return (
-		<div className="hero">
+		<div className="hero" {...rest}>
 			<div className="hero__container">
 				{header && header}
 				<div className="hero__body">
