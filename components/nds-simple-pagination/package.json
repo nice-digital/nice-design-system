@@ -47,5 +47,6 @@
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.5.0"
-	}
+	},
+	"gitHead": "b70a1e39df19c1943a000c841aca8d9bb3ef4ff1"
 }
