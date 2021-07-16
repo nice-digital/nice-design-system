@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 import "../scss/card.scss";
 
 const CardHeader = props => {
@@ -50,7 +51,11 @@ const CardBody = props => {
 						return (
 							<div key={`item${idx}`} className="card__metadatum">
 								{item.label && (
-									<dt className={!item.visibleLabel && "visually-hidden"}>
+									<dt
+										className={classNames({
+											"visually-hidden": !item.visibleLabel
+										})}
+									>
 										{item.label}
 									</dt>
 								)}
