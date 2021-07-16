@@ -7,15 +7,17 @@ import "./../scss/stacked-nav.scss";
 const Heading = props => {
 	const { elementType: ElementType = "p", label, link } = props;
 	if (link) {
-		const { elementType: LinkElementType = "a", isCurrent, destination } = link;
+		const {
+			elementType: LinkElementType = "a",
+			isCurrent,
+			destination,
+			method
+		} = link;
 		const linkProps = {
-			"aria-current": isCurrent ? "true" : "false"
+			"aria-current": isCurrent ? "true" : "false",
+			[method || (LinkElementType === "a" && "href") || "to"]: destination
 		};
-		if (LinkElementType === "a") {
-			linkProps.href = destination;
-		} else {
-			linkProps.to = destination;
-		}
+
 		return (
 			<ElementType className="stacked-nav__root">
 				<LinkElementType {...linkProps}>{label}</LinkElementType>
@@ -35,7 +37,8 @@ Heading.propTypes = {
 	link: PropTypes.shape({
 		destination: PropTypes.string,
 		isCurrent: PropTypes.bool,
-		elementType: PropTypes.elementType
+		elementType: PropTypes.elementType,
+		method: PropTypes.string
 	})
 };
 
@@ -48,17 +51,20 @@ export const StackedNavLink = props => {
 		children,
 		nested,
 		className,
+		method,
 		...rest
 	} = props;
+
 	const label = props.label || children;
+
 	if (!label) return null;
+
 	const linkProps = {};
+
 	linkProps["aria-current"] = isCurrent ? "true" : "false";
-	if (ElementType === "a") {
-		linkProps.href = destination;
-	} else if (ElementType) {
-		linkProps.to = destination;
-	}
+
+	linkProps[method || (ElementType === "a" && "href") || "to"] = destination;
+
 	return (
 		<li className={classnames(["stacked-nav__list-item", className])} {...rest}>
 			<ElementType {...linkProps}>
@@ -86,7 +92,8 @@ StackedNavLink.propTypes = {
 	elementType: PropTypes.elementType,
 	hint: PropTypes.node,
 	children: PropTypes.node,
-	nested: PropTypes.node
+	nested: PropTypes.node,
+	method: PropTypes.string
 };
 
 export const StackedNav = props => {
@@ -107,7 +114,8 @@ StackedNav.propTypes = {
 	link: PropTypes.shape({
 		destination: PropTypes.string,
 		isCurrent: PropTypes.bool,
-		elementType: PropTypes.elementType
+		elementType: PropTypes.elementType,
+		method: PropTypes.string
 	}),
 	children: PropTypes.oneOfType([
 		PropTypes.arrayOf(StackedNavLink),

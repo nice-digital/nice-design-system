@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, MemoryRouter } from "react-router-dom";
 import { shallow, mount } from "enzyme";
 import toJson from "enzyme-to-json";
 
@@ -90,6 +91,70 @@ describe("StackedNav", () => {
 			</StackedNav>
 		);
 		expect(wrapper.find("h6")).toHaveLength(1);
+	});
+
+	it("should render a custom method in the heading if one is supplied", () => {
+		const localHeading = Object.assign({}, heading, {
+			elementType: "h6",
+			link: {
+				method: "pigeon",
+				label: "Pigeon",
+				destination: "/pigeon"
+			}
+		});
+		const wrapper = mount(
+			<StackedNav {...localHeading}>
+				{links.map((item, index) => (
+					<StackedNavLink key={`idx${index}`} {...item} />
+				))}
+			</StackedNav>
+		);
+		expect(wrapper.find("h6 a").props()["pigeon"]).toEqual("/pigeon");
+	});
+
+	it("should render an appropriate navigation attribute depending on the options supplied", () => {
+		const links = [
+			{
+				label: "One",
+				destination: "one"
+			},
+			{
+				label: "Two",
+				destination: "two",
+				method: "pigeon"
+			},
+			{
+				label: "Three",
+				destination: "three",
+				elementType: Link
+			}
+		];
+
+		const wrapper = mount(
+			<MemoryRouter>
+				<StackedNav>
+					{links.map((item, index) => (
+						<StackedNavLink key={index} {...item} />
+					))}
+				</StackedNav>
+			</MemoryRouter>
+		);
+
+		expect(
+			wrapper
+				.find("a")
+				.at(0)
+				.props().href
+		).toEqual("one");
+
+		expect(
+			wrapper
+				.find("a")
+				.at(1)
+				.props().pigeon
+		).toEqual("two");
+
+		expect(wrapper.find(Link).props().to).toEqual("three");
 	});
 
 	it("should not render a root tag unless the label is present", () => {

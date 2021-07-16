@@ -1,38 +1,34 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 import { HorizontalNav, HorizontalNavLink } from "../src/HorizontalNav";
-import { Link } from "react-router-dom";
+import { MemoryRouter, Link } from "react-router-dom";
 import toJson from "enzyme-to-json";
 
 const links = [
 	{
-		title: "Form Group",
+		title: "Link One",
 		destination: "/formgroup",
-		isCurrent: false
+		className: "one"
 	},
 	{
-		title: "Page Header",
+		title: "Link Two",
 		destination: "/pageheader",
 		isCurrent: true,
-		elementType: Link
+		elementType: Link,
+		className: "two"
 	},
 	{
-		title: "Stacked Nav",
+		title: "Link Three",
 		destination: "/stackednav",
-		isCurrent: false,
-		elementType: Link
+		method: "pigeon",
+		className: "three"
 	},
 	{
-		title: "Alert",
+		title: "Link Four",
 		destination: "/alert",
-		isCurrent: false,
-		elementType: Link
-	},
-	{
-		title: "Grid",
-		destination: "/grid",
-		isCurrent: false,
-		elementType: Link
+		elementType: Link,
+		method: "to",
+		className: "four"
 	}
 ];
 
@@ -103,6 +99,7 @@ describe("Horizontal Nav Component", () => {
 
 			expect(linkProps["dancing"]).toEqual("is what we do");
 		});
+
 		it("should merge additional classes onto the anchor", () => {
 			const wrapper = mount(
 				<HorizontalNav>
@@ -114,6 +111,26 @@ describe("Horizontal Nav Component", () => {
 			expect(wrapper.find("a").props()["className"]).toEqual(
 				"horizontal-nav__link very-classy"
 			);
+		});
+
+		it("should use a custom navigation attribute if supplied, otherwise fall back to href if anchor or to if not", () => {
+			const wrapper = mount(
+				<MemoryRouter>
+					<HorizontalNav>
+						{links.map(link => (
+							<HorizontalNavLink key={link.title} {...link} />
+						))}
+					</HorizontalNav>
+				</MemoryRouter>
+			);
+
+			wrapper.find(Link).forEach(item => {
+				expect(item.props()["to"]).toBeTruthy();
+			});
+
+			expect(wrapper.find("a.three").props()["pigeon"]).toBeTruthy();
+
+			expect(wrapper.find("a.one").props()["href"]).toBeTruthy();
 		});
 	});
 });

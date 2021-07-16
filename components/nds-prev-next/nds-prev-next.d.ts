@@ -6,6 +6,7 @@ declare module "@nice-digital/nds-prev-next" {
 		destination: string;
 		elementType?: React.ElementType;
 		intro?: string;
+		method?: string;
 	}
 
 	interface PrevNextProps {

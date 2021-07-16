@@ -4,6 +4,7 @@ declare module "@nice-digital/nds-simple-pagination" {
 	interface PageLinkProps {
 		destination?: string;
 		elementType?: React.ElementType;
+		method?: string;
 	}
 
 	export interface SimplePaginationProps {

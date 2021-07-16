@@ -266,3 +266,87 @@ Array [
   </Card>,
 ]
 `;
+
+exports[`Card should not hide label if a metadatum has a visibleLabel property 1`] = `
+<Card
+  headingText="Hello"
+  metadata={
+    Array [
+      Object {
+        "label": "Email address",
+        "value": "test@test.com",
+      },
+      Object {
+        "label": "Published on",
+        "value": "27 May 2012",
+        "visibleLabel": true,
+      },
+    ]
+  }
+>
+  <article
+    className="card"
+  >
+    <CardBody
+      headingText="Hello"
+      metadata={
+        Array [
+          Object {
+            "label": "Email address",
+            "value": "test@test.com",
+          },
+          Object {
+            "label": "Published on",
+            "value": "27 May 2012",
+            "visibleLabel": true,
+          },
+        ]
+      }
+    >
+      <header
+        className="card__header"
+      >
+        <CardHeader
+          headingText="Hello"
+        >
+          <p
+            className="card__heading"
+          >
+            Hello
+          </p>
+        </CardHeader>
+      </header>
+      <dl
+        className="card__metadata"
+      >
+        <div
+          className="card__metadatum"
+          key="item0"
+        >
+          <dt
+            className="visually-hidden"
+          >
+            Email address
+          </dt>
+          <dd>
+            test@test.com
+          </dd>
+        </div>
+        <div
+          className="card__metadatum"
+          key="item1"
+        >
+          <dt
+            className={false}
+          >
+            Published on
+          </dt>
+          <dd>
+            27 May 2012
+          </dd>
+        </div>
+      </dl>
+    </CardBody>
+  </article>
+</Card>
+`;

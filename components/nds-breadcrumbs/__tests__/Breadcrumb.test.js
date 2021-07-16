@@ -26,6 +26,17 @@ describe("Breadcrumb", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
+	it("should use a custom link method if supplied", () => {
+		const CustomLink = () => <span />;
+
+		const wrapper = shallow(
+			<Breadcrumb to="/" tag={CustomLink} method="pigeon">
+				Home
+			</Breadcrumb>
+		);
+		expect(wrapper).toMatchSnapshot();
+	});
+
 	it("should pass on props to rendered anchor", () => {
 		const wrapper = shallow(
 			<Breadcrumb to="/" aria-current={true}>

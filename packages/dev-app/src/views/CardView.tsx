@@ -54,6 +54,26 @@ const image3 = <img src="http://placehold.it/200x200" alt="placeholder" />;
 export const CardView = () => {
 	return (
 		<>
+			<Card
+				headingText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, minus."
+				metadata={[
+					{
+						value: "21 May 2021",
+						label: "Published on",
+						visibleLabel: true
+					},
+					{
+						value: "Guideline",
+						label: "Email address"
+					},
+					{
+						value: "NICE guideline",
+						label: "I don't know"
+					}
+				]}
+			/>
+			<hr />
+
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet
 				asperiores aspernatur <mark>autem</mark> cum doloremque illum impedit

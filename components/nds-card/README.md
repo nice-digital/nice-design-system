@@ -124,6 +124,13 @@ A string to represent the destination if the card heading is a link.
 
 The tag that you would like to use for the heading link. By default it's an HTMLAnchorElement and will result in something like `<a href="/destination">Card heading text</a>` but you can pass a custom router link tag such as `Link` to result in `<Link to="/destination">Card heading text</Link>`.
 
+##### link.method
+
+- Type: `string`
+- Default: `to`
+
+The method of activating the link. By default a link is an anchor with `href` attribute for the destination. Other routers may use another prop, such as `to`. This allows you to stipulate any possible required attribute name. If no `method` is provided and the `elementType` is an anchor (or an `elementType` is not supplied) then the `method` will default to `href`. If the `elementType` is not an anchor and no method is supplied, the `method` will default to `to`.
+
 ##### metadata
 
 - Type: `Metadata`, `Array<Metadata>`
@@ -144,6 +151,12 @@ This is the key of the key-value pair that describe the metadata item. An exampl
 
 This is the value of the metadata that is printed to the page. This will accept a string or any valid React node, such as another component.
 
+###### visibleLabel
+
+- Type: `boolean`
+- Default: `false`
+
+By default the key side of the key-value pairs of metadata are visually hidden but present in the markup. Set `visibleLable` to `true` to show the key.
 ### SCSS
 
 If you're not using [React](#react), then import the SCSS directly into your application by:

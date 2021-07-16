@@ -10,20 +10,16 @@ exports[`Breadcrumbs should match snapshot for multiple levels 1`] = `
       className="breadcrumbs"
     >
       <Breadcrumb
-        elementType="a"
         to="/"
       >
         Home
       </Breadcrumb>
       <Breadcrumb
-        elementType="a"
         to="/topics/"
       >
         Topics
       </Breadcrumb>
-      <Breadcrumb
-        elementType="a"
-      >
+      <Breadcrumb>
         Page
       </Breadcrumb>
     </ol>
@@ -77,14 +73,11 @@ exports[`Breadcrumbs should match snapshot for single level 1`] = `
       className="breadcrumbs"
     >
       <Breadcrumb
-        elementType="a"
         to="/"
       >
         Home
       </Breadcrumb>
-      <Breadcrumb
-        elementType="a"
-      >
+      <Breadcrumb>
         Page
       </Breadcrumb>
     </ol>

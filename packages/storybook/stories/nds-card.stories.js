@@ -89,12 +89,11 @@ const fullCardWithComponentMeta = () => {
 			{
 				value: <Tag alpha>Component as value</Tag>
 			},
+			{ label: "This is a hidden label", value: "just a label" },
 			{
-				value: "just a label"
-			},
-			{
-				label: "Email address",
-				value: "value with a label"
+				label: "Value with a...",
+				value: "...visible label!",
+				visibleLabel: true
 			}
 		]
 	};

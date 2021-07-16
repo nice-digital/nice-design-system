@@ -95,6 +95,13 @@ A string to represent the destination if the heading is a link.
 
 A boolean value to determine whether the link should have style and ARIA attributes to show that it is currently active.
 
+##### link.method
+
+- Type: `string`
+- Default: `href`
+
+The method of activating the link. By default a link is an anchor with `href` attribute for the destination. Other routers may use another prop, such as `to`. This allows you to stipulate any possible required attribute name. If no `method` is provided and the `elementType` is an anchor (or an `elementType` is not supplied) then the `method` will default to `href`. If the `elementType` is not an anchor and no method is supplied, the `method` will default to `to`.
+
 ##### `<StackedNavLink />`
 
 ###### nested
@@ -145,6 +152,13 @@ A string to represent the destination if the element is a link.
 - Default: `false`
 
 A boolean value to determine whether the link should have style and ARIA attributes to show that it is currently active.
+
+###### method
+
+- Type: `string`
+- Default: `href`
+
+The method of activating the link. By default a link is an anchor with `href` attribute for the destination. Other routers may use another prop, such as `to`. This allows you to stipulate any possible required attribute name. If no `method` is provided and the `elementType` is an anchor (or an `elementType` is not supplied) then the `method` will default to `href`. If the `elementType` is not an anchor and no method is supplied, the `method` will default to `to`.
 
 ###### hint
 

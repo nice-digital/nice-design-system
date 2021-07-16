@@ -2,7 +2,6 @@ import React from "react";
 import { SimplePagination } from "@nice-digital/nds-simple-pagination";
 import { Link } from "react-router-dom";
 import { Panel } from "@nice-digital/nds-panel";
-// import d from "./../data/search-response.json";
 
 import test from "../data/demo-data.json";
 
@@ -23,7 +22,8 @@ export const SimplePaginationView = () => {
 			destination: "#test"
 		},
 		previousPageLink: {
-			destination: "#hello"
+			destination: "#hello",
+			method: "pigeon"
 		}
 	};
 

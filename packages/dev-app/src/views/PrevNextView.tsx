@@ -11,12 +11,12 @@ export const PrevNextView = () => {
 					text: "Page Header",
 					destination: "/pageheader",
 					elementType: Link,
-					intro: "Show me the next one"
+					intro: "Show me the next one",
+					method: "pigeon"
 				}}
 				previousPageLink={{
 					text: "Alert",
-					destination: "/alert",
-					elementType: Link
+					destination: "/alert"
 				}}
 			/>
 			<hr />
