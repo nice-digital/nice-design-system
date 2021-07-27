@@ -78,6 +78,13 @@ The text that the link will be applied to. Usually the title of the resource the
 
 The tag that you would like to use for the link. By default it's an HTMLAnchorElement and will result in something like `<a href="/about-page">About page</a>` but you can pass a custom router element such as `Link` to result in `<Link to="/about-page">About page</Link>`.
 
+##### nextPageLink.method
+
+- Type: `string`
+- Default: `href`
+
+The method of activating the link. By default a link is an anchor with `href` attribute for the destination. Other routers may use another prop, such as `to`. This allows you to stipulate any possible required attribute name. If no `method` is provided and the `elementType` is an anchor (or an `elementType` is not supplied) then the `method` will default to `href`. If the `elementType` is not an anchor and no method is supplied, the `method` will default to `to`.
+
 ##### nextPageLink.intro
 
 - Type: `string`

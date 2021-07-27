@@ -8,34 +8,25 @@ import {
 
 const links = [
 	{
-		title: "Form Group",
-		destination: "/formgroup",
-		isCurrent: false,
-		elementType: Link
+		title: "Should be 'href'",
+		destination: "/formgroup"
 	},
 	{
-		title: "Page Header",
+		title: "Should be 'to'",
 		destination: "/pageheader",
 		isCurrent: true,
 		elementType: Link
 	},
 	{
-		title: "Stacked Nav",
+		title: "Should be 'pigeon'",
 		destination: "/stackednav",
-		isCurrent: false,
-		elementType: Link
+		method: "pigeon"
 	},
 	{
-		title: "Alert",
+		title: "Should be 'to'!",
 		destination: "/alert",
-		isCurrent: false,
-		elementType: Link
-	},
-	{
-		title: "Grid",
-		destination: "/grid",
-		isCurrent: false,
-		elementType: Link
+		elementType: Link,
+		method: "to"
 	}
 ];
 

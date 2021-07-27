@@ -1,7 +1,8 @@
 "use strict";
 
 import React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
+import { MemoryRouter, Link } from "react-router-dom";
 
 import { Button } from "../src/Button";
 
@@ -152,6 +153,31 @@ describe("@nice-digital/nds-button", () => {
 			let wrapper = shallow(<Button onClick={clickHandler}>Test</Button>);
 			wrapper.find("button").simulate("click");
 			expect(clickHandler).toHaveBeenCalled();
+		});
+	});
+
+	describe("should render the appropriate link method for the supplied elementType and method", () => {
+		const wrapper = mount(
+			<MemoryRouter>
+				<Button method="pigeon" to="/one" className="one">
+					One
+				</Button>
+				<Button elementType="a" to="/two" className="two">
+					Two
+				</Button>
+				<Button elementType={Link} to="/three" className="three">
+					Three
+				</Button>
+			</MemoryRouter>
+		);
+		it("should use any supplied method", () => {
+			expect(wrapper.find("a.one").props()["pigeon"]).toEqual("/one");
+		});
+		it("should use href is elementType is anchor", () => {
+			expect(wrapper.find("a.two").props()["href"]).toEqual("/two");
+		});
+		it("should not use href if elementType is custom", () => {
+			expect(wrapper.find(Link).props().to).toEqual("/three");
 		});
 	});
 });

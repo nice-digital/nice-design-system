@@ -4,6 +4,7 @@ import toJson from "enzyme-to-json";
 
 import { Card } from "../src/Card";
 import { Link, MemoryRouter } from "react-router-dom";
+import { isExportDeclaration } from "typescript";
 
 const headingProps = {
 	headingText: "Card heading text",
@@ -71,7 +72,7 @@ describe("Card", () => {
 		expect(wrapper.find(".card__metadatum")).toHaveLength(2);
 	});
 
-	it("should not render an a metadata item without a value", () => {
+	it("should not render a metadata item without a value", () => {
 		const localMetadataProps = [...metadataProps];
 		localMetadataProps[0].value = "";
 		const wrapper = mount(
@@ -86,6 +87,15 @@ describe("Card", () => {
 		expect(anchor.props()["href"]).toEqual("/about");
 	});
 
+	it("should pass a custom navigaiton method if supplied", () => {
+		const localProps = Object.assign({}, headingProps, {
+			link: { method: "pigeon", destination: "/about" }
+		});
+		const wrapper = mount(<Card {...localProps} />);
+		const anchor = wrapper.find("a");
+		expect(anchor.props()["pigeon"]).toEqual("/about");
+	});
+
 	it("should render a 'to' attribute if the elementType is anything other than an anchor", () => {
 		const localHeadingProps = Object.assign({}, headingProps);
 		localHeadingProps.link.elementType = Link;
@@ -96,5 +106,44 @@ describe("Card", () => {
 		);
 		const anchor = wrapper.find(Link);
 		expect(anchor.props()["to"]).toEqual("/about");
+	});
+
+	it("should render a 'to' attribute if the elementType is not an anchor and a method is supplied", () => {
+		const localHeadingProps = Object.assign({}, headingProps);
+		localHeadingProps.link.elementType = Link;
+		localHeadingProps.link.method = "pigeon";
+		const wrapper = mount(
+			<MemoryRouter>
+				<Card {...localHeadingProps} />
+			</MemoryRouter>
+		);
+		const anchor = wrapper.find(Link);
+		expect(anchor.props()["pigeon"]).toEqual("/about");
+	});
+
+	it("should not hide label if a metadatum has a visibleLabel property", () => {
+		const wrapper = mount(
+			<Card
+				headingText="Hello"
+				metadata={[
+					{
+						label: "Email address",
+						value: "test@test.com"
+					},
+					{
+						label: "Published on",
+						value: "27 May 2012",
+						visibleLabel: true
+					},
+					{
+						label: "Reviewed on",
+						value: "27 May 2022",
+						visibleLabel: false
+					}
+				]}
+			/>
+		);
+		expect(wrapper.find("dt.visually-hidden").length).toEqual(2);
+		expect(wrapper.find("dt").length).toEqual(3);
 	});
 });

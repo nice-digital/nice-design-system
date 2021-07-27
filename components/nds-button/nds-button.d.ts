@@ -13,6 +13,7 @@ declare module "@nice-digital/nds-button" {
 		/** Additional classes e.g. margin modifiers like "mt--0" */
 		className?: string;
 		children: React.ReactNode;
+		method?: string;
 	}
 
 	interface ButtonComponent extends React.FC<ButtonProps> {

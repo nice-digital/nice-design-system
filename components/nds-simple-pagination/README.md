@@ -73,6 +73,12 @@ A string to represent the destination if you're supplying a traditional "link". 
 
 Here you can pass a custom link type such as `Link` from react-router or gatsby. If no `elementType` is provided, it will default to an anchor tag.
 
+##### PageLink.method
+
+- Type: `string`
+- Default: `href`
+
+The method of activating the link. By default a link is an anchor with `href` attribute for the destination. Other routers may use another prop, such as `to`. This allows you to stipulate any possible required attribute name. If no `method` is provided and the `elementType` is an anchor (or an `elementType` is not supplied) then the `method` will default to `href`. If the `elementType` is not an anchor and no method is supplied, the `method` will default to `to`.
 ### SCSS
 
 If you're not using [React](#react), then import the SCSS directly into your application by:

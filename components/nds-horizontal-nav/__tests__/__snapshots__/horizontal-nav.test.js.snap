@@ -11,9 +11,8 @@ exports[`Horizontal Nav Component should match the default snapshot 1`] = `
       className="monkey"
       data-track="monkey"
       destination="/formgroup"
-      isCurrent={false}
-      key="Form Group"
-      title="Form Group"
+      key="Link One"
+      title="Link One"
     />
     <HorizontalNavLink
       className="monkey"
@@ -34,30 +33,16 @@ exports[`Horizontal Nav Component should match the default snapshot 1`] = `
         }
       }
       isCurrent={true}
-      key="Page Header"
-      title="Page Header"
+      key="Link Two"
+      title="Link Two"
     />
     <HorizontalNavLink
       className="monkey"
       data-track="monkey"
       destination="/stackednav"
-      elementType={
-        Object {
-          "$$typeof": Symbol(react.forward_ref),
-          "displayName": "Link",
-          "propTypes": Object {
-            "innerRef": [Function],
-            "onClick": [Function],
-            "replace": [Function],
-            "target": [Function],
-            "to": [Function],
-          },
-          "render": [Function],
-        }
-      }
-      isCurrent={false}
-      key="Stacked Nav"
-      title="Stacked Nav"
+      key="Link Three"
+      method="pigeon"
+      title="Link Three"
     />
     <HorizontalNavLink
       className="monkey"
@@ -77,31 +62,9 @@ exports[`Horizontal Nav Component should match the default snapshot 1`] = `
           "render": [Function],
         }
       }
-      isCurrent={false}
-      key="Alert"
-      title="Alert"
-    />
-    <HorizontalNavLink
-      className="monkey"
-      data-track="monkey"
-      destination="/grid"
-      elementType={
-        Object {
-          "$$typeof": Symbol(react.forward_ref),
-          "displayName": "Link",
-          "propTypes": Object {
-            "innerRef": [Function],
-            "onClick": [Function],
-            "replace": [Function],
-            "target": [Function],
-            "to": [Function],
-          },
-          "render": [Function],
-        }
-      }
-      isCurrent={false}
-      key="Grid"
-      title="Grid"
+      key="Link Four"
+      method="to"
+      title="Link Four"
     />
   </ul>
 </nav>

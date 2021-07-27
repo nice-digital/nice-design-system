@@ -3,6 +3,7 @@ import { mount, shallow } from "enzyme";
 import { PrevNext } from "../src/PrevNext";
 import { Link } from "react-router-dom";
 import toJson from "enzyme-to-json";
+import { MemoryRouter } from "react-router-dom";
 
 const nextPageLink = {
 	text: "Page Header",
@@ -41,6 +42,36 @@ describe("Previous & Next", () => {
 		const wrapper = mount(<PrevNext previousPageLink={previousPageLink} />);
 		const anchor = wrapper.find("a");
 		expect(anchor.props()["href"]).toEqual("/alert");
+	});
+
+	it("link should render an to attribute if the elementType is not an anchor and a method is not supplied", () => {
+		const wrapper = mount(
+			<MemoryRouter>
+				<PrevNext
+					previousPageLink={{
+						text: "Alert",
+						destination: "/alert",
+						elementType: Link
+					}}
+				/>
+			</MemoryRouter>
+		);
+		const anchor = wrapper.find(Link);
+		expect(anchor.props()["to"]).toEqual("/alert");
+	});
+
+	it("should use a custom navigation method if supplied", () => {
+		const wrapper = mount(
+			<PrevNext
+				previousPageLink={{
+					text: "Alert",
+					destination: "/alert",
+					method: "pigeon"
+				}}
+			/>
+		);
+		const anchor = wrapper.find("a");
+		expect(anchor.props()["pigeon"]).toEqual("/alert");
 	});
 
 	it("should pass extra props to the containing element", () => {

@@ -5,12 +5,14 @@ declare module "@nice-digital/nds-card" {
 		[prop: string]: unknown;
 		destination?: string;
 		elementType?: React.ElementType;
+		method?: string;
 	}
 
 	interface CardMetaDataProps {
 		[prop: string]: unknown;
 		label?: string;
 		value: React.ReactNode;
+		visibleLabel?: boolean;
 	}
 
 	export interface CardProps {

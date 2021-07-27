@@ -3,20 +3,22 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import "./../scss/prev-next.scss";
 
-const Link = ({ text, destination, elementType: LinkTag = "a", intro }) => {
+const Link = ({
+	text,
+	destination,
+	elementType: ElementType = "a",
+	intro,
+	method
+}) => {
 	let linkProps = {
-		className: "prev-next__link"
+		className: "prev-next__link",
+		[method || (ElementType === "a" && "href") || "to"]: destination
 	};
-	if (LinkTag === "a") {
-		linkProps.href = destination;
-	} else {
-		linkProps.to = destination;
-	}
 	return (
-		<LinkTag {...linkProps}>
+		<ElementType {...linkProps}>
 			<span className="prev-next__link-intro">{intro}</span>
 			<span className="prev-next__link-text">{text}</span>
-		</LinkTag>
+		</ElementType>
 	);
 };
 
@@ -27,14 +29,16 @@ export const PrevNext = props => {
 		intro: nextPageLink?.intro || "Next page",
 		text: nextPageLink?.text,
 		destination: nextPageLink?.destination,
-		elementType: nextPageLink?.elementType
+		elementType: nextPageLink?.elementType,
+		method: nextPageLink?.method
 	};
 
 	const previousLinkProps = {
 		intro: previousPageLink?.intro || "Previous page",
 		text: previousPageLink?.text,
 		destination: previousPageLink?.destination,
-		elementType: previousPageLink?.elementType
+		elementType: previousPageLink?.elementType,
+		method: previousPageLink?.method
 	};
 
 	return (
@@ -59,5 +63,6 @@ Link.propTypes = {
 	text: PropTypes.string.isRequired,
 	destination: PropTypes.string.isRequired,
 	elementType: PropTypes.elementType,
-	intro: PropTypes.string
+	intro: PropTypes.string,
+	method: PropTypes.string
 };
