@@ -16,6 +16,7 @@
 		"icons:lint": "lerna run --stream --scope=@nice-digital/icons lint",
 		"// DEVAPP (Playground)": "",
 		"devapp": "lerna run --scope=dev-app start",
+    "devapp:dev" : "concurrently npm:devapp npm:build:es:watch",
 		"// DOCUMENTATION": "",
 		"docs:dev": "lerna run --stream --scope=@nice-digital/design-system-documentation start",
 		"docs:build": "lerna run --stream --scope=@nice-digital/design-system-documentation build",

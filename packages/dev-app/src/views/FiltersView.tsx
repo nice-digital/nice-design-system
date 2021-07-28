@@ -2,15 +2,24 @@ import React from "react";
 import {
 	FilterPanel,
 	FilterGroup,
-	FilterOption
+	FilterOption,
+	FilterSummary
 } from "@nice-digital/nds-filters";
 
 const onChanged = () => {};
 
+const sorting = [
+	{ title: "Relevance", to: "/sort-rel" },
+	{ title: "Date", to: "/", active: true },
+	{ title: "Pertinence", to: "/sort-pert" }
+];
+
 export const FiltersView = () => {
 	return (
 		<>
-			<h1>Filters</h1>
+			<FilterSummary className="monkey" sorting={sorting}>
+				Showing results 1 to 10 of 1209
+			</FilterSummary>
 			<FilterPanel heading="A filter panel">
 				<FilterGroup heading="Type" id="ProductType" selectedCount={99}>
 					<FilterOption isSelected={true} onChanged={onChanged}>
@@ -26,7 +35,7 @@ export const FiltersView = () => {
 				<FilterGroup
 					heading="Guidance programme"
 					selectedCount={0}
-					collapseByDefault={true}
+					collapseByDefault={false}
 				>
 					<FilterOption isSelected={false} onChanged={onChanged}>
 						NICE guidelines

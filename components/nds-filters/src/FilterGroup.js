@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { slugify } from "@nice-digital/nds-core/es/utils";
 
-import "./../scss/filter-panel.scss";
+import "./../scss/filter-group.scss";
 
 export class FilterGroup extends Component {
 	constructor(props) {
