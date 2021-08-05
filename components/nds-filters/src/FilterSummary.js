@@ -3,36 +3,48 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import "./../scss/filter-summary.scss";
 
-export function FilterSummary({ children, className, sorting }) {
+export function FilterSummary({
+	children,
+	className,
+	sorting = [],
+	activeFilters = []
+}) {
 	return (
 		<div className={classnames("filter-summary", className)}>
-			{/* <div className="filter-summary__count">
+			<div className="filter-summary__count">
 				<h2 className="h5 mv--0">{children}</h2>
-			</div> */}
+			</div>
 			{sorting.length && (
-				<FilterSorting
+				<ResultsSorting
 					inactive={sorting.filter(item => !item.active)}
 					active={sorting.filter(item => item.active)[0]}
 				/>
 			)}
-
-			{/*
-			<ul
-				className="filter-summary__filters hide-print"
-				aria-label="Active filters"
-			>
-				<li className="filter-summary__filter">
-					<span className="tag tag--outline">
-						Evidence type: Quality Indicators
-						<a href="search?q=test&amp;sp=on" className="tag__remove">
-							<span className="icon icon--remove" aria-hidden="true"></span>
-							<span className="visually-hidden">
-								Remove Evidence type: Quality Indicators filter
-							</span>
-						</a>
-					</span>
-				</li>
-			</ul> */}
+			{activeFilters.length && (
+				<ul
+					className="filter-summary__filters hide-print"
+					aria-label="Active filters"
+				>
+					{activeFilters.map(({ title, onClick }) => {
+						return (
+							<li key={title} className="filter-summary__filter">
+								<span className="tag tag--outline">
+									{title}
+									<button onClick={onClick} className="tag__remove">
+										<span
+											className="icon icon--remove"
+											aria-hidden="true"
+										></span>
+										<span className="visually-hidden">
+											Remove {title} filter
+										</span>
+									</button>
+								</span>
+							</li>
+						);
+					})}
+				</ul>
+			)}
 		</div>
 	);
 }
@@ -43,7 +55,7 @@ FilterSummary.propTypes = {
 	sorting: PropTypes.arrayOf(SortingType)
 };
 
-function FilterSorting({ active, inactive }) {
+function ResultsSorting({ active, inactive }) {
 	if (!inactive.length && !active) return null;
 	return (
 		<p className="filter-summary__sort hide-print">
@@ -56,6 +68,8 @@ function FilterSorting({ active, inactive }) {
 					|
 				</>
 			)}
+
+			{/* TODO: create custom elementtype option for filter and sorter */}
 
 			{inactive.length &&
 				inactive.map(({ title, to }, index) => {
@@ -71,7 +85,7 @@ function FilterSorting({ active, inactive }) {
 	);
 }
 
-FilterSorting.propTypes = {
+ResultsSorting.propTypes = {
 	active: SortingType,
 	inactive: PropTypes.oneOfType([PropTypes.arrayOf(SortingType), SortingType])
 };
@@ -80,4 +94,14 @@ const SortingType = {
 	title: PropTypes.string,
 	to: PropTypes.string,
 	active: PropTypes.elementType
+};
+
+const FilterType = {
+	title: PropTypes.string,
+	onClick: PropTypes.function
+};
+
+FilterSummary.propTypes = {
+	children: PropTypes.Node,
+	activeFilters: PropTypes.arrayOf(FilterType)
 };

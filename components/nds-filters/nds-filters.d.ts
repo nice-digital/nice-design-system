@@ -5,13 +5,19 @@ declare module "@nice-digital/nds-filters" {
 		className?: string;
 		children: React.ReactNode;
 		sorting: SortingType[];
+		activeFilters?: FilterType[];
 		[prop: string]: unknown;
 	}
 
 	export type SortingType = {
 		title: string;
-		to: string;
-		active?: boolean;
+		onClick: function;
+		active?: boolean | undefined;
+	};
+
+	export type FilterType = {
+		title: string;
+		onClick: function;
 	};
 
 	export const FilterSummary: React.ComponentType<FilterSummaryProps>;
@@ -40,7 +46,7 @@ declare module "@nice-digital/nds-filters" {
 		isSelected: boolean;
 		children: string;
 		value?: string;
-		onChanged: () => void;
+		onChanged: function;
 	}
 
 	export const FilterOption: React.ComponentType<FilterOptionProps>;

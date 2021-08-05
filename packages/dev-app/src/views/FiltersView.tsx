@@ -6,18 +6,33 @@ import {
 	FilterSummary
 } from "@nice-digital/nds-filters";
 
-const onChanged = () => {};
+const onChanged = (e: React.ReactEventHandler) => {
+	console.log(e);
+	alert("onChanged");
+};
 
+// TODO carry on here
 const sorting = [
-	{ title: "Relevance", to: "/sort-rel" },
-	{ title: "Date", to: "/", active: true },
-	{ title: "Pertinence", to: "/sort-pert" }
+	{ title: "Relevance", onClick: onChanged },
+	{ title: "Date", active: true, onClick: onChanged },
+	{ title: "Pertinence", onClick: onChanged }
+];
+
+const activeFilters = [
+	{
+		title: "My filter",
+		onClick: onChanged
+	},
+	{
+		title: "Another filter",
+		onClick: onChanged
+	}
 ];
 
 export const FiltersView = () => {
 	return (
 		<>
-			<FilterSummary className="monkey" sorting={sorting}>
+			<FilterSummary sorting={sorting} activeFilters={activeFilters}>
 				Showing results 1 to 10 of 1209
 			</FilterSummary>
 			<FilterPanel heading="A filter panel">
