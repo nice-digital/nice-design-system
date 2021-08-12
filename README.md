@@ -40,8 +40,9 @@ We recommend using vscode as the IDE when developing with the NICE Design System
     TL;DR:
     	1. Install Node 8.9+
     	2. `npm i`
-    	3. `npm start`
-    	4. http://localhost:3000/
+		3. `npm run bootstrap`
+    	4. `npm start`
+    	5. http://localhost:3000/
 
 ### Slow start
 
