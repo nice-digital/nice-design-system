@@ -90,7 +90,7 @@ export class FilterGroup extends Component {
 FilterGroup.propTypes = {
 	heading: PropTypes.string.isRequired,
 	id: PropTypes.string,
-	selectedCount: PropTypes.number.isRequired,
+	selectedCount: PropTypes.number,
 	collapseByDefault: PropTypes.bool,
 	children: PropTypes.oneOfType([
 		PropTypes.arrayOf(PropTypes.node),

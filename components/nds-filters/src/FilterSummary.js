@@ -105,3 +105,5 @@ FilterSummary.propTypes = {
 	children: PropTypes.Node,
 	activeFilters: PropTypes.arrayOf(FilterType)
 };
+
+export default FilterSummary;

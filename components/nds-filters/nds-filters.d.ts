@@ -35,7 +35,7 @@ declare module "@nice-digital/nds-filters" {
 		heading: string;
 		id?: string;
 		collapseByDefault?: boolean;
-		selectedCount: number;
+		selectedCount?: number;
 		children: React.ReactNode;
 	}
 
@@ -50,4 +50,12 @@ declare module "@nice-digital/nds-filters" {
 	}
 
 	export const FilterOption: React.ComponentType<FilterOptionProps>;
+
+	export interface FilterByInputProps {
+		[prop: string]: unknown;
+		label: string;
+		name: string;
+	}
+
+	export const FilterByInput: React.FC<FilterByInputProps>;
 }
