@@ -54,9 +54,16 @@ export const FiltersView = () => {
 						NICE Pathways
 					</FilterOption>
 				</FilterGroup>
-
-				<FilterByInput label="filter yo" name="filter" />
-
+				<FilterByInput
+					label="filter yo"
+					name="filter"
+					hint="enter your search term here"
+					error={true}
+					errorMessage="WRRRONG"
+					onChange={onChanged}
+					buttonLabel="Clik nmee!"
+					collapseByDefault={true}
+				/>
 				<FilterGroup
 					heading="Guidance programme"
 					selectedCount={0}

@@ -9,8 +9,10 @@ export class FilterByInput extends Component {
 	constructor(props) {
 		super(props);
 
+		const { collapseByDefault = false } = this.props;
+
 		this.state = {
-			isExpanded: true,
+			isExpanded: !collapseByDefault,
 			canUseDOM: false
 		};
 
@@ -30,7 +32,13 @@ export class FilterByInput extends Component {
 	}
 
 	render() {
-		const { type = "text", label, name, ...rest } = this.props,
+		const {
+				type = "text",
+				label,
+				name,
+				buttonLabel = "Filter",
+				...rest
+			} = this.props,
 			{ isExpanded } = this.state;
 
 		return (
@@ -40,7 +48,7 @@ export class FilterByInput extends Component {
 						<button
 							type="button"
 							aria-expanded={isExpanded}
-							aria-controls={`inputFilter-${label}`}
+							aria-controls={`inputFilter-${name}`}
 							onClick={this.handleTitleClick}
 						>
 							{label}
@@ -50,12 +58,14 @@ export class FilterByInput extends Component {
 					)}
 				</h3>
 				<div
-					id={`inputFilter-${label}`}
+					id={`inputFilter-${name}`}
 					aria-hidden={!isExpanded}
 					className="inputFilterBox__controls"
 				>
 					<Input type={type} label={label} name={name} {...rest} />
-					<Button>Filter</Button>
+					<Button type="submit" className="ml--0 mb--0">
+						{buttonLabel}
+					</Button>
 				</div>
 			</div>
 		);
@@ -65,8 +75,10 @@ export class FilterByInput extends Component {
 FilterByInput.propTypes = {
 	inputType: PropTypes.string,
 	type: PropTypes.string,
+	buttonLabel: PropTypes.string,
 	label: PropTypes.string.isRequired,
-	name: PropTypes.string.isRequired
+	name: PropTypes.string.isRequired,
+	collapseByDefault: PropTypes.bool
 };
 
 export default FilterByInput;

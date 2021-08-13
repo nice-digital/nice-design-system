@@ -55,6 +55,25 @@ declare module "@nice-digital/nds-filters" {
 		[prop: string]: unknown;
 		label: string;
 		name: string;
+		buttonLabel?: string;
+		type?:
+			| "color"
+			| "date"
+			| "datetime-local"
+			| "email"
+			| "file"
+			| "hidden"
+			| "image"
+			| "month"
+			| "number"
+			| "range"
+			| "password"
+			| "search"
+			| "tel"
+			| "text"
+			| "time"
+			| "url"
+			| "week";
 	}
 
 	export const FilterByInput: React.FC<FilterByInputProps>;
