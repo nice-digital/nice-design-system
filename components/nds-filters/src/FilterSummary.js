@@ -51,7 +51,7 @@ export function FilterSummary({
 
 FilterSummary.propTypes = {
 	className: PropTypes.string,
-	children: PropTypes.node,
+	children: PropTypes.string,
 	sorting: PropTypes.arrayOf(SortingType)
 };
 
@@ -85,24 +85,24 @@ function ResultsSorting({ active, inactive }) {
 	);
 }
 
+const SortingType = PropTypes.shape({
+	title: PropTypes.string,
+	to: PropTypes.string,
+	active: PropTypes.bool
+});
+
 ResultsSorting.propTypes = {
 	active: SortingType,
 	inactive: PropTypes.oneOfType([PropTypes.arrayOf(SortingType), SortingType])
 };
 
-const SortingType = {
-	title: PropTypes.string,
-	to: PropTypes.string,
-	active: PropTypes.elementType
-};
-
-const FilterType = {
+const FilterType = PropTypes.shape({
 	title: PropTypes.string,
 	onClick: PropTypes.function
-};
+});
 
 FilterSummary.propTypes = {
-	children: PropTypes.Node,
+	children: PropTypes.string,
 	activeFilters: PropTypes.arrayOf(FilterType)
 };
 

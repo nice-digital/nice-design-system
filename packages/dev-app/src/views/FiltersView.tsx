@@ -3,7 +3,8 @@ import {
 	FilterPanel,
 	FilterGroup,
 	FilterOption,
-	FilterSummary
+	FilterSummary,
+	FilterByInput
 } from "@nice-digital/nds-filters";
 
 const onChanged = (e: React.ReactEventHandler) => {
@@ -11,17 +12,23 @@ const onChanged = (e: React.ReactEventHandler) => {
 	alert("onChanged");
 };
 
-// TODO carry on here
 const sorting = [
 	{ title: "Relevance", onClick: onChanged },
 	{ title: "Date", active: true, onClick: onChanged },
-	{ title: "Pertinence", onClick: onChanged }
+	{
+		title: "Pertinence",
+		elementType: "a", // optional default <a>
+		to: "somewhere",
+		onClick: () => {} // optional
+	}
 ];
 
 const activeFilters = [
 	{
 		title: "My filter",
-		onClick: onChanged
+		elementType: "a", // optional default <a>
+		to: "somewhere",
+		onClick: () => {} // optional
 	},
 	{
 		title: "Another filter",
@@ -47,6 +54,9 @@ export const FiltersView = () => {
 						NICE Pathways
 					</FilterOption>
 				</FilterGroup>
+
+				<FilterByInput label="filter yo" name="filter" />
+
 				<FilterGroup
 					heading="Guidance programme"
 					selectedCount={0}
