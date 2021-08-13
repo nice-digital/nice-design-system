@@ -37,6 +37,7 @@ declare module "@nice-digital/nds-filters" {
 		collapseByDefault?: boolean;
 		selectedCount?: number;
 		children: React.ReactNode;
+		className?: string;
 	}
 
 	export const FilterGroup: React.ComponentType<FilterGroupProps>;
@@ -56,6 +57,8 @@ declare module "@nice-digital/nds-filters" {
 		label: string;
 		name: string;
 		buttonLabel?: string;
+		className?: string;
+		collapseByDefault?: boolean;
 		type?:
 			| "color"
 			| "date"

@@ -12,6 +12,11 @@ const onChanged = (e: React.ReactEventHandler) => {
 	alert("onChanged");
 };
 
+const onSubmit = (e: React.ReactEventHandler) => {
+	// console.log(e);
+	alert("FORM SUBMITTED!");
+};
+
 const sorting = [
 	{ title: "Relevance", onClick: onChanged },
 	{ title: "Date", active: true, onClick: onChanged },
@@ -42,8 +47,17 @@ export const FiltersView = () => {
 			<FilterSummary sorting={sorting} activeFilters={activeFilters}>
 				Showing results 1 to 10 of 1209
 			</FilterSummary>
-			<FilterPanel heading="A filter panel">
-				<FilterGroup heading="Type" id="ProductType" selectedCount={99}>
+			<FilterPanel heading="A filter panel"
+				fallback={{
+					action: "/submit-form",
+					method: "POST"
+				}}>
+				<FilterGroup
+					heading="Type"
+					id="ProductType"
+					selectedCount={99}
+					className="mb--f"
+				>
 					<FilterOption isSelected={true} onChanged={onChanged}>
 						Guidance
 					</FilterOption>
@@ -57,12 +71,16 @@ export const FiltersView = () => {
 				<FilterByInput
 					label="filter yo"
 					name="filter"
-					hint="enter your search term here"
-					error={true}
-					errorMessage="WRRRONG"
-					onChange={onChanged}
 					buttonLabel="Clik nmee!"
 					collapseByDefault={true}
+					className="mb--f"
+					onChange={onChanged}
+					inputProps={{
+						hint: "enter your search term here",
+						error: true,
+						errorMessage: "NOOOO",
+						"data-tracking": "message"
+					}}
 				/>
 				<FilterGroup
 					heading="Guidance programme"

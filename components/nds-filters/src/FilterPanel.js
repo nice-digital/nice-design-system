@@ -28,33 +28,41 @@ export class FilterPanel extends Component {
 	}
 
 	render() {
-		const { heading = "Filter", children, className } = this.props;
+		const {
+			heading = "Filter",
+			children,
+			className,
+			fallback,
+			...rest
+		} = this.props;
 		const { canUseDOM, isExpanded } = this.state;
 
 		return (
-			<div className={`filter-panel ${className}`}>
-				<h2 className="filter-panel__heading">
-					<a
-						href="#filter-panel-body"
-						aria-expanded="true"
-						aria-controls="filter-panel-body"
-					>
-						{heading}
-					</a>
-				</h2>
-				<div
-					id="filter-panel-body"
-					className="filter-panel__body"
-					aria-hidden={!isExpanded}
-				>
-					{children}
-					{!canUseDOM && (
-						<button type="submit" className="btn filter-panel__submit">
-							Apply filters
+			<form {...rest} {...fallback}>
+				<div className={`filter-panel ${className}`}>
+					<h2 className="filter-panel__heading">
+						<button
+							aria-expanded={isExpanded}
+							aria-controls="filter-panel-body"
+							onClick={this.handleClick}
+						>
+							{heading}
 						</button>
-					)}
+					</h2>
+					<div
+						id="filter-panel-body"
+						className="filter-panel__body"
+						aria-hidden={!isExpanded}
+					>
+						{children}
+						{!canUseDOM && (
+							<button type="submit" className="btn filter-panel__submit">
+								Apply filters
+							</button>
+						)}
+					</div>
 				</div>
-			</div>
+			</form>
 		);
 	}
 }

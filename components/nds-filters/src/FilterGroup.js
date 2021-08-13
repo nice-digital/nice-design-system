@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import classnames from "classnames";
 
 import { slugify } from "@nice-digital/nds-core/es/utils";
 
@@ -32,7 +33,7 @@ export class FilterGroup extends Component {
 	}
 
 	render() {
-		const { selectedCount, id, heading, children } = this.props,
+		const { selectedCount, id, heading, children, className } = this.props,
 			{ isExpanded } = this.state,
 			groupId = id || slugify(heading);
 
@@ -59,7 +60,7 @@ export class FilterGroup extends Component {
 		});
 
 		return (
-			<div className="filter-group">
+			<div className={classnames("filter-group", className)}>
 				<h3 className="filter-group__heading">
 					{this.state.canUseDOM ? (
 						<button
@@ -95,7 +96,8 @@ FilterGroup.propTypes = {
 	children: PropTypes.oneOfType([
 		PropTypes.arrayOf(PropTypes.node),
 		PropTypes.node
-	]).isRequired
+	]).isRequired,
+	className: PropTypes.string
 };
 
 FilterGroup.defaultProps = {};

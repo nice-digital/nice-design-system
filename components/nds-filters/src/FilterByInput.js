@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import classnames from "classnames";
 import { Input } from "@nice-digital/nds-input";
 import { Button } from "@nice-digital/nds-button";
 
@@ -33,16 +34,17 @@ export class FilterByInput extends Component {
 
 	render() {
 		const {
+				className,
 				type = "text",
 				label,
 				name,
 				buttonLabel = "Filter",
-				...rest
+				inputProps
 			} = this.props,
 			{ isExpanded } = this.state;
 
 		return (
-			<div className="inputFilterBox">
+			<div className={classnames("inputFilterBox", className)}>
 				<h3 className="inputFilterBox__heading">
 					{this.state.canUseDOM ? (
 						<button
@@ -62,7 +64,7 @@ export class FilterByInput extends Component {
 					aria-hidden={!isExpanded}
 					className="inputFilterBox__controls"
 				>
-					<Input type={type} label={label} name={name} {...rest} />
+					<Input type={type} label={label} name={name} {...inputProps} />
 					<Button type="submit" className="ml--0 mb--0">
 						{buttonLabel}
 					</Button>
@@ -78,7 +80,9 @@ FilterByInput.propTypes = {
 	buttonLabel: PropTypes.string,
 	label: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
-	collapseByDefault: PropTypes.bool
+	collapseByDefault: PropTypes.bool,
+	className: PropTypes.string,
+	inputProps: PropTypes.object
 };
 
 export default FilterByInput;
