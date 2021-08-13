@@ -1,0 +1,88 @@
+@import '~@nice-digital/nds-core/scss/core';
+@import '~@nice-digital/icons/scss/nice-icons';
+
+@mixin _filter-group-heading-button {
+  appearance: none;
+  background: $nds-colour-nice-grey-2;
+  border: 0;
+  color: $nds-colour-text;
+  cursor: pointer;
+  display: block;
+  font-weight: bold;
+  line-height: 1.5;
+  max-width: 100%;
+  padding: rem($nds-spacing-small);
+  text-align: left;
+  text-decoration: none;
+  width: 100%;
+
+  &:after {
+    @include nice-icon(chevron-up);
+    @include nds-font-size(-1);
+    color: $nds-colour-icons;
+    line-height: normal; // IE 9/10 bug where rems on block psuedos collapse to 0
+    position: absolute;
+    right: rem($nds-spacing-small);
+    top: rem($nds-spacing-small);
+  }
+
+  &[aria-expanded='false']:after {
+    content: nice-icon(chevron-down);
+  }
+
+  &:hover {
+    background: $nds-colour-nice-grey-1;
+  }
+
+  &:focus {
+    @include nds-default-focus-style;
+  }
+}
+
+.inputFilterBox {
+  margin-top: rem($nds-spacing-medium);
+
+  // Wrapper for the input and button
+  &__controls {
+    border: rem($nds-spacing-x-small) solid $nds-colour-nice-grey-2;
+    padding: rem($nds-spacing-small);
+
+    label {
+      @include nds-invisible();
+    }
+
+    &[aria-hidden='true'] {
+      display: none;
+    }
+  }
+
+  // Heading used for collapsing/expanding the filter group
+  &__heading {
+    @include nds-font-size(0);
+    background: $nds-colour-nice-grey-2;
+    border: 0;
+    display: block;
+    font-weight: bold;
+    margin: 0;
+    max-width: 100%;
+    padding: 0;
+    position: relative;
+    text-align: left;
+    width: 100%;
+
+    a,
+    button {
+      @include _filter-group-heading-button;
+    }
+
+    &:hover {
+      + .filter-group__options {
+        border-color: $nds-colour-nice-grey-1;
+      }
+    }
+
+    @include nds-when-is(a, button) {
+      @include _filter-group-heading-button;
+    }
+  }
+}
