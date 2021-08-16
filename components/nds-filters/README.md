@@ -1,11 +1,451 @@
 # `@nice-digital/nds-filters`
 
-> TODO: description
+> Filter components for the NICE Design System
+
+## Installation
+
+Install Node, and then:
+
+```sh
+npm i @nice-digital/nds-filters --save
+```
 
 ## Usage
 
-```
-const ndsFilters = require('@nice-digital/nds-filters');
+// TODO - bit of blurb about how it should be used, and about the fallback form thing?
 
-// TODO: DEMONSTRATE API
+### React
+
+Import the `FilterPanel`, `FilterGroup`, `FilterOption`, `FilterSummary`, and `FilterByInput` components from the package and use within JSX:
+
+```jsx
+import React from "react";
+import {
+	FilterPanel,
+	FilterGroup,
+	FilterOption,
+	FilterSummary,
+	FilterByInput
+} from "@nice-digital/nds-filters";
+
+<FilterSummary sorting={sorting} activeFilters={activeFilters}>
+	Showing results 1 to 10 of 1209
+</FilterSummary>
+
+// A filter panel can contain a filter group with filter options to select, and/or a filter by input
+<FilterPanel heading="A filter panel">
+	<FilterGroup heading="Type">
+		<FilterOption isSelected={true} onChanged={onChanged}>
+			Guidance
+		</FilterOption>
+		<FilterOption isSelected={false} onChanged={onChanged}>
+			Advice
+		</FilterOption>
+		<FilterOption isSelected={false} onChanged={onChanged}>
+			NICE Pathways
+		</FilterOption>
+	</FilterGroup>
+	<FilterByInput
+		label="Filter by guidance ID"
+		name="GID-filter"
+	/>
+</FilterPanel>
+```
+
+> Note: The React component automatically imports the SCSS, so there's no need to import the SCSS directly yourself.
+
+#### Props
+
+##### `<FilterSummary />`
+
+###### className
+
+- Type: `string`
+
+Any additional classes that you would like applied to the `<FilterSummary>` component
+
+```js
+<FilterSummary sorting={sorting} activeFilters={activeFilters} className="mb--f">
+	Showing results 1 to 10 of 1209
+</FilterSummary>
+```
+
+###### sorting
+
+- Type: `SortingType` (required)
+
+Ways to sort the returned results
+
+```ts
+type SortingType = {
+		title: string;
+		onClick: function;
+		active?: boolean | undefined;
+	};
+```
+
+```js
+const sorting = [
+	{ title: "Relevance", onClick: onChanged },
+	{ title: "Date", active: true, onClick: onChanged },
+	{
+		title: "Pertinence",
+		elementType: "a", // optional default <a>
+		to: "somewhere",
+		onClick: () => {} // optional
+	}
+];
+
+<FilterSummary sorting={sorting} activeFilters={activeFilters}>
+	Showing results 1 to 10 of 1209
+</FilterSummary>
+```
+
+###### activeFilters
+
+- Type: `FilterType` (required)
+
+The filters that are being applied to the data, creates a tag that can be clicked to eg remove that filter
+
+```ts
+type FilterType = {
+		title: string;
+		onClick: function;
+	};
+```
+
+```js
+const activeFilters = [
+	{
+		title: "My filter",
+		elementType: "a", // optional default <a>
+		to: "somewhere",
+		onClick: () => {} // optional
+	},
+	{
+		title: "Another filter",
+		onClick: onChanged
+	}
+];
+
+<FilterSummary sorting={sorting} activeFilters={activeFilters} className="mb--f">
+	Showing results 1 to 10 of 1209
+</FilterSummary>
+```
+
+##### `<FilterPanel />`
+
+###### className
+
+- Type: `string`
+
+Any additional classes that you would like applied to the `<FilterPanel>` component
+
+```js
+<FilterPanel heading="A filter panel" className="mb--f" />
+```
+
+###### heading
+
+- Type: `string` (required)
+
+The heading for the filter panel
+
+```js
+<FilterPanel heading="A filter panel" />
+```
+
+###### fallback
+
+- Type: `object`
+
+The `<FilterPanel>` is a form, which provides a fallback if js is not available. A submit button will be visible if js is not available, and the fallback action and method will be applied to the form.
+
+```js
+<FilterPanel 
+	heading="A filter panel" 
+	fallback={{
+		action: "/submit-form",
+		method: "POST"
+	}}> />
+```
+
+###### additional props
+
+Any additional props are spread on to the `form` element,useful for accessibility or data attributes.
+
+##### `<FilterGroup />`
+
+###### heading
+
+- Type: `string` (required)
+
+The heading for the filter group
+
+```js
+<FilterGroup heading="Type" />
+```
+
+###### id
+
+- Type: `string` 
+
+The id for the filter panel
+
+```js
+<FilterGroup heading="Type" id="ProductType"/>
+```
+
+###### collapseByDefault
+
+- Type: `boolean` 
+- Default: `false`
+
+The filter group can be collapsed to hide the filter options. 
+
+```js
+<FilterGroup heading="Type" collapseByDefault={true}/>
+```
+
+###### selectedCount
+
+- Type: `number` 
+
+????
+
+```js
+<FilterGroup heading="Type" selectedCount={99}/>
+```
+
+###### className
+
+- Type: `string`
+
+Any additional classes that you would like applied to the `<FilterGroup>` component
+
+```js
+<FilterGroup heading="Type" className="mb--f" />
+```
+
+##### `<FilterOption />`
+
+###### isSelected
+
+- Type: `boolean` (required)
+
+If the option is selected by default
+
+```js
+<FilterOption isSelected={true} onChanged={onChanged}>
+	Guidance
+</FilterOption>
+```
+
+###### onChanged
+
+- Type: `function` (required)
+
+What happens when the checkbox is selected
+
+```js
+<FilterOption isSelected={true} onChanged={onChanged}>
+	Guidance
+</FilterOption>
+```
+
+###### value
+
+- Type: `string`
+
+The value of the input
+
+```js
+<FilterOption isSelected={true} onChanged={onChanged} value="guidance">
+	Guidance
+</FilterOption>
+```
+
+##### `<FilterByInput />`
+
+###### label
+
+- Type: `string` (required)
+
+The label for the input
+
+```js
+<FilterByInput
+	label="Filter by guidance ID"
+	name="GID-filter"
+/>
+```
+
+###### name
+
+- Type: `string` (required)
+
+The name for the input
+
+```js
+<FilterByInput
+	label="Filter by guidance ID"
+	name="GID-filter"
+/>
+```
+
+###### buttonLabel
+
+- Type: `string` 
+- Default: "Filter"
+
+Replace the label for the button
+
+```js
+<FilterByInput
+	label="Filter by guidance ID"
+	name="GID-filter"
+	buttonLabel="Filter results"
+/>
+```
+
+###### className
+
+- Type: `string` 
+
+Any additional classes that you would like applied to the `<FilterByInput>` component
+
+```js
+<FilterByInput
+	label="Filter by guidance ID"
+	name="GID-filter"
+	className="mb--f"
+/>
+```
+
+###### collapseByDefault
+
+- Type: `boolean` 
+- Default: `false`
+
+The filter by input panel can be collapsed to hide the input and button. 
+
+```js
+<FilterByInput
+	label="Filter by guidance ID"
+	name="GID-filter"
+	collapseByDefault={true}
+/>
+```
+
+###### type
+
+- Type: "color"
+		| "date"
+		| "datetime-local"
+		| "email"
+		| "file"
+		| "hidden"
+		| "image"
+		| "month"
+		| "number"
+		| "range"
+		| "password"
+		| "search"
+		| "tel"
+		| "text"
+		| "time"
+		| "url"
+		| "week";
+- Default: "text""
+
+The type of input for the filter
+
+```js
+<FilterByInput
+	label="Filter by guidance ID"
+	name="GID-filter"
+	type="number"
+/>
+```
+
+###### inputProps
+
+- Type: `object` 
+
+Any props you would like to spread on the input, examples given below. See nds-input for more options.
+
+```js
+<FilterByInput
+	label="Filter by guidance ID"
+	name="GID-filter"
+	inputProps={{
+		hint: "enter your search term here",
+		error: true,
+		errorMessage: "NOOOO",
+		"data-tracking": "message"
+	}}
+/>
+```
+
+### SCSS
+
+If you're not using [React](#react), then import the SCSS directly into your application by:
+
+```scss
+@import "~@nice-digital/nds-filters/scss/filters";
+```
+
+### HTML
+
+If you're not using [React](#react), then include the [SCSS as above](#scss) and use the HTML:
+
+```html
+<form title="Filter" action="/submit-form" method="POST">
+	<div class="filter-panel undefined">
+		<h2 class="filter-panel__heading">
+			<button aria-expanded="true" aria-controls="filter-panel-body">A filter panel</button>
+		</h2>
+		<div id="filter-panel-body" class="filter-panel__body" aria-hidden="false">
+
+			// For a filter group
+			<div class="filter-group">
+				<h3 class="filter-group__heading">
+					<button type="button" aria-expanded="true" aria-controls="group-ProductType">
+						<span id="group-heading-ProductType">Type</span>
+					</button>
+				</h3>
+				<fieldset id="group-ProductType" aria-hidden="false" class="filter-group__options">
+					<legend>Type</legend>
+					<label for="filter_ProductType_guidance" class="filter-option">
+						<input id="filter_ProductType_guidance" type="checkbox" name="ProductType" title="Type - Guidance" value="Guidance" checked="">
+						<span class="filter-option__text">Guidance</span>
+					</label>
+					<label for="filter_ProductType_advice" class="filter-option">
+						<input id="filter_ProductType_advice" type="checkbox" name="ProductType" title="Type - Advice" value="Advice">
+						<span class="filter-option__text">Advice</span>
+					</label>
+					<label for="filter_ProductType_nice-pathways" class="filter-option">
+						<input id="filter_ProductType_nice-pathways" type="checkbox" name="ProductType" title="Type - NICE Pathways" value="NICE Pathways">
+						<span class="filter-option__text">NICE Pathways</span>
+					</label>
+				</fieldset>
+			</div>
+
+			// For a filter by input
+			<div class="inputFilterBox">
+				<h3 class="inputFilterBox__heading">
+					<button type="button" aria-expanded="false" aria-controls="inputFilter-filter">Filter by GID</button>
+				</h3>
+				<div id="inputFilter-filter" aria-hidden="true" class="inputFilterBox__controls">
+					<div class="input">
+						<label class="input__label" for="filter">Filter by GID</label>
+						<input name="filter" class="input__input" id="filter" type="text"  value="">
+					</div>
+					<button type="submit" class="btn ml--0 mb--0">Filter</button>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</form>
 ```
