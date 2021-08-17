@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@nice-digital/nds-filters should match snapshot 1`] = `
+<div
+  className="filter-summary testClass"
+>
+  <div
+    className="filter-summary__count"
+  >
+    <h2
+      className="h5 mv--0"
+    >
+      Showing results 1 to 10 of 1209
+    </h2>
+  </div>
+  <ResultsSorting
+    inactive={
+      Array [
+        Object {
+          "onClick": [Function],
+          "title": "Relevance",
+        },
+      ]
+    }
+  />
+  <ul
+    aria-label="Active filters"
+    className="filter-summary__filters hide-print"
+  >
+    <li
+      className="filter-summary__filter"
+      key="Another filter"
+    >
+      <span
+        className="tag tag--outline"
+      >
+        Another filter
+        <button
+          className="tag__remove"
+          onClick={[Function]}
+        >
+          <span
+            aria-hidden="true"
+            className="icon icon--remove"
+          />
+          <span
+            className="visually-hidden"
+          >
+            Remove 
+            Another filter
+             filter
+          </span>
+        </button>
+      </span>
+    </li>
+  </ul>
+</div>
+`;

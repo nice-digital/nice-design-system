@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
-import { Input } from "@nice-digital/nds-input";
 import { Button } from "@nice-digital/nds-button";
+import { Input } from "@nice-digital/nds-input";
 
 import "./../scss/filter-input.scss";
 
