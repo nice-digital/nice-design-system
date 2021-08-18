@@ -21,32 +21,49 @@ export function FilterSummary({
 					active={sorting.filter(item => item.active)[0]}
 				/>
 			)}
-			{activeFilters.length && (
-				<ul
-					className="filter-summary__filters hide-print"
-					aria-label="Active filters"
-				>
-					{activeFilters.map(({ title, onClick }) => {
-						return (
-							<li key={title} className="filter-summary__filter">
-								<span className="tag tag--outline">
-									{title}
-									<button onClick={onClick} className="tag__remove">
-										<span
-											className="icon icon--remove"
-											aria-hidden="true"
-										></span>
-										<span className="visually-hidden">
-											Remove {title} filter
-										</span>
-									</button>
-								</span>
-							</li>
-						);
-					})}
-				</ul>
-			)}
+			{activeFilters.length && <ResultsFilters filters={activeFilters} />}
 		</div>
+	);
+}
+
+function ResultsFilters({ filters }) {
+	if (!filters) return null;
+	return (
+		<ul
+			className="filter-summary__filters hide-print"
+			aria-label="Active filters"
+		>
+			{filters.map(
+				({
+					label,
+					destination,
+					method,
+					elementType,
+					onClick,
+					className = ""
+				}) => {
+					const props = {
+						className: classnames(["tag__remove", className]),
+						"aria-label": `Sort by ${label}`,
+						[!onClick
+							? method || (ElementType === "a" && "href") || "to"
+							: "onClick"]: onClick ? onClick : destination
+					};
+					const ElementType = onClick ? "button" : elementType || "a";
+					return (
+						<li key={label} className="filter-summary__filter">
+							<span className="tag tag--outline">
+								{label}
+								<ElementType {...props}>
+									<span className="icon icon--remove" aria-hidden="true"></span>
+									<span className="visually-hidden">Remove {label} filter</span>
+								</ElementType>
+							</span>
+						</li>
+					);
+				}
+			)}
+		</ul>
 	);
 }
 
@@ -67,27 +84,32 @@ function ResultsSorting({ active, inactive }) {
 			{inactive.length &&
 				inactive.map(
 					(
-						{ label, to, elementType = null, onClick, className = "" },
+						{
+							label,
+							destination,
+							method,
+							elementType,
+							onClick,
+							className = ""
+						},
 						index
 					) => {
 						const props = {
-							className: classnames(["filter-summary__sort-control", className])
+							className: classnames([
+								"filter-summary__sort-control",
+								className
+							]),
+							"aria-label": `Sort by ${label}`,
+							[!onClick
+								? method || (ElementType === "a" && "href") || "to"
+								: "onClick"]: onClick ? onClick : destination
 						};
-						// it("should render a 'to' attribute if the elementType is anything other than an anchor", () => {
-						const ElementType = elementType ? elementType : to ? "a" : "button";
+						const ElementType = onClick ? "button" : elementType || "a";
 
-						if (to) {
-							props.href = to;
-							props.to = to;
-						} else if (onClick) {
-							props.onClick = onClick;
-						}
 						return (
 							<span key={index}>
 								{" "}
-								<ElementType aria-label={`Sort by ${label}`} {...props}>
-									{label}
-								</ElementType>{" "}
+								<ElementType {...props}>{label}</ElementType>{" "}
 								{index + 1 < inactive.length && "|"}
 							</span>
 						);
@@ -97,29 +119,33 @@ function ResultsSorting({ active, inactive }) {
 	);
 }
 
-const SortingType = PropTypes.shape({
+const FilterType = PropTypes.shape({
 	label: PropTypes.string,
-	to: PropTypes.string,
-	active: PropTypes.bool,
+	destination: PropTypes.string,
 	onClick: PropTypes.func,
 	elementType: PropTypes.element
 });
+
+const SortingType =
+	FilterType +
+	PropTypes.shape({
+		active: PropTypes.bool
+	});
 
 ResultsSorting.propTypes = {
 	active: SortingType,
 	inactive: PropTypes.oneOfType([PropTypes.arrayOf(SortingType), SortingType])
 };
 
-const FilterType = PropTypes.shape({
-	label: PropTypes.string,
-	onClick: PropTypes.function
-});
+ResultsFilters.propTypes = {
+	filters: PropTypes.oneOfType([PropTypes.arrayOf(FilterType), FilterType])
+};
 
 FilterSummary.propTypes = {
 	children: PropTypes.string,
 	activeFilters: PropTypes.arrayOf(FilterType),
-	className: PropTypes.string
-	// sorting:
+	className: PropTypes.string,
+	sorting: PropTypes.arrayOf(SortingType)
 };
 
 export default FilterSummary;

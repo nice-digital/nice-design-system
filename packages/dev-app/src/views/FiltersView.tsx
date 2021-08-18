@@ -20,36 +20,34 @@ const onSubmit = (e: React.ReactEventHandler) => {
 };
 
 const sorting = [
-	{ label: "Relevance", onClick: onChanged, className: "mt--d" },
-	{ label: "Date", active: true, onClick: onChanged },
+	{ label: "onClick active", active: true, onClick: onChanged },
+	{ label: "onClick inactive", onClick: onChanged },
 	{
-		label: "Pertinence",
-		to: "somewhere"
+		// bog standard link
+		label: "Anchor",
+		destination: "https://google.com",
+		method: "href"
 	},
 	{
-		label: "Newsworthiness",
+		// custom link in gatsby
+		label: "Gatsby",
 		elementType: Link,
-		to: "/"
-	}
-];
-
-const activeFilters = [
-	{
-		label: "My filter",
-		elementType: "a", // optional default <a>
-		to: "somewhere",
-		onClick: () => {} // optional
+		destination: "/",
+		method: "to"
 	},
 	{
-		label: "Another filter",
-		onClick: onChanged
+		// custom link in Next
+		label: "Next",
+		elementType: Link,
+		method: "monkey",
+		destination: "/monkeylink"
 	}
 ];
 
 export const FiltersView = () => {
 	return (
 		<>
-			<FilterSummary sorting={sorting} activeFilters={activeFilters}>
+			<FilterSummary sorting={sorting} activeFilters={sorting}>
 				Showing results 1 to 10 of 1209
 			</FilterSummary>
 			<FilterPanel

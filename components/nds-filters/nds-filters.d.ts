@@ -11,6 +11,8 @@ declare module "@nice-digital/nds-filters" {
 
 	export type SortingType = {
 		label: string;
+		destination?: string;
+		method?: string;
 		onClick?: function;
 		active?: boolean | undefined;
 		elementType?: React.ElementType;
@@ -20,7 +22,8 @@ declare module "@nice-digital/nds-filters" {
 	export type FilterType = {
 		label: string;
 		onClick?: function;
-		to?: string;
+		destination?: string;
+		method?: string;
 	};
 
 	export const FilterSummary: React.ComponentType<FilterSummaryProps>;
