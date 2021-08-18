@@ -1,20 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`@nice-digital/nds-filters should match snapshot 1`] = `
-<div
-  className="filter-summary testClass"
->
-  <div
-    className="filter-summary__count"
-  >
-    <h2
-      className="h5 mv--0"
-    >
-      Showing results 1 to 10 of 1209
-    </h2>
-  </div>
-  <ResultsSorting
-    inactive={
+Array [
+  <FilterSummary
+    activeFilters={
+      Array [
+        Object {
+          "onClick": [Function],
+          "title": "Another filter",
+        },
+      ]
+    }
+    sorting={
       Array [
         Object {
           "onClick": [Function],
@@ -22,37 +19,246 @@ exports[`@nice-digital/nds-filters should match snapshot 1`] = `
         },
       ]
     }
-  />
-  <ul
-    aria-label="Active filters"
-    className="filter-summary__filters hide-print"
   >
-    <li
-      className="filter-summary__filter"
-      key="Another filter"
+    <div
+      className="filter-summary"
     >
-      <span
-        className="tag tag--outline"
+      <div
+        className="filter-summary__count"
       >
-        Another filter
-        <button
-          className="tag__remove"
-          onClick={[Function]}
+        <h2
+          className="h5 mv--0"
+        >
+          Showing results 1 to 10 of 1209
+        </h2>
+      </div>
+      <ResultsSorting
+        inactive={
+          Array [
+            Object {
+              "onClick": [Function],
+              "title": "Relevance",
+            },
+          ]
+        }
+      >
+        <p
+          className="filter-summary__sort hide-print"
         >
           <span
-            aria-hidden="true"
-            className="icon icon--remove"
-          />
-          <span
-            className="visually-hidden"
+            key="0"
           >
-            Remove 
-            Another filter
-             filter
+             
+            <span
+              className="visually-hidden"
+            >
+              Sort by
+            </span>
+            <a>
+              Relevance
+            </a>
+             
           </span>
-        </button>
-      </span>
-    </li>
-  </ul>
-</div>
+        </p>
+      </ResultsSorting>
+      <ul
+        aria-label="Active filters"
+        className="filter-summary__filters hide-print"
+      >
+        <li
+          className="filter-summary__filter"
+          key="Another filter"
+        >
+          <span
+            className="tag tag--outline"
+          >
+            Another filter
+            <button
+              className="tag__remove"
+              onClick={[Function]}
+            >
+              <span
+                aria-hidden="true"
+                className="icon icon--remove"
+              />
+              <span
+                className="visually-hidden"
+              >
+                Remove 
+                Another filter
+                 filter
+              </span>
+            </button>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </FilterSummary>,
+  <FilterPanel
+    heading="Some filters"
+    title="Filter"
+  >
+    <form
+      title="Filter"
+    >
+      <div
+        className="filter-panel undefined"
+      >
+        <h2
+          className="filter-panel__heading"
+        >
+          <button
+            aria-controls="filter-panel-body"
+            aria-expanded={true}
+            onClick={[Function]}
+          >
+            Some filters
+          </button>
+        </h2>
+        <div
+          aria-hidden={false}
+          className="filter-panel__body"
+          id="filter-panel-body"
+        >
+          <FilterGroup
+            className="testClass"
+            collapseByDefault={true}
+            heading="Some filters"
+            selectedCount={99}
+          >
+            <div
+              className="filter-group testClass"
+              collapseByDefault={true}
+            >
+              <h3
+                className="filter-group__heading"
+              >
+                <button
+                  aria-controls="group-some-filters"
+                  aria-expanded={true}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <span
+                    id="group-heading-some-filters"
+                  >
+                    Some filters
+                  </span>
+                  <span
+                    className="filter-group__count"
+                  >
+                    99
+                     selected
+                  </span>
+                </button>
+              </h3>
+              <fieldset
+                aria-hidden={false}
+                className="filter-group__options"
+                id="group-some-filters"
+              >
+                <legend>
+                  Some filters
+                </legend>
+                <FilterOption
+                  className="testClass"
+                  collapseByDefault={true}
+                  groupHeading="Some filters"
+                  groupId="some-filters"
+                  heading="Some filters"
+                  key=".0"
+                  name=""
+                  selectedCount={99}
+                >
+                  <label
+                    className="testClass"
+                    collapseByDefault={true}
+                    heading="Some filters"
+                    htmlFor="filter_some-filters_a-filter"
+                    name=""
+                    selectedCount={99}
+                  >
+                    <input
+                      id="filter_some-filters_a-filter"
+                      name="some-filters"
+                      onChange={[Function]}
+                      title="Some filters - A filter"
+                      type="checkbox"
+                      value="A filter"
+                    />
+                    <span
+                      className="filter-option__text"
+                    >
+                      A filter
+                    </span>
+                  </label>
+                </FilterOption>
+              </fieldset>
+            </div>
+          </FilterGroup>
+          <FilterByInput
+            label="Filter by name"
+            name="Filter by name"
+          >
+            <div
+              className="inputFilterBox"
+            >
+              <h3
+                className="inputFilterBox__heading"
+              >
+                <button
+                  aria-controls="inputFilter-Filter by name"
+                  aria-expanded={true}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Filter by name
+                </button>
+              </h3>
+              <div
+                aria-hidden={false}
+                className="inputFilterBox__controls"
+                id="inputFilter-Filter by name"
+              >
+                <Input
+                  label="Filter by name"
+                  name="Filter by name"
+                  type="text"
+                >
+                  <div
+                    className="input"
+                  >
+                    <label
+                      className="input__label"
+                      htmlFor="Filter by name"
+                    >
+                      Filter by name
+                    </label>
+                    <input
+                      className="input__input"
+                      id="Filter by name"
+                      name="Filter by name"
+                      type="text"
+                    />
+                  </div>
+                </Input>
+                <Button
+                  className="ml--0 mb--0"
+                  type="submit"
+                >
+                  <button
+                    className="btn ml--0 mb--0"
+                    type="submit"
+                  >
+                    Filter
+                  </button>
+                </Button>
+              </div>
+            </div>
+          </FilterByInput>
+        </div>
+      </div>
+    </form>
+  </FilterPanel>,
+]
 `;

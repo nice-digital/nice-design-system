@@ -143,7 +143,7 @@
 		"grunt-webfont": "^1.7.2",
 		"history": "^4.9.0",
 		"identity-obj-proxy": "^3.0.0",
-		"jest": "^24.8.0",
+		"jest": "^27.0.6",
 		"lerna": "^3.20.2",
 		"load-grunt-config": "^3.0.1",
 		"lodash": "^4.17.20",
