@@ -73,7 +73,8 @@ FilterPanel.propTypes = {
 		PropTypes.node
 	]).isRequired,
 	className: PropTypes.string,
-	heading: PropTypes.string
+	heading: PropTypes.string,
+	fallback: PropTypes.object
 };
 
 FilterPanel.defaultProps = {

@@ -34,7 +34,7 @@ export class FilterOption extends Component {
 	}
 
 	render() {
-		const { groupId, groupHeading, value, children } = this.props;
+		const { groupId, groupHeading, value, children, ...rest } = this.props;
 		const { isSelected } = this.state;
 
 		const slugifiedValue = value ? slugify(value) : slugify(children);
@@ -43,6 +43,7 @@ export class FilterOption extends Component {
 			<label
 				htmlFor={`filter_${groupId}_${slugifiedValue}`}
 				className="filter-option"
+				{...rest}
 			>
 				<input
 					id={`filter_${groupId}_${slugifiedValue}`}
