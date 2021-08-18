@@ -7,6 +7,8 @@ import {
 	FilterByInput
 } from "@nice-digital/nds-filters";
 
+import { Link } from "react-router-dom";
+
 const onChanged = (e: React.ReactEventHandler) => {
 	console.log(e);
 	alert("onChanged");
@@ -18,25 +20,28 @@ const onSubmit = (e: React.ReactEventHandler) => {
 };
 
 const sorting = [
-	{ title: "Relevance", onClick: onChanged },
-	{ title: "Date", active: true, onClick: onChanged },
+	{ label: "Relevance", onClick: onChanged, className: "mt--d" },
+	{ label: "Date", active: true, onClick: onChanged },
 	{
-		title: "Pertinence",
-		elementType: "a", // optional default <a>
-		to: "somewhere",
-		onClick: () => {} // optional
+		label: "Pertinence",
+		to: "somewhere"
+	},
+	{
+		label: "Newsworthiness",
+		elementType: Link,
+		to: "/"
 	}
 ];
 
 const activeFilters = [
 	{
-		title: "My filter",
+		label: "My filter",
 		elementType: "a", // optional default <a>
 		to: "somewhere",
 		onClick: () => {} // optional
 	},
 	{
-		title: "Another filter",
+		label: "Another filter",
 		onClick: onChanged
 	}
 ];
@@ -47,11 +52,13 @@ export const FiltersView = () => {
 			<FilterSummary sorting={sorting} activeFilters={activeFilters}>
 				Showing results 1 to 10 of 1209
 			</FilterSummary>
-			<FilterPanel heading="A filter panel"
+			<FilterPanel
+				heading="A filter panel"
 				fallback={{
 					action: "/submit-form",
 					method: "POST"
-				}}>
+				}}
+			>
 				<FilterGroup
 					heading="Type"
 					id="ProductType"

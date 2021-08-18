@@ -4,20 +4,23 @@ declare module "@nice-digital/nds-filters" {
 	export interface FilterSummaryProps {
 		className?: string;
 		children: React.ReactNode;
-		sorting: SortingType[];
+		sorting?: SortingType[];
 		activeFilters?: FilterType[];
 		[prop: string]: unknown;
 	}
 
 	export type SortingType = {
-		title: string;
-		onClick: function;
+		label: string;
+		onClick?: function;
 		active?: boolean | undefined;
+		elementType?: React.ElementType;
+		className?: string;
 	};
 
 	export type FilterType = {
-		title: string;
-		onClick: function;
+		label: string;
+		onClick?: function;
+		to?: string;
 	};
 
 	export const FilterSummary: React.ComponentType<FilterSummaryProps>;
