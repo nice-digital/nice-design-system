@@ -7,10 +7,11 @@ export function FilterSummary({
 	children,
 	className,
 	sorting = [],
-	activeFilters = []
+	activeFilters = [],
+	...rest
 }) {
 	return (
-		<div className={classnames("filter-summary", className)}>
+		<div className={classnames("filter-summary", className)} {...rest}>
 			<div className="filter-summary__count">
 				<h2 className="h5 mv--0">{children}</h2>
 			</div>

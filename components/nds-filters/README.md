@@ -62,7 +62,7 @@ import {
 
 - Type: `string`
 
-Any additional classes that you would like applied to the `<FilterSummary>` component
+Any additional classes that you would like applied to the `<FilterSummary />` component
 
 ```js
 <FilterSummary sorting={sorting} activeFilters={activeFilters} className="mb--f">
@@ -133,13 +133,17 @@ const activeFilters = [
 </FilterSummary>
 ```
 
+###### additional props
+
+Any additional props are spread on to the first `div` element, useful for accessibility or data attributes.
+
 ##### `<FilterPanel />`
 
 ###### className
 
 - Type: `string`
 
-Any additional classes that you would like applied to the `<FilterPanel>` component
+Any additional classes that you would like applied to the `<FilterPanel />` component
 
 ```js
 <FilterPanel heading="A filter panel" className="mb--f" />
@@ -159,7 +163,7 @@ The heading for the filter panel
 
 - Type: `object`
 
-The `<FilterPanel>` is a form, which provides a fallback if js is not available. A submit button will be visible if js is not available, and the fallback action and method will be applied to the form.
+The `<FilterPanel />` is a form, which provides a fallback if js is not available. A submit button will be visible if js is not available, and the fallback action and method will be applied to the form.
 
 ```js
 <FilterPanel 
@@ -172,7 +176,7 @@ The `<FilterPanel>` is a form, which provides a fallback if js is not available.
 
 ###### additional props
 
-Any additional props are spread on to the `form` element,useful for accessibility or data attributes.
+Any additional props are spread on to the `form` element, useful for accessibility or data attributes.
 
 ##### `<FilterGroup />`
 
@@ -211,7 +215,7 @@ The filter group can be collapsed to hide the filter options.
 
 - Type: `number` 
 
-????
+How many of the options in the group are currently selected ie how many filters are applied. 
 
 ```js
 <FilterGroup heading="Type" selectedCount={99}/>
@@ -221,11 +225,15 @@ The filter group can be collapsed to hide the filter options.
 
 - Type: `string`
 
-Any additional classes that you would like applied to the `<FilterGroup>` component
+Any additional classes that you would like applied to the `<FilterGroup />` component
 
 ```js
 <FilterGroup heading="Type" className="mb--f" />
 ```
+
+###### additional props
+
+Any additional props are spread on to the first `div` element, useful for accessibility or data attributes.
 
 ##### `<FilterOption />`
 
@@ -264,6 +272,10 @@ The value of the input
 	Guidance
 </FilterOption>
 ```
+
+###### additional props
+
+Any additional props are spread on to the `label` element, useful for accessibility or data attributes.
 
 ##### `<FilterByInput />`
 
@@ -312,7 +324,7 @@ Replace the label for the button
 
 - Type: `string` 
 
-Any additional classes that you would like applied to the `<FilterByInput>` component
+Any additional classes that you would like applied to the `<FilterByInput />` component
 
 ```js
 <FilterByInput
@@ -372,7 +384,7 @@ The type of input for the filter
 
 - Type: `object` 
 
-Any props you would like to spread on the input, examples given below. See nds-input for more options.
+Any props you would like to spread on to the `<Input />` component, examples given below. See the documentation for nds-input for more options.
 
 ```js
 <FilterByInput
@@ -386,6 +398,10 @@ Any props you would like to spread on the input, examples given below. See nds-i
 	}}
 />
 ```
+
+###### additional props
+
+Any additional props are spread on to the first `div` element, useful for accessibility or data attributes.
 
 ### SCSS
 

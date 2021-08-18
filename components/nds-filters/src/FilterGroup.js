@@ -33,7 +33,14 @@ export class FilterGroup extends Component {
 	}
 
 	render() {
-		const { selectedCount, id, heading, children, className } = this.props,
+		const {
+				selectedCount,
+				id,
+				heading,
+				children,
+				className,
+				...rest
+			} = this.props,
 			{ isExpanded } = this.state,
 			groupId = id || slugify(heading);
 
@@ -60,7 +67,7 @@ export class FilterGroup extends Component {
 		});
 
 		return (
-			<div className={classnames("filter-group", className)}>
+			<div className={classnames("filter-group", className)} {...rest}>
 				<h3 className="filter-group__heading">
 					{this.state.canUseDOM ? (
 						<button

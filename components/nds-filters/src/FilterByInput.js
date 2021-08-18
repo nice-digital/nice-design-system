@@ -39,12 +39,13 @@ export class FilterByInput extends Component {
 				label,
 				name,
 				buttonLabel = "Filter",
-				inputProps
+				inputProps,
+				...rest
 			} = this.props,
 			{ isExpanded } = this.state;
 
 		return (
-			<div className={classnames("inputFilterBox", className)}>
+			<div className={classnames("inputFilterBox", className)} {...rest}>
 				<h3 className="inputFilterBox__heading">
 					{this.state.canUseDOM ? (
 						<button
@@ -82,7 +83,7 @@ FilterByInput.propTypes = {
 	name: PropTypes.string.isRequired,
 	collapseByDefault: PropTypes.bool,
 	className: PropTypes.string,
-	inputProps: PropTypes.object
+	inputProps: PropTypes.any
 };
 
 export default FilterByInput;

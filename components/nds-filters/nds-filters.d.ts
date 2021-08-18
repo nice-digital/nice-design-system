@@ -26,6 +26,7 @@ declare module "@nice-digital/nds-filters" {
 		[prop: string]: unknown;
 		className?: string;
 		heading: string;
+		fallback?: object;
 	}
 
 	export const FilterPanel: React.ComponentType<FilterPanelProps>;
@@ -77,6 +78,7 @@ declare module "@nice-digital/nds-filters" {
 			| "time"
 			| "url"
 			| "week";
+		inputProps?: unknown;
 	}
 
 	export const FilterByInput: React.FC<FilterByInputProps>;
