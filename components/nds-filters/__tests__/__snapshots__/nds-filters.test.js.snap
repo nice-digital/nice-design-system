@@ -6,16 +6,36 @@ Array [
     activeFilters={
       Array [
         Object {
+          "label": "Another filter",
           "onClick": [Function],
-          "title": "Another filter",
         },
       ]
     }
     sorting={
       Array [
         Object {
+          "active": true,
+          "label": "Active",
+        },
+        Object {
+          "label": "Button",
           "onClick": [Function],
-          "title": "Relevance",
+        },
+        Object {
+          "destination": "https://google.com",
+          "label": "Anchor",
+        },
+        Object {
+          "destination": "/",
+          "elementType": "MadeupType",
+          "label": "Gatsby",
+          "method": "to",
+        },
+        Object {
+          "destination": "/monkeylink",
+          "elementType": "MadeupType",
+          "label": "Next",
+          "method": "href",
         },
       ]
     }
@@ -33,11 +53,33 @@ Array [
         </h2>
       </div>
       <ResultsSorting
+        active={
+          Object {
+            "active": true,
+            "label": "Active",
+          }
+        }
         inactive={
           Array [
             Object {
+              "label": "Button",
               "onClick": [Function],
-              "title": "Relevance",
+            },
+            Object {
+              "destination": "https://google.com",
+              "label": "Anchor",
+            },
+            Object {
+              "destination": "/",
+              "elementType": "MadeupType",
+              "label": "Gatsby",
+              "method": "to",
+            },
+            Object {
+              "destination": "/monkeylink",
+              "elementType": "MadeupType",
+              "label": "Next",
+              "method": "href",
             },
           ]
         }
@@ -45,53 +87,122 @@ Array [
         <p
           className="filter-summary__sort hide-print"
         >
+          <span>
+            <span
+              className="visually-hidden"
+            >
+              Sorted by
+            </span>
+             
+            Active
+            <span
+              className="visually-hidden"
+            >
+              .
+            </span>
+          </span>
+           
+          |
           <span
             key="0"
           >
              
-            <span
-              className="visually-hidden"
+            <button
+              aria-label="Sort by Button"
+              className="filter-summary__sort-control"
+              onClick={[Function]}
             >
-              Sort by
-            </span>
-            <a>
-              Relevance
+              Button
+            </button>
+             
+            |
+          </span>
+          <span
+            key="1"
+          >
+             
+            <a
+              aria-label="Sort by Anchor"
+              className="filter-summary__sort-control"
+              to="https://google.com"
+            >
+              Anchor
             </a>
+             
+            |
+          </span>
+          <span
+            key="2"
+          >
+             
+            <MadeupType
+              aria-label="Sort by Gatsby"
+              className="filter-summary__sort-control"
+              to="/"
+            >
+              Gatsby
+            </MadeupType>
+             
+            |
+          </span>
+          <span
+            key="3"
+          >
+             
+            <MadeupType
+              aria-label="Sort by Next"
+              className="filter-summary__sort-control"
+              href="/monkeylink"
+            >
+              Next
+            </MadeupType>
              
           </span>
         </p>
       </ResultsSorting>
-      <ul
-        aria-label="Active filters"
-        className="filter-summary__filters hide-print"
+      <ResultsFilters
+        filters={
+          Array [
+            Object {
+              "label": "Another filter",
+              "onClick": [Function],
+            },
+          ]
+        }
       >
-        <li
-          className="filter-summary__filter"
-          key="Another filter"
+        <ul
+          aria-label="Active filters"
+          className="filter-summary__filters hide-print"
         >
-          <span
-            className="tag tag--outline"
+          <li
+            className="filter-summary__filter"
+            key="Another filter"
           >
-            Another filter
-            <button
-              className="tag__remove"
-              onClick={[Function]}
+            <span
+              className="tag tag--outline"
             >
-              <span
-                aria-hidden="true"
-                className="icon icon--remove"
-              />
-              <span
-                className="visually-hidden"
+              Another filter
+              <button
+                aria-label="Sort by Another filter"
+                className="tag__remove"
+                onClick={[Function]}
               >
-                Remove 
-                Another filter
-                 filter
-              </span>
-            </button>
-          </span>
-        </li>
-      </ul>
+                <span
+                  aria-hidden="true"
+                  className="icon icon--remove"
+                />
+                <span
+                  className="visually-hidden"
+                >
+                  Remove 
+                  Another filter
+                   filter
+                </span>
+              </button>
+            </span>
+          </li>
+        </ul>
+      </ResultsFilters>
     </div>
   </FilterSummary>,
   <FilterPanel

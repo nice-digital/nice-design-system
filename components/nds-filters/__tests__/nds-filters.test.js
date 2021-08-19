@@ -13,10 +13,32 @@ import {
 const aFunction = () => {};
 
 const filterSummaryProps = {
-	sorting: [{ title: "Relevance", onClick: aFunction }],
+	sorting: [
+		{ label: "Active", active: true },
+		{ label: "Button", onClick: aFunction },
+		{
+			// bog standard link
+			label: "Anchor",
+			destination: "https://google.com"
+		},
+		{
+			// custom link in gatsby
+			label: "Gatsby",
+			elementType: "MadeupType",
+			method: "to",
+			destination: "/"
+		},
+		{
+			// custom link in Next
+			label: "Next",
+			elementType: "MadeupType",
+			method: "href",
+			destination: "/monkeylink"
+		}
+	],
 	activeFilters: [
 		{
-			title: "Another filter",
+			label: "Another filter",
 			onClick: aFunction
 		}
 	],
@@ -80,6 +102,44 @@ describe("@nice-digital/nds-filters", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
+	describe("FilterSummary component", () => {
+		it("should create a button if passed an onClick prop ", () => {
+			const wrapper = mount(<FilterSummary {...filterSummaryProps} />);
+			const sortingElements = wrapper.find(".filter-summary__sort");
+			expect(
+				sortingElements
+					.find("span")
+					.at(3)
+					.childAt(1)
+					.type()
+			).toEqual("button");
+		});
+
+		it("should create an anchor if passed no elementType or onClick prop ", () => {
+			const wrapper = mount(<FilterSummary {...filterSummaryProps} />);
+			const sortingElements = wrapper.find(".filter-summary__sort");
+			expect(
+				sortingElements
+					.find("span")
+					.at(4)
+					.childAt(1)
+					.type()
+			).toEqual("a");
+		});
+
+		it("should create the elementType if passed an elementType ", () => {
+			const wrapper = mount(<FilterSummary {...filterSummaryProps} />);
+			const sortingElements = wrapper.find(".filter-summary__sort");
+			expect(
+				sortingElements
+					.find("span")
+					.at(5)
+					.childAt(1)
+					.type()
+			).toEqual("MadeupType");
+		});
+	});
+
 	describe("FilterByInput component", () => {
 		it("should pass inputProps down to the input ", () => {
 			const wrapper = mount(
@@ -88,14 +148,14 @@ describe("@nice-digital/nds-filters", () => {
 						<FilterByInput
 							{...filterByInputProps}
 							inputProps={{
-								"data-tracking": "message"
+								hint: "enter your search term here"
 							}}
 						/>
 					</FilterPanel>
 				</>
 			);
-			const input = wrapper.find("input");
-			expect(input.props()["data-tracking"]).toEqual("message");
+			const input = wrapper.find("p");
+			expect(input.text()).toEqual("enter your search term here");
 		});
 	});
 
@@ -140,12 +200,13 @@ describe("@nice-digital/nds-filters", () => {
 							selectedCount={1}
 						>
 							<FilterOption {...filterGroupProps}>First filter</FilterOption>
+							<FilterOption {...filterGroupProps}>Second filter</FilterOption>
 						</FilterGroup>
 					</FilterPanel>
 				</>
 			);
-			const button = wrapper.find("button");
-			expect(button.at(1).props()["aria-expanded"]).toEqual(true);
+			const input = wrapper.find("input");
+			expect(input.length).toEqual(2);
 		});
 	});
 });
