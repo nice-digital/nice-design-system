@@ -158,14 +158,10 @@ Array [
           id="filter-panel-body"
         >
           <FilterGroup
-            className="testClass"
-            collapseByDefault={true}
             heading="Some filters"
-            selectedCount={99}
           >
             <div
-              className="filter-group testClass"
-              collapseByDefault={true}
+              className="filter-group"
             >
               <h3
                 className="filter-group__heading"
@@ -180,12 +176,6 @@ Array [
                     id="group-heading-some-filters"
                   >
                     Some filters
-                  </span>
-                  <span
-                    className="filter-group__count"
-                  >
-                    99
-                     selected
                   </span>
                 </button>
               </h3>

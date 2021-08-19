@@ -31,10 +31,7 @@ const filterPanelProps = {
 };
 
 const filterGroupProps = {
-	heading: "Some filters",
-	collapseByDefault: true,
-	selectedCount: 99,
-	className: "testClass"
+	heading: "Some filters"
 };
 
 const filterOptionProps = {
@@ -161,6 +158,38 @@ describe("@nice-digital/nds-filters", () => {
 		});
 	});
 
+	describe("FilterGroup component", () => {
+		it("should collapse the filter group when set to collapse by default", () => {
+			const wrapper = mount(
+				<FilterGroup {...filterGroupProps} collapseByDefault={true} />
+			);
+			const fieldset = wrapper.find("fieldset");
+			expect(fieldset.props()["aria-hidden"]).toEqual(true);
+		});
+
+		it("should expand the filter group when filters are selected despite it being set to collapse by default", () => {
+			const wrapper = mount(
+				<FilterGroup
+					{...filterGroupProps}
+					collapseByDefault={true}
+					selectedCount={1}
+				/>
+			);
+			const fieldset = wrapper.find("fieldset");
+			expect(fieldset.props()["aria-hidden"]).toEqual(false);
+		});
+
+		it("should collapse the expanded filter group when the title is clicked", () => {
+			const wrapper = mount(<FilterGroup {...filterGroupProps} />);
+
+			const button = wrapper.find("button");
+			button.simulate("click");
+
+			const fieldset = wrapper.find("fieldset");
+			expect(fieldset.props()["aria-hidden"]).toEqual(true);
+		});
+	});
+
 	describe("FilterOptions component", () => {
 		it("should pass the filter group heading down to the filter option and use it plus the child set the input id when no id or value is present", () => {
 			const wrapper = mount(
@@ -190,26 +219,6 @@ describe("@nice-digital/nds-filters", () => {
 			);
 			const input = wrapper.find("input");
 			expect(input.props()["id"]).toEqual("filter_group-id_override-child");
-		});
-
-		it("should expand the filter group when options are selected despite it being set to collapse by default", () => {
-			const wrapper = mount(
-				<>
-					<FilterPanel {...filterPanelProps}>
-						<FilterGroup
-							{...filterGroupProps}
-							collapseByDefault={true}
-							selectedCount={1}
-						>
-							<FilterOption {...filterOptionProps}>First filter</FilterOption>
-							{/* TODO: don't think this is right */}
-							<FilterOption {...filterOptionProps}>Second filter</FilterOption>
-						</FilterGroup>
-					</FilterPanel>
-				</>
-			);
-			const input = wrapper.find("input");
-			expect(input.length).toEqual(2);
 		});
 
 		it("should fire an onChange function if one is supplied", () => {
