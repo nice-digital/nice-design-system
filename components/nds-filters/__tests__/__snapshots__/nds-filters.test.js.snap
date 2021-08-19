@@ -21,22 +21,6 @@ Array [
           "label": "Button",
           "onClick": [Function],
         },
-        Object {
-          "destination": "https://google.com",
-          "label": "Anchor",
-        },
-        Object {
-          "destination": "/",
-          "elementType": "MadeupType",
-          "label": "Gatsby",
-          "method": "to",
-        },
-        Object {
-          "destination": "/monkeylink",
-          "elementType": "MadeupType",
-          "label": "Next",
-          "method": "href",
-        },
       ]
     }
   >
@@ -64,22 +48,6 @@ Array [
             Object {
               "label": "Button",
               "onClick": [Function],
-            },
-            Object {
-              "destination": "https://google.com",
-              "label": "Anchor",
-            },
-            Object {
-              "destination": "/",
-              "elementType": "MadeupType",
-              "label": "Gatsby",
-              "method": "to",
-            },
-            Object {
-              "destination": "/monkeylink",
-              "elementType": "MadeupType",
-              "label": "Next",
-              "method": "href",
             },
           ]
         }
@@ -114,48 +82,6 @@ Array [
             >
               Button
             </button>
-             
-            |
-          </span>
-          <span
-            key="1"
-          >
-             
-            <a
-              aria-label="Sort by Anchor"
-              className="filter-summary__sort-control"
-              to="https://google.com"
-            >
-              Anchor
-            </a>
-             
-            |
-          </span>
-          <span
-            key="2"
-          >
-             
-            <MadeupType
-              aria-label="Sort by Gatsby"
-              className="filter-summary__sort-control"
-              to="/"
-            >
-              Gatsby
-            </MadeupType>
-             
-            |
-          </span>
-          <span
-            key="3"
-          >
-             
-            <MadeupType
-              aria-label="Sort by Next"
-              className="filter-summary__sort-control"
-              href="/monkeylink"
-            >
-              Next
-            </MadeupType>
              
           </span>
         </p>

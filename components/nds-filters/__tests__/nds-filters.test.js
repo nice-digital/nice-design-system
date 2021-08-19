@@ -1,7 +1,7 @@
 "use strict";
 
 import React from "react";
-import { mount } from "enzyme";
+import { shallow, mount } from "enzyme";
 import {
 	FilterSummary,
 	FilterPanel,
@@ -15,26 +15,7 @@ const aFunction = () => {};
 const filterSummaryProps = {
 	sorting: [
 		{ label: "Active", active: true },
-		{ label: "Button", onClick: aFunction },
-		{
-			// bog standard link
-			label: "Anchor",
-			destination: "https://google.com"
-		},
-		{
-			// custom link in gatsby
-			label: "Gatsby",
-			elementType: "MadeupType",
-			method: "to",
-			destination: "/"
-		},
-		{
-			// custom link in Next
-			label: "Next",
-			elementType: "MadeupType",
-			method: "href",
-			destination: "/monkeylink"
-		}
+		{ label: "Button", onClick: aFunction }
 	],
 	activeFilters: [
 		{
@@ -68,23 +49,23 @@ const filterByInputProps = {
 
 describe("@nice-digital/nds-filters", () => {
 	it("should render filter summary without crashing", () => {
-		mount(<FilterSummary {...filterSummaryProps} />);
+		shallow(<FilterSummary {...filterSummaryProps} />);
 	});
 
 	it("should render filter panel without crashing", () => {
-		mount(<FilterPanel {...filterPanelProps} />);
+		shallow(<FilterPanel {...filterPanelProps} />);
 	});
 
 	it("should render filter group without crashing", () => {
-		mount(<FilterGroup {...filterGroupProps} />);
+		shallow(<FilterGroup {...filterGroupProps} />);
 	});
 
 	it("should render a filter option without crashing", () => {
-		mount(<FilterOption {...filterOptionProps}>A filter</FilterOption>);
+		shallow(<FilterOption {...filterOptionProps}>A filter</FilterOption>);
 	});
 
 	it("should render a filter by input component without crashing", () => {
-		mount(<FilterByInput {...filterByInputProps} />);
+		shallow(<FilterByInput {...filterByInputProps} />);
 	});
 
 	it("should match snapshot", () => {
@@ -103,40 +84,61 @@ describe("@nice-digital/nds-filters", () => {
 	});
 
 	describe("FilterSummary component", () => {
-		it("should create a button if passed an onClick prop ", () => {
-			const wrapper = mount(<FilterSummary {...filterSummaryProps} />);
+		it("should create a button if passed an onClick prop with onClick set with the function passed", () => {
+			const sorting = [
+				{ label: "Active", active: true },
+				{ label: "Button", onClick: aFunction }
+			];
+			const wrapper = mount(
+				<FilterSummary sorting={sorting} activeFilters={sorting}>
+					Showing results 1 to 10 of 1209
+				</FilterSummary>
+			);
 			const sortingElements = wrapper.find(".filter-summary__sort");
-			expect(
-				sortingElements
-					.find("span")
-					.at(3)
-					.childAt(1)
-					.type()
-			).toEqual("button");
+			expect(sortingElements.find("button").length).toEqual(1);
+			expect(sortingElements.find("button").props().onClick).toEqual(aFunction);
 		});
 
-		it("should create an anchor if passed no elementType or onClick prop ", () => {
-			const wrapper = mount(<FilterSummary {...filterSummaryProps} />);
+		it("should create an anchor with an href if passed no elementType or onClick prop ", () => {
+			const sorting = [
+				{ label: "Active", active: true },
+				{
+					label: "Anchor",
+					destination: "https://google.com"
+				}
+			];
+			const wrapper = mount(
+				<FilterSummary sorting={sorting} activeFilters={sorting}>
+					Showing results 1 to 10 of 1209
+				</FilterSummary>
+			);
 			const sortingElements = wrapper.find(".filter-summary__sort");
-			expect(
-				sortingElements
-					.find("span")
-					.at(4)
-					.childAt(1)
-					.type()
-			).toEqual("a");
+			expect(sortingElements.find("a").length).toEqual(1);
+			expect(sortingElements.find("a").props().href).toEqual(
+				"https://google.com"
+			);
 		});
 
-		it("should create the elementType if passed an elementType ", () => {
-			const wrapper = mount(<FilterSummary {...filterSummaryProps} />);
+		it("should create the elementType if passed an elementType with the passed method and destination", () => {
+			const sorting = [
+				{ label: "Active", active: true },
+				{
+					label: "Special Link Element",
+					elementType: "MadeupType",
+					method: "aMethod",
+					destination: "/somewhere"
+				}
+			];
+			const wrapper = mount(
+				<FilterSummary sorting={sorting} activeFilters={sorting}>
+					Showing results 1 to 10 of 1209
+				</FilterSummary>
+			);
 			const sortingElements = wrapper.find(".filter-summary__sort");
-			expect(
-				sortingElements
-					.find("span")
-					.at(5)
-					.childAt(1)
-					.type()
-			).toEqual("MadeupType");
+			expect(sortingElements.find("MadeupType").length).toEqual(1);
+			expect(sortingElements.find("MadeupType").props().aMethod).toEqual(
+				"/somewhere"
+			);
 		});
 	});
 
