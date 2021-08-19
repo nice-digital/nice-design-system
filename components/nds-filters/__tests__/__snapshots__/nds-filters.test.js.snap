@@ -132,6 +132,12 @@ Array [
     </div>
   </FilterSummary>,
   <FilterPanel
+    fallback={
+      Object {
+        "action": "/submit",
+        "method": "GET",
+      }
+    }
     heading="Some filters"
     title="Filter"
   >

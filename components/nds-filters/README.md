@@ -116,12 +116,12 @@ type FilterType = {
 ```js
 const activeFilters = [
 	{
-		title: "My filter",
+		label: "My filter",
 		elementType: Link,
 		to: "somewhere",
 	},
 	{
-		title: "Another filter",
+		label: "Another filter",
 		onClick: onChanged
 	}
 ];

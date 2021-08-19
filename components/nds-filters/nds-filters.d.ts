@@ -24,6 +24,8 @@ declare module "@nice-digital/nds-filters" {
 		onClick?: function;
 		destination?: string;
 		method?: string;
+		elementType?: React.ElementType;
+		className?: string;
 	};
 
 	export const FilterSummary: React.ComponentType<FilterSummaryProps>;
@@ -32,7 +34,10 @@ declare module "@nice-digital/nds-filters" {
 		[prop: string]: unknown;
 		className?: string;
 		heading: string;
-		fallback?: object;
+		fallback?: {
+			action?: string;
+			method?: "GET" | "POST";
+		};
 	}
 
 	export const FilterPanel: React.ComponentType<FilterPanelProps>;

@@ -37,8 +37,10 @@ export class FilterPanel extends Component {
 		} = this.props;
 		const { canUseDOM, isExpanded } = this.state;
 
+		const formProps = canUseDOM ? { ...rest } : { ...fallback, ...rest };
+
 		return (
-			<form {...rest} {...fallback}>
+			<form {...formProps}>
 				<div className={`filter-panel ${className}`}>
 					<h2 className="filter-panel__heading">
 						<button
@@ -74,7 +76,10 @@ FilterPanel.propTypes = {
 	]).isRequired,
 	className: PropTypes.string,
 	heading: PropTypes.string,
-	fallback: PropTypes.object
+	fallback: PropTypes.shape({
+		action: PropTypes.string,
+		method: PropTypes.oneOf(["GET", "POST"])
+	})
 };
 
 FilterPanel.defaultProps = {

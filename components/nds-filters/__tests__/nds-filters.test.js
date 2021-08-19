@@ -27,7 +27,11 @@ const filterSummaryProps = {
 };
 
 const filterPanelProps = {
-	heading: "Some filters"
+	heading: "Some filters",
+	fallback: {
+		method: "GET",
+		action: "/submit"
+	}
 };
 
 const filterGroupProps = {
@@ -50,11 +54,11 @@ describe("@nice-digital/nds-filters", () => {
 	});
 
 	it("should render filter panel without crashing", () => {
-		shallow(<FilterPanel {...filterPanelProps} />);
+		shallow(<FilterPanel {...filterPanelProps}>A filter panel</FilterPanel>);
 	});
 
 	it("should render filter group without crashing", () => {
-		shallow(<FilterGroup {...filterGroupProps} />);
+		shallow(<FilterGroup {...filterGroupProps}>A filter group</FilterGroup>);
 	});
 
 	it("should render a filter option without crashing", () => {
@@ -87,7 +91,10 @@ describe("@nice-digital/nds-filters", () => {
 				{ label: "Button", onClick: aFunction }
 			];
 			const wrapper = mount(
-				<FilterSummary sorting={sorting} activeFilters={sorting}>
+				<FilterSummary
+					sorting={sorting}
+					activeFilters={filterSummaryProps.activeFilters}
+				>
 					Showing results 1 to 10 of 1209
 				</FilterSummary>
 			);
@@ -105,7 +112,10 @@ describe("@nice-digital/nds-filters", () => {
 				}
 			];
 			const wrapper = mount(
-				<FilterSummary sorting={sorting} activeFilters={sorting}>
+				<FilterSummary
+					sorting={sorting}
+					activeFilters={filterSummaryProps.activeFilters}
+				>
 					Showing results 1 to 10 of 1209
 				</FilterSummary>
 			);
@@ -121,19 +131,22 @@ describe("@nice-digital/nds-filters", () => {
 				{ label: "Active", active: true },
 				{
 					label: "Special Link Element",
-					elementType: "MadeupType",
-					method: "aMethod",
+					elementType: "madeuptype",
+					method: "amethod",
 					destination: "/somewhere"
 				}
 			];
 			const wrapper = mount(
-				<FilterSummary sorting={sorting} activeFilters={sorting}>
+				<FilterSummary
+					sorting={sorting}
+					activeFilters={filterSummaryProps.activeFilters}
+				>
 					Showing results 1 to 10 of 1209
 				</FilterSummary>
 			);
 			const sortingElements = wrapper.find(".filter-summary__sort");
-			expect(sortingElements.find("MadeupType").length).toEqual(1);
-			expect(sortingElements.find("MadeupType").props().aMethod).toEqual(
+			expect(sortingElements.find("madeuptype").length).toEqual(1);
+			expect(sortingElements.find("madeuptype").props().amethod).toEqual(
 				"/somewhere"
 			);
 		});
@@ -160,27 +173,35 @@ describe("@nice-digital/nds-filters", () => {
 
 	describe("FilterGroup component", () => {
 		it("should collapse the filter group when set to collapse by default", () => {
-			const wrapper = mount(
-				<FilterGroup {...filterGroupProps} collapseByDefault={true} />
+			const wrapper = shallow(
+				<FilterGroup {...filterGroupProps} collapseByDefault={true}>
+					A filter group
+				</FilterGroup>
 			);
 			const fieldset = wrapper.find("fieldset");
 			expect(fieldset.props()["aria-hidden"]).toEqual(true);
 		});
 
 		it("should expand the filter group when filters are selected despite it being set to collapse by default", () => {
-			const wrapper = mount(
+			const wrapper = shallow(
 				<FilterGroup
 					{...filterGroupProps}
 					collapseByDefault={true}
 					selectedCount={1}
-				/>
+				>
+					A filter group
+				</FilterGroup>
 			);
 			const fieldset = wrapper.find("fieldset");
 			expect(fieldset.props()["aria-hidden"]).toEqual(false);
 		});
 
 		it("should collapse the expanded filter group when the title is clicked", () => {
-			const wrapper = mount(<FilterGroup {...filterGroupProps} />);
+			const wrapper = mount(
+				<FilterGroup {...filterGroupProps}>
+					<span>Filter group</span>
+				</FilterGroup>
+			);
 
 			const button = wrapper.find("button");
 			button.simulate("click");
@@ -230,4 +251,27 @@ describe("@nice-digital/nds-filters", () => {
 			expect(aFunction).toHaveBeenCalledTimes(1);
 		});
 	});
+	describe("FilterPanel component", () => {
+		it("should fallback to default form methods when server-side rendered and not hydrated", async () => {
+			const wrapper = mount(
+				<FilterPanel {...filterPanelProps}>Second filter</FilterPanel>
+			);
+			wrapper.setState({ canUseDOM: false });
+			await nextTick();
+			wrapper.update();
+			expect(wrapper.find("form").props()["method"]).toEqual("GET");
+			expect(wrapper.find("form").props()["action"]).toEqual("/submit");
+			wrapper.setState({ canUseDOM: true });
+			await nextTick();
+			wrapper.update();
+			expect(wrapper.find("form").props()["method"]).toBeFalsy();
+			expect(wrapper.find("form").props()["action"]).toBeFalsy();
+		});
+	});
 });
+
+const nextTick = async () => {
+	return new Promise(resolve => {
+		setTimeout(resolve, 0);
+	});
+};
