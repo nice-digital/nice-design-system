@@ -1,7 +1,7 @@
 "use strict";
 
 import React from "react";
-import { mount } from "enzyme";
+import { shallow, mount } from "enzyme";
 import {
 	FilterSummary,
 	FilterPanel,
@@ -10,7 +10,7 @@ import {
 	FilterByInput
 } from "../src/Filters.js";
 
-const aFunction = () => {};
+const aFunction = jest.fn();
 
 const filterSummaryProps = {
 	sorting: [
@@ -58,7 +58,7 @@ const filterGroupProps = {
 
 const filterOptionProps = {
 	isSelected: true,
-	onChanged: aFunction
+	onChange: aFunction
 };
 
 const filterByInputProps = {
@@ -93,7 +93,7 @@ describe("@nice-digital/nds-filters", () => {
 				<FilterSummary {...filterSummaryProps} />
 				<FilterPanel {...filterPanelProps}>
 					<FilterGroup {...filterGroupProps}>
-						<FilterOption {...filterGroupProps}>A filter</FilterOption>
+						<FilterOption {...filterOptionProps}>A filter</FilterOption>
 					</FilterGroup>
 					<FilterByInput {...filterByInputProps} />
 				</FilterPanel>
@@ -165,7 +165,7 @@ describe("@nice-digital/nds-filters", () => {
 				<>
 					<FilterPanel {...filterPanelProps}>
 						<FilterGroup {...filterGroupProps}>
-							<FilterOption {...filterGroupProps}>First filter</FilterOption>
+							<FilterOption {...filterOptionProps}>First filter</FilterOption>
 						</FilterGroup>
 					</FilterPanel>
 				</>
@@ -179,7 +179,7 @@ describe("@nice-digital/nds-filters", () => {
 				<>
 					<FilterPanel {...filterPanelProps}>
 						<FilterGroup {...filterGroupProps} id="group-id">
-							<FilterOption {...filterGroupProps} value="override-child">
+							<FilterOption {...filterOptionProps} value="override-child">
 								First filter
 							</FilterOption>
 						</FilterGroup>
@@ -199,14 +199,24 @@ describe("@nice-digital/nds-filters", () => {
 							collapseByDefault={true}
 							selectedCount={1}
 						>
-							<FilterOption {...filterGroupProps}>First filter</FilterOption>
-							<FilterOption {...filterGroupProps}>Second filter</FilterOption>
+							<FilterOption {...filterOptionProps}>First filter</FilterOption>
+							{/* TODO: don't think this is right */}
+							<FilterOption {...filterOptionProps}>Second filter</FilterOption>
 						</FilterGroup>
 					</FilterPanel>
 				</>
 			);
 			const input = wrapper.find("input");
 			expect(input.length).toEqual(2);
+		});
+
+		it("should fire an onChange function if one is supplied", () => {
+			const wrapper = mount(
+				<FilterOption {...filterOptionProps}>Second filter</FilterOption>
+			);
+			const checkbox = wrapper.find("input");
+			checkbox.simulate("change");
+			expect(aFunction).toHaveBeenCalledTimes(1);
 		});
 	});
 });

@@ -7,7 +7,7 @@ Array [
       Array [
         Object {
           "label": "Another filter",
-          "onClick": [Function],
+          "onClick": [MockFunction],
         },
       ]
     }
@@ -19,7 +19,7 @@ Array [
         },
         Object {
           "label": "Button",
-          "onClick": [Function],
+          "onClick": [MockFunction],
         },
         Object {
           "destination": "https://google.com",
@@ -63,7 +63,7 @@ Array [
           Array [
             Object {
               "label": "Button",
-              "onClick": [Function],
+              "onClick": [MockFunction],
             },
             Object {
               "destination": "https://google.com",
@@ -110,7 +110,7 @@ Array [
             <button
               aria-label="Sort by Button"
               className="filter-summary__sort-control"
-              onClick={[Function]}
+              onClick={[MockFunction]}
             >
               Button
             </button>
@@ -165,7 +165,7 @@ Array [
           Array [
             Object {
               "label": "Another filter",
-              "onClick": [Function],
+              "onClick": [MockFunction],
             },
           ]
         }
@@ -185,7 +185,7 @@ Array [
               <button
                 aria-label="Sort by Another filter"
                 className="tag__remove"
-                onClick={[Function]}
+                onClick={[MockFunction]}
               >
                 <span
                   aria-hidden="true"
@@ -272,24 +272,22 @@ Array [
                   Some filters
                 </legend>
                 <FilterOption
-                  className="testClass"
-                  collapseByDefault={true}
                   groupHeading="Some filters"
                   groupId="some-filters"
-                  heading="Some filters"
+                  isSelected={true}
                   key=".0"
                   name=""
-                  selectedCount={99}
+                  onChange={[MockFunction]}
                 >
                   <label
-                    className="testClass"
-                    collapseByDefault={true}
-                    heading="Some filters"
+                    className="filter-option"
                     htmlFor="filter_some-filters_a-filter"
+                    isSelected={true}
                     name=""
-                    selectedCount={99}
+                    onChange={[MockFunction]}
                   >
                     <input
+                      checked={true}
                       id="filter_some-filters_a-filter"
                       name="some-filters"
                       onChange={[Function]}
