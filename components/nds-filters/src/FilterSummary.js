@@ -94,6 +94,7 @@ function ResultsSorting({ active, inactive }) {
 						},
 						index
 					) => {
+						const ElementType = onClick ? "button" : elementType || "a";
 						const props = {
 							className: classnames([
 								"filter-summary__sort-control",
@@ -104,7 +105,6 @@ function ResultsSorting({ active, inactive }) {
 								? method || (ElementType === "a" && "href") || "to"
 								: "onClick"]: onClick ? onClick : destination
 						};
-						const ElementType = onClick ? "button" : elementType || "a";
 
 						return (
 							<span key={index}>

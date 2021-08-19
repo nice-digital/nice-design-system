@@ -58,41 +58,34 @@ import {
 
 ##### `<FilterSummary />`
 
-###### className
-
-- Type: `string`
-
-Any additional classes that you would like applied to the `<FilterSummary />` component
-
-```js
-<FilterSummary sorting={sorting} activeFilters={activeFilters} className="mb--f">
-	Showing results 1 to 10 of 1209
-</FilterSummary>
-```
-
 ###### sorting
 
 - Type: `SortingType` (required)
 
-Ways to sort the returned results
+Ways to sort the returned results. 
+
+If an onClick function is passed, the elementType will default to a button. If no onClick or elementType is passed, it will default to an anchor and you should pass it a destination for the href. If you use a custom elementType, you should also pass the method and destination for the element to use, eg "to" for Gatsby.
 
 ```ts
 type SortingType = {
-		title: string;
-		onClick: function;
+		label: string;
+		destination?: string;
+		method?: string;
+		onClick?: function;
 		active?: boolean | undefined;
+		elementType?: React.ElementType;
+		className?: string;
 	};
 ```
 
 ```js
 const sorting = [
-	{ title: "Relevance", onClick: onChanged },
-	{ title: "Date", active: true, onClick: onChanged },
+	{ label: "Relevance", onClick: onChanged },
+	{ label: "Date", active: true, onClick: onChanged },
 	{
-		title: "Pertinence",
-		elementType: "a", // optional default <a>
+		label: "Pertinence",
+		elementType: Link, 
 		to: "somewhere",
-		onClick: () => {} // optional
 	}
 ];
 
@@ -105,12 +98,18 @@ const sorting = [
 
 - Type: `FilterType` (required)
 
-The filters that are being applied to the data, creates a tag that can be clicked to eg remove that filter
+The filters that are being applied to the data, creates a tag that can be clicked to eg remove that filter.
+
+If an onClick function is passed, the elementType will default to a button. If no onClick or elementType is passed, it will default to an anchor and you should pass it a destination for the href. If you use a custom elementType, you should also pass the method and destination for the element to use, eg "to" for Gatsby.
 
 ```ts
 type FilterType = {
-		title: string;
-		onClick: function;
+		label: string;
+		destination?: string;
+		method?: string;
+		onClick?: function;
+		elementType?: React.ElementType;
+		className?: string;
 	};
 ```
 
@@ -118,9 +117,8 @@ type FilterType = {
 const activeFilters = [
 	{
 		title: "My filter",
-		elementType: "a", // optional default <a>
+		elementType: Link,
 		to: "somewhere",
-		onClick: () => {} // optional
 	},
 	{
 		title: "Another filter",
@@ -128,6 +126,18 @@ const activeFilters = [
 	}
 ];
 
+<FilterSummary sorting={sorting} activeFilters={activeFilters}>
+	Showing results 1 to 10 of 1209
+</FilterSummary>
+```
+
+###### className
+
+- Type: `string`
+
+Any additional classes that you would like applied to the `<FilterSummary />` component
+
+```js
 <FilterSummary sorting={sorting} activeFilters={activeFilters} className="mb--f">
 	Showing results 1 to 10 of 1209
 </FilterSummary>
