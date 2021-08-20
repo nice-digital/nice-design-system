@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
+import { Tag } from "@nice-digital/nds-tag";
+import RemoveIcon from "@nice-digital/icons/lib/Remove";
 import "./../scss/filter-summary.scss";
 
 export function FilterSummary({
@@ -52,13 +54,13 @@ function ResultsFilters({ filters }) {
 					const ElementType = onClick ? "button" : elementType || "a";
 					return (
 						<li key={label} className="filter-summary__filter">
-							<span className="tag tag--outline">
+							<Tag outline>
 								{label}
 								<ElementType {...props}>
-									<span className="icon icon--remove" aria-hidden="true"></span>
+									<RemoveIcon />
 									<span className="visually-hidden">Remove {label} filter</span>
 								</ElementType>
-							</span>
+							</Tag>
 						</li>
 					);
 				}

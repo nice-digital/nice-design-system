@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
+import ChevronDown from "@nice-digital/icons/lib/ChevronDown";
 
 import { slugify } from "@nice-digital/nds-core/es/utils";
 
@@ -79,6 +80,12 @@ export class FilterGroup extends Component {
 							aria-controls={`group-${groupId}`}
 							onClick={this.handleTitleClick}
 						>
+							<ChevronDown
+								className={classnames([
+									"filter-group__heading-icon",
+									isExpanded && "filter-group__heading-icon--expanded"
+								])}
+							/>
 							{groupHeadingElement}
 						</button>
 					) : (
