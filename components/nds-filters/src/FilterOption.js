@@ -34,7 +34,15 @@ export class FilterOption extends Component {
 	}
 
 	render() {
-		const { groupId, groupHeading, value, children, ...rest } = this.props;
+		const {
+			groupId,
+			groupHeading,
+			value,
+			children,
+			// eslint-disable-next-line
+			onChanged,
+			...rest
+		} = this.props;
 		const { isSelected } = this.state;
 
 		const slugifiedValue = value ? slugify(value) : slugify(children);

@@ -123,7 +123,7 @@ const FilterType = PropTypes.shape({
 	label: PropTypes.string.isRequired,
 	destination: PropTypes.string,
 	onClick: PropTypes.func,
-	elementType: PropTypes.element,
+	elementType: PropTypes.elementType,
 	method: PropTypes.string,
 	className: PropTypes.string
 });
@@ -134,15 +134,15 @@ const SortingType =
 		label: PropTypes.string.isRequired,
 		destination: PropTypes.string,
 		onClick: PropTypes.func,
-		elementType: PropTypes.element,
+		elementType: PropTypes.elementType,
 		method: PropTypes.string,
 		className: PropTypes.string,
 		active: PropTypes.bool
 	});
 
 ResultsSorting.propTypes = {
-	active: PropTypes.oneOfType(SortingType),
-	inactive: PropTypes.oneOfType([PropTypes.arrayOf(SortingType), SortingType])
+	active: SortingType,
+	inactive: PropTypes.arrayOf(SortingType)
 };
 
 ResultsFilters.propTypes = {

@@ -86,13 +86,13 @@ import {
 // A filter panel can contain a filter group with filter options to select, and/or a filter by input
 <FilterPanel heading="A filter panel">
 	<FilterGroup heading="Type">
-		<FilterOption isSelected={true} onChanged={onChanged}>
+		<FilterOption isSelected={true} onChange={onChanged}>
 			Guidance
 		</FilterOption>
-		<FilterOption isSelected={false} onChanged={onChanged}>
+		<FilterOption isSelected={false} onChange={onChanged}>
 			Advice
 		</FilterOption>
-		<FilterOption isSelected={false} onChanged={onChanged}>
+		<FilterOption isSelected={false} onChange={onChanged}>
 			NICE Pathways
 		</FilterOption>
 	</FilterGroup>
@@ -234,16 +234,24 @@ The heading for the filter panel
 
 ###### fallback
 
-- Type: `object`
+- Type: 
+``` ts 
+fallback?: {
+	action?: string;
+	method?: "GET" | "POST";
+};
+```
 
 The `<FilterPanel />` is a form, which provides a fallback if js is not available. A submit button will be visible if js is not available, and the fallback action and method will be applied to the form.
+
+[When you initialize a variable with an object, TypeScript assumes that the properties of that object might change values later, ](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-inference) so the method here would be inferred to be a string as it could be reassigned before use. This means TypeScript will consider the code to have an error if you pass the fallback prop to filter panel with `method: "POST"`. Instead you need to add a type assertion like so: `method: "POST" as "POST"`.
 
 ```js
 <FilterPanel 
 	heading="A filter panel" 
 	fallback={{
 		action: "/submit-form",
-		method: "POST"
+		method: "POST" as "POST"
 	}}> />
 ```
 
@@ -359,7 +367,7 @@ The label text of the filter option. The value defaults to this if no value is p
 The value of the input
 
 ```js
-<FilterOption isSelected={true} onChanged={onChanged} value="guidance">
+<FilterOption isSelected={true} onChange={onChanged} value="guidance">
 	Guidance
 </FilterOption>
 ```

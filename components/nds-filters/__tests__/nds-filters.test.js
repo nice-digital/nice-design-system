@@ -40,7 +40,7 @@ const filterGroupProps = {
 
 const filterOptionProps = {
 	isSelected: true,
-	onChange: aFunction
+	onChanged: aFunction
 };
 
 const filterByInputProps = {
@@ -212,7 +212,7 @@ describe("@nice-digital/nds-filters", () => {
 	});
 
 	describe("FilterOptions component", () => {
-		it("should pass the filter group heading down to the filter option and use it plus the child set the input id when no id or value is present", () => {
+		it.only("should pass the filter group heading down to the filter option and use it plus the child set the input id when no id or value is present", () => {
 			const wrapper = mount(
 				<>
 					<FilterPanel {...filterPanelProps}>
