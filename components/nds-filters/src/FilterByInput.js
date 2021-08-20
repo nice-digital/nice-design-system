@@ -76,13 +76,12 @@ export class FilterByInput extends Component {
 }
 
 FilterByInput.propTypes = {
-	inputType: PropTypes.string,
-	type: PropTypes.string,
-	buttonLabel: PropTypes.string,
 	label: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
-	collapseByDefault: PropTypes.bool,
+	buttonLabel: PropTypes.string,
 	className: PropTypes.string,
+	collapseByDefault: PropTypes.bool,
+	type: PropTypes.string,
 	inputProps: PropTypes.any
 };
 

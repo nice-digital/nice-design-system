@@ -75,15 +75,11 @@ FilterPanel.propTypes = {
 		PropTypes.node
 	]).isRequired,
 	className: PropTypes.string,
-	heading: PropTypes.string,
+	heading: PropTypes.string.isRequired,
 	fallback: PropTypes.shape({
 		action: PropTypes.string,
 		method: PropTypes.oneOf(["GET", "POST"])
 	})
-};
-
-FilterPanel.defaultProps = {
-	title: "Filter"
 };
 
 export default FilterPanel;

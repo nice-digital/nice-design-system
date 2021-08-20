@@ -1,3 +1,54 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [`@nice-digital/nds-filters`](#nice-digitalnds-filters)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [React](#react)
+      - [Props](#props)
+        - [`<FilterSummary />`](#filtersummary-)
+          - [sorting](#sorting)
+          - [activeFilters](#activefilters)
+          - [children](#children)
+          - [className](#classname)
+          - [additional props](#additional-props)
+        - [`<FilterPanel />`](#filterpanel-)
+          - [children](#children-1)
+          - [className](#classname-1)
+          - [heading](#heading)
+          - [fallback](#fallback)
+          - [additional props](#additional-props-1)
+        - [`<FilterGroup />`](#filtergroup-)
+          - [heading](#heading-1)
+          - [id](#id)
+          - [selectedCount](#selectedcount)
+          - [collapseByDefault](#collapsebydefault)
+          - [children](#children-2)
+          - [className](#classname-2)
+          - [additional props](#additional-props-2)
+        - [`<FilterOption />`](#filteroption-)
+          - [groupId](#groupid)
+          - [groupHeading](#groupheading)
+          - [isSelected](#isselected)
+          - [children](#children-3)
+          - [value](#value)
+          - [onChanged](#onchanged)
+          - [additional props](#additional-props-3)
+        - [`<FilterByInput />`](#filterbyinput-)
+          - [label](#label)
+          - [name](#name)
+          - [buttonLabel](#buttonlabel)
+          - [className](#classname-3)
+          - [collapseByDefault](#collapsebydefault-1)
+          - [type](#type)
+          - [inputProps](#inputprops)
+          - [additional props](#additional-props-4)
+    - [SCSS](#scss)
+    - [HTML](#html)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # `@nice-digital/nds-filters`
 
 > Filter components for the NICE Design System
@@ -16,15 +67,15 @@ npm i @nice-digital/nds-filters --save
 
 ### React
 
-Import the `FilterPanel`, `FilterGroup`, `FilterOption`, `FilterSummary`, and `FilterByInput` components from the package and use within JSX:
+Import the `FilterSummary`, `FilterPanel`, `FilterGroup`, `FilterOption`, and `FilterByInput` components from the package and use within JSX:
 
 ```jsx
 import React from "react";
 import {
+	FilterSummary,
 	FilterPanel,
 	FilterGroup,
 	FilterOption,
-	FilterSummary,
 	FilterByInput
 } from "@nice-digital/nds-filters";
 
@@ -70,11 +121,11 @@ If an onClick function is passed, the elementType will default to a button. If n
 type SortingType = {
 		label: string;
 		destination?: string;
-		method?: string;
 		onClick?: function;
-		active?: boolean | undefined;
 		elementType?: React.ElementType;
+		method?: string;
 		className?: string;
+		active?: boolean | undefined;
 	};
 ```
 
@@ -106,9 +157,9 @@ If an onClick function is passed, the elementType will default to a button. If n
 type FilterType = {
 		label: string;
 		destination?: string;
-		method?: string;
 		onClick?: function;
 		elementType?: React.ElementType;
+		method?: string;
 		className?: string;
 	};
 ```
@@ -131,6 +182,12 @@ const activeFilters = [
 </FilterSummary>
 ```
 
+###### children
+
+- Type: `ReactNode`
+
+The `h2` text of the filter summary
+
 ###### className
 
 - Type: `string`
@@ -148,6 +205,12 @@ Any additional classes that you would like applied to the `<FilterSummary />` co
 Any additional props are spread on to the first `div` element, useful for accessibility or data attributes.
 
 ##### `<FilterPanel />`
+
+###### children
+
+- Type: `ReactNode`
+
+The body text of the filter panel
 
 ###### className
 
@@ -210,6 +273,16 @@ The id for the filter panel
 <FilterGroup heading="Type" id="ProductType"/>
 ```
 
+###### selectedCount
+
+- Type: `number` 
+
+How many of the options in the group are currently selected ie how many filters are applied. 
+
+```js
+<FilterGroup heading="Type" selectedCount={99}/>
+```
+
 ###### collapseByDefault
 
 - Type: `boolean` 
@@ -221,15 +294,11 @@ The filter group can be collapsed to hide the filter options.
 <FilterGroup heading="Type" collapseByDefault={true}/>
 ```
 
-###### selectedCount
+###### children
 
-- Type: `number` 
+- Type: ????
 
-How many of the options in the group are currently selected ie how many filters are applied. 
-
-```js
-<FilterGroup heading="Type" selectedCount={99}/>
-```
+????
 
 ###### className
 
@@ -247,6 +316,18 @@ Any additional props are spread on to the first `div` element, useful for access
 
 ##### `<FilterOption />`
 
+###### groupId
+
+- Type: `string` 
+
+Passed from the parent `<FilterGroup />`, will be the id or slufigied heading of the parent `<FilterGroup />`. 
+
+###### groupHeading
+
+- Type: `string`
+
+Passed from the parent `<FilterGroup />`, will be the heading of the parent `<FilterGroup />`. 
+
 ###### isSelected
 
 - Type: `boolean` (required)
@@ -259,11 +340,11 @@ If the option is selected by default
 </FilterOption>
 ```
 
-###### onChanged
+###### children
 
-- Type: `function` (required)
+- Type: `string` (required)
 
-What happens when the checkbox is selected
+The label text of the filter option. The value defaults to this if no value is provided
 
 ```js
 <FilterOption isSelected={true} onChanged={onChanged}>
@@ -279,6 +360,18 @@ The value of the input
 
 ```js
 <FilterOption isSelected={true} onChanged={onChanged} value="guidance">
+	Guidance
+</FilterOption>
+```
+
+###### onChanged
+
+- Type: `function` (required)
+
+What happens when the checkbox is selected
+
+```js
+<FilterOption isSelected={true} onChanged={onChanged}>
 	Guidance
 </FilterOption>
 ```

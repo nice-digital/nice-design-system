@@ -2,29 +2,29 @@ declare module "@nice-digital/nds-filters" {
 	import React = require("react");
 
 	export interface FilterSummaryProps {
-		className?: string;
-		children: React.ReactNode;
+		[prop: string]: unknown;
 		sorting?: SortingType[];
 		activeFilters?: FilterType[];
-		[prop: string]: unknown;
+		children: React.ReactNode;
+		className?: string;
 	}
 
 	export type SortingType = {
 		label: string;
 		destination?: string;
-		method?: string;
 		onClick?: function;
-		active?: boolean | undefined;
 		elementType?: React.ElementType;
+		method?: string;
 		className?: string;
+		active?: boolean | undefined;
 	};
 
 	export type FilterType = {
 		label: string;
-		onClick?: function;
 		destination?: string;
-		method?: string;
+		onClick?: function;
 		elementType?: React.ElementType;
+		method?: string;
 		className?: string;
 	};
 
@@ -32,6 +32,7 @@ declare module "@nice-digital/nds-filters" {
 
 	export interface FilterPanelProps {
 		[prop: string]: unknown;
+		children: React.ReactNode;
 		className?: string;
 		heading: string;
 		fallback?: {
@@ -46,8 +47,8 @@ declare module "@nice-digital/nds-filters" {
 		[prop: string]: unknown;
 		heading: string;
 		id?: string;
-		collapseByDefault?: boolean;
 		selectedCount?: number;
+		collapseByDefault?: boolean;
 		children: React.ReactNode;
 		className?: string;
 	}
@@ -56,6 +57,8 @@ declare module "@nice-digital/nds-filters" {
 
 	export interface FilterOptionProps {
 		[prop: string]: unknown;
+		groupId?: string;
+		groupHeading?: string;
 		isSelected: boolean;
 		children: string;
 		value?: string;

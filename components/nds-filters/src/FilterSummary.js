@@ -120,20 +120,28 @@ function ResultsSorting({ active, inactive }) {
 }
 
 const FilterType = PropTypes.shape({
-	label: PropTypes.string,
+	label: PropTypes.string.isRequired,
 	destination: PropTypes.string,
 	onClick: PropTypes.func,
-	elementType: PropTypes.element
+	elementType: PropTypes.element,
+	method: PropTypes.string,
+	className: PropTypes.string
 });
 
 const SortingType =
-	FilterType +
+	// FilterType +
 	PropTypes.shape({
+		label: PropTypes.string.isRequired,
+		destination: PropTypes.string,
+		onClick: PropTypes.func,
+		elementType: PropTypes.element,
+		method: PropTypes.string,
+		className: PropTypes.string,
 		active: PropTypes.bool
 	});
 
 ResultsSorting.propTypes = {
-	active: SortingType,
+	active: PropTypes.oneOfType(SortingType),
 	inactive: PropTypes.oneOfType([PropTypes.arrayOf(SortingType), SortingType])
 };
 
@@ -142,10 +150,10 @@ ResultsFilters.propTypes = {
 };
 
 FilterSummary.propTypes = {
-	children: PropTypes.string,
+	sorting: PropTypes.arrayOf(SortingType),
 	activeFilters: PropTypes.arrayOf(FilterType),
-	className: PropTypes.string,
-	sorting: PropTypes.arrayOf(SortingType)
+	children: PropTypes.node.isRequired,
+	className: PropTypes.string
 };
 
 export default FilterSummary;

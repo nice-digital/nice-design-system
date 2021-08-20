@@ -110,6 +110,4 @@ FilterGroup.propTypes = {
 	className: PropTypes.string
 };
 
-FilterGroup.defaultProps = {};
-
 export default FilterGroup;

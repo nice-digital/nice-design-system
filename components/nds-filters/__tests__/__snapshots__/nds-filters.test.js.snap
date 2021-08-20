@@ -139,11 +139,8 @@ Array [
       }
     }
     heading="Some filters"
-    title="Filter"
   >
-    <form
-      title="Filter"
-    >
+    <form>
       <div
         className="filter-panel undefined"
       >
