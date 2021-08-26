@@ -15,50 +15,18 @@ import {
 	FilterOption,
 	FilterByInput
 } from "@nice-digital/nds-filters";
-
-const filterSummaryProps = {
-sorting: [
-{ label: "Date", active: true },
-{ label: "Title", onClick: action("Click") }
-],
-activeFilters: [
-{
-label: "Guidance",
-onClick: action("Click")
-},
-{
-label: "Pathway",
-onClick: action("Click")
-}
-],
-children: "Showing results 1 to 10 of 1209"
-};
-
-const filterPanelProps = {
-heading: "Some filters",
-fallback: {
-method: "GET",
-action: "/submit"
-}
-};
-
-const filterGroupProps = {
-heading: "Filter by updated date"
-};
-
-const filterOptionProps = {
-isSelected: true,
-onChanged: action("Click")
-};
-
-const filterByInputProps = {
-label: "Filter by name",
-name: "Filter by name"
-};
+import Panel from "@nice-digital/nds-panel";
 
 ## Filter Summary
 
-<FilterSummary {...filterSummaryProps} />
+<Panel>
+	<FilterSummary
+	sorting={[{ label: "Date", active: true },{ label: "Title"}]}
+	activeFilters={[{label: "Guidance"},{label: "Pathway"}]}
+	>
+		Showing results 1 to 10 out of 1209
+	</FilterSummary>
+</Panel>
 
 ### What is it?
 
@@ -68,18 +36,20 @@ Allows you to remove filters, and to sort the returned data.
 
 ## Filter panel, filter group, filter options, filter by filter by input
 
-    <FilterPanel {...filterPanelProps}>
-    	<FilterByInput {...filterByInputProps} />
-    	<FilterGroup {...filterGroupProps}>
-    		<FilterOption {...filterOptionProps} isSelected={false}>
-    			Today
-    		</FilterOption>
-    		<FilterOption {...filterOptionProps}>Last 30 days</FilterOption>
-    		<FilterOption {...filterOptionProps} isSelected={false}>
-    			Last year
-    		</FilterOption>
-    	</FilterGroup>
-    </FilterPanel>
+<Panel>
+	<FilterPanel heading="Some filters">
+		<FilterByInput label="Filter by name" name="Filter by name" />
+		<FilterGroup heading="Filter by updated date">
+			<FilterOption>
+				Today
+			</FilterOption>
+			<FilterOption>Last 30 days</FilterOption>
+			<FilterOption isSelected={true}>
+				Last year
+			</FilterOption>
+		</FilterGroup>
+	</FilterPanel>
+</Panel>
 
 ### What are they?
 
@@ -97,31 +67,38 @@ The Filter Summary should be positioned above the results, and the Filter Panel 
 
 ### Variants
 
-For the filter by input, you can use any standard input, but it defaults to a text input. You can use any of the [variants on our input component](http://localhost:6006/?path=/story/foundations-input--try-it-out) such as an error message or hint text.
+For the filter by input, you can use any standard input, but it defaults to a text input.
 
-<FilterPanel {...filterPanelProps}>
-	<FilterByInput
-		{...filterByInputProps}
-		inputProps={{
-			hint: "Enter your search term here",
-			error: true,
-			errorMessage: "You can only search for names"
-		}}
-	/>
-</FilterPanel>
+You can use any of the [variants on our input component](http://localhost:6006/?path=/story/foundations-input--try-it-out) such as an error message or hint text.
 
 For the filter group, you can indicate how many filters are currently selected.
 
-<FilterPanel {...filterPanelProps}>
-	<FilterGroup
-		{...filterGroupProps}
-		selectedCount={number("selectedCount", 3)}
-	>
-		<FilterOption {...filterOptionProps}>Guidance</FilterOption>
-		<FilterOption {...filterOptionProps}>Technology Appraisals</FilterOption>
-		<FilterOption {...filterOptionProps}>Quality Statements</FilterOption>
-	</FilterGroup>
-</FilterPanel>
+<Panel>
+	<FilterPanel heading="Some filters">
+		<FilterByInput
+			label="Filter by last updated date"
+			name="Filter by date"
+			type="date"
+		/>
+		<FilterByInput
+			label="Filter by users name"
+			name="Filter by name"
+			inputProps={{
+				hint: "Enter your search term here",
+				error: true,
+				errorMessage: "You can only search for names"
+			}}
+		/>
+		<FilterGroup
+			heading="Filter by type of guidance"
+			selectedCount={2}
+		>
+			<FilterOption isSelected={true}>Guidance</FilterOption>
+			<FilterOption>Technology Appraisals</FilterOption>
+			<FilterOption isSelected={true}>Quality Statements</FilterOption>
+		</FilterGroup>
+	</FilterPanel>
+</Panel>
 
 ### Content
 

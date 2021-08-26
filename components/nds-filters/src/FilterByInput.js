@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import { Button } from "@nice-digital/nds-button";
 import { Input } from "@nice-digital/nds-input";
+import ChevronDown from "@nice-digital/icons/lib/ChevronDown";
 
 import "./../scss/filter-input.scss";
 
@@ -54,6 +55,12 @@ export class FilterByInput extends Component {
 							aria-controls={`inputFilter-${name}`}
 							onClick={this.handleTitleClick}
 						>
+							<ChevronDown
+								className={classnames([
+									"filter-group__heading-icon",
+									isExpanded && "filter-group__heading-icon--expanded"
+								])}
+							/>
 							{label}
 						</button>
 					) : (
