@@ -7,6 +7,7 @@ declare module "@nice-digital/nds-filters" {
 		activeFilters?: FilterType[];
 		children: React.ReactNode;
 		className?: string;
+		headingLevel?: 2 | 3 | 4 | 5;
 	}
 
 	export type SortingType = {
@@ -39,6 +40,7 @@ declare module "@nice-digital/nds-filters" {
 			action?: string;
 			method?: "GET" | "POST";
 		};
+		headingLevel?: 2 | 3 | 4 | 5;
 	}
 
 	export const FilterPanel: React.ComponentType<FilterPanelProps>;
@@ -51,6 +53,7 @@ declare module "@nice-digital/nds-filters" {
 		collapseByDefault?: boolean;
 		children: React.ReactNode;
 		className?: string;
+		headingLevel?: 3 | 4 | 5 | 6;
 	}
 
 	export const FilterGroup: React.ComponentType<FilterGroupProps>;
@@ -93,6 +96,7 @@ declare module "@nice-digital/nds-filters" {
 			| "url"
 			| "week";
 		inputProps?: unknown;
+		headingLevel?: 3 | 4 | 5 | 6;
 	}
 
 	export const FilterByInput: React.FC<FilterByInputProps>;

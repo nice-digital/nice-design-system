@@ -38,6 +38,7 @@ export class FilterGroup extends Component {
 				selectedCount,
 				id,
 				heading,
+				headingLevel,
 				children,
 				className,
 				/* eslint-disable */
@@ -54,6 +55,8 @@ export class FilterGroup extends Component {
 				<span className="filter-group__count">{selectedCount} selected</span>
 			);
 		}
+
+		const HeadingLevel = "h" + headingLevel;
 
 		const groupHeadingElement = (
 			<>
@@ -72,7 +75,7 @@ export class FilterGroup extends Component {
 
 		return (
 			<div className={classnames("filter-group", className)} {...rest}>
-				<h3 className="filter-group__heading">
+				<HeadingLevel className="filter-group__heading">
 					{this.state.canUseDOM ? (
 						<button
 							type="button"
@@ -91,7 +94,7 @@ export class FilterGroup extends Component {
 					) : (
 						<>{groupHeadingElement}</>
 					)}
-				</h3>
+				</HeadingLevel>
 				<fieldset
 					id={`group-${groupId}`}
 					aria-hidden={!isExpanded}
@@ -105,6 +108,8 @@ export class FilterGroup extends Component {
 	}
 }
 
+FilterGroup.displayName = "FilterGroup";
+
 FilterGroup.propTypes = {
 	heading: PropTypes.string.isRequired,
 	id: PropTypes.string,
@@ -114,7 +119,8 @@ FilterGroup.propTypes = {
 		PropTypes.arrayOf(PropTypes.node),
 		PropTypes.node
 	]).isRequired,
-	className: PropTypes.string
+	className: PropTypes.string,
+	headingLevel: PropTypes.oneOf([3, 4, 5, 6])
 };
 
 export default FilterGroup;

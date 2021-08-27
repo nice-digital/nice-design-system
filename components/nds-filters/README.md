@@ -200,6 +200,21 @@ Any additional classes that you would like applied to the `<FilterSummary />` co
 </FilterSummary>
 ```
 
+###### headingLevel
+
+- Type: `2 | 3 | 4 | 5`
+- Default: `2`
+
+The heading level for the filter summary. This defaults to 2, but you may need to change it depending on the rest of the page structure. 
+
+[When you initialize a variable with an object, TypeScript assumes that the properties of that object might change values later, ](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-inference) so the heading level provided here would be inferred to be a number as it could be reassigned before use. This means TypeScript will consider the code to have an error if you pass the fallback prop to filter panel with `headingLevel: 3`. Instead you need to add a type assertion like so: `headingLevel: 3 as 3`.
+
+```js
+<FilterSummary sorting={sorting} activeFilters={activeFilters} headingLevel={3 as 3}>
+	Showing results 1 to 10 of 1209
+</FilterSummary>
+```
+
 ###### additional props
 
 Any additional props are spread on to the first `div` element, useful for accessibility or data attributes.
@@ -253,6 +268,21 @@ The `<FilterPanel />` is a form, which provides a fallback if js is not availabl
 		action: "/submit-form",
 		method: "POST" as "POST"
 	}}> />
+```
+
+###### headingLevel
+
+- Type: `2 | 3 | 4 | 5`
+- Default: `2`
+
+The heading level for the panel heading. This defaults to 2, but you may need to change it depending on the rest of the page structure. This heading level cascades to the `<FilterGroup />` and `<FilterByInput />` components, which have their headings set to the headingLevel you provide here + 1.
+
+As above, [when you initialize a variable with an object, TypeScript assumes that the properties of that object might change values later, ](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-inference) so the heading level provided here would be inferred to be a number as it could be reassigned before use. This means TypeScript will consider the code to have an error if you pass the fallback prop to filter panel with `headingLevel: 3`. Instead you need to add a type assertion like so: `headingLevel: 3 as 3`.
+
+```js
+<FilterPanel 
+	heading="A filter panel" 
+	headingLevel={3 as 3}> />
 ```
 
 ###### additional props

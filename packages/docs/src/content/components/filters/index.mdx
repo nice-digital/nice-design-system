@@ -23,6 +23,7 @@ import Panel from "@nice-digital/nds-panel";
 	<FilterSummary
 	sorting={[{ label: "Date", active: true },{ label: "Title"}]}
 	activeFilters={[{label: "Guidance"},{label: "Pathway"}]}
+	headingLevel={3}
 	>
 		Showing results 1 to 10 out of 1209
 	</FilterSummary>
@@ -37,7 +38,7 @@ Allows you to remove filters, and to sort the returned data.
 ## Filter panel, filter group, filter options, filter by filter by input
 
 <Panel>
-	<FilterPanel heading="Some filters">
+	<FilterPanel heading="Example filter panel" headingLevel={3}>
 		<FilterByInput label="Filter by name" name="Filter by name" />
 		<FilterGroup heading="Filter by updated date">
 			<FilterOption>
@@ -74,7 +75,7 @@ You can use any of the [variants on our input component](http://localhost:6006/?
 For the filter group, you can indicate how many filters are currently selected.
 
 <Panel>
-	<FilterPanel heading="Some filters">
+	<FilterPanel heading="Example filter panel" headingLevel={3}>
 		<FilterByInput
 			label="Filter by last updated date"
 			name="Filter by date"

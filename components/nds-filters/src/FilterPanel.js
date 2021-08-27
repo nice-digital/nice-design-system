@@ -42,6 +42,16 @@ export class FilterPanel extends Component {
 
 		const formProps = canUseDOM ? { ...rest } : { ...fallback, ...rest };
 
+		const clonedChildren = React.Children.map(children, child => {
+			const clonedChild =
+				child.type?.displayName == "FilterGroup" ||
+				child.type?.displayName == "FilterByInput"
+					? React.cloneElement(child, { headingLevel: headingLevel + 1 })
+					: child;
+
+			return clonedChild;
+		});
+
 		return (
 			<form {...formProps}>
 				<div className={`filter-panel ${className}`}>
@@ -59,7 +69,7 @@ export class FilterPanel extends Component {
 						className="filter-panel__body"
 						aria-hidden={!isExpanded}
 					>
-						{children}
+						{clonedChildren}
 						{!canUseDOM && (
 							<button type="submit" className="btn filter-panel__submit">
 								Apply filters
@@ -83,7 +93,7 @@ FilterPanel.propTypes = {
 		action: PropTypes.string,
 		method: PropTypes.oneOf(["GET", "POST"])
 	}),
-	headingLevel: PropTypes.number
+	headingLevel: PropTypes.oneOf([2, 3, 4, 5])
 };
 
 export default FilterPanel;
