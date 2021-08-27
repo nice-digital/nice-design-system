@@ -33,16 +33,29 @@ export class FilterPanel extends Component {
 			children,
 			className,
 			fallback,
+			headingLevel = 2,
 			...rest
 		} = this.props;
 		const { canUseDOM, isExpanded } = this.state;
 
+		const HeadingLevel = "h" + headingLevel;
+
 		const formProps = canUseDOM ? { ...rest } : { ...fallback, ...rest };
+
+		const clonedChildren = React.Children.map(children, child => {
+			const clonedChild =
+				child.type?.displayName == "FilterGroup" ||
+				child.type?.displayName == "FilterByInput"
+					? React.cloneElement(child, { headingLevel: headingLevel + 1 })
+					: child;
+
+			return clonedChild;
+		});
 
 		return (
 			<form {...formProps}>
 				<div className={`filter-panel ${className}`}>
-					<h2 className="filter-panel__heading">
+					<HeadingLevel className="filter-panel__heading">
 						<button
 							aria-expanded={isExpanded}
 							aria-controls="filter-panel-body"
@@ -50,13 +63,13 @@ export class FilterPanel extends Component {
 						>
 							{heading}
 						</button>
-					</h2>
+					</HeadingLevel>
 					<div
 						id="filter-panel-body"
 						className="filter-panel__body"
 						aria-hidden={!isExpanded}
 					>
-						{children}
+						{clonedChildren}
 						{!canUseDOM && (
 							<button type="submit" className="btn filter-panel__submit">
 								Apply filters
@@ -79,7 +92,8 @@ FilterPanel.propTypes = {
 	fallback: PropTypes.shape({
 		action: PropTypes.string,
 		method: PropTypes.oneOf(["GET", "POST"])
-	})
+	}),
+	headingLevel: PropTypes.oneOf([2, 3, 4, 5])
 };
 
 export default FilterPanel;

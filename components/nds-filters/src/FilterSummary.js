@@ -10,12 +10,15 @@ export function FilterSummary({
 	className,
 	sorting = [],
 	activeFilters = [],
+	headingLevel = 2,
 	...rest
 }) {
+	const HeadingLevel = "h" + headingLevel;
+
 	return (
 		<div className={classnames("filter-summary", className)} {...rest}>
 			<div className="filter-summary__count">
-				<h2 className="h5 mv--0">{children}</h2>
+				<HeadingLevel className="h5 mv--0">{children}</HeadingLevel>
 			</div>
 			{sorting.length && (
 				<ResultsSorting
@@ -155,7 +158,8 @@ FilterSummary.propTypes = {
 	sorting: PropTypes.arrayOf(SortingType),
 	activeFilters: PropTypes.arrayOf(FilterType),
 	children: PropTypes.node.isRequired,
-	className: PropTypes.string
+	className: PropTypes.string,
+	headingLevel: PropTypes.number
 };
 
 export default FilterSummary;

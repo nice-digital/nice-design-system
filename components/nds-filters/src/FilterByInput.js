@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import { Button } from "@nice-digital/nds-button";
 import { Input } from "@nice-digital/nds-input";
+import ChevronDown from "@nice-digital/icons/lib/ChevronDown";
 
 import "./../scss/filter-input.scss";
 
@@ -40,13 +41,16 @@ export class FilterByInput extends Component {
 				name,
 				buttonLabel = "Filter",
 				inputProps,
+				headingLevel,
 				...rest
 			} = this.props,
 			{ isExpanded } = this.state;
 
+		const HeadingLevel = "h" + headingLevel;
+
 		return (
 			<div className={classnames("inputFilterBox", className)} {...rest}>
-				<h3 className="inputFilterBox__heading">
+				<HeadingLevel className="inputFilterBox__heading">
 					{this.state.canUseDOM ? (
 						<button
 							type="button"
@@ -54,12 +58,18 @@ export class FilterByInput extends Component {
 							aria-controls={`inputFilter-${name}`}
 							onClick={this.handleTitleClick}
 						>
+							<ChevronDown
+								className={classnames([
+									"filter-group__heading-icon",
+									isExpanded && "filter-group__heading-icon--expanded"
+								])}
+							/>
 							{label}
 						</button>
 					) : (
 						<>{label}</>
 					)}
-				</h3>
+				</HeadingLevel>
 				<div
 					id={`inputFilter-${name}`}
 					aria-hidden={!isExpanded}
@@ -75,6 +85,8 @@ export class FilterByInput extends Component {
 	}
 }
 
+FilterByInput.displayName = "FilterByInput";
+
 FilterByInput.propTypes = {
 	label: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
@@ -82,7 +94,8 @@ FilterByInput.propTypes = {
 	className: PropTypes.string,
 	collapseByDefault: PropTypes.bool,
 	type: PropTypes.string,
-	inputProps: PropTypes.any
+	inputProps: PropTypes.any,
+	headingLevel: PropTypes.oneOf([3, 4, 5, 6])
 };
 
 export default FilterByInput;
