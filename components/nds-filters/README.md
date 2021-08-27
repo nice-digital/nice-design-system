@@ -63,8 +63,6 @@ npm i @nice-digital/nds-filters --save
 
 ## Usage
 
-// TODO - bit of blurb about how it should be used, and about the fallback form thing?
-
 ### React
 
 Import the `FilterSummary`, `FilterPanel`, `FilterGroup`, `FilterOption`, and `FilterByInput` components from the package and use within JSX:
