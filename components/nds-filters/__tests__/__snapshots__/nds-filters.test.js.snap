@@ -233,14 +233,12 @@ Array [
                   groupId="some-filters"
                   isSelected={true}
                   key=".0"
-                  name=""
                   onChanged={[MockFunction]}
                 >
                   <label
                     className="filter-option"
                     htmlFor="filter_some-filters_a-filter"
                     isSelected={true}
-                    name=""
                   >
                     <input
                       checked={true}

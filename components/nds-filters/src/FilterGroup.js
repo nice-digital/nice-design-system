@@ -67,7 +67,6 @@ export class FilterGroup extends Component {
 
 		const clonedChildren = React.Children.map(children, child => {
 			return React.cloneElement(child, {
-				name,
 				groupId,
 				groupHeading: heading
 			});
