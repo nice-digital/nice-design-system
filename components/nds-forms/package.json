@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-forms",
-	"version": "1.2.4-alpha.0",
+	"version": "1.2.5-alpha.0",
 	"description": "DEPRECATED! Use @nice-digital/nds-input and @nice-digital/nds-textarea",
 	"author": "Warren Keith <warren.keith@nice.org.uk>",
 	"homepage": "https://github.com/nice-digital/nice-design-system#readme",
