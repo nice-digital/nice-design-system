@@ -267,6 +267,33 @@ describe("@nice-digital/nds-filters", () => {
 			expect(wrapper.find("form").props()["method"]).toBeFalsy();
 			expect(wrapper.find("form").props()["action"]).toBeFalsy();
 		});
+
+		it("should cascade the heading level from the filter panel down to the filter group and filter by item components", () => {
+			const wrapper = mount(
+				<FilterPanel {...filterPanelProps} headingLevel={3}>
+					<p>
+						Hello, another child to check the heading levels don't get passed
+						here
+					</p>
+					<FilterGroup {...filterGroupProps}>
+						<FilterOption {...filterOptionProps}>First filter</FilterOption>
+						<FilterOption {...filterOptionProps}>Second filter</FilterOption>
+					</FilterGroup>
+					<FilterByInput label="something" name="something">
+						Filter by name
+					</FilterByInput>
+				</FilterPanel>
+			);
+
+			const filterPanelHeading = wrapper.find(".filter-panel__heading");
+			expect(filterPanelHeading.type()).toEqual("h3");
+
+			const filterGroupHeading = wrapper.find(".filter-group__heading");
+			expect(filterGroupHeading.type()).toEqual("h4");
+
+			const filterByInputHeading = wrapper.find(".inputFilterBox__heading");
+			expect(filterByInputHeading.type()).toEqual("h4");
+		});
 	});
 });
 
