@@ -156,8 +156,34 @@ Array [
       }
     }
     heading="Some filters"
+    onSubmit={[MockFunction]}
   >
-    <form>
+    <form
+      _isMockFunction={true}
+      getMockImplementation={[Function]}
+      getMockName={[Function]}
+      mock={
+        Object {
+          "calls": Array [],
+          "instances": Array [],
+          "invocationCallOrder": Array [],
+          "results": Array [],
+        }
+      }
+      mockClear={[Function]}
+      mockImplementation={[Function]}
+      mockImplementationOnce={[Function]}
+      mockName={[Function]}
+      mockRejectedValue={[Function]}
+      mockRejectedValueOnce={[Function]}
+      mockReset={[Function]}
+      mockResolvedValue={[Function]}
+      mockResolvedValueOnce={[Function]}
+      mockRestore={[Function]}
+      mockReturnThis={[Function]}
+      mockReturnValue={[Function]}
+      mockReturnValueOnce={[Function]}
+    >
       <div
         className="filter-panel undefined"
       >

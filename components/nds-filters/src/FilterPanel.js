@@ -33,6 +33,7 @@ export class FilterPanel extends Component {
 			children,
 			className,
 			fallback,
+			onSubmit,
 			headingLevel = 2,
 			...rest
 		} = this.props;
@@ -40,7 +41,9 @@ export class FilterPanel extends Component {
 
 		const HeadingLevel = "h" + headingLevel;
 
-		const formProps = canUseDOM ? { ...rest } : { ...fallback, ...rest };
+		const formProps = canUseDOM
+			? { ...onSubmit, ...rest }
+			: { ...fallback, ...rest };
 
 		const clonedChildren = React.Children.map(children, child => {
 			const clonedChild =
@@ -93,6 +96,7 @@ FilterPanel.propTypes = {
 		action: PropTypes.string,
 		method: PropTypes.oneOf(["GET", "POST"])
 	}),
+	onSubmit: PropTypes.func,
 	headingLevel: PropTypes.oneOf([2, 3, 4, 5])
 };
 

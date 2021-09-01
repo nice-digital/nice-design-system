@@ -31,7 +31,8 @@ const filterPanelProps = {
 	fallback: {
 		method: "GET",
 		action: "/submit"
-	}
+	},
+	onSubmit: aFunction
 };
 
 const filterGroupProps = {
@@ -261,20 +262,18 @@ describe("@nice-digital/nds-filters", () => {
 			wrapper.update();
 			expect(wrapper.find("form").props()["method"]).toEqual("GET");
 			expect(wrapper.find("form").props()["action"]).toEqual("/submit");
+			expect(wrapper.find("FilterPanel").props().onSubmit).toBeFalsy;
 			wrapper.setState({ canUseDOM: true });
 			await nextTick();
 			wrapper.update();
 			expect(wrapper.find("form").props()["method"]).toBeFalsy();
 			expect(wrapper.find("form").props()["action"]).toBeFalsy();
+			expect(wrapper.find("FilterPanel").props().onSubmit).toEqual(aFunction);
 		});
 
 		it("should cascade the heading level from the filter panel down to the filter group and filter by item components", () => {
 			const wrapper = mount(
 				<FilterPanel {...filterPanelProps} headingLevel={3}>
-					<p>
-						Hello, another child to check the heading levels don't get passed
-						here
-					</p>
 					<FilterGroup {...filterGroupProps}>
 						<FilterOption {...filterOptionProps}>First filter</FilterOption>
 						<FilterOption {...filterOptionProps}>Second filter</FilterOption>

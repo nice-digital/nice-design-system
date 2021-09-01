@@ -119,7 +119,7 @@ If an onClick function is passed, the elementType will default to a button. If n
 type SortingType = {
 		label: string;
 		destination?: string;
-		onClick?: function;
+		onClick?: React.MouseEventHandler;
 		elementType?: React.ElementType;
 		method?: string;
 		className?: string;
@@ -155,7 +155,7 @@ If an onClick function is passed, the elementType will default to a button. If n
 type FilterType = {
 		label: string;
 		destination?: string;
-		onClick?: function;
+		onClick?: React.MouseEventHandler;
 		elementType?: React.ElementType;
 		method?: string;
 		className?: string;
@@ -184,7 +184,7 @@ const activeFilters = [
 
 - Type: `ReactNode`
 
-The `h2` text of the filter summary
+The heading text of the filter summary. Will be a `<h2>` unless the headingLevel prop is provided to change the level.
 
 ###### className
 
@@ -268,6 +268,12 @@ The `<FilterPanel />` is a form, which provides a fallback if js is not availabl
 	}}> />
 ```
 
+###### onSubmit
+
+- Type: `React.MouseEventHandler`
+
+This gets used when js is available instead of the fallback above.
+
 ###### headingLevel
 
 - Type: `2 | 3 | 4 | 5`
@@ -332,9 +338,9 @@ The filter group can be collapsed to hide the filter options.
 
 ###### children
 
-- Type: ????
+- Type: `ReactNode`
 
-????
+One or more `<FilterOption \>` components.
 
 ###### className
 

@@ -40,6 +40,7 @@ declare module "@nice-digital/nds-filters" {
 			action?: string;
 			method?: "GET" | "POST";
 		};
+		onSubmit?: React.EventHandler;
 		headingLevel?: 2 | 3 | 4 | 5;
 	}
 
