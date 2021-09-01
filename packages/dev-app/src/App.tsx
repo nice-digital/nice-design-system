@@ -25,6 +25,7 @@ import { HorizontalNavView } from "./views/HorizontalNavView";
 import { TableView } from "./views/TableView";
 import { FullBleedView } from "./views/FullBleedView";
 import { CalloutView } from "./views/CalloutView";
+import { EnhancedPaginationView } from "./views/EnhancedPaginationView";
 import "./App.scss";
 
 const browserHistory = createBrowserHistory();
@@ -100,6 +101,9 @@ class App extends Component {
 					<li>
 						<Link to="/tags">Tags</Link>
 					</li>
+					<li>
+						<Link to="/enhanced-pagination">Enhanced Pagination</Link>
+					</li>
 				</ul>
 				<hr />
 				<Container>
@@ -125,6 +129,10 @@ class App extends Component {
 					<Route path="/table" component={TableView} />
 					<Route path="/tabs" component={TabsView} />
 					<Route path="/tags" component={TagsView} />
+					<Route
+						path="/enhanced-pagination"
+						component={EnhancedPaginationView}
+					/>
 					<p>
 						Some paragraph content for context. Lorem ipsum dolor sit amet,
 						consectetur adipisicing elit. Consequatur minima molestiae nisi qui,
