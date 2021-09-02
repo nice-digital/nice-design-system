@@ -54,6 +54,9 @@ class App extends Component {
 						<Link to="/dep-forms">Deprecated Forms</Link>
 					</li>
 					<li>
+						<Link to="/enhanced-pagination">Enhanced Pagination</Link>
+					</li>
+					<li>
 						<Link to="/filters">Filters</Link>
 					</li>
 					<li>
@@ -100,9 +103,6 @@ class App extends Component {
 					</li>
 					<li>
 						<Link to="/tags">Tags</Link>
-					</li>
-					<li>
-						<Link to="/enhanced-pagination">Enhanced Pagination</Link>
 					</li>
 				</ul>
 				<hr />
