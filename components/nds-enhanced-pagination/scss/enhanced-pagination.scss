@@ -1,0 +1,51 @@
+////
+/// @group components
+////
+
+@import '~@nice-digital/nds-core/scss/core';
+
+.pagination {
+  // The list of pages
+  &__list {
+    list-style: none;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    position: relative;
+  }
+
+  // Individual page
+  &__page {
+    text-align: center;
+    min-width: 3rem;
+    min-height: 3rem;
+    line-height: 3rem;
+    &__current {
+      display: block;
+      background: $nds-colour-nice-grey-2;
+      font-weight: bold;
+    }
+  }
+
+  // The button/link for the tab itself
+  &__page-link {
+    @include nds-link-default;
+    border: 1px solid transparent;
+    cursor: pointer;
+    display: block;
+
+    &:hover {
+      border: 1px solid $nds-colour-focus;
+      color: $nds-colour-text;
+    }
+
+    &:focus {
+      // Stop focus ring clipping
+      outline-color: $nds-colour-focus;
+      outline-offset: rem(-$nds-spacing-x-small);
+      z-index: 1;
+    }
+  }
+}
