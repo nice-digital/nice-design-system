@@ -85,11 +85,18 @@ export const EnhancedPagination = ({
 				{pagesToRender.map(page => (
 					<li
 						key={page.pageNumber}
-						className={
-							currentPage == page.pageNumber
-								? "pagination__page pagination__page__current"
-								: "pagination__page"
-						}
+						// className={
+						// 	currentPage == page.pageNumber
+						// 		? "pagination__page pagination__page__current"
+						// 		: "pagination__page"
+						// }
+
+						className={`pagination__page ${
+							currentPage == page.pageNumber ? "pagination__page__current" : ""
+						} ${page.pageNumber == "..." ? "no-flex" : ""}`}
+
+						// className={`pagination__page  ${currentPage == page.pageNumber &&
+						// 	"pagination__page__current"}`}
 					>
 						{currentPage == page.pageNumber || page.pageNumber == "..." ? (
 							<span>

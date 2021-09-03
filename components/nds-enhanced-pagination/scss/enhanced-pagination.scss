@@ -56,6 +56,10 @@
   }
 }
 
+.pagination .pagination__page.no-flex {
+  flex-grow: 0;
+}
+
 .pagination li * {
   display: block;
   padding: 1rem;
