@@ -13,8 +13,7 @@ const pagesDestinations = [
 	{ destination: "#9" }
 ];
 
-// I'm presuming that the element type for the pages links and for the next and previous will be the same, reasonable? Yes.
-const elementType = "anElementType";
+const elementType = "a";
 const method = "aMethod";
 
 const nextPageDestination = "#somewhere";

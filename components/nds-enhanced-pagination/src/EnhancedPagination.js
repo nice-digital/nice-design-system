@@ -8,17 +8,20 @@ export const EnhancedPagination = ({
 	method,
 	nextPageDestination,
 	previousPageDestination,
-	pagesDestinations
+	pagesDestinations,
+	onClick
 }) => {
-	// add possibility of buttons
-	const ElementType = elementType || "a";
+	const ElementType = onClick ? "button" : elementType || "a";
+	const action = onClick
+		? "onClick"
+		: method || (ElementType === "a" && "href") || "to";
 
 	const previousPageProps = {
-		[method || (ElementType === "a" && "href") || "to"]: previousPageDestination
+		[action]: previousPageDestination
 	};
 
 	const nextPageProps = {
-		[method || (ElementType === "a" && "href") || "to"]: nextPageDestination
+		[action]: nextPageDestination
 	};
 
 	// This sets up which pages numbers are going to be rendered
@@ -47,7 +50,7 @@ export const EnhancedPagination = ({
 	}
 	totalPages != 1 && pages.push(totalPages);
 
-	// We then map the pagesDespinations to the pages we want to render
+	// We then map the pagesDestinations to the pages we want to render
 	const pagesToRender = [];
 	pages.map(page =>
 		pagesToRender.push({
@@ -55,11 +58,7 @@ export const EnhancedPagination = ({
 			pageProp:
 				page == "..."
 					? undefined
-					: {
-							[method ||
-							(ElementType === "a" && "href") ||
-							"to"]: pagesDestinations[page - 1].destination
-					  }
+					: { [action]: pagesDestinations[page - 1].destination }
 		})
 	);
 
@@ -105,11 +104,17 @@ export const EnhancedPagination = ({
 	);
 };
 
+const PagesDestinationsType = PropTypes.shape({
+	destination: PropTypes.string
+});
+
 EnhancedPagination.propTypes = {
-	currentPage: PropTypes.number,
+	currentPage: PropTypes.number.isRequired,
+	pagesDestinations: PropTypes.arrayOf(PropTypes.PagesDestinationsType)
+		.isRequired,
+	previousPageDestination: PropTypes.string.isRequired,
+	nextPageDestination: PropTypes.string.isRequired,
 	elementType: PropTypes.elementType,
 	method: PropTypes.string,
-	nextPageDestination: PropTypes.string,
-	previousPageDestination: PropTypes.string,
-	pagesDestinations: PropTypes.arrayOf(PropTypes.object)
+	onClick: PropTypes.func
 };
