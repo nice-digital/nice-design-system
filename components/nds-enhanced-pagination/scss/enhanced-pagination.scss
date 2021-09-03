@@ -5,41 +5,29 @@
 @import '~@nice-digital/nds-core/scss/core';
 
 .pagination {
+  border: 1px solid red;
+  padding: 20px;
   // The list of pages
   &__list {
-    all: unset;
     align-content: center;
     border: 1px solid red;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: left;
     list-style: none;
-    padding: 1rem;
+    margin: 0;
+    padding: 0;
     position: relative;
-
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
   }
 
   // Individual page
   &__page {
-    all: unset;
-    border: 1px solid green;
-    // flex-grow: 1;
-    // flex-shrink: 1;
-    // flex-basis: 0;
-    min-height: 18px;
-    min-width: 18px;
-
-    // line-height: 2rem;
-    // min-height: 2rem;
-    // min-width: 2rem;
+    border: 1px solid red;
+    min-width: 3rem;
     // padding: 1rem;
     text-align: center;
     &__current {
       background: $nds-colour-nice-grey-2;
-      display: block;
       font-weight: bold;
     }
   }
@@ -64,12 +52,15 @@
     }
   }
 }
-
-.pagination li:first-of-type {
-  background: red;
+.pagination li * {
+  display: block;
   padding: 0.5rem;
 }
+.pagination li:first-of-type * {
+  background: red;
+  flex-grow: 1;
+}
 
-.pagination li:last-of-type {
+.pagination li:last-of-type * {
   background: green;
 }
