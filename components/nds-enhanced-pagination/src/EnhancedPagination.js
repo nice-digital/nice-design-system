@@ -3,19 +3,19 @@ import PropTypes from "prop-types";
 import "./../scss/enhanced-pagination.scss";
 
 export const EnhancedPagination = ({ totalPages, currentPage }) => {
-	// const pagesArray = [0, 1, 2, 3, 4, 5, 6, 7];
-	// const sliced = pagesArray.slice(currentPage, currentPage + 3);
-	// console.log("a range of pages starting at current page");
-	// console.log(sliced);
-
 	let pages = [];
-	currentPage != 1 && pages.push("Previous page");
+
 	pages.push(1);
 	if (currentPage < 4) {
 		//beginning
-		// stuff for when its less than 4 pages
-		pages.push(2, 3, 4);
-		totalPages > 5 && pages.push("...");
+		if (totalPages < 5) {
+			for (let i = 2; i < totalPages; i++) {
+				pages.push(i);
+			}
+		} else {
+			pages.push(2, 3, 4);
+			totalPages > 5 && pages.push("...");
+		}
 	} else if (currentPage > totalPages - 3) {
 		//end
 		totalPages > 5 && pages.push("...");
@@ -26,12 +26,14 @@ export const EnhancedPagination = ({ totalPages, currentPage }) => {
 		pages.push(currentPage - 1, currentPage, currentPage + 1);
 		totalPages > 5 && pages.push("...");
 	}
-	pages.push(totalPages);
-	currentPage != totalPages && pages.push("Next page");
+	totalPages != 1 && pages.push(totalPages);
 
 	return (
 		<div className="pagination clearfix mt--a mb--e mr--b mb--b ml--b">
 			<ul className="pagination__list">
+				{currentPage != 1 && (
+					<li className="pagination__page">Previous page</li>
+				)}
 				{pages.map((page, i) => (
 					<li key={i} className="pagination__page">
 						{currentPage == page || page == "..." ? (
@@ -47,6 +49,9 @@ export const EnhancedPagination = ({ totalPages, currentPage }) => {
 						)}
 					</li>
 				))}
+				{currentPage != totalPages && (
+					<li className="pagination__page">Next page</li>
+				)}
 			</ul>
 		</div>
 	);

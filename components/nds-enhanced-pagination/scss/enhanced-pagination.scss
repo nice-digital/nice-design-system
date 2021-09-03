@@ -7,24 +7,23 @@
 .pagination {
   // The list of pages
   &__list {
-    list-style: none;
-    position: relative;
-    display: flex;
-    justify-content: center;
     align-content: center;
+    display: flex;
     flex-direction: row;
+    justify-content: center;
+    list-style: none;
     position: relative;
   }
 
   // Individual page
   &__page {
-    text-align: center;
-    min-width: 3rem;
-    min-height: 3rem;
     line-height: 3rem;
+    min-height: 3rem;
+    min-width: 3rem;
+    text-align: center;
     &__current {
-      display: block;
       background: $nds-colour-nice-grey-2;
+      display: block;
       font-weight: bold;
     }
   }
