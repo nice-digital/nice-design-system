@@ -3,7 +3,6 @@ declare module "@nice-digital/nds-enhanced-pagination" {
 
 	export interface EnhancedPaginationProps {
 		[prop: string]: unknown;
-		totalPages: number;
 		currentPage: number;
 	}
 

@@ -2,9 +2,28 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./../scss/enhanced-pagination.scss";
 
-export const EnhancedPagination = ({ totalPages, currentPage }) => {
-	let pages = [];
+export const EnhancedPagination = ({
+	currentPage,
+	elementType,
+	method,
+	nextPageDestination,
+	previousPageDestination,
+	pagesDestinations
+}) => {
+	// add possibility of buttons
+	const ElementType = elementType || "a";
 
+	const previousPageProps = {
+		[method || (ElementType === "a" && "href") || "to"]: previousPageDestination
+	};
+
+	const nextPageProps = {
+		[method || (ElementType === "a" && "href") || "to"]: nextPageDestination
+	};
+
+	// This sets up which pages numbers are going to be rendered
+	let pages = [];
+	const totalPages = Object.keys(pagesDestinations).length;
 	pages.push(1);
 	if (currentPage < 4) {
 		//beginning
@@ -28,29 +47,58 @@ export const EnhancedPagination = ({ totalPages, currentPage }) => {
 	}
 	totalPages != 1 && pages.push(totalPages);
 
+	// We then map the pagesDespinations to the pages we want to render
+	const pagesToRender = [];
+	pages.map(page =>
+		pagesToRender.push({
+			pageNumber: page,
+			pageProp:
+				page == "..."
+					? undefined
+					: {
+							[method ||
+							(ElementType === "a" && "href") ||
+							"to"]: pagesDestinations[page - 1].destination
+					  }
+		})
+	);
+
 	return (
 		<div className="pagination clearfix mt--a mb--e mr--b mb--b ml--b">
 			<ul className="pagination__list">
 				{currentPage != 1 && (
-					<li className="pagination__page">Previous page</li>
+					<li className="pagination__page">
+						<ElementType
+							{...previousPageProps}
+							className="pagination__page-link"
+						>
+							Previous page
+						</ElementType>
+					</li>
 				)}
-				{pages.map((page, i) => (
-					<li key={i} className="pagination__page">
-						{currentPage == page || page == "..." ? (
+				{pagesToRender.map(page => (
+					<li key={page.pageNumber} className="pagination__page">
+						{currentPage == page.pageNumber || page.pageNumber == "..." ? (
 							<span
-								className={currentPage == page && "pagination__page__current"}
+								className={
+									currentPage == page.pageNumber && "pagination__page__current"
+								}
 							>
-								{page}
+								{page.pageNumber}
 							</span>
 						) : (
-							<a href="" className="pagination__page-link">
-								{page}
-							</a>
+							<ElementType {...page.pageProp} className="pagination__page-link">
+								{page.pageNumber}
+							</ElementType>
 						)}
 					</li>
 				))}
 				{currentPage != totalPages && (
-					<li className="pagination__page">Next page</li>
+					<li className="pagination__page">
+						<ElementType {...nextPageProps} className="pagination__page-link">
+							Next page
+						</ElementType>
+					</li>
 				)}
 			</ul>
 		</div>
@@ -58,6 +106,10 @@ export const EnhancedPagination = ({ totalPages, currentPage }) => {
 };
 
 EnhancedPagination.propTypes = {
-	totalPages: PropTypes.number,
-	currentPage: PropTypes.number
+	currentPage: PropTypes.number,
+	elementType: PropTypes.elementType,
+	method: PropTypes.string,
+	nextPageDestination: PropTypes.string,
+	previousPageDestination: PropTypes.string,
+	pagesDestinations: PropTypes.arrayOf(PropTypes.object)
 };

@@ -7,19 +7,35 @@
 .pagination {
   // The list of pages
   &__list {
+    all: unset;
     align-content: center;
+    border: 1px solid red;
     display: flex;
     flex-direction: row;
     justify-content: center;
     list-style: none;
+    padding: 1rem;
     position: relative;
+
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
 
   // Individual page
   &__page {
-    line-height: 3rem;
-    min-height: 3rem;
-    min-width: 3rem;
+    all: unset;
+    border: 1px solid green;
+    // flex-grow: 1;
+    // flex-shrink: 1;
+    // flex-basis: 0;
+    min-height: 18px;
+    min-width: 18px;
+
+    // line-height: 2rem;
+    // min-height: 2rem;
+    // min-width: 2rem;
+    // padding: 1rem;
     text-align: center;
     &__current {
       background: $nds-colour-nice-grey-2;
@@ -47,4 +63,13 @@
       z-index: 1;
     }
   }
+}
+
+.pagination li:first-of-type {
+  background: red;
+  padding: 0.5rem;
+}
+
+.pagination li:last-of-type {
+  background: green;
 }
