@@ -10,12 +10,14 @@
   // The list of pages
   &__list {
     align-content: center;
+    align-items: center;
     border: 1px solid red;
     display: flex;
     flex-direction: row;
     justify-content: left;
     list-style: none;
     margin: 0;
+    max-width: unset;
     padding: 0;
     position: relative;
   }
@@ -23,8 +25,9 @@
   // Individual page
   &__page {
     border: 1px solid red;
-    min-width: 3rem;
-    // padding: 1rem;
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
     text-align: center;
     &__current {
       background: $nds-colour-nice-grey-2;
@@ -52,15 +55,18 @@
     }
   }
 }
+
 .pagination li * {
   display: block;
-  padding: 0.5rem;
+  padding: 1rem;
 }
+
 .pagination li:first-of-type * {
-  background: red;
-  flex-grow: 1;
+  background: yellow;
+  white-space: nowrap;
 }
 
 .pagination li:last-of-type * {
-  background: green;
+  background: yellow;
+  white-space: nowrap;
 }

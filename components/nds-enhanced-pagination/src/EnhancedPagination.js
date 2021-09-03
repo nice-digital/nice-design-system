@@ -24,29 +24,36 @@ export const EnhancedPagination = ({
 		[action]: nextPageDestination
 	};
 
-	// This sets up which pages numbers are going to be rendered
-	let pages = [];
 	const totalPages = Object.keys(pagesDestinations).length;
-	pages.push(1);
+
+	// This sets up which page numbers are going to be rendered
+	let pages = [1];
 	if (currentPage < 4) {
-		//beginning
+		// current page is an early page
 		if (totalPages < 5) {
 			for (let i = 2; i < totalPages; i++) {
 				pages.push(i);
 			}
 		} else {
-			pages.push(2, 3, 4);
-			totalPages > 5 && pages.push("...");
+			pages.push(2, 3, 4, totalPages > 5 && "...");
 		}
 	} else if (currentPage > totalPages - 3) {
-		//end
-		totalPages > 5 && pages.push("...");
-		pages.push(totalPages - 3, totalPages - 2, totalPages - 1);
+		// current page is a late page
+		pages.push(
+			totalPages > 5 && "...",
+			totalPages - 3,
+			totalPages - 2,
+			totalPages - 1
+		);
 	} else {
-		//middle
-		totalPages > 5 && pages.push("...");
-		pages.push(currentPage - 1, currentPage, currentPage + 1);
-		totalPages > 5 && pages.push("...");
+		// current page is somewhere in the middle
+		pages.push(
+			totalPages > 5 && "...",
+			currentPage - 1,
+			currentPage,
+			currentPage + 1,
+			totalPages > 5 && "..."
+		);
 	}
 	totalPages != 1 && pages.push(totalPages);
 
@@ -76,18 +83,22 @@ export const EnhancedPagination = ({
 					</li>
 				)}
 				{pagesToRender.map(page => (
-					<li key={page.pageNumber} className="pagination__page">
+					<li
+						key={page.pageNumber}
+						className={
+							currentPage == page.pageNumber
+								? "pagination__page pagination__page__current"
+								: "pagination__page"
+						}
+					>
 						{currentPage == page.pageNumber || page.pageNumber == "..." ? (
-							<span
-								className={
-									currentPage == page.pageNumber && "pagination__page__current"
-								}
-							>
+							<span>
 								{page.pageNumber}
+								{currentPage == page.pageNumber && "987987"}
 							</span>
 						) : (
 							<ElementType {...page.pageProp} className="pagination__page-link">
-								{page.pageNumber}
+								{page.pageNumber}999999
 							</ElementType>
 						)}
 					</li>
