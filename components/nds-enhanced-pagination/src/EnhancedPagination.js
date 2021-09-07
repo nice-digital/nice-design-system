@@ -81,10 +81,12 @@ export const EnhancedPagination = ({
 	pages.map(page =>
 		pagesToRender.push({
 			pageNumber: page,
-			pageProp:
-				(page == "..." && undefined) || ElementType === "button"
-					? { [action]: pagesActions[page - 1].onClick }
-					: { [action]: pagesActions[page - 1].destination }
+			pageProp: page == "..." || {
+				[action]:
+					ElementType === "button"
+						? pagesActions[page - 1].onClick
+						: pagesActions[page - 1].destination
+			}
 		})
 	);
 
