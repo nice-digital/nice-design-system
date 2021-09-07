@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import { slugify } from "@nice-digital/nds-core/es/utils";
+import { slugify } from "@nice-digital/nds-core";
 
 import "./../scss/filter-panel.scss";
 
