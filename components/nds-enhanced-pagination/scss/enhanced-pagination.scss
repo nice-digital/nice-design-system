@@ -5,13 +5,11 @@
 @import '~@nice-digital/nds-core/scss/core';
 
 .pagination {
-  border: 1px solid red;
   padding: 20px;
   // The list of pages
   &__list {
     align-content: center;
     align-items: center;
-    border: 1px solid red;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -25,7 +23,6 @@
 
   // Individual page
   &__page {
-    border: 1px solid red;
     flex-grow: 1;
     margin: 0;
     padding: 0;
@@ -68,11 +65,9 @@
 }
 
 .pagination li:first-of-type * {
-  background: yellow;
   white-space: nowrap;
 }
 
 .pagination li:last-of-type * {
-  background: yellow;
   white-space: nowrap;
 }
