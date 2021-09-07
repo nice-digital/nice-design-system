@@ -13,7 +13,7 @@ declare module "@nice-digital/nds-filters" {
 	export type SortingType = {
 		label: string;
 		destination?: string;
-		onClick?: React.EventHandler;
+		onClick?: React.EventHandler<any>;
 		elementType?: React.ElementType;
 		method?: string;
 		className?: string;
@@ -23,7 +23,7 @@ declare module "@nice-digital/nds-filters" {
 	export type FilterType = {
 		label: string;
 		destination?: string;
-		onClick?: React.EventHandler;
+		onClick?: React.EventHandler<any>;
 		elementType?: React.ElementType;
 		method?: string;
 		className?: string;
@@ -40,7 +40,7 @@ declare module "@nice-digital/nds-filters" {
 			action?: string;
 			method?: "GET" | "POST";
 		};
-		onSubmit?: React.EventHandler;
+		onSubmit?: React.EventHandler<any>;
 		headingLevel?: 2 | 3 | 4 | 5;
 	}
 
@@ -66,7 +66,7 @@ declare module "@nice-digital/nds-filters" {
 		isSelected: boolean;
 		children: string;
 		value?: string;
-		onChanged: React.EventHandler;
+		onChanged: React.EventHandler<any>;
 	}
 
 	export const FilterOption: React.ComponentType<FilterOptionProps>;
