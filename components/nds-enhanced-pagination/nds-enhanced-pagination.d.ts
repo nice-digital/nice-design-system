@@ -9,7 +9,7 @@ declare module "@nice-digital/nds-enhanced-pagination" {
 		nextPageDestination: string;
 		elementType?: React.ElementType;
 		method?: string;
-		onClick?: React.MouseEventHandler;
+		onClick?: React.EventHandler;
 	}
 
 	export type PagesDestinationType = {

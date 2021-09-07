@@ -4,27 +4,31 @@ import "./../scss/enhanced-pagination.scss";
 
 export const EnhancedPagination = ({
 	currentPage,
-	elementType,
+	elementType = "a",
 	method,
 	nextPageDestination,
 	previousPageDestination,
 	pagesDestinations,
+	nextPageAction,
+	previousPageAction,
 	onClick
 }) => {
 	// onclick - if we have this, is it the same for all?? probably not right? what does that look like? need to bring through for each current destination
 
-	const ElementType = onClick ? "button" : elementType || "a";
-	const action = onClick
-		? "onClick"
-		: method || (ElementType === "a" && "href") || "to";
+	const ElementType = elementType;
+	const action = ElementType === "button" ? "onClick" : method || "href";
 
 	const previousPageProps = {
-		[action]: previousPageDestination
+		[ElementType === "button" ? "onClick" : method || "href"]:
+			ElementType === "button" ? onClick : previousPageAction.destination
 	};
 
 	const nextPageProps = {
-		[action]: nextPageDestination
+		[ElementType === "button" ? "onClick" : method || "href"]:
+			ElementType === "button" ? onClick : nextPageAction.destination
 	};
+
+	console.log("checking: " + nextPageProps.onClick);
 
 	const totalPages = Object.keys(pagesDestinations).length;
 
@@ -140,5 +144,13 @@ EnhancedPagination.propTypes = {
 	nextPageDestination: PropTypes.string.isRequired,
 	elementType: PropTypes.elementType,
 	method: PropTypes.string,
-	onClick: PropTypes.func
+	onClick: PropTypes.func,
+	nextPageAction: PropTypes.shape({
+		destination: PropTypes.string,
+		onClick: PropTypes.func
+	}),
+	previousPageAction: PropTypes.shape({
+		destination: PropTypes.string,
+		onClick: PropTypes.func
+	})
 };
