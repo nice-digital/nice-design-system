@@ -24,7 +24,7 @@ export const EnhancedPaginationView = () => {
 	return (
 		<>
 			<EnhancedPagination
-				currentPage={5}
+				currentPage={3}
 				elementType={elementType}
 				method={method}
 				nextPageDestination={nextPageDestination}

@@ -11,6 +11,8 @@ export const EnhancedPagination = ({
 	pagesDestinations,
 	onClick
 }) => {
+	// onclick - if we have this, is it the same for all?? probably not right? what does that look like? need to bring through for each current destination
+
 	const ElementType = onClick ? "button" : elementType || "a";
 	const action = onClick
 		? "onClick"
@@ -26,36 +28,52 @@ export const EnhancedPagination = ({
 
 	const totalPages = Object.keys(pagesDestinations).length;
 
-	// This sets up which page numbers are going to be rendered
-	let pages = [1];
-	if (currentPage < 4) {
-		// current page is an early page
-		if (totalPages < 5) {
-			for (let i = 2; i < totalPages; i++) {
-				pages.push(i);
-			}
-		} else {
-			pages.push(2, 3, 4, totalPages > 5 && "...");
+	const calculatePosition = currentPage => {
+		if (currentPage <= 3) return "early";
+		if (totalPages - currentPage <= 3) return "late";
+		return "middle";
+	};
+
+	const addNumberedPages = array => {
+		array.push(1, totalPages != 1 && totalPages);
+		switch (calculatePosition(currentPage)) {
+			case "early":
+				if (totalPages < 5) {
+					for (let i = 2; i < totalPages; i++) {
+						array.splice(1, 0, i);
+					}
+				} else {
+					array.splice(1, 0, 2, 3, 4);
+				}
+				break;
+			case "late":
+				array.splice(1, 0, totalPages - 3, totalPages - 2, totalPages - 1);
+				break;
+			default:
+				array.splice(1, 0, currentPage - 1, currentPage, currentPage + 1);
 		}
-	} else if (currentPage > totalPages - 3) {
-		// current page is a late page
-		pages.push(
-			totalPages > 5 && "...",
-			totalPages - 3,
-			totalPages - 2,
-			totalPages - 1
-		);
-	} else {
-		// current page is somewhere in the middle
-		pages.push(
-			totalPages > 5 && "...",
-			currentPage - 1,
-			currentPage,
-			currentPage + 1,
-			totalPages > 5 && "..."
-		);
-	}
-	totalPages != 1 && pages.push(totalPages);
+	};
+
+	const addEllipses = array => {
+		switch (calculatePosition(currentPage)) {
+			case "early":
+				pages.splice(array.length - 1, 0, "...");
+				break;
+			case "late":
+				pages.splice(1, 0, "...");
+				break;
+			default:
+				pages.splice(1, 0, "...");
+				pages.splice(array.length - 1, 0, "...");
+				break;
+		}
+		return array;
+	};
+
+	// This sets up which page numbers are going to be rendered
+	let pages = [];
+	addNumberedPages(pages);
+	if (totalPages > 5) addEllipses(pages);
 
 	// We then map the pagesDestinations to the pages we want to render
 	const pagesToRender = [];
@@ -99,13 +117,10 @@ export const EnhancedPagination = ({
 						// 	"pagination__page__current"}`}
 					>
 						{currentPage == page.pageNumber || page.pageNumber == "..." ? (
-							<span>
-								{page.pageNumber}
-								{currentPage == page.pageNumber && "987987"}
-							</span>
+							<span>{page.pageNumber}</span>
 						) : (
 							<ElementType {...page.pageProp} className="pagination__page-link">
-								{page.pageNumber}999999
+								{page.pageNumber}
 							</ElementType>
 						)}
 					</li>
