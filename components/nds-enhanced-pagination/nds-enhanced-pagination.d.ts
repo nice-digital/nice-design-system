@@ -4,16 +4,16 @@ declare module "@nice-digital/nds-enhanced-pagination" {
 	export interface EnhancedPaginationProps {
 		[prop: string]: unknown;
 		currentPage: number;
-		pagesDestinations: PagesDestinationType[];
-		previousPageDestination: string;
-		nextPageDestination: string;
+		pagesActions: ActionType[];
+		previousPageAction: ActionType;
+		nextPageAction: ActionType;
 		elementType?: React.ElementType;
 		method?: string;
-		onClick?: React.EventHandler;
 	}
 
-	export type PagesDestinationType = {
-		destination: string;
+	export type ActionType = {
+		destination?: string;
+		onClick?: React.EventHandler;
 	};
 
 	export const EnhancedPagination: React.FC<EnhancedPaginationProps>;

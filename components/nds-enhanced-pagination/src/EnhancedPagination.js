@@ -6,31 +6,28 @@ export const EnhancedPagination = ({
 	currentPage,
 	elementType = "a",
 	method,
-	nextPageDestination,
-	previousPageDestination,
-	pagesDestinations,
+	pagesActions,
 	nextPageAction,
-	previousPageAction,
-	onClick
+	previousPageAction
 }) => {
-	// onclick - if we have this, is it the same for all?? probably not right? what does that look like? need to bring through for each current destination
-
 	const ElementType = elementType;
 	const action = ElementType === "button" ? "onClick" : method || "href";
 
 	const previousPageProps = {
-		[ElementType === "button" ? "onClick" : method || "href"]:
-			ElementType === "button" ? onClick : previousPageAction.destination
+		[action]:
+			ElementType === "button"
+				? previousPageAction.onClick
+				: previousPageAction.destination
 	};
 
 	const nextPageProps = {
-		[ElementType === "button" ? "onClick" : method || "href"]:
-			ElementType === "button" ? onClick : nextPageAction.destination
+		[action]:
+			ElementType === "button"
+				? nextPageAction.onClick
+				: nextPageAction.destination
 	};
 
-	console.log("checking: " + nextPageProps.onClick);
-
-	const totalPages = Object.keys(pagesDestinations).length;
+	const totalPages = Object.keys(pagesActions).length;
 
 	const calculatePosition = currentPage => {
 		if (currentPage <= 3) return "early";
@@ -85,9 +82,9 @@ export const EnhancedPagination = ({
 		pagesToRender.push({
 			pageNumber: page,
 			pageProp:
-				page == "..."
-					? undefined
-					: { [action]: pagesDestinations[page - 1].destination }
+				(page == "..." && undefined) || ElementType === "button"
+					? { [action]: pagesActions[page - 1].onClick }
+					: { [action]: pagesActions[page - 1].destination }
 		})
 	);
 
@@ -132,25 +129,16 @@ export const EnhancedPagination = ({
 	);
 };
 
-const PagesDestinationsType = PropTypes.shape({
-	destination: PropTypes.string
+const ActionsType = PropTypes.shape({
+	destination: PropTypes.string,
+	onClick: PropTypes.func
 });
 
 EnhancedPagination.propTypes = {
 	currentPage: PropTypes.number.isRequired,
-	pagesDestinations: PropTypes.arrayOf(PropTypes.PagesDestinationsType)
-		.isRequired,
-	previousPageDestination: PropTypes.string.isRequired,
-	nextPageDestination: PropTypes.string.isRequired,
+	pagesActions: PropTypes.arrayOf(PropTypes.ActionsType).isRequired,
+	nextPageAction: PropTypes.arrayOf(PropTypes.ActionsType).isRequired,
+	previousPageAction: PropTypes.arrayOf(PropTypes.ActionsType).isRequired,
 	elementType: PropTypes.elementType,
-	method: PropTypes.string,
-	onClick: PropTypes.func,
-	nextPageAction: PropTypes.shape({
-		destination: PropTypes.string,
-		onClick: PropTypes.func
-	}),
-	previousPageAction: PropTypes.shape({
-		destination: PropTypes.string,
-		onClick: PropTypes.func
-	})
+	method: PropTypes.string
 };

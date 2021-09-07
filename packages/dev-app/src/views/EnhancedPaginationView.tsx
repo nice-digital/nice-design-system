@@ -1,34 +1,31 @@
 import React from "react";
 import { EnhancedPagination } from "@nice-digital/nds-enhanced-pagination";
 
-const pagesDestinations = [
-	{ destination: "#1" },
-	{ destination: "#2" },
-	{ destination: "#3" },
-	{ destination: "#4" },
-	{ destination: "#5" },
-	{ destination: "#6" },
-	{ destination: "#7" },
-	{ destination: "#8" },
-	{ destination: "#9" }
+const aFunction = () => console.log("HI!");
+
+const pagesActions = [
+	{ destination: "#1", onClick: aFunction },
+	{ destination: "#2", onClick: aFunction },
+	{ destination: "#3", onClick: aFunction },
+	{ destination: "#4", onClick: aFunction },
+	{ destination: "#5", onClick: aFunction },
+	{ destination: "#6", onClick: aFunction },
+	{ destination: "#7", onClick: aFunction },
+	{ destination: "#8", onClick: aFunction },
+	{ destination: "#9", onClick: aFunction }
 ];
 
 const elementType = "button";
 const method = "aMethod";
-
-const aFunction = () => console.log("HIYA!!!!");
-
-const nextPageDestination = "#somewhere";
 
 const nextPageAction = {
 	destination: "#somewhere",
 	onClick: aFunction
 };
 
-const previousPageDestination = "#somewhereelse";
 const previousPageAction = {
 	destination: "#somewhereElse",
-	function: aFunction
+	onClick: aFunction
 };
 
 export const EnhancedPaginationView = () => {
@@ -38,12 +35,9 @@ export const EnhancedPaginationView = () => {
 				currentPage={3}
 				elementType={elementType}
 				method={method}
-				nextPageDestination={nextPageDestination}
-				previousPageDestination={previousPageDestination}
-				pagesDestinations={pagesDestinations}
+				pagesActions={pagesActions}
 				nextPageAction={nextPageAction}
 				previousPageAction={previousPageAction}
-				onClick={aFunction}
 			/>
 		</>
 	);
