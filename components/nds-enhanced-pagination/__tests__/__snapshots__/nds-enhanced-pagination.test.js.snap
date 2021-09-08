@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Enhanced Pagination should match snapshot with some default attributes 1`] = `
+<div
+  className="pagination clearfix mt--a mb--e mr--b mb--b ml--b"
+>
+  <ul
+    className="pagination__list"
+  >
+    <li
+      className="pagination__page"
+    >
+      <a
+        className="pagination__page-link"
+        href="/previous"
+      >
+        Previous page
+      </a>
+    </li>
+    <li
+      className="pagination__page  "
+      key="1"
+    >
+      <a
+        className="pagination__page-link"
+        href={[Function]}
+      >
+        1
+      </a>
+    </li>
+    <li
+      className="pagination__page  "
+      key="NaN"
+    >
+      <a
+        className="pagination__page-link"
+        href="#TODODEFAULT"
+      >
+        NaN
+      </a>
+    </li>
+    <li
+      className="pagination__page pagination__page__current "
+    >
+      <span />
+    </li>
+    <li
+      className="pagination__page  "
+      key="NaN"
+    >
+      <a
+        className="pagination__page-link"
+        href="#TODODEFAULT"
+      >
+        NaN
+      </a>
+    </li>
+    <li
+      className="pagination__page pagination__page__current "
+    >
+      <span />
+    </li>
+  </ul>
+</div>
+`;
