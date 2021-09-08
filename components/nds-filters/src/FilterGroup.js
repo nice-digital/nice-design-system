@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import ChevronDown from "@nice-digital/icons/lib/ChevronDown";
 
-import { slugify } from "@nice-digital/nds-core/es/utils";
+import { slugify } from "@nice-digital/nds-core";
 
 import "./../scss/filter-group.scss";
 
