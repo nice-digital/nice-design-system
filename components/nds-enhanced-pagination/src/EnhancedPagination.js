@@ -80,14 +80,16 @@ export const EnhancedPagination = ({
 	pages.map(page =>
 		pagesToRender.push({
 			pageNumber: page,
-			pageProp: page == "..." || {
-				[action]:
-					pagesActions.find(pageActions => pageActions.pageNumber === page)
-						?.onClick ||
-					pagesActions.find(pageActions => pageActions.pageNumber === page)
-						?.destination ||
-					"#TODODEFAULT"
-			}
+			pageProp: page == "..." ||
+				pagesActions.find(pageActions => pageActions.pageNumber === page) || {
+					id: "page-object-missing"
+				} || {
+					[action]:
+						pagesActions.find(pageActions => pageActions.pageNumber === page)
+							?.onClick ||
+						pagesActions.find(pageActions => pageActions.pageNumber === page)
+							?.destination
+				}
 		})
 	);
 

@@ -71,3 +71,8 @@
 .pagination li:last-of-type * {
   white-space: nowrap;
 }
+
+// Your pagesActions array is missing an object for a page number that is expected to render
+#page-object-missing {
+  border: 2px solid red;
+}
