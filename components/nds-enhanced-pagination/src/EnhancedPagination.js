@@ -4,15 +4,15 @@ import "./../scss/enhanced-pagination.scss";
 
 export const EnhancedPagination = ({
 	currentPage,
-	elementType = "a",
-	method,
+	totalPages,
 	pagesActions,
 	nextPageAction,
 	previousPageAction,
-	totalPages
+	elementType = "a",
+	method = "href"
 }) => {
 	const ElementType = elementType;
-	const action = ElementType === "button" ? "onClick" : method || "href";
+	const action = ElementType === "button" ? "onClick" : method;
 
 	const previousPageProps = {
 		[action]:
