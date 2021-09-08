@@ -3,19 +3,62 @@ import { EnhancedPagination } from "@nice-digital/nds-enhanced-pagination";
 
 const aFunction = () => console.log("HI!");
 
-const pagesActions = [
-	{ destination: "#1", onClick: aFunction },
-	{ destination: "#2", onClick: aFunction },
-	{ destination: "#3", onClick: aFunction },
-	{ destination: "#4", onClick: aFunction },
-	{ destination: "#5", onClick: aFunction },
-	{ destination: "#6", onClick: aFunction },
-	{ destination: "#7", onClick: aFunction },
-	{ destination: "#8", onClick: aFunction },
-	{ destination: "#9", onClick: aFunction }
+const totalPages = 49;
+
+const generatePagesActions = (maxDestinations: number) => {
+	let destinations = [];
+	for (let i = 0; i < maxDestinations; i++) {
+		destinations.push({
+			pageNumber: i,
+			destination: `#${i}`,
+			onClick: aFunction
+		});
+	}
+	return destinations;
+};
+
+// example where you get a wierd middle object like from search endpoint
+const partialPagesActions = [
+	{
+		pageNumber: 1,
+		destination: "#1",
+		onClick: aFunction
+	},
+	{
+		pageNumber: 30,
+		destination: "#30",
+		onClick: aFunction
+	},
+	{
+		pageNumber: 31,
+		destination: "#31",
+		onClick: aFunction
+	},
+	{
+		pageNumber: 32,
+		destination: "#32",
+		onClick: aFunction
+	},
+	{
+		pageNumber: 33,
+		destination: "#33",
+		onClick: aFunction
+	},
+	{
+		pageNumber: 34,
+		destination: "#34",
+		onClick: aFunction
+	},
+	{
+		pageNumber: 49,
+		destination: "#49",
+		onClick: aFunction
+	}
 ];
 
-const elementType = "button";
+const pagesActions = generatePagesActions(totalPages);
+
+const elementType = "a";
 const method = "aMethod";
 
 const nextPageAction = {
@@ -32,12 +75,13 @@ export const EnhancedPaginationView = () => {
 	return (
 		<>
 			<EnhancedPagination
-				currentPage={3}
+				currentPage={32}
 				elementType={elementType}
 				method={method}
-				pagesActions={pagesActions}
+				pagesActions={partialPagesActions}
 				nextPageAction={nextPageAction}
 				previousPageAction={previousPageAction}
+				totalPages={totalPages}
 			/>
 		</>
 	);

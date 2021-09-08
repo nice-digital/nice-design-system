@@ -7,6 +7,7 @@ declare module "@nice-digital/nds-enhanced-pagination" {
 		pagesActions: ActionType[];
 		previousPageAction: ActionType;
 		nextPageAction: ActionType;
+		totalPages: number;
 		elementType?: React.ElementType;
 		method?: string;
 	}
@@ -14,6 +15,7 @@ declare module "@nice-digital/nds-enhanced-pagination" {
 	export type ActionType = {
 		destination?: string;
 		onClick?: React.EventHandler;
+		pageNumber?: number;
 	};
 
 	export const EnhancedPagination: React.FC<EnhancedPaginationProps>;

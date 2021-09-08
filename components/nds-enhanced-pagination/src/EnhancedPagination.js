@@ -8,7 +8,8 @@ export const EnhancedPagination = ({
 	method,
 	pagesActions,
 	nextPageAction,
-	previousPageAction
+	previousPageAction,
+	totalPages
 }) => {
 	const ElementType = elementType;
 	const action = ElementType === "button" ? "onClick" : method || "href";
@@ -26,8 +27,6 @@ export const EnhancedPagination = ({
 				? nextPageAction.onClick
 				: nextPageAction.destination
 	};
-
-	const totalPages = Object.keys(pagesActions).length;
 
 	const calculatePosition = currentPage => {
 		if (currentPage <= 3) return "early";
@@ -76,16 +75,18 @@ export const EnhancedPagination = ({
 	addNumberedPages(pages);
 	if (totalPages > 5) addEllipses(pages);
 
-	// We then map the pagesDestinations to the pages we want to render
+	// We then map the pagesActions to the pages we want to render
 	const pagesToRender = [];
 	pages.map(page =>
 		pagesToRender.push({
 			pageNumber: page,
 			pageProp: page == "..." || {
 				[action]:
-					ElementType === "button"
-						? pagesActions[page - 1].onClick
-						: pagesActions[page - 1].destination
+					pagesActions.find(pageActions => pageActions.pageNumber === page)
+						?.onClick ||
+					pagesActions.find(pageActions => pageActions.pageNumber === page)
+						?.destination ||
+					"#TODODEFAULT"
 			}
 		})
 	);
@@ -133,7 +134,8 @@ export const EnhancedPagination = ({
 
 const ActionsType = PropTypes.shape({
 	destination: PropTypes.string,
-	onClick: PropTypes.func
+	onClick: PropTypes.func,
+	pageNumber: PropTypes.number
 });
 
 EnhancedPagination.propTypes = {
@@ -142,5 +144,6 @@ EnhancedPagination.propTypes = {
 	nextPageAction: PropTypes.arrayOf(PropTypes.ActionsType).isRequired,
 	previousPageAction: PropTypes.arrayOf(PropTypes.ActionsType).isRequired,
 	elementType: PropTypes.elementType,
-	method: PropTypes.string
+	method: PropTypes.string,
+	totalPages: PropTypes.number.isRequired
 };
