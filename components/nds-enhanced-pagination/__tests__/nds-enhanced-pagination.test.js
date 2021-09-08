@@ -87,7 +87,32 @@ describe("Enhanced Pagination", () => {
 			</MemoryRouter>
 		);
 		const buttonElement = wrapper.find("button");
-		console.log("props >>>>>>>>>>>>>>>>>> ", localProps);
 		expect(buttonElement.length).toEqual(4);
+	});
+
+	it("should render a button with an onClick attribute", () => {
+		const localProps = Object.assign({
+			nextPageAction: {
+				destination: "/next"
+			},
+			previousPageAction: {
+				destination: "/previous"
+			},
+			pagesActions: [
+				{
+					pageNumber: 33,
+					destination: "#33",
+					onClick: aFunction
+				}
+			],
+			elementType: "button"
+		});
+		const wrapper = mount(
+			<MemoryRouter>
+				<EnhancedPagination {...localProps} />
+			</MemoryRouter>
+		);
+		const buttonElement = wrapper.find("button[onClick='aFunction']");
+		expect(buttonElement.length).toEqual(1);
 	});
 });
