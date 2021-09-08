@@ -4,6 +4,7 @@ import toJson from "enzyme-to-json";
 
 import { EnhancedPagination } from "../src/EnhancedPagination";
 import { Link, MemoryRouter } from "react-router-dom";
+import { elementType } from "prop-types";
 
 const aFunction = () => console.log("hello");
 
@@ -57,7 +58,7 @@ const props = {
 
 describe("Enhanced Pagination", () => {
 	it("should render without crashing", () => {
-		const wrapper = shallow(<EnhancedPagination />);
+		const wrapper = shallow(<EnhancedPagination {...props} />);
 		expect(wrapper).toHaveLength(1);
 	});
 
@@ -74,5 +75,19 @@ describe("Enhanced Pagination", () => {
 		);
 		const previousPageAction = wrapper.find("a[href='/previous']");
 		expect(previousPageAction.length).toEqual(1);
+	});
+
+	it("should render a button if an elementType is provided", () => {
+		const localProps = Object.assign({}, props, {
+			elementType: "button"
+		});
+		const wrapper = mount(
+			<MemoryRouter>
+				<EnhancedPagination {...localProps} />
+			</MemoryRouter>
+		);
+		const buttonElement = wrapper.find("button");
+		console.log("props >>>>>>>>>>>>>>>>>> ", localProps);
+		expect(buttonElement.length).toEqual(4);
 	});
 });

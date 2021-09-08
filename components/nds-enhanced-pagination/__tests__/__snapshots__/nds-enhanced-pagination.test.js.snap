@@ -1,13 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Enhanced Pagination should match snapshot with some default attributes 1`] = `
-<div
+<nav
+  aria-label="Pagination Navigation"
   className="pagination clearfix mt--a mb--e mr--b mb--b ml--b"
+  role="navigation"
 >
   <ul
     className="pagination__list"
   >
     <li
+      aria-label="Go to previous page"
       className="pagination__page"
     >
       <a
@@ -22,8 +25,9 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
       key="1"
     >
       <a
+        aria-label="Go to page 1"
         className="pagination__page-link"
-        href={[Function]}
+        href="#1"
       >
         1
       </a>
@@ -34,7 +38,7 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
     >
       <a
         className="pagination__page-link"
-        href="#TODODEFAULT"
+        id="page-object-missing"
       >
         NaN
       </a>
@@ -42,7 +46,13 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
     <li
       className="pagination__page pagination__page__current "
     >
-      <span />
+      <span>
+        <span
+          className="visually-hidden"
+        >
+          Current page 
+        </span>
+      </span>
     </li>
     <li
       className="pagination__page  "
@@ -50,7 +60,7 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
     >
       <a
         className="pagination__page-link"
-        href="#TODODEFAULT"
+        id="page-object-missing"
       >
         NaN
       </a>
@@ -58,8 +68,14 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
     <li
       className="pagination__page pagination__page__current "
     >
-      <span />
+      <span>
+        <span
+          className="visually-hidden"
+        >
+          Current page 
+        </span>
+      </span>
     </li>
   </ul>
-</div>
+</nav>
 `;
