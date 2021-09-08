@@ -80,22 +80,29 @@ export const EnhancedPagination = ({
 	pages.map(page =>
 		pagesToRender.push({
 			pageNumber: page,
-			pageProp: page == "..." || {
-				[action]:
-					pagesActions.find(pageActions => pageActions.pageNumber === page)
-						?.onClick ||
-					pagesActions.find(pageActions => pageActions.pageNumber === page)
-						?.destination ||
-					"#TODODEFAULT"
-			}
+			pageProp: pagesActions.find(p => p.pageNumber === page)
+				? {
+						"aria-label": `Go to page ${page}`,
+						[action]:
+							(action == "onClick" &&
+								pagesActions.find(p => p.pageNumber === page)?.onClick) ||
+							pagesActions.find(p => p.pageNumber === page)?.destination
+				  }
+				: {
+						id: "page-object-missing"
+				  }
 		})
 	);
 
 	return (
-		<div className="pagination clearfix mt--a mb--e mr--b mb--b ml--b">
+		<nav
+			role="navigation"
+			aria-label="Pagination Navigation"
+			className="pagination clearfix mt--a mb--e mr--b mb--b ml--b"
+		>
 			<ul className="pagination__list">
 				{currentPage != 1 && (
-					<li className="pagination__page">
+					<li className="pagination__page" aria-label="Go to previous page">
 						<ElementType
 							{...previousPageProps}
 							className="pagination__page-link"
@@ -112,7 +119,12 @@ export const EnhancedPagination = ({
 						} ${page.pageNumber == "..." ? "pagination__page__no-flex" : ""}`}
 					>
 						{currentPage == page.pageNumber || page.pageNumber == "..." ? (
-							<span>{page.pageNumber}</span>
+							<span>
+								{currentPage == page.pageNumber && (
+									<span className="visually-hidden">Current page </span>
+								)}
+								{page.pageNumber}
+							</span>
 						) : (
 							<ElementType {...page.pageProp} className="pagination__page-link">
 								{page.pageNumber}
@@ -121,14 +133,14 @@ export const EnhancedPagination = ({
 					</li>
 				))}
 				{currentPage != totalPages && (
-					<li className="pagination__page">
+					<li className="pagination__page" aria-label="Go to next page">
 						<ElementType {...nextPageProps} className="pagination__page-link">
 							Next page
 						</ElementType>
 					</li>
 				)}
 			</ul>
-		</div>
+		</nav>
 	);
 };
 
@@ -143,7 +155,7 @@ EnhancedPagination.propTypes = {
 	pagesActions: PropTypes.arrayOf(PropTypes.ActionsType).isRequired,
 	nextPageAction: PropTypes.arrayOf(PropTypes.ActionsType).isRequired,
 	previousPageAction: PropTypes.arrayOf(PropTypes.ActionsType).isRequired,
+	totalPages: PropTypes.number.isRequired,
 	elementType: PropTypes.elementType,
-	method: PropTypes.string,
-	totalPages: PropTypes.number.isRequired
+	method: PropTypes.string
 };
