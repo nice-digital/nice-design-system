@@ -133,9 +133,7 @@ describe("Enhanced Pagination", () => {
 				<EnhancedPagination {...localProps} />
 			</MemoryRouter>
 		);
-		expect(
-			wrapper.find(".pagination__page.pagination__page__no-flex > span").length
-		).toEqual(2);
+		expect(wrapper.find(".pagination__item--spacer").length).toEqual(2);
 
 		wrapper
 			.find(".pagination__page.pagination__page__no-flex > span")

@@ -5,7 +5,7 @@
 @import '~@nice-digital/nds-core/scss/core';
 
 .pagination {
-  padding: 20px;
+  // padding: 20px;
   // The list of pages
   &__list {
     align-content: center;
@@ -22,19 +22,22 @@
   }
 
   // Individual page
-  &__page {
+  &__item {
     flex-grow: 1;
     margin: 0;
     padding: 0;
     text-align: center;
-    &__current {
+    &--current {
       background: $nds-colour-nice-grey-2;
       font-weight: bold;
+    }
+    &--spacer {
+      flex-grow: 0;
     }
   }
 
   // The button/link for the tab itself
-  &__page-link {
+  &__link {
     @include nds-link-default;
     border: 1px solid transparent;
     cursor: pointer;
@@ -52,10 +55,6 @@
       z-index: 1;
     }
   }
-}
-
-.pagination .pagination__page__no-flex {
-  flex-grow: 0;
 }
 
 .pagination li * {
