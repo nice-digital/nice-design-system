@@ -147,6 +147,12 @@ For custom elementTypes that use a method other than `href` for their destinatio
 
 Use this is you pass a custom elementType that uses a method other than href eg "to" for a Gatsby `Link` elementType.
 
+##### className
+
+- Type: `string`
+
+Any aditional classes that you would like applied to the `<nav />` element 
+
 ### SCSS
 
 If you're not using [React](#react), then import the SCSS directly into your application by:

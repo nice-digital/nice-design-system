@@ -10,6 +10,7 @@ declare module "@nice-digital/nds-enhanced-pagination" {
 		nextPageAction: ActionType;
 		elementType?: React.ElementType;
 		method?: string;
+		className?: string;
 	}
 
 	export type ActionType = {

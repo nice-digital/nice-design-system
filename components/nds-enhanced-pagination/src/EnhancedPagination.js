@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classnames from "classnames";
 import "./../scss/enhanced-pagination.scss";
 
 export const EnhancedPagination = ({
@@ -9,7 +10,8 @@ export const EnhancedPagination = ({
 	nextPageAction,
 	previousPageAction,
 	elementType = "a",
-	method = "href"
+	method = "href",
+	className
 }) => {
 	const ElementType = elementType;
 	const action = ElementType === "button" ? "onClick" : method;
@@ -99,7 +101,10 @@ export const EnhancedPagination = ({
 		<nav
 			role="navigation"
 			aria-label="Pagination Navigation"
-			className="pagination clearfix mt--a mb--e mr--b mb--b ml--b"
+			className={classnames(
+				"pagination clearfix mt--a mb--e mr--b mb--b ml--b",
+				className
+			)}
 		>
 			<ul className="pagination__list">
 				{currentPage != 1 && (
@@ -115,9 +120,10 @@ export const EnhancedPagination = ({
 				{pagesToRender.map(page => (
 					<li
 						key={page.id}
-						className={`pagination__page ${
-							currentPage == page.pageNumber ? "pagination__page__current" : ""
-						} ${page.pageNumber == "..." ? "pagination__page__no-flex" : ""}`}
+						className={classnames("pagination__page", {
+							pagination__page__current: page.pageNumber == currentPage,
+							"pagination__page__no-flex": page.pageNumber == "..."
+						})}
 					>
 						{currentPage == page.pageNumber || page.pageNumber == "..." ? (
 							<span>
@@ -158,5 +164,6 @@ EnhancedPagination.propTypes = {
 	previousPageAction: PropTypes.arrayOf(PropTypes.ActionsType).isRequired,
 	totalPages: PropTypes.number.isRequired,
 	elementType: PropTypes.elementType,
-	method: PropTypes.string
+	method: PropTypes.string,
+	className: PropTypes.string
 };
