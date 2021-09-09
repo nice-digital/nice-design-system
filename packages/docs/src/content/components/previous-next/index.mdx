@@ -7,19 +7,19 @@ template: detail
 storybook: components-previous-next
 ---
 
-import { PrevNext } from "@nice-digital/nds-prev-next"
+import { PrevNext } from "@nice-digital/nds-prev-next";
 
 <div className="panel panel--default pb--0">
-<PrevNext
-	nextPageLink={{
-		text: "Page Header",
-		destination: "#",
-	}}
-	previousPageLink={{
-		text: "Alert",
-		destination: "#",
-	}}
-/>
+	<PrevNext
+		nextPageLink={{
+			text: "Page Header",
+			destination: "#"
+		}}
+		previousPageLink={{
+			text: "Alert",
+			destination: "#"
+		}}
+	/>
 </div>
 
 ## Why?
@@ -38,7 +38,6 @@ For example:
 - Impact reports - moving through different pages of the report: e.g. - https://www.nice.org.uk/about/what-we-do/into-practice/measuring-the-use-of-nice-guidance/impact-of-our-guidance/niceimpact-dementia/ch1-prevent-or-delay-onset-of-dementia
 - Links are placed at the bottom of content, where users would logically finish reading the content and need to progress to the next or previous page.
 
-
 ### Interaction principles
 
 - Links should include the page title underneath the Previous or Next link. Give context about where the user will navigate to.
@@ -52,7 +51,7 @@ For example:
 
 Do not use previous and next links on pages which aren't grouped together or related as this is likely to confuse users.
 
-Don’t use previous and next links on multiple pages of results or lists or data tables. Use pagination patterns for this instead. Pagination patterns contain extra information such as displaying the number of items/results and ability to change the number of results that help users with this type of content.
+Don’t use previous and next links on multiple pages of results or lists or data tables. Use [pagination patterns](../enhanced-pagination/) for this instead. Pagination patterns contain extra information such as displaying the number of items/results and ability to change the number of results that help users with this type of content.
 
 ### Accessibility
 
