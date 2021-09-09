@@ -15,25 +15,24 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
     >
       <a
         className="pagination__page-link"
-        href="/previous"
+        href="#previous"
       >
         Previous page
       </a>
     </li>
     <li
-      className="pagination__page  "
+      className="pagination__page"
       key="1"
     >
       <a
-        aria-label="Go to page 1"
         className="pagination__page-link"
-        href="#1"
+        id="page-object-missing"
       >
         1
       </a>
     </li>
     <li
-      className="pagination__page  pagination__page__no-flex"
+      className="pagination__page pagination__page__no-flex"
       key="...-1"
     >
       <span>
@@ -41,19 +40,18 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
       </span>
     </li>
     <li
-      className="pagination__page  "
+      className="pagination__page"
       key="31"
     >
       <a
-        aria-label="Go to page 31"
         className="pagination__page-link"
-        href="#31"
+        id="page-object-missing"
       >
         31
       </a>
     </li>
     <li
-      className="pagination__page pagination__page__current "
+      className="pagination__page pagination__page__current"
       key="32"
     >
       <span>
@@ -66,19 +64,18 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
       </span>
     </li>
     <li
-      className="pagination__page  "
+      className="pagination__page"
       key="33"
     >
       <a
-        aria-label="Go to page 33"
         className="pagination__page-link"
-        href="#33"
+        id="page-object-missing"
       >
         33
       </a>
     </li>
     <li
-      className="pagination__page  pagination__page__no-flex"
+      className="pagination__page pagination__page__no-flex"
       key="...-5"
     >
       <span>
@@ -86,13 +83,12 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
       </span>
     </li>
     <li
-      className="pagination__page  "
+      className="pagination__page"
       key="49"
     >
       <a
-        aria-label="Go to page 49"
         className="pagination__page-link"
-        href="#49"
+        id="page-object-missing"
       >
         49
       </a>
@@ -103,7 +99,7 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
     >
       <a
         className="pagination__page-link"
-        href="/next"
+        href="#next"
       >
         Next page
       </a>
