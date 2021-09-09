@@ -47,11 +47,15 @@ const partialPagesActions = [
 ];
 
 const props = {
+	currentPage: 32,
+	totalPages: 49,
 	nextPageAction: {
-		destination: "/next"
+		destination: "/next",
+		onClick: aFunction
 	},
 	previousPageAction: {
-		destination: "/previous"
+		destination: "/previous",
+		onClick: aFunction
 	},
 	pagesActions: partialPagesActions
 };
@@ -87,32 +91,16 @@ describe("Enhanced Pagination", () => {
 			</MemoryRouter>
 		);
 		const buttonElement = wrapper.find("button");
-		expect(buttonElement.length).toEqual(4);
+		expect(buttonElement.length).toEqual(6);
 	});
 
 	it("should render a button with an onClick attribute", () => {
-		const localProps = Object.assign({
-			nextPageAction: {
-				destination: "/next"
-			},
-			previousPageAction: {
-				destination: "/previous"
-			},
-			pagesActions: [
-				{
-					pageNumber: 33,
-					destination: "#33",
-					onClick: aFunction
-				}
-			],
-			elementType: "button"
-		});
 		const wrapper = mount(
 			<MemoryRouter>
-				<EnhancedPagination {...localProps} />
+				<EnhancedPagination {...props} elementType="button" />
 			</MemoryRouter>
 		);
-		const buttonElement = wrapper.find("button[onClick='aFunction']");
-		expect(buttonElement.length).toEqual(1);
+		const buttonElement = wrapper.find("button").first();
+		expect(buttonElement.props()["onClick"]).toBeTruthy;
 	});
 });

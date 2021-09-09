@@ -77,9 +77,10 @@ export const EnhancedPagination = ({
 
 	// We then map the pagesActions to the pages we want to render
 	const pagesToRender = [];
-	pages.map(page =>
+	pages.map((page, index) =>
 		pagesToRender.push({
 			pageNumber: page,
+			id: page !== "..." ? page : `${page}-${index}`,
 			pageProp: pagesActions.find(p => p.pageNumber === page)
 				? {
 						"aria-label": `Go to page ${page}`,
@@ -113,7 +114,7 @@ export const EnhancedPagination = ({
 				)}
 				{pagesToRender.map(page => (
 					<li
-						key={page.pageNumber}
+						key={page.id}
 						className={`pagination__page ${
 							currentPage == page.pageNumber ? "pagination__page__current" : ""
 						} ${page.pageNumber == "..." ? "pagination__page__no-flex" : ""}`}

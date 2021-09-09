@@ -33,18 +33,28 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
       </a>
     </li>
     <li
+      className="pagination__page  pagination__page__no-flex"
+      key="...-1"
+    >
+      <span>
+        ...
+      </span>
+    </li>
+    <li
       className="pagination__page  "
-      key="NaN"
+      key="31"
     >
       <a
+        aria-label="Go to page 31"
         className="pagination__page-link"
-        id="page-object-missing"
+        href="#31"
       >
-        NaN
+        31
       </a>
     </li>
     <li
       className="pagination__page pagination__page__current "
+      key="32"
     >
       <span>
         <span
@@ -52,29 +62,51 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
         >
           Current page 
         </span>
+        32
       </span>
     </li>
     <li
       className="pagination__page  "
-      key="NaN"
+      key="33"
     >
       <a
+        aria-label="Go to page 33"
         className="pagination__page-link"
-        id="page-object-missing"
+        href="#33"
       >
-        NaN
+        33
       </a>
     </li>
     <li
-      className="pagination__page pagination__page__current "
+      className="pagination__page  pagination__page__no-flex"
+      key="...-5"
     >
       <span>
-        <span
-          className="visually-hidden"
-        >
-          Current page 
-        </span>
+        ...
       </span>
+    </li>
+    <li
+      className="pagination__page  "
+      key="49"
+    >
+      <a
+        aria-label="Go to page 49"
+        className="pagination__page-link"
+        href="#49"
+      >
+        49
+      </a>
+    </li>
+    <li
+      aria-label="Go to next page"
+      className="pagination__page"
+    >
+      <a
+        className="pagination__page-link"
+        href="/next"
+      >
+        Next page
+      </a>
     </li>
   </ul>
 </nav>

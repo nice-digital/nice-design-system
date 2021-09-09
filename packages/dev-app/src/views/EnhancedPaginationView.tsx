@@ -48,17 +48,12 @@ const partialPagesActions = [
 		pageNumber: 34,
 		destination: "#34",
 		onClick: aFunction
-	},
-	{
-		pageNumber: 49,
-		destination: "#49",
-		onClick: aFunction
 	}
 ];
 
 const pagesActions = generatePagesActions(totalPages);
 
-const elementType = "a";
+const elementType = "button";
 const method = "aMethod";
 
 const nextPageAction = {
