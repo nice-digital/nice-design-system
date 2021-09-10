@@ -59,14 +59,14 @@ export const EnhancedPagination = ({
 	const addEllipses = array => {
 		switch (calculatePosition(currentPage)) {
 			case "early":
-				pages.splice(array.length - 1, 0, "...");
+				pages.splice(array.length - 1, 0, null);
 				break;
 			case "late":
-				pages.splice(1, 0, "...");
+				pages.splice(1, 0, null);
 				break;
 			default:
-				pages.splice(1, 0, "...");
-				pages.splice(array.length - 1, 0, "...");
+				pages.splice(1, 0, null);
+				pages.splice(array.length - 1, 0, null);
 				break;
 		}
 		return array;
@@ -78,11 +78,11 @@ export const EnhancedPagination = ({
 	if (totalPages > 5) addEllipses(pages);
 
 	// We then map the pagesActions to the pages we want to render
-	const pagesToRender = [];
+	const itemsToRender = [];
 	pages.map((page, index) =>
-		pagesToRender.push({
+		itemsToRender.push({
 			pageNumber: page,
-			id: page !== "..." ? page : `${page}-${index}`,
+			id: page !== null ? page : `${page}-${index}`,
 			pageProp: pagesActions.find(p => p.pageNumber === page)
 				? {
 						"aria-label": `Go to page ${page}`,
@@ -101,47 +101,42 @@ export const EnhancedPagination = ({
 		<nav
 			role="navigation"
 			aria-label="Pagination Navigation"
-			className={classnames(
-				"pagination clearfix mt--a mb--e mr--b mb--b ml--b",
-				className
-			)}
+			className={classnames("pagination clearfix ", className)}
 		>
 			<ul className="pagination__list">
 				{currentPage != 1 && (
-					<li className="pagination__page" aria-label="Go to previous page">
-						<ElementType
-							{...previousPageProps}
-							className="pagination__page-link"
-						>
+					<li className="pagination__item" aria-label="Go to previous page">
+						<ElementType {...previousPageProps} className="pagination__link">
 							Previous page
 						</ElementType>
 					</li>
 				)}
-				{pagesToRender.map(page => (
+				{itemsToRender.map(item => (
 					<li
-						key={page.id}
-						className={classnames("pagination__page", {
-							pagination__page__current: page.pageNumber == currentPage,
-							"pagination__page__no-flex": page.pageNumber == "..."
+						key={item.id}
+						className={classnames("pagination__item", {
+							"pagination__item--current": item.pageNumber == currentPage,
+							"pagination__item--spacer": item.pageNumber == null
 						})}
 					>
-						{currentPage == page.pageNumber || page.pageNumber == "..." ? (
+						{currentPage == item.pageNumber || item.pageNumber == null ? (
 							<span>
-								{currentPage == page.pageNumber && (
+								{currentPage == item.pageNumber && (
 									<span className="visually-hidden">Current page </span>
 								)}
-								{page.pageNumber}
+								{/* TODO: what's the a11y around ellipsis */}
+								{item.pageNumber || <span>&hellip;</span>}
 							</span>
 						) : (
-							<ElementType {...page.pageProp} className="pagination__page-link">
-								{page.pageNumber}
+							<ElementType {...item.pageProp} className="pagination__link">
+								{item.pageNumber}
 							</ElementType>
 						)}
 					</li>
 				))}
 				{currentPage != totalPages && (
-					<li className="pagination__page" aria-label="Go to next page">
-						<ElementType {...nextPageProps} className="pagination__page-link">
+					<li className="pagination__item" aria-label="Go to next page">
+						<ElementType {...nextPageProps} className="pagination__link">
 							Next page
 						</ElementType>
 					</li>
