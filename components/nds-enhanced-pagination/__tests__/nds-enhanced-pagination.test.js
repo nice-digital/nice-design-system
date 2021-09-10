@@ -122,11 +122,11 @@ describe("Enhanced Pagination", () => {
 				<EnhancedPagination {...props} />
 			</MemoryRouter>
 		);
-		const currentPageElement = wrapper.find(".pagination__page__current");
+		const currentPageElement = wrapper.find(".pagination__item--current");
 		expect(currentPageElement.length).toEqual(1);
 	});
 
-	it("should render a pair of ellipses when there are more than 8 pages and the current page is in the middle", () => {
+	it("should render a pair of ellipses when there are more than 8 pages and the current page is in the middle of the range", () => {
 		const localProps = generateProps({ totalPages: 10, currentPage: 5 });
 		const wrapper = mount(
 			<MemoryRouter>
@@ -134,21 +134,33 @@ describe("Enhanced Pagination", () => {
 			</MemoryRouter>
 		);
 		expect(wrapper.find(".pagination__item--spacer").length).toEqual(2);
+	});
 
-		wrapper
-			.find(".pagination__page.pagination__page__no-flex > span")
-			.forEach((node, i) => {
-				console.log("node >>>>>>>>>>>>>>>>>>>>>>>>>>>", node.debug(), i);
-				expect(node.text()).toEqual("...");
-			});
+	it("should render a single ellipsis when there are more than 8 pages and the current page is early or late in the range", () => {
+		const localProps = generateProps({ totalPages: 10, currentPage: 8 });
+		const wrapper = mount(
+			<MemoryRouter>
+				<EnhancedPagination {...localProps} />
+			</MemoryRouter>
+		);
+		expect(wrapper.find(".pagination__item--spacer").length).toEqual(1);
+		wrapper.setProps({
+			children: <EnhancedPagination {...localProps} currentPage={2} />
+		});
+		wrapper.update();
+		expect(wrapper.find(".pagination__item--spacer").length).toEqual(1);
+	});
+
+	it("should render the correct number of items", () => {
+		const localProps = generateProps({ totalPages: 20 });
+		const wrapper = mount(
+			<MemoryRouter>
+				<EnhancedPagination {...localProps} />
+			</MemoryRouter>
+		);
+		expect(wrapper.find(".pagination__item").length).toEqual(8);
 	});
 });
-
-// component.find('MyInnerComponent').forEach( (node) => {
-//     expect(node.prop('title')).toEqual('Good-bye')
-// })
-
-// const customProps = generateProps({ totalPages: 8, onClick: aFunction });
 
 // Renders the correct number of pages
 // Renders Next Page element when appropriate
@@ -160,45 +172,3 @@ describe("Enhanced Pagination", () => {
 // Renders a button when a custom element is provided
 // Renders a button with an onClick that can be called by clicking
 // matches page number to the correct destination
-
-// const localProps = Object.assign({}, props, {
-// 	elementType: "button"
-// });
-
-// console.log(
-// 	">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>",
-// 	wrapper.debug()
-// );
-
-// OLD STATIC PROPS
-// const props = {
-// 	currentPage: 32,
-// 	totalPages: 49,
-// 	nextPageAction: {
-// 		destination: "/next",
-// 		onClick: aFunction
-// 	},
-// 	previousPageAction: {
-// 		destination: "/previous",
-// 		onClick: aFunction
-// 	},
-// 	pagesActions: partialPagesActions
-// };
-
-// TO REMOVE
-// const currentPageElement = wrapper.find(".pagination__page__current");
-// expect(currentPageElement.length).toEqual(1);
-// expect(wrapper.html()).toContain('<b>foo</b><span>cool</span>')
-// expect(wrapper.contains([<span>...</span>]).length).toEqual(2);
-// expect(wrapper.contains("[<span>...</span>]").length).toEqual(2);
-// expect(wrapper.html()).toContain("<span>...</span> <span>...</span>");
-// expect(wrapper.find(".pagination__page__no-flex").html().length).toEqual(2);
-
-// expect(
-// 	wrapper
-// 		.find(".pagination__page__no-flex")
-// 		.at(1)
-// 		.text()
-// ).toEqual("...");
-
-// wrapper.findAll('.pagination__page__no-flex').at(1).text()).toEqual("...");
