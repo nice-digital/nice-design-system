@@ -126,7 +126,7 @@ describe("Enhanced Pagination", () => {
 		expect(currentPageElement.length).toEqual(1);
 	});
 
-	it("should render a pair of ellipses when there are more than 8 pages and the current page is in the middle of the range", () => {
+	it("should render truncation ellipses when there are more than 8 pages and the current page is in the middle of the range", () => {
 		const localProps = generateProps({ totalPages: 10, currentPage: 5 });
 		const wrapper = mount(
 			<MemoryRouter>
@@ -134,6 +134,18 @@ describe("Enhanced Pagination", () => {
 			</MemoryRouter>
 		);
 		expect(wrapper.find(".pagination__item--spacer").length).toEqual(2);
+		expect(
+			wrapper
+				.find(".pagination__item")
+				.at(2)
+				.text()
+		).toBe("…");
+		expect(
+			wrapper
+				.find(".pagination__item")
+				.at(6)
+				.text()
+		).toBe("…");
 	});
 
 	it("should render a single ellipsis when there are more than 8 pages and the current page is early or late in the range", () => {
@@ -144,11 +156,23 @@ describe("Enhanced Pagination", () => {
 			</MemoryRouter>
 		);
 		expect(wrapper.find(".pagination__item--spacer").length).toEqual(1);
+		expect(
+			wrapper
+				.find(".pagination__item")
+				.at(2)
+				.text()
+		).toBe("…");
 		wrapper.setProps({
 			children: <EnhancedPagination {...localProps} currentPage={2} />
 		});
 		wrapper.update();
 		expect(wrapper.find(".pagination__item--spacer").length).toEqual(1);
+		expect(
+			wrapper
+				.find(".pagination__item")
+				.at(5)
+				.text()
+		).toBe("…");
 	});
 
 	it("should render the correct number of items", () => {
