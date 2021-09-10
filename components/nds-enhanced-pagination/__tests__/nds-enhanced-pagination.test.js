@@ -160,6 +160,36 @@ describe("Enhanced Pagination", () => {
 		);
 		expect(wrapper.find(".pagination__item").length).toEqual(8);
 	});
+
+	it("should render a next page element when current page is 1 and total pages > 1 ", () => {
+		const localProps = generateProps({ currentPage: 1, totalPages: 2 });
+		const wrapper = mount(
+			<MemoryRouter>
+				<EnhancedPagination {...localProps} />
+			</MemoryRouter>
+		);
+		expect(
+			wrapper
+				.find(".pagination__link")
+				.at(1)
+				.text()
+		).toEqual("Next page");
+	});
+
+	it("should render a previous page element when current page is > 1 and total pages > 1 ", () => {
+		const localProps = generateProps({ currentPage: 2, totalPages: 2 });
+		const wrapper = mount(
+			<MemoryRouter>
+				<EnhancedPagination {...localProps} />
+			</MemoryRouter>
+		);
+		expect(
+			wrapper
+				.find(".pagination__link")
+				.at(0)
+				.text()
+		).toEqual("Previous page");
+	});
 });
 
 // Renders the correct number of pages
