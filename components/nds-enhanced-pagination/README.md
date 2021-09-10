@@ -153,6 +153,10 @@ Use this is you pass a custom elementType that uses a method other than href eg 
 
 Any aditional classes that you would like applied to the `<nav />` element 
 
+##### additional props
+
+Any additional props are spread on to the `nav` element, useful for accessibility or data attributes.
+
 ### SCSS
 
 If you're not using [React](#react), then import the SCSS directly into your application by:

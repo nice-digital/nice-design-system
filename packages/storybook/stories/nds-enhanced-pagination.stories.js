@@ -1,6 +1,7 @@
 import React from "react";
 
 import { storiesOf } from "@storybook/react";
+import { number } from "@storybook/addon-knobs";
 
 import { EnhancedPagination } from "@nice-digital/nds-enhanced-pagination";
 
@@ -95,6 +96,23 @@ storiesOf("Components/Enhanced pagination", module)
 				nextPageAction={nextPageAction}
 				previousPageAction={previousPageAction}
 				totalPages={8}
+			/>
+		);
+	})
+	.add("Try it out!", () => {
+		return (
+			<EnhancedPagination
+				currentPage={number("Current page", 5)}
+				method={method}
+				pagesActions={generatePagesActions(
+					number(
+						"Pages to generate (you need at least as many as the total pages)",
+						20
+					)
+				)}
+				nextPageAction={nextPageAction}
+				previousPageAction={previousPageAction}
+				totalPages={number("Total pages", 10)}
 			/>
 		);
 	});

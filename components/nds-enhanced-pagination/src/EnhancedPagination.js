@@ -11,7 +11,8 @@ export const EnhancedPagination = ({
 	previousPageAction,
 	elementType = "a",
 	method = "href",
-	className
+	className,
+	...rest
 }) => {
 	const ElementType = elementType;
 	const action = ElementType === "button" ? "onClick" : method;
@@ -102,6 +103,7 @@ export const EnhancedPagination = ({
 			role="navigation"
 			aria-label="Pagination Navigation"
 			className={classnames("pagination clearfix ", className)}
+			{...rest}
 		>
 			<ul className="pagination__list">
 				{currentPage != 1 && (
