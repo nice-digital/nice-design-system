@@ -8,11 +8,9 @@ import { elementType } from "prop-types";
 
 const aFunction = () => console.log("hello");
 
-// const aFunction = jest.fn();
-
 const generateProps = options => {
 	let pagesActions = [];
-	for (let i = 0; i < options.totalPages; i++) {
+	for (let i = 1; i <= options.totalPages; i++) {
 		pagesActions.push({
 			pageNumber: i,
 			destination: `#${i}`,
@@ -33,6 +31,8 @@ const generateProps = options => {
 		},
 		pagesActions
 	};
+
+	console.log("THE PAGES ACTIONS ARE ", pagesActions);
 
 	return props;
 };
@@ -233,6 +233,25 @@ describe("Enhanced Pagination", () => {
 				.at(0)
 				.text()
 		).toEqual("Previous page");
+	});
+
+	it("should render items whose page number matches their destination", () => {
+		const localProps = generateProps({ currentPage: 1, totalPages: 5 });
+		const randomNumberFrom2to5 = Math.floor(
+			Math.random() * (5 - 2 + 1) + 2
+		).toString();
+		const wrapper = mount(
+			<MemoryRouter>
+				<EnhancedPagination {...localProps} />
+			</MemoryRouter>
+		);
+		let dynamicHref = `[href='#${randomNumberFrom2to5}']`;
+		let linkElementByHref = wrapper.find(dynamicHref);
+		console.log("the random number ----> ", randomNumberFrom2to5);
+		console.log("the wrapper ----> ", wrapper.debug());
+		console.log("the dynamic href is ", dynamicHref);
+		console.log("the link element by href text is ", linkElementByHref.text());
+		expect(linkElementByHref.text()).toEqual(randomNumberFrom2to5);
 	});
 });
 
