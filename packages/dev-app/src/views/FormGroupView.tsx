@@ -12,7 +12,7 @@ export const FormGroupView = () => {
 				<Input
 					name="first_name"
 					type="text"
-					label="First name"
+					label={"null"}
 					hint="Enter your given name"
 					error={true}
 					errorMessage="This field is required"
