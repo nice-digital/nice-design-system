@@ -8,13 +8,15 @@ import { elementType } from "prop-types";
 
 const aFunction = () => console.log("hello");
 
+// const aFunction = jest.fn();
+
 const generateProps = options => {
 	let pagesActions = [];
 	for (let i = 0; i < options.totalPages; i++) {
 		pagesActions.push({
 			pageNumber: i,
 			destination: `#${i}`,
-			onClick: aFunction
+			onClick: options.clickHandler || aFunction
 		});
 	}
 
@@ -99,10 +101,10 @@ describe("Enhanced Pagination", () => {
 	it("should render a button if an elementType is provided", () => {
 		const wrapper = mount(
 			<MemoryRouter>
-				<EnhancedPagination {...props} elementType="CustomElement" />
+				<EnhancedPagination {...props} elementType="button" />
 			</MemoryRouter>
 		);
-		const buttonElement = wrapper.find("CustomElement");
+		const buttonElement = wrapper.find("button");
 		expect(buttonElement.length).toEqual(6);
 	});
 
@@ -114,6 +116,24 @@ describe("Enhanced Pagination", () => {
 		);
 		const buttonElement = wrapper.find("button").first();
 		expect(buttonElement.props()["onClick"]).toBeTruthy;
+	});
+
+	it("render a button with a callable onClick handler", () => {
+		const clickHandler = jest.fn();
+		const localProps = generateProps({
+			clickHandler: clickHandler,
+			totalPages: 10
+		});
+
+		const wrapper = mount(
+			<MemoryRouter>
+				<EnhancedPagination {...localProps} elementType="button" />
+			</MemoryRouter>
+		);
+		const buttonElement = wrapper.find("button").at(1);
+		expect(buttonElement.props()["onClick"]).toBeTruthy;
+		buttonElement.simulate("click");
+		expect(clickHandler).toHaveBeenCalled();
 	});
 
 	it("should render a single current page indicator element", () => {
@@ -216,13 +236,13 @@ describe("Enhanced Pagination", () => {
 	});
 });
 
-// Renders the correct number of pages
-// Renders Next Page element when appropriate
-// Renders Previous Page element when appropriate
-// Renders starting ellipsis when appropriate
-// Renders ending ellipsis when appropriate
+// Renders the correct number of pages DONE
+// Renders Next Page element when appropriate DONE
+// Renders Previous Page element when appropriate DONE
+// Renders starting ellipsis when appropriate DONE
+// Renders ending ellipsis when appropriate DONE
+// Renders current page indicator element DONE
+// Renders a button when a custom element is provided DONE
+// Renders a button with an onClick that can be called by clicking DONE
 // Renders a range of pages when >5 pages
-// Renders current page indicator element
-// Renders a button when a custom element is provided
-// Renders a button with an onClick that can be called by clicking
 // matches page number to the correct destination
