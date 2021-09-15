@@ -26,7 +26,6 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
     >
       <a
         className="pagination__link"
-        id="page-object-missing"
       >
         1
       </a>
@@ -47,7 +46,6 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
     >
       <a
         className="pagination__link"
-        id="page-object-missing"
       >
         31
       </a>
@@ -71,7 +69,6 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
     >
       <a
         className="pagination__link"
-        id="page-object-missing"
       >
         33
       </a>
@@ -92,7 +89,6 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
     >
       <a
         className="pagination__link"
-        id="page-object-missing"
       >
         49
       </a>

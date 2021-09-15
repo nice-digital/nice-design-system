@@ -93,7 +93,7 @@ export const EnhancedPagination = ({
 							pagesActions.find(p => p.pageNumber === page)?.destination
 				  }
 				: {
-						id: "page-object-missing"
+						className: "page-object-missing"
 				  }
 		})
 	);

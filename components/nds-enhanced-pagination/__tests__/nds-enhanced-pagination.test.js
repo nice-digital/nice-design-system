@@ -5,15 +5,24 @@ import toJson from "enzyme-to-json";
 import { EnhancedPagination } from "../src/EnhancedPagination";
 import { Link, MemoryRouter } from "react-router-dom";
 import { elementType } from "prop-types";
+import { indexOf } from "lodash";
 
 const aFunction = () => console.log("hello");
+
+const generateRandomNumber = (min, max) => {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+};
 
 const generateProps = options => {
 	let pagesActions = [];
 	for (let i = 1; i <= options.totalPages; i++) {
+		let path = Math.random()
+			.toString(16)
+			.substr(2, 8);
+		// console.log("the path is ", path);
 		pagesActions.push({
 			pageNumber: i,
-			destination: `#${i}`,
+			destination: path,
 			onClick: options.clickHandler || aFunction
 		});
 	}
@@ -32,7 +41,7 @@ const generateProps = options => {
 		pagesActions
 	};
 
-	console.log("THE PAGES ACTIONS ARE ", pagesActions);
+	// console.log("THE PAGES ACTIONS ARE ", pagesActions);
 
 	return props;
 };
@@ -235,23 +244,54 @@ describe("Enhanced Pagination", () => {
 		).toEqual("Previous page");
 	});
 
-	it("should render items whose page number matches their destination", () => {
-		const localProps = generateProps({ currentPage: 1, totalPages: 5 });
-		const randomNumberFrom2to5 = Math.floor(
-			Math.random() * (5 - 2 + 1) + 2
-		).toString();
+	it("should render items with the correct destination and pageNumber", () => {
+		// ARRANGE ACT ASSERT
+		const randomTotalPages = generateRandomNumber(5, 1000);
+		const randomCurrentPage = generateRandomNumber(2, randomTotalPages - 1);
+
+		const localProps = generateProps({
+			currentPage: randomCurrentPage,
+			totalPages: randomTotalPages
+		});
+
 		const wrapper = mount(
 			<MemoryRouter>
 				<EnhancedPagination {...localProps} />
 			</MemoryRouter>
 		);
-		let dynamicHref = `[href='#${randomNumberFrom2to5}']`;
-		let linkElementByHref = wrapper.find(dynamicHref);
-		console.log("the random number ----> ", randomNumberFrom2to5);
-		console.log("the wrapper ----> ", wrapper.debug());
-		console.log("the dynamic href is ", dynamicHref);
-		console.log("the link element by href text is ", linkElementByHref.text());
-		expect(linkElementByHref.text()).toEqual(randomNumberFrom2to5);
+
+		const currentPageMinusOneLabel = `[aria-label='Go to page ${randomCurrentPage -
+			1}']`;
+		const currentPagePlusOneLabel = `[aria-label='Go to page ${randomCurrentPage +
+			1}']`;
+		const currentPageItemMinusOne = wrapper.find(currentPageMinusOneLabel);
+		const currentPageItemPlusOne = wrapper.find(currentPagePlusOneLabel);
+
+		const currentPageItemPlusOneString = (randomCurrentPage + 1).toString();
+		const currentPageItemMinusOneString = (randomCurrentPage - 1).toString();
+
+		const currentPageItemIndex = localProps.pagesActions
+			.map(obj => obj.pageNumber)
+			.indexOf(randomCurrentPage);
+
+		console.log(
+			`minus one and plus one from randomCurrentPage: ${randomCurrentPage} pagesActionsArrayIndex: ${currentPageItemIndex} objects ~~~ ${JSON.stringify(
+				localProps.pagesActions[currentPageItemIndex - 1]
+			)} ### ${JSON.stringify(
+				localProps.pagesActions[currentPageItemIndex + 1]
+			)}`
+		);
+
+		expect(currentPageItemMinusOne.text()).toEqual(
+			currentPageItemMinusOneString
+		);
+		expect(currentPageItemPlusOne.text()).toEqual(currentPageItemPlusOneString);
+		expect(currentPageItemMinusOne.props().href).toEqual(
+			localProps.pagesActions[currentPageItemIndex - 1].destination
+		);
+		expect(currentPageItemPlusOne.props().href).toEqual(
+			localProps.pagesActions[currentPageItemIndex + 1].destination
+		);
 	});
 });
 
@@ -263,5 +303,5 @@ describe("Enhanced Pagination", () => {
 // Renders current page indicator element DONE
 // Renders a button when a custom element is provided DONE
 // Renders a button with an onClick that can be called by clicking DONE
+// matches page number to the correct destination DONE
 // Renders a range of pages when >5 pages
-// matches page number to the correct destination
