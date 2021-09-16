@@ -157,8 +157,8 @@ const ActionsType = PropTypes.shape({
 EnhancedPagination.propTypes = {
 	currentPage: PropTypes.number.isRequired,
 	pagesActions: PropTypes.arrayOf(ActionsType).isRequired,
-	nextPageAction: PropTypes.arrayOf(ActionsType).isRequired,
-	previousPageAction: PropTypes.arrayOf(ActionsType).isRequired,
+	nextPageAction: ActionsType,
+	previousPageAction: ActionsType,
 	totalPages: PropTypes.number.isRequired,
 	elementType: PropTypes.elementType,
 	method: PropTypes.string,
