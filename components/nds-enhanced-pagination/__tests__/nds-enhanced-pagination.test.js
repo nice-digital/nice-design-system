@@ -274,13 +274,13 @@ describe("Enhanced Pagination", () => {
 			.map(obj => obj.pageNumber)
 			.indexOf(randomCurrentPage);
 
-		console.log(
-			`minus one and plus one from randomCurrentPage: ${randomCurrentPage} pagesActionsArrayIndex: ${currentPageItemIndex} objects ~~~ ${JSON.stringify(
-				localProps.pagesActions[currentPageItemIndex - 1]
-			)} ### ${JSON.stringify(
-				localProps.pagesActions[currentPageItemIndex + 1]
-			)}`
-		);
+		// console.log(
+		// 	`minus one and plus one from randomCurrentPage: ${randomCurrentPage} pagesActionsArrayIndex: ${currentPageItemIndex} objects ~~~ ${JSON.stringify(
+		// 		localProps.pagesActions[currentPageItemIndex - 1]
+		// 	)} ### ${JSON.stringify(
+		// 		localProps.pagesActions[currentPageItemIndex + 1]
+		// 	)}`
+		// );
 
 		expect(currentPageItemMinusOne.text()).toEqual(
 			currentPageItemMinusOneString
@@ -293,6 +293,18 @@ describe("Enhanced Pagination", () => {
 			localProps.pagesActions[currentPageItemIndex + 1].destination
 		);
 	});
+
+	it("should render a range of pages when total pages > 5", () => {
+		const localProps = generateProps({ currentPage: 50, totalPages: 100 });
+		const wrapper = mount(
+			<MemoryRouter>
+				<EnhancedPagination {...localProps} />
+			</MemoryRouter>
+		);
+		const paginationItems = wrapper.find(".pagination__item");
+		expect(paginationItems.at(3).text()).toEqual("49");
+		expect(paginationItems.at(5).text()).toEqual("51");
+	});
 });
 
 // Renders the correct number of pages DONE
@@ -304,4 +316,4 @@ describe("Enhanced Pagination", () => {
 // Renders a button when a custom element is provided DONE
 // Renders a button with an onClick that can be called by clicking DONE
 // matches page number to the correct destination DONE
-// Renders a range of pages when >5 pages
+// Renders a range of pages when >5 pages DONE
