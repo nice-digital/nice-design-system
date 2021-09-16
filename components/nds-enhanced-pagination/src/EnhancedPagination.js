@@ -107,40 +107,45 @@ export const EnhancedPagination = ({
 		>
 			<ul className="pagination__list">
 				{currentPage != 1 && (
-					<li className="pagination__item" aria-label="Go to previous page">
+					<li
+						className="pagination__item pagination__item--bookend"
+						aria-label="Go to previous page"
+					>
 						<ElementType {...previousPageProps} className="pagination__link">
 							Previous page
 						</ElementType>
 					</li>
 				)}
-				{itemsToRender.map(item => (
+				{itemsToRender.map(({ pageNumber, pageProp, id }) => (
 					<li
-						key={item.id}
-						className={classnames("pagination__item--desktop", {
-							"pagination__item--current": item.pageNumber == currentPage,
-							"pagination__item--spacer": item.pageNumber == null
+						key={id}
+						className={classnames("pagination__item", {
+							"pagination__item--current": pageNumber == currentPage
 						})}
+						{...(pageNumber === currentPage && { "aria-current": "true" })}
 					>
-						{currentPage == item.pageNumber || item.pageNumber == null ? (
-							<span>
-								{currentPage == item.pageNumber && (
+						{currentPage == pageNumber || pageNumber == null ? (
+							<span className="pagination__inactive">
+								{currentPage == pageNumber && (
 									<span className="visually-hidden">Current page </span>
 								)}
-								{/* TODO: what's the a11y around ellipsis */}
-								{item.pageNumber || <span>&hellip;</span>}
+								{pageNumber || <>&hellip;</>}
 							</span>
 						) : (
-							<ElementType {...item.pageProp} className="pagination__link">
-								{item.pageNumber}
+							<ElementType {...pageProp} className="pagination__link">
+								{pageNumber}
 							</ElementType>
 						)}
 					</li>
 				))}
-				<li className="pagination__item--mobile">
+				<li className="pagination__item pagination__item--count">
 					mobile page count goes here
 				</li>
 				{currentPage != totalPages && (
-					<li className="pagination__item" aria-label="Go to next page">
+					<li
+						className="pagination__item pagination__item--bookend"
+						aria-label="Go to next page"
+					>
 						<ElementType {...nextPageProps} className="pagination__link">
 							Next page
 						</ElementType>

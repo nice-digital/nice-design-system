@@ -9,11 +9,12 @@
   // The list of pages
   &__list {
     align-content: center;
-    align-items: center;
+    align-items: stretch;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: left;
+    line-height: 1;
     list-style: none;
     margin: 0;
     max-width: unset;
@@ -21,51 +22,49 @@
     position: relative;
   }
 
-  // &__desktop {
-  //   @include mq($from: $nds-breakpoint-sm) {
-  //     border: 10px solid yellow;
-  //   }
-  // }
-
-  // &__mobile {
-  //   border: 10px solid red;
-  // }
-
   // Individual page
   &__item {
-    flex-grow: 1;
+    display: none;
+    line-height: 1;
     margin: 0;
     padding: 0;
     text-align: center;
-    &--desktop {
-      display: none;
-      @include mq($from: $nds-breakpoint-md) {
-        display: block;
-      }
+    &--bookend {
+      display: block;
+      white-space: nowrap;
     }
-    &--mobile {
+    &--status {
       display: block;
       @include mq($from: $nds-breakpoint-md) {
-        display: none;
+        display: none !important;
       }
     }
     &--current {
       background: $nds-colour-nice-grey-2;
+      border: 1px solid transparent;
       font-weight: bold;
     }
-    &--spacer {
-      flex-grow: 0;
+    @include mq($from: $nds-breakpoint-md) {
+      display: block;
     }
+  }
+
+  &__inactive {
+    display: block;
+    padding: rem($nds-spacing-medium);
   }
 
   // The button/link for the tab itself
   &__link {
     @include nds-link-default;
+    background: none;
     border: 1px solid transparent;
     cursor: pointer;
     display: block;
+    padding: rem($nds-spacing-medium);
 
     &:hover {
+      background-color: $nds-colour-nice-white;
       border: 1px solid $nds-colour-focus;
       color: $nds-colour-text;
     }
@@ -77,20 +76,6 @@
       z-index: 1;
     }
   }
-}
-
-.pagination li * {
-  display: block;
-  padding: 1rem;
-  width: 100%;
-}
-
-.pagination li:first-of-type * {
-  white-space: nowrap;
-}
-
-.pagination li:last-of-type * {
-  white-space: nowrap;
 }
 
 // Your pagesActions array is missing an object for a page number that is expected to render
