@@ -3,7 +3,7 @@ import { EnhancedPagination } from "@nice-digital/nds-enhanced-pagination";
 
 const aFunction = () => console.log("HI!");
 
-const totalPages = 49;
+const totalPages = 12000;
 
 const generatePagesActions = (maxDestinations: number) => {
 	let destinations = [];
@@ -70,7 +70,7 @@ export const EnhancedPaginationView = () => {
 	return (
 		<>
 			<EnhancedPagination
-				currentPage={32}
+				currentPage={6000}
 				elementType={elementType}
 				method={method}
 				pagesActions={partialPagesActions}

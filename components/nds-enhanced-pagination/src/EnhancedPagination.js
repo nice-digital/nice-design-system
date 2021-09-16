@@ -139,7 +139,9 @@ export const EnhancedPagination = ({
 					</li>
 				))}
 				<li className="pagination__item pagination__item--count">
-					mobile page count goes here
+					<span>
+						Page <strong>{currentPage}</strong> of <strong>{totalPages}</strong>
+					</span>
 				</li>
 				{currentPage != totalPages && (
 					<li

@@ -33,8 +33,11 @@
       display: block;
       white-space: nowrap;
     }
-    &--status {
+    &--count {
+      border: 1px solid transparent;
       display: block;
+      line-height: 1.15;
+      padding: rem($nds-spacing-medium);
       @include mq($from: $nds-breakpoint-md) {
         display: none !important;
       }
