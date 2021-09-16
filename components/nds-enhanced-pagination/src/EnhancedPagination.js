@@ -116,7 +116,7 @@ export const EnhancedPagination = ({
 				{itemsToRender.map(item => (
 					<li
 						key={item.id}
-						className={classnames("pagination__item", {
+						className={classnames("pagination__item--desktop", {
 							"pagination__item--current": item.pageNumber == currentPage,
 							"pagination__item--spacer": item.pageNumber == null
 						})}
@@ -136,6 +136,9 @@ export const EnhancedPagination = ({
 						)}
 					</li>
 				))}
+				<li className="pagination__item--mobile">
+					mobile page count goes here
+				</li>
 				{currentPage != totalPages && (
 					<li className="pagination__item" aria-label="Go to next page">
 						<ElementType {...nextPageProps} className="pagination__link">
