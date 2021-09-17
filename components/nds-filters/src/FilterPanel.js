@@ -35,6 +35,7 @@ export class FilterPanel extends Component {
 			fallback,
 			onSubmit,
 			headingLevel = 2,
+			getFormRef,
 			...rest
 		} = this.props;
 		const { canUseDOM, isExpanded } = this.state;
@@ -42,8 +43,8 @@ export class FilterPanel extends Component {
 		const HeadingLevel = "h" + headingLevel;
 
 		const formProps = canUseDOM
-			? { ...onSubmit, ...rest }
-			: { ...fallback, ...rest };
+			? { ...onSubmit, ...rest, ref={ref:any => getFormRef(ref)} }
+			: { ...fallback, ...rest, ref={ref:any => getFormRef(ref)} };
 
 		const clonedChildren = React.Children.map(children, child => {
 			const clonedChild =
@@ -94,8 +95,10 @@ FilterPanel.propTypes = {
 	heading: PropTypes.string.isRequired,
 	fallback: PropTypes.shape({
 		action: PropTypes.string,
-		method: PropTypes.oneOf(["GET", "POST"])
+		method: PropTypes.oneOf(["GET", "POST"]),
+		getFallbackFormRef: PropTypes.func
 	}),
+	getFormRef: PropTypes.func,
 	onSubmit: PropTypes.func,
 	headingLevel: PropTypes.oneOf([2, 3, 4, 5])
 };

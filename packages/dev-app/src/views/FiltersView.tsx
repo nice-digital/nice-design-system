@@ -8,10 +8,14 @@ import {
 } from "@nice-digital/nds-filters";
 
 import { Link } from "react-router-dom";
+const serialize = require("form-serialize");
+
+let formReference: any;
 
 const onChanged = (e: React.ReactEventHandler) => {
 	console.log(e);
 	alert("onChanged");
+	console.log(serialize(formReference));
 };
 
 const onSubmit = (e: React.ReactEventHandler) => {
@@ -44,6 +48,20 @@ const sorting = [
 	}
 ];
 
+const getFormRef = (ref: any) => {
+	formReference = ref;
+	console.log("the form reference >>> ", formReference);
+	let str = serialize(formReference);
+	console.log("serialized >>> ", str);
+};
+
+const getFallbackFormRef = (ref: any) => {
+	formReference = ref;
+	console.log("the form reference >>> ", formReference);
+	let str = serialize(formReference);
+	console.log("serialized >>> ", str);
+};
+
 export const FiltersView = () => {
 	return (
 		<>
@@ -56,6 +74,7 @@ export const FiltersView = () => {
 					action: "/submit-form",
 					method: "POST"
 				}}
+				getFormRef={getFormRef}
 			>
 				<FilterGroup
 					heading="Type"
