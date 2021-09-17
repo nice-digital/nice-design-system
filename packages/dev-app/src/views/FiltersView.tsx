@@ -55,13 +55,6 @@ const getFormRef = (ref: any) => {
 	console.log("serialized >>> ", str);
 };
 
-const getFallbackFormRef = (ref: any) => {
-	formReference = ref;
-	console.log("the form reference >>> ", formReference);
-	let str = serialize(formReference);
-	console.log("serialized >>> ", str);
-};
-
 export const FiltersView = () => {
 	return (
 		<>

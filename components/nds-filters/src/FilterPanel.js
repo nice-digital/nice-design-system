@@ -43,6 +43,7 @@ export class FilterPanel extends Component {
 		const HeadingLevel = "h" + headingLevel;
 
 		const formProps = canUseDOM
+			// eslint-disable-next-line no-undef
 			? { ...onSubmit, ...rest, ref={ref:any => getFormRef(ref)} }
 			: { ...fallback, ...rest, ref={ref:any => getFormRef(ref)} };
 
