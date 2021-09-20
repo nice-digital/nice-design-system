@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-filters",
-	"version": "1.2.13-alpha.0",
+	"version": "1.2.14-alpha.0",
 	"description": "Filter components for the NICE Design System",
 	"author": "Ian Routledge <ian.routledge@nice.org.uk>",
 	"homepage": "https://design-system.nice.org.uk/",
@@ -34,7 +34,7 @@
 		"@nice-digital/icons": "^2.2.6-alpha.0",
 		"@nice-digital/nds-button": "^1.2.10-alpha.0",
 		"@nice-digital/nds-core": "^1.2.10-alpha.0",
-		"@nice-digital/nds-input": "^1.2.11-alpha.0",
+		"@nice-digital/nds-input": "^1.2.12-alpha.0",
 		"@nice-digital/nds-tag": "^1.2.10-alpha.0",
 		"classnames": "^2.3.1",
 		"prop-types": "^15.7.2"
