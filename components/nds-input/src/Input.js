@@ -20,7 +20,7 @@ export const Input = props => {
 	const classNames = classnames({
 		input: true,
 		"input--error": error,
-		[className]: true
+		[className]: className
 	});
 	return (
 		<div className={classNames}>

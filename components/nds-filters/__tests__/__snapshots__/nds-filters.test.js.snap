@@ -264,7 +264,6 @@ Array [
                   <label
                     className="filter-option"
                     htmlFor="filter_some-filters_a-filter"
-                    isSelected={true}
                   >
                     <input
                       checked={true}

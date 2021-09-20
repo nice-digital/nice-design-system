@@ -10,7 +10,7 @@ export class FilterOption extends Component {
 		super(props);
 
 		this.state = {
-			isSelected: this.props.isSelected
+			selected: this.props.isSelected
 		};
 
 		this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
@@ -18,14 +18,14 @@ export class FilterOption extends Component {
 
 	UNSAFE_componentWillReceiveProps(nextProps) {
 		this.setState({
-			isSelected: nextProps.isSelected
+			selected: nextProps.isSelected
 		});
 	}
 
 	handleCheckboxChange() {
 		this.setState(
 			prevState => ({
-				isSelected: !prevState.isSelected
+				selected: !prevState.selected
 			}),
 			() => {
 				this.props.onChanged && this.props.onChanged();
@@ -39,11 +39,15 @@ export class FilterOption extends Component {
 			groupHeading,
 			value,
 			children,
-			// eslint-disable-next-line
+			/* eslint-disable */
+			// declaring unused props to avoid spreading across the dom
 			onChanged,
+			isSelected,
+			/* eslint-enable */
 			...rest
 		} = this.props;
-		const { isSelected } = this.state;
+
+		const { selected } = this.state;
 
 		const slugifiedValue = value ? slugify(value) : slugify(children);
 
@@ -58,7 +62,7 @@ export class FilterOption extends Component {
 					type="checkbox"
 					name={groupId}
 					value={value || children}
-					checked={isSelected}
+					checked={selected}
 					title={`${groupHeading} - ${children}`}
 					onChange={this.handleCheckboxChange}
 				/>

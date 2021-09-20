@@ -10,17 +10,18 @@ import {
 import { Link } from "react-router-dom";
 const serialize = require("form-serialize");
 
-let formReference: any;
+const ref = React.createRef();
+
+function handleFormSubmission() {
+	console.log("serial", serialize(ref.current));
+}
 
 const onChanged = (e: React.ReactEventHandler) => {
-	console.log(e);
-	alert("onChanged");
-	console.log(serialize(formReference));
+	handleFormSubmission();
 };
 
 const onSubmit = (e: React.ReactEventHandler) => {
-	// console.log(e);
-	alert("FORM SUBMITTED!");
+	handleFormSubmission();
 };
 
 const sorting = [
@@ -48,13 +49,6 @@ const sorting = [
 	}
 ];
 
-const getFormRef = (ref: any) => {
-	formReference = ref;
-	console.log("the form reference >>> ", formReference);
-	let str = serialize(formReference);
-	console.log("serialized >>> ", str);
-};
-
 export const FiltersView = () => {
 	return (
 		<>
@@ -67,7 +61,8 @@ export const FiltersView = () => {
 					action: "/submit-form",
 					method: "POST"
 				}}
-				getFormRef={getFormRef}
+				onSubmit={onSubmit}
+				innerRef={ref}
 			>
 				<FilterGroup
 					heading="Type"
