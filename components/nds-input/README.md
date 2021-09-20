@@ -94,9 +94,9 @@ Allow parent access to the ref property of the `input` element.
 
 ##### label
 
-- Type: `React.ReactNode` (required)
+- Type: `React.ReactNode` | `null` (required)
 
-The content of the `label` element.
+The content of the `label` element. If `null` is passed, the `label` element will not be rendered. **Only use this if you are supplying your own `label` in the markup!**
 
 ##### name
 
@@ -108,6 +108,13 @@ Input element `name` property.
 
 - Type: `string`
 - Default: "text"
+
+##### className
+
+- Type: `string`
+- Default: `""`
+
+A className that will be merged with the component's container className.
 
 ##### Anything else
 

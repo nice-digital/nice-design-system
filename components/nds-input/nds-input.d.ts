@@ -8,7 +8,7 @@ declare module "@nice-digital/nds-input" {
 		errorMessage?: string;
 		hint?: string;
 		inputRef?: React.Ref<HTMLElement>;
-		label: string;
+		label: string | null;
 		name: string;
 		type?:
 			| "color"
