@@ -31,6 +31,14 @@ export function FilterSummary({
 	);
 }
 
+const populateMethodProperty = (onClick, method) => {
+	return "some-property";
+};
+
+const populateMethodValue = (onClick, method) => {
+	return "some value";
+};
+
 function ResultsFilters({ filters }) {
 	if (!filters) return null;
 	return (
@@ -50,11 +58,20 @@ function ResultsFilters({ filters }) {
 					const props = {
 						className: classnames(["tag__remove", className]),
 						"aria-label": `Sort by ${label}`,
-						[!onClick
-							? method || (ElementType === "a" && "href") || "to"
-							: "onClick"]: onClick ? onClick : destination
+						// [!onClick
+						// 	? method || (ElementType === "a" && "href") || "to"
+						// 	: "onClick"]: onClick ? onClick : destination,
+						[onClick
+							? "onClick"
+							: method || (ElementType === "a" && "href") || "to"]: onClick
+							? onClick
+							: destination,
+						[populateMethodProperty(onClick, method)]: [
+							populateMethodValue(onClick, method)
+						]
 					};
 					const ElementType = onClick ? "button" : elementType || "a";
+					console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!", props);
 					return (
 						<li key={label} className="filter-summary__filter">
 							<Tag outline>
