@@ -31,11 +31,15 @@ export function FilterSummary({
 	);
 }
 
-const populateMethodProperty = (onClick, method, ElementType) => {
-	let defaultMethod = method || (ElementType && "href") || "to";
+const populateMethodProperty = (onClick, method, elementType) => {
+	console.log("the element type is ", elementType);
+
+	let defaultMethod = method || (elementType === "a" && "href") || "to";
 	if (onClick) return "onClick";
 
+	if (elementType === undefined) defaultMethod = "noelementtypeprovided";
 	console.log("the default method is", defaultMethod);
+
 	return defaultMethod;
 };
 
@@ -60,6 +64,7 @@ function ResultsFilters({ filters }) {
 					onClick,
 					className = ""
 				}) => {
+					const ElementType = onClick ? "button" : elementType || "a";
 					const props = {
 						className: classnames(["tag__remove", className]),
 						"aria-label": `Sort by ${label}`,
@@ -74,11 +79,12 @@ function ResultsFilters({ filters }) {
 						[populateMethodProperty(
 							onClick,
 							method,
-							ElementType === "a" && "href"
+							// ElementType === "a" && "href"
+							ElementType
 						)]: populateMethodValue(onClick, destination)
 					};
-					const ElementType = onClick ? "button" : elementType || "a";
-					console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!", props);
+					// const ElementType = onClick ? "button" : elementType || "a";
+					console.log("the props ---------> ", props);
 					return (
 						<li key={label} className="filter-summary__filter">
 							<Tag outline>
@@ -130,14 +136,15 @@ function ResultsSorting({ active, inactive }) {
 								className
 							]),
 							"aria-label": `Sort by ${label}`,
-							// [!onClick
-							// 	? method || (ElementType === "a" && "href") || "to"
-							// 	: "onClick"]: onClick ? onClick : destination
-							[populateMethodProperty(
-								onClick,
-								method,
-								ElementType === "a" && "href"
-							)]: populateMethodValue(onClick, destination)
+							[!onClick
+								? method || (ElementType === "a" && "href") || "to"
+								: "onClick"]: onClick ? onClick : destination
+							// [populateMethodProperty(
+							// 	onClick,
+							// 	method,
+							// 	// ElementType === "a" && "href"
+							// 	elementType
+							// )]: populateMethodValue(onClick, destination)
 						};
 
 						return (
