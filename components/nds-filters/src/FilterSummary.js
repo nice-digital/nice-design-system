@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import PropTypes, { elementType } from "prop-types";
 import classnames from "classnames";
 import { Tag } from "@nice-digital/nds-tag";
 import RemoveIcon from "@nice-digital/icons/lib/Remove";
@@ -48,6 +48,12 @@ const populateMethodValue = (onClick, destination) => {
 	return destination;
 };
 
+const defineElementType = (onClick, elementType) => {
+	if (onClick) return "button";
+	if (elementType) return elementType;
+	return "a";
+};
+
 function ResultsFilters({ filters }) {
 	if (!filters) return null;
 	return (
@@ -64,7 +70,8 @@ function ResultsFilters({ filters }) {
 					onClick,
 					className = ""
 				}) => {
-					const ElementType = onClick ? "button" : elementType || "a";
+					// const ElementType = onClick ? "button" : elementType || "a";
+					const ElementType = defineElementType(onClick, elementType);
 					const props = {
 						className: classnames(["tag__remove", className]),
 						"aria-label": `Sort by ${label}`,
@@ -129,7 +136,8 @@ function ResultsSorting({ active, inactive }) {
 						},
 						index
 					) => {
-						const ElementType = onClick ? "button" : elementType || "a";
+						// const ElementType = onClick ? "button" : elementType || "a";
+						const ElementType = defineElementType(onClick, elementType);
 						const props = {
 							className: classnames([
 								"filter-summary__sort-control",
@@ -139,12 +147,6 @@ function ResultsSorting({ active, inactive }) {
 							[!onClick
 								? method || (ElementType === "a" && "href") || "to"
 								: "onClick"]: onClick ? onClick : destination
-							// [populateMethodProperty(
-							// 	onClick,
-							// 	method,
-							// 	// ElementType === "a" && "href"
-							// 	elementType
-							// )]: populateMethodValue(onClick, destination)
 						};
 
 						return (
