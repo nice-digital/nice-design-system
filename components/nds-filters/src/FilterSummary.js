@@ -4,6 +4,7 @@ import classnames from "classnames";
 import { Tag } from "@nice-digital/nds-tag";
 import RemoveIcon from "@nice-digital/icons/lib/Remove";
 import "./../scss/filter-summary.scss";
+import validate from "validate-npm-package-name";
 
 export function FilterSummary({
 	children,
@@ -32,13 +33,15 @@ export function FilterSummary({
 }
 
 const populateMethodProperty = (onClick, method, elementType) => {
-	console.log("the element type is ", elementType);
+	console.log("the elementType is ", elementType);
 
 	let defaultMethod = method || (elementType === "a" && "href") || "to";
 	if (onClick) return "onClick";
 
 	if (elementType === undefined) defaultMethod = "noelementtypeprovided";
+
 	console.log("the default method is", defaultMethod);
+	console.log("typeof method", typeof defaultMethod);
 
 	return defaultMethod;
 };
@@ -49,9 +52,16 @@ const populateMethodValue = (onClick, destination) => {
 };
 
 const defineElementType = (onClick, elementType) => {
-	if (onClick) return "button";
-	if (elementType) return elementType;
-	return "a";
+	let element = "a";
+	if (onClick) element = "button";
+	if (elementType) element = elementType;
+	return element;
+};
+
+const validateElementProps = element => {
+	if (element.type.displayName == "Link" && !element.props.to) {
+		return "Link component missing 'TO' attribute --->";
+	}
 };
 
 function ResultsFilters({ filters }) {
@@ -94,6 +104,7 @@ function ResultsFilters({ filters }) {
 					console.log("the props ---------> ", props);
 					return (
 						<li key={label} className="filter-summary__filter">
+							{validateElementProps(<ElementType {...props} />)}
 							<Tag outline>
 								{label}
 								<ElementType {...props}>
@@ -151,7 +162,6 @@ function ResultsSorting({ active, inactive }) {
 
 						return (
 							<span key={index}>
-								{" "}
 								<ElementType {...props}>{label}</ElementType>{" "}
 								{index + 1 < inactive.length && "|"}
 							</span>
