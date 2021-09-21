@@ -31,12 +31,17 @@ export function FilterSummary({
 	);
 }
 
-const populateMethodProperty = (onClick, method) => {
-	return "some-property";
+const populateMethodProperty = (onClick, method, ElementType) => {
+	let defaultMethod = method || (ElementType && "href") || "to";
+	if (onClick) return "onClick";
+
+	console.log("the default method is", defaultMethod);
+	return defaultMethod;
 };
 
-const populateMethodValue = (onClick, method) => {
-	return "some value";
+const populateMethodValue = (onClick, destination) => {
+	if (onClick) return onClick;
+	return destination;
 };
 
 function ResultsFilters({ filters }) {
@@ -61,14 +66,16 @@ function ResultsFilters({ filters }) {
 						// [!onClick
 						// 	? method || (ElementType === "a" && "href") || "to"
 						// 	: "onClick"]: onClick ? onClick : destination,
-						[onClick
-							? "onClick"
-							: method || (ElementType === "a" && "href") || "to"]: onClick
-							? onClick
-							: destination,
-						[populateMethodProperty(onClick, method)]: [
-							populateMethodValue(onClick, method)
-						]
+						// [onClick
+						// 	? "onClick"
+						// 	: method || (ElementType === "a" && "href") || "to"]: onClick
+						// 	? onClick
+						// 	: destination,
+						[populateMethodProperty(
+							onClick,
+							method,
+							ElementType === "a" && "href"
+						)]: populateMethodValue(onClick, destination)
 					};
 					const ElementType = onClick ? "button" : elementType || "a";
 					console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!", props);
@@ -123,9 +130,14 @@ function ResultsSorting({ active, inactive }) {
 								className
 							]),
 							"aria-label": `Sort by ${label}`,
-							[!onClick
-								? method || (ElementType === "a" && "href") || "to"
-								: "onClick"]: onClick ? onClick : destination
+							// [!onClick
+							// 	? method || (ElementType === "a" && "href") || "to"
+							// 	: "onClick"]: onClick ? onClick : destination
+							[populateMethodProperty(
+								onClick,
+								method,
+								ElementType === "a" && "href"
+							)]: populateMethodValue(onClick, destination)
 						};
 
 						return (
