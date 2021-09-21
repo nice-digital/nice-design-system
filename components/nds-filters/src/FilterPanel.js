@@ -61,6 +61,7 @@ export class FilterPanel extends Component {
 							aria-expanded={isExpanded}
 							aria-controls="filter-panel-body"
 							onClick={this.handleClick}
+							type="button"
 						>
 							{heading}
 						</button>
