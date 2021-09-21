@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`@nice-digital/nds-filters should match snapshot 1`] = `
+exports[`@nice-digital/nds-filters Crash test should match snapshot 1`] = `
 Array [
   <FilterSummary
     activeFilters={
@@ -164,7 +164,7 @@ Array [
       onSubmit={[MockFunction]}
     >
       <div
-        className="filter-panel undefined"
+        className="filter-panel"
       >
         <h2
           className="filter-panel__heading"

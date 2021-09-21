@@ -13,14 +13,14 @@ const serialize = require("form-serialize");
 const ref = React.createRef();
 
 function handleFormSubmission() {
-	console.log("serial", serialize(ref.current));
+	console.log("serialize", serialize(ref.current));
 }
 
-const onChanged = (e: React.ReactEventHandler) => {
+const onChanged = (e: any) => {
 	handleFormSubmission();
 };
 
-const onSubmit = (e: React.ReactEventHandler) => {
+const onSubmit = (e: any) => {
 	handleFormSubmission();
 };
 

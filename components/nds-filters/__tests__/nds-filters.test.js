@@ -50,39 +50,41 @@ const filterByInputProps = {
 };
 
 describe("@nice-digital/nds-filters", () => {
-	it("should render filter summary without crashing", () => {
-		shallow(<FilterSummary {...filterSummaryProps} />);
-	});
+	describe("Crash test", () => {
+		it("should render filter summary without crashing", () => {
+			shallow(<FilterSummary {...filterSummaryProps} />);
+		});
 
-	it("should render filter panel without crashing", () => {
-		shallow(<FilterPanel {...filterPanelProps}>A filter panel</FilterPanel>);
-	});
+		it("should render filter panel without crashing", () => {
+			shallow(<FilterPanel {...filterPanelProps}>A filter panel</FilterPanel>);
+		});
 
-	it("should render filter group without crashing", () => {
-		shallow(<FilterGroup {...filterGroupProps}>A filter group</FilterGroup>);
-	});
+		it("should render filter group without crashing", () => {
+			shallow(<FilterGroup {...filterGroupProps}>A filter group</FilterGroup>);
+		});
 
-	it("should render a filter option without crashing", () => {
-		shallow(<FilterOption {...filterOptionProps}>A filter</FilterOption>);
-	});
+		it("should render a filter option without crashing", () => {
+			shallow(<FilterOption {...filterOptionProps}>A filter</FilterOption>);
+		});
 
-	it("should render a filter by input component without crashing", () => {
-		shallow(<FilterByInput {...filterByInputProps} />);
-	});
+		it("should render a filter by input component without crashing", () => {
+			shallow(<FilterByInput {...filterByInputProps} />);
+		});
 
-	it("should match snapshot", () => {
-		const wrapper = mount(
-			<>
-				<FilterSummary {...filterSummaryProps} />
-				<FilterPanel {...filterPanelProps}>
-					<FilterGroup {...filterGroupProps}>
-						<FilterOption {...filterOptionProps}>A filter</FilterOption>
-					</FilterGroup>
-					<FilterByInput {...filterByInputProps} />
-				</FilterPanel>
-			</>
-		);
-		expect(wrapper).toMatchSnapshot();
+		it("should match snapshot", () => {
+			const wrapper = mount(
+				<>
+					<FilterSummary {...filterSummaryProps} />
+					<FilterPanel {...filterPanelProps}>
+						<FilterGroup {...filterGroupProps}>
+							<FilterOption {...filterOptionProps}>A filter</FilterOption>
+						</FilterGroup>
+						<FilterByInput {...filterByInputProps} />
+					</FilterPanel>
+				</>
+			);
+			expect(wrapper).toMatchSnapshot();
+		});
 	});
 
 	describe("FilterSummary component", () => {
@@ -145,6 +147,7 @@ describe("@nice-digital/nds-filters", () => {
 					Showing results 1 to 10 of 1209
 				</FilterSummary>
 			);
+			console.log(wrapper.html());
 			const sortingElements = wrapper.find(".filter-summary__sort");
 			expect(sortingElements.find("madeuptype").length).toEqual(1);
 			expect(sortingElements.find("madeuptype").props().amethod).toEqual(
@@ -253,22 +256,12 @@ describe("@nice-digital/nds-filters", () => {
 		});
 	});
 	describe("FilterPanel component", () => {
-		it("should fallback to default form methods when server-side rendered and not hydrated", async () => {
+		it("should always have fallback properties present", async () => {
 			const wrapper = mount(
 				<FilterPanel {...filterPanelProps}>Second filter</FilterPanel>
 			);
-			wrapper.setState({ canUseDOM: false });
-			await nextTick();
-			wrapper.update();
 			expect(wrapper.find("form").props()["method"]).toEqual("GET");
 			expect(wrapper.find("form").props()["action"]).toEqual("/submit");
-			expect(wrapper.find("FilterPanel").props().onSubmit).toBeFalsy;
-			wrapper.setState({ canUseDOM: true });
-			await nextTick();
-			wrapper.update();
-			expect(wrapper.find("form").props()["method"]).toBeFalsy();
-			expect(wrapper.find("form").props()["action"]).toBeFalsy();
-			expect(wrapper.find("FilterPanel").props().onSubmit).toEqual(aFunction);
 		});
 
 		it("should cascade the heading level from the filter panel down to the filter group and filter by item components", () => {
@@ -295,9 +288,3 @@ describe("@nice-digital/nds-filters", () => {
 		});
 	});
 });
-
-const nextTick = async () => {
-	return new Promise(resolve => {
-		setTimeout(resolve, 0);
-	});
-};

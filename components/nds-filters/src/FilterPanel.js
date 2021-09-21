@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import classnames from "classnames";
 import PropTypes from "prop-types";
 
 import "./../scss/filter-panel.scss";
@@ -54,7 +55,7 @@ export class FilterPanel extends Component {
 
 		return (
 			<form onSubmit={onSubmit} {...rest} {...fallback} ref={innerRef}>
-				<div className={`filter-panel ${className}`}>
+				<div className={classnames(["filter-panel", className])}>
 					<HeadingLevel className="filter-panel__heading">
 						<button
 							aria-expanded={isExpanded}
