@@ -147,7 +147,6 @@ describe("@nice-digital/nds-filters", () => {
 					Showing results 1 to 10 of 1209
 				</FilterSummary>
 			);
-			console.log(wrapper.html());
 			const sortingElements = wrapper.find(".filter-summary__sort");
 			expect(sortingElements.find("madeuptype").length).toEqual(1);
 			expect(sortingElements.find("madeuptype").props().amethod).toEqual(
