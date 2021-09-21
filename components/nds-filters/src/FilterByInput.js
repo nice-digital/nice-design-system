@@ -42,6 +42,9 @@ export class FilterByInput extends Component {
 				buttonLabel = "Filter",
 				inputProps,
 				headingLevel,
+				/* eslint-disable */
+				collapseByDefault, // declaring here to prevent spread of invalid attribute on to container div
+				/* eslint-enable */
 				...rest
 			} = this.props,
 			{ isExpanded } = this.state;
