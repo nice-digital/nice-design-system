@@ -41,9 +41,7 @@ export class FilterGroup extends Component {
 				headingLevel,
 				children,
 				className,
-				/* eslint-disable */
-				collapseByDefault, // declaring here to prevent spread of invalid attribute on to container div
-				/* eslint-enable */
+				// collapseByDefault, // declaring here to prevent spread of invalid attribute on to container div
 				...rest
 			} = this.props,
 			{ isExpanded } = this.state,
@@ -72,8 +70,22 @@ export class FilterGroup extends Component {
 			});
 		});
 
+		const sanitisedProps = Object.assign({}, ...this.props);
+		const propsToRemove = [
+			"collapseByDefault",
+			"headingLevel",
+			"selectedCount"
+		];
+
+		propsToRemove.forEach(prop => {
+			delete sanitisedProps[prop];
+		});
+
 		return (
-			<div className={classnames("filter-group", className)} {...rest}>
+			<div
+				className={classnames("filter-group", className)}
+				{...sanitisedProps}
+			>
 				<HeadingLevel className="filter-group__heading">
 					{this.state.canUseDOM ? (
 						<button
