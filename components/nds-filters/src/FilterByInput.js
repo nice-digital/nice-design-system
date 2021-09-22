@@ -41,18 +41,14 @@ export class FilterByInput extends Component {
 				name,
 				buttonLabel = "Filter",
 				inputProps,
-				headingLevel,
-				/* eslint-disable */
-				collapseByDefault, // declaring here to prevent spread of invalid attribute on to container div
-				/* eslint-enable */
-				...rest
+				headingLevel
 			} = this.props,
 			{ isExpanded } = this.state;
 
 		const HeadingLevel = "h" + headingLevel;
 
 		return (
-			<div className={classnames("inputFilterBox", className)} {...rest}>
+			<div className={classnames("inputFilterBox", className)}>
 				<HeadingLevel className="inputFilterBox__heading">
 					{this.state.canUseDOM ? (
 						<button

@@ -34,28 +34,24 @@ export class FilterOption extends Component {
 	}
 
 	render() {
-		const {
-			groupId,
-			groupHeading,
-			value,
-			children,
-			/* eslint-disable */
-			// declaring unused props to avoid spreading across the dom
-			onChanged,
-			isSelected,
-			/* eslint-enable */
-			...rest
-		} = this.props;
+		const { groupId, groupHeading, value, children, ...rest } = this.props;
 
 		const { selected } = this.state;
 
 		const slugifiedValue = value ? slugify(value) : slugify(children);
 
+		const filteredProps = Object.assign({}, ...rest);
+
+		const propsToRemoveFromDom = ["isSelected", "onChanged"];
+
+		propsToRemoveFromDom.forEach(prop => {
+			delete filteredProps[prop];
+		});
+
 		return (
 			<label
 				htmlFor={`filter_${groupId}_${slugifiedValue}`}
 				className="filter-option"
-				{...rest}
 			>
 				<input
 					id={`filter_${groupId}_${slugifiedValue}`}
@@ -65,6 +61,7 @@ export class FilterOption extends Component {
 					checked={selected}
 					title={`${groupHeading} - ${children}`}
 					onChange={this.handleCheckboxChange}
+					{...filteredProps}
 				/>
 				<span className="filter-option__text">{children}</span>
 			</label>

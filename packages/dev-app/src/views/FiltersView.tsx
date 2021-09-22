@@ -70,7 +70,11 @@ export const FiltersView = () => {
 					selectedCount={99}
 					className="mb--f"
 				>
-					<FilterOption isSelected={true} onChanged={onChanged}>
+					<FilterOption
+						isSelected={true}
+						onChanged={onChanged}
+						data-track="important"
+					>
 						Guidance
 					</FilterOption>
 					<FilterOption isSelected={false} onChanged={onChanged}>
