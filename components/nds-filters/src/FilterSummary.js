@@ -21,13 +21,13 @@ export function FilterSummary({
 			<div className="filter-summary__count">
 				<HeadingLevel className="h5 mv--0">{children}</HeadingLevel>
 			</div>
-			{sorting.length && (
+			{sorting.length > 0 && (
 				<ResultsSorting
 					inactive={sorting.filter(item => !item.active)}
 					active={sorting.filter(item => item.active)[0]}
 				/>
 			)}
-			{activeFilters.length && <ResultsFilters filters={activeFilters} />}
+			{activeFilters.length > 0 && <ResultsFilters filters={activeFilters} />}
 		</div>
 	);
 }
@@ -44,11 +44,6 @@ const populateMethodProperty = (onClick, method, elementType) => {
 	console.log("typeof method", typeof defaultMethod);
 
 	return defaultMethod;
-};
-
-const populateMethodValue = (onClick, destination) => {
-	if (onClick) return onClick;
-	return destination;
 };
 
 const defineElementType = (onClick, elementType) => {
@@ -98,7 +93,7 @@ function ResultsFilters({ filters }) {
 							method,
 							// ElementType === "a" && "href"
 							ElementType
-						)]: populateMethodValue(onClick, destination)
+						)]: onClick ? onClick : destination
 					};
 					// const ElementType = onClick ? "button" : elementType || "a";
 					console.log("the props ---------> ", props);
