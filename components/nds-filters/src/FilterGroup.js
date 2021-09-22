@@ -49,7 +49,10 @@ export class FilterGroup extends Component {
 		let numSelected = null;
 		if (selectedCount > 0) {
 			numSelected = (
-				<span className="filter-group__count">{selectedCount} selected</span>
+				<span className="filter-group__count">
+					<span className="visually-hidden">(</span>
+					{selectedCount} selected<span className="visually-hidden">)</span>
+				</span>
 			);
 		}
 
@@ -57,7 +60,7 @@ export class FilterGroup extends Component {
 
 		const groupHeadingElement = (
 			<>
-				<span id={`group-heading-${groupId}`}>{heading}</span>
+				<span id={`group-heading-${groupId}`}>{heading} </span>
 				{numSelected}
 			</>
 		);
