@@ -74,7 +74,6 @@ Array [
           <span
             key="0"
           >
-             
             <button
               aria-label="Sort by Button"
               className="filter-summary__sort-control"
@@ -173,6 +172,7 @@ Array [
             aria-controls="filter-panel-body"
             aria-expanded={true}
             onClick={[Function]}
+            type="button"
           >
             Some filters
           </button>
