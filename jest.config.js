@@ -7,7 +7,8 @@ module.exports = {
 		"nds-maintain-ratio":
 			"<rootDir>/components/nds-maintain-ratio/src/MaintainRatio.js",
 		"nds-button": "<rootDir>/components/nds-button/src/Button.js",
-		"nds-tag": "<rootDir>/components/nds-tag/src/Tag.js"
+		"nds-tag": "<rootDir>/components/nds-tag/src/Tag.js",
+		"nds-core": "<rootDir>/components/nds-core/src/core.js"
 	},
 	setupFilesAfterEnv: ["<rootDir>/scripts/jest/setup.js"],
 	snapshotSerializers: ["enzyme-to-json/serializer"],
