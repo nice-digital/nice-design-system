@@ -1,10 +1,9 @@
 import React from "react";
-import PropTypes, { elementType } from "prop-types";
+import PropTypes from "prop-types";
 import classnames from "classnames";
 import { Tag } from "@nice-digital/nds-tag";
 import RemoveIcon from "@nice-digital/icons/lib/Remove";
 import "./../scss/filter-summary.scss";
-import validate from "validate-npm-package-name";
 
 export function FilterSummary({
 	children,
@@ -72,11 +71,9 @@ function ResultsFilters({ filters }) {
 					const props = {
 						className: classnames(["tag__remove", className]),
 						"aria-label": `Sort by ${label}`,
-						[populateMethodProperty(
-							onClick,
-							method,
-							ElementType
-						)]: onClick ? onClick : destination
+						[populateMethodProperty(onClick, method, ElementType)]: onClick
+							? onClick
+							: destination
 					};
 					return (
 						<li key={label} className="filter-summary__filter">
@@ -130,11 +127,9 @@ function ResultsSorting({ active, inactive }) {
 								className
 							]),
 							"aria-label": `Sort by ${label}`,
-							[populateMethodProperty(
-								onClick,
-								method,
-								ElementType
-							)]: onClick ? onClick : destination
+							[populateMethodProperty(onClick, method, ElementType)]: onClick
+								? onClick
+								: destination
 						};
 
 						return (
