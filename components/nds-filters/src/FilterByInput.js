@@ -41,14 +41,26 @@ export class FilterByInput extends Component {
 				name,
 				buttonLabel = "Filter",
 				inputProps,
-				headingLevel
+				headingLevel,
+				...rest
 			} = this.props,
 			{ isExpanded } = this.state;
 
 		const HeadingLevel = "h" + headingLevel;
 
+		const filteredProps = Object.assign({}, ...rest);
+
+		const propsToRemoveFromDom = ["collapseByDefault"];
+
+		propsToRemoveFromDom.forEach(prop => {
+			delete filteredProps[prop];
+		});
+
 		return (
-			<div className={classnames("inputFilterBox", className)}>
+			<div
+				className={classnames("inputFilterBox", className)}
+				{...filteredProps}
+			>
 				<HeadingLevel className="inputFilterBox__heading">
 					{this.state.canUseDOM ? (
 						<button
