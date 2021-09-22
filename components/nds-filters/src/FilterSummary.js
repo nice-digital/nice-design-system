@@ -134,6 +134,7 @@ function ResultsSorting({ active, inactive }) {
 
 						return (
 							<span key={index}>
+								{" "}
 								<ElementType {...props}>{label}</ElementType>{" "}
 								{index + 1 < inactive.length && "|"}
 							</span>
