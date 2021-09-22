@@ -30,6 +30,7 @@
 		"bootstrap": "lerna bootstrap",
 		"bootstrap:prod": "lerna bootstrap --no-ci",
 		"release": "lerna publish",
+		"lerna:clean": "lerna clean -y",
 		"// TESTS": "",
 		"test": "cross-env CI=true npm run test:unit && npm run lint",
 		"test:unit": "jest",

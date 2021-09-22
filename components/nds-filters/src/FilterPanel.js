@@ -54,13 +54,14 @@ export class FilterPanel extends Component {
 		});
 
 		return (
-			<form onSubmit={onSubmit} {...rest} {...fallback} ref={innerRef}>
+			<form onSubmit={onSubmit} {...fallback} {...rest} ref={innerRef}>
 				<div className={classnames(["filter-panel", className])}>
 					<HeadingLevel className="filter-panel__heading">
 						<button
 							aria-expanded={isExpanded}
 							aria-controls="filter-panel-body"
 							onClick={this.handleClick}
+							type="button"
 						>
 							{heading}
 						</button>
