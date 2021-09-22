@@ -255,7 +255,7 @@ fallback?: {
 };
 ```
 
-The `<FilterPanel />` is a form, which provides a fallback if js is not available. A submit button will be visible if js is not available, and the fallback action and method will be applied to the form.
+The `<FilterPanel />` is a form, which will submit via the form action (GET request by default), if js is not available. If js is available and an action is supplied, it will override the default behaviour. 
 
 [When you initialize a variable with an object, TypeScript assumes that the properties of that object might change values later, ](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-inference) so the method here would be inferred to be a string as it could be reassigned before use. This means TypeScript will consider the code to have an error if you pass the fallback prop to filter panel with `method: "POST"`. Instead you need to add a type assertion like so: `method: "POST" as "POST"`.
 
