@@ -11,20 +11,24 @@ export const Input = props => {
 		inputRef,
 		error,
 		errorMessage,
-		label,
+		label = "Label",
 		hint,
-		type,
+		type = "text",
+		className = "",
 		...rest
 	} = props;
 	const classNames = classnames({
 		input: true,
-		"input--error": error
+		"input--error": error,
+		[className]: true
 	});
 	return (
 		<div className={classNames}>
-			<label className="input__label" htmlFor={name}>
-				{label}
-			</label>
+			{label && (
+				<label className="input__label" htmlFor={name}>
+					{label}
+				</label>
+			)}
 			{hint && <p className="input__hint">{hint}</p>}
 			{error && <p className="input__error">{errorMessage}</p>}
 			<input
@@ -45,10 +49,11 @@ Input.propTypes = {
 		PropTypes.func,
 		PropTypes.shape({ current: PropTypes.object })
 	]),
+	className: PropTypes.string,
 	defaultValue: PropTypes.string,
 	error: PropTypes.bool,
 	errorMessage: PropTypes.string,
-	label: PropTypes.string.isRequired,
+	label: PropTypes.oneOf([PropTypes.string, null]).isRequired,
 	hint: PropTypes.string,
 	type: PropTypes.oneOf([
 		"color",
@@ -70,8 +75,4 @@ Input.propTypes = {
 		"week"
 	]),
 	name: PropTypes.string.isRequired
-};
-
-Input.defaultProps = {
-	type: "text"
 };

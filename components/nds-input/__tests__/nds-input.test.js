@@ -41,4 +41,15 @@ describe("@nice-digital/nds-input", () => {
 		const wrapper = mount(<Input {...props} data-track={false} />);
 		expect(wrapper.find("input").props()["data-track"]).toEqual(false);
 	});
+
+	it("should merge supplied classNames supplied with internal classes", () => {
+		const wrapper = mount(<Input {...props} className="my-class" />);
+		expect(wrapper.find("div").hasClass("my-class")).toEqual(true);
+		expect(wrapper.find("div").hasClass("input")).toEqual(true);
+	});
+
+	it("should exclude a label if null option is passed for label prop", () => {
+		const wrapper = shallow(<Input {...props} label={null} />);
+		expect(wrapper.find("label")).toHaveLength(0);
+	});
 });
