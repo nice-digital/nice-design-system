@@ -70,7 +70,7 @@ function ResultsFilters({ filters }) {
 					const ElementType = defineElementType(onClick, elementType);
 					const props = {
 						className: classnames(["tag__remove", className]),
-						"aria-label": `Sort by ${label}`,
+						"aria-label": `Remove ${label}`,
 						[populateMethodProperty(onClick, method, ElementType)]: onClick
 							? onClick
 							: destination
