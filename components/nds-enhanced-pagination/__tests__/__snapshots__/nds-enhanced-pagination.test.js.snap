@@ -11,7 +11,7 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
   >
     <li
       aria-label="Go to previous page"
-      className="pagination__item"
+      className="pagination__item pagination__item--bookend"
     >
       <a
         className="pagination__link"
@@ -31,71 +31,108 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
       </a>
     </li>
     <li
-      className="pagination__item pagination__item--spacer"
+      className="pagination__item"
       key="null-1"
     >
-      <span>
-        <span>
-          …
-        </span>
+      <span
+        className="pagination__inactive"
+      >
+        …
       </span>
     </li>
     <li
       className="pagination__item"
-      key="31"
+      key="3"
     >
       <a
         className="pagination__link"
       >
-        31
+        3
       </a>
     </li>
     <li
-      className="pagination__item pagination__item--current"
-      key="32"
+      className="pagination__item"
+      key="4"
     >
-      <span>
+      <a
+        className="pagination__link"
+      >
+        4
+      </a>
+    </li>
+    <li
+      aria-current="true"
+      className="pagination__item pagination__item--current"
+      key="5"
+    >
+      <span
+        className="pagination__inactive"
+      >
         <span
           className="visually-hidden"
         >
           Current page 
         </span>
-        32
+        5
       </span>
     </li>
     <li
       className="pagination__item"
-      key="33"
+      key="6"
     >
       <a
         className="pagination__link"
       >
-        33
+        6
       </a>
     </li>
     <li
-      className="pagination__item pagination__item--spacer"
-      key="null-5"
+      className="pagination__item"
+      key="7"
+    >
+      <a
+        className="pagination__link"
+      >
+        7
+      </a>
+    </li>
+    <li
+      className="pagination__item"
+      key="null-7"
+    >
+      <span
+        className="pagination__inactive"
+      >
+        …
+      </span>
+    </li>
+    <li
+      className="pagination__item"
+      key="20"
+    >
+      <a
+        className="pagination__link"
+      >
+        20
+      </a>
+    </li>
+    <li
+      className="pagination__item pagination__item--count"
     >
       <span>
-        <span>
-          …
-        </span>
+        Page 
+        <strong>
+          5
+        </strong>
+         of 
+        <strong>
+          20
+        </strong>
       </span>
-    </li>
-    <li
-      className="pagination__item"
-      key="49"
-    >
-      <a
-        className="pagination__link"
-      >
-        49
-      </a>
     </li>
     <li
       aria-label="Go to next page"
-      className="pagination__item"
+      className="pagination__item pagination__item--bookend"
     >
       <a
         className="pagination__link"

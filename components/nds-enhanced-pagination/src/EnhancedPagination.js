@@ -32,7 +32,7 @@ export const EnhancedPagination = ({
 	};
 
 	const calculatePosition = currentPage => {
-		if (currentPage <= 3) return "early";
+		if (currentPage <= 4) return "early";
 		if (totalPages - currentPage <= 3) return "late";
 		return "middle";
 	};
@@ -41,19 +41,24 @@ export const EnhancedPagination = ({
 		array.push(1, totalPages != 1 && totalPages);
 		switch (calculatePosition(currentPage)) {
 			case "early":
-				if (totalPages < 5) {
+				if (totalPages < 7) {
 					for (let i = 2; i < totalPages; i++) {
-						array.splice(1, 0, i);
+						array.splice(array.length -1, 0, i);
+
 					}
 				} else {
-					array.splice(1, 0, 2, 3, 4);
+					for (let i = 2; i <= currentPage + 2; i++) {
+						array.splice(array.length -1, 0, i);
+					}
 				}
 				break;
 			case "late":
-				array.splice(1, 0, totalPages - 3, totalPages - 2, totalPages - 1);
+				for (let i = currentPage - 2; i < totalPages; i++) {
+					array.splice(array.length -1, 0, i);
+				}
 				break;
 			default:
-				array.splice(1, 0, currentPage - 1, currentPage, currentPage + 1);
+				array.splice(1, 0, currentPage - 2, currentPage - 1, currentPage, currentPage + 1, currentPage +2);
 		}
 	};
 
@@ -76,7 +81,7 @@ export const EnhancedPagination = ({
 	// This sets up which page numbers are going to be rendered
 	let pages = [];
 	addNumberedPages(pages);
-	if (totalPages > 5) addEllipses(pages);
+	if (totalPages > 7) addEllipses(pages);
 
 	// We then map the pagesActions to the pages we want to render
 	const itemsToRender = [];

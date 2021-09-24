@@ -28,8 +28,8 @@ const generateProps = options => {
 	}
 
 	let props = {
-		currentPage: options.currentPage || 32,
-		totalPages: options.totalPages || 49,
+		currentPage: options.currentPage || 5,
+		totalPages: options.totalPages || 20,
 		previousPageAction: {
 			destination: "#previous",
 			onClick: aFunction
@@ -114,7 +114,7 @@ describe("Enhanced Pagination", () => {
 			</MemoryRouter>
 		);
 		const buttonElement = wrapper.find("button");
-		expect(buttonElement.length).toEqual(6);
+		expect(buttonElement.length).toEqual(8);
 	});
 
 	it("should render a button with an onClick attribute", () => {
@@ -162,7 +162,7 @@ describe("Enhanced Pagination", () => {
 				<EnhancedPagination {...localProps} />
 			</MemoryRouter>
 		);
-		expect(wrapper.find(".pagination__item--spacer").length).toEqual(2);
+		expect(wrapper.find(".pagination__item--bookend").length).toEqual(2);
 		expect(
 			wrapper
 				.find(".pagination__item")
@@ -172,7 +172,7 @@ describe("Enhanced Pagination", () => {
 		expect(
 			wrapper
 				.find(".pagination__item")
-				.at(6)
+				.at(8)
 				.text()
 		).toBe("…");
 	});
@@ -184,7 +184,7 @@ describe("Enhanced Pagination", () => {
 				<EnhancedPagination {...localProps} />
 			</MemoryRouter>
 		);
-		expect(wrapper.find(".pagination__item--spacer").length).toEqual(1);
+		expect(wrapper.find(".pagination__inactive").length).toEqual(2);
 		expect(
 			wrapper
 				.find(".pagination__item")
@@ -195,7 +195,7 @@ describe("Enhanced Pagination", () => {
 			children: <EnhancedPagination {...localProps} currentPage={2} />
 		});
 		wrapper.update();
-		expect(wrapper.find(".pagination__item--spacer").length).toEqual(1);
+		expect(wrapper.find(".pagination__inactive").length).toEqual(2);
 		expect(
 			wrapper
 				.find(".pagination__item")
@@ -211,7 +211,7 @@ describe("Enhanced Pagination", () => {
 				<EnhancedPagination {...localProps} />
 			</MemoryRouter>
 		);
-		expect(wrapper.find(".pagination__item").length).toEqual(8);
+		expect(wrapper.find(".pagination__item").length).toEqual(12);
 	});
 
 	it("should render a next page element when current page is 1 and total pages > 1 ", () => {
@@ -294,26 +294,17 @@ describe("Enhanced Pagination", () => {
 		);
 	});
 
-	it("should render a range of pages when total pages > 5", () => {
+	it("should render a range of pages when total pages > 7", () => {
 		const localProps = generateProps({ currentPage: 50, totalPages: 100 });
 		const wrapper = mount(
 			<MemoryRouter>
 				<EnhancedPagination {...localProps} />
 			</MemoryRouter>
 		);
+
 		const paginationItems = wrapper.find(".pagination__item");
-		expect(paginationItems.at(3).text()).toEqual("49");
-		expect(paginationItems.at(5).text()).toEqual("51");
+		expect(paginationItems.at(3).text()).toEqual("48");
+		expect(paginationItems.at(7).text()).toEqual("52");
 	});
 });
 
-// Renders the correct number of pages DONE
-// Renders Next Page element when appropriate DONE
-// Renders Previous Page element when appropriate DONE
-// Renders starting ellipsis when appropriate DONE
-// Renders ending ellipsis when appropriate DONE
-// Renders current page indicator element DONE
-// Renders a button when a custom element is provided DONE
-// Renders a button with an onClick that can be called by clicking DONE
-// matches page number to the correct destination DONE
-// Renders a range of pages when >5 pages DONE
