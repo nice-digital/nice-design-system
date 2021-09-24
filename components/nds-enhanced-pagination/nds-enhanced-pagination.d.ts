@@ -14,7 +14,7 @@ declare module "@nice-digital/nds-enhanced-pagination" {
 	}
 
 	export type ActionType = {
-		destination?: string;
+		destination?: null | string;
 		onClick?: React.EventHandler;
 		pageNumber?: number;
 	};
