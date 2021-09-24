@@ -51,7 +51,7 @@ The total number of pages your results will be over.
 
 An array of objects, one for each page that will have links rendered. You should provide the page number, and either a destination if you are using links, or an onClick if you are using buttons.
 
-You can provide more pages than will be rendered (ie you could provide an object for every results page), but you need to at least provide an object for each that will be rendered. This will be the first and last pages, the current page, and one to either side.
+You can provide more pages than will be rendered (ie you could provide an object for every results page), but you need to at least provide an object for each that will be rendered. This will be the first and last pages, the current page, and two to either side.
 
 ```ts
 type ActionType = {
@@ -68,6 +68,10 @@ const pagesActions =  [
 		destination: "#1",
 	},
 	{
+		pageNumber: 30,
+		destination: "#30",
+	},
+	{
 		pageNumber: 31,
 		destination: "#31",
 	},
@@ -78,6 +82,10 @@ const pagesActions =  [
 	{
 		pageNumber: 33,
 		destination: "#33",
+	},
+	{
+		pageNumber: 34,
+		destination: "#34",
 	},
 	{
 		pageNumber: 49,
@@ -170,37 +178,62 @@ If you're not using [React](#react), then import the SCSS directly into your app
 If you're not using [React](#react), then include the [SCSS as above](#scss) and use the HTML:
 
 ```html
-<nav role="navigation" aria-label="Pagination Navigation" class="pagination clearfix mt--a mb--e mr--b mb--b ml--b">
-	<ul class="pagination__list">
-		<li class="pagination__page" aria-label="Go to previous page">
-			<a amethod="#somewhereElse" class="pagination__page-link">Previous page</a>
-		</li>
-		<li class="pagination__page  ">
-			<a aria-label="Go to page 1" amethod="#1" class="pagination__page-link">1</a>
-		</li>
-		<li class="pagination__page  pagination__page__no-flex">
-			<span>...</span>
-		</li>
-		<li class="pagination__page  ">
-			<a aria-label="Go to page 31" amethod="#31" class="pagination__page-link">31</a>
-		</li>
-		<li class="pagination__page pagination__page__current ">
-			<span>
-				<span class="visually-hidden">Current page </span>32
-			</span>
-		</li>
-		<li class="pagination__page  ">
-			<a aria-label="Go to page 33" amethod="#33" class="pagination__page-link">33</a>
-		</li>
-		<li class="pagination__page  pagination__page__no-flex">
-			<span>...</span>
-		</li>
-		<li class="pagination__page  ">
-			<a aria-label="Go to page 49" amethod="#49" class="pagination__page-link">49</a>
-		</li>
-		<li class="pagination__page" aria-label="Go to next page">
-			<a amethod="#somewhere" class="pagination__page-link">Next page</a>
-		</li>
-	</ul>
+<nav role="navigation" aria-label="Pagination Navigation" class="pagination clearfix ">
+  <ul class="pagination__list">
+    <li class="pagination__item pagination__item--bookend" aria-label="Go to previous page">
+      <button class="pagination__link">Previous page
+      </button>
+    </li>
+    <li class="pagination__item">
+      <button aria-label="Go to page 1" class="pagination__link">1
+      </button>
+    </li>
+    <li class="pagination__item">
+      <span class="pagination__inactive">…
+      </span>
+    </li>
+    <li class="pagination__item">
+      <button aria-label="Go to page 30" class="pagination__link">30
+      </button>
+    </li>
+    <li class="pagination__item">
+      <button aria-label="Go to page 31" class="pagination__link">31
+      </button>
+    </li>
+    <li class="pagination__item pagination__item--current" aria-current="true">
+      <span class="pagination__inactive">
+        <span class="visually-hidden">Current page 
+        </span>32
+      </span>
+    </li>
+    <li class="pagination__item">
+      <button aria-label="Go to page 33" class="pagination__link">33
+      </button>
+    </li>
+    <li class="pagination__item">
+      <button aria-label="Go to page 34" class="pagination__link">34
+      </button>
+    </li>
+    <li class="pagination__item">
+      <span class="pagination__inactive">…
+      </span>
+    </li>
+    <li class="pagination__item">
+      <button class="pagination__link">49
+      </button>
+    </li>
+    <li class="pagination__item pagination__item--count">
+      <span>Page 
+        <strong>32
+        </strong> of 
+        <strong>49
+        </strong>
+      </span>
+    </li>
+    <li class="pagination__item pagination__item--bookend" aria-label="Go to next page">
+      <button class="pagination__link">Next page
+      </button>
+    </li>
+  </ul>
 </nav>
 ```
