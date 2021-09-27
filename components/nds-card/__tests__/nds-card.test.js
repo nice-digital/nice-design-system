@@ -4,7 +4,6 @@ import toJson from "enzyme-to-json";
 
 import { Card } from "../src/Card";
 import { Link, MemoryRouter } from "react-router-dom";
-import { isExportDeclaration } from "typescript";
 
 const headingProps = {
 	headingText: "Card heading text",

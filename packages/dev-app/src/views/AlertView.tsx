@@ -13,7 +13,7 @@ export const AlertView = () => {
 					inventore maxime repellendus dolorem incidunt tempora a aspernatur
 					sapiente quas quidem quia dolores, molestiae, accusamus, libero dicta!
 					Explicabo recusandae, exercitationem iure ad asperiores tenetur
-					quaerat, animi in quae numquam velit nostrum!
+					quaerat, animi in quae numquam velit nostrum!!!!!
 				</p>
 			</Alert>
 		</>

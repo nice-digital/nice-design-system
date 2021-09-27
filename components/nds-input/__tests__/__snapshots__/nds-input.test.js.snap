@@ -2,7 +2,7 @@
 
 exports[`@nice-digital/nds-input should match snapshot 1`] = `
 <div
-  className="input input--error"
+  className="input input--error "
 >
   <label
     className="input__label"
