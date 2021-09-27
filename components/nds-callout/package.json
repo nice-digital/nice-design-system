@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-callout",
-	"version": "1.1.9-alpha.0",
+	"version": "1.1.9",
 	"description": "Callout / promotional component for the NICE Design System",
 	"author": "Warren Keith <warren.keith@nice.org.uk>",
 	"homepage": "https://design-system.nice.org.uk",
@@ -34,8 +34,8 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
-		"@nice-digital/nds-core": "^1.2.8-alpha.0",
-		"@nice-digital/nds-maintain-ratio": "^1.2.8-alpha.0",
+		"@nice-digital/nds-core": "^1.2.8",
+		"@nice-digital/nds-maintain-ratio": "^1.2.8",
 		"classnames": "^2.2.6",
 		"prop-types": "^15.7.2"
 	},
@@ -46,5 +46,5 @@
 	"devDependencies": {
 		"@babel/cli": "^7.5.0"
 	},
-	"gitHead": "b70a1e39df19c1943a000c841aca8d9bb3ef4ff1"
+	"gitHead": "b56a3c7ffb41ed4bb3b0b2132d0fc918bfcd9465"
 }
