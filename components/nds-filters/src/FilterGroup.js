@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import classnames from "classnames";
+import ChevronDown from "@nice-digital/icons/lib/ChevronDown";
 
-import { slugify } from "@nice-digital/nds-core/es/utils";
+import { slugify } from "@nice-digital/nds-core";
 
-import "./../scss/filter-panel.scss";
+import "./../scss/filter-group.scss";
 
 export class FilterGroup extends Component {
 	constructor(props) {
@@ -32,35 +34,55 @@ export class FilterGroup extends Component {
 	}
 
 	render() {
-		const { selectedCount, id, heading, children } = this.props,
+		const {
+				selectedCount,
+				id,
+				heading,
+				headingLevel,
+				children,
+				className,
+				...rest
+			} = this.props,
 			{ isExpanded } = this.state,
 			groupId = id || slugify(heading);
 
 		let numSelected = null;
 		if (selectedCount > 0) {
 			numSelected = (
-				<span className="filter-group__count">{selectedCount} selected</span>
+				<span className="filter-group__count">
+					<span className="visually-hidden">(</span>
+					{selectedCount} selected<span className="visually-hidden">)</span>
+				</span>
 			);
 		}
 
+		const HeadingLevel = "h" + headingLevel;
+
 		const groupHeadingElement = (
 			<>
-				<span id={`group-heading-${groupId}`}>{heading}</span>
+				<span id={`group-heading-${groupId}`}>{heading} </span>
 				{numSelected}
 			</>
 		);
 
 		const clonedChildren = React.Children.map(children, child => {
 			return React.cloneElement(child, {
-				name,
 				groupId,
 				groupHeading: heading
 			});
 		});
 
+		const filteredProps = Object.assign({}, ...rest);
+
+		const propsToRemoveFromDom = ["collapseByDefault"];
+
+		propsToRemoveFromDom.forEach(prop => {
+			delete filteredProps[prop];
+		});
+
 		return (
-			<div className="filter-group">
-				<h3 className="filter-group__heading">
+			<div className={classnames("filter-group", className)} {...filteredProps}>
+				<HeadingLevel className="filter-group__heading">
 					{this.state.canUseDOM ? (
 						<button
 							type="button"
@@ -68,12 +90,18 @@ export class FilterGroup extends Component {
 							aria-controls={`group-${groupId}`}
 							onClick={this.handleTitleClick}
 						>
+							<ChevronDown
+								className={classnames([
+									"filter-group__heading-icon",
+									isExpanded && "filter-group__heading-icon--expanded"
+								])}
+							/>
 							{groupHeadingElement}
 						</button>
 					) : (
 						<>{groupHeadingElement}</>
 					)}
-				</h3>
+				</HeadingLevel>
 				<fieldset
 					id={`group-${groupId}`}
 					aria-hidden={!isExpanded}
@@ -87,17 +115,19 @@ export class FilterGroup extends Component {
 	}
 }
 
+FilterGroup.displayName = "FilterGroup";
+
 FilterGroup.propTypes = {
 	heading: PropTypes.string.isRequired,
 	id: PropTypes.string,
-	selectedCount: PropTypes.number.isRequired,
+	selectedCount: PropTypes.number,
 	collapseByDefault: PropTypes.bool,
 	children: PropTypes.oneOfType([
 		PropTypes.arrayOf(PropTypes.node),
 		PropTypes.node
-	]).isRequired
+	]).isRequired,
+	className: PropTypes.string,
+	headingLevel: PropTypes.oneOf([3, 4, 5, 6])
 };
-
-FilterGroup.defaultProps = {};
 
 export default FilterGroup;
