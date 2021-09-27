@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import { slugify } from "@nice-digital/nds-core/es/utils";
+import { slugify } from "@nice-digital/nds-core";
 
 import "./../scss/filter-option.scss";
 
@@ -10,7 +10,7 @@ export class FilterOption extends Component {
 		super(props);
 
 		this.state = {
-			isSelected: this.props.isSelected
+			selected: this.props.isSelected
 		};
 
 		this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
@@ -18,14 +18,14 @@ export class FilterOption extends Component {
 
 	UNSAFE_componentWillReceiveProps(nextProps) {
 		this.setState({
-			isSelected: nextProps.isSelected
+			selected: nextProps.isSelected
 		});
 	}
 
 	handleCheckboxChange() {
 		this.setState(
 			prevState => ({
-				isSelected: !prevState.isSelected
+				selected: !prevState.selected
 			}),
 			() => {
 				this.props.onChanged && this.props.onChanged();
@@ -34,10 +34,19 @@ export class FilterOption extends Component {
 	}
 
 	render() {
-		const { groupId, groupHeading, value, children } = this.props;
-		const { isSelected } = this.state;
+		const { groupId, groupHeading, value, children, ...rest } = this.props;
+
+		const { selected } = this.state;
 
 		const slugifiedValue = value ? slugify(value) : slugify(children);
+
+		const filteredProps = Object.assign({}, ...rest);
+
+		const propsToRemoveFromDom = ["isSelected", "onChanged"];
+
+		propsToRemoveFromDom.forEach(prop => {
+			delete filteredProps[prop];
+		});
 
 		return (
 			<label
@@ -49,9 +58,10 @@ export class FilterOption extends Component {
 					type="checkbox"
 					name={groupId}
 					value={value || children}
-					checked={isSelected}
+					checked={selected}
 					title={`${groupHeading} - ${children}`}
 					onChange={this.handleCheckboxChange}
+					{...filteredProps}
 				/>
 				<span className="filter-option__text">{children}</span>
 			</label>

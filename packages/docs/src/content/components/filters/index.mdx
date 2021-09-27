@@ -1,0 +1,118 @@
+---
+title: Filters
+description: A set of components to use to filter results
+template: detail
+storybook: components-filters
+inpagenav: true
+npm: https://www.npmjs.com/package/@nice-digital/nds-filters
+github: https://github.com/nice-digital/nice-design-system/tree/main/components/nds-filters
+---
+
+import {
+	FilterSummary,
+	FilterPanel,
+	FilterGroup,
+	FilterOption,
+	FilterByInput
+} from "@nice-digital/nds-filters";
+import Panel from "@nice-digital/nds-panel";
+
+## Filter Summary
+
+<Panel>
+	<FilterSummary
+	sorting={[{ label: "Date", active: true },{ label: "Title"}]}
+	activeFilters={[{label: "Guidance"},{label: "Pathway"}]}
+	headingLevel={3}
+	>
+		Showing results 1 to 10 out of 1209
+	</FilterSummary>
+</Panel>
+
+### What is it?
+
+A summary of the results on your page which updates as you apply filters from the filter panel. Shows how many results have been returned in total, and on that page.
+
+Allows you to remove filters, and to sort the returned data.
+
+## Filter panel, filter group, filter options, filter by filter by input
+
+<Panel>
+	<FilterPanel heading="Example filter panel" headingLevel={3}>
+		<FilterByInput label="Filter by name" name="Filter by name" />
+		<FilterGroup heading="Filter by updated date">
+			<FilterOption>
+				Today
+			</FilterOption>
+			<FilterOption>Last 30 days</FilterOption>
+			<FilterOption isSelected={true}>
+				Last year
+			</FilterOption>
+		</FilterGroup>
+	</FilterPanel>
+</Panel>
+
+### What are they?
+
+A set of components used for filtering results. The filter panel contains various filters which can either be set options that can be selected which are held in a filter group, or can be a filter by input.
+
+You can have multiple groups of filters in a filter panel, and can combine filter groups with filter by input within the panel.
+
+There should be one filter panel on the page holding the various filters.
+
+## Usage
+
+### Positioning
+
+The Filter Summary should be positioned above the results, and the Filter Panel should be positioned to the left of the results.
+
+### Variants
+
+For the filter by input, you can use any standard input, but it defaults to a text input.
+
+You can use any of the [variants on our input component](http://localhost:6006/?path=/story/foundations-input--try-it-out) such as an error message or hint text.
+
+For the filter group, you can indicate how many filters are currently selected.
+
+<Panel>
+	<FilterPanel heading="Example filter panel" headingLevel={3}>
+		<FilterByInput
+			label="Filter by last updated date"
+			name="Filter by date"
+			type="date"
+		/>
+		<FilterByInput
+			label="Filter by users name"
+			name="Filter by name"
+			inputProps={{
+				hint: "Enter your search term here",
+				error: true,
+				errorMessage: "You can only search for names"
+			}}
+		/>
+		<FilterGroup
+			heading="Filter by type of guidance"
+			selectedCount={2}
+		>
+			<FilterOption isSelected={true}>Guidance</FilterOption>
+			<FilterOption>Technology Appraisals</FilterOption>
+			<FilterOption isSelected={true}>Quality Statements</FilterOption>
+		</FilterGroup>
+	</FilterPanel>
+</Panel>
+
+### Content
+
+Avoid long text for the filter options. Option text should be as simple as possible, one or two words.
+
+If you change the text on the filter by input button, ensure it is clear what that button does.
+
+### Accessibility
+
+All colours used meet accessibility requirements.
+
+Tap target meets minimum size requirements (44 x 44 pixels).
+
+### Fallback when javascript isn't available
+
+When javascript is unavailable, the filter panel acts as a form. You should provide a method and action for the form. A button will appear at the bottom of the filter panel to submit the form and filter the results.

@@ -1,0 +1,26 @@
+@import '~@nice-digital/nds-core/scss/core';
+@import '~@nice-digital/icons/scss/nice-icons';
+@import './filter-group';
+
+.inputFilterBox {
+  margin-top: rem($nds-spacing-medium);
+
+  // Wrapper for the input and button
+  &__controls {
+    border: rem($nds-spacing-x-small) solid $nds-colour-nice-grey-2;
+    padding: rem($nds-spacing-small);
+
+    label {
+      @include nds-invisible();
+    }
+
+    &[aria-hidden='true'] {
+      display: none;
+    }
+  }
+
+  // Heading used for collapsing/expanding the filter group
+  &__heading {
+    @extend .filter-group__heading;
+  }
+}

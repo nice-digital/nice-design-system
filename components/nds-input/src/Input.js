@@ -20,7 +20,7 @@ export const Input = props => {
 	const classNames = classnames({
 		input: true,
 		"input--error": error,
-		[className]: true
+		[className]: className
 	});
 	return (
 		<div className={classNames}>
@@ -53,7 +53,7 @@ Input.propTypes = {
 	defaultValue: PropTypes.string,
 	error: PropTypes.bool,
 	errorMessage: PropTypes.string,
-	label: PropTypes.oneOf([PropTypes.string, null]).isRequired,
+	label: PropTypes.string,
 	hint: PropTypes.string,
 	type: PropTypes.oneOf([
 		"color",

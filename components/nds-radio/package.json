@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-radio",
-	"version": "1.2.8",
+	"version": "1.2.10-alpha.0",
 	"description": "Radio button component for the NICE Design System",
 	"author": "Warren Keith <warren.keith@nice.org.uk>",
 	"homepage": "https://github.com/nice-digital/nice-design-system#readme",
@@ -34,7 +34,7 @@
 		"@babel/cli": "^7.5.0"
 	},
 	"dependencies": {
-		"@nice-digital/nds-core": "^1.2.8",
+		"@nice-digital/nds-core": "^1.2.10-alpha.0",
 		"classnames": "^2.2.6",
 		"prop-types": "^15.7.2"
 	},
@@ -42,5 +42,5 @@
 		"react": "^16 || ^17",
 		"react-dom": "^16 || ^17"
 	},
-	"gitHead": "b56a3c7ffb41ed4bb3b0b2132d0fc918bfcd9465"
+	"gitHead": "b70a1e39df19c1943a000c841aca8d9bb3ef4ff1"
 }

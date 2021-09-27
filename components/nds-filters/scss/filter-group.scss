@@ -20,20 +20,6 @@
   text-decoration: none;
   width: 100%;
 
-  &:after {
-    @include nice-icon(chevron-up);
-    @include nds-font-size(-1);
-    color: $nds-colour-icons;
-    line-height: normal; // IE 9/10 bug where rems on block psuedos collapse to 0
-    position: absolute;
-    right: rem($nds-spacing-small);
-    top: rem($nds-spacing-small);
-  }
-
-  &[aria-expanded='false']:after {
-    content: nice-icon(chevron-down);
-  }
-
   &:hover {
     background: $nds-colour-nice-grey-1;
   }
@@ -70,6 +56,13 @@
 
     &[aria-hidden='true'] {
       display: none;
+    }
+  }
+
+  &__heading-icon {
+    float: right;
+    &--expanded {
+      transform: rotate(180deg);
     }
   }
 

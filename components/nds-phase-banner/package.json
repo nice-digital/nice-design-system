@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-phase-banner",
-	"version": "1.2.8",
+	"version": "1.2.10-alpha.0",
 	"description": "Phase banner component for the NICE Design System",
 	"keywords": [
 		"alpha",
@@ -38,7 +38,7 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
-		"@nice-digital/nds-core": "^1.2.8",
+		"@nice-digital/nds-core": "^1.2.10-alpha.0",
 		"@nice-digital/nds-tag": "^1.2.4",
 		"prop-types": "^15.7.2"
 	},
@@ -49,5 +49,5 @@
 		"react": "^16 || ^17",
 		"react-dom": "^16 || ^17"
 	},
-	"gitHead": "b56a3c7ffb41ed4bb3b0b2132d0fc918bfcd9465"
+	"gitHead": "b70a1e39df19c1943a000c841aca8d9bb3ef4ff1"
 }
