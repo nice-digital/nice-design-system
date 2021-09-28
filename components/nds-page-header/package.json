@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-page-header",
-	"version": "1.2.10-alpha.0",
+	"version": "1.2.11-alpha.0",
 	"description": "Page header component for the NICE Design System",
 	"keywords": [
 		"header"
@@ -37,7 +37,7 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
-		"@nice-digital/nds-core": "^1.2.10-alpha.0",
+		"@nice-digital/nds-core": "^1.2.11-alpha.0",
 		"prop-types": "^15.7.2"
 	},
 	"peerDependencies": {
