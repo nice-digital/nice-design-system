@@ -43,22 +43,29 @@ export const EnhancedPagination = ({
 			case "early":
 				if (totalPages < 7) {
 					for (let i = 2; i < totalPages; i++) {
-						array.splice(array.length -1, 0, i);
-
+						array.splice(array.length - 1, 0, i);
 					}
 				} else {
 					for (let i = 2; i <= currentPage + 2; i++) {
-						array.splice(array.length -1, 0, i);
+						array.splice(array.length - 1, 0, i);
 					}
 				}
 				break;
 			case "late":
 				for (let i = currentPage - 2; i < totalPages; i++) {
-					array.splice(array.length -1, 0, i);
+					array.splice(array.length - 1, 0, i);
 				}
 				break;
 			default:
-				array.splice(1, 0, currentPage - 2, currentPage - 1, currentPage, currentPage + 1, currentPage +2);
+				array.splice(
+					1,
+					0,
+					currentPage - 2,
+					currentPage - 1,
+					currentPage,
+					currentPage + 1,
+					currentPage + 2
+				);
 		}
 	};
 
