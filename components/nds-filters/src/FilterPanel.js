@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
+import ChevronDown from "@nice-digital/icons/lib/ChevronDown";
 
 import "./../scss/filter-panel.scss";
 
@@ -63,6 +64,12 @@ export class FilterPanel extends Component {
 							onClick={this.handleClick}
 							type="button"
 						>
+							<ChevronDown
+								className={classnames([
+									"filter-panel__heading-icon",
+									isExpanded && "filter-panel__heading-icon--expanded"
+								])}
+							/>
 							{heading}
 						</button>
 					</HeadingLevel>

@@ -20,19 +20,19 @@
   text-decoration: none;
   width: 100%;
 
-  &:after {
-    @include nice-icon(chevron-up);
-    @include nds-font-size(-1);
-    color: $nds-colour-icons;
-    margin-top: rem(-$nds-spacing-small);
-    position: absolute;
-    right: rem($nds-spacing-small);
-    top: 50%;
-  }
+  // &:after {
+  //   @include nice-icon(chevron-up);
+  //   @include nds-font-size(-1);
+  //   color: $nds-colour-icons;
+  //   margin-top: rem(-$nds-spacing-small);
+  //   position: absolute;
+  //   right: rem($nds-spacing-small);
+  //   top: 50%;
+  // }
 
-  &[aria-expanded='false']:after {
-    content: nice-icon(chevron-down);
-  }
+  // &[aria-expanded='false']:after {
+  //   content: nice-icon(chevron-down);
+  // }
 
   &:visited,
   &:hover,
@@ -64,6 +64,13 @@
 
     @include nds-when-is(a, button) {
       @include _filter-panel-heading-button;
+    }
+  }
+
+  &__heading-icon {
+    float: right;
+    &--expanded {
+      transform: rotate(180deg);
     }
   }
 
