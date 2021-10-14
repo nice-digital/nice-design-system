@@ -184,7 +184,6 @@ describe("Enhanced Pagination", () => {
 				<EnhancedPagination {...localProps} />
 			</MemoryRouter>
 		);
-		console.log(wrapper.debug());
 		expect(wrapper.find(".pagination__inactive").length).toEqual(2);
 		expect(
 			wrapper
@@ -196,7 +195,6 @@ describe("Enhanced Pagination", () => {
 			children: <EnhancedPagination {...localProps} currentPage={5} />
 		});
 		wrapper.update();
-		console.log("wrapper 2>>>", wrapper.debug());
 		expect(wrapper.find(".pagination__inactive").length).toEqual(2);
 		expect(
 			wrapper
