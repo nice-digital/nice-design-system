@@ -88,7 +88,7 @@ export const EnhancedPagination = ({
 	// This sets up which page numbers are going to be rendered
 	let pages = [];
 	addNumberedPages(pages);
-	if (totalPages > 7) addEllipses(pages);
+	if (totalPages >= 7) addEllipses(pages);
 
 	// We then map the pagesActions to the pages we want to render
 	const itemsToRender = [];
