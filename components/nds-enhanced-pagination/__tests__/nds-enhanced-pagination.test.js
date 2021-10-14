@@ -177,6 +177,35 @@ describe("Enhanced Pagination", () => {
 		).toBe("…");
 	});
 
+	it("should render a single ellipsis when there are 7 or more pages and the current page is early or late in the range", () => {
+		const localProps = generateProps({ totalPages: 7, currentPage: 1 });
+		const wrapper = mount(
+			<MemoryRouter>
+				<EnhancedPagination {...localProps} />
+			</MemoryRouter>
+		);
+		console.log(wrapper.debug());
+		expect(wrapper.find(".pagination__inactive").length).toEqual(2);
+		expect(
+			wrapper
+				.find(".pagination__item")
+				.at(3)
+				.text()
+		).toBe("…");
+		wrapper.setProps({
+			children: <EnhancedPagination {...localProps} currentPage={5} />
+		});
+		wrapper.update();
+		console.log("wrapper 2>>>", wrapper.debug());
+		expect(wrapper.find(".pagination__inactive").length).toEqual(2);
+		expect(
+			wrapper
+				.find(".pagination__item")
+				.at(2)
+				.text()
+		).toBe("…");
+	});
+
 	it("should render a single ellipsis when there are more than 8 pages and the current page is early or late in the range", () => {
 		const localProps = generateProps({ totalPages: 10, currentPage: 8 });
 		const wrapper = mount(
@@ -307,4 +336,3 @@ describe("Enhanced Pagination", () => {
 		expect(paginationItems.at(7).text()).toEqual("52");
 	});
 });
-
