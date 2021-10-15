@@ -5,19 +5,11 @@ declare module "@nice-digital/nds-enhanced-pagination" {
 		[prop: string]: unknown;
 		currentPage: number;
 		totalPages: number;
-		pagesActions: ActionType[];
-		previousPageAction: ActionType;
-		nextPageAction: ActionType;
+		mapPageNumberToHref: (pageNumber: number) => string;
 		elementType?: React.ElementType;
 		method?: string;
 		className?: string;
 	}
-
-	export type ActionType = {
-		destination?: null | string;
-		onClick?: React.EventHandler;
-		pageNumber?: number;
-	};
 
 	export const EnhancedPagination: React.FC<EnhancedPaginationProps>;
 }

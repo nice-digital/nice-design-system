@@ -1,81 +1,38 @@
 import React from "react";
 import { EnhancedPagination } from "@nice-digital/nds-enhanced-pagination";
+import { Link } from "react-router-dom";
 
-const aFunction = () => console.log("HI!");
+const totalPages = 32;
 
-const totalPages = 49;
-
-const generatePagesActions = (maxDestinations: number) => {
-	let destinations = [];
-	for (let i = 0; i < maxDestinations; i++) {
-		destinations.push({
-			pageNumber: i,
-			destination: `#${i}`,
-			onClick: aFunction
-		});
-	}
-	return destinations;
-};
-
-// example where you get a wierd middle object like from search endpoint
-const partialPagesActions = [
-	{
-		pageNumber: 1,
-		destination: "#1",
-		onClick: aFunction
-	},
-	{
-		pageNumber: 30,
-		destination: "#30",
-		onClick: aFunction
-	},
-	{
-		pageNumber: 31,
-		destination: "#31",
-		onClick: aFunction
-	},
-	{
-		pageNumber: 32,
-		destination: "#32",
-		onClick: aFunction
-	},
-	{
-		pageNumber: 33,
-		destination: "#33",
-		onClick: aFunction
-	},
-	{
-		pageNumber: 34,
-		destination: "#34",
-		onClick: aFunction
-	}
-];
-
-const pagesActions = generatePagesActions(totalPages);
-
-const elementType = "button";
-const method = "aMethod";
-
-const nextPageAction = {
-	destination: "#somewhere",
-	onClick: aFunction
-};
-
-const previousPageAction = {
-	destination: "#somewhereElse",
-	onClick: aFunction
-};
+const mapPageNumberToHref = (pageNumber: number) => `#${pageNumber}`;
 
 export const EnhancedPaginationView = () => {
 	return (
 		<>
+			<p>Default element type:</p>
+			<EnhancedPagination
+				currentPage={1}
+				mapPageNumberToHref={mapPageNumberToHref}
+				totalPages={totalPages}
+			/>
+			<p>Middle page number:</p>
+			<EnhancedPagination
+				currentPage={16}
+				mapPageNumberToHref={mapPageNumberToHref}
+				totalPages={totalPages}
+			/>
+			<p>End of range:</p>
 			<EnhancedPagination
 				currentPage={32}
-				elementType={elementType}
-				method={method}
-				pagesActions={partialPagesActions}
-				nextPageAction={nextPageAction}
-				previousPageAction={previousPageAction}
+				mapPageNumberToHref={mapPageNumberToHref}
+				totalPages={totalPages}
+			/>
+			<p>Custom element type:</p>
+			<EnhancedPagination
+				currentPage={1}
+				elementType={Link}
+				method="to"
+				mapPageNumberToHref={mapPageNumberToHref}
 				totalPages={totalPages}
 			/>
 		</>

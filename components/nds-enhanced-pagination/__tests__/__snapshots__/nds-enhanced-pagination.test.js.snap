@@ -2,37 +2,38 @@
 
 exports[`Enhanced Pagination should match snapshot with some default attributes 1`] = `
 <nav
-  aria-label="Pagination Navigation"
-  className="pagination clearfix "
+  aria-label="Pagination"
+  className="pagination "
   role="navigation"
 >
-  <ul
+  <ol
     className="pagination__list"
   >
     <li
-      aria-label="Go to previous page"
       className="pagination__item pagination__item--bookend"
     >
       <a
         className="pagination__link"
-        href="#previous"
+        href="#4"
       >
         Previous page
       </a>
     </li>
     <li
       className="pagination__item"
-      key="1"
+      key="0"
     >
       <a
+        aria-label="Go to page 1"
         className="pagination__link"
+        href="#1"
       >
         1
       </a>
     </li>
     <li
       className="pagination__item"
-      key="null-1"
+      key="1"
     >
       <span
         className="pagination__inactive"
@@ -42,20 +43,24 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
     </li>
     <li
       className="pagination__item"
-      key="3"
+      key="2"
     >
       <a
+        aria-label="Go to page 3"
         className="pagination__link"
+        href="#3"
       >
         3
       </a>
     </li>
     <li
       className="pagination__item"
-      key="4"
+      key="3"
     >
       <a
+        aria-label="Go to page 4"
         className="pagination__link"
+        href="#4"
       >
         4
       </a>
@@ -63,7 +68,7 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
     <li
       aria-current="true"
       className="pagination__item pagination__item--current"
-      key="5"
+      key="4"
     >
       <span
         className="pagination__inactive"
@@ -78,27 +83,31 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
     </li>
     <li
       className="pagination__item"
-      key="6"
+      key="5"
     >
       <a
+        aria-label="Go to page 6"
         className="pagination__link"
+        href="#6"
       >
         6
       </a>
     </li>
     <li
       className="pagination__item"
-      key="7"
+      key="6"
     >
       <a
+        aria-label="Go to page 7"
         className="pagination__link"
+        href="#7"
       >
         7
       </a>
     </li>
     <li
       className="pagination__item"
-      key="null-7"
+      key="7"
     >
       <span
         className="pagination__inactive"
@@ -108,10 +117,12 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
     </li>
     <li
       className="pagination__item"
-      key="20"
+      key="8"
     >
       <a
+        aria-label="Go to page 20"
         className="pagination__link"
+        href="#20"
       >
         20
       </a>
@@ -131,16 +142,15 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
       </span>
     </li>
     <li
-      aria-label="Go to next page"
       className="pagination__item pagination__item--bookend"
     >
       <a
         className="pagination__link"
-        href="#next"
+        href="#6"
       >
         Next page
       </a>
     </li>
-  </ul>
+  </ol>
 </nav>
 `;

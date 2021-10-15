@@ -3,88 +3,21 @@ import { shallow, mount } from "enzyme";
 import toJson from "enzyme-to-json";
 
 import { EnhancedPagination } from "../src/EnhancedPagination";
-import { Link, MemoryRouter } from "react-router-dom";
-import { elementType } from "prop-types";
-import { indexOf } from "lodash";
+import { MemoryRouter } from "react-router-dom";
 
-const aFunction = () => console.log("hello");
-
-const generateRandomNumber = (min, max) => {
-	return Math.floor(Math.random() * (max - min + 1)) + min;
-};
+const mapPageNumberToHref = pageNumber => `#${pageNumber}`;
 
 const generateProps = options => {
-	let pagesActions = [];
-	for (let i = 1; i <= options.totalPages; i++) {
-		let path = Math.random()
-			.toString(16)
-			.substr(2, 8);
-		// console.log("the path is ", path);
-		pagesActions.push({
-			pageNumber: i,
-			destination: path,
-			onClick: options.clickHandler || aFunction
-		});
-	}
-
 	let props = {
 		currentPage: options.currentPage || 5,
 		totalPages: options.totalPages || 20,
-		previousPageAction: {
-			destination: "#previous",
-			onClick: aFunction
-		},
-		nextPageAction: {
-			destination: "#next",
-			onClick: aFunction
-		},
-		pagesActions
+		mapPageNumberToHref: mapPageNumberToHref
 	};
-
-	// console.log("THE PAGES ACTIONS ARE ", pagesActions);
 
 	return props;
 };
 
-const partialPagesActions = [
-	{
-		pageNumber: 1,
-		destination: "#1",
-		onClick: aFunction
-	},
-	{
-		pageNumber: 30,
-		destination: "#30",
-		onClick: aFunction
-	},
-	{
-		pageNumber: 31,
-		destination: "#31",
-		onClick: aFunction
-	},
-	{
-		pageNumber: 32,
-		destination: "#32",
-		onClick: aFunction
-	},
-	{
-		pageNumber: 33,
-		destination: "#33",
-		onClick: aFunction
-	},
-	{
-		pageNumber: 34,
-		destination: "#34",
-		onClick: aFunction
-	},
-	{
-		pageNumber: 49,
-		destination: "#49",
-		onClick: aFunction
-	}
-];
-
-const props = generateProps({ partialPagesActions });
+const props = generateProps({});
 
 describe("Enhanced Pagination", () => {
 	it("should render without crashing", () => {
@@ -103,8 +36,8 @@ describe("Enhanced Pagination", () => {
 				<EnhancedPagination {...props} />
 			</MemoryRouter>
 		);
-		const previousPageAction = wrapper.find("a[href='#previous']");
-		expect(previousPageAction.length).toEqual(1);
+		const pageLinks = wrapper.find("a[className='pagination__link']");
+		expect(pageLinks.length).toEqual(8);
 	});
 
 	it("should render a button if an elementType is provided", () => {
@@ -127,22 +60,18 @@ describe("Enhanced Pagination", () => {
 		expect(buttonElement.props()["onClick"]).toBeTruthy;
 	});
 
-	it("render a button with a callable onClick handler", () => {
-		const clickHandler = jest.fn();
-		const localProps = generateProps({
-			clickHandler: clickHandler,
-			totalPages: 10
-		});
+	it("renders pagination links with the given element type", () => {
+		const customElementType = () => {
+			return <button>some button</button>;
+		};
 
 		const wrapper = mount(
 			<MemoryRouter>
-				<EnhancedPagination {...localProps} elementType="button" />
+				<EnhancedPagination {...props} elementType={customElementType} />
 			</MemoryRouter>
 		);
-		const buttonElement = wrapper.find("button").at(1);
-		expect(buttonElement.props()["onClick"]).toBeTruthy;
-		buttonElement.simulate("click");
-		expect(clickHandler).toHaveBeenCalled();
+		const buttonElement = wrapper.find(".pagination__link").at(0);
+		expect(buttonElement.is(customElementType)).toBeTruthy();
 	});
 
 	it("should render a single current page indicator element", () => {
@@ -271,54 +200,60 @@ describe("Enhanced Pagination", () => {
 		).toEqual("Previous page");
 	});
 
-	it("should render items with the correct destination and pageNumber", () => {
-		// ARRANGE ACT ASSERT
-		const randomTotalPages = generateRandomNumber(5, 1000);
-		const randomCurrentPage = generateRandomNumber(2, randomTotalPages - 1);
+	it("should use given function for pagination link href", () => {
+		const wrapper = mount(
+			<MemoryRouter>
+				<EnhancedPagination {...props} />
+			</MemoryRouter>
+		);
+		const firstPaginationLink = wrapper.find(".pagination__link").at(0);
 
-		const localProps = generateProps({
-			currentPage: randomCurrentPage,
-			totalPages: randomTotalPages
-		});
+		expect(firstPaginationLink.prop("href")).toEqual("#4");
+	});
 
+	// no next link
+	it("should not render a next page element when current page = totalPages", () => {
+		const localProps = generateProps({ currentPage: 100, totalPages: 100 });
+		const wrapper = mount(
+			<MemoryRouter>
+				<EnhancedPagination {...localProps} />
+			</MemoryRouter>
+		);
+		expect(wrapper.findWhere(node => node.text() === "Next page")).toHaveLength(
+			0
+		);
+	});
+	// no previous link
+	it("should not render a previous page element when current page is 1 and total pages > 1 ", () => {
+		const localProps = generateProps({ currentPage: 1, totalPages: 2 });
+		const wrapper = mount(
+			<MemoryRouter>
+				<EnhancedPagination {...localProps} />
+			</MemoryRouter>
+		);
+		expect(
+			wrapper.findWhere(node => node.text() === "Previous page")
+		).toHaveLength(0);
+	});
+	// less than 7 totalPages
+
+	it("should render a range of pages when total pages < 7 and current page is early in range", () => {
+		const localProps = generateProps({ currentPage: 1, totalPages: 6 });
 		const wrapper = mount(
 			<MemoryRouter>
 				<EnhancedPagination {...localProps} />
 			</MemoryRouter>
 		);
 
-		const currentPageMinusOneLabel = `[aria-label='Go to page ${randomCurrentPage -
-			1}']`;
-		const currentPagePlusOneLabel = `[aria-label='Go to page ${randomCurrentPage +
-			1}']`;
-		const currentPageItemMinusOne = wrapper.find(currentPageMinusOneLabel);
-		const currentPageItemPlusOne = wrapper.find(currentPagePlusOneLabel);
-
-		const currentPageItemPlusOneString = (randomCurrentPage + 1).toString();
-		const currentPageItemMinusOneString = (randomCurrentPage - 1).toString();
-
-		const currentPageItemIndex = localProps.pagesActions
-			.map(obj => obj.pageNumber)
-			.indexOf(randomCurrentPage);
-
-		// console.log(
-		// 	`minus one and plus one from randomCurrentPage: ${randomCurrentPage} pagesActionsArrayIndex: ${currentPageItemIndex} objects ~~~ ${JSON.stringify(
-		// 		localProps.pagesActions[currentPageItemIndex - 1]
-		// 	)} ### ${JSON.stringify(
-		// 		localProps.pagesActions[currentPageItemIndex + 1]
-		// 	)}`
-		// );
-
-		expect(currentPageItemMinusOne.text()).toEqual(
-			currentPageItemMinusOneString
-		);
-		expect(currentPageItemPlusOne.text()).toEqual(currentPageItemPlusOneString);
-		expect(currentPageItemMinusOne.props().href).toEqual(
-			localProps.pagesActions[currentPageItemIndex - 1].destination
-		);
-		expect(currentPageItemPlusOne.props().href).toEqual(
-			localProps.pagesActions[currentPageItemIndex + 1].destination
-		);
+		// starting at 2 to skip "current Page of 1"
+		for (let i = 2; i < 7; i++) {
+			// const element = array[i];
+			expect(
+				wrapper
+					.findWhere(node => node.text() == i.toString() && node.type() == "a")
+					.prop("href")
+			).toEqual(`#${i}`);
+		}
 	});
 
 	it("should render a range of pages when total pages > 7", () => {

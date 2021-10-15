@@ -1,5 +1,5 @@
 module.exports = {
-	collectCoverageFrom: ["packages/*/src/**/*.js"],
+	collectCoverageFrom: ["packages/*/src/**/*.js", "components/*/src/**/*.js"],
 	coveragePathIgnorePatterns: ["stories\\.js"],
 	moduleNameMapper: {
 		"^.+\\.(css|less|scss)$": "identity-obj-proxy",

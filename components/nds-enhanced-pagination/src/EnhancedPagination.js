@@ -6,31 +6,12 @@ import "./../scss/enhanced-pagination.scss";
 export const EnhancedPagination = ({
 	currentPage,
 	totalPages,
-	pagesActions,
-	nextPageAction,
-	previousPageAction,
-	elementType = "a",
+	mapPageNumberToHref,
+	elementType: ElementType = "a",
 	method = "href",
 	className,
 	...rest
 }) => {
-	const ElementType = elementType;
-	const action = ElementType === "button" ? "onClick" : method;
-
-	const previousPageProps = {
-		[action]:
-			ElementType === "button"
-				? previousPageAction.onClick
-				: previousPageAction.destination
-	};
-
-	const nextPageProps = {
-		[action]:
-			ElementType === "button"
-				? nextPageAction.onClick
-				: nextPageAction.destination
-	};
-
 	const calculatePosition = currentPage => {
 		if (currentPage <= 4) return "early";
 		if (totalPages - currentPage <= 3) return "late";
@@ -90,47 +71,27 @@ export const EnhancedPagination = ({
 	addNumberedPages(pages);
 	if (totalPages >= 7) addEllipses(pages);
 
-	// We then map the pagesActions to the pages we want to render
-	const itemsToRender = [];
-	pages.map((page, index) =>
-		itemsToRender.push({
-			pageNumber: page,
-			id: page !== null ? page : `${page}-${index}`,
-			pageProp: pagesActions.find(p => p.pageNumber === page)
-				? {
-						"aria-label": `Go to page ${page}`,
-						[action]:
-							(action == "onClick" &&
-								pagesActions.find(p => p.pageNumber === page)?.onClick) ||
-							pagesActions.find(p => p.pageNumber === page)?.destination
-				  }
-				: {
-						className: "page-object-missing"
-				  }
-		})
-	);
-
 	return (
 		<nav
 			role="navigation"
-			aria-label="Pagination Navigation"
-			className={classnames("pagination clearfix ", className)}
+			aria-label="Pagination"
+			className={classnames("pagination ", className)}
 			{...rest}
 		>
-			<ul className="pagination__list">
+			<ol className="pagination__list">
 				{currentPage != 1 && (
-					<li
-						className="pagination__item pagination__item--bookend"
-						aria-label="Go to previous page"
-					>
-						<ElementType {...previousPageProps} className="pagination__link">
+					<li className="pagination__item pagination__item--bookend">
+						<ElementType
+							className="pagination__link"
+							{...{ [method]: mapPageNumberToHref(currentPage - 1) }}
+						>
 							Previous page
 						</ElementType>
 					</li>
 				)}
-				{itemsToRender.map(({ pageNumber, pageProp, id }) => (
+				{pages.map((pageNumber, index) => (
 					<li
-						key={id}
+						key={index}
 						className={classnames("pagination__item", {
 							"pagination__item--current": pageNumber == currentPage
 						})}
@@ -144,7 +105,11 @@ export const EnhancedPagination = ({
 								{pageNumber || <>&hellip;</>}
 							</span>
 						) : (
-							<ElementType {...pageProp} className="pagination__link">
+							<ElementType
+								aria-label={`Go to page ${pageNumber}`}
+								className="pagination__link"
+								{...{ [method]: mapPageNumberToHref(pageNumber) }}
+							>
 								{pageNumber}
 							</ElementType>
 						)}
@@ -156,31 +121,23 @@ export const EnhancedPagination = ({
 					</span>
 				</li>
 				{currentPage != totalPages && (
-					<li
-						className="pagination__item pagination__item--bookend"
-						aria-label="Go to next page"
-					>
-						<ElementType {...nextPageProps} className="pagination__link">
+					<li className="pagination__item pagination__item--bookend">
+						<ElementType
+							className="pagination__link"
+							{...{ [method]: mapPageNumberToHref(currentPage + 1) }}
+						>
 							Next page
 						</ElementType>
 					</li>
 				)}
-			</ul>
+			</ol>
 		</nav>
 	);
 };
 
-const ActionsType = PropTypes.shape({
-	destination: PropTypes.string,
-	onClick: PropTypes.func,
-	pageNumber: PropTypes.number
-});
-
 EnhancedPagination.propTypes = {
 	currentPage: PropTypes.number.isRequired,
-	pagesActions: PropTypes.arrayOf(ActionsType).isRequired,
-	nextPageAction: ActionsType,
-	previousPageAction: ActionsType,
+	mapPageNumberToHref: PropTypes.func.isRequired,
 	totalPages: PropTypes.number.isRequired,
 	elementType: PropTypes.elementType,
 	method: PropTypes.string,
