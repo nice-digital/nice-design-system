@@ -46,6 +46,7 @@ The page of the search results you are currently on.
 The total number of pages your results will be over.
 
 ##### mapPageNumberToHref
+- Type: function (required)
 
 Function to map a page number to a destination (e.g an href)
 ```
