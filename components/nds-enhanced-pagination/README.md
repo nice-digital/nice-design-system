@@ -20,12 +20,12 @@ Import the `EnhancedPagination` component from the package and use within JSX:
 import React from "react";
 import { EnahncedPagination } from "@nice-digital/nds-enhanced-pagination";
 
+const mapPageNumberToHref = (pageNumber: number) => `#${pageNumber}`;
+
 <EnhancedPagination
-	currentPage={32}
-	totalPages={49}
-	pagesActions={pagesActions}
-	nextPageAction={nextPageAction}
-	previousPageAction={previousPageAction}
+		currentPage={32}
+		mapPageNumberToHref={mapPageNumberToHref}
+		totalPages={49}
 />
 ```
 
@@ -45,84 +45,14 @@ The page of the search results you are currently on.
 
 The total number of pages your results will be over.
 
-##### pagesActions
+##### mapPageNumberToHref
 
-- Type: `ActionType[]` (required)
-
-An array of objects, one for each page that will have links rendered. You should provide the page number, and either a destination if you are using links, or an onClick if you are using buttons.
-
-You can provide more pages than will be rendered (ie you could provide an object for every results page), but you need to at least provide an object for each that will be rendered. This will be the first and last pages, the current page, and two to either side.
-
-```ts
-type ActionType = {
-		destination?: string;
-		onClick?: React.EventHandler;
-		pageNumber?: number;
-	};
+Function to map a page number to a destination (e.g an href)
 ```
-
-```jsx
-const pagesActions =  [
-	{
-		pageNumber: 1,
-		destination: "#1",
-	},
-	{
-		pageNumber: 30,
-		destination: "#30",
-	},
-	{
-		pageNumber: 31,
-		destination: "#31",
-	},
-	{
-		pageNumber: 32,
-		destination: "#32",
-	},
-	{
-		pageNumber: 33,
-		destination: "#33",
-	},
-	{
-		pageNumber: 34,
-		destination: "#34",
-	},
-	{
-		pageNumber: 49,
-		destination: "#49",
-	}
-];
-
 <EnhancedPagination
-	currentPage={32}
-	totalPages={49}
-	pagesActions={pagesActions}
-	nextPageAction={nextPageAction}
-	previousPageAction={previousPageAction}
-/>
-```
-
-##### nextPageAction and previousPageAction
-
-- Type: `ActionType` (required)
-
-Contains either a destination if you are using links, or an onClick if you are using buttons for the next and previous pages (relative to your current page).
-
-```jsx
-const nextPageAction = {
-	destination: "#somewhere",
-};
-
-const previousPageAction = {
-	destination: "#somewhereElse",
-};
-
-<EnhancedPagination
-	currentPage={32}
-	totalPages={49}
-	pagesActions={pagesActions}
-	nextPageAction={nextPageAction}
-	previousPageAction={previousPageAction}
+		currentPage={32}
+		mapPageNumberToHref={mapPageNumberToHref}
+		totalPages={49}
 />
 ```
 
@@ -131,21 +61,28 @@ const previousPageAction = {
 - Type: `React.ElementType`
 - Default: `a`
 
-The element type for the pagination is by default an anchor, in which case you should pass a destination with your pagesActions, previousPageAction, and nextPageAction props. 
+The element type for the pagination is by default an anchor 
 
 If you wish you can change this to something else, for example a button (in which case you need to pass an onClick prop instead of a destination), or a custom elementType.
 
 For custom elementTypes that use a method other than `href` for their destination, you should pass that in the method prop eg "to" for a Gatsby `Link` elementType.
 
 ```jsx
+const mapPageNumberToHref = (pageNumber: number) => `#${pageNumber}`;
+
 <EnhancedPagination
 	currentPage={32}
+    elementType={({ children, ...props }) => (
+		<Link scroll={false} {...props}>
+			<a>{children}</a>
+		</Link>
+	)}
+	method="href"
+	mapPageNumberToHref={mapPageNumberToHref}
 	totalPages={49}
-	pagesActions={pagesActions}
-	nextPageAction={nextPageAction}
-	previousPageAction={previousPageAction}
-	elementType={"button"}
 />
+
+
 ```
 
 ##### method
@@ -178,62 +115,63 @@ If you're not using [React](#react), then import the SCSS directly into your app
 If you're not using [React](#react), then include the [SCSS as above](#scss) and use the HTML:
 
 ```html
-<nav role="navigation" aria-label="Pagination Navigation" class="pagination clearfix ">
-  <ul class="pagination__list">
-    <li class="pagination__item pagination__item--bookend" aria-label="Go to previous page">
-      <button class="pagination__link">Previous page
-      </button>
+<nav role="navigation" aria-label="Pagination" class="pagination ">
+  <ol class="pagination__list">
+    <li class="pagination__item pagination__item--bookend">
+      <a class="pagination__link" href="#15">Previous page
+      </a>
     </li>
     <li class="pagination__item">
-      <button aria-label="Go to page 1" class="pagination__link">1
-      </button>
+      <a aria-label="Go to page 1" class="pagination__link" href="#1">1
+      </a>
     </li>
     <li class="pagination__item">
       <span class="pagination__inactive">…
       </span>
     </li>
     <li class="pagination__item">
-      <button aria-label="Go to page 30" class="pagination__link">30
-      </button>
+      <a aria-label="Go to page 14" class="pagination__link" href="#14">14
+      </a>
     </li>
     <li class="pagination__item">
-      <button aria-label="Go to page 31" class="pagination__link">31
-      </button>
+      <a aria-label="Go to page 15" class="pagination__link" href="#15">15
+      </a>
     </li>
     <li class="pagination__item pagination__item--current" aria-current="true">
       <span class="pagination__inactive">
         <span class="visually-hidden">Current page 
-        </span>32
+        </span>16
       </span>
     </li>
     <li class="pagination__item">
-      <button aria-label="Go to page 33" class="pagination__link">33
-      </button>
+      <a aria-label="Go to page 17" class="pagination__link" href="#17">17
+      </a>
     </li>
     <li class="pagination__item">
-      <button aria-label="Go to page 34" class="pagination__link">34
-      </button>
+      <a aria-label="Go to page 18" class="pagination__link" href="#18">18
+      </a>
     </li>
     <li class="pagination__item">
       <span class="pagination__inactive">…
       </span>
     </li>
     <li class="pagination__item">
-      <button class="pagination__link">49
-      </button>
+      <a aria-label="Go to page 49" class="pagination__link" href="#49">49
+      </a>
     </li>
     <li class="pagination__item pagination__item--count">
       <span>Page 
-        <strong>32
+        <strong>16
         </strong> of 
         <strong>49
         </strong>
       </span>
     </li>
-    <li class="pagination__item pagination__item--bookend" aria-label="Go to next page">
-      <button class="pagination__link">Next page
-      </button>
+    <li class="pagination__item pagination__item--bookend">
+      <a class="pagination__link" href="#17">Next page
+      </a>
     </li>
-  </ul>
+  </ol>
 </nav>
+
 ```
