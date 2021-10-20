@@ -5,97 +5,60 @@ import { number } from "@storybook/addon-knobs";
 
 import { EnhancedPagination } from "@nice-digital/nds-enhanced-pagination";
 
-const generatePagesActions = maxDestinations => {
-	let destinations = [];
-	for (let i = 0; i <= maxDestinations; i++) {
-		destinations.push({
-			pageNumber: i,
-			destination: `#${i}`
-		});
-	}
-	return destinations;
-};
-
-const method = "aMethod";
-
-const nextPageAction = {
-	destination: "#somewhere"
-};
-
-const previousPageAction = {
-	destination: "#somewhereElse"
-};
+const mapPageNumberToHref = (pageNumber: number) => `#${pageNumber}`;
 
 storiesOf("Components/Enhanced pagination", module)
-	.add("First page, up to 5 pages", () => {
+	.add("First page, up to 6 pages", () => {
 		return (
 			<EnhancedPagination
 				currentPage={1}
-				method={method}
-				pagesActions={generatePagesActions(4)}
-				nextPageAction={nextPageAction}
-				previousPageAction={previousPageAction}
-				totalPages={4}
+				mapPageNumberToHref={mapPageNumberToHref}
+				totalPages={6}
 			/>
 		);
 	})
-	.add("Second page, up to 5 pages", () => {
+	.add("Second page, up to 6 pages", () => {
 		return (
 			<EnhancedPagination
 				currentPage={2}
-				method={method}
-				pagesActions={generatePagesActions(4)}
-				nextPageAction={nextPageAction}
-				previousPageAction={previousPageAction}
-				totalPages={4}
+				mapPageNumberToHref={mapPageNumberToHref}
+				totalPages={6}
 			/>
 		);
 	})
-	.add("Last page, up to 5 pages", () => {
+	.add("Last page, up to 6 pages", () => {
 		return (
 			<EnhancedPagination
-				currentPage={4}
-				method={method}
-				pagesActions={generatePagesActions(4)}
-				nextPageAction={nextPageAction}
-				previousPageAction={previousPageAction}
-				totalPages={4}
+				currentPage={6}
+				mapPageNumberToHref={mapPageNumberToHref}
+				totalPages={6}
 			/>
 		);
 	})
-	.add("First page, more than 5 pages", () => {
+	.add("First page, more than 6 pages", () => {
 		return (
 			<EnhancedPagination
 				currentPage={1}
-				method={method}
-				pagesActions={generatePagesActions(8)}
-				nextPageAction={nextPageAction}
-				previousPageAction={previousPageAction}
-				totalPages={8}
+				mapPageNumberToHref={mapPageNumberToHref}
+				totalPages={10}
 			/>
 		);
 	})
-	.add("Middle page, more than 5 pages", () => {
+	.add("Middle page, more than 6 pages", () => {
 		return (
 			<EnhancedPagination
-				currentPage={4}
-				method={method}
-				pagesActions={generatePagesActions(8)}
-				nextPageAction={nextPageAction}
-				previousPageAction={previousPageAction}
-				totalPages={8}
+				currentPage={10}
+				mapPageNumberToHref={mapPageNumberToHref}
+				totalPages={20}
 			/>
 		);
 	})
-	.add("Last page, more than 5 pages", () => {
+	.add("Last page, more than 6 pages", () => {
 		return (
 			<EnhancedPagination
-				currentPage={8}
-				method={method}
-				pagesActions={generatePagesActions(8)}
-				nextPageAction={nextPageAction}
-				previousPageAction={previousPageAction}
-				totalPages={8}
+				currentPage={10}
+				mapPageNumberToHref={mapPageNumberToHref}
+				totalPages={10}
 			/>
 		);
 	})
@@ -103,15 +66,7 @@ storiesOf("Components/Enhanced pagination", module)
 		return (
 			<EnhancedPagination
 				currentPage={number("Current page", 5)}
-				method={method}
-				pagesActions={generatePagesActions(
-					number(
-						"Pages to generate (you need at least as many as the total pages)",
-						20
-					)
-				)}
-				nextPageAction={nextPageAction}
-				previousPageAction={previousPageAction}
+				mapPageNumberToHref={mapPageNumberToHref}
 				totalPages={number("Total pages", 10)}
 			/>
 		);
