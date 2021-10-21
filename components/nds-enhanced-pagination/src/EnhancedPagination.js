@@ -23,7 +23,6 @@ export const EnhancedPagination = ({
 		switch (calculatePosition(currentPage)) {
 			case "early":
 				if (totalPages < 7) {
-					console.log("less than 7");
 					for (let i = 2; i < totalPages; i++) {
 						array.splice(array.length - 1, 0, i);
 					}
