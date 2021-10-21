@@ -211,6 +211,21 @@ describe("Enhanced Pagination", () => {
 		expect(firstPaginationLink.prop("href")).toEqual("#4");
 	});
 
+	it("should not render a page link when current page = totalPages and totalPages = 1", () => {
+		const localProps = generateProps({ currentPage: 1, totalPages: 1 });
+		const wrapper = mount(
+			<MemoryRouter>
+				<EnhancedPagination {...localProps} />
+			</MemoryRouter>
+		);
+		expect(
+			wrapper.findWhere(node => node.hasClass("pagination__inactive"))
+		).toHaveLength(1);
+		expect(
+			wrapper.findWhere(node => node.hasClass("pagination__link"))
+		).toHaveLength(0);
+	});
+
 	// no next link
 	it("should not render a next page element when current page = totalPages", () => {
 		const localProps = generateProps({ currentPage: 100, totalPages: 100 });
