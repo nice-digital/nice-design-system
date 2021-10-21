@@ -19,7 +19,8 @@ export const EnhancedPagination = ({
 	};
 
 	const addNumberedPages = array => {
-		array.push(1, totalPages != 1 && totalPages);
+		array.push(1);
+		if (totalPages && totalPages != 1) array.push(totalPages);
 		switch (calculatePosition(currentPage)) {
 			case "early":
 				if (totalPages < 7) {
@@ -89,34 +90,32 @@ export const EnhancedPagination = ({
 						</ElementType>
 					</li>
 				)}
-				{pages
-					.filter(e => e != false)
-					.map((pageNumber, index) => (
-						<li
-							key={index}
-							className={classnames("pagination__item", {
-								"pagination__item--current": pageNumber == currentPage
-							})}
-							{...(pageNumber === currentPage && { "aria-current": "true" })}
-						>
-							{currentPage == pageNumber || pageNumber == null ? (
-								<span className="pagination__inactive">
-									{currentPage == pageNumber && (
-										<span className="visually-hidden">Current page </span>
-									)}
-									{pageNumber || <>&hellip;</>}
-								</span>
-							) : (
-								<ElementType
-									aria-label={`Go to page ${pageNumber}`}
-									className="pagination__link"
-									{...{ [method]: mapPageNumberToHref(pageNumber) }}
-								>
-									{pageNumber}
-								</ElementType>
-							)}
-						</li>
-					))}
+				{pages.map((pageNumber, index) => (
+					<li
+						key={index}
+						className={classnames("pagination__item", {
+							"pagination__item--current": pageNumber == currentPage
+						})}
+						{...(pageNumber === currentPage && { "aria-current": "true" })}
+					>
+						{currentPage == pageNumber || pageNumber == null ? (
+							<span className="pagination__inactive">
+								{currentPage == pageNumber && (
+									<span className="visually-hidden">Current page </span>
+								)}
+								{pageNumber || <>&hellip;</>}
+							</span>
+						) : (
+							<ElementType
+								aria-label={`Go to page ${pageNumber}`}
+								className="pagination__link"
+								{...{ [method]: mapPageNumberToHref(pageNumber) }}
+							>
+								{pageNumber}
+							</ElementType>
+						)}
+					</li>
+				))}
 				<li className="pagination__item pagination__item--count">
 					<span>
 						Page <strong>{currentPage}</strong> of <strong>{totalPages}</strong>
