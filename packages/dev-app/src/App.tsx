@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Grid, GridItem } from "@nice-digital/nds-grid";
 // import Faker from "faker";
 import { Router, Route, Link } from "react-router-dom";
 import { createBrowserHistory } from "history";
@@ -25,6 +26,7 @@ import { HorizontalNavView } from "./views/HorizontalNavView";
 import { TableView } from "./views/TableView";
 import { FullBleedView } from "./views/FullBleedView";
 import { CalloutView } from "./views/CalloutView";
+import { EnhancedPaginationView } from "./views/EnhancedPaginationView";
 import "./App.scss";
 
 const browserHistory = createBrowserHistory();
@@ -51,6 +53,9 @@ class App extends Component {
 					</li>
 					<li>
 						<Link to="/dep-forms">Deprecated Forms</Link>
+					</li>
+					<li>
+						<Link to="/enhanced-pagination">Enhanced Pagination</Link>
 					</li>
 					<li>
 						<Link to="/filters">Filters</Link>
@@ -125,6 +130,10 @@ class App extends Component {
 					<Route path="/table" component={TableView} />
 					<Route path="/tabs" component={TabsView} />
 					<Route path="/tags" component={TagsView} />
+					<Route
+						path="/enhanced-pagination"
+						component={EnhancedPaginationView}
+					/>
 					<p>
 						Some paragraph content for context. Lorem ipsum dolor sit amet,
 						consectetur adipisicing elit. Consequatur minima molestiae nisi qui,

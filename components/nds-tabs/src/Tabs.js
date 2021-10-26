@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { slugify } from "@nice-digital/nds-core/es/utils";
+import { slugify } from "@nice-digital/nds-core";
 import { Tab } from "./Tab";
 import "./../scss/tabs.scss";
 export { Tab };

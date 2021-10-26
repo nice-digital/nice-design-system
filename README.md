@@ -40,8 +40,9 @@ We recommend using vscode as the IDE when developing with the NICE Design System
     TL;DR:
     	1. Install Node 8.9+
     	2. `npm i`
-    	3. `npm start`
-    	4. http://localhost:3000/
+		3. `npm run bootstrap`
+    	4. `npm start`
+    	5. http://localhost:3000/
 
 ### Slow start
 
@@ -110,7 +111,7 @@ Next, check you have access to the @nice-digital org on npm by running `npm org 
 Then run `npm run release` to publish to npm. This runs `lerna publish` under the hood, which means you can pass in [additional command arguments](https://github.com/lerna/lerna/tree/master/commands/publish#readme). For example to release to npm with an alpha [dist tag](https://docs.npmjs.com/cli/dist-tag), run the following:
 
 ```sh
-npm run release -- --dist-tag alpha
+npm run release:alpha
 ```
 
 ## Upgrading to 1.x from 0.x
