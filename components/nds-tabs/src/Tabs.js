@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import classnames from "classnames";
 import { slugify } from "@nice-digital/nds-core";
 import { Tab } from "./Tab";
 import "./../scss/tabs.scss";
@@ -96,11 +97,16 @@ export class Tabs extends Component {
 
 		const getTabSlug = (title, id = null) => id || slugify(title);
 
+		const { className, ...rest } = this.props;
+
+		const classes = classnames({
+			tabs: true,
+			js: this.state.canUseDOM,
+			[className]: className
+		});
+
 		return (
-			<div
-				className={`tabs${this.state.canUseDOM ? " js" : ""}`}
-				{...this.props}
-			>
+			<div className={classes} {...rest}>
 				<ul className="tabs__list" role="tablist">
 					{tabs.map((tab, i) => {
 						const { title, id } = tab.props;
@@ -161,5 +167,6 @@ export class Tabs extends Component {
 }
 
 Tabs.propTypes = {
-	children: PropTypes.oneOfType([PropTypes.arrayOf(Tab), Tab]).isRequired
+	children: PropTypes.oneOfType([PropTypes.arrayOf(Tab), Tab]).isRequired,
+	className: PropTypes.string
 };
