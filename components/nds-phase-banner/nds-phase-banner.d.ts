@@ -6,6 +6,7 @@ declare module "@nice-digital/nds-phase-banner" {
 		alpha?: boolean;
 		beta?: boolean;
 		children: React.ReactNode;
+		className?: string;
 	}
 
 	export const PhaseBanner: React.FC<PhaseBannerProps>;
