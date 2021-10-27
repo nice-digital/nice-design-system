@@ -4,6 +4,7 @@ declare module "@nice-digital/nds-phase-banner" {
 	interface BaseProps {
 		[prop: string]: unknown;
 		children: React.ReactNode;
+		className?: string;
 	}
 
 	export interface PhaseBannerAlpha extends BaseProps {

@@ -65,6 +65,12 @@ Mark the phase of the banner display as "beta".
 </PhaseBanner>;
 ```
 
+##### className
+
+- Type: `string`
+
+Any additional className will be merged on to the container.
+
 ### SCSS
 
 If you're not using [React](#react), then import the SCSS directly into your application by:
