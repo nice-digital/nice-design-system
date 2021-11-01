@@ -185,7 +185,6 @@ export class Tabs extends Component {
 
 Tabs.propTypes = {
 	children: PropTypes.oneOfType([PropTypes.arrayOf(Tab), Tab]).isRequired,
-	initialTab: PropTypes.number,
 	changeCallback: PropTypes.func,
 	hash: PropTypes.string,
 	className: PropTypes.string
