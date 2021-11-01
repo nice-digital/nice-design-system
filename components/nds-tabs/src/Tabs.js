@@ -47,7 +47,7 @@ export class Tabs extends Component {
 			index: index,
 			focusActiveTabButton: true
 		});
-		this.props.changeCallback && this.props.changeCallback(hash);
+		this.props.onTabChange && this.props.onTabChange(hash);
 	}
 
 	getIndexOfHashThatMatchesTab(hash) {
@@ -185,7 +185,7 @@ export class Tabs extends Component {
 
 Tabs.propTypes = {
 	children: PropTypes.oneOfType([PropTypes.arrayOf(Tab), Tab]).isRequired,
-	changeCallback: PropTypes.func,
+	onTabChange: PropTypes.func,
 	initialHash: PropTypes.string,
 	className: PropTypes.string
 };
