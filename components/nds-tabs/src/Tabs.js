@@ -61,7 +61,7 @@ export class Tabs extends Component {
 	componentDidMount() {
 		this.setState({
 			canUseDOM: true,
-			index: this.getIndexOfHashThatMatchesTab(this.props.hash)
+			index: this.getIndexOfHashThatMatchesTab(this.props.initialHash)
 		});
 	}
 
@@ -186,6 +186,6 @@ export class Tabs extends Component {
 Tabs.propTypes = {
 	children: PropTypes.oneOfType([PropTypes.arrayOf(Tab), Tab]).isRequired,
 	changeCallback: PropTypes.func,
-	hash: PropTypes.string,
+	initialHash: PropTypes.string,
 	className: PropTypes.string
 };
