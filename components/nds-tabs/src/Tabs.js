@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import classnames from "classnames";
 import { slugify } from "@nice-digital/nds-core";
 import { Tab } from "./Tab";
 import "./../scss/tabs.scss";
@@ -41,15 +42,32 @@ export class Tabs extends Component {
 		};
 	}
 
-	componentDidMount() {
-		this.setState({ canUseDOM: true });
-	}
-
-	handleTabButtonClick(index) {
+	changeTab(index, hash) {
 		this.setState({
 			index: index,
 			focusActiveTabButton: true
 		});
+		this.props.changeCallback && this.props.changeCallback(hash);
+	}
+
+	getIndexOfHashThatMatchesTab(hash) {
+		const tabs = this.getTabChildElements();
+		const hashIndex = tabs
+			.map(tab => "#" + slugify(tab.props.title))
+			.indexOf(hash);
+		return hashIndex === -1 ? 0 : hashIndex;
+	}
+
+	componentDidMount() {
+		this.setState({
+			canUseDOM: true,
+			index: this.getIndexOfHashThatMatchesTab(this.props.hash)
+		});
+	}
+
+	handleTabButtonClick(event, index) {
+		const hash = event.target.dataset.hash;
+		this.changeTab(index, hash);
 	}
 
 	handleTabButtonKey(e, i) {
@@ -78,11 +96,7 @@ export class Tabs extends Component {
 				break;
 		}
 
-		newIndex !== i &&
-			this.setState({
-				index: newIndex,
-				focusActiveTabButton: true
-			});
+		newIndex !== i && this.changeTab(newIndex);
 	}
 
 	getTabChildElements() {
@@ -96,11 +110,19 @@ export class Tabs extends Component {
 
 		const getTabSlug = (title, id = null) => id || slugify(title);
 
+		const classes = classnames([
+			"tabs",
+			this.state.canUseDOM && "js",
+			this.props.className
+		]);
+
+		const filteredProps = Object.assign({}, this.props);
+
+		// remove from being spread on to the DOM
+		delete filteredProps?.changeCallback;
+
 		return (
-			<div
-				className={`tabs${this.state.canUseDOM ? " js" : ""}`}
-				{...this.props}
-			>
+			<div className={classes} {...filteredProps}>
 				<ul className="tabs__list" role="tablist">
 					{tabs.map((tab, i) => {
 						const { title, id } = tab.props;
@@ -113,10 +135,11 @@ export class Tabs extends Component {
 									className="tabs__tab-btn"
 									type="button"
 									role="tab"
+									data-hash={tabSlug}
 									id={`tab-button-${tabSlug}`}
 									aria-controls={`tab-pane-${tabSlug}`}
 									aria-selected={isTabActive}
-									onClick={() => this.handleTabButtonClick(i)}
+									onClick={e => this.handleTabButtonClick(e, i)}
 									onKeyDown={e => this.handleTabButtonKey(e, i)}
 									ref={btn => {
 										this.state.focusActiveTabButton &&
@@ -161,5 +184,9 @@ export class Tabs extends Component {
 }
 
 Tabs.propTypes = {
-	children: PropTypes.oneOfType([PropTypes.arrayOf(Tab), Tab]).isRequired
+	children: PropTypes.oneOfType([PropTypes.arrayOf(Tab), Tab]).isRequired,
+	initialTab: PropTypes.number,
+	changeCallback: PropTypes.func,
+	hash: PropTypes.string,
+	className: PropTypes.string
 };
