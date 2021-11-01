@@ -24,4 +24,13 @@ describe("Phase Banner", () => {
 		expect(wrapper.find("p").props()["className"]).toContain("mt--0");
 		expect(wrapper.find("p").props()["className"]).toContain("phase-banner");
 	});
+
+	it("should pass additional props down to the container", () => {
+		const wrapper = shallow(
+			<PhaseBanner alpha data-track="false">
+				Some content
+			</PhaseBanner>
+		);
+		expect(wrapper.find("p").props()["data-track"]).toEqual("false");
+	});
 });

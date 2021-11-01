@@ -71,12 +71,21 @@ Mark the phase of the banner display as "beta".
 
 Any additional className will be merged on to the container.
 
+##### Other props
+
+Any additional props will be spread across the container.
+
+```jsx
+<PhaseBanner alpha data-track="track-this">...</PhaseBanner>
+```
+
+
 ### SCSS
 
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-alert/scss/alert";
+@import "~@nice-digital/nds-phase-banner/scss/phase-banner";
 ```
 
 ### HTML
@@ -84,14 +93,12 @@ If you're not using [React](#react), then import the SCSS directly into your app
 If you're not using [React](#react), then include the [SCSS as above](#scss) and use the HTML:
 
 ```html
-<div class="alert alert--info">
-	<h3>Alert title</h3>
-	<p>
-		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet inventore
-		maxime repellendus dolorem incidunt tempora a aspernatur sapiente quas
-		quidem quia dolores, molestiae, accusamus, libero dicta! Explicabo
-		recusandae, exercitationem iure ad asperiores tenetur quaerat, animi in quae
-		numquam velit nostrum!
-	</p>
-</div>
+<p class="phase-banner">
+  <span class="phase-banner__tag">
+    <span class="tag tag--alpha tag--impact">Alpha</span>
+  </span>
+  <span class="phase-banner__label">
+    This is a new service - your feedback will help us to improve it.
+  </span>
+</p>
 ```
