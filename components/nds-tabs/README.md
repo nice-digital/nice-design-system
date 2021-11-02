@@ -49,6 +49,12 @@ The `Tabs` component will only accept children of type `Tab`. Any other supplied
 </Tabs>
 ```
 
+##### className
+
+- Type: `string`
+
+Any additional className will be merged on to the container.
+
 ##### other props
 
 The `Tabs` component will spread any props across the tab panel's containing `div` element.

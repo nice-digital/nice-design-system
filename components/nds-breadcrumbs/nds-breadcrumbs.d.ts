@@ -18,6 +18,7 @@ declare module "@nice-digital/nds-breadcrumbs" {
 
 	export interface BreadcrumbsProps {
 		[prop: string]: unknown;
+		className?: string;
 		children: ValidBreadcrumbProp[] | ValidBreadcrumbProp;
 	}
 

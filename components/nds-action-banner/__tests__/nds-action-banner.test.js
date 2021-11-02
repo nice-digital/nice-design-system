@@ -46,6 +46,15 @@ describe("ActionBanner", () => {
 		expect(wrapper.find("section").props()["data-track"]).toEqual("test");
 	});
 
+	it("should merge additional classes into the existing classes", () => {
+		const wrapper = shallow(
+			<ActionBanner title="Some title" className="mt--0">
+				Some body
+			</ActionBanner>
+		);
+		expect(wrapper.find("section").props()["className"]).toContain("mt--0");
+	});
+
 	it("should not render an empty CTA", () => {
 		const wrapper = shallow(<ActionBanner title="Title">Body</ActionBanner>);
 		expect(wrapper.find(".action-banner__actions")).toHaveLength(0);

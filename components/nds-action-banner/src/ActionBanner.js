@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import classnames from "classnames";
 import RemoveIcon from "@nice-digital/icons/lib/Remove";
 
 import "../scss/action-banner.scss";
@@ -28,17 +28,25 @@ export class ActionBanner extends React.Component {
 	render() {
 		if (this.state.isClosed) return null;
 
-		const { variant, onClosing, title, children, cta, ...rest } = this.props;
+		const {
+			variant,
+			onClosing,
+			title,
+			children,
+			cta,
+			className,
+			...rest
+		} = this.props;
 
-		const classes = ["action-banner"];
-
-		if (variant && variant !== "default")
-			classes.push(`action-banner--${variant}`);
-
-		if (onClosing) classes.push("action-banner--closeable");
+		const classes = {
+			"action-banner": true,
+			"action-banner--closeable": onClosing,
+			[`action-banner--${variant}`]: variant,
+			[className]: className
+		};
 
 		return (
-			<section className={classes.join(" ")} {...rest}>
+			<section className={classnames(classes)} {...rest}>
 				<div className="action-banner__container">
 					<div className="action-banner__inner">
 						<div className="action-banner__text">
@@ -71,7 +79,8 @@ ActionBanner.propTypes = {
 		PropTypes.node
 	]).isRequired,
 	cta: PropTypes.node,
-	onClosing: PropTypes.func
+	onClosing: PropTypes.func,
+	className: PropTypes.string
 };
 
 ActionBanner.defaultProps = {

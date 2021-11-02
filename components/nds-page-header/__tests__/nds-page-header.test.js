@@ -41,4 +41,11 @@ describe("PageHeader", () => {
 		);
 		expect(wrapper.find("div").props()["data-track"]).toEqual(false);
 	});
+
+	it("should merge classes with the container", () => {
+		const wrapper = shallow(
+			<PageHeader heading="This is our heading" className="mt--0" />
+		);
+		expect(wrapper.find("div").props()["className"]).toContain("mt--0");
+	});
 });

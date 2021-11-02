@@ -59,6 +59,10 @@ import { Breadcrumbs, Breadcrumb } from "@nice-digital/nds-breadcrumbs";
 
 The indvidual breadcrumb items
 
+###### rest
+
+Any additional props will be spread across the containing `nav`, including any additional classNames
+
 ##### Breadcrumb
 
 ###### to
@@ -86,6 +90,12 @@ The method of activating the link. By default a link is an anchor with `href` at
 - Type: `React.ReactNode`
 
 The text of the breadcrumb. Can accept any valid React node, but should be limited to a string to conform with the design system.
+
+###### className
+
+- Type: `string`
+
+Any additional className will be merged on to the container
 
 ### SCSS
 

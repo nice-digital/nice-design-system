@@ -49,4 +49,13 @@ describe("Breadcrumb", () => {
 			["aria-current"]: true
 		});
 	});
+
+	it("should merge any additional classes onto the container", () => {
+		const wrapper = shallow(
+			<Breadcrumb to="/" aria-current={true} className="mt--0">
+				Home
+			</Breadcrumb>
+		);
+		expect(wrapper.find("li").props()["className"]).toContain("mt--0");
+	});
 });
