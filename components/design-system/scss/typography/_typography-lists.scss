@@ -21,7 +21,6 @@ ol {
 /// @see .list--unstyled
 /// @see .list--loose
 /// @since 0.1.0
-/* stylelint-disable-next-line no-descending-specificity */
 .list {
   @include nds-list;
   li,

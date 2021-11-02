@@ -51,17 +51,20 @@ export class Tabs extends Component {
 	}
 
 	getIndexOfHashThatMatchesTab(hash) {
+		if (!hash) return 0;
 		const tabs = this.getTabChildElements();
 		const hashIndex = tabs
+			// document.location.hash returns the # character with it
 			.map(tab => "#" + slugify(tab.props.title))
 			.indexOf(hash);
 		return hashIndex === -1 ? 0 : hashIndex;
 	}
 
 	componentDidMount() {
+		const hash = document?.location?.hash || null;
 		this.setState({
 			canUseDOM: true,
-			index: this.getIndexOfHashThatMatchesTab(this.props.initialHash)
+			index: this.getIndexOfHashThatMatchesTab(hash)
 		});
 	}
 
@@ -119,7 +122,7 @@ export class Tabs extends Component {
 		const filteredProps = Object.assign({}, this.props);
 
 		// remove from being spread on to the DOM
-		delete filteredProps?.changeCallback;
+		delete filteredProps?.onTabChange;
 
 		return (
 			<div className={classes} {...filteredProps}>
@@ -186,6 +189,5 @@ export class Tabs extends Component {
 Tabs.propTypes = {
 	children: PropTypes.oneOfType([PropTypes.arrayOf(Tab), Tab]).isRequired,
 	onTabChange: PropTypes.func,
-	initialHash: PropTypes.string,
 	className: PropTypes.string
 };
