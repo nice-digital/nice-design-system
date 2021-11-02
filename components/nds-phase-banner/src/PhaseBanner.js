@@ -1,14 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classnames from "classnames";
 import { Tag } from "@nice-digital/nds-tag";
 
 import "./../scss/phase-banner.scss";
 
 export const PhaseBanner = props => {
-	const { alpha, beta, children, ...rest } = props;
+	const { alpha, beta, children, className, ...rest } = props;
 
 	return (
-		<p className="phase-banner" {...rest}>
+		<p className={classnames(["phase-banner", className])} {...rest}>
 			<span className="phase-banner__tag">
 				<Tag impact alpha={alpha} beta={beta}>
 					{alpha ? "Alpha" : "Beta"}
@@ -25,7 +26,8 @@ PhaseBanner.propTypes = {
 	children: PropTypes.oneOfType([
 		PropTypes.arrayOf(PropTypes.node),
 		PropTypes.node
-	]).isRequired
+	]).isRequired,
+	className: PropTypes.string
 };
 
 PhaseBanner.defaultProps = {};
