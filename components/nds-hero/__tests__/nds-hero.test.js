@@ -65,6 +65,7 @@ describe("Hero", () => {
 				intro="Introduction text"
 				actions={actions}
 				data-track={false}
+				className="mt--0"
 			>
 				{extras}
 			</Hero>
@@ -73,5 +74,6 @@ describe("Hero", () => {
 		expect(anchor).toHaveLength(2);
 		expect(anchor.last().text()).toEqual("Go to page two");
 		expect(wrapper.find("div.hero").props()["data-track"]).toEqual(false);
+		expect(wrapper.find("div.hero").props()["className"]).toContain("mt--0");
 	});
 });

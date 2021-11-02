@@ -1,12 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import classnames from "classnames";
 import "../scss/hero.scss";
 
 export const Hero = props => {
-	const { actions, children, footer, header, intro, title, ...rest } = props;
+	const {
+		actions,
+		children,
+		footer,
+		header,
+		intro,
+		title,
+		className,
+		...rest
+	} = props;
 	return (
-		<div className="hero" {...rest}>
+		<div className={classnames(["hero", className])} {...rest}>
 			<div className="hero__container">
 				{header && header}
 				<div className="hero__body">
@@ -26,6 +35,7 @@ export const Hero = props => {
 Hero.propTypes = {
 	actions: PropTypes.node,
 	children: PropTypes.node,
+	className: PropTypes.string,
 	footer: PropTypes.node,
 	header: PropTypes.node,
 	intro: PropTypes.node,

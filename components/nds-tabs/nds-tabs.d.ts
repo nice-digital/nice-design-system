@@ -13,7 +13,7 @@ declare module "@nice-digital/nds-tabs" {
 	export interface TabsProps {
 		[prop: string]: unknown;
 		children: React.ReactNode | React.ReactNode[];
-		initialHash?: string;
+		className?: string;
 		onTabChange?(hash: string): void;
 	}
 

@@ -126,6 +126,12 @@ const myFooter = <p>Here is some footer content</p>;
 <Hero title="The title" footer={myFooter}>
 ```
 
+###### className
+
+- Type: `string`
+
+Any additional className will be merged on to the container.
+
 ### SCSS
 
 If you're not using [React](#react), then import the SCSS directly into your application by:

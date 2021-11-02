@@ -88,6 +88,12 @@ The main, call to action button.
 
 The callback function to be called when this action banner is closed. Leave blank to default to a non-closable banner.
 
+###### className
+
+- Type: `string`
+
+Any additional className will be merged on to the container.
+
 ### SCSS
 
 If you're not using [React](#react), then import the SCSS directly into your application by:

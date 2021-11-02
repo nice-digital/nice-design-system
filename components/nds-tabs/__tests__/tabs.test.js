@@ -100,4 +100,15 @@ describe("Tabs", () => {
 			true
 		);
 	});
+
+	it("should merge additional classes onto container", () => {
+		const newWrapper = mount(
+			<Tabs className="mt--0">
+				<Tab title="Tab 1">
+					<p>Tab one content</p>
+				</Tab>
+			</Tabs>
+		);
+		expect(newWrapper.find("div.tabs").props()["className"]).toContain("mt--0");
+	});
 });

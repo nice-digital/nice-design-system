@@ -62,6 +62,10 @@ A callback function that will be called when a tab is changed. Passes back a slu
 
 Any additional className value that should be merged with the container.
 
+##### other props
+
+The `Tabs` component will spread any props across the tab panel's containing `div` element.
+
 #### `Tab` Props
 
 ##### children

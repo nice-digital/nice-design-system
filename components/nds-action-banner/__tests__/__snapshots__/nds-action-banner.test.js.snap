@@ -2,7 +2,7 @@
 
 exports[`ActionBanner should match snapshot for closeable subtle action banner 1`] = `
 <section
-  className="action-banner action-banner--subtle action-banner--closeable"
+  className="action-banner action-banner--closeable action-banner--subtle"
 >
   <div
     className="action-banner__container"
@@ -53,7 +53,7 @@ exports[`ActionBanner should match snapshot for closeable subtle action banner 1
 
 exports[`ActionBanner should match snapshot for default action banner 1`] = `
 <section
-  className="action-banner"
+  className="action-banner action-banner--default"
 >
   <div
     className="action-banner__container"

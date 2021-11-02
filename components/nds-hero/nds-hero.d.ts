@@ -9,6 +9,7 @@ declare module "@nice-digital/nds-hero" {
 		header?: React.ReactNode;
 		intro?: React.ReactNode;
 		title: React.ReactNode;
+		className?: string;
 	}
 
 	export const Hero: React.FC<HeroProps>;
