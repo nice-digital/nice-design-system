@@ -27,6 +27,7 @@ import { TableView } from "./views/TableView";
 import { FullBleedView } from "./views/FullBleedView";
 import { CalloutView } from "./views/CalloutView";
 import { EnhancedPaginationView } from "./views/EnhancedPaginationView";
+import { PhaseBannerView } from "./views/PhaseBannerView";
 import "./App.scss";
 
 const browserHistory = createBrowserHistory();
@@ -105,6 +106,9 @@ class App extends Component {
 					<li>
 						<Link to="/tags">Tags</Link>
 					</li>
+					<li>
+						<Link to="/phase-banner">Phase Banner</Link>
+					</li>
 				</ul>
 				<hr />
 				<Container>
@@ -130,6 +134,7 @@ class App extends Component {
 					<Route path="/table" component={TableView} />
 					<Route path="/tabs" component={TabsView} />
 					<Route path="/tags" component={TagsView} />
+					<Route path="/phase-banner" component={PhaseBannerView} />
 					<Route
 						path="/enhanced-pagination"
 						component={EnhancedPaginationView}
