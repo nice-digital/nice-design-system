@@ -1,13 +1,19 @@
 declare module "@nice-digital/nds-phase-banner" {
 	import React = require("react");
 
-	export interface PhaseBannerProps {
+	interface BaseProps {
 		[prop: string]: unknown;
-		alpha?: boolean;
-		beta?: boolean;
 		children: React.ReactNode;
 		className?: string;
 	}
 
-	export const PhaseBanner: React.FC<PhaseBannerProps>;
+	export interface PhaseBannerAlpha extends BaseProps {
+		alpha: boolean;
+	}
+
+	export interface PhaseBannerBeta extends BaseProps {
+		beta: boolean;
+	}
+
+	export const PhaseBanner: React.FC<PhaseBannerAlpha | PhaseBannerBeta>;
 }

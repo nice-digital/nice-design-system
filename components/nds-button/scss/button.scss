@@ -4,6 +4,9 @@
 
 @import '~@nice-digital/nds-core/scss/core';
 
+$nds-button-shadow-colour: rgba(0, 0, 0, 0.2);
+$nds-button-border-radius: em(3px);
+
 /// Button
 /// @since 0.1.0
 .btn {
@@ -11,7 +14,8 @@
   appearance: none;
   background: $nds-colour-btn-primary;
   border: em(1px) solid $nds-colour-btn-primary-text;
-  border-radius: 0;
+  border-radius: $nds-button-border-radius;
+  box-shadow: 0 em(3px) em(6px) 0 $nds-button-shadow-colour;
   color: $nds-colour-btn-primary-text;
   cursor: pointer;
   display: inline-block;
@@ -39,6 +43,7 @@
 
   &:hover {
     background: $nds-colour-btn-primary-hover;
+    box-shadow: 0 em(5px) em(8px) 0 $nds-button-shadow-colour;
     color: $nds-colour-btn-primary-text;
     text-decoration: none;
   }
