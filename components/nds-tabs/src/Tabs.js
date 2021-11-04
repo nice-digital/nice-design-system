@@ -42,15 +42,35 @@ export class Tabs extends Component {
 		};
 	}
 
-	componentDidMount() {
-		this.setState({ canUseDOM: true });
-	}
-
-	handleTabButtonClick(index) {
+	changeTab(index, hash) {
 		this.setState({
 			index: index,
 			focusActiveTabButton: true
 		});
+		this.props.onTabChange && this.props.onTabChange(hash);
+	}
+
+	getIndexOfHashThatMatchesTab(hash) {
+		if (!hash) return 0;
+		const tabs = this.getTabChildElements();
+		const hashIndex = tabs
+			// document.location.hash returns the # character with it
+			.map(tab => "#" + slugify(tab.props.title))
+			.indexOf(hash);
+		return hashIndex === -1 ? 0 : hashIndex;
+	}
+
+	componentDidMount() {
+		const hash = document?.location?.hash || null;
+		this.setState({
+			canUseDOM: true,
+			index: this.getIndexOfHashThatMatchesTab(hash)
+		});
+	}
+
+	handleTabButtonClick(event, index) {
+		const hash = event.target.dataset.hash;
+		this.changeTab(index, hash);
 	}
 
 	handleTabButtonKey(e, i) {
@@ -79,11 +99,7 @@ export class Tabs extends Component {
 				break;
 		}
 
-		newIndex !== i &&
-			this.setState({
-				index: newIndex,
-				focusActiveTabButton: true
-			});
+		newIndex !== i && this.changeTab(newIndex);
 	}
 
 	getTabChildElements() {
@@ -97,16 +113,19 @@ export class Tabs extends Component {
 
 		const getTabSlug = (title, id = null) => id || slugify(title);
 
-		const { className, ...rest } = this.props;
+		const classes = classnames([
+			"tabs",
+			this.state.canUseDOM && "js",
+			this.props.className
+		]);
 
-		const classes = classnames({
-			tabs: true,
-			js: this.state.canUseDOM,
-			[className]: className
-		});
+		const filteredProps = Object.assign({}, this.props);
+
+		// remove from being spread on to the DOM
+		delete filteredProps?.onTabChange;
 
 		return (
-			<div className={classes} {...rest}>
+			<div className={classes} {...filteredProps}>
 				<ul className="tabs__list" role="tablist">
 					{tabs.map((tab, i) => {
 						const { title, id } = tab.props;
@@ -119,10 +138,11 @@ export class Tabs extends Component {
 									className="tabs__tab-btn"
 									type="button"
 									role="tab"
+									data-hash={tabSlug}
 									id={`tab-button-${tabSlug}`}
 									aria-controls={`tab-pane-${tabSlug}`}
 									aria-selected={isTabActive}
-									onClick={() => this.handleTabButtonClick(i)}
+									onClick={e => this.handleTabButtonClick(e, i)}
 									onKeyDown={e => this.handleTabButtonKey(e, i)}
 									ref={btn => {
 										this.state.focusActiveTabButton &&
@@ -168,5 +188,6 @@ export class Tabs extends Component {
 
 Tabs.propTypes = {
 	children: PropTypes.oneOfType([PropTypes.arrayOf(Tab), Tab]).isRequired,
+	onTabChange: PropTypes.func,
 	className: PropTypes.string
 };

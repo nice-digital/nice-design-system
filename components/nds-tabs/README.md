@@ -49,11 +49,18 @@ The `Tabs` component will only accept children of type `Tab`. Any other supplied
 </Tabs>
 ```
 
+##### onTabChange
+
+- Type: `function`
+- Returns: string
+
+A callback function that will be called when a tab is changed. Passes back a slugified version of the active tab's title.
+
 ##### className
 
 - Type: `string`
 
-Any additional className will be merged on to the container.
+Any additional className value that should be merged with the container.
 
 ##### other props
 

@@ -14,6 +14,7 @@ declare module "@nice-digital/nds-tabs" {
 		[prop: string]: unknown;
 		children: React.ReactNode | React.ReactNode[];
 		className?: string;
+		onTabChange?(hash: string): void;
 	}
 
 	export const Tabs: React.FC<TabsProps>;
