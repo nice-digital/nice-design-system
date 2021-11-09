@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-breadcrumbs",
-	"version": "1.2.12",
+	"version": "1.2.13",
 	"description": "Breadcrumbs component for the NICE Design System",
 	"keywords": [
 		"breadcrumbs"
