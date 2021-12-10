@@ -41,7 +41,9 @@ import { MySuperComponent } from "./components/MySuperComponent";
 			value: <MySuperComponent />
 		}
 	]
-/>
+>
+    <p>Card children</p>
+</Card>
 
 <Card
 	headingText="Card title"
@@ -61,6 +63,12 @@ import { MySuperComponent } from "./components/MySuperComponent";
 > Note: The React component automatically imports the SCSS, so there's no need to import the SCSS directly yourself.
 
 #### Props
+
+##### children
+
+- Type: `ReactNode`
+
+Child elements when provided are rendered inside card body when the Card component wraps them
 
 ##### summary
 

@@ -36,8 +36,14 @@ CardHeader.propTypes = {
 };
 
 const CardBody = props => {
-	console.log("props ----> ", props);
-	const { metadata, headingText, headingElementType, link, summary } = props;
+	const {
+		metadata,
+		headingText,
+		headingElementType,
+		link,
+		summary,
+		children
+	} = props;
 	const headerProps = { headingText, headingElementType, link };
 	return (
 		<>
@@ -45,9 +51,9 @@ const CardBody = props => {
 				<CardHeader {...headerProps} />
 			</header>
 			{summary && <p className="card__summary">{summary}</p>}
-			{/* TODO render children */}
-			{props.children}
-			{/* <b id="child">Render child</b> */}
+
+			{children && children}
+
 			{metadata && metadata.length && (
 				<dl className="card__metadata">
 					{metadata.map((item, idx) => {
@@ -75,6 +81,7 @@ const CardBody = props => {
 
 CardBody.propTypes = {
 	summary: PropTypes.node,
+	children: PropTypes.node,
 	metadata: PropTypes.arrayOf(
 		PropTypes.shape({
 			label: PropTypes.node,
@@ -94,14 +101,17 @@ export const Card = props => {
 		image,
 		summary,
 		elementType: ContainerType = "article",
+		children,
 		...rest
 	} = props;
+
 	const cardBodyProps = {
 		metadata,
 		headingText,
 		headingElementType,
 		link,
-		summary
+		summary,
+		children
 	};
 	return (
 		<ContainerType className="card" {...rest}>
@@ -122,5 +132,6 @@ export const Card = props => {
 Card.propTypes = {
 	elementType: PropTypes.elementType,
 	image: PropTypes.node,
+	children: PropTypes.node,
 	...CardBody.propTypes
 };
