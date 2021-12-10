@@ -109,6 +109,7 @@ describe("Tabs", () => {
 				</Tab>
 			</Tabs>
 		);
-		expect(newWrapper.find("div.tabs").props()["className"]).toContain("mt--0");
+
+		expect(newWrapper.props()["className"]).toContain("mt--0");
 	});
 });

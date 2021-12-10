@@ -146,7 +146,7 @@ describe("Card", () => {
 		expect(wrapper.find("dt").length).toEqual(3);
 	});
 
-	it.only("should render a wrapped child element", () => {
+	it("should render a wrapped child element", () => {
 		const wrapper = mount(
 			<>
 				<Card headingText="Children rendering">
@@ -155,8 +155,6 @@ describe("Card", () => {
 			</>
 		);
 		const childElement = wrapper.find("#child");
-
-		console.log("####", wrapper.debug());
 		expect(childElement.text()).toBe("Render child");
 	});
 });
