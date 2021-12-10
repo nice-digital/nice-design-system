@@ -17,6 +17,7 @@ declare module "@nice-digital/nds-card" {
 
 	export interface CardProps {
 		[prop: string]: unknown;
+		children?: React.ReactNode;
 		summary?: React.ReactNode;
 		elementType?: React.ElementType;
 		headingElementType?: React.ElementType;

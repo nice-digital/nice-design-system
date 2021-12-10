@@ -36,6 +36,7 @@ CardHeader.propTypes = {
 };
 
 const CardBody = props => {
+	console.log("props ----> ", props);
 	const { metadata, headingText, headingElementType, link, summary } = props;
 	const headerProps = { headingText, headingElementType, link };
 	return (
@@ -44,6 +45,9 @@ const CardBody = props => {
 				<CardHeader {...headerProps} />
 			</header>
 			{summary && <p className="card__summary">{summary}</p>}
+			{/* TODO render children */}
+			{props.children}
+			{/* <b id="child">Render child</b> */}
 			{metadata && metadata.length && (
 				<dl className="card__metadata">
 					{metadata.map((item, idx) => {
