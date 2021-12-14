@@ -118,8 +118,16 @@ const imageAndSummary = () => {
 						alt="Some engaging alt text"
 					/>
 				}
+				summary={text(
+					"Summary",
+					"Summary text (wrapped in a p tag for the purpose of demonstration).",
+					"Summary"
+				)}
 			>
-				<p>Any children passed to the card will be rendered as a summary.</p>
+				<p>
+					Any <strong>children</strong> passed to the card will be rendered in
+					the card body. Take care with semantics!
+				</p>
 			</Card>
 		</ListWrapper>
 	);
