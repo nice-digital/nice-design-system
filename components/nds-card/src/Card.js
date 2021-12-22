@@ -94,6 +94,7 @@ CardBody.propTypes = {
 
 export const Card = props => {
 	const {
+		className,
 		metadata,
 		headingText,
 		headingElementType,
@@ -113,8 +114,11 @@ export const Card = props => {
 		summary,
 		children
 	};
+
+	const classes = classNames(["card", className]);
+
 	return (
-		<ContainerType className="card" {...rest}>
+		<ContainerType className={classes} {...rest}>
 			{image ? (
 				<>
 					<div className="card__image">{image}</div>
