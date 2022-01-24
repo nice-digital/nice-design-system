@@ -102,6 +102,24 @@ export const CardView = () => {
 						</span>
 					}
 				/>
+				<Card
+					headingText={
+						<a href="#">
+							This is a <mark>search</mark> result
+						</a>
+					}
+					summary={
+						<span>
+							My <b>lightly formatted</b> summary
+						</span>
+					}
+				/>
+				<Card
+					headingText="test child rendering"
+					summary="Does this have a child element?"
+				>
+					<p>Child element inside card</p>
+				</Card>
 			</ul>
 		</>
 	);
