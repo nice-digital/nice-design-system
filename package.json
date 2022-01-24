@@ -24,7 +24,7 @@
 		"// STORYBOOK": "",
 		"storybook": "lerna run --stream --scope=storybook storybook",
 		"storybook:dev": "concurrently npm:build:es:watch npm:storybook",
-		"storybook:build": "lerna run --scope=storybook build-storybook",
+		"storybook:build": "lerna run --stream --scope=storybook build-storybook",
 		"// LERNA": "",
 		"lerna": "lerna",
 		"bootstrap": "lerna bootstrap",
