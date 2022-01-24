@@ -38,9 +38,10 @@ $nds-tag-border-radius: em($nds-spacing-xx-small);
   vertical-align: baseline;
 
   &--impact {
-    font-weight: 900;
+    font-weight: 700;
     letter-spacing: 1px;
     padding: em($nds-spacing-xx-small $nds-spacing-small);
+    text-shadow: 1px 0 0 currentColor;
     text-transform: uppercase;
   }
 
