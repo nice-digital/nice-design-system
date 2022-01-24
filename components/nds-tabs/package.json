@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-tabs",
-	"version": "1.2.16-alpha.0",
+	"version": "1.2.16",
 	"description": "Tabs component for the NICE Design System",
 	"author": "Ian Routledge <ian.routledge@nice.org.uk>",
 	"homepage": "https://design-system.nice.org.uk/",
