@@ -81,7 +81,7 @@
 		"@mdx-js/mdx": "^1.5.1",
 		"@mdx-js/react": "^1.5.1",
 		"@nice-digital/eslint-config": "^1.0.1",
-		"@nice-digital/global-nav": "github:nice-digital/global-nav",
+		"@nice-digital/global-nav": "^4.1.707-GN-165-IconsDep",
 		"@storybook/addon-a11y": "^6.4.14",
 		"@storybook/addon-actions": "^6.4.14",
 		"@storybook/addon-essentials": "^6.4.14",
