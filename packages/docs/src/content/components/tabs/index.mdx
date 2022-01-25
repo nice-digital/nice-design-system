@@ -4,6 +4,8 @@ description: Content is separated into different panes, with only one pane viewa
 template: detail
 npm: nds-tabs
 storybook: components-tabs
+inpagenav: true
+github: components/nds-tabs
 ---
 
 import { Tabs, Tab } from "@nice-digital/nds-tabs";
@@ -58,8 +60,6 @@ Make sure the CSS and JS is loaded into your page. If you're using this on nice.
 	<div data-tab-title="Tab two title"><p>Tab Two content</p></div>
 	<div data-tab-title="Tab three title"><p>Tab Three content</p></div>
 </div>
-
 ```
 
 The container should have the data attribute `data-tabs`. The direct children of this element will become the content of the three tabs, and the said children `data-tab-title` attribute will be the name of the tab. The first tab will be the active tab on load.
-

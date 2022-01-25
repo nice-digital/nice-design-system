@@ -4,20 +4,21 @@ description: A navigation menu to navigate to different high level pages or sect
 template: detail
 storybook: components-horizontal-nav
 inpagenav: true
+github: components/nds-horizontal-nav
+npm: nds-horizontal-nav
 ---
 
-import { HorizontalNav, HorizontalNavLink } from "@nice-digital/nds-horizontal-nav";
+import {
+	HorizontalNav,
+	HorizontalNavLink
+} from "@nice-digital/nds-horizontal-nav";
 
 <HorizontalNav className="panel">
-	<HorizontalNavLink destination="#">
-		Link One
-	</HorizontalNavLink>
+	<HorizontalNavLink destination="#">Link One</HorizontalNavLink>
 	<HorizontalNavLink destination="#" isCurrent={true}>
 		Link Two
 	</HorizontalNavLink>
-	<HorizontalNavLink destination="#">
-		Link Three
-	</HorizontalNavLink>
+	<HorizontalNavLink destination="#">Link Three</HorizontalNavLink>
 </HorizontalNav>
 
 ## What is it?
@@ -104,13 +105,12 @@ Users were asked to navigate to content that sat under the IFP link in the Horiz
 
 NICE users - [Results of click tests for the HST prototype](https://nicedigital.atlassian.net/wiki/spaces/OI/pages/1907687610/Click+tests+of+HST+prototype#Test-2---Navigate-to-IFP)
 
-
 ## Horizontal vs Stacked (Vertical) navigation
 
 When to use the horizontal pattern and when to use the stacked Vertical pattern.
 
 | Vertical nav good to use when:                                                                                            | Horizontal nav good to use when:                                                                 |
-|---------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
 | Menu items with long link text. For example guidance page titles: ‘6. Evaluation committee members and NICE project team’ | Short navigation text.                                                                           |
-| Lots of navigation items - large menus.  Vertical navigation stacks vertically so infinite amount of space to take up.    | Small number of navigation items. Horizontal nav restricted to width of screen.                  |
+| Lots of navigation items - large menus. Vertical navigation stacks vertically so infinite amount of space to take up.     | Small number of navigation items. Horizontal nav restricted to width of screen.                  |
 |                                                                                                                           | Content that needs full width of page Nav sits above content, allows content to span full width. |
