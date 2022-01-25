@@ -12,13 +12,7 @@ import { EnhancedPagination } from "@nice-digital/nds-enhanced-pagination";
 
 <EnhancedPagination
 	currentPage={4}
-	pagesActions={[
-		{ pageNumber: 1, destination: "#1" },
-		{ pageNumber: 3, destination: "#3" },
-		{ pageNumber: 4, destination: "#4" },
-		{ pageNumber: 5, destination: "#5" },
-		{ pageNumber: 9, destination: "#9" }
-	]}
+	mapPageNumberToHref={pageNum => `#${pageNum}`}
 	nextPageAction={{
 		destination: "#somewhere"
 	}}
