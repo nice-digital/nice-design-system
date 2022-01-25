@@ -2,23 +2,17 @@
 title: Enhanced pagination
 description: A way for users to navigate to numbered pages in a sequence of content
 template: detail
-storybook: components-enhanced-navigation
+storybook: components-enhanced-pagination
 inpagenav: true
-npm: https://www.npmjs.com/package/@nice-digital/nds-enhanced-pagination
-github: https://github.com/nice-digital/nice-design-system/tree/main/components/nds-enhanced-pagination
+npm: nds-enhanced-pagination
+github: components/nds-enhanced-pagination
 ---
 
 import { EnhancedPagination } from "@nice-digital/nds-enhanced-pagination";
 
 <EnhancedPagination
 	currentPage={4}
-	pagesActions={[
-		{ pageNumber: 1, destination: "#1" },
-		{ pageNumber: 3, destination: "#3" },
-		{ pageNumber: 4, destination: "#4" },
-		{ pageNumber: 5, destination: "#5" },
-		{ pageNumber: 9, destination: "#9" }
-	]}
+	mapPageNumberToHref={pageNum => `#${pageNum}`}
 	nextPageAction={{
 		destination: "#somewhere"
 	}}

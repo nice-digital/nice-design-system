@@ -9,6 +9,7 @@
 	],
 	"dependencies": {
 		"@nice-digital/design-system": "^1.2.31",
+		"@nice-digital/icons": "^2.2.7",
 		"@nice-digital/nds-action-banner": "^1.2.13",
 		"@nice-digital/nds-alert": "^1.2.11",
 		"@nice-digital/nds-breadcrumbs": "^1.2.13",
@@ -18,6 +19,7 @@
 		"@nice-digital/nds-checkbox": "^1.2.11",
 		"@nice-digital/nds-container": "^1.0.7",
 		"@nice-digital/nds-core": "^1.2.11",
+		"@nice-digital/nds-enhanced-pagination": "^1.0.5",
 		"@nice-digital/nds-filters": "^1.2.20",
 		"@nice-digital/nds-form-group": "^1.2.11",
 		"@nice-digital/nds-forms": "^1.2.6",

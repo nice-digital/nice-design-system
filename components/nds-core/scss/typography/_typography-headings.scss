@@ -8,8 +8,11 @@
 @mixin nds-h1 {
   @include nds-font(h1);
   clear: both;
-  font-weight: 900;
+  font-weight: 700;
+  // Letter spacing and text shadow to mimic 900 weight, see https://github.com/nice-digital/nice-design-system/issues/240
+  letter-spacing: 0.5px;
   max-width: 66ch;
+  text-shadow: 1.5px 0 0 currentColor;
 }
 
 /// Secondary heading. Used for h2 tag but can be used directly

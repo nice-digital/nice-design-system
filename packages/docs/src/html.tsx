@@ -7,8 +7,14 @@ export default function HTML(props: any): React.ReactElement {
 			<head>
 				<meta charSet="utf-8" />
 				<meta httpEquiv="x-ua-compatible" content="ie=edge" />
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
 				<link
-					href="https://fonts.googleapis.com/css?family=Lato:200normal,200italic,300normal,300italic,400normal,400italic,700normal,700italic,900normal,900italic"
+					rel="preconnect"
+					href="https://fonts.gstatic.com"
+					crossOrigin="crossOrigin"
+				/>
+				<link
+					href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap"
 					rel="stylesheet"
 					type="text/css"
 				/>
