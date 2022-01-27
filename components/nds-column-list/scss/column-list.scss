@@ -1,0 +1,46 @@
+@import '~@nice-digital/nds-core/scss/core';
+
+.column-list {
+  list-style: none;
+  margin: 0;
+  max-width: 100%;
+
+  &--boxed {
+    background: $nds-colour-true-white;
+    border: 1px solid $nds-colour-border;
+
+    a {
+      padding: rem($nds-spacing-x-small $nds-spacing-medium);
+    }
+
+    @include mq($from: md) {
+      column-count: 2;
+    }
+
+    @include mq($from: lg) {
+      column-count: 3;
+
+      &.cols2 {
+        column-count: 2;
+      }
+    }
+  }
+
+  &--plain {
+    @include mq($from: sm) {
+      column-count: 2;
+    }
+
+    @include mq($from: lg) {
+      &.cols3 {
+        column-count: 3;
+      }
+    }
+  }
+
+  li {
+    break-inside: avoid;
+    display: block;
+    padding: rem($nds-spacing-small) 0; // Make room for the anchor focus outline
+  }
+}

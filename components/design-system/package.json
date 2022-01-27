@@ -40,6 +40,7 @@
     "@nice-digital/nds-callout": "^1.1.14",
     "@nice-digital/nds-card": "^1.2.15",
     "@nice-digital/nds-checkbox": "^1.2.12",
+    "@nice-digital/nds-column-list": "^1.0.0",
     "@nice-digital/nds-container": "^1.0.8",
     "@nice-digital/nds-core": "^1.2.12",
     "@nice-digital/nds-enhanced-pagination": "^1.0.6",

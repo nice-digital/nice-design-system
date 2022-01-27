@@ -171,5 +171,8 @@
 		"stylelint-prettier": "^1.1.1",
 		"stylelint-scss": "^3.21.0",
 		"typescript": "^3.5.3"
+	},
+	"volta": {
+		"node": "12.22.9"
 	}
 }
