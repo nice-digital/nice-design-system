@@ -46,14 +46,14 @@ Whether to render a plain list (as opposed to a boxed one)
 </ColumnList>
 ```
 
-##### cols
+##### columns
 
 - Type: `number` (default: 3)
 
 The maximum number of columns to render. The only permitted values are 2 or 3.
 
 ```js
-<ColumnList cols={2}>
+<ColumnList columns={2}>
 	<li>Item one</li>
 	<li>Item two</li>
 	<li>Item three</li>
@@ -96,7 +96,7 @@ If you're not using [React](#react), then include the [SCSS as above](#scss) and
 
 #### Standard variant (3 columns, boxed layout)
 ```html
-<ol class="column-list column-list--boxed column-list--three-cols">
+<ol class="column-list column-list--boxed">
   <li>One</li>
   <li>Two</li>
   <li>Three</li>
@@ -108,7 +108,7 @@ If you're not using [React](#react), then include the [SCSS as above](#scss) and
 
 #### Alternative variant (2 columns, plain layout)
 ```html
-<ol class="column-list column-list--plain column-list--two-cols">
+<ol class="column-list column-list--plain column-list--two-columns">
   <li>One</li>
   <li>Two</li>
   <li>Three</li>

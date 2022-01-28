@@ -28,6 +28,7 @@ import { FullBleedView } from "./views/FullBleedView";
 import { CalloutView } from "./views/CalloutView";
 import { EnhancedPaginationView } from "./views/EnhancedPaginationView";
 import { PhaseBannerView } from "./views/PhaseBannerView";
+import { ColumnListView } from "./views/ColumnList";
 import "./App.scss";
 
 const browserHistory = createBrowserHistory();
@@ -51,6 +52,9 @@ class App extends Component {
 					</li>
 					<li>
 						<Link to="/card">Card</Link>
+					</li>
+					<li>
+						<Link to="/column-list">Column List</Link>
 					</li>
 					<li>
 						<Link to="/dep-forms">Deprecated Forms</Link>
@@ -117,6 +121,7 @@ class App extends Component {
 					<Route path="/button" component={ButtonView} />
 					<Route path="/callout" component={CalloutView} />
 					<Route path="/card" component={CardView} />
+					<Route path="/column-list" component={ColumnListView} />
 					<Route path="/dep-forms" component={DeprecatedFormsView} />
 					<Route path="/filters" component={FiltersView} />
 					<Route path="/formgroup" component={FormGroupView} />

@@ -10,7 +10,7 @@ export const ColumnList = props => {
 			className={[
 				"column-list",
 				plain ? "column-list--plain" : "column-list--boxed",
-				columns === 2 ? "column-list--two-cols" : "column-list--three-cols",
+				columns === 2 ? "column-list--two-columns" : "",
 				className
 			]
 				.filter(Boolean)

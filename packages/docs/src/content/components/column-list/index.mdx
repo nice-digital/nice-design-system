@@ -78,7 +78,7 @@ increasing as the viewport width increases, up to a maximum of 3 columns.
 </h3>
 <ColumnList
 	plain
-	cols={2}
+	columns={2}
 	aria-labelledby="frequently-visited-topics"
 >
 	<li>
@@ -95,14 +95,14 @@ increasing as the viewport width increases, up to a maximum of 3 columns.
 | Parameter name | Type    | Default | Description                                                                   |
 | -------------- | ------- | ------- | ----------------------------------------------------------------------------- |
 | plain          | Boolean | false   | Whether to render a plain list (as opposed to a boxed one)                    |
-| cols           | Integer | 3       | The maximum number of columns to render. The only permitted values are 2 or 3 |
+| columns        | Integer | 3       | The maximum number of columns to render. The only permitted values are 2 or 3 |
 
 ## Generated markup
 
 The standard variant: 3 columns at the largest breakpoint, with a boxed layout.
 
 ```
-<ol class="column-list column-list--boxed column-list--three-cols">
+<ol class="column-list column-list--boxed">
   <li>One</li>
   <li>Two</li>
   <li>Three</li>
@@ -115,7 +115,7 @@ The standard variant: 3 columns at the largest breakpoint, with a boxed layout.
 An alternative variant: plain rendering, with a maximum of 2 columns.
 
 ```
-<ol class="column-list column-list--plain column-list--two-cols">
+<ol class="column-list column-list--plain column-list--two-columns">
   <li>One</li>
   <li>Two</li>
   <li>Three</li>

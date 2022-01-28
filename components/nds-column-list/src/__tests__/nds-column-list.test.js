@@ -46,15 +46,15 @@ describe("ColumnList", () => {
 				<ListItems />
 			</ColumnList>
 		);
-		expect(wrapper.hasClass("cols2")).toEqual(true);
+		expect(wrapper.hasClass("column-list--two-columns")).toEqual(true);
 	});
-	it("should add CSS module class name to parent list for the 3 column variant", () => {
+	it("should add no CSS module class name to parent list for the 3 column variant", () => {
 		const wrapper = shallow(
 			<ColumnList columns={3}>
 				<ListItems />
 			</ColumnList>
 		);
-		expect(wrapper.hasClass("cols3")).toEqual(true);
+		expect(wrapper.hasClass("column-list--two-columns")).toEqual(false);
 	});
 	it("should append className prop to rendered class attribute", () => {
 		const wrapper = shallow(
