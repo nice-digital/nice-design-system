@@ -18,7 +18,7 @@ Import the `ColumnList` component from the package and use within JSX:
 
 ```jsx
 import React from "react";
-import { Hero } from "@nice-digital/nds-column-list";
+import { ColumnList } from "@nice-digital/nds-column-list";
 
 <ColumnList>
 	<li>Item one</li>
