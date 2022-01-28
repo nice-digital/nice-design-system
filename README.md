@@ -79,24 +79,24 @@ The docs site is built with [Gatsby](https://www.gatsbyjs.org/), a state site ge
 
 Run `npm start` and `test:unit:watch` for development. However, there are other npm scripts available to be run for other tasks:
 
-| Task                         | Description                                                 |
-| ---------------------------- | ----------------------------------------------------------- |
-| `npm start`                  | Runs a server for local development and watches for changes |
-| `npm run bootstrap`          | Runs `lerna bootstrap` under the hood                       |
-| `npm run lerna`              | Runs `lerna` under the hood                                 |
-| `npm run release`            | Runs `lerna publish` under the hood                         |
-| `npm run storybook`          | Runs the storybook web app locally                          |
-| `npm run storybook:build`    | Builds a compiled storybook site                            |
-| `npm test`                   | Lints JS and SCSS and runs JS unit tests                    |
-| `npm run test:unit`          | Runs JS unit tests                                          |
-| `npm run test:unit:watch`    | Runs JS test tests and watches for changes to re-run tests  |
-| `npm run test:unit:coverage` | Runs JS test tests and generates a coverage report          |
-| `npm run lint`               | Lints both JS and SCSS                                      |
-| `npm run lint:js`            | Lints just JS                                               |
-| `npm run lint:scss`          | Lints just SCSS                                             |
-| `npm run docs:dev`           | Start development server for Gatsby documentation site      |
-| `npm run docs:serve`         | Serve the built docs site locally for testing               |
-| `npm run docs:build`         | Build out the docs static site for deployment               |
+| Task                         | Description                                                                   |
+| ---------------------------- | ------------------------------------------------------------------------------|
+| `npm start`                  | Runs a server for local development and watches for changes                   |
+| `npm run bootstrap`          | Runs `lerna bootstrap` under the hood                                         |
+| `npm run lerna`              | Runs `lerna` under the hood                                                   |
+| `npm run release`            | Runs `lerna publish` under the hood                                           |
+| `npm run storybook`          | Runs the storybook web app locally                                            |
+| `npm run storybook:build`    | Builds a compiled storybook site                                              |
+| `npm test`                   | Lints JS and SCSS and runs JS unit tests                                      |
+| `npm run test:unit`          | Runs JS unit tests                                                            |
+| `npm run test:unit:watch`    | Runs JS test tests and watches for changes to re-run tests                    |
+| `npm run test:unit:coverage` | Runs JS test tests and generates a coverage report                            |
+| `npm run lint`               | Lints both JS and SCSS                                                        |
+| `npm run lint:js`            | Lints just JS                                                                 |
+| `npm run lint:scss`          | Lints just SCSS                                                               |
+| `npm run docs:dev`           | Start development server for Gatsby documentation site at localhost:8000      |
+| `npm run docs:serve`         | Serve the built docs site locally for testing at localhost:9000               |
+| `npm run docs:build`         | Build out the docs static site for deployment                                 |
 
 > Note: because lerna is installed locally, you can use `npm run lerna -- ` to run lerna commands, for example `npm run lerna -- add @nice-digital/icons --scope=@nice-digital/nds-filters`
 
