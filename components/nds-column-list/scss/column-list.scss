@@ -12,35 +12,21 @@
     a {
       padding: rem($nds-spacing-x-small $nds-spacing-medium);
     }
-
-    @include mq($from: md) {
-      column-count: 2;
-    }
-
-    @include mq($from: lg) {
-      column-count: 3;
-
-      &.cols2 {
-        column-count: 2;
-      }
-    }
-  }
-
-  &--plain {
-    @include mq($from: sm) {
-      column-count: 2;
-    }
-
-    @include mq($from: lg) {
-      &.cols3 {
-        column-count: 3;
-      }
-    }
   }
 
   li {
     break-inside: avoid;
     display: block;
     padding: rem($nds-spacing-small) 0; // Make room for the anchor focus outline
+  }
+
+  @include mq($from: md) {
+    column-count: 2;
+  }
+
+  @include mq($from: lg) {
+    &--three-cols {
+      column-count: 3;
+    }
   }
 }

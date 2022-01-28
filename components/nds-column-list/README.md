@@ -96,7 +96,7 @@ If you're not using [React](#react), then include the [SCSS as above](#scss) and
 
 #### Standard variant (3 columns, boxed layout)
 ```html
-<ol class="column-list column-list--boxed">
+<ol class="column-list column-list--boxed column-list--three-cols">
   <li>One</li>
   <li>Two</li>
   <li>Three</li>
@@ -108,7 +108,7 @@ If you're not using [React](#react), then include the [SCSS as above](#scss) and
 
 #### Alternative variant (2 columns, plain layout)
 ```html
-<ol class="column-list column-list--plain cols2">
+<ol class="column-list column-list--plain column-list--two-cols">
   <li>One</li>
   <li>Two</li>
   <li>Three</li>
