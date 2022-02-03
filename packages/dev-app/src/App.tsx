@@ -29,6 +29,7 @@ import { CalloutView } from "./views/CalloutView";
 import { EnhancedPaginationView } from "./views/EnhancedPaginationView";
 import { PhaseBannerView } from "./views/PhaseBannerView";
 import { ColumnListView } from "./views/ColumnList";
+import { AToZListView } from "./views/AToZList";
 import "./App.scss";
 
 const browserHistory = createBrowserHistory();
@@ -40,6 +41,9 @@ class App extends Component {
 				<ul className="container hide-print list list--unstyled">
 					<li>
 						<Link to="/alert">Alert</Link>
+					</li>
+					<li>
+						<Link to="/a-to-z-list">A-Z List</Link>
 					</li>
 					<li>
 						<Link to="/breadcrumbs">Breadcrumbs</Link>
@@ -117,6 +121,7 @@ class App extends Component {
 				<hr />
 				<Container>
 					<Route path="/alert" component={AlertView} />
+					<Route path="/a-to-z-list" component={AToZListView} />
 					<Route path="/breadcrumbs" component={BreadcrumbsView} />
 					<Route path="/button" component={ButtonView} />
 					<Route path="/callout" component={CalloutView} />

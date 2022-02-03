@@ -1,0 +1,36 @@
+{
+  "name": "@nice-digital/nds-a-to-z-list",
+  "version": "0.1.0",
+  "description": "A-Z list component for the NICE design system",
+  "main": "lib/AToZList.js",
+  "module": "es/AToZList.js",
+  "style": "scss/a-to-z-list.scss",
+  "types": "nds-a-to-z-list.d.ts",
+  "files": [
+    "lib",
+    "es",
+    "scss",
+    "*.d.ts"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/nice-digital/nice-design-system/issues"
+  },
+  "keywords": [
+    "a to z",
+    "list"
+  ],
+  "author": "Chris Barker <chris.barker@nice.org.uk>",
+  "homepage": "https://design-system.nice.org.uk/",
+  "license": "MIT",
+  "dependencies": {
+    "@nice-digital/nds-column-list": "^1.1.0",
+    "prop-types": "^15.8.1"
+  }
+}
