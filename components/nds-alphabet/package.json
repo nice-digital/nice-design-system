@@ -1,0 +1,39 @@
+{
+  "name": "@nice-digital/nds-alphabet",
+  "version": "0.1.0",
+  "description": "Alphabet component for the NICE Design System",
+  "main": "lib/Alphabet.js",
+  "module": "es/Alphabet.js",
+  "style": "scss/alphabet.js",
+  "types": "nds-alphabet.d.ts",
+  "files": [
+    "lib",
+    "es",
+    "scss",
+    "*.d.ts"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nice-digital/nice-design-system.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/nice-digital/nice-design-system/issues"
+  },
+  "keywords": [
+    "column",
+    "list"
+  ],
+  "author": "Chris Barker <chris.barker@nice.org.uk>",
+  "homepage": "https://design-system.nice.org.uk/",
+  "license": "MIT",
+  "dependencies": {
+    "prop-types": "^15.8.1"
+  }
+}

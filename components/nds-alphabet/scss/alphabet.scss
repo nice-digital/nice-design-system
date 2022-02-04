@@ -1,0 +1,69 @@
+@import '~@nice-digital/nds-core/scss/core';
+
+.alphabet {
+  list-style: none;
+  margin: rem(0 0 $nds-spacing-large);
+  max-width: 100%;
+  padding: 0;
+
+  &:focus {
+    outline: none;
+  }
+
+  @supports (display: grid) {
+    column-gap: rem($nds-spacing-small);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(4ch, 1fr));
+    row-gap: rem($nds-spacing-small);
+
+    &--chunky {
+      grid-template-columns: repeat(auto-fit, minmax(6ch, 1fr));
+    }
+  }
+
+  &__letter {
+    display: inline-block;
+    font-weight: bold;
+    margin: rem(0 $nds-spacing-small $nds-spacing-small 0);
+
+    &--chunky {
+      @include nds-font-size(h4);
+
+      a,
+      span {
+        width: 4.95ch;
+      }
+    }
+
+    a,
+    span {
+      display: block;
+      padding: rem($nds-spacing-small 0);
+      text-align: center;
+      width: 3.95ch;
+    }
+
+    a {
+      background: $nds-colour-true-white;
+      border: 1px solid $nds-colour-border;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    span {
+      color: $nds-colour-nice-dark-grey;
+    }
+
+    @supports (display: grid) {
+      margin: 0;
+
+      a,
+      span {
+        width: auto;
+      }
+    }
+  }
+}
