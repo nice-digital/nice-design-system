@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 
 import { storiesOf } from "@storybook/react";
@@ -9,8 +10,16 @@ import {
 
 const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 
+const FakeLink = props => {
+	return (
+		<a data-test="example-non-standard-element" {...props}>
+			{props.children}
+		</a>
+	);
+};
+
 storiesOf("Components/Alphabet", module)
-	.add("Default (anchors)", () => (
+	.add("Default (links on same page)", () => (
 		<Alphabet>
 			{alphabet.map(letter => (
 				<Letter key={letter} to={`#${letter}`} label={`Letter ${letter}`}>
@@ -19,7 +28,7 @@ storiesOf("Components/Alphabet", module)
 			))}
 		</Alphabet>
 	))
-	.add("Chunky (anchors)", () => (
+	.add("Chunky (links on same page)", () => (
 		<Alphabet chunky>
 			{alphabet.map(letter => (
 				<Letter key={letter} to={`#${letter}`} label={`Letter ${letter}`}>
@@ -41,6 +50,20 @@ storiesOf("Components/Alphabet", module)
 		<Alphabet>
 			{alphabet.map(letter => (
 				<Letter key={letter} to="/example-url" label={`Letter ${letter}`}>
+					{letter.toUpperCase()}
+				</Letter>
+			))}
+		</Alphabet>
+	))
+	.add("Custom link type", () => (
+		<Alphabet>
+			{alphabet.map(letter => (
+				<Letter
+					key={letter}
+					elementType={FakeLink}
+					to="/example-url"
+					label={`Letter ${letter}`}
+				>
 					{letter.toUpperCase()}
 				</Letter>
 			))}
