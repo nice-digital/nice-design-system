@@ -1,4 +1,4 @@
-import React, { Children, isValidElement, cloneElement } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import "../scss/column-list.scss";
 
@@ -17,13 +17,7 @@ export const ColumnList = props => {
 				.join(" ")}
 			{...attrs}
 		>
-			{chunky
-				? Children.map(children, child =>
-						isValidElement(child)
-							? cloneElement(child, { chunky: true })
-							: child
-				  )
-				: children}
+			{children}
 		</ol>
 	);
 };
