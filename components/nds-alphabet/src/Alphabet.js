@@ -69,7 +69,7 @@ Letter.propTypes = {
 	children: PropTypes.node.isRequired,
 	chunky: PropTypes.bool,
 	label: PropTypes.string,
-	to: PropTypes.string | PropTypes.bool,
+	to: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
 	elementType: PropTypes.elementType
 };
 

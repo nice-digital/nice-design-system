@@ -56,7 +56,7 @@ storiesOf("Components/Alphabet", module)
 		</Alphabet>
 	))
 	.add("Custom link type", () => (
-		<Alphabet>
+		<Alphabet aria-label="test-label">
 			{alphabet.map(letter => (
 				<Letter
 					key={letter}
