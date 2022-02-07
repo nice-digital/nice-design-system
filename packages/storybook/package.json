@@ -22,6 +22,7 @@
     "@nice-digital/design-system": "^1.4.0",
     "@nice-digital/nds-action-banner": "^1.2.14",
     "@nice-digital/nds-alert": "^1.2.12",
+    "@nice-digital/nds-alphabet": "^0.1.0",
     "@nice-digital/nds-breadcrumbs": "^1.2.14",
     "@nice-digital/nds-button": "^1.2.12",
     "@nice-digital/nds-callout": "^1.1.14",

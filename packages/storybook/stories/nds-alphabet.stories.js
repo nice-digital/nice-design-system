@@ -3,12 +3,9 @@ import React from "react";
 
 import { storiesOf } from "@storybook/react";
 
-import {
-	Alphabet,
-	Letter
-} from "../../../components/nds-alphabet/src/Alphabet";
+import { Alphabet, Letter } from "@nice-digital/nds-alphabet";
 
-const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+const allLetters = "abcdefghijklmnopqrstuvwxyz".split("");
 
 const FakeLink = props => {
 	return (
@@ -21,7 +18,7 @@ const FakeLink = props => {
 storiesOf("Components/Alphabet", module)
 	.add("Default (links on same page)", () => (
 		<Alphabet>
-			{alphabet.map(letter => (
+			{allLetters.map(letter => (
 				<Letter key={letter} to={`#${letter}`} label={`Letter ${letter}`}>
 					{letter.toUpperCase()}
 				</Letter>
@@ -30,7 +27,7 @@ storiesOf("Components/Alphabet", module)
 	))
 	.add("Chunky (links on same page)", () => (
 		<Alphabet chunky>
-			{alphabet.map(letter => (
+			{allLetters.map(letter => (
 				<Letter key={letter} to={`#${letter}`} label={`Letter ${letter}`}>
 					{letter.toUpperCase()}
 				</Letter>
@@ -39,7 +36,7 @@ storiesOf("Components/Alphabet", module)
 	))
 	.add("No links", () => (
 		<Alphabet>
-			{alphabet.map(letter => (
+			{allLetters.map(letter => (
 				<Letter key={letter} label={`Letter ${letter}`}>
 					{letter.toUpperCase()}
 				</Letter>
@@ -48,7 +45,7 @@ storiesOf("Components/Alphabet", module)
 	))
 	.add("External links", () => (
 		<Alphabet>
-			{alphabet.map(letter => (
+			{allLetters.map(letter => (
 				<Letter key={letter} to="/example-url" label={`Letter ${letter}`}>
 					{letter.toUpperCase()}
 				</Letter>
@@ -57,7 +54,7 @@ storiesOf("Components/Alphabet", module)
 	))
 	.add("Custom link type", () => (
 		<Alphabet aria-label="test-label">
-			{alphabet.map(letter => (
+			{allLetters.map(letter => (
 				<Letter
 					key={letter}
 					elementType={FakeLink}
