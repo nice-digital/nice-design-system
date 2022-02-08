@@ -1,6 +1,6 @@
 {
   "name": "@nice-digital/nds-column-list",
-  "version": "1.1.0",
+  "version": "1.2.0-alpha.0",
   "description": "Column List component for the NICE Design System",
   "main": "lib/ColumnList.js",
   "module": "es/ColumnList.js",
