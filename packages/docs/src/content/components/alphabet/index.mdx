@@ -1,0 +1,325 @@
+---
+title: Alphabet
+description: Display a horizontal A-Z list with optional links
+template: detail
+storybook: components-alphabet
+inpagenav: true
+npm: nds-alphabet
+github: components/nds-alphabet
+---
+
+import { Alphabet, Letter } from "@nice-digital/nds-alphabet";
+
+## Demo
+
+<Alphabet>
+	<li class="alphabet__letter">
+		<a href="#a" aria-label="Letter a">
+			A
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#b" aria-label="Letter b">
+			B
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#c" aria-label="Letter c">
+			C
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#d" aria-label="Letter d">
+			D
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#e" aria-label="Letter e">
+			E
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#f" aria-label="Letter f">
+			F
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#g" aria-label="Letter g">
+			G
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#h" aria-label="Letter h">
+			H
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#i" aria-label="Letter i">
+			I
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#j" aria-label="Letter j">
+			J
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#k" aria-label="Letter k">
+			K
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#l" aria-label="Letter l">
+			L
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#m" aria-label="Letter m">
+			M
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#n" aria-label="Letter n">
+			N
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#o" aria-label="Letter o">
+			O
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#p" aria-label="Letter p">
+			P
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#q" aria-label="Letter q">
+			Q
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#r" aria-label="Letter r">
+			R
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#s" aria-label="Letter s">
+			S
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#t" aria-label="Letter t">
+			T
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#u" aria-label="Letter u">
+			U
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#v" aria-label="Letter v">
+			V
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#w" aria-label="Letter w">
+			W
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#x" aria-label="Letter x">
+			X
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#y" aria-label="Letter y">
+			Y
+		</a>
+	</li>
+	<li class="alphabet__letter">
+		<a href="#z" aria-label="Letter z">
+			Z
+		</a>
+	</li>
+</Alphabet>
+
+## Why use this component?
+
+The alphabet component shows an A-Z list of links in a horizontal format.
+It will actually accept any number of child elements, so you can feed it a
+limited alphabet if the situation calls for it. There are two sizes: standard
+and chunky.
+
+## Usage
+
+The alphabet component fills the available horizontal space wherever it is inserted.
+It renders an `<ol>` element containing any number of child items.
+
+- The child elements passed into the alphabet must consist of at least one `<li>`
+  element - no other elements are permitted
+- The list items may contain links or plain text
+- The chunky variant of the alphabet uses a slightly larger font size and more
+  padding
+- The Alphabet module also exports a `Letter` component, which should be used to
+  generate each letter.
+- The Letter component can take an optional `elementType` argument, which will replace the
+  standard anchor/span tag with whatever you pass in. This is useful for passing in
+  components such as a Gatsby Link.
+
+## Code example
+
+```
+const allLetters = "abcdefghijklmnopqrstuvwxyz".split("");
+
+<Alphabet>
+			{allLetters.map(letter => (
+				<Letter key={letter} to={`#${letter}`} label={`Letter ${letter}`}>
+					{letter.toUpperCase()}
+				</Letter>
+			))}
+</Alphabet>
+```
+
+## Parameters
+
+### Alphabet component
+
+| Parameter name | Type       | Default | Description                                                                      |
+| -------------- | ---------- | ------- | -------------------------------------------------------------------------------- |
+| chunky         | Boolean    | false   | Whether to render the chunky variant (larger font sizes and more padding)        |
+| id             | String     | a-to-z  | The id to give the generated `ol` element. Defaults to "a-to-z" if not specified |
+| children       | Node array | -       | _Required._ An array of nodes to render. These should be `li` elements.          |
+
+### Letter component
+
+| Parameter name | Type    | Default | Description                                                                       |
+| -------------- | ------- | ------- | --------------------------------------------------------------------------------- |
+| to             | String  | -       | If specified, the link destination. If not specified, a span is rendered instead. |
+| label          | String  | -       | Creates an `aria-label` attribute on the generated element.                       |
+| elementType    | Element | a       | The element type used to render the component; can be a React component.          |
+
+## Generated markup
+
+The standard, non-chunky variant:
+
+```
+<ol class="alphabet" id="a-to-z">
+  <li class="alphabet__letter"><a href="#a" aria-label="Letter a">A</a></li>
+  <li class="alphabet__letter"><a href="#b" aria-label="Letter b">B</a></li>
+  <li class="alphabet__letter"><a href="#c" aria-label="Letter c">C</a></li>
+	...
+  <li class="alphabet__letter"><a href="#x" aria-label="Letter x">X</a></li>
+  <li class="alphabet__letter"><a href="#y" aria-label="Letter y">Y</a></li>
+  <li class="alphabet__letter"><a href="#z" aria-label="Letter z">Z</a></li>
+</ol>
+```
+
+The chunky variant:
+
+```
+<ol class="alphabet alphabet--chunky" id="a-to-z">
+  <li class="alphabet__letter alphabet__letter--chunky"><a href="#a" aria-label="Letter a">A</a></li>
+  <li class="alphabet__letter alphabet__letter--chunky"><a href="#b" aria-label="Letter b">B</a></li>
+  <li class="alphabet__letter alphabet__letter--chunky"><a href="#c" aria-label="Letter c">C</a></li>
+	...
+  <li class="alphabet__letter alphabet__letter--chunky"><a href="#x" aria-label="Letter x">X</a></li>
+  <li class="alphabet__letter alphabet__letter--chunky"><a href="#y" aria-label="Letter y">Y</a></li>
+  <li class="alphabet__letter alphabet__letter--chunky"><a href="#z" aria-label="Letter z">Z</a></li>
+</ol>
+```
+
+No links:
+
+```
+<ol class="alphabet" id="a-to-z">
+  <li class="alphabet__letter"><span aria-label="Letter a">A</span></li>
+  <li class="alphabet__letter"><span aria-label="Letter b">B</span></li>
+  <li class="alphabet__letter"><span aria-label="Letter c">C</span></li>
+	...
+  <li class="alphabet__letter"><span aria-label="Letter x">X</span></li>
+  <li class="alphabet__letter"><span aria-label="Letter y">Y</span></li>
+  <li class="alphabet__letter"><span aria-label="Letter z">Z</span></li>
+</ol>
+```
+
+Custom link types:
+
+```
+<ol class="alphabet" id="a-to-z" aria-label="test-label">
+  <li class="alphabet__letter">
+    <span class="alphabet__link-wrapper">
+      <a
+        data-test="example-non-standard-element"
+        aria-label="Letter a"
+        class="alphabet__link"
+        to="/example-url"
+      >
+        A
+      </a>
+    </span>
+  </li>
+  <li class="alphabet__letter">
+    <span class="alphabet__link-wrapper">
+      <a
+        data-test="example-non-standard-element"
+        aria-label="Letter b"
+        class="alphabet__link"
+        to="/example-url"
+      >
+        B
+      </a>
+    </span>
+  </li>
+  <li class="alphabet__letter">
+    <span class="alphabet__link-wrapper">
+      <a
+        data-test="example-non-standard-element"
+        aria-label="Letter c"
+        class="alphabet__link"
+        to="/example-url"
+      >
+        C
+      </a>
+    </span>
+  </li>
+	...
+	<li class="alphabet__letter">
+    <span class="alphabet__link-wrapper">
+      <a
+        data-test="example-non-standard-element"
+        aria-label="Letter x"
+        class="alphabet__link"
+        to="/example-url"
+      >
+        X
+      </a>
+    </span>
+  </li>
+  <li class="alphabet__letter">
+    <span class="alphabet__link-wrapper">
+      <a
+        data-test="example-non-standard-element"
+        aria-label="Letter y"
+        class="alphabet__link"
+        to="/example-url"
+      >
+        Y
+      </a>
+    </span>
+  </li>
+  <li class="alphabet__letter">
+    <span class="alphabet__link-wrapper">
+      <a
+        data-test="example-non-standard-element"
+        aria-label="Letter z"
+        class="alphabet__link"
+        to="/example-url"
+      >
+        Z
+      </a>
+    </span>
+  </li>
+</ol>
+```
