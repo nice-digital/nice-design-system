@@ -15,4 +15,7 @@ declare module "@nice-digital/nds-alphabet" {
 		to?: string | false;
 		[key: string]: unknown;
 	}
+
+	export const Alphabet: React.FC<AlphabetProps>;
+	export const Letter: React.FC<LetterProps>;
 }
