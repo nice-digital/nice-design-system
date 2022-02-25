@@ -16,7 +16,7 @@ export const AZList = props => {
 };
 
 AZList.propTypes = {
-	alphabet: PropTypes.node.isRequired,
+	alphabet: PropTypes.elementType.isRequired,
 	children: PropTypes.node.isRequired,
 	className: PropTypes.string
 };
@@ -27,7 +27,7 @@ export const AZListItem = props => {
 	const itemId = id || title.replace(" ", "").toLowerCase();
 
 	return (
-		<li className={["a-z-list__item", className].join(" ")}>
+		<li className={["a-z-list__item", className].join(" ")} {...attrs}>
 			<h2 className="a-z-list__item-heading" id={itemId}>
 				{title}
 			</h2>

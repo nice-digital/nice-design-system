@@ -38,7 +38,7 @@ storiesOf("Components/A-Z List", module)
 		</AZList>
 	))
 	.add("Default, column lists as content", () => (
-		<AZList alphabet={mockAlphabet}>
+		<AZList alphabet={mockAlphabet} className="test">
 			{allLetters.map(letter => (
 				<AZListItem key={letter} title={letter.toUpperCase()}>
 					<ColumnList className="test-class">

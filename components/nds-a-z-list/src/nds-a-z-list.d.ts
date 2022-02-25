@@ -2,7 +2,7 @@ declare module "@nice-digital/nds-a-z-list" {
 	import React = require("react");
 
 	export interface AZListProps {
-		alphabet: React.ReactNode;
+		alphabet: React.ElementType;
 		children: React.ReactNode;
 		className?: string;
 		[prop: string]: unknown;
