@@ -2,13 +2,13 @@
 	"name": "@nice-digital/design-system-documentation",
 	"private": true,
 	"description": "Documentation for the NICE Design System",
-	"version": "1.6.0-alpha.0",
+	"version": "1.6.1-alpha.0",
 	"author": "Warren Keith <warren.keith@nice.org.uk>",
 	"keywords": [
 		"gatsby"
 	],
 	"dependencies": {
-		"@nice-digital/design-system": "^1.6.0-alpha.0",
+		"@nice-digital/design-system": "^1.6.1-alpha.0",
 		"@nice-digital/icons": "^2.2.7",
 		"@nice-digital/nds-a-z-list": "^0.2.0-alpha.0",
 		"@nice-digital/nds-action-banner": "^1.2.14",
