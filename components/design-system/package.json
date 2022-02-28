@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@nice-digital/icons": "^2.2.7",
+    "@nice-digital/nds-a-z-list": "^0.2.0-alpha.0",
     "@nice-digital/nds-action-banner": "^1.2.14",
     "@nice-digital/nds-alert": "^1.2.12",
     "@nice-digital/nds-alphabet": "^0.3.0-alpha.0",
