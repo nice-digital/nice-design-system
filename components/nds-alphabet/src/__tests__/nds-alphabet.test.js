@@ -22,6 +22,13 @@ describe("Alphabet", () => {
 		expect(wrapper.hasClass("alphabet")).toEqual(true);
 	});
 
+	it("should add a custom class when one is specified", () => {
+		const wrapper = shallow(
+			<Alphabet className="test-class">{letterElements}</Alphabet>
+		);
+		expect(wrapper.hasClass("test-class")).toEqual(true);
+	});
+
 	it("should add a class of 'alphabet--chunky' to the chunky variant", () => {
 		const wrapper = shallow(<Alphabet chunky>{letterElements}</Alphabet>);
 		expect(wrapper.hasClass("alphabet--chunky")).toEqual(true);

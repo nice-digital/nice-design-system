@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "../scss/alphabet.scss";
 
 export const Alphabet = props => {
-	const { children, id, chunky, ...attrs } = props;
+	const { children, className, id, chunky, ...attrs } = props;
 
 	const chunkyChild = child => {
 		return isValidElement(child)
@@ -13,7 +13,10 @@ export const Alphabet = props => {
 
 	return (
 		<ol
-			className={`alphabet ${chunky ? "alphabet--chunky" : ""}`}
+			className={[
+				`alphabet ${chunky ? "alphabet--chunky" : ""}`,
+				className
+			].join(" ")}
 			id={id || "a-to-z"}
 			{...attrs}
 		>
@@ -25,7 +28,8 @@ export const Alphabet = props => {
 Alphabet.propTypes = {
 	id: PropTypes.string,
 	children: PropTypes.node.isRequired,
-	chunky: PropTypes.bool
+	chunky: PropTypes.bool,
+	className: PropTypes.string
 };
 
 export const Letter = props => {

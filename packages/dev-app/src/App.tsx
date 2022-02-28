@@ -28,7 +28,7 @@ import { FullBleedView } from "./views/FullBleedView";
 import { CalloutView } from "./views/CalloutView";
 import { EnhancedPaginationView } from "./views/EnhancedPaginationView";
 import { PhaseBannerView } from "./views/PhaseBannerView";
-import { ColumnListView } from "./views/ColumnList";
+import { ColumnListView } from "./views/ColumnListView";
 import { AZListView } from "./views/AZListView";
 import { AlphabetView } from "./views/AlphabetView";
 import "./App.scss";
@@ -125,8 +125,8 @@ class App extends Component {
 				<hr />
 				<Container>
 					<Route path="/alert" component={AlertView} />
-		  			<Route path="/a-z-list" component={AZListView} />
-		  			<Route path="/alphabet" component={AlphabetView} />
+					<Route path="/a-z-list" component={AZListView} />
+					<Route path="/alphabet" component={AlphabetView} />
 					<Route path="/breadcrumbs" component={BreadcrumbsView} />
 					<Route path="/button" component={ButtonView} />
 					<Route path="/callout" component={CalloutView} />

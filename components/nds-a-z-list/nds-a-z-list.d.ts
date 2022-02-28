@@ -9,8 +9,11 @@ declare module "@nice-digital/nds-a-z-list" {
 	}
 
 	export interface AZListItemProps {
+		id?: string;
 		title: string;
 		children: React.ReactNode;
+		className?: string;
+		[prop: string]: unknown;
 	}
 
 	export const AZList: React.FC<AZListProps>;

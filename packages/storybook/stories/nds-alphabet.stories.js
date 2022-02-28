@@ -65,4 +65,13 @@ storiesOf("Components/Alphabet", module)
 				</Letter>
 			))}
 		</Alphabet>
+	))
+	.add("Custom class name", () => (
+		<Alphabet className="test-class">
+			{allLetters.map(letter => (
+				<Letter key={letter} to={`#${letter}`} label={`Letter ${letter}`}>
+					{letter.toUpperCase()}
+				</Letter>
+			))}
+		</Alphabet>
 	));
