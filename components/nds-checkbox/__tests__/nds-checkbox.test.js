@@ -51,7 +51,7 @@ describe("Checkbox", () => {
 		expect(parent.length).toEqual(1);
 	});
 
-	it("should add dispaly error text above the control if an error string is supplied", () => {
+	it("should add display error text above the control if an error string is supplied", () => {
 		const localProps = Object.assign({}, props);
 		localProps.error = "Error message here.";
 		const wrapper = shallow(<Checkbox {...localProps} />);

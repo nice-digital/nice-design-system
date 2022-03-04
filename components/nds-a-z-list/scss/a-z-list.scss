@@ -1,0 +1,26 @@
+@import '~@nice-digital/nds-core/scss/core';
+
+.a-z-list {
+  list-style: none;
+  margin: 0;
+  max-width: 100%;
+  padding: 0;
+
+  &__item {
+    margin-bottom: rem($nds-spacing-large);
+  }
+
+  &__item-heading {
+    @include nds-font-size(h4);
+    background: $nds-colour-true-white;
+    border: 1px solid $nds-colour-border;
+    font-weight: 900;
+    margin: 0;
+    max-width: 100%;
+    padding: rem($nds-spacing-small $nds-spacing-medium);
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

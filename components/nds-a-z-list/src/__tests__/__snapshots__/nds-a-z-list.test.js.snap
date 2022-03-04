@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A-Z List should match snapshot with custom attributes 1`] = `
+<AZList
+  alphabet={[Function]}
+  aria-label="test-label"
+  className="test-class"
+>
+  <mockAlphabet
+    className="a-z-list__alphabet"
+  >
+    <ol>
+      <li>
+        <a
+          href="#a"
+        >
+          A
+        </a>
+      </li>
+      <li>
+        <a
+          href="#b"
+        >
+          B
+        </a>
+      </li>
+    </ol>
+  </mockAlphabet>
+  <ol
+    aria-label="test-label"
+    className="a-z-list test-class"
+  >
+    <AZListItems>
+      <li>
+        Item one
+      </li>
+      <li>
+        Item two
+      </li>
+    </AZListItems>
+  </ol>
+</AZList>
+`;
+
+exports[`A-Z List should match snapshot with default attributes 1`] = `
+<AZList
+  alphabet={[Function]}
+>
+  <mockAlphabet
+    className="a-z-list__alphabet"
+  >
+    <ol>
+      <li>
+        <a
+          href="#a"
+        >
+          A
+        </a>
+      </li>
+      <li>
+        <a
+          href="#b"
+        >
+          B
+        </a>
+      </li>
+    </ol>
+  </mockAlphabet>
+  <ol
+    className="a-z-list "
+  >
+    <AZListItems>
+      <li>
+        Item one
+      </li>
+      <li>
+        Item two
+      </li>
+    </AZListItems>
+  </ol>
+</AZList>
+`;

@@ -1,11 +1,11 @@
 {
-  "name": "@nice-digital/nds-column-list",
-  "version": "1.3.0-alpha.0",
-  "description": "Column List component for the NICE Design System",
-  "main": "lib/ColumnList.js",
-  "module": "es/ColumnList.js",
-  "style": "scss/column-list.js",
-  "types": "nds-column-list.d.ts",
+  "name": "@nice-digital/nds-alphabet",
+  "version": "0.3.1-alpha.0",
+  "description": "Alphabet component for the NICE Design System",
+  "main": "lib/Alphabet.js",
+  "module": "es/Alphabet.js",
+  "style": "scss/alphabet.js",
+  "types": "nds-alphabet.d.ts",
   "files": [
     "lib",
     "es",
@@ -27,14 +27,13 @@
     "url": "https://github.com/nice-digital/nice-design-system/issues"
   },
   "keywords": [
-    "column",
-    "list"
+    "alphabet",
+    "a to z"
   ],
   "author": "Chris Barker <chris.barker@nice.org.uk>",
   "homepage": "https://design-system.nice.org.uk/",
   "license": "MIT",
   "dependencies": {
     "prop-types": "^15.8.1"
-  },
-  "gitHead": "e33b39c96bdba7d3c4bf1e74d4101395ccd4f6e6"
+  }
 }
