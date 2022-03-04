@@ -18,7 +18,7 @@ Import the `AZList` and `AZListItem` components from the package and use within 
 
 ```jsx
 import React from "react";
-import { AZList, AZListItem } from "@nice-digital/nds-alphabet";
+import { AZList, AZListItem } from "@nice-digital/nds-a-z-list";
 
 const allLetters = "abcdefghijklmnopqrstuvwxyz".split("");
 
@@ -116,4 +116,3 @@ If you're not using [React](#react), then include the [SCSS as above](#scss) and
   </li>
 </ol>
 ```
-
