@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /// Modular scale values
 /// @link http://www.modularscale.com/
 /// @prop {Number} golden [1.618034]
@@ -19,22 +21,22 @@
 /// @since 0.1.0
 $nds-scales: (
   golden: 1.618034,
-  double-octave: calc(4 / 1),
-  major-twelfth: calc(3 / 1),
-  major-eleventh: calc(8 / 3),
-  major-tenth: calc(5 / 2),
-  octave: calc(2 / 1),
-  major-seventh: calc(15 / 8),
-  minor-seventh: calc(16 / 9),
-  major-sixth: calc(5 / 3),
-  minor-sixth: calc(8 / 5),
-  fifth: calc(3 / 2),
-  augmented-fourth: calc(sqrt(2) / 1),
-  fourth: calc(4 / 3),
-  major-third: calc(5 / 4),
-  minor-third: calc(6 / 5),
-  major-second: calc(9 / 8),
-  minor-second: calc(16 / 1)5
+  double-octave: math.div(4, 1),
+  major-twelfth: math.div(3, 1),
+  major-eleventh: math.div(8, 3),
+  major-tenth: math.div(5, 2),
+  octave: math.div(2, 1),
+  major-seventh: math.div(1, 8),
+  minor-seventh: math.div(1, 9),
+  major-sixth: math.div(5, 3),
+  minor-sixth: math.div(8, 5),
+  fifth: math.div(3, 2),
+  augmented-fourth: math.div(s, (2) / 1),
+  fourth: math.div(4, 3),
+  major-third: math.div(5, 4),
+  minor-third: math.div(6, 5),
+  major-second: math.div(9, 8),
+  minor-second: math.div(1, 1)
 );
 
 /// Gets a module scale ratio with the given name. Looks
