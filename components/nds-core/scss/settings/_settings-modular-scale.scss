@@ -19,22 +19,22 @@
 /// @since 0.1.0
 $nds-scales: (
   golden: 1.618034,
-  double-octave: 4 / 1,
-  major-twelfth: 3 / 1,
-  major-eleventh: 8 / 3,
-  major-tenth: 5 / 2,
-  octave: 2 / 1,
-  major-seventh: 15 / 8,
-  minor-seventh: 16 / 9,
-  major-sixth: 5 / 3,
-  minor-sixth: 8 / 5,
-  fifth: 3 / 2,
-  augmented-fourth: sqrt(2) / 1,
-  fourth: 4 / 3,
-  major-third: 5 / 4,
-  minor-third: 6 / 5,
-  major-second: 9 / 8,
-  minor-second: 16 / 15
+  double-octave: calc(4 / 1),
+  major-twelfth: calc(3 / 1),
+  major-eleventh: calc(8 / 3),
+  major-tenth: calc(5 / 2),
+  octave: calc(2 / 1),
+  major-seventh: calc(15 / 8),
+  minor-seventh: calc(16 / 9),
+  major-sixth: calc(5 / 3),
+  minor-sixth: calc(8 / 5),
+  fifth: calc(3 / 2),
+  augmented-fourth: calc(sqrt(2) / 1),
+  fourth: calc(4 / 3),
+  major-third: calc(5 / 4),
+  minor-third: calc(6 / 5),
+  major-second: calc(9 / 8),
+  minor-second: calc(16 / 1)5
 );
 
 /// Gets a module scale ratio with the given name. Looks
