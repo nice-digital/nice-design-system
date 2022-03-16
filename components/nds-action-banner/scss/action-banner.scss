@@ -115,7 +115,7 @@ $nds-action-banner-subtle-border: $nds-colour-nice-grey-2;
 
     &__text {
       margin-bottom: 0;
-      width: percentage(3/4);
+      width: percentage(3*0.25);
     }
 
     &__actions {
@@ -124,7 +124,7 @@ $nds-action-banner-subtle-border: $nds-colour-nice-grey-2;
       text-align: right;
       top: 50%;
       transform: translateY(-50%);
-      width: percentage(1/4);
+      width: percentage(1*0.25);
     }
 
     &--closeable {

@@ -6,8 +6,10 @@
 /// @param {Number} $num The number whose units you wish to strip.
 /// @since 0.2.0
 /// @link https://davidtheclark.github.io/scut/strip-unit.html
+@use "sass:math";
+
 @function nds-strip-unit($num) {
-  @return $num / ($num * 0 + 1);
+  @return math.div($num, $num * 0 + 1);
 }
 
 /// Convert pixel-values to em-values.
@@ -25,7 +27,7 @@
   $em-vals: ();
 
   @each $val in $pixels {
-    $val-in-ems: (nds-strip-unit($val) / $divisor) * 1em;
+    $val-in-ems: math.div(nds-strip-unit($val), $divisor) * 1em;
     $em-vals: append($em-vals, $val-in-ems);
   }
 
@@ -46,7 +48,7 @@
 @function rem($pixels, $base: $nds-base-font-size) {
   $rem-vals: ();
   @each $val in $pixels {
-    $val-in-rems: nds-strip-unit($val) / $base * 1rem;
+    $val-in-rems: math.div(nds-strip-unit($val), $base) * 1rem;
     $rem-vals: append($rem-vals, $val-in-rems);
   }
 
