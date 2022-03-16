@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import '~@nice-digital/nds-core/scss/core';
 
 // stylelint-disable no-descending-specificity
@@ -46,7 +48,7 @@ $nds-checkbox-size: rem($nds-spacing-large);
       border-width: 0 0 rem($nds-spacing-x-small) rem($nds-spacing-x-small);
       // inside check / tick // stylelint-disable-line
       content: '';
-      height: $nds-checkbox-size / 3; // this is the short end of the checkmark;
+      height: math.div($nds-checkbox-size, 3); // this is the short end of the checkmark;
       left: rem($nds-spacing-small);
       opacity: 0;
       position: absolute;

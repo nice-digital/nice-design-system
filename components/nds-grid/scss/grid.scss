@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import '~@nice-digital/nds-core/scss/core';
 
 ////
@@ -32,8 +34,8 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   list-style: none; // Allow the grid system to be used on lists.
-  margin-left: -#{$nds-grid-gutter / 2};
-  margin-right: -#{$nds-grid-gutter / 2};
+  margin-left: -#{$nds-grid-gutter * 0.5};
+  margin-right: -#{$nds-grid-gutter * 0.5};
   max-width: none; // To override the 66ch max width on lists
   padding: 0; // Remove any paddings that might affect the grid system.
   width: calc(100% + #{$nds-grid-gutter});
@@ -114,8 +116,8 @@
 [data-g] {
   // Auto flex-basis with separate width property for IE11 because of https://github.com/philipwalton/flexbugs#flexbug-8
   flex: 0 0 auto;
-  margin-left: #{$nds-grid-gutter / 2};
-  margin-right: #{$nds-grid-gutter / 2};
+  margin-left: #{$nds-grid-gutter * 0.5};
+  margin-right: #{$nds-grid-gutter * 0.5};
   position: relative;
   // Fixed gutters fallback for IE11, due to lack of custom property support:
   width: calc(100% - #{$nds-grid-gutter});
@@ -155,18 +157,18 @@
 
   @for $index from 1 through 12 {
     [data-g~='#{ $prefix }#{ $index }'] {
-      --grid-item-width: #{percentage($index / 12)};
+      --grid-item-width: #{percentage(math.div($index, 12))};
       // IE 11 fallback, due to lack of custom property support:
-      width: calc(#{percentage($index / 12)} - #{$nds-grid-gutter});
+      width: calc(#{percentage(math.div($index, 12))} - #{$nds-grid-gutter});
     }
   }
 
   @for $index from 0 through 12 {
     [data-g~='#{ $prefix }push:#{ $index }'] {
-      left: percentage($index / 12);
+      left: percentage(math.div($index, 12));
     }
     [data-g~='#{ $prefix }pull:#{ $index }'] {
-      right: percentage($index / 12);
+      right: percentage(math.div($index, 12));
     }
   }
 }
