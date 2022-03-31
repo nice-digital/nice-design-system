@@ -9,3 +9,7 @@ $nds-container-max-width: 1170;
 /// The gutter for the default container
 /// @since 1.0.0
 $nds-container-gutter: $nds-spacing-medium;
+
+/// The maximum content width to ensure good readability
+/// @since 1.6.4
+$nds-readable-width: 66ch;

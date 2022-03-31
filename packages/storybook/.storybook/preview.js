@@ -23,5 +23,10 @@ addDecorator(wrapperDecorator);
 export const parameters = {
 	html: {
 		root: "#wrap-storybook"
+	},
+	options: {
+		storySort: {
+			order: ["Docs", "Foundations", "Components", "Typography"]
+		}
 	}
 };

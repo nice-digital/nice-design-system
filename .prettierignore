@@ -9,6 +9,7 @@ es
 vendor
 *.bundle.js
 packages/storybook/storybook-static
+packages/storybook/stories/**/*.mdx
 packages/docs/.netlify/state.json
 
 # Generated icons SCSS
