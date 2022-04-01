@@ -245,3 +245,37 @@ $nds-colour-hero-background: $nds-colour-nice-teal-2;
 /// Colour for the border in the hero component
 /// @since 0.5.2
 $nds-colour-hero-border: $nds-colour-nice-teal-3;
+
+// ALERTS
+
+/// Border colour for "info" alerts
+/// @since 1.6.4
+$nds-alert-info-border: #3479d0;
+
+/// Background colour for "info" alerts
+/// @since 1.6.4
+$nds-alert-info-background: #eff4fc;
+
+/// Border colour for "caution" alerts
+/// @since 1.6.4
+$nds-alert-caution-border: #dc8a07;
+
+/// Background colour for "caution" alerts
+/// @since 1.6.4
+$nds-alert-caution-background: #fbf7f1;
+
+/// Border colour for "danger" alerts
+/// @since 1.6.4
+$nds-alert-danger-border: #b50f23;
+
+/// Background colour for "danger" alerts
+/// @since 1.6.4
+$nds-alert-danger-background: #f9eced;
+
+/// Border colour for "success" alerts
+/// @since 1.6.4
+$nds-alert-success-border: #68c103;
+
+/// Background colour for "success" alerts
+/// @since 1.6.4
+$nds-alert-success-background: #f3faeb;
