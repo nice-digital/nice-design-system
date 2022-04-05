@@ -1,5 +1,6 @@
 $nice-icons-base-path: '/';
 
+@use '@nice-digital/nds-core/scss/core';
 @import '../../../components/design-system/scss/base.scss';
 
 .storybook-swatch {
@@ -7,4 +8,8 @@ $nice-icons-base-path: '/';
   display: inline-block;
   height: 30px;
   width: 60px;
+}
+
+.link-inverse {
+  @include core.nds-link-inverse;
 }
