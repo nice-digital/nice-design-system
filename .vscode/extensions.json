@@ -7,6 +7,7 @@
 		"christian-kohler.npm-intellisense",
 		"christian-kohler.path-intellisense",
 		"esbenp.prettier-vscode",
-		"hex-ci.stylelint-plus"
+		"hex-ci.stylelint-plus",
+		"silvenon.mdx"
 	]
 }

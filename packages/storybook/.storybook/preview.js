@@ -1,5 +1,6 @@
 import React from "react";
 import { configure, addDecorator } from "@storybook/react";
+import theme from "./nice-theme";
 
 import "./stories.scss";
 
@@ -23,5 +24,13 @@ addDecorator(wrapperDecorator);
 export const parameters = {
 	html: {
 		root: "#wrap-storybook"
+	},
+	options: {
+		storySort: {
+			order: ["Docs", "Foundations", "Components", "Typography"]
+		}
+	},
+	docs: {
+		theme
 	}
 };

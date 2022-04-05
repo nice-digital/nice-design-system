@@ -1,3 +1,44 @@
 $nice-icons-base-path: '/';
 
+@use '@nice-digital/nds-core/scss/core';
 @import '../../../components/design-system/scss/base.scss';
+
+.storybook-swatch {
+  border: 1px solid #dedede;
+  display: inline-block;
+  height: 30px;
+  width: 60px;
+}
+
+.storybook-block {
+  background: core.$nds-colour-nice-purple;
+  display: inline-block;
+  height: 20px;
+  min-width: 1px;
+
+  &--xx-small {
+    width: core.rem(core.$nds-spacing-xx-small);
+  }
+  &--x-small {
+    width: core.rem(core.$nds-spacing-x-small);
+  }
+  &--small {
+    width: core.rem(core.$nds-spacing-small);
+  }
+  &--medium {
+    width: core.rem(core.$nds-spacing-medium);
+  }
+  &--large {
+    width: core.rem(core.$nds-spacing-large);
+  }
+  &--x-large {
+    width: core.rem(core.$nds-spacing-x-large);
+  }
+  &--xx-large {
+    width: core.rem(core.$nds-spacing-xx-large);
+  }
+}
+
+.link-inverse {
+  @include core.nds-link-inverse;
+}
