@@ -1,5 +1,7 @@
 import { Meta } from "@storybook/addon-docs";
 
+import {Block} from "../../storybook-components/Block.jsx";
+
 <Meta title="Docs/Spacing" />
 
 # Spacing
@@ -8,12 +10,12 @@ Settings can be found within NDS Core at [settings/settings-spacing.scss](https:
 
 There are a number of set sizes to be used for margins/padding/borders, listed below:
 
-| Var | Size | Px equivalent | Sample code |
-| --- | ---- | ------------- | ----------- |
-| $nds-spacing-xx-small | 2 | 1px | core.rem(core.$nds-spacing-xx-small) |
-| $nds-spacing-x-small | 4 | 3px | core.rem(core.$nds-spacing-x-small) |
-| $nds-spacing-small | 8 | 7px | core.rem(core.$nds-spacing-small) |
-| $nds-spacing-medium | 16 | 15px | core.rem(core.$nds-spacing-medium) |
-| $nds-spacing-large | 32 | 30px | core.rem(core.$nds-spacing-large) |
-| $nds-spacing-x-large | 48 | 45px | core.rem(core.$nds-spacing-x-large) |
-| $nds-spacing-xx-large | 64 | 60px | core.rem(core.$nds-spacing-xx-large) |
+| Var | Pixels | Rems | Sample code | Width |
+| --- | ------ | ---- | ----------- | ----- |
+| $nds-spacing-xx-small | 2px | 0.125rem | `core.rem(core.$nds-spacing-xx-small)` | <Block width="xx-small" /> |
+| $nds-spacing-x-small | 4px | 0.25rem | `core.rem(core.$nds-spacing-x-small)` | <Block width="x-small" /> |
+| $nds-spacing-small | 8px | 0.5rem | `core.rem(core.$nds-spacing-small)` | <Block width="small" /> |
+| $nds-spacing-medium | 16px | 1rem | `core.rem(core.$nds-spacing-medium)` | <Block width="medium" /> |
+| $nds-spacing-large | 32px | 2rem | `core.rem(core.$nds-spacing-large)` | <Block width="large" /> |
+| $nds-spacing-x-large | 48px | 3rem | `core.rem(core.$nds-spacing-x-large)` | <Block width="x-large" /> |
+| $nds-spacing-xx-large | 64px | 4rem | `core.rem(core.$nds-spacing-xx-large)` | <Block width="xx-large" /> |

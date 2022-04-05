@@ -1,3 +1,5 @@
+// A swatch used to demonstrate a colour value
+
 import React from "react";
 import PropTypes from "prop-types";
 

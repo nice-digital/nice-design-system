@@ -1,5 +1,6 @@
 import React from "react";
 import { configure, addDecorator } from "@storybook/react";
+import theme from "./nice-theme";
 
 import "./stories.scss";
 
@@ -28,5 +29,8 @@ export const parameters = {
 		storySort: {
 			order: ["Docs", "Foundations", "Components", "Typography"]
 		}
+	},
+	docs: {
+		theme
 	}
 };
