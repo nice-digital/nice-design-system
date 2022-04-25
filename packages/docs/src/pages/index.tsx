@@ -168,7 +168,7 @@ export default function IndexPage(props: IndexProps): React.ReactElement {
 						>
 							latest version published on NPM
 						</a>
-						. .
+						. 
 					</p>
 				</GridItem>
 				<GridItem sm={4}>
