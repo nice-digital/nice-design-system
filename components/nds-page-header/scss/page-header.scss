@@ -29,6 +29,7 @@
     @include nds-font-size(h5);
     display: block;
     margin: rem(0);
+    text-shadow: 0.5px 0 0 currentColor;
   }
 
   &__heading {
