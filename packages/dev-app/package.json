@@ -1,6 +1,6 @@
 {
 	"name": "dev-app",
-	"version": "1.4.5",
+	"version": "1.4.6",
 	"private": true,
 	"scripts": {
 		"start": "npm run copy-nice-icons && react-scripts start",
@@ -10,7 +10,7 @@
 		"copy-nice-icons": "copyfiles -f \"node_modules/@nice-digital/icons/dist/*.{eot,svg,ttf,woff,woff2}\" \"public/fonts\""
 	},
 	"dependencies": {
-		"@nice-digital/design-system": "^1.7.1",
+		"@nice-digital/design-system": "^1.7.2",
 		"@nice-digital/nds-a-z-list": "^0.2.2",
 		"@nice-digital/nds-action-banner": "^1.2.17",
 		"@nice-digital/nds-alert": "^1.2.15",
