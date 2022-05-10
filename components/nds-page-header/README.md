@@ -84,7 +84,7 @@ Lead text serves as a short introduction to the page, rendered as a paragraph.
 
 - Type: `React.node`
 
-Room for a button or other call-to-action
+Room for a button or other call-to-action.
 
 ```jsx
 const CtaButton = <button onclick={()=>false}>

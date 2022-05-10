@@ -1,6 +1,6 @@
 {
   "name": "@nice-digital/nds-alphabet",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Alphabet component for the NICE Design System",
   "main": "lib/Alphabet.js",
   "module": "es/Alphabet.js",

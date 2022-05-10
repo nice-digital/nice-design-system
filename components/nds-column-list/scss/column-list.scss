@@ -10,9 +10,8 @@
     border: 1px solid $nds-colour-border;
 
     li {
-      padding: rem(
-        $nds-spacing-small
-      ); // Make room for the anchor focus outline
+      // Make room for the anchor focus outline
+      padding: rem($nds-spacing-small $nds-spacing-medium);
     }
 
     a {
