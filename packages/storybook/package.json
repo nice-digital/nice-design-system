@@ -1,6 +1,6 @@
 {
   "name": "storybook",
-  "version": "1.7.3",
+  "version": "1.7.4",
   "private": true,
   "description": "> TODO: description",
   "author": "Warren Keith <warren.keith@nice.org.uk>",
@@ -19,10 +19,10 @@
     "url": "git+https://github.com/nice-digital/nice-design-system.git"
   },
   "dependencies": {
-    "@nice-digital/design-system": "^1.7.3",
+    "@nice-digital/design-system": "^1.7.4",
     "@nice-digital/nds-a-z-list": "^0.2.2",
     "@nice-digital/nds-action-banner": "^1.2.17",
-    "@nice-digital/nds-alert": "^1.2.15",
+    "@nice-digital/nds-alert": "^1.2.16",
     "@nice-digital/nds-alphabet": "^0.3.2",
     "@nice-digital/nds-breadcrumbs": "^1.2.17",
     "@nice-digital/nds-button": "^1.2.15",
