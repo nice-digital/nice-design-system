@@ -2,7 +2,7 @@
 
 .alert {
   @include nds-font-size(p);
-  border: 3px solid;
+  border: 1px solid;
   font-weight: bold;
   margin-bottom: rem($nds-spacing-medium);
   padding: rem($nds-spacing-medium);
