@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import { Tag } from "@nice-digital/nds-tag";
@@ -20,12 +20,7 @@ export function FilterSummary({
 			<div className="filter-summary__count">
 				<HeadingLevel className="h5 mv--0">{children}</HeadingLevel>
 			</div>
-			{sorting.length > 0 && (
-				<ResultsSorting
-					inactive={sorting.filter(item => !item.active)}
-					active={sorting.filter(item => item.active)[0]}
-				/>
-			)}
+			{sorting.length > 0 && <ResultsSorting sorting={sorting} />}
 			{activeFilters.length > 0 && <ResultsFilters filters={activeFilters} />}
 		</div>
 	);
@@ -92,56 +87,52 @@ function ResultsFilters({ filters }) {
 		</ul>
 	);
 }
+function ResultsSorting({ sorting }) {
+	if (!sorting.length) return null;
 
-function ResultsSorting({ active, inactive }) {
-	if (!inactive.length && !active) return null;
+	// Find default active value if it exists
+	let defaultValue = "";
+	for (let i = 0; i < sorting.length; i++) {
+		if (sorting[i].active === true) {
+			defaultValue = sorting[i].value;
+			break;
+		}
+	}
+
+	// Run function passed in to the selected sorting param
+	const handleChange = e => {
+		const callback = sorting[e.target.selectedIndex].callback;
+		if (typeof callback === "function") {
+			callback();
+		}
+	};
+
+	// Hide button via JS, so it's visible if JS is disabled
+	const buttonStyle = { display: "none" };
+
 	return (
-		<p className="filter-summary__sort hide-print">
-			{active && (
-				<>
-					<span>
-						<span className="visually-hidden">Sorted by</span> {active.label}
-						<span className="visually-hidden">.</span>
-					</span>{" "}
-					|
-				</>
-			)}
-
-			{inactive.length &&
-				inactive.map(
-					(
-						{
-							label,
-							destination,
-							method,
-							elementType,
-							onClick,
-							className = ""
-						},
-						index
-					) => {
-						const ElementType = defineElementType(onClick, elementType);
-						const props = {
-							className: classnames([
-								"filter-summary__sort-control",
-								className
-							]),
-							"aria-label": `Sort by ${label}`,
-							[populateMethodProperty(onClick, method, ElementType)]: onClick
-								? onClick
-								: destination
-						};
-
-						return (
-							<span key={index}>
-								{" "}
-								<ElementType {...props}>{label}</ElementType>{" "}
-								{index + 1 < inactive.length && "|"}
-							</span>
-						);
-					}
-				)}
-		</p>
+		<div className="filter-summary__sorting">
+			<label className="filter-summary__sort-label" htmlFor="sorting-options">
+				Sort by
+			</label>
+			<select
+				id="sorting-options"
+				onChange={handleChange}
+				defaultValue={defaultValue}
+				className="filter-summary__select"
+			>
+				{sorting.map(({ label, value }, index) => {
+					return (
+						<option value={value} key={index}>
+							{label}
+						</option>
+					);
+				})}
+			</select>
+			<button type="submit" style={buttonStyle}>
+				Apply sorting
+			</button>
+		</div>
 	);
 }
 
@@ -154,21 +145,15 @@ const FilterType = PropTypes.shape({
 	className: PropTypes.string
 });
 
-const SortingType =
-	// FilterType +
-	PropTypes.shape({
-		label: PropTypes.string.isRequired,
-		destination: PropTypes.string,
-		onClick: PropTypes.func,
-		elementType: PropTypes.elementType,
-		method: PropTypes.string,
-		className: PropTypes.string,
-		active: PropTypes.bool
-	});
+const SortingType = PropTypes.shape({
+	label: PropTypes.string.isRequired,
+	value: PropTypes.string,
+	active: PropTypes.bool,
+	callback: PropTypes.func
+});
 
 ResultsSorting.propTypes = {
-	active: SortingType,
-	inactive: PropTypes.arrayOf(SortingType)
+	sorting: PropTypes.arrayOf(SortingType)
 };
 
 ResultsFilters.propTypes = {
