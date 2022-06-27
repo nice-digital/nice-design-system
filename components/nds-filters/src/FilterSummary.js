@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import { Tag } from "@nice-digital/nds-tag";
@@ -99,7 +99,7 @@ function ResultsSorting({ sorting }) {
 		}
 	}
 
-	// Run function passed in to the selected sorting param
+	// Run callback function passed in to the selected sorting option
 	const handleChange = e => {
 		const callback = sorting[e.target.selectedIndex].callback;
 		if (typeof callback === "function") {

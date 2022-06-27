@@ -37,14 +37,12 @@ Array [
         </h2>
       </div>
       <ResultsSorting
-        active={
-          Object {
-            "active": true,
-            "label": "Active",
-          }
-        }
-        inactive={
+        sorting={
           Array [
+            Object {
+              "active": true,
+              "label": "Active",
+            },
             Object {
               "label": "Button",
               "onClick": [MockFunction],
@@ -52,39 +50,42 @@ Array [
           ]
         }
       >
-        <p
-          className="filter-summary__sort hide-print"
+        <div
+          className="filter-summary__sorting"
         >
-          <span>
-            <span
-              className="visually-hidden"
-            >
-              Sorted by
-            </span>
-             
-            Active
-            <span
-              className="visually-hidden"
-            >
-              .
-            </span>
-          </span>
-           
-          |
-          <span
-            key="0"
+          <label
+            className="filter-summary__sort-label"
+            htmlFor="sorting-options"
           >
-             
-            <button
-              aria-label="Sort by Button"
-              className="filter-summary__sort-control"
-              onClick={[MockFunction]}
+            Sort by
+          </label>
+          <select
+            className="filter-summary__select"
+            id="sorting-options"
+            onChange={[Function]}
+          >
+            <option
+              key="0"
+            >
+              Active
+            </option>
+            <option
+              key="1"
             >
               Button
-            </button>
-             
-          </span>
-        </p>
+            </option>
+          </select>
+          <button
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+            type="submit"
+          >
+            Apply sorting
+          </button>
+        </div>
       </ResultsSorting>
       <ResultsFilters
         filters={
