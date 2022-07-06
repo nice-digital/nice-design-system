@@ -11,20 +11,20 @@ $nds-base-font-size: $nds-baseline * 4 !default;
 $nds-base-line-height: $nds-baseline * 6 !default;
 
 /// Sans-serif font stack
-/// @since 0.2.0
-$nds-font-family-sans: '"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif' !default;
+/// @since 2.0.0
+$nds-font-family-sans: 'Inter, "Helvetica Neue", Helvetica, Arial, sans-serif' !default;
 
 /// Serif font stack
-/// @since 0.2.0
-$nds-font-family-serif: 'Georgia, "Times New Roman", Times, serif' !default;
+/// @since 2.0.0
+$nds-font-family-serif: 'Lora, Georgia, Times, serif' !default;
 
 /// Mono font stack
 /// @since 0.2.0
 $nds-font-family-mono: 'Monaco, Menlo, Consolas, "Courier New", monospace' !default;
 
 /// The font families in use across NICE.
-/// @prop {Font stack} sans [Lato, Helvetica Neue, Helvetica, Arial, sans-serif] The sans-serif font stack
-/// @prop {Font stack} serif [Georgia, "Times New Roman", Times, serif] The serif font stack
+/// @prop {Font stack} sans [Inter, Helvetica Neue, Helvetica, Arial, sans-serif] The sans-serif font stack
+/// @prop {Font stack} serif [Lora, Georgia, Times, serif] The serif font stack
 /// @prop {Font stack} mono [Monaco, Menlo, Consolas, "Courier New", monospace] The monospace font stack
 /// @see font-family
 /// @since 0.2.0

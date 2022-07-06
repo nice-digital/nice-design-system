@@ -14,9 +14,12 @@ export default function HTML(props: any): React.ReactElement {
 					crossOrigin="crossOrigin"
 				/>
 				<link
-					href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+					href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
 					rel="stylesheet"
-					type="text/css"
+				/>
+				<link
+					href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+					rel="stylesheet"
 				/>
 				<meta
 					name="viewport"
