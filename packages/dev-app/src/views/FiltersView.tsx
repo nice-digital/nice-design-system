@@ -29,16 +29,16 @@ const callback = () => {
 };
 
 const sorting = [
-	{ label: "Item 1", value: "item-1", callback: callback },
-	{ label: "Item 2", value: "item-2", callback: callback },
+	{ label: "Item 1", value: "item-1", onSelected: callback },
+	{ label: "Item 2", value: "item-2", onSelected: callback },
 	{
 		label: "Item 3 (active)",
 		value: "item-3",
-		callback: callback,
+		onSelected: callback,
 		active: true
 	},
-	{ label: "Item 4", value: "item-4", callback: callback },
-	{ label: "Item 5", onClick: onChanged, value: "item-5", callback: callback }
+	{ label: "Item 4", value: "item-4", onSelected: callback },
+	{ label: "Item 5", onClick: onChanged, value: "item-5", onSelected: callback }
 ];
 
 export const FiltersView = () => {

@@ -88,30 +88,19 @@ describe("@nice-digital/nds-filters", () => {
 	});
 
 	describe("FilterSummary component", () => {
-		it("should create a button if passed an onClick prop with onClick set with the function passed", () => {
-			const sorting = [
-				{ label: "Active", active: true },
-				{ label: "Button", onClick: aFunction }
-			];
-			const wrapper = mount(
-				<FilterSummary
-					sorting={sorting}
-					activeFilters={filterSummaryProps.activeFilters}
-				>
-					Showing results 1 to 10 of 1209
-				</FilterSummary>
-			);
-			const sortingElements = wrapper.find(".filter-summary__sort");
-			expect(sortingElements.find("button").length).toEqual(1);
-			expect(sortingElements.find("button").props().onClick).toEqual(aFunction);
-		});
+		it("should preselect whichever sorting option has an active property", () => {
+			const callback = () => {
+				console.log("Callback!");
+			};
 
-		it("should create an anchor with an href if passed no elementType or onClick prop ", () => {
 			const sorting = [
-				{ label: "Active", active: true },
+				{ label: "Item 1", value: "item-1", onSelected: callback },
+				{ label: "Item 2", value: "item-2", onSelected: callback },
 				{
-					label: "Anchor",
-					destination: "https://google.com"
+					label: "Item 3 (active)",
+					value: "item-3",
+					onSelected: callback,
+					active: true
 				}
 			];
 			const wrapper = mount(
@@ -122,36 +111,8 @@ describe("@nice-digital/nds-filters", () => {
 					Showing results 1 to 10 of 1209
 				</FilterSummary>
 			);
-			const sortingElements = wrapper.find(".filter-summary__sort");
-			expect(sortingElements.find("a").length).toEqual(1);
-			expect(sortingElements.find("a").props().href).toEqual(
-				"https://google.com"
-			);
-		});
-
-		it("should create the elementType if passed an elementType with the passed method and destination", () => {
-			const sorting = [
-				{ label: "Active", active: true },
-				{
-					label: "Special Link Element",
-					elementType: "madeuptype",
-					method: "amethod",
-					destination: "/somewhere"
-				}
-			];
-			const wrapper = mount(
-				<FilterSummary
-					sorting={sorting}
-					activeFilters={filterSummaryProps.activeFilters}
-				>
-					Showing results 1 to 10 of 1209
-				</FilterSummary>
-			);
-			const sortingElements = wrapper.find(".filter-summary__sort");
-			expect(sortingElements.find("madeuptype").length).toEqual(1);
-			expect(sortingElements.find("madeuptype").props().amethod).toEqual(
-				"/somewhere"
-			);
+			const sortingSelect = wrapper.find("#sorting-options");
+			expect(sortingSelect.props().defaultValue).toBe("item-3");
 		});
 	});
 

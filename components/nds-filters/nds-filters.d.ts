@@ -12,12 +12,9 @@ declare module "@nice-digital/nds-filters" {
 
 	export type SortingType = {
 		label: string;
-		destination?: string;
-		onClick?: React.EventHandler<any>;
-		elementType?: React.ElementType;
-		method?: string;
-		className?: string;
+		value: string;
 		active?: boolean | undefined;
+		onSelected?: React.EventHandler<any>;
 	};
 
 	export type FilterType = {

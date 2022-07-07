@@ -61,6 +61,7 @@ Array [
           </label>
           <select
             className="filter-summary__select"
+            defaultValue=""
             id="sorting-options"
             onChange={[Function]}
           >
@@ -75,16 +76,6 @@ Array [
               Button
             </option>
           </select>
-          <button
-            style={
-              Object {
-                "display": "none",
-              }
-            }
-            type="submit"
-          >
-            Apply sorting
-          </button>
         </div>
       </ResultsSorting>
       <ResultsFilters

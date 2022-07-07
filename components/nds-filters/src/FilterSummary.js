@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import { Tag } from "@nice-digital/nds-tag";
@@ -90,25 +90,23 @@ function ResultsFilters({ filters }) {
 function ResultsSorting({ sorting }) {
 	if (!sorting.length) return null;
 
+	const [showButton, setShowButton] = useState(true);
+
 	// Find default active value if it exists
-	let defaultValue = "";
-	for (let i = 0; i < sorting.length; i++) {
-		if (sorting[i].active === true) {
-			defaultValue = sorting[i].value;
-			break;
-		}
-	}
+	const defaultValue = sorting.find(s => s.active)?.value || "";
 
 	// Run callback function passed in to the selected sorting option
 	const handleChange = e => {
-		const callback = sorting[e.target.selectedIndex].callback;
-		if (typeof callback === "function") {
-			callback();
+		const onSelected = sorting[e.target.selectedIndex].onSelected;
+		if (typeof onSelected === "function") {
+			onSelected(sorting[e.target.selectedIndex].onSelected.value);
 		}
 	};
 
-	// Hide button via JS, so it's visible if JS is disabled
-	const buttonStyle = { display: "none" };
+	// Hide the button for client-side apps running JS
+	useEffect(() => {
+		setShowButton(false);
+	}, [showButton]);
 
 	return (
 		<div className="filter-summary__sorting">
@@ -129,9 +127,7 @@ function ResultsSorting({ sorting }) {
 					);
 				})}
 			</select>
-			<button type="submit" style={buttonStyle}>
-				Apply sorting
-			</button>
+			{showButton && <button type="submit">Apply sorting</button>}
 		</div>
 	);
 }
@@ -149,7 +145,7 @@ const SortingType = PropTypes.shape({
 	label: PropTypes.string.isRequired,
 	value: PropTypes.string,
 	active: PropTypes.bool,
-	callback: PropTypes.func
+	onSelected: PropTypes.func
 });
 
 ResultsSorting.propTypes = {
