@@ -98,4 +98,17 @@ declare module "@nice-digital/nds-filters" {
 	}
 
 	export const FilterByInput: React.FC<FilterByInputProps>;
+
+	export interface ResultsSortingProps {
+		sorting: SortingType[];
+		selectName: string;
+	}
+
+	export const ResultsSorting: React.FC<ResultsSortingProps>;
+
+	export interface ResultsFiltersProps {
+		filters: FilterType | FilterType[];
+	}
+
+	export const ResultsFilters: React.FC<ResultsFiltersProps>;
 }
