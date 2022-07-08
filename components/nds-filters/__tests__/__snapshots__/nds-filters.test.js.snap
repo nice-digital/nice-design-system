@@ -37,6 +37,7 @@ Array [
         </h2>
       </div>
       <ResultsSorting
+        selectName="s"
         sorting={
           Array [
             Object {
@@ -63,6 +64,7 @@ Array [
             className="filter-summary__select"
             defaultValue=""
             id="sorting-options"
+            name="s"
             onChange={[Function]}
           >
             <option

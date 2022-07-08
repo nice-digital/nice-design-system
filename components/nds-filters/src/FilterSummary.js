@@ -87,7 +87,7 @@ function ResultsFilters({ filters }) {
 		</ul>
 	);
 }
-function ResultsSorting({ sorting }) {
+function ResultsSorting({ sorting, selectName }) {
 	if (!sorting.length) return null;
 
 	const [showButton, setShowButton] = useState(true);
@@ -118,6 +118,7 @@ function ResultsSorting({ sorting }) {
 				onChange={handleChange}
 				defaultValue={defaultValue}
 				className="filter-summary__select"
+				name={selectName}
 			>
 				{sorting.map(({ label, value }, index) => {
 					return (
@@ -149,7 +150,12 @@ const SortingType = PropTypes.shape({
 });
 
 ResultsSorting.propTypes = {
-	sorting: PropTypes.arrayOf(SortingType)
+	sorting: PropTypes.arrayOf(SortingType),
+	selectName: PropTypes.string
+};
+
+ResultsSorting.defaultProps = {
+	selectName: "s"
 };
 
 ResultsFilters.propTypes = {
