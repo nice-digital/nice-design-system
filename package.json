@@ -7,13 +7,12 @@
 		"start": "npm run dev",
 		"dev": "concurrently npm:build:es:watch npm:devapp npm:storybook npm:docs:dev",
 		"// ICONS": "",
-		"icons:start": "lerna run --stream --scope=@nice-digital/icons start",
-		"icons:svgr": "lerna run --stream --scope=@nice-digital/icons svgr",
-		"icons:es5ify": "lerna run --stream --scope=@nice-digital/icons es5ify",
-		"icons:webfont": "lerna run --stream --scope=@nice-digital/icons webfont",
-		"icons:test": "lerna run --stream --scope=@nice-digital/icons test",
-		"icons:readme": "lerna run --stream --scope=@nice-digital/icons readme",
-		"icons:lint": "lerna run --stream --scope=@nice-digital/icons lint",
+		"icons": "lerna run --stream --scope=@nice-digital/icons",
+		"icons:start": "npm run icons -- start",
+		"icons:svgr": "npm run icons -- svgr",
+		"icons:esify": "npm run icons -- esify",
+		"icons:webfont": "npm run icons -- webfont",
+		"icons:readme": "npm run icons -- readme",
 		"// DEVAPP (Playground)": "",
 		"devapp": "lerna run --scope=dev-app start",
 		"devapp:dev": "concurrently npm:devapp npm:build:es:watch",
@@ -95,7 +94,7 @@
 		"@storybook/react": "^6.4.14",
 		"@storybook/source-loader": "^6.4.14",
 		"@storybook/theming": "^6.4.14",
-		"@svgr/cli": "^5.1.0",
+		"@svgr/cli": "^6.2.1",
 		"@types/classnames": "^2.2.11",
 		"@types/faker": "^4.1.5",
 		"@types/history": "^4.7.11",
@@ -142,13 +141,10 @@
 		"gatsby-source-filesystem": "^2.1.35",
 		"gatsby-transformer-remark": "^2.12.0",
 		"gatsby-transformer-sharp": "^2.3.1",
-		"grunt": "^1.0.4",
-		"grunt-webfont": "^1.7.2",
 		"history": "^4.9.0",
 		"identity-obj-proxy": "^3.0.0",
 		"jest": "^27.4.7",
 		"lerna": "^3.20.2",
-		"load-grunt-config": "^3.0.1",
 		"lodash": "^4.17.20",
 		"node-sass-tilde-importer": "^1.0.2",
 		"prettier": "^1.18.2",
@@ -171,9 +167,9 @@
 		"stylelint-order": "^3.1.0",
 		"stylelint-prettier": "^1.1.1",
 		"stylelint-scss": "^3.21.0",
-		"typescript": "^3.5.3"
+		"typescript": "^4.7.4"
 	},
 	"volta": {
-		"node": "12.22.9"
+		"node": "14.20.0"
 	}
 }

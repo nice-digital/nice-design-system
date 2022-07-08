@@ -1,0 +1,11 @@
+{
+	"compilerOptions": {
+		"target": "ES6",
+		"outDir": "es6",
+		"rootDir": "./ts",
+		"jsx": "react",
+		"declaration": true,
+		"skipLibCheck": true
+	},
+	"include": ["./ts/*.tsx"]
+}

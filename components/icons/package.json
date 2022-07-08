@@ -2,15 +2,13 @@
 	"name": "@nice-digital/icons",
 	"version": "2.2.7",
 	"description": "Icons for use in NICE Digital Services",
-	"main": "index.js",
 	"scripts": {
-		"start": "npm run webfont && npm run svgr",
-		"svgr": "svgr -d es6 src && npm run es5ify",
-		"es5ify": "babel es6 -d lib",
-		"webfont": "grunt dist --color",
+		"start": "npm run webfont && npm run svgr && npm run esify",
+		"webfont": "fantasticon",
+		"svgr": "svgr -d ts src",
+		"esify": "tsc -p tsconfig.es5.json && tsc -p tsconfig.es6.json",
 		"test": "echo \"No tests :)\" && exit 0",
 		"readme": "doctoc ./README.md && babel-node ./scripts/readme-replacer.js",
-		"lint": "eslint .",
 		"// Lifecycle hooks": "",
 		"prepublishOnly": "npm start && npm run readme"
 	},
@@ -39,6 +37,7 @@
 		"dist",
 		"es6",
 		"lib",
+		"ts",
 		"scss",
 		"src"
 	],
@@ -49,8 +48,10 @@
 		"react": ">=15"
 	},
 	"engines": {
-		"node": ">= 10.0.0",
-		"npm": ">= 6.8.0"
+		"node": ">= 14.0.0"
 	},
-	"gitHead": "b70a1e39df19c1943a000c841aca8d9bb3ef4ff1"
+	"gitHead": "b70a1e39df19c1943a000c841aca8d9bb3ef4ff1",
+	"devDependencies": {
+		"fantasticon": "^1.2.3"
+	}
 }
