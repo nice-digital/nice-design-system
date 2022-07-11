@@ -29,5 +29,7 @@
 		"titleBar.activeBackground": "#d6c39e",
 		"titleBar.activeForeground": "#3b3938",
 		"activityBar.foreground": "#3b3938"
-	}
+	},
+	"markdown.extension.tableFormatter.enabled": false,
+	"markdown.extension.tableFormatter.normalizeIndentation": false
 }
