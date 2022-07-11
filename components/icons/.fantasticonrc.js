@@ -1,33 +1,20 @@
 module.exports = {
-	inputDir: "./src", // (required)
-	outputDir: "./dist", // (required)
-	fontTypes: ["ttf", "woff", "woff2"],
-	assetTypes: ["ts", "css", "json", "html"],
-	fontsUrl: "/static/fonts",
+	name: "nice-icons",
+	inputDir: "./src",
+	outputDir: "./dist",
+	// Note: as of Icons v2.3 we no longer support older browsers so don't generate TTF etc
+	fontTypes: ["woff", "woff2"],
+	assetTypes: ["css", "scss", "json", "html"],
 	formatOptions: {
-		// Pass options directly to `svgicons2svgfont`
-		woff: {
-			// Woff Extended Metadata Block - see https://www.w3.org/TR/WOFF/#Metadata
-			metadata: "..."
-		},
 		json: {
-			// render the JSON human readable with two spaces indentation (default is none, so minified)
 			indent: 2
-		},
-		ts: {
-			// select what kind of types you want to generate (default `['enum', 'constant', 'literalId', 'literalKey']`)
-			types: ["constant", "literalId"],
-			// render the types with `'` instead of `"` (default is `"`)
-			singleQuotes: true
 		}
 	},
-	// Use a custom Handlebars template
 	templates: {
-		//css: "./my-custom-tp.css.hbs"
+		scss: "./templates/scss.hbs"
 	},
 	pathOptions: {
-		//ts: "./dist/types/icon-types.ts",
-		//json: "./dist/icon-codepoints.json"
+		scss: "./scss/_nice-icons.scss"
 	},
 	codepoints: {
 		// FontAwesome codepoints for backwards compatability
@@ -81,13 +68,5 @@ module.exports = {
 		twitter: 0xe000,
 		user: 0xe01f,
 		warning: 0xe04b
-	},
-	// Customize generated icon IDs (unavailable with `.json` config file)
-	getIconId: ({
-		basename, // `string` - Example: 'foo';
-		relativeDirPath, // `string` - Example: 'sub/dir/foo.svg'
-		absoluteFilePath, // `string` - Example: '/var/icons/sub/dir/foo.svg'
-		relativeFilePath, // `string` - Example: 'foo.svg'
-		index // `number` - Example: `0`
-	}) => [index, basename].join("_") // '0_foo'
+	}
 };

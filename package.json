@@ -146,6 +146,7 @@
 		"jest": "^27.4.7",
 		"lerna": "^3.20.2",
 		"lodash": "^4.17.20",
+		"mkdirp": "^1.0.4",
 		"node-sass-tilde-importer": "^1.0.2",
 		"prettier": "^1.18.2",
 		"prop-types": "^15.8.1",

@@ -1,7 +1,7 @@
 {
 	"compilerOptions": {
 		"target": "ES6",
-		"outDir": "es6",
+		"outDir": "es",
 		"rootDir": "./ts",
 		"jsx": "react",
 		"declaration": true,
