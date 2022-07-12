@@ -7,7 +7,7 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"copy-nice-icons": "copyfiles -f \"node_modules/@nice-digital/icons/dist/*.{eot,svg,ttf,woff,woff2}\" \"public/fonts\""
+		"copy-nice-icons": "copyfiles -f \"node_modules/@nice-digital/icons/dist/*.{woff,woff2}\" \"public/fonts\""
 	},
 	"dependencies": {
 		"@nice-digital/design-system": "^1.7.4",

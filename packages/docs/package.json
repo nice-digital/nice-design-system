@@ -63,6 +63,7 @@
 	"scripts": {
 		"build": "gatsby build",
 		"develop-playground": "cross-env GATSBY_GRAPHQL_IDE=playground gatsby develop",
+		"predevelop": "copyfiles -f \"node_modules/@nice-digital/icons/dist/*.{woff,woff2}\" \"public/fonts\"",
 		"develop": "gatsby develop",
 		"format": "prettier --write \"**/*.{js,jsx,json,md}\"",
 		"start": "gatsby clean && npm run develop",

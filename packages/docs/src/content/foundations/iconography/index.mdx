@@ -1,12 +1,12 @@
 ---
 title: Iconography
 description: Icons, their usage and guidance for creating new custom icons
-
 template: detail
-
 ---
 
-## Introduction
+import { IconList } from "../../../components/partials/icon-list/IconList";
+
+## Guidance
 
 Avoid unnecessary decoration - only use icons if there’s a real user need:
 
@@ -15,121 +15,98 @@ Avoid unnecessary decoration - only use icons if there’s a real user need:
 - icons should be easily recognizable
 - keep icon designs simple and schematic.
 
-We use two types of icons: [unicode glyphs](#unicode-icons) and a [custom icon font](#icon-font):
+## The icons
 
-## Unicode icons
+<IconList />
 
-We use unicode symbols as icons because:
+## Usage
 
-- there are over 136,000 of them
-- they don't require a download so are better for performance.
+There are several ways to use icons with the Design System:
 
-Use unicode symbols instead of SVGs icons wherever possible. If there is no unicode symbol available, then use an icon from our [icon font](#icon-font).
+- [React components](#react-components), when you're in control of React-generated markup (optionally with TypeScript)
+- [icon font](#icon-font), for when you're working with raw HTML or [in SASS](#sass), for writing a bespoke component
+- [SVG icons directly](#svg-icons), for when you're doing something bespoke.
 
-### Unicode glyphs
+Use the method that best suits your use-case. Each of the methods is explained in detail below.
 
-We use a few unicode glyphs within our core code. These are available for by name to avoid using 'magic strings' in code:
+## React components
 
-```
-{% assign unicode = site.data.sass.nice-design-system.items | where_exp: "item","item.context.name == 'nice-glyphs'" | first %}
-<div class="grid">
-    {% for glyph in unicode.property %}
-        <div data-g="6 xs:4 md:3 lg:2" class="text-center">
-            <div class="h2">
-                &#x{{ glyph.resolvedValue }};
-            </div>
-            <p>
-                {{ glyph.name }}
-            </p>
-        </div>
-    {% endfor %}
-</div>
-```
+Use the React (and TypeScript) versions of the icons when you're using React to generate markup in a web app.
 
-### Usage in SASS
+The `@nice-digital/icons` npm package ships with a React component for each icon. There is both an ES5 version in the _lib_ folder (if you're not transipling _node_modules_) or an ES6 version in the _es_ folder. Both of these folders come with corresponding TypeScript definitions in .d.ts files.
 
-#### SASS map
+Note: each React component is also available in source TypeScript in the _ts_ folder to support building from source if you transpile _node_modules_.
 
-The core unicode glyphs we use are defined within the [$nice-glyphs map]({{ site.baseurl }}{% link technical/sass/documentation/helpers.md %}#nice-glyphs).
+Import the component from the _lib_ or _es_ folder to use it in React e.g. `import Chevronright from "@nice-digital/icons/lib/ChevronRight";`. Then use it like any normal React component e.g. `<ChevronRight />`.
 
-This map can be overriden in your application if you use different glyphs, or can be added to over time within the core code.
-
-#### SASS function
-
-The [get-glyph function]({{ site.baseurl }}{% link technical/sass/documentation/helpers.md %}#get-glyph) is a convenient way to use a unicode glyph without needing to know its codepoint. For example:
+Each React component comes with the following props by default:
 
 ```
-.rule:before {
-    content: get-glyph(greater-than);
-}
+width="1em"
+height="1em"
+viewBox="0 0 512 512"
+fill="none"
+xmlns="http://www.w3.org/2000/svg"
+className="icon"
+aria-hidden={true}
+focusable="false"
 ```
 
-### Usage in markup
+Any additional props are spread onto the `svg` element so you can pass in other attributes as needed for example:
 
-To use a unciode icon in markup, you must set `$nice-output-glyph-classes: true` so that the classes are generated. Note: this is set to `false` by default to reduce the size of our CSS.
-
-Usage follows this pattern:
-
+```jsx
+<ChevronRight className={styles.icon} data-tracking="Something" />
 ```
-<span class="glyph glyph--greater-than" aria-hidden="true"></span>
-```
-
-Note: you can use any unicode glyph in markup yourself if you know it's codepoint or shortcut, e.g. &#169;. However these 'magic number' codepoints can make it more difficult to understand what icon is being used. It is advisable to use descriptive class names wherever possible.
 
 ## Icon font
 
-Use icons from an icon font when there are no applicable [unicode icons](#unicode-icons).
+Our icon font is great for when you're working with raw HTML and want to use icons, for example in Orchard, without copying large chunks of SVG markup.
 
-We use a custom icon web font for rendering our icons, built from [source SVGs]({{ site.repository }}/tree/master/src/icons){:target="\_blank"} by a [grunt task]({{ site.repository }}/blob/master/.grunt-tasks/webfont.js){:target="\_blank"} as part of our build process.
-
-- any custom icons can be used
-- icon fonts support IE8+
-- icons are infinitely scalable.
-
-### The icons
-
-The following icons are included within our icon font by default:
-
-```
-<div class="grid">
-    {% for glyph in site.data.fonts.nice-icons.glyphs %}
-        <div data-g="6 xs:4 md:3 lg:2" class="text-center">
-            <div class="h2">
-                <span class="icon icon--{{ glyph }}"></span>
-            </div>
-            <p>
-                {{ glyph }}
-            </p>
-        </div>
-    {% endfor %}
-</div>
-```
+We compile our source SVG icon files into a custom web font. This allows us to use icons easily in HTML markup.
 
 ### Icon markup
 
-Use custom icons in markup wherever possible. Note: there are also [SASS functions and mixins](#usage-in-sass-1) available for building custom components.
+Use the following markup for using the icon font in HTML:
 
-- hide from screenreaders with `[aria-hidden="true"]`
-- use BEM style CSS classes (`icon--NAME` modifier)
-- prefer `<span>` over `<i>`.
-
-For performance reasons, all icons require a base class and individual icon class. To use, place the following code just about anywhere. Be sure to leave a space between the icon and text for proper padding.
-
-```
+```html
 <span class="icon icon--syndication" aria-hidden="true"></span>
 ```
 
-Icon classes cannot be directly combined with other components. They should not be used along with other classes on the same element. Instead, add a nested `<span>` and apply the icon classes to the `<span>`.
+Note the following:
 
-Icon classes should only be used on elements that contain no text content and have no child elements. Use a `<span>` tag rather than `<i>`.
+- hide from screenreaders with `[aria-hidden="true"]`
+- use BEM style CSS classes (e.g. `icon icon--NAME`)
+- use an empty `span` tag (not `<i>`).
+
+Icon classes cannot be directly combined with other clases or components. Instead, add a nested `<span>` and apply the icon classes to the `<span>`:
+
+```html
+<div class="some-component">
+	<span class="icon icon--syndication" aria-hidden="true"></span>
+</div>
+```
+
+Note: there are also [SASS functions and mixins](#usage-in-sass) available for building custom components.
+
+### Margins
+
+Often, icons are used inline with text, for example:
+
+```html
+<span class="icon icon--syndication"></span> Syndication
+```
+
+Make sure there is a space between the icon and the text.
+
+Alternatively, if you have spacing modifiers enabled (with `$nds-include-spacing-modifiers: true` in SASS) use a class of `mr--c` to put space between the icon and text:
+
+```html
+<span class="icon icon--syndication mr--c"></span>Syndication
+```
 
 ### Usage in SASS
 
-There are generated SASS constructs (map, function and mixin) available for creating custom components. These are useful if the default classes for use in markup are not sufficient.
-
-```
-<a href="{{ site.baseurl }}{% link technical/sass/documentation/icons.md %}" class="btn">Browse SASS docs for icons</a>
-```
+There is a generated SASS map, function and mixin available for advanced use-cases like bespoke components. However, the React components should be sufficient in most cases. Use the SASS function and mixin like this:
 
 ```
 .search {
@@ -139,7 +116,7 @@ There are generated SASS constructs (map, function and mixin) available for crea
 
     // or
     &__btn {
-        @include nice-icon-base;
+        @include nice-icons-base;
 
         &:before {
             content: nice-icon(search);
@@ -151,25 +128,18 @@ There are generated SASS constructs (map, function and mixin) available for crea
 
 ### Custom URL
 
-By default, icon font files are referenced from CSS at the _/fonts/_ directory. This can be overridden with the `$nice-font-base-path` variable in your application's SASS. For example:
+The icon font files (WOFF and WOFF2) are loaded from the _/fonts/_ directory by default. This can be overridden with the `$nice-icons-base-path` variable in your application's SASS. For example:
 
-- serve fonts from a different folder (e.g. `$nice-font-base-path: '/assets/icons/';`)
-- serve fonts from a CDN (e.g. `$nice-font-base-path: 'https://cdn.nice.org.uk/fonts/';`).
-
-See [$nice-font-base-path]({{ site.baseurl }}{% link technical/sass/documentation/icons.md %}#nice-font-base-path) in the SASS docs.
+- serve fonts from a different folder (e.g. `$nice-icons-base-path: '/assets/icons/';`)
+- serve fonts from a CDN (e.g. `$nice-icons-base-path: 'https://cdn.nice.org.uk/fonts/';`).
 
 ### Icon font path
 
-The icon font files are included with the _dist/fonts_ folder so are either:
+The icon font files are included with the _dist/fonts_ folder i.e. at _node_modules\@nice-digital\icons\dist_.
 
-- \bower_components\nice-design-system\dist\fonts
-- \node_modules\@nice-digital\design-system\dist\fonts
+To serve these they either need to be copied into an app directory or served directly, like the following ExpressJS example.
 
-To serve these they either need to be served directly or copied into a directory:
-
-#### Node/express
-
-If you're using node and express then you can use the following to serve the compiled font files (woff/eot/ttf etc) directly from the _node_modules/@nice-digital/design-system/dist/fonts_ folder:
+If you're using node and Express then use the following method to serve the font files (WOFF2 and WOFF2) directly:
 
 ```
 const express = require("express"),
@@ -177,87 +147,9 @@ const express = require("express"),
 
 const app = express();
 
-app.use("/fonts", express.static(path.join(__dirname, "./node_modules/@nice-digital/design-system/dist/fonts")));
+app.use("/fonts", express.static(path.join(__dirname, "./node_modules/@nice-digital/icons/dist/")));
 ```
 
-#### Grunt
+## SVG icons
 
-If you're not using express but using Grunt, use a [copy task](ttps://github.com/gruntjs/grunt-contrib-copy){:target="\_blank"} to copy the font files to a directory of your choice on build, e.g.:
-
-```
-// Run `npm install grunt-contrib-copy --save-dev`
-module.exports = function(grunt) {
-
-    grunt.loadNpmTasks("grunt-contrib-copy");
-
-    grunt.initConfig({
-        copy: {
-            icons: {
-                cwd: "node_modules/@nice-digital/design-system/dist/fonts/",
-                src: ["*"],
-                dest: "/fonts/",
-                expand: true,
-                flatten: true,,
-                filter: "isFile"
-            }
-        }
-    });
-};
-```
-
-### 404 in IIS
-
-If you get a 404 error for .woff files with IIS, then you may need to [add the MIME type](http://stackoverflow.com/a/7374640/486434){:target="\_blank"} to your web.config:
-
-```
-<system.webServer>
-    <staticContent>
-        <remove fileExtension=".woff" />
-        <mimeMap fileExtension=".woff" mimeType="application/x-font-woff" />
-    </staticContent>
-</system.webServer>
-```
-
-### IE8 and @font-face
-
-Internet Explorer 8 has some issues with `@font-face`when combined with `:before`. Our icon font uses that combination. If a page is cached, and loaded without the mouse over the window (i.e. hit the refresh button or load something in an iframe) then the page gets rendered before the font loads. Hovering over the page (body) will show some of the icons and hovering over the remaining icons will show those as well.
-
-## Custom icons
-
-The icons provided by default (unicode or icon font) should cater for most scenarios but sometimes you'll need an icon that isn't included.
-
-There are 2 options for creating custom icons:
-
-1. Create a new icon and add it to the core code to make it available for all applications
-2. Create a new icon and generate a [custom icon font](#custom-icon-font) within your application.
-
-### Creating SVG icons
-
-The following should be followed when creating custom SVG icons:
-
-- icons should be easily recognizable
-- keep icon designs simple, clear and schematic
-- use a 512px height SVG
-- use a single compound path
-- ensure the viewbox is from 0,0.
-
-### Core icon
-
-To create a new core icon:
-
-- create an SVG as per the [creating SVG icons](#creating-svg-icons) section
-- save into the _src/icons_ folder
-- run `npm start` to build and run the dev site locally
-- test the icon renders correctly
-- submit a pull request
-- release a new version after it's merged to master.
-
-### Custom icon font
-
-Creating a custom icon font is the best option if you need bespoke icons for your application:
-
-1. create the SVG as per the [creating SVG icons](#creating-svg-icons) section
-2. create a [grunt task for webfont generation](https://github.com/sapegin/grunt-webfont){:target="\_blank"}. You can base this off [our webfont task]({{ site.repository }}/blob/master/.grunt-tasks/webfont.js){:target="\_blank"}.
-3. use a custom template for the Grunt task to override the `$nice-icons` map. You can base this off [our custom template]({{ site.repository }}/blob/master/src/icons/.nice-icons.tmpl.scss){:target="\_blank"}. You don't need the mixins in your template.
-4. reference both your custom SVG icon(s) and the core ones: `src: ["./icons/*.svg", "./node_modules/@nice-digital/design-system/src/icons/*.svg"]`.
-5. override the `$nice-font-base-path` variable if you generate your font files anywhere other than _/fonts/_
+The _src_ folder of the icons package contains the raw SVG files. These SVG files are used to generate both the React components and icon font. In most cases you won't need the SVGs themselves and can use the React components or icon font. However, the src folder is included in the npm package in case you need to do something bespoke.

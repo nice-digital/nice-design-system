@@ -32,7 +32,6 @@
 		- [Webfont](#webfont)
 			- [Serving font files](#serving-font-files)
 				- [Express](#express)
-				- [Grunt copy](#grunt-copy)
 				- [Visual Studio Copy Task](#visual-studio-copy-task)
 				- [Webpack](#webpack)
 			- [Markup](#markup)
@@ -41,9 +40,7 @@
 		- [Dependencies](#dependencies)
 		- [Commands](#commands)
 		- [Updating the readme](#updating-the-readme)
-		- [Releasing](#releasing)
 	- [Creating icons](#creating-icons)
-	- [Custom application icons](#custom-application-icons)
 	- [Icons](#icons)
 	- [License](#license)
 
@@ -206,35 +203,9 @@ app.use("/fonts", express.static(path.join(__dirname, "./node_modules/@nice-digi
 
 See the [simple-express](examples/simple-express) folder for a complete example of this.
 
-##### Grunt copy
-
-Setup a [copy task](https://github.com/gruntjs/grunt-contrib-copy) with [Grunt](https://gruntjs.com/) to copy the font files into your application:
-
-```js
-// Gruntfile.js
-module.exports = function(grunt) {
-	// Run `npm i grunt-contrib-copy --save-dev`
-	grunt.loadNpmTasks("grunt-contrib-copy");
-
-	grunt.initConfig({
-		copy: {
-			icons: {
-				cwd: "node_modules/@nice-digital/icons/dist/",
-				src: ["*.{eot,woff,woff2,ttf,svg}"],
-				dest: "/fonts/",
-				expand: true,
-				flatten: true,,
-				filter: "isFile"
-			}
-		}
-	});
-};
-```
-
 ##### Visual Studio Copy Task
 
 Use a [Visual Studio Copy Task](https://docs.microsoft.com/en-gb/visualstudio/msbuild/copy-task) to copy the font files into your application. Or use a [post build event](https://stackoverflow.com/a/3719097/486434).
-
 
 ##### Webpack
 
@@ -247,7 +218,6 @@ then in the plugins section add the following:
 `new CopyWebpackPlugin([{ from: "node_modules/@nice-digital/icons/dist/*", to: "fonts", ignore: ["*.html"], flatten: true }]),`
 
 note that the 'to' destination is relative to the output path, which for a .NET core app would probably have been configured for wwwroot.
-
 
 #### Markup
 
@@ -301,30 +271,21 @@ There are SASS constructs for advanced usage:
 
 To build the icon font on your local machine, first install:
 
-- [Node 12](https://nodejs.org/en/download/)
+- [Node 14](https://nodejs.org/en/download/)
 - [npm 6.8+](https://www.npmjs.com/)
 
-Then before you can run any tasks, run the following from the command line to install dependencies:
-
-- `npm i`
-
-> Note: if you prefer to use npm rather than yarn, run `yarn` instead.
-
-We use Grunt as a task runner hence the dependency on Node. If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide first.
+Then before you can run any tasks, run the following from the command line to install dependencies `npm i`
 
 ### Commands
 
-Run `npm start` from the command line for development. This uses [grunt-webfont](.grunt-tasks/webfont.js) under the hood to:
+Run `npm start` from the command line for development. This uses fantasticon under the hood to:
 
 - build the [source icons](src) into a web font in the [dist folder](dist) with formats:
-	- [EOT](dist/nice-icons.eot)
-	- [SVG](dist/nice-icons.svg)
-	- [TTF](dist/nice-icons.ttf)
 	- [WOFF](dist/nice-icons.woff)
 	- [WOFF2](dist/nice-icons.woff2)
 - build a [JSON file](dist/nice-icons.json) of metadata for the font
 - build a [SASS file](scss/_nice-icons.scss)
-- build [React components](lib) into the lib folder
+- build [React components](lib) into the lib and es folders
 - create a [demo html](dist/demo.html) - use this for testing new icons.
 
 ### Updating the readme
@@ -336,20 +297,6 @@ npm run readme
 ```
 
 This will generate the table of icons from the readme and to update the ToC.
-
-### Releasing
-
-Run `npm run release` from the command line to release the package in interactive mode. Or run one of:
-
-- `npm run release:major`
-- `npm run release:minor`
-- `npm run release:patch`
-
-Alternatively use fine-grained options like `npm run release -- 2.0.0-beta.1 --tag=beta --any-branch`
-
-This uses [np](https://www.npmjs.com/package/np) under the hood.
-
-> Note: Generate a [GitHub personal acccess token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) and set this as the environment variable GITHUB_TOKEN. E.g. `export GITHUB_TOKEN="abcde1234"`
 
 ## Creating icons
 
@@ -377,21 +324,6 @@ Afterwards,
 
 1. Re-run `npm start` to rebuild the icon font and React components
 2. Re-run `npm run readme` to rebuild the icons in this readme file.
-
-## Custom application icons
-
-Use these instructions to build a webfont from custom icons for your application. First, follow the [steps above to create an SVG](#creating-icons) then follow the steps below to create a custom icon font:
-
-1. Create a [grunt task](https://github.com/sapegin/grunt-webfont) for webfont generation. You can base this off [our webfont task](.grunt-tasks/webfont.js).
-2. Use a [custom template](.nice-icons.tmpl.scss) to override the `$nice-icons` map. (You don't need the mixins in your template.)
-3. Reference both your SVG icon and the core icons:
-	
-	`src: ["./icons/*.svg", "./node_modules/@nice-digital/icons/src/*.svg"]`
-4. Override the `$nice-icons-base-path` variable in your application's SASS to match where your font files are served from. The default path is */fonts/*.
-
-> Note: Only reference the core icons you need when building a custom icon font. E.g. replace `"./icons/*.svg"` with `"./icons/logo.svg", "./icons/search.svg"` etc.
-
-See the [custom-icon](examples/custom-icon) folder for a complete example of this.
 
 ## Icons
 
