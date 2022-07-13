@@ -21,7 +21,7 @@ ${{ name }}-no-cache: random(999999999);
 /// Base path for loading font files
 /// Override this in your application if your path differs.
 /// E.g. if you want to replace it off a CDN you could change this to 'http://cdn.com/fonts/'
-${{ name }}-base-path: '/fonts' !default;
+${{ name }}-base-path: '/fonts/' !default;
 
 /// Map of icon name to codepoint.
 /// This map avoids the use of 'magic strings' for codepoints throught SASS code. The map is usually not used directly - use the nice-icon function/mixin instead.
