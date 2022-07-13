@@ -88,7 +88,7 @@ ${{ name }}: (
 @function nice-icon($icon) {
   @if map-has-key(${{ name }}, $icon) {
     $icon-code: map-get(${{ name }}, $icon);
-    @return unquote('\'\\#{ $icon-code }\'');
+    @return unquote('\'#{ $icon-code }\'');
   } @else {
     @error 'Icons with name #{ $icon } could not be found in the ${{ name }} map';
   }

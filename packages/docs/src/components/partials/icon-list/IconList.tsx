@@ -3,6 +3,7 @@ import React, { FC } from "react";
 
 import icons from "@nice-digital/icons/dist/nice-icons.json";
 import { Panel } from "@nice-digital/nds-panel";
+import { Button } from "@nice-digital/nds-button";
 
 export const IconList: FC = () => {
 	return (
@@ -15,16 +16,18 @@ export const IconList: FC = () => {
 						name.slice(1).replace(/-./g, x => x[1].toUpperCase());
 
 					return (
-						<li key={name}>
+						<li key={name} className="mb--c">
 							<details>
-								<summary className="h5 mt--0 mb--0">
-									{name}{" "}
-									<span
-										className={`icon icon--${name}`}
-										aria-hidden="true"
-									></span>
+								<summary>
+									<span className="h3 mv--0">
+										<span
+											className={`icon icon--${name}`}
+											aria-hidden="true"
+										></span>
+									</span>
+									<span className="h6 ml--c mt--0 mb--0">{name}</span>
 								</summary>
-								<Panel>
+								<Panel className="mt--c">
 									<dl>
 										<dt>HTML embed code</dt>
 										<dd>
@@ -48,6 +51,13 @@ export const IconList: FC = () => {
 											<code>{`&:before { content: nice-icon(${name}); }`}</code>
 										</dd>
 									</dl>
+									<Button
+										to={`/fonts/${name}.svg`}
+										variant="secondary"
+										download
+									>
+										Download {name}.svg
+									</Button>
 								</Panel>
 							</details>
 						</li>

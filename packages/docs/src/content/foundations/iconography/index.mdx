@@ -2,6 +2,7 @@
 title: Iconography
 description: Icons, their usage and guidance for creating new custom icons
 template: detail
+inpagenav: true
 ---
 
 import { IconList } from "../../../components/partials/icon-list/IconList";
@@ -24,7 +25,7 @@ Avoid unnecessary decoration - only use icons if there’s a real user need:
 There are several ways to use icons with the Design System:
 
 - [React components](#react-components), when you're in control of React-generated markup (optionally with TypeScript)
-- [icon font](#icon-font), for when you're working with raw HTML or [in SASS](#sass), for writing a bespoke component
+- [icon font](#icon-font), for when you're working with raw HTML or [in SASS](#usage-in-sass), for writing a bespoke component
 - [SVG icons directly](#svg-icons), for when you're doing something bespoke.
 
 Use the method that best suits your use-case. Each of the methods is explained in detail below.
@@ -145,9 +146,10 @@ If you're using node and Express then use the following method to serve the font
 const express = require("express"),
     path = require("path");
 
-const app = express();
+const app = express(),
+	iconsPath = path.join(__dirname, "./node_modules/@nice-digital/icons/dist/");
 
-app.use("/fonts", express.static(path.join(__dirname, "./node_modules/@nice-digital/icons/dist/")));
+app.use("/fonts", express.static(iconsPath));
 ```
 
 ## SVG icons
