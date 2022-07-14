@@ -14,11 +14,12 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-
 - [Intro](#intro)
+    - [Some background](#some-background)
   - [Guidance](#guidance)
-- [Upgrading from 1.x to 2.x](#upgrading-from-1x-to-2x)
-  - [What's new in v2.x?](#whats-new-in-v2x)
+- [Upgrading from 1.x to 2.9](#upgrading-from-1x-to-29)
+  - [What's new in v2.0?](#whats-new-in-v20)
+  - [What's new in v2.3?](#whats-new-in-v23)
 - [Installation](#installation)
   - [Include sass](#include-sass)
     - [Environment variable](#environment-variable)
@@ -30,7 +31,6 @@
   - [Webfont](#webfont)
     - [Serving font files](#serving-font-files)
       - [Express](#express)
-      - [Grunt copy](#grunt-copy)
       - [Visual Studio Copy Task](#visual-studio-copy-task)
       - [Webpack](#webpack)
     - [Markup](#markup)
@@ -39,9 +39,7 @@
   - [Dependencies](#dependencies)
   - [Commands](#commands)
   - [Updating the readme](#updating-the-readme)
-  - [Releasing](#releasing)
 - [Creating icons](#creating-icons)
-- [Custom application icons](#custom-application-icons)
 - [Icons](#icons)
 - [License](#license)
 
@@ -51,7 +49,11 @@
 
 ## Intro
 
-NICE Icons is a replacement for [NICE.Glyphs](http://nhsevidence.github.io/NICE.Bootstrap/Guide.Glyphs.html#charset). It is independent of Bootstrap and the Design System so can be used on its own.
+NICE Icons is a set of SVG icons for use in NICE Digital Services using the NICE Design System. It provides source SVGs, React/TypeScript versions and an icon font.
+
+#### Some background
+
+NICE Icons is a replacement for [NICE.Glyphs](http://nhsevidence.github.io/NICE.Bootstrap/Guide.Glyphs.html#charset), which in turn was part of the old 'NICE.Bootstrap'.
 
 ### Guidance
 
@@ -62,7 +64,7 @@ Avoid unnecessary decoration - only use icons if there’s a real user need:
 - icons should be easily recognizable
 - keep icon designs simple and schematic.
 
-## Upgrading from 1.x to 2.x
+## Upgrading from 1.x to 2.9
 
 The following are breaking changes from v1 to v2:
 
@@ -74,7 +76,7 @@ The following are breaking changes from v1 to v2:
 - dropped support for usage via Bower
 - use Node 10, and npm 6.8+.
 
-### What's new in v2.x?
+### What's new in v2.0?
 
 As well as the breaking changes listed above, we've made the following updates:
 
@@ -82,6 +84,12 @@ As well as the breaking changes listed above, we've made the following updates:
 - upgrade other outdated packages
 - add Figma source file containing all the SVG icons
 - add React components, with ES5 transpiled version.
+
+### What's new in v2.3?
+
+Version 2.3 is an internal refactor, mostly to use fantasticon instead of grunt-webfont for the icon font generation. This release drops support for IE8, which we no longer support but that should be the only 'breaking' change.
+
+We have removed generation of EOT, SVG and TTF font files because we know longer support older browsers like IE8 that needed these types. We now just generate WOFF and WOFF2 which covers all modern browsers.
 
 ## Installation
 
@@ -92,8 +100,11 @@ Install [NICE Icons from npm](https://www.npmjs.com/package/@nice-digital/icons)
 The *node_modules/@nice-digital/icons* package folder will include:
 
 - source SVG files in the *src* folder
-- React components in the *lib* folder
-- generated icon font (EOT, SVG, TTF, WOFF and WOFF 2) in the *dist* folder
+- React components:
+  - ES5 in the *lib* folder (with associated d.ts files)
+  - ES6 in the *es* folder (with associated d.ts files)
+  - TypeScript in the *ts* folder
+- generated icon font (WOFF and WOFF 2) in the *dist* folder
 - JSON file in the *dist* folder with font metadata information.
 
 ### Include sass
@@ -116,23 +127,7 @@ SASS_PATH=node_modules/@nice-digital/icons/scss
 
 #### includePaths
 
-Use the [includePaths option from node-sass](https://github.com/sass/node-sass#includepaths) to include the path. Or with [grunt-sass](https://github.com/sindresorhus/grunt-sass#options):
-
-```js
-// Gruntfile.js
-module.exports = function(grunt) {
-	// Run `npm i grunt-sass --save-dev`
-	grunt.loadNpmTasks("grunt-sass");
-
-	grunt.initConfig({
-		sass: {
-			app: {
-				includePaths: ["node_modules/@nice-digital/icons/scss"]
-			}
-		}
-	});
-};
-```
+Use the [includePaths option from node-sass](https://github.com/sass/node-sass#includepaths) to include the path.
 
 #### Tilde import
 
@@ -144,13 +139,11 @@ Replace the import above with a tilde path if you're using [sass-loader via webp
 
 ## Usage
 
-We've created various [usage examples](examples) to help with getting started.
-
 There are 2 main ways to use NICE Icons in your project:
 
 ### React
 
-There are React component versions of each icon within the *lib* folder. This allows you to easily include inline SVGs when rendering via React. Each icon file is named with PascalCase, for example *src/email-closed.svg* is available in React as *lib/EmailClosed.js*.
+There are React component versions of each icon within the *lib* folder (transpiled to ES5) or the *es* folder (ES6 compatible). This allows you to easily include inline SVGs when rendering via React. Each icon file is named with PascalCase, for example *src/email-closed.svg* is available in React as *lib/EmailClosed.js*.
 
 To use, first import the SASS file into your project [as above](#installation). Then import and use React components from the lib folder, for example:
 
@@ -170,13 +163,13 @@ The React component icons have the following default props:
 - `className=icon` - the associated class has a height and width of 1em to match the surrounding text
 - `aria-hidden={true}` as they're designed to be a visual to textual labels. In the rare case you need icons on their own without text, then pass a prop of `aria-hidden={false}` and make sure there's an associated aria label, title etc.
 
-The svg path also has a default `fill=currentColor` to match surrounding text colour, but this can also be overridden by the `colour` prop, or via CSS.
+The svg path also has a default `fill=currentColor` to match surrounding text colour, but this can also be overridden via CSS.
 
-Note: these React files in the lib folder are ES5 compatible. However, we also include ES6 versions in the ES6 folder if you prefer. This means you'll need to transpile these with babel (or similar) as part of your build. For example, by using the [include option](https://webpack.js.org/configuration/module/#condition) pointing to *node_modules/@nice-digital/icons* with babel-loader in webpack.
+Note: these React files in the *lib* folder are ES5 compatible. However, we also include ES6 versions in the _es_ folder if you prefer. This means you'll need to transpile these with babel (or similar) as part of your build. For example, by using the [include option](https://webpack.js.org/configuration/module/#condition) pointing to *node_modules/@nice-digital/icons* with babel-loader in webpack.
 
 #### Browser support
 
-This method is subject to the same [browser support as inline SVGs](https://caniuse.com/#feat=svg-html5) - essentially IE9+. To support IE8, you'd need to roll your own fallback - that's currently beyond the scope of this package.
+This method is subject to the same [browser support as inline SVGs](https://caniuse.com/#feat=svg-html5) - essentially IE9+.
 
 ### Webfont
 
@@ -209,35 +202,9 @@ app.use("/fonts", express.static(path.join(__dirname, "./node_modules/@nice-digi
 
 See the [simple-express](examples/simple-express) folder for a complete example of this.
 
-##### Grunt copy
-
-Setup a [copy task](https://github.com/gruntjs/grunt-contrib-copy) with [Grunt](https://gruntjs.com/) to copy the font files into your application:
-
-```js
-// Gruntfile.js
-module.exports = function(grunt) {
-	// Run `npm i grunt-contrib-copy --save-dev`
-	grunt.loadNpmTasks("grunt-contrib-copy");
-
-	grunt.initConfig({
-		copy: {
-			icons: {
-				cwd: "node_modules/@nice-digital/icons/dist/",
-				src: ["*.{eot,woff,woff2,ttf,svg}"],
-				dest: "/fonts/",
-				expand: true,
-				flatten: true,,
-				filter: "isFile"
-			}
-		}
-	});
-};
-```
-
 ##### Visual Studio Copy Task
 
 Use a [Visual Studio Copy Task](https://docs.microsoft.com/en-gb/visualstudio/msbuild/copy-task) to copy the font files into your application. Or use a [post build event](https://stackoverflow.com/a/3719097/486434).
-
 
 ##### Webpack
 
@@ -250,7 +217,6 @@ then in the plugins section add the following:
 `new CopyWebpackPlugin([{ from: "node_modules/@nice-digital/icons/dist/*", to: "fonts", ignore: ["*.html"], flatten: true }]),`
 
 note that the 'to' destination is relative to the output path, which for a .NET core app would probably have been configured for wwwroot.
-
 
 #### Markup
 
@@ -304,30 +270,21 @@ There are SASS constructs for advanced usage:
 
 To build the icon font on your local machine, first install:
 
-- [Node 12](https://nodejs.org/en/download/)
+- [Node 14](https://nodejs.org/en/download/)
 - [npm 6.8+](https://www.npmjs.com/)
 
-Then before you can run any tasks, run the following from the command line to install dependencies:
-
-- `npm i`
-
-> Note: if you prefer to use npm rather than yarn, run `yarn` instead.
-
-We use Grunt as a task runner hence the dependency on Node. If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide first.
+Then before you can run any tasks, run the following from the command line to install dependencies `npm i`
 
 ### Commands
 
-Run `npm start` from the command line for development. This uses [grunt-webfont](.grunt-tasks/webfont.js) under the hood to:
+Run `npm start` from the command line for development. This uses fantasticon under the hood to:
 
 - build the [source icons](src) into a web font in the [dist folder](dist) with formats:
-	- [EOT](dist/nice-icons.eot)
-	- [SVG](dist/nice-icons.svg)
-	- [TTF](dist/nice-icons.ttf)
 	- [WOFF](dist/nice-icons.woff)
 	- [WOFF2](dist/nice-icons.woff2)
 - build a [JSON file](dist/nice-icons.json) of metadata for the font
 - build a [SASS file](scss/_nice-icons.scss)
-- build [React components](lib) into the lib folder
+- build [React components](lib) into the lib and es folders
 - create a [demo html](dist/demo.html) - use this for testing new icons.
 
 ### Updating the readme
@@ -339,20 +296,6 @@ npm run readme
 ```
 
 This will generate the table of icons from the readme and to update the ToC.
-
-### Releasing
-
-Run `npm run release` from the command line to release the package in interactive mode. Or run one of:
-
-- `npm run release:major`
-- `npm run release:minor`
-- `npm run release:patch`
-
-Alternatively use fine-grained options like `npm run release -- 2.0.0-beta.1 --tag=beta --any-branch`
-
-This uses [np](https://www.npmjs.com/package/np) under the hood.
-
-> Note: Generate a [GitHub personal acccess token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) and set this as the environment variable GITHUB_TOKEN. E.g. `export GITHUB_TOKEN="abcde1234"`
 
 ## Creating icons
 
@@ -381,27 +324,12 @@ Afterwards,
 1. Re-run `npm start` to rebuild the icon font and React components
 2. Re-run `npm run readme` to rebuild the icons in this readme file.
 
-## Custom application icons
-
-Use these instructions to build a webfont from custom icons for your application. First, follow the [steps above to create an SVG](#creating-icons) then follow the steps below to create a custom icon font:
-
-1. Create a [grunt task](https://github.com/sapegin/grunt-webfont) for webfont generation. You can base this off [our webfont task](.grunt-tasks/webfont.js).
-2. Use a [custom template](.nice-icons.tmpl.scss) to override the `$nice-icons` map. (You don't need the mixins in your template.)
-3. Reference both your SVG icon and the core icons:
-	
-	`src: ["./icons/*.svg", "./node_modules/@nice-digital/icons/src/*.svg"]`
-4. Override the `$nice-icons-base-path` variable in your application's SASS to match where your font files are served from. The default path is */fonts/*.
-
-> Note: Only reference the core icons you need when building a custom icon font. E.g. replace `"./icons/*.svg"` with `"./icons/logo.svg", "./icons/search.svg"` etc.
-
-See the [custom-icon](examples/custom-icon) folder for a complete example of this.
-
 ## Icons
 
 <!-- START icons generated comment -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN COMMAND TO UPDATE -->
 
-Icon | Name | Unicode | HTML | SASS 
+Icon | Name | Unicode | HTML | SCSS 
 ---- | ---- | ---- | ---- | ---- 
 <img src="src/android.svg" alt="android" height="50"> | android | f17b | `<span class="icon icon--android" aria-hidden="true"></span>` | `@include nice-icon(android);` 
 <img src="src/apple.svg" alt="apple" height="50"> | apple | f179 | `<span class="icon icon--apple" aria-hidden="true"></span>` | `@include nice-icon(apple);` 
@@ -415,19 +343,20 @@ Icon | Name | Unicode | HTML | SASS
 <img src="src/download.svg" alt="download" height="50"> | download | e006 | `<span class="icon icon--download" aria-hidden="true"></span>` | `@include nice-icon(download);` 
 <img src="src/email-closed.svg" alt="email-closed" height="50"> | email-closed | e014 | `<span class="icon icon--email-closed" aria-hidden="true"></span>` | `@include nice-icon(email-closed);` 
 <img src="src/evidence.svg" alt="evidence" height="50"> | evidence | e017 | `<span class="icon icon--evidence" aria-hidden="true"></span>` | `@include nice-icon(evidence);` 
-<img src="src/facebook-square.svg" alt="facebook-square" height="50"> | facebook-square | f082 | `<span class="icon icon--facebook-square" aria-hidden="true"></span>` | `@include nice-icon(facebook-square);` 
 <img src="src/facebook.svg" alt="facebook" height="50"> | facebook | e012 | `<span class="icon icon--facebook" aria-hidden="true"></span>` | `@include nice-icon(facebook);` 
-<img src="src/google-plus-square.svg" alt="google-plus-square" height="50"> | google-plus-square | f0d4 | `<span class="icon icon--google-plus-square" aria-hidden="true"></span>` | `@include nice-icon(google-plus-square);` 
+<img src="src/facebook-square.svg" alt="facebook-square" height="50"> | facebook-square | f082 | `<span class="icon icon--facebook-square" aria-hidden="true"></span>` | `@include nice-icon(facebook-square);` 
 <img src="src/google-plus.svg" alt="google-plus" height="50"> | google-plus | f0d5 | `<span class="icon icon--google-plus" aria-hidden="true"></span>` | `@include nice-icon(google-plus);` 
+<img src="src/google-plus-square.svg" alt="google-plus-square" height="50"> | google-plus-square | f0d4 | `<span class="icon icon--google-plus-square" aria-hidden="true"></span>` | `@include nice-icon(google-plus-square);` 
 <img src="src/guidance.svg" alt="guidance" height="50"> | guidance | e011 | `<span class="icon icon--guidance" aria-hidden="true"></span>` | `@include nice-icon(guidance);` 
 <img src="src/hamburger.svg" alt="hamburger" height="50"> | hamburger | e03d | `<span class="icon icon--hamburger" aria-hidden="true"></span>` | `@include nice-icon(hamburger);` 
 <img src="src/instagram.svg" alt="instagram" height="50"> | instagram | f16d | `<span class="icon icon--instagram" aria-hidden="true"></span>` | `@include nice-icon(instagram);` 
-<img src="src/linkedin-sign.svg" alt="linkedin-sign" height="50"> | linkedin-sign | f08c | `<span class="icon icon--linkedin-sign" aria-hidden="true"></span>` | `@include nice-icon(linkedin-sign);` 
 <img src="src/linkedin.svg" alt="linkedin" height="50"> | linkedin | f0e1 | `<span class="icon icon--linkedin" aria-hidden="true"></span>` | `@include nice-icon(linkedin);` 
+<img src="src/linkedin-sign.svg" alt="linkedin-sign" height="50"> | linkedin-sign | f08c | `<span class="icon icon--linkedin-sign" aria-hidden="true"></span>` | `@include nice-icon(linkedin-sign);` 
 <img src="src/location.svg" alt="location" height="50"> | location | f102 | `<span class="icon icon--location" aria-hidden="true"></span>` | `@include nice-icon(location);` 
+<img src="src/logo.svg" alt="logo" height="50"> | logo | e01a | `<span class="icon icon--logo" aria-hidden="true"></span>` | `@include nice-icon(logo);` 
 <img src="src/logo-full.svg" alt="logo-full" height="50"> | logo-full | e01c | `<span class="icon icon--logo-full" aria-hidden="true"></span>` | `@include nice-icon(logo-full);` 
 <img src="src/logo-name.svg" alt="logo-name" height="50"> | logo-name | e01b | `<span class="icon icon--logo-name" aria-hidden="true"></span>` | `@include nice-icon(logo-name);` 
-<img src="src/logo.svg" alt="logo" height="50"> | logo | e01a | `<span class="icon icon--logo" aria-hidden="true"></span>` | `@include nice-icon(logo);` 
+<img src="src/logo-portrait.svg" alt="logo-portrait" height="50"> | logo-portrait | f103 | `<span class="icon icon--logo-portrait" aria-hidden="true"></span>` | `@include nice-icon(logo-portrait);` 
 <img src="src/minus.svg" alt="minus" height="50"> | minus | e02a | `<span class="icon icon--minus" aria-hidden="true"></span>` | `@include nice-icon(minus);` 
 <img src="src/pathways.svg" alt="pathways" height="50"> | pathways | e005 | `<span class="icon icon--pathways" aria-hidden="true"></span>` | `@include nice-icon(pathways);` 
 <img src="src/play.svg" alt="play" height="50"> | play | e028 | `<span class="icon icon--play" aria-hidden="true"></span>` | `@include nice-icon(play);` 
@@ -439,15 +368,15 @@ Icon | Name | Unicode | HTML | SASS
 <img src="src/remove.svg" alt="remove" height="50"> | remove | e024 | `<span class="icon icon--remove" aria-hidden="true"></span>` | `@include nice-icon(remove);` 
 <img src="src/search.svg" alt="search" height="50"> | search | e004 | `<span class="icon icon--search" aria-hidden="true"></span>` | `@include nice-icon(search);` 
 <img src="src/share.svg" alt="share" height="50"> | share | e008 | `<span class="icon icon--share" aria-hidden="true"></span>` | `@include nice-icon(share);` 
+<img src="src/sorting.svg" alt="sorting" height="50"> | sorting | e021 | `<span class="icon icon--sorting" aria-hidden="true"></span>` | `@include nice-icon(sorting);` 
 <img src="src/sorting-asc.svg" alt="sorting-asc" height="50"> | sorting-asc | e022 | `<span class="icon icon--sorting-asc" aria-hidden="true"></span>` | `@include nice-icon(sorting-asc);` 
 <img src="src/sorting-desc.svg" alt="sorting-desc" height="50"> | sorting-desc | e023 | `<span class="icon icon--sorting-desc" aria-hidden="true"></span>` | `@include nice-icon(sorting-desc);` 
-<img src="src/sorting.svg" alt="sorting" height="50"> | sorting | e021 | `<span class="icon icon--sorting" aria-hidden="true"></span>` | `@include nice-icon(sorting);` 
 <img src="src/standards.svg" alt="standards" height="50"> | standards | e002 | `<span class="icon icon--standards" aria-hidden="true"></span>` | `@include nice-icon(standards);` 
 <img src="src/stop.svg" alt="stop" height="50"> | stop | e043 | `<span class="icon icon--stop" aria-hidden="true"></span>` | `@include nice-icon(stop);` 
 <img src="src/syndication.svg" alt="syndication" height="50"> | syndication | e013 | `<span class="icon icon--syndication" aria-hidden="true"></span>` | `@include nice-icon(syndication);` 
 <img src="src/trash.svg" alt="trash" height="50"> | trash | e020 | `<span class="icon icon--trash" aria-hidden="true"></span>` | `@include nice-icon(trash);` 
-<img src="src/twitter-square.svg" alt="twitter-square" height="50"> | twitter-square | f081 | `<span class="icon icon--twitter-square" aria-hidden="true"></span>` | `@include nice-icon(twitter-square);` 
 <img src="src/twitter.svg" alt="twitter" height="50"> | twitter | e000 | `<span class="icon icon--twitter" aria-hidden="true"></span>` | `@include nice-icon(twitter);` 
+<img src="src/twitter-square.svg" alt="twitter-square" height="50"> | twitter-square | f081 | `<span class="icon icon--twitter-square" aria-hidden="true"></span>` | `@include nice-icon(twitter-square);` 
 <img src="src/user.svg" alt="user" height="50"> | user | e01f | `<span class="icon icon--user" aria-hidden="true"></span>` | `@include nice-icon(user);` 
 <img src="src/warning.svg" alt="warning" height="50"> | warning | e04b | `<span class="icon icon--warning" aria-hidden="true"></span>` | `@include nice-icon(warning);` 
 <img src="src/youtube-play.svg" alt="youtube-play" height="50"> | youtube-play | f16a | `<span class="icon icon--youtube-play" aria-hidden="true"></span>` | `@include nice-icon(youtube-play);` 

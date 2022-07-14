@@ -16,17 +16,16 @@
     margin: rem(0 0 $nds-spacing-small);
   }
 
-  &__sort {
-    margin: 0;
+  &__sorting {
+    float: right;
   }
 
-  &__sort-control {
-    @include nds-link-default;
-    appearance: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
+  &__sort-label {
+    margin: 0 rem($nds-spacing-medium) 0 0;
+  }
+
+  &__select {
+    padding: rem($nds-spacing-small);
   }
 
   &__filters {
@@ -42,12 +41,6 @@
     &__count {
       float: left;
       margin: 0;
-      width: 50%;
-    }
-
-    &__sort {
-      float: right;
-      text-align: right;
       width: 50%;
     }
 

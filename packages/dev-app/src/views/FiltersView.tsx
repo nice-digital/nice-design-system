@@ -24,29 +24,21 @@ const onSubmit = (e: any) => {
 	handleFormSubmission();
 };
 
+const callback = () => {
+	console.log("Callback!");
+};
+
 const sorting = [
-	{ label: "onClick active", active: true, onClick: onChanged },
-	{ label: "onClick inactive", onClick: onChanged },
+	{ label: "Item 1", value: "item-1", onSelected: callback },
+	{ label: "Item 2", value: "item-2", onSelected: callback },
 	{
-		// bog standard link
-		label: "Anchor",
-		destination: "https://google.com",
-		method: "href"
+		label: "Item 3 (active)",
+		value: "item-3",
+		onSelected: callback,
+		active: true
 	},
-	{
-		// custom link in gatsby
-		label: "Gatsby",
-		elementType: Link,
-		destination: "/",
-		method: "to"
-	},
-	{
-		// custom link in Next
-		label: "Next",
-		elementType: Link,
-		method: "monkey",
-		destination: "/monkeylink"
-	}
+	{ label: "Item 4", value: "item-4", onSelected: callback },
+	{ label: "Item 5", onClick: onChanged, value: "item-5", onSelected: callback }
 ];
 
 export const FiltersView = () => {

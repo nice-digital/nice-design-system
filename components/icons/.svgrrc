@@ -2,12 +2,13 @@
 	"expandProps": "end",
 	"icon": true,
 	"replaceAttrValues": {
-		"#000": "{props.colour || 'currentColor'}"
+		"#000": "currentColor"
 	},
 	"svgo": true,
 	"svgProps": {
 		"className": "icon",
 		"aria-hidden": true,
 		"focusable": "false"
-	}
+	},
+	"typescript": true
 }
