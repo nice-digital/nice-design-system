@@ -77,7 +77,3 @@ packages/storybook/storybook-static
 /packages/docs/public/
 .netlify
 packages/docs/netlify.toml
-
-# From NICE icons
-components/icons/es6
-components/icons/scss

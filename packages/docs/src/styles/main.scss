@@ -1,4 +1,7 @@
 // stylelint-disable no-descending-specificity
+
+$nds-output-glyph-classes: true;
+
 @import '~@nice-digital/design-system/scss/nice-design-system.scss';
 @import 'utils';
 

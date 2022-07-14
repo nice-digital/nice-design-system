@@ -61,8 +61,11 @@
 		"gatsby-transformer-sharp": "^2.3.1"
 	},
 	"scripts": {
+		"prebuild": "npm run copy-nice-icons",
 		"build": "gatsby build",
 		"develop-playground": "cross-env GATSBY_GRAPHQL_IDE=playground gatsby develop",
+		"predevelop": "npm run copy-nice-icons",
+		"copy-nice-icons": "copyfiles -f \"node_modules/@nice-digital/icons/{src,dist}/*.{woff,woff2,svg}\" \"public/fonts\"",
 		"develop": "gatsby develop",
 		"format": "prettier --write \"**/*.{js,jsx,json,md}\"",
 		"start": "gatsby clean && npm run develop",
