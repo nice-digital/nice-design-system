@@ -38,8 +38,8 @@
 		"sass-mq": "^6.0.0"
 	},
 	"peerDependencies": {
-		"react": "^16 || ^17",
-		"react-dom": "^16 || ^17"
+		"react": "^16 || ^17 || ^18",
+		"react-dom": "^16 || ^17 || ^18"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.5.0"
