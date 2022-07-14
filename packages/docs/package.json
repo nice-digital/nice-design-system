@@ -66,7 +66,7 @@
 		"develop-playground": "cross-env GATSBY_GRAPHQL_IDE=playground gatsby develop",
 		"predevelop": "npm run copy-nice-icons",
 		"copy-nice-icons": "copyfiles -f \"node_modules/@nice-digital/icons/{src,dist}/*.{woff,woff2,svg}\" \"public/fonts\"",
-		"develop": "gatsby develop",
+		"develop": "gatsby develop -o",
 		"format": "prettier --write \"**/*.{js,jsx,json,md}\"",
 		"start": "gatsby clean && npm run develop",
 		"serve": "gatsby serve",
