@@ -1,4 +1,4 @@
-// Global colours - do not reference these directly, use tokens instead!
+// Global tokens - do not reference these directly, use alias tokens instead!
 
 // Primary palette
 $global-nice-teal: #228096;
@@ -25,3 +25,17 @@ $global-nice-cream-tint-1: #fbfaf8;
 $global-black-tint-1: #404040;
 $global-black-tint-2: #808080;
 $global-black-tint-3: #bfbfbf;
+
+// Custom palette
+$global-custom-grey-1: #adadad;
+$global-custom-blue-1: #005ea5;
+$global-custom-blue-2: #003761;
+$global-custom-blue-3: #3479d0;
+$global-custom-blue-3-tint: #eff4fc;
+$global-custom-purple: #4c2c92;
+$global-custom-red: #b50f23;
+$global-custom-red-tint: #f9eced;
+$global-custom-orange: #dc8a07;
+$global-custom-orange-tint: #fbf7f1;
+$global-custom-green: #68c103;
+$global-custom-green-tint: #f3faeb;
