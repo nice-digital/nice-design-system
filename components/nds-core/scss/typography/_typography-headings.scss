@@ -8,7 +8,7 @@
 @mixin nds-h1 {
   @include nds-font(h1);
   clear: both;
-  font-family: $nds-font-family-serif;
+  font-family: nds-get-font-family(serif);
   font-weight: 600;
   // Letter spacing and text shadow to mimic 900 weight, see https://github.com/nice-digital/nice-design-system/issues/240
   letter-spacing: 0.5px;
@@ -22,7 +22,7 @@
 @mixin nds-h2 {
   @include nds-font(h2);
   clear: both;
-  font-family: $nds-font-family-serif;
+  font-family: nds-get-font-family(serif);
   font-weight: 600;
   max-width: 66ch;
 }
@@ -33,7 +33,7 @@
 @mixin nds-h3 {
   @include nds-font(h3);
   clear: both;
-  font-family: $nds-font-family-serif;
+  font-family: nds-get-font-family(serif);
   font-weight: 600;
   max-width: 66ch;
 }
@@ -44,7 +44,7 @@
 @mixin nds-h4 {
   @include nds-font(h4);
   clear: both;
-  font-family: $nds-font-family-serif;
+  font-family: nds-get-font-family(serif);
   font-weight: 600;
   max-width: 66ch;
 }
