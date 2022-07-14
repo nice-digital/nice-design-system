@@ -9,8 +9,15 @@
 	"scss.validate": false,
 	"files.exclude": {
 		"packages/*/es": true,
+		"packages/*/es6": true,
 		"packages/*/lib": true,
 		"packages/*/dist": true,
+		"packages/*/ts": true,
+		"components/*/es": true,
+		"components/*/es6": true,
+		"components/*/lib": true,
+		"components/*/dist": true,
+		"components/*/ts": true,
 		".cache": true,
 		".nyc_output": true,
 		"coverage": true,
@@ -22,5 +29,7 @@
 		"titleBar.activeBackground": "#d6c39e",
 		"titleBar.activeForeground": "#3b3938",
 		"activityBar.foreground": "#3b3938"
-	}
+	},
+	"markdown.extension.tableFormatter.enabled": false,
+	"markdown.extension.tableFormatter.normalizeIndentation": false
 }

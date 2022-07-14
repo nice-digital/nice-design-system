@@ -113,29 +113,29 @@ import {
 
 Ways to sort the returned results. 
 
-If an onClick function is passed, the elementType will default to a button. If no onClick or elementType is passed, it will default to an anchor and you should pass it a destination for the href. If you use a custom elementType, you should also pass the method and destination for the element to use, eg "to" for Gatsby.
+Each `SortingType` item contains an `onSelected` property - this is a callback function that will
+run when that option is selected. If the user isn't running JS then a button will be displayed instead,
+submitting the form with the selected option's value.
 
 ```ts
 type SortingType = {
 		label: string;
-		destination?: string;
-		onClick?: React.MouseEventHandler;
-		elementType?: React.ElementType;
-		method?: string;
-		className?: string;
+		value: string;
 		active?: boolean | undefined;
+		onSelected?: React.EventHandler<any>;
 	};
 ```
 
 ```js
 const sorting = [
-	{ label: "Relevance", onClick: onChanged },
-	{ label: "Date", active: true, onClick: onChanged },
+	{ label: "Item 1", value: "item-1", onSelected: () => { console.log("Callback 1"); } },
+	{ label: "Item 2", value: "item-2", onSelected: () => { console.log("Callback 2"); } },
 	{
-		label: "Pertinence",
-		elementType: Link, 
-		to: "somewhere",
-	}
+		label: "Item 3 (active)",
+		value: "item-3",
+		onSelected: () => { console.log("Callback 3"); },
+		active: true
+	},
 ];
 
 <FilterSummary sorting={sorting} activeFilters={activeFilters}>
