@@ -1,15 +1,15 @@
 {
 	"name": "@nice-digital/icons",
-	"version": "2.2.7",
+	"version": "3.0.0",
 	"description": "Icons for use in NICE Digital Services",
 	"scripts": {
 		"start": "npm run webfont && npm run svgr && npm run esify",
 		"prewebfont": "rimraf dist && mkdirp dist && rimraf scss && mkdirp scss",
 		"webfont": "fantasticon",
 		"postwebfont": "npm run readme",
-    "presvgr": "rimraf ts",
+		"presvgr": "rimraf ts",
 		"svgr": "svgr -d ts src",
-    "preesify": "rimraf es && rimraf lib",
+		"preesify": "rimraf es && rimraf lib",
 		"esify": "tsc -p tsconfig.es5.json && tsc -p tsconfig.es6.json",
 		"test": "echo \"No tests :)\" && exit 0",
 		"readme": "doctoc ./README.md && node ./scripts/readme-replacer.js",
