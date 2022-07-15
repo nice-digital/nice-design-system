@@ -1,12 +1,13 @@
 @use "sass:math";
-
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/media-queries';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/utils';
+@use 'grid-settings';
 
 ////
 /// @group grid
 ////
-
-@import 'grid-settings';
 
 /// Grid class for the grid wrapper. Expects direct children to be `[data-g]`
 /// grid items. Use modifiers to affect grid behaviour as shown below:
@@ -28,17 +29,17 @@
 ///     <div data-g="12 xs:6 md:4 lg:3 xl:2">Grid item</div>
 ///   </div>
 .grid {
-  --nds-grid-gutter: #{$nds-grid-gutter};
+  --nds-grid-gutter: #{grid-settings.$grid-gutter};
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   list-style: none; // Allow the grid system to be used on lists.
-  margin-left: -#{$nds-grid-gutter * 0.5};
-  margin-right: -#{$nds-grid-gutter * 0.5};
+  margin-left: -#{grid-settings.$grid-gutter * 0.5};
+  margin-right: -#{grid-settings.$grid-gutter * 0.5};
   max-width: none; // To override the 66ch max width on lists
   padding: 0; // Remove any paddings that might affect the grid system.
-  width: calc(100% + #{$nds-grid-gutter});
+  width: calc(100% + #{grid-settings.$grid-gutter});
 
   // Fallback to fixed gutter grid in IE11, but use CSS vars where supported.
   // IE11 doesn't support custom properties: https://caniuse.com/css-variables
@@ -57,11 +58,11 @@
   }
 
   &--compact {
-    --nds-grid-gutter: #{$nds-grid-gutter-compact};
+    --nds-grid-gutter: #{grid-settings.$grid-gutter-compact};
   }
 
   &--loose {
-    --nds-grid-gutter: #{$nds-grid-gutter-loose};
+    --nds-grid-gutter: #{grid-settings.$grid-gutter-loose};
   }
 
   &--right {
@@ -87,16 +88,16 @@
   // Defensive warning for grids with children that aren't items
   > :not([data-g]) {
     --error: 'Grids (`.grid`) should only have grid items (`[data-g]`) as direct children';
-    background: $nds-colour-error-background;
+    background: colours.$error-background;
     cursor: help;
-    outline: rem($nds-spacing-x-small) solid $nds-colour-error;
+    outline: utils.rem(spacing.$x-small) solid colours.$error;
   }
 
   .debug-grid &,
   &--debug,
   .grid--debug & {
-    outline: rem($nds-spacing-xx-small) dashed red;
-    outline-offset: rem($nds-spacing-x-small);
+    outline: utils.rem(spacing.$xx-small) dashed red;
+    outline-offset: utils.rem(spacing.$x-small);
   }
 }
 
@@ -116,11 +117,11 @@
 [data-g] {
   // Auto flex-basis with separate width property for IE11 because of https://github.com/philipwalton/flexbugs#flexbug-8
   flex: 0 0 auto;
-  margin-left: #{$nds-grid-gutter * 0.5};
-  margin-right: #{$nds-grid-gutter * 0.5};
+  margin-left: #{grid-settings.$grid-gutter * 0.5};
+  margin-right: #{grid-settings.$grid-gutter * 0.5};
   position: relative;
   // Fixed gutters fallback for IE11, due to lack of custom property support:
-  width: calc(100% - #{$nds-grid-gutter});
+  width: calc(100% - #{grid-settings.$grid-gutter});
 
   @supports ((--a: 0)) {
     --grid-item-width: 100%;
@@ -136,9 +137,9 @@
   // See https://github.com/nice-digital/nice-design-system/issues/73
   :not(.grid) > & {
     --error: 'Put grid items (`[data-g]`) directly inside a `.grid`';
-    background: $nds-colour-error-background;
+    background: colours.$error-background;
     cursor: help;
-    outline: rem($nds-spacing-x-small) solid $nds-colour-error;
+    outline: utils.rem(spacing.$x-small) solid colours.$error;
   }
 
   // Warning for single grid items within a grid
@@ -148,7 +149,7 @@
 
   .debug-grid &,
   .grid--debug & {
-    outline: rem($nds-spacing-xx-small) dashed blue;
+    outline: utils.rem(spacing.$xx-small) dashed blue;
   }
 }
 
@@ -159,7 +160,9 @@
     [data-g~='#{ $prefix }#{ $index }'] {
       --grid-item-width: #{percentage(math.div($index, 12))};
       // IE 11 fallback, due to lack of custom property support:
-      width: calc(#{percentage(math.div($index, 12))} - #{$nds-grid-gutter});
+      width: calc(
+        #{percentage(math.div($index, 12))} - #{grid-settings.$grid-gutter}
+      );
     }
   }
 
@@ -175,10 +178,8 @@
 
 @include _nds-generate-grid-items;
 
-@if $nds-responsive {
-  @each $brkpnt-key, $brkpnt-value in $mq-breakpoints {
-    @include mq($from: $brkpnt-key) {
-      @include _nds-generate-grid-items($brkpnt-key);
-    }
+@each $brkpnt-key, $brkpnt-value in media-queries.$breakpoints {
+  @include media-queries.mq($from: $brkpnt-key) {
+    @include _nds-generate-grid-items($brkpnt-key);
   }
 }

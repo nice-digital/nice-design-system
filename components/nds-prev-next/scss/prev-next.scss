@@ -1,16 +1,21 @@
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/utils';
+@use '@nice-digital/nds-core/scss/visibility';
 
 .prev-next {
-  @include nds-hide-print;
+  @include visibility.hide-print;
+
   &__link {
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: utils.rem(spacing.$medium);
     text-decoration: none;
   }
+
   &__link-intro {
     display: block;
     font-weight: bold;
   }
+
   &__link-text {
     display: block;
     text-decoration: underline;

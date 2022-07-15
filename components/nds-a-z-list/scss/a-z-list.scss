@@ -1,4 +1,7 @@
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
+@use '@nice-digital/nds-core/scss/colours';
 
 .a-z-list {
   list-style: none;
@@ -7,17 +10,17 @@
   padding: 0;
 
   &__item {
-    margin-bottom: rem($nds-spacing-large);
+    margin-bottom: utils.rem(spacing.$large);
   }
 
   &__item-heading {
-    @include nds-font-size(h4);
-    background: $nds-colour-true-white;
-    border: 1px solid $nds-colour-border;
+    @include typography.font-size(h4);
+    background: colours.$true-white;
+    border: 1px solid colours.$border;
     font-weight: 900;
     margin: 0;
     max-width: 100%;
-    padding: rem($nds-spacing-small $nds-spacing-medium);
+    padding: utils.rem(spacing.$small spacing.$medium);
 
     &:focus {
       outline: none;

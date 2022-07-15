@@ -1,30 +1,33 @@
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
 
 .form-group {
-  border: rem(1px) solid $nds-colour-border;
-  margin-bottom: rem($nds-spacing-medium);
-  padding: rem($nds-spacing-small);
+  border: utils.rem(1px) solid colours.$border;
+  margin-bottom: utils.rem(spacing.$medium);
+  padding: utils.rem(spacing.$small);
 
   &--no-legend {
     border: none;
   }
 
   &__legend {
-    @include nds-font-size(p);
+    @include typography.font-size(p);
     font-weight: bold;
-    margin-left: rem(-$nds-spacing-x-small);
-    padding-left: rem($nds-spacing-x-small);
-    padding-right: rem($nds-spacing-x-small);
+    margin-left: utils.rem(-(spacing.$x-small));
+    padding-left: utils.rem(spacing.$x-small);
+    padding-right: utils.rem(spacing.$x-small);
   }
 
   &__hint {
-    color: $nds-colour-nice-dark-grey;
-    margin-top: rem($nds-spacing-x-small);
+    color: colours.$nice-dark-grey;
+    margin-top: utils.rem(spacing.$x-small);
   }
 
   &__error-message {
-    color: $nds-colour-error;
+    color: colours.$error;
     font-weight: bold;
-    margin-top: rem($nds-spacing-x-small);
+    margin-top: utils.rem(spacing.$x-small);
   }
 }

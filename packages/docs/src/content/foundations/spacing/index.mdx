@@ -1,12 +1,10 @@
 ---
+
 title: Spacing
 description: Spacing between elements and vertical rhythm
 
 template: detail
-
----
-
-## Introduction
+---## Introduction
 
 Keep a consistent vertical and horizontal rhythm between elements on a page.
 
@@ -20,15 +18,15 @@ Our spacing is set out on a non-linear scale, to avoid ambiguity between adjacen
 - default spacing is provided within typography, grid and all components
 - use [CSS classes](#css-classes) or [SASS variables](#sass-variables) in code rather than pixel values directly.
 
-| Width                                                       | Pixels | Rems     | Scale | SASS variable       |
-| ----------------------------------------------------------- | ------ | -------- | ----- | ------------------- |
-| <span class="spacing-block spacing-block--xx-small"></span> | 2px    | 0.125rem | a     | `$spacing-xx-small` |
-| <span class="spacing-block spacing-block--x-small"></span>  | 4px    | 0.25rem  | b     | `$spacing-x-small`  |
-| <span class="spacing-block spacing-block--small"></span>    | 8px    | 0.5rem   | c     | `$spacing-small`    |
-| <span class="spacing-block spacing-block--medium"></span>   | 16px   | 1rem     | d     | `$spacing-medium`   |
-| <span class="spacing-block spacing-block--large"></span>    | 32px   | 2rem     | e     | `$spacing-large`    |
-| <span class="spacing-block spacing-block--x-large"></span>  | 48px   | 3rem     | f     | `$spacing-x-large`  |
-| <span class="spacing-block spacing-block--xx-large"></span> | 64px   | 4rem     | g     | `$spacing-xx-large` |
+| Width                                                       | Pixels | Rems     | Scale | SASS variable |
+| ----------------------------------------------------------- | ------ | -------- | ----- | ------------- |
+| <span class="spacing-block spacing-block--xx-small"></span> | 2px    | 0.125rem | a     | `$xx-small`   |
+| <span class="spacing-block spacing-block--x-small"></span>  | 4px    | 0.25rem  | b     | `$x-small`    |
+| <span class="spacing-block spacing-block--small"></span>    | 8px    | 0.5rem   | c     | `$small`      |
+| <span class="spacing-block spacing-block--medium"></span>   | 16px   | 1rem     | d     | `$medium`     |
+| <span class="spacing-block spacing-block--large"></span>    | 32px   | 2rem     | e     | `$large`      |
+| <span class="spacing-block spacing-block--x-large"></span>  | 48px   | 3rem     | f     | `$x-large`    |
+| <span class="spacing-block spacing-block--xx-large"></span> | 64px   | 4rem     | g     | `$xx-large`   |
 
 ## CSS classes
 
@@ -108,12 +106,12 @@ These SASS variables should be used in custom components to ensure consistent sp
 
 ```
 .component {
-    border-top: em($spacing-xx-small) solid $colour-border;
-    margin: rem($spacing-medium 0 $spacing-large);
-    padding: rem($spacing-medium);
+    border-top: core.em(core.$xx-small) solid core.$colour-border;
+    margin: core.rem(core.$medium 0 core.$large);
+    padding: core.rem(core.$medium);
 
-    @include mq($from: md) {
-        margin: rem($spacing-large 0);
+    @include core.mq($from: md) {
+        margin: core.rem(core.$large 0);
     }
 }
 ```

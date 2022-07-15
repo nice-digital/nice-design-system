@@ -1,11 +1,14 @@
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
 
 .alert {
-  @include nds-font-size(p);
+  @include typography.font-size(p);
   border: 1px solid;
   font-weight: bold;
-  margin-bottom: rem($nds-spacing-medium);
-  padding: rem($nds-spacing-medium);
+  margin-bottom: utils.rem(spacing.$medium);
+  padding: utils.rem(spacing.$medium);
 
   p {
     font-weight: bold;
@@ -20,22 +23,22 @@
   }
 
   &--info {
-    background-color: $nds-colour-info-background;
-    border-color: $nds-colour-info;
+    background-color: colours.$info-background;
+    border-color: colours.$info;
   }
 
   &--caution {
-    background-color: $nds-colour-caution-background;
-    border-color: $nds-colour-caution;
+    background-color: colours.$caution-background;
+    border-color: colours.$caution;
   }
 
   &--error {
-    background-color: $nds-colour-error-background;
-    border-color: $nds-colour-error;
+    background-color: colours.$error-background;
+    border-color: colours.$error;
   }
 
   &--success {
-    background-color: $nds-colour-success-background;
-    border-color: $nds-colour-success;
+    background-color: colours.$success-background;
+    border-color: colours.$success;
   }
 }

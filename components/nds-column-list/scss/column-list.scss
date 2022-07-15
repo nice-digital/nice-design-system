@@ -1,21 +1,25 @@
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/media-queries';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
 
 .column-list {
   list-style: none;
-  margin: 0 0 rem($nds-spacing-large);
+  margin: 0 0 utils.rem(spacing.$large);
   max-width: 100%;
 
   &--boxed {
-    background: $nds-colour-true-white;
-    border: 1px solid $nds-colour-border;
+    background: colours.$true-white;
+    border: 1px solid colours.$border;
 
     li {
       // Make room for the anchor focus outline
-      padding: rem($nds-spacing-small $nds-spacing-medium);
+      padding: utils.rem(spacing.$small spacing.$medium);
     }
 
     a {
-      padding: rem($nds-spacing-x-small 0);
+      padding: utils.rem(spacing.$x-small 0);
     }
   }
 
@@ -24,11 +28,11 @@
     display: block;
   }
 
-  @include mq($from: md) {
+  @include media-queries.mq($from: md) {
     column-count: 2;
   }
 
-  @include mq($from: lg) {
+  @include media-queries.mq($from: lg) {
     column-count: 3;
 
     &--two-columns {

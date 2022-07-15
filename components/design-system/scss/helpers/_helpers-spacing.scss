@@ -1,3 +1,7 @@
+@use "@nice-digital/nds-core/scss/spacing";
+@use "@nice-digital/nds-core/scss/utils";
+@use "@nice-digital/nds-core/scss/media-queries";
+
 ////
 /// @group spacing
 ////
@@ -42,18 +46,18 @@
 
 /// Set to `false` to not output all the spacing modifier classes
 /// @since 1.0.0
-$nds-include-spacing-modifiers: true !default;
+$include-spacing-modifiers: true !default;
 
 // A map of spacing value
 $_spacings: (
   0: 0,
-  a: $nds-spacing-xx-small,
-  b: $nds-spacing-x-small,
-  c: $nds-spacing-small,
-  d: $nds-spacing-medium,
-  e: $nds-spacing-large,
-  f: $nds-spacing-x-large,
-  g: $nds-spacing-xx-large
+  a: spacing.$xx-small,
+  b: spacing.$x-small,
+  c: spacing.$small,
+  d: spacing.$medium,
+  e: spacing.$large,
+  f: spacing.$x-large,
+  g: spacing.$xx-large
 );
 
 // Map of property abbreviations to name
@@ -81,7 +85,7 @@ $_sides: (
 @mixin _prop($prop-name, $length, $side: '') {
   $side: if($side == '', '', '-#{$side}');
   $prop: '#{$prop-name}#{$side}';
-  #{$prop}: rem($length) !important;
+  #{$prop}: utils.rem($length) !important;
 }
 
 @mixin _side($prop-abbrev, $prop-name, $breakpoint, $size, $length) {
@@ -110,11 +114,11 @@ $_sides: (
   }
 }
 
-@if $nds-include-spacing-modifiers {
+@if $include-spacing-modifiers {
   @include _properties;
 
-  @each $breakpoint-name, $breakpoint-value in $mq-breakpoints {
-    @include mq($from: $breakpoint-name) {
+  @each $breakpoint-name, $breakpoint-value in media-queries.$breakpoints {
+    @include media-queries.mq($from: $breakpoint-name) {
       @include _properties('-#{$breakpoint-name}');
     }
   }

@@ -1,28 +1,37 @@
+@use "@nice-digital/nds-core/scss/visibility";
+@use "@nice-digital/nds-core/scss/colours";
+
 ////
 /// @group helpers
 ////
 
 .show-print {
-  @include nds-show-print;
+  @include visibility.show-print;
 }
 
 .hide-print {
-  @include nds-hide-print;
+  @include visibility.hide-print;
 }
 
 .remove-appended-print-link {
-  @include nds-remove-appended-print-link;
+  @include visibility.remove-appended-print-link;
 }
+
+/// Whether to output a default set of generic print styles for things
+/// like avoiding page breaks after headings etc. If you disabled this,
+/// be sure to add your own print styles.
+/// @since 0.2.0
+$output-default-print-styles: true !default;
 
 // Printing
 // -------------------------
 // Source: https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css
-@if $nds-output-default-print-styles {
+@if $output-default-print-styles {
   @media print {
     * {
       background: transparent !important;
       box-shadow: none !important;
-      color: $nds-colour-true-black !important; // Black prints faster: h5bp.com/s
+      color: colours.$true-black !important; // Black prints faster: h5bp.com/s
       text-shadow: none !important;
     }
 
@@ -39,7 +48,7 @@
     h4 a,
     h5 a,
     h6 a {
-      @include nds-remove-appended-print-link;
+      @include visibility.remove-appended-print-link;
     }
 
     a[href]:after {
@@ -79,7 +88,7 @@
     // Hide all images that don't have, or have a blank, alt attribute
     img:not([alt]),
     img[alt=''] {
-      @include nds-hide-print;
+      @include visibility.hide-print;
     }
 
     @page {

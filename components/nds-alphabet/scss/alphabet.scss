@@ -1,8 +1,11 @@
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
 
 .alphabet {
   list-style: none;
-  margin: rem(0 0 $nds-spacing-large);
+  margin: utils.rem(0 0 spacing.$large);
   max-width: 100%;
   padding: 0;
 
@@ -11,10 +14,10 @@
   }
 
   @supports (display: grid) {
-    column-gap: rem($nds-spacing-small);
+    column-gap: utils.rem(spacing.$small);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(4ch, 1fr));
-    row-gap: rem($nds-spacing-small);
+    row-gap: utils.rem(spacing.$small);
 
     &--chunky {
       grid-template-columns: repeat(auto-fit, minmax(6ch, 1fr));
@@ -24,10 +27,10 @@
   &__letter {
     display: inline-block;
     font-weight: bold;
-    margin: rem(0 $nds-spacing-small $nds-spacing-small 0);
+    margin: utils.rem(0 spacing.$small spacing.$small 0);
 
     &--chunky {
-      @include nds-font-size(h4);
+      @include typography.font-size(h4);
 
       a,
       span {
@@ -38,14 +41,14 @@
     a,
     span {
       display: block;
-      padding: rem($nds-spacing-small 0);
+      padding: utils.rem(spacing.$small 0);
       text-align: center;
       width: 3.95ch;
     }
 
     a {
-      background: $nds-colour-true-white;
-      border: 1px solid $nds-colour-border;
+      background: colours.$true-white;
+      border: 1px solid colours.$border;
       text-decoration: none;
 
       &:hover {
@@ -54,7 +57,7 @@
     }
 
     span {
-      color: $nds-colour-nice-dark-grey;
+      color: colours.$nice-dark-grey;
     }
 
     @supports (display: grid) {

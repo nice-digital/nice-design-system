@@ -1,8 +1,8 @@
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/colours';
 
 .grid-example-item {
-  background: $nds-colour-nice-grey-3;
-  border: 0.25em solid $nds-colour-nice-grey-1;
+  background: colours.$nice-grey-3;
+  border: 0.25em solid colours.$nice-grey-1;
   margin-bottom: 0.5em;
   padding: 0.5em;
   text-align: center;

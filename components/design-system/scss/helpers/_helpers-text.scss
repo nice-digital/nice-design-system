@@ -1,10 +1,12 @@
+@use "@nice-digital/nds-core/scss/typography";
+
 ////
 /// @group helpers
 ////
 
-$nds-output-text-classes: true !default;
+$output-text-classes: true !default;
 
-@if $nds-output-text-classes {
+@if $output-text-classes {
   // ## Alignment
 
   /// Justified text alignment
@@ -23,7 +25,7 @@ $nds-output-text-classes: true !default;
   /// Requires inline-block or block for proper styling
   /// @since 0.1.0
   .text-truncate {
-    @include nds-text-truncate;
+    @include typography.text-truncate;
   }
 
   /// Align text left
@@ -103,6 +105,6 @@ $nds-output-text-classes: true !default;
   /// centrally via auto left/right margins
   /// @since 0.1.0
   .center-block {
-    @include nds-center-block;
+    @include typography.center-block;
   }
 }

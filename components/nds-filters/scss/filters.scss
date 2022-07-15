@@ -1,2 +1,5 @@
-@import 'filter-panel', 'filter-group', 'filter-option', 'filter-summary',
-  'filter-input';
+@forward 'filter-panel';
+@forward 'filter-group';
+@forward 'filter-option';
+@forward 'filter-summary';
+@forward 'filter-input';

@@ -69,7 +69,7 @@ A custom tag type for the container. Useful if the container covers the whole of
 - Type: `boolean`
 - Default: `false`
 
-An option to override the default `max-width` of the container (`$nds-container-max-width`), and set it to 98% of the parent (or viewport's) width.
+An option to override the default `max-width` of the container (`$container-max-width`), and set it to 98% of the parent (or viewport's) width.
 
 ### SCSS
 

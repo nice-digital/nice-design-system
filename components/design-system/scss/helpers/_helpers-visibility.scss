@@ -1,10 +1,13 @@
+@use "@nice-digital/nds-core/scss/media-queries";
+@use "@nice-digital/nds-core/scss/visibility";
+
 ////
 /// @group helpers
 ////
 
-$nds-output-visibility-classes: true !default;
+$output-visibility-classes: true !default;
 
-@if $nds-output-visibility-classes {
+@if $output-visibility-classes {
   /// Display none.
   /// Note the use of `!important` for overriding styles.
   .hide {
@@ -46,11 +49,11 @@ $nds-output-visibility-classes: true !default;
   .hide-portrait {
     display: block !important;
 
-    @include nds-landscape {
+    @include visibility.landscape {
       display: block !important;
     }
 
-    @include nds-portrait {
+    @include visibility.portrait {
       display: none !important;
     }
   }
@@ -60,11 +63,11 @@ $nds-output-visibility-classes: true !default;
   .show-portrait {
     display: none !important;
 
-    @include nds-landscape {
+    @include visibility.landscape {
       display: none !important;
     }
 
-    @include nds-portrait {
+    @include visibility.portrait {
       display: block !important;
     }
   }
@@ -77,7 +80,7 @@ $nds-output-visibility-classes: true !default;
 
   $hide-selectors: (); /* stylelint-disable-line */
 
-  @each $brkpnt-key, $brkpnt-value in $mq-breakpoints {
+  @each $brkpnt-key, $brkpnt-value in media-queries.$breakpoints {
     // Show from
     $hide-selectors: append($hide-selectors, '.show-#{ $brkpnt-key }', comma);
     $hide-selectors: append(
@@ -96,8 +99,8 @@ $nds-output-visibility-classes: true !default;
     display: none;
   }
 
-  @each $brkpnt-key, $brkpnt-value in $mq-breakpoints {
-    @include mq($from: $brkpnt-key) {
+  @each $brkpnt-key, $brkpnt-value in media-queries.$breakpoints {
+    @include media-queries.mq($from: $brkpnt-key) {
       .show-#{ $brkpnt-key } {
         display: block !important;
       }
@@ -119,14 +122,14 @@ $nds-output-visibility-classes: true !default;
   //## Accessibility
   .show-focus,
   .visually-hidden {
-    @include nds-invisible;
+    @include visibility.invisible;
   }
 
   //## Focus
   .show-focus {
     &:active,
     &:focus {
-      @include nds-invisible-off;
+      @include visibility.invisible-off;
     }
   }
 

@@ -1,2 +1,5 @@
-@import 'typography-global', 'typography-headings', 'typography-links',
-  'typography-lists', 'typography-quotations';
+@forward 'typography-global';
+@forward 'typography-headings';
+@forward 'typography-links';
+@forward 'typography-lists';
+@forward 'typography-quotations';

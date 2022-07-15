@@ -2,28 +2,32 @@
 /// @group components
 ////
 
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/focus';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
 
-$nds-button-shadow-colour: rgba(0, 0, 0, 0.2);
-$nds-button-border-radius: em(3px);
+$button-shadow-colour: rgba(0, 0, 0, 0.2);
+$button-border-radius: utils.em(3px);
 
 /// Button
 /// @since 0.1.0
 .btn {
-  @include nds-font-size(0);
+  @include typography.font-size(0);
   appearance: none;
-  background: $nds-colour-btn-primary;
-  border: em(1px) solid $nds-colour-btn-primary-text;
-  border-radius: $nds-button-border-radius;
-  box-shadow: 0 em(3px) em(6px) 0 $nds-button-shadow-colour;
-  color: $nds-colour-btn-primary-text;
+  background: colours.$btn-primary;
+  border: utils.em(1px) solid colours.$btn-primary-text;
+  border-radius: $button-border-radius;
+  box-shadow: 0 utils.em(3px) utils.em(6px) 0 $button-shadow-colour;
+  color: colours.$btn-primary-text;
   cursor: pointer;
   display: inline-block;
   font-family: inherit;
-  margin: em(
-    0 $nds-spacing-small $nds-spacing-small -4px
+  margin: utils.em(
+    0 spacing.$small spacing.$small -4px
   ); // Negative left margin to combat inline-block gaps
-  padding: em($nds-spacing-small $nds-spacing-medium);
+  padding: utils.em(spacing.$small spacing.$medium);
   position: relative;
   text-align: left;
   text-decoration: none !important;
@@ -38,27 +42,27 @@ $nds-button-border-radius: em(3px);
   }
 
   &:visited {
-    color: $nds-colour-btn-primary-text;
+    color: colours.$btn-primary-text;
   }
 
   &:hover {
-    background: $nds-colour-btn-primary-hover;
-    box-shadow: 0 em(5px) em(8px) 0 $nds-button-shadow-colour;
-    color: $nds-colour-btn-primary-text;
+    background: colours.$btn-primary-hover;
+    box-shadow: 0 utils.em(5px) utils.em(8px) 0 $button-shadow-colour;
+    color: colours.$btn-primary-text;
     text-decoration: none;
   }
 
   &:focus {
-    @include nds-default-focus-style;
-    background: $nds-colour-btn-primary;
-    border-color: $nds-colour-focus-inverse;
-    color: $nds-colour-btn-primary-text;
+    @include focus.default-focus-style;
+    background: colours.$btn-primary;
+    border-color: colours.$focus-inverse;
+    color: colours.$btn-primary-text;
   }
 
   &:active {
-    background: $nds-colour-btn-primary-hover;
+    background: colours.$btn-primary-hover;
     text-decoration: none;
-    top: em(2px);
+    top: utils.em(2px);
   }
 
   // Disabled button styles
@@ -79,74 +83,74 @@ $nds-button-border-radius: em(3px);
 /// CTA/prominent button
 /// @since 0.2.0
 .btn--cta {
-  background: $nds-colour-btn-cta;
-  border: em(1px) solid $nds-colour-btn-cta-text;
-  color: $nds-colour-btn-cta-text;
+  background: colours.$btn-cta;
+  border: utils.em(1px) solid colours.$btn-cta-text;
+  color: colours.$btn-cta-text;
 
   &:visited {
-    color: $nds-colour-btn-cta-text;
+    color: colours.$btn-cta-text;
   }
 
   &:hover {
-    background: $nds-colour-btn-cta-hover;
-    color: $nds-colour-btn-cta-text;
+    background: colours.$btn-cta-hover;
+    color: colours.$btn-cta-text;
   }
 
   &:focus {
-    background: $nds-colour-btn-cta-hover;
+    background: colours.$btn-cta-hover;
   }
 
   &:active {
-    background: $nds-colour-btn-cta-hover;
+    background: colours.$btn-cta-hover;
   }
 }
 
 /// Secondary button
 /// @since 0.2.0
 .btn--secondary {
-  background: $nds-colour-btn-secondary;
-  border: em(1px) solid $nds-colour-btn-secondary-text;
-  color: $nds-colour-btn-secondary-text;
+  background: colours.$btn-secondary;
+  border: utils.em(1px) solid colours.$btn-secondary-text;
+  color: colours.$btn-secondary-text;
 
   &:visited {
-    color: $nds-colour-btn-secondary-text;
+    color: colours.$btn-secondary-text;
   }
 
   &:hover {
-    background: $nds-colour-btn-secondary-hover;
-    color: $nds-colour-btn-secondary-text;
+    background: colours.$btn-secondary-hover;
+    color: colours.$btn-secondary-text;
   }
 
   &:focus {
-    background: $nds-colour-btn-secondary-hover;
+    background: colours.$btn-secondary-hover;
   }
 
   &:active {
-    background: $nds-colour-btn-secondary-hover;
+    background: colours.$btn-secondary-hover;
   }
 }
 
 /// Inverse (light) button, for use on inverse (dark) panels/sections
 /// @since 0.2.0
 .btn--inverse {
-  background: $nds-colour-btn-inverse;
-  border: em(1px) solid $nds-colour-btn-inverse-text;
-  color: $nds-colour-btn-inverse-text !important;
+  background: colours.$btn-inverse;
+  border: utils.em(1px) solid colours.$btn-inverse-text;
+  color: colours.$btn-inverse-text !important;
 
   &:visited {
-    color: $nds-colour-btn-inverse-text;
+    color: colours.$btn-inverse-text;
   }
 
   &:hover {
-    background: $nds-colour-btn-inverse-hover;
-    color: $nds-colour-btn-inverse-text;
+    background: colours.$btn-inverse-hover;
+    color: colours.$btn-inverse-text;
   }
 
   &:focus {
-    background: $nds-colour-btn-inverse-hover;
+    background: colours.$btn-inverse-hover;
   }
 
   &:active {
-    background: $nds-colour-btn-inverse-hover;
+    background: colours.$btn-inverse-hover;
   }
 }

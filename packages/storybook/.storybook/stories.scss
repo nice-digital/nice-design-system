@@ -1,7 +1,20 @@
 $nice-icons-base-path: '/';
 
-@use '@nice-digital/nds-core/scss/core';
-@import '../../../components/design-system/scss/base.scss';
+@use '../../../components/design-system/scss/base';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
+
+.sbdocs {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: typography.get-font-family(serif);
+    font-weight: 600;
+  }
+}
 
 .storybook-swatch {
   border: 1px solid #dedede;
@@ -11,34 +24,34 @@ $nice-icons-base-path: '/';
 }
 
 .storybook-block {
-  background: core.$nds-colour-nice-purple;
+  background: colours.$nice-purple;
   display: inline-block;
   height: 20px;
   min-width: 1px;
 
   &--xx-small {
-    width: core.rem(core.$nds-spacing-xx-small);
+    width: utils.rem(spacing.$xx-small);
   }
   &--x-small {
-    width: core.rem(core.$nds-spacing-x-small);
+    width: utils.rem(spacing.$x-small);
   }
   &--small {
-    width: core.rem(core.$nds-spacing-small);
+    width: utils.rem(spacing.$small);
   }
   &--medium {
-    width: core.rem(core.$nds-spacing-medium);
+    width: utils.rem(spacing.$medium);
   }
   &--large {
-    width: core.rem(core.$nds-spacing-large);
+    width: utils.rem(spacing.$large);
   }
   &--x-large {
-    width: core.rem(core.$nds-spacing-x-large);
+    width: utils.rem(spacing.$x-large);
   }
   &--xx-large {
-    width: core.rem(core.$nds-spacing-xx-large);
+    width: utils.rem(spacing.$xx-large);
   }
 }
 
 .link-inverse {
-  @include core.nds-link-inverse;
+  @include typography.link-inverse;
 }

@@ -4,8 +4,6 @@
 
 @use "sass:math";
 
-@import '~@nice-digital/nds-core/scss/core';
-
 /// Maintains the aspect ratio of an embedded item, useful for responsive embedding, e.g.
 /// YouTube videos in iframes or video tags. Also useful when you know the ratio of an image
 /// and want to avoid the 'pop' for slow loading images.

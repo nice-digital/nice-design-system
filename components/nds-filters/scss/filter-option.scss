@@ -2,18 +2,21 @@
 /// @group components
 ////
 
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/focus';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/utils';
 
 // Checkbox/radio button option (label)
 .filter-option {
-  background: $nds-colour-nice-white;
-  border-top: 1px solid $nds-colour-nice-grey-2;
-  color: $nds-colour-text;
+  background: colours.$nice-white;
+  border-top: 1px solid colours.$nice-grey-2;
+  color: colours.$text;
   cursor: pointer;
   display: block;
   line-height: 1.2;
-  padding: rem(
-    $nds-spacing-small $nds-spacing-small $nds-spacing-small $nds-spacing-large
+  padding: utils.rem(
+    spacing.$small spacing.$small spacing.$small spacing.$large
   );
   position: relative;
   text-decoration: none;
@@ -21,47 +24,47 @@
   // An option can be an anchor or a label
   &:hover,
   &:focus {
-    color: $nds-colour-text;
+    color: colours.$text;
   }
 
   &:hover {
-    background: $nds-colour-nice-grey-3;
+    background: colours.$nice-grey-3;
   }
 
   input {
     float: left;
-    height: rem($nds-spacing-medium);
-    margin-left: rem(-($nds-spacing-medium + $nds-spacing-small));
-    margin-top: rem($nds-spacing-xx-small);
-    width: rem($nds-spacing-medium);
+    height: utils.rem(spacing.$medium);
+    margin-left: utils.rem(-(spacing.$medium + spacing.$small));
+    margin-top: utils.rem(spacing.$xx-small);
+    width: utils.rem(spacing.$medium);
 
     &:focus {
-      @include nds-default-focus-style;
+      @include focus.default-focus-style;
       z-index: 1;
     }
   }
 
   &__text {
     &:before {
-      background: $nds-colour-nice-white;
-      border: 1px solid $nds-colour-nice-dark-grey;
+      background: colours.$nice-white;
+      border: 1px solid colours.$nice-dark-grey;
       box-sizing: border-box;
       content: '';
       cursor: pointer;
-      height: rem($nds-spacing-medium);
-      left: rem($nds-spacing-small);
-      margin-top: rem($nds-spacing-xx-small);
+      height: utils.rem(spacing.$medium);
+      left: utils.rem(spacing.$small);
+      margin-top: utils.rem(spacing.$xx-small);
       pointer-events: none;
       position: absolute;
-      top: rem($nds-spacing-small);
-      width: rem($nds-spacing-medium);
+      top: utils.rem(spacing.$small);
+      width: utils.rem(spacing.$medium);
     }
 
     &:after {
       background: transparent;
       border: solid;
       border-top-color: transparent;
-      border-width: rem(0 0 $nds-spacing-xx-small $nds-spacing-xx-small);
+      border-width: utils.rem(0 0 spacing.$xx-small spacing.$xx-small);
       content: '';
       cursor: pointer;
       height: 0.4rem;
@@ -77,7 +80,7 @@
 
   input:focus ~ &__text {
     &:before {
-      @include nds-default-focus-style;
+      @include focus.default-focus-style;
     }
   }
   input:checked ~ &__text {
@@ -86,14 +89,14 @@
     }
   }
 
-  @include nds-when-is(a) {
+  @include utils.when-is(a) {
     &:focus {
       z-index: 1;
     }
 
     &:visited,
     &:active {
-      color: $nds-colour-text;
+      color: colours.$text;
     }
   }
 }

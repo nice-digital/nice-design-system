@@ -1,4 +1,4 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import { Alphabet, Letter } from "@nice-digital/nds-alphabet";
 
 export const AlphabetView = () => {
@@ -8,7 +8,7 @@ export const AlphabetView = () => {
 			{letter.toUpperCase()}
 		</Letter>
 	));
-	const FakeLink = props => {
+	const FakeLink = (props: PropsWithChildren<Record<string, unknown>>) => {
 		return (
 			<a data-test="example-non-standard-element" {...props}>
 				{props.children}

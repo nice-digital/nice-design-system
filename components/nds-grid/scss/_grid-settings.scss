@@ -1,11 +1,14 @@
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/utils';
+
 /// The width of the default spacing between grid items, in rems
 /// @since 0.2.0
-$nds-grid-gutter: rem($nds-spacing-medium);
+$grid-gutter: utils.rem(spacing.$medium);
 
 /// The width of the spacing between grid items in a compact grid, in rems
 /// @since 0.2.0
-$nds-grid-gutter-compact: rem($nds-spacing-small);
+$grid-gutter-compact: utils.rem(spacing.$small);
 
 /// The width of the spacing between grid items in a loose grid, in rems
 /// @since 0.2.0
-$nds-grid-gutter-loose: rem($nds-spacing-large);
+$grid-gutter-loose: utils.rem(spacing.$large);

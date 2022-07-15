@@ -1,16 +1,18 @@
+@use "@nice-digital/nds-core/scss/typography";
+
 ////
 /// @group Typography
 ////
 
 a {
-  @include nds-link-default;
+  @include typography.link-default;
 }
 
 /// Inverse link for use on a dark background. Apply to an individual link.
 /// Prefer using `.inverse-links` on the container instead.
 /// @since 0.2.9
 .link--inverse {
-  @include nds-link-inverse;
+  @include typography.link-inverse;
 }
 
 /// Inverse links, for use on dark backgrounds e.g dark panels.
@@ -18,5 +20,5 @@ a {
 /// @require {mixin} links-inverse
 /// @since 0.2.9
 .inverse-links {
-  @include nds-links-inverse;
+  @include typography.links-inverse;
 }

@@ -1,4 +1,4 @@
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/layout';
 
 /// Container, used as a wrapper around sections within a page.
 /// Usually used to house grids.
@@ -10,7 +10,8 @@
 ///   </div>
 /// @since 0.1.0
 .container {
-  @include nds-container;
+  @include layout.container;
+
   &--full {
     max-width: 100%;
     padding: 0 2%;

@@ -2,43 +2,47 @@
 /// @group components
 ////
 
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/focus';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
 
 .input {
-  margin-bottom: rem($nds-spacing-medium);
+  margin-bottom: utils.rem(spacing.$medium);
 
   &__label {
-    @include nds-font-size(p);
+    @include typography.font-size(p);
     display: block;
     font-weight: bold;
-    margin-bottom: rem($nds-spacing-small);
+    margin-bottom: utils.rem(spacing.$small);
   }
 
   &__hint {
-    margin-bottom: rem($nds-spacing-small);
+    margin-bottom: utils.rem(spacing.$small);
     margin-top: 0;
   }
 
   &__error {
-    color: $nds-colour-error;
+    color: colours.$error;
     font-weight: bold;
-    margin-bottom: rem($nds-spacing-small);
+    margin-bottom: utils.rem(spacing.$small);
     margin-top: 0;
   }
 
   &__input {
-    border: rem($nds-spacing-xx-small) solid $nds-colour-border;
-    padding: rem($nds-spacing-small);
+    border: utils.rem(spacing.$xx-small) solid colours.$border;
+    padding: utils.rem(spacing.$small);
     width: 100%;
 
     &:focus {
-      @include nds-default-focus-style;
+      @include focus.default-focus-style;
     }
   }
 
   &--error {
     .input__input {
-      @include nds-default-error-style;
+      @include typography.default-error-style;
     }
   }
 }

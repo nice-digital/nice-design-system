@@ -58,15 +58,15 @@ We use tildes in SCSS import paths, which works out of the box with sass-loader 
 If you want the design system without all of the components you can install the base styling:
 
 ```scss
-@import "~@nice-digital/design-system/scss/base";
+@import "@nice-digital/design-system/scss/base";
 ```
 
 You can then start using the SCSS from the NICE Design System, for example:
 
 ```scss
 .something {
-	color: $colour-nice-teal;
-	margin: rem($spacing-large);
+	color: core.$colour-nice-teal;
+	margin: core.rem(core.$large);
 }
 ```
 
@@ -74,7 +74,7 @@ If you want to import the design system into a CSS module you can scope the impo
 
 ```scss
 :global {
-	@import "~@nice-digital/design-system/scss/nice-design-system.scss";
+	@import "@nice-digital/design-system/scss/nice-design-system";
 }
 ```
 

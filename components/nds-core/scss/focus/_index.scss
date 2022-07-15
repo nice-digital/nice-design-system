@@ -1,3 +1,7 @@
+@use "../spacing";
+@use "../colours";
+@use "../utils";
+
 ////
 /// @group helpers
 ////
@@ -6,13 +10,13 @@
 /// @param {Boolean} $rounded whether to use box shadow for border (outline can't be styled to have radius corners)
 /// @output the default focus styles ie background colour and outline
 /// @since 0.1.0
-@mixin nds-default-focus-style($rounded: false) {
+@mixin default-focus-style($rounded: false) {
   @if $rounded {
-    box-shadow: 0 0 0 rem($nds-spacing-x-small) $nds-colour-focus;
-    outline: $nds-spacing-x-small solid transparent;
-    outline-offset: $nds-spacing-x-small;
+    box-shadow: 0 0 0 utils.rem(spacing.$x-small) colours.$focus;
+    outline: spacing.$x-small solid transparent;
+    outline-offset: spacing.$x-small;
   } @else {
-    outline: rem($nds-spacing-x-small) solid $nds-colour-focus;
+    outline: utils.rem(spacing.$x-small) solid colours.$focus;
   }
 }
 
@@ -20,24 +24,24 @@
 /// on an inverse (dark) background
 /// @output the inverse focus styles ie background colour and outline
 /// @since 0.3.1
-@mixin nds-inverse-focus-style {
-  outline: rem($nds-spacing-x-small) solid $nds-colour-focus-inverse;
+@mixin inverse-focus-style {
+  outline: utils.rem(spacing.$x-small) solid colours.$focus-inverse;
 }
 
-@mixin nds-default-button-focus {
+@mixin default-button-focus {
   .btn,
   button {
     &:focus {
-      @include nds-default-focus-style;
+      @include default-focus-style;
     }
   }
 }
 
-@mixin nds-inverse-button-focus {
+@mixin inverse-button-focus {
   .btn,
   button {
     &:focus {
-      @include nds-inverse-focus-style;
+      @include inverse-focus-style;
     }
   }
 }

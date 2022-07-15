@@ -1,3 +1,9 @@
+@use "@nice-digital/nds-core/scss/typography";
+@use "@nice-digital/nds-core/scss/spacing";
+@use "@nice-digital/nds-core/scss/utils";
+@use "@nice-digital/nds-core/scss/glyphs";
+@use "@nice-digital/nds-core/scss/colours";
+
 ////
 /// @group Typography
 ////
@@ -5,16 +11,16 @@
 /// Blockquote style
 /// @since 0.1.0
 .quote {
-  @include nds-font-size(lead);
-  border-left: em($nds-spacing-x-small) solid $nds-colour-nice-teal;
+  @include typography.font-size(lead);
+  border-left: utils.em(spacing.$x-small) solid colours.$nice-teal;
   font-weight: normal;
-  margin: rem($nds-spacing-large 0);
-  padding: rem(0 0 0 $nds-spacing-xx-large);
+  margin: utils.rem(spacing.$large 0);
+  padding: utils.rem(0 0 0 spacing.$xx-large);
   position: relative;
 
   &:before {
-    color: $nds-colour-nice-teal;
-    content: nds-get-glyph(left-double-quotation-mark);
+    color: colours.$nice-teal;
+    content: glyphs.get-glyph(left-double-quotation-mark);
     display: block;
     font-family: Arial, sans-serif;
     font-size: 5rem;
@@ -24,10 +30,10 @@
     position: absolute;
     text-align: center;
     top: 0;
-    width: rem($nds-spacing-xx-large);
+    width: utils.rem(spacing.$xx-large);
 
     @media print {
-      color: $nds-colour-true-black;
+      color: colours.$true-black;
     }
   }
 
@@ -37,7 +43,7 @@
 
   footer,
   cite {
-    @include nds-font-size($scale: 0);
+    @include typography.font-size($scale: 0);
     font-style: normal;
   }
 }

@@ -1,10 +1,16 @@
+@use "@nice-digital/nds-core/scss/typography";
+@use "@nice-digital/nds-core/scss/utils";
+@use "@nice-digital/nds-core/scss/spacing";
+@use "@nice-digital/nds-core/scss/media-queries";
+@use "@nice-digital/nds-core/scss/colours";
+
 ////
 /// @group Typography
 ////
 
 html {
   box-sizing: border-box;
-  font-size: rem($nds-root-font-size-min);
+  font-size: utils.rem(typography.$root-font-size-min);
 
   // See https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
   *,
@@ -13,41 +19,42 @@ html {
     box-sizing: inherit;
   }
 
-  @include mq($from: $nds-root-font-size-min-breakpoint) {
+  @include media-queries.mq($from: typography.$root-font-size-min-breakpoint) {
     // stylelint-disable function-calc-no-unspaced-operator
     // Fallback halfway between max and min for older browsers that don't support calc
-    font-size: rem(
-      $nds-root-font-size-min +
-        ($nds-root-font-size-max - $nds-root-font-size-min) * 0.5
+    font-size: utils.rem(
+      typography.$root-font-size-min +
+        (typography.$root-font-size-max - typography.$root-font-size-min) * 0.5
     );
     // Follows "fluid typography" rules: https://www.google.co.uk/search?q=fluid%20typography%20vw
     // ie scales font-size linearly between 2 breakpoints.
     // Also uses rems so that they're relative to browser font size.
     // In form: MIN_FONT_SIZE + (MAX_FONT_SIZE - MIN_FONT_SIZE) * (100vw - MIN_SCREEN_SIZE) / (MAX_SCREEN_SIZE - MIN_SCREEN_SIZE)
     font-size: calc(
-      #{rem($nds-root-font-size-min)} + #{nds-strip-unit(
-          rem($nds-root-font-size-max) - rem($nds-root-font-size-min)
+      #{utils.rem(typography.$root-font-size-min)} + #{utils.strip-unit(
+          utils.rem(typography.$root-font-size-max) -
+            utils.rem(typography.$root-font-size-min)
         )} *
         (
-          (100vw - #{rem($nds-root-font-size-min-breakpoint)}) / #{nds-strip-unit(
-              rem($nds-root-font-size-max-breakpoint) -
-                rem($nds-root-font-size-min-breakpoint)
+          (100vw - #{utils.rem(typography.$root-font-size-min-breakpoint)}) / #{utils.strip-unit(
+              utils.rem(typography.$root-font-size-max-breakpoint) -
+                utils.rem(typography.$root-font-size-min-breakpoint)
             )}
         )
     );
   }
 
-  @include mq($from: $nds-root-font-size-max-breakpoint) {
-    font-size: rem($nds-root-font-size-max);
+  @include media-queries.mq($from: typography.$root-font-size-max-breakpoint) {
+    font-size: utils.rem(typography.$root-font-size-max);
   }
 }
 
 body {
-  background: $nds-colour-body;
-  color: $nds-colour-text;
-  font-family: nds-get-font-family(sans);
+  background: colours.$body;
+  color: colours.$text;
+  font-family: typography.get-font-family(sans);
   font-style: normal;
-  line-height: rem($nds-base-line-height);
+  line-height: utils.rem(typography.$base-line-height);
   overflow-x: hidden;
   text-rendering: optimizelegibility;
 }
@@ -59,29 +66,29 @@ img {
 hr {
   background: 0;
   border: 0;
-  border-top: em(1px) solid $nds-colour-border;
-  margin: em($nds-spacing-large 0);
+  border-top: utils.em(1px) solid colours.$border;
+  margin: utils.em(spacing.$large 0);
   padding: 0;
 }
 
 p,
 .p {
-  @include nds-p;
+  @include typography.p;
 }
 
 .lead {
-  @include nds-lead;
+  @include typography.lead;
 }
 
 code {
-  background: $nds-colour-nice-grey-3;
-  border: 1px solid $nds-colour-border;
-  border-radius: em($nds-spacing-xx-small);
-  color: $nds-colour-text;
+  background: colours.$nice-grey-3;
+  border: 1px solid colours.$border;
+  border-radius: utils.em(spacing.$xx-small);
+  color: colours.$text;
   display: inline-block;
-  font-family: nds-get-font-family(mono);
-  margin: em(0 0 $nds-spacing-xx-small);
-  padding: em(0 $nds-spacing-x-small);
+  font-family: typography.get-font-family(mono);
+  margin: utils.em(0 0 spacing.$xx-small);
+  padding: utils.em(0 spacing.$x-small);
 
   pre & {
     background: transparent;
@@ -93,8 +100,8 @@ code {
 /// Mark
 mark,
 .mark {
-  background-color: $nds-colour-mark;
-  padding: em(0 $nds-spacing-x-small);
+  background-color: colours.$mark;
+  padding: utils.em(0 spacing.$x-small);
 }
 
 /// Small

@@ -138,7 +138,7 @@ These are the following breaking changes from 0.x to 1.x:
 - removed nunjucks templates, we now recommend using React components
 - removed the inverse panel
 - prefixed all mixin, functions, variables and classes with _nds-_ e.g. `container` is now `nds-container`
-- moved component-specific colour variables out of core into their respective component SCSS. Also renamed appropriately e.g.`$colour-panel-default` and `$colour-panel-default-border` are now in @nice-digital/nds-panel and renamed to `$nds-colour-panel-default-background` and `$nds-colour-panel-default-border`
+- moved component-specific colour variables out of core into their respective component SCSS. Also renamed appropriately e.g.`$colour-panel-default` and `$colour-panel-default-border` are now in @nice-digital/nds-panel and renamed to `$colour-panel-default-background` and `$colour-panel-default-border`
 - removed `nds-element` and `nds-modifier` and their aliases `nds-e` and `nds-m` as they were never used
 - Removed all placeholders and replaced with mixins
 - Removed grid mixins: either use the grid in markup or use your own custom grid with flexbox etc in CSS.

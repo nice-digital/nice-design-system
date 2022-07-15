@@ -2,30 +2,34 @@
 /// @group components
 ////
 
-@import '~@nice-digital/nds-core/scss/core';
-@import '~@nice-digital/icons/scss/nice-icons';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/focus';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
+@use '@nice-digital/nds-core/scss/visibility';
 
 @mixin _filter-group-heading-button {
   appearance: none;
-  background: $nds-colour-nice-grey-2;
+  background: colours.$nice-grey-2;
   border: 0;
-  color: $nds-colour-text;
+  color: colours.$text;
   cursor: pointer;
   display: block;
   font-weight: bold;
   line-height: 1.5;
   max-width: 100%;
-  padding: rem($nds-spacing-small);
+  padding: utils.rem(spacing.$small);
   text-align: left;
   text-decoration: none;
   width: 100%;
 
   &:hover {
-    background: $nds-colour-nice-grey-1;
+    background: colours.$nice-grey-1;
   }
 
   &:focus {
-    @include nds-default-focus-style;
+    @include focus.default-focus-style;
   }
 }
 
@@ -35,10 +39,10 @@
 /// Used to filter searches or lists of content.
 /// @since 0.5.0
 .filter-group {
-  margin-top: rem($nds-spacing-medium);
+  margin-top: utils.rem(spacing.$medium);
 
   legend {
-    @include nds-invisible();
+    @include visibility.invisible();
   }
 
   fieldset {
@@ -52,7 +56,7 @@
 
   // Wrapper for the options when filter is a list of checboxes
   &__options {
-    border: rem($nds-spacing-x-small) solid $nds-colour-nice-grey-2;
+    border: utils.rem(spacing.$x-small) solid colours.$nice-grey-2;
 
     &[aria-hidden='true'] {
       display: none;
@@ -68,11 +72,12 @@
 
   // Heading used for collapsing/expanding the filter group
   &__heading {
-    @include nds-font-size(0);
-    background: $nds-colour-nice-grey-2;
+    @include typography.font-size(0);
+    background: colours.$nice-grey-2;
     border: 0;
     display: block;
-    font-weight: bold;
+    font-family: typography.get-font-family(sans);
+    font-weight: 600;
     margin: 0;
     max-width: 100%;
     padding: 0;
@@ -87,18 +92,18 @@
 
     &:hover {
       + .filter-group__options {
-        border-color: $nds-colour-nice-grey-1;
+        border-color: colours.$nice-grey-1;
       }
     }
 
-    @include nds-when-is(a, button) {
+    @include utils.when-is(a, button) {
       @include _filter-group-heading-button;
     }
   }
 
   // Shows the number of filtered options e.g. "2 selected"
   &__count {
-    @include nds-font-size(-1);
+    @include typography.font-size(-1);
     display: block;
     font-weight: normal;
   }
@@ -107,31 +112,30 @@
   // DEPRECTAED: Use filter-option.scss (i.e. .filter__option) instead
   // This is here for backwards compat but may be removed in the future
   &__option {
-    background: $nds-colour-nice-white;
-    border-top: 1px solid $nds-colour-nice-grey-2;
-    color: $nds-colour-text;
+    background: colours.$nice-white;
+    border-top: 1px solid colours.$nice-grey-2;
+    color: colours.$text;
     cursor: pointer;
     display: block;
     line-height: 1.2;
-    padding: rem(
-      $nds-spacing-small $nds-spacing-small $nds-spacing-small
-        $nds-spacing-large
+    padding: utils.rem(
+      spacing.$small spacing.$small spacing.$small spacing.$large
     );
     text-decoration: none;
 
     &:hover {
-      background: $nds-colour-nice-grey-3;
+      background: colours.$nice-grey-3;
     }
 
     input {
       float: left;
-      height: rem($nds-spacing-medium);
-      margin-left: rem(-($nds-spacing-medium + $nds-spacing-small));
-      margin-top: rem($nds-spacing-xx-small);
-      width: rem($nds-spacing-medium);
+      height: utils.rem(spacing.$medium);
+      margin-left: utils.rem(-(spacing.$medium + spacing.$small));
+      margin-top: utils.rem(spacing.$xx-small);
+      width: utils.rem(spacing.$medium);
 
       &:focus {
-        @include nds-default-focus-style;
+        @include focus.default-focus-style;
         z-index: 1;
       }
     }

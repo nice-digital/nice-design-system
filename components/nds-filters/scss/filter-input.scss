@@ -1,17 +1,19 @@
-@import '~@nice-digital/nds-core/scss/core';
-@import '~@nice-digital/icons/scss/nice-icons';
-@import './filter-group';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/utils';
+@use '@nice-digital/nds-core/scss/visibility';
+@use './filter-group';
 
 .inputFilterBox {
-  margin-top: rem($nds-spacing-medium);
+  margin-top: utils.rem(spacing.$medium);
 
   // Wrapper for the input and button
   &__controls {
-    border: rem($nds-spacing-x-small) solid $nds-colour-nice-grey-2;
-    padding: rem($nds-spacing-small);
+    border: utils.rem(spacing.$x-small) solid colours.$nice-grey-2;
+    padding: utils.rem(spacing.$small);
 
     label {
-      @include nds-invisible();
+      @include visibility.invisible();
     }
 
     &[aria-hidden='true'] {

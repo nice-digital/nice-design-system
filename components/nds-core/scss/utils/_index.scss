@@ -1,3 +1,9 @@
+@use "sass:math";
+@use "../typography/settings" as typography-settings;
+
+@forward "vendor/is";
+@forward "vendor/math";
+
 ////
 /// @group helpers
 ////
@@ -6,28 +12,26 @@
 /// @param {Number} $num The number whose units you wish to strip.
 /// @since 0.2.0
 /// @link https://davidtheclark.github.io/scut/strip-unit.html
-@use "sass:math";
-
-@function nds-strip-unit($num) {
+@function strip-unit($num) {
   @return math.div($num, $num * 0 + 1);
 }
 
 /// Convert pixel-values to em-values.
 /// @param {Number} $pixels - The px-value you wish to convert to ems. No px unit necessary (e.g. 20 is fine, so is 20px). Passing a list will result in a list of em values (see examples).
-/// @param {Number} $base [$nds-base-font-size] - A base-value with which to calculate the em-value
+/// @param {Number} $base [typography.$base-font-size] - A base-value with which to calculate the em-value
 /// @since 0.2.0
 /// @link https://davidtheclark.github.io/scut/em.html
-@function em($pixels, $base: $nds-base-font-size) {
+@function em($pixels, $base: typography-settings.$base-font-size) {
   // $base could be in em or px (no unit = px).
   // Adjust accordingly to create a $divisor that
   // serves as context for $pixels.
   $multiplier: if(unit($base) == em, 16, 1);
-  $divisor: nds-strip-unit($base) * $multiplier;
+  $divisor: strip-unit($base) * $multiplier;
 
   $em-vals: ();
 
   @each $val in $pixels {
-    $val-in-ems: math.div(nds-strip-unit($val), $divisor) * 1em;
+    $val-in-ems: math.div(strip-unit($val), $divisor) * 1em;
     $em-vals: append($em-vals, $val-in-ems);
   }
 
@@ -42,13 +46,13 @@
 
 /// Convert pixel-values to rem-values.
 /// @param {Number} $pixels - The px-value you wish to convert to rems. No px unit necessary (e.g. 20 is fine, so is 20px). Passing a list will result in a list of rem values (see examples).
-/// @param {Number} $base [$nds-base-font-size] - A base-value with which to calculate the em-value
+/// @param {Number} $base [typography.$base-font-size] - A base-value with which to calculate the em-value
 /// @since 0.2.0
 /// @link https://davidtheclark.github.io/scut/rem.html
-@function rem($pixels, $base: $nds-base-font-size) {
+@function rem($pixels, $base: typography-settings.$base-font-size) {
   $rem-vals: ();
   @each $val in $pixels {
-    $val-in-rems: math.div(nds-strip-unit($val), $base) * 1rem;
+    $val-in-rems: math.div(strip-unit($val), $base) * 1rem;
     $rem-vals: append($rem-vals, $val-in-rems);
   }
 
@@ -71,11 +75,11 @@
 ///   .something {
 ///     color: red;
 
-///     @include nds-when-is(a, button) {
+///     @include when-is(a, button) {
 ///       color: blue;
 ///     }
 ///   }
-@mixin nds-when-is($element-selectors...) {
+@mixin when-is($element-selectors...) {
   $selectors: ();
   @each $element-selector in $element-selectors {
     $selectors: append($selectors, $element-selector + &);

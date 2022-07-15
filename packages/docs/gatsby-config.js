@@ -1,3 +1,10 @@
+const path = require("path");
+
+console.log(
+	"##################################################################"
+);
+console.log(path.resolve(__dirname, "../../components/nds-core/node_modules/"));
+
 module.exports = {
 	siteMetadata: {
 		title: "NICE Design System",
@@ -44,7 +51,20 @@ module.exports = {
 		},
 		"gatsby-transformer-remark",
 		"gatsby-plugin-typescript",
-		"gatsby-plugin-sass",
+		{
+			resolve: "gatsby-plugin-sass",
+			options: {
+				implementation: require("sass"),
+				sassOptions: {
+					includePaths: [
+						"node_modules",
+						// Allows the main NDS package to load nds-core's sass-mq dependency
+						// when running locally in dev mode, because of the symlinks from bootstrapping
+						path.resolve(__dirname, "../../components/nds-core/node_modules/")
+					]
+				}
+			}
+		},
 		"gatsby-plugin-react-helmet",
 		"gatsby-transformer-sharp",
 		"gatsby-plugin-sharp",

@@ -1,37 +1,41 @@
 @charset "utf-8";
+
 // Import all the core variables, functions and mixins
-@import './base.scss';
+@forward 'base';
 
 // Icons - from nice-icons module
-@import '~@nice-digital/icons/scss/nice-icons';
+@forward '@nice-digital/icons/scss/nice-icons';
 
-@import '~@nice-digital/nds-action-banner/scss/action-banner',
-  '~@nice-digital/nds-alert/scss/alert',
-  '~@nice-digital/nds-a-z-list/scss/a-z-list',
-  '~@nice-digital/nds-alphabet/scss/alphabet',
-  '~@nice-digital/nds-breadcrumbs/scss/breadcrumbs',
-  '~@nice-digital/nds-button/scss/button', '~@nice-digital/nds-card/scss/card',
-  '~@nice-digital/nds-checkbox/scss/checkbox',
-  '~@nice-digital/nds-column-list/scss/column-list',
-  '~@nice-digital/nds-core/scss/core', '~@nice-digital/nds-enhanced-pagination',
-  '~@nice-digital/nds-filters/scss/filters',
-  '~@nice-digital/nds-form-group/scss/form-group',
-  '~@nice-digital/nds-grid/scss/grid',
-  '~@nice-digital/nds-container/scss/container',
-  '~@nice-digital/nds-hero/scss/hero',
-  '~@nice-digital/nds-in-page-nav/scss/in-page-nav',
-  '~@nice-digital/nds-input/scss/input',
-  '~@nice-digital/nds-maintain-ratio/scss/maintain-ratio',
-  '~@nice-digital/nds-page-header/scss/page-header',
-  '~@nice-digital/nds-panel/scss/panel',
-  '~@nice-digital/nds-phase-banner/scss/phase-banner',
-  '~@nice-digital/nds-radio/scss/radio',
-  '~@nice-digital/nds-simple-pagination/scss/simple-pagination',
-  '~@nice-digital/nds-stacked-nav/scss/stacked-nav',
-  '~@nice-digital/nds-tabs/scss/tabs', '~@nice-digital/nds-tag/scss/tag',
-  '~@nice-digital/nds-textarea/scss/textarea',
-  '~@nice-digital/nds-prev-next/scss/prev-next',
-  '~@nice-digital/nds-table/scss/table',
-  '~@nice-digital/nds-horizontal-nav/scss/horizontal-nav',
-  '~@nice-digital/nds-callout/scss/callout',
-  '~@nice-digital/nds-full-bleed/scss/full-bleed';
+@forward '@nice-digital/nds-a-z-list/scss/a-z-list';
+@forward '@nice-digital/nds-action-banner/scss/action-banner';
+@forward '@nice-digital/nds-alert/scss/alert';
+@forward '@nice-digital/nds-alphabet/scss/alphabet';
+@forward '@nice-digital/nds-breadcrumbs/scss/breadcrumbs';
+@forward '@nice-digital/nds-button/scss/button';
+@forward '@nice-digital/nds-callout/scss/callout';
+@forward '@nice-digital/nds-card/scss/card';
+@forward '@nice-digital/nds-checkbox/scss/checkbox';
+@forward '@nice-digital/nds-column-list/scss/column-list';
+@forward '@nice-digital/nds-container/scss/container';
+@forward '@nice-digital/nds-enhanced-pagination/scss/enhanced-pagination';
+@forward '@nice-digital/nds-filters/scss/filters';
+@forward '@nice-digital/nds-form-group/scss/form-group';
+@forward '@nice-digital/nds-forms/scss/forms';
+@forward '@nice-digital/nds-full-bleed/scss/full-bleed';
+@forward '@nice-digital/nds-grid/scss/grid';
+@forward '@nice-digital/nds-hero/scss/hero';
+@forward '@nice-digital/nds-horizontal-nav/scss/horizontal-nav';
+@forward '@nice-digital/nds-in-page-nav/scss/in-page-nav';
+@forward '@nice-digital/nds-input/scss/input';
+@forward '@nice-digital/nds-maintain-ratio/scss/maintain-ratio';
+@forward '@nice-digital/nds-page-header/scss/page-header';
+@forward '@nice-digital/nds-panel/scss/panel';
+@forward '@nice-digital/nds-phase-banner/scss/phase-banner';
+@forward '@nice-digital/nds-prev-next/scss/prev-next';
+@forward '@nice-digital/nds-radio/scss/radio';
+@forward '@nice-digital/nds-simple-pagination/scss/simple-pagination';
+@forward '@nice-digital/nds-stacked-nav/scss/stacked-nav';
+@forward '@nice-digital/nds-table/scss/table';
+@forward '@nice-digital/nds-tabs/scss/tabs';
+@forward '@nice-digital/nds-tag/scss/tag';
+@forward '@nice-digital/nds-textarea/scss/textarea';

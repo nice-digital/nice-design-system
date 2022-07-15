@@ -4,18 +4,20 @@
 /// @group components
 ////
 
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/utils';
 
-$nds-colour-table-heading: $nds-colour-true-white;
-$nds-colour-table-row-odd: $nds-colour-body;
-$nds-colour-table-row-even: $nds-colour-nice-grey-3;
+$colour-table-heading: colours.$true-white;
+$colour-table-row-odd: colours.$body;
+$colour-table-row-even: colours.$nice-grey-3;
 
 table,
 .table {
   border: 0;
   border-collapse: collapse;
   display: block; // Allows table to scroll horizontally in tandem with overflow-x
-  margin: rem(0 0 $nds-spacing-medium);
+  margin: utils.rem(0 0 spacing.$medium);
   max-width: none;
   overflow-x: auto;
   overflow-y: hidden;
@@ -25,30 +27,30 @@ table,
   tbody,
   tr {
     // No need to have directional borders because of border-collapse
-    border: 1px solid $nds-colour-border;
+    border: 1px solid colours.$border;
   }
 
   thead tr,
   // Cater for tables without a thead/tbody - assume the first row is the heading row
   > tr:first-child {
-    background: $nds-colour-table-heading;
+    background: $colour-table-heading;
   }
 
   tr {
-    background: $nds-colour-table-row-odd;
+    background: $colour-table-row-odd;
 
     &:nth-child(even) {
       // Zebra stripes
-      background-color: $nds-colour-table-row-even;
+      background-color: $colour-table-row-even;
     }
   }
 
   td,
   th {
     // Only left/right border as vertical borders are handled by tr
-    border-left: 1px solid $nds-colour-border;
-    border-right: 1px solid $nds-colour-border;
-    padding: rem($nds-spacing-small);
+    border-left: 1px solid colours.$border;
+    border-right: 1px solid colours.$border;
+    padding: utils.rem(spacing.$small);
     text-align: left;
     vertical-align: top;
 
@@ -62,7 +64,7 @@ table,
   }
 
   th {
-    background: $nds-colour-table-heading;
+    background: $colour-table-heading;
     vertical-align: bottom;
   }
 

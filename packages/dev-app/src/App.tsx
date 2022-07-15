@@ -39,89 +39,91 @@ class App extends Component {
 	render() {
 		return (
 			<Router history={browserHistory}>
-				<ul className="container hide-print list list--unstyled">
-					<li>
-						<Link to="/alert">Alert</Link>
-					</li>
-					<li>
-						<Link to="/a-z-list">A-Z List</Link>
-					</li>
-					<li>
-						<Link to="/alphabet">Alphabet</Link>
-					</li>
-					<li>
-						<Link to="/breadcrumbs">Breadcrumbs</Link>
-					</li>
-					<li>
-						<Link to="/button">Button</Link>
-					</li>
-					<li>
-						<Link to="/callout">Callout</Link>
-					</li>
-					<li>
-						<Link to="/card">Card</Link>
-					</li>
-					<li>
-						<Link to="/column-list">Column List</Link>
-					</li>
-					<li>
-						<Link to="/dep-forms">Deprecated Forms</Link>
-					</li>
-					<li>
-						<Link to="/enhanced-pagination">Enhanced Pagination</Link>
-					</li>
-					<li>
-						<Link to="/filters">Filters</Link>
-					</li>
-					<li>
-						<Link to="/formgroup">Form Group</Link>
-					</li>
-					<li>
-						<Link to="/full-bleed">Full Bleed</Link>
-					</li>
-					<li>
-						<Link to="/grid">Grid</Link>
-					</li>
-					<li>
-						<Link to="/hero">Hero</Link>
-					</li>
-					<li>
-						<Link to="/in-page-nav">In page nav</Link>
-					</li>
-					<li>
-						<Link to="/horizontal-nav">Horizontal Nav</Link>
-					</li>
-					<li>
-						<Link to="/maintain-ratio">Maintain Ratio</Link>
-					</li>
-					<li>
-						<Link to="/pageheader">Page Header</Link>
-					</li>
-					<li>
-						<Link to="/prev-next">Previous and Next</Link>
-					</li>
-					<li>
-						<Link to="/print">Print</Link>
-					</li>
-					<li>
-						<Link to="/stackednav">Stacked Nav</Link>
-					</li>
-					<li>
-						<Link to="/simple-pagination">Simple pagination</Link>
-					</li>
-					<li>
-						<Link to="/table">Table</Link>
-					</li>
-					<li>
-						<Link to="/tabs">Tabs</Link>
-					</li>
-					<li>
-						<Link to="/tags">Tags</Link>
-					</li>
-					<li>
-						<Link to="/phase-banner">Phase Banner</Link>
-					</li>
-				</ul>
+				<Container>
+					<ul className="container hide-print list list--unstyled">
+						<li>
+							<Link to="/alert">Alert</Link>
+						</li>
+						<li>
+							<Link to="/a-z-list">A-Z List</Link>
+						</li>
+						<li>
+							<Link to="/alphabet">Alphabet</Link>
+						</li>
+						<li>
+							<Link to="/breadcrumbs">Breadcrumbs</Link>
+						</li>
+						<li>
+							<Link to="/button">Button</Link>
+						</li>
+						<li>
+							<Link to="/callout">Callout</Link>
+						</li>
+						<li>
+							<Link to="/card">Card</Link>
+						</li>
+						<li>
+							<Link to="/column-list">Column List</Link>
+						</li>
+						<li>
+							<Link to="/dep-forms">Deprecated Forms</Link>
+						</li>
+						<li>
+							<Link to="/enhanced-pagination">Enhanced Pagination</Link>
+						</li>
+						<li>
+							<Link to="/filters">Filters</Link>
+						</li>
+						<li>
+							<Link to="/formgroup">Form Group</Link>
+						</li>
+						<li>
+							<Link to="/full-bleed">Full Bleed</Link>
+						</li>
+						<li>
+							<Link to="/grid">Grid</Link>
+						</li>
+						<li>
+							<Link to="/hero">Hero</Link>
+						</li>
+						<li>
+							<Link to="/in-page-nav">In page nav</Link>
+						</li>
+						<li>
+							<Link to="/horizontal-nav">Horizontal Nav</Link>
+						</li>
+						<li>
+							<Link to="/maintain-ratio">Maintain Ratio</Link>
+						</li>
+						<li>
+							<Link to="/pageheader">Page Header</Link>
+						</li>
+						<li>
+							<Link to="/prev-next">Previous and Next</Link>
+						</li>
+						<li>
+							<Link to="/print">Print</Link>
+						</li>
+						<li>
+							<Link to="/stackednav">Stacked Nav</Link>
+						</li>
+						<li>
+							<Link to="/simple-pagination">Simple pagination</Link>
+						</li>
+						<li>
+							<Link to="/table">Table</Link>
+						</li>
+						<li>
+							<Link to="/tabs">Tabs</Link>
+						</li>
+						<li>
+							<Link to="/tags">Tags</Link>
+						</li>
+						<li>
+							<Link to="/phase-banner">Phase Banner</Link>
+						</li>
+					</ul>
+				</Container>
 				<hr />
 				<Container>
 					<Route path="/alert" component={AlertView} />

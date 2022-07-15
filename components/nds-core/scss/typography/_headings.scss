@@ -1,3 +1,5 @@
+@use "helpers";
+
 ////
 /// @group Typography
 ////
@@ -5,10 +7,10 @@
 /// Primary heading. Used for h1 tag but can be used directly
 /// for semantic classes for visual styling.
 /// @since 0.1.0
-@mixin nds-h1 {
-  @include nds-font(h1);
+@mixin h1 {
+  @include helpers.font(h1);
   clear: both;
-  font-family: nds-get-font-family(serif);
+  font-family: helpers.get-font-family(serif);
   font-weight: 600;
   // Letter spacing and text shadow to mimic 900 weight, see https://github.com/nice-digital/nice-design-system/issues/240
   letter-spacing: 0.5px;
@@ -19,10 +21,10 @@
 /// Secondary heading. Used for h2 tag but can be used directly
 /// for semantic classes for visual styling.
 /// @since 0.1.0
-@mixin nds-h2 {
-  @include nds-font(h2);
+@mixin h2 {
+  @include helpers.font(h2);
   clear: both;
-  font-family: nds-get-font-family(serif);
+  font-family: helpers.get-font-family(serif);
   font-weight: 600;
   max-width: 66ch;
 }
@@ -30,10 +32,10 @@
 /// Tertiary heading. Used for h3 tag but can be used directly
 /// for semantic classes for visual styling.
 /// @since 0.1.0
-@mixin nds-h3 {
-  @include nds-font(h3);
+@mixin h3 {
+  @include helpers.font(h3);
   clear: both;
-  font-family: nds-get-font-family(serif);
+  font-family: helpers.get-font-family(serif);
   font-weight: 600;
   max-width: 66ch;
 }
@@ -41,10 +43,10 @@
 /// Fourth level heading. Used for h4 tag but can be used directly
 /// for semantic classes for visual styling.
 /// @since 0.1.0
-@mixin nds-h4 {
-  @include nds-font(h4);
+@mixin h4 {
+  @include helpers.font(h4);
   clear: both;
-  font-family: nds-get-font-family(serif);
+  font-family: helpers.get-font-family(serif);
   font-weight: 600;
   max-width: 66ch;
 }
@@ -52,8 +54,8 @@
 /// Fifth level heading. Used for h5 tag but can be used directly
 /// for semantic classes for visual styling.
 /// @since 0.1.0
-@mixin nds-h5 {
-  @include nds-font(h5);
+@mixin h5 {
+  @include helpers.font(h5);
   clear: both;
   font-weight: 700;
   max-width: 66ch;
@@ -62,8 +64,8 @@
 /// Sixth level heading. Used for h6 tag but can be used directly
 /// for semantic classes for visual styling.
 /// @since 0.1.0
-@mixin nds-h6 {
-  @include nds-font(h6);
+@mixin h6 {
+  @include helpers.font(h6);
   clear: both;
   font-weight: 700;
   max-width: 66ch;

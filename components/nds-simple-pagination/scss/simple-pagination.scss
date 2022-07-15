@@ -1,15 +1,21 @@
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
 
 .simple-pagination {
   &__link-wrapper {
     display: block;
-    margin-bottom: rem($nds-spacing-medium);
-    margin-top: rem($nds-spacing-medium);
+    margin-bottom: utils.rem(spacing.$medium);
+    margin-top: utils.rem(spacing.$medium);
   }
   &__link {
+    @include typography.link-default;
+    background: none;
+    border: 0;
+    cursor: pointer;
     display: inline-block;
-    margin: -(rem($nds-spacing-small));
-    padding: rem($nds-spacing-small);
+    margin: -(utils.rem(spacing.$small));
+    padding: utils.rem(spacing.$small);
     position: relative;
     z-index: 1;
   }

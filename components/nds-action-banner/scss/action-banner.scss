@@ -2,24 +2,30 @@
 /// @group components
 ////
 
-@import '~@nice-digital/nds-core/scss/core';
-@import '~@nice-digital/icons/scss/nice-icons';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/focus';
+@use '@nice-digital/nds-core/scss/layout';
+@use '@nice-digital/nds-core/scss/media-queries';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
+@use '@nice-digital/nds-core/scss/visibility';
 
 // Default action banner background colour
 /// @since 1.0.0
-$nds-action-banner-default-background: $nds-colour-nice-cool-teal;
+$action-banner-default-background: colours.$nice-cool-teal;
 
 // Subtle default banner border colour
 /// @since 1.0.0
-$nds-action-banner-default-border: $nds-colour-nice-black;
+$action-banner-default-border: colours.$nice-black;
 
 // Subtle action banner background colour
 /// @since 1.0.0
-$nds-action-banner-subtle-background: $nds-colour-nice-grey-3;
+$action-banner-subtle-background: colours.$nice-grey-3;
 
 // Subtle action banner border colour
 /// @since 1.0.0
-$nds-action-banner-subtle-border: $nds-colour-nice-grey-2;
+$action-banner-subtle-border: colours.$nice-grey-2;
 
 /// Action banner component. Used to highlight
 /// and give context to a call-to-action.
@@ -28,27 +34,27 @@ $nds-action-banner-subtle-border: $nds-colour-nice-grey-2;
 ///
 /// @since 0.3.1
 .action-banner {
-  @include nds-hide-print;
-  @include nds-links-inverse;
-  background: $nds-action-banner-default-background;
-  border: 1px solid $nds-action-banner-default-border;
-  color: $nds-colour-text-inverse;
-  margin: em(0 0 $nds-spacing-large);
-  padding: em($nds-spacing-medium 0);
+  @include visibility.hide-print;
+  @include typography.links-inverse;
+  background: $action-banner-default-background;
+  border: 1px solid $action-banner-default-border;
+  color: colours.$text-inverse;
+  margin: utils.em(0 0 spacing.$large);
+  padding: utils.em(spacing.$medium 0);
   position: relative;
 
   &__container {
-    @include nds-container;
+    @include layout.container;
   }
 
   &__text {
-    margin-bottom: em($nds-spacing-medium);
+    margin-bottom: utils.em(spacing.$medium);
   }
 
   &__title {
-    @include nds-font-size(3);
-    color: $nds-colour-text-inverse;
-    margin: em(0 0 $nds-spacing-x-small);
+    @include typography.font-size(3);
+    color: colours.$text-inverse;
+    margin: utils.em(0 0 spacing.$x-small);
   }
 
   &__intro {
@@ -56,21 +62,21 @@ $nds-action-banner-subtle-border: $nds-colour-nice-grey-2;
   }
 
   &__actions {
-    @include nds-inverse-button-focus;
+    @include focus.inverse-button-focus;
     .btn {
       margin: 0;
     }
   }
 
   &__close {
-    @include nds-inverse-button-focus;
+    @include focus.inverse-button-focus;
     appearance: none;
     background: 0;
     border: 0;
-    color: $nds-colour-text-inverse;
+    color: colours.$text-inverse;
     cursor: pointer;
     line-height: 1;
-    padding: rem($nds-spacing-small);
+    padding: utils.rem(spacing.$small);
     position: absolute;
     right: 0;
     top: 0;
@@ -81,50 +87,50 @@ $nds-action-banner-subtle-border: $nds-colour-nice-grey-2;
     }
 
     &:focus {
-      @include nds-inverse-focus-style;
+      @include focus.inverse-focus-style;
     }
   }
 
   &--subtle {
-    @include nds-links-default;
-    background: $nds-action-banner-subtle-background;
-    border: 1px solid $nds-action-banner-subtle-border;
-    color: $nds-colour-text;
+    @include typography.links-default;
+    background: $action-banner-subtle-background;
+    border: 1px solid $action-banner-subtle-border;
+    color: colours.$text;
 
     .action-banner__title {
-      color: $nds-colour-text;
+      color: colours.$text;
     }
 
     .action-banner__close {
-      color: $nds-colour-text;
+      color: colours.$text;
     }
 
     .action-banner__actions {
-      @include nds-default-button-focus;
+      @include focus.default-button-focus;
     }
   }
 
   &--closeable {
     .action-banner__title {
-      padding-right: rem($nds-spacing-large); // Make room for close button
+      padding-right: utils.rem(spacing.$large); // Make room for close button
     }
   }
 
-  @include mq($from: md) {
-    @include nds-clearfix;
+  @include media-queries.mq($from: md) {
+    @include layout.clearfix;
 
     &__text {
       margin-bottom: 0;
-      width: percentage(3*0.25);
+      width: percentage(3 * 0.25);
     }
 
     &__actions {
       position: absolute;
-      right: rem($nds-spacing-medium);
+      right: utils.rem(spacing.$medium);
       text-align: right;
       top: 50%;
       transform: translateY(-50%);
-      width: percentage(1*0.25);
+      width: percentage(1 * 0.25);
     }
 
     &--closeable {
@@ -133,7 +139,7 @@ $nds-action-banner-subtle-border: $nds-colour-nice-grey-2;
       }
 
       .action-banner__actions {
-        right: rem($nds-spacing-x-large);
+        right: utils.rem(spacing.$x-large);
       }
     }
   }
