@@ -1,13 +1,13 @@
 {
 	"recommendations": [
-		"EditorConfig.EditorConfig",
+		"editorconfig.editorconfig",
 		"dbaeumer.vscode-eslint",
 		"andys8.jest-snippets",
 		"eg2.vscode-npm-script",
 		"christian-kohler.npm-intellisense",
 		"christian-kohler.path-intellisense",
 		"esbenp.prettier-vscode",
-		"hex-ci.stylelint-plus",
-		"silvenon.mdx"
+		"silvenon.mdx",
+		"stylelint.vscode-stylelint"
 	]
 }

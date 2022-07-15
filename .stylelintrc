@@ -1,16 +1,22 @@
 {
-  "extends": ["stylelint-config-standard", "stylelint-prettier/recommended"],
-  "plugins": [
-    "stylelint-scss",
+	"extends": [
+		"stylelint-config-standard-scss",
+		"stylelint-prettier/recommended"
+	],
+	"plugins": [
+		"stylelint-scss",
 		"stylelint-order"
-  ],
+	],
 	"rules": {
 		"at-rule-no-unknown": null,
 		"scss/at-rule-no-unknown": true,
 		"block-closing-brace-newline-after": [
 			"always",
 			{
-				"ignoreAtRules": ["if", "else"]
+				"ignoreAtRules": [
+					"if",
+					"else"
+				]
 			}
 		],
 		"selector-pseudo-element-colon-notation": "single",
@@ -40,9 +46,9 @@
 		],
 		"order/properties-alphabetical-order": true
 	},
-  "ignoreFiles": [
-	  "**/vendor/**/*.scss",
-	  "**/*.md",
-	  "components/icons/templates/nice-icons.tmpl.scss",
-  ]
+	"ignoreFiles": [
+		"**/vendor/**/*.scss",
+		"**/*.md",
+		"components/icons/templates/nice-icons.tmpl.scss"
+	]
 }
