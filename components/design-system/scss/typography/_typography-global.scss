@@ -50,7 +50,7 @@ html {
 }
 
 body {
-  background: colours.$body;
+  background: colours.$fill-page-background;
   color: colours.$text;
   font-family: typography.get-font-family(sans);
   font-style: normal;
@@ -81,7 +81,7 @@ p,
 }
 
 code {
-  background: colours.$nice-grey-3;
+  background: colours.$code-background;
   border: 1px solid colours.$border;
   border-radius: utils.em(spacing.$xx-small);
   color: colours.$text;

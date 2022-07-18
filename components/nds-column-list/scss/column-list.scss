@@ -10,7 +10,7 @@
   max-width: 100%;
 
   &--boxed {
-    background: colours.$true-white;
+    background: colours.$column-list-boxed-background;
     border: 1px solid colours.$border;
 
     li {

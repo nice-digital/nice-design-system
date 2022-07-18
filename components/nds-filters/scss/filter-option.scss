@@ -9,8 +9,8 @@
 
 // Checkbox/radio button option (label)
 .filter-option {
-  background: colours.$nice-white;
-  border-top: 1px solid colours.$nice-grey-2;
+  background: colours.$filter-option-background;
+  border-top: 1px solid colours.$filter-option-border;
   color: colours.$text;
   cursor: pointer;
   display: block;
@@ -28,7 +28,7 @@
   }
 
   &:hover {
-    background: colours.$nice-grey-3;
+    background: colours.$filter-option-hover;
   }
 
   input {
@@ -46,8 +46,8 @@
 
   &__text {
     &:before {
-      background: colours.$nice-white;
-      border: 1px solid colours.$nice-dark-grey;
+      background: colours.$filter-option-text-before-background;
+      border: 1px solid colours.$filter-option-text-before-border;
       box-sizing: border-box;
       content: '';
       cursor: pointer;

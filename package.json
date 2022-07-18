@@ -5,7 +5,7 @@
 	"description": "Monorepo for the NICE Design System",
 	"scripts": {
 		"start": "npm run dev",
-		"dev": "concurrently npm:build:es:watch npm:docs:dev",
+		"dev": "concurrently npm:build:es:watch npm:devapp npm:storybook npm:docs:dev",
 		"// ICONS": "",
 		"icons": "lerna run --stream --scope=@nice-digital/icons",
 		"icons:start": "npm run icons -- start",

@@ -15,7 +15,7 @@
 
   &__item-heading {
     @include typography.font-size(h4);
-    background: colours.$true-white;
+    background: colours.$a-z-list-heading-background;
     border: 1px solid colours.$border;
     font-weight: 900;
     margin: 0;

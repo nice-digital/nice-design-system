@@ -12,7 +12,7 @@
 @mixin _filter-panel-heading-button {
   @include typography.font-size(h5);
   appearance: none;
-  background: colours.$nice-grey-2;
+  background: colours.$filter-panel-heading-button-background;
   border: 0;
   color: colours.$text;
   cursor: pointer;
@@ -66,7 +66,7 @@
   }
 
   &__body {
-    background: colours.$nice-grey-3;
+    background: colours.$filter-panel-background;
     padding: utils.rem(spacing.$medium);
 
     &[aria-hidden='true'] {

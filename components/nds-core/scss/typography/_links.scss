@@ -24,7 +24,7 @@
 
   &:focus {
     @include focus.default-focus-style;
-    color: colours.$link-focus-text;
+    color: colours.$link-focus;
   }
 
   &:active {
@@ -58,7 +58,7 @@
 
   &:focus {
     @include focus.inverse-focus-style;
-    color: colours.$link-inverse-focus-text;
+    color: colours.$link-inverse-focus;
   }
 
   &:active {

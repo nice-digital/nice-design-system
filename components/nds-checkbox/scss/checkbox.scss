@@ -34,9 +34,9 @@ $checkbox-size: utils.rem(spacing.$large);
 
     &:before {
       background: transparent;
-      border: utils.rem(spacing.$xx-small) solid colours.$nice-black;
+      border: utils.rem(spacing.$xx-small) solid colours.$checkbox;
       box-sizing: border-box;
-      // outside square // stylelint-disable-line
+      // outside square
       content: '';
       height: $checkbox-size;
       left: 0;
@@ -50,7 +50,7 @@ $checkbox-size: utils.rem(spacing.$large);
       border: solid;
       border-top-color: transparent; // IE11 bug
       border-width: 0 0 utils.rem(spacing.$x-small) utils.rem(spacing.$x-small);
-      // inside check / tick // stylelint-disable-line
+      // inside check / tick
       content: '';
       height: math.div(
         $checkbox-size,
@@ -94,7 +94,7 @@ $checkbox-size: utils.rem(spacing.$large);
   }
 
   &__hint {
-    color: colours.$nice-dark-grey;
+    color: colours.$checkbox-hint;
     margin-bottom: utils.rem(spacing.$small);
     margin-top: utils.rem(spacing.$x-small);
   }
@@ -112,7 +112,7 @@ $checkbox-size: utils.rem(spacing.$large);
     }
 
     &:after {
-      color: colours.$nice-black;
+      color: colours.$checkbox;
     }
   }
 

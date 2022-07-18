@@ -2,6 +2,8 @@
 /// @group components
 ////
 
+@use "sass:math";
+
 @use '@nice-digital/nds-core/scss/colours';
 @use '@nice-digital/nds-core/scss/focus';
 @use '@nice-digital/nds-core/scss/layout';
@@ -10,22 +12,6 @@
 @use '@nice-digital/nds-core/scss/typography';
 @use '@nice-digital/nds-core/scss/utils';
 @use '@nice-digital/nds-core/scss/visibility';
-
-// Default action banner background colour
-/// @since 1.0.0
-$action-banner-default-background: colours.$nice-cool-teal;
-
-// Subtle default banner border colour
-/// @since 1.0.0
-$action-banner-default-border: colours.$nice-black;
-
-// Subtle action banner background colour
-/// @since 1.0.0
-$action-banner-subtle-background: colours.$nice-grey-3;
-
-// Subtle action banner border colour
-/// @since 1.0.0
-$action-banner-subtle-border: colours.$nice-grey-2;
 
 /// Action banner component. Used to highlight
 /// and give context to a call-to-action.
@@ -36,8 +22,8 @@ $action-banner-subtle-border: colours.$nice-grey-2;
 .action-banner {
   @include visibility.hide-print;
   @include typography.links-inverse;
-  background: $action-banner-default-background;
-  border: 1px solid $action-banner-default-border;
+  background: colours.$action-banner-default-background;
+  border: 1px solid colours.$action-banner-default-border;
   color: colours.$text-inverse;
   margin: utils.em(0 0 spacing.$large);
   padding: utils.em(spacing.$medium 0);
@@ -83,7 +69,7 @@ $action-banner-subtle-border: colours.$nice-grey-2;
     z-index: 1;
 
     &:hover {
-      background: rgba(0, 0, 0, 0.2);
+      background: rgba(0, 0, 0, 20%);
     }
 
     &:focus {
@@ -93,8 +79,8 @@ $action-banner-subtle-border: colours.$nice-grey-2;
 
   &--subtle {
     @include typography.links-default;
-    background: $action-banner-subtle-background;
-    border: 1px solid $action-banner-subtle-border;
+    background: colours.$action-banner-subtle-background;
+    border: 1px solid colours.$action-banner-subtle-border;
     color: colours.$text;
 
     .action-banner__title {
@@ -121,7 +107,7 @@ $action-banner-subtle-border: colours.$nice-grey-2;
 
     &__text {
       margin-bottom: 0;
-      width: percentage(3 * 0.25);
+      width: math.percentage(3 * 0.25);
     }
 
     &__actions {
@@ -130,7 +116,7 @@ $action-banner-subtle-border: colours.$nice-grey-2;
       text-align: right;
       top: 50%;
       transform: translateY(-50%);
-      width: percentage(1 * 0.25);
+      width: math.percentage(1 * 0.25);
     }
 
     &--closeable {

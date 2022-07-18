@@ -90,7 +90,7 @@
     }
 
     &[aria-selected='true'] {
-      background: colours.$nice-grey-3;
+      background: colours.$tab-btn-selected;
       border-bottom: 1px solid colours.$border;
       border-left: 1px solid colours.$border;
       border-right: 1px solid colours.$border;
@@ -130,7 +130,7 @@
     clear: both;
 
     .js & {
-      background: colours.$nice-grey-3;
+      background: colours.$tab-content;
       border: 1px solid colours.$border;
       clear: both;
       padding: utils.rem(spacing.$medium);
@@ -139,7 +139,7 @@
 
   // An individual tab content pane
   &__pane {
-    background: colours.$nice-grey-3;
+    background: colours.$tab-pane;
     margin-bottom: utils.em(spacing.$medium);
     padding: utils.rem(spacing.$medium);
 

@@ -8,10 +8,6 @@
 @use '@nice-digital/nds-core/scss/spacing';
 @use '@nice-digital/nds-core/scss/utils';
 
-$colour-table-heading: colours.$true-white;
-$colour-table-row-odd: colours.$body;
-$colour-table-row-even: colours.$nice-grey-3;
-
 table,
 .table {
   border: 0;
@@ -33,15 +29,15 @@ table,
   thead tr,
   // Cater for tables without a thead/tbody - assume the first row is the heading row
   > tr:first-child {
-    background: $colour-table-heading;
+    background: colours.$table-heading;
   }
 
   tr {
-    background: $colour-table-row-odd;
+    background: colours.$table-row-odd;
 
     &:nth-child(even) {
       // Zebra stripes
-      background-color: $colour-table-row-even;
+      background-color: colours.$table-row-even;
     }
   }
 
@@ -64,7 +60,7 @@ table,
   }
 
   th {
-    background: $colour-table-heading;
+    background: colours.$table-heading;
     vertical-align: bottom;
   }
 

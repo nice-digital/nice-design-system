@@ -30,7 +30,7 @@ $tag-border-radius: utils.em(spacing.$xx-small);
 /// @since 0.3.1
 .tag {
   @include typography.font-size(0);
-  background-color: colours.$nice-dark-grey;
+  background-color: colours.$tag-background;
   border-radius: $tag-border-radius;
   color: colours.$text-inverse;
   display: inline-block;
@@ -52,29 +52,28 @@ $tag-border-radius: utils.em(spacing.$xx-small);
     vertical-align: super;
   }
 
-  &--alpha {
-    background-color: colours.$alpha;
-  }
+  // &--alpha {
+  //   background-color: colours.$alpha;
+  // }
 
-  &--beta {
-    background-color: colours.$beta;
-  }
+  // &--beta {
+  //   background-color: colours.$beta;
+  // }
 
-  &--live {
-    background-color: colours.$live;
-  }
+  // &--live {
+  //   background-color: colours.$live;
+  // }
 
-  &--new {
-    background: colours.$guidance-new;
-  }
+  // &--new {
+  //   background: colours.$guidance-new;
+  // }
 
-  &--updated {
-    background: colours.$guidance-updated;
-  }
+  // &--updated {
+  //   background: colours.$guidance-updated;
+  // }
 
-  &--consultation {
-    background: colours.$guidance-consultation;
-  }
+  // &--consultation {
+  //   background: colours.$guidance-consultation;
 
   &--info {
     background: colours.$info;
@@ -98,9 +97,9 @@ $tag-border-radius: utils.em(spacing.$xx-small);
 
   &--outline {
     @include typography.font-size(-1);
-    background: colours.$nice-grey-3;
+    background: colours.$tag-outline-background;
     border: 1px solid colours.$border;
-    color: colours.$nice-dark-grey;
+    color: colours.$tag-outline;
     position: relative;
   }
 
@@ -108,7 +107,7 @@ $tag-border-radius: utils.em(spacing.$xx-small);
     appearance: none;
     background: 0;
     border: 0;
-    color: colours.$nice-teal;
+    color: colours.$tag-remove;
     cursor: pointer;
     margin-left: utils.rem(spacing.$x-small);
     padding: 0;
@@ -119,7 +118,7 @@ $tag-border-radius: utils.em(spacing.$xx-small);
     }
 
     &:visited {
-      color: colours.$nice-teal;
+      color: colours.$tag-remove;
     }
 
     &:hover,
@@ -139,16 +138,16 @@ $tag-border-radius: utils.em(spacing.$xx-small);
     }
 
     &:hover:after {
-      background: rgba(colours.$nice-black, 0.1);
+      background: rgba(colours.$tag-remove-hover-after, 0.1);
     }
   }
 
   @include utils.when-is(a) {
-    color: colours.$nice-white;
+    color: colours.$tag-anchor;
     text-decoration: underline;
 
     &:visited {
-      color: colours.$nice-white;
+      color: colours.$tag-anchor;
     }
 
     &:hover {
@@ -162,7 +161,7 @@ $tag-border-radius: utils.em(spacing.$xx-small);
 
   @media print {
     background: none !important;
-    color: colours.$true-black !important;
+    color: colours.$tag-print !important;
     padding: 0 !important;
   }
 }

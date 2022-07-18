@@ -31,7 +31,7 @@ $output-default-print-styles: true !default;
     * {
       background: transparent !important;
       box-shadow: none !important;
-      color: colours.$true-black !important; // Black prints faster: h5bp.com/s
+      color: colours.$text-print !important; // Black prints faster: h5bp.com/s
       text-shadow: none !important;
     }
 

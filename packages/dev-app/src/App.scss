@@ -8,8 +8,8 @@ main {
 }
 
 .grid-example-item {
-  background: colours.$nice-grey-3;
-  border: 0.25em solid colours.$nice-grey-1;
+  background: colours.$fill-page-background;
+  border: 0.25em solid colours.$border;
   padding: 0.5em;
   text-align: center;
 }

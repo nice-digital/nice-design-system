@@ -8,7 +8,7 @@
 @use '@nice-digital/nds-core/scss/utils';
 
 .callout {
-  background: colours.$nice-white;
+  background: colours.$callout-background;
   height: auto;
   margin-bottom: utils.rem(spacing.$large);
   position: relative;

@@ -51,7 +51,7 @@ $radio-base-size: utils.rem(spacing.$large);
 
     &:before {
       // outside circle
-      border: utils.rem(spacing.$xx-small) solid colours.$nice-black;
+      border: utils.rem(spacing.$xx-small) solid colours.$radio;
       border-radius: 50%;
       content: '';
       height: $radio-base-size;
@@ -63,7 +63,7 @@ $radio-base-size: utils.rem(spacing.$large);
 
     &:after {
       // center dot
-      background: colours.$nice-black;
+      background: colours.$radio;
       border-radius: 50%;
       content: '';
       height: utils.rem(spacing.$medium);
@@ -76,7 +76,7 @@ $radio-base-size: utils.rem(spacing.$large);
   }
 
   &__hint {
-    color: colours.$nice-dark-grey;
+    color: colours.$radio-hint;
     margin-bottom: utils.rem(spacing.$small);
     margin-top: utils.rem(spacing.$x-small);
   }
