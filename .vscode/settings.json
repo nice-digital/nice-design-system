@@ -31,5 +31,6 @@
 		"activityBar.foreground": "#3b3938"
 	},
 	"markdown.extension.tableFormatter.enabled": false,
-	"markdown.extension.tableFormatter.normalizeIndentation": false
+	"markdown.extension.tableFormatter.normalizeIndentation": false,
+	"markdown.extension.toc.levels": "2..6"
 }
