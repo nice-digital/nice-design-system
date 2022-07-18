@@ -80,7 +80,7 @@
 		"@mdx-js/mdx": "^1.5.1",
 		"@mdx-js/react": "^1.5.1",
 		"@nice-digital/eslint-config": "^1.0.1",
-		"@nice-digital/global-nav": "^4.1.838",
+		"@nice-digital/global-nav": "^4.1.850-GN-187-Rebrand",
 		"@storybook/addon-a11y": "^6.5.9",
 		"@storybook/addon-actions": "^6.5.9",
 		"@storybook/addon-docs": "^6.5.9",
