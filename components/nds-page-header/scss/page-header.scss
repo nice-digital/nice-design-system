@@ -35,7 +35,6 @@
     @include typography.font-size(h5);
     display: block;
     margin: utils.rem(0);
-    text-shadow: 0.5px 0 0 currentColor;
   }
 
   &__heading {

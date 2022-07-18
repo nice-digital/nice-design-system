@@ -42,9 +42,9 @@ $tag-border-radius: utils.em(spacing.$xx-small);
   vertical-align: baseline;
 
   &--impact {
+    font-weight: 600;
     letter-spacing: 1px;
     padding: utils.em(spacing.$xx-small spacing.$small);
-    text-shadow: 1px 0 0 currentColor;
     text-transform: uppercase;
   }
 
