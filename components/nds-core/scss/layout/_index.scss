@@ -19,7 +19,7 @@ $readable-width: 66ch;
   margin: auto;
   max-width: utils.rem($container-max-width);
   width: 96%; // IE11 support for calc not consistent https://caniuse.com/calc (See "Known issues")
-  width: calc(100% - #{rem($container-gutter * 2)});
+  width: calc(100% - #{utils.rem($container-gutter * 2)});
 }
 
 /// Make an element adapt its height to fit floated children, and clear floats in both directions.
