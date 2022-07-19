@@ -139,7 +139,7 @@ $tag-border-radius: utils.em(spacing.$xx-small);
     }
 
     &:hover:after {
-      background: rgba(colours.$nice-black, 0.1);
+      background: rgb(colours.$nice-black 0.1);
     }
   }
 

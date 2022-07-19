@@ -29,9 +29,11 @@
     max-width: none;
     position: relative;
     text-decoration: none;
+
     a {
       color: colours.$text;
     }
+
     &--no-link {
       padding: utils.em(spacing.$small);
     }
@@ -40,6 +42,7 @@
   &__hint {
     color: colours.$text;
     display: block;
+
     & :active {
       color: colours.$nice-white;
     }
@@ -102,10 +105,12 @@
     list-style: none;
     margin: 0;
     padding: 0;
+
     // First nested element
     .stacked-nav__content-wrapper {
       padding-left: utils.rem(spacing.$medium) !important;
     }
+
     // Second nested element
     ul .stacked-nav__content-wrapper {
       padding-left: utils.rem(spacing.$medium * 2) !important;

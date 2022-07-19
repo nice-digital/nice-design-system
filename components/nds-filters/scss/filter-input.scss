@@ -13,7 +13,7 @@
     padding: utils.rem(spacing.$small);
 
     label {
-      @include visibility.invisible();
+      @include visibility.invisible;
     }
 
     &[aria-hidden='true'] {
@@ -23,6 +23,7 @@
 
   // Heading used for collapsing/expanding the filter group
   &__heading {
+    // stylelint-disable scss/at-extend-no-missing-placeholder
     @extend .filter-group__heading;
   }
 }

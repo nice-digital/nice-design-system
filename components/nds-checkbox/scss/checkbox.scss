@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 
 @use '@nice-digital/nds-core/scss/colours';
 @use '@nice-digital/nds-core/scss/focus';
@@ -32,11 +32,11 @@ $checkbox-size: utils.rem(spacing.$large);
     margin-bottom: utils.rem(spacing.$x-small);
     padding: utils.rem(spacing.$x-small) 0;
 
+    // outside square
     &:before {
       background: transparent;
       border: utils.rem(spacing.$xx-small) solid colours.$nice-black;
       box-sizing: border-box;
-      // outside square // stylelint-disable-line
       content: '';
       height: $checkbox-size;
       left: 0;
@@ -45,12 +45,12 @@ $checkbox-size: utils.rem(spacing.$large);
       width: $checkbox-size;
     }
 
+    // inside check / tick
     &:after {
       background: transparent;
       border: solid;
       border-top-color: transparent; // IE11 bug
       border-width: 0 0 utils.rem(spacing.$x-small) utils.rem(spacing.$x-small);
-      // inside check / tick // stylelint-disable-line
       content: '';
       height: math.div(
         $checkbox-size,
@@ -120,6 +120,7 @@ $checkbox-size: utils.rem(spacing.$large);
     display: inline-block;
     margin-right: utils.rem(spacing.$medium);
     vertical-align: top;
+
     input {
       margin-right: utils.rem(spacing.$x-small);
     }

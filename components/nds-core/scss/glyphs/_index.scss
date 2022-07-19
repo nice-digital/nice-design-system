@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 ////
 /// @group helpers
 ////
@@ -49,8 +51,8 @@ $glyphs: (
   $codes: '';
 
   @each $name in $names {
-    @if map-has-key($glyphs, $name) {
-      $code: map-get($glyphs, $name);
+    @if map.has-key($glyphs, $name) {
+      $code: map.get($glyphs, $name);
       $codes: $codes + '\\#{$code}';
     } @else {
       @error 'Glyph with name #{$name} could not be found in the $glyphs map';

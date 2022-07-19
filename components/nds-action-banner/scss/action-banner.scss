@@ -1,7 +1,7 @@
 ////
 /// @group components
 ////
-
+@use 'sass:math';
 @use '@nice-digital/nds-core/scss/colours';
 @use '@nice-digital/nds-core/scss/focus';
 @use '@nice-digital/nds-core/scss/layout';
@@ -83,7 +83,7 @@ $action-banner-subtle-border: colours.$nice-grey-2;
     z-index: 1;
 
     &:hover {
-      background: rgba(0, 0, 0, 0.2);
+      background: rgb(0 0 0 / 20%);
     }
 
     &:focus {
@@ -121,7 +121,7 @@ $action-banner-subtle-border: colours.$nice-grey-2;
 
     &__text {
       margin-bottom: 0;
-      width: percentage(3 * 0.25);
+      width: math.percentage(3 * 0.25);
     }
 
     &__actions {
@@ -130,7 +130,7 @@ $action-banner-subtle-border: colours.$nice-grey-2;
       text-align: right;
       top: 50%;
       transform: translateY(-50%);
-      width: percentage(1 * 0.25);
+      width: math.percentage(1 * 0.25);
     }
 
     &--closeable {

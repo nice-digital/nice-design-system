@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 @use '@nice-digital/nds-core/scss/colours';
 @use '@nice-digital/nds-core/scss/media-queries';
 @use '@nice-digital/nds-core/scss/spacing';
@@ -31,8 +31,7 @@
 .grid {
   --nds-grid-gutter: #{grid-settings.$grid-gutter};
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   justify-content: flex-start;
   list-style: none; // Allow the grid system to be used on lists.
   margin-left: -#{grid-settings.$grid-gutter * 0.5};
@@ -120,6 +119,7 @@
   margin-left: #{grid-settings.$grid-gutter * 0.5};
   margin-right: #{grid-settings.$grid-gutter * 0.5};
   position: relative;
+
   // Fixed gutters fallback for IE11, due to lack of custom property support:
   width: calc(100% - #{grid-settings.$grid-gutter});
 
@@ -127,6 +127,7 @@
     --grid-item-width: 100%;
     margin-left: calc(var(--nds-grid-gutter) / 2) !important;
     margin-right: calc(var(--nds-grid-gutter) / 2) !important;
+
     // Slightly hacky 0.1px because of subpixel rounding e.g. https://bugzilla.mozilla.org/show_bug.cgi?id=1323735
     width: calc(
       var(--grid-item-width) - var(--nds-grid-gutter) - 0.1px
@@ -153,33 +154,34 @@
   }
 }
 
-@mixin _nds-generate-grid-items($prefix: null) {
+@mixin -nds-generate-grid-items($prefix: null) {
   $prefix: if($prefix, $prefix + ':', '');
 
   @for $index from 1 through 12 {
     [data-g~='#{ $prefix }#{ $index }'] {
-      --grid-item-width: #{percentage(math.div($index, 12))};
+      --grid-item-width: #{math.percentage(math.div($index, 12))};
+
       // IE 11 fallback, due to lack of custom property support:
       width: calc(
-        #{percentage(math.div($index, 12))} - #{grid-settings.$grid-gutter}
+        #{math.percentage(math.div($index, 12))} - #{grid-settings.$grid-gutter}
       );
     }
   }
 
   @for $index from 0 through 12 {
     [data-g~='#{ $prefix }push:#{ $index }'] {
-      left: percentage(math.div($index, 12));
+      left: math.percentage(math.div($index, 12));
     }
     [data-g~='#{ $prefix }pull:#{ $index }'] {
-      right: percentage(math.div($index, 12));
+      right: math.percentage(math.div($index, 12));
     }
   }
 }
 
-@include _nds-generate-grid-items;
+@include -nds-generate-grid-items;
 
 @each $brkpnt-key, $brkpnt-value in media-queries.$breakpoints {
   @include media-queries.mq($from: $brkpnt-key) {
-    @include _nds-generate-grid-items($brkpnt-key);
+    @include -nds-generate-grid-items($brkpnt-key);
   }
 }

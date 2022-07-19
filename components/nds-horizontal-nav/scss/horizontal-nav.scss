@@ -16,27 +16,31 @@
   &__list {
     align-items: stretch;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-flow: column wrap;
     list-style: none;
     margin: 0;
     max-width: 100%;
+
     @include media-queries.mq($from: sm) {
       border-bottom: 3px solid colours.$nice-black;
       flex-direction: row;
     }
   }
+
   &__item {
     margin: 0;
+
     &:first-of-type {
       margin-left: 0;
     }
+
     @include media-queries.mq($from: sm) {
       align-items: stretch;
       display: flex;
       margin: 0 utils.rem(spacing.$small);
       text-align: center;
     }
+
     @include media-queries.mq($until: sm) {
       border-top: 1px solid colours.$border;
       &:first-of-type {
@@ -44,15 +48,18 @@
       }
     }
   }
+
   &__link {
     display: block;
     line-height: 1em;
     margin-bottom: -1px; // to ensure there's no rendered gap between the bottom border and the border across the page
     padding: utils.rem(spacing.$medium);
     text-decoration: none;
+
     &:hover {
       text-decoration: underline;
     }
+
     &[aria-current='true'] {
       background-color: colours.$nice-grey-3;
       border-bottom: 4px solid colours.$nice-black;
@@ -62,19 +69,23 @@
         background-color: unset;
       }
     }
+
     @include media-queries.mq($until: sm) {
       &:active {
         background-color: colours.$nice-teal;
         color: colours.$nice-white;
       }
     }
+
     @include media-queries.mq($from: sm) {
       padding: utils.rem(spacing.$medium) utils.rem(spacing.$small);
     }
+
     @include media-queries.mq($from: md) {
       padding: utils.rem(spacing.$medium);
     }
   }
+
   @include media-queries.mq($until: sm) {
     border: 1px solid colours.$border;
   }

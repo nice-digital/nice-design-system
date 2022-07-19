@@ -1,9 +1,9 @@
-/* stylelint-disable no-descending-specificity */
-@use "@nice-digital/nds-core/scss/utils";
-@use "@nice-digital/nds-core/scss/typography";
-@use "@nice-digital/nds-core/scss/spacing";
-@use "@nice-digital/nds-core/scss/glyphs";
-@use "@nice-digital/nds-core/scss/colours";
+/* stylelint-disable no-descending-specificity, selector-class-pattern */
+@use '@nice-digital/nds-core/scss/utils';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/glyphs';
+@use '@nice-digital/nds-core/scss/colours';
 
 ////
 /// @group Typography

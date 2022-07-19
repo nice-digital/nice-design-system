@@ -1,5 +1,6 @@
-@use "@nice-digital/nds-core/scss/media-queries";
-@use "@nice-digital/nds-core/scss/visibility";
+@use 'sass:list';
+@use '@nice-digital/nds-core/scss/media-queries';
+@use '@nice-digital/nds-core/scss/visibility';
 
 ////
 /// @group helpers
@@ -42,7 +43,7 @@ $output-visibility-classes: true !default;
     visibility: hidden !important;
   }
 
-  //## Orientation
+  // ## Orientation
 
   /// Landscape and portrait display
   .show-landscape,
@@ -72,7 +73,7 @@ $output-visibility-classes: true !default;
     }
   }
 
-  //## Breakpoints show
+  // ## Breakpoints show
 
   // Outuput the following for each break point:
   //  - .hide-from-*
@@ -82,13 +83,17 @@ $output-visibility-classes: true !default;
 
   @each $brkpnt-key, $brkpnt-value in media-queries.$breakpoints {
     // Show from
-    $hide-selectors: append($hide-selectors, '.show-#{ $brkpnt-key }', comma);
-    $hide-selectors: append(
+    $hide-selectors: list.append(
+      $hide-selectors,
+      '.show-#{ $brkpnt-key }',
+      comma
+    );
+    $hide-selectors: list.append(
       $hide-selectors,
       '.show--i-#{ $brkpnt-key }',
       comma
     );
-    $hide-selectors: append(
+    $hide-selectors: list.append(
       $hide-selectors,
       '.show--ib-#{ $brkpnt-key }',
       comma
@@ -119,13 +124,13 @@ $output-visibility-classes: true !default;
     }
   }
 
-  //## Accessibility
+  // ## Accessibility
   .show-focus,
   .visually-hidden {
     @include visibility.invisible;
   }
 
-  //## Focus
+  // ## Focus
   .show-focus {
     &:active,
     &:focus {

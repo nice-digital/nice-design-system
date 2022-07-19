@@ -1,6 +1,6 @@
-@use "@nice-digital/nds-core/scss/spacing";
-@use "@nice-digital/nds-core/scss/utils";
-@use "@nice-digital/nds-core/scss/media-queries";
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/utils';
+@use '@nice-digital/nds-core/scss/media-queries';
 
 ////
 /// @group spacing
@@ -11,7 +11,6 @@
 // Spacing classes take the form:
 //  - {property}{sides}--{size} for xs, or
 //  - {property}{sides}--{size}-{breakpoint} upwards
-//
 // Where {property} is one of:
 //  - m - for classes that set margin
 //  - p - for classes that set padding
@@ -37,7 +36,6 @@
 //  - md
 //  - lg
 //  - xl
-//
 // For example:
 //  - `pb--d-lg` - default padding bottom from large breakpoint upwards
 //  - `mv--f` - extra large vertical (top and bottom) margin
@@ -49,7 +47,7 @@
 $include-spacing-modifiers: true !default;
 
 // A map of spacing value
-$_spacings: (
+$-spacings: (
   0: 0,
   a: spacing.$xx-small,
   b: spacing.$x-small,
@@ -61,13 +59,13 @@ $_spacings: (
 );
 
 // Map of property abbreviations to name
-$_properties: (
+$-properties: (
   m: margin,
   p: padding
 );
 
 // Map of side abbreviations to name
-$_sides: (
+$-sides: (
   t: top,
   r: right,
   b: bottom,
@@ -82,44 +80,44 @@ $_sides: (
   )
 );
 
-@mixin _prop($prop-name, $length, $side: '') {
+@mixin -prop($prop-name, $length, $side: '') {
   $side: if($side == '', '', '-#{$side}');
   $prop: '#{$prop-name}#{$side}';
   #{$prop}: utils.rem($length) !important;
 }
 
-@mixin _side($prop-abbrev, $prop-name, $breakpoint, $size, $length) {
-  @each $side-key, $side-name in $_sides {
+@mixin -side($prop-abbrev, $prop-name, $breakpoint, $size, $length) {
+  @each $side-key, $side-name in $-sides {
     .#{$prop-abbrev}#{$side-key}--#{$size}#{$breakpoint} {
-      @if is-list($side-name) {
+      @if utils.is-list($side-name) {
         @each $s in $side-name {
-          @include _prop($prop-name, $length, $s);
+          @include -prop($prop-name, $length, $s);
         }
       } @else {
-        @include _prop($prop-name, $length, $side-name);
+        @include -prop($prop-name, $length, $side-name);
       }
     }
   }
 }
 
-@mixin _spacings($prop-abbrev, $prop-name, $breakpoint) {
-  @each $size, $length in $_spacings {
-    @include _side($prop-abbrev, $prop-name, $breakpoint, $size, $length);
+@mixin -spacings($prop-abbrev, $prop-name, $breakpoint) {
+  @each $size, $length in $-spacings {
+    @include -side($prop-abbrev, $prop-name, $breakpoint, $size, $length);
   }
 }
 
-@mixin _properties($breakpoint: '') {
-  @each $prop-abbrev, $prop-name in $_properties {
-    @include _spacings($prop-abbrev, $prop-name, $breakpoint);
+@mixin -properties($breakpoint: '') {
+  @each $prop-abbrev, $prop-name in $-properties {
+    @include -spacings($prop-abbrev, $prop-name, $breakpoint);
   }
 }
 
 @if $include-spacing-modifiers {
-  @include _properties;
+  @include -properties;
 
   @each $breakpoint-name, $breakpoint-value in media-queries.$breakpoints {
     @include media-queries.mq($from: $breakpoint-name) {
-      @include _properties('-#{$breakpoint-name}');
+      @include -properties('-#{$breakpoint-name}');
     }
   }
 }

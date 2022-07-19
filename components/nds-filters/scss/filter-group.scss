@@ -9,7 +9,7 @@
 @use '@nice-digital/nds-core/scss/utils';
 @use '@nice-digital/nds-core/scss/visibility';
 
-@mixin _filter-group-heading-button {
+@mixin -filter-group-heading-button {
   appearance: none;
   background: colours.$nice-grey-2;
   border: 0;
@@ -42,7 +42,7 @@
   margin-top: utils.rem(spacing.$medium);
 
   legend {
-    @include visibility.invisible();
+    @include visibility.invisible;
   }
 
   fieldset {
@@ -87,7 +87,7 @@
 
     a,
     button {
-      @include _filter-group-heading-button;
+      @include -filter-group-heading-button;
     }
 
     &:hover {
@@ -97,7 +97,7 @@
     }
 
     @include utils.when-is(a, button) {
-      @include _filter-group-heading-button;
+      @include -filter-group-heading-button;
     }
   }
 

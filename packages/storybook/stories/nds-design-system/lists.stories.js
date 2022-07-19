@@ -1,11 +1,7 @@
 import React from "react";
 
 import { storiesOf } from "@storybook/react";
-import { withKnobs, text, select, boolean } from "@storybook/addon-knobs";
-import { action } from "@storybook/addon-actions";
-
-import { ActionBanner } from "@nice-digital/nds-action-banner";
-import { Button } from "@nice-digital/nds-button";
+import { withKnobs } from "@storybook/addon-knobs";
 
 const list = (
 	<>
@@ -44,8 +40,9 @@ const list = (
 					help should&nbsp;be requested and 999 called to dispatch an ambulance.
 				</li>
 				<li>
-					The rescuer should stay with&nbsp;the person and activate the phone's
-					speaker function to communicate&nbsp;with the ambulance service.
+					The rescuer should stay with&nbsp;the person and activate the
+					phone&apos;s speaker function to communicate&nbsp;with the ambulance
+					service.
 				</li>
 				<li>
 					Someone should be sent to fetch an automated external defibrillator

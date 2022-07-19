@@ -1,4 +1,4 @@
-@use "helpers";
+@use 'helpers';
 
 ////
 /// @group Typography
@@ -12,8 +12,6 @@
   clear: both;
   font-family: helpers.get-font-family(serif);
   font-weight: 600;
-  // Letter spacing and text shadow to mimic 900 weight, see https://github.com/nice-digital/nice-design-system/issues/240
-  letter-spacing: 0.5px;
   max-width: 66ch;
 }
 

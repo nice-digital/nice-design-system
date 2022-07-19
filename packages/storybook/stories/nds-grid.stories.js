@@ -2,7 +2,7 @@
 import React from "react";
 
 import { storiesOf } from "@storybook/react";
-import { withKnobs, boolean } from "@storybook/addon-knobs";
+import { withKnobs } from "@storybook/addon-knobs";
 
 import { PageHeader } from "@nice-digital/nds-page-header";
 import { Container } from "@nice-digital/nds-container";

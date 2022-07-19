@@ -3,7 +3,7 @@
 @use '@nice-digital/nds-core/scss/utils';
 
 // Multipliers of $large
-$paddingSizes: (
+$-padding-sizes: (
   'small': 1,
   'medium': 3,
   'large': 6
@@ -26,7 +26,7 @@ $paddingSizes: (
       color: colours.$nice-white;
     }
   }
-  @each $paddingSize, $size in $paddingSizes {
+  @each $paddingSize, $size in $-padding-sizes {
     &--padding-#{$paddingSize} {
       padding: (utils.rem(spacing.$large) * $size) 0;
     }

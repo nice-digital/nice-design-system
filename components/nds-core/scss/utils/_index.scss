@@ -1,8 +1,8 @@
-@use "sass:math";
-@use "../typography/settings" as typography-settings;
+@use 'sass:list';
+@use 'sass:math';
+@use '../typography/settings' as typography-settings;
 
-@forward "vendor/is";
-@forward "vendor/math";
+@forward 'vendor/is';
 
 ////
 /// @group helpers
@@ -25,14 +25,13 @@
   // $base could be in em or px (no unit = px).
   // Adjust accordingly to create a $divisor that
   // serves as context for $pixels.
-  $multiplier: if(unit($base) == em, 16, 1);
+  $multiplier: if(math.unit($base) == em, 16, 1);
   $divisor: strip-unit($base) * $multiplier;
-
   $em-vals: ();
 
   @each $val in $pixels {
     $val-in-ems: math.div(strip-unit($val), $divisor) * 1em;
-    $em-vals: append($em-vals, $val-in-ems);
+    $em-vals: list.append($em-vals, $val-in-ems);
   }
 
   @if length($em-vals) == 1 {
@@ -53,13 +52,13 @@
   $rem-vals: ();
   @each $val in $pixels {
     $val-in-rems: math.div(strip-unit($val), $base) * 1rem;
-    $rem-vals: append($rem-vals, $val-in-rems);
+    $rem-vals: list.append($rem-vals, $val-in-rems);
   }
 
   @if length($rem-vals) == 1 {
     // return a single value instead of a list,
     // so it can be used in calculations
-    @return nth($rem-vals, 1);
+    @return list.nth($rem-vals, 1);
   } @else {
     @return $rem-vals;
   }
@@ -82,10 +81,10 @@
 @mixin when-is($element-selectors...) {
   $selectors: ();
   @each $element-selector in $element-selectors {
-    $selectors: append($selectors, $element-selector + &);
+    $selectors: list.append($selectors, $element-selector + &);
   }
 
-  @at-root #{zip($selectors)} {
+  @at-root #{list.zip($selectors)} {
     @content;
   }
 }

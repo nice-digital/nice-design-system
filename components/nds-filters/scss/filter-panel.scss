@@ -9,7 +9,7 @@
 @use '@nice-digital/nds-core/scss/typography';
 @use '@nice-digital/nds-core/scss/utils';
 
-@mixin _filter-panel-heading-button {
+@mixin -filter-panel-heading-button {
   @include typography.font-size(h5);
   appearance: none;
   background: colours.$nice-grey-2;
@@ -50,11 +50,11 @@
 
     a,
     button {
-      @include _filter-panel-heading-button;
+      @include -filter-panel-heading-button;
     }
 
     @include utils.when-is(a, button) {
-      @include _filter-panel-heading-button;
+      @include -filter-panel-heading-button;
     }
   }
 

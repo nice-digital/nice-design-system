@@ -15,8 +15,7 @@
     align-content: center;
     align-items: stretch;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: left;
     line-height: 1;
     list-style: none;
@@ -42,16 +41,18 @@
       display: block;
       line-height: 1.15;
       padding: utils.rem(spacing.$medium);
-      @include media-queries.mq($from: media-queries.$md) {
+      @include media-queries.mq($from: md) {
         display: none !important;
       }
     }
+
     &--current {
       background: colours.$nice-grey-2;
       border: 1px solid transparent;
       font-weight: bold;
     }
-    @include media-queries.mq($from: media-queries.$md) {
+
+    @include media-queries.mq($from: md) {
       display: block;
     }
   }

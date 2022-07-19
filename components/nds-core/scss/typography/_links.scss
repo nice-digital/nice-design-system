@@ -1,5 +1,6 @@
-@use "../colours";
-@use "../focus";
+@use 'sass:color';
+@use '../colours';
+@use '../focus';
 
 ////
 /// @group Typography
@@ -9,7 +10,7 @@
 /// @since 0.3.1
 @mixin link-default {
   color: colours.$link;
-  -webkit-tap-highlight-color: rgba(colours.$focus, 0.333);
+  -webkit-tap-highlight-color: color.adjust(colours.$focus, $alpha: -0.666);
   text-decoration: underline;
   text-decoration-skip-ink: auto;
 
@@ -31,6 +32,7 @@
     color: colours.$link-active;
   }
 }
+
 /// Default links for use on a light background
 /// @require {mixin} link-default
 /// @since 0.5.0
@@ -44,7 +46,7 @@
 /// @since 0.3.1
 @mixin link-inverse {
   color: colours.$link-inverse;
-  -webkit-tap-highlight-color: rgba(colours.$focus, 0.333);
+  -webkit-tap-highlight-color: rgb(colours.$focus 0.333);
   text-decoration: underline;
   text-decoration-skip-ink: auto;
 

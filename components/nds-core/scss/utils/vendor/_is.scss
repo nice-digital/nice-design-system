@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 // See https://gist.github.com/HugoGiraudel/2933ef053ae0bf70ad8b
 // ----
 // Sass (v3.4.9)
@@ -9,7 +11,7 @@
 }
 
 @function is-time($value) {
-  @return is-number($value) and index('ms' 's', unit($value)) != null;
+  @return is-number($value) and index('ms' 's', math.unit($value)) != null;
 }
 
 @function is-duration($value) {
@@ -17,11 +19,11 @@
 }
 
 @function is-angle($value) {
-  @return is-number($value) and index('deg' 'rad' 'grad' 'turn', unit($value)) != null;
+  @return is-number($value) and index('deg' 'rad' 'grad' 'turn', math.unit($value)) != null;
 }
 
 @function is-frequency($value) {
-  @return is-number($value) and index('Hz' 'kHz', unit($value)) != null;
+  @return is-number($value) and index('Hz' 'kHz', math.unit($value)) != null;
 }
 
 @function is-integer($value) {
@@ -29,11 +31,11 @@
 }
 
 @function is-relative-length($value) {
-  @return is-number($value) and index('em' 'ex' 'ch' 'rem' 'vw' 'vh' 'vmin' 'vmax', unit($value)) != null;
+  @return is-number($value) and index('em' 'ex' 'ch' 'rem' 'vw' 'vh' 'vmin' 'vmax', math.unit($value)) != null;
 }
 
 @function is-absolute-length($value) {
-  @return is-number($value) and index('cm' 'mm' 'in' 'px' 'pt' 'pc', unit($value)) != null;
+  @return is-number($value) and index('cm' 'mm' 'in' 'px' 'pt' 'pc', math.unit($value)) != null;
 }
 
 @function is-percentage($value) {
@@ -45,7 +47,7 @@
 }
 
 @function is-resolution($value) {
-  @return is-number($value) and index('dpi' 'dpcm' 'dppx', unit($value)) != null;
+  @return is-number($value) and index('dpi' 'dpcm' 'dppx', math.unit($value)) != null;
 }
 
 @function is-position($value) {

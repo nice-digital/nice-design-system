@@ -1,7 +1,8 @@
-@use "settings" as typography-settings;
-@use "../spacing";
-@use "../colours";
-@use "../utils";
+@use 'sass:map';
+@use 'settings' as typography-settings;
+@use '../spacing';
+@use '../colours';
+@use '../utils';
 
 ////
 /// @group Typography
@@ -11,7 +12,7 @@
 /// @param {String} $stack The stack name e.g. sans, serif or mono
 /// @since 0.1.0
 @function get-font-family($stack) {
-  $result: map-get(typography-settings.$font-families, $stack);
+  $result: map.get(typography-settings.$font-families, $stack);
   @return unquote($result);
 }
 
@@ -20,7 +21,7 @@
 /// @since 0.1.0
 @function get-scale-integer($scale) {
   @if map-has-key(typography-settings.$named-font-sizes, $scale) {
-    @return map-get(typography-settings.$named-font-sizes, $scale);
+    @return map.get(typography-settings.$named-font-sizes, $scale);
   } @else if is-integer($scale) {
     @return $scale;
   }
@@ -39,8 +40,8 @@
 /// @since 0.1.0
 @function get-font-size($scale) {
   $scale-integer: get-scale-integer($scale);
-  $font-map: map-get(typography-settings.$font-sizes, $scale-integer);
-  @return map-get($font-map, fs);
+  $font-map: map.get(typography-settings.$font-sizes, $scale-integer);
+  @return map.get($font-map, fs);
 }
 
 /// Gets a numeric line height (in px) from a given scale multiplier.
@@ -54,8 +55,8 @@
 /// @since 0.1.0
 @function get-line-height($scale) {
   $scale-integer: get-scale-integer($scale);
-  $font-map: map-get(typography-settings.$font-sizes, $scale-integer);
-  @return map-get($font-map, lh);
+  $font-map: map.get(typography-settings.$font-sizes, $scale-integer);
+  @return map.get($font-map, lh);
 }
 
 /// Applies font size and line-height for the given scale.
@@ -97,15 +98,15 @@
 /// @since 0.1.0
 @mixin font($scale, $important: false) {
   $scale-integer: get-scale-integer($scale);
-  $font-map: map-get(typography-settings.$font-sizes, $scale-integer);
+  $font-map: map.get(typography-settings.$font-sizes, $scale-integer);
   @include font-size($scale, $important);
 
   @if $important {
-    margin-bottom: utils.rem(map-get($font-map, mb)) !important;
-    margin-top: utils.rem(map-get($font-map, mt)) !important;
+    margin-bottom: utils.rem(map.get($font-map, mb)) !important;
+    margin-top: utils.rem(map.get($font-map, mt)) !important;
   } @else {
-    margin-bottom: utils.rem(map-get($font-map, mb));
-    margin-top: utils.rem(map-get($font-map, mt));
+    margin-bottom: utils.rem(map.get($font-map, mb));
+    margin-top: utils.rem(map.get($font-map, mt));
   }
 }
 

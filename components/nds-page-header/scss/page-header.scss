@@ -57,8 +57,7 @@
     padding: 0;
 
     @include media-queries.mq($from: md) {
-      flex-direction: row;
-      flex-wrap: wrap;
+      flex-flow: row wrap;
 
       li {
         display: flex;

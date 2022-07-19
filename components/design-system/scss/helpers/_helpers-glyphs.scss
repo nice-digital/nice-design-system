@@ -1,4 +1,5 @@
-@use "@nice-digital/nds-core/scss/glyphs";
+@use 'sass:string';
+@use '@nice-digital/nds-core/scss/glyphs';
 
 ////
 /// @group helpers
@@ -16,7 +17,7 @@ $output-glyph-classes: false !default;
     @each $key, $value in glyphs.$glyphs {
       &--#{$key} {
         &:before {
-          content: unquote("'\\#{$value}'");
+          content: string.unquote("'\\#{$value}'");
         }
       }
     }
