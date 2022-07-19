@@ -45,7 +45,6 @@
 			}
 		],
 		"order/properties-alphabetical-order": true,
-		"color-function-notation": null,
 		"selector-class-pattern": null,
 		"scss/double-slash-comment-empty-line-before": null
 	},

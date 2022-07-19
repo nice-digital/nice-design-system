@@ -8,7 +8,7 @@
 @use '@nice-digital/nds-core/scss/typography';
 @use '@nice-digital/nds-core/scss/utils';
 
-$button-shadow-colour: rgba(0, 0, 0, 20%);
+$button-shadow-colour: rgb(0 0 0 / 20%);
 $button-border-radius: utils.em(3px);
 
 /// Button
@@ -84,7 +84,8 @@ $button-border-radius: utils.em(3px);
 /// @since 0.2.0
 .btn--cta {
   background: colours.$btn-cta;
-  border: utils.em(1px) solid colours.$btn-cta-text;
+  border: utils.em(1px) solid colours.$btn-cta-border;
+  box-shadow: 4px 4px 8px $button-shadow-colour;
   color: colours.$btn-cta-text;
 
   &:visited {
@@ -93,6 +94,7 @@ $button-border-radius: utils.em(3px);
 
   &:hover {
     background: colours.$btn-cta-hover;
+    box-shadow: 4px 4px 8px $button-shadow-colour;
     color: colours.$btn-cta-text;
   }
 
