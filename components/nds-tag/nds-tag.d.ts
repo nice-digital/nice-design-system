@@ -13,7 +13,7 @@ declare module "@nice-digital/nds-tag" {
 		/** Use the .tag--outline modifier for a tag with a border. Use outline tags with filtered lists to show the currently applied filters. */
 		outline?: boolean;
 		/** Use removeable tags when users need to be able to remove or dismiss a tag. Use with outline tags at the top of filtered lists to show the currently applied selections. */
-		removeable?: boolean;
+		remove?: React.ReactNode;
 	}
 
 	interface UpdatedColour {
@@ -77,7 +77,8 @@ declare module "@nice-digital/nds-tag" {
 			| InfoColour
 			| ErrorColour
 			| SuccessColour
-			| CautionColour);
+			| CautionColour
+		);
 
 	export const Tag: React.FC<TagProps>;
 }

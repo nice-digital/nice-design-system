@@ -12,6 +12,7 @@
 /// @prop {String} bullet [2022] Bullet (•)
 /// @prop {String} copyright [00a9] Copyright symbol (©)
 /// @prop {String} greater-than [003e] Greater than symbol (>)
+/// @prop {String} heavy-multiplication-x [2716] Heavy multiplication x (✖)
 /// @prop {String} hyphen-minus [002d] Hyphen minus (-)
 /// @prop {String} left-double-quotation-mark [201C] Left double quotation mark (“)
 /// @prop {String} less-than [003c] Less than symbol (<)
@@ -23,6 +24,7 @@ $glyphs: (
   bullet: '2022',
   copyright: '00a9',
   greater-than: '003e',
+  heavy-multiplication-x: '2716',
   hyphen-minus: '002d',
   left-double-quotation-mark: '201C',
   less-than: '003c',

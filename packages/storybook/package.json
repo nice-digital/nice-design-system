@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@nice-digital/design-system": "^3.0.1-alpha.0",
+    "@nice-digital/icons": "^4.0.0-alpha.0",
     "@nice-digital/nds-a-z-list": "^2.0.1-alpha.0",
     "@nice-digital/nds-action-banner": "^2.0.1-alpha.0",
     "@nice-digital/nds-alert": "^2.0.1-alpha.0",

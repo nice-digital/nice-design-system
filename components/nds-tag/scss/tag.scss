@@ -5,6 +5,7 @@
 @use 'sass:color';
 @use '@nice-digital/nds-core/scss/colours';
 @use '@nice-digital/nds-core/scss/focus';
+@use '@nice-digital/nds-core/scss/glyphs';
 @use '@nice-digital/nds-core/scss/spacing';
 @use '@nice-digital/nds-core/scss/typography';
 @use '@nice-digital/nds-core/scss/utils';
@@ -31,10 +32,11 @@ $tag-border-radius: utils.em(spacing.$xx-small);
 /// @since 0.3.1
 .tag {
   @include typography.font-size(0);
+  align-items: center;
   background-color: colours.$tag-background;
   border-radius: $tag-border-radius;
   color: colours.$text-inverse;
-  display: inline-block;
+  display: inline-flex;
   font-weight: normal;
   margin: utils.rem(0 0 spacing.$x-small 0);
   padding: utils.em(0 spacing.$x-small);
@@ -113,6 +115,13 @@ $tag-border-radius: utils.em(spacing.$xx-small);
     margin-left: utils.rem(spacing.$x-small);
     padding: 0;
     text-decoration: none;
+
+    &:before {
+      content: glyphs.get-glyph(heavy-multiplication-x);
+      display: block;
+      font-weight: bold;
+      line-height: 1;
+    }
 
     &:focus {
       @include focus.default-focus-style;

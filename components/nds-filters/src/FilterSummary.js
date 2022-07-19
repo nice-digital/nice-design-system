@@ -64,8 +64,7 @@ function ResultsFilters({ filters }) {
 				}) => {
 					const ElementType = defineElementType(onClick, elementType);
 					const props = {
-						className: classnames(["tag__remove", className]),
-						"aria-label": `Remove ${label}`,
+						className,
 						[populateMethodProperty(onClick, method, ElementType)]: onClick
 							? onClick
 							: destination
@@ -73,12 +72,17 @@ function ResultsFilters({ filters }) {
 					return (
 						<li key={label} className="filter-summary__filter">
 							{validateElementProps(<ElementType {...props} />)}
-							<Tag outline>
+							<Tag
+								outline
+								remove={
+									<ElementType {...props}>
+										<span className="visually-hidden">
+											Remove {label} filter
+										</span>
+									</ElementType>
+								}
+							>
 								{label}
-								<ElementType {...props}>
-									<RemoveIcon />
-									<span className="visually-hidden">Remove {label} filter</span>
-								</ElementType>
 							</Tag>
 						</li>
 					);

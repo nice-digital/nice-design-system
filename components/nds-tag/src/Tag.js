@@ -1,4 +1,4 @@
-import React from "react";
+import React, { cloneElement } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 
@@ -20,6 +20,7 @@ export const Tag = props => {
 		error,
 		success,
 		caution,
+		remove,
 		...rest
 	} = props;
 
@@ -40,9 +41,13 @@ export const Tag = props => {
 		"tag--caution": caution
 	});
 
+	const removeClassNames =
+		remove && classnames(remove.props.className, "tag__remove");
+
 	return (
 		<span className={classNames} {...rest}>
 			{children}
+			{remove ? cloneElement(remove, { className: removeClassNames }) : null}
 		</span>
 	);
 };
@@ -61,6 +66,7 @@ Tag.propTypes = {
 	error: PropTypes.bool,
 	success: PropTypes.bool,
 	caution: PropTypes.bool,
+	remove: PropTypes.elementType,
 	children: PropTypes.oneOfType([
 		PropTypes.arrayOf(PropTypes.node),
 		PropTypes.node
