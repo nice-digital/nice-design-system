@@ -2,6 +2,7 @@
 /// @group components
 ////
 
+@use 'sass:color';
 @use '@nice-digital/nds-core/scss/colours';
 @use '@nice-digital/nds-core/scss/focus';
 @use '@nice-digital/nds-core/scss/spacing';
@@ -138,7 +139,7 @@ $tag-border-radius: utils.em(spacing.$xx-small);
     }
 
     &:hover:after {
-      background: rgb(colours.$tag-remove-hover-after 0.1);
+      background: color.adjust(colours.$tag-remove-hover-after, $alpha: -0.9);
     }
   }
 

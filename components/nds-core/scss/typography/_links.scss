@@ -46,7 +46,7 @@
 /// @since 0.3.1
 @mixin link-inverse {
   color: colours.$link-inverse;
-  -webkit-tap-highlight-color: rgb(colours.$focus 0.333);
+  -webkit-tap-highlight-color: color.adjust(colours.$focus, $alpha: -0.666);
   text-decoration: underline;
   text-decoration-skip-ink: auto;
 

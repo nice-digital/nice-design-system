@@ -52,7 +52,6 @@
 		"plugin/selector-bem-pattern": {
 			"preset": "bem"
 		},
-		"color-function-notation": null,
 		"scss/double-slash-comment-empty-line-before": null
 	},
 	"ignoreFiles": [
