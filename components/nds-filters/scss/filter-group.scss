@@ -11,7 +11,7 @@
 
 @mixin -filter-group-heading-button {
   appearance: none;
-  background: colours.$nice-grey-2;
+  background: colours.$filter-group-heading-button-background;
   border: 0;
   color: colours.$text;
   cursor: pointer;
@@ -25,7 +25,7 @@
   width: 100%;
 
   &:hover {
-    background: colours.$nice-grey-1;
+    background: colours.$filter-group-heading-button-background-hover;
   }
 
   &:focus {
@@ -56,7 +56,7 @@
 
   // Wrapper for the options when filter is a list of checboxes
   &__options {
-    border: utils.rem(spacing.$x-small) solid colours.$nice-grey-2;
+    border: utils.rem(spacing.$x-small) solid colours.$filter-option-border;
 
     &[aria-hidden='true'] {
       display: none;
@@ -73,7 +73,7 @@
   // Heading used for collapsing/expanding the filter group
   &__heading {
     @include typography.font-size(0);
-    background: colours.$nice-grey-2;
+    background: colours.$filter-group-heading-background;
     border: 0;
     display: block;
     font-family: typography.get-font-family(sans);
@@ -92,7 +92,7 @@
 
     &:hover {
       + .filter-group__options {
-        border-color: colours.$nice-grey-1;
+        border-color: colours.$filter-option-hover-border;
       }
     }
 
@@ -112,8 +112,8 @@
   // DEPRECTAED: Use filter-option.scss (i.e. .filter__option) instead
   // This is here for backwards compat but may be removed in the future
   &__option {
-    background: colours.$nice-white;
-    border-top: 1px solid colours.$nice-grey-2;
+    background: colours.$filter-option-background;
+    border-top: 1px solid colours.$filter-option-border;
     color: colours.$text;
     cursor: pointer;
     display: block;
@@ -124,7 +124,7 @@
     text-decoration: none;
 
     &:hover {
-      background: colours.$nice-grey-3;
+      background: colours.$filter-option-hover;
     }
 
     input {

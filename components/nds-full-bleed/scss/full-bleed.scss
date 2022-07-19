@@ -10,7 +10,7 @@ $-padding-sizes: (
 );
 
 .full-bleed {
-  background-color: colours.$nice-white;
+  background-color: colours.$full-bleed-background;
   background-position: center center;
   background-size: cover;
   left: 50%;
@@ -20,10 +20,10 @@ $-padding-sizes: (
   width: 100vw;
   z-index: 0;
   &--light {
-    background-color: colours.$nice-teal;
-    color: colours.$nice-white;
+    background-color: colours.$full-bleed-light-background;
+    color: colours.$full-bleed-light-text;
     a {
-      color: colours.$nice-white;
+      color: colours.$full-bleed-light-text;
     }
   }
   @each $paddingSize, $size in $-padding-sizes {

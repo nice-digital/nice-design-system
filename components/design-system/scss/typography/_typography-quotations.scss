@@ -12,14 +12,14 @@
 /// @since 0.1.0
 .quote {
   @include typography.font-size(lead);
-  border-left: utils.em(spacing.$x-small) solid colours.$nice-teal;
+  border-left: utils.em(spacing.$x-small) solid colours.$quote-left-border;
   font-weight: normal;
   margin: utils.rem(spacing.$large 0);
   padding: utils.rem(0 0 0 spacing.$xx-large);
   position: relative;
 
   &:before {
-    color: colours.$nice-teal;
+    color: colours.$icons;
     content: glyphs.get-glyph(left-double-quotation-mark);
     display: block;
     font-family: Arial, sans-serif;
@@ -33,7 +33,7 @@
     width: utils.rem(spacing.$xx-large);
 
     @media print {
-      color: colours.$true-black;
+      color: colours.$text-print;
     }
   }
 

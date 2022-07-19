@@ -47,7 +47,7 @@
     }
 
     a {
-      background: colours.$true-white;
+      background: colours.$alphabet-letter-background;
       border: 1px solid colours.$border;
       text-decoration: none;
 
@@ -57,7 +57,7 @@
     }
 
     span {
-      color: colours.$nice-dark-grey;
+      color: colours.$alphabet-letter-span;
     }
 
     @supports (display: grid) {

@@ -47,7 +47,7 @@
     }
 
     &--current {
-      background: colours.$nice-grey-2;
+      background: colours.$enhanced-pagination-current-item-background;
       border: 1px solid transparent;
       font-weight: bold;
     }
@@ -72,7 +72,7 @@
     padding: utils.rem(spacing.$medium);
 
     &:hover {
-      background-color: colours.$nice-white;
+      background-color: colours.$enhanced-pagination-link-hover-background;
       border: 1px solid colours.$focus;
       color: colours.$text;
     }
@@ -88,5 +88,5 @@
 
 // Your pagesActions array is missing an object for a page number that is expected to render
 .page-object-missing {
-  border: 2px solid red;
+  border: 2px solid colours.$error;
 }

@@ -9,7 +9,8 @@
 
   // Wrapper for the input and button
   &__controls {
-    border: utils.rem(spacing.$x-small) solid colours.$nice-grey-2;
+    border: utils.rem(spacing.$x-small) solid
+      colours.$filter-input-controls-border;
     padding: utils.rem(spacing.$small);
 
     label {

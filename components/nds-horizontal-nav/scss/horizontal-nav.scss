@@ -22,7 +22,7 @@
     max-width: 100%;
 
     @include media-queries.mq($from: sm) {
-      border-bottom: 3px solid colours.$nice-black;
+      border-bottom: 3px solid colours.$horizontal-nav-list-border;
       flex-direction: row;
     }
   }
@@ -61,9 +61,9 @@
     }
 
     &[aria-current='true'] {
-      background-color: colours.$nice-grey-3;
-      border-bottom: 4px solid colours.$nice-black;
-      color: colours.$nice-black;
+      background-color: colours.$horizontal-nav-current-link-background;
+      border-bottom: 4px solid colours.$horizontal-nav-current-link-border;
+      color: colours.$horizontal-nav-current-link;
       font-weight: bold;
       @include media-queries.mq($from: md) {
         background-color: unset;
@@ -72,8 +72,8 @@
 
     @include media-queries.mq($until: sm) {
       &:active {
-        background-color: colours.$nice-teal;
-        color: colours.$nice-white;
+        background-color: colours.$horizontal-nav-active-link-mobile-background;
+        color: colours.$horizontal-nav-active-link-mobile;
       }
     }
 

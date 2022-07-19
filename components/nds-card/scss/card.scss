@@ -74,7 +74,7 @@
 
   &__author {
     @include typography.font-size(-1);
-    color: colours.$nice-dark-grey;
+    color: colours.$card-author;
     margin: utils.rem(0 0 spacing.$x-small 0);
 
     dd {
@@ -108,7 +108,7 @@
 
   &__metadata {
     @include typography.font-size(-1);
-    color: colours.$nice-dark-grey;
+    color: colours.$card-metadata;
     display: inline-block;
     margin: 0;
     position: relative;
