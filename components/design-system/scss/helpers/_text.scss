@@ -89,6 +89,24 @@ $output-text-classes: true !default;
     font-style: italic;
   }
 
+  /// Applies the sans-serif font stack
+  /// @since 3.0.0
+  .font-family-sans {
+    font-family: typography.get-font-family(sans);
+  }
+
+  /// Applies the serif font stack
+  /// @since 3.0.0
+  .font-family-serif {
+    font-family: typography.get-font-family(serif);
+  }
+
+  /// Applies the mono font stack
+  /// @since 3.0.0
+  .font-family-mono {
+    font-family: typography.get-font-family(mono);
+  }
+
   /// Quick left float
   /// @since 0.1.0
   .left {

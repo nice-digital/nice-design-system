@@ -54,6 +54,7 @@
 @mixin h5 {
   @include helpers.font(h5);
   clear: both;
+  font-family: helpers.get-font-family(sans);
   font-weight: 700;
   max-width: 66ch;
 }
@@ -64,6 +65,7 @@
 @mixin h6 {
   @include helpers.font(h6);
   clear: both;
+  font-family: helpers.get-font-family(sans);
   font-weight: 700;
   max-width: 66ch;
 }

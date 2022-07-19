@@ -38,6 +38,6 @@ $readable-width: 66ch;
 
 /// Placeholder for clearfix
 /// @since 0.1.0
-%nds-clearfix {
+%clearfix {
   @include clearfix;
 }
