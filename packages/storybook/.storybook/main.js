@@ -1,7 +1,10 @@
 const path = require("path");
 
 module.exports = {
-	stories: ["../stories/**/*.stories.(js|mdx)"],
+	core: {
+		builder: "webpack5"
+	},
+	stories: ["./../stories/**/*.stories.@(js|mdx)"],
 	addons: [
 		{
 			name: "@storybook/preset-scss",

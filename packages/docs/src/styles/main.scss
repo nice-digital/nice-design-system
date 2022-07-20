@@ -1,9 +1,10 @@
 // stylelint-disable no-descending-specificity
 
-$output-glyph-classes: true;
+@use '@nice-digital/design-system/scss/nice-design-system' with (
+  $output-glyph-classes: true
+);
 
-@use '@nice-digital/design-system/scss/nice-design-system';
-@use 'utils';
+@forward 'utils';
 
 // Styling for the github-style permalink header links
 .permalink-icon svg {
