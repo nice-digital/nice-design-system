@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Grid, GridItem } from "@nice-digital/nds-grid";
-// import Faker from "faker";
 import { Router, Route, Link } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import { Container } from "@nice-digital/nds-container";
