@@ -48,6 +48,7 @@
 
   &__actions {
     @include focus.inverse-button-focus;
+
     .btn {
       margin: 0;
     }

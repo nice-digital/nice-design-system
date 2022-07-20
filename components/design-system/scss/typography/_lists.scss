@@ -12,9 +12,11 @@
 ul,
 ol {
   @include typography.list;
+
   li,
   .list__item {
     margin-bottom: utils.rem(spacing.$x-small);
+
     ul,
     .list {
       margin-top: utils.rem(spacing.$x-small);
@@ -28,9 +30,11 @@ ol {
 /// @since 0.1.0
 .list {
   @include typography.list;
+
   li,
   .list__item {
     margin-bottom: utils.rem(spacing.$x-small);
+
     ul,
     .list {
       margin-top: utils.rem(spacing.$x-small);
@@ -56,6 +60,7 @@ ol {
   li,
   .list__item {
     margin-bottom: utils.rem(spacing.$small);
+
     ul,
     .list--loose {
       margin-top: utils.rem(spacing.$small);
@@ -69,6 +74,7 @@ ol {
   li,
   .list__item {
     margin-bottom: 0;
+
     ul,
     .list--loose {
       margin-top: 0;

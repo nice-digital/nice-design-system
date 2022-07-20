@@ -36,10 +36,12 @@
 
     a {
       text-decoration: none;
+
       &:hover,
       &:focus {
         text-decoration: underline;
       }
+
       &:before {
         content: '';
         display: block;

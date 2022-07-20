@@ -13,6 +13,7 @@
 .horizontal-nav {
   @include visibility.hide-print;
   margin-bottom: utils.rem(spacing.$large);
+
   &__list {
     align-items: stretch;
     display: flex;
@@ -43,6 +44,7 @@
 
     @include media-queries.mq($until: sm) {
       border-top: 1px solid colours.$border;
+
       &:first-of-type {
         border-top: none;
       }
@@ -65,6 +67,7 @@
       border-bottom: 4px solid colours.$horizontal-nav-current-link-border;
       color: colours.$horizontal-nav-current-link;
       font-weight: bold;
+
       @include media-queries.mq($from: md) {
         background-color: unset;
       }

@@ -8,6 +8,7 @@
     margin-bottom: utils.rem(spacing.$medium);
     margin-top: utils.rem(spacing.$medium);
   }
+
   &__link {
     @include typography.link-default;
     background: none;

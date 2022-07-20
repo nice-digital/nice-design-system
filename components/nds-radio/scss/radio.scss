@@ -88,6 +88,7 @@ $radio-base-size: utils.rem(spacing.$large);
 
   &--error .radio__label {
     color: colours.$error;
+
     &:before {
       @include typography.default-error-style(true);
     }

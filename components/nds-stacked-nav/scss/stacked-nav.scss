@@ -95,6 +95,7 @@
     &:active {
       background: colours.$stacked-nav-current-link-background;
       color: colours.$link-inverse;
+
       span {
         color: colours.$stacked-nav-current-link-active;
       }

@@ -19,9 +19,11 @@ $-padding-sizes: (
   position: relative;
   width: 100vw;
   z-index: 0;
+
   &--light {
     background-color: colours.$full-bleed-light-background;
     color: colours.$full-bleed-light-text;
+
     a {
       color: colours.$full-bleed-light-text;
     }
