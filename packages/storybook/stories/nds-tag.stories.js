@@ -12,7 +12,7 @@ storiesOf("Foundations/Tag", module)
 				outline
 				remove={
 					<a href="#" className="test">
-						<span className="visually-hidden">Remove this tag</span>
+						Remove this tag
 					</a>
 				}
 			>

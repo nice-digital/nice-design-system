@@ -41,13 +41,16 @@ export const Tag = props => {
 		"tag--caution": caution
 	});
 
-	const removeClassNames =
-		remove && classnames(remove.props.className, "tag__remove");
-
 	return (
 		<span className={classNames} {...rest}>
 			{children}
-			{remove ? cloneElement(remove, { className: removeClassNames }) : null}
+			{remove
+				? cloneElement(
+						remove,
+						{ className: classnames(remove.props.className, "tag__remove") },
+						<span className="visually-hidden">{remove.props.children}</span>
+				  )
+				: null}
 		</span>
 	);
 };
@@ -66,7 +69,7 @@ Tag.propTypes = {
 	error: PropTypes.bool,
 	success: PropTypes.bool,
 	caution: PropTypes.bool,
-	remove: PropTypes.elementType,
+	remove: PropTypes.node,
 	children: PropTypes.oneOfType([
 		PropTypes.arrayOf(PropTypes.node),
 		PropTypes.node

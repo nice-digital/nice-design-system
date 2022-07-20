@@ -75,11 +75,7 @@ function ResultsFilters({ filters }) {
 							<Tag
 								outline
 								remove={
-									<ElementType {...props}>
-										<span className="visually-hidden">
-											Remove {label} filter
-										</span>
-									</ElementType>
+									<ElementType {...props}>Remove {label} filter</ElementType>
 								}
 							>
 								{label}
