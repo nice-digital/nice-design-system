@@ -55,7 +55,7 @@ export class Tabs extends Component {
 		const tabs = this.getTabChildElements();
 		const hashIndex = tabs
 			// document.location.hash returns the # character with it
-			.map(tab => "#" + slugify(tab.props.title))
+			.map((tab) => "#" + slugify(tab.props.title))
 			.indexOf(hash);
 		return hashIndex === -1 ? 0 : hashIndex;
 	}
@@ -104,7 +104,7 @@ export class Tabs extends Component {
 
 	getTabChildElements() {
 		return React.Children.toArray(this.props.children).filter(
-			c => c.type === Tab
+			(c) => c.type === Tab
 		);
 	}
 
@@ -142,9 +142,9 @@ export class Tabs extends Component {
 									id={`tab-button-${tabSlug}`}
 									aria-controls={`tab-pane-${tabSlug}`}
 									aria-selected={isTabActive}
-									onClick={e => this.handleTabButtonClick(e, i)}
-									onKeyDown={e => this.handleTabButtonKey(e, i)}
-									ref={btn => {
+									onClick={(e) => this.handleTabButtonClick(e, i)}
+									onKeyDown={(e) => this.handleTabButtonKey(e, i)}
+									ref={(btn) => {
 										this.state.focusActiveTabButton &&
 											isTabActive &&
 											btn &&

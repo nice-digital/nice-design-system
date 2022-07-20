@@ -5,7 +5,7 @@ import { Tag } from "@nice-digital/nds-tag";
 
 import "./../scss/phase-banner.scss";
 
-export const PhaseBanner = props => {
+export const PhaseBanner = (props) => {
 	const { alpha, beta, children, className, ...rest } = props;
 
 	return (

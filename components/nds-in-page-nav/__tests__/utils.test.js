@@ -118,7 +118,7 @@ describe("utils", () => {
 		it("should return null when no headings are scrolled past", () => {
 			const spy = jest
 				.spyOn(document, "querySelector")
-				.mockImplementation(selector => ({
+				.mockImplementation((selector) => ({
 					textContent: selector,
 					getBoundingClientRect: () => ({ top: 999 })
 				}));
@@ -131,7 +131,7 @@ describe("utils", () => {
 		it("should select first heading scrolled above the viewport", () => {
 			const spy = jest
 				.spyOn(document, "querySelector")
-				.mockImplementation(selector => ({
+				.mockImplementation((selector) => ({
 					id: selector.split("#")[1],
 					getBoundingClientRect: () => ({
 						top: selector == "#b2" ? -2 : selector == "#a3" ? -1 : 999

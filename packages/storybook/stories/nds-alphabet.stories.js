@@ -7,7 +7,7 @@ import { Alphabet, Letter } from "@nice-digital/nds-alphabet";
 
 const allLetters = "abcdefghijklmnopqrstuvwxyz".split("");
 
-const FakeLink = props => {
+const FakeLink = (props) => {
 	return (
 		<a data-test="example-non-standard-element" {...props}>
 			{props.children}
@@ -18,7 +18,7 @@ const FakeLink = props => {
 storiesOf("Components/Alphabet", module)
 	.add("Default (links on same page)", () => (
 		<Alphabet>
-			{allLetters.map(letter => (
+			{allLetters.map((letter) => (
 				<Letter key={letter} to={`#${letter}`} label={`Letter ${letter}`}>
 					{letter.toUpperCase()}
 				</Letter>
@@ -27,7 +27,7 @@ storiesOf("Components/Alphabet", module)
 	))
 	.add("Chunky (links on same page)", () => (
 		<Alphabet chunky>
-			{allLetters.map(letter => (
+			{allLetters.map((letter) => (
 				<Letter key={letter} to={`#${letter}`} label={`Letter ${letter}`}>
 					{letter.toUpperCase()}
 				</Letter>
@@ -36,7 +36,7 @@ storiesOf("Components/Alphabet", module)
 	))
 	.add("No links", () => (
 		<Alphabet>
-			{allLetters.map(letter => (
+			{allLetters.map((letter) => (
 				<Letter key={letter} label={`Letter ${letter}`}>
 					{letter.toUpperCase()}
 				</Letter>
@@ -45,7 +45,7 @@ storiesOf("Components/Alphabet", module)
 	))
 	.add("External links", () => (
 		<Alphabet>
-			{allLetters.map(letter => (
+			{allLetters.map((letter) => (
 				<Letter key={letter} to="/example-url" label={`Letter ${letter}`}>
 					{letter.toUpperCase()}
 				</Letter>
@@ -54,7 +54,7 @@ storiesOf("Components/Alphabet", module)
 	))
 	.add("Custom link type", () => (
 		<Alphabet aria-label="test-label">
-			{allLetters.map(letter => (
+			{allLetters.map((letter) => (
 				<Letter
 					key={letter}
 					elementType={FakeLink}
@@ -68,7 +68,7 @@ storiesOf("Components/Alphabet", module)
 	))
 	.add("Custom class name", () => (
 		<Alphabet className="test-class">
-			{allLetters.map(letter => (
+			{allLetters.map((letter) => (
 				<Letter key={letter} to={`#${letter}`} label={`Letter ${letter}`}>
 					{letter.toUpperCase()}
 				</Letter>

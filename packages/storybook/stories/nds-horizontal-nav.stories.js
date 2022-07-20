@@ -33,7 +33,7 @@ const links = [
 
 const Default = () => (
 	<HorizontalNav>
-		{links.map(link => (
+		{links.map((link) => (
 			<HorizontalNavLink key={link.title} {...link} />
 		))}
 	</HorizontalNav>

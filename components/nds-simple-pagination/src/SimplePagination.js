@@ -28,7 +28,7 @@ Link.propTypes = {
 	method: PropTypes.string
 };
 
-export const SimplePagination = props => {
+export const SimplePagination = (props) => {
 	const {
 		currentPage,
 		totalPages,

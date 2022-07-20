@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export const GridItem = props => {
+export const GridItem = (props) => {
 	const {
 		children,
 		cols = 12,
@@ -23,7 +23,7 @@ export const GridItem = props => {
 	if (pull) gridColsAttr.push("pull:" + pull);
 
 	const bpGridDefs = { xs, sm, md, lg, xl };
-	const mapBpToAttr = bp => {
+	const mapBpToAttr = (bp) => {
 		const bpGridDef = bpGridDefs[bp];
 
 		if (!bpGridDef) return null;
@@ -40,7 +40,7 @@ export const GridItem = props => {
 	};
 	gridColsAttr = gridColsAttr
 		.concat(Object.keys(bpGridDefs).map(mapBpToAttr))
-		.filter(col => col)
+		.filter((col) => col)
 		.join(" ");
 
 	return (

@@ -22,7 +22,7 @@ const Link = ({
 	);
 };
 
-export const PrevNext = props => {
+export const PrevNext = (props) => {
 	const { nextPageLink, previousPageLink, className, ...rest } = props;
 
 	const nextLinkProps = {

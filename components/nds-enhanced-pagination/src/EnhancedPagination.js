@@ -12,13 +12,13 @@ export const EnhancedPagination = ({
 	className,
 	...rest
 }) => {
-	const calculatePosition = currentPage => {
+	const calculatePosition = (currentPage) => {
 		if (currentPage <= 4) return "early";
 		if (totalPages - currentPage <= 3) return "late";
 		return "middle";
 	};
 
-	const addNumberedPages = array => {
+	const addNumberedPages = (array) => {
 		array.push(1);
 		if (totalPages && totalPages != 1) array.push(totalPages);
 		switch (calculatePosition(currentPage)) {
@@ -51,7 +51,7 @@ export const EnhancedPagination = ({
 		}
 	};
 
-	const addEllipses = array => {
+	const addEllipses = (array) => {
 		switch (calculatePosition(currentPage)) {
 			case "early":
 				pages.splice(array.length - 1, 0, null);

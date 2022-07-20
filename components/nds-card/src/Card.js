@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import "../scss/card.scss";
 
-const CardHeader = props => {
+const CardHeader = (props) => {
 	const { headingText, headingElementType: HeadingTag = "p", link } = props;
 
 	let linkProps = {};
@@ -35,15 +35,9 @@ CardHeader.propTypes = {
 	})
 };
 
-const CardBody = props => {
-	const {
-		metadata,
-		headingText,
-		headingElementType,
-		link,
-		summary,
-		children
-	} = props;
+const CardBody = (props) => {
+	const { metadata, headingText, headingElementType, link, summary, children } =
+		props;
 	const headerProps = { headingText, headingElementType, link };
 	return (
 		<>
@@ -92,7 +86,7 @@ CardBody.propTypes = {
 	...CardHeader.propTypes
 };
 
-export const Card = props => {
+export const Card = (props) => {
 	const {
 		className,
 		metadata,

@@ -24,7 +24,7 @@ export class FilterOption extends Component {
 
 	handleCheckboxChange() {
 		this.setState(
-			prevState => ({
+			(prevState) => ({
 				selected: !prevState.selected
 			}),
 			() => {
@@ -44,7 +44,7 @@ export class FilterOption extends Component {
 
 		const propsToRemoveFromDom = ["isSelected", "onChanged"];
 
-		propsToRemoveFromDom.forEach(prop => {
+		propsToRemoveFromDom.forEach((prop) => {
 			delete filteredProps[prop];
 		});
 

@@ -41,7 +41,7 @@ export default (pluginName, Plugin) => {
 	const dataName = `__${pluginName}`,
 		old = $.fn[pluginName];
 
-	$.fn[pluginName] = function(options) {
+	$.fn[pluginName] = function (options) {
 		const args = arguments;
 
 		// TODO: Destory plugin by removing the data
@@ -81,7 +81,7 @@ export default (pluginName, Plugin) => {
 				return instance[methodName].apply(instance);
 			} else {
 				// Invoke the speficied method on each selected element
-				return this.each(function() {
+				return this.each(function () {
 					var instance = $.data(this, dataName);
 					if (
 						instance instanceof Plugin &&

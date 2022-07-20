@@ -28,15 +28,8 @@ export class ActionBanner extends React.Component {
 	render() {
 		if (this.state.isClosed) return null;
 
-		const {
-			variant,
-			onClosing,
-			title,
-			children,
-			cta,
-			className,
-			...rest
-		} = this.props;
+		const { variant, onClosing, title, children, cta, className, ...rest } =
+			this.props;
 
 		const classes = {
 			"action-banner": true,

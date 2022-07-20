@@ -4,7 +4,7 @@ import classnames from "classnames";
 
 import "../scss/textarea.scss";
 
-export const Textarea = props => {
+export const Textarea = (props) => {
 	const {
 		defaultValue,
 		name,

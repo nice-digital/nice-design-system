@@ -4,7 +4,7 @@ import classnames from "classnames";
 
 import "./../scss/tag.scss";
 
-export const Tag = props => {
+export const Tag = (props) => {
 	const {
 		children,
 		alpha,

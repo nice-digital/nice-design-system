@@ -8,7 +8,7 @@ import breakpoints from "../../nds-core/src/breakpoints";
 import utils from "../../nds-core/src/utils";
 
 let nice = {
-	init: el => {
+	init: (el) => {
 		// Load all component modules from this directory automatically, see http://stackoverflow.com/a/31770875/486434
 		// But exclude test files http://stackoverflow.com/a/30372240
 		pluginAutoLoader.load(
@@ -32,7 +32,7 @@ let nice = {
 	utils
 };
 
-$.fn.nice = function() {
+$.fn.nice = function () {
 	nice.init(this);
 };
 

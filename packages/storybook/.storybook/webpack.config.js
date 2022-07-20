@@ -1,4 +1,4 @@
-module.exports = function({ config }) {
+module.exports = function ({ config }) {
 	// for story source plugin https://github.com/storybookjs/storybook/tree/master/addons/storysource#getting-started
 	config.module.rules.push({
 		test: /\.stories\.jsx?$/,

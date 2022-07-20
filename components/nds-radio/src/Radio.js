@@ -5,16 +5,8 @@ import "../scss/radio.scss";
 
 export class Radio extends Component {
 	render() {
-		const {
-			disabled,
-			hint,
-			error,
-			name,
-			label,
-			value,
-			inline,
-			...rest
-		} = this.props;
+		const { disabled, hint, error, name, label, value, inline, ...rest } =
+			this.props;
 		if (!value || value === "") return null;
 		const classNames = classnames({
 			radio: true,

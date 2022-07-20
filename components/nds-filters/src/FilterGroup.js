@@ -28,7 +28,7 @@ export class FilterGroup extends Component {
 	handleTitleClick(e) {
 		e.preventDefault();
 
-		this.setState(prevState => ({
+		this.setState((prevState) => ({
 			isExpanded: !prevState.isExpanded
 		}));
 	}
@@ -65,7 +65,7 @@ export class FilterGroup extends Component {
 			</>
 		);
 
-		const clonedChildren = React.Children.map(children, child => {
+		const clonedChildren = React.Children.map(children, (child) => {
 			return React.cloneElement(child, {
 				groupId,
 				groupHeading: heading
@@ -76,7 +76,7 @@ export class FilterGroup extends Component {
 
 		const propsToRemoveFromDom = ["collapseByDefault"];
 
-		propsToRemoveFromDom.forEach(prop => {
+		propsToRemoveFromDom.forEach((prop) => {
 			delete filteredProps[prop];
 		});
 

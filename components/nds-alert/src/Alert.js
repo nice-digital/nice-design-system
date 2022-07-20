@@ -6,7 +6,7 @@ import "../scss/alert.scss";
 
 const allowedTypes = ["info", "caution", "error", "success"];
 
-export const Alert = props => {
+export const Alert = (props) => {
 	const { children, type, ...rest } = props;
 	const classNames = classnames({
 		alert: true,

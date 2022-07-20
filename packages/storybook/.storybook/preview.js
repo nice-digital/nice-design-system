@@ -5,7 +5,7 @@ import theme from "./nice-theme";
 import "./stories.scss";
 
 // wrap-storybook is the root for the HTML add-on to take markup from
-const wrapperDecorator = storyFn => (
+const wrapperDecorator = (storyFn) => (
 	<div className="pv--d" id="wrap-storybook">
 		{storyFn()}
 	</div>

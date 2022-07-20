@@ -128,7 +128,7 @@ export function sendDataLayerEvent(
 
 	if (value) data.eventValue = value;
 
-	return new Promise(resolve => {
+	return new Promise((resolve) => {
 		data.eventCallback = () => {
 			if (typeof callback === "function") callback();
 			resolve();
@@ -163,7 +163,7 @@ export function sendUniversalEvent(
 		});
 	}
 
-	return new Promise(resolve => {
+	return new Promise((resolve) => {
 		var cb = () => {
 			if (typeof callback === "function") callback();
 			resolve();
@@ -196,7 +196,7 @@ export function sendClassicEvent(
 		});
 	}
 
-	return new Promise(resolve => {
+	return new Promise((resolve) => {
 		var cb = () => {
 			if (typeof callback === "function") callback();
 			resolve();

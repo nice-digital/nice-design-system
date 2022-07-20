@@ -4,7 +4,7 @@ import classnames from "classnames";
 
 import "../scss/table.scss";
 
-export const Table = props => {
+export const Table = (props) => {
 	const { className, children, ...attributes } = props;
 
 	const classNames = classnames({

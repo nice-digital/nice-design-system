@@ -8,8 +8,7 @@ import { Callout, CalloutBody, CalloutImage } from "@nice-digital/nds-callout";
 const callouts = [
 	{
 		title: "Article one with a shortish title",
-		text:
-			"Consequuntur est iure quis sapiente? Animi, asperiores atque commodi corporis cum delectus deserunt eveniet fugiat fugit id in inventore magnam magni maiores molestiae natus nesciunt, Officia praesentium quae quidem repellendus repudiandae sed sunt tempora totam unde."
+		text: "Consequuntur est iure quis sapiente? Animi, asperiores atque commodi corporis cum delectus deserunt eveniet fugiat fugit id in inventore magnam magni maiores molestiae natus nesciunt, Officia praesentium quae quidem repellendus repudiandae sed sunt tempora totam unde."
 	},
 	{
 		title: "Article one with a longish title that goes on a bit",
@@ -17,8 +16,7 @@ const callouts = [
 	},
 	{
 		title: "Very short!",
-		text:
-			"Consequuntur est iure quis sapiente? Animi, asperiores atque commodi corporis cum delectus deserunt eveniet fugiat fugit id in inventore magnam magni maiores molestiae natus nesciunt, Officia praesentium quae quidem repellendus repudiandae sed sunt tempora totam unde. Animi, asperiores atque commodi corporis cum delectus deserunt eveniet fugiat fugit id in inventore magnam magni maiores molestiae natus nesciunt, Officia praesentium quae quidem repellendus repudiandae sed sunt tempora totam unde."
+		text: "Consequuntur est iure quis sapiente? Animi, asperiores atque commodi corporis cum delectus deserunt eveniet fugiat fugit id in inventore magnam magni maiores molestiae natus nesciunt, Officia praesentium quae quidem repellendus repudiandae sed sunt tempora totam unde. Animi, asperiores atque commodi corporis cum delectus deserunt eveniet fugiat fugit id in inventore magnam magni maiores molestiae natus nesciunt, Officia praesentium quae quidem repellendus repudiandae sed sunt tempora totam unde."
 	}
 ];
 
@@ -50,8 +48,9 @@ storiesOf("Components/Callout", module)
 								<CalloutImage>
 									<img
 										alt={item.title}
-										src={`http://placehold.it/800x450?text=Callout ${index +
-											1}`}
+										src={`http://placehold.it/800x450?text=Callout ${
+											index + 1
+										}`}
 									/>
 								</CalloutImage>
 								<CalloutBody>

@@ -111,10 +111,7 @@ describe("A-Z List", () => {
 			</AZList>
 		);
 		expect(
-			wrapper
-				.find(customAlphabet)
-				.childAt(0)
-				.hasClass("test-class")
+			wrapper.find(customAlphabet).childAt(0).hasClass("test-class")
 		).toEqual(true);
 		wrapper.unmount();
 	});

@@ -5,9 +5,9 @@ import toJson from "enzyme-to-json";
 import { EnhancedPagination } from "../src/EnhancedPagination";
 import { MemoryRouter } from "react-router-dom";
 
-const mapPageNumberToHref = pageNumber => `#${pageNumber}`;
+const mapPageNumberToHref = (pageNumber) => `#${pageNumber}`;
 
-const generateProps = options => {
+const generateProps = (options) => {
 	let props = {
 		currentPage: options.currentPage || 5,
 		totalPages: options.totalPages || 20,
@@ -92,18 +92,8 @@ describe("Enhanced Pagination", () => {
 			</MemoryRouter>
 		);
 		expect(wrapper.find(".pagination__item--bookend").length).toEqual(2);
-		expect(
-			wrapper
-				.find(".pagination__item")
-				.at(2)
-				.text()
-		).toBe("…");
-		expect(
-			wrapper
-				.find(".pagination__item")
-				.at(8)
-				.text()
-		).toBe("…");
+		expect(wrapper.find(".pagination__item").at(2).text()).toBe("…");
+		expect(wrapper.find(".pagination__item").at(8).text()).toBe("…");
 	});
 
 	it("should render a single ellipsis when there are 7 or more pages and the current page is early or late in the range", () => {
@@ -114,23 +104,13 @@ describe("Enhanced Pagination", () => {
 			</MemoryRouter>
 		);
 		expect(wrapper.find(".pagination__inactive").length).toEqual(2);
-		expect(
-			wrapper
-				.find(".pagination__item")
-				.at(3)
-				.text()
-		).toBe("…");
+		expect(wrapper.find(".pagination__item").at(3).text()).toBe("…");
 		wrapper.setProps({
 			children: <EnhancedPagination {...localProps} currentPage={5} />
 		});
 		wrapper.update();
 		expect(wrapper.find(".pagination__inactive").length).toEqual(2);
-		expect(
-			wrapper
-				.find(".pagination__item")
-				.at(2)
-				.text()
-		).toBe("…");
+		expect(wrapper.find(".pagination__item").at(2).text()).toBe("…");
 	});
 
 	it("should render a single ellipsis when there are more than 8 pages and the current page is early or late in the range", () => {
@@ -141,23 +121,13 @@ describe("Enhanced Pagination", () => {
 			</MemoryRouter>
 		);
 		expect(wrapper.find(".pagination__inactive").length).toEqual(2);
-		expect(
-			wrapper
-				.find(".pagination__item")
-				.at(2)
-				.text()
-		).toBe("…");
+		expect(wrapper.find(".pagination__item").at(2).text()).toBe("…");
 		wrapper.setProps({
 			children: <EnhancedPagination {...localProps} currentPage={2} />
 		});
 		wrapper.update();
 		expect(wrapper.find(".pagination__inactive").length).toEqual(2);
-		expect(
-			wrapper
-				.find(".pagination__item")
-				.at(5)
-				.text()
-		).toBe("…");
+		expect(wrapper.find(".pagination__item").at(5).text()).toBe("…");
 	});
 
 	it("should render the correct number of items", () => {
@@ -177,12 +147,7 @@ describe("Enhanced Pagination", () => {
 				<EnhancedPagination {...localProps} />
 			</MemoryRouter>
 		);
-		expect(
-			wrapper
-				.find(".pagination__link")
-				.at(1)
-				.text()
-		).toEqual("Next page");
+		expect(wrapper.find(".pagination__link").at(1).text()).toEqual("Next page");
 	});
 
 	it("should render a previous page element when current page is > 1 and total pages > 1 ", () => {
@@ -192,12 +157,9 @@ describe("Enhanced Pagination", () => {
 				<EnhancedPagination {...localProps} />
 			</MemoryRouter>
 		);
-		expect(
-			wrapper
-				.find(".pagination__link")
-				.at(0)
-				.text()
-		).toEqual("Previous page");
+		expect(wrapper.find(".pagination__link").at(0).text()).toEqual(
+			"Previous page"
+		);
 	});
 
 	it("should use given function for pagination link href", () => {
@@ -219,10 +181,10 @@ describe("Enhanced Pagination", () => {
 			</MemoryRouter>
 		);
 		expect(
-			wrapper.findWhere(node => node.hasClass("pagination__inactive"))
+			wrapper.findWhere((node) => node.hasClass("pagination__inactive"))
 		).toHaveLength(1);
 		expect(
-			wrapper.findWhere(node => node.hasClass("pagination__link"))
+			wrapper.findWhere((node) => node.hasClass("pagination__link"))
 		).toHaveLength(0);
 	});
 
@@ -234,9 +196,9 @@ describe("Enhanced Pagination", () => {
 				<EnhancedPagination {...localProps} />
 			</MemoryRouter>
 		);
-		expect(wrapper.findWhere(node => node.text() === "Next page")).toHaveLength(
-			0
-		);
+		expect(
+			wrapper.findWhere((node) => node.text() === "Next page")
+		).toHaveLength(0);
 	});
 	// no previous link
 	it("should not render a previous page element when current page is 1 and total pages > 1 ", () => {
@@ -247,7 +209,7 @@ describe("Enhanced Pagination", () => {
 			</MemoryRouter>
 		);
 		expect(
-			wrapper.findWhere(node => node.text() === "Previous page")
+			wrapper.findWhere((node) => node.text() === "Previous page")
 		).toHaveLength(0);
 	});
 	// less than 7 totalPages
@@ -265,7 +227,9 @@ describe("Enhanced Pagination", () => {
 			// const element = array[i];
 			expect(
 				wrapper
-					.findWhere(node => node.text() == i.toString() && node.type() == "a")
+					.findWhere(
+						(node) => node.text() == i.toString() && node.type() == "a"
+					)
 					.prop("href")
 			).toEqual(`#${i}`);
 		}

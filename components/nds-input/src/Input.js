@@ -4,7 +4,7 @@ import classnames from "classnames";
 
 import "./../scss/input.scss";
 
-export const Input = props => {
+export const Input = (props) => {
 	const {
 		defaultValue,
 		name,

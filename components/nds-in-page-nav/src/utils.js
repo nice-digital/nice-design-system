@@ -7,7 +7,7 @@ const numberPrefixRegex = /^\s*\d+\s*/;
  * @param {HTMLHeadingElement} headingEl
  * @returns The id of the heading
  */
-export const generateHeadingId = headingEl => {
+export const generateHeadingId = (headingEl) => {
 	if (headingEl.id) return headingEl.id;
 
 	// Remove numbers from start of string before slugifying to make sure we have a valid id
@@ -28,7 +28,7 @@ export const generateHeadingId = headingEl => {
 
 	// Increment the integer suffix to make a unique id
 	const slugPrefixRegex = new RegExp(`^${slug}(-[0-9]+)?`, "i"),
-		isSlugPrefixMatch = el => (el.id ? el.id.match(slugPrefixRegex) : false),
+		isSlugPrefixMatch = (el) => (el.id ? el.id.match(slugPrefixRegex) : false),
 		matchingElements = Array.prototype.filter.call(
 			document.querySelectorAll("[id]"),
 			isSlugPrefixMatch
@@ -78,7 +78,7 @@ export const buildLinkTree = (headingElements, currentLevel = undefined) => {
 	return linkTree;
 };
 
-const flattenTree = linkTree => {
+const flattenTree = (linkTree) => {
 	return linkTree.reduce((acc, curr) => {
 		return acc.concat(curr).concat(flattenTree(curr.subLinks));
 	}, []);

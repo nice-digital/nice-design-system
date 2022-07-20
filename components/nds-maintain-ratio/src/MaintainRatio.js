@@ -4,14 +4,9 @@ import classnames from "classnames";
 
 import "../scss/maintain-ratio.scss";
 
-export const MaintainRatio = props => {
-	const {
-		ratio,
-		className,
-		stretchFirstChild,
-		children,
-		...attributes
-	} = props;
+export const MaintainRatio = (props) => {
+	const { ratio, className, stretchFirstChild, children, ...attributes } =
+		props;
 
 	const classNames = classnames({
 		"maintain-ratio": true,

@@ -4,7 +4,7 @@ import classnames from "classnames";
 
 import "../scss/button.scss";
 
-export const Button = props => {
+export const Button = (props) => {
 	const {
 		variant = "primary",
 		to,
@@ -17,7 +17,7 @@ export const Button = props => {
 	} = props;
 
 	const possibleVariants = Object.keys(Button.variants);
-	if (variant && !possibleVariants.some(m => m === variant)) {
+	if (variant && !possibleVariants.some((m) => m === variant)) {
 		throw new Error(
 			`Expected variant to be one of '${possibleVariants.join(
 				"', '"

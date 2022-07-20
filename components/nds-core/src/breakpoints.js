@@ -26,7 +26,7 @@ export const breakpoints = {
  * 	// Checks if the media query (min-width: 25em) matches
  * 	var matches = matchesFrom("xs");
  */
-export const matchesFrom = breakpointName => {
+export const matchesFrom = (breakpointName) => {
 	let breakpointPx = breakpoints[breakpointName];
 
 	if (!breakpointPx) {

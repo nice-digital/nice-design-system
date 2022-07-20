@@ -6,7 +6,7 @@ import { Alphabet, Letter } from "../Alphabet";
 
 describe("Alphabet", () => {
 	const allLetters = "abcdefghijklmnopqrstuvwxyz".split("");
-	const letterElements = allLetters.map(letter => (
+	const letterElements = allLetters.map((letter) => (
 		<Letter key={letter} to={`#${letter}`} label={`Letter ${letter}`}>
 			{letter.toUpperCase()}
 		</Letter>

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import "../scss/page-header.scss";
 
-export const PageHeader = props => {
+export const PageHeader = (props) => {
 	const { heading, lead, metadata, cta, preheading, ...rest } = props;
 
 	return (
