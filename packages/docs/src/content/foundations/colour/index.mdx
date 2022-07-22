@@ -6,168 +6,83 @@ template: detail
 
 ---
 
-Follow these guidelines to determine the best way to apply the NICE colour palette. We use colour to aid in communication, and help our users navigate. We also use our [brand guidelines](https://www.nice.org.uk/brand/colour-palette){:target="\_blank"} to help form the base of our digital palette.
+Follow these guidelines to determine the best way to apply the NICE colour palette. We use colour to aid in communication and help our users navigate. We also use our [brand guidelines](https://www.nice.org.uk/brand/colour-palette) to help form the base of our digital palette.
 
-## Text
+## Tokens
 
-```
-<ul class="colour-grid">
-    {% include colour.html title="Primary text" var="colour-text" %}
-    {% include colour.html title="Inverse text" var="colour-text-inverse" %}
-</ul>
-```
+Our colours are organised by assigning them to values called *design tokens*. There are two types of tokens: *global tokens*, which specify the colours themselves, and *alias tokens*, which describe how those colours are used.
 
-## Links
+Organising our colours this way helps us to maintain the design system. Here's [a YouTube video that explains why design tokens are very useful](https://www.youtube.com/watch?v=wtTstdiBuUk).
 
-### Default links
+### Global tokens
 
-For use on a light background
+The global tokens specify the palette of colours that we must choose from whenever we apply colour to text, components or anything else that we produce.
+They are split into two groups: brand colours, and custom colours.
 
-```
-<ul class="colour-grid">
-    {% include colour.html title="Link" var="colour-link" %}
-    {% include colour.html title="Link hover state" var="colour-link-hover" %}
-    {% include colour.html title="Link visited state" var="colour-link-visited" %}
-    {% include colour.html title="Link active state" var="colour-link-active" %}
-    {% include colour.html title="Link focus" var="colour-focus" %}
-    {% include colour.html title="Link focus text" var="colour-link-focus-text" %}
-</ul>
-```
+#### Brand colours
 
-### Inverse links
+Brand colours are taken directly from NICE's brand palette.
 
-For use on a dark background
+| Name | Hex | Swatch |
+| - | - | - |
+| $nice-teal | #228096 | ![#228096](https://via.placeholder.com/70x20/228096/228096.png) |
+| $nice-cream | #f7f4f1 | ![#f7f4f1](https://via.placeholder.com/70x20/f7f4f1/f7f4f1.png) |
+| $nice-blue | #00436c | ![#00436c](https://via.placeholder.com/70x20/00436c/00436c.png) |
+| $white | #fff | ![#fff](https://via.placeholder.com/70x20/fff/fff.png) |
+| $black | #000 | ![#000000](https://via.placeholder.com/70x20/000000/000000.png) |
+| $nice-black | #0e0e0e | ![#0e0e0e](https://via.placeholder.com/70x20/0e0e0e/0e0e0e.png) |
+| $yellow | #ead054 | ![#ead054](https://via.placeholder.com/70x20/ead054/ead054.png) |
+| $nice-teal-tint-1 | #59a0b0 | ![#59a0b0](https://via.placeholder.com/70x20/59a0b0/59a0b0.png) |
+| $nice-teal-tint-2 | #91c0cb | ![#91c0cb](https://via.placeholder.com/70x20/91c0cb/91c0cb.png) |
+| $nice-teal-tint-3 | #c8e0e6 | ![#c8e0e6](https://via.placeholder.com/70x20/c8e0e6/c8e0e6.png) |
+| $nice-blue-tint-1 | #407291 | ![#407291](https://via.placeholder.com/70x20/407291/407291.png) |
+| $nice-blue-tint-2 | #80a1b5 | ![#80a1b5](https://via.placeholder.com/70x20/80a1b5/80a1b5.png) |
+| $nice-blue-tint-3 | #bfd0da | ![#bfd0da](https://via.placeholder.com/70x20/bfd0da/bfd0da.png) |
+| $nice-cream-1 | #ded5ca | ![#ded5ca](https://via.placeholder.com/70x20/ded5ca/ded5ca.png) |
+| $nice-cream-2 | #e6e0d7 | ![#e6e0d7](https://via.placeholder.com/70x20/e6e0d7/e6e0d7.png) |
+| $nice-cream-3 | #eeeae4 | ![#eeeae4](https://via.placeholder.com/70x20/eeeae4/eeeae4.png) |
+| $nice-cream-tint-1 | #fbfaf8 | ![#fbfaf8](https://via.placeholder.com/70x20/fbfaf8/fbfaf8.png) |
+| $black-tint-1 | #404040 | ![#404040](https://via.placeholder.com/70x20/404040/404040.png) |
+| $black-tint-2 | #808080 | ![#808080](https://via.placeholder.com/70x20/808080/808080.png) |
+| $black-tint-3 | #bfbfbf | ![#bfbfbf](https://via.placeholder.com/70x20/bfbfbf/bfbfbf.png) |
 
-```
-<ul class="colour-grid">
-    {% include colour.html title="Inverse link" var="colour-link-inverse" %}
-    {% include colour.html title="Inverse link hover state" var="colour-link-inverse-hover" %}
-    {% include colour.html title="Inverse link visited state" var="colour-link-inverse-visited" %}
-    {% include colour.html title="Inverse link active state" var="colour-link-inverse-active" %}
-    {% include colour.html title="Inverse link focus" var="colour-focus" %}
-    {% include colour.html title="Inverse link focus text" var="colour-link-inverse-focus-text" %}
-</ul>
-```
 
-## Buttons
+#### Custom colours
 
-### Call-to-action
+Custom colours are not contained in the brand palette, but they give us a little more freedom
+to choose suitable colours in situations where none of the brand colours will do.
 
-```
-<ul class="colour-grid">
-    {% include colour.html title="CTA button" var="colour-btn-cta" %}
-    {% include colour.html title="CTA button hover state" var="colour-btn-cta-hover" %}
-    {% include colour.html title="CTA button text" var="colour-btn-cta-text" %}
-</ul>
-```
+| Name | Hex | Swatch |
+| - | - | - |
+| $custom-grey-1 | #adadad | ![#adadad](https://via.placeholder.com/70x20/adadad/adadad.png) |
+| $custom-grey-2 | #d6d6d6 | ![#d6d6d6](https://via.placeholder.com/70x20/d6d6d6/d6d6d6.png) |
+| $custom-grey-3 | #666666 | ![#666666](https://via.placeholder.com/70x20/666666/666666.png) |
+| $custom-blue-1 | #005ea5 | ![#005ea5](https://via.placeholder.com/70x20/005ea5/005ea5.png) |
+| $custom-blue-2 | #003761 | ![#003761](https://via.placeholder.com/70x20/003761/003761.png) |
+| $custom-blue-3 | #3479d0 | ![#3479d0](https://via.placeholder.com/70x20/3479d0/3479d0.png) |
+| $custom-blue-3-tint | #eff4fc | ![#eff4fc](https://via.placeholder.com/70x20/eff4fc/eff4fc.png) |
+| $custom-purple-1 | #4c2c92 | ![#4c2c92](https://via.placeholder.com/70x20/4c2c92/4c2c92.png) |
+| $custom-red-1 | #b50f23 | ![#b50f23](https://via.placeholder.com/70x20/b50f23/b50f23.png) |
+| $custom-red-1-tint | #f9eced | ![#f9eced](https://via.placeholder.com/70x20/f9eced/f9eced.png) |
+| $custom-orange-1 | #dc8a07 | ![#dc8a07](https://via.placeholder.com/70x20/dc8a07/dc8a07.png) |
+| $custom-orange-1-tint | #fbf7f1 | ![#fbf7f1](https://via.placeholder.com/70x20/fbf7f1/fbf7f1.png) |
+| $custom-green-1 | #68c103 | ![#68c103](https://via.placeholder.com/70x20/68c103/68c103.png) |
+| $custom-green-1-tint | #f3faeb | ![#f3faeb](https://via.placeholder.com/70x20/f3faeb/f3faeb.png) |
+| $custom-yellow-shade | #d6ba32 | ![#d6ba32](https://via.placeholder.com/70x20/d6ba32/d6ba32.png) |
+| $custom-yellow-highlight | #fff999 | ![#fff999](https://via.placeholder.com/70x20/fff999/fff999.png) |
+| $custom-teal | #0092a6 | ![#0092a6](https://via.placeholder.com/70x20/0092a6/0092a6.png) |
 
-### Primary
+### Alias tokens
 
-```
-<ul class="colour-grid">
-    {% include colour.html title="Primary button" var="colour-btn-primary" %}
-    {% include colour.html title="Primary button hover state" var="colour-btn-primary-hover" %}
-    {% include colour.html title="Primary button text" var="colour-btn-primary-text" %}
-</ul>
-```
+Alias tokens tell us where the global tokens should be used. They provide meaning and context to a colour, whereas the global tokens only specify the colour itself.
 
-### Secondary
+When updating stylesheets, **always** use alias tokens and **never** use global tokens.
 
-```
-<ul class="colour-grid">
-    {% include colour.html title="Secondary button" var="colour-btn-secondary" %}
-    {% include colour.html title="Secondary button hover state" var="colour-btn-secondary-hover" %}
-    {% include colour.html title="Secondary button text" var="colour-btn-secondary-text" %}
-</ul>
-```
-
-### Light
-
-```
-<ul class="colour-grid">
-    {% include colour.html title="Light button" var="colour-btn-light" %}
-    {% include colour.html title="Light button hover state" var="colour-btn-light-hover" %}
-    {% include colour.html title="Light button text" var="colour-btn-light-text" %}
-</ul>
-```
-
-### Focus state (all buttons)
-
-```
-<ul class="colour-grid">
-    {% include colour.html title="Focus state" var="colour-focus" %}
-</ul>
-```
-
-## Icons
-
-```
-<ul class="colour-grid">
-    {% include colour.html title="Icons" var="colour-icons" %}
-</ul>
-```
-
-## Backgrounds and border
-
-```
-<ul class="colour-grid">
-    {% include colour.html title="Body background" var="colour-body" %}
-    {% include colour.html title="Default (light) panel background" var="colour-panel-default" %}
-    {% include colour.html title="Inverse (dark) panel background" var="colour-panel-inverse" %}
-    {% include colour.html title="Borders" var="colour-border" %}
-</ul>
-```
-
-## Notifications and banners
-
-```
-<ul class="colour-grid">
-    {% include colour.html title="Alpha & beta banner" var="colour-agile-phase" %}
-
-    {% include colour.html title="Error text & border" var="colour-error" %}
-    {% include colour.html title="Error background" var="colour-error-background" %}
-
-    {% include colour.html title="Caution text & border" var="colour-caution" %}
-    {% include colour.html title="Caution background" var="colour-caution-background" %}
-
-    {% include colour.html title="Info text & border" var="colour-info" %}
-    {% include colour.html title="Info background" var="colour-info-background" %}
-
-    {% include colour.html title="Success text & border" var="colour-success" %}
-    {% include colour.html title="Success background" var="colour-success-background" %}
-</ul>
-```
-
-## Guidance colours
-
-```
-<ul class="colour-grid">
-    {% include colour.html title="New guidance" var="colour-guidance-new" %}
-    {% include colour.html title="Updated guidance" var="colour-guidance-updated" %}
-    {% include colour.html title="In consultation guidance" var="colour-guidance-consultation" %}
-</ul>
-```
-
-## Colours in SASS
-
-```
-In our SASS, we have colour variables for both <a href="{{ site.baseurl }}{% link technical/sass/documentation/colours.md %}">the corporate palette and 'semantic' colours</a>. Wherever possible, the semantic variables should be used rather than the corporate palette directly. For example, text should use `color: $colour-text` rather than `color: $colour-rich-black`, panels should use `background: $colour-panel-light` rather than `background: $colour-nice-grey-3;` and so on.
-
-<a href="{{ site.baseurl }}{% link technical/sass/documentation/colours.md %}" class="btn btn--secondary">SASS colour documentation</a>
-```
-
-### SASS example
-
-```
-body {
-    background: $colour-page;
-    colour: $colour-text;
-}
-```
+TODO: Add link to the list of NDS alias tokens.
 
 ## Accessibility
 
-We follow the guidelines for UK government websites and aim to support [W3C’s WCAG 2.0 Guidelines Level AA level](https://www.w3.org/TR/WCAG20/){:target="\_blank"}.
+We follow the guidelines for UK government websites and aim to support [W3C’s WCAG 2.0 Guidelines Level AA level](https://www.w3.org/TR/WCAG20/).
 
 Specifically, this means meeting guideline 1.4. <q>Distinguishable: Make it easier for users to see and hear content including separating foreground from background</q>. These are the most relevant guidelines for colour:
 
@@ -188,7 +103,7 @@ Specifically, this means meeting guideline 1.4. <q>Distinguishable: Make it easi
 	</footer>
 </blockquote>
 
-This guideline is designed for [users who have difficulty perceiving colour](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html#visual-audio-contrast-without-color-65-head){:target="\_blank"}. This may be people with partial sight, colourblindness etc. The W3C describes [how to meet 1.4.1](http://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-without-color){:target="\_blank"} in detail.
+This guideline is designed for [users who have difficulty perceiving colour](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html#visual-audio-contrast-without-color-65-head). This may be people with partial sight, colourblindness etc. The W3C describes [how to meet 1.4.1](http://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-without-color) in detail.
 
 Use other visual cues aside from colour to convey information, states etc. Use elements such as strokes, indicators, patterns, texture, or text to describe actions and content.
 
@@ -208,13 +123,13 @@ Use other visual cues aside from colour to convey information, states etc. Use e
 	</footer>
 </blockquote>
 
-The W3C guidlines [1.4.3 Contrast (Minimum) (AA)](https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-contrast){:target="\_blank"} and [1.4.6 Contrast (Enhanced) (AAA)](https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast7){:target="\_blank"} describe the minimum levels of colour contrast for different sizes of text.
+The W3C guidlines [1.4.3 Contrast (Minimum) (AA)](https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-contrast) and [1.4.6 Contrast (Enhanced) (AAA)](https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast7) describe the minimum levels of colour contrast for different sizes of text.
 
 #### Contrast tools
 
 The NICE colour palette has been designed to meet WCAG 2.0 AA with respect to colour contrast. However, because applications can use colours in their own way, the following tools can be used to test colour contrast:
 
-- [Lea Verou's Contrast Ratio](http://leaverou.github.io/contrast-ratio/){:target="\_blank"} - useful for a quick test of 2 colours
-- [WAVE WebAIM](http://wave.webaim.org/extension/){:target="\_blank"} - general accessibility testing tool that highlights colour contrast issues
-- [HTML_CodeSniffer](http://squizlabs.github.io/HTML_CodeSniffer/){:target="\_blank"} - general accessibility testing tool that highlights colour contrast issues
-- [Accessibility Developer Tools extension for Chrome](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en){:target="\_blank"} - extension for Chrome developer tools to check contrast of any inspected element
+- [Lea Verou's Contrast Ratio](http://leaverou.github.io/contrast-ratio/) - useful for a quick test of 2 colours
+- [WAVE WebAIM](http://wave.webaim.org/extension/) - general accessibility testing tool that highlights colour contrast issues
+- [HTML_CodeSniffer](http://squizlabs.github.io/HTML_CodeSniffer/) - general accessibility testing tool that highlights colour contrast issues
+- [Accessibility Developer Tools extension for Chrome](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en) - extension for Chrome developer tools to check contrast of any inspected element
