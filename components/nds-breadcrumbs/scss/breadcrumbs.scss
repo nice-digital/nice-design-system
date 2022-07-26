@@ -15,19 +15,25 @@
 .breadcrumbs {
   @include typography.font-size(0);
   @include visibility.hide-print;
+  display: flex;
+  flex-flow: row wrap;
   list-style: none;
-  margin: utils.em(spacing.$small 0 spacing.$large);
+  margin: utils.rem(spacing.$small 0 spacing.$large);
   max-width: 100%;
   padding: 0;
 
   &__crumb {
-    display: inline-block;
+    align-items: center;
+    display: flex;
     margin-bottom: 0;
 
     &:before {
       content: glyphs.get-glyph(greater-than);
+      font-family: typography.get-font-family(mono);
       font-size: 80%;
-      margin: utils.em(0 spacing.$x-small);
+      font-weight: bold;
+      line-height: 1;
+      margin: utils.rem(0 spacing.$small);
     }
 
     &:first-child:before {

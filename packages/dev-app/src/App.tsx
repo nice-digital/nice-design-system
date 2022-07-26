@@ -30,6 +30,7 @@ import { PhaseBannerView } from "./views/PhaseBannerView";
 import { ColumnListView } from "./views/ColumnListView";
 import { AZListView } from "./views/AZListView";
 import { AlphabetView } from "./views/AlphabetView";
+import { TypographyView } from "./views/TypographyView";
 import "./App.scss";
 
 const browserHistory = createBrowserHistory();
@@ -121,6 +122,9 @@ class App extends Component {
 						<li>
 							<Link to="/phase-banner">Phase Banner</Link>
 						</li>
+						<li>
+							<Link to="/typography">Typography</Link>
+						</li>
 					</ul>
 				</Container>
 				<hr />
@@ -155,6 +159,7 @@ class App extends Component {
 						path="/enhanced-pagination"
 						component={EnhancedPaginationView}
 					/>
+					<Route path="/typography" component={TypographyView} />
 					<p>
 						Some paragraph content for context. Lorem ipsum dolor sit amet,
 						consectetur adipisicing elit. Consequatur minima molestiae nisi qui,

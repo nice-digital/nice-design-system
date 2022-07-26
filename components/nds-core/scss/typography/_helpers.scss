@@ -44,10 +44,10 @@
   @return map.get($font-map, fs);
 }
 
-/// Gets a numeric line height (in px) from a given scale multiplier.
+/// Gets a numeric line height from a given scale multiplier.
 /// Usually not used directly - the font-size or font mixin is usually used instead.
 /// @param $scale {Integer|Name} The integer ratio or named font-size.
-/// @return {Number} Numeric line-height (in px)
+/// @return {Number} Numeric line-height
 /// @example
 ///   $line-height: get-line-height(2)
 /// @example
@@ -77,10 +77,10 @@
 
   @if $important {
     font-size: utils.rem($font-size) !important;
-    line-height: utils.rem($line-height) !important;
+    line-height: $line-height !important;
   } @else {
     font-size: utils.rem($font-size);
-    line-height: utils.rem($line-height);
+    line-height: $line-height;
   }
 }
 

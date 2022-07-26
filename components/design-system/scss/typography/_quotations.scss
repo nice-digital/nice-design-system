@@ -12,7 +12,7 @@
 /// @since 0.1.0
 .quote {
   @include typography.font-size(lead);
-  border-left: utils.em(spacing.$x-small) solid colours.$quote-left-border;
+  border-left: utils.rem(spacing.$x-small) solid colours.$quote-left-border;
   font-weight: normal;
   margin: utils.rem(spacing.$large 0);
   padding: utils.rem(0 0 0 spacing.$xx-large);

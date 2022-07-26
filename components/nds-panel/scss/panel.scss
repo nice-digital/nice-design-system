@@ -14,8 +14,8 @@
 .panel {
   background: colours.$panel-default-background;
   border: 1px solid colours.$panel-default-border; // To distinguish panel from off-grey body background
-  margin: utils.em(0 0 spacing.$large);
-  padding: utils.em(spacing.$medium);
+  margin: utils.rem(0 0 spacing.$large);
+  padding: utils.rem(spacing.$medium);
 
   > :first-child {
     margin-top: 0;

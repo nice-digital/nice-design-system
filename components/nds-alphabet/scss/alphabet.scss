@@ -16,7 +16,7 @@
   @supports (display: grid) {
     column-gap: utils.rem(spacing.$small);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(4ch, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(3ch, 1fr));
     row-gap: utils.rem(spacing.$small);
 
     &--chunky {
@@ -29,18 +29,10 @@
     font-weight: bold;
     margin: utils.rem(0 spacing.$small spacing.$small 0);
 
-    &--chunky {
-      @include typography.font-size(h4);
-
-      a,
-      span {
-        width: 4.95ch;
-      }
-    }
-
     a,
     span {
       display: block;
+      line-height: 1;
       padding: utils.rem(spacing.$small 0);
       text-align: center;
       width: 3.95ch;
@@ -58,6 +50,16 @@
 
     span {
       color: colours.$alphabet-letter-span;
+    }
+
+    &--chunky {
+      @include typography.font-size(h4);
+
+      a,
+      span {
+        padding: utils.rem(spacing.$medium 0);
+        width: 4.95ch;
+      }
     }
 
     @supports (display: grid) {

@@ -24,8 +24,8 @@
   background: colours.$action-banner-default-background;
   border: 1px solid colours.$action-banner-default-border;
   color: colours.$text-inverse;
-  margin: utils.em(0 0 spacing.$large);
-  padding: utils.em(spacing.$medium 0);
+  margin: utils.rem(0 0 spacing.$large);
+  padding: utils.rem(spacing.$medium 0);
   position: relative;
 
   &__container {
@@ -33,13 +33,13 @@
   }
 
   &__text {
-    margin-bottom: utils.em(spacing.$medium);
+    margin-bottom: utils.rem(spacing.$medium);
   }
 
   &__title {
     @include typography.font-size(3);
     color: colours.$text-inverse;
-    margin: utils.em(0 0 spacing.$x-small);
+    margin: utils.rem(0 0 spacing.$x-small);
   }
 
   &__intro {

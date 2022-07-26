@@ -9,7 +9,7 @@
 @use '@nice-digital/nds-core/scss/utils';
 
 $button-shadow-colour: rgb(0 0 0 / 20%);
-$button-border-radius: utils.em(3px);
+$button-border-radius: utils.rem(3px);
 
 /// Button
 /// @since 0.1.0
@@ -17,17 +17,17 @@ $button-border-radius: utils.em(3px);
   @include typography.font-size(0);
   appearance: none;
   background: colours.$btn-primary;
-  border: utils.em(1px) solid colours.$btn-primary-text;
+  border: utils.rem(1px) solid colours.$btn-primary-text;
   border-radius: $button-border-radius;
-  box-shadow: 0 utils.em(3px) utils.em(6px) 0 $button-shadow-colour;
+  box-shadow: 0 utils.rem(3px) utils.rem(6px) 0 $button-shadow-colour;
   color: colours.$btn-primary-text;
   cursor: pointer;
   display: inline-block;
   font-family: inherit;
-  margin: utils.em(
+  margin: utils.rem(
     0 spacing.$small spacing.$small -4px
   ); // Negative left margin to combat inline-block gaps
-  padding: utils.em(spacing.$small spacing.$medium);
+  padding: utils.rem(spacing.$small spacing.$medium);
   position: relative;
   text-align: left;
   text-decoration: none !important;
@@ -47,7 +47,7 @@ $button-border-radius: utils.em(3px);
 
   &:hover {
     background: colours.$btn-primary-hover;
-    box-shadow: 0 utils.em(5px) utils.em(8px) 0 $button-shadow-colour;
+    box-shadow: 0 utils.rem(5px) utils.rem(8px) 0 $button-shadow-colour;
     color: colours.$btn-primary-text;
     text-decoration: none;
   }
@@ -62,7 +62,7 @@ $button-border-radius: utils.em(3px);
   &:active {
     background: colours.$btn-primary-hover;
     text-decoration: none;
-    top: utils.em(2px);
+    top: utils.rem(2px);
   }
 
   // Disabled button styles
@@ -84,7 +84,7 @@ $button-border-radius: utils.em(3px);
 /// @since 0.2.0
 .btn--cta {
   background: colours.$btn-cta;
-  border: utils.em(1px) solid colours.$btn-cta-border;
+  border: utils.rem(1px) solid colours.$btn-cta-border;
   box-shadow: 4px 4px 8px $button-shadow-colour;
   color: colours.$btn-cta-text;
 
@@ -111,7 +111,7 @@ $button-border-radius: utils.em(3px);
 /// @since 0.2.0
 .btn--secondary {
   background: colours.$btn-secondary;
-  border: utils.em(1px) solid colours.$btn-secondary-text;
+  border: utils.rem(1px) solid colours.$btn-secondary-text;
   color: colours.$btn-secondary-text;
 
   &:visited {
@@ -136,7 +136,7 @@ $button-border-radius: utils.em(3px);
 /// @since 0.2.0
 .btn--inverse {
   background: colours.$btn-inverse;
-  border: utils.em(1px) solid colours.$btn-inverse-text;
+  border: utils.rem(1px) solid colours.$btn-inverse-text;
   color: colours.$btn-inverse-text !important;
 
   &:visited {

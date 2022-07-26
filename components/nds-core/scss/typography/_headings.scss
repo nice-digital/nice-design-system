@@ -4,68 +4,70 @@
 /// @group Typography
 ////
 
+@mixin -heading-base {
+  clear: both;
+  font-weight: 600;
+  max-width: 66ch;
+}
+
 /// Primary heading. Used for h1 tag but can be used directly
 /// for semantic classes for visual styling.
 /// @since 0.1.0
 @mixin h1 {
+  @include -heading-base;
   @include helpers.font(h1);
-  clear: both;
   font-family: helpers.get-font-family(serif);
-  font-weight: 600;
-  max-width: 66ch;
+}
+
+/// Alternative (smaller) heading 1 style
+/// @since 3.0.0
+@mixin h1-alt {
+  @include -heading-base;
+  @include helpers.font(h1-alt);
+  font-family: helpers.get-font-family(serif);
 }
 
 /// Secondary heading. Used for h2 tag but can be used directly
 /// for semantic classes for visual styling.
 /// @since 0.1.0
 @mixin h2 {
+  @include -heading-base;
   @include helpers.font(h2);
-  clear: both;
   font-family: helpers.get-font-family(serif);
-  font-weight: 600;
-  max-width: 66ch;
 }
 
 /// Tertiary heading. Used for h3 tag but can be used directly
 /// for semantic classes for visual styling.
 /// @since 0.1.0
 @mixin h3 {
+  @include -heading-base;
   @include helpers.font(h3);
-  clear: both;
   font-family: helpers.get-font-family(serif);
-  font-weight: 600;
-  max-width: 66ch;
 }
 
 /// Fourth level heading. Used for h4 tag but can be used directly
 /// for semantic classes for visual styling.
 /// @since 0.1.0
 @mixin h4 {
+  @include -heading-base;
   @include helpers.font(h4);
-  clear: both;
   font-family: helpers.get-font-family(serif);
-  font-weight: 600;
-  max-width: 66ch;
 }
 
 /// Fifth level heading. Used for h5 tag but can be used directly
 /// for semantic classes for visual styling.
 /// @since 0.1.0
 @mixin h5 {
+  @include -heading-base;
   @include helpers.font(h5);
-  clear: both;
   font-family: helpers.get-font-family(sans);
-  font-weight: 700;
-  max-width: 66ch;
 }
 
 /// Sixth level heading. Used for h6 tag but can be used directly
 /// for semantic classes for visual styling.
 /// @since 0.1.0
 @mixin h6 {
+  @include -heading-base;
   @include helpers.font(h6);
-  clear: both;
   font-family: helpers.get-font-family(sans);
-  font-weight: 700;
-  max-width: 66ch;
 }

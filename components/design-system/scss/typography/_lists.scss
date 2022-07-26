@@ -104,7 +104,7 @@ ol {
       border-left: 1px solid colours.$icons;
       content: glyphs.get-glyph(zero-width-space);
       display: inline-block;
-      margin: utils.em(0 spacing.$small);
+      margin: utils.rem(0 spacing.$small);
       overflow: hidden;
       text-indent: -99px;
       vertical-align: middle;

@@ -10,7 +10,7 @@
 @use '@nice-digital/nds-core/scss/typography';
 @use '@nice-digital/nds-core/scss/utils';
 
-$tag-border-radius: utils.em(spacing.$xx-small);
+$tag-border-radius: utils.rem(spacing.$xx-small);
 
 /// Tag component. Used for labelling items in lists
 /// and also used within alpha/beta phase banners.
@@ -39,7 +39,7 @@ $tag-border-radius: utils.em(spacing.$xx-small);
   display: inline-flex;
   font-weight: normal;
   margin: utils.rem(0 0 spacing.$x-small 0);
-  padding: utils.em(0 spacing.$x-small);
+  padding: utils.rem(0 spacing.$x-small);
   position: relative;
   text-decoration: none;
   vertical-align: baseline;
@@ -47,7 +47,7 @@ $tag-border-radius: utils.em(spacing.$xx-small);
   &--impact {
     font-weight: 600;
     letter-spacing: 1px;
-    padding: utils.em(spacing.$xx-small spacing.$small);
+    padding: utils.rem(spacing.$xx-small spacing.$small);
     text-transform: uppercase;
   }
 
@@ -165,7 +165,7 @@ $tag-border-radius: utils.em(spacing.$xx-small);
     }
 
     &:active {
-      top: utils.em(spacing.$xx-small);
+      top: utils.rem(spacing.$xx-small);
     }
   }
 

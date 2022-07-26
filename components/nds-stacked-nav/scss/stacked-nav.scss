@@ -17,7 +17,7 @@
   @include visibility.hide-print;
   background: colours.$stacked-nav-background;
   border: 1px solid colours.$border;
-  margin: utils.em(0 0 spacing.$large);
+  margin: utils.rem(0 0 spacing.$large);
 
   // The title nav link
   &__root {
@@ -35,7 +35,7 @@
     }
 
     &--no-link {
-      padding: utils.em(spacing.$small);
+      padding: utils.rem(spacing.$small);
     }
   }
 
@@ -67,7 +67,7 @@
   a {
     color: colours.$link;
     display: block;
-    padding: utils.em(spacing.$small);
+    padding: utils.rem(spacing.$small);
     position: relative;
     text-decoration: none;
 
@@ -84,7 +84,7 @@
         left: 0;
         position: absolute;
         top: 0;
-        width: utils.em(spacing.$x-small);
+        width: utils.rem(spacing.$x-small);
       }
     }
 

@@ -41,7 +41,6 @@
     &--count {
       border: 1px solid transparent;
       display: block;
-      line-height: 1.15;
       padding: utils.rem(spacing.$medium);
       @include media-queries.mq($from: md) {
         display: none !important;

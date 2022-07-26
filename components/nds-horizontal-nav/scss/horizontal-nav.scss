@@ -53,7 +53,7 @@
 
   &__link {
     display: block;
-    line-height: 1em;
+    line-height: 1;
     margin-bottom: -1px; // to ensure there's no rendered gap between the bottom border and the border across the page
     padding: utils.rem(spacing.$medium);
     text-decoration: none;

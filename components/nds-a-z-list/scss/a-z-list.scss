@@ -17,7 +17,8 @@
     @include typography.font-size(h4);
     background: colours.$a-z-list-heading-background;
     border: 1px solid colours.$border;
-    font-weight: 900;
+    font-family: typography.get-font-family(sans);
+    font-weight: 600;
     margin: 0;
     max-width: 100%;
     padding: utils.rem(spacing.$small spacing.$medium);

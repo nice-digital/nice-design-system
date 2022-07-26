@@ -47,7 +47,7 @@
 ///   </div>
 /// @since 0.1.0
 .tabs {
-  margin: utils.em(0 0 spacing.$large);
+  margin: utils.rem(0 0 spacing.$large);
 
   // The list of tabs
   &__list {
@@ -81,7 +81,7 @@
     cursor: pointer;
     display: block;
     margin-bottom: utils.rem(spacing.$small);
-    padding: utils.em(spacing.$small spacing.$small);
+    padding: utils.rem(spacing.$small spacing.$small);
     position: relative;
 
     &:focus {
@@ -101,7 +101,7 @@
         // The -1px is to over the grey border round the tab
         background: colours.$icons;
         content: '';
-        height: utils.em(spacing.$x-small);
+        height: utils.rem(spacing.$x-small);
         left: -1px;
         position: absolute;
         right: -1px;
@@ -117,11 +117,11 @@
     @include media-queries.mq($from: sm) {
       border-bottom: none;
       margin-bottom: 0;
-      padding: utils.em(spacing.$medium spacing.$small);
+      padding: utils.rem(spacing.$medium spacing.$small);
     }
 
     @include media-queries.mq($from: md) {
-      padding: utils.em(spacing.$medium);
+      padding: utils.rem(spacing.$medium);
     }
   }
 
@@ -140,7 +140,7 @@
   // An individual tab content pane
   &__pane {
     background: colours.$tab-pane;
-    margin-bottom: utils.em(spacing.$medium);
+    margin-bottom: utils.rem(spacing.$medium);
     padding: utils.rem(spacing.$medium);
 
     // Assume tabs will stack if no JS is available

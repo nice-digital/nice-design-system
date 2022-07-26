@@ -67,7 +67,7 @@
         &:after {
           background: colours.$icons;
           content: glyphs.get-glyph(zero-width-space);
-          margin: utils.em(0 spacing.$small);
+          margin: utils.rem(0 spacing.$small);
           width: 1px;
         }
 

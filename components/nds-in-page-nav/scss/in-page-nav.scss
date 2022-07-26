@@ -22,7 +22,7 @@
   &__list {
     list-style: disc;
     margin: 0;
-    padding-left: utils.em(spacing.$medium + spacing.$xx-small);
+    padding-left: utils.rem(spacing.$medium + spacing.$xx-small);
 
     .in-page-nav__list {
       list-style: circle;

@@ -11,6 +11,7 @@
 html {
   box-sizing: border-box;
   font-size: utils.rem(typography.$root-font-size-min);
+  line-height: typography.$base-line-height;
 
   // See https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
   *,
@@ -55,7 +56,7 @@ body {
   color: colours.$text;
   font-family: typography.get-font-family(sans);
   font-style: normal;
-  line-height: utils.rem(typography.$base-line-height);
+  font-variant-ligatures: none;
   overflow-x: hidden;
   text-rendering: optimizelegibility;
 }
@@ -67,8 +68,8 @@ img {
 hr {
   background: 0;
   border: 0;
-  border-top: utils.em(1px) solid colours.$border;
-  margin: utils.em(spacing.$large 0);
+  border-top: utils.rem(1px) solid colours.$border;
+  margin: utils.rem(spacing.$large 0);
   padding: 0;
 }
 
@@ -84,12 +85,12 @@ p,
 code {
   background: colours.$code-background;
   border: 1px solid colours.$border;
-  border-radius: utils.em(spacing.$xx-small);
+  border-radius: utils.rem(spacing.$xx-small);
   color: colours.$text;
   display: inline-block;
   font-family: typography.get-font-family(mono);
-  margin: utils.em(0 0 spacing.$xx-small);
-  padding: utils.em(0 spacing.$x-small);
+  margin: utils.rem(0 0 spacing.$xx-small);
+  padding: utils.rem(0 spacing.$x-small);
 
   pre & {
     background: transparent;
@@ -102,7 +103,7 @@ code {
 mark,
 .mark {
   background-color: colours.$mark;
-  padding: utils.em(0 spacing.$x-small);
+  padding: utils.rem(0 spacing.$x-small);
 }
 
 /// Small
