@@ -40,6 +40,10 @@
   &__heading {
     @include typography.font-size(h1);
     margin: utils.rem(0 0 spacing.$small 0);
+
+    &--alt {
+      @include typography.font-size(h1-alt);
+    }
   }
 
   &__lead {

@@ -4,11 +4,23 @@ import PropTypes from "prop-types";
 import "../scss/page-header.scss";
 
 export const PageHeader = (props) => {
-	const { heading, lead, metadata, cta, preheading, ...rest } = props;
+	const {
+		heading,
+		useAltHeading = false,
+		lead,
+		metadata,
+		cta,
+		preheading,
+		...rest
+	} = props;
 
 	return (
 		<div className="page-header" {...rest}>
-			<h1 className="page-header__heading">
+			<h1
+				className={`page-header__heading ${
+					useAltHeading ? "page-header__heading--alt" : ""
+				}`}
+			>
 				{preheading && (
 					<span className="page-header__pre-heading">{preheading}</span>
 				)}
@@ -35,6 +47,7 @@ PageHeader.propTypes = {
 		PropTypes.arrayOf(PropTypes.node),
 		PropTypes.node
 	]).isRequired,
+	useAltHeading: PropTypes.bool,
 	lead: PropTypes.oneOfType([
 		PropTypes.arrayOf(PropTypes.node),
 		PropTypes.node
