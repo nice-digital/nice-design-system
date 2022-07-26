@@ -12,7 +12,6 @@ exports[`Previous & Next should match snapshot with both links supplied 1`] = `
       elementType={
         Object {
           "$$typeof": Symbol(react.forward_ref),
-          "displayName": "Link",
           "propTypes": Object {
             "innerRef": [Function],
             "onClick": [Function],
