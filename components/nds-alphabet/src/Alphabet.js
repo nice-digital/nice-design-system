@@ -92,11 +92,9 @@ const Link = ({
 	};
 
 	return (
-		<span className="alphabet__link-wrapper">
-			<ElementType aria-label={ariaLabel} {...linkProps}>
-				{text}
-			</ElementType>{" "}
-		</span>
+		<ElementType aria-label={ariaLabel} {...linkProps}>
+			{text}
+		</ElementType>
 	);
 };
 

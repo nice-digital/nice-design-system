@@ -3,8 +3,12 @@ import { Alphabet, Letter } from "@nice-digital/nds-alphabet";
 
 export const AlphabetView = () => {
 	const allLetters = "abcdefghijklmnopqrstuvwxyz".split("");
-	const letterElements = allLetters.map(letter => (
-		<Letter key={letter} to={`#${letter}`} label={`Letter ${letter}`}>
+	const letterElements = allLetters.map((letter) => (
+		<Letter
+			key={letter}
+			to={["j", "q", "x"].includes(letter) ? "" : `#${letter}`}
+			label={`Letter ${letter}`}
+		>
 			{letter.toUpperCase()}
 		</Letter>
 	));
@@ -24,7 +28,7 @@ export const AlphabetView = () => {
 			<Alphabet chunky>{letterElements}</Alphabet>
 			<h2>No links</h2>
 			<Alphabet>
-				{allLetters.map(letter => (
+				{allLetters.map((letter) => (
 					<Letter key={letter} label={`Letter ${letter}`}>
 						{letter.toUpperCase()}
 					</Letter>
@@ -32,7 +36,7 @@ export const AlphabetView = () => {
 			</Alphabet>
 			<h2>Custom link type</h2>
 			<Alphabet aria-label="test-label">
-				{allLetters.map(letter => (
+				{allLetters.map((letter) => (
 					<Letter
 						key={letter}
 						elementType={FakeLink}

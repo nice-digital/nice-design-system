@@ -20,7 +20,9 @@
     row-gap: utils.rem(spacing.$small);
 
     &--chunky {
+      column-gap: utils.rem(spacing.$medium);
       grid-template-columns: repeat(auto-fit, minmax(6ch, 1fr));
+      row-gap: utils.rem(spacing.$medium);
     }
   }
 
@@ -41,6 +43,7 @@
     a {
       background: colours.$alphabet-letter-background;
       border: 1px solid colours.$border;
+      border-radius: utils.rem(spacing.$xx-small);
       text-decoration: none;
 
       &:hover {
@@ -63,6 +66,7 @@
     }
 
     @supports (display: grid) {
+      display: block;
       margin: 0;
 
       a,
