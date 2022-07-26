@@ -100,7 +100,7 @@ Any additional props will be spread across the component container.
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-full-bleed/scss/full-bleed";
+@forward '@nice-digital/nds-full-bleed/scss/full-bleed';
 ```
 
 ### HTML

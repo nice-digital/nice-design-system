@@ -176,7 +176,7 @@ Any additional props are spread on to the `li` element, useful for accessibility
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-stacked-nav/scss/stacked-nav";
+@forward '@nice-digital/nds-stacked-nav/scss/stacked-nav';
 ```
 
 ### HTML

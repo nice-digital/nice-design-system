@@ -204,7 +204,7 @@ Other props will be cascaded to the containing span.
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-tag/scss/tag";
+@forward '@nice-digital/nds-tag/scss/tag';
 ```
 
 ### HTML

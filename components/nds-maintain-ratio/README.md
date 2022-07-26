@@ -84,7 +84,7 @@ The content to maintain the ratio of. Expects, but isn't limited to, a single el
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-maintain-ratio/scss/maintain-ratio";
+@forward '@nice-digital/nds-maintain-ratio/scss/maintain-ratio';
 ```
 
 ### HTML

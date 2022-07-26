@@ -59,7 +59,7 @@ The styling to apply to the alert box. Defaults to `info` if not supplied. Can b
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-alert/scss/alert";
+@forward '@nice-digital/nds-alert/scss/alert';
 ```
 
 ### HTML

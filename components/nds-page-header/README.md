@@ -109,7 +109,7 @@ const CtaButton = <button onclick={()=>false}>
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-page-header/scss/page-header";
+@forward '@nice-digital/nds-page-header/scss/page-header';
 ```
 
 #### HTML

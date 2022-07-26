@@ -129,7 +129,7 @@ Render styled error text below the legend and above the inputs. Use the `error` 
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-form-group/scss/form-group";
+@forward '@nice-digital/nds-form-group/scss/form-group';
 ```
 
 ### HTML

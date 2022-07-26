@@ -108,7 +108,7 @@ Any additional props are spread on to the `nav` element, useful for accessibilit
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-enhanced-pagination/scss/enhanced-pagination";
+@forward '@nice-digital/nds-enhanced-pagination/scss/enhanced-pagination';
 ```
 
 ### HTML

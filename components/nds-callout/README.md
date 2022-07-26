@@ -129,7 +129,7 @@ Any additional props will be spread across the surrounding `div`.
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-callout/scss/callout";
+@forward '@nice-digital/nds-callout/scss/callout';
 ```
 
 ### HTML

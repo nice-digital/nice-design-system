@@ -170,7 +170,7 @@ By default the key side of the key-value pairs of metadata are visually hidden b
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-card/scss/card";
+@forward '@nice-digital/nds-card/scss/card';
 ```
 
 ### HTML

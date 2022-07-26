@@ -132,7 +132,7 @@ Any additional props are spread on to the `li` element, useful for accessibility
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-horizontal-nav/scss/horizontal-nav";
+@forward '@nice-digital/nds-horizontal-nav/scss/horizontal-nav';
 ```
 
 ### HTML

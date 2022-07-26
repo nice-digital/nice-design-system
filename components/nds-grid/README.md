@@ -167,7 +167,7 @@ A custom tag type for the grid item. Useful if semantically your grid is a `ul` 
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-grid/scss/grid";
+@forward '@nice-digital/nds-grid/scss/grid';
 ```
 
 ### HTML

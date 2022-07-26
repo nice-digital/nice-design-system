@@ -84,7 +84,7 @@ The method of activating the link. By default a link is an anchor with `href` at
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-simple-pagination/scss/simple-pagination";
+@forward '@nice-digital/nds-simple-pagination/scss/simple-pagination';
 ```
 
 ### HTML

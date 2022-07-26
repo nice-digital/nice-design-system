@@ -67,7 +67,7 @@ Additional CSS classes to apply to the panel, e.g. `mt--0` to remove the top mar
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-panel/scss/panel";
+@forward '@nice-digital/nds-panel/scss/panel';
 ```
 
 ### HTML

@@ -105,13 +105,19 @@ The variables are:
 These SASS variables should be used in custom components to ensure consistent spacing:
 
 ```
-.component {
-    border-top: core.em(core.$xx-small) solid core.$colour-border;
-    margin: core.rem(core.$medium 0 core.$large);
-    padding: core.rem(core.$medium);
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/media-queries';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
 
-    @include core.mq($from: md) {
-        margin: core.rem(core.$large 0);
+.component {
+    border-top: utils.rem(spacing.$xx-small) solid spacing.$border;
+    margin: utils.rem(spacing.$medium 0 spacing.$large);
+    padding: utils.rem(spacing.$medium);
+
+    @include media-queries.mq($from: md) {
+        margin: utils.rem(spacing.$large 0);
     }
 }
 ```

@@ -137,7 +137,7 @@ Any additional className will be merged on to the container.
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-hero/scss/hero";
+@forward '@nice-digital/nds-hero/scss/hero';
 ```
 
 ### HTML

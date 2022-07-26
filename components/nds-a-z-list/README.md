@@ -79,7 +79,7 @@ This can be any content at all and will be displayed below the title.
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-a-z-list/scss/a-z-list";
+@forward '@nice-digital/nds-a-z-list/scss/a-z-list';
 ```
 
 ### HTML

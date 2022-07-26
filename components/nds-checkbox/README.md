@@ -141,7 +141,7 @@ const otherProps = {
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-checkbox/scss/checkbox";
+@forward '@nice-digital/nds-checkbox/scss/checkbox';
 ```
 
 ### HTML

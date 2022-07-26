@@ -76,7 +76,7 @@ An option to override the default `max-width` of the container (`$container-max-
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-container/scss/container";
+@forward '@nice-digital/nds-container/scss/container';
 ```
 
 ### HTML
