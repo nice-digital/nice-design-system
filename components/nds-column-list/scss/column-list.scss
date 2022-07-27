@@ -9,9 +9,22 @@
   margin: 0 0 utils.rem(spacing.$large);
   max-width: 100%;
 
+  li {
+    break-inside: avoid;
+    display: block;
+    margin: 0;
+    vertical-align: middle;
+  }
+
+  a {
+    display: block;
+    padding: utils.rem(spacing.$small 0);
+  }
+
   &--boxed {
     background: colours.$column-list-boxed-background;
     border: 1px solid colours.$border;
+    padding: utils.rem(spacing.$x-small 0);
 
     li {
       // Make room for the anchor focus outline
@@ -21,11 +34,6 @@
     a {
       padding: utils.rem(spacing.$x-small 0);
     }
-  }
-
-  li {
-    break-inside: avoid;
-    display: block;
   }
 
   @include media-queries.mq($from: md) {
