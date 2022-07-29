@@ -43,7 +43,6 @@
     a {
       background: colours.$alphabet-letter-background;
       border: 1px solid colours.$border;
-      border-radius: utils.rem(spacing.$xx-small);
       text-decoration: none;
 
       &:hover {
