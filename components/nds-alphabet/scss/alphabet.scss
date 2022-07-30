@@ -3,6 +3,9 @@
 @use '@nice-digital/nds-core/scss/typography';
 @use '@nice-digital/nds-core/scss/utils';
 
+// To meet Success Criterion 2.5.5: Target Size (Enhanced) of WCAG 2.2
+$-minimum-anchor-size: 44px;
+
 .alphabet {
   list-style: none;
   margin: utils.rem(0 0 spacing.$large);
@@ -14,10 +17,12 @@
   }
 
   @supports (display: grid) {
-    column-gap: utils.rem(spacing.$small);
+    column-gap: utils.rem(
+      spacing.$small - 2
+    ); // Hack to get 26 letters to fit across on 1 line on desktop
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(3ch, 1fr));
-    row-gap: utils.rem(spacing.$small);
+    grid-template-columns: repeat(auto-fit, minmax($-minimum-anchor-size, 1fr));
+    row-gap: utils.rem(spacing.$small - 2);
 
     &--chunky {
       column-gap: utils.rem(spacing.$medium);
@@ -33,11 +38,14 @@
 
     a,
     span {
-      display: block;
+      align-items: center;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      justify-content: center;
       line-height: 1;
       padding: utils.rem(spacing.$small 0);
       text-align: center;
-      width: 3.95ch;
+      width: utils.rem($-minimum-anchor-size);
     }
 
     a {
@@ -46,7 +54,7 @@
       text-decoration: none;
 
       &:hover {
-        text-decoration: underline;
+        text-decoration-line: underline;
       }
     }
 
@@ -56,11 +64,12 @@
 
     &--chunky {
       @include typography.font-size(h4);
+      margin: utils.rem(0 spacing.$medium spacing.$medium 0);
 
       a,
       span {
         padding: utils.rem(spacing.$medium 0);
-        width: 4.95ch;
+        width: utils.rem(spacing.$x-large);
       }
     }
 
@@ -70,6 +79,7 @@
 
       a,
       span {
+        padding: 0;
         width: auto;
       }
     }

@@ -59,7 +59,7 @@
     text-decoration: none;
 
     &:hover {
-      text-decoration: underline;
+      text-decoration-line: underline;
     }
 
     &[aria-current='true'] {

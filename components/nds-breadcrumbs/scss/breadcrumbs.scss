@@ -43,11 +43,6 @@
 
   a {
     color: colours.$text;
-    text-decoration: underline;
-
-    &:hover {
-      text-decoration: none;
-    }
 
     &:focus {
       color: colours.$link-focus;

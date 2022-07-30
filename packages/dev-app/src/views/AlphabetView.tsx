@@ -25,7 +25,9 @@ export const AlphabetView = () => {
 			<h2>Standard</h2>
 			<Alphabet>{letterElements}</Alphabet>
 			<h2>Chunky (links on same page)</h2>
-			<Alphabet chunky>{letterElements}</Alphabet>
+			<Alphabet chunky style={{ maxWidth: "560px" }}>
+				{letterElements}
+			</Alphabet>
 			<h2>No links</h2>
 			<Alphabet>
 				{allLetters.map((letter) => (

@@ -1,6 +1,7 @@
 @use 'sass:color';
 @use '../colours';
 @use '../focus';
+@use 'settings';
 
 ////
 /// @group Typography
@@ -20,7 +21,7 @@
 
   &:hover {
     color: colours.$link-hover;
-    text-decoration-thickness: 0.15rem;
+    text-decoration-thickness: settings.$link-hover-text-decoration-thickness;
   }
 
   &:focus {
@@ -45,7 +46,7 @@
 /// Inverse link style for use on an inverse (dark) background
 /// @since 0.3.1
 @mixin link-inverse {
-  color: colours.$link-inverse;
+  color: colours.$link-inverse !important; // Use important here to override conflicting styles in inverse containers
   -webkit-tap-highlight-color: color.adjust(colours.$focus, $alpha: -0.666);
   text-decoration: underline;
   text-decoration-skip-ink: auto;

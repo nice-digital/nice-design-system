@@ -7,7 +7,7 @@ const Cta = () => <Button variant="cta">Hello!</Button>;
 
 const MyBreadcrumbs = (
 	<Breadcrumbs>
-		<Breadcrumb>Hello</Breadcrumb>
+		<Breadcrumb to="/test">Hello</Breadcrumb>
 		<Breadcrumb>There</Breadcrumb>
 	</Breadcrumbs>
 );
