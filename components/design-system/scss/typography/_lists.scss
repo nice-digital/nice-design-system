@@ -15,11 +15,11 @@ ol {
 
   li,
   .list__item {
-    margin-bottom: utils.rem(spacing.$x-small);
+    margin-bottom: utils.rem(spacing.$small);
 
     ul,
     .list {
-      margin-top: utils.rem(spacing.$x-small);
+      margin-top: utils.rem(spacing.$small);
     }
   }
 }
@@ -33,11 +33,11 @@ ol {
 
   li,
   .list__item {
-    margin-bottom: utils.rem(spacing.$x-small);
+    margin-bottom: utils.rem(spacing.$small);
 
     ul,
     .list {
-      margin-top: utils.rem(spacing.$x-small);
+      margin-top: utils.rem(spacing.$small);
     }
   }
 }
@@ -59,11 +59,11 @@ ol {
 .list--loose {
   li,
   .list__item {
-    margin-bottom: utils.rem(spacing.$small);
+    margin-bottom: utils.rem(spacing.$medium);
 
     ul,
     .list--loose {
-      margin-top: utils.rem(spacing.$small);
+      margin-top: utils.rem(spacing.$medium);
     }
   }
 }
