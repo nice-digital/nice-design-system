@@ -12,7 +12,7 @@
 @mixin link-default {
   color: colours.$link;
   -webkit-tap-highlight-color: color.adjust(colours.$focus, $alpha: -0.666);
-  text-decoration: underline;
+  text-decoration-line: underline;
   text-decoration-skip-ink: auto;
 
   &:visited {
@@ -46,9 +46,9 @@
 /// Inverse link style for use on an inverse (dark) background
 /// @since 0.3.1
 @mixin link-inverse {
-  color: colours.$link-inverse !important; // Use important here to override conflicting styles in inverse containers
+  color: colours.$link-inverse;
   -webkit-tap-highlight-color: color.adjust(colours.$focus, $alpha: -0.666);
-  text-decoration: underline;
+  text-decoration-line: underline;
   text-decoration-skip-ink: auto;
 
   &:visited {
