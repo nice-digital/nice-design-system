@@ -26,6 +26,10 @@
   right: calc(50%);
   width: 100vw;
 
+  .breadcrumbs {
+    @include typography.links-inverse;
+  }
+
   &__container {
     @include layout.container;
   }
