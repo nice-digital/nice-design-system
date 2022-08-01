@@ -55,28 +55,24 @@ $tag-border-radius: utils.rem(spacing.$xx-small);
     vertical-align: super;
   }
 
-  // &--alpha {
-  //   background-color: colours.$alpha;
-  // }
+  &--alpha {
+    background-color: colours.$tag-alpha;
+  }
 
-  // &--beta {
-  //   background-color: colours.$beta;
-  // }
+  &--beta {
+    background-color: colours.$tag-beta;
+  }
 
-  // &--live {
-  //   background-color: colours.$live;
-  // }
+  &--new {
+    background: colours.$tag-guidance-new;
+  }
 
-  // &--new {
-  //   background: colours.$guidance-new;
-  // }
+  &--updated {
+    background: colours.$tag-guidance-updated;
+  }
 
-  // &--updated {
-  //   background: colours.$guidance-updated;
-  // }
-
-  // &--consultation {
-  //   background: colours.$guidance-consultation;
+  &--consultation {
+    background: colours.$tag-guidance-consultation;
 
   &--info {
     background: colours.$info;
