@@ -20,7 +20,7 @@ $button-border-radius: utils.rem(3px);
   border: utils.rem(1px) solid colours.$btn-primary-text;
   border-radius: $button-border-radius;
   box-shadow: 0 utils.rem(3px) utils.rem(6px) 0 $button-shadow-colour;
-  color: colours.$btn-primary-text;
+  color: colours.$btn-primary-text !important;
   cursor: pointer;
   display: inline-block;
   font-family: inherit;
@@ -42,13 +42,13 @@ $button-border-radius: utils.rem(3px);
   }
 
   &:visited {
-    color: colours.$btn-primary-text;
+    color: colours.$btn-primary-text !important;
   }
 
   &:hover {
     background: colours.$btn-primary-hover;
     box-shadow: 0 utils.rem(5px) utils.rem(8px) 0 $button-shadow-colour;
-    color: colours.$btn-primary-text;
+    color: colours.$btn-primary-text !important;
     text-decoration: none;
   }
 
@@ -56,11 +56,12 @@ $button-border-radius: utils.rem(3px);
     @include focus.default-focus-style;
     background: colours.$btn-primary;
     border-color: colours.$focus-inverse;
-    color: colours.$btn-primary-text;
+    color: colours.$btn-primary-text !important;
   }
 
   &:active {
     background: colours.$btn-primary-hover;
+    color: colours.$btn-primary-text !important;
     text-decoration: none;
     top: utils.rem(2px);
   }
@@ -86,24 +87,26 @@ $button-border-radius: utils.rem(3px);
   background: colours.$btn-cta;
   border: utils.rem(1px) solid colours.$btn-cta-border;
   box-shadow: 4px 4px 8px $button-shadow-colour;
-  color: colours.$btn-cta-text;
+  color: colours.$btn-cta-text !important;
 
   &:visited {
-    color: colours.$btn-cta-text;
+    color: colours.$btn-cta-text !important;
   }
 
   &:hover {
     background: colours.$btn-cta-hover;
     box-shadow: 4px 4px 8px $button-shadow-colour;
-    color: colours.$btn-cta-text;
+    color: colours.$btn-cta-text !important;
   }
 
   &:focus {
     background: colours.$btn-cta-hover;
+    color: colours.$btn-cta-text !important;
   }
 
   &:active {
     background: colours.$btn-cta-hover;
+    color: colours.$btn-cta-text !important;
   }
 }
 
@@ -112,23 +115,25 @@ $button-border-radius: utils.rem(3px);
 .btn--secondary {
   background: colours.$btn-secondary;
   border: utils.rem(1px) solid colours.$btn-secondary-text;
-  color: colours.$btn-secondary-text;
+  color: colours.$btn-secondary-text !important;
 
   &:visited {
-    color: colours.$btn-secondary-text;
+    color: colours.$btn-secondary-text !important;
   }
 
   &:hover {
     background: colours.$btn-secondary-hover;
-    color: colours.$btn-secondary-text;
+    color: colours.$btn-secondary-text !important;
   }
 
   &:focus {
     background: colours.$btn-secondary-hover;
+    color: colours.$btn-secondary-text !important;
   }
 
   &:active {
     background: colours.$btn-secondary-hover;
+    color: colours.$btn-secondary-text !important;
   }
 }
 
@@ -140,19 +145,21 @@ $button-border-radius: utils.rem(3px);
   color: colours.$btn-inverse-text !important;
 
   &:visited {
-    color: colours.$btn-inverse-text;
+    color: colours.$btn-inverse-text !important;
   }
 
   &:hover {
     background: colours.$btn-inverse-hover;
-    color: colours.$btn-inverse-text;
+    color: colours.$btn-inverse-text !important;
   }
 
   &:focus {
     background: colours.$btn-inverse-hover;
+    color: colours.$btn-inverse-text !important;
   }
 
   &:active {
     background: colours.$btn-inverse-hover;
+    color: colours.$btn-inverse-text !important;
   }
 }
