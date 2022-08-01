@@ -20,7 +20,6 @@ $tag-border-radius: utils.rem(spacing.$xx-small);
 ///   - `--super`  Super aligned, useful for tagging headings
 ///   - `--alpha` Alpha
 ///   - `--beta`  Beta
-///   - `--live`  Live
 ///   - `--new`  New
 ///   - `--updated`  Updated
 ///   - `--consultation`  In consultation
@@ -56,38 +55,48 @@ $tag-border-radius: utils.rem(spacing.$xx-small);
   }
 
   &--alpha {
-    background-color: colours.$tag-alpha;
+    background-color: colours.$tag-alpha-background;
+    color: colours.$tag-alpha-text;
   }
 
   &--beta {
-    background-color: colours.$tag-beta;
+    background-color: colours.$tag-beta-background;
+    color: colours.$tag-beta-text;
   }
 
   &--new {
-    background: colours.$tag-guidance-new;
+    background: colours.$tag-new-background;
+    color: colours.$tag-new-text;
   }
 
   &--updated {
-    background: colours.$tag-guidance-updated;
+    background: colours.$tag-updated-background;
+    color: colours.$tag-updated-text;
   }
 
   &--consultation {
-    background: colours.$tag-guidance-consultation;
+    background: colours.$tag-consultation-background;
+    color: colours.$tag-consultation-text;
+  }
 
   &--info {
-    background: colours.$info;
+    background: colours.$tag-info-background;
+    color: colours.$tag-info-text;
   }
 
   &--caution {
-    background: colours.$caution;
+    background: colours.$tag-caution-background;
+    color: colours.$tag-caution-text;
   }
 
   &--error {
-    background: colours.$error;
+    background: colours.$tag-error-background;
+    color: colours.$tag-error-text;
   }
 
   &--success {
-    background: colours.$success;
+    background: colours.$tag-success-background;
+    color: colours.$tag-success-text;
   }
 
   &--flush {
@@ -98,7 +107,7 @@ $tag-border-radius: utils.rem(spacing.$xx-small);
     @include typography.font-size(-1);
     background: colours.$tag-outline-background;
     border: 1px solid colours.$border;
-    color: colours.$tag-outline;
+    color: colours.$tag-outline-text;
     position: relative;
   }
 
@@ -148,26 +157,9 @@ $tag-border-radius: utils.rem(spacing.$xx-small);
     }
   }
 
-  @include utils.when-is(a) {
-    color: colours.$tag-anchor;
-    text-decoration: underline;
-
-    &:visited {
-      color: colours.$tag-anchor;
-    }
-
-    &:hover {
-      text-decoration: none;
-    }
-
-    &:active {
-      top: utils.rem(spacing.$xx-small);
-    }
-  }
-
   @media print {
     background: none !important;
-    color: colours.$tag-print !important;
+    color: colours.$tag-print-text !important;
     padding: 0 !important;
   }
 }

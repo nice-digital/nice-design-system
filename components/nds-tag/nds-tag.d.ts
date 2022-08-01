@@ -41,11 +41,6 @@ declare module "@nice-digital/nds-tag" {
 		isNew: boolean;
 	}
 
-	interface LiveColour {
-		/** Use tags to denote service phase */
-		live: boolean;
-	}
-
 	interface InfoColour {
 		/** Use tags to denote status of information */
 		info: boolean;
@@ -73,7 +68,6 @@ declare module "@nice-digital/nds-tag" {
 			| BetaColour
 			| ConsultationColour
 			| IsNewColour
-			| LiveColour
 			| InfoColour
 			| ErrorColour
 			| SuccessColour

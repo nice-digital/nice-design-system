@@ -9,7 +9,6 @@ export const Tag = (props) => {
 		children,
 		alpha,
 		beta,
-		live,
 		isNew,
 		updated,
 		consultation,
@@ -28,7 +27,6 @@ export const Tag = (props) => {
 		tag: true,
 		"tag--alpha": alpha,
 		"tag--beta": beta,
-		"tag--live": live,
 		"tag--new": isNew,
 		"tag--updated": updated,
 		"tag--consultation": consultation,
@@ -58,7 +56,6 @@ export const Tag = (props) => {
 Tag.propTypes = {
 	alpha: PropTypes.bool,
 	beta: PropTypes.bool,
-	live: PropTypes.bool,
 	isNew: PropTypes.bool,
 	updated: PropTypes.bool,
 	consultation: PropTypes.bool,
@@ -79,7 +76,6 @@ Tag.propTypes = {
 Tag.variants = {
 	alpha: "alpha",
 	beta: "beta",
-	live: "live",
 	isNew: "isNew",
 	updated: "updated",
 	consultation: "consultation",

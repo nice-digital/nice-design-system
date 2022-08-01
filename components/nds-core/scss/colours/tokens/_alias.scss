@@ -155,14 +155,27 @@ $tab-content: global.$custom-grey-4;
 
 // Tags
 $tag-background: global.$black-tint-1;
-$tag-outline: global.$black-tint-1;
-$tag-outline-background: global.$custom-grey-4;
 $tag-remove: global.$nice-teal;
 $tag-remove-hover-after: global.$nice-black;
-$tag-anchor: global.$white;
-$tag-print: global.$black;
-$tag-alpha: global.$custom-pink;
-$tag-beta: global.$custom-orange-2;
-$tag-guidance-new: global.$custom-purple-1;
-$tag-guidance-updated: global.$nice-blue-tint-1;
-$tag-guidance-consultation: global.$custom-green-2;
+$tag-print-text: global.$black;
+// Tag colours
+$tag-outline-text: global.$black-tint-1;
+$tag-outline-background: global.$custom-grey-4;
+$tag-alpha-background: global.$custom-pink;
+$tag-alpha-text: global.$white;
+$tag-beta-background: global.$custom-orange-2;
+$tag-beta-text: global.$white;
+$tag-caution-background: global.$custom-orange-1;
+$tag-caution-text: global.$black;
+$tag-consultation-background: global.$nice-cream-1;
+$tag-consultation-text: global.$black;
+$tag-error-background: global.$custom-red-1;
+$tag-error-text: global.$custom-red-1-tint;
+$tag-info-background: global.$custom-blue-3;
+$tag-info-text: global.$black;
+$tag-new-background: global.$yellow;
+$tag-new-text: global.$black;
+$tag-success-background: global.$custom-green-1;
+$tag-success-text: global.$black;
+$tag-updated-background: global.$nice-teal-tint-3;
+$tag-updated-text: global.$black;
