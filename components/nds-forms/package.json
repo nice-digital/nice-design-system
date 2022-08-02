@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-forms",
-	"version": "2.0.8-alpha.0",
+	"version": "2.0.9-alpha.0",
 	"description": "DEPRECATED! Use @nice-digital/nds-input and @nice-digital/nds-textarea",
 	"author": "Warren Keith <warren.keith@nice.org.uk>",
 	"homepage": "https://github.com/nice-digital/nice-design-system#readme",
@@ -35,7 +35,7 @@
 	},
 	"gitHead": "b70a1e39df19c1943a000c841aca8d9bb3ef4ff1",
 	"dependencies": {
-		"@nice-digital/nds-input": "^2.0.8-alpha.0",
-		"@nice-digital/nds-textarea": "^2.0.8-alpha.0"
+		"@nice-digital/nds-input": "^2.0.9-alpha.0",
+		"@nice-digital/nds-textarea": "^2.0.9-alpha.0"
 	}
 }

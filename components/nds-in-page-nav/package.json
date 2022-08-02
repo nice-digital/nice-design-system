@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-in-page-nav",
-	"version": "2.0.8-alpha.0",
+	"version": "2.0.9-alpha.0",
 	"description": "In page navigation component for the NICE Design System",
 	"author": "Ian Routledge <ian.routledge@nice.org.uk>",
 	"homepage": "https://design-system.nice.org.uk/",
@@ -34,7 +34,7 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
-		"@nice-digital/nds-core": "^2.0.8-alpha.0",
+		"@nice-digital/nds-core": "^2.0.9-alpha.0",
 		"lodash.throttle": "^4.1.1",
 		"prop-types": "^15.7.2",
 		"slugify": "1.4.7"
