@@ -56,7 +56,15 @@
   // Optional footer
   &__footer {
     border-top: utils.rem(spacing.$xx-small) solid colours.$hero-border;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
     padding: utils.rem(spacing.$medium 0);
+
+    // HACK: To fix any lists that have classes like show--ib applied e.g. find guidance landing page
+    .list--piped {
+      display: flex !important;
+    }
 
     p,
     ul {
