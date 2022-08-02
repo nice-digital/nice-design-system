@@ -99,16 +99,19 @@ class App extends Component {
 							<Link to="/pageheader">Page Header</Link>
 						</li>
 						<li>
+							<Link to="/phase-banner">Phase Banner</Link>
+						</li>
+						<li>
 							<Link to="/prev-next">Previous and Next</Link>
 						</li>
 						<li>
 							<Link to="/print">Print</Link>
 						</li>
 						<li>
-							<Link to="/stackednav">Stacked Nav</Link>
+							<Link to="/simple-pagination">Simple pagination</Link>
 						</li>
 						<li>
-							<Link to="/simple-pagination">Simple pagination</Link>
+							<Link to="/stackednav">Stacked Nav</Link>
 						</li>
 						<li>
 							<Link to="/table">Table</Link>
@@ -120,17 +123,14 @@ class App extends Component {
 							<Link to="/tags">Tags</Link>
 						</li>
 						<li>
-							<Link to="/phase-banner">Phase Banner</Link>
-						</li>
-						<li>
 							<Link to="/typography">Typography</Link>
 						</li>
 					</ul>
 				</Container>
 				<hr />
 				<Container>
-					<Route path="/alert" component={AlertView} />
 					<Route path="/a-z-list" component={AZListView} />
+					<Route path="/alert" component={AlertView} />
 					<Route path="/alphabet" component={AlphabetView} />
 					<Route path="/breadcrumbs" component={BreadcrumbsView} />
 					<Route path="/button" component={ButtonView} />
@@ -143,10 +143,11 @@ class App extends Component {
 					<Route path="/full-bleed" component={FullBleedView} />
 					<Route path="/grid" component={GridView} />
 					<Route path="/hero" component={HeroView} />
-					<Route path="/in-page-nav" component={InPageNavView} />
 					<Route path="/horizontal-nav" component={HorizontalNavView} />
+					<Route path="/in-page-nav" component={InPageNavView} />
 					<Route path="/maintain-ratio" component={MaintainRatioView} />
 					<Route path="/pageheader" component={PageHeaderView} />
+					<Route path="/phase-banner" component={PhaseBannerView} />
 					<Route path="/prev-next" component={PrevNextView} />
 					<Route path="/print" component={PrintView} />
 					<Route path="/simple-pagination" component={SimplePaginationView} />
@@ -154,7 +155,6 @@ class App extends Component {
 					<Route path="/table" component={TableView} />
 					<Route path="/tabs" component={TabsView} />
 					<Route path="/tags" component={TagsView} />
-					<Route path="/phase-banner" component={PhaseBannerView} />
 					<Route
 						path="/enhanced-pagination"
 						component={EnhancedPaginationView}

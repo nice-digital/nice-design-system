@@ -131,7 +131,8 @@
 /// @since 0.1.0
 @mixin list {
   font-feature-settings: 'kern', 'onum', 'liga';
-  margin-left: utils.rem(spacing.$medium);
+  // Avoid bullets being clipped with slight offset
+  margin: utils.rem(0 0 spacing.$medium (spacing.$medium + spacing.$x-small));
   max-width: 66ch;
   padding: 0;
 }

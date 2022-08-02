@@ -27,6 +27,59 @@ export const TypographyView = () => {
 			<ul>
 				<li>A list item!</li>
 				<li>And another</li>
+				<li>
+					With nested list items:
+					<ul>
+						<li>First nested</li>
+						<li>
+							Second nested with a bit more text that should wrap to demonstrate
+							line height and list item spacing
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<h2>Unstyled list</h2>
+			<ul className="list list--unstyled">
+				<li>One potato</li>
+				<li>Two potato</li>
+				<li>Three potato</li>
+			</ul>
+			<h2>Loose list</h2>
+			<ul className="list list--loose">
+				<li>One potato</li>
+				<li>Two potato</li>
+				<li>Three potato</li>
+				<li>
+					More, nested list:
+					<ul>
+						<li>One potato</li>
+						<li>Two potato</li>
+						<li>Three potato</li>
+					</ul>
+				</li>
+			</ul>
+			<h2>Tight list</h2>
+			<ul className="list list--tight">
+				<li>One potato</li>
+				<li>Two potato</li>
+				<li>
+					Three potato, loost list nested:
+					<ul className="list list--loose">
+						<li>One potato</li>
+						<li>Two potato</li>
+						<li>Three potato</li>
+					</ul>
+				</li>
+			</ul>
+			<h2>Piped list</h2>
+			<ul className="list list--piped">
+				<li>
+					<a href="#">One potato</a>
+				</li>
+				<li>
+					<a href="#">Two potato</a>
+				</li>
+				<li>Three potato</li>
 			</ul>
 		</div>
 	);
