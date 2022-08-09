@@ -2,13 +2,13 @@
 	"name": "@nice-digital/design-system-documentation",
 	"private": true,
 	"description": "Documentation for the NICE Design System",
-	"version": "2.0.13-alpha.0",
+	"version": "2.0.14-alpha.0",
 	"author": "Warren Keith <warren.keith@nice.org.uk>",
 	"keywords": [
 		"gatsby"
 	],
 	"dependencies": {
-		"@nice-digital/design-system": "^3.0.13-alpha.0",
+		"@nice-digital/design-system": "^3.0.14-alpha.0",
 		"@nice-digital/icons": "^4.0.1-alpha.0",
 		"@nice-digital/nds-a-z-list": "^2.0.11-alpha.0",
 		"@nice-digital/nds-action-banner": "^2.0.11-alpha.0",
@@ -27,7 +27,7 @@
 		"@nice-digital/nds-form-group": "^2.0.11-alpha.0",
 		"@nice-digital/nds-forms": "^2.0.11-alpha.0",
 		"@nice-digital/nds-full-bleed": "^2.0.11-alpha.0",
-		"@nice-digital/nds-grid": "^2.0.11-alpha.0",
+		"@nice-digital/nds-grid": "^2.0.12-alpha.0",
 		"@nice-digital/nds-hero": "^2.0.12-alpha.0",
 		"@nice-digital/nds-horizontal-nav": "^2.0.11-alpha.0",
 		"@nice-digital/nds-in-page-nav": "^2.0.11-alpha.0",
