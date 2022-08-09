@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-checkbox",
-	"version": "2.0.9-alpha.0",
+	"version": "2.0.10-alpha.0",
 	"description": "Checkbox component for the NICE Design System",
 	"author": "Warren Keith <warren.keith@nice.org.uk>",
 	"homepage": "https://design-system.nice.org.uk/",
@@ -34,7 +34,7 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
-		"@nice-digital/nds-core": "^2.0.9-alpha.0",
+		"@nice-digital/nds-core": "^2.0.10-alpha.0",
 		"classnames": "^2.2.6",
 		"prop-types": "^15.7.2"
 	},
