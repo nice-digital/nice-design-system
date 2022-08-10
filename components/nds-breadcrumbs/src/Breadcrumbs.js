@@ -6,7 +6,7 @@ import "../scss/breadcrumbs.scss";
 
 export { Breadcrumb };
 
-const stringify = data => {
+const stringify = (data) => {
 	if (process.env.NODE_ENV === "production") return JSON.stringify(data);
 	return JSON.stringify(data, null, 2);
 };

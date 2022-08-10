@@ -7,11 +7,11 @@ import { withKnobs, text } from "@storybook/addon-knobs";
 import { Card } from "@nice-digital/nds-card";
 import { Tag } from "@nice-digital/nds-tag";
 
-const ListWrapper = props => (
+const ListWrapper = (props) => (
 	<ul className="list--unstyled">{props.children}</ul>
 );
 
-const FakeLink = props => {
+const FakeLink = (props) => {
 	return (
 		<a className="non-standard-link-type-example" {...props}>
 			{props.children}

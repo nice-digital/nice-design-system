@@ -41,7 +41,7 @@ describe("Horizontal Nav Component", () => {
 	it("should match the default snapshot", () => {
 		const wrapper = shallow(
 			<HorizontalNav>
-				{links.map(link => (
+				{links.map((link) => (
 					<HorizontalNavLink
 						key={link.title}
 						{...link}
@@ -117,14 +117,14 @@ describe("Horizontal Nav Component", () => {
 			const wrapper = mount(
 				<MemoryRouter>
 					<HorizontalNav>
-						{links.map(link => (
+						{links.map((link) => (
 							<HorizontalNavLink key={link.title} {...link} />
 						))}
 					</HorizontalNav>
 				</MemoryRouter>
 			);
 
-			wrapper.find(Link).forEach(item => {
+			wrapper.find(Link).forEach((item) => {
 				expect(item.props()["to"]).toBeTruthy();
 			});
 

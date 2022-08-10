@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../scss/column-list.scss";
 
-export const ColumnList = props => {
+export const ColumnList = (props) => {
 	const { children, plain, className, columns, ...attrs } = props;
 
 	return (

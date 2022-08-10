@@ -13,4 +13,4 @@ packages/storybook/stories/**/*.mdx
 packages/docs/.netlify/state.json
 
 # Generated icons SCSS
-components/icons/scss/_nice-icons.scss
+components/icons/scss/nice-icons.scss

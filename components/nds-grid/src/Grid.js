@@ -5,7 +5,7 @@ import { GridItem } from "./GridItem";
 import "../scss/grid.scss";
 export { GridItem };
 
-export const Grid = props => {
+export const Grid = (props) => {
 	const {
 		children,
 		reverse,

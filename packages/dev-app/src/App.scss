@@ -1,14 +1,15 @@
-@import '~@nice-digital/design-system/scss/nice-design-system';
+@use '@nice-digital/design-system/scss/base';
+@use '@nice-digital/nds-core/scss/colours';
 
 main {
   background: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgb(0 0 0 / 30%);
   position: relative;
 }
 
 .grid-example-item {
-  background: $nds-colour-nice-grey-3;
-  border: 0.25em solid $nds-colour-nice-grey-1;
+  background: colours.$fill-page-background;
+  border: 0.25em solid colours.$border;
   padding: 0.5em;
   text-align: center;
 }

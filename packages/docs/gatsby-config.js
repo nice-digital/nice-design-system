@@ -1,3 +1,10 @@
+const path = require("path");
+
+console.log(
+	"##################################################################"
+);
+console.log(path.resolve(__dirname, "../../components/nds-core/node_modules/"));
+
 module.exports = {
 	siteMetadata: {
 		title: "NICE Design System",

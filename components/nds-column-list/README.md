@@ -86,7 +86,7 @@ Any additional className will be merged on to the containing `<ol>` element.
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-column-list/scss/column-list";
+@forward '@nice-digital/nds-column-list/scss/column-list';
 ```
 
 ### HTML

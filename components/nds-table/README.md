@@ -58,7 +58,7 @@ Any additional classes you would like cascading to the `table` tag.
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-table/scss/table";
+@forward '@nice-digital/nds-table/scss/table';
 ```
 
 ### HTML

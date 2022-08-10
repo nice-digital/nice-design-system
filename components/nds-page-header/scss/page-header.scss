@@ -2,7 +2,13 @@
 /// @group components
 ////
 
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/glyphs';
+@use '@nice-digital/nds-core/scss/media-queries';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
+@use '@nice-digital/nds-core/scss/visibility';
 
 /// Page header component.
 /// Used at the top of a page to contain an h1 and optional
@@ -23,37 +29,39 @@
 ///   </header>
 /// @since 0.4.0
 .page-header {
-  margin: rem(0 0 $nds-spacing-x-large 0);
+  margin: utils.rem(0 0 spacing.$x-large 0);
 
   &__pre-heading {
-    @include nds-font-size(h5);
+    @include typography.font-size(h5);
     display: block;
-    margin: rem(0);
-    text-shadow: 0.5px 0 0 currentColor;
+    margin: utils.rem(0);
   }
 
   &__heading {
-    @include nds-font-size(h1);
-    margin: rem(0 0 $nds-spacing-small 0);
+    @include typography.font-size(h1);
+    margin: utils.rem(0 0 spacing.$small 0);
+
+    &--alt {
+      @include typography.font-size(h1-alt);
+    }
   }
 
   &__lead {
-    @include nds-font-size(lead);
-    margin: rem(0 0 $nds-spacing-small 0);
+    @include typography.font-size(lead);
+    margin: utils.rem(0 0 spacing.$small 0);
   }
 
   &__metadata {
-    @include nds-font-size(lead);
+    @include typography.font-size(lead);
     display: flex;
     flex-direction: column;
     list-style: none;
-    margin: rem(0 0 $nds-spacing-small 0);
+    margin: utils.rem(0 0 spacing.$small 0);
     max-width: none;
     padding: 0;
 
-    @include mq($from: md) {
-      flex-direction: row;
-      flex-wrap: wrap;
+    @include media-queries.mq($from: md) {
+      flex-flow: row wrap;
 
       li {
         display: flex;
@@ -61,9 +69,9 @@
         white-space: nowrap;
 
         &:after {
-          background: $nds-colour-icons;
-          content: nds-get-glyph(zero-width-space);
-          margin: em(0 $nds-spacing-small);
+          background: colours.$icons;
+          content: glyphs.get-glyph(zero-width-space);
+          margin: utils.rem(0 spacing.$small);
           width: 1px;
         }
 
@@ -75,8 +83,8 @@
   }
 
   &__cta {
-    @include nds-hide-print;
-    @include nds-font-size(p);
+    @include visibility.hide-print;
+    @include typography.font-size(p);
     display: block;
     margin: 0;
   }

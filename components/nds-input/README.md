@@ -2,21 +2,22 @@
 
 > Form input component for the NICE Design System
 
-- [`@nice-digital/nds-input`](#nice-digitalnds-input)
-	- [Installation](#installation)
-	- [Usage](#usage)
-		- [React](#react)
-			- [Props](#props)
-				- [defaultValue](#defaultValue)
-				- [error](#error)
-				- [errorMessage](#errormessage)
-				- [hint](#hint)
-				- [inputRef](#inputref)
-				- [label](#label)
-				- [name](#name)
-				- [type](#type)
-		- [SCSS](#scss)
-		- [HTML](#html)
+- [Installation](#installation)
+- [Usage](#usage)
+	- [React](#react)
+		- [Props](#props)
+			- [defaultValue](#defaultvalue)
+			- [error](#error)
+			- [errorMessage](#errormessage)
+			- [hint](#hint)
+			- [inputRef](#inputref)
+			- [label](#label)
+			- [name](#name)
+			- [type](#type)
+			- [className](#classname)
+			- [Anything else](#anything-else)
+	- [SCSS](#scss)
+	- [HTML](#html)
 
 ## Installation
 
@@ -125,7 +126,7 @@ Any other props passed to `<Input />` will be cascaded to the input element.x
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import '~@nice-digital/nds-input/scss/input';
+@forward '@nice-digital/nds-input/scss/input';
 ```
 
 ### HTML

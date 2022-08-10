@@ -2,27 +2,38 @@
 /// @group components
 ////
 
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/glyphs';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
+@use '@nice-digital/nds-core/scss/visibility';
 
 /// breadcrumbs
 /// See https://www.w3.org/WAI/WCAG20/Techniques/working-examples/G65/ex3.html
 /// @since 0.1.0
 .breadcrumbs {
-  @include nds-font-size(0);
-  @include nds-hide-print;
+  @include typography.font-size(0);
+  @include visibility.hide-print;
+  display: flex;
+  flex-flow: row wrap;
   list-style: none;
-  margin: em($nds-spacing-small 0 $nds-spacing-large);
+  margin: utils.rem(spacing.$small 0 spacing.$large);
   max-width: 100%;
   padding: 0;
 
   &__crumb {
-    display: inline-block;
+    align-items: center;
+    display: flex;
     margin-bottom: 0;
 
     &:before {
-      content: nds-get-glyph(greater-than);
+      content: glyphs.get-glyph(greater-than);
+      font-family: typography.get-font-family(mono);
       font-size: 80%;
-      margin: em(0 $nds-spacing-x-small);
+      font-weight: bold;
+      line-height: 1;
+      margin: utils.rem(0 spacing.$small);
     }
 
     &:first-child:before {
@@ -31,19 +42,14 @@
   }
 
   a {
-    color: $nds-colour-text;
-    text-decoration: underline;
-
-    &:hover {
-      text-decoration: none;
-    }
+    color: colours.$text;
 
     &:focus {
-      color: $nds-colour-link-focus-text;
+      color: colours.$link-focus;
     }
 
     &:active {
-      color: $nds-colour-link-active;
+      color: colours.$link-active;
     }
   }
 }

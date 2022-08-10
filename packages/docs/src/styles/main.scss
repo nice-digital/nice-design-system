@@ -1,12 +1,13 @@
 // stylelint-disable no-descending-specificity
 
-$nds-output-glyph-classes: true;
+@use '@nice-digital/design-system/scss/nice-design-system' with (
+  $output-glyph-classes: true
+);
 
-@import '~@nice-digital/design-system/scss/nice-design-system.scss';
-@import 'utils';
+@forward 'utils';
 
 // Styling for the github-style permalink header links
 .permalink-icon svg {
-  height: 1.5rem;
+  height: 1.6rem;
   margin-right: 0.25rem;
 }

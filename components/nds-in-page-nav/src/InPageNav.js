@@ -35,7 +35,7 @@ export const InPageNav = ({
 
 			const headingsToUse = Array.prototype.slice
 				.call(headingsContainerElement.querySelectorAll(headingsSelector))
-				.filter(el => headingstoExclude.indexOf(el) === -1);
+				.filter((el) => headingstoExclude.indexOf(el) === -1);
 
 			setlinkTree(buildLinkTree(headingsToUse));
 		}
@@ -75,7 +75,7 @@ export const InPageNav = ({
 				className="in-page-nav__list"
 				aria-label="Jump to sections on this page"
 			>
-				{linkTree.map(link => (
+				{linkTree.map((link) => (
 					<InPageNavLink
 						key={link.href}
 						link={link}

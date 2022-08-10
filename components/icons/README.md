@@ -14,35 +14,31 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [NICE Icons](#nice-icons)
-	- [Intro](#intro)
-			- [Some background](#some-background)
-		- [Guidance](#guidance)
-	- [Upgrading from 1.x to 2.9](#upgrading-from-1x-to-29)
-		- [What's new in v2.0?](#whats-new-in-v20)
-		- [What's new in v2.3?](#whats-new-in-v23)
-	- [Installation](#installation)
-		- [Include sass](#include-sass)
-			- [Environment variable](#environment-variable)
-			- [includePaths](#includepaths)
-			- [Tilde import](#tilde-import)
-	- [Usage](#usage)
-		- [React](#react)
-			- [Browser support](#browser-support)
-		- [Webfont](#webfont)
-			- [Serving font files](#serving-font-files)
-				- [Express](#express)
-				- [Visual Studio Copy Task](#visual-studio-copy-task)
-				- [Webpack](#webpack)
-			- [Markup](#markup)
-			- [SASS](#sass)
-	- [Development](#development)
-		- [Dependencies](#dependencies)
-		- [Commands](#commands)
-		- [Updating the readme](#updating-the-readme)
-	- [Creating icons](#creating-icons)
-	- [Icons](#icons)
-	- [License](#license)
+- [Intro](#intro)
+    - [Some background](#some-background)
+  - [Guidance](#guidance)
+- [Upgrading from 1.x to 2.9](#upgrading-from-1x-to-29)
+  - [What's new in v2.0?](#whats-new-in-v20)
+  - [What's new in v2.3?](#whats-new-in-v23)
+- [Installation](#installation)
+  - [Include sass](#include-sass)
+- [Usage](#usage)
+  - [React](#react)
+    - [Browser support](#browser-support)
+  - [Webfont](#webfont)
+    - [Serving font files](#serving-font-files)
+      - [Express](#express)
+      - [Visual Studio Copy Task](#visual-studio-copy-task)
+      - [Webpack](#webpack)
+    - [Markup](#markup)
+    - [SASS](#sass)
+- [Development](#development)
+  - [Dependencies](#dependencies)
+  - [Commands](#commands)
+  - [Updating the readme](#updating-the-readme)
+- [Creating icons](#creating-icons)
+- [Icons](#icons)
+- [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -106,6 +102,7 @@ The *node_modules/@nice-digital/icons* package folder will include:
   - ES6 in the *es* folder (with associated d.ts files)
   - TypeScript in the *ts* folder
 - generated icon font (WOFF and WOFF 2) in the *dist* folder
+- generated SCSS in the _scss_ folder
 - JSON file in the *dist* folder with font metadata information.
 
 ### Include sass
@@ -113,29 +110,7 @@ The *node_modules/@nice-digital/icons* package folder will include:
 Import NICE Icons in SASS with:
 
 ```scss
-@import 'nice-icons';
-```
-
-But before you do this, you'll need to include the path *./node_modules/@nice-digital/icons/scss* in your SASS build. There are a few ways to do this:
-
-#### Environment variable
-
-Use the [SASS_PATH environment variable](https://github.com/sass/node-sass/pull/1680) with SASS. For example, in Create React App 2 use the following inside a *.env* file:
-
-```
-SASS_PATH=node_modules/@nice-digital/icons/scss
-```
-
-#### includePaths
-
-Use the [includePaths option from node-sass](https://github.com/sass/node-sass#includepaths) to include the path.
-
-#### Tilde import
-
-Replace the import above with a tilde path if you're using [sass-loader via webpack](https://github.com/webpack-contrib/sass-loader#imports) or [node-sass-tilde-importer](https://www.npmjs.com/package/node-sass-tilde-importer) with node-sass:
-
-```scss
-@import '~@nice-digital/icons/scss/nice-icons';
+@use '@nice-digital/icons/scss/nice-icons';
 ```
 
 ## Usage
@@ -284,9 +259,9 @@ Run `npm start` from the command line for development. This uses fantasticon und
 	- [WOFF](dist/nice-icons.woff)
 	- [WOFF2](dist/nice-icons.woff2)
 - build a [JSON file](dist/nice-icons.json) of metadata for the font
-- build a [SASS file](scss/_nice-icons.scss)
+- build a [SASS file](scss/nice-icons.scss)
 - build [React components](lib) into the lib and es folders
-- create a [demo html](dist/demo.html) - use this for testing new icons.
+- create a [demo html](dist/nice-icons.html) - use this for testing new icons.
 
 ### Updating the readme
 
@@ -357,6 +332,7 @@ Icon | Name | Unicode | HTML | SCSS
 <img src="src/logo.svg" alt="logo" height="50"> | logo | e01a | `<span class="icon icon--logo" aria-hidden="true"></span>` | `@include nice-icon(logo);` 
 <img src="src/logo-full.svg" alt="logo-full" height="50"> | logo-full | e01c | `<span class="icon icon--logo-full" aria-hidden="true"></span>` | `@include nice-icon(logo-full);` 
 <img src="src/logo-name.svg" alt="logo-name" height="50"> | logo-name | e01b | `<span class="icon icon--logo-name" aria-hidden="true"></span>` | `@include nice-icon(logo-name);` 
+<img src="src/logo-portrait.svg" alt="logo-portrait" height="50"> | logo-portrait | f103 | `<span class="icon icon--logo-portrait" aria-hidden="true"></span>` | `@include nice-icon(logo-portrait);` 
 <img src="src/minus.svg" alt="minus" height="50"> | minus | e02a | `<span class="icon icon--minus" aria-hidden="true"></span>` | `@include nice-icon(minus);` 
 <img src="src/pathways.svg" alt="pathways" height="50"> | pathways | e005 | `<span class="icon icon--pathways" aria-hidden="true"></span>` | `@include nice-icon(pathways);` 
 <img src="src/play.svg" alt="play" height="50"> | play | e028 | `<span class="icon icon--play" aria-hidden="true"></span>` | `@include nice-icon(play);` 

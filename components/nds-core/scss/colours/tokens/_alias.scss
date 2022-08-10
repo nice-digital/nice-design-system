@@ -1,0 +1,181 @@
+@use 'global';
+
+// Text, links, focus
+$text: global.$nice-black;
+$text-inverse: global.$white;
+$link: global.$custom-blue-1;
+$link-hover: global.$custom-blue-2;
+$link-visited: global.$custom-purple-1;
+$link-active: global.$nice-black;
+$link-focus: global.$custom-blue-1;
+$link-inverse: global.$white;
+$link-inverse-hover: global.$custom-blue-3-tint;
+$link-inverse-visited: global.$white;
+$link-inverse-active: global.$custom-blue-3-tint;
+$link-inverse-focus: global.$white;
+$code-background: global.$custom-grey-4;
+$mark: global.$custom-yellow-highlight;
+$focus: global.$custom-teal;
+$focus-inverse: global.$white;
+$text-print: global.$black;
+
+// Buttons
+$btn-cta: global.$yellow;
+$btn-cta-hover: global.$custom-yellow-shade;
+$btn-cta-text: global.$nice-black;
+$btn-cta-border: global.$white;
+$btn-primary: global.$black-tint-1;
+$btn-primary-hover: global.$nice-black;
+$btn-primary-text: global.$white;
+$btn-secondary: global.$custom-grey-3;
+$btn-secondary-hover: global.$black-tint-1;
+$btn-secondary-text: global.$white;
+$btn-inverse: global.$white;
+$btn-inverse-hover: global.$custom-grey-4;
+$btn-inverse-text: global.$nice-black;
+
+// Borders
+$border: global.$custom-grey-1;
+$border-selected: global.$nice-teal;
+
+// Status
+$error: global.$custom-red-1;
+$error-background: global.$custom-red-1-tint;
+$info: global.$custom-blue-3;
+$info-background: global.$custom-blue-3-tint;
+$caution: global.$custom-orange-1;
+$caution-background: global.$custom-orange-1-tint;
+$success: global.$custom-green-1;
+$success-background: global.$custom-green-1-tint;
+
+// Fills
+$fill-page-background: global.$nice-cream-tint-1;
+
+// Forms
+$form-group-hint: global.$black-tint-1;
+$checkbox: global.$nice-black;
+$checkbox-hint: global.$black-tint-1;
+$radio: global.$nice-black;
+$radio-hint: global.$black-tint-1;
+
+// Components...
+
+// A-Z list
+$a-z-list-heading-background: global.$white;
+
+// Action banner
+$action-banner-default-background: global.$nice-blue;
+$action-banner-default-border: global.$nice-black;
+$action-banner-subtle-background: global.$nice-cream;
+$action-banner-subtle-border: global.$nice-cream;
+
+// Alphabet
+$alphabet-letter-background: global.$white;
+$alphabet-letter-span: global.$custom-grey-3;
+
+// Card
+$card-author: global.$black-tint-1;
+$card-metadata: global.$black-tint-1;
+
+// Callout
+$callout-background: global.$white;
+
+// Column list
+$column-list-boxed-background: global.$white;
+
+// Enhanced pagination
+$enhanced-pagination-current-item-background: global.$custom-grey-2;
+$enhanced-pagination-link-hover-background: global.$white;
+
+// Filters
+$filter-panel-background: global.$custom-grey-4;
+$filter-panel-heading-button-background: global.$custom-grey-2;
+$filter-group-heading-background: global.$custom-grey-2;
+$filter-group-heading-button-background: global.$custom-grey-2;
+$filter-group-heading-button-background-hover: global.$custom-grey-1;
+$filter-option-background: global.$white;
+$filter-option-border: global.$custom-grey-2;
+$filter-option-hover: global.$custom-grey-4;
+$filter-option-hover-border: global.$custom-grey-1;
+$filter-option-text-before-background: global.$white;
+$filter-option-text-before-border: global.$black-tint-1;
+$filter-input-controls-border: global.$custom-grey-2;
+
+// Full bleed
+$full-bleed-background: global.$white;
+$full-bleed-light-background: global.$nice-teal;
+$full-bleed-light-text: global.$white;
+
+// Hero
+$hero-background: global.$nice-blue-tint-1;
+$hero-border: global.$nice-blue-tint-2;
+
+// Horizontal nav
+$horizontal-nav-list-border: global.$nice-black;
+$horizontal-nav-current-link-background: global.$custom-grey-4;
+$horizontal-nav-current-link-border: global.$nice-black;
+$horizontal-nav-current-link: global.$nice-black;
+$horizontal-nav-active-link-mobile: global.$white;
+$horizontal-nav-active-link-mobile-background: global.$nice-teal;
+
+// Icons
+$icons: global.$nice-teal;
+
+// Panels
+$panel-default-background: global.$nice-cream;
+$panel-default-border: global.$custom-grey-2;
+$panel-impact-background: global.$nice-blue;
+$panel-impact-border: global.$nice-blue;
+$panel-impact-alt-background-1: global.$nice-blue;
+$panel-impact-alt-background-2: global.$nice-blue-tint-1;
+$panel-primary-background: global.$white;
+$panel-primary-border: global.$nice-teal-tint-2;
+$panel-inverse-background: global.$black-tint-1;
+
+// Quote
+$quote-left-border: global.$nice-teal;
+
+// Stacked nav
+$stacked-nav-background: global.$white;
+$stacked-nav-active-hint: global.$white;
+$stacked-nav-current-link: global.$custom-grey-4;
+$stacked-nav-current-link-background: global.$nice-teal;
+$stacked-nav-current-link-active: global.$white;
+$stacked-nav-link-hover: global.$custom-grey-2;
+
+// Tables
+$table-heading: global.$white;
+$table-row-odd: global.$nice-cream-tint-1;
+$table-row-even: global.$custom-grey-4;
+
+// Tabs
+$tab-btn-selected: global.$custom-grey-4;
+$tab-pane: global.$custom-grey-4;
+$tab-content: global.$custom-grey-4;
+
+// Tags
+$tag-background: global.$black-tint-1;
+$tag-remove: global.$nice-teal;
+$tag-remove-hover-after: global.$nice-black;
+$tag-print-text: global.$black;
+// Tag colours
+$tag-outline-text: global.$black-tint-1;
+$tag-outline-background: global.$custom-grey-4;
+$tag-alpha-background: global.$custom-pink;
+$tag-alpha-text: global.$white;
+$tag-beta-background: global.$custom-orange-2;
+$tag-beta-text: global.$white;
+$tag-caution-background: global.$custom-orange-1;
+$tag-caution-text: global.$black;
+$tag-consultation-background: global.$nice-cream-1;
+$tag-consultation-text: global.$black;
+$tag-error-background: global.$custom-red-1;
+$tag-error-text: global.$custom-red-1-tint;
+$tag-info-background: global.$custom-blue-3;
+$tag-info-text: global.$black;
+$tag-new-background: global.$yellow;
+$tag-new-text: global.$black;
+$tag-success-background: global.$custom-green-1;
+$tag-success-text: global.$black;
+$tag-updated-background: global.$nice-teal-tint-3;
+$tag-updated-text: global.$black;

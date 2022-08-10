@@ -127,7 +127,7 @@ const otherProps = {
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-radio/scss/radio";
+@forward '@nice-digital/nds-radio/scss/radio';
 ```
 
 ### HTML

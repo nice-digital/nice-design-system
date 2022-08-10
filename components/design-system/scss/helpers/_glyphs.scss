@@ -1,0 +1,25 @@
+@use 'sass:string';
+@use '@nice-digital/nds-core/scss/glyphs';
+
+////
+/// @group helpers
+////
+
+/// Whether to output the classes for the UTF-8 glyphs.
+/// @since 0.2.0
+$output-glyph-classes: false !default;
+
+@if $output-glyph-classes {
+  /// Output a BEM style glyph selector for each glyph in the map.
+  /// E.g. .glyph.glyph--bullet { content: '\2022'; }
+  /// @since 0.1.0
+  .glyph {
+    @each $key, $value in glyphs.$glyphs {
+      &--#{$key} {
+        &:before {
+          content: string.unquote("'\\#{$value}'");
+        }
+      }
+    }
+  }
+}

@@ -2,7 +2,11 @@
 /// @group components
 ////
 
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/media-queries';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
 
 /// Tabbed navigational structure.
 /// Works without JavaScript - the tab buttons disappear and the tab
@@ -43,7 +47,7 @@
 ///   </div>
 /// @since 0.1.0
 .tabs {
-  margin: em(0 0 $nds-spacing-large);
+  margin: utils.rem(0 0 spacing.$large);
 
   // The list of tabs
   &__list {
@@ -68,7 +72,7 @@
 
   // The button/link for the tab itself
   &__tab-btn {
-    @include nds-link-default;
+    @include typography.link-default;
     background: 0;
     border: 0;
     border-bottom: 1px solid transparent;
@@ -76,8 +80,8 @@
     border-right: 1px solid transparent;
     cursor: pointer;
     display: block;
-    margin-bottom: rem($nds-spacing-small);
-    padding: em($nds-spacing-small $nds-spacing-small);
+    margin-bottom: utils.rem(spacing.$small);
+    padding: utils.rem(spacing.$small spacing.$small);
     position: relative;
 
     &:focus {
@@ -86,38 +90,38 @@
     }
 
     &[aria-selected='true'] {
-      background: $nds-colour-nice-grey-3;
-      border-bottom: 1px solid $nds-colour-border;
-      border-left: 1px solid $nds-colour-border;
-      border-right: 1px solid $nds-colour-border;
-      color: $nds-colour-text;
+      background: colours.$tab-btn-selected;
+      border-bottom: 1px solid colours.$border;
+      border-left: 1px solid colours.$border;
+      border-right: 1px solid colours.$border;
+      color: colours.$text;
       text-decoration: none;
 
       &:before {
         // The -1px is to over the grey border round the tab
-        background: $nds-colour-icons;
+        background: colours.$icons;
         content: '';
-        height: em($nds-spacing-x-small);
+        height: utils.rem(spacing.$x-small);
         left: -1px;
         position: absolute;
         right: -1px;
         top: 0;
       }
 
-      @include mq($from: sm) {
+      @include media-queries.mq($from: sm) {
         border-bottom: none;
         margin: 0;
       }
     }
 
-    @include mq($from: sm) {
+    @include media-queries.mq($from: sm) {
       border-bottom: none;
       margin-bottom: 0;
-      padding: em($nds-spacing-medium $nds-spacing-small);
+      padding: utils.rem(spacing.$medium spacing.$small);
     }
 
-    @include mq($from: md) {
-      padding: em($nds-spacing-medium);
+    @include media-queries.mq($from: md) {
+      padding: utils.rem(spacing.$medium);
     }
   }
 
@@ -126,18 +130,18 @@
     clear: both;
 
     .js & {
-      background: $nds-colour-nice-grey-3;
-      border: 1px solid $nds-colour-border;
+      background: colours.$tab-content;
+      border: 1px solid colours.$border;
       clear: both;
-      padding: rem($nds-spacing-medium);
+      padding: utils.rem(spacing.$medium);
     }
   }
 
   // An individual tab content pane
   &__pane {
-    background: $nds-colour-nice-grey-3;
-    margin-bottom: em($nds-spacing-medium);
-    padding: rem($nds-spacing-medium);
+    background: colours.$tab-pane;
+    margin-bottom: utils.rem(spacing.$medium);
+    padding: utils.rem(spacing.$medium);
 
     // Assume tabs will stack if no JS is available
     .js & {

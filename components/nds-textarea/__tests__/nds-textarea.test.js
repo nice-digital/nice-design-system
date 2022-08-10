@@ -32,7 +32,7 @@ describe("@nice-digital/nds-textarea", () => {
 	});
 
 	it("should pass down a ref to the textarea", () => {
-		const myRefFunction = jest.fn(node => node.nodeName);
+		const myRefFunction = jest.fn((node) => node.nodeName);
 		mount(<Textarea {...props} textareaRef={myRefFunction} />);
 		expect(myRefFunction).toReturnWith("TEXTAREA");
 	});

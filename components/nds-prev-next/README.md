@@ -117,7 +117,7 @@ Any additional props are spread on to the containing `div` element, useful for a
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-prev-next/scss/prev-next";
+@forward '@nice-digital/nds-prev-next/scss/prev-next';
 ```
 
 ### HTML

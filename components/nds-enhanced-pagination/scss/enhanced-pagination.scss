@@ -2,7 +2,11 @@
 /// @group components
 ////
 
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/media-queries';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
 
 .pagination {
   // padding: 20px;
@@ -11,8 +15,7 @@
     align-content: center;
     align-items: stretch;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: left;
     line-height: 1;
     list-style: none;
@@ -29,53 +32,56 @@
     margin: 0;
     padding: 0;
     text-align: center;
+
     &--bookend {
       display: block;
       white-space: nowrap;
     }
+
     &--count {
       border: 1px solid transparent;
       display: block;
-      line-height: 1.15;
-      padding: rem($nds-spacing-medium);
-      @include mq($from: $nds-breakpoint-md) {
+      padding: utils.rem(spacing.$medium);
+      @include media-queries.mq($from: md) {
         display: none !important;
       }
     }
+
     &--current {
-      background: $nds-colour-nice-grey-2;
+      background: colours.$enhanced-pagination-current-item-background;
       border: 1px solid transparent;
       font-weight: bold;
     }
-    @include mq($from: $nds-breakpoint-md) {
+
+    @include media-queries.mq($from: md) {
       display: block;
     }
   }
 
   &__inactive {
     display: block;
-    padding: rem($nds-spacing-medium);
+    padding: utils.rem(spacing.$medium);
   }
 
   // The button/link for the tab itself
   &__link {
-    @include nds-link-default;
+    @include typography.link-default;
     background: none;
     border: 1px solid transparent;
     cursor: pointer;
     display: block;
-    padding: rem($nds-spacing-medium);
+    padding: utils.rem(spacing.$medium);
 
     &:hover {
-      background-color: $nds-colour-nice-white;
-      border: 1px solid $nds-colour-focus;
-      color: $nds-colour-text;
+      background-color: colours.$enhanced-pagination-link-hover-background;
+      border: 1px solid colours.$focus;
+      color: colours.$text;
     }
 
     &:focus {
       // Stop focus ring clipping
-      outline-color: $nds-colour-focus;
-      outline-offset: rem(-$nds-spacing-x-small);
+      outline-color: colours.$focus;
+      outline-offset: utils.rem(-(spacing.$x-small));
       z-index: 1;
     }
   }
@@ -83,5 +89,5 @@
 
 // Your pagesActions array is missing an object for a page number that is expected to render
 .page-object-missing {
-  border: 2px solid red;
+  border: 2px solid colours.$error;
 }

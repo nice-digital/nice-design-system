@@ -31,7 +31,7 @@ Then follow the [usage](#usage) steps below:
 
 ## Usage
 
-This package is the 'kitchen sink' package which gives you access to all styles, components and icons. It references [@nice-digital/nds-core](packages/nds-core#readme), [@nice-digital/icons](https://github.com/nice-digital/nice-icons#readme) and all the [component packages](packages).
+This package is the 'kitchen sink' package which gives you access to all styles, components and icons. It references [@nice-digital/nds-core](packages/nds-core#readme), [@nice-digital/icons](https://github.com/nice-digital/nice-icons#readme) and all the [component packages](../).
 
 The installed package contains:
 
@@ -46,35 +46,25 @@ The installed package contains:
 Import the NICE Design System into your application:
 
 ```scss
-@import "~@nice-digital/design-system/scss/nice-design-system";
+@forward '@nice-digital/design-system/scss/nice-design-system';
 ```
 
 This gives you everything: core (mixins, functions, variables, placeholders), CSS resets, icon font, default styles and all components. Visit the [documentation site](https://design-system.nice.org.uk/technical/sass/documentation/) for full details on what's available in the SCSS.
 
-#### Problems with tilde (~) imports?
 
-We use tildes in SCSS import paths, which works out of the box with sass-loader in webpack. Use [node-sass-tilde-importer](https://www.npmjs.com/package/node-sass-tilde-importer) if you're using node-sass directly, or [grunt-sass-tilde-importer](https://www.npmjs.com/package/grunt-sass-tilde-importer).
-
-If you want the design system without all of the components you can install the base styling:
+If you want the design system without all of the components you can install the base styling (CSS resets and global ):
 
 ```scss
-@import "~@nice-digital/design-system/scss/base";
+@forward "@nice-digital/design-system/scss/base";
 ```
 
 You can then start using the SCSS from the NICE Design System, for example:
 
 ```scss
+@use "@nice-digital/nds-core/scss/colours";
+
 .something {
-	color: $colour-nice-teal;
-	margin: rem($spacing-large);
-}
-```
-
-If you want to import the design system into a CSS module you can scope the import globally:
-
-```scss
-:global {
-	@import "~@nice-digital/design-system/scss/nice-design-system.scss";
+	color: colours.$text;
 }
 ```
 

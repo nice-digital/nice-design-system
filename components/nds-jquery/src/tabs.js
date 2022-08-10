@@ -19,8 +19,8 @@ const Defaults = {
 
 // Generate unique id amongst tabs
 // See http://stackoverflow.com/a/20302361
-const uid = (function(i) {
-	return function() {
+const uid = (function (i) {
+	return function () {
 		return "tabs-" + ++i;
 	};
 })(0);
@@ -74,9 +74,7 @@ export default class Tabs {
 
 	/// Gets the 0-based index of the currently selected tab
 	getCurrentIndex() {
-		return this._getTabs()
-			.filter(`.${this.options.tabActiveClass}`)
-			.index();
+		return this._getTabs().filter(`.${this.options.tabActiveClass}`).index();
 	}
 
 	/// Activates a tab with the given index
@@ -167,9 +165,7 @@ export default class Tabs {
 	_handleTabBtnClick(e) {
 		e.preventDefault();
 
-		var index = $(e.currentTarget)
-			.closest(`.${this.options.tabClass}`)
-			.index();
+		var index = $(e.currentTarget).closest(`.${this.options.tabClass}`).index();
 		this.activate(index);
 	}
 
@@ -212,9 +208,7 @@ export default class Tabs {
 				e.preventDefault();
 				e.stopPropagation();
 				this.activate(
-					$(e.currentTarget)
-						.closest(`.${this.options.tabClass}`)
-						.index()
+					$(e.currentTarget).closest(`.${this.options.tabClass}`).index()
 				);
 				break;
 			default:

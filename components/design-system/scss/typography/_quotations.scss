@@ -1,0 +1,49 @@
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/utils';
+@use '@nice-digital/nds-core/scss/glyphs';
+@use '@nice-digital/nds-core/scss/colours';
+
+////
+/// @group Typography
+////
+
+/// Blockquote style
+/// @since 0.1.0
+.quote {
+  @include typography.font-size(lead);
+  border-left: utils.rem(spacing.$x-small) solid colours.$quote-left-border;
+  font-weight: normal;
+  margin: utils.rem(spacing.$large 0);
+  padding: utils.rem(0 0 0 spacing.$xx-large);
+  position: relative;
+
+  &:before {
+    color: colours.$icons;
+    content: glyphs.get-glyph(left-double-quotation-mark);
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 5rem;
+    font-weight: bold;
+    left: 0;
+    line-height: 0.8;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: utils.rem(spacing.$xx-large);
+
+    @media print {
+      color: colours.$text-print;
+    }
+  }
+
+  p {
+    font-size: inherit;
+  }
+
+  footer,
+  cite {
+    @include typography.font-size($scale: 0);
+    font-style: normal;
+  }
+}

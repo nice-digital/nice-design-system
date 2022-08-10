@@ -1,0 +1,29 @@
+/// Extra small break point
+/// @since 0.2.0
+$xs: 400px;
+
+/// 'Small' break point. Roughly portrait tablets.
+/// @since 0.2.0
+$sm: 600px;
+
+/// 'Medium' break point. Roughly landscape tablets.
+/// @since 0.2.0
+$md: 900px;
+
+/// 'Large' break point. Roughly 'dektops'.
+/// @since 0.2.0
+$lg: 1200px;
+
+/// 'Extra large' break point for wide screens
+/// @since 0.2.0
+$xl: 1600px;
+
+@forward 'vendor/mq' with (
+  $breakpoints: (
+    xs: $xs,
+    sm: $sm,
+    md: $md,
+    lg: $lg,
+    xl: $xl
+  )
+);

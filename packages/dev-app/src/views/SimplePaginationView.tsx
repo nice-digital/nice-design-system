@@ -7,8 +7,12 @@ function handleClick(action: string) {
 	alert("clicked! " + action);
 }
 
-const MyCustomHandler = () => {
-	return <button onClick={e => handleClick("next")}>Next</button>;
+const MyCustomHandler = (props: { className?: string }) => {
+	return (
+		<button onClick={e => handleClick("next")} className={props.className}>
+			Next
+		</button>
+	);
 };
 
 export const SimplePaginationView = () => {

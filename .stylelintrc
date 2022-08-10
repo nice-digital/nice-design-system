@@ -1,16 +1,25 @@
 {
-  "extends": ["stylelint-config-standard", "stylelint-prettier/recommended"],
-  "plugins": [
-    "stylelint-scss",
-		"stylelint-order"
-  ],
+	"extends": [
+		"stylelint-config-standard-scss",
+		"stylelint-prettier/recommended"
+	],
+	"plugins": [
+		"stylelint-scss",
+		"stylelint-order",
+		"stylelint-selector-bem-pattern"
+	],
 	"rules": {
+		"string-quotes": "single",
 		"at-rule-no-unknown": null,
+		"scss/operator-no-newline-after": null,
 		"scss/at-rule-no-unknown": true,
 		"block-closing-brace-newline-after": [
 			"always",
 			{
-				"ignoreAtRules": ["if", "else"]
+				"ignoreAtRules": [
+					"if",
+					"else"
+				]
 			}
 		],
 		"selector-pseudo-element-colon-notation": "single",
@@ -38,11 +47,16 @@
 				"hasBlock": true
 			}
 		],
-		"order/properties-alphabetical-order": true
+		"order/properties-alphabetical-order": true,
+		"selector-class-pattern": null,
+		"plugin/selector-bem-pattern": {
+			"preset": "bem"
+		},
+		"scss/double-slash-comment-empty-line-before": null
 	},
-  "ignoreFiles": [
-	  "**/vendor/**/*.scss",
-	  "**/*.md",
-	  "components/icons/templates/nice-icons.tmpl.scss",
-  ]
+	"ignoreFiles": [
+		"**/vendor/**/*.scss",
+		"**/*.md",
+		"components/icons/templates/nice-icons.tmpl.scss"
+	]
 }

@@ -10,7 +10,7 @@
  *
  * @param {string} str The string to trim
  */
-export const trim = function(str) {
+export const trim = function (str) {
 	return str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, "");
 };
 
@@ -23,7 +23,7 @@ export const trim = function(str) {
  * @param      {Object}  scope   The context of the throttled function
  * @return     {Function}  { The throttled function }
  */
-export const throttle = function(fn, threshhold = 100, scope = null) {
+export const throttle = function (fn, threshhold = 100, scope = null) {
 	let last, deferTimer;
 
 	return function throttled() {
@@ -34,7 +34,7 @@ export const throttle = function(fn, threshhold = 100, scope = null) {
 		if (last && now < last + threshhold) {
 			// hold on to it
 			clearTimeout(deferTimer);
-			deferTimer = setTimeout(function() {
+			deferTimer = setTimeout(function () {
 				last = now;
 				fn.apply(context, args);
 			}, threshhold);
@@ -55,7 +55,7 @@ export const throttle = function(fn, threshhold = 100, scope = null) {
  * @param      {Object}  scope  The context for the debounced function
  * @return     {Function}  { The debounced function }
  */
-export const debounce = function(
+export const debounce = function (
 	func,
 	execAsap = false,
 	threshold = 100,
@@ -91,7 +91,7 @@ export const debounce = function(
  *          // returns "a-string-to-transform-and-slugify"
  *          slugify("A (string) to transform & slugify!");
  */
-export const slugify = str => {
+export const slugify = (str) => {
 	return trim(str)
 		.toLowerCase()
 		.replace(/\s+/g, "-") // Replace spaces with -
@@ -120,8 +120,8 @@ export const slugify = str => {
  *          // returns "prefix-1"
  *          utils.nextUniqueId("prefix");
  */
-export const nextUniqueId = (function(i) {
-	return function(prefix = "uid") {
+export const nextUniqueId = (function (i) {
+	return function (prefix = "uid") {
 		return `${prefix}-${++i}`;
 	};
 })(0);
@@ -130,11 +130,11 @@ export const nextUniqueId = (function(i) {
  * CamelCases a  string
  * @param {string} str The string to camel case
  */
-export const camelCase = function(str) {
+export const camelCase = function (str) {
 	str = str.split("-").join(" "); // To support kebab-case
 	// See https://stackoverflow.com/a/2970667/486434
 	return str
-		.replace(/(?:^\w|[A-Z]|\b\w)/g, function(letter, index) {
+		.replace(/(?:^\w|[A-Z]|\b\w)/g, function (letter, index) {
 			return index === 0 ? letter.toLowerCase() : letter.toUpperCase();
 		})
 		.replace(/\s+/g, "");

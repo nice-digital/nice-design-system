@@ -14,7 +14,7 @@ module.exports = {
 		scss: "./templates/scss.hbs"
 	},
 	pathOptions: {
-		scss: "./scss/_nice-icons.scss"
+		scss: "./scss/nice-icons.scss"
 	},
 	codepoints: {
 		// FontAwesome codepoints for backwards compatability

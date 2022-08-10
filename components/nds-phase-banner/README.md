@@ -85,7 +85,7 @@ Any additional props will be spread across the container.
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-phase-banner/scss/phase-banner";
+@forward '@nice-digital/nds-phase-banner/scss/phase-banner';
 ```
 
 ### HTML

@@ -2,9 +2,15 @@
 /// @group components
 ////
 
-@import '~@nice-digital/nds-core/scss/core';
+@use 'sass:color';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/focus';
+@use '@nice-digital/nds-core/scss/glyphs';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
 
-$nds-tag-border-radius: em($nds-spacing-xx-small);
+$tag-border-radius: utils.rem(spacing.$xx-small);
 
 /// Tag component. Used for labelling items in lists
 /// and also used within alpha/beta phase banners.
@@ -14,7 +20,6 @@ $nds-tag-border-radius: em($nds-spacing-xx-small);
 ///   - `--super`  Super aligned, useful for tagging headings
 ///   - `--alpha` Alpha
 ///   - `--beta`  Beta
-///   - `--live`  Live
 ///   - `--new`  New
 ///   - `--updated`  Updated
 ///   - `--consultation`  In consultation
@@ -25,23 +30,23 @@ $nds-tag-border-radius: em($nds-spacing-xx-small);
 ///   - `--error`  Error
 /// @since 0.3.1
 .tag {
-  @include nds-font-size(0);
-  background-color: $nds-colour-nice-dark-grey;
-  border-radius: $nds-tag-border-radius;
-  color: $nds-colour-text-inverse;
-  display: inline-block;
+  @include typography.font-size(0);
+  align-items: center;
+  background-color: colours.$tag-background;
+  border-radius: $tag-border-radius;
+  color: colours.$text-inverse;
+  display: inline-flex;
   font-weight: normal;
-  margin: rem(0 0 $nds-spacing-x-small 0);
-  padding: em(0 $nds-spacing-x-small);
+  margin: utils.rem(0 0 spacing.$x-small 0);
+  padding: utils.rem(0 spacing.$x-small);
   position: relative;
   text-decoration: none;
   vertical-align: baseline;
 
   &--impact {
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 1px;
-    padding: em($nds-spacing-xx-small $nds-spacing-small);
-    text-shadow: 1px 0 0 currentColor;
+    padding: utils.rem(spacing.$xx-small spacing.$small);
     text-transform: uppercase;
   }
 
@@ -50,43 +55,48 @@ $nds-tag-border-radius: em($nds-spacing-xx-small);
   }
 
   &--alpha {
-    background-color: $nds-colour-alpha;
+    background-color: colours.$tag-alpha-background;
+    color: colours.$tag-alpha-text;
   }
 
   &--beta {
-    background-color: $nds-colour-beta;
-  }
-
-  &--live {
-    background-color: $nds-colour-live;
+    background-color: colours.$tag-beta-background;
+    color: colours.$tag-beta-text;
   }
 
   &--new {
-    background: $nds-colour-guidance-new;
+    background: colours.$tag-new-background;
+    color: colours.$tag-new-text;
   }
 
   &--updated {
-    background: $nds-colour-guidance-updated;
+    background: colours.$tag-updated-background;
+    color: colours.$tag-updated-text;
   }
 
   &--consultation {
-    background: $nds-colour-guidance-consultation;
+    background: colours.$tag-consultation-background;
+    color: colours.$tag-consultation-text;
   }
 
   &--info {
-    background: $nds-colour-info;
+    background: colours.$tag-info-background;
+    color: colours.$tag-info-text;
   }
 
   &--caution {
-    background: $nds-colour-caution;
+    background: colours.$tag-caution-background;
+    color: colours.$tag-caution-text;
   }
 
   &--error {
-    background: $nds-colour-error;
+    background: colours.$tag-error-background;
+    color: colours.$tag-error-text;
   }
 
   &--success {
-    background: $nds-colour-success;
+    background: colours.$tag-success-background;
+    color: colours.$tag-success-text;
   }
 
   &--flush {
@@ -94,10 +104,10 @@ $nds-tag-border-radius: em($nds-spacing-xx-small);
   }
 
   &--outline {
-    @include nds-font-size(-1);
-    background: $nds-colour-nice-grey-3;
-    border: 1px solid $nds-colour-border;
-    color: $nds-colour-nice-dark-grey;
+    @include typography.font-size(-1);
+    background: colours.$tag-outline-background;
+    border: 1px solid colours.$border;
+    color: colours.$tag-outline-text;
     position: relative;
   }
 
@@ -105,27 +115,34 @@ $nds-tag-border-radius: em($nds-spacing-xx-small);
     appearance: none;
     background: 0;
     border: 0;
-    color: $nds-colour-nice-teal;
+    color: colours.$tag-remove;
     cursor: pointer;
-    margin-left: rem($nds-spacing-x-small);
+    margin-left: utils.rem(spacing.$x-small);
     padding: 0;
     text-decoration: none;
 
+    &:before {
+      content: glyphs.get-glyph(heavy-multiplication-x);
+      display: block;
+      font-weight: bold;
+      line-height: 1;
+    }
+
     &:focus {
-      @include nds-default-focus-style;
+      @include focus.default-focus-style;
     }
 
     &:visited {
-      color: $nds-colour-nice-teal;
+      color: colours.$tag-remove;
     }
 
     &:hover,
     &:active {
-      color: $nds-colour-text;
+      color: colours.$text;
     }
 
     &:after {
-      border-radius: $nds-tag-border-radius;
+      border-radius: $tag-border-radius;
       content: '';
       display: block;
       height: 100%;
@@ -136,30 +153,13 @@ $nds-tag-border-radius: em($nds-spacing-xx-small);
     }
 
     &:hover:after {
-      background: rgba($nds-colour-nice-black, 0.1);
-    }
-  }
-
-  @include nds-when-is(a) {
-    color: $nds-colour-nice-white;
-    text-decoration: underline;
-
-    &:visited {
-      color: $nds-colour-nice-white;
-    }
-
-    &:hover {
-      text-decoration: none;
-    }
-
-    &:active {
-      top: em($nds-spacing-xx-small);
+      background: color.adjust(colours.$tag-remove-hover-after, $alpha: -0.9);
     }
   }
 
   @media print {
     background: none !important;
-    color: $nds-colour-true-black !important;
+    color: colours.$tag-print-text !important;
     padding: 0 !important;
   }
 }

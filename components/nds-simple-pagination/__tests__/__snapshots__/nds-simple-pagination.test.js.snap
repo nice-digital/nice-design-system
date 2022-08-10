@@ -25,7 +25,6 @@ exports[`Simple Pagination should match snapshot with some default attributes 1`
       elementType={
         Object {
           "$$typeof": Symbol(react.forward_ref),
-          "displayName": "Link",
           "propTypes": Object {
             "innerRef": [Function],
             "onClick": [Function],

@@ -68,7 +68,7 @@ const handleReadFile = (err, readme) => {
  * @param {string} readme The file contents to save
  */
 const saveToFile = (file, readme) => {
-	fs.writeFile(file, readme, err => {
+	fs.writeFile(file, readme, (err) => {
 		if (err) throw err;
 		console.info(`Replaced ${iconNames.length} icons in ${file}`);
 	});

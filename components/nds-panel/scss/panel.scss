@@ -2,40 +2,20 @@
 /// @group components
 ////
 
-@import '~@nice-digital/nds-core/scss/core';
-
-// Default (light) panel background colour
-/// @since 1.0.0
-$nds-colour-panel-default-background: $nds-colour-nice-grey-3;
-
-// Default (light) panel border colour
-/// @since 0.5.2
-$nds-colour-panel-default-border: $nds-colour-nice-grey-2;
-
-// Impact panel background colour
-/// @since 1.0.0
-$nds-colour-panel-impact-background: $nds-colour-nice-blue-3;
-
-// Impact panel border colour
-/// @since 1.0.0
-$nds-colour-panel-impact-border: $nds-colour-nice-blue-2;
-
-// Primary panel background colour
-/// @since 1.0.0
-$nds-colour-panel-primary-background: $nds-colour-nice-white;
-
-// Primary panel border colour
-/// @since 1.0.0
-$nds-colour-panel-primary-border: $nds-colour-nice-ice-teal;
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/focus';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
 
 /// A panel is a container for visually separating content.
 /// Often used within a sidebar.
 /// @since 0.1.0
 .panel {
-  background: $nds-colour-panel-default-background;
-  border: 1px solid $nds-colour-panel-default-border; // To distinguish panel from off-grey body background
-  margin: em(0 0 $nds-spacing-large);
-  padding: em($nds-spacing-medium);
+  background: colours.$panel-default-background;
+  border: 1px solid colours.$panel-default-border; // To distinguish panel from off-grey body background
+  margin: utils.rem(0 0 spacing.$large);
+  padding: utils.rem(spacing.$medium);
 
   > :first-child {
     margin-top: 0;
@@ -52,11 +32,11 @@ $nds-colour-panel-primary-border: $nds-colour-nice-ice-teal;
 /// @require .panel
 /// @since 1.0.0
 .panel--impact {
-  @include nds-links-inverse;
-  @include nds-inverse-button-focus;
-  background: $nds-colour-panel-impact-background;
-  border: 1px solid $nds-colour-panel-impact-border;
-  color: $nds-colour-text-inverse;
+  @include typography.links-inverse;
+  @include focus.inverse-button-focus;
+  background: colours.$panel-impact-background;
+  border: 1px solid colours.$panel-impact-border;
+  color: colours.$text-inverse;
 }
 
 /// Modifier for a primary panel.
@@ -66,25 +46,25 @@ $nds-colour-panel-primary-border: $nds-colour-nice-ice-teal;
 /// @require .panel
 /// @since 1.0.0
 .panel--primary {
-  background: $nds-colour-panel-primary-background;
-  border: 3px solid $nds-colour-panel-primary-border;
+  background: colours.$panel-primary-background;
+  border: 3px solid colours.$panel-primary-border;
 }
 
 .panel--inverse {
-  @include nds-links-inverse;
-  @include nds-inverse-button-focus;
-  background: $nds-colour-nice-teal;
-  color: $nds-colour-text-inverse;
+  @include typography.links-inverse;
+  @include focus.inverse-button-focus;
+  background: colours.$panel-inverse-background;
+  color: colours.$text-inverse;
 }
 
 .panel--impact-alt {
-  @include nds-links-inverse;
-  @include nds-inverse-button-focus;
-  background: $nds-colour-nice-teal;
+  @include typography.links-inverse;
+  @include focus.inverse-button-focus;
+  background: colours.$panel-impact-alt-background-1;
   background: linear-gradient(
     333deg,
-    $nds-colour-nice-teal-3 0%,
-    $nds-colour-nice-teal-1 100%
+    colours.$panel-impact-alt-background-1 0%,
+    colours.$panel-impact-alt-background-2 100%
   );
-  color: $nds-colour-text-inverse;
+  color: colours.$text-inverse;
 }

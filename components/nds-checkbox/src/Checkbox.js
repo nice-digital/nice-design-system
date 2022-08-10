@@ -4,7 +4,7 @@ import classnames from "classnames";
 
 import "../scss/checkbox.scss";
 
-export const Checkbox = props => {
+export const Checkbox = (props) => {
 	const { error, inline, name, label, value, hint, ...rest } = props;
 	if (!value) return null;
 	const unique = name + "_" + value;

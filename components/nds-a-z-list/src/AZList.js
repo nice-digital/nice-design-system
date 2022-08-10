@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../scss/a-z-list.scss";
 
-export const AZList = props => {
+export const AZList = (props) => {
 	const { alphabet: Alphabet, children, className, ...attrs } = props;
 
 	return (
@@ -21,7 +21,7 @@ AZList.propTypes = {
 	className: PropTypes.string
 };
 
-export const AZListItem = props => {
+export const AZListItem = (props) => {
 	const { id, title, children, className, ...attrs } = props;
 
 	const itemId = id || title.replace(" ", "").toLowerCase();

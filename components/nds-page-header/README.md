@@ -41,6 +41,16 @@ The main title that is rendered into a H1 with H1 styling.
 <PageHeader heading="Welcome to the page" />
 ```
 
+#### useAltHeading
+
+- Type: `boolean` (optional)
+
+Whether to use the `h1-alt` alternative (smaller) heading 1 style.
+
+```jsx
+<PageHeader useAltHeading ... />
+```
+
 ##### preheading
 
 - Type: `React.node`
@@ -99,7 +109,7 @@ const CtaButton = <button onclick={()=>false}>
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-page-header/scss/page-header";
+@forward '@nice-digital/nds-page-header/scss/page-header';
 ```
 
 #### HTML
@@ -108,7 +118,7 @@ If you're not using [React](#react), then include the [SCSS as above](#scss) and
 
 ```html
 <div class="page-header">
-	<h1 class="page-header__heading">
+	<h1 class="page-header__heading page-header__heading--alt">
 		<span class="page-header__pre-heading">
 			Systemic lupus erythematosus
 		</span>

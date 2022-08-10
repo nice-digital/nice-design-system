@@ -92,7 +92,7 @@ Any additional props will be spread across the container.
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-in-page-nav/scss/in-page-nav";
+@forward '@nice-digital/nds-in-page-nav/scss/in-page-nav';
 ```
 
 ### HTML

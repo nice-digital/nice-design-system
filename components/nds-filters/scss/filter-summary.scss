@@ -1,19 +1,29 @@
 ////
 /// @group components
 ////
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/layout';
+@use '@nice-digital/nds-core/scss/media-queries';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
+
 /// Filter summary info shows at the top of a list of results and
 /// contains the count and sort options.
 /// .results-info deprecated in 1.0.0, use .filter-summary
 .filter-summary,
 .results-info {
-  @include nds-clearfix;
-  margin: rem(0 0 $nds-spacing-medium);
+  @include layout.clearfix;
+  margin: utils.rem(0 0 spacing.$medium);
 
   &__count {
-    @include nds-font-size(h5);
-    font-weight: bold;
-    margin: rem(0 0 $nds-spacing-small);
+    @include typography.font-size(h5);
+    font-weight: 600;
+    margin: utils.rem(0 0 spacing.$small);
+
+    h2,
+    h3 {
+      font-family: typography.get-font-family(sans);
+    }
   }
 
   &__sorting {
@@ -21,22 +31,22 @@
   }
 
   &__sort-label {
-    margin: 0 rem($nds-spacing-medium) 0 0;
+    margin: 0 utils.rem(spacing.$medium) 0 0;
   }
 
   &__select {
-    padding: rem($nds-spacing-small);
+    padding: utils.rem(spacing.$small);
   }
 
   &__filters {
     clear: both;
     list-style: none;
     margin: 0;
-    padding-top: rem($nds-spacing-small);
+    padding-top: utils.rem(spacing.$small);
   }
 
-  @include mq($from: sm) {
-    margin: rem(0 0 $nds-spacing-medium);
+  @include media-queries.mq($from: sm) {
+    margin: utils.rem(0 0 spacing.$medium);
 
     &__count {
       float: left;
@@ -46,7 +56,7 @@
 
     &__filter {
       display: inline-block;
-      margin-right: rem($nds-spacing-x-small);
+      margin-right: utils.rem(spacing.$x-small);
     }
   }
 }

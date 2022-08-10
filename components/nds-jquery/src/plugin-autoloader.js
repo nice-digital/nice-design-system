@@ -6,7 +6,7 @@ import { getPlugins } from "./pluginizr";
 const ModuleNameRegex = /([^/.]*)\.js$/i;
 
 // Constructs a module object - parses a key (path) into a module name
-let getModuleObj = key => ({
+let getModuleObj = (key) => ({
 	key: key,
 	name: key.match(ModuleNameRegex, "")[1]
 });
@@ -25,14 +25,14 @@ export function load(localRequire) {
 	// Build a list from which to auto-load
 	localRequire
 		.keys()
-		.filter(k => k !== "./experience.js") // Ignore experience as it's our entry point so treated differently
+		.filter((k) => k !== "./experience.js") // Ignore experience as it's our entry point so treated differently
 		.map(getModuleObj)
-		.map(module => requireModule(module, localRequire))
-		.filter(m => m.name in $.fn); // Now the module is loaded, only care about ones that are a plugin
+		.map((module) => requireModule(module, localRequire))
+		.filter((m) => m.name in $.fn); // Now the module is loaded, only care about ones that are a plugin
 }
 
 export function findPlugins($context) {
-	getPlugins().forEach(plugin => {
+	getPlugins().forEach((plugin) => {
 		// Load any plugins automatically
 		$(`[data-${plugin.name}]`, $context || $(document)).each((i, el) => {
 			var $el = $(el),
@@ -41,7 +41,7 @@ export function findPlugins($context) {
 			// Convert plugin data-attributes into options object
 			// e.g. data-plugin-test="true" data-plugin-something-else="1" becomes:
 			// { test: true, somethingElse: 1 }
-			[].forEach.call(el.attributes, function(attr) {
+			[].forEach.call(el.attributes, function (attr) {
 				var match = attr.name.match(new RegExp(`^data-(${plugin.name}-.+)`));
 				if (match && match.length === 2) {
 					var attrName = $.camelCase(match[1]),

@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-hero",
-	"version": "1.2.17",
+	"version": "2.0.12-alpha.0",
 	"description": "Hero component for the NICE Design System",
 	"keywords": [
 		"hero"
@@ -37,13 +37,13 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
-		"@nice-digital/nds-core": "^1.3.2",
+		"@nice-digital/nds-core": "^2.0.11-alpha.0",
 		"classnames": "^2.3.1",
 		"prop-types": "^15.7.2"
 	},
 	"peerDependencies": {
-		"react": "^16 || ^17",
-		"react-dom": "^16 || ^17"
+		"react": "^16 || ^17 || ^18",
+		"react-dom": "^16 || ^17 || ^18"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.5.0"

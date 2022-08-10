@@ -1,4 +1,8 @@
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/media-queries';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
 
 ////
 /// @group components
@@ -6,11 +10,11 @@
 
 /// In page nav
 .in-page-nav {
-  margin: rem(0 0 $nds-spacing-large);
+  margin: utils.rem(0 0 spacing.$large);
 
   // The 'on this page' title
   &__title {
-    @include nds-font-size(h4);
+    @include typography.font-size(h4);
     margin-top: 0;
   }
 
@@ -18,7 +22,7 @@
   &__list {
     list-style: disc;
     margin: 0;
-    padding-left: em($nds-spacing-medium + $nds-spacing-xx-small);
+    padding-left: utils.rem(spacing.$medium + spacing.$xx-small);
 
     .in-page-nav__list {
       list-style: circle;
@@ -27,7 +31,7 @@
 
   a {
     &:visited {
-      color: $nds-colour-link;
+      color: colours.$link;
     }
 
     &:focus {
@@ -35,21 +39,21 @@
     }
   }
 
-  @include mq($from: md) {
+  @include media-queries.mq($from: md) {
     margin: 0;
 
     @supports (position: sticky) {
       display: flex;
       flex-direction: column;
       max-height: 100vh;
-      padding-top: rem($nds-spacing-small);
+      padding-top: utils.rem(spacing.$small);
       position: sticky;
       top: 0;
 
       &__list {
         flex-grow: 1;
         overflow: auto;
-        padding-top: rem($nds-spacing-x-small);
+        padding-top: utils.rem(spacing.$x-small);
         scrollbar-width: thin;
 
         .in-page-nav__list {

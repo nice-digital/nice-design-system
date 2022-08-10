@@ -1,0 +1,79 @@
+@use 'sass:color';
+@use '../colours';
+@use '../focus';
+@use 'settings';
+
+////
+/// @group Typography
+////
+
+/// Default link style for use on a normal (light) background
+/// @since 0.3.1
+@mixin link-default {
+  color: colours.$link;
+  -webkit-tap-highlight-color: color.adjust(colours.$focus, $alpha: -0.666);
+  text-decoration-line: underline;
+  text-decoration-skip-ink: auto;
+
+  &:visited {
+    color: colours.$link-visited;
+  }
+
+  &:hover {
+    color: colours.$link-hover;
+    text-decoration-thickness: settings.$link-hover-text-decoration-thickness;
+  }
+
+  &:focus {
+    @include focus.default-focus-style;
+    color: colours.$link-focus;
+  }
+
+  &:active {
+    color: colours.$link-active;
+  }
+}
+
+/// Default links for use on a light background
+/// @require {mixin} link-default
+/// @since 0.5.0
+@mixin links-default {
+  a {
+    @include link-default;
+  }
+}
+
+/// Inverse link style for use on an inverse (dark) background
+/// @since 0.3.1
+@mixin link-inverse {
+  color: colours.$link-inverse;
+  -webkit-tap-highlight-color: color.adjust(colours.$focus, $alpha: -0.666);
+  text-decoration-line: underline;
+  text-decoration-skip-ink: auto;
+
+  &:visited {
+    color: colours.$link-inverse-visited;
+  }
+
+  &:hover {
+    color: colours.$link-inverse-hover;
+  }
+
+  &:focus {
+    @include focus.inverse-focus-style;
+    color: colours.$link-inverse-focus;
+  }
+
+  &:active {
+    color: colours.$link-inverse-active;
+  }
+}
+
+/// Inverse links for use on a dark background
+/// @require {mixin} link-inverse
+/// @since 0.3.1
+@mixin links-inverse {
+  a {
+    @include link-inverse;
+  }
+}

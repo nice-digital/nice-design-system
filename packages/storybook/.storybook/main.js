@@ -1,7 +1,29 @@
+const path = require("path");
+
 module.exports = {
-	stories: ["../stories/**/*.stories.(js|mdx)"],
+	core: {
+		builder: "webpack5"
+	},
+	stories: ["./../stories/**/*.stories.@(js|mdx)"],
 	addons: [
-		"@storybook/preset-scss",
+		{
+			name: "@storybook/preset-scss",
+			options: {
+				sassLoaderOptions: {
+					sassOptions: {
+						includePaths: [
+							"node_modules",
+							// Allows the main NDS package to load nds-core's sass-mq dependency
+							// when running locally in dev mode, because of the symlinks from bootstrapping
+							path.resolve(
+								__dirname,
+								"../../../components/nds-core/node_modules/"
+							)
+						]
+					}
+				}
+			}
+		},
 		"@storybook/addon-actions",
 		"@storybook/addon-links",
 		"@storybook/addon-knobs",

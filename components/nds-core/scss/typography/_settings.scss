@@ -1,0 +1,147 @@
+@use '../media-queries';
+@use '../spacing';
+@use '../modular-scale';
+
+/// Baseline, in pixels
+/// @since 0.2.0
+$baseline: 4;
+
+/// Base font size, in pixels
+/// @since 0.2.0
+$base-font-size: 16;
+
+/// Base line height
+/// @since 0.2.0
+$base-line-height: 1.6;
+
+/// Default text decoration thickness for link hover
+/// @since 3.0.0
+$link-hover-text-decoration-thickness: 0.1rem;
+
+/// Sans-serif font stack
+/// @since 2.0.0
+$font-family-sans: 'Inter, Roboto, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif';
+
+/// Serif font stack
+/// @since 2.0.0
+$font-family-serif: 'Lora, Georgia, Times, serif';
+
+/// Mono font stack
+/// @since 0.2.0
+$font-family-mono: 'Monaco, Menlo, Consolas, "Courier New", monospace';
+
+/// The font families in use across NICE.
+/// @prop {Font stack} sans [Inter, Helvetica Neue, Helvetica, Arial, sans-serif] The sans-serif font stack
+/// @prop {Font stack} serif [Lora, Georgia, Times, serif] The serif font stack
+/// @prop {Font stack} mono [Monaco, Menlo, Consolas, "Courier New", monospace] The monospace font stack
+/// @see font-family
+/// @since 0.2.0
+$font-families: (
+  sans: $font-family-sans,
+  serif: $font-family-serif,
+  mono: $font-family-mono
+);
+
+/// The modular scale ratio to use for typography
+/// @since 0.2.0
+$type-ratio: modular-scale.get-ratio(fourth);
+
+/// The minimum root font size, in pixels
+/// @since 0.2.13
+$root-font-size-min: 15;
+
+/// The maximum root font size, used from breakpoint `$root-font-size-max-breakpoint`
+/// @since 0.2.13
+$root-font-size-max: 18;
+
+/// The breakpoint at which the root font size starts changing from minimum
+/// towards maximum.
+/// @since 0.2.13
+$root-font-size-min-breakpoint: media-queries.$md;
+
+/// The breakpoint at which the root font size stops changing and is at its maximum
+/// towards maximum.
+/// @since 0.2.13
+$root-font-size-max-breakpoint: media-queries.$lg;
+
+/// A map of named font sizes to their corresponding modular scale factor
+/// @prop {Integer} h1 [6] Heading 1
+/// @prop {Integer} h1-alt [5] Heading 1 (alt)
+/// @prop {Integer} h2 [4] Heading 2
+/// @prop {Integer} h3 [3] Heading 3
+/// @prop {Integer} h4 [2] Heading 4
+/// @prop {Integer} h5 [1] Heading 5
+/// @prop {Integer} h6 [0] Heading 6
+/// @prop {Integer} lead [1] Lead
+/// @prop {Integer} p [0] Paragraph
+/// @since 0.1.0
+$named-font-sizes: (
+  h1: 6,
+  h1-alt: 5,
+  h2: 4,
+  h3: 3,
+  h4: 2,
+  h5: 1,
+  h6: 0,
+  lead: 2,
+  p: 0
+);
+
+/// Numeric font sizes
+/// @since 0.2.0
+$font-sizes: (
+  -2: (
+      fs: 14,
+      lh: 1.6,
+      mb: spacing.$small,
+      mt: spacing.$small
+    ),
+  -1: (
+      fs: 15,
+      lh: 1.6,
+      mb: spacing.$medium,
+      mt: spacing.$medium
+    ),
+  0: (
+    fs: 16,
+    lh: 1.6,
+    mb: spacing.$medium,
+    mt: spacing.$medium
+  ),
+  1: (
+    fs: 18,
+    lh: 1.4,
+    mb: spacing.$medium,
+    mt: spacing.$large
+  ),
+  2: (
+    fs: 22,
+    lh: 1.3,
+    mb: spacing.$medium,
+    mt: spacing.$large
+  ),
+  3: (
+    fs: 28,
+    lh: 1.25,
+    mb: spacing.$medium,
+    mt: spacing.$large
+  ),
+  4: (
+    fs: 34,
+    lh: 1.2,
+    mb: spacing.$medium,
+    mt: spacing.$large
+  ),
+  5: (
+    fs: 38,
+    lh: 1.2,
+    mb: spacing.$medium,
+    mt: 0
+  ),
+  6: (
+    fs: 44,
+    lh: 1.2,
+    mb: spacing.$large,
+    mt: 0
+  )
+);

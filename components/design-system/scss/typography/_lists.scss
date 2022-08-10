@@ -1,0 +1,121 @@
+/* stylelint-disable no-descending-specificity, selector-class-pattern */
+@use '@nice-digital/nds-core/scss/utils';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/colours';
+
+////
+/// @group Typography
+////
+
+ul,
+ol,
+.list {
+  @include typography.list;
+
+  li {
+    margin-bottom: utils.rem(spacing.$small);
+
+    ol,
+    ul,
+    .list {
+      margin-top: utils.rem(spacing.$small);
+    }
+
+    li {
+      margin-bottom: utils.rem(spacing.$x-small);
+    }
+  }
+}
+
+/// Unstyled list modifier - remove bullets, padding etc.
+/// Used as a modifier for `.list`.
+/// Often used for lists of links.
+/// @requires .list
+/// @since 0.1.0
+.list--unstyled {
+  list-style: none;
+  margin-left: 0;
+  max-width: none; // To override max-width of 66ch set on lists
+  padding: 0;
+}
+
+/// Loose list style - with a gap between list items
+/// @since 0.2.12
+.list--loose {
+  li {
+    margin-bottom: utils.rem(spacing.$medium);
+
+    ol,
+    ul,
+    .list {
+      margin-top: utils.rem(spacing.$medium);
+    }
+
+    li {
+      margin-bottom: utils.rem(spacing.$small);
+    }
+  }
+}
+
+/// Tight list style - no margin between list items
+/// @since 1.2.0
+.list--tight {
+  li {
+    margin-bottom: utils.rem(spacing.$x-small);
+
+    ol,
+    ul,
+    .list {
+      margin-top: 0;
+    }
+
+    li {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/// Pipe separate list
+/// @since 0.5.0
+.list--piped {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+  margin-left: 0;
+  max-width: none; // To override the default 66ch max width
+  padding: 0;
+
+  li {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 0;
+
+    a {
+      margin-left: -(utils.rem(spacing.$medium));
+      margin-right: -(utils.rem(spacing.$medium));
+      padding: utils.rem(spacing.$small spacing.$medium);
+    }
+
+    &:after {
+      background: colours.$icons;
+      content: '';
+      height: utils.rem(spacing.$large);
+      margin: utils.rem(0 spacing.$medium);
+      width: 1px;
+    }
+
+    &:first-child {
+      a {
+        margin-left: 0;
+        padding-left: 0;
+      }
+    }
+
+    &:last-child:after {
+      display: none;
+    }
+  }
+}

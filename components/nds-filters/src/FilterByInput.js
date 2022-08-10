@@ -28,7 +28,7 @@ export class FilterByInput extends Component {
 	handleTitleClick(e) {
 		e.preventDefault();
 
-		this.setState(prevState => ({
+		this.setState((prevState) => ({
 			isExpanded: !prevState.isExpanded
 		}));
 	}
@@ -52,7 +52,7 @@ export class FilterByInput extends Component {
 
 		const propsToRemoveFromDom = ["collapseByDefault"];
 
-		propsToRemoveFromDom.forEach(prop => {
+		propsToRemoveFromDom.forEach((prop) => {
 			delete filteredProps[prop];
 		});
 

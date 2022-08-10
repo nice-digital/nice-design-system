@@ -2,18 +2,18 @@
 
 > Action banner component for the NICE Design System
 
-- [`@nice-digital/nds-action-banner`](#nice-digitalnds-action-banner)
-	- [Installation](#installation)
-	- [Usage](#usage)
-		- [React](#react)
-			- [Props](#props)
-				- [children](#children)
-				- [title](#title)
-				- [variant](#variant)
-				- [cta](#cta)
-				- [onClosing](#onclosing)
-		- [SCSS](#scss)
-		- [HTML](#html)
+- [Installation](#installation)
+- [Usage](#usage)
+	- [React](#react)
+		- [Props](#props)
+			- [children](#children)
+			- [title](#title)
+			- [variant](#variant)
+			- [cta](#cta)
+			- [onClosing](#onclosing)
+				- [className](#classname)
+	- [SCSS](#scss)
+	- [HTML](#html)
 
 ## Installation
 
@@ -99,7 +99,7 @@ Any additional className will be merged on to the container.
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import '~@nice-digital/nds-action-banner/scss/action-banner';
+@forward '@nice-digital/nds-action-banner/scss/action-banner';
 ```
 
 ### HTML

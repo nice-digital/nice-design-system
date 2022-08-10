@@ -121,7 +121,7 @@ Any other props will be cascaded to the tab panel, not the button.
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-tabs/scss/tabs";
+@forward '@nice-digital/nds-tabs/scss/tabs';
 ```
 
 ### HTML

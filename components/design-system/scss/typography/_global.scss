@@ -1,0 +1,113 @@
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/media-queries';
+@use '@nice-digital/nds-core/scss/colours';
+
+////
+/// @group Typography
+////
+
+html {
+  box-sizing: border-box;
+  font-size: utils.rem(typography.$root-font-size-min);
+  line-height: typography.$base-line-height;
+
+  // See https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  @include media-queries.mq($from: typography.$root-font-size-min-breakpoint) {
+    // stylelint-disable function-calc-no-unspaced-operator
+    // Fallback halfway between max and min for older browsers that don't support calc
+    font-size: utils.rem(
+      typography.$root-font-size-min +
+        (typography.$root-font-size-max - typography.$root-font-size-min) * 0.5
+    );
+
+    // Follows "fluid typography" rules: https://www.google.co.uk/search?q=fluid%20typography%20vw
+    // ie scales font-size linearly between 2 breakpoints.
+    // Also uses rems so that they're relative to browser font size.
+    // In form: MIN_FONT_SIZE + (MAX_FONT_SIZE - MIN_FONT_SIZE) * (100vw - MIN_SCREEN_SIZE) / (MAX_SCREEN_SIZE - MIN_SCREEN_SIZE)
+    font-size: calc(
+      #{utils.rem(typography.$root-font-size-min)} + #{utils.strip-unit(
+          utils.rem(typography.$root-font-size-max) -
+            utils.rem(typography.$root-font-size-min)
+        )} *
+        (
+          (100vw - #{utils.rem(typography.$root-font-size-min-breakpoint)}) / #{utils.strip-unit(
+              utils.rem(typography.$root-font-size-max-breakpoint) -
+                utils.rem(typography.$root-font-size-min-breakpoint)
+            )}
+        )
+    );
+  }
+
+  @include media-queries.mq($from: typography.$root-font-size-max-breakpoint) {
+    font-size: utils.rem(typography.$root-font-size-max);
+  }
+}
+
+body {
+  background: colours.$fill-page-background;
+  color: colours.$text;
+  font-family: typography.get-font-family(sans);
+  font-style: normal;
+  font-variant-ligatures: none;
+  overflow-x: hidden;
+  text-rendering: optimizelegibility;
+}
+
+img {
+  max-width: 100%;
+}
+
+hr {
+  background: 0;
+  border: 0;
+  border-top: utils.rem(1px) solid colours.$border;
+  margin: utils.rem(spacing.$large 0);
+  padding: 0;
+}
+
+p,
+.p {
+  @include typography.p;
+}
+
+.lead {
+  @include typography.lead;
+}
+
+code {
+  background: colours.$code-background;
+  border: 1px solid colours.$border;
+  border-radius: utils.rem(spacing.$xx-small);
+  color: colours.$text;
+  display: inline-block;
+  font-family: typography.get-font-family(mono);
+  margin: utils.rem(0 0 spacing.$xx-small);
+  padding: utils.rem(0 spacing.$x-small);
+
+  pre & {
+    background: transparent;
+    border: 0;
+    margin: 0;
+  }
+}
+
+/// Mark
+mark,
+.mark {
+  background-color: colours.$mark;
+  padding: utils.rem(0 spacing.$x-small);
+}
+
+/// Small
+small,
+.small {
+  font-size: 85%;
+}

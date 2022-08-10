@@ -2,19 +2,23 @@
 /// @group components
 ////
 
-@import '~@nice-digital/nds-core/scss/core';
-@import '~@nice-digital/icons/scss/nice-icons';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/focus';
+@use '@nice-digital/nds-core/scss/media-queries';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
 
-@mixin _filter-panel-heading-button {
-  @include nds-font-size(h5);
+@mixin -filter-panel-heading-button {
+  @include typography.font-size(h5);
   appearance: none;
-  background: $nds-colour-nice-grey-2;
+  background: colours.$filter-panel-heading-button-background;
   border: 0;
-  color: $nds-colour-text;
+  color: colours.$text;
   cursor: pointer;
   display: block;
   font-weight: bold;
-  padding: rem($nds-spacing-small);
+  padding: utils.rem(spacing.$small);
   position: relative;
   text-align: left;
   text-decoration: none;
@@ -24,45 +28,47 @@
   &:hover,
   &:active,
   &:focus {
-    color: $nds-colour-text;
+    color: colours.$text;
   }
 
   &:focus {
-    @include nds-default-focus-style;
+    @include focus.default-focus-style;
   }
 }
 
 .filter-panel {
-  margin: rem(0 0 $nds-spacing-medium 0);
+  margin: utils.rem(0 0 spacing.$medium 0);
 
   // Heading can be one of:
   // - heading for server side rendering for non-js
   // - button to collapse/expand filter panel client side
   // - anchor if you're progressively enhancing
   &__heading {
+    font-family: typography.get-font-family(sans);
     margin: 0;
     padding: 0;
 
     a,
     button {
-      @include _filter-panel-heading-button;
+      @include -filter-panel-heading-button;
     }
 
-    @include nds-when-is(a, button) {
-      @include _filter-panel-heading-button;
+    @include utils.when-is(a, button) {
+      @include -filter-panel-heading-button;
     }
   }
 
   &__heading-icon {
     float: right;
+
     &--expanded {
       transform: rotate(180deg);
     }
   }
 
   &__body {
-    background: $nds-colour-nice-grey-3;
-    padding: rem($nds-spacing-medium);
+    background: colours.$filter-panel-background;
+    padding: utils.rem(spacing.$medium);
 
     &[aria-hidden='true'] {
       display: none;
@@ -70,13 +76,13 @@
   }
 
   &__submit {
-    margin: rem($nds-spacing-medium 0 0);
+    margin: utils.rem(spacing.$medium 0 0);
   }
 
-  @include mq($from: sm) {
+  @include media-queries.mq($from: sm) {
     &__heading {
       background: none;
-      margin-bottom: rem($nds-spacing-medium);
+      margin-bottom: utils.rem(spacing.$medium);
       padding: 0;
 
       a,
@@ -89,7 +95,7 @@
         }
       }
 
-      @include nds-when-is(a, button) {
+      @include utils.when-is(a, button) {
         background: none;
         padding: 0;
 

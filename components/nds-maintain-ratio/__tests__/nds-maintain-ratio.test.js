@@ -33,7 +33,7 @@ describe("nds-maintain-ratio", () => {
 		expect(wrapper.props()["data-test"]).toEqual("yes");
 	});
 
-	Object.keys(MaintainRatio.ratios).forEach(ratio => {
+	Object.keys(MaintainRatio.ratios).forEach((ratio) => {
 		it(`should apply the class for the ratio: ${ratio}`, () => {
 			const wrapper = shallow(
 				<MaintainRatio ratio={ratio}>

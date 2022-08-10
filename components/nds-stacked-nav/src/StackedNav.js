@@ -4,7 +4,7 @@ import classnames from "classnames";
 
 import "./../scss/stacked-nav.scss";
 
-const Heading = props => {
+const Heading = (props) => {
 	const { elementType: ElementType = "p", label, link } = props;
 	if (link) {
 		const {
@@ -42,7 +42,7 @@ Heading.propTypes = {
 	})
 };
 
-export const StackedNavLink = props => {
+export const StackedNavLink = (props) => {
 	const {
 		hint,
 		destination,
@@ -96,7 +96,7 @@ StackedNavLink.propTypes = {
 	method: PropTypes.string
 };
 
-export const StackedNav = props => {
+export const StackedNav = (props) => {
 	const { label, elementType, link, children, className, ...rest } = props;
 	const classNames = classnames(["stacked-nav", className]);
 	return (

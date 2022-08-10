@@ -7,13 +7,13 @@ const Cta = () => <Button variant="cta">Hello!</Button>;
 
 const MyBreadcrumbs = (
 	<Breadcrumbs>
-		<Breadcrumb>Hello</Breadcrumb>
+		<Breadcrumb to="/test">Hello</Breadcrumb>
 		<Breadcrumb>There</Breadcrumb>
 	</Breadcrumbs>
 );
 
 const myFooter: HeroProps["footer"] = (
-	<section aria-labelledby="new-updated">
+	<>
 		<h2 className="h5 mv--0 show--ib mr--d" id="new-updated">
 			New&nbsp;and updated products:
 		</h2>
@@ -39,7 +39,7 @@ const myFooter: HeroProps["footer"] = (
 				</a>
 			</li>
 		</ul>
-	</section>
+	</>
 );
 
 const ExtraContent = (

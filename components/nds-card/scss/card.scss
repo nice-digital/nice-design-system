@@ -2,7 +2,12 @@
 /// @group components
 ////
 
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/layout';
+@use '@nice-digital/nds-core/scss/media-queries';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
 
 /// Flexible card component for displaying
 /// guidance, news etc in a list.
@@ -17,8 +22,8 @@
 ///
 /// @since 0.3.1
 .card {
-  @include nds-clearfix;
-  margin: rem(0 0 $nds-spacing-large 0);
+  @include layout.clearfix;
+  margin: utils.rem(0 0 spacing.$large 0);
   position: relative;
 
   &--flush {
@@ -27,9 +32,9 @@
 
   &--separator,
   .list--unstyled & {
-    border-bottom: 1px solid $nds-colour-border;
-    margin: rem(0 0 $nds-spacing-medium 0);
-    padding: rem(0 0 $nds-spacing-medium 0);
+    border-bottom: 1px solid colours.$border;
+    margin: utils.rem(0 0 spacing.$medium 0);
+    padding: utils.rem(0 0 spacing.$medium 0);
   }
 
   mark {
@@ -37,20 +42,21 @@
   }
 
   &__header {
-    margin: rem(0 0 $nds-spacing-small 0);
+    margin: utils.rem(0 0 spacing.$small 0);
   }
 
   &__heading {
-    @include nds-font-size(1);
-    font-weight: bold;
+    @include typography.font-size(1);
+    font-family: typography.get-font-family(sans);
+    font-weight: 600;
     margin: 0;
 
     a {
-      text-decoration: underline;
+      text-decoration-line: underline;
 
       mark {
-        background-color: $nds-colour-mark;
-        color: $nds-colour-link;
+        background-color: colours.$mark;
+        color: colours.$link;
       }
 
       &:before {
@@ -67,9 +73,9 @@
   }
 
   &__author {
-    @include nds-font-size(-1);
-    color: $nds-colour-nice-dark-grey;
-    margin: rem(0 0 $nds-spacing-x-small 0);
+    @include typography.font-size(-1);
+    color: colours.$card-author;
+    margin: utils.rem(0 0 spacing.$x-small 0);
 
     dd {
       display: block;
@@ -78,7 +84,8 @@
   }
 
   &__summary {
-    margin: rem(0 0 $nds-spacing-small 0);
+    margin: utils.rem(0 0 spacing.$small 0);
+
     a {
       position: relative;
     }
@@ -87,22 +94,22 @@
   &__image {
     img {
       display: block;
-      margin: rem(0 0 $nds-spacing-x-small);
+      margin: utils.rem(0 0 spacing.$x-small);
       width: 100%;
     }
   }
 
   &__icon {
-    margin: rem(0 $nds-spacing-x-small 0 0);
+    margin: utils.rem(0 spacing.$x-small 0 0);
   }
 
   &__tag {
-    @include nds-font-size(-1, true);
+    @include typography.font-size(-1, true);
   }
 
   &__metadata {
-    @include nds-font-size(-1);
-    color: $nds-colour-nice-dark-grey;
+    @include typography.font-size(-1);
+    color: colours.$card-metadata;
     display: inline-block;
     margin: 0;
     position: relative;
@@ -111,7 +118,7 @@
 
   &__metadatum {
     display: block;
-    margin: rem(0 $nds-spacing-medium $nds-spacing-x-small 0);
+    margin: utils.rem(0 spacing.$medium spacing.$x-small 0);
 
     dt,
     dd {
@@ -120,11 +127,11 @@
     }
 
     dt {
-      margin-right: rem($nds-spacing-x-small);
+      margin-right: utils.rem(spacing.$x-small);
     }
   }
 
-  @include mq($from: xs) {
+  @include media-queries.mq($from: xs) {
     &__image {
       float: left;
       width: 30%;
@@ -132,12 +139,12 @@
 
     &__text {
       float: left;
-      padding-left: rem($nds-spacing-medium);
+      padding-left: utils.rem(spacing.$medium);
       width: 70%;
     }
   }
 
-  @include mq($from: sm) {
+  @include media-queries.mq($from: sm) {
     &__image {
       width: 20%;
     }
@@ -152,7 +159,7 @@
     }
   }
 
-  @include mq($from: md) {
+  @include media-queries.mq($from: md) {
     &__image {
       width: 30%;
     }
@@ -162,7 +169,7 @@
     }
   }
 
-  @include mq($from: lg) {
+  @include media-queries.mq($from: lg) {
     &__image {
       width: 25%;
     }

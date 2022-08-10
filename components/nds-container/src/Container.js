@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import "../scss/container.scss";
 
-export const Container = props => {
+export const Container = (props) => {
 	const {
 		children,
 		className,

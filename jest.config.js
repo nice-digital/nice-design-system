@@ -10,7 +10,7 @@ module.exports = {
 		"nds-tag": "<rootDir>/components/nds-tag/src/Tag.js",
 		"nds-core": "<rootDir>/components/nds-core/src/core.js"
 	},
-	setupFilesAfterEnv: ["<rootDir>/scripts/jest/setup.js"],
+	setupFilesAfterEnv: ["./jest.setup.js"],
 	snapshotSerializers: ["enzyme-to-json/serializer"],
 	testEnvironment: "jsdom",
 	testPathIgnorePatterns: [

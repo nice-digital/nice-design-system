@@ -2,20 +2,19 @@
 
 > Button component for the NICE Design System
 
-- [`@nice-digital/nds-button`](#nice-digitalnds-button)
-	- [Installation](#installation)
-	- [Usage](#usage)
-		- [React](#react)
-			- [Props](#props)
-				- [children](#children)
-				- [variant](#variant)
-				- [buttonType](#buttontype)
-				- [to](#to)
-				- [elementType](#elementtype)
-				- [method](#method)
-				- [className](#classname)
-		- [SCSS](#scss)
-		- [HTML](#html)
+- [Installation](#installation)
+- [Usage](#usage)
+	- [React](#react)
+		- [Props](#props)
+			- [children](#children)
+			- [variant](#variant)
+			- [buttonType](#buttontype)
+			- [to](#to)
+			- [elementType](#elementtype)
+			- [method](#method)
+			- [className](#classname)
+	- [SCSS](#scss)
+	- [HTML](#html)
 
 ## Installation
 
@@ -117,7 +116,7 @@ Additional CSS classes to apply to the button, e.g. `mt--e` to add a top margin.
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import '~@nice-digital/nds-button/scss/button';
+@forward '@nice-digital/nds-button/scss/button';
 ```
 
 ### HTML

@@ -2,7 +2,9 @@
 /// @group components
 ////
 
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/utils';
 
 /// A phase banner includes a tag and a label and is designed
 /// to designate that a service is in alpha or beta.
@@ -15,23 +17,24 @@
 /// @see .tag
 /// @since 0.1.0
 .phase-banner {
-  border-bottom: 1px solid $nds-colour-border;
-  display: table;
-  margin: em(0 0 $nds-spacing-small);
+  border-bottom: 1px solid colours.$border;
+  display: flex;
+  flex-flow: row nowrap;
+  margin: utils.rem(0 0 spacing.$medium);
   max-width: 100%;
-  padding: em($nds-spacing-small 0);
+  padding: utils.rem(spacing.$medium 0);
   width: 100%;
 
   &__tag {
-    display: table-cell;
-    padding: em(0 $nds-spacing-small 0 0);
-    vertical-align: top;
+    margin: utils.rem(0 spacing.$medium 0 0);
+
+    .tag {
+      margin: 0;
+    }
   }
 
   &__label {
-    display: table-cell;
-    line-height: 1.3;
-    vertical-align: middle;
+    padding-top: utils.rem(spacing.$xx-small);
     width: 100%;
   }
 }

@@ -30,7 +30,7 @@ const MockColumnListContent = () => (
 storiesOf("Components/A-Z List", module)
 	.add("Default, implicit item ID, simple paragraph content", () => (
 		<AZList alphabet={mockAlphabet}>
-			{allLetters.map(letter => (
+			{allLetters.map((letter) => (
 				<AZListItem key={letter} title={letter.toUpperCase()}>
 					<p className="test-class">{letter}: lorem ipsum dolor sit amet</p>
 				</AZListItem>
@@ -39,7 +39,7 @@ storiesOf("Components/A-Z List", module)
 	))
 	.add("Default, column lists as content", () => (
 		<AZList alphabet={mockAlphabet} className="test">
-			{allLetters.map(letter => (
+			{allLetters.map((letter) => (
 				<AZListItem key={letter} title={letter.toUpperCase()}>
 					<ColumnList className="test-class">
 						<MockColumnListContent />

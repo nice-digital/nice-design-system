@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import "./../scss/form-group.scss";
 
-export const FormGroup = props => {
+export const FormGroup = (props) => {
 	const { groupError, inline, legend, children, hint, name, ...rest } = props;
 
-	const clonedChildren = React.Children.map(children, child => {
+	const clonedChildren = React.Children.map(children, (child) => {
 		return React.cloneElement(child, {
 			name,
 			inline,

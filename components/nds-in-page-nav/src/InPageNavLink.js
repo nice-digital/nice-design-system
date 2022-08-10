@@ -9,7 +9,7 @@ export const InPageNavLink = ({
 	const targetId = href.replace("#", "");
 
 	const hasActiveSubLink = subLinks.some(
-		subLink => subLink.href.replace("#", "") === activeHeadingId
+		(subLink) => subLink.href.replace("#", "") === activeHeadingId
 	);
 
 	return (
@@ -32,7 +32,7 @@ export const InPageNavLink = ({
 					className="in-page-nav__list"
 					aria-labelledby={`inpagenav-${targetId}`}
 				>
-					{subLinks.map(subLink => (
+					{subLinks.map((subLink) => (
 						<InPageNavLink
 							key={subLink.href}
 							link={subLink}

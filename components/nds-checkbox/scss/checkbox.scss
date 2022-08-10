@@ -1,17 +1,21 @@
-@use "sass:math";
+@use 'sass:math';
 
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/focus';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
 
 // stylelint-disable no-descending-specificity
 
-$nds-checkbox-size: rem($nds-spacing-large);
+$checkbox-size: utils.rem(spacing.$large);
 
 .checkbox {
-  @include nds-font-size(p);
+  @include typography.font-size(p);
   display: block;
-  margin-bottom: rem($nds-spacing-medium);
-  min-height: $nds-checkbox-size;
-  padding-left: $nds-checkbox-size + rem($nds-spacing-medium);
+  margin-bottom: utils.rem(spacing.$medium);
+  min-height: $checkbox-size;
+  padding-left: $checkbox-size + utils.rem(spacing.$medium);
   position: relative;
 
   &:last-child,
@@ -24,52 +28,54 @@ $nds-checkbox-size: rem($nds-spacing-large);
     display: block;
     font-size: 1rem;
     font-weight: bold;
-    line-height: 1.5rem;
-    margin-bottom: rem($nds-spacing-x-small);
-    padding: rem($nds-spacing-x-small) 0;
+    margin-bottom: utils.rem(spacing.$x-small);
+    padding: utils.rem(spacing.$x-small) 0;
 
+    // outside square
     &:before {
       background: transparent;
-      border: rem($nds-spacing-xx-small) solid $nds-colour-nice-black;
+      border: utils.rem(spacing.$xx-small) solid colours.$checkbox;
       box-sizing: border-box;
-      // outside square // stylelint-disable-line
       content: '';
-      height: $nds-checkbox-size;
+      height: $checkbox-size;
       left: 0;
       position: absolute;
       top: 0;
-      width: $nds-checkbox-size;
+      width: $checkbox-size;
     }
 
+    // inside check / tick
     &:after {
       background: transparent;
       border: solid;
       border-top-color: transparent; // IE11 bug
-      border-width: 0 0 rem($nds-spacing-x-small) rem($nds-spacing-x-small);
-      // inside check / tick // stylelint-disable-line
+      border-width: 0 0 utils.rem(spacing.$x-small) utils.rem(spacing.$x-small);
       content: '';
-      height: math.div($nds-checkbox-size, 3); // this is the short end of the checkmark;
-      left: rem($nds-spacing-small);
+      height: math.div(
+        $checkbox-size,
+        3
+      ); // this is the short end of the checkmark;
+      left: utils.rem(spacing.$small);
       opacity: 0;
       position: absolute;
-      top: rem($nds-spacing-small);
+      top: utils.rem(spacing.$small);
       transform: rotate(-45deg);
-      width: rem($nds-spacing-medium);
+      width: utils.rem(spacing.$medium);
     }
   }
 
   &__input {
     cursor: pointer;
-    height: $nds-checkbox-size;
+    height: $checkbox-size;
     left: 0;
     opacity: 0;
     position: absolute;
     top: 0;
-    width: $nds-checkbox-size;
+    width: $checkbox-size;
     z-index: 1;
 
     &:focus + .checkbox__label:before {
-      @include nds-default-focus-style;
+      @include focus.default-focus-style;
     }
 
     &:checked + .checkbox__label:after {
@@ -87,34 +93,35 @@ $nds-checkbox-size: rem($nds-spacing-large);
   }
 
   &__hint {
-    color: $nds-colour-nice-dark-grey;
-    margin-bottom: rem($nds-spacing-small);
-    margin-top: rem($nds-spacing-x-small);
+    color: colours.$checkbox-hint;
+    margin-bottom: utils.rem(spacing.$small);
+    margin-top: utils.rem(spacing.$x-small);
   }
 
   &__error-message {
-    color: $nds-colour-error;
+    color: colours.$error;
     font-weight: bold;
   }
 
   &--error .checkbox__label {
-    color: $nds-colour-error;
+    color: colours.$error;
 
     &:before {
-      @include nds-default-error-style;
+      @include typography.default-error-style;
     }
 
     &:after {
-      color: $nds-colour-nice-black;
+      color: colours.$checkbox;
     }
   }
 
   &--inline {
     display: inline-block;
-    margin-right: rem($nds-spacing-medium);
+    margin-right: utils.rem(spacing.$medium);
     vertical-align: top;
+
     input {
-      margin-right: rem($nds-spacing-x-small);
+      margin-right: utils.rem(spacing.$x-small);
     }
   }
 }

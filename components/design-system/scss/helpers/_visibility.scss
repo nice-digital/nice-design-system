@@ -1,0 +1,144 @@
+@use 'sass:list';
+@use '@nice-digital/nds-core/scss/media-queries';
+@use '@nice-digital/nds-core/scss/visibility';
+
+////
+/// @group helpers
+////
+
+$output-visibility-classes: true !default;
+
+@if $output-visibility-classes {
+  /// Display none.
+  /// Note the use of `!important` for overriding styles.
+  .hide {
+    display: none !important;
+  }
+
+  /// Displays an element as block by default.
+  /// Or use modifiers to display inline/inline-block:
+  ///
+  /// Modifiers:
+  ///   - `i`
+  ///   - `ib`
+  .show {
+    display: block !important;
+
+    &--i {
+      display: inline !important;
+    }
+
+    &--ib {
+      display: inline-block !important;
+    }
+  }
+
+  /// Visible
+  .visible {
+    visibility: visible !important;
+  }
+
+  /// Visibility hidden
+  .invisible {
+    visibility: hidden !important;
+  }
+
+  // ## Orientation
+
+  /// Landscape and portrait display
+  .show-landscape,
+  .hide-portrait {
+    display: block !important;
+
+    @include visibility.landscape {
+      display: block !important;
+    }
+
+    @include visibility.portrait {
+      display: none !important;
+    }
+  }
+
+  /// Landscape and portrait display
+  .hide-landscape,
+  .show-portrait {
+    display: none !important;
+
+    @include visibility.landscape {
+      display: none !important;
+    }
+
+    @include visibility.portrait {
+      display: block !important;
+    }
+  }
+
+  // ## Breakpoints show
+
+  // Outuput the following for each break point:
+  //  - .hide-from-*
+  //  - .show-from-*
+
+  $hide-selectors: (); /* stylelint-disable-line */
+
+  @each $brkpnt-key, $brkpnt-value in media-queries.$breakpoints {
+    // Show from
+    $hide-selectors: list.append(
+      $hide-selectors,
+      '.show-#{ $brkpnt-key }',
+      comma
+    );
+    $hide-selectors: list.append(
+      $hide-selectors,
+      '.show--i-#{ $brkpnt-key }',
+      comma
+    );
+    $hide-selectors: list.append(
+      $hide-selectors,
+      '.show--ib-#{ $brkpnt-key }',
+      comma
+    );
+  }
+
+  #{ $hide-selectors } {
+    display: none;
+  }
+
+  @each $brkpnt-key, $brkpnt-value in media-queries.$breakpoints {
+    @include media-queries.mq($from: $brkpnt-key) {
+      .show-#{ $brkpnt-key } {
+        display: block !important;
+      }
+
+      .show--i-#{ $brkpnt-key } {
+        display: inline !important;
+      }
+
+      .show--ib-#{ $brkpnt-key } {
+        display: inline-block !important;
+      }
+
+      .hide-#{ $brkpnt-key } {
+        display: none !important;
+      }
+    }
+  }
+
+  // ## Accessibility
+  .show-focus,
+  .visually-hidden {
+    @include visibility.invisible;
+  }
+
+  // ## Focus
+  .show-focus {
+    &:active,
+    &:focus {
+      @include visibility.invisible-off;
+    }
+  }
+
+  .relative {
+    position: relative;
+  }
+}

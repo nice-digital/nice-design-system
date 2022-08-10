@@ -140,19 +140,9 @@ describe("StackedNav", () => {
 			</MemoryRouter>
 		);
 
-		expect(
-			wrapper
-				.find("a")
-				.at(0)
-				.props().href
-		).toEqual("one");
+		expect(wrapper.find("a").at(0).props().href).toEqual("one");
 
-		expect(
-			wrapper
-				.find("a")
-				.at(1)
-				.props().pigeon
-		).toEqual("two");
+		expect(wrapper.find("a").at(1).props().pigeon).toEqual("two");
 
 		expect(wrapper.find(Link).props().to).toEqual("three");
 	});
@@ -186,18 +176,8 @@ describe("StackedNav", () => {
 				<StackedNavLink>Two</StackedNavLink>
 			</StackedNav>
 		);
-		expect(
-			wrapper
-				.find("li")
-				.first()
-				.text()
-		).toEqual("One");
-		expect(
-			wrapper
-				.find("li")
-				.last()
-				.text()
-		).toEqual("Two");
+		expect(wrapper.find("li").first().text()).toEqual("One");
+		expect(wrapper.find("li").last().text()).toEqual("Two");
 	});
 
 	it("should pass any additionally supplied props to the parent nav and to the child link", () => {
@@ -210,11 +190,8 @@ describe("StackedNav", () => {
 			</StackedNav>
 		);
 		expect(wrapper.props()["data-test"]).toEqual("true");
-		expect(
-			wrapper
-				.find("li")
-				.first()
-				.props()["data-another-test"]
-		).toEqual("true");
+		expect(wrapper.find("li").first().props()["data-another-test"]).toEqual(
+			"true"
+		);
 	});
 });

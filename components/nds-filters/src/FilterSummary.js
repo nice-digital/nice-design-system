@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import { Tag } from "@nice-digital/nds-tag";
-import RemoveIcon from "@nice-digital/icons/lib/Remove";
 import "./../scss/filter-summary.scss";
 
 export function FilterSummary({
@@ -40,7 +39,7 @@ const defineElementType = (onClick, elementType) => {
 	return element;
 };
 
-const validateElementProps = element => {
+const validateElementProps = (element) => {
 	if (element.type.displayName == "Link" && !element.props.to) {
 		return "Link component missing 'TO' attribute --->";
 	}
@@ -64,8 +63,7 @@ function ResultsFilters({ filters }) {
 				}) => {
 					const ElementType = defineElementType(onClick, elementType);
 					const props = {
-						className: classnames(["tag__remove", className]),
-						"aria-label": `Remove ${label}`,
+						className,
 						[populateMethodProperty(onClick, method, ElementType)]: onClick
 							? onClick
 							: destination
@@ -73,12 +71,13 @@ function ResultsFilters({ filters }) {
 					return (
 						<li key={label} className="filter-summary__filter">
 							{validateElementProps(<ElementType {...props} />)}
-							<Tag outline>
+							<Tag
+								outline
+								remove={
+									<ElementType {...props}>Remove {label} filter</ElementType>
+								}
+							>
 								{label}
-								<ElementType {...props}>
-									<RemoveIcon />
-									<span className="visually-hidden">Remove {label} filter</span>
-								</ElementType>
 							</Tag>
 						</li>
 					);
@@ -93,10 +92,10 @@ function ResultsSorting({ sorting, selectName }) {
 	const [showButton, setShowButton] = useState(true);
 
 	// Find default active value if it exists
-	const defaultValue = sorting.find(s => s.active)?.value || "";
+	const defaultValue = sorting.find((s) => s.active)?.value || "";
 
 	// Run callback function passed in to the selected sorting option
-	const handleChange = e => {
+	const handleChange = (e) => {
 		const onSelected = sorting[e.target.selectedIndex].onSelected;
 		if (typeof onSelected === "function") {
 			onSelected(sorting[e.target.selectedIndex].onSelected.value);

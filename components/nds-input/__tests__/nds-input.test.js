@@ -32,7 +32,7 @@ describe("@nice-digital/nds-input", () => {
 	});
 
 	it("should pass down a ref to the input", () => {
-		const myRefFunction = jest.fn(node => node.nodeName);
+		const myRefFunction = jest.fn((node) => node.nodeName);
 		mount(<Input {...props} inputRef={myRefFunction} />);
 		expect(myRefFunction).toReturnWith("INPUT");
 	});

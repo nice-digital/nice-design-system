@@ -132,10 +132,10 @@ export function undelegate(instance) {
  * 	eventr(Test;)
  */
 function mixin(pluginClass) {
-	pluginClass.prototype.delegate = function() {
+	pluginClass.prototype.delegate = function () {
 		return mixin.delegate.call(this, this);
 	};
-	pluginClass.prototype.undelegate = function() {
+	pluginClass.prototype.undelegate = function () {
 		return mixin.undelegate.call(this, this);
 	};
 }

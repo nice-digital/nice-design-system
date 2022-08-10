@@ -1,4 +1,11 @@
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/focus';
+@use '@nice-digital/nds-core/scss/layout';
+@use '@nice-digital/nds-core/scss/media-queries';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
+
 ////
 /// @group components
 ////
@@ -6,12 +13,12 @@
 /// Hero banner component.
 /// @since 0.2.0
 .hero {
-  @include nds-links-inverse;
-  @include nds-inverse-button-focus;
-  background: $nds-colour-hero-background;
-  color: $nds-colour-text-inverse;
+  @include typography.links-inverse;
+  @include focus.inverse-button-focus;
+  background: colours.$hero-background;
+  color: colours.$text-inverse;
   left: calc(50%);
-  margin-bottom: rem($nds-spacing-large);
+  margin-bottom: utils.rem(spacing.$large);
   margin-left: -50vw;
   margin-right: -50vw;
   overflow: hidden;
@@ -19,33 +26,45 @@
   right: calc(50%);
   width: 100vw;
 
+  .breadcrumbs {
+    @include typography.links-inverse;
+  }
+
   &__container {
-    @include nds-container;
+    @include layout.container;
   }
 
   &__body {
-    @include nds-clearfix;
-    margin-top: rem($nds-spacing-large);
-    padding: rem(0 0 $nds-spacing-large);
+    @include layout.clearfix;
+    margin-top: utils.rem(spacing.$large);
+    padding: utils.rem(0 0 spacing.$large);
   }
 
   // Container for title, lead and actions
   &__copy {
-    margin-bottom: rem($nds-spacing-large);
+    margin-bottom: utils.rem(spacing.$large);
   }
 
   &__title {
-    @include nds-h1;
+    @include typography.h1;
   }
 
   &__intro {
-    @include nds-lead;
+    @include typography.lead;
   }
 
   // Optional footer
   &__footer {
-    border-top: rem($nds-spacing-xx-small) solid $nds-colour-hero-border;
-    padding: rem($nds-spacing-medium 0);
+    border-top: utils.rem(spacing.$xx-small) solid colours.$hero-border;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: utils.rem(spacing.$medium 0);
+
+    // HACK: To fix any lists that have classes like show--ib applied e.g. find guidance landing page
+    .list--piped {
+      display: flex !important;
+    }
 
     p,
     ul {
@@ -54,7 +73,7 @@
     }
   }
 
-  @include mq($from: md) {
+  @include media-queries.mq($from: md) {
     &__copy {
       float: left;
       margin-bottom: 0;

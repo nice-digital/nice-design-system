@@ -24,7 +24,7 @@ export class FilterPanel extends Component {
 	handleClick(e) {
 		e.preventDefault();
 
-		this.setState(prevState => ({
+		this.setState((prevState) => ({
 			isExpanded: !prevState.isExpanded
 		}));
 	}
@@ -44,7 +44,7 @@ export class FilterPanel extends Component {
 
 		const HeadingLevel = "h" + headingLevel;
 
-		const clonedChildren = React.Children.map(children, child => {
+		const clonedChildren = React.Children.map(children, (child) => {
 			const clonedChild =
 				child.type?.displayName == "FilterGroup" ||
 				child.type?.displayName == "FilterByInput"

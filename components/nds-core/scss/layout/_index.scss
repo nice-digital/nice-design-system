@@ -1,0 +1,43 @@
+@use '../spacing';
+@use '../utils';
+
+/// The maximum width of the default container, in pixels
+/// @since 0.5.2
+$container-max-width: 1170;
+
+/// The gutter for the default container
+/// @since 1.0.0
+$container-gutter: spacing.$medium;
+
+/// The maximum content width to ensure good readability
+/// @since 1.7.0
+$readable-width: 66ch;
+
+/// Container placeholder.
+/// @since 1.0.0
+@mixin container {
+  margin: auto;
+  max-width: utils.rem($container-max-width);
+  width: 96%; // IE11 support for calc not consistent https://caniuse.com/calc (See "Known issues")
+  width: calc(100% - #{utils.rem($container-gutter * 2)});
+}
+
+/// Make an element adapt its height to fit floated children, and clear floats in both directions.
+/// @since 0.1.0
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: ' ';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+/// Placeholder for clearfix
+/// @since 0.1.0
+%clearfix {
+  @include clearfix;
+}

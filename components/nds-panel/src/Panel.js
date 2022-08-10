@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import "./../scss/panel.scss";
 
-export const Panel = props => {
+export const Panel = (props) => {
 	const { children, variant, className, ...rest } = props;
 
 	const classes = classnames([

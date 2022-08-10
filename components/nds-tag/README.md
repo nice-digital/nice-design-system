@@ -172,6 +172,25 @@ Applies an success state. Adds class to apply styling.
 <Tag success>success</Tag>
 ```
 
+#### remove
+
+- Type: `ReactNode`
+
+An element to render as a the button/link if this is a removeable tag. Usually an anchor or a custom `Link` component when using a router. It will get passed a `className` prop of `tag__remove` automatically. It's up to you to provide relevant visually hidden link text for the anchor. See the example below:
+
+```jsx
+<Tag
+	outline
+	remove={
+		<a href="#" className="test">
+			<span className="visually-hidden">Remove this tag</span>
+		</a>
+	}
+>
+	Some tag text
+</Tag>
+```
+
 ##### other props
 
 Other props will be cascaded to the containing span.
@@ -185,7 +204,7 @@ Other props will be cascaded to the containing span.
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-tag/scss/tag";
+@forward '@nice-digital/nds-tag/scss/tag';
 ```
 
 ### HTML

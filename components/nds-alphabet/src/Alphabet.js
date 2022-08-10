@@ -2,10 +2,10 @@ import React, { Children, isValidElement, cloneElement } from "react";
 import PropTypes from "prop-types";
 import "../scss/alphabet.scss";
 
-export const Alphabet = props => {
+export const Alphabet = (props) => {
 	const { children, className, id, chunky, ...attrs } = props;
 
-	const chunkyChild = child => {
+	const chunkyChild = (child) => {
 		return isValidElement(child)
 			? cloneElement(child, { chunky: true })
 			: child;
@@ -20,7 +20,9 @@ export const Alphabet = props => {
 			id={id || "a-to-z"}
 			{...attrs}
 		>
-			{chunky ? Children.map(children, child => chunkyChild(child)) : children}
+			{chunky
+				? Children.map(children, (child) => chunkyChild(child))
+				: children}
 		</ol>
 	);
 };
@@ -32,7 +34,7 @@ Alphabet.propTypes = {
 	className: PropTypes.string
 };
 
-export const Letter = props => {
+export const Letter = (props) => {
 	const { children, label, to, chunky, elementType, ...attrs } = props;
 
 	let body;
@@ -90,11 +92,9 @@ const Link = ({
 	};
 
 	return (
-		<span className="alphabet__link-wrapper">
-			<ElementType aria-label={ariaLabel} {...linkProps}>
-				{text}
-			</ElementType>{" "}
-		</span>
+		<ElementType aria-label={ariaLabel} {...linkProps}>
+			{text}
+		</ElementType>
 	);
 };
 

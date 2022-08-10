@@ -1,9 +1,5 @@
 @charset 'utf-8';
 
-// Vendor
-@import '~normalize.css/normalize';
-
-// Import all the core variables, functions and mixins
-@import '~@nice-digital/nds-core/scss/core';
-
-@import 'helpers/helpers', 'typography/typography';
+@forward 'normalize.css/normalize';
+@forward 'helpers';
+@forward 'typography';

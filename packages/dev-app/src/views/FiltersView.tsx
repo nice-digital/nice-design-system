@@ -60,7 +60,7 @@ export const FiltersView = () => {
 					heading="Type"
 					id="ProductType"
 					selectedCount={99}
-					className="mb--f"
+					className="test"
 				>
 					<FilterOption
 						isSelected={true}
@@ -81,7 +81,7 @@ export const FiltersView = () => {
 					name="filter"
 					buttonLabel="Clik nmee!"
 					collapseByDefault={true}
-					className="mb--f"
+					className="test"
 					onChange={onChanged}
 					inputProps={{
 						hint: "enter your search term here",

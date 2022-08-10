@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 
-export const Breadcrumb = props => {
+export const Breadcrumb = (props) => {
 	const { elementType, method, to, children, className, ...attributes } = props;
 
 	let ElementType = elementType || "span";

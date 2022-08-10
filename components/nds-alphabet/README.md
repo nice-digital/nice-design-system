@@ -101,7 +101,7 @@ The element type used to render the component; can be a React component.
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-alphabet/scss/alphabet";
+@forward '@nice-digital/nds-alphabet/scss/alphabet';
 ```
 
 ### HTML

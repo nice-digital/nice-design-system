@@ -1,15 +1,14 @@
-import React from "react";
+import React, { cloneElement } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 
 import "./../scss/tag.scss";
 
-export const Tag = props => {
+export const Tag = (props) => {
 	const {
 		children,
 		alpha,
 		beta,
-		live,
 		isNew,
 		updated,
 		consultation,
@@ -20,6 +19,7 @@ export const Tag = props => {
 		error,
 		success,
 		caution,
+		remove,
 		...rest
 	} = props;
 
@@ -27,7 +27,6 @@ export const Tag = props => {
 		tag: true,
 		"tag--alpha": alpha,
 		"tag--beta": beta,
-		"tag--live": live,
 		"tag--new": isNew,
 		"tag--updated": updated,
 		"tag--consultation": consultation,
@@ -43,6 +42,13 @@ export const Tag = props => {
 	return (
 		<span className={classNames} {...rest}>
 			{children}
+			{remove
+				? cloneElement(
+						remove,
+						{ className: classnames(remove.props.className, "tag__remove") },
+						<span className="visually-hidden">{remove.props.children}</span>
+				  )
+				: null}
 		</span>
 	);
 };
@@ -50,7 +56,6 @@ export const Tag = props => {
 Tag.propTypes = {
 	alpha: PropTypes.bool,
 	beta: PropTypes.bool,
-	live: PropTypes.bool,
 	isNew: PropTypes.bool,
 	updated: PropTypes.bool,
 	consultation: PropTypes.bool,
@@ -61,6 +66,7 @@ Tag.propTypes = {
 	error: PropTypes.bool,
 	success: PropTypes.bool,
 	caution: PropTypes.bool,
+	remove: PropTypes.node,
 	children: PropTypes.oneOfType([
 		PropTypes.arrayOf(PropTypes.node),
 		PropTypes.node
@@ -70,7 +76,6 @@ Tag.propTypes = {
 Tag.variants = {
 	alpha: "alpha",
 	beta: "beta",
-	live: "live",
 	isNew: "isNew",
 	updated: "updated",
 	consultation: "consultation",

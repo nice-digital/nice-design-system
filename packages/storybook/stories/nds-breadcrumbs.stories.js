@@ -23,10 +23,10 @@ const twoLevels = () => {
 	);
 };
 
-const CustomLink = props => (
+const CustomLink = (props) => (
 	<a
 		href={props.to}
-		onClick={e => {
+		onClick={(e) => {
 			e.preventDefault();
 			action("Clicked " + props.to)();
 		}}

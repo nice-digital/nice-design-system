@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import "../scss/hero.scss";
 
-export const Hero = props => {
+export const Hero = (props) => {
 	const {
 		actions,
 		children,

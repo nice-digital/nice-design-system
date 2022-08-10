@@ -553,7 +553,7 @@ Any additional props are spread on to the first `div` element, useful for access
 If you're not using [React](#react), then import the SCSS directly into your application by:
 
 ```scss
-@import "~@nice-digital/nds-filters/scss/filters";
+@forward '@nice-digital/nds-filters/scss/filters';
 ```
 
 ### HTML

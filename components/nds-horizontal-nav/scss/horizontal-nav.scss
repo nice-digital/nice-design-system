@@ -4,74 +4,92 @@
 
 // stylelint-disable no-descending-specificity
 
-@import '~@nice-digital/nds-core/scss/core';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/media-queries';
+@use '@nice-digital/nds-core/scss/utils';
+@use '@nice-digital/nds-core/scss/visibility';
 
 .horizontal-nav {
-  @include nds-hide-print;
-  margin-bottom: rem($nds-spacing-large);
+  @include visibility.hide-print;
+  margin-bottom: utils.rem(spacing.$large);
+
   &__list {
     align-items: stretch;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-flow: column wrap;
     list-style: none;
     margin: 0;
     max-width: 100%;
-    @include mq($from: sm) {
-      border-bottom: 3px solid $nds-colour-nice-black;
+
+    @include media-queries.mq($from: sm) {
+      border-bottom: 3px solid colours.$horizontal-nav-list-border;
       flex-direction: row;
     }
   }
+
   &__item {
     margin: 0;
+
     &:first-of-type {
       margin-left: 0;
     }
-    @include mq($from: sm) {
+
+    @include media-queries.mq($from: sm) {
       align-items: stretch;
       display: flex;
-      margin: 0 rem($nds-spacing-small);
+      margin: 0 utils.rem(spacing.$small);
       text-align: center;
     }
-    @include mq($until: sm) {
-      border-top: 1px solid $nds-colour-border;
+
+    @include media-queries.mq($until: sm) {
+      border-top: 1px solid colours.$border;
+
       &:first-of-type {
         border-top: none;
       }
     }
   }
+
   &__link {
     display: block;
-    line-height: 1em;
+    line-height: 1;
     margin-bottom: -1px; // to ensure there's no rendered gap between the bottom border and the border across the page
-    padding: rem($nds-spacing-medium);
+    padding: utils.rem(spacing.$medium);
     text-decoration: none;
+
     &:hover {
-      text-decoration: underline;
+      text-decoration-line: underline;
     }
+
     &[aria-current='true'] {
-      background-color: $nds-colour-nice-grey-3;
-      border-bottom: 4px solid $nds-colour-nice-black;
-      color: $nds-colour-nice-black;
+      background-color: colours.$horizontal-nav-current-link-background;
+      border-bottom: 4px solid colours.$horizontal-nav-current-link-border;
+      color: colours.$horizontal-nav-current-link;
       font-weight: bold;
-      @include mq($from: md) {
+
+      @include media-queries.mq($from: md) {
         background-color: unset;
       }
     }
-    @include mq($until: sm) {
+
+    @include media-queries.mq($until: sm) {
       &:active {
-        background-color: $nds-colour-nice-teal;
-        color: $nds-colour-nice-white;
+        background-color: colours.$horizontal-nav-active-link-mobile-background;
+        color: colours.$horizontal-nav-active-link-mobile;
       }
     }
-    @include mq($from: sm) {
-      padding: rem($nds-spacing-medium) rem($nds-spacing-small);
+
+    @include media-queries.mq($from: sm) {
+      padding: utils.rem(spacing.$medium) utils.rem(spacing.$small);
     }
-    @include mq($from: md) {
-      padding: rem($nds-spacing-medium);
+
+    @include media-queries.mq($from: md) {
+      padding: utils.rem(spacing.$medium);
     }
   }
-  @include mq($until: sm) {
-    border: 1px solid $nds-colour-border;
+
+  @include media-queries.mq($until: sm) {
+    border: 1px solid colours.$border;
   }
 }
