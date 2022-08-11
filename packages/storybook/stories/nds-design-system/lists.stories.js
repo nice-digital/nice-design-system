@@ -73,6 +73,13 @@ const list = (
 					One shock&nbsp;of 150 J should be given and CPR
 					immediately&nbsp;resumed. This should be continued
 					for&nbsp;2&nbsp;minutes, then paused briefly to check the monitor.
+					<ul>
+						<li>I am a list item</li>
+						<li>I am a list item</li>
+						<li>I am a list item</li>
+						<li>I am a list item</li>
+						<li>I am a list item</li>
+					</ul>
 				</li>
 				<li>
 					If VF/VT persists a second shock of&nbsp;150 J should be given
