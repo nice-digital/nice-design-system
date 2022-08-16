@@ -43,8 +43,8 @@
   // Fallback to fixed gutter grid in IE11, but use CSS vars where supported.
   // IE11 doesn't support custom properties: https://caniuse.com/css-variables
   @supports ((--a: 0)) {
-    margin-left: calc(grid-settings.$grid-gutter / -2);
-    margin-right: calc(grid-settings.$grid-gutter / -2);
+    margin-left: calc(-0.5 * var(--nds-grid-gutter));
+    margin-right: calc(-0.5 * var(--nds-grid-gutter));
     width: calc(100% + var(--nds-grid-gutter));
   }
 
