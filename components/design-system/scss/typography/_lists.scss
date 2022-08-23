@@ -79,19 +79,16 @@ ol,
 /// Pipe separate list
 /// @since 0.5.0
 .list--piped {
-  align-items: center;
-  display: flex;
-  flex-flow: row wrap;
   list-style: none;
   margin-left: 0;
   max-width: none; // To override the default 66ch max width
   padding: 0;
 
   li {
-    align-items: center;
-    display: flex;
-    flex-flow: row nowrap;
-    margin-bottom: 0;
+    border-right: 1px solid colours.$icons;
+    display: inline-block;
+    margin: 0 utils.rem(spacing.$medium) 0 0;
+    padding-right: utils.rem(spacing.$medium);
 
     a {
       margin-left: -(utils.rem(spacing.$medium));
@@ -99,23 +96,17 @@ ol,
       padding: utils.rem(spacing.$small spacing.$medium);
     }
 
-    &:after {
-      background: colours.$icons;
-      content: '';
-      height: utils.rem(spacing.$large);
-      margin: utils.rem(0 spacing.$medium);
-      width: 1px;
-    }
-
     &:first-child {
+      padding-left: 0;
+
       a {
         margin-left: 0;
         padding-left: 0;
       }
     }
 
-    &:last-child:after {
-      display: none;
+    &:last-child {
+      border-right: 0;
     }
   }
 }

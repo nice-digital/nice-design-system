@@ -131,4 +131,21 @@ storiesOf("Typography/Lists", module)
 	})
 	.add("Tight", () => {
 		return <ul className="list list--tight">{list}</ul>;
+	})
+	.add("Piped", () => {
+		return (
+			<ul className="list list--piped">
+				<li>
+					New <span className="visually-hidden">guidance</span> in the last 6
+					months (0)
+				</li>
+				<li>
+					Updated <span className="visually-hidden">guidance</span> in the last
+					6 months (0)
+				</li>
+				<li>
+					In development <span className="visually-hidden">guidance</span> (0)
+				</li>
+			</ul>
+		);
 	});
