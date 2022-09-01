@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/icons",
-	"version": "5.0.0",
+	"version": "5.0.1",
 	"description": "Icons for use in NICE Digital Services",
 	"scripts": {
 		"start": "npm run webfont && npm run svgr && npm run esify",

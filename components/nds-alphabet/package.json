@@ -1,6 +1,6 @@
 {
   "name": "@nice-digital/nds-alphabet",
-  "version": "2.0.1-alpha.0",
+  "version": "2.0.1",
   "description": "Alphabet component for the NICE Design System",
   "main": "lib/Alphabet.js",
   "module": "es/Alphabet.js",
@@ -34,7 +34,7 @@
   "homepage": "https://design-system.nice.org.uk/",
   "license": "MIT",
   "dependencies": {
-    "@nice-digital/nds-core": "^3.0.1-alpha.0",
+    "@nice-digital/nds-core": "^3.0.1",
     "prop-types": "^15.8.1"
   }
 }
