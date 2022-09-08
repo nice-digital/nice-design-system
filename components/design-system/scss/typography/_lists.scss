@@ -26,6 +26,10 @@ ol,
       margin-bottom: utils.rem(spacing.$x-small);
     }
   }
+
+  ul {
+    margin-bottom: 0;
+  }
 }
 
 /// Unstyled list modifier - remove bullets, padding etc.
