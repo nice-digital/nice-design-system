@@ -1,6 +1,6 @@
 {
 	"name": "dev-app",
-	"version": "3.0.3-alpha.0",
+	"version": "3.0.4-alpha.0",
 	"private": true,
 	"scripts": {
 		"start": "npm run copy-nice-icons && react-scripts start",
@@ -10,7 +10,7 @@
 		"copy-nice-icons": "copyfiles -f \"node_modules/@nice-digital/icons/dist/*.{woff,woff2}\" \"public/fonts\""
 	},
 	"dependencies": {
-		"@nice-digital/design-system": "^4.0.3-alpha.0",
+		"@nice-digital/design-system": "^4.0.4-alpha.0",
 		"@nice-digital/nds-a-z-list": "^3.0.2-alpha.0",
 		"@nice-digital/nds-action-banner": "^3.0.2-alpha.0",
 		"@nice-digital/nds-alert": "^3.0.2-alpha.0",
