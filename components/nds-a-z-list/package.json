@@ -1,6 +1,6 @@
 {
   "name": "@nice-digital/nds-a-z-list",
-  "version": "3.0.2-alpha.0",
+  "version": "3.0.2",
   "description": "A to Z list component for the NICE Design System",
   "main": "lib/AZList.js",
   "module": "es/AZList.js",
@@ -34,7 +34,7 @@
   "homepage": "https://design-system.nice.org.uk/",
   "license": "MIT",
   "dependencies": {
-    "@nice-digital/nds-core": "^3.0.2-alpha.0",
+    "@nice-digital/nds-core": "^3.0.2",
     "prop-types": "^15.8.1"
   }
 }
