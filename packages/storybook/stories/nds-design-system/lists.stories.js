@@ -19,6 +19,46 @@ const list = (
 					or quadruple survival from out hospital cardiac arrest,
 					and&nbsp;defibrillation within 3–5 minutes of collapse can produce
 					survival rates up to 50–70%.
+					<ul>
+						<li>
+							Immediate initiation of cardiopulmonary resuscitation (CPR) can
+							double or quadruple survival from out hospital cardiac arrest,
+							and&nbsp;defibrillation within 3–5 minutes of collapse can produce
+							survival rates up to 50–70%.
+						</li>
+						<li>
+							Immediate initiation of cardiopulmonary resuscitation (CPR) can
+							double or quadruple survival from out hospital cardiac arrest,
+							and&nbsp;defibrillation within 3–5 minutes of collapse can produce
+							survival rates up to 50–70%.
+						</li>
+						<li>
+							Immediate initiation of cardiopulmonary resuscitation (CPR) can
+							double or quadruple survival from out hospital cardiac arrest,
+							and&nbsp;defibrillation within 3–5 minutes of collapse can produce
+							survival rates up to 50–70%.
+							<ul>
+								<li>
+									Immediate initiation of cardiopulmonary resuscitation (CPR)
+									can double or quadruple survival from out hospital cardiac
+									arrest, and&nbsp;defibrillation within 3–5 minutes of collapse
+									can produce survival rates up to 50–70%.
+								</li>
+								<li>
+									Immediate initiation of cardiopulmonary resuscitation (CPR)
+									can double or quadruple survival from out hospital cardiac
+									arrest, and&nbsp;defibrillation within 3–5 minutes of collapse
+									can produce survival rates up to 50–70%.
+								</li>
+								<li>
+									Immediate initiation of cardiopulmonary resuscitation (CPR)
+									can double or quadruple survival from out hospital cardiac
+									arrest, and&nbsp;defibrillation within 3–5 minutes of collapse
+									can produce survival rates up to 50–70%.
+								</li>
+							</ul>
+						</li>
+					</ul>
 				</li>
 			</ul>
 		</li>
@@ -124,7 +164,19 @@ const list = (
 storiesOf("Typography/Lists", module)
 	.addDecorator(withKnobs)
 	.add("Default", () => {
-		return <ul className="list">{list}</ul>;
+		return (
+			<>
+				<ul className="list">{list}</ul>
+				<h2>Some text in between</h2>
+				<ul className="list">{list}</ul>
+				<h3>Some text in between</h3>
+				<ul className="list">{list}</ul>
+				<h4>Some text in between</h4>
+				<ul className="list">{list}</ul>
+				<h5>Some text in between</h5>
+				<ul className="list">{list}</ul>
+			</>
+		);
 	})
 	.add("Loose", () => {
 		return <ul className="list list--loose">{list}</ul>;

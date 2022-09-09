@@ -19,12 +19,16 @@ ol,
     ol,
     ul,
     .list {
-      margin-top: utils.rem(spacing.$small);
+      margin-top: utils.rem(spacing.$x-small);
     }
 
     li {
       margin-bottom: utils.rem(spacing.$x-small);
     }
+  }
+
+  ul {
+    margin-bottom: 0;
   }
 }
 
@@ -49,7 +53,7 @@ ol,
     ol,
     ul,
     .list {
-      margin-top: utils.rem(spacing.$medium);
+      margin-top: utils.rem(spacing.$small);
     }
 
     li {
