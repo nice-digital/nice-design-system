@@ -1,7 +1,5 @@
 {
-	"command": {
-		"bootstrap": { "npmClientArgs": ["--no-package-lock"] }
-	},
-	"packages": ["components/*", "packages/*"],
+	"$schema": "node_modules/lerna/schemas/lerna-schema.json",
+	"useWorkspaces": true,
 	"version": "independent"
 }
