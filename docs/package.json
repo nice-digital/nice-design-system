@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mdx-js/loader": "^2.1.5",
+    "@mdx-js/react": "^2.1.5",
+    "@next/mdx": "^13.0.1",
     "glob": "^8.0.3",
     "next": "13.0.0",
     "next-transpile-modules": "^9.1.0",
