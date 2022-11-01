@@ -36,5 +36,8 @@
   "dependencies": {
     "@nice-digital/nds-core": "^3.0.2",
     "prop-types": "^15.8.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.4"
   }
 }

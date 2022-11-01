@@ -34,7 +34,8 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"devDependencies": {
-		"@babel/cli": "^7.5.0"
+		"@babel/cli": "^7.5.0",
+		"typescript": "^4.8.4"
 	},
 	"dependencies": {
 		"@nice-digital/nds-core": "^3.0.2",

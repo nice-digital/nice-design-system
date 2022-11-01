@@ -73,5 +73,8 @@
     "react": "^16 || ^17 || ^18",
     "react-dom": "^16 || ^17 || ^18"
   },
-  "gitHead": "e33b39c96bdba7d3c4bf1e74d4101395ccd4f6e6"
+  "gitHead": "e33b39c96bdba7d3c4bf1e74d4101395ccd4f6e6",
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  }
 }

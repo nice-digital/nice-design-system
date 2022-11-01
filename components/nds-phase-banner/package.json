@@ -44,7 +44,8 @@
 		"prop-types": "^15.7.2"
 	},
 	"devDependencies": {
-		"@babel/cli": "^7.5.0"
+		"@babel/cli": "^7.5.0",
+		"typescript": "^4.8.4"
 	},
 	"peerDependencies": {
 		"react": "^16 || ^17 || ^18",
