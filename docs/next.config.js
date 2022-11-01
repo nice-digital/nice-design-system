@@ -1,10 +1,8 @@
 /** @type {import('next').NextConfig} */
 
 const glob = require("glob");
-const { default: next } = require("next");
-const {
-	getModuleBuildInfo
-} = require("next/dist/build/webpack/loaders/get-module-build-info");
+const theme = require("shiki/themes/nord.json");
+const { remarkCodeHike } = require("@code-hike/mdx");
 
 const nextConfig = {
 	reactStrictMode: true,
@@ -18,7 +16,7 @@ const withMDX = require("@next/mdx")({
 		// If you use remark-gfm, you'll need to use next.config.mjs
 		// as the package is ESM only
 		// https://github.com/remarkjs/remark-gfm#install
-		remarkPlugins: [],
+		remarkPlugins: [[remarkCodeHike, { theme, lineNumbers: true }]],
 		rehypePlugins: []
 		// If you use `MDXProvider`, uncomment the following line.
 		// providerImportSource: "@mdx-js/react",
