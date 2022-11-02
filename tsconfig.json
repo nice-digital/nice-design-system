@@ -10,5 +10,6 @@
 		"skipLibCheck": true
 	},
 	"files": [],
+	"exclude": ["node_modules"],
 	"references": [{ "path": "./components/nds-action-banner" }]
 }
