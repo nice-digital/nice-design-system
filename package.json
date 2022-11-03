@@ -5,7 +5,7 @@
   "description": "Monorepo for the NICE Design System",
   "scripts": {
     "start": "npm run dev",
-    "dev": "concurrently npm:build:es:watch npm:docs:dev",
+    "dev": "concurrently npm:build:ts:watch npm:docs:dev",
     "// ICONS": "",
     "icons": "lerna run --stream --scope=@nice-digital/icons",
     "icons:start": "npm run icons -- start",
@@ -35,6 +35,8 @@
     "prettier": "prettier --check components/*/{src,scss,__{tests,mocks}__}/**/*.{scss,js,json} packages/**/*.{scss,js,json}",
     "prettier:fix": "npm run prettier -- --write",
     "// TRANSIPLE ES6": "",
+    "build:ts": "tsc --build",
+    "build:ts:watch": "tsc --build --watch",
     "prebuild:lib": "lerna exec rimraf lib",
     "build:lib": "lerna exec --scope=@nice-digital/nds-* --parallel -- babel src -d lib --source-maps --root-mode upward",
     "build:lib:watch": "npm run build:lib -- -w",
