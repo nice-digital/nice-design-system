@@ -1,4 +1,6 @@
-module.exports = {
+import type { Config } from "jest";
+
+const config: Config = {
 	collectCoverageFrom: ["components/*/src/**/*.tsx"],
 	moduleFileExtensions: ["tsx", "js"],
 	moduleNameMapper: {
@@ -10,6 +12,7 @@ module.exports = {
 		"nds-tag": "<rootDir>/components/nds-tag/src/Tag.js",
 		"nds-core": "<rootDir>/components/nds-core/src/core.js"
 	},
+	setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
 	testEnvironment: "jsdom",
 	testPathIgnorePatterns: [
 		"<rootDir>/(?:.+?)/lib/",
@@ -22,3 +25,5 @@ module.exports = {
 	},
 	transformIgnorePatterns: ["<rootDir>.*(node_modules)(?!.*nds-*.*).*$"]
 };
+
+export default config;
