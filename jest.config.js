@@ -1,6 +1,6 @@
 module.exports = {
-	collectCoverageFrom: ["packages/*/src/**/*.js", "components/*/src/**/*.js"],
-	coveragePathIgnorePatterns: ["stories\\.js"],
+	collectCoverageFrom: ["components/*/src/**/*.tsx"],
+	moduleFileExtensions: ["tsx", "js"],
 	moduleNameMapper: {
 		"^.+\\.(css|less|scss)$": "identity-obj-proxy",
 		"nds-input": "<rootDir>/components/nds-input/src/Input.js",
@@ -10,13 +10,15 @@ module.exports = {
 		"nds-tag": "<rootDir>/components/nds-tag/src/Tag.js",
 		"nds-core": "<rootDir>/components/nds-core/src/core.js"
 	},
-	setupFilesAfterEnv: ["./jest.setup.js"],
-	snapshotSerializers: ["enzyme-to-json/serializer"],
 	testEnvironment: "jsdom",
 	testPathIgnorePatterns: [
 		"<rootDir>/(?:.+?)/lib/",
 		"<rootDir>/(?:.+?)/es/",
-		".cache"
+		".cache",
+		".next"
 	],
+	transform: {
+		"^.+\\.(ts|tsx|js)?$": "ts-jest"
+	},
 	transformIgnorePatterns: ["<rootDir>.*(node_modules)(?!.*nds-*.*).*$"]
 };

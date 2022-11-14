@@ -39,6 +39,9 @@
   },
   "gitHead": "e33b39c96bdba7d3c4bf1e74d4101395ccd4f6e6",
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@types/jest": "^29.2.2",
     "typescript": "^4.8.4"
   }
 }
