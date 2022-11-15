@@ -28,7 +28,9 @@ const withMDX = require("@next/mdx")({
 const allNDSComponents = glob.sync("@nice-digital/*", {
 	cwd: "../node_modules"
 });
-
-const withTM = require("next-transpile-modules")(allNDSComponents);
+const withTM = require("next-transpile-modules")([
+	...allNDSComponents,
+	"@nice-digital/global-nav"
+]);
 
 module.exports = withTM(withMDX(nextConfig));
