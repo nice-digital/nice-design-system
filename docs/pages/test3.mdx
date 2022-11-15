@@ -1,3 +1,4 @@
+import { ComponentLayout } from "../components/layouts/Component";
 import { Button } from "@nice-digital/nds-button";
 
 # I am a page!
@@ -23,3 +24,5 @@ console.log("Wowzers");
 console.log("ERMAGERD, TABS");
 ```
 </CH.Code>
+
+export default ({ children }) => <ComponentLayout>{children}</ComponentLayout>;
