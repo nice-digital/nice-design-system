@@ -8,16 +8,14 @@
 	"author": "Ian Routledge <ian.routledge@nice.org.uk>",
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
-	"main": "lib/ActionBanner.js",
-	"module": "es/ActionBanner.js",
+	"main": "es/ActionBanner.js",
 	"style": "scss/action-banner.scss",
 	"types": "nds-action-banner.d.ts",
 	"directories": {
-		"lib": "lib",
+		"lib": "es",
 		"test": "__tests__"
 	},
 	"files": [
-		"lib",
 		"es",
 		"scss",
 		"*.d.ts"
