@@ -19,11 +19,11 @@ exports[`ActionBanner should match snapshot for closeable subtle action banner 1
           >
             Some title
           </h2>
-          <p
+          <div
             class="action-banner__intro"
           >
             Some body
-          </p>
+          </div>
         </div>
         <div
           class="action-banner__actions"
@@ -85,11 +85,11 @@ exports[`ActionBanner should match snapshot for default action banner 1`] = `
           >
             Some title
           </h2>
-          <p
+          <div
             class="action-banner__intro"
           >
             Some body
-          </p>
+          </div>
         </div>
         <div
           class="action-banner__actions"

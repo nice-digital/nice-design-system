@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "../styles/globals.scss";
 import "@code-hike/mdx/dist/index.css";
 import type { AppProps } from "next/app";
 import { RootLayout } from "../components/layouts/RootLayout";

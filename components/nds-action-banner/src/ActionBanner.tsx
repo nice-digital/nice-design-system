@@ -59,7 +59,9 @@ export class ActionBanner extends React.Component<
 					<div className="action-banner__inner">
 						<div className="action-banner__text">
 							<h2 className="action-banner__title">{title}</h2>
-							{children && <p className="action-banner__intro">{children}</p>}
+							{children && (
+								<div className="action-banner__intro">{children}</div>
+							)}
 						</div>
 						{cta && <div className="action-banner__actions">{cta}</div>}
 						{onClosing && (

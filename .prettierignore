@@ -3,6 +3,7 @@ public
 package-lock.json
 .cache
 *.md
+*.mdx
 
 lib
 es
