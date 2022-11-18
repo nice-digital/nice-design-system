@@ -12,5 +12,8 @@
 	},
 	"files": [],
 	"exclude": ["node_modules"],
-	"references": [{ "path": "./components/nds-action-banner" }]
+	"references": [
+		{ "path": "./components/nds-action-banner" },
+		{ "path": "./components/nds-stacked-nav" }
+	]
 }

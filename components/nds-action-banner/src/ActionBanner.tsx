@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import classnames from "classnames";
 import RemoveIcon from "@nice-digital/icons/lib/Remove";
 
@@ -7,8 +7,8 @@ import "../scss/action-banner.scss";
 interface ActionBannerProps {
 	title: string;
 	variant?: "default" | "subtle";
-	children: React.ReactNode[] | React.ReactNode;
-	cta?: React.ReactNode;
+	children: ReactNode[] | ReactNode;
+	cta?: ReactNode;
 	onClosing?: Function;
 	className?: string;
 }
