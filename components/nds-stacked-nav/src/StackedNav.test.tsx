@@ -1,9 +1,5 @@
-import React from "react";
-import { Link, MemoryRouter } from "react-router-dom";
-import { shallow, mount } from "enzyme";
-import toJson from "enzyme-to-json";
-
-import { StackedNav, StackedNavLink } from "../src/StackedNav";
+import { render } from "@testing-library/react";
+import { StackedNav, StackedNavLink } from "./StackedNav";
 
 const heading = {
 	label: "Stacked Nav Heading",
@@ -48,49 +44,40 @@ const subNav = (
 );
 
 describe("StackedNav", () => {
-	it("should render without crashing", () => {
-		const wrapper = shallow(
-			<StackedNav {...heading}>
-				{links.map((item, index) => (
-					<StackedNavLink key={`idx${index}`} {...item} />
-				))}
-			</StackedNav>
-		);
-		expect(wrapper).toHaveLength(1);
-	});
-
 	it("should match snapshot with supplied props", () => {
-		const wrapper = shallow(
+		const { container } = render(
 			<StackedNav {...heading}>
 				{links.map((item, index) => (
 					<StackedNavLink key={`idx${index}`} {...item} />
 				))}
 			</StackedNav>
 		);
-		expect(toJson(wrapper)).toMatchSnapshot();
+
+		expect(container).toMatchSnapshot();
 	});
 
 	it("should match snapshot with supplied nested links", () => {
-		const wrapper = mount(
+		const { container } = render(
 			<StackedNav {...heading}>
 				<StackedNavLink {...links[0]} nested={subNav} />
 			</StackedNav>
 		);
-		expect(toJson(wrapper)).toMatchSnapshot();
+
+		expect(container).toMatchSnapshot();
 	});
 
 	it("should render a custom tag when passed to the header", () => {
 		const localHeading = Object.assign({}, heading, {
 			elementType: "h6"
 		});
-		const wrapper = mount(
+		const wrapper = render(
 			<StackedNav {...localHeading}>
 				{links.map((item, index) => (
 					<StackedNavLink key={`idx${index}`} {...item} />
 				))}
 			</StackedNav>
 		);
-		expect(wrapper.find("h6")).toHaveLength(1);
+		expect(wrapper.getByRole("heading", { level: 6 })).toBeInTheDocument();
 	});
 
 	it("should render a custom method in the heading if one is supplied", () => {
@@ -102,14 +89,16 @@ describe("StackedNav", () => {
 				destination: "/pigeon"
 			}
 		});
-		const wrapper = mount(
+		const wrapper = render(
 			<StackedNav {...localHeading}>
 				{links.map((item, index) => (
 					<StackedNavLink key={`idx${index}`} {...item} />
 				))}
 			</StackedNav>
 		);
-		expect(wrapper.find("h6 a").props()["pigeon"]).toEqual("/pigeon");
+		const heading6 = wrapper.getByRole("heading", { level: 6 });
+		const link = heading6.querySelector("a");
+		expect(link?.getAttribute("pigeon")).toBe("/pigeon");
 	});
 
 	it("should render an appropriate navigation attribute depending on the options supplied", () => {
@@ -122,66 +111,66 @@ describe("StackedNav", () => {
 				label: "Two",
 				destination: "two",
 				method: "pigeon"
-			},
-			{
-				label: "Three",
-				destination: "three",
-				elementType: Link
 			}
 		];
 
-		const wrapper = mount(
-			<MemoryRouter>
-				<StackedNav>
-					{links.map((item, index) => (
-						<StackedNavLink key={index} {...item} />
-					))}
-				</StackedNav>
-			</MemoryRouter>
+		const wrapper = render(
+			<StackedNav>
+				{links.map((item, index) => (
+					<StackedNavLink key={index} {...item} />
+				))}
+			</StackedNav>
 		);
 
-		expect(wrapper.find("a").at(0).props().href).toEqual("one");
+		expect(wrapper.getByRole("link").getAttribute("href")).toBe("one");
 
-		expect(wrapper.find("a").at(1).props().pigeon).toEqual("two");
-
-		expect(wrapper.find(Link).props().to).toEqual("three");
+		const { container } = wrapper;
+		container.querySelectorAll("a").forEach((link) => {
+			if (link.getAttribute("pigeon")) {
+				expect(link.getAttribute("pigeon")).toBe("two");
+			}
+		});
 	});
 
 	it("should not render a root tag unless the label is present", () => {
-		const wrapper = mount(
+		const { container } = render(
 			<StackedNav>
 				{links.map((item, index) => (
 					<StackedNavLink key={`idx${index}`} {...item} />
 				))}
 			</StackedNav>
 		);
-		expect(wrapper.find(".stacked-nav__root")).toHaveLength(0);
+		expect(
+			container.querySelector(".stacked-nav__root")
+		).not.toBeInTheDocument();
 	});
 
-	it("should not render a link where a label isn't present", () => {
-		const wrapper = mount(
+	it("should render the correct number of list items passed to it", () => {
+		const wrapper = render(
 			<StackedNav {...heading}>
 				{links.map((item, index) => (
 					<StackedNavLink key={`idx${index}`} {...item} />
 				))}
 			</StackedNav>
 		);
-		expect(wrapper.find("li")).toHaveLength(4);
+		expect(wrapper.getAllByRole("listitem")).toHaveLength(4);
 	});
 
 	it("should render a label as a priority over a child string", () => {
-		const wrapper = mount(
+		const wrapper = render(
 			<StackedNav {...heading}>
 				<StackedNavLink label="One">Two</StackedNavLink>
 				<StackedNavLink>Two</StackedNavLink>
 			</StackedNav>
 		);
-		expect(wrapper.find("li").first().text()).toEqual("One");
-		expect(wrapper.find("li").last().text()).toEqual("Two");
+
+		const items = wrapper.queryAllByRole("listitem");
+		expect(items[0].textContent).toBe("One");
+		expect(items[1].textContent).toBe("Two");
 	});
 
 	it("should pass any additionally supplied props to the parent nav and to the child link", () => {
-		const wrapper = mount(
+		const wrapper = render(
 			<StackedNav data-test="true">
 				<StackedNavLink label="One" data-another-test="true">
 					Two
@@ -189,9 +178,15 @@ describe("StackedNav", () => {
 				<StackedNavLink>Two</StackedNavLink>
 			</StackedNav>
 		);
-		expect(wrapper.props()["data-test"]).toEqual("true");
-		expect(wrapper.find("li").first().props()["data-another-test"]).toEqual(
+
+		expect(wrapper.getByRole("navigation").getAttribute("data-test")).toBe(
 			"true"
 		);
+
+		wrapper.queryAllByRole("li").forEach((item, index) => {
+			if (index === 0) {
+				expect(item.getAttribute("data-another-test")).toBe("true");
+			}
+		});
 	});
 });

@@ -6,7 +6,7 @@ import "./../scss/stacked-nav.scss";
 
 interface HeadingProps {
 	label?: ReactNode;
-	elementType?: ElementType;
+	elementType?: ElementType | string;
 	link?: HeadingLink;
 }
 
@@ -119,12 +119,12 @@ export const StackedNavLink = (props: BaseStackedNavLinkProps) => {
 
 export interface StackedNavProps {
 	[prop: string]: unknown;
-	label?: React.ReactNode;
-	elementType?: React.ElementType;
+	label?: ReactNode;
+	elementType?: ElementType | string;
 	link?: HeadingLink;
 	children:
-		| React.ReactElement<React.FC<StackedNavLinkType>>
-		| React.ReactElement<React.FC<StackedNavLinkType>>[];
+		| ReactElement<FC<StackedNavLinkType>>
+		| ReactElement<FC<StackedNavLinkType>>[];
 	className?: string;
 }
 
