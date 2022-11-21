@@ -23,6 +23,9 @@ export default function Home() {
 
 			<ul>
 				<li>
+					<Link href="/components/action-banner">Action Banner docs page</Link>
+				</li>
+				<li>
 					<Link href="/test">Test page 1 (NDS Action Banner)</Link>
 				</li>
 				<li>
