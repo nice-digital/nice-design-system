@@ -132,7 +132,7 @@ export const StackedNav = (props: StackedNavProps) => {
 	const { label, elementType, link, children, className, ...rest } = props;
 	const classNames = classnames(["stacked-nav", className]);
 	return (
-		<nav className={classNames} {...rest}>
+		<nav className={classNames} {...rest} data-component="stacked-nav">
 			{label && <Heading label={label} elementType={elementType} link={link} />}
 			{children && <ul className="stacked-nav__list">{children}</ul>}
 		</nav>

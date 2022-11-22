@@ -54,7 +54,11 @@ export class ActionBanner extends React.Component<
 		};
 
 		return (
-			<section className={classnames(classes)} {...rest}>
+			<section
+				className={classnames(classes)}
+				data-component="action-banner"
+				{...rest}
+			>
 				<div className="action-banner__container">
 					<div className="action-banner__inner">
 						<div className="action-banner__text">

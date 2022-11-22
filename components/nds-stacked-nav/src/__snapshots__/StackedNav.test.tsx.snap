@@ -4,6 +4,7 @@ exports[`StackedNav should match snapshot with supplied nested links 1`] = `
 <div>
   <nav
     class="stacked-nav"
+    data-component="stacked-nav"
   >
     <h1
       class="stacked-nav__root stacked-nav__root--no-link"
@@ -80,6 +81,7 @@ exports[`StackedNav should match snapshot with supplied props 1`] = `
 <div>
   <nav
     class="stacked-nav"
+    data-component="stacked-nav"
   >
     <h1
       class="stacked-nav__root stacked-nav__root--no-link"
