@@ -10,7 +10,6 @@
 	"license": "MIT",
 	"main": "es/ActionBanner.js",
 	"style": "scss/action-banner.scss",
-	"types": "nds-action-banner.d.ts",
 	"directories": {
 		"lib": "es",
 		"test": "__tests__"

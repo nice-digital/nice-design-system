@@ -25,6 +25,7 @@ export function ComponentLayout({ children }: ComponentLayoutProps) {
 				</StackedNav>
 			</GridItem>
 			<GridItem cols={12} sm={{ cols: 10 }}>
+				TODO: Add breadcrumbs, on page nav, NPM/GitHub links
 				{children}
 			</GridItem>
 		</Grid>
