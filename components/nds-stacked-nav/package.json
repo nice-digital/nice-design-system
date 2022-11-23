@@ -8,15 +8,13 @@
 	"author": "Ian Routledge <ian.routledge@nice.org.uk>",
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
-	"main": "lib/StackedNav.js",
-	"module": "es/StackedNav.js",
+	"main": "es/StackedNav.js",
 	"style": "scss/stacked-nav.scss",
 	"directories": {
 		"lib": "lib",
 		"test": "__tests__"
 	},
 	"files": [
-		"lib",
 		"es",
 		"scss",
 		"*.d.ts"
