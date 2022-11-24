@@ -1,8 +1,14 @@
-import { ComponentLayout } from "../../components/layouts/ComponentLayout";
+import { ComponentLayout } from "components/layouts/ComponentLayout";
 import { ActionBanner } from "@nice-digital/nds-action-banner";
 import { Button } from "@nice-digital/nds-button";
 
-# Action banner
+export const meta = {
+	title: "Action Banner",
+	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-action-banner",
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-action-banner"
+};
+
+# {meta.title}
 
 A banner for highlighting, and giving context to, a call-to-action.
 
@@ -145,4 +151,4 @@ To help make sure that this page is useful, relevant and up to date, you can:
 
 If you've got a question about the NICE Design System, contact the team. (Link TBC)
 
-export default ({ children }) => <ComponentLayout>{children}</ComponentLayout>;
+export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;
