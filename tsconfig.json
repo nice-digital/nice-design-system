@@ -8,12 +8,13 @@
 		"forceConsistentCasingInFileNames": true,
 		"strict": true,
 		"skipLibCheck": true,
-		"types": ["jest", "@testing-library/jest-dom"]
+		"types": ["jest", "@testing-library/jest-dom", "node"]
 	},
 	"files": [],
 	"exclude": ["node_modules"],
 	"references": [
 		{ "path": "./components/nds-action-banner" },
+		{ "path": "./components/nds-breadcrumbs" },
 		{ "path": "./components/nds-stacked-nav" }
 	]
 }

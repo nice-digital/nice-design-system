@@ -1,8 +1,16 @@
-import React from "react";
-import PropTypes from "prop-types";
+import { ReactNode, ElementType } from "react";
 import classnames from "classnames";
 
-export const Breadcrumb = (props) => {
+export interface BreadcrumbProps {
+	[prop: string]: unknown;
+	children: ReactNode;
+	to?: string;
+	elementType?: ElementType;
+	method?: string;
+	className?: string;
+}
+
+export const Breadcrumb = (props: BreadcrumbProps) => {
 	const { elementType, method, to, children, className, ...attributes } = props;
 
 	let ElementType = elementType || "span";
@@ -21,12 +29,4 @@ export const Breadcrumb = (props) => {
 			<ElementType {...innerTagProps}>{children}</ElementType>
 		</li>
 	);
-};
-
-Breadcrumb.propTypes = {
-	elementType: PropTypes.elementType, // Allow tag to be customised for custom routing integration
-	children: PropTypes.string.isRequired,
-	to: PropTypes.string,
-	method: PropTypes.string,
-	className: PropTypes.string
 };

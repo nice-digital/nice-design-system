@@ -11,8 +11,7 @@
 	"main": "es/ActionBanner.js",
 	"style": "scss/action-banner.scss",
 	"directories": {
-		"lib": "es",
-		"test": "__tests__"
+		"lib": "es"
 	},
 	"files": [
 		"es",
@@ -46,6 +45,7 @@
 		"@testing-library/react": "^13.4.0",
 		"@testing-library/user-event": "^14.4.3",
 		"@types/jest": "^29.2.2",
+		"@types/node": "^18.11.9",
 		"typescript": "^4.8.4"
 	},
 	"gitHead": "b70a1e39df19c1943a000c841aca8d9bb3ef4ff1"

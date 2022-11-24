@@ -6,7 +6,7 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<title>Nice Design System: Docs</title>
+				<title>Nice Design System</title>
 				<meta
 					name="description"
 					content="Create consistent and on-brand digital services"
