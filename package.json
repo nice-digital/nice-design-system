@@ -56,7 +56,7 @@
   ],
   "license": "MIT",
   "engines": {
-    "node": ">= 18.12.0"
+    "node": ">= 16.18.1"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
@@ -80,7 +80,7 @@
     "typescript": "^4.8.4"
   },
   "volta": {
-    "node": "18.12.0"
+    "node": "16.18.1"
   },
   "workspaces": [
     "./components/*",
