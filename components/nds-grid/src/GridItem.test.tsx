@@ -1,36 +1,33 @@
-import React from "react";
-import { shallow, mount } from "enzyme";
-import toJson from "enzyme-to-json";
+import { render } from "@testing-library/react";
 
 import { GridItem } from "../src/Grid";
 
 describe("GridItem", () => {
-	it("should render without crashing", () => {
-		const wrapper = shallow(<GridItem cols={6}>Test</GridItem>);
-		expect(wrapper).toHaveLength(1);
-	});
-
 	it("should match snapshot", () => {
-		const wrapper = mount(<GridItem cols={6}>Test</GridItem>);
-		expect(toJson(wrapper)).toMatchSnapshot();
+		const wrapper = render(<GridItem cols={6}>Test</GridItem>);
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it("should add push columns to data attribute", () => {
-		const wrapper = mount(
+		const { container } = render(
 			<GridItem cols={6} push={2}>
 				Test
 			</GridItem>
 		);
-		expect(wrapper.find("div").props()["data-g"]).toEqual("6 push:2");
+		expect(container.querySelector("div")?.getAttribute("data-g")).toBe(
+			"6 push:2"
+		);
 	});
 
 	it("should add pull columns to data attribute", () => {
-		const wrapper = mount(
+		const { container } = render(
 			<GridItem cols={6} pull={2}>
 				Test
 			</GridItem>
 		);
-		expect(wrapper.find("div").props()["data-g"]).toEqual("6 pull:2");
+		expect(container.querySelector("div")?.getAttribute("data-g")).toBe(
+			"6 pull:2"
+		);
 	});
 
 	describe("breakpoints", () => {
@@ -60,12 +57,12 @@ describe("GridItem", () => {
 				const breakPointProps = {
 					[breakpointName]: breakpointGridDef
 				};
-				const wrapper = mount(
+				const { container } = render(
 					<GridItem cols={cols} {...breakPointProps}>
 						Test
 					</GridItem>
 				);
-				expect(wrapper.find("div").props()["data-g"]).toEqual(
+				expect(container.querySelector("div")?.getAttribute("data-g")).toBe(
 					cols + " " + expected
 				);
 			}
@@ -73,29 +70,31 @@ describe("GridItem", () => {
 	});
 
 	it("should add given additional class names to rendered grid item class names", () => {
-		const wrapper = shallow(
+		const { container } = render(
 			<GridItem cols={6} className="mt--d">
 				Test
 			</GridItem>
 		);
-		expect(wrapper.find("[data-g]").props().className).toEqual("mt--d");
+		expect(container.querySelector("[data-g]")).toHaveClass("mt--d");
 	});
 
 	it("should add other props to rendered grid item", () => {
-		const wrapper = shallow(
+		const { container } = render(
 			<GridItem cols={6} aria-label="test">
 				Test
 			</GridItem>
 		);
-		expect(wrapper.find("[data-g]").props()["aria-label"]).toEqual("test");
+		expect(
+			container.querySelector("[data-g]")?.getAttribute("aria-label")
+		).toBe("test");
 	});
 
 	it("should use elementType prop as rendered DOM node type", () => {
-		const wrapper = shallow(
+		const wrapper = render(
 			<GridItem cols={6} elementType="li">
 				Test
 			</GridItem>
 		);
-		expect(wrapper.find("[data-g]").type()).toEqual("li");
+		expect(wrapper.getByRole("listitem")).toBeInTheDocument();
 	});
 });

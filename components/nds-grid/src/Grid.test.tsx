@@ -1,148 +1,142 @@
-import React from "react";
-import { shallow, mount } from "enzyme";
-import toJson from "enzyme-to-json";
+import { render } from "@testing-library/react";
 
-import { Grid, GridItem } from "../src/Grid";
+import {
+	Grid,
+	GridItem,
+	GutterEnum,
+	HorizontalAlignmentEnum,
+	VerticalAlignmentEnum
+} from "../src/Grid";
 
 describe("Grid", () => {
-	it("should render without crashing", () => {
-		const wrapper = shallow(
-			<Grid>
-				<GridItem cols={6}>Test</GridItem>
-				<GridItem cols={6}>Test</GridItem>
-			</Grid>
-		);
-		expect(wrapper).toHaveLength(1);
-	});
-
 	it("should match snapshot", () => {
-		const wrapper = mount(
+		const wrapper = render(
 			<Grid>
 				<GridItem cols={6}>Test</GridItem>
 				<GridItem cols={6}>Test</GridItem>
 			</Grid>
 		);
-		expect(toJson(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it("should add rev class name to grid with reverse prop", () => {
-		const wrapper = shallow(
+		const { container } = render(
 			<Grid reverse>
 				<GridItem cols={6}>Test</GridItem>
 			</Grid>
 		);
-		expect(wrapper.find(".grid").props().className).toEqual("grid grid--rev");
+		expect(container.querySelector(".grid")).toHaveClass("grid grid--rev");
 	});
 
 	describe("gutters", () => {
-		const gutterTest = (gutter, expectedClassName) => {
-			const wrapper = shallow(
+		const gutterTest = (gutter: GutterEnum, expectedClassName: string) => {
+			const { container } = render(
 				<Grid gutter={gutter}>
 					<GridItem cols={6}>Test</GridItem>
 				</Grid>
 			);
-			expect(wrapper.find(".grid").props().className).toEqual(
-				expectedClassName
-			);
+			expect(container.querySelector(".grid")).toHaveClass(expectedClassName);
 		};
 
 		it("shouldn't add any class to grid with gutter prop as standard", () => {
-			gutterTest(Grid.gutter.standard, "grid");
+			gutterTest(GutterEnum.standard, "grid");
 		});
 
 		it("should add gutterless class to grid with gutter prop as none", () => {
-			gutterTest(Grid.gutter.none, "grid grid--gutterless");
+			gutterTest(GutterEnum.none, "grid grid--gutterless");
 		});
 
 		it("should add compact class to grid with gutter prop as compact", () => {
-			gutterTest(Grid.gutter.compact, "grid grid--compact");
+			gutterTest(GutterEnum.compact, "grid grid--compact");
 		});
 
 		it("should add compact class to grid with gutter prop as compact", () => {
-			gutterTest(Grid.gutter.loose, "grid grid--loose");
+			gutterTest(GutterEnum.loose, "grid grid--loose");
 		});
 	});
 
 	describe("horizontal alignment", () => {
-		const horizontalAlignmentTest = (hAlignment, expectedClassName) => {
-			const wrapper = shallow(
+		const horizontalAlignmentTest = (
+			hAlignment: HorizontalAlignmentEnum,
+			expectedClassName: string
+		) => {
+			const { container } = render(
 				<Grid horizontalAlignment={hAlignment}>
 					<GridItem cols={6}>Test</GridItem>
 				</Grid>
 			);
-			expect(wrapper.find(".grid").props().className).toEqual(
-				expectedClassName
-			);
+			expect(container.querySelector(".grid")).toHaveClass(expectedClassName);
 		};
 
 		it("shouldn't add any class to grid with horizontalAlignment prop as left", () => {
-			horizontalAlignmentTest(Grid.horizontalAlignment.left, "grid");
+			horizontalAlignmentTest(HorizontalAlignmentEnum.left, "grid");
 		});
 
 		it("should add center modifier class to grid when horizontalAlignment prop set to center", () => {
 			horizontalAlignmentTest(
-				Grid.horizontalAlignment.center,
+				HorizontalAlignmentEnum.center,
 				"grid grid--center"
 			);
 		});
 
 		it("should add right modifier class to grid when horizontalAlignment prop set to right", () => {
 			horizontalAlignmentTest(
-				Grid.horizontalAlignment.right,
+				HorizontalAlignmentEnum.right,
 				"grid grid--right"
 			);
 		});
 	});
 
 	describe("vertical alignment", () => {
-		const verticalAlignmentTest = (vAlignment, expectedClassName) => {
-			const wrapper = shallow(
+		const verticalAlignmentTest = (
+			vAlignment: VerticalAlignmentEnum,
+			expectedClassName: string
+		) => {
+			const { container } = render(
 				<Grid verticalAlignment={vAlignment}>
 					<GridItem cols={6}>Test</GridItem>
 				</Grid>
 			);
-			expect(wrapper.find(".grid").props().className).toEqual(
-				expectedClassName
-			);
+			expect(container.querySelector(".grid")).toHaveClass(expectedClassName);
 		};
 
 		it("shouldn't add any class to grid with vertical alignment prop as top", () => {
-			verticalAlignmentTest(Grid.verticalAlignment.top, "grid");
+			verticalAlignmentTest(VerticalAlignmentEnum.top, "grid");
 		});
 
 		it("should add middle modifier class to grid when verticalAlignment prop set to middle", () => {
-			verticalAlignmentTest(Grid.verticalAlignment.middle, "grid grid--middle");
+			verticalAlignmentTest(VerticalAlignmentEnum.middle, "grid grid--middle");
 		});
 
 		it("should add bottom modifier class to grid when verticalAlignment prop set to bottom", () => {
-			verticalAlignmentTest(Grid.verticalAlignment.bottom, "grid grid--bottom");
+			verticalAlignmentTest(VerticalAlignmentEnum.bottom, "grid grid--bottom");
 		});
 	});
 
 	it("should add a debug modifier class when debug prop set to true", () => {
-		const wrapper = shallow(
+		const { container } = render(
 			<Grid debug>
 				<GridItem cols={6}>Test</GridItem>
 			</Grid>
 		);
-		expect(wrapper.find(".grid").props().className).toEqual("grid grid--debug");
+		expect(container.querySelector(".grid")).toHaveClass("grid grid--debug");
 	});
 
 	it("should add given additional class names to rendered grid class names", () => {
-		const wrapper = shallow(
+		const { container } = render(
 			<Grid className="mt--d">
 				<GridItem cols={6}>Test</GridItem>
 			</Grid>
 		);
-		expect(wrapper.find(".grid").props().className).toEqual("grid mt--d");
+		expect(container.querySelector(".grid")).toHaveClass("grid mt--d");
 	});
 
 	it("should use elementType prop as rendered DOM node type", () => {
-		const wrapper = shallow(
+		const wrapper = render(
 			<Grid elementType="ul">
 				<GridItem cols={6}>Test</GridItem>
 			</Grid>
 		);
-		expect(wrapper.find(".grid").type()).toEqual("ul");
+		expect(wrapper.getByRole("list")).toBeInTheDocument();
 	});
 });

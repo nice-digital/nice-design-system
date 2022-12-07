@@ -10,6 +10,9 @@ module.exports = {
 	env: {
 		es6: true
 	},
+	rules: {
+		"react/react-in-jsx-scope": "off"
+	},
 	overrides: [
 		{
 			files: ["**.test.js"],
