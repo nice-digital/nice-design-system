@@ -35,6 +35,7 @@
     "prettier": "prettier --check components/*/{src,scss,__{tests,mocks}__}/**/*.{scss,js,json} packages/**/*.{scss,js,json}",
     "prettier:fix": "npm run prettier -- --write",
     "// TRANSIPLE ES6": "",
+    "clean:ts": "tsc --build --clean",
     "build:ts": "tsc --build",
     "build:ts:watch": "tsc --build --watch",
     "prebuild:lib": "lerna exec rimraf lib",
