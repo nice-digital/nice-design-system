@@ -1,6 +1,10 @@
 import { ComponentLayout } from "../components/layouts/ComponentLayout";
 import { Button } from "@nice-digital/nds-button";
 
+export const meta = {
+	title: "Test component page 3",
+};
+
 # I am a page!
 
 Here's some content
@@ -25,4 +29,4 @@ console.log("ERMAGERD, TABS");
 ```
 </CH.Code>
 
-export default ({ children }) => <ComponentLayout>{children}</ComponentLayout>;
+export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;

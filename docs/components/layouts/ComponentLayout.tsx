@@ -14,7 +14,7 @@ export interface ComponentLayoutProps {
 }
 
 export function ComponentLayout({ children, meta }: ComponentLayoutProps) {
-	const shouldShowExternalLinks = meta.gitHubUrl || meta.npmUrl;
+	const shouldShowExternalLinks = meta?.gitHubUrl || meta?.npmUrl;
 
 	return (
 		<>
