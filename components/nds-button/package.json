@@ -5,16 +5,9 @@
 	"author": "Ian Routledge <ian.routledge@nice.org.uk>",
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
-	"main": "lib/Button.js",
-	"module": "es/Button.js",
+	"main": "es/Button.js",
 	"style": "scss/button.scss",
-	"types": "nds-button.d.ts",
-	"directories": {
-		"lib": "lib",
-		"test": "__tests__"
-	},
 	"files": [
-		"lib",
 		"es",
 		"scss",
 		"*.d.ts"

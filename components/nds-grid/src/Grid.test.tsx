@@ -6,7 +6,7 @@ import {
 	GutterEnum,
 	HorizontalAlignmentEnum,
 	VerticalAlignmentEnum
-} from "../src/Grid";
+} from "./Grid";
 
 describe("Grid", () => {
 	it("should match snapshot", () => {

@@ -10,7 +10,6 @@
 	"license": "MIT",
 	"main": "es/Grid.js",
 	"style": "scss/grid.scss",
-	"types": "nds-grid.d.ts",
 	"directories": {
 		"lib": "es"
 	},

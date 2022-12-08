@@ -15,6 +15,7 @@
 	"references": [
 		{ "path": "./components/nds-action-banner" },
 		{ "path": "./components/nds-breadcrumbs" },
+		{ "path": "./components/nds-button" },
 		{ "path": "./components/nds-grid" },
 		{ "path": "./components/nds-stacked-nav" }
 	]
