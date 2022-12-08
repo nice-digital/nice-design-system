@@ -18,6 +18,7 @@
 		{ "path": "./components/nds-button" },
 		{ "path": "./components/nds-container" },
 		{ "path": "./components/nds-grid" },
+		{ "path": "./components/nds-hero" },
 		{ "path": "./components/nds-stacked-nav" }
 	]
 }

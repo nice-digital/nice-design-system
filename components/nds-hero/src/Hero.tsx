@@ -1,9 +1,20 @@
 import React from "react";
-import PropTypes from "prop-types";
 import classnames from "classnames";
 import "../scss/hero.scss";
 
-export const Hero = (props) => {
+export interface HeroProps {
+	[prop: string]: unknown;
+	actions?: React.ReactNode;
+	extra?: React.ReactNode;
+	footer?: React.ReactNode;
+	header?: React.ReactNode;
+	intro?: React.ReactNode;
+	title: React.ReactNode;
+	className?: string;
+	children?: React.ReactNode;
+}
+
+export const Hero: React.FC<HeroProps> = (props: HeroProps) => {
 	const {
 		actions,
 		children,
@@ -30,14 +41,4 @@ export const Hero = (props) => {
 			</div>
 		</div>
 	);
-};
-
-Hero.propTypes = {
-	actions: PropTypes.node,
-	children: PropTypes.node,
-	className: PropTypes.string,
-	footer: PropTypes.node,
-	header: PropTypes.node,
-	intro: PropTypes.node,
-	title: PropTypes.node.isRequired
 };
