@@ -61,7 +61,7 @@ export const GridItem: React.FC<GridItemProps> = (props) => {
 
 	const bpGridDefs = { xs, sm, md, lg, xl };
 	const mapBpToAttr = (bp: string): string | null => {
-		const key = bp as keyof typeof bpGridDef;
+		const key = bp as keyof typeof bpGridDefs;
 		const bpGridDef: BreakPointGridDefinition | undefined = bpGridDefs[key];
 
 		if (!bpGridDef) return null;
