@@ -8,16 +8,12 @@
 	"author": "Warren Keith <warren.keith@nice.org.uk>",
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
-	"main": "lib/Container.js",
-	"module": "es/Container.js",
+	"main": "es/Container.js",
 	"style": "scss/container.scss",
-	"types": "nds-container.d.ts",
 	"directories": {
-		"lib": "lib",
 		"test": "__tests__"
 	},
 	"files": [
-		"lib",
 		"es",
 		"scss",
 		"*.d.ts"
