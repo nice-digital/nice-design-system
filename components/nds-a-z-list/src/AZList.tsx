@@ -1,8 +1,22 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "../scss/a-z-list.scss";
 
-export const AZList = (props) => {
+export interface AZListProps {
+	alphabet: React.ElementType;
+	children: React.ReactNode;
+	className?: string;
+	[prop: string]: unknown;
+}
+
+export interface AZListItemProps {
+	id?: string;
+	title: string;
+	children: React.ReactNode;
+	className?: string;
+	[prop: string]: unknown;
+}
+
+export const AZList: React.FC<AZListProps> = (props: AZListProps) => {
 	const { alphabet: Alphabet, children, className, ...attrs } = props;
 
 	return (
@@ -15,13 +29,9 @@ export const AZList = (props) => {
 	);
 };
 
-AZList.propTypes = {
-	alphabet: PropTypes.elementType.isRequired,
-	children: PropTypes.node.isRequired,
-	className: PropTypes.string
-};
-
-export const AZListItem = (props) => {
+export const AZListItem: React.FC<AZListItemProps> = (
+	props: AZListItemProps
+) => {
 	const { id, title, children, className, ...attrs } = props;
 
 	const itemId = id || title.replace(" ", "").toLowerCase();
@@ -34,11 +44,4 @@ export const AZListItem = (props) => {
 			{children}
 		</li>
 	);
-};
-
-AZListItem.propTypes = {
-	id: PropTypes.string,
-	title: PropTypes.string.isRequired,
-	children: PropTypes.node.isRequired,
-	className: PropTypes.string
 };

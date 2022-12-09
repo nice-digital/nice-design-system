@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
 import { StackedNav, StackedNavLink } from "@nice-digital/nds-stacked-nav";
@@ -13,8 +14,51 @@ export interface ComponentLayoutProps {
 	meta: PageMeta;
 }
 
+interface menuLink {
+	title: string;
+	slug: string;
+}
+
 export function ComponentLayout({ children, meta }: ComponentLayoutProps) {
 	const shouldShowExternalLinks = meta?.gitHubUrl || meta?.npmUrl;
+	const menuLinks: menuLink[] = [
+		{
+			title: "A-Z List",
+			slug: "a-z-list"
+		},
+		{
+			title: "Action Banner",
+			slug: "action-banner"
+		},
+		{
+			title: "Alert",
+			slug: "alert"
+		},
+		{
+			title: "Breadcrumbs",
+			slug: "breadcrumbs"
+		},
+		{
+			title: "Button",
+			slug: "button"
+		},
+		{
+			title: "Container",
+			slug: "container"
+		},
+		{
+			title: "Grid",
+			slug: "grid"
+		},
+		{
+			title: "Hero",
+			slug: "hero"
+		},
+		{
+			title: "Stacked nav",
+			slug: "stacked-nav"
+		}
+	];
 
 	return (
 		<>
@@ -32,13 +76,16 @@ export function ComponentLayout({ children, meta }: ComponentLayoutProps) {
 						<StackedNavLink elementType={Link} method="href" destination="/">
 							NDS Docs Home
 						</StackedNavLink>
-						<StackedNavLink
-							elementType={Link}
-							method="href"
-							destination="/components/action-banner"
-						>
-							Action Banner
-						</StackedNavLink>
+						{menuLinks.map(({ title, slug }) => (
+							<StackedNavLink
+								elementType={Link}
+								method="href"
+								key={slug}
+								destination={`/components/${slug}`}
+							>
+								{title}
+							</StackedNavLink>
+						))}
 					</StackedNav>
 				</GridItem>
 				<GridItem cols={12} md={{ cols: 8 }}>
@@ -55,7 +102,7 @@ export function ComponentLayout({ children, meta }: ComponentLayoutProps) {
 										className={`btn btn--secondary ${styles.externalSiteButton}`}
 										href={meta.gitHubUrl}
 									>
-										<img src="/github.svg" alt="" />
+										<Image src="/github.svg" alt="" width={30} height={30} />
 										View on GitHub
 									</a>
 								</li>
@@ -66,7 +113,7 @@ export function ComponentLayout({ children, meta }: ComponentLayoutProps) {
 										className={`btn btn--secondary ${styles.externalSiteButton}`}
 										href={meta.npmUrl}
 									>
-										<img src="/npm.svg" alt="" />
+										<Image src="/npm.svg" alt="" width={30} height={30} />
 										View on NPM
 									</a>
 								</li>

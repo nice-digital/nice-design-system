@@ -1,0 +1,23 @@
+import { ComponentLayout } from "components/layouts/ComponentLayout";
+import { AZList, AZListItem } from "@nice-digital/nds-a-z-list";
+
+export const meta = {
+	title: "A to Z List",
+	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-a-z-list",
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-a-z-list"
+};
+
+# {meta.title}
+
+*** Placeholder component page ***
+
+<AZList alphabet={() => <p>Alphabet...</p>}>
+	<AZListItem title="A">
+		<p className="test-class">A: lorem ipsum dolor sit amet</p>
+	</AZListItem>
+	<AZListItem title="B">
+		<p className="test-class">B: lorem ipsum dolor sit amet</p>
+	</AZListItem>
+</AZList>
+
+export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;

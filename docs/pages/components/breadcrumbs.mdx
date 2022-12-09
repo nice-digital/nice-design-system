@@ -1,0 +1,20 @@
+import { ComponentLayout } from "components/layouts/ComponentLayout";
+import { Breadcrumbs, Breadcrumb } from "@nice-digital/nds-breadcrumbs";
+
+export const meta = {
+	title: "Breadcrumbs",
+	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-breadcrumbs",
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-breadcrumbs"
+};
+
+# {meta.title}
+
+*** Placeholder component page ***
+
+***TODO: Figure out why MDX doesn't like any more than one breadcrumb***
+
+<Breadcrumbs>
+	<Breadcrumb to="/">CKS</Breadcrumb>
+</Breadcrumbs>
+
+export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;

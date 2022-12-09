@@ -13,6 +13,7 @@
 	"files": [],
 	"exclude": ["node_modules"],
 	"references": [
+		{ "path": "./components/nds-a-z-list" },
 		{ "path": "./components/nds-action-banner" },
 		{ "path": "./components/nds-alert" },
 		{ "path": "./components/nds-breadcrumbs" },
