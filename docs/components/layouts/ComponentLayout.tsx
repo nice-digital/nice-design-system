@@ -14,14 +14,17 @@ export interface ComponentLayoutProps {
 	meta: PageMeta;
 }
 
-interface menuLink {
+interface MenuLink {
 	title: string;
 	slug: string;
 }
 
-export function ComponentLayout({ children, meta }: ComponentLayoutProps) {
+export const ComponentLayout: React.FC<ComponentLayoutProps> = ({
+	children,
+	meta
+}: ComponentLayoutProps) => {
 	const shouldShowExternalLinks = meta?.gitHubUrl || meta?.npmUrl;
-	const menuLinks: menuLink[] = [
+	const menuLinks: MenuLink[] = [
 		{
 			title: "A-Z List",
 			slug: "a-z-list"
@@ -80,16 +83,18 @@ export function ComponentLayout({ children, meta }: ComponentLayoutProps) {
 						<StackedNavLink elementType={Link} method="href" destination="/">
 							NDS Docs Home
 						</StackedNavLink>
-						{menuLinks.map(({ title, slug }) => (
-							<StackedNavLink
-								elementType={Link}
-								method="href"
-								key={slug}
-								destination={`/components/${slug}`}
-							>
-								{title}
-							</StackedNavLink>
-						))}
+						<>
+							{menuLinks.map(({ title, slug }) => (
+								<StackedNavLink
+									elementType={Link}
+									method="href"
+									key={slug}
+									destination={`/components/${slug}`}
+								>
+									{title}
+								</StackedNavLink>
+							))}
+						</>
 					</StackedNav>
 				</GridItem>
 				<GridItem cols={12} md={{ cols: 8 }}>
@@ -128,4 +133,4 @@ export function ComponentLayout({ children, meta }: ComponentLayoutProps) {
 			</Grid>
 		</>
 	);
-}
+};
