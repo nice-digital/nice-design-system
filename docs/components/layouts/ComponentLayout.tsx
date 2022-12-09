@@ -35,6 +35,10 @@ export function ComponentLayout({ children, meta }: ComponentLayoutProps) {
 			slug: "alert"
 		},
 		{
+			title: "Alphabet",
+			slug: "alphabet"
+		},
+		{
 			title: "Breadcrumbs",
 			slug: "breadcrumbs"
 		},

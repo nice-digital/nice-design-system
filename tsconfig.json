@@ -16,6 +16,7 @@
 		{ "path": "./components/nds-a-z-list" },
 		{ "path": "./components/nds-action-banner" },
 		{ "path": "./components/nds-alert" },
+		{ "path": "./components/nds-alphabet" },
 		{ "path": "./components/nds-breadcrumbs" },
 		{ "path": "./components/nds-button" },
 		{ "path": "./components/nds-container" },
