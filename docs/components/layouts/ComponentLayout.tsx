@@ -66,6 +66,10 @@ export const ComponentLayout: React.FC<ComponentLayoutProps> = ({
 			slug: "hero"
 		},
 		{
+			title: "Input",
+			slug: "input"
+		},
+		{
 			title: "Radio",
 			slug: "radio"
 		},

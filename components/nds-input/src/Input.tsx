@@ -1,10 +1,39 @@
 import React from "react";
-import PropTypes from "prop-types";
 import classnames from "classnames";
 
 import "./../scss/input.scss";
 
-export const Input = (props) => {
+export interface InputProps {
+	[prop: string]: unknown;
+	className?: string;
+	defaultValue?: string;
+	error?: boolean;
+	errorMessage?: string;
+	hint?: string;
+	inputRef?: React.Ref<HTMLInputElement>;
+	label: string | null;
+	name: string;
+	type?:
+		| "color"
+		| "date"
+		| "datetime-local"
+		| "email"
+		| "file"
+		| "hidden"
+		| "image"
+		| "month"
+		| "number"
+		| "range"
+		| "password"
+		| "search"
+		| "tel"
+		| "text"
+		| "time"
+		| "url"
+		| "week";
+}
+
+export const Input: React.FC<InputProps> = (props: InputProps) => {
 	const {
 		defaultValue,
 		name,
@@ -20,7 +49,7 @@ export const Input = (props) => {
 	const classNames = classnames({
 		input: true,
 		"input--error": error,
-		[className]: className
+		[`${className}`]: className
 	});
 	return (
 		<div className={classNames}>
@@ -42,37 +71,4 @@ export const Input = (props) => {
 			/>
 		</div>
 	);
-};
-
-Input.propTypes = {
-	inputRef: PropTypes.oneOfType([
-		PropTypes.func,
-		PropTypes.shape({ current: PropTypes.object })
-	]),
-	className: PropTypes.string,
-	defaultValue: PropTypes.string,
-	error: PropTypes.bool,
-	errorMessage: PropTypes.string,
-	label: PropTypes.string,
-	hint: PropTypes.string,
-	type: PropTypes.oneOf([
-		"color",
-		"date",
-		"datetime-local",
-		"email",
-		"file",
-		"hidden",
-		"image",
-		"month",
-		"number",
-		"range",
-		"password",
-		"search",
-		"tel",
-		"text",
-		"time",
-		"url",
-		"week"
-	]),
-	name: PropTypes.string.isRequired
 };
