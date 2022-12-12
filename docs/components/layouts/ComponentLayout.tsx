@@ -50,6 +50,10 @@ export const ComponentLayout: React.FC<ComponentLayoutProps> = ({
 			slug: "button"
 		},
 		{
+			title: "Checkbox",
+			slug: "checkbox"
+		},
+		{
 			title: "Container",
 			slug: "container"
 		},
