@@ -24,6 +24,7 @@
 		{ "path": "./components/nds-grid" },
 		{ "path": "./components/nds-hero" },
 		{ "path": "./components/nds-radio" },
-		{ "path": "./components/nds-stacked-nav" }
+		{ "path": "./components/nds-stacked-nav" },
+		{ "path": "./components/nds-textarea" }
 	]
 }

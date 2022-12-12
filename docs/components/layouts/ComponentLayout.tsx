@@ -72,6 +72,10 @@ export const ComponentLayout: React.FC<ComponentLayoutProps> = ({
 		{
 			title: "Stacked nav",
 			slug: "stacked-nav"
+		},
+		{
+			title: "Textarea",
+			slug: "textarea"
 		}
 	];
 

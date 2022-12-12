@@ -1,10 +1,20 @@
 import React from "react";
-import PropTypes from "prop-types";
 import classnames from "classnames";
 
 import "../scss/textarea.scss";
 
-export const Textarea = (props) => {
+export interface TextareaProps {
+	[prop: string]: unknown;
+	defaultValue?: string;
+	error?: boolean;
+	errorMessage?: string;
+	hint?: string;
+	label: string;
+	name: string;
+	textareaRef?: React.Ref<HTMLTextAreaElement>;
+}
+
+export const Textarea: React.FC<TextareaProps> = (props: TextareaProps) => {
 	const {
 		defaultValue,
 		name,
@@ -39,18 +49,3 @@ export const Textarea = (props) => {
 		</div>
 	);
 };
-
-Textarea.propTypes = {
-	defaultValue: PropTypes.string,
-	error: PropTypes.bool,
-	errorMessage: PropTypes.string,
-	hint: PropTypes.string,
-	label: PropTypes.string.isRequired,
-	name: PropTypes.string.isRequired,
-	textareaRef: PropTypes.oneOfType([
-		PropTypes.func,
-		PropTypes.shape({ current: PropTypes.object })
-	])
-};
-
-export default Textarea;
