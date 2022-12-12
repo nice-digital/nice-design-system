@@ -54,6 +54,10 @@ export const ComponentLayout: React.FC<ComponentLayoutProps> = ({
 			slug: "checkbox"
 		},
 		{
+			title: "Column List",
+			slug: "column-list"
+		},
+		{
 			title: "Container",
 			slug: "container"
 		},

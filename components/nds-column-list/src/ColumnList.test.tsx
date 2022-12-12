@@ -1,8 +1,6 @@
-"use strict";
-
 import React from "react";
-import { shallow } from "enzyme";
-import { ColumnList } from "../ColumnList";
+import { render } from "@testing-library/react";
+import { ColumnList } from "./ColumnList";
 
 const ListItems = () => (
 	<>
@@ -16,60 +14,68 @@ const ListItems = () => (
 );
 
 describe("ColumnList", () => {
-	it("should render without crashing", () => {
-		const wrapper = shallow(
+	it("should match snapshot", () => {
+		const wrapper = render(
 			<ColumnList>
 				<ListItems />
 			</ColumnList>
 		);
-		expect(wrapper).toHaveLength(1);
+		expect(wrapper).toMatchSnapshot();
 	});
+
 	it("should add CSS module class name to parent list for standard (boxed) variant", () => {
-		const wrapper = shallow(
+		const wrapper = render(
 			<ColumnList>
 				<ListItems />
 			</ColumnList>
 		);
-		expect(wrapper.hasClass("column-list--boxed")).toEqual(true);
+		expect(wrapper.getByRole("list")).toHaveClass("column-list--boxed");
 	});
+
 	it("should add CSS module class name to parent list for the plain variant", () => {
-		const wrapper = shallow(
+		const wrapper = render(
 			<ColumnList plain>
 				<ListItems />
 			</ColumnList>
 		);
-		expect(wrapper.hasClass("column-list--plain")).toEqual(true);
+		expect(wrapper.getByRole("list")).toHaveClass("column-list--plain");
 	});
+
 	it("should add CSS module class name to parent list for the 2 column variant", () => {
-		const wrapper = shallow(
+		const wrapper = render(
 			<ColumnList columns={2}>
 				<ListItems />
 			</ColumnList>
 		);
-		expect(wrapper.hasClass("column-list--two-columns")).toEqual(true);
+		expect(wrapper.getByRole("list")).toHaveClass("column-list--two-columns");
 	});
+
 	it("should add no CSS module class name to parent list for the 3 column variant", () => {
-		const wrapper = shallow(
+		const wrapper = render(
 			<ColumnList columns={3}>
 				<ListItems />
 			</ColumnList>
 		);
-		expect(wrapper.hasClass("column-list--two-columns")).toEqual(false);
+		expect(wrapper.getByRole("list")).not.toHaveClass(
+			"column-list--two-columns"
+		);
 	});
+
 	it("should append className prop to rendered class attribute", () => {
-		const wrapper = shallow(
+		const wrapper = render(
 			<ColumnList className="test">
 				<ListItems />
 			</ColumnList>
 		);
-		expect(wrapper.hasClass("test")).toEqual(true);
+		expect(wrapper.getByRole("list")).toHaveClass("test");
 	});
+
 	it("should render additional props as attributes", () => {
-		const wrapper = shallow(
+		const wrapper = render(
 			<ColumnList aria-label="hello">
 				<ListItems />
 			</ColumnList>
 		);
-		expect(wrapper.prop("aria-label")).toEqual("hello");
+		expect(wrapper.getByRole("list").getAttribute("aria-label")).toBe("hello");
 	});
 });

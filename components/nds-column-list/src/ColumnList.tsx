@@ -1,8 +1,18 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "../scss/column-list.scss";
 
-export const ColumnList = (props) => {
+export interface ColumnListProps {
+	children: React.ReactNode;
+	plain?: boolean;
+	className?: string;
+	/** Number of columns on desktop-width screens */
+	columns?: 2 | 3;
+	[prop: string]: unknown;
+}
+
+export const ColumnList: React.FC<ColumnListProps> = (
+	props: ColumnListProps
+) => {
 	const { children, plain, className, columns, ...attrs } = props;
 
 	return (
@@ -20,11 +30,4 @@ export const ColumnList = (props) => {
 			{children}
 		</ol>
 	);
-};
-
-ColumnList.propTypes = {
-	children: PropTypes.node.isRequired,
-	plain: PropTypes.bool,
-	className: PropTypes.string,
-	columns: PropTypes.number
 };
