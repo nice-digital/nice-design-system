@@ -66,6 +66,10 @@ export const ComponentLayout: React.FC<ComponentLayoutProps> = ({
 			slug: "hero"
 		},
 		{
+			title: "Radio",
+			slug: "radio"
+		},
+		{
 			title: "Stacked nav",
 			slug: "stacked-nav"
 		}

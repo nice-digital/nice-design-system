@@ -59,9 +59,13 @@ describe("Checkbox", () => {
 
 	it("should pass through any additional attributes supplied", () => {
 		const localProps = Object.assign({}, props);
+		localProps.defaultChecked = true;
 		localProps["data-something"] = "test";
 		const wrapper = render(<Checkbox {...localProps} />);
-		const checked = wrapper.getByRole("checkbox");
+		const checked: HTMLInputElement = wrapper.getByRole(
+			"checkbox"
+		) as HTMLInputElement;
+		expect(checked.checked).toBe(true);
 		expect(checked.getAttribute("data-something")).toBe("test");
 	});
 });

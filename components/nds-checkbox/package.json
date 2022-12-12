@@ -8,8 +8,7 @@
 	"main": "es/Checkbox.js",
 	"style": "scss/checkbox.scss",
 	"directories": {
-		"lib": "es",
-		"test": "__tests__"
+		"lib": "es"
 	},
 	"files": [
 		"es",
