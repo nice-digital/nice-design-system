@@ -66,6 +66,10 @@ export const ComponentLayout: React.FC<ComponentLayoutProps> = ({
 			slug: "enhanced-pagination"
 		},
 		{
+			title: "Form Group",
+			slug: "form-group"
+		},
+		{
 			title: "Grid",
 			slug: "grid"
 		},

@@ -1,13 +1,22 @@
 import React from "react";
-import PropTypes from "prop-types";
 import classnames from "classnames";
 import "./../scss/form-group.scss";
 
-export const FormGroup = (props) => {
+export interface FormGroupProps {
+	[prop: string]: unknown;
+	inline?: boolean;
+	name?: string;
+	hint?: React.ReactNode;
+	legend?: string;
+	children: React.ReactNode;
+	groupError?: string | boolean;
+}
+
+export const FormGroup: React.FC<FormGroupProps> = (props: FormGroupProps) => {
 	const { groupError, inline, legend, children, hint, name, ...rest } = props;
 
 	const clonedChildren = React.Children.map(children, (child) => {
-		return React.cloneElement(child, {
+		return React.cloneElement(child as React.ReactElement, {
 			name,
 			inline,
 			...rest
@@ -27,13 +36,4 @@ export const FormGroup = (props) => {
 			{clonedChildren}
 		</fieldset>
 	);
-};
-
-FormGroup.propTypes = {
-	children: PropTypes.node.isRequired,
-	legend: PropTypes.node,
-	name: PropTypes.string,
-	hint: PropTypes.node,
-	inline: PropTypes.bool,
-	groupError: PropTypes.string
 };

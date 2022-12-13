@@ -1,9 +1,6 @@
-"use strict";
-
 import React from "react";
-import { shallow } from "enzyme";
-import toJson from "enzyme-to-json";
-import { FormGroup } from "./../src/FormGroup";
+import { render } from "@testing-library/react";
+import { FormGroup } from "./FormGroup";
 
 const props = {
 	legend: "This is the legend text",
@@ -14,43 +11,32 @@ const props = {
 };
 
 describe("FormGroup", () => {
-	it("should render without crashing", () => {
-		const wrapper = shallow(
-			<FormGroup {...props}>
-				<span>Render</span>
-			</FormGroup>
-		);
-		expect(wrapper).toHaveLength(1);
-	});
-
 	it("should match the snapshot when no props are passed", () => {
-		const wrapper = shallow(
+		const wrapper = render(
 			<FormGroup>
 				<span>Render</span>
 			</FormGroup>
 		);
-		expect(toJson(wrapper, { noKey: true })).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it("should match the snapshot when all possible props are passed", () => {
-		const wrapper = shallow(
+		const wrapper = render(
 			<FormGroup {...props}>
 				<span>Render</span>
 			</FormGroup>
 		);
-		expect(toJson(wrapper, { noKey: true })).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it("should pass any additional props down to the cloned child components", () => {
 		const localProps = Object.assign({}, props);
-		localProps.inline = true;
-		const wrapper = shallow(
+		const { container } = render(
 			<FormGroup {...localProps}>
 				<span>Render</span>
 			</FormGroup>
 		);
-		const child = wrapper.find("span");
-		expect(child.props()["name"]).toEqual("group-name");
-		expect(child.props()["inline"]).toEqual(true);
+		const child = container.querySelector("span");
+		expect(child?.getAttribute("name")).toBe("group-name");
 	});
 });
