@@ -8,15 +8,11 @@ import { Grid, GridItem } from "@nice-digital/nds-grid";
 
 import { type PageMeta } from "types/meta";
 import styles from "./ComponentLayout.module.scss";
+import { menuLinks } from "./ComponentMenuLinks";
 
 export interface ComponentLayoutProps {
 	children: ReactNode;
 	meta: PageMeta;
-}
-
-interface MenuLink {
-	title: string;
-	slug: string;
 }
 
 export const ComponentLayout: React.FC<ComponentLayoutProps> = ({
@@ -24,76 +20,6 @@ export const ComponentLayout: React.FC<ComponentLayoutProps> = ({
 	meta
 }: ComponentLayoutProps) => {
 	const shouldShowExternalLinks = meta?.gitHubUrl || meta?.npmUrl;
-	const menuLinks: MenuLink[] = [
-		{
-			title: "A-Z List",
-			slug: "a-z-list"
-		},
-		{
-			title: "Action Banner",
-			slug: "action-banner"
-		},
-		{
-			title: "Alert",
-			slug: "alert"
-		},
-		{
-			title: "Alphabet",
-			slug: "alphabet"
-		},
-		{
-			title: "Breadcrumbs",
-			slug: "breadcrumbs"
-		},
-		{
-			title: "Button",
-			slug: "button"
-		},
-		{
-			title: "Checkbox",
-			slug: "checkbox"
-		},
-		{
-			title: "Column List",
-			slug: "column-list"
-		},
-		{
-			title: "Container",
-			slug: "container"
-		},
-		{
-			title: "Enhanced Pagination",
-			slug: "enhanced-pagination"
-		},
-		{
-			title: "Form Group",
-			slug: "form-group"
-		},
-		{
-			title: "Grid",
-			slug: "grid"
-		},
-		{
-			title: "Hero",
-			slug: "hero"
-		},
-		{
-			title: "Input",
-			slug: "input"
-		},
-		{
-			title: "Radio",
-			slug: "radio"
-		},
-		{
-			title: "Stacked nav",
-			slug: "stacked-nav"
-		},
-		{
-			title: "Textarea",
-			slug: "textarea"
-		}
-	];
 
 	return (
 		<>
