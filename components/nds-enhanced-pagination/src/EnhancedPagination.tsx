@@ -1,9 +1,18 @@
 import React from "react";
-import PropTypes from "prop-types";
 import classnames from "classnames";
 import "./../scss/enhanced-pagination.scss";
 
-export const EnhancedPagination = ({
+export interface EnhancedPaginationProps {
+	[prop: string]: unknown;
+	currentPage: number;
+	totalPages: number;
+	mapPageNumberToHref: (pageNumber: number) => string;
+	elementType?: React.ElementType;
+	method?: string;
+	className?: string;
+}
+
+export const EnhancedPagination: React.FC<EnhancedPaginationProps> = ({
 	currentPage,
 	totalPages,
 	mapPageNumberToHref,
@@ -11,16 +20,16 @@ export const EnhancedPagination = ({
 	method = "href",
 	className,
 	...rest
-}) => {
-	const calculatePosition = (currentPage) => {
+}: EnhancedPaginationProps) => {
+	const calculatePosition = (currentPage: number) => {
 		if (currentPage <= 4) return "early";
 		if (totalPages - currentPage <= 3) return "late";
 		return "middle";
 	};
 
-	const addNumberedPages = (array) => {
+	const addNumberedPages = (array: (number | null)[]) => {
 		array.push(1);
-		if (totalPages && totalPages != 1) array.push(totalPages);
+		if (totalPages && totalPages !== 1) array.push(totalPages);
 		switch (calculatePosition(currentPage)) {
 			case "early":
 				if (totalPages < 7) {
@@ -51,7 +60,7 @@ export const EnhancedPagination = ({
 		}
 	};
 
-	const addEllipses = (array) => {
+	const addEllipses = (array: (number | null)[]) => {
 		switch (calculatePosition(currentPage)) {
 			case "early":
 				pages.splice(array.length - 1, 0, null);
@@ -68,7 +77,7 @@ export const EnhancedPagination = ({
 	};
 
 	// This sets up which page numbers are going to be rendered
-	let pages = [];
+	let pages: (number | null)[] = [];
 	addNumberedPages(pages);
 	if (totalPages >= 7) addEllipses(pages);
 
@@ -134,13 +143,4 @@ export const EnhancedPagination = ({
 			</ol>
 		</nav>
 	);
-};
-
-EnhancedPagination.propTypes = {
-	currentPage: PropTypes.number.isRequired,
-	mapPageNumberToHref: PropTypes.func.isRequired,
-	totalPages: PropTypes.number.isRequired,
-	elementType: PropTypes.elementType,
-	method: PropTypes.string,
-	className: PropTypes.string
 };

@@ -1,0 +1,350 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Enhanced Pagination should match snapshot with some default attributes 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <nav
+        aria-label="Pagination"
+        class="pagination "
+        role="navigation"
+      >
+        <ol
+          class="pagination__list"
+        >
+          <li
+            class="pagination__item pagination__item--bookend"
+          >
+            <a
+              class="pagination__link"
+              href="#4"
+            >
+              Previous page
+            </a>
+          </li>
+          <li
+            class="pagination__item"
+          >
+            <a
+              aria-label="Go to page 1"
+              class="pagination__link"
+              href="#1"
+            >
+              1
+            </a>
+          </li>
+          <li
+            class="pagination__item"
+          >
+            <span
+              class="pagination__inactive"
+            >
+              …
+            </span>
+          </li>
+          <li
+            class="pagination__item"
+          >
+            <a
+              aria-label="Go to page 3"
+              class="pagination__link"
+              href="#3"
+            >
+              3
+            </a>
+          </li>
+          <li
+            class="pagination__item"
+          >
+            <a
+              aria-label="Go to page 4"
+              class="pagination__link"
+              href="#4"
+            >
+              4
+            </a>
+          </li>
+          <li
+            aria-current="true"
+            class="pagination__item pagination__item--current"
+          >
+            <span
+              class="pagination__inactive"
+            >
+              <span
+                class="visually-hidden"
+              >
+                Current page 
+              </span>
+              5
+            </span>
+          </li>
+          <li
+            class="pagination__item"
+          >
+            <a
+              aria-label="Go to page 6"
+              class="pagination__link"
+              href="#6"
+            >
+              6
+            </a>
+          </li>
+          <li
+            class="pagination__item"
+          >
+            <a
+              aria-label="Go to page 7"
+              class="pagination__link"
+              href="#7"
+            >
+              7
+            </a>
+          </li>
+          <li
+            class="pagination__item"
+          >
+            <span
+              class="pagination__inactive"
+            >
+              …
+            </span>
+          </li>
+          <li
+            class="pagination__item"
+          >
+            <a
+              aria-label="Go to page 20"
+              class="pagination__link"
+              href="#20"
+            >
+              20
+            </a>
+          </li>
+          <li
+            class="pagination__item pagination__item--count"
+          >
+            <span>
+              Page 
+              <strong>
+                5
+              </strong>
+               of 
+              <strong>
+                20
+              </strong>
+            </span>
+          </li>
+          <li
+            class="pagination__item pagination__item--bookend"
+          >
+            <a
+              class="pagination__link"
+              href="#6"
+            >
+              Next page
+            </a>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </body>,
+  "container": <div>
+    <nav
+      aria-label="Pagination"
+      class="pagination "
+      role="navigation"
+    >
+      <ol
+        class="pagination__list"
+      >
+        <li
+          class="pagination__item pagination__item--bookend"
+        >
+          <a
+            class="pagination__link"
+            href="#4"
+          >
+            Previous page
+          </a>
+        </li>
+        <li
+          class="pagination__item"
+        >
+          <a
+            aria-label="Go to page 1"
+            class="pagination__link"
+            href="#1"
+          >
+            1
+          </a>
+        </li>
+        <li
+          class="pagination__item"
+        >
+          <span
+            class="pagination__inactive"
+          >
+            …
+          </span>
+        </li>
+        <li
+          class="pagination__item"
+        >
+          <a
+            aria-label="Go to page 3"
+            class="pagination__link"
+            href="#3"
+          >
+            3
+          </a>
+        </li>
+        <li
+          class="pagination__item"
+        >
+          <a
+            aria-label="Go to page 4"
+            class="pagination__link"
+            href="#4"
+          >
+            4
+          </a>
+        </li>
+        <li
+          aria-current="true"
+          class="pagination__item pagination__item--current"
+        >
+          <span
+            class="pagination__inactive"
+          >
+            <span
+              class="visually-hidden"
+            >
+              Current page 
+            </span>
+            5
+          </span>
+        </li>
+        <li
+          class="pagination__item"
+        >
+          <a
+            aria-label="Go to page 6"
+            class="pagination__link"
+            href="#6"
+          >
+            6
+          </a>
+        </li>
+        <li
+          class="pagination__item"
+        >
+          <a
+            aria-label="Go to page 7"
+            class="pagination__link"
+            href="#7"
+          >
+            7
+          </a>
+        </li>
+        <li
+          class="pagination__item"
+        >
+          <span
+            class="pagination__inactive"
+          >
+            …
+          </span>
+        </li>
+        <li
+          class="pagination__item"
+        >
+          <a
+            aria-label="Go to page 20"
+            class="pagination__link"
+            href="#20"
+          >
+            20
+          </a>
+        </li>
+        <li
+          class="pagination__item pagination__item--count"
+        >
+          <span>
+            Page 
+            <strong>
+              5
+            </strong>
+             of 
+            <strong>
+              20
+            </strong>
+          </span>
+        </li>
+        <li
+          class="pagination__item pagination__item--bookend"
+        >
+          <a
+            class="pagination__link"
+            href="#6"
+          >
+            Next page
+          </a>
+        </li>
+      </ol>
+    </nav>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

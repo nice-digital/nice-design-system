@@ -22,6 +22,7 @@
 		{ "path": "./components/nds-checkbox" },
 		{ "path": "./components/nds-column-list" },
 		{ "path": "./components/nds-container" },
+		{ "path": "./components/nds-enhanced-pagination" },
 		{ "path": "./components/nds-grid" },
 		{ "path": "./components/nds-hero" },
 		{ "path": "./components/nds-input" },

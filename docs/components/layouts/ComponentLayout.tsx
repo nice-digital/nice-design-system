@@ -62,6 +62,10 @@ export const ComponentLayout: React.FC<ComponentLayoutProps> = ({
 			slug: "container"
 		},
 		{
+			title: "Enhanced Pagination",
+			slug: "enhanced-pagination"
+		},
+		{
 			title: "Grid",
 			slug: "grid"
 		},
