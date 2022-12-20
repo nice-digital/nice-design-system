@@ -1,8 +1,8 @@
 import React from "react";
-import { shallow, mount } from "enzyme";
-import { HorizontalNav, HorizontalNavLink } from "../src/HorizontalNav";
-import { MemoryRouter, Link } from "react-router-dom";
-import toJson from "enzyme-to-json";
+import { render } from "@testing-library/react";
+import { HorizontalNav, HorizontalNavLink } from "./HorizontalNav";
+
+const Link = () => <div data-type="link"></div>;
 
 const links = [
 	{
@@ -33,13 +33,8 @@ const links = [
 ];
 
 describe("Horizontal Nav Component", () => {
-	it("should render without crashing", () => {
-		const wrapper = shallow(<HorizontalNav />);
-		expect(wrapper).toHaveLength(1);
-	});
-
 	it("should match the default snapshot", () => {
-		const wrapper = shallow(
+		const wrapper = render(
 			<HorizontalNav>
 				{links.map((link) => (
 					<HorizontalNavLink
@@ -51,86 +46,80 @@ describe("Horizontal Nav Component", () => {
 				))}
 			</HorizontalNav>
 		);
-		expect(toJson(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it("should render the name of the destination as the link text if no title or child is supplied ", () => {
-		const wrapper = mount(
+		const wrapper = render(
 			<HorizontalNav>
 				<HorizontalNavLink destination="/testing" />
 			</HorizontalNav>
 		);
-		const link = wrapper.find("a").text();
-		expect(link).toEqual("/testing");
+		expect(wrapper.getByRole("link", { name: "/testing" })).toBeInTheDocument();
 	});
 
 	describe("HorizontalNav", () => {
 		it("should pass additional props to the container", () => {
-			const wrapper = mount(
+			const wrapper = render(
 				<HorizontalNav autoglassrepair="autoglass replace">
 					<HorizontalNavLink destination="#">Link text</HorizontalNavLink>
 				</HorizontalNav>
 			);
-			expect(wrapper.props()["autoglassrepair"]).toEqual("autoglass replace");
+			expect(
+				wrapper.getByRole("navigation").getAttribute("autoglassrepair")
+			).toBe("autoglass replace");
 		});
 
 		it("should merge additional classes onto the container", () => {
-			const wrapper = mount(
+			const wrapper = render(
 				<HorizontalNav className="classy">
 					<HorizontalNavLink destination="#">Link text</HorizontalNavLink>
 				</HorizontalNav>
 			);
-			expect(wrapper.find("nav").props()["className"]).toEqual(
-				"horizontal-nav classy"
-			);
+			expect(wrapper.getByRole("navigation")).toHaveClass("classy");
 		});
 	});
 
 	describe("HorizontalNavLink", () => {
 		it("NavLink should pass additional props directly to the link", () => {
-			const wrapper = mount(
+			const wrapper = render(
 				<HorizontalNav>
 					<HorizontalNavLink destination="#" dancing="is what we do">
 						Link text
 					</HorizontalNavLink>
 				</HorizontalNav>
 			);
-			const linkProps = wrapper.find("a").props();
-
-			expect(linkProps["dancing"]).toEqual("is what we do");
+			expect(wrapper.getByRole("link").getAttribute("dancing")).toBe(
+				"is what we do"
+			);
 		});
 
 		it("should merge additional classes onto the anchor", () => {
-			const wrapper = mount(
+			const wrapper = render(
 				<HorizontalNav>
 					<HorizontalNavLink destination="#" className="very-classy">
 						Link text
 					</HorizontalNavLink>
 				</HorizontalNav>
 			);
-			expect(wrapper.find("a").props()["className"]).toEqual(
-				"horizontal-nav__link very-classy"
-			);
+			expect(wrapper.getByRole("link")).toHaveClass("very-classy");
 		});
 
 		it("should use a custom navigation attribute if supplied, otherwise fall back to href if anchor or to if not", () => {
-			const wrapper = mount(
-				<MemoryRouter>
-					<HorizontalNav>
-						{links.map((link) => (
-							<HorizontalNavLink key={link.title} {...link} />
-						))}
-					</HorizontalNav>
-				</MemoryRouter>
+			const { container } = render(
+				<HorizontalNav>
+					{links.map((link) => (
+						<HorizontalNavLink key={link.title} {...link} />
+					))}
+				</HorizontalNav>
 			);
 
-			wrapper.find(Link).forEach((item) => {
-				expect(item.props()["to"]).toBeTruthy();
-			});
-
-			expect(wrapper.find("a.three").props()["pigeon"]).toBeTruthy();
-
-			expect(wrapper.find("a.one").props()["href"]).toBeTruthy();
+			expect(
+				container.querySelector("a.three")?.getAttribute("pigeon")
+			).toBeTruthy();
+			expect(
+				container.querySelector("a.one")?.getAttribute("href")
+			).toBeTruthy();
 		});
 	});
 });

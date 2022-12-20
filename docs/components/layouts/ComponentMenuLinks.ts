@@ -57,6 +57,10 @@ export const menuLinks: MenuLink[] = [
 		slug: "hero"
 	},
 	{
+		title: "Horizontal Nav",
+		slug: "horizontal-nav"
+	},
+	{
 		title: "Input",
 		slug: "input"
 	},

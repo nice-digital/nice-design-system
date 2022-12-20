@@ -26,6 +26,7 @@
 		{ "path": "./components/nds-form-group" },
 		{ "path": "./components/nds-grid" },
 		{ "path": "./components/nds-hero" },
+		{ "path": "./components/nds-horizontal-nav" },
 		{ "path": "./components/nds-input" },
 		{ "path": "./components/nds-radio" },
 		{ "path": "./components/nds-stacked-nav" },

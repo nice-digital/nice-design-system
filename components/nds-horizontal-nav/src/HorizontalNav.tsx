@@ -1,10 +1,30 @@
 import React from "react";
-import PropTypes from "prop-types";
 import classnames from "classnames";
 
-import "./../scss/horizontal-nav.scss";
+import "../scss/horizontal-nav.scss";
 
-export const HorizontalNav = ({ className, children, ...rest }) => {
+export interface HorizontalNavProps {
+	[prop: string]: unknown;
+	children: React.ReactNode;
+	className?: string;
+}
+
+export interface HorizontalNavLinkProps {
+	[prop: string]: unknown;
+	children?: React.ReactNode;
+	className?: string;
+	destination: string;
+	elementType?: React.ElementType;
+	isCurrent?: boolean;
+	method?: string;
+	title?: string;
+}
+
+export const HorizontalNav: React.FC<HorizontalNavProps> = ({
+	className,
+	children,
+	...rest
+}: HorizontalNavProps) => {
 	return (
 		<nav className={classnames("horizontal-nav", className)} {...rest}>
 			<ul className="horizontal-nav__list">{children}</ul>
@@ -12,7 +32,7 @@ export const HorizontalNav = ({ className, children, ...rest }) => {
 	);
 };
 
-export const HorizontalNavLink = ({
+export const HorizontalNavLink: React.FC<HorizontalNavLinkProps> = ({
 	title,
 	isCurrent = false,
 	destination,
@@ -21,7 +41,7 @@ export const HorizontalNavLink = ({
 	className,
 	method,
 	...rest
-}) => {
+}: HorizontalNavLinkProps) => {
 	// Would like to make method a required prop in the future but not possible without a breaking change
 	const props = {
 		"aria-current": isCurrent,
@@ -35,19 +55,4 @@ export const HorizontalNavLink = ({
 			</ElementType>
 		</li>
 	);
-};
-
-HorizontalNav.propTypes = {
-	children: PropTypes.node,
-	className: PropTypes.string
-};
-
-HorizontalNavLink.propTypes = {
-	children: PropTypes.node,
-	title: PropTypes.string,
-	isCurrent: PropTypes.bool,
-	destination: PropTypes.string.isRequired,
-	elementType: PropTypes.elementType,
-	className: PropTypes.string,
-	method: PropTypes.string
 };
