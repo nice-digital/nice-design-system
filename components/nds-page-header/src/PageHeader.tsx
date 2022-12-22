@@ -1,9 +1,20 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import "../scss/page-header.scss";
 
-export const PageHeader = (props) => {
+export interface PageHeaderProps {
+	[prop: string]: unknown;
+	useAltHeading?: boolean;
+	preheading?: React.ReactNode;
+	heading: React.ReactNode;
+	lead?: React.ReactNode;
+	metadata?: React.ReactNode[];
+	cta?: React.ReactNode;
+}
+
+export const PageHeader: React.FC<PageHeaderProps> = (
+	props: PageHeaderProps
+) => {
 	const {
 		heading,
 		useAltHeading = false,
@@ -40,22 +51,4 @@ export const PageHeader = (props) => {
 			{cta && <p className="page-header__cta">{cta}</p>}
 		</div>
 	);
-};
-
-PageHeader.propTypes = {
-	heading: PropTypes.oneOfType([
-		PropTypes.arrayOf(PropTypes.node),
-		PropTypes.node
-	]).isRequired,
-	useAltHeading: PropTypes.bool,
-	lead: PropTypes.oneOfType([
-		PropTypes.arrayOf(PropTypes.node),
-		PropTypes.node
-	]),
-	metadata: PropTypes.arrayOf(PropTypes.node),
-	preheading: PropTypes.oneOfType([
-		PropTypes.arrayOf(PropTypes.node),
-		PropTypes.node
-	]),
-	cta: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
 };

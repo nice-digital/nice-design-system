@@ -1,10 +1,9 @@
 "use strict";
 import React from "react";
-import { shallow } from "enzyme";
-import toJson from "enzyme-to-json";
-import { PageHeader } from "../src/PageHeader";
+import { render } from "@testing-library/react";
+import { PageHeader, PageHeaderProps } from "./PageHeader";
 
-const props = {
+const props: PageHeaderProps = {
 	heading: "Products",
 	cta: "See more below",
 	preheading: "Systemic lupus erythematosus",
@@ -12,40 +11,37 @@ const props = {
 };
 
 describe("PageHeader", () => {
-	it("should mount without crashing", () => {
-		const wrapper = shallow(<PageHeader {...props} />);
-		expect(wrapper.length).toEqual(1);
-	});
-
 	it("should match the snapshot with all props supplied", () => {
-		const wrapper = shallow(<PageHeader {...props} />);
-		expect(toJson(wrapper)).toMatchSnapshot();
+		const wrapper = render(<PageHeader {...props} />);
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it("should match the snapshot with only required heading prop supplied", () => {
-		const wrapper = shallow(<PageHeader heading="This is our heading" />);
-		expect(toJson(wrapper)).toMatchSnapshot();
+		const wrapper = render(<PageHeader heading="This is our heading" />);
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it("should allow a component to be passed as a prop", () => {
 		const button = <button onClick={() => false}>Click Me</button>;
-		const wrapper = shallow(
+		const wrapper = render(
 			<PageHeader heading="This is our heading" cta={button} />
 		);
-		expect(toJson(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it("should pass additional props to the container", () => {
-		const wrapper = shallow(
+		const { container } = render(
 			<PageHeader heading="This is our heading" data-track={false} />
 		);
-		expect(wrapper.find("div").props()["data-track"]).toEqual(false);
+		expect(container.querySelector("div")?.getAttribute("data-track")).toBe(
+			"false"
+		);
 	});
 
 	it("should merge classes with the container", () => {
-		const wrapper = shallow(
+		const { container } = render(
 			<PageHeader heading="This is our heading" className="mt--0" />
 		);
-		expect(wrapper.find("div").props()["className"]).toContain("mt--0");
+		expect(container.querySelector("div")).toHaveClass("mt--0");
 	});
 });

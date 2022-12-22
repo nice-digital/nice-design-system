@@ -69,6 +69,10 @@ export const menuLinks: MenuLink[] = [
 		slug: "maintain-ratio"
 	},
 	{
+		title: "Page Header",
+		slug: "page-header"
+	},
+	{
 		title: "Radio",
 		slug: "radio"
 	},

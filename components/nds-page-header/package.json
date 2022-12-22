@@ -8,16 +8,13 @@
 	"author": "Ian Routledge <ian.routledge@nice.org.uk>",
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
-	"main": "lib/PageHeader.js",
-	"module": "es/PageHeader.js",
+	"main": "es/PageHeader.js",
 	"style": "scss/page-header.scss",
-	"types": "nds-page-header.d.ts",
 	"directories": {
-		"lib": "lib",
+		"lib": "es",
 		"test": "__tests__"
 	},
 	"files": [
-		"lib",
 		"es",
 		"scss",
 		"*.d.ts"
@@ -37,8 +34,7 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
-		"@nice-digital/nds-core": "^3.0.2",
-		"prop-types": "^15.7.2"
+		"@nice-digital/nds-core": "^3.0.2"
 	},
 	"peerDependencies": {
 		"react": "^16 || ^17 || ^18",
