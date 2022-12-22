@@ -13,6 +13,9 @@
 	"files": [],
 	"exclude": ["node_modules"],
 	"references": [
+		// Order is important here - if any module relies on any other, list the dependency first
+		// e.g. nds-tag is used by nds-phase-banner, so it needs to appear before it in this list
+		{ "path": "./components/nds-tag" },
 		{ "path": "./components/nds-a-z-list" },
 		{ "path": "./components/nds-action-banner" },
 		{ "path": "./components/nds-alert" },
@@ -30,9 +33,9 @@
 		{ "path": "./components/nds-input" },
 		{ "path": "./components/nds-maintain-ratio" },
 		{ "path": "./components/nds-page-header" },
+		{ "path": "./components/nds-phase-banner" },
 		{ "path": "./components/nds-radio" },
 		{ "path": "./components/nds-stacked-nav" },
-		{ "path": "./components/nds-tag" },
 		{ "path": "./components/nds-textarea" }
 	]
 }

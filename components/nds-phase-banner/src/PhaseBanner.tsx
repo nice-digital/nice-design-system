@@ -1,11 +1,28 @@
 import React from "react";
-import PropTypes from "prop-types";
 import classnames from "classnames";
 import { Tag } from "@nice-digital/nds-tag";
 
 import "./../scss/phase-banner.scss";
 
-export const PhaseBanner = (props) => {
+interface BaseProps {
+	[prop: string]: unknown;
+	children: React.ReactNode;
+	className?: string;
+}
+
+interface PhaseBannerAlpha {
+	alpha: boolean;
+}
+
+interface PhaseBannerBeta {
+	beta: boolean;
+}
+
+export type PhaseBannerProps = BaseProps & (PhaseBannerAlpha | PhaseBannerBeta);
+
+export const PhaseBanner: React.FC<PhaseBannerProps> = (
+	props: PhaseBannerProps
+) => {
 	const { alpha, beta, children, className, ...rest } = props;
 
 	return (
@@ -19,15 +36,3 @@ export const PhaseBanner = (props) => {
 		</p>
 	);
 };
-
-PhaseBanner.propTypes = {
-	alpha: PropTypes.bool,
-	beta: PropTypes.bool,
-	children: PropTypes.oneOfType([
-		PropTypes.arrayOf(PropTypes.node),
-		PropTypes.node
-	]).isRequired,
-	className: PropTypes.string
-};
-
-PhaseBanner.defaultProps = {};
