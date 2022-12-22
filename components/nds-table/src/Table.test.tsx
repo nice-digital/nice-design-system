@@ -1,52 +1,40 @@
-"use strict";
 import React from "react";
-import { shallow } from "enzyme";
-import toJson from "enzyme-to-json";
-import { Table } from "../src/Table";
+import { render } from "@testing-library/react";
+import { Table } from "./Table";
 
 describe("Table", () => {
-	it("should render without crashing", () => {
-		const wrapper = shallow(
-			<Table>
-				<tr>
-					<td>One</td>
-				</tr>
-			</Table>
-		);
-		expect(wrapper).toHaveLength(1);
-	});
-
 	it("should match the snapshot", () => {
-		const wrapper = shallow(
+		const wrapper = render(
 			<Table>
 				<tr>
 					<td>One</td>
 				</tr>
 			</Table>
 		);
-		expect(toJson(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it("should merge container classes when additional className supplied", () => {
-		const wrapper = shallow(
+		const wrapper = render(
 			<Table className="mt--d">
 				<tr>
 					<td>One</td>
 				</tr>
 			</Table>
 		);
-		expect(toJson(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it("should cascade additional attributes to the container", () => {
-		const wrapper = shallow(
+		const wrapper = render(
 			<Table aria-label="Table showing increased usage of the design system over time">
 				<tr>
 					<td>One</td>
 				</tr>
 			</Table>
 		);
-		expect(wrapper.props()["aria-label"]).toEqual(
+
+		expect(wrapper.getByRole("table").getAttribute("aria-label")).toBe(
 			"Table showing increased usage of the design system over time"
 		);
 	});

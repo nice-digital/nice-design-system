@@ -1,15 +1,20 @@
 import React from "react";
-import PropTypes from "prop-types";
 import classnames from "classnames";
 
 import "../scss/table.scss";
 
-export const Table = (props) => {
+export interface TableProps {
+	[prop: string]: unknown;
+	className?: string;
+	children: React.ReactNode;
+}
+
+export const Table: React.FC<TableProps> = (props: TableProps) => {
 	const { className, children, ...attributes } = props;
 
 	const classNames = classnames({
 		table: true,
-		[className]: className && true
+		[`${className}`]: className && true
 	});
 
 	return (
@@ -17,9 +22,4 @@ export const Table = (props) => {
 			{children}
 		</table>
 	);
-};
-
-Table.propTypes = {
-	className: PropTypes.string,
-	children: PropTypes.node.isRequired
 };

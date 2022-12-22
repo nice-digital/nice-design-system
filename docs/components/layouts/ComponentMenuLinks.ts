@@ -85,6 +85,10 @@ export const menuLinks: MenuLink[] = [
 		slug: "stacked-nav"
 	},
 	{
+		title: "Table",
+		slug: "table"
+	},
+	{
 		title: "Tag",
 		slug: "tag"
 	},
