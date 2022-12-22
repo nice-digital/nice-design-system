@@ -1,0 +1,17 @@
+import { ComponentLayout } from "components/layouts/ComponentLayout";
+import { Tag } from "@nice-digital/nds-tag";
+
+export const meta = {
+	title: "Tag",
+	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-tag",
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-tag"
+};
+
+# {meta.title}
+
+*** Placeholder component page ***
+
+<Tag success>Tag content</Tag>
+<Tag info flush>More tag content</Tag>
+
+export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;

@@ -32,6 +32,7 @@
 		{ "path": "./components/nds-page-header" },
 		{ "path": "./components/nds-radio" },
 		{ "path": "./components/nds-stacked-nav" },
+		{ "path": "./components/nds-tag" },
 		{ "path": "./components/nds-textarea" }
 	]
 }
