@@ -28,6 +28,7 @@
 		{ "path": "./components/nds-hero" },
 		{ "path": "./components/nds-horizontal-nav" },
 		{ "path": "./components/nds-input" },
+		{ "path": "./components/nds-maintain-ratio" },
 		{ "path": "./components/nds-radio" },
 		{ "path": "./components/nds-stacked-nav" },
 		{ "path": "./components/nds-textarea" }

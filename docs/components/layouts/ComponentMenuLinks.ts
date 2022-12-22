@@ -65,6 +65,10 @@ export const menuLinks: MenuLink[] = [
 		slug: "input"
 	},
 	{
+		title: "Maintain Ratio",
+		slug: "maintain-ratio"
+	},
+	{
 		title: "Radio",
 		slug: "radio"
 	},
