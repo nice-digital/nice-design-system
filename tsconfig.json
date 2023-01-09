@@ -8,6 +8,7 @@
 		"forceConsistentCasingInFileNames": true,
 		"strict": true,
 		"skipLibCheck": true,
+		"noImplicitThis": false,
 		"types": ["jest", "@testing-library/jest-dom", "node"]
 	},
 	"files": [],
@@ -15,6 +16,7 @@
 	"references": [
 		// Order is important here - if any module relies on any other, list the dependency first
 		// e.g. nds-tag is used by nds-phase-banner, so it needs to appear before it in this list
+		{ "path": "./components/nds-core" },
 		{ "path": "./components/nds-tag" },
 		{ "path": "./components/nds-a-z-list" },
 		{ "path": "./components/nds-action-banner" },

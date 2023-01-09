@@ -1,6 +1,6 @@
 /* eslint-env node, mocha, jquery */
 
-import { slugify, nextUniqueId, camelCase } from "../src/utils";
+import { slugify, nextUniqueId, camelCase } from "./utils";
 
 describe("Utils", function () {
 	describe("slugify", function () {
@@ -63,8 +63,11 @@ describe("Utils", function () {
 		});
 
 		it("increments counter on subsequent calls", function () {
-			let a = Number(nextUniqueId().match(/\d+/)[0]),
-				b = Number(nextUniqueId().match(/\d+/)[0]);
+			const idA = nextUniqueId().match(/\d+/),
+				idB = nextUniqueId().match(/\d+/);
+
+			let a = Number(idA ? idA[0] : null),
+				b = Number(idB ? idB[0] : null);
 
 			expect(b).toEqual(a + 1);
 		});

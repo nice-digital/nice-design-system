@@ -15,6 +15,8 @@ export const breakpoints = {
 	xl: 1600
 };
 
+export type breakpointType = keyof typeof breakpoints;
+
 /**
  * Determines if the device's width matches a min-width query from the given breakpoint.
  *
@@ -26,8 +28,8 @@ export const breakpoints = {
  * 	// Checks if the media query (min-width: 25em) matches
  * 	var matches = matchesFrom("xs");
  */
-export const matchesFrom = (breakpointName) => {
-	let breakpointPx = breakpoints[breakpointName];
+export const matchesFrom = (breakpointName: string) => {
+	let breakpointPx = breakpoints[breakpointName as breakpointType];
 
 	if (!breakpointPx) {
 		throw new Error(`Breakpoint ${breakpointName} does not exist`);

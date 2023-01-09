@@ -10,7 +10,7 @@
  *
  * @param {string} str The string to trim
  */
-export const trim = function (str) {
+export const trim = function (str: string) {
 	return str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, "");
 };
 
@@ -19,25 +19,29 @@ export const trim = function (str) {
  * See https://remysharp.com/2010/07/21/throttling-function-calls
  *
  * @param      {Function}  func       The function to throttle
- * @param      {Integer}  threshold  The threshhold period, in milliseconds
+ * @param      {Integer}  threshold  The threshold period, in milliseconds
  * @param      {Object}  scope   The context of the throttled function
  * @return     {Function}  { The throttled function }
  */
-export const throttle = function (fn, threshhold = 100, scope = null) {
-	let last, deferTimer;
+export const throttle = function (
+	fn: Function,
+	threshold: number = 100,
+	scope: Object | null = null
+) {
+	let last: number, deferTimer: ReturnType<typeof setTimeout>;
 
 	return function throttled() {
 		let context = scope || this,
 			now = +new Date(),
 			args = arguments;
 
-		if (last && now < last + threshhold) {
+		if (last && now < last + threshold) {
 			// hold on to it
 			clearTimeout(deferTimer);
 			deferTimer = setTimeout(function () {
 				last = now;
 				fn.apply(context, args);
-			}, threshhold);
+			}, threshold);
 		} else {
 			last = now;
 			fn.apply(context, args);
@@ -50,18 +54,18 @@ export const throttle = function (fn, threshhold = 100, scope = null) {
  * See http://unscriptable.com/2009/03/20/debouncing-javascript-methods/
  *
  * @param      {Function}  func       The function to debounce
- * @param      {Integer}  execAsap   Whether to execute the function now
+ * @param      {boolean}  execAsap   Whether to execute the function now
  * @param      {Integer}  threshold  The detection period, in milliseconds
  * @param      {Object}  scope  The context for the debounced function
  * @return     {Function}  { The debounced function }
  */
 export const debounce = function (
-	func,
-	execAsap = false,
-	threshold = 100,
-	scope = null
+	func: Function,
+	execAsap: boolean = false,
+	threshold: number = 100,
+	scope: Object | null = null
 ) {
-	let timeout;
+	let timeout: ReturnType<typeof setTimeout> | null;
 
 	return function debounced() {
 		let context = scope || this,
@@ -91,7 +95,7 @@ export const debounce = function (
  *          // returns "a-string-to-transform-and-slugify"
  *          slugify("A (string) to transform & slugify!");
  */
-export const slugify = (str) => {
+export const slugify = (str: string) => {
 	return trim(str)
 		.toLowerCase()
 		.replace(/\s+/g, "-") // Replace spaces with -
@@ -120,8 +124,8 @@ export const slugify = (str) => {
  *          // returns "prefix-1"
  *          utils.nextUniqueId("prefix");
  */
-export const nextUniqueId = (function (i) {
-	return function (prefix = "uid") {
+export const nextUniqueId = (function (i: number) {
+	return function (prefix: string = "uid") {
 		return `${prefix}-${++i}`;
 	};
 })(0);
@@ -130,20 +134,20 @@ export const nextUniqueId = (function (i) {
  * CamelCases a  string
  * @param {string} str The string to camel case
  */
-export const camelCase = function (str) {
+export const camelCase = function (str: string) {
 	str = str.split("-").join(" "); // To support kebab-case
 	// See https://stackoverflow.com/a/2970667/486434
 	return str
-		.replace(/(?:^\w|[A-Z]|\b\w)/g, function (letter, index) {
+		.replace(/(?:^\w|[A-Z]|\b\w)/g, function (letter: string, index: number) {
 			return index === 0 ? letter.toLowerCase() : letter.toUpperCase();
 		})
 		.replace(/\s+/g, "");
 };
 
 export default {
-	throttle: throttle,
-	debounce: debounce,
-	slugify: slugify,
-	nextUniqueId: nextUniqueId,
-	camelCase: camelCase
+	throttle,
+	debounce,
+	slugify,
+	nextUniqueId,
+	camelCase
 };
