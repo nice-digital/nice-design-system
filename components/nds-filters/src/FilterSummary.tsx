@@ -4,15 +4,49 @@ import classnames from "classnames";
 import { Tag } from "@nice-digital/nds-tag";
 import "./../scss/filter-summary.scss";
 
-export function FilterSummary({
+export interface FilterSummaryProps {
+	[prop: string]: unknown;
+	sorting?: SortingType[];
+	activeFilters?: FilterType[];
+	children: React.ReactNode;
+	className?: string;
+	headingLevel?: 2 | 3 | 4 | 5;
+}
+
+export type SortingType = {
+	label: string;
+	value?: string;
+	active?: boolean | undefined;
+	onSelected?: React.EventHandler<any>;
+};
+
+export type FilterType = {
+	label: string;
+	destination?: string;
+	onClick?: React.EventHandler<any>;
+	elementType?: React.ElementType;
+	method?: string;
+	className?: string;
+};
+
+export interface ResultsSortingProps {
+	sorting: SortingType[];
+	selectName?: string;
+}
+
+export interface ResultsFiltersProps {
+	filters: FilterType | FilterType[];
+}
+
+export const FilterSummary: React.FC<FilterSummaryProps> = ({
 	children,
 	className,
 	sorting = [],
 	activeFilters = [],
 	headingLevel = 2,
 	...rest
-}) {
-	const HeadingLevel = "h" + headingLevel;
+}: FilterSummaryProps) => {
+	const HeadingLevel = `h${headingLevel}` as keyof JSX.IntrinsicElements;
 
 	return (
 		<div className={classnames("filter-summary", className)} {...rest}>
@@ -23,29 +57,36 @@ export function FilterSummary({
 			{activeFilters.length > 0 && <ResultsFilters filters={activeFilters} />}
 		</div>
 	);
-}
+};
 
-const populateMethodProperty = (onClick, method, elementType) => {
+const populateMethodProperty = (
+	onClick: React.EventHandler<any> | undefined,
+	method: string,
+	elementType: React.ElementType
+) => {
 	let defaultMethod = method || (elementType === "a" && "href") || "to";
 	if (onClick) return "onClick";
 	if (elementType === undefined) defaultMethod = "noelementtypeprovided";
 	return defaultMethod;
 };
 
-const defineElementType = (onClick, elementType) => {
-	let element = "a";
+const defineElementType = (
+	onClick: React.EventHandler<any> | undefined,
+	elementType: React.ElementType
+): string | React.ElementType => {
+	let element: string | React.ElementType = "a";
 	if (onClick) element = "button";
 	if (elementType) element = elementType;
 	return element;
 };
 
-const validateElementProps = (element) => {
-	if (element.type.displayName == "Link" && !element.props.to) {
+const validateElementProps = (element: React.ReactElement) => {
+	if (element.type == "Link" && !element.props.to) {
 		return "Link component missing 'TO' attribute --->";
 	}
 };
 
-function ResultsFilters({ filters }) {
+function ResultsFilters({ filters }: { filters: FilterType[] }) {
 	if (!filters) return null;
 	return (
 		<ul
@@ -61,12 +102,17 @@ function ResultsFilters({ filters }) {
 					onClick,
 					className = ""
 				}) => {
-					const ElementType = defineElementType(onClick, elementType);
+					const ElementType = defineElementType(
+						onClick,
+						elementType as React.ElementType
+					);
 					const props = {
 						className,
-						[populateMethodProperty(onClick, method, ElementType)]: onClick
-							? onClick
-							: destination
+						[populateMethodProperty(
+							onClick,
+							method as string,
+							ElementType as React.ElementType
+						)]: onClick ? onClick : destination
 					};
 					return (
 						<li key={label} className="filter-summary__filter">
@@ -86,7 +132,8 @@ function ResultsFilters({ filters }) {
 		</ul>
 	);
 }
-function ResultsSorting({ sorting, selectName }) {
+
+function ResultsSorting({ sorting, selectName }: ResultsSortingProps) {
 	if (!sorting.length) return null;
 
 	const [showButton, setShowButton] = useState(true);
@@ -95,10 +142,11 @@ function ResultsSorting({ sorting, selectName }) {
 	const defaultValue = sorting.find((s) => s.active)?.value || "";
 
 	// Run callback function passed in to the selected sorting option
-	const handleChange = (e) => {
-		const onSelected = sorting[e.target.selectedIndex].onSelected;
+	const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+		const selectedIndex: number = e.target.selectedIndex;
+		const onSelected = sorting[selectedIndex].onSelected;
 		if (typeof onSelected === "function") {
-			onSelected(sorting[e.target.selectedIndex].onSelected.value);
+			onSelected(e);
 		}
 	};
 
@@ -131,42 +179,5 @@ function ResultsSorting({ sorting, selectName }) {
 		</div>
 	);
 }
-
-const FilterType = PropTypes.shape({
-	label: PropTypes.string.isRequired,
-	destination: PropTypes.string,
-	onClick: PropTypes.func,
-	elementType: PropTypes.elementType,
-	method: PropTypes.string,
-	className: PropTypes.string
-});
-
-const SortingType = PropTypes.shape({
-	label: PropTypes.string.isRequired,
-	value: PropTypes.string,
-	active: PropTypes.bool,
-	onSelected: PropTypes.func
-});
-
-ResultsSorting.propTypes = {
-	sorting: PropTypes.arrayOf(SortingType),
-	selectName: PropTypes.string
-};
-
-ResultsSorting.defaultProps = {
-	selectName: "s"
-};
-
-ResultsFilters.propTypes = {
-	filters: PropTypes.oneOfType([PropTypes.arrayOf(FilterType), FilterType])
-};
-
-FilterSummary.propTypes = {
-	sorting: PropTypes.arrayOf(SortingType),
-	activeFilters: PropTypes.arrayOf(FilterType),
-	children: PropTypes.node.isRequired,
-	className: PropTypes.string,
-	headingLevel: PropTypes.number
-};
 
 export default FilterSummary;

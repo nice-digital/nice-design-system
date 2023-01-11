@@ -4,8 +4,7 @@ const config: Config = {
 	collectCoverageFrom: ["components/*/src/**/*.tsx"],
 	moduleFileExtensions: ["tsx", "js"],
 	moduleNameMapper: {
-		"^.+\\.(css|less|scss)$": "identity-obj-proxy",
-		"nds-core": "<rootDir>/components/nds-core/src/core.js"
+		"^.+\\.(css|less|scss)$": "identity-obj-proxy"
 	},
 	setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
 	testEnvironment: "jsdom",

@@ -1,5 +1,4 @@
 import React, { ReactNode, ReactElement, ElementType, FC } from "react";
-import PropTypes from "prop-types";
 import classnames from "classnames";
 
 import "./../scss/stacked-nav.scss";
