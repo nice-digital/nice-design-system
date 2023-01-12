@@ -40,6 +40,7 @@
 		{ "path": "./components/nds-page-header" },
 		{ "path": "./components/nds-panel" },
 		{ "path": "./components/nds-phase-banner" },
+		{ "path": "./components/nds-prev-next" },
 		{ "path": "./components/nds-radio" },
 		{ "path": "./components/nds-stacked-nav" },
 		{ "path": "./components/nds-table" },

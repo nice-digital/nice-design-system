@@ -1,18 +1,19 @@
 import type { Config } from "jest";
 
 const config: Config = {
-	collectCoverageFrom: ["components/*/src/**/*.tsx"],
+	collectCoverageFrom: ["<rootDir>/components/**/src/**/*.tsx"],
 	moduleFileExtensions: ["tsx", "js"],
 	moduleNameMapper: {
 		"^.+\\.(css|less|scss)$": "identity-obj-proxy"
 	},
 	setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
 	testEnvironment: "jsdom",
+	testMatch: ["<rootDir>/components/**/src/**/*.test.tsx"],
 	testPathIgnorePatterns: [
 		"<rootDir>/(?:.+?)/lib/",
 		"<rootDir>/(?:.+?)/es/",
-		".cache",
-		".next"
+		"\\.cache",
+		"\\.next"
 	],
 	transform: {
 		"^.+\\.(ts|tsx|js)?$": "ts-jest"

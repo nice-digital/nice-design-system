@@ -81,6 +81,10 @@ export const menuLinks: MenuLink[] = [
 		slug: "phase-banner"
 	},
 	{
+		title: "Prev Next",
+		slug: "prev-next"
+	},
+	{
 		title: "Radio",
 		slug: "radio"
 	},
