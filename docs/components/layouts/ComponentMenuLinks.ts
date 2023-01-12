@@ -73,6 +73,10 @@ export const menuLinks: MenuLink[] = [
 		slug: "page-header"
 	},
 	{
+		title: "Panel",
+		slug: "panel"
+	},
+	{
 		title: "Phase Banner",
 		slug: "phase-banner"
 	},
