@@ -45,6 +45,7 @@
 		{ "path": "./components/nds-simple-pagination" },
 		{ "path": "./components/nds-stacked-nav" },
 		{ "path": "./components/nds-table" },
+		{ "path": "./components/nds-tabs" },
 		{ "path": "./components/nds-textarea" },
 		{ "path": "./components/nds-filters" }
 	]

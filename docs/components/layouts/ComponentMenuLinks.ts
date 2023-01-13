@@ -101,6 +101,10 @@ export const menuLinks: MenuLink[] = [
 		slug: "table"
 	},
 	{
+		title: "Tabs",
+		slug: "tabs"
+	},
+	{
 		title: "Tag",
 		slug: "tag"
 	},
