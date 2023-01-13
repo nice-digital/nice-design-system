@@ -8,16 +8,12 @@
 	],
 	"homepage": "https://github.com/nice-digital/nice-design-system#readme",
 	"license": "MIT",
-	"types": "nds-simple-pagination.d.ts",
-	"main": "lib/SimplePagination.js",
-	"module": "es/SimplePagination.js",
+	"main": "es/SimplePagination.js",
 	"style": "scss/simple-pagination.scss",
 	"directories": {
-		"lib": "lib",
-		"test": "__tests__"
+		"lib": "es"
 	},
 	"files": [
-		"lib",
 		"es",
 		"scss",
 		"*.d.ts"
@@ -38,8 +34,7 @@
 	},
 	"dependencies": {
 		"@nice-digital/nds-core": "^3.0.2",
-		"classnames": "^2.2.6",
-		"prop-types": "^15.7.2"
+		"classnames": "^2.2.6"
 	},
 	"peerDependencies": {
 		"react": "^16 || ^17 || ^18",

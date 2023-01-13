@@ -3,12 +3,28 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import "./../scss/simple-pagination.scss";
 
-const Link = ({
+interface PageLinkProps {
+	destination?: string;
+	elementType?: React.ElementType;
+	method?: string;
+	text?: string;
+}
+
+export interface SimplePaginationProps {
+	[prop: string]: unknown;
+	currentPage?: number;
+	totalPages?: number;
+	nextPageLink?: PageLinkProps;
+	previousPageLink?: PageLinkProps;
+	className?: string;
+}
+
+const Link: React.FC<PageLinkProps> = ({
 	text,
 	destination,
 	elementType: ElementType = "a",
 	method
-}) => {
+}: PageLinkProps) => {
 	let linkProps = {
 		className: "simple-pagination__link",
 		[method || (ElementType === "a" && "href") || "to"]: destination
@@ -21,14 +37,9 @@ const Link = ({
 	);
 };
 
-Link.propTypes = {
-	text: PropTypes.string,
-	destination: PropTypes.string,
-	elementType: PropTypes.elementType,
-	method: PropTypes.string
-};
-
-export const SimplePagination = (props) => {
+export const SimplePagination: React.FC<SimplePaginationProps> = (
+	props: SimplePaginationProps
+) => {
 	const {
 		currentPage,
 		totalPages,
@@ -73,19 +84,4 @@ export const SimplePagination = (props) => {
 			)}
 		</div>
 	);
-};
-
-SimplePagination.propTypes = {
-	currentPage: PropTypes.number.isRequired,
-	nextPageLink: PropTypes.objectOf(Link),
-	previousPageLink: PropTypes.objectOf(Link),
-	totalPages: PropTypes.number,
-	className: PropTypes.string
-};
-
-SimplePagination.defaultProps = {
-	currentPage: 1,
-	totalPages: null,
-	nextPageLink: null,
-	previousPageLink: null
 };

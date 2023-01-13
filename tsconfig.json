@@ -42,6 +42,7 @@
 		{ "path": "./components/nds-phase-banner" },
 		{ "path": "./components/nds-prev-next" },
 		{ "path": "./components/nds-radio" },
+		{ "path": "./components/nds-simple-pagination" },
 		{ "path": "./components/nds-stacked-nav" },
 		{ "path": "./components/nds-table" },
 		{ "path": "./components/nds-textarea" },

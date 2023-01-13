@@ -89,7 +89,11 @@ export const menuLinks: MenuLink[] = [
 		slug: "radio"
 	},
 	{
-		title: "Stacked nav",
+		title: "Simple Pagination",
+		slug: "simple-pagination"
+	},
+	{
+		title: "Stacked Nav",
 		slug: "stacked-nav"
 	},
 	{
