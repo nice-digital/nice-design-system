@@ -1,5 +1,5 @@
 import React from "react";
-import { render, waitFor } from "@testing-library/react";
+import { render, waitFor, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Tabs, Tab, keyCodes } from "./Tabs";
 
@@ -62,43 +62,51 @@ describe("Tabs", () => {
 	});
 
 	it("should navigate tab content with the keyboard", async () => {
-		const { container } = render(defaultTabs);
+		const wrapper = render(defaultTabs);
 
-		const btn1 = container.querySelector("#tab-button-tab-1") as Element;
-		const btn2 = container.querySelector("#tab-button-tab-2") as Element;
-		const btn3 = container.querySelector("#tab-button-tab-3") as Element;
+		const btn1 = wrapper.getByRole("tab", { name: "Tab 1" });
+		const btn2 = wrapper.getByRole("tab", { name: "Tab 2" });
+		const btn3 = wrapper.getByRole("tab", { name: "Tab 3" });
 
 		userEvent.click(btn1);
 		await waitFor(() => {
-			expect(btn1?.getAttribute("aria-selected")).toBe("true");
+			expect(btn1.getAttribute("aria-selected")).toBe("true");
 		});
 
-		// userEvent.keyboard("[ArrowRight]");
-		// await waitFor(() => {
-		// 	expect(btn2?.getAttribute("aria-selected")).toBe("true");
-		// });
+		fireEvent.keyDown(btn1, { keyCode: keyCodes.right });
+		await waitFor(() => {
+			expect(btn2.getAttribute("aria-selected")).toBe("true");
+		});
 
-		// expect(wrapper.state().index).toEqual(1);
-		// btn2.simulate("keyDown", {
-		// 	which: keyCodes.right
-		// });
-		// expect(wrapper.state().index).toEqual(2);
-		// btn3.simulate("keyDown", {
-		// 	which: keyCodes.home
-		// });
-		// expect(wrapper.state().index).toEqual(0);
-		// btn1.simulate("keyDown", {
-		// 	which: keyCodes.down
-		// });
-		// expect(wrapper.state().index).toEqual(1);
-		// btn2.simulate("keyDown", {
-		// 	which: keyCodes.up
-		// });
-		// expect(wrapper.state().index).toEqual(0);
-		// btn1.simulate("keyDown", {
-		// 	which: keyCodes.end
-		// });
-		// expect(wrapper.state().index).toEqual(2);
+		fireEvent.keyDown(btn2, { keyCode: keyCodes.right });
+		await waitFor(() => {
+			expect(btn3.getAttribute("aria-selected")).toBe("true");
+		});
+
+		fireEvent.keyDown(btn3, { keyCode: keyCodes.right });
+		await waitFor(() => {
+			expect(btn1.getAttribute("aria-selected")).toBe("true");
+		});
+
+		fireEvent.keyDown(btn3, { keyCode: keyCodes.home });
+		await waitFor(() => {
+			expect(btn1.getAttribute("aria-selected")).toBe("true");
+		});
+
+		fireEvent.keyDown(btn1, { keyCode: keyCodes.down });
+		await waitFor(() => {
+			expect(btn2.getAttribute("aria-selected")).toBe("true");
+		});
+
+		fireEvent.keyDown(btn2, { keyCode: keyCodes.up });
+		await waitFor(() => {
+			expect(btn1.getAttribute("aria-selected")).toBe("true");
+		});
+
+		fireEvent.keyDown(btn1, { keyCode: keyCodes.end });
+		await waitFor(() => {
+			expect(btn3.getAttribute("aria-selected")).toBe("true");
+		});
 	});
 
 	it("should cascade additional props to the tabs and individual tab containers", () => {
