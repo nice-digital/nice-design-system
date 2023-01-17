@@ -1,13 +1,21 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 /* eslint-disable indent */
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import throttle from "lodash.throttle";
 
-import { buildLinkTree, getActiveHeadingId } from "./utils";
+import { buildLinkTree, getActiveHeadingId, type LinkTreeItem } from "./utils";
 import { InPageNavLink } from "./InPageNavLink";
 
 import "./../scss/in-page-nav.scss";
+
+export interface InPageNavProps {
+	[prop: string]: unknown;
+	className?: string;
+	headingsContainerSelector?: string;
+	headingsSelector?: string;
+	headingsExcludeSelector?: string;
+	scrollTolerance?: number;
+}
 
 export const InPageNav = ({
 	className,
@@ -16,9 +24,9 @@ export const InPageNav = ({
 	headingsExcludeSelector = "",
 	scrollTolerance = 50, // In pixels
 	...rest
-}) => {
-	const [activeHeadingId, setActiveHeadingId] = useState(null);
-	const [linkTree, setlinkTree] = useState([]);
+}: InPageNavProps) => {
+	const [activeHeadingId, setActiveHeadingId] = useState<null | string>(null);
+	const [linkTree, setlinkTree] = useState<LinkTreeItem[]>([]);
 
 	// Build the tree if links to use in the nav, from the headings found on the page
 	useEffect(() => {
@@ -56,7 +64,7 @@ export const InPageNav = ({
 
 		return () => {
 			setActiveHeadingId(null);
-			window.removeEventListener("scroll", scrollHandler, { passive: true });
+			window.removeEventListener("scroll", scrollHandler);
 		};
 	}, [linkTree]);
 
@@ -85,12 +93,4 @@ export const InPageNav = ({
 			</ol>
 		</nav>
 	);
-};
-
-InPageNav.propTypes = {
-	className: PropTypes.string,
-	headingsContainerSelector: PropTypes.string,
-	headingsSelector: PropTypes.string,
-	headingsExcludeSelector: PropTypes.string,
-	scrollTolerance: PropTypes.number
 };

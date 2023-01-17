@@ -69,6 +69,10 @@ export const menuLinks: MenuLink[] = [
 		slug: "horizontal-nav"
 	},
 	{
+		title: "In-page Nav",
+		slug: "in-page-nav"
+	},
+	{
 		title: "Input",
 		slug: "input"
 	},

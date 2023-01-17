@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
+import { InPageNav } from "@nice-digital/nds-in-page-nav";
 import { StackedNav, StackedNavLink } from "@nice-digital/nds-stacked-nav";
 import { Grid, GridItem } from "@nice-digital/nds-grid";
 
@@ -51,12 +52,10 @@ export const ComponentLayout: React.FC<ComponentLayoutProps> = ({
 						</>
 					</StackedNav>
 				</GridItem>
-				<GridItem cols={12} md={{ cols: 8 }}>
+				<GridItem cols={12} md={{ cols: 8 }} className="docs-main">
 					{children}
 				</GridItem>
 				<GridItem cols={12} md={{ cols: 2 }}>
-					<p>TODO: Add on-page nav</p>
-
 					{shouldShowExternalLinks && (
 						<ul className={styles.externalLinkList}>
 							{meta.gitHubUrl && (
@@ -83,6 +82,11 @@ export const ComponentLayout: React.FC<ComponentLayoutProps> = ({
 							)}
 						</ul>
 					)}
+
+					<InPageNav
+						headingsContainerSelector=".docs-main"
+						headingsExcludeSelector=".exclude-in-page-nav"
+					/>
 				</GridItem>
 			</Grid>
 		</>

@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InPageNav should match snapshot 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <div>
+    <nav
+      aria-labelledby="inpagenav-title"
+      class="in-page-nav "
+      data-track="false"
+    >
+      <h2
+        class="in-page-nav__title"
+        id="inpagenav-title"
+      >
+        On this page
+      </h2>
+      <ol
+        aria-label="Jump to sections on this page"
+        class="in-page-nav__list"
+      >
+        <li
+          class="in-page-nav__item"
+        >
+          <a
+            aria-current="true"
+            href="#a-heading-2"
+            id="inpagenav-a-heading-2"
+          >
+            A heading 2
+          </a>
+          <ol
+            aria-labelledby="inpagenav-a-heading-2"
+            class="in-page-nav__list"
+          >
+            <li
+              class="in-page-nav__item"
+            >
+              <a
+                aria-current="location"
+                href="#a-heading-3"
+                id="inpagenav-a-heading-3"
+              >
+                A heading 3
+              </a>
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </nav>
+  </div>,
+  "container": <div>
+    <nav
+      aria-labelledby="inpagenav-title"
+      class="in-page-nav "
+      data-track="false"
+    >
+      <h2
+        class="in-page-nav__title"
+        id="inpagenav-title"
+      >
+        On this page
+      </h2>
+      <ol
+        aria-label="Jump to sections on this page"
+        class="in-page-nav__list"
+      >
+        <li
+          class="in-page-nav__item"
+        >
+          <a
+            aria-current="true"
+            href="#a-heading-2"
+            id="inpagenav-a-heading-2"
+          >
+            A heading 2
+          </a>
+          <ol
+            aria-labelledby="inpagenav-a-heading-2"
+            class="in-page-nav__list"
+          >
+            <li
+              class="in-page-nav__item"
+            >
+              <a
+                aria-current="location"
+                href="#a-heading-3"
+                id="inpagenav-a-heading-3"
+              >
+                A heading 3
+              </a>
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </nav>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

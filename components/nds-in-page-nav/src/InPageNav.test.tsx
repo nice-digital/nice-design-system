@@ -1,15 +1,9 @@
 import React from "react";
-import { shallow, mount } from "enzyme";
-import toJson from "enzyme-to-json";
+import { render } from "@testing-library/react";
 
-import { InPageNav } from "../src/InPageNav";
+import { InPageNav } from "./InPageNav";
 
 describe("InPageNav", () => {
-	it("should render without crashing", () => {
-		const wrapper = shallow(<InPageNav />);
-		expect(wrapper).toHaveLength(1);
-	});
-
 	it("should match snapshot", () => {
 		const main = document.createElement("main");
 		document.body.appendChild(main);
@@ -25,10 +19,9 @@ describe("InPageNav", () => {
 		const inPageNavContainer = document.createElement("div");
 		document.body.appendChild(inPageNavContainer);
 
-		const wrapper = mount(<InPageNav data-track={false} />, {
-			attachTo: inPageNavContainer
+		const wrapper = render(<InPageNav data-track={false} />, {
+			container: inPageNavContainer
 		});
-		wrapper.update();
-		expect(toJson(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

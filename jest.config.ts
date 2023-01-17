@@ -2,7 +2,7 @@ import type { Config } from "jest";
 
 const config: Config = {
 	collectCoverageFrom: ["<rootDir>/components/**/src/**/*.tsx"],
-	moduleFileExtensions: ["tsx", "js"],
+	moduleFileExtensions: ["tsx", "ts", "js"],
 	moduleNameMapper: {
 		"^.+\\.(css|less|scss)$": "identity-obj-proxy"
 	},

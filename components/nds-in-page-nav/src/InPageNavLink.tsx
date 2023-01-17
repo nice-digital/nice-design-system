@@ -1,14 +1,24 @@
-/* eslint-disable indent */
 import React from "react";
-import PropTypes from "prop-types";
+
+export interface InPageNavLinkProps {
+	link: {
+		title: string;
+		href: string;
+		subLinks?: {
+			title: string;
+			href: string;
+		}[];
+	};
+	activeHeadingId?: string | null;
+}
 
 export const InPageNavLink = ({
 	link: { subLinks, href, title },
 	activeHeadingId
-}) => {
+}: InPageNavLinkProps) => {
 	const targetId = href.replace("#", "");
 
-	const hasActiveSubLink = subLinks.some(
+	const hasActiveSubLink = subLinks?.some(
 		(subLink) => subLink.href.replace("#", "") === activeHeadingId
 	);
 
@@ -22,7 +32,7 @@ export const InPageNavLink = ({
 						? "location"
 						: hasActiveSubLink
 						? "true"
-						: null
+						: undefined
 				}
 			>
 				{title}
@@ -43,18 +53,4 @@ export const InPageNavLink = ({
 			)}
 		</li>
 	);
-};
-
-InPageNavLink.propTypes = {
-	link: PropTypes.shape({
-		title: PropTypes.string.isRequired,
-		href: PropTypes.string.isRequired,
-		subLinks: PropTypes.arrayOf(
-			PropTypes.shape({
-				title: PropTypes.string.isRequired,
-				href: PropTypes.string.isRequired
-			})
-		)
-	}).isRequired,
-	activeHeadingId: PropTypes.string
 };

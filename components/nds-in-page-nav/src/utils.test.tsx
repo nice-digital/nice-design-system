@@ -1,8 +1,4 @@
-import {
-	buildLinkTree,
-	generateHeadingId,
-	getActiveHeadingId
-} from "../src/utils";
+import { buildLinkTree, generateHeadingId, getActiveHeadingId } from "./utils";
 
 const linkTree = [
 	{
@@ -95,14 +91,20 @@ describe("utils", () => {
 		});
 
 		it("should build link tree", () => {
-			const createHeading = (level, id, text) => {
-				const heading = document.createElement("h" + level);
+			const createHeading = (
+				level: number,
+				id: string,
+				text: string
+			): HTMLHeadingElement => {
+				const heading = document.createElement(
+					"h" + level
+				) as HTMLHeadingElement;
 				heading.id = id;
 				heading.textContent = text;
 				return heading;
 			};
 
-			const headings = [
+			const headings: HTMLHeadingElement[] = [
 				createHeading(2, "a2", "Heading 2a"),
 				createHeading(2, "b2", "Heading 2b"),
 				createHeading(3, "a3", "Heading 3a"),
@@ -116,12 +118,13 @@ describe("utils", () => {
 
 	describe("getActiveHeadingId", () => {
 		it("should return null when no headings are scrolled past", () => {
-			const spy = jest
-				.spyOn(document, "querySelector")
-				.mockImplementation((selector) => ({
-					textContent: selector,
-					getBoundingClientRect: () => ({ top: 999 })
-				}));
+			const spy = jest.spyOn(document, "querySelector").mockImplementation(
+				(selector) =>
+					({
+						textContent: selector,
+						getBoundingClientRect: () => ({ top: 999 })
+					} as Element)
+			);
 
 			expect(getActiveHeadingId(linkTree, 100)).toBeNull();
 
@@ -129,14 +132,15 @@ describe("utils", () => {
 		});
 
 		it("should select first heading scrolled above the viewport", () => {
-			const spy = jest
-				.spyOn(document, "querySelector")
-				.mockImplementation((selector) => ({
-					id: selector.split("#")[1],
-					getBoundingClientRect: () => ({
-						top: selector == "#b2" ? -2 : selector == "#a3" ? -1 : 999
-					})
-				}));
+			const spy = jest.spyOn(document, "querySelector").mockImplementation(
+				(selector) =>
+					({
+						id: selector.split("#")[1],
+						getBoundingClientRect: () => ({
+							top: selector == "#b2" ? -2 : selector == "#a3" ? -1 : 999
+						})
+					} as Element)
+			);
 
 			expect(getActiveHeadingId(linkTree, 100)).toBe("a3");
 
