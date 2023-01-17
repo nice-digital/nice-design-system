@@ -1,23 +1,19 @@
 import React from "react";
-import { shallow } from "enzyme";
-import { FullBleed } from "../src/FullBleed";
-import toJson from "enzyme-to-json";
+import { render } from "@testing-library/react";
+import { FullBleed } from "./FullBleed";
 
 describe("FullBleed component", () => {
-	it("should render without crashing", () => {
-		const wrapper = shallow(<FullBleed />);
-		expect(wrapper).toHaveLength(1);
-	});
 	it("should match the snapshot with no options", () => {
-		const wrapper = shallow(
+		const wrapper = render(
 			<FullBleed>
 				<p>content</p>
 			</FullBleed>
 		);
-		expect(toJson(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
+
 	it("should match the snapshot with all options", () => {
-		const wrapper = shallow(
+		const wrapper = render(
 			<FullBleed
 				className="monkey"
 				padding="large"
@@ -27,11 +23,11 @@ describe("FullBleed component", () => {
 				<p>content</p>
 			</FullBleed>
 		);
-		expect(toJson(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it("should spread additional props onto the container", () => {
-		const wrapper = shallow(
+		const { container } = render(
 			<FullBleed
 				className="monkey"
 				padding="large"
@@ -42,6 +38,8 @@ describe("FullBleed component", () => {
 				<p>content</p>
 			</FullBleed>
 		);
-		expect(wrapper.find("div.full-bleed").props()["data-track"]).toEqual(false);
+		expect(
+			container.querySelector("div.full-bleed")?.getAttribute("data-track")
+		).toBe("false");
 	});
 });

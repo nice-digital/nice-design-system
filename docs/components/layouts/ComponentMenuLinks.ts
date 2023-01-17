@@ -53,6 +53,10 @@ export const menuLinks: MenuLink[] = [
 		slug: "form-group"
 	},
 	{
+		title: "Full Bleed",
+		slug: "full-bleed"
+	},
+	{
 		title: "Grid",
 		slug: "grid"
 	},

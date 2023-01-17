@@ -1,7 +1,15 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "../scss/full-bleed.scss";
 import classnames from "classnames";
+
+export interface FullBleedProps {
+	[prop: string]: unknown;
+	children: React.ReactNode;
+	className?: string;
+	backgroundImage?: string;
+	padding?: "small" | "medium" | "large";
+	light?: boolean;
+}
 
 export const FullBleed = ({
 	backgroundImage = undefined,
@@ -10,7 +18,7 @@ export const FullBleed = ({
 	padding = "small",
 	light,
 	...rest
-}) => {
+}: FullBleedProps) => {
 	const style = backgroundImage
 		? { style: { backgroundImage: `url("${backgroundImage}")` } }
 		: undefined;
@@ -28,12 +36,4 @@ export const FullBleed = ({
 			{children}
 		</div>
 	);
-};
-
-FullBleed.propTypes = {
-	children: PropTypes.node.isRequired,
-	className: PropTypes.string,
-	backgroundImage: PropTypes.string,
-	padding: PropTypes.oneOf(["small", "medium", "large"]),
-	light: PropTypes.bool
 };
