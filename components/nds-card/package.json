@@ -5,16 +5,12 @@
 	"author": "Ian Routledge <ian.routledge@nice.org.uk>",
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
-	"main": "lib/Card.js",
-	"module": "es/Card.js",
+	"main": "es/Card.js",
 	"style": "scss/card.scss",
-	"types": "nds-card.d.ts",
 	"directories": {
-		"lib": "lib",
-		"test": "__tests__"
+		"lib": "es"
 	},
 	"files": [
-		"lib",
 		"es",
 		"scss",
 		"*.d.ts"
@@ -35,8 +31,7 @@
 	},
 	"dependencies": {
 		"@nice-digital/nds-core": "^3.0.2",
-		"classnames": "^2.2.6",
-		"prop-types": "^15.7.2"
+		"classnames": "^2.2.6"
 	},
 	"peerDependencies": {
 		"react": "^16 || ^17 || ^18",

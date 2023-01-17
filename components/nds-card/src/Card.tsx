@@ -1,9 +1,21 @@
 import React from "react";
-import PropTypes from "prop-types";
 import classNames from "classnames";
 import "../scss/card.scss";
 
-const CardHeader = (props) => {
+export interface CardHeadingLinkProps {
+	[prop: string]: unknown;
+	destination?: string;
+	elementType?: React.ElementType;
+	method?: string;
+}
+
+interface CardHeaderProps {
+	headingElementType?: React.ElementType;
+	headingText: React.ReactNode;
+	link: CardHeadingLinkProps;
+}
+
+const CardHeader = (props: CardHeaderProps) => {
 	const { headingText, headingElementType: HeadingTag = "p", link } = props;
 
 	let linkProps = {};
@@ -25,20 +37,31 @@ const CardHeader = (props) => {
 	}
 };
 
-CardHeader.propTypes = {
-	headingElementType: PropTypes.elementType,
-	headingText: PropTypes.node.isRequired,
-	link: PropTypes.shape({
-		destination: PropTypes.node.isRequired,
-		elementType: PropTypes.elementType,
-		method: PropTypes.string
-	})
-};
+export interface CardBodyProps {
+	[prop: string]: unknown;
+	children?: React.ReactNode;
+	summary?: React.ReactNode;
+	headingElementType?: React.ElementType;
+	headingText: React.ReactNode;
+	link?: CardHeadingLinkProps;
+	metadata?: CardMetaDataProps[];
+}
 
-const CardBody = (props) => {
+interface CardMetaDataProps {
+	[prop: string]: unknown;
+	label?: string;
+	value: React.ReactNode;
+	visibleLabel?: boolean;
+}
+
+const CardBody = (props: CardBodyProps) => {
 	const { metadata, headingText, headingElementType, link, summary, children } =
 		props;
-	const headerProps = { headingText, headingElementType, link };
+	const headerProps = {
+		headingText,
+		headingElementType: headingElementType as React.ElementType,
+		link: link as CardHeadingLinkProps
+	};
 	return (
 		<>
 			<header className="card__header">
@@ -73,20 +96,20 @@ const CardBody = (props) => {
 	);
 };
 
-CardBody.propTypes = {
-	summary: PropTypes.node,
-	children: PropTypes.node,
-	metadata: PropTypes.arrayOf(
-		PropTypes.shape({
-			label: PropTypes.node,
-			value: PropTypes.node.isRequired,
-			visibleLabel: PropTypes.bool
-		})
-	),
-	...CardHeader.propTypes
-};
+export interface CardProps {
+	[prop: string]: unknown;
+	children?: React.ReactNode;
+	summary?: React.ReactNode;
+	elementType?: React.ElementType;
+	headingElementType?: React.ElementType;
+	headingText: React.ReactNode;
+	image?: React.ReactNode;
+	link?: CardHeadingLinkProps;
+	metadata?: Array<CardMetaDataProps>;
+	className?: string;
+}
 
-export const Card = (props) => {
+export const Card = (props: CardProps) => {
 	const {
 		className,
 		metadata,
@@ -109,7 +132,7 @@ export const Card = (props) => {
 		children
 	};
 
-	const classes = classNames(["card", className]);
+	const classes = classNames(["card", `${className}`]);
 
 	return (
 		<ContainerType className={classes} {...rest}>
@@ -125,11 +148,4 @@ export const Card = (props) => {
 			)}
 		</ContainerType>
 	);
-};
-
-Card.propTypes = {
-	elementType: PropTypes.elementType,
-	image: PropTypes.node,
-	children: PropTypes.node,
-	...CardBody.propTypes
 };

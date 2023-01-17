@@ -28,6 +28,7 @@
 		{ "path": "./components/nds-alert" },
 		{ "path": "./components/nds-alphabet" },
 		{ "path": "./components/nds-breadcrumbs" },
+		{ "path": "./components/nds-card" },
 		{ "path": "./components/nds-checkbox" },
 		{ "path": "./components/nds-column-list" },
 		{ "path": "./components/nds-container" },

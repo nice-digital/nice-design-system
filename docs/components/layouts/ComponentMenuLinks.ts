@@ -29,6 +29,10 @@ export const menuLinks: MenuLink[] = [
 		slug: "button"
 	},
 	{
+		title: "Card",
+		slug: "card"
+	},
+	{
 		title: "Checkbox",
 		slug: "checkbox"
 	},
