@@ -35,21 +35,13 @@
     "lint:scss:fix": "npm run lint:scss -- --fix",
     "prettier": "prettier --check components/*/{src,scss,__{tests,mocks}__}/**/*.{scss,js,json} packages/**/*.{scss,js,json}",
     "prettier:fix": "npm run prettier -- --write",
-    "// TRANSIPLE ES6": "",
+    "// COMPILE TYPESCRIPT": "",
     "clean:ts": "tsc --build --clean",
     "build:ts": "tsc --build",
     "build:ts:watch": "tsc --build --watch",
-    "prebuild:lib": "lerna exec rimraf lib",
-    "build:lib": "lerna exec --scope=@nice-digital/nds-* --parallel -- babel src -d lib --source-maps --root-mode upward",
-    "build:lib:watch": "npm run build:lib -- -w",
-    "prebuild:es": "lerna exec rimraf es",
-    "build:es": "cross-env NODE_ENV=es lerna exec --scope=@nice-digital/nds-* --parallel -- babel src -d es --source-maps --root-mode upward",
-    "build:es:watch": "npm run build:es -- -w",
-    "build:watch": "concurrently -n build: npm:build:*:watch",
+    "prebuild:ts": "lerna exec rimraf es",
     "// BUILD CSS": "",
-    "build:css": "lerna run --scope=@nice-digital/design-system build-css",
-    "// LIFECYCLE": "",
-    "prepublishOnly": "npm run build:lib && npm run build:es"
+    "build:css": "lerna run --scope=@nice-digital/design-system build-css"
   },
   "author": "Ian Routledge <ian.routledge@nice.org.uk>",
   "contributors": [
@@ -61,12 +53,6 @@
     "node": ">= 16.18.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.19.6",
-    "@babel/plugin-transform-runtime": "^7.19.6",
-    "@babel/preset-env": "^7.19.4",
-    "@babel/preset-flow": "^7.18.6",
-    "@babel/preset-react": "^7.18.6",
-    "@babel/preset-typescript": "^7.18.6",
     "@nrwl/nx-cloud": "latest",
     "@testing-library/jest-dom": "^5.16.5",
     "@types/node": "^18.11.9",
