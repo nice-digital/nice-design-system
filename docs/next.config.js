@@ -7,7 +7,10 @@ const { remarkCodeHike } = require("@code-hike/mdx");
 const nextConfig = {
 	reactStrictMode: true,
 	swcMinify: true,
-	pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"]
+	pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+	images: {
+		unoptimized: true
+	}
 };
 
 const withMDX = require("@next/mdx")({
