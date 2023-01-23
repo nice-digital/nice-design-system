@@ -5,6 +5,15 @@ export default function Document() {
 	return (
 		<Html lang="en">
 			<Head>
+				<link
+					rel="preconnect"
+					href="https://fonts.gstatic.com"
+					crossOrigin="crossOrigin"
+				/>
+				<link
+					href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+					rel="stylesheet"
+				/>
 				<Script strategy="afterInteractive" id="google-tag-manager">
 					{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 						new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
