@@ -1,7 +1,6 @@
 import React from "react";
 import classNames from "classnames";
 import "../scss/card.scss";
-
 export interface CardHeadingLinkProps {
 	[prop: string]: unknown;
 	destination?: string;
@@ -107,6 +106,7 @@ export interface CardProps {
 	link?: CardHeadingLinkProps;
 	metadata?: Array<CardMetaDataProps>;
 	className?: string;
+	callout?: boolean;
 }
 
 export const Card = (props: CardProps) => {
@@ -120,6 +120,7 @@ export const Card = (props: CardProps) => {
 		summary,
 		elementType: ContainerType = "article",
 		children,
+		callout,
 		...rest
 	} = props;
 
@@ -132,7 +133,11 @@ export const Card = (props: CardProps) => {
 		children
 	};
 
-	const classes = classNames(["card", `${className}`]);
+	const classes = classNames([
+		"card",
+		{ "card--callout": callout },
+		{ [`${className}`]: !!className }
+	]);
 
 	return (
 		<ContainerType className={classes} {...rest}>

@@ -6,7 +6,7 @@ exports[`Card should match snapshot with some default attributes 1`] = `
   "baseElement": <body>
     <div>
       <article
-        class="card undefined"
+        class="card"
       >
         <header
           class="card__header"
@@ -56,7 +56,7 @@ exports[`Card should match snapshot with some default attributes 1`] = `
         </dl>
       </article>
       <article
-        class="card undefined"
+        class="card"
       >
         <div
           class="card__image"
@@ -127,7 +127,7 @@ exports[`Card should match snapshot with some default attributes 1`] = `
   </body>,
   "container": <div>
     <article
-      class="card undefined"
+      class="card"
     >
       <header
         class="card__header"
@@ -177,7 +177,7 @@ exports[`Card should match snapshot with some default attributes 1`] = `
       </dl>
     </article>
     <article
-      class="card undefined"
+      class="card"
     >
       <div
         class="card__image"

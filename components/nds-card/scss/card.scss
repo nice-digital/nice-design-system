@@ -37,6 +37,12 @@
     padding: utils.rem(0 0 spacing.$medium 0);
   }
 
+  &--callout {
+    background: colours.$card-callout-background;
+    border: 1px solid colours.$card-callout-border;
+    padding: utils.rem(spacing.$medium);
+  }
+
   mark {
     padding: 0;
   }

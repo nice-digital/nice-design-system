@@ -9,8 +9,192 @@ export const meta = {
 
 # {meta.title}
 
-*** Placeholder component page ***
-
 <Card headingText="Card title" />
+
+A navigation component used as an overview and entry point to access more detailed information on a topic.
+
+There are two types:
+
+- Card lists: Stack vertically to show a clear hierarchy or order. They are typically used when people are searching for specific items in a list or when there are lots of list items - example search results.
+
+(image)
+
+- Card grids: Appear side by side using the grid system. They typically support people browsing for information or when there are fewer items to display - example NICE and BNF homepage.
+
+(image)
+
+## When to use
+
+Use cards to allow users to quickly view different content options and select the content most relevant to their interests.
+
+Cards are intended as an outline used to entice users to click through to further information contained on a separate page.
+
+### Card lists
+
+Card lists are a flexible component for displaying an item within a list. They're used for items like guidance, news and search results to give an easily scannable list. Results lists stack underneath each other to make the ordering/hierarchy of items more obvious.
+
+(image)
+
+### Card grids
+
+Card grids are used for displaying options side by side in rows of a grid. They support browsing rather than searching.
+
+The callout variant of has a white container which helps to group several different (but related) pieces of information into one unit.
+
+(image)
+
+### Card lists vs card grids
+
+Card lists are best for:
+
+- Items with a clear hierarchy.
+- When users are searching for a specific item or piece of content from a list.
+- When you have lots of items (lists take up less room than card grids).
+
+Card grids are best for:
+
+- Browsing not searching - the hierarchy for card grids is less obvious than in lists.
+- Grouping several related pieces of info together - the card callout container/background helps to group the info together.
+- Organising groups of content that are different sizes - the callout variant of the card grid has a container/background that helps to group the content and keep things neat.
+
+## How to use
+
+Cards will always contain a heading alongside some combination of paragraph text, an image, metadata and links. A card can contain several different elements, but they all should be about a single subject. A card should only contain one link.
+
+### Card lists
+
+Cards are usually used within an unstyled, unordered list (`ul.list--unstyled`).
+
+They will always have a heading. They can have a combination of other elements alongside the heading. See the card options [link to card options section] for details of other elements to use.
+
+### Guidance list example
+
+Use a card list for displaying things like guidance, advice, quality standards and shared learning in a list:
+
+- show the id of published guidance in brackets after the title
+- use the correct level of heading to maintain a correct document heading structure
+- use tags in metadata to highlight important content
+- show relevant dates with the correct label
+- use a time tag with the correct datetime attribute to display dates.
+
+(image)
+
+```
+<ul class="list--unstyled">
+<h3 class="card">
+<header class="card__header">
+<p class="card__heading"><a class="non-standard-link-type-example" to="/test">This card has a custom link tag</a></p>
+</header>
+<p class="card__summary" style="
+    font-family: 'Inter';
+">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium assumenda blanditiis culpa in nesciunt optio quibusdam		sunt voluptatum. Aut blanditiis ex excepturi pariatur porro provident		quos repellat tempora. Voluptas?</p>
+</h3>
+</ul>
+```
+
+### Card grid
+
+Use the grid system [link to grid system content] to layout cards next to each other. Card grids are used for browsing through content options on things like homepages and section landing pages.
+
+Cards in the card grid will fill the width of their grid span.
+
+They will always have a heading. They can have a combination of other elements alongside the heading. See the card options [link to card options section] for details of other elements to use.
+
+### Callout card
+
+A callout card adds a white container to the card grid component. Use this for content than needs extra emphasis or content where an additional container will help to group the content inside the card.
+
+(image)
+
+[Add code snippet for callout card]
+
+#### Equal height
+
+Callout cards will take the height of the tallest card in a row - this helps to align the cards and keep the row ordered.
+
+### Clickable card
+
+The click area for card grids wraps the entire card. This creates a larger click area that’s easier for users to recognise and click.
+
+We avoid wrapping an entire card in an anchor tag as this can be a difficult experience for screen reader users.
+
+[add example code for clickable card]
+
+### Card headings
+
+Cards will always have a heading.
+
+Keep headings succinct and make it clear what the user will find on the page that the card links to.
+
+Headings can be linked:
+
+(image)
+
+ or not linked:
+
+(image)
+
+### Card options
+
+Alongside headings, cards can have a combination of the following:
+
+#### Paragraph text
+
+If you need to include supporting information in the card, you can use a paragraph.
+
+The paragraph sits below the heading for both card lists and card grids.
+
+[code snippet to add paragraph text]
+
+#### Card images
+
+The image must relate to the content. It must have an alt tag that describes the image content.
+
+Images in card lists appear to the side:
+
+(image)
+
+[code snippet to add to card list]
+
+Images in card grids appear on top and the image will always be clipped at 16:9 ratio:
+
+(image)
+
+[code snippet to add to card grid]
+
+#### Metadata
+
+Metadata is used for adding secondary information such as categories or labels to the content. For example a guidance type or published date.
+
+(image)
+
+[code snippet to add metadata]
+
+Card icon
+
+Use an icon to distinguish items in a list. Follow the rules around icon usage.
+
+(image)
+
+## Accessibility
+
+Make sure images used in the card component have appropriate alt text to describe the image.
+
+Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
+
+## Research/evidence
+
+Card lists were tested as part of research on how people use search on the website. There we no observed issues with the component when searching.
+
+## Help improve this page
+
+To help make sure that this page is useful, relevant and up to date, you can:
+
+- Share your research or feedback on GitHub
+- Propose a change
+
+## Need help?
+
+If you’ve got a question about the NICE Design System, contact the team. (Link TBC)
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;

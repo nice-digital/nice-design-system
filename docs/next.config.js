@@ -10,7 +10,8 @@ const nextConfig = {
 	pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
 	images: {
 		unoptimized: true
-	}
+	},
+	trailingSlash: true
 };
 
 const withMDX = require("@next/mdx")({
