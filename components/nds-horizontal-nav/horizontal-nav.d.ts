@@ -11,7 +11,7 @@ declare module "@nice-digital/nds-horizontal-nav" {
 		children?: React.ReactNode;
 		className?: string;
 		destination: string;
-		elementType?: React.ReactHTMLElement<any> | React.ReactNode;
+		elementType?: React.ElementType;
 		isCurrent?: boolean;
 		method?: string;
 		title?: string;
