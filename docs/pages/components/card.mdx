@@ -1,5 +1,5 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
-import { Card } from "@nice-digital/nds-card";
+import { ExampleCardList, ExampleCardGrid } from "components/examples/Card";
 
 export const meta = {
 	title: "Card",
@@ -9,19 +9,17 @@ export const meta = {
 
 # {meta.title}
 
-<Card headingText="Card title" />
-
 A navigation component used as an overview and entry point to access more detailed information on a topic.
 
 There are two types:
 
-- Card lists: Stack vertically to show a clear hierarchy or order. They are typically used when people are searching for specific items in a list or when there are lots of list items - example search results.
+**Card lists** stack vertically to show a clear hierarchy or order. They are typically used when people are searching for specific items in a list or when there are lots of list items - example search results.
 
-(image)
+<ExampleCardList />
 
-- Card grids: Appear side by side using the grid system. They typically support people browsing for information or when there are fewer items to display - example NICE and BNF homepage.
+**Card grids** appear side by side using the grid system. They typically support people browsing for information or when there are fewer items to display - example NICE and BNF homepage.
 
-(image)
+<ExampleCardGrid />
 
 ## When to use
 
@@ -33,7 +31,7 @@ Cards are intended as an outline used to entice users to click through to furthe
 
 Card lists are a flexible component for displaying an item within a list. They're used for items like guidance, news and search results to give an easily scannable list. Results lists stack underneath each other to make the ordering/hierarchy of items more obvious.
 
-(image)
+<ExampleCardList />
 
 ### Card grids
 
@@ -41,7 +39,7 @@ Card grids are used for displaying options side by side in rows of a grid. They 
 
 The callout variant of has a white container which helps to group several different (but related) pieces of information into one unit.
 
-(image)
+<ExampleCardGrid />
 
 ### Card lists vs card grids
 
