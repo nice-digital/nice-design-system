@@ -1,7 +1,2 @@
-@use '@nice-digital/design-system/scss/base' with (
-  $include-spacing-modifiers: false,
-  $output-text-classes: false,
-  $output-visibility-classes: false
-);
-
+@use '@nice-digital/design-system/scss/base';
 @use '@nice-digital/nds-button/scss/button';

@@ -41,6 +41,18 @@
     background: colours.$card-callout-background;
     border: 1px solid colours.$card-callout-border;
     padding: utils.rem(spacing.$medium);
+
+    .card__image {
+      margin: -#{utils.rem(spacing.$medium)} 0 utils.rem(spacing.$small) -#{utils.rem(
+          spacing.$medium
+        )};
+      width: calc(100% + 2 * utils.rem(spacing.$medium));
+    }
+
+    .card__text {
+      padding: 0;
+      width: 100%;
+    }
   }
 
   mark {

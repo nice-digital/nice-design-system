@@ -1,5 +1,304 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Card should match snapshot for the callout variant 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <article
+        class="card card--callout"
+      >
+        <header
+          class="card__header"
+        >
+          <h1
+            class="card__heading"
+          >
+            <a
+              href="/about"
+            >
+              Card heading text
+            </a>
+          </h1>
+        </header>
+        <p
+          class="card__summary"
+        >
+          I'm just a string
+        </p>
+        <dl
+          class="card__metadata"
+        >
+          <div
+            class="card__metadatum"
+          >
+            <dt
+              class="visually-hidden"
+            >
+              Email address
+            </dt>
+            <dd>
+              john.smith@email.com
+            </dd>
+          </div>
+          <div
+            class="card__metadatum"
+          >
+            <dt
+              class="visually-hidden"
+            >
+              Email address
+            </dt>
+            <dd>
+              sarah.smith@email.com
+            </dd>
+          </div>
+        </dl>
+      </article>
+      <article
+        class="card card--callout"
+      >
+        <div
+          class="card__image"
+        >
+          <img
+            alt="Cute dog"
+            src="test.png"
+          />
+        </div>
+        <div
+          class="card__text"
+        >
+          <header
+            class="card__header"
+          >
+            <h1
+              class="card__heading"
+            >
+              <a
+                href="/about"
+              >
+                Card heading text
+              </a>
+            </h1>
+          </header>
+          <p
+            class="card__summary"
+          >
+            <span>
+              how 
+              <b>
+                bold
+              </b>
+               of you
+            </span>
+          </p>
+          <dl
+            class="card__metadata"
+          >
+            <div
+              class="card__metadatum"
+            >
+              <dt
+                class="visually-hidden"
+              >
+                Email address
+              </dt>
+              <dd>
+                john.smith@email.com
+              </dd>
+            </div>
+            <div
+              class="card__metadatum"
+            >
+              <dt
+                class="visually-hidden"
+              >
+                Email address
+              </dt>
+              <dd>
+                sarah.smith@email.com
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </article>
+    </div>
+  </body>,
+  "container": <div>
+    <article
+      class="card card--callout"
+    >
+      <header
+        class="card__header"
+      >
+        <h1
+          class="card__heading"
+        >
+          <a
+            href="/about"
+          >
+            Card heading text
+          </a>
+        </h1>
+      </header>
+      <p
+        class="card__summary"
+      >
+        I'm just a string
+      </p>
+      <dl
+        class="card__metadata"
+      >
+        <div
+          class="card__metadatum"
+        >
+          <dt
+            class="visually-hidden"
+          >
+            Email address
+          </dt>
+          <dd>
+            john.smith@email.com
+          </dd>
+        </div>
+        <div
+          class="card__metadatum"
+        >
+          <dt
+            class="visually-hidden"
+          >
+            Email address
+          </dt>
+          <dd>
+            sarah.smith@email.com
+          </dd>
+        </div>
+      </dl>
+    </article>
+    <article
+      class="card card--callout"
+    >
+      <div
+        class="card__image"
+      >
+        <img
+          alt="Cute dog"
+          src="test.png"
+        />
+      </div>
+      <div
+        class="card__text"
+      >
+        <header
+          class="card__header"
+        >
+          <h1
+            class="card__heading"
+          >
+            <a
+              href="/about"
+            >
+              Card heading text
+            </a>
+          </h1>
+        </header>
+        <p
+          class="card__summary"
+        >
+          <span>
+            how 
+            <b>
+              bold
+            </b>
+             of you
+          </span>
+        </p>
+        <dl
+          class="card__metadata"
+        >
+          <div
+            class="card__metadatum"
+          >
+            <dt
+              class="visually-hidden"
+            >
+              Email address
+            </dt>
+            <dd>
+              john.smith@email.com
+            </dd>
+          </div>
+          <div
+            class="card__metadatum"
+          >
+            <dt
+              class="visually-hidden"
+            >
+              Email address
+            </dt>
+            <dd>
+              sarah.smith@email.com
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </article>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
 exports[`Card should match snapshot with some default attributes 1`] = `
 {
   "asFragment": [Function],

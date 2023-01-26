@@ -51,6 +51,25 @@ describe("Card", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
+	it("should match snapshot for the callout variant", () => {
+		const wrapper = render(
+			<>
+				<Card {...props} summary="I'm just a string" callout={true} />
+				<Card
+					{...props}
+					image={<img src="test.png" alt="Cute dog" />}
+					summary={
+						<span>
+							how <b>bold</b> of you
+						</span>
+					}
+					callout={true}
+				/>
+			</>
+		);
+		expect(wrapper).toMatchSnapshot();
+	});
+
 	it("should pass extra props to the containing element", () => {
 		const localProps = Object.assign({}, props, {
 			"data-tracker": "my-tracker"
