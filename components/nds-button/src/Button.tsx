@@ -20,20 +20,7 @@ interface ButtonProps
 
 type customButtonProps = Omit<ButtonProps, "children">;
 
-const ButtonTypes = {
-	button: "button",
-	submit: "submit",
-	reset: "reset"
-};
-
-const ButtonVariants = {
-	cta: "cta",
-	primary: "primary",
-	secondary: "secondary",
-	inverse: "inverse"
-};
-
-export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
+export const Button = (props: ButtonProps) => {
 	const {
 		variant = "primary",
 		to,
@@ -45,7 +32,7 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
 		...attributes
 	} = props;
 
-	const possibleVariants = Object.keys(ButtonVariants);
+	const possibleVariants = Object.keys(Button.variants);
 	if (variant && !possibleVariants.some((m) => m === variant)) {
 		throw new Error(
 			`Expected variant to be one of '${possibleVariants.join(
@@ -60,12 +47,12 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
 	if (to) {
 		buttonProps[method || (ButtonTagType === "a" && "href") || "to"] = to;
 	} else if (ButtonTagType === "button") {
-		buttonProps.type = buttonType || ButtonTypes.button;
+		buttonProps.type = buttonType || Button.types.button;
 	}
 
 	buttonProps.className = classnames({
 		btn: true,
-		[`btn--${variant}`]: variant !== ButtonVariants.primary,
+		[`btn--${variant}`]: variant !== Button.variants.primary,
 		[`${className}`]: !!className
 	});
 
@@ -74,4 +61,17 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
 			{children}
 		</ButtonTagType>
 	);
+};
+
+Button.types = {
+	button: "button",
+	submit: "submit",
+	reset: "reset"
+};
+
+Button.variants = {
+	cta: "cta",
+	primary: "primary",
+	secondary: "secondary",
+	inverse: "inverse"
 };
