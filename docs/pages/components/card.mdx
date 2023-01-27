@@ -26,12 +26,14 @@ There are two types:
 **Card lists** stack vertically to show a clear hierarchy or order. They are typically used when people are searching for specific items in a list or when there are lots of list items - example search results.
 
 <Example>
+<h3>Example: card list</h3>
 <ExampleCardList />
 </Example>
 
 **Card grids** appear side by side using the grid system. They typically support people browsing for information or when there are fewer items to display - example NICE and BNF homepage.
 
 <Example>
+<h3>Example: card grid</h3>
 <ExampleCardGrid />
 </Example>
 
@@ -46,6 +48,7 @@ Cards are intended as an outline used to entice users to click through to furthe
 Card lists are a flexible component for displaying an item within a list. They're used for items like guidance, news and search results to give an easily scannable list. Results lists stack underneath each other to make the ordering/hierarchy of items more obvious.
 
 <Example>
+<h4>Example: card list</h4>
 <ExampleCardList />
 </Example>
 
@@ -56,6 +59,7 @@ Card grids are used for displaying options side by side in rows of a grid. They 
 The callout variant has a white container which helps to group several different (but related) pieces of information into one unit.
 
 <Example>
+<h4>Example: card grid</h4>
 <ExampleCardGrid />
 </Example>
 
@@ -94,6 +98,7 @@ Use a card list for displaying things like guidance, advice, quality standards a
 - use a time tag with the correct datetime attribute to display dates.
 
 <Example>
+<h4>Example: guidance list</h4>
 <ExampleGuidanceList />
 </Example>
 
@@ -110,7 +115,7 @@ They will always have a heading. They can have a combination of other elements a
 A callout card adds a white container to the card grid component. Use this for content than needs extra emphasis or content where an additional container will help to group the content inside the card.
 
 <Example>
-<h4>Preview</h4>
+<h4>Example: callout card</h4>
 <ExampleCalloutCard />
 <h4>Code</h4>
 <CH.Code>
@@ -140,7 +145,7 @@ The click area for card grids wraps the entire card. This creates a larger click
 We avoid wrapping an entire card in an anchor tag as this can be a difficult experience for screen reader users.
 
 <Example>
-<h4>Preview</h4>
+<h4>Example: clickable card</h4>
 <ExampleClickableCard />
 <h4>Code</h4>
 <CH.Code>
@@ -171,12 +176,14 @@ Keep headings succinct and make it clear what the user will find on the page tha
 Headings can be linked:
 
 <Example>
+<h4>Example: linked heading</h4>
 <ExampleClickableCard />
 </Example>
 
  or not linked:
 
 <Example>
+<h4>Example: plain heading</h4>
 <ExampleCard />
 </Example>
 
@@ -212,12 +219,14 @@ The image must relate to the content. It must have an alt tag that describes the
 Images appear to the side by default:
 
 <Example>
+<h5>Example: card list with images</h5>
 <ExampleCardListWithImages />
 </Example>
 
 Images in callout cards appear on top and the image will always be clipped at 16:9 ratio:
 
 <Example>
+<h5>Example: callout card grid with images</h5>
 <ExampleCardGrid />
 </Example>
 
@@ -226,9 +235,9 @@ Images in callout cards appear on top and the image will always be clipped at 16
 Metadata is used for adding secondary information such as categories or labels to the content. For example a guidance type or published date.
 
 <Example>
-<h4>Preview</h4>
+<h5>Example: card with metadata</h5>
 <ExampleCardWithMetadata />
-<h4>Code</h4>
+<h5>Code</h5>
 <CH.Code>
 ```js React
 <Card
