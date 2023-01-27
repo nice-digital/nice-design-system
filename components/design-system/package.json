@@ -1,83 +1,83 @@
 {
-  "name": "@nice-digital/design-system",
-  "version": "4.0.5",
-  "description": "Your source for quickly creating consistent on-brand NICE digital services",
-  "author": "Ian Routledge <ian.routledge@nice.org.uk>",
-  "homepage": "https://design-system.nice.org.uk/",
-  "license": "MIT",
-  "main": "lib/design-system.js",
-  "style": "scss/nice-design-system.scss",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "lib",
-    "es",
-    "scss"
-  ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nice-digital/nice-design-system.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1",
-    "build-css": "sass --load-path=node_modules scss/nice-design-system.scss dist/bundle.css"
-  },
-  "bugs": {
-    "url": "https://github.com/nice-digital/nice-design-system/issues"
-  },
-  "dependencies": {
-    "@nice-digital/icons": "^5.0.2",
-    "@nice-digital/nds-a-z-list": "^3.0.2",
-    "@nice-digital/nds-action-banner": "^3.0.2",
-    "@nice-digital/nds-alert": "^3.0.2",
-    "@nice-digital/nds-alphabet": "^2.0.2",
-    "@nice-digital/nds-breadcrumbs": "^3.0.2",
-    "@nice-digital/nds-button": "^3.0.2",
-    "@nice-digital/nds-card": "^3.0.2",
-    "@nice-digital/nds-checkbox": "^3.0.2",
-    "@nice-digital/nds-column-list": "^3.0.2",
-    "@nice-digital/nds-container": "^3.0.2",
-    "@nice-digital/nds-core": "^3.0.2",
-    "@nice-digital/nds-enhanced-pagination": "^3.0.2",
-    "@nice-digital/nds-filters": "^4.0.2",
-    "@nice-digital/nds-form-group": "^3.0.2",
-    "@nice-digital/nds-full-bleed": "^3.0.2",
-    "@nice-digital/nds-grid": "^3.0.3",
-    "@nice-digital/nds-hero": "^3.0.2",
-    "@nice-digital/nds-horizontal-nav": "^3.0.3",
-    "@nice-digital/nds-in-page-nav": "^3.0.2",
-    "@nice-digital/nds-input": "^3.0.2",
-    "@nice-digital/nds-maintain-ratio": "^3.0.2",
-    "@nice-digital/nds-page-header": "^3.0.2",
-    "@nice-digital/nds-panel": "^3.0.2",
-    "@nice-digital/nds-phase-banner": "^3.0.2",
-    "@nice-digital/nds-prev-next": "^3.0.2",
-    "@nice-digital/nds-radio": "^3.0.2",
-    "@nice-digital/nds-simple-pagination": "^3.0.2",
-    "@nice-digital/nds-stacked-nav": "^3.0.2",
-    "@nice-digital/nds-table": "^3.0.2",
-    "@nice-digital/nds-tabs": "^3.0.2",
-    "@nice-digital/nds-tag": "^3.0.2",
-    "@nice-digital/nds-textarea": "^3.0.2",
-    "normalize.css": "8.0.1"
-  },
-  "peerDependencies": {
-    "react": "^16 || ^17 || ^18",
-    "react-dom": "^16 || ^17 || ^18"
-  },
-  "gitHead": "e33b39c96bdba7d3c4bf1e74d4101395ccd4f6e6",
-  "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^14.4.3",
-    "@types/jest": "^29.2.2",
-    "@types/node": "^18.11.9",
-    "typescript": "^4.8.4"
-  }
+	"name": "@nice-digital/design-system",
+	"version": "5.0.0-alpha.0",
+	"description": "Your source for quickly creating consistent on-brand NICE digital services",
+	"author": "Ian Routledge <ian.routledge@nice.org.uk>",
+	"homepage": "https://design-system.nice.org.uk/",
+	"license": "MIT",
+	"main": "lib/design-system.js",
+	"style": "scss/nice-design-system.scss",
+	"directories": {
+		"lib": "lib",
+		"test": "__tests__"
+	},
+	"files": [
+		"lib",
+		"es",
+		"scss"
+	],
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/",
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nice-digital/nice-design-system.git"
+	},
+	"scripts": {
+		"test": "echo \"Error: run tests from root\" && exit 1",
+		"build-css": "sass --load-path=node_modules scss/nice-design-system.scss dist/bundle.css"
+	},
+	"bugs": {
+		"url": "https://github.com/nice-digital/nice-design-system/issues"
+	},
+	"dependencies": {
+		"@nice-digital/icons": "^6.0.0-alpha.0",
+		"@nice-digital/nds-a-z-list": "^4.0.0-alpha.0",
+		"@nice-digital/nds-action-banner": "^4.0.0-alpha.0",
+		"@nice-digital/nds-alert": "^4.0.0-alpha.0",
+		"@nice-digital/nds-alphabet": "^3.0.0-alpha.0",
+		"@nice-digital/nds-breadcrumbs": "^4.0.0-alpha.0",
+		"@nice-digital/nds-button": "^4.0.0-alpha.0",
+		"@nice-digital/nds-card": "^4.0.0-alpha.0",
+		"@nice-digital/nds-checkbox": "^4.0.0-alpha.0",
+		"@nice-digital/nds-column-list": "^4.0.0-alpha.0",
+		"@nice-digital/nds-container": "^4.0.0-alpha.0",
+		"@nice-digital/nds-core": "^4.0.0-alpha.0",
+		"@nice-digital/nds-enhanced-pagination": "^4.0.0-alpha.0",
+		"@nice-digital/nds-filters": "^5.0.0-alpha.0",
+		"@nice-digital/nds-form-group": "^4.0.0-alpha.0",
+		"@nice-digital/nds-full-bleed": "^4.0.0-alpha.0",
+		"@nice-digital/nds-grid": "^4.0.0-alpha.0",
+		"@nice-digital/nds-hero": "^4.0.0-alpha.0",
+		"@nice-digital/nds-horizontal-nav": "^4.0.0-alpha.0",
+		"@nice-digital/nds-in-page-nav": "^4.0.0-alpha.0",
+		"@nice-digital/nds-input": "^4.0.0-alpha.0",
+		"@nice-digital/nds-maintain-ratio": "^4.0.0-alpha.0",
+		"@nice-digital/nds-page-header": "^4.0.0-alpha.0",
+		"@nice-digital/nds-panel": "^4.0.0-alpha.0",
+		"@nice-digital/nds-phase-banner": "^4.0.0-alpha.0",
+		"@nice-digital/nds-prev-next": "^4.0.0-alpha.0",
+		"@nice-digital/nds-radio": "^4.0.0-alpha.0",
+		"@nice-digital/nds-simple-pagination": "^4.0.0-alpha.0",
+		"@nice-digital/nds-stacked-nav": "^4.0.0-alpha.0",
+		"@nice-digital/nds-table": "^4.0.0-alpha.0",
+		"@nice-digital/nds-tabs": "^4.0.0-alpha.0",
+		"@nice-digital/nds-tag": "^4.0.0-alpha.0",
+		"@nice-digital/nds-textarea": "^4.0.0-alpha.0",
+		"normalize.css": "8.0.1"
+	},
+	"peerDependencies": {
+		"react": "^16 || ^17 || ^18",
+		"react-dom": "^16 || ^17 || ^18"
+	},
+	"gitHead": "e33b39c96bdba7d3c4bf1e74d4101395ccd4f6e6",
+	"devDependencies": {
+		"@testing-library/jest-dom": "^5.16.5",
+		"@testing-library/react": "^13.4.0",
+		"@testing-library/user-event": "^14.4.3",
+		"@types/jest": "^29.2.2",
+		"@types/node": "^18.11.9",
+		"typescript": "^4.8.4"
+	}
 }

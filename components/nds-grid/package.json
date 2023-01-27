@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-grid",
-	"version": "3.0.3",
+	"version": "4.0.0-alpha.0",
 	"description": "Grid component for the NICE Design System",
 	"keywords": [
 		"grid"
@@ -33,7 +33,7 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
-		"@nice-digital/nds-core": "^3.0.2",
+		"@nice-digital/nds-core": "^4.0.0-alpha.0",
 		"classnames": "^2.2.6"
 	},
 	"peerDependencies": {

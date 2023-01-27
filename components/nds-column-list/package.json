@@ -1,49 +1,49 @@
 {
-  "name": "@nice-digital/nds-column-list",
-  "version": "3.0.2",
-  "description": "Column List component for the NICE Design System",
-  "main": "lib/ColumnList.js",
-  "module": "es/ColumnList.js",
-  "style": "scss/column-list.js",
-  "types": "nds-column-list.d.ts",
-  "files": [
-    "lib",
-    "es",
-    "scss",
-    "*.d.ts"
-  ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nice-digital/nice-design-system.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
-  },
-  "bugs": {
-    "url": "https://github.com/nice-digital/nice-design-system/issues"
-  },
-  "keywords": [
-    "column",
-    "list"
-  ],
-  "author": "Chris Barker <chris.barker@nice.org.uk>",
-  "homepage": "https://design-system.nice.org.uk/",
-  "license": "MIT",
-  "dependencies": {
-    "@nice-digital/nds-core": "^3.0.2",
-    "prop-types": "^15.8.1"
-  },
-  "gitHead": "e33b39c96bdba7d3c4bf1e74d4101395ccd4f6e6",
-  "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^14.4.3",
-    "@types/jest": "^29.2.2",
-    "@types/node": "^18.11.9",
-    "typescript": "^4.8.4"
-  }
+	"name": "@nice-digital/nds-column-list",
+	"version": "4.0.0-alpha.0",
+	"description": "Column List component for the NICE Design System",
+	"main": "lib/ColumnList.js",
+	"module": "es/ColumnList.js",
+	"style": "scss/column-list.js",
+	"types": "nds-column-list.d.ts",
+	"files": [
+		"lib",
+		"es",
+		"scss",
+		"*.d.ts"
+	],
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/",
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nice-digital/nice-design-system.git"
+	},
+	"scripts": {
+		"test": "echo \"Error: run tests from root\" && exit 1"
+	},
+	"bugs": {
+		"url": "https://github.com/nice-digital/nice-design-system/issues"
+	},
+	"keywords": [
+		"column",
+		"list"
+	],
+	"author": "Chris Barker <chris.barker@nice.org.uk>",
+	"homepage": "https://design-system.nice.org.uk/",
+	"license": "MIT",
+	"dependencies": {
+		"@nice-digital/nds-core": "^4.0.0-alpha.0",
+		"prop-types": "^15.8.1"
+	},
+	"gitHead": "e33b39c96bdba7d3c4bf1e74d4101395ccd4f6e6",
+	"devDependencies": {
+		"@testing-library/jest-dom": "^5.16.5",
+		"@testing-library/react": "^13.4.0",
+		"@testing-library/user-event": "^14.4.3",
+		"@types/jest": "^29.2.2",
+		"@types/node": "^18.11.9",
+		"typescript": "^4.8.4"
+	}
 }
