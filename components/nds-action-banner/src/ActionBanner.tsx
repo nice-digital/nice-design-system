@@ -56,7 +56,7 @@ export class ActionBanner extends React.Component<
 		return (
 			<section
 				className={classnames(classes)}
-				data-component="action-banner"
+				data-component={`action-banner${variant ? `--${variant}` : ""}`}
 				{...rest}
 			>
 				<div className="action-banner__container">
