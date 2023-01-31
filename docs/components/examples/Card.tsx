@@ -33,6 +33,42 @@ export const ExampleCardGrid = () => (
 		<GridItem cols={12} sm={{ cols: 4 }}>
 			<Card
 				headingText="Card title 1"
+				link={{
+					destination: "https://www.example.com"
+				}}
+			>
+				Card text
+			</Card>
+		</GridItem>
+		<GridItem cols={12} sm={{ cols: 4 }}>
+			<Card
+				headingText="Card title 2"
+				link={{
+					destination: "https://www.example.com"
+				}}
+			>
+				Nulla risus erat, maximus id semper ut, vulputate non nisl. Pellentesque
+				sed luctus enim.
+			</Card>
+		</GridItem>
+		<GridItem cols={12} sm={{ cols: 4 }}>
+			<Card
+				headingText="Card title 3"
+				link={{
+					destination: "https://www.example.com"
+				}}
+			>
+				Card text
+			</Card>
+		</GridItem>
+	</Grid>
+);
+
+export const ExampleCardGridWithImages = () => (
+	<Grid equalHeight>
+		<GridItem cols={12} sm={{ cols: 4 }}>
+			<Card
+				headingText="Card title 1"
 				image={<img src="https://picsum.photos/id/272/300/200" alt="" />}
 				link={{
 					destination: "https://www.example.com"
