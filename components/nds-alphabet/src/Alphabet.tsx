@@ -23,7 +23,7 @@ export interface LinkProps {
 	destination: string;
 	elementType?: React.ElementType;
 	method?: string;
-	ariaLabel: string;
+	ariaLabel?: string;
 }
 
 export const Alphabet: React.FC<AlphabetProps> = (props: AlphabetProps) => {
@@ -68,11 +68,10 @@ export const Letter: React.FC<LetterProps> = (props: LetterProps) => {
 		);
 	} else {
 		// Link to somewhere else!
-		const linkLabel = label || "";
 		body = (
 			<Link
 				elementType={elementType}
-				ariaLabel={linkLabel}
+				ariaLabel={label}
 				destination={to}
 				text={children}
 			/>
