@@ -71,7 +71,7 @@
 		"react": "^16 || ^17 || ^18",
 		"react-dom": "^16 || ^17 || ^18"
 	},
-	"gitHead": "e33b39c96bdba7d3c4bf1e74d4101395ccd4f6e6",
+	"gitHead": "e75957040c9acfbd7eeb164cad724e3b48760679",
 	"devDependencies": {
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/react": "^13.4.0",
