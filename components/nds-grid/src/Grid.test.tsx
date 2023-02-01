@@ -1,11 +1,12 @@
+import React from "react";
 import { render } from "@testing-library/react";
 
 import {
 	Grid,
 	GridItem,
-	GutterEnum,
-	HorizontalAlignmentEnum,
-	VerticalAlignmentEnum
+	gutterTypes,
+	horizontalAlignmentTypes,
+	verticalAlignmentTypes
 } from "./Grid";
 
 describe("Grid", () => {
@@ -29,7 +30,10 @@ describe("Grid", () => {
 	});
 
 	describe("gutters", () => {
-		const gutterTest = (gutter: GutterEnum, expectedClassName: string) => {
+		const gutterTest = (
+			gutter: keyof typeof gutterTypes,
+			expectedClassName: string
+		) => {
 			const { container } = render(
 				<Grid gutter={gutter}>
 					<GridItem cols={6}>Test</GridItem>
@@ -39,25 +43,25 @@ describe("Grid", () => {
 		};
 
 		it("shouldn't add any class to grid with gutter prop as standard", () => {
-			gutterTest(GutterEnum.standard, "grid");
+			gutterTest(gutterTypes.standard, "grid");
 		});
 
 		it("should add gutterless class to grid with gutter prop as none", () => {
-			gutterTest(GutterEnum.none, "grid grid--gutterless");
+			gutterTest(gutterTypes.none, "grid grid--gutterless");
 		});
 
 		it("should add compact class to grid with gutter prop as compact", () => {
-			gutterTest(GutterEnum.compact, "grid grid--compact");
+			gutterTest(gutterTypes.compact, "grid grid--compact");
 		});
 
 		it("should add compact class to grid with gutter prop as compact", () => {
-			gutterTest(GutterEnum.loose, "grid grid--loose");
+			gutterTest(gutterTypes.loose, "grid grid--loose");
 		});
 	});
 
 	describe("horizontal alignment", () => {
 		const horizontalAlignmentTest = (
-			hAlignment: HorizontalAlignmentEnum,
+			hAlignment: keyof typeof horizontalAlignmentTypes,
 			expectedClassName: string
 		) => {
 			const { container } = render(
@@ -69,19 +73,19 @@ describe("Grid", () => {
 		};
 
 		it("shouldn't add any class to grid with horizontalAlignment prop as left", () => {
-			horizontalAlignmentTest(HorizontalAlignmentEnum.left, "grid");
+			horizontalAlignmentTest(horizontalAlignmentTypes.left, "grid");
 		});
 
 		it("should add center modifier class to grid when horizontalAlignment prop set to center", () => {
 			horizontalAlignmentTest(
-				HorizontalAlignmentEnum.center,
+				horizontalAlignmentTypes.center,
 				"grid grid--center"
 			);
 		});
 
 		it("should add right modifier class to grid when horizontalAlignment prop set to right", () => {
 			horizontalAlignmentTest(
-				HorizontalAlignmentEnum.right,
+				horizontalAlignmentTypes.right,
 				"grid grid--right"
 			);
 		});
@@ -89,7 +93,7 @@ describe("Grid", () => {
 
 	describe("vertical alignment", () => {
 		const verticalAlignmentTest = (
-			vAlignment: VerticalAlignmentEnum,
+			vAlignment: keyof typeof verticalAlignmentTypes,
 			expectedClassName: string
 		) => {
 			const { container } = render(
@@ -101,15 +105,15 @@ describe("Grid", () => {
 		};
 
 		it("shouldn't add any class to grid with vertical alignment prop as top", () => {
-			verticalAlignmentTest(VerticalAlignmentEnum.top, "grid");
+			verticalAlignmentTest(verticalAlignmentTypes.top, "grid");
 		});
 
 		it("should add middle modifier class to grid when verticalAlignment prop set to middle", () => {
-			verticalAlignmentTest(VerticalAlignmentEnum.middle, "grid grid--middle");
+			verticalAlignmentTest(verticalAlignmentTypes.middle, "grid grid--middle");
 		});
 
 		it("should add bottom modifier class to grid when verticalAlignment prop set to bottom", () => {
-			verticalAlignmentTest(VerticalAlignmentEnum.bottom, "grid grid--bottom");
+			verticalAlignmentTest(verticalAlignmentTypes.bottom, "grid grid--bottom");
 		});
 	});
 
