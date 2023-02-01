@@ -3,13 +3,26 @@ import classnames from "classnames";
 
 import "../scss/button.scss";
 
+export const buttonVariants = {
+	cta: "cta",
+	primary: "primary",
+	secondary: "secondary",
+	inverse: "inverse"
+} as const;
+
+export const buttonTypes = {
+	button: "button",
+	submit: "submit",
+	reset: "reset"
+} as const;
+
 export interface ButtonProps
 	extends React.HTMLProps<HTMLButtonElement | HTMLAnchorElement> {
 	[prop: string]: unknown;
 	/** The destination URL if this is an anchor */
 	to?: string;
-	variant?: "primary" | "cta" | "secondary" | "inverse";
-	buttonType?: "button" | "submit" | "reset";
+	variant?: keyof typeof buttonVariants;
+	buttonType?: keyof typeof buttonTypes;
 	/** A custom element type to be rendered as the tag, useful for custom routing */
 	elementType?: React.ElementType;
 	/** Additional classes e.g. margin modifiers like "mt--0" */
@@ -32,7 +45,7 @@ export const Button = (props: ButtonProps) => {
 		...attributes
 	} = props;
 
-	const possibleVariants = Object.keys(Button.variants);
+	const possibleVariants = Object.keys(buttonVariants);
 	if (variant && !possibleVariants.some((m) => m === variant)) {
 		throw new Error(
 			`Expected variant to be one of '${possibleVariants.join(
@@ -47,12 +60,12 @@ export const Button = (props: ButtonProps) => {
 	if (to) {
 		buttonProps[method || (ButtonTagType === "a" && "href") || "to"] = to;
 	} else if (ButtonTagType === "button") {
-		buttonProps.type = buttonType || Button.types.button;
+		buttonProps.type = buttonType || buttonTypes.button;
 	}
 
 	buttonProps.className = classnames({
 		btn: true,
-		[`btn--${variant}`]: variant !== Button.variants.primary,
+		[`btn--${variant}`]: variant !== buttonVariants.primary,
 		[`${className}`]: !!className
 	});
 
@@ -63,15 +76,6 @@ export const Button = (props: ButtonProps) => {
 	);
 };
 
-Button.types = {
-	button: "button",
-	submit: "submit",
-	reset: "reset"
-};
-
-Button.variants = {
-	cta: "cta",
-	primary: "primary",
-	secondary: "secondary",
-	inverse: "inverse"
-};
+// Legacy references - deprecated!
+Button.types = buttonTypes;
+Button.variants = buttonVariants;

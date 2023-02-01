@@ -1,12 +1,9 @@
 import Head from "next/head";
 
-import { EnhancedPagination } from "@nice-digital/nds-enhanced-pagination";
-
-const mapPageNumberToHref = (pageNumber: number) => `#${pageNumber}`;
+import { Grid, GridItem } from "@nice-digital/nds-grid";
+import { Button, ButtonProps } from "@nice-digital/nds-button";
 
 export default function Test() {
-	const allLetters = "abcdefghijklmnopqrstuvwxyz".split("");
-
 	return (
 		<>
 			<Head>
@@ -21,11 +18,11 @@ export default function Test() {
 				MDX files don&apos;t have great Typescript integration, so it can
 				sometimes be hard to debug components using MDX alone.
 			</p>
-			<EnhancedPagination
-				currentPage={32}
-				mapPageNumberToHref={mapPageNumberToHref}
-				totalPages={49}
-			/>
+			<Grid gutter="loose">
+				<GridItem>
+					<Button variant={Button.variants.primary}>I AM BUTTON</Button>
+				</GridItem>
+			</Grid>
 		</>
 	);
 }

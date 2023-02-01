@@ -11,24 +11,24 @@ type ValidGridItemProps =
 	| null
 	| undefined;
 
-export enum HorizontalAlignmentEnum {
-	left = "left",
-	center = "center",
-	right = "right"
-}
+export const gutterTypes = {
+	standard: "standard",
+	none: "none",
+	compact: "compact",
+	loose: "loose"
+} as const;
 
-export enum VerticalAlignmentEnum {
-	top = "top",
-	middle = "middle",
-	bottom = "bottom"
-}
+export const horizontalAlignmentTypes = {
+	left: "left",
+	center: "center",
+	right: "right"
+} as const;
 
-export enum GutterEnum {
-	standard = "standard",
-	none = "none",
-	compact = "compact",
-	loose = "loose"
-}
+export const verticalAlignmentTypes = {
+	top: "top",
+	middle: "middle",
+	bottom: "bottom"
+} as const;
 
 export interface GridProps {
 	/** Grid item elements */
@@ -38,11 +38,11 @@ export interface GridProps {
 	/** Make children of grid items ahve 100% height to fill the vertical space */
 	equalHeight?: boolean;
 	/** The horizontal alignment of items within the grid, when there are empty columns. Leave blank to default to left. */
-	horizontalAlignment?: HorizontalAlignmentEnum;
+	horizontalAlignment?: keyof typeof horizontalAlignmentTypes;
 	/** The vertical alignment of items within the grid. Leave blank to default to top. */
-	verticalAlignment?: VerticalAlignmentEnum;
+	verticalAlignment?: keyof typeof verticalAlignmentTypes;
 	/** The gap between grid cells. Leave blank to default to the standard gutter. */
-	gutter?: GutterEnum;
+	gutter?: keyof typeof gutterTypes;
 	/** Debug puts a coloured outline around the grid and its cells */
 	debug?: boolean;
 	/** Additional classes to add to the grid, for example mt--e */
@@ -51,7 +51,7 @@ export interface GridProps {
 	elementType?: React.ElementType;
 }
 
-export const Grid: React.FC<GridProps> = (props) => {
+export const Grid = (props: GridProps) => {
 	const {
 		children,
 		reverse,
@@ -69,13 +69,13 @@ export const Grid: React.FC<GridProps> = (props) => {
 		grid: true,
 		"grid--rev": reverse,
 		"grid--equal-height": equalHeight,
-		"grid--gutterless": gutter === GutterEnum.none,
-		"grid--compact": gutter === GutterEnum.compact,
-		"grid--loose": gutter === GutterEnum.loose,
-		"grid--center": horizontalAlignment === HorizontalAlignmentEnum.center,
-		"grid--right": horizontalAlignment === HorizontalAlignmentEnum.right,
-		"grid--middle": verticalAlignment === VerticalAlignmentEnum.middle,
-		"grid--bottom": verticalAlignment === VerticalAlignmentEnum.bottom,
+		"grid--gutterless": gutter === gutterTypes.none,
+		"grid--compact": gutter === gutterTypes.compact,
+		"grid--loose": gutter === gutterTypes.loose,
+		"grid--center": horizontalAlignment === horizontalAlignmentTypes.center,
+		"grid--right": horizontalAlignment === horizontalAlignmentTypes.right,
+		"grid--middle": verticalAlignment === verticalAlignmentTypes.middle,
+		"grid--bottom": verticalAlignment === verticalAlignmentTypes.bottom,
 		"grid--debug": debug,
 		[`${className}`]: className
 	});
@@ -88,3 +88,8 @@ export const Grid: React.FC<GridProps> = (props) => {
 		</GridElementType>
 	);
 };
+
+// Legacy references - deprecated!
+Grid.gutter = gutterTypes;
+Grid.horizontalAlignment = horizontalAlignmentTypes;
+Grid.verticalAlignment = verticalAlignmentTypes;
