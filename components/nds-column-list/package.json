@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-column-list",
-	"version": "4.0.0-alpha.0",
+	"version": "4.0.1-alpha.0",
 	"description": "Column List component for the NICE Design System",
 	"main": "es/ColumnList.js",
 	"style": "scss/column-list.js",
@@ -31,7 +31,7 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"dependencies": {
-		"@nice-digital/nds-core": "^4.0.0-alpha.0"
+		"@nice-digital/nds-core": "^4.0.1-alpha.0"
 	},
 	"gitHead": "e33b39c96bdba7d3c4bf1e74d4101395ccd4f6e6",
 	"devDependencies": {
