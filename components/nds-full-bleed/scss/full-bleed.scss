@@ -53,21 +53,11 @@ $-padding-sizes: (
   }
 
   &--imageDark {
-    background-color: transparent;
+    @extend %imageBackground;
     color: colours.$full-bleed-text-image-dark;
 
     &::before {
       background: colours.$full-bleed-background-image-dark;
-      content: '';
-      inset: 0;
-      opacity: 0.7;
-      position: absolute;
-      z-index: 0;
-    }
-
-    & > * {
-      position: relative;
-      z-index: 1;
     }
 
     a {
@@ -76,21 +66,11 @@ $-padding-sizes: (
   }
 
   &--imageLight {
-    background-color: transparent;
+    @extend %imageBackground;
     color: colours.$full-bleed-text-image-light;
 
     &::before {
       background: colours.$full-bleed-background-image-light;
-      content: '';
-      inset: 0;
-      opacity: 0.7;
-      position: absolute;
-      z-index: 0;
-    }
-
-    & > * {
-      position: relative;
-      z-index: 1;
     }
 
     a {
@@ -102,5 +82,22 @@ $-padding-sizes: (
     &--padding-#{$paddingSize} {
       padding: (utils.rem(spacing.$large) * $size) 0;
     }
+  }
+}
+
+%imageBackground {
+  background-color: transparent;
+
+  &::before {
+    content: '';
+    inset: 0;
+    opacity: 0.7;
+    position: absolute;
+    z-index: 0;
+  }
+
+  & > * {
+    position: relative;
+    z-index: 1;
   }
 }
