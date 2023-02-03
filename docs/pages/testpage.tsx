@@ -1,7 +1,6 @@
 import Head from "next/head";
 
-import { Grid, GridItem } from "@nice-digital/nds-grid";
-import { Button, ButtonProps } from "@nice-digital/nds-button";
+import { FullBleed, fullBleedVariants } from "@nice-digital/nds-full-bleed";
 
 export default function Test() {
 	return (
@@ -18,11 +17,66 @@ export default function Test() {
 				MDX files don&apos;t have great Typescript integration, so it can
 				sometimes be hard to debug components using MDX alone.
 			</p>
-			<Grid gutter="loose">
-				<GridItem>
-					<Button variant={Button.variants.primary}>I AM BUTTON</Button>
-				</GridItem>
-			</Grid>
+
+			<h2>Full bleed (default)</h2>
+			<FullBleed>
+				<h3>Full bleed heading</h3>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+					id massa pellentesque, bibendum risus in, interdum nibh.
+				</p>
+			</FullBleed>
+
+			<h2>Full bleed (dark)</h2>
+			<FullBleed variant={fullBleedVariants.dark}>
+				<h3>Full bleed heading</h3>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+					id massa pellentesque, bibendum risus in, interdum nibh.
+				</p>
+			</FullBleed>
+
+			<h2>Full bleed (light)</h2>
+			<FullBleed variant={fullBleedVariants.light}>
+				<h3>Full bleed heading</h3>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+					id massa pellentesque, bibendum risus in, interdum nibh.
+				</p>
+			</FullBleed>
+
+			<h2>Full bleed (transparent)</h2>
+			<FullBleed variant={fullBleedVariants.transparent}>
+				<h3>Full bleed heading</h3>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+					id massa pellentesque, bibendum risus in, interdum nibh.
+				</p>
+			</FullBleed>
+
+			<h2>Full bleed (image dark)</h2>
+			<FullBleed
+				variant={fullBleedVariants.imageDark}
+				backgroundImage="https://picsum.photos/1000/500"
+			>
+				<h3>Full bleed heading</h3>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+					id massa pellentesque, bibendum risus in, interdum nibh.
+				</p>
+			</FullBleed>
+
+			<h2>Full bleed (image light)</h2>
+			<FullBleed
+				variant={fullBleedVariants.imageLight}
+				backgroundImage="https://picsum.photos/1000/500"
+			>
+				<h3>Full bleed heading</h3>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+					id massa pellentesque, bibendum risus in, interdum nibh.
+				</p>
+			</FullBleed>
 		</>
 	);
 }

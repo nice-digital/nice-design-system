@@ -2,13 +2,21 @@ import React from "react";
 import "../scss/full-bleed.scss";
 import classnames from "classnames";
 
+export const fullBleedVariants = {
+	dark: "dark",
+	light: "light",
+	transparent: "transparent",
+	imageDark: "imageDark",
+	imageLight: "imageLight"
+} as const;
+
 export interface FullBleedProps {
 	[prop: string]: unknown;
 	children: React.ReactNode;
 	className?: string;
 	backgroundImage?: string;
 	padding?: "small" | "medium" | "large";
-	light?: boolean;
+	variant?: keyof typeof fullBleedVariants;
 }
 
 export const FullBleed = ({
@@ -16,7 +24,7 @@ export const FullBleed = ({
 	className,
 	children,
 	padding = "small",
-	light,
+	variant,
 	...rest
 }: FullBleedProps) => {
 	const style = backgroundImage
@@ -24,11 +32,12 @@ export const FullBleed = ({
 		: undefined;
 	return (
 		<div
+			data-component={`full-bleed${variant ? `--${variant}` : ""}`}
 			{...style}
 			className={classnames(
 				"full-bleed",
 				className,
-				light && "full-bleed--light",
+				variant && `full-bleed--${variant}`,
 				padding && "full-bleed--padding-" + padding
 			)}
 			{...rest}

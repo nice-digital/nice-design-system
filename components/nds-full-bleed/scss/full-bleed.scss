@@ -13,6 +13,7 @@ $-padding-sizes: (
   background-color: colours.$full-bleed-background;
   background-position: center center;
   background-size: cover;
+  color: colours.$full-bleed-text;
   left: 50%;
   margin-left: -50vw;
   overflow: hidden;
@@ -20,14 +21,83 @@ $-padding-sizes: (
   width: 100vw;
   z-index: 0;
 
-  &--light {
-    background-color: colours.$full-bleed-light-background;
-    color: colours.$full-bleed-light-text;
+  a {
+    color: colours.$full-bleed-text;
+  }
+
+  &--dark {
+    background-color: colours.$full-bleed-background-dark;
+    color: colours.$full-bleed-text-dark;
 
     a {
-      color: colours.$full-bleed-light-text;
+      color: colours.$full-bleed-text-dark;
     }
   }
+
+  &--light {
+    background-color: colours.$full-bleed-background-light;
+    color: colours.$full-bleed-text-light;
+
+    a {
+      color: colours.$full-bleed-text-light;
+    }
+  }
+
+  &--transparent {
+    background-color: transparent;
+    color: colours.$full-bleed-text-transparent;
+
+    a {
+      color: colours.$full-bleed-text-transparent;
+    }
+  }
+
+  &--imageDark {
+    background-color: transparent;
+    color: colours.$full-bleed-text-image-dark;
+
+    &::before {
+      background: colours.$full-bleed-background-image-dark;
+      content: '';
+      inset: 0;
+      opacity: 0.7;
+      position: absolute;
+      z-index: 0;
+    }
+
+    & > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    a {
+      color: colours.$full-bleed-text-image-dark;
+    }
+  }
+
+  &--imageLight {
+    background-color: transparent;
+    color: colours.$full-bleed-text-image-light;
+
+    &::before {
+      background: colours.$full-bleed-background-image-light;
+      content: '';
+      inset: 0;
+      opacity: 0.7;
+      position: absolute;
+      z-index: 0;
+    }
+
+    & > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    a {
+      color: colours.$full-bleed-text-image-light;
+    }
+  }
+
   @each $paddingSize, $size in $-padding-sizes {
     &--padding-#{$paddingSize} {
       padding: (utils.rem(spacing.$large) * $size) 0;

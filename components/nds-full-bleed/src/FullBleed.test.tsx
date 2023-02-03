@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import { FullBleed } from "./FullBleed";
+import { FullBleed, fullBleedVariants } from "./FullBleed";
 
 describe("FullBleed component", () => {
 	it("should match the snapshot with no options", () => {
@@ -16,8 +16,8 @@ describe("FullBleed component", () => {
 		const wrapper = render(
 			<FullBleed
 				className="monkey"
+				variant={fullBleedVariants.light}
 				padding="large"
-				light={true}
 				backgroundImage="image.jpg"
 			>
 				<p>content</p>
@@ -31,7 +31,6 @@ describe("FullBleed component", () => {
 			<FullBleed
 				className="monkey"
 				padding="large"
-				light={true}
 				backgroundImage="image.jpg"
 				data-track={false}
 			>
