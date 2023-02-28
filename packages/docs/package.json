@@ -46,7 +46,7 @@
 		"@nice-digital/nds-textarea": "^3.0.3"
 	},
 	"devDependencies": {
-		"gatsby": "^2.17.6",
+		"gatsby": "^5.7.0",
 		"gatsby-image": "^2.2.30",
 		"gatsby-plugin-manifest": "^2.2.25",
 		"gatsby-plugin-mdx": "^1.0.56",
