@@ -1,40 +1,41 @@
 {
-  "name": "@nice-digital/nds-a-z-list",
-  "version": "3.0.2",
-  "description": "A to Z list component for the NICE Design System",
-  "main": "lib/AZList.js",
-  "module": "es/AZList.js",
-  "style": "scss/a-z-list.js",
-  "types": "nds-a-z-list.d.ts",
-  "files": [
-    "lib",
-    "es",
-    "scss",
-    "*.d.ts"
-  ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nice-digital/nice-design-system.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
-  },
-  "bugs": {
-    "url": "https://github.com/nice-digital/nice-design-system/issues"
-  },
-  "keywords": [
-    "a to z",
-    "list"
-  ],
-  "author": "Chris Barker <chris.barker@nice.org.uk>",
-  "homepage": "https://design-system.nice.org.uk/",
-  "license": "MIT",
-  "dependencies": {
-    "@nice-digital/nds-core": "^3.0.2",
-    "prop-types": "^15.8.1"
-  }
+	"name": "@nice-digital/nds-a-z-list",
+	"version": "3.0.3",
+	"description": "A to Z list component for the NICE Design System",
+	"main": "lib/AZList.js",
+	"module": "es/AZList.js",
+	"style": "scss/a-z-list.js",
+	"types": "nds-a-z-list.d.ts",
+	"files": [
+		"lib",
+		"es",
+		"scss",
+		"*.d.ts"
+	],
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/",
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nice-digital/nice-design-system.git"
+	},
+	"scripts": {
+		"test": "echo \"Error: run tests from root\" && exit 1"
+	},
+	"bugs": {
+		"url": "https://github.com/nice-digital/nice-design-system/issues"
+	},
+	"keywords": [
+		"a to z",
+		"list"
+	],
+	"author": "Chris Barker <chris.barker@nice.org.uk>",
+	"homepage": "https://design-system.nice.org.uk/",
+	"license": "MIT",
+	"dependencies": {
+		"@nice-digital/nds-core": "^3.0.3",
+		"prop-types": "^15.8.1"
+	},
+	"gitHead": "8a7d7925546f9ab473cf88904d938f018ec0fd1f"
 }

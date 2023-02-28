@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-filters",
-	"version": "4.0.2",
+	"version": "4.0.3",
 	"description": "Filter components for the NICE Design System",
 	"author": "Ian Routledge <ian.routledge@nice.org.uk>",
 	"homepage": "https://design-system.nice.org.uk/",
@@ -32,10 +32,10 @@
 	},
 	"dependencies": {
 		"@nice-digital/icons": "^5.0.2",
-		"@nice-digital/nds-button": "^3.0.2",
-		"@nice-digital/nds-core": "^3.0.2",
-		"@nice-digital/nds-input": "^3.0.2",
-		"@nice-digital/nds-tag": "^3.0.2",
+		"@nice-digital/nds-button": "^3.0.3",
+		"@nice-digital/nds-core": "^3.0.3",
+		"@nice-digital/nds-input": "^3.0.3",
+		"@nice-digital/nds-tag": "^3.0.3",
 		"classnames": "^2.3.1",
 		"prop-types": "^15.7.2"
 	},
@@ -46,5 +46,5 @@
 	"devDependencies": {
 		"@babel/cli": "^7.5.0"
 	},
-	"gitHead": "b70a1e39df19c1943a000c841aca8d9bb3ef4ff1"
+	"gitHead": "8a7d7925546f9ab473cf88904d938f018ec0fd1f"
 }

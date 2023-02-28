@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-input",
-	"version": "3.0.2",
+	"version": "3.0.3",
 	"description": "Input component for the NICE Design System",
 	"author": "Warren Keith <warren.keith@nice.org.uk>",
 	"homepage": "https://nice-digital.github.io/nice-design-system/",
@@ -34,7 +34,7 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
-		"@nice-digital/nds-core": "^3.0.2",
+		"@nice-digital/nds-core": "^3.0.3",
 		"classnames": "^2.2.6",
 		"prop-types": "^15.7.2"
 	},
@@ -45,5 +45,5 @@
 		"react": "^16 || ^17 || ^18",
 		"react-dom": "^16 || ^17 || ^18"
 	},
-	"gitHead": "b70a1e39df19c1943a000c841aca8d9bb3ef4ff1"
+	"gitHead": "8a7d7925546f9ab473cf88904d938f018ec0fd1f"
 }
