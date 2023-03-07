@@ -7,9 +7,10 @@ import { InPageNav } from "@nice-digital/nds-in-page-nav";
 import { StackedNav, StackedNavLink } from "@nice-digital/nds-stacked-nav";
 import { Grid, GridItem } from "@nice-digital/nds-grid";
 
-import { type PageMeta } from "types/meta";
+import { type PageMeta } from "types/PageMeta";
+import { type PageData } from "types/PageData";
 import styles from "./ComponentLayout.module.scss";
-import { menuLinks } from "./ComponentMenuLinks";
+import { components } from "../../data/components";
 
 export interface ComponentLayoutProps {
 	children: ReactNode;
@@ -39,7 +40,7 @@ export const ComponentLayout: React.FC<ComponentLayoutProps> = ({
 							NDS Docs Home
 						</StackedNavLink>
 						<>
-							{menuLinks.map(({ title, slug }) => (
+							{components.map(({ title, slug }: PageData) => (
 								<StackedNavLink
 									elementType={Link}
 									method="href"
