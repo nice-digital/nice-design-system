@@ -52,7 +52,7 @@ export const Input: React.FC<InputProps> = (props: InputProps) => {
 		[`${className}`]: className
 	});
 	return (
-		<div className={classNames}>
+		<div className={classNames} data-component="input">
 			{label && (
 				<label className="input__label" htmlFor={name}>
 					{label}

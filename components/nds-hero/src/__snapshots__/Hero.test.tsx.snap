@@ -7,6 +7,7 @@ exports[`Hero should match the snapshot with props 1`] = `
     <div>
       <div
         class="hero"
+        data-component="hero"
       >
         <div
           class="hero__container"
@@ -94,6 +95,7 @@ exports[`Hero should match the snapshot with props 1`] = `
   "container": <div>
     <div
       class="hero"
+      data-component="hero"
     >
       <div
         class="hero__container"

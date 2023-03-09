@@ -7,6 +7,7 @@ exports[`InPageNav should match snapshot 1`] = `
     <nav
       aria-labelledby="inpagenav-title"
       class="in-page-nav "
+      data-component="in-page-nav"
       data-track="false"
     >
       <h2
@@ -53,6 +54,7 @@ exports[`InPageNav should match snapshot 1`] = `
     <nav
       aria-labelledby="inpagenav-title"
       class="in-page-nav "
+      data-component="in-page-nav"
       data-track="false"
     >
       <h2

@@ -7,6 +7,7 @@ exports[`Tag should match snapshot for a supplied type 1`] = `
     <div>
       <span
         class="tag tag--alpha"
+        data-component="tag"
       >
         tag content 3
       </span>
@@ -15,6 +16,7 @@ exports[`Tag should match snapshot for a supplied type 1`] = `
   "container": <div>
     <span
       class="tag tag--alpha"
+      data-component="tag"
     >
       tag content 3
     </span>
@@ -80,6 +82,7 @@ exports[`Tag should match snapshot for default tag 1`] = `
     <div>
       <span
         class="tag"
+        data-component="tag"
       >
         tag content 2
       </span>
@@ -88,6 +91,7 @@ exports[`Tag should match snapshot for default tag 1`] = `
   "container": <div>
     <span
       class="tag"
+      data-component="tag"
     >
       tag content 2
     </span>

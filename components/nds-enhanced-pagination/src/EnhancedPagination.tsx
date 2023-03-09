@@ -86,6 +86,7 @@ export const EnhancedPagination: React.FC<EnhancedPaginationProps> = ({
 			role="navigation"
 			aria-label="Pagination"
 			className={classnames("pagination ", className)}
+			data-component="pagination"
 			{...rest}
 		>
 			<ol className="pagination__list">

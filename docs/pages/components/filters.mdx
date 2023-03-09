@@ -1,0 +1,146 @@
+import { ComponentLayout } from "components/layouts/ComponentLayout";
+import { Example } from "components/examples/Example";
+import { FilterPanel, FilterGroup, FilterOption, FilterSummary, FilterByInput } from "@nice-digital/nds-filters";
+
+export const meta = {
+	title: "Filters",
+	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-filters",
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-filters"
+};
+
+# {meta.title}
+
+
+# Filters
+
+Help users narrow down long lists of information by letting them filter out items that don’t meet their chosen criteria.
+
+## Overview
+
+A summary of the filtered results on a page, which update as you apply filters from the filter panel.
+
+It shows how many results have been returned in total and on that page and allows you to remove filters and sort the returned data.
+
+There are four variations of the alert component:
+
+### Filter summary
+
+<Example>
+<h2>Example: filter summary</h2>
+<FilterSummary activeFilters={[
+		{
+			label: "Guidance"
+		},
+		{
+			label: "Pathway"
+		}
+	]}>
+	Showing results 1 to 10 of 1209
+</FilterSummary>
+</Example>
+
+### Filter panel with filter group
+
+<Example>
+A filter panel can contain a filter group with filter options to select
+<FilterPanel heading="A filter panel">
+	<FilterGroup heading="Type">
+		<FilterOption isSelected={true} value="This is an example" onChanged={()=>console.log("bleugh")}>
+			This is an example
+		</FilterOption>
+		<FilterOption isSelected={false} value="Another example" onChanged={()=>console.log("bleugh")}>
+			Another example
+		</FilterOption>
+	</FilterGroup>
+</FilterPanel>
+</Example>
+
+### Filter panel with filter by input
+
+<Example>
+A filter panel can contain a filter group with a filter by input
+<FilterPanel heading="A filter panel">
+	<FilterByInput label="test" name="test">
+	</FilterByInput>
+</FilterPanel>
+</Example>
+
+### Filter panel with multiple filters
+
+<Example>
+// A filter panel can contain a filter group with filter options to select, and/or a filter by input
+<FilterPanel heading="A filter panel">
+	<FilterGroup heading="Type">
+		<FilterOption isSelected={true} value="This is an example" onChanged={()=>console.log("bleugh")}>
+			This is an example
+		</FilterOption>
+		<FilterOption isSelected={false} value="Another example" onChanged={()=>console.log("bleugh")}>
+			Another example
+		</FilterOption>
+	</FilterGroup>
+	<FilterByInput label="test" name="test">
+	</FilterByInput>
+</FilterPanel>
+</Example>
+
+
+## When to use filters
+
+Use filters when providing a long list of results which introduces search filter complexity.
+
+## When not use filters
+
+When it isn't appropriate to present content with filters, they are not required.
+
+## How to use
+
+### Filter summary
+
+This component should be positioned directly above the results.
+
+### Filter panel with a filter group
+
+For the filter group, you can indicate the selected filters.
+
+### Filter panel with filter by input
+
+You can use any standard input; it will default to a text input.
+
+You can use variants on our input components, such as an error message or hint text.
+
+### Filter panel with multiple filters
+
+Avoid lengthy text for the filter options. Option text should be as simple as possible, one or two words.
+
+If you change the text on the filter by the input button, ensure it is clear what that button does.
+
+## Accessibility
+
+Component meets WCAG AA guidelines for accessibility on:
+
+Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
+
+UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
+
+Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+
+## Research and evidence
+
+No research done on the component at this time
+
+## Help improve this page
+
+To help make sure that this page is useful, relevant and up to date, you can:
+
+-   [Share your research or feedback on GitHub](https://github.com/nice-digital/nice-design-system/discussions "https://github.com/nice-digital/nice-design-system/discussions")
+
+-   [Propose a change](https://github.com/nice-digital/nice-design-system/discussions/categories/ideas "https://github.com/nice-digital/nice-design-system/discussions/categories/ideas")
+
+
+## Need help
+
+If you’ve got a question about the NICE Design System, contact the team. (Link TBC)
+
+*** Placeholder component page ***
+
+export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;

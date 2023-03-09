@@ -140,7 +140,7 @@ export const Card = (props: CardProps) => {
 	]);
 
 	return (
-		<ContainerType className={classes} {...rest}>
+		<ContainerType className={classes} data-component="card" {...rest}>
 			{image ? (
 				<>
 					<div className="card__image">{image}</div>

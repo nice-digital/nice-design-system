@@ -85,7 +85,12 @@ export const GridItem: React.FC<GridItemProps> = (props) => {
 		.join(" ");
 
 	return (
-		<GridItemElementType data-g={gridColsAttr} className={className} {...rest}>
+		<GridItemElementType
+			data-g={gridColsAttr}
+			data-component="grid-item"
+			className={className}
+			{...rest}
+		>
 			{children}
 		</GridItemElementType>
 	);

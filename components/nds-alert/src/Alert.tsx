@@ -21,7 +21,11 @@ export const Alert: React.FC<AlertProps> = ({
 		[`alert--${type}`]: true
 	});
 	return (
-		<div {...rest} className={classNames}>
+		<div
+			className={classNames}
+			data-component={`alert${type ? `--${type}` : ""}`}
+			{...rest}
+		>
 			{children}
 		</div>
 	);

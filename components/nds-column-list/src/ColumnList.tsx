@@ -25,6 +25,7 @@ export const ColumnList: React.FC<ColumnListProps> = (
 			]
 				.filter(Boolean)
 				.join(" ")}
+			data-component={`column-list--${plain}`}
 			{...attrs}
 		>
 			{children}

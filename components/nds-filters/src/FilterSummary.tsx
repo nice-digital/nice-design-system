@@ -49,7 +49,11 @@ export const FilterSummary: React.FC<FilterSummaryProps> = ({
 	const HeadingLevel = `h${headingLevel}` as keyof JSX.IntrinsicElements;
 
 	return (
-		<div className={classnames("filter-summary", className)} {...rest}>
+		<div
+			className={classnames("filter-summary", className)}
+			data-component="filter-summary"
+			{...rest}
+		>
 			<div className="filter-summary__count">
 				<HeadingLevel className="h5 mv--0">{children}</HeadingLevel>
 			</div>

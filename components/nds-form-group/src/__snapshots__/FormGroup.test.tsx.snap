@@ -7,6 +7,7 @@ exports[`FormGroup should match the snapshot when all possible props are passed 
     <div>
       <fieldset
         class="form-group"
+        data-component="form-group"
       >
         <legend
           class="form-group__legend"
@@ -34,6 +35,7 @@ exports[`FormGroup should match the snapshot when all possible props are passed 
   "container": <div>
     <fieldset
       class="form-group"
+      data-component="form-group"
     >
       <legend
         class="form-group__legend"
@@ -118,6 +120,7 @@ exports[`FormGroup should match the snapshot when no props are passed 1`] = `
     <div>
       <fieldset
         class="form-group form-group--no-legend"
+        data-component="form-group"
       >
         <span>
           Render
@@ -128,6 +131,7 @@ exports[`FormGroup should match the snapshot when no props are passed 1`] = `
   "container": <div>
     <fieldset
       class="form-group form-group--no-legend"
+      data-component="form-group"
     >
       <span>
         Render

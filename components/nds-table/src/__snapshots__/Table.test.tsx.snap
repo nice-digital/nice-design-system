@@ -7,6 +7,7 @@ exports[`Table should match the snapshot 1`] = `
     <div>
       <table
         class="table"
+        data-component="table"
       >
         <tr>
           <td>
@@ -19,6 +20,7 @@ exports[`Table should match the snapshot 1`] = `
   "container": <div>
     <table
       class="table"
+      data-component="table"
     >
       <tr>
         <td>
@@ -88,6 +90,7 @@ exports[`Table should merge container classes when additional className supplied
     <div>
       <table
         class="table mt--d"
+        data-component="table"
       >
         <tr>
           <td>
@@ -100,6 +103,7 @@ exports[`Table should merge container classes when additional className supplied
   "container": <div>
     <table
       class="table mt--d"
+      data-component="table"
     >
       <tr>
         <td>

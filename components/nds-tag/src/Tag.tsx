@@ -113,7 +113,7 @@ export const Tag: React.FC<TagProps> = (props: TagProps) => {
 	});
 
 	return (
-		<span className={classNames} {...rest}>
+		<span className={classNames} data-component="tag" {...rest}>
 			{children}
 			{remove
 				? cloneElement(

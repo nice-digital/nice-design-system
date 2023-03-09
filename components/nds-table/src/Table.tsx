@@ -18,7 +18,7 @@ export const Table: React.FC<TableProps> = (props: TableProps) => {
 	});
 
 	return (
-		<table className={classNames} {...attributes}>
+		<table className={classNames} data-component="table" {...attributes}>
 			{children}
 		</table>
 	);

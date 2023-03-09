@@ -49,7 +49,7 @@ export const HorizontalNavLink: React.FC<HorizontalNavLinkProps> = ({
 		[method || (ElementType === "a" && "href") || "to"]: destination
 	};
 	return (
-		<li className="horizontal-nav__item">
+		<li className="horizontal-nav__item" data-component="horizontal-nav">
 			<ElementType {...props} {...rest}>
 				{title || children || destination || "No Link"}
 			</ElementType>

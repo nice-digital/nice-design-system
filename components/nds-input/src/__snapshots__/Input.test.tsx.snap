@@ -7,6 +7,7 @@ exports[`@nice-digital/nds-input should match snapshot 1`] = `
     <div>
       <div
         class="input input--error"
+        data-component="input"
       >
         <label
           class="input__label"
@@ -37,6 +38,7 @@ exports[`@nice-digital/nds-input should match snapshot 1`] = `
   "container": <div>
     <div
       class="input input--error"
+      data-component="input"
     >
       <label
         class="input__label"

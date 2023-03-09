@@ -65,7 +65,10 @@ export const FilterPanel: React.FC<FilterPanelProps> = (
 
 	return (
 		<form onSubmit={onSubmit} {...fallback} {...rest} ref={innerRef}>
-			<div className={classnames(["filter-panel", className])}>
+			<div
+				className={classnames(["filter-panel", className])}
+				data-component="filter-panel"
+			>
 				<HeadingLevel className="filter-panel__heading">
 					<button
 						aria-expanded={isExpanded}

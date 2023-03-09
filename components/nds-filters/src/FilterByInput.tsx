@@ -73,7 +73,11 @@ export const FilterByInput: React.FC<FilterByInputProps> = (
 	});
 
 	return (
-		<div className={classnames("inputFilterBox", className)} {...filteredProps}>
+		<div
+			className={classnames("inputFilterBox", className)}
+			data-component="input-filter"
+			{...filteredProps}
+		>
 			<HeadingLevel className="inputFilterBox__heading">
 				{canUseDOM ? (
 					<button

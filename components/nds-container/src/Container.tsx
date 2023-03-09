@@ -31,7 +31,7 @@ export const Container: React.FC<ContainerProps> = (props: ContainerProps) => {
 	]);
 
 	return (
-		<ElementType className={classes} {...rest}>
+		<ElementType className={classes} data-component="container" {...rest}>
 			{children}
 		</ElementType>
 	);

@@ -7,12 +7,14 @@ exports[`Simple Pagination should default to 'page 1' only if no props are provi
     <div>
       <div
         class="simple-pagination"
+        data-component="simple-pagination"
       />
     </div>
   </body>,
   "container": <div>
     <div
       class="simple-pagination"
+      data-component="simple-pagination"
     />
   </div>,
   "debug": [Function],
@@ -76,6 +78,7 @@ exports[`Simple Pagination should match snapshot with some default attributes 1`
     <div>
       <div
         class="simple-pagination"
+        data-component="simple-pagination"
       >
         <p>
           Page 
@@ -119,6 +122,7 @@ exports[`Simple Pagination should match snapshot with some default attributes 1`
   "container": <div>
     <div
       class="simple-pagination"
+      data-component="simple-pagination"
     >
       <p>
         Page 

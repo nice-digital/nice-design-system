@@ -7,6 +7,7 @@ exports[`Panel should match snapshot for default panel 1`] = `
     <div>
       <div
         class="panel"
+        data-component="panel"
       >
         Some panel content
       </div>
@@ -15,6 +16,7 @@ exports[`Panel should match snapshot for default panel 1`] = `
   "container": <div>
     <div
       class="panel"
+      data-component="panel"
     >
       Some panel content
     </div>

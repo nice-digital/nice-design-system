@@ -74,6 +74,7 @@ export const InPageNav = ({
 		<nav
 			className={["in-page-nav", className].join(" ")}
 			aria-labelledby="inpagenav-title"
+			data-component="in-page-nav"
 			{...rest}
 		>
 			<h2 id="inpagenav-title" className="in-page-nav__title">

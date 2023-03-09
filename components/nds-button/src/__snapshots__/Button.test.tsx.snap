@@ -7,6 +7,7 @@ exports[`@nice-digital/nds-button should match snapshot 1`] = `
     <div>
       <button
         class="btn"
+        data-component="button--primary"
         type="button"
       >
         Example
@@ -16,6 +17,7 @@ exports[`@nice-digital/nds-button should match snapshot 1`] = `
   "container": <div>
     <button
       class="btn"
+      data-component="button--primary"
       type="button"
     >
       Example

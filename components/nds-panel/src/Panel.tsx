@@ -20,7 +20,11 @@ export const Panel: React.FC<PanelProps> = (props: PanelProps) => {
 	]);
 
 	return (
-		<div className={classes} {...rest}>
+		<div
+			className={classes}
+			data-component={`panel${variant ? `--${variant}` : ""}`}
+			{...rest}
+		>
 			{children}
 		</div>
 	);

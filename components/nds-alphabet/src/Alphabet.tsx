@@ -81,6 +81,7 @@ export const Letter: React.FC<LetterProps> = (props: LetterProps) => {
 	return (
 		<li
 			className={`alphabet__letter ${chunky ? "alphabet__letter--chunky" : ""}`}
+			data-component={`alphabet-letter${chunky ? `--chunky` : ""}`}
 			{...attrs}
 		>
 			{body}
@@ -101,7 +102,11 @@ const Link: React.FC<LinkProps> = ({
 	};
 
 	return (
-		<ElementType aria-label={ariaLabel} {...linkProps}>
+		<ElementType
+			aria-label={ariaLabel}
+			data-component={`alphabet`}
+			{...linkProps}
+		>
 			{text}
 		</ElementType>
 	);

@@ -64,7 +64,11 @@ export const SimplePagination: React.FC<SimplePaginationProps> = (
 	};
 
 	return (
-		<div className={classnames("simple-pagination", className)} {...rest}>
+		<div
+			className={classnames("simple-pagination", className)}
+			data-component="simple-pagination"
+			{...rest}
+		>
 			{currentPage && (
 				<p>
 					Page <b>{currentPage}</b>
