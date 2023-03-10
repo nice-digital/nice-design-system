@@ -123,7 +123,7 @@ export const Tabs: React.FC<TabsProps> = (props: TabsProps) => {
 	delete filteredProps?.className;
 
 	return (
-		<div className={classes} {...filteredProps}>
+		<div className={classes} data-component="tabs" {...filteredProps}>
 			<ul className="tabs__list" role="tablist">
 				{tabs.map((tab, i) => {
 					const tabElement = tab as React.ReactElement;
@@ -135,6 +135,7 @@ export const Tabs: React.FC<TabsProps> = (props: TabsProps) => {
 						<li className="tabs__tab" key={tabSlug} role="presentation">
 							<button
 								className="tabs__tab-btn"
+								data-component="tabs--button"
 								type="button"
 								role="tab"
 								data-hash={tabSlug}
@@ -162,6 +163,7 @@ export const Tabs: React.FC<TabsProps> = (props: TabsProps) => {
 					return (
 						<div
 							className="tabs__pane"
+							data-component="tabs--pane"
 							key={tabSlug}
 							role="tabpanel"
 							id={`tab-pane-${tabSlug}`}

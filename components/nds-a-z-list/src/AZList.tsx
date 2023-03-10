@@ -22,7 +22,11 @@ export const AZList: React.FC<AZListProps> = (props: AZListProps) => {
 	return (
 		<>
 			<Alphabet className="a-z-list__alphabet" />
-			<ol className={["a-z-list", className].join(" ")} {...attrs}>
+			<ol
+				className={["a-z-list", className].join(" ")}
+				data-component="a-z-list"
+				{...attrs}
+			>
 				{children}
 			</ol>
 		</>
