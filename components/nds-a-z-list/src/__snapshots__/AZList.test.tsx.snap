@@ -26,6 +26,7 @@ exports[`A-Z List should match snapshot with custom attributes 1`] = `
       <ol
         aria-label="test-label"
         class="a-z-list test-class"
+        data-component="a-z-list"
       >
         <li>
           Item one
@@ -58,6 +59,7 @@ exports[`A-Z List should match snapshot with custom attributes 1`] = `
     <ol
       aria-label="test-label"
       class="a-z-list test-class"
+      data-component="a-z-list"
     >
       <li>
         Item one
@@ -146,6 +148,7 @@ exports[`A-Z List should match snapshot with default attributes 1`] = `
       </ol>
       <ol
         class="a-z-list "
+        data-component="a-z-list"
       >
         <li>
           Item one
@@ -177,6 +180,7 @@ exports[`A-Z List should match snapshot with default attributes 1`] = `
     </ol>
     <ol
       class="a-z-list "
+      data-component="a-z-list"
     >
       <li>
         Item one
