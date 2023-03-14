@@ -31,7 +31,18 @@ export default function Home() {
 			/>
 
 			<h2>How to use the NICE design system</h2>
-			<p>TODO: Add content about prototyping &amp; code</p>
+			<Grid>
+				<GridItem sm={6}>
+					<h3>In code</h3>
+					<p>Import components and styles directly into your project.</p>
+					<a href="#development">Read more about coding</a>
+				</GridItem>
+				<GridItem sm={6}>
+					<h3>In design prototypes</h3>
+					<p>Use our Figma files to build prototypes.</p>
+					<a href="#prototyping">Read more about prototyping</a>
+				</GridItem>
+			</Grid>
 
 			<hr />
 
@@ -44,7 +55,9 @@ export default function Home() {
 				{foundations.map(
 					({ slug, title, description }: PageData, index: number) => (
 						<GridItem key={index} sm={4}>
-							<h3>{title}</h3>
+							<h3>
+								<Link href={`/foundations/${slug}`}>{title}</Link>
+							</h3>
 							{description && <p>{description}</p>}
 						</GridItem>
 					)
@@ -79,11 +92,31 @@ export default function Home() {
 
 			<hr />
 
+			<h2 id="development">Development</h2>
+			<p>TODO: Add development content</p>
+
+			<hr />
+
+			<h2 id="prototyping">Prototyping</h2>
+			<p>TODO: Add prototyping content</p>
+
+			<hr />
+
 			<h2>Contact the team</h2>
 			<ul>
-				<li>Link to Teams channel</li>
-				<li>Link to Github discussions</li>
-				<li>Link to process map</li>
+				<li>
+					If you work for NICE,{" "}
+					<a href="https://teams.microsoft.com/l/team/19%3aj3x65ql6djS-Ro2mM8yQIRzK_QHOk1S3Jl75got7hwk1%40thread.tacv2/conversations?groupId=10c92ff2-b41f-42d1-abef-f34f5bfe1202&tenantId=6030f479-b342-472d-a5dd-740ff7538de9">
+						ask us a question in our Teams channel
+					</a>
+				</li>{" "}
+				<li>
+					If you work outside of NICE, you can get in touch via{" "}
+					<a href="https://github.com/nice-digital/nice-design-system/discussions">
+						Github discussions
+					</a>
+				</li>
+				<li>TODO: Add process map</li>
 			</ul>
 		</>
 	);

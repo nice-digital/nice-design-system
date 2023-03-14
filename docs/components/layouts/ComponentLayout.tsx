@@ -1,25 +1,26 @@
 import { ReactNode } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
 import { InPageNav } from "@nice-digital/nds-in-page-nav";
-import { StackedNav, StackedNavLink } from "@nice-digital/nds-stacked-nav";
 import { Grid, GridItem } from "@nice-digital/nds-grid";
 
 import { type PageMeta } from "types/PageMeta";
-import { type PageData } from "types/PageData";
+import { SidebarMenu } from "components/menus/SidebarMenu";
+import { capitalise } from "utils/utils";
 import styles from "./ComponentLayout.module.scss";
-import { components } from "../../data/components";
 
 export interface ComponentLayoutProps {
 	children: ReactNode;
 	meta: PageMeta;
+	type: "foundations" | "components";
+	isFoundationPage?: boolean;
 }
 
 export const ComponentLayout: React.FC<ComponentLayoutProps> = ({
 	children,
-	meta
+	meta,
+	type = "components"
 }: ComponentLayoutProps) => {
 	const shouldShowExternalLinks = meta?.gitHubUrl || meta?.npmUrl;
 
@@ -30,28 +31,12 @@ export const ComponentLayout: React.FC<ComponentLayoutProps> = ({
 			</Head>
 			<Breadcrumbs>
 				<Breadcrumb to="/">NICE Design System</Breadcrumb>
-				<Breadcrumb to="/components">Components</Breadcrumb>
+				<Breadcrumb to={`/${type}`}>{capitalise(type)}</Breadcrumb>
 				<Breadcrumb>{meta.title}</Breadcrumb>
 			</Breadcrumbs>
 			<Grid>
 				<GridItem cols={12} md={{ cols: 2 }}>
-					<StackedNav label="Components menu" elementType="h2">
-						<StackedNavLink elementType={Link} method="href" destination="/">
-							NDS Docs Home
-						</StackedNavLink>
-						<>
-							{components.map(({ title, slug }: PageData) => (
-								<StackedNavLink
-									elementType={Link}
-									method="href"
-									key={slug}
-									destination={`/components/${slug}`}
-								>
-									{title}
-								</StackedNavLink>
-							))}
-						</>
-					</StackedNav>
+					<SidebarMenu type={type}></SidebarMenu>
 				</GridItem>
 				<GridItem cols={12} md={{ cols: 8 }} className="docs-main">
 					{children}

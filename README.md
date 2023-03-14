@@ -29,8 +29,6 @@
 
 NICE Design System is a pattern library, front-end toolkit and set of guidelines for rapidly building modern, accessible digital services that are consistent with the NICE brand guidelines.
 
-It is a replacement for [NICE.Bootstrap](https://github.com/nice-digital/NICE.Bootstrap/).
-
 ## Development
 
 We recommend using vscode as the IDE when developing with the NICE Design System. We have a set of [recommended extensions](.vscode/extensions.json) you should install to make development easier. You should be prompted to install these when opening the folder in vscode.
@@ -38,7 +36,7 @@ We recommend using vscode as the IDE when developing with the NICE Design System
 ### Quick start
 
     TL;DR:
-    	1. Install Node 8.9+
+    	1. Install Node
     	2. `npm i`
 		3. `npm run bootstrap`
     	4. `npm start`
