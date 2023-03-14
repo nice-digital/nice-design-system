@@ -35,7 +35,7 @@ export default function Home() {
 				<GridItem sm={6}>
 					<h3>In code</h3>
 					<p>Import components and styles directly into your project.</p>
-					<a href="#development">Read more about coding</a>
+					<a href="#development">Read more about development</a>
 				</GridItem>
 				<GridItem sm={6}>
 					<h3>In design prototypes</h3>
@@ -87,13 +87,41 @@ export default function Home() {
 
 			<hr />
 
-			<h2>Patterns</h2>
-			<p>TODO: Add patterns content</p>
+			<h2 id="development">Development</h2>
+			<Grid>
+				<GridItem sm={4}>
+					<h3>Github</h3>
+					<p>
+						<Link href="https://github.com/nice-digital/nice-design-system">
+							Check out the NDS GitHub repo
+						</Link>{" "}
+						to read technical documentation and inspect the code
+					</p>
+				</GridItem>
+				<GridItem sm={4}>
+					<h3>NPM</h3>
+					<p>
+						<Link href="https://www.npmjs.com/package/@nice-digital/design-system">
+							Install the node package using NPM
+						</Link>{" "}
+						to import styles and components into your project
+					</p>
+				</GridItem>
+				<GridItem sm={4}>
+					<h3>CDN</h3>
+					<p>
+						If you can&apos;t use NPM, you can{" "}
+						<Link href="https://cdn.nice.org.uk/niceorg/css/app.min.css">
+							import the design system styles directly via the CDN
+						</Link>
+					</p>
+				</GridItem>
+			</Grid>
 
 			<hr />
 
-			<h2 id="development">Development</h2>
-			<p>TODO: Add development content</p>
+			<h2>Patterns</h2>
+			<p>TODO: Add patterns content</p>
 
 			<hr />
 
