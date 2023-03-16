@@ -7,6 +7,7 @@ exports[`Checkbox should match snapshot with hint text supplied 1`] = `
     <div>
       <div
         class="checkbox"
+        data-component="checkbox"
       >
         <div>
           <input
@@ -34,6 +35,7 @@ exports[`Checkbox should match snapshot with hint text supplied 1`] = `
   "container": <div>
     <div
       class="checkbox"
+      data-component="checkbox"
     >
       <div>
         <input
@@ -118,6 +120,7 @@ exports[`Checkbox should match snapshot with some default attributes 1`] = `
     <div>
       <div
         class="checkbox"
+        data-component="checkbox"
       >
         <div>
           <input
@@ -140,6 +143,7 @@ exports[`Checkbox should match snapshot with some default attributes 1`] = `
   "container": <div>
     <div
       class="checkbox"
+      data-component="checkbox"
     >
       <div>
         <input

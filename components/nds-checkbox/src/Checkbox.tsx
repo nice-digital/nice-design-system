@@ -34,7 +34,7 @@ export const Checkbox: React.FC<CheckboxProps> = (props: CheckboxProps) => {
 			{error && error.toString().length && (
 				<p className="checkbox__error-message">{error}</p>
 			)}
-			<div className={classNames}>
+			<div className={classNames} data-component="checkbox">
 				<div>
 					<input
 						type="checkbox"

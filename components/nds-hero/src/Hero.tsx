@@ -26,7 +26,11 @@ export const Hero: React.FC<HeroProps> = (props: HeroProps) => {
 		...rest
 	} = props;
 	return (
-		<div className={classnames(["hero", className])} {...rest}>
+		<div
+			className={classnames(["hero", className])}
+			data-component="hero"
+			{...rest}
+		>
 			<div className="hero__container">
 				{header && header}
 				<div className="hero__body">

@@ -26,7 +26,7 @@ export const PageHeader: React.FC<PageHeaderProps> = (
 	} = props;
 
 	return (
-		<div className="page-header" {...rest}>
+		<div className="page-header" data-component="page-header" {...rest}>
 			<h1
 				className={`page-header__heading ${
 					useAltHeading ? "page-header__heading--alt" : ""

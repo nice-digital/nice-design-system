@@ -32,7 +32,7 @@ export const Textarea: React.FC<TextareaProps> = (props: TextareaProps) => {
 	});
 
 	return (
-		<div className={classNames}>
+		<div className={classNames} data-component="textarea">
 			<label className="textarea__label" htmlFor={name}>
 				{label}
 			</label>

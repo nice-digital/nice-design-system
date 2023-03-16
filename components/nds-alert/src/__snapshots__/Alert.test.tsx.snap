@@ -7,6 +7,7 @@ exports[`Alert should match snapshot for a supplied type 1`] = `
     <div>
       <div
         class="alert alert--success"
+        data-component="alert--success"
       >
         <h1>
           Alert Title
@@ -20,6 +21,7 @@ exports[`Alert should match snapshot for a supplied type 1`] = `
   "container": <div>
     <div
       class="alert alert--success"
+      data-component="alert--success"
     >
       <h1>
         Alert Title
@@ -90,6 +92,7 @@ exports[`Alert should match snapshot for default alert if type not supplied 1`] 
     <div>
       <div
         class="alert alert--info"
+        data-component="alert--info"
       >
         <h1>
           Alert Title
@@ -103,6 +106,7 @@ exports[`Alert should match snapshot for default alert if type not supplied 1`] 
   "container": <div>
     <div
       class="alert alert--info"
+      data-component="alert--info"
     >
       <h1>
         Alert Title

@@ -26,7 +26,11 @@ export const PhaseBanner: React.FC<PhaseBannerProps> = (
 	const { alpha, beta, children, className, ...rest } = props;
 
 	return (
-		<p className={classnames(["phase-banner", className])} {...rest}>
+		<p
+			className={classnames(["phase-banner", className])}
+			data-component="phase-banner"
+			{...rest}
+		>
 			<span className="phase-banner__tag">
 				<Tag impact alpha={alpha} beta={beta}>
 					{alpha ? "Alpha" : "Beta"}

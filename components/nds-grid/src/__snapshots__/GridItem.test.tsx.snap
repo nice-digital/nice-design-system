@@ -6,6 +6,7 @@ exports[`GridItem should match snapshot 1`] = `
   "baseElement": <body>
     <div>
       <div
+        data-component="grid-item"
         data-g="6"
       >
         Test
@@ -14,6 +15,7 @@ exports[`GridItem should match snapshot 1`] = `
   </body>,
   "container": <div>
     <div
+      data-component="grid-item"
       data-g="6"
     >
       Test

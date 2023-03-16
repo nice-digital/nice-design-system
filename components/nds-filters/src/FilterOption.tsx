@@ -53,6 +53,7 @@ export const FilterOption: React.FC<FilterOptionProps> = (
 		<label
 			htmlFor={`filter_${groupId}_${slugifiedValue}`}
 			className="filter-option"
+			data-component="filter-option"
 		>
 			<input
 				id={`filter_${groupId}_${slugifiedValue}`}

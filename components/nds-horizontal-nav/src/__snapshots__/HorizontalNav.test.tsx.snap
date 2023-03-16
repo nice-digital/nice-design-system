@@ -13,6 +13,7 @@ exports[`Horizontal Nav Component should match the default snapshot 1`] = `
         >
           <li
             class="horizontal-nav__item"
+            data-component="horizontal-nav"
           >
             <a
               aria-current="false"
@@ -25,6 +26,7 @@ exports[`Horizontal Nav Component should match the default snapshot 1`] = `
           </li>
           <li
             class="horizontal-nav__item"
+            data-component="horizontal-nav"
           >
             <div
               data-type="link"
@@ -32,6 +34,7 @@ exports[`Horizontal Nav Component should match the default snapshot 1`] = `
           </li>
           <li
             class="horizontal-nav__item"
+            data-component="horizontal-nav"
           >
             <a
               aria-current="false"
@@ -44,6 +47,7 @@ exports[`Horizontal Nav Component should match the default snapshot 1`] = `
           </li>
           <li
             class="horizontal-nav__item"
+            data-component="horizontal-nav"
           >
             <div
               data-type="link"
@@ -62,6 +66,7 @@ exports[`Horizontal Nav Component should match the default snapshot 1`] = `
       >
         <li
           class="horizontal-nav__item"
+          data-component="horizontal-nav"
         >
           <a
             aria-current="false"
@@ -74,6 +79,7 @@ exports[`Horizontal Nav Component should match the default snapshot 1`] = `
         </li>
         <li
           class="horizontal-nav__item"
+          data-component="horizontal-nav"
         >
           <div
             data-type="link"
@@ -81,6 +87,7 @@ exports[`Horizontal Nav Component should match the default snapshot 1`] = `
         </li>
         <li
           class="horizontal-nav__item"
+          data-component="horizontal-nav"
         >
           <a
             aria-current="false"
@@ -93,6 +100,7 @@ exports[`Horizontal Nav Component should match the default snapshot 1`] = `
         </li>
         <li
           class="horizontal-nav__item"
+          data-component="horizontal-nav"
         >
           <div
             data-type="link"

@@ -28,7 +28,10 @@ export const Radio: React.FC<RadioProps> = (props: RadioProps) => {
 			{error && error.toString().length && (
 				<p className="radio__error-message">{error}</p>
 			)}
-			<div className={classNames}>
+			<div
+				className={classNames}
+				data-component={`radio${inline ? "--inline" : ""}`}
+			>
 				<input
 					disabled={disabled}
 					className="radio__input"

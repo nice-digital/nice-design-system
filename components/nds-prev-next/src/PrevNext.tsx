@@ -63,7 +63,11 @@ export const PrevNext: React.FC<PrevNextProps> = (props: PrevNextProps) => {
 		: null;
 
 	return (
-		<div className={classnames("prev-next", className)} {...rest}>
+		<div
+			className={classnames("prev-next", className)}
+			data-component="prev-next"
+			{...rest}
+		>
 			{(nextPageLink || previousPageLink) && (
 				<nav aria-label="Previous and next pages">
 					{nextPageLink && nextLinkProps && <Link {...nextLinkProps} />}

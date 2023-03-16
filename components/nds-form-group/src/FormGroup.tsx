@@ -29,7 +29,10 @@ export const FormGroup: React.FC<FormGroupProps> = (props: FormGroupProps) => {
 	});
 
 	return (
-		<fieldset className={classes}>
+		<fieldset
+			className={classes}
+			data-component={`form-group${inline ? "--inline" : ""}`}
+		>
 			{legend && <legend className="form-group__legend">{legend}</legend>}
 			{groupError && <p className="form-group__error-message">{groupError}</p>}
 			{hint && <p className="form-group__hint">{hint}</p>}

@@ -8,6 +8,7 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
       <nav
         aria-label="Pagination"
         class="pagination "
+        data-component="pagination"
         role="navigation"
       >
         <ol
@@ -154,6 +155,7 @@ exports[`Enhanced Pagination should match snapshot with some default attributes 
     <nav
       aria-label="Pagination"
       class="pagination "
+      data-component="pagination"
       role="navigation"
     >
       <ol

@@ -7,6 +7,7 @@ exports[`PageHeader should allow a component to be passed as a prop 1`] = `
     <div>
       <div
         class="page-header"
+        data-component="page-header"
       >
         <h1
           class="page-header__heading "
@@ -26,6 +27,7 @@ exports[`PageHeader should allow a component to be passed as a prop 1`] = `
   "container": <div>
     <div
       class="page-header"
+      data-component="page-header"
     >
       <h1
         class="page-header__heading "
@@ -102,6 +104,7 @@ exports[`PageHeader should match the snapshot with all props supplied 1`] = `
     <div>
       <div
         class="page-header"
+        data-component="page-header"
       >
         <h1
           class="page-header__heading "
@@ -129,6 +132,7 @@ exports[`PageHeader should match the snapshot with all props supplied 1`] = `
   "container": <div>
     <div
       class="page-header"
+      data-component="page-header"
     >
       <h1
         class="page-header__heading "
@@ -213,6 +217,7 @@ exports[`PageHeader should match the snapshot with only required heading prop su
     <div>
       <div
         class="page-header"
+        data-component="page-header"
       >
         <h1
           class="page-header__heading "
@@ -225,6 +230,7 @@ exports[`PageHeader should match the snapshot with only required heading prop su
   "container": <div>
     <div
       class="page-header"
+      data-component="page-header"
     >
       <h1
         class="page-header__heading "

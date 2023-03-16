@@ -7,12 +7,14 @@ exports[`Phase Banner should match the default snapshot 1`] = `
     <div>
       <p
         class="phase-banner"
+        data-component="phase-banner"
       >
         <span
           class="phase-banner__tag"
         >
           <span
             class="tag tag--alpha tag--impact"
+            data-component="tag"
           >
             Alpha
           </span>
@@ -28,12 +30,14 @@ exports[`Phase Banner should match the default snapshot 1`] = `
   "container": <div>
     <p
       class="phase-banner"
+      data-component="phase-banner"
     >
       <span
         class="phase-banner__tag"
       >
         <span
           class="tag tag--alpha tag--impact"
+          data-component="tag"
         >
           Alpha
         </span>

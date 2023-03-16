@@ -41,7 +41,7 @@ export const MaintainRatio: React.FC<MaintainRatioProps> = (
 	});
 
 	return (
-		<div className={classNames} {...attributes}>
+		<div className={classNames} data-component="maintain-ratio" {...attributes}>
 			{children}
 		</div>
 	);

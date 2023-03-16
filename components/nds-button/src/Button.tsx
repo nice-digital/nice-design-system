@@ -70,7 +70,13 @@ export const Button = (props: ButtonProps) => {
 	});
 
 	return (
-		<ButtonTagType {...buttonProps} {...attributes}>
+		<ButtonTagType
+			{...buttonProps}
+			{...attributes}
+			data-component={`button${variant ? `--${variant}` : ""}${
+				buttonType ? `--${buttonType}` : ""
+			}`}
+		>
 			{children}
 		</ButtonTagType>
 	);

@@ -9,11 +9,13 @@ exports[`Grid should match snapshot 1`] = `
         class="grid"
       >
         <div
+          data-component="grid-item"
           data-g="6"
         >
           Test
         </div>
         <div
+          data-component="grid-item"
           data-g="6"
         >
           Test
@@ -26,11 +28,13 @@ exports[`Grid should match snapshot 1`] = `
       class="grid"
     >
       <div
+        data-component="grid-item"
         data-g="6"
       >
         Test
       </div>
       <div
+        data-component="grid-item"
         data-g="6"
       >
         Test
