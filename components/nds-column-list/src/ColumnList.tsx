@@ -25,7 +25,7 @@ export const ColumnList: React.FC<ColumnListProps> = (
 			]
 				.filter(Boolean)
 				.join(" ")}
-			data-component={`column-list--${plain}`}
+			data-component={`column-list${plain ? "--plain" : "--boxed"}`}
 			{...attrs}
 		>
 			{children}

@@ -7,7 +7,7 @@ exports[`ColumnList should match snapshot 1`] = `
     <div>
       <ol
         class="column-list column-list--boxed"
-        data-component="column-list--undefined"
+        data-component="column-list--boxed"
       >
         <li>
           One
@@ -33,7 +33,7 @@ exports[`ColumnList should match snapshot 1`] = `
   "container": <div>
     <ol
       class="column-list column-list--boxed"
-      data-component="column-list--undefined"
+      data-component="column-list--boxed"
     >
       <li>
         One
