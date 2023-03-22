@@ -91,6 +91,8 @@ Run `npm start` and `test:unit:watch` for development. However, there are other 
 | `npm run lint:scss`          | Lints just SCSS                                                               |
 | `npm run clean:ts`           | Cleans the Typescript output                                                  |
 | `npm run build:ts`           | Compiles all Typescript components                                            |
+| `npm run docs:dev`           | Starts the Next.js documentation site in development mode                     |
+| `npm run docs:build`         | Builds the Next.js documentation site for production                          |
 
 Check [package.json](package.json) for a complete list of scripts.
 
