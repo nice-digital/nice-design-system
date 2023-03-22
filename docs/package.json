@@ -16,10 +16,11 @@
 		"@nice-digital/design-system": "^5.0.4-alpha.0",
 		"@nice-digital/global-nav": "^5.0.916",
 		"glob": "^8.0.3",
-		"next": "13.0.0",
+		"next": "^13.2.4",
 		"next-transpile-modules": "^9.1.0",
 		"react": "18.2.0",
-		"react-dom": "18.2.0"
+		"react-dom": "18.2.0",
+		"remark-gfm": "^3.0.1"
 	},
 	"devDependencies": {
 		"@testing-library/jest-dom": "^5.16.5",
