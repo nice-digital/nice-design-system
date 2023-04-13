@@ -1,0 +1,25 @@
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/utils';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/media-queries';
+
+.header {
+  padding: utils.rem(spacing.$small) 0;
+
+  @include media-queries.mq($from: md) {
+    align-items: flex-end;
+    display: flex;
+  }
+}
+
+.logo {
+  margin-right: utils.rem(spacing.$small);
+  max-width: 25rem;
+}
+
+.designSystemTitle {
+  @include typography.h4;
+  display: block;
+  font-family: typography.get-font-family(sans);
+  margin: 0 0 -#{utils.rem(spacing.$x-small)};
+}
