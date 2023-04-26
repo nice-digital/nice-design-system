@@ -9,6 +9,7 @@
   @include media-queries.mq($from: md) {
     align-items: flex-end;
     display: flex;
+    justify-content: space-between;
   }
 }
 
@@ -18,7 +19,7 @@
 }
 
 .designSystemTitle {
-  @include typography.h4;
+  @include typography.h2;
   display: block;
   font-family: typography.get-font-family(sans);
   margin: 0 0 -#{utils.rem(spacing.$x-small)};

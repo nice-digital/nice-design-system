@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { StackedNav, StackedNavLink } from "@nice-digital/nds-stacked-nav";
 import { components } from "../../data/components";
 import { foundations } from "../../data/foundations";
@@ -10,6 +11,10 @@ export interface SidebarMenuProps {
 }
 
 export function SidebarMenu({ type }: SidebarMenuProps) {
+	const { asPath } = useRouter(),
+		urlArray = asPath.split("/"),
+		pageSlug = urlArray[urlArray.length - 2]; // Infer slug from part of URL preceding final slash
+
 	const menuItems: PageData[] =
 		type === "foundations" ? foundations : components;
 
@@ -24,6 +29,7 @@ export function SidebarMenu({ type }: SidebarMenuProps) {
 						elementType={Link}
 						method="href"
 						key={slug}
+						isCurrent={slug === pageSlug}
 						destination={`/${type}/${slug}`}
 					>
 						{title}
