@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-tag",
-	"version": "3.0.3",
+	"version": "4.0.2",
 	"description": "Tag component for the NICE Design System",
 	"keywords": [
 		"tag"
@@ -8,16 +8,13 @@
 	"author": "Ian Routledge <ian.routledge@nice.org.uk>",
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
-	"main": "lib/Tag.js",
-	"module": "es/Tag.js",
-	"types": "nds-tag.d.ts",
+	"main": "es/Tag.js",
 	"style": "scss/tag.scss",
 	"directories": {
-		"lib": "lib",
+		"lib": "es",
 		"test": "__tests__"
 	},
 	"files": [
-		"lib",
 		"es",
 		"scss",
 		"*.d.ts"
@@ -34,16 +31,20 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
-		"@nice-digital/nds-core": "^3.0.3",
-		"classnames": "^2.2.6",
-		"prop-types": "^15.7.2"
+		"@nice-digital/nds-core": "^4.0.2",
+		"classnames": "^2.2.6"
 	},
 	"peerDependencies": {
 		"react": "^16 || ^17 || ^18",
 		"react-dom": "^16 || ^17 || ^18"
 	},
 	"devDependencies": {
-		"@babel/cli": "^7.5.0"
+		"@testing-library/jest-dom": "^5.16.5",
+		"@testing-library/react": "^13.4.0",
+		"@testing-library/user-event": "^14.4.3",
+		"@types/jest": "^29.2.2",
+		"@types/node": "^18.11.9",
+		"typescript": "^4.8.4"
 	},
-	"gitHead": "8a7d7925546f9ab473cf88904d938f018ec0fd1f"
+	"gitHead": "e75957040c9acfbd7eeb164cad724e3b48760679"
 }

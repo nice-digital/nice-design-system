@@ -1,0 +1,19 @@
+import { ComponentLayout } from "components/layouts/ComponentLayout";
+import { Alert } from "@nice-digital/nds-alert";
+
+export const meta = {
+	title: "Alert",
+	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-alert",
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-alert"
+};
+
+# {meta.title}
+
+*** Placeholder component page ***
+
+<Alert type="caution">
+	<h3>Important Notice</h3>
+	<p>Please read the below for more information.</p>
+</Alert>
+
+export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;

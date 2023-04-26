@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/icons",
-	"version": "5.0.2",
+	"version": "6.0.0-alpha.0",
 	"description": "Icons for use in NICE Digital Services",
 	"scripts": {
 		"start": "npm run webfont && npm run svgr && npm run esify",
@@ -56,6 +56,14 @@
 	},
 	"gitHead": "b70a1e39df19c1943a000c841aca8d9bb3ef4ff1",
 	"devDependencies": {
-		"fantasticon": "^1.2.3"
+		"@svgr/cli": "^6.5.1",
+		"@testing-library/jest-dom": "^5.16.5",
+		"@testing-library/react": "^13.4.0",
+		"@testing-library/user-event": "^14.4.3",
+		"@types/jest": "^29.2.2",
+		"@types/node": "^18.11.9",
+		"doctoc": "^2.2.1",
+		"fantasticon": "^1.2.3",
+		"typescript": "^4.8.4"
 	}
 }

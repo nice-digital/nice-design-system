@@ -1,0 +1,19 @@
+import { ComponentLayout } from "components/layouts/ComponentLayout";
+import { HorizontalNav, HorizontalNavLink } from "@nice-digital/nds-horizontal-nav";
+
+export const meta = {
+	title: "Horizontal Nav",
+	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-horizontal-nav",
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-horizontal-nav"
+};
+
+# {meta.title}
+
+*** Placeholder component page ***
+
+<HorizontalNav aria-label="My navigation">
+<HorizontalNavLink isCurrent="true" destination="/about-us">About</HorizontalNavLink>
+<HorizontalNavLink destination="/contact">Contact</HorizontalNavLink>
+</HorizontalNav>
+
+export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;

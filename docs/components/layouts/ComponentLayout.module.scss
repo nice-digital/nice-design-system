@@ -1,0 +1,15 @@
+.externalLinkList {
+  list-style: none;
+  margin: 0;
+}
+
+.externalSiteButton {
+  display: flex !important;
+  justify-content: center;
+  width: 100%;
+
+  img {
+    margin-right: 10px;
+    max-width: 30px;
+  }
+}

@@ -1,0 +1,56 @@
+{
+	"compilerOptions": {
+		"target": "ES6",
+		"jsx": "react-jsx",
+		"module": "commonjs",
+		"allowJs": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"moduleResolution": "node",
+		"strict": true,
+		"skipLibCheck": true,
+		"noImplicitThis": false,
+		"types": ["jest", "@testing-library/jest-dom", "node"]
+	},
+	"files": [],
+	"exclude": ["node_modules"],
+	"references": [
+		// Order is important here - if any module relies on any other, list the dependency first
+		// e.g. nds-tag is used by nds-phase-banner, so it needs to appear before it in this list
+		// Also, race conditions can occur - nds-input is a dependency of nds-filters and even though
+		// it appears before it, we've had to move nds-filters to the end so that there's enough time
+		// to generate the libraries. Bit messy and inelegant but there you go.
+		{ "path": "./components/nds-core" },
+		{ "path": "./components/nds-button" },
+		{ "path": "./components/nds-input" },
+		{ "path": "./components/nds-tag" },
+		{ "path": "./components/nds-a-z-list" },
+		{ "path": "./components/nds-action-banner" },
+		{ "path": "./components/nds-alert" },
+		{ "path": "./components/nds-alphabet" },
+		{ "path": "./components/nds-breadcrumbs" },
+		{ "path": "./components/nds-card" },
+		{ "path": "./components/nds-checkbox" },
+		{ "path": "./components/nds-column-list" },
+		{ "path": "./components/nds-container" },
+		{ "path": "./components/nds-enhanced-pagination" },
+		{ "path": "./components/nds-form-group" },
+		{ "path": "./components/nds-full-bleed" },
+		{ "path": "./components/nds-grid" },
+		{ "path": "./components/nds-hero" },
+		{ "path": "./components/nds-horizontal-nav" },
+		{ "path": "./components/nds-in-page-nav" },
+		{ "path": "./components/nds-maintain-ratio" },
+		{ "path": "./components/nds-page-header" },
+		{ "path": "./components/nds-panel" },
+		{ "path": "./components/nds-phase-banner" },
+		{ "path": "./components/nds-prev-next" },
+		{ "path": "./components/nds-radio" },
+		{ "path": "./components/nds-simple-pagination" },
+		{ "path": "./components/nds-stacked-nav" },
+		{ "path": "./components/nds-table" },
+		{ "path": "./components/nds-tabs" },
+		{ "path": "./components/nds-textarea" },
+		{ "path": "./components/nds-filters" }
+	]
+}

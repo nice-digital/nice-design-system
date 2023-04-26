@@ -50,6 +50,7 @@ $success-background: global.$custom-green-1-tint;
 
 // Fills
 $fill-page-background: global.$nice-cream-tint-1;
+$fill-white-background: global.$white;
 
 // Forms
 $form-group-hint: global.$black-tint-1;
@@ -76,6 +77,8 @@ $alphabet-letter-span: global.$custom-grey-3;
 // Card
 $card-author: global.$black-tint-1;
 $card-metadata: global.$black-tint-1;
+$card-callout-background: global.$white;
+$card-callout-border: global.$custom-grey-2;
 
 // Callout
 $callout-background: global.$white;
@@ -102,9 +105,17 @@ $filter-option-text-before-border: global.$black-tint-1;
 $filter-input-controls-border: global.$custom-grey-2;
 
 // Full bleed
-$full-bleed-background: global.$white;
-$full-bleed-light-background: global.$nice-teal;
-$full-bleed-light-text: global.$white;
+$full-bleed-background: global.$nice-teal;
+$full-bleed-background-dark: global.$nice-blue;
+$full-bleed-background-light: global.$nice-cream-1;
+$full-bleed-background-image-dark: global.$nice-black;
+$full-bleed-background-image-light: global.$white;
+$full-bleed-text: global.$white;
+$full-bleed-text-dark: global.$white;
+$full-bleed-text-light: global.$nice-black;
+$full-bleed-text-transparent: global.$nice-black;
+$full-bleed-text-image-dark: global.$white;
+$full-bleed-text-image-light: global.$nice-black;
 
 // Hero
 $hero-background: global.$nice-blue-tint-1;

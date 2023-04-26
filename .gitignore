@@ -77,3 +77,6 @@ packages/storybook/storybook-static
 /packages/docs/public/
 .netlify
 packages/docs/netlify.toml
+
+# TS artefacts
+*.tsbuildinfo

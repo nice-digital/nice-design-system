@@ -1,0 +1,289 @@
+import { ComponentLayout } from "components/layouts/ComponentLayout";
+import { Example } from "components/examples/Example";
+import {
+	ExampleCardList,
+	ExampleCardGrid,
+	ExampleCardGridWithImages,
+	ExampleGuidanceList,
+	ExampleCard,
+	ExampleCalloutCard,
+	ExampleClickableCard,
+	ExampleCardListWithImages,
+	ExampleCardWithMetadata
+	} from "components/examples/Card";
+
+export const meta = {
+	title: "Card",
+	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-card",
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-card"
+};
+
+# {meta.title}
+
+A card is a navigation component used as an overview and entry point to access more detailed information on a topic.
+
+There are two types:
+
+**Card lists** stack vertically to show a clear hierarchy or order. They are typically used when people are searching for specific items in a list or when there are lots of list items - example search results.
+
+<Example>
+<h3>Example: card list</h3>
+<ExampleCardList />
+</Example>
+
+**Card grids** appear side by side using the grid system. They typically support people browsing for information or when there are fewer items to display - example NICE and BNF homepage.
+
+<Example>
+<h3>Example: card grid</h3>
+<ExampleCardGrid />
+</Example>
+
+## When to use
+
+Use cards to allow users to quickly view different content options and select the content most relevant to their interests.
+
+Cards are intended as an outline used to entice users to click through to further information contained on a separate page.
+
+### Card lists
+
+Card lists are a flexible component for displaying an item within a list. They're used for items like guidance, news and search results to give an easily scannable list. Results lists stack underneath each other to make the ordering/hierarchy of items more obvious.
+
+<Example>
+<h4>Example: card list</h4>
+<ExampleCardList />
+</Example>
+
+### Card grids
+
+Card grids are used for displaying options side by side in rows of a grid. They support browsing rather than searching.
+
+The callout variant has a white container which helps to group several different (but related) pieces of information into one unit.
+
+<Example>
+<h4>Example: card grid</h4>
+<ExampleCardGrid />
+</Example>
+
+### Card lists vs card grids
+
+Card lists are best for:
+
+- Items with a clear hierarchy.
+- When users are searching for a specific item or piece of content from a list.
+- When you have lots of items (lists take up less room than card grids).
+
+Card grids are best for:
+
+- Browsing not searching - the hierarchy for card grids is less obvious than in lists.
+- Grouping several related pieces of info together - the card callout container/background helps to group the info together.
+- Organising groups of content that are different sizes - the callout variant of the card grid has a container/background that helps to group the content and keep things neat.
+
+## How to use
+
+Cards will always contain a heading alongside some combination of paragraph text, an image, metadata and links. A card can contain several different elements, but they all should be about a single subject. A card should only contain one link.
+
+### Card lists
+
+Cards are usually used within an unstyled, unordered list (`ul.list--unstyled`).
+
+They will always have a heading. They can have a combination of other elements alongside the heading. See the card options for details of other elements to use.
+
+### Guidance list example
+
+Use a card list for displaying things like guidance, advice, quality standards and shared learning in a list:
+
+- show the id of published guidance in brackets after the title
+- use the correct level of heading to maintain a correct document heading structure
+- use [tags](/components/tag) in metadata to highlight important content
+- show relevant dates with the correct label
+- use a time tag with the correct datetime attribute to display dates.
+
+<Example>
+<h4>Example: guidance list</h4>
+<ExampleGuidanceList />
+</Example>
+
+### Card grid
+
+Use the [grid system](/components/grid) to layout cards next to each other. Card grids are used for browsing through content options on things like homepages and section landing pages.
+
+Cards in the card grid will fill the width of their grid span.
+
+They will always have a heading. They can have a combination of other elements alongside the heading. See the card options for details of other elements to use.
+
+### Callout card
+
+A callout card adds a white container to the card grid component. Use this for content than needs extra emphasis or content where an additional container will help to group the content inside the card.
+
+<Example>
+<h4>Example: callout card</h4>
+<ExampleCalloutCard />
+
+<CH.Code>
+```js React
+<Card headingText="Card title 1" callout>
+	Card text 1
+</Card>
+```
+```html HTML
+<article class="card card--callout">
+	<header class="card__header">
+		<p class="card__heading">Card title 1</p>
+	</header>Card text 1
+</article>
+```
+</CH.Code>
+</Example>
+
+#### Equal height
+
+Callout cards will take the height of the tallest card in a row - this helps to align the cards and keep the row ordered.
+
+### Clickable card
+
+The click area for card grids wraps the entire card. This creates a larger click area that’s easier for users to recognise and click.
+
+We avoid wrapping an entire card in an anchor tag as this can be a difficult experience for screen reader users.
+
+<Example>
+<h4>Example: clickable card</h4>
+<ExampleClickableCard />
+
+<CH.Code>
+```js React
+<Card headingText="Card title 1" link={{ destination: "/test" }}>
+	Card text 1
+</Card>
+```
+```html HTML
+<article class="card">
+	<header class="card__header">
+		<p class="card__heading">
+			<a href="/test">Card title 1</a>
+		</p>
+	</header>
+	Card text 1
+</article>
+```
+</CH.Code>
+</Example>
+
+### Card headings
+
+Cards will always have a heading.
+
+Keep headings succinct and make it clear what the user will find on the page that the card links to.
+
+Headings can be linked:
+
+<Example>
+<h4>Example: linked heading</h4>
+<ExampleClickableCard />
+</Example>
+
+ or not linked:
+
+<Example>
+<h4>Example: plain heading</h4>
+<ExampleCard />
+</Example>
+
+### Card options
+
+Alongside headings, cards can have a combination of the following:
+
+#### Paragraph text
+
+If you need to include supporting information in the card, you can use a paragraph.
+
+The paragraph sits below the heading for both card lists and card grids.
+
+<CH.Code>
+```js React
+<Card headingText="Card title 1">
+	Card text 1
+</Card>
+```
+```html HTML
+<article class="card">
+	<header class="card__header">
+		<p class="card__heading">Card title 1</p>
+	</header>Card text 1
+</article>
+```
+</CH.Code>
+
+#### Card images
+
+The image must relate to the content. It must have an alt tag that describes the image content.
+
+Images appear to the side by default:
+
+<Example>
+<h5>Example: card list with images</h5>
+<ExampleCardListWithImages />
+</Example>
+
+Images in callout cards appear on top and the image will always be clipped at 16:9 ratio:
+
+<Example>
+<h5>Example: callout card grid with images</h5>
+<ExampleCardGridWithImages />
+</Example>
+
+#### Metadata
+
+Metadata is used for adding secondary information such as categories or labels to the content. For example a guidance type or published date.
+
+<Example>
+<h5>Example: card with metadata</h5>
+<ExampleCardWithMetadata />
+<h5>Code</h5>
+<CH.Code>
+```js React
+<Card
+	headingText="Card with metadata"
+	metadata={[{ label: "label", value: "value" }, { value: "Another value" }]}
+/>
+```
+```html HTML
+<article class="card">
+	<header class="card__header">
+		<p class="card__heading">Card with metadata</p>
+	</header>
+	<dl class="card__metadata">
+		<div class="card__metadatum">
+			<dt class="visually-hidden">label</dt>
+			<dd>value</dd>
+		</div>
+		<div class="card__metadatum">
+			<dd>Another value</dd>
+		</div>
+	</dl>
+</article>
+```
+</CH.Code>
+</Example>
+
+## Accessibility
+
+Make sure images used in the card component have appropriate alt text to describe the image.
+
+Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
+
+## Research/evidence
+
+Card lists were tested as part of research on how people use search on the website. There we no observed issues with the component when searching.
+
+## Help improve this page
+
+To help make sure that this page is useful, relevant and up to date, you can:
+
+- Share your research or feedback on GitHub
+- Propose a change
+
+## Need help?
+
+If you’ve got a question about the NICE Design System, contact the team. (Link TBC)
+
+export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;

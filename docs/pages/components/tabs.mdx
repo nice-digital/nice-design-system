@@ -1,0 +1,26 @@
+import { ComponentLayout } from "components/layouts/ComponentLayout";
+import { Tabs, Tab } from "@nice-digital/nds-tabs";
+
+export const meta = {
+	title: "Tabs",
+	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-tabs",
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-tabs"
+};
+
+# {meta.title}
+
+*** Placeholder component page ***
+
+<Tabs>
+<Tab title="Tab 1">
+<p>Here is some content for the first tab</p>
+</Tab>
+<Tab title="Tab 2">
+<p>Here is some content for the second tab</p>
+</Tab>
+<Tab title="Tab 3">
+<p>Here is some content for the third tab</p>
+</Tab>
+</Tabs>
+
+export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;

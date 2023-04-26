@@ -1,0 +1,19 @@
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
+
+.example {
+  background: transparent;
+  border: 1px solid colours.$border;
+  padding: utils.rem(spacing.$medium);
+
+  & > h2,
+  & > h3,
+  & > h4,
+  & > h5,
+  & > h6 {
+    @include typography.h6;
+    margin-top: 0;
+  }
+}

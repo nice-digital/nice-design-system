@@ -1,0 +1,162 @@
+import { ComponentLayout } from "components/layouts/ComponentLayout";
+import { Example } from "components/examples/Example";
+import { ActionBanner } from "@nice-digital/nds-action-banner";
+import { Button } from "@nice-digital/nds-button";
+
+export const meta = {
+	title: "Action Banner",
+	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-action-banner",
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-action-banner"
+};
+
+# {meta.title}
+
+A banner for highlighting, and giving context to, a call-to-action.
+
+<Example>
+<h2>Example: action banner</h2>
+<ActionBanner
+	title="Sign up for NICE News"
+	cta={<Button variant="cta">Sign up</Button>}
+>
+	Our monthly newsletter, keeping you up to date with{" "}
+	<a href="#">important developments at NICE</a>
+</ActionBanner>
+</Example>
+
+## When to use
+
+Use action banners to provide a call to action with context, particularly when drawing attention to the key call to action on the page. They can also be used to break up a page layout and give visual interest.
+
+The action banner highlights a key action users can take. The colour adds contrast and breaks up the page.
+
+## When not use
+
+Don't use for large blocks of content. An action banner is designed as a short interruption on the page to call attention to a key action or goal. There should be a short heading and one or two sentences of content maximum.
+
+An example of the banner to call attention to registering as a stakeholder. There is a short heading and just one sentence of supporting text.
+
+If you need to highlight or emphasise larger blocks of content use the panel component [link to Panel].
+
+For warning, error or caution messages use the [alert component](/components/alert).
+
+## How to use
+
+Use sparingly, with a maximum of 1 per page.
+
+Don't use within a container component. Action banners fill the available horizontal space and have their own built-in container. They usually live outside of any .container to fill the screen width.
+
+The action should be a button: choose the right type of button (primary, secondary etc) to match the call to action importance. Follow the rules for buttons [link to buttons].
+
+### Default action banner
+
+<Example>
+<h4>Example: default action banner</h4>
+<ActionBanner
+	title="Default action banner"
+	cta={<Button variant="cta">A CTA</Button>}
+>
+	This is some content with <a href="#">a link</a>
+</ActionBanner>
+
+
+<CH.Code>
+```js React
+<ActionBanner
+	title="Default action banner"
+	cta={<Button variant="cta">A CTA</Button>}
+>
+	This is some content with <a href="#">a link</a>
+</ActionBanner>
+```
+```html HTML
+<section class="action-banner">
+	<div class="action-banner__container">
+		<div class="action-banner__inner">
+			<div class="action-banner__text">
+				<h2 class="action-banner__title">Default action banner</h2>
+				<div class="action-banner__intro">
+					<p>This is some content with <a href="#">a link</a></p>
+				</div>
+			</div>
+			<div class="action-banner__actions">
+				<button type="button" class="btn btn--cta">A CTA</button>
+			</div>
+		</div>
+	</div>
+</section>
+```
+</CH.Code>
+</Example>
+
+The default variant is strong and grabs users' attention. Use sparingly for important calls of action on a page that need extra context. Can be used with an inverse button - .btn.btn--inverse or with a call to action button - .btn.btn--cta for extra impact.
+
+### Subtle action banner
+
+<Example>
+<h4>Example: subtle action banner</h4>
+<ActionBanner
+	variant="subtle"
+	title="Subtle action banner"
+	cta={<Button>A button</Button>}
+>
+	This is <a href="#">some content with a link</a>
+</ActionBanner>
+
+
+<CH.Code>
+```js React
+<ActionBanner
+	variant="subtle"
+	title="Subtle action banner"
+	cta={<Button>A button</Button>}
+>
+	This is <a href="#">some content with a link</a>
+</ActionBanner>
+```
+```html HTML
+<section class="action-banner action-banner--subtle">
+	<div class="action-banner__container">
+		<div class="action-banner__inner">
+			<div class="action-banner__text">
+				<h2 class="action-banner__title">Subtle action banner</h2>
+				<div class="action-banner__intro">
+					<p>This is <a href="#">some content with a link</a></p>
+				</div>
+			</div>
+			<div class="action-banner__actions">
+				<button type="button" class="btn">A button</button>
+			</div>
+		</div>
+	</div>
+</section>
+```
+</CH.Code>
+</Example>
+
+Use the subtle variant when you need a call to action with context, but don't want to distract users. For example giving feedback on a page. Use with a primary .btn.btn--primaryor secondary - .btn.btn--secondary button.
+
+## Accessibility
+
+Component meets WCAG AA guidelines for accessibility on:
+
+- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 1.4.3).
+- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
+- Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+
+## Research/evidence
+
+No research done on the component at this time
+
+## Help improve this page
+
+To help make sure that this page is useful, relevant and up to date, you can:
+
+- Share your research or feedback on GitHub
+- Propose a change
+
+## Need help
+
+If you've got a question about the NICE Design System, contact the team. (Link TBC)
+
+export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;

@@ -1,0 +1,24 @@
+import { ComponentLayout } from "components/layouts/ComponentLayout";
+import { Block } from "components/Block/Block";
+
+export const meta = {
+	title: "Spacing"
+};
+
+# {meta.title}
+
+Find spacing variables within the [nds-core package](https://github.com/nice-digital/nice-design-system/blob/main/components/nds-core/scss/spacing/).
+
+There are a number of set sizes to be used for margins/padding/borders, listed below:
+
+| Var | Pixels | Rems | Sample code | Width |
+| --- | ------ | ---- | ----------- | ----- |
+| $xx-small | 2px | 0.125rem | `utils.rem(spacing.$xx-small)` | <Block width="xx-small" /> |
+| $x-small | 4px | 0.25rem | `utils.rem(spacing.$x-small)` | <Block width="x-small" /> |
+| $small | 8px | 0.5rem | `utils.rem(spacing.$small)` | <Block width="small" /> |
+| $medium | 16px | 1rem | `utils.rem(spacing.$medium)` | <Block width="medium" /> |
+| $large | 32px | 2rem | `utils.rem(spacing.$large)` | <Block width="large" /> |
+| $x-large | 48px | 3rem | `utils.rem(spacing.$x-large)` | <Block width="x-large" /> |
+| $xx-large | 64px | 4rem | `utils.rem(spacing.$xx-large)` | <Block width="xx-large" /> |
+
+export default ({ children }) => <ComponentLayout meta={meta} type="foundations">{children}</ComponentLayout>;

@@ -1,10 +1,6 @@
 module.exports = {
 	parser: "@typescript-eslint/parser",
-	extends: [
-		"@nice-digital/eslint-config/es6",
-		"plugin:react/recommended",
-		"plugin:prettier/recommended"
-	],
+	extends: ["plugin:react/recommended", "plugin:prettier/recommended"],
 	settings: {
 		react: {
 			version: "detect"
@@ -13,6 +9,9 @@ module.exports = {
 	plugins: ["@typescript-eslint/eslint-plugin"],
 	env: {
 		es6: true
+	},
+	rules: {
+		"react/react-in-jsx-scope": "off"
 	},
 	overrides: [
 		{

@@ -1,0 +1,16 @@
+import { ComponentLayout } from "components/layouts/ComponentLayout";
+import { SimplePagination } from "@nice-digital/nds-simple-pagination";
+
+export const meta = {
+	title: "Simple Pagination",
+	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-simple-pagination",
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-simple-pagination"
+};
+
+# {meta.title}
+
+*** Placeholder component page ***
+
+<SimplePagination totalPages={3} currentPage={1} nextPageLink={{destination: "#next", elementType: "a"}} />
+
+export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;

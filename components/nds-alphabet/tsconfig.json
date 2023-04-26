@@ -1,0 +1,11 @@
+{
+	"extends": "../../tsconfig",
+	"compilerOptions": {
+		"rootDir": "./src",
+		"outDir": "./es",
+		"incremental": true,
+		"composite": true
+	},
+	"include": ["src/**/*"],
+	"exclude": ["src/*.test.tsx"]
+}

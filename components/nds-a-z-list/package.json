@@ -1,13 +1,10 @@
 {
 	"name": "@nice-digital/nds-a-z-list",
-	"version": "3.0.3",
+	"version": "4.0.2",
 	"description": "A to Z list component for the NICE Design System",
-	"main": "lib/AZList.js",
-	"module": "es/AZList.js",
+	"main": "es/AZList.js",
 	"style": "scss/a-z-list.js",
-	"types": "nds-a-z-list.d.ts",
 	"files": [
-		"lib",
 		"es",
 		"scss",
 		"*.d.ts"
@@ -34,8 +31,15 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"dependencies": {
-		"@nice-digital/nds-core": "^3.0.3",
-		"prop-types": "^15.8.1"
+		"@nice-digital/nds-core": "^4.0.2"
 	},
-	"gitHead": "8a7d7925546f9ab473cf88904d938f018ec0fd1f"
+	"devDependencies": {
+		"@testing-library/jest-dom": "^5.16.5",
+		"@testing-library/react": "^13.4.0",
+		"@testing-library/user-event": "^14.4.3",
+		"@types/jest": "^29.2.2",
+		"@types/node": "^18.11.9",
+		"typescript": "^4.8.4"
+	},
+	"gitHead": "e75957040c9acfbd7eeb164cad724e3b48760679"
 }

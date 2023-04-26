@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StackedNav should match snapshot with supplied nested links 1`] = `
+<div>
+  <nav
+    class="stacked-nav"
+    data-component="stacked-nav"
+  >
+    <h1
+      class="stacked-nav__root stacked-nav__root--no-link"
+    >
+      Stacked Nav Heading
+    </h1>
+    <ul
+      class="stacked-nav__list"
+    >
+      <li
+        class="stacked-nav__list-item"
+        label="Form Group"
+      >
+        <a
+          aria-current="true"
+          href="#"
+        >
+          <span
+            class="stacked-nav__content-wrapper"
+          >
+            Form Group
+          </span>
+        </a>
+        <ul
+          class="stacked-nav__nested"
+        >
+          <li
+            class="stacked-nav__list-item"
+          >
+            <a
+              aria-current="false"
+            >
+              <span
+                class="stacked-nav__content-wrapper"
+              >
+                Nested nav one
+              </span>
+            </a>
+          </li>
+          <li
+            class="stacked-nav__list-item"
+          >
+            <a
+              aria-current="false"
+            >
+              <span
+                class="stacked-nav__content-wrapper"
+              >
+                Nested nav two
+              </span>
+            </a>
+          </li>
+          <li
+            class="stacked-nav__list-item"
+          >
+            <a
+              aria-current="false"
+            >
+              <span
+                class="stacked-nav__content-wrapper"
+              >
+                Nested nav three
+              </span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
+
+exports[`StackedNav should match snapshot with supplied props 1`] = `
+<div>
+  <nav
+    class="stacked-nav"
+    data-component="stacked-nav"
+  >
+    <h1
+      class="stacked-nav__root stacked-nav__root--no-link"
+    >
+      Stacked Nav Heading
+    </h1>
+    <ul
+      class="stacked-nav__list"
+    >
+      <li
+        class="stacked-nav__list-item"
+        label="Form Group"
+      >
+        <a
+          aria-current="true"
+          href="#"
+        >
+          <span
+            class="stacked-nav__content-wrapper"
+          >
+            Form Group
+          </span>
+        </a>
+      </li>
+      <li
+        class="stacked-nav__list-item"
+        label="Page Header"
+      >
+        <a
+          aria-current="false"
+          href="#"
+        >
+          <span
+            class="stacked-nav__content-wrapper"
+          >
+            Page Header
+            <span
+              class="stacked-nav__hint"
+            >
+              This is a piece of hint text
+            </span>
+          </span>
+        </a>
+      </li>
+      <li
+        class="stacked-nav__list-item"
+        label="Link Three"
+      >
+        <a
+          aria-current="false"
+          href="#"
+        >
+          <span
+            class="stacked-nav__content-wrapper"
+          >
+            Link Three
+          </span>
+        </a>
+      </li>
+      <li
+        class="stacked-nav__list-item"
+        label="Link Four"
+      >
+        <a
+          aria-current="false"
+          href="#"
+        >
+          <span
+            class="stacked-nav__content-wrapper"
+          >
+            Link Four
+          </span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;

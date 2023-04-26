@@ -1,0 +1,151 @@
+import { ComponentLayout } from "components/layouts/ComponentLayout";
+import { Example } from "components/examples/Example";
+
+export const meta = {
+	title: "Typography"
+};
+
+# {meta.title}
+
+Within NDS Core's SCSS folder, typography settings and functions can be found in:
+- [settings/_settings-typography.scss](https://github.com/nice-digital/nice-design-system/blob/main/components/nds-core/scss/settings/_settings-typography.scss)
+- [typography/_typography-headings.scss](https://github.com/nice-digital/nice-design-system/blob/main/components/nds-core/scss/typography/_typography-headings.scss)
+- [typography/_typography-helpers.scss](https://github.com/nice-digital/nice-design-system/blob/main/components/nds-core/scss/typography/_typography-helpers.scss)
+- [typography/_typography-links.scss](https://github.com/nice-digital/nice-design-system/blob/main/components/nds-core/scss/typography/_typography-links.scss)
+
+## Headings
+
+### Heading 1 (2.75rem)
+
+<Example>
+	<h1>Heading 1</h1>
+</Example>
+
+#### Usage:
+
+- Use an `h1` element, or
+- Apply a class of `h1`, or
+- Use the `nds-h1` SASS mixin
+
+### Heading 2 (2.25rem)
+
+<Example>
+	<h2>Heading 2</h2>
+</Example>
+
+#### Usage:
+
+- Use an `h2` element, or
+- Apply a class of `h2`, or
+- Use the `nds-h2` SASS mixin
+
+### Heading 3 (1.75rem)
+
+<Example>
+	<h3>Heading 3</h3>
+</Example>
+
+#### Usage:
+
+- Use an `h3` element, or
+- Apply a class of `h3`, or
+- Use the `nds-h3` SASS mixin
+
+### Heading 4 (1.25rem)
+
+<Example>
+	<h4>Heading 4</h4>
+</Example>
+
+#### Usage:
+
+- Use an `h4` element, or
+- Apply a class of `h4`, or
+- Use the `nds-h4` SASS mixin
+
+### Heading 5 (1.125rem)
+
+<Example>
+	<h5>Heading 5</h5>
+</Example>
+
+#### Usage:
+
+- Use an `h5` element, or
+- Apply a class of `h5`, or
+- Use the `nds-h5` SASS mixin
+
+### Heading 6 (1rem)
+
+<Example>
+	<h6>Heading 6</h6>
+</Example>
+
+#### Usage:
+
+- Use an `h6` element, or
+- Apply a class of `h6`, or
+- Use the `nds-h6` SASS mixin
+
+## Paragraphs
+
+### Standard paragraphs
+
+<Example>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum nibh pellentesque, blandit nunc vitae, semper ipsum.</p>
+	<p>In libero nisi, laoreet vel lacinia vel, malesuada id eros. Pellentesque tempor interdum tortor non malesuada. Curabitur nec consequat ex, rhoncus dictum sapien. In varius nisl metus. Curabitur sollicitudin venenatis elit, a feugiat nulla. Vivamus luctus in dui ut maximus. Morbi quis nisl est. Ut a ex lectus. Etiam interdum malesuada felis, vitae malesuada felis sagittis a.</p>
+</Example>
+
+##### Usage:
+
+- Use a `p` element, or
+- Apply a class of `p`, or
+- Use the `nds-p` SASS mixin
+
+### Lead paragraphs
+
+<Example>
+	<p className="lead">In libero nisi, laoreet vel lacinia vel, malesuada id eros. Pellentesque tempor interdum tortor non malesuada. Curabitur nec consequat ex, rhoncus dictum sapien. In varius nisl metus. Curabitur sollicitudin venenatis elit, a feugiat nulla. Vivamus luctus in dui ut maximus. Morbi quis nisl est. Ut a ex lectus. Etiam interdum malesuada felis, vitae malesuada felis sagittis a.</p>
+</Example>
+
+##### Usage:
+
+- Apply a class of `lead` to a `p` element, or
+- Use the `nds-lead` SASS mixin
+
+## Small text
+
+<Example>
+	<small>In libero nisi, laoreet vel lacinia vel, malesuada id eros. Pellentesque tempor interdum tortor non malesuada. Curabitur nec consequat ex, rhoncus dictum sapien. In varius nisl metus. Curabitur sollicitudin venenatis elit, a feugiat nulla. Vivamus luctus in dui ut maximus. Morbi quis nisl est. Ut a ex lectus. Etiam interdum malesuada felis, vitae malesuada felis sagittis a.</small>
+</Example>
+
+##### Usage:
+
+- Use a `small` element, or
+- Apply a class of `small`
+
+## Links
+
+### Default link style
+
+<Example>
+	<p><a href="https://www.nice.org.uk">Here is a link to NICE!</a></p>
+</Example>
+
+### Inverse link style
+
+##### Usage:
+
+- Default style for all links (i.e. `a` elements)
+- use the `nds-link-default` mixin
+
+<Example>
+	<p style={{background: "#333", padding: "10px"}}><a className="link--inverse" href="https://www.nice.org.uk">Here is an inverted link to NICE!</a></p>
+</Example>
+
+##### Usage:
+
+- use the `link--inverse` class
+- use the `typography.link-inverse` mixin
+
+export default ({ children }) => <ComponentLayout meta={meta} type="foundations">{children}</ComponentLayout>;

@@ -1,0 +1,22 @@
+import { ComponentLayout } from "components/layouts/ComponentLayout";
+import { Alphabet, Letter } from "@nice-digital/nds-alphabet";
+
+export const meta = {
+	title: "Alphabet",
+	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-alphabet",
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-alphabet"
+};
+
+# {meta.title}
+
+*** Placeholder component page ***
+
+<Alphabet>
+	{["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"].map(letter => (
+		<Letter key={letter} to={`#${letter}`} label={`Letter ${letter}`}>
+			{letter.toUpperCase()}
+		</Letter>
+	))}
+</Alphabet>
+
+export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;
