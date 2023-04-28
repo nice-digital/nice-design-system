@@ -1,5 +1,6 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
 import { Example } from "components/examples/Example";
+import { DefaultBanner } from "components/examples/ActionBanner";
 import { ActionBanner } from "@nice-digital/nds-action-banner";
 import { Button } from "@nice-digital/nds-button";
 
@@ -7,19 +8,9 @@ export const meta = {
 	title: "Action Banner",
 	description: "A banner for highlighting, and giving context to, a call-to-action.",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-action-banner",
-	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-action-banner"
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-action-banner",
+	component: DefaultBanner
 };
-
-<Example>
-<h2>Example: action banner</h2>
-<ActionBanner
-	title="Sign up for NICE News"
-	cta={<Button variant="cta">Sign up</Button>}
->
-	Our monthly newsletter, keeping you up to date with{" "}
-	<a href="#">important developments at NICE</a>
-</ActionBanner>
-</Example>
 
 ## When to use
 

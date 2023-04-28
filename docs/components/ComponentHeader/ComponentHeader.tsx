@@ -1,11 +1,14 @@
 import { type PageMeta } from "types/PageMeta";
+import { Example } from "components/examples/Example";
+
 import styles from "./ComponentHeader.module.scss";
 
 export const ComponentHeader = ({
 	title,
 	description,
 	npmUrl,
-	gitHubUrl
+	gitHubUrl,
+	component: Component
 }: PageMeta) => {
 	const shouldShowExternalLinks = gitHubUrl || npmUrl;
 
@@ -26,6 +29,11 @@ export const ComponentHeader = ({
 						</li>
 					)}
 				</ul>
+			)}
+			{Component && (
+				<Example>
+					<Component />
+				</Example>
 			)}
 		</header>
 	);
