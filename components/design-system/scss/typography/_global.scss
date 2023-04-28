@@ -13,6 +13,11 @@ html {
   font-size: utils.rem(typography.$root-font-size-min);
   line-height: typography.$base-line-height;
 
+  --sans-font-family: Inter, Roboto, 'Segoe UI', 'Helvetica Neue', Helvetica,
+    Arial, sans-serif;
+  --serif-font-family: Lora, Georgia, Times, serif;
+  --mono-font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;
+
   // See https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
   *,
   *:before,

@@ -18,18 +18,6 @@ $base-line-height: 1.6;
 /// @since 3.0.0
 $link-hover-text-decoration-thickness: 0.1rem;
 
-/// Sans-serif font stack
-/// @since 2.0.0
-$font-family-sans: 'Inter, Roboto, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif';
-
-/// Serif font stack
-/// @since 2.0.0
-$font-family-serif: 'Lora, Georgia, Times, serif';
-
-/// Mono font stack
-/// @since 0.2.0
-$font-family-mono: 'Monaco, Menlo, Consolas, "Courier New", monospace';
-
 /// The font families in use across NICE.
 /// @prop {Font stack} sans [Inter, Helvetica Neue, Helvetica, Arial, sans-serif] The sans-serif font stack
 /// @prop {Font stack} serif [Lora, Georgia, Times, serif] The serif font stack
@@ -37,9 +25,9 @@ $font-family-mono: 'Monaco, Menlo, Consolas, "Courier New", monospace';
 /// @see font-family
 /// @since 0.2.0
 $font-families: (
-  sans: $font-family-sans,
-  serif: $font-family-serif,
-  mono: $font-family-mono
+  sans: var(--sans-font-family),
+  serif: var(--serif-font-family),
+  mono: var(--mono-font-family)
 );
 
 /// The modular scale ratio to use for typography
