@@ -9,6 +9,7 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/PageHeader.js",
+	"types": "es/PageHeader.d.ts",
 	"style": "scss/page-header.scss",
 	"directories": {
 		"lib": "es",

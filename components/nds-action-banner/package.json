@@ -9,6 +9,7 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/ActionBanner.js",
+	"types": "es/ActionBanner.d.ts",
 	"style": "scss/action-banner.scss",
 	"directories": {
 		"lib": "es"

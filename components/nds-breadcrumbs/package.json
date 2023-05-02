@@ -9,6 +9,7 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/Breadcrumbs.js",
+	"types": "es/Breadcrumbs.d.ts",
 	"style": "scss/breadcrumbs.scss",
 	"directories": {
 		"lib": "es"

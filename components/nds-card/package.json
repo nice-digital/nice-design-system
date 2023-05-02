@@ -6,6 +6,7 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/Card.js",
+	"types": "es/Card.d.ts",
 	"style": "scss/card.scss",
 	"directories": {
 		"lib": "es"

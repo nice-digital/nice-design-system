@@ -9,6 +9,7 @@
 	"homepage": "https://github.com/nice-digital/nice-design-system#readme",
 	"license": "MIT",
 	"main": "es/SimplePagination.js",
+	"types": "es/SimplePagination.d.ts",
 	"style": "scss/simple-pagination.scss",
 	"directories": {
 		"lib": "es"

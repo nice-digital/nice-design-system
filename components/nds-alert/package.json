@@ -9,6 +9,7 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/Alert.js",
+	"types": "es/Alert.d.ts",
 	"style": "scss/alert.scss",
 	"directories": {
 		"test": "__tests__"

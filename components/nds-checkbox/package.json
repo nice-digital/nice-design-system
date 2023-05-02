@@ -6,6 +6,7 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/Checkbox.js",
+	"types": "es/Checkbox.d.ts",
 	"style": "scss/checkbox.scss",
 	"directories": {
 		"lib": "es"

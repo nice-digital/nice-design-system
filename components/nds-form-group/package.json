@@ -6,6 +6,7 @@
 	"homepage": "https://github.com/nice-digital/nice-design-system#readme",
 	"license": "MIT",
 	"main": "es/FormGroup.js",
+	"types": "es/FormGroup.d.ts",
 	"scss": "scss/form-group.scss",
 	"directories": {
 		"lib": "es"

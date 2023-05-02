@@ -6,6 +6,7 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/Button.js",
+	"types": "es/Button.d.ts",
 	"style": "scss/button.scss",
 	"files": [
 		"es",

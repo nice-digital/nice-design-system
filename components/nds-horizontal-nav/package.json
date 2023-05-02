@@ -9,6 +9,7 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/HorizontalNav.js",
+	"types": "es/HorizontalNav.d.ts",
 	"style": "scss/horizontal-nav.scss",
 	"directories": {
 		"lib": "es",

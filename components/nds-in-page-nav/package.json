@@ -6,6 +6,7 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/InPageNav.js",
+	"types": "es/InPageNav.d.ts",
 	"style": "scss/in-page-nav.scss",
 	"directories": {
 		"lib": "es"

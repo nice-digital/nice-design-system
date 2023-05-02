@@ -3,6 +3,7 @@
 	"version": "4.0.3",
 	"description": "Column List component for the NICE Design System",
 	"main": "es/ColumnList.js",
+	"types": "es/ColumnList.d.ts",
 	"style": "scss/column-list.js",
 	"files": [
 		"es",

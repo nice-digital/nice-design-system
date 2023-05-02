@@ -9,6 +9,7 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/Panel.js",
+	"types": "es/Panel.d.ts",
 	"style": "scss/panel.scss",
 	"directories": {
 		"lib": "es"

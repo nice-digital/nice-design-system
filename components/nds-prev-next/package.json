@@ -10,6 +10,7 @@
 	"homepage": "https://github.com/nice-digital/nice-design-system#readme",
 	"license": "MIT",
 	"main": "es/PrevNext.js",
+	"types": "es/PrevNext.d.ts",
 	"style": "scss/prev-next.scss",
 	"directories": {
 		"lib": "es"

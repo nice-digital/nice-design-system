@@ -9,6 +9,7 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/Grid.js",
+	"types": "es/Grid.d.ts",
 	"style": "scss/grid.scss",
 	"directories": {
 		"lib": "es"

@@ -6,6 +6,7 @@
 	"homepage": "https://nice-digital.github.io/nice-design-system/",
 	"license": "MIT",
 	"main": "es/Input.js",
+	"types": "es/Input.d.ts",
 	"style": "scss/input.scss",
 	"directories": {
 		"lib": "es"

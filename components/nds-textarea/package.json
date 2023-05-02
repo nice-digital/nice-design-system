@@ -6,6 +6,7 @@
 	"homepage": "https://nice-digital.github.io/nice-design-system/",
 	"license": "MIT",
 	"main": "es/Textarea.js",
+	"types": "es/Textarea.d.ts",
 	"style": "scss/textarea.scss",
 	"directories": {
 		"lib": "es"

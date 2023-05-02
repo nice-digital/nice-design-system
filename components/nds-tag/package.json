@@ -9,6 +9,7 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/Tag.js",
+	"types": "es/Tag.d.ts",
 	"style": "scss/tag.scss",
 	"directories": {
 		"lib": "es",

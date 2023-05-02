@@ -9,6 +9,7 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/Hero.js",
+	"types": "es/Hero.d.ts",
 	"style": "scss/hero.scss",
 	"directories": {
 		"test": "__tests__"

@@ -6,6 +6,7 @@
 	"homepage": "https://github.com/nice-digital/nice-design-system#readme",
 	"license": "MIT",
 	"main": "es/Radio.js",
+	"types": "es/Radio.d.ts",
 	"scss": "scss/radio.scss",
 	"directories": {
 		"lib": "es"

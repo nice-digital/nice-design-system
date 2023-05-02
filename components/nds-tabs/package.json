@@ -6,6 +6,7 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/Tabs.js",
+	"types": "es/Tabs.d.ts",
 	"style": "scss/tabs.scss",
 	"directories": {
 		"lib": "es"

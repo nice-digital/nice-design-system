@@ -10,6 +10,7 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/PhaseBanner.js",
+	"types": "es/PhaseBanner.d.ts",
 	"style": "scss/phase-banner.scss",
 	"directories": {
 		"lib": "es"

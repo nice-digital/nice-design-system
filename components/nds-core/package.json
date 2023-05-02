@@ -10,6 +10,7 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/core.js",
+	"types": "es/core.d.ts",
 	"style": "scss/core.scss",
 	"directories": {
 		"lib": "es"

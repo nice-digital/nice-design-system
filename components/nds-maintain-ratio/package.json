@@ -6,6 +6,7 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/MaintainRatio.js",
+	"types": "es/MaintainRatio.d.ts",
 	"style": "scss/maintain-ratio.scss",
 	"directories": {
 		"lib": "es",

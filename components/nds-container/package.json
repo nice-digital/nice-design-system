@@ -9,6 +9,7 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/Container.js",
+	"types": "es/Container.d.ts",
 	"style": "scss/container.scss",
 	"directories": {
 		"test": "__tests__"

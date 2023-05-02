@@ -3,6 +3,7 @@
 	"version": "3.0.3",
 	"description": "Alphabet component for the NICE Design System",
 	"main": "es/Alphabet.js",
+	"types": "es/Alphabet.d.ts",
 	"style": "scss/alphabet.js",
 	"files": [
 		"es",

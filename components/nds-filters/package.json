@@ -6,6 +6,7 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/Filters.js",
+	"types": "es/Filters.d.ts",
 	"style": "scss/filters.scss",
 	"directories": {
 		"lib": "es"
