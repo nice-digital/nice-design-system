@@ -179,6 +179,7 @@ function ResultsSorting({ sorting, selectName = "s" }: ResultsSortingProps) {
 					);
 				})}
 			</select>
+
 			{showButton && <button type="submit">Apply sorting</button>}
 		</div>
 	);
