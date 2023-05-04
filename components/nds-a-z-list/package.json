@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-a-z-list",
-	"version": "4.0.4",
+	"version": "4.0.5",
 	"description": "A to Z list component for the NICE Design System",
 	"main": "es/AZList.js",
 	"types": "es/AZList.d.ts",
