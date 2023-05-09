@@ -1,0 +1,522 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@nice-digital/nds-filters Crash test should match snapshot 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="filter-summary"
+        data-component="filter-summary"
+      >
+        <div
+          class="filter-summary__count"
+        >
+          <h2
+            class="h5 mv--0"
+          >
+            Showing results 1 to 10 of 1209
+          </h2>
+        </div>
+        <div
+          class="filter-summary__sorting"
+        >
+          <label
+            class="filter-summary__sort-label"
+            for="sorting-options"
+          >
+            Sort by
+          </label>
+          <select
+            class="filter-summary__select"
+            id="sorting-options"
+            name="s"
+          >
+            <option>
+              Active
+            </option>
+            <option>
+              Button
+            </option>
+          </select>
+        </div>
+        <ul
+          aria-label="Active filters"
+          class="filter-summary__filters hide-print"
+        >
+          <li
+            class="filter-summary__filter"
+          >
+            <span
+              class="tag tag--outline"
+              data-component="tag"
+            >
+              Another filter
+              <button
+                class="tag__remove"
+              >
+                <span
+                  class="visually-hidden"
+                >
+                  Remove 
+                  Another filter
+                   filter
+                </span>
+              </button>
+            </span>
+          </li>
+        </ul>
+      </div>
+      <form
+        action="/submit"
+        method="GET"
+      >
+        <div
+          class="filter-panel"
+          data-component="filter-panel"
+        >
+          <h2
+            class="filter-panel__heading"
+          >
+            <button
+              aria-controls="filter-panel-body"
+              aria-expanded="true"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="filter-panel__heading-icon filter-panel__heading-icon--expanded"
+                fill="none"
+                focusable="false"
+                height="1em"
+                viewBox="0 0 512 512"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M478.152 174c0 10.091-3.525 18.661-10.576 25.712l-186 186c-7.243 7.243-15.909 10.864-26 10.864-10.283 0-18.853-3.621-25.712-10.864l-186-186C36.621 192.853 33 184.283 33 174c0-10.091 3.621-18.757 10.864-26L65 126.576C72.424 119.525 81.09 116 91 116c10.091 0 18.661 3.525 25.712 10.576L255.576 265.44 394.44 126.576c7.051-7.051 15.621-10.576 25.712-10.576 9.909 0 18.576 3.525 26 10.576L467.576 148c7.051 7.424 10.576 16.091 10.576 26Z"
+                  fill="currentColor"
+                />
+              </svg>
+              Some filters
+            </button>
+          </h2>
+          <div
+            aria-hidden="false"
+            class="filter-panel__body"
+            id="filter-panel-body"
+          >
+            <div
+              class="filter-group"
+            >
+              <h3
+                class="filter-group__heading"
+              >
+                <button
+                  aria-controls="group-some-filters"
+                  aria-expanded="true"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="filter-group__heading-icon filter-group__heading-icon--expanded"
+                    fill="none"
+                    focusable="false"
+                    height="1em"
+                    viewBox="0 0 512 512"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M478.152 174c0 10.091-3.525 18.661-10.576 25.712l-186 186c-7.243 7.243-15.909 10.864-26 10.864-10.283 0-18.853-3.621-25.712-10.864l-186-186C36.621 192.853 33 184.283 33 174c0-10.091 3.621-18.757 10.864-26L65 126.576C72.424 119.525 81.09 116 91 116c10.091 0 18.661 3.525 25.712 10.576L255.576 265.44 394.44 126.576c7.051-7.051 15.621-10.576 25.712-10.576 9.909 0 18.576 3.525 26 10.576L467.576 148c7.051 7.424 10.576 16.091 10.576 26Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <span
+                    id="group-heading-some-filters"
+                  >
+                    Some filters
+                     
+                  </span>
+                </button>
+              </h3>
+              <fieldset
+                aria-hidden="false"
+                class="filter-group__options"
+                id="group-some-filters"
+              >
+                <legend>
+                  Some filters
+                </legend>
+                <label
+                  class="filter-option"
+                  data-component="filter-option"
+                  for="filter_some-filters_a-filter"
+                >
+                  <input
+                    checked=""
+                    id="filter_some-filters_a-filter"
+                    name="some-filters"
+                    title="Some filters - A filter"
+                    type="checkbox"
+                    value="A filter"
+                  />
+                  <span
+                    class="filter-option__text"
+                  >
+                    A filter
+                  </span>
+                </label>
+              </fieldset>
+            </div>
+            <div
+              class="inputFilterBox"
+              data-component="input-filter"
+            >
+              <h3
+                class="inputFilterBox__heading"
+              >
+                <button
+                  aria-controls="inputFilter-Filter by name"
+                  aria-expanded="true"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="filter-group__heading-icon filter-group__heading-icon--expanded"
+                    fill="none"
+                    focusable="false"
+                    height="1em"
+                    viewBox="0 0 512 512"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M478.152 174c0 10.091-3.525 18.661-10.576 25.712l-186 186c-7.243 7.243-15.909 10.864-26 10.864-10.283 0-18.853-3.621-25.712-10.864l-186-186C36.621 192.853 33 184.283 33 174c0-10.091 3.621-18.757 10.864-26L65 126.576C72.424 119.525 81.09 116 91 116c10.091 0 18.661 3.525 25.712 10.576L255.576 265.44 394.44 126.576c7.051-7.051 15.621-10.576 25.712-10.576 9.909 0 18.576 3.525 26 10.576L467.576 148c7.051 7.424 10.576 16.091 10.576 26Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  Filter by name
+                </button>
+              </h3>
+              <div
+                aria-hidden="false"
+                class="inputFilterBox__controls"
+                id="inputFilter-Filter by name"
+              >
+                <div
+                  class="input"
+                  data-component="input"
+                >
+                  <label
+                    class="input__label"
+                    for="Filter by name"
+                  >
+                    Filter by name
+                  </label>
+                  <input
+                    class="input__input"
+                    id="Filter by name"
+                    name="Filter by name"
+                    type="text"
+                    value=""
+                  />
+                </div>
+                <button
+                  class="btn ml--0 mb--0"
+                  data-component="button--primary"
+                  type="submit"
+                >
+                  Filter
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="filter-summary"
+      data-component="filter-summary"
+    >
+      <div
+        class="filter-summary__count"
+      >
+        <h2
+          class="h5 mv--0"
+        >
+          Showing results 1 to 10 of 1209
+        </h2>
+      </div>
+      <div
+        class="filter-summary__sorting"
+      >
+        <label
+          class="filter-summary__sort-label"
+          for="sorting-options"
+        >
+          Sort by
+        </label>
+        <select
+          class="filter-summary__select"
+          id="sorting-options"
+          name="s"
+        >
+          <option>
+            Active
+          </option>
+          <option>
+            Button
+          </option>
+        </select>
+      </div>
+      <ul
+        aria-label="Active filters"
+        class="filter-summary__filters hide-print"
+      >
+        <li
+          class="filter-summary__filter"
+        >
+          <span
+            class="tag tag--outline"
+            data-component="tag"
+          >
+            Another filter
+            <button
+              class="tag__remove"
+            >
+              <span
+                class="visually-hidden"
+              >
+                Remove 
+                Another filter
+                 filter
+              </span>
+            </button>
+          </span>
+        </li>
+      </ul>
+    </div>
+    <form
+      action="/submit"
+      method="GET"
+    >
+      <div
+        class="filter-panel"
+        data-component="filter-panel"
+      >
+        <h2
+          class="filter-panel__heading"
+        >
+          <button
+            aria-controls="filter-panel-body"
+            aria-expanded="true"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="filter-panel__heading-icon filter-panel__heading-icon--expanded"
+              fill="none"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 512 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M478.152 174c0 10.091-3.525 18.661-10.576 25.712l-186 186c-7.243 7.243-15.909 10.864-26 10.864-10.283 0-18.853-3.621-25.712-10.864l-186-186C36.621 192.853 33 184.283 33 174c0-10.091 3.621-18.757 10.864-26L65 126.576C72.424 119.525 81.09 116 91 116c10.091 0 18.661 3.525 25.712 10.576L255.576 265.44 394.44 126.576c7.051-7.051 15.621-10.576 25.712-10.576 9.909 0 18.576 3.525 26 10.576L467.576 148c7.051 7.424 10.576 16.091 10.576 26Z"
+                fill="currentColor"
+              />
+            </svg>
+            Some filters
+          </button>
+        </h2>
+        <div
+          aria-hidden="false"
+          class="filter-panel__body"
+          id="filter-panel-body"
+        >
+          <div
+            class="filter-group"
+          >
+            <h3
+              class="filter-group__heading"
+            >
+              <button
+                aria-controls="group-some-filters"
+                aria-expanded="true"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="filter-group__heading-icon filter-group__heading-icon--expanded"
+                  fill="none"
+                  focusable="false"
+                  height="1em"
+                  viewBox="0 0 512 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M478.152 174c0 10.091-3.525 18.661-10.576 25.712l-186 186c-7.243 7.243-15.909 10.864-26 10.864-10.283 0-18.853-3.621-25.712-10.864l-186-186C36.621 192.853 33 184.283 33 174c0-10.091 3.621-18.757 10.864-26L65 126.576C72.424 119.525 81.09 116 91 116c10.091 0 18.661 3.525 25.712 10.576L255.576 265.44 394.44 126.576c7.051-7.051 15.621-10.576 25.712-10.576 9.909 0 18.576 3.525 26 10.576L467.576 148c7.051 7.424 10.576 16.091 10.576 26Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <span
+                  id="group-heading-some-filters"
+                >
+                  Some filters
+                   
+                </span>
+              </button>
+            </h3>
+            <fieldset
+              aria-hidden="false"
+              class="filter-group__options"
+              id="group-some-filters"
+            >
+              <legend>
+                Some filters
+              </legend>
+              <label
+                class="filter-option"
+                data-component="filter-option"
+                for="filter_some-filters_a-filter"
+              >
+                <input
+                  checked=""
+                  id="filter_some-filters_a-filter"
+                  name="some-filters"
+                  title="Some filters - A filter"
+                  type="checkbox"
+                  value="A filter"
+                />
+                <span
+                  class="filter-option__text"
+                >
+                  A filter
+                </span>
+              </label>
+            </fieldset>
+          </div>
+          <div
+            class="inputFilterBox"
+            data-component="input-filter"
+          >
+            <h3
+              class="inputFilterBox__heading"
+            >
+              <button
+                aria-controls="inputFilter-Filter by name"
+                aria-expanded="true"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="filter-group__heading-icon filter-group__heading-icon--expanded"
+                  fill="none"
+                  focusable="false"
+                  height="1em"
+                  viewBox="0 0 512 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M478.152 174c0 10.091-3.525 18.661-10.576 25.712l-186 186c-7.243 7.243-15.909 10.864-26 10.864-10.283 0-18.853-3.621-25.712-10.864l-186-186C36.621 192.853 33 184.283 33 174c0-10.091 3.621-18.757 10.864-26L65 126.576C72.424 119.525 81.09 116 91 116c10.091 0 18.661 3.525 25.712 10.576L255.576 265.44 394.44 126.576c7.051-7.051 15.621-10.576 25.712-10.576 9.909 0 18.576 3.525 26 10.576L467.576 148c7.051 7.424 10.576 16.091 10.576 26Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                Filter by name
+              </button>
+            </h3>
+            <div
+              aria-hidden="false"
+              class="inputFilterBox__controls"
+              id="inputFilter-Filter by name"
+            >
+              <div
+                class="input"
+                data-component="input"
+              >
+                <label
+                  class="input__label"
+                  for="Filter by name"
+                >
+                  Filter by name
+                </label>
+                <input
+                  class="input__input"
+                  id="Filter by name"
+                  name="Filter by name"
+                  type="text"
+                  value=""
+                />
+              </div>
+              <button
+                class="btn ml--0 mb--0"
+                data-component="button--primary"
+                type="submit"
+              >
+                Filter
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

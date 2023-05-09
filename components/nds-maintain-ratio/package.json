@@ -1,11 +1,12 @@
 {
 	"name": "@nice-digital/nds-maintain-ratio",
-	"version": "4.0.3",
+	"version": "4.0.4",
 	"description": "Maintain ratio component for the NICE Design System",
 	"author": "Ian Routledge <ian.routledge@nice.org.uk>",
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/MaintainRatio.js",
+	"types": "es/MaintainRatio.d.ts",
 	"style": "scss/maintain-ratio.scss",
 	"directories": {
 		"lib": "es",
@@ -31,7 +32,7 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
-		"@nice-digital/nds-core": "^4.0.3",
+		"@nice-digital/nds-core": "^4.0.4",
 		"classnames": "^2.3.1"
 	},
 	"peerDependencies": {

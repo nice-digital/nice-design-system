@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-stacked-nav",
-	"version": "4.0.3",
+	"version": "4.0.4",
 	"description": "Stacked navigation component for the NICE Design System",
 	"keywords": [
 		"navigation"
@@ -9,6 +9,7 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/StackedNav.js",
+	"types": "es/StackedNav.d.ts",
 	"style": "scss/stacked-nav.scss",
 	"directories": {
 		"lib": "es"
@@ -30,7 +31,7 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
-		"@nice-digital/nds-core": "^4.0.3",
+		"@nice-digital/nds-core": "^4.0.4",
 		"classnames": "^2.2.6"
 	},
 	"peerDependencies": {

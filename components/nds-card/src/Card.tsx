@@ -46,7 +46,7 @@ export interface CardBodyProps {
 	metadata?: CardMetaDataProps[];
 }
 
-interface CardMetaDataProps {
+export interface CardMetaDataProps {
 	[prop: string]: unknown;
 	label?: string;
 	value: React.ReactNode;

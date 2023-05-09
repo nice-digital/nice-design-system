@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-page-header",
-	"version": "4.0.3",
+	"version": "4.0.4",
 	"description": "Page header component for the NICE Design System",
 	"keywords": [
 		"header"
@@ -9,6 +9,7 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/PageHeader.js",
+	"types": "es/PageHeader.d.ts",
 	"style": "scss/page-header.scss",
 	"directories": {
 		"lib": "es",
@@ -34,7 +35,7 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
-		"@nice-digital/nds-core": "^4.0.3"
+		"@nice-digital/nds-core": "^4.0.4"
 	},
 	"peerDependencies": {
 		"react": "^16 || ^17 || ^18",
