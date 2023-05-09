@@ -137,7 +137,7 @@ function ResultsFilters({ filters }: { filters: FilterType[] }) {
 	);
 }
 
-function ResultsSorting({ sorting, selectName }: ResultsSortingProps) {
+function ResultsSorting({ sorting, selectName = "s" }: ResultsSortingProps) {
 	if (!sorting.length) return null;
 
 	const [showButton, setShowButton] = useState(true);
@@ -179,6 +179,7 @@ function ResultsSorting({ sorting, selectName }: ResultsSortingProps) {
 					);
 				})}
 			</select>
+
 			{showButton && <button type="submit">Apply sorting</button>}
 		</div>
 	);

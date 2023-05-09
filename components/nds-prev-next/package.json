@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-prev-next",
-	"version": "4.0.2",
+	"version": "4.0.4",
 	"description": "Previous and next navigation component for the NICE Design System",
 	"author": "Warren Keith <w@rren.dev>",
 	"keywords": [
@@ -10,6 +10,7 @@
 	"homepage": "https://github.com/nice-digital/nice-design-system#readme",
 	"license": "MIT",
 	"main": "es/PrevNext.js",
+	"types": "es/PrevNext.d.ts",
 	"style": "scss/prev-next.scss",
 	"directories": {
 		"lib": "es"
@@ -34,7 +35,7 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
-		"@nice-digital/nds-core": "^4.0.2",
+		"@nice-digital/nds-core": "^4.0.4",
 		"classnames": "^2.2.6"
 	},
 	"peerDependencies": {

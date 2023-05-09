@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-tag",
-	"version": "4.0.2",
+	"version": "4.0.4",
 	"description": "Tag component for the NICE Design System",
 	"keywords": [
 		"tag"
@@ -9,6 +9,7 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/Tag.js",
+	"types": "es/Tag.d.ts",
 	"style": "scss/tag.scss",
 	"directories": {
 		"lib": "es",
@@ -31,7 +32,7 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
-		"@nice-digital/nds-core": "^4.0.2",
+		"@nice-digital/nds-core": "^4.0.4",
 		"classnames": "^2.2.6"
 	},
 	"peerDependencies": {

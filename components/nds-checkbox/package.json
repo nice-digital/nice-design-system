@@ -1,11 +1,12 @@
 {
 	"name": "@nice-digital/nds-checkbox",
-	"version": "4.0.2",
+	"version": "4.0.4",
 	"description": "Checkbox component for the NICE Design System",
 	"author": "Warren Keith <warren.keith@nice.org.uk>",
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/Checkbox.js",
+	"types": "es/Checkbox.d.ts",
 	"style": "scss/checkbox.scss",
 	"directories": {
 		"lib": "es"
@@ -30,7 +31,7 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
-		"@nice-digital/nds-core": "^4.0.2",
+		"@nice-digital/nds-core": "^4.0.4",
 		"classnames": "^2.2.6"
 	},
 	"peerDependencies": {

@@ -1,11 +1,12 @@
 {
 	"name": "@nice-digital/nds-card",
-	"version": "4.0.2",
+	"version": "4.0.5",
 	"description": "Card component for the NICE Design System",
 	"author": "Ian Routledge <ian.routledge@nice.org.uk>",
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"main": "es/Card.js",
+	"types": "es/Card.d.ts",
 	"style": "scss/card.scss",
 	"directories": {
 		"lib": "es"
@@ -30,7 +31,7 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
-		"@nice-digital/nds-core": "^4.0.2",
+		"@nice-digital/nds-core": "^4.0.4",
 		"classnames": "^2.2.6"
 	},
 	"peerDependencies": {

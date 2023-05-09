@@ -51,176 +51,176 @@ const filterByInputProps: FilterByInputProps = {
 };
 
 describe("@nice-digital/nds-filters", () => {
-	// describe("Crash test", () => {
-	// 	it("should render filter summary without crashing", () => {
-	// 		render(<FilterSummary {...filterSummaryProps} />);
-	// 	});
+	describe("Crash test", () => {
+		it("should render filter summary without crashing", () => {
+			render(<FilterSummary {...filterSummaryProps} />);
+		});
 
-	// 	it("should render filter panel without crashing", () => {
-	// 		render(<FilterPanel {...filterPanelProps} />);
-	// 	});
+		it("should render filter panel without crashing", () => {
+			render(<FilterPanel {...filterPanelProps} />);
+		});
 
-	// 	it("should render filter group without crashing", () => {
-	// 		render(<FilterGroup {...filterGroupProps} />);
-	// 	});
+		it("should render filter group without crashing", () => {
+			render(<FilterGroup {...filterGroupProps} />);
+		});
 
-	// 	it("should render a filter option without crashing", () => {
-	// 		render(<FilterOption {...filterOptionProps} />);
-	// 	});
+		it("should render a filter option without crashing", () => {
+			render(<FilterOption {...filterOptionProps} />);
+		});
 
-	// 	it("should render a filter by input component without crashing", () => {
-	// 		render(<FilterByInput {...filterByInputProps} />);
-	// 	});
+		it("should render a filter by input component without crashing", () => {
+			render(<FilterByInput {...filterByInputProps} />);
+		});
 
-	// 	it("should match snapshot", () => {
-	// 		const wrapper = render(
-	// 			<>
-	// 				<FilterSummary {...filterSummaryProps} />
-	// 				<FilterPanel {...filterPanelProps}>
-	// 					<FilterGroup {...filterGroupProps}>
-	// 						<FilterOption {...filterOptionProps}>A filter</FilterOption>
-	// 					</FilterGroup>
-	// 					<FilterByInput {...filterByInputProps} />
-	// 				</FilterPanel>
-	// 			</>
-	// 		);
-	// 		expect(wrapper).toMatchSnapshot();
-	// 	});
-	// });
+		it("should match snapshot", () => {
+			const wrapper = render(
+				<>
+					<FilterSummary {...filterSummaryProps} />
+					<FilterPanel {...filterPanelProps}>
+						<FilterGroup {...filterGroupProps}>
+							<FilterOption {...filterOptionProps}>A filter</FilterOption>
+						</FilterGroup>
+						<FilterByInput {...filterByInputProps} />
+					</FilterPanel>
+				</>
+			);
+			expect(wrapper).toMatchSnapshot();
+		});
+	});
 
-	// describe("FilterSummary component", () => {
-	// 	it("should preselect whichever sorting option has an active property", () => {
-	// 		const callback = () => {
-	// 			console.log("Callback!");
-	// 		};
+	describe("FilterSummary component", () => {
+		it("should preselect whichever sorting option has an active property", () => {
+			const callback = () => {
+				console.log("Callback!");
+			};
 
-	// 		const sorting = [
-	// 			{ label: "Item 1", value: "item-1", onSelected: callback },
-	// 			{ label: "Item 2", value: "item-2", onSelected: callback },
-	// 			{
-	// 				label: "Item 3 (active)",
-	// 				value: "item-3",
-	// 				onSelected: callback,
-	// 				active: true
-	// 			}
-	// 		];
-	// 		const { container } = render(
-	// 			<FilterSummary
-	// 				sorting={sorting}
-	// 				activeFilters={filterSummaryProps.activeFilters}
-	// 			>
-	// 				Showing results 1 to 10 of 1209
-	// 			</FilterSummary>
-	// 		);
-	// 		const selectedItem = container.querySelector('[value="item-3"]');
-	// 		expect(selectedItem?.hasAttribute("selected")).toBe(true);
-	// 	});
-	// });
+			const sorting = [
+				{ label: "Item 1", value: "item-1", onSelected: callback },
+				{ label: "Item 2", value: "item-2", onSelected: callback },
+				{
+					label: "Item 3 (active)",
+					value: "item-3",
+					onSelected: callback,
+					active: true
+				}
+			];
+			const { container } = render(
+				<FilterSummary
+					sorting={sorting}
+					activeFilters={filterSummaryProps.activeFilters}
+				>
+					Showing results 1 to 10 of 1209
+				</FilterSummary>
+			);
+			const selectedItem = container.querySelector('[value="item-3"]');
+			expect(selectedItem?.hasAttribute("selected")).toBe(true);
+		});
+	});
 
-	// describe("FilterByInput component", () => {
-	// 	it("should pass inputProps down to the input ", () => {
-	// 		const { container } = render(
-	// 			<>
-	// 				<FilterPanel {...filterPanelProps}>
-	// 					<FilterByInput
-	// 						{...filterByInputProps}
-	// 						inputProps={{
-	// 							hint: "enter your search term here"
-	// 						}}
-	// 					/>
-	// 				</FilterPanel>
-	// 			</>
-	// 		);
-	// 		const input = container.querySelector("p");
-	// 		expect(input?.textContent).toBe("enter your search term here");
-	// 	});
-	// });
+	describe("FilterByInput component", () => {
+		it("should pass inputProps down to the input ", () => {
+			const { container } = render(
+				<>
+					<FilterPanel {...filterPanelProps}>
+						<FilterByInput
+							{...filterByInputProps}
+							inputProps={{
+								hint: "enter your search term here"
+							}}
+						/>
+					</FilterPanel>
+				</>
+			);
+			const input = container.querySelector("p");
+			expect(input?.textContent).toBe("enter your search term here");
+		});
+	});
 
-	// describe("FilterGroup component", () => {
-	// 	it("should collapse the filter group when set to collapse by default", () => {
-	// 		const { container } = render(
-	// 			<FilterGroup {...filterGroupProps} collapseByDefault={true}>
-	// 				A filter group
-	// 			</FilterGroup>
-	// 		);
-	// 		const fieldset = container.querySelector("fieldset");
-	// 		expect(fieldset?.getAttribute("aria-hidden")).toBe("true");
-	// 	});
+	describe("FilterGroup component", () => {
+		it("should collapse the filter group when set to collapse by default", () => {
+			const { container } = render(
+				<FilterGroup {...filterGroupProps} collapseByDefault={true}>
+					A filter group
+				</FilterGroup>
+			);
+			const fieldset = container.querySelector("fieldset");
+			expect(fieldset?.getAttribute("aria-hidden")).toBe("true");
+		});
 
-	// 	it("should expand the filter group when filters are selected despite it being set to collapse by default", () => {
-	// 		const { container } = render(
-	// 			<FilterGroup
-	// 				{...filterGroupProps}
-	// 				collapseByDefault={true}
-	// 				selectedCount={1}
-	// 			>
-	// 				A filter group
-	// 			</FilterGroup>
-	// 		);
-	// 		const fieldset = container.querySelector("fieldset");
-	// 		expect(fieldset?.getAttribute("aria-hidden")).toBe("false");
-	// 	});
+		it("should expand the filter group when filters are selected despite it being set to collapse by default", () => {
+			const { container } = render(
+				<FilterGroup
+					{...filterGroupProps}
+					collapseByDefault={true}
+					selectedCount={1}
+				>
+					A filter group
+				</FilterGroup>
+			);
+			const fieldset = container.querySelector("fieldset");
+			expect(fieldset?.getAttribute("aria-hidden")).toBe("false");
+		});
 
-	// 	it("should collapse the expanded filter group when the title is clicked", async () => {
-	// 		const wrapper = render(
-	// 			<FilterGroup {...filterGroupProps}>
-	// 				<span>Filter group</span>
-	// 			</FilterGroup>
-	// 		);
+		it("should collapse the expanded filter group when the title is clicked", async () => {
+			const wrapper = render(
+				<FilterGroup {...filterGroupProps}>
+					<span>Filter group</span>
+				</FilterGroup>
+			);
 
-	// 		const button = wrapper.getByRole("button");
-	// 		userEvent.click(button);
+			const button = wrapper.getByRole("button");
+			userEvent.click(button);
 
-	// 		await waitFor(() => {
-	// 			const fieldset = wrapper.container.querySelector("fieldset");
-	// 			expect(fieldset?.getAttribute("aria-hidden")).toBe("true");
-	// 		});
-	// 	});
-	// });
+			await waitFor(() => {
+				const fieldset = wrapper.container.querySelector("fieldset");
+				expect(fieldset?.getAttribute("aria-hidden")).toBe("true");
+			});
+		});
+	});
 
-	// describe("FilterOptions component", () => {
-	// 	it("should pass the filter group heading down to the filter option and use it plus the child set the input id when no id or value is present", () => {
-	// 		const wrapper = render(
-	// 			<>
-	// 				<FilterPanel {...filterPanelProps}>
-	// 					<FilterGroup {...filterGroupProps}>
-	// 						<FilterOption {...filterOptionProps}>First filter</FilterOption>
-	// 					</FilterGroup>
-	// 				</FilterPanel>
-	// 			</>
-	// 		);
-	// 		const input = wrapper.getByRole("checkbox");
-	// 		expect(input.id).toBe("filter_some-filters_first-filter");
-	// 	});
+	describe("FilterOptions component", () => {
+		it("should pass the filter group heading down to the filter option and use it plus the child set the input id when no id or value is present", () => {
+			const wrapper = render(
+				<>
+					<FilterPanel {...filterPanelProps}>
+						<FilterGroup {...filterGroupProps}>
+							<FilterOption {...filterOptionProps}>First filter</FilterOption>
+						</FilterGroup>
+					</FilterPanel>
+				</>
+			);
+			const input = wrapper.getByRole("checkbox");
+			expect(input.id).toBe("filter_some-filters_first-filter");
+		});
 
-	// 	it("should pass the filter group id down to the filter option and use it plus filter option value to set the input id when present ", () => {
-	// 		const wrapper = render(
-	// 			<>
-	// 				<FilterPanel {...filterPanelProps}>
-	// 					<FilterGroup {...filterGroupProps} id="group-id">
-	// 						<FilterOption {...filterOptionProps} value="override-child">
-	// 							First filter
-	// 						</FilterOption>
-	// 					</FilterGroup>
-	// 				</FilterPanel>
-	// 			</>
-	// 		);
-	// 		const input = wrapper.getByRole("checkbox");
-	// 		expect(input.id).toBe("filter_group-id_override-child");
-	// 	});
+		it("should pass the filter group id down to the filter option and use it plus filter option value to set the input id when present ", () => {
+			const wrapper = render(
+				<>
+					<FilterPanel {...filterPanelProps}>
+						<FilterGroup {...filterGroupProps} id="group-id">
+							<FilterOption {...filterOptionProps} value="override-child">
+								First filter
+							</FilterOption>
+						</FilterGroup>
+					</FilterPanel>
+				</>
+			);
+			const input = wrapper.getByRole("checkbox");
+			expect(input.id).toBe("filter_group-id_override-child");
+		});
 
-	// 	it("should fire an onChange function if one is supplied", async () => {
-	// 		const wrapper = render(
-	// 			<FilterOption {...filterOptionProps}>Second filter</FilterOption>
-	// 		);
-	// 		const checkbox = wrapper.getByRole("checkbox");
-	// 		userEvent.click(checkbox);
+		it("should fire an onChange function if one is supplied", async () => {
+			const wrapper = render(
+				<FilterOption {...filterOptionProps}>Second filter</FilterOption>
+			);
+			const checkbox = wrapper.getByRole("checkbox");
+			userEvent.click(checkbox);
 
-	// 		await waitFor(() => {
-	// 			expect(aFunction).toHaveBeenCalledTimes(1);
-	// 		});
-	// 	});
-	// });
+			await waitFor(() => {
+				expect(aFunction).toHaveBeenCalledTimes(1);
+			});
+		});
+	});
 
 	describe("FilterPanel component", () => {
 		it("should always have fallback properties present", async () => {
