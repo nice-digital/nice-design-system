@@ -32,10 +32,7 @@ export const ComponentLayout: React.FC<ComponentLayoutProps> = ({
 				<Breadcrumb>{meta.title}</Breadcrumb>
 			</Breadcrumbs>
 			<Grid>
-				<GridItem cols={12} md={{ cols: 2 }}>
-					<SidebarMenu type={type}></SidebarMenu>
-				</GridItem>
-				<GridItem cols={12} md={{ cols: 8 }} className="docs-main">
+				<GridItem cols={12} md={{ cols: 8, push: 2 }} className="docs-main">
 					<ComponentHeader {...meta} />
 					{children}
 					<h2>Help improve this page</h2>
@@ -75,12 +72,15 @@ export const ComponentLayout: React.FC<ComponentLayoutProps> = ({
 						</li>
 					</ul>
 				</GridItem>
-				<GridItem cols={12} md={{ cols: 2 }}>
+				<GridItem cols={12} md={{ cols: 2, push: 2 }}>
 					<InPageNav
 						headingsContainerSelector=".docs-main"
 						headingsExcludeSelector=".exclude-in-page-nav"
 						headingsExcludeContainer=".exclude-container"
 					/>
+				</GridItem>
+				<GridItem cols={12} md={{ cols: 2, pull: 10 }}>
+					<SidebarMenu type={type}></SidebarMenu>
 				</GridItem>
 			</Grid>
 		</>
