@@ -11,9 +11,12 @@ export const ComponentHeader = ({
 	component: Component
 }: PageMeta) => {
 	const shouldShowExternalLinks = gitHubUrl || npmUrl;
+	const headerClass = Component
+		? styles.header
+		: `${styles.header} ${styles.headerNoComponent}`;
 
 	return (
-		<header className={styles.header}>
+		<header className={headerClass}>
 			<h1>{title}</h1>
 			{description && <p className="lead">{description}</p>}
 			{shouldShowExternalLinks && (

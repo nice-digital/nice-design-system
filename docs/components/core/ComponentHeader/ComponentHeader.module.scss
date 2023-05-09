@@ -3,9 +3,12 @@
 @use '@nice-digital/nds-core/scss/colours';
 
 .header {
-  border-bottom: 1px solid colours.$border;
   margin-bottom: utils.rem(spacing.$large);
-  padding-bottom: utils.rem(spacing.$large);
+  padding-bottom: utils.rem(spacing.$medium);
+}
+
+.headerNoComponent {
+  border-bottom: 1px solid colours.$border;
 }
 
 .externalLinkList {

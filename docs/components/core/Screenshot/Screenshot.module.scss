@@ -1,0 +1,14 @@
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/utils';
+
+.container {
+  margin: 0 0 utils.rem(spacing.$medium);
+}
+
+.screenshot {
+  max-width: 70%;
+}
+
+.caption {
+  font-style: italic;
+}
