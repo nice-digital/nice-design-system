@@ -6,7 +6,7 @@ import { Grid, GridItem } from "@nice-digital/nds-grid";
 
 import { type PageMeta } from "types/PageMeta";
 import { SidebarMenu } from "components/menus/SidebarMenu";
-import { ComponentHeader } from "components/ComponentHeader/ComponentHeader";
+import { ComponentHeader } from "components/core/ComponentHeader/ComponentHeader";
 import { capitalise } from "utils/utils";
 
 export interface ComponentLayoutProps {

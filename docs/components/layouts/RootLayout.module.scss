@@ -12,15 +12,3 @@
     justify-content: space-between;
   }
 }
-
-.logo {
-  margin-right: utils.rem(spacing.$small);
-  max-width: 25rem;
-}
-
-.designSystemTitle {
-  @include typography.h2;
-  display: block;
-  font-family: typography.get-font-family(sans);
-  margin: 0 0 -#{utils.rem(spacing.$x-small)};
-}
