@@ -6,5 +6,5 @@ interface ExampleProps {
 }
 
 export const Example = ({ children }: ExampleProps) => (
-	<div className={styles.example}>{children}</div>
+	<div className={`${styles.example} exclude-container`}>{children}</div>
 );

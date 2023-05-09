@@ -79,6 +79,7 @@ export const ComponentLayout: React.FC<ComponentLayoutProps> = ({
 					<InPageNav
 						headingsContainerSelector=".docs-main"
 						headingsExcludeSelector=".exclude-in-page-nav"
+						headingsExcludeContainer=".exclude-container"
 					/>
 				</GridItem>
 			</Grid>
