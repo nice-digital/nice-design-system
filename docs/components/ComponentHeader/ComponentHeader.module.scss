@@ -5,13 +5,13 @@
 .header {
   border-bottom: 1px solid colours.$border;
   margin-bottom: utils.rem(spacing.$large);
-  padding-bottom: utils.rem(spacing.$medium);
+  padding-bottom: utils.rem(spacing.$large);
 }
 
 .externalLinkList {
   display: flex;
   list-style: none;
-  margin: 0;
+  margin: 0 0 utils.rem(spacing.$small);
 
   li {
     margin-right: utils.rem(spacing.$large);
