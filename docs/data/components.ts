@@ -33,8 +33,7 @@ export const components: PageData[] = [
 	{
 		title: "Button",
 		slug: "button",
-		description:
-			"Buttons are large clickable elements that make it clear to users what actions can be taken on a page"
+		description: "Use buttons when users need to trigger an action"
 	},
 	{
 		title: "Card",
