@@ -1,13 +1,87 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
+import { Example } from "components/examples/Example";
+import { Screenshot } from "components/core/Screenshot/Screenshot";
 
 export const meta = {
 	title: "Container",
+	description: "Wrap page content inside a container to ensure consistent margin and width settings across screen sizes.",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-container",
 	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-container"
 };
 
-# {meta.title}
+<Screenshot image="container-1.png" alt="Screenshot of the container element" caption="Image showing the margin (in orange) applied to the container element that keeps the content centred on the page." />
 
-*** Placeholder component page ***
+## What is it?
+
+A container is an empty `<div>` component that you fill with content. Containers have pre-set margin and width settings that centre content on the page.
+
+Containers help to make the site work across different devices and screen sizes. They keep content centred on the page across large screen sizes by adding a max-width of 73.125rem.
+
+<Screenshot image="container-2.png" alt="Screenshot of the NICE design system site" caption="The NICE Design System site sits inside a container. Blue shows the container and orange shows the margin applied." />
+
+## When to use
+
+All pages should be inside some sort of container element, however some existing templates and site sections such as the Footer, header and global nav have margin and width settings already built in so the container isn’t needed.
+
+Use if you need to make page content align with the fixed website elements such as the global nav and footer.
+
+You should use a container to wrap content inside the full bleed component [link]. Without a container content won’t align with surrounding content.
+
+### Full bleed without a container
+
+<Screenshot image="container-3.png" alt="Screenshot of the full bleed component without a container" caption="The full bleed component overrides existing margin and width settings." />
+
+### Full bleed with container inside
+
+<Screenshot image="container-4.png" alt="Screenshot of the full bleed component with a container" caption="Adding a container inside wraps the content and makes it align with the rest of the content on the page. The orange colour shows the margin that has been added." />
+
+## When not to use
+
+Don't put a container inside another container.
+
+Some parts of the site, such as the corporate pages of the website, use page templates that have margin and width settings already applied so the container is not needed.
+
+## How to use
+
+### Default container
+
+<Example>
+<CH.Code>
+```js React
+<Container>Content here...</Container>
+```
+```html HTML
+<div class="container">Content here...</div>
+```
+</CH.Code>
+</Example>
+
+### Full width container
+
+<Example>
+<CH.Code>
+```js React
+<Container fullWidth>Full width content here...</Container>
+```
+```html HTML
+<div class="container container--full">Full width content here...</div>
+```
+</CH.Code>
+</Example>
+
+The full width option overrides the default max-width of the container and sets it to 98% of the parent element's width.
+
+## Accessibility
+
+Component meets WCAG AA guidelines for accessibility on:
+
+- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
+- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
+- Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+
+## Research and evidence
+
+No research done on the component at this time.
+
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;
