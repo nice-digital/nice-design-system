@@ -43,14 +43,18 @@ export const InPageNav = ({
 				  )
 				: [];
 
+			// If we've specified a whole container to exclude,
+			// search for any headings within each matched container
 			if (headingsExcludeContainer) {
-				const excludedElement = document.querySelector(
+				const excludedElements = document.querySelectorAll(
 					headingsExcludeContainer
 				);
-				if (excludedElement) {
-					const headingsWithinExcludedContainer =
-						excludedElement.querySelectorAll(headingsSelector);
-					headingstoExclude.push(...headingsWithinExcludedContainer);
+				if (excludedElements.length) {
+					excludedElements.forEach((element) => {
+						const headingsWithinExcludedContainer =
+							element.querySelectorAll(headingsSelector);
+						headingstoExclude.push(...headingsWithinExcludedContainer);
+					});
 				}
 			}
 
