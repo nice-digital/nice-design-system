@@ -59,15 +59,15 @@ export const components: PageData[] = [
 			"Keep content aligned and readable by placing it in a container"
 	},
 	{
+		title: "Filters",
+		slug: "filters",
+		description: "A set of components to use to filter results"
+	},
+	{
 		title: "Form Group",
 		slug: "form-group",
 		description:
 			"Use a form group to show a relationship between multiple form inputs"
-	},
-	{
-		title: "Filters",
-		slug: "filters",
-		description: "A set of components to use to filter results"
 	},
 	{
 		title: "Full Bleed",
