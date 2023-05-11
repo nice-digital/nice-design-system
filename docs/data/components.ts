@@ -59,12 +59,6 @@ export const components: PageData[] = [
 			"Keep content aligned and readable by placing it in a container"
 	},
 	{
-		title: "Enhanced Pagination",
-		slug: "enhanced-pagination",
-		description:
-			"A way for users to navigate to numbered pages in a sequence of content"
-	},
-	{
 		title: "Form Group",
 		slug: "form-group",
 		description:
@@ -122,8 +116,7 @@ export const components: PageData[] = [
 	{
 		title: "Pagination",
 		slug: "pagination",
-		description:
-			"A way for users to navigate to previous or next pages in a sequence of content"
+		description: "Pagination is used for moving between pages of information"
 	},
 	{
 		title: "Panel",
@@ -137,21 +130,10 @@ export const components: PageData[] = [
 			"Alpha and beta beta banners clearly identify non-live services"
 	},
 	{
-		title: "Previous and Next",
-		slug: "prev-next",
-		description:
-			"A way for users to navigate to previous or next pages in a sequence of content"
-	},
-	{
 		title: "Radio",
 		slug: "radio",
 		description:
 			"Use the radio component when users can only select one option from a list"
-	},
-	{
-		title: "Simple Pagination",
-		slug: "simple-pagination",
-		description: "TODO: add description"
 	},
 	{
 		title: "Stacked Nav",

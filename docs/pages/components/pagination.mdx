@@ -1,0 +1,281 @@
+import { ComponentLayout } from "components/layouts/ComponentLayout";
+import { Example } from "components/examples/Example";
+import { DefaultPrevNext, DefaultSimple, DefaultEnhanced } from "components/examples/Pagination";
+import { Screenshot } from "components/core/Screenshot/Screenshot";
+
+export const meta = {
+	title: "Pagination",
+	description: "Pagination is used for moving between pages of information."
+};
+
+## Overview
+
+Pagination allows people to move up and down between pages of information.
+
+Consider using pagination when:
+
+-   Showing all the content on a single page makes the page take too long to load.
+-   Large lists of information need to be broken down into separate pages creating smaller, more manageable chunks of information for users to process.
+
+Pagination is used instead of alternative options that keep information on the same page such as '[infinite scroll](https://uxplanet.org/ux-infinite-scrolling-vs-pagination-1030d29376f1)'.
+
+There are 3 types:
+
+Previous and next links - for sequential content - moving to the next or previous page with named content.
+
+<Example>
+<h3>Example of previous/next links</h3>
+<DefaultPrevNext />
+</Example>
+
+Simple pagination - for numbered lists, results and pages.
+
+<Example>
+<h3>Example of simple pagination</h3>
+<DefaultSimple />
+</Example>
+
+Enhanced pagination - for larger lists of results or content where users need to skip past the next or previous page.
+
+<Example>
+<h3>Example of enhanced pagination</h3>
+<DefaultEnhanced />
+</Example>
+
+## When to use
+
+### Previous and next links
+
+A simple way to move back and forwards through related pages of content. They can be used as well as other navigation (such as the stacked navigation component) to reinforce navigation options and give users a couple of ways to move between pages of content.
+
+The links should only move between pages of content that are sequentially before (Previous link) or after (Next link) the current page.
+
+Typically used to move between named sections or chapters.
+
+<Screenshot image="pagination-1.png" alt="Screenshot of the previous/next links on a NICE guidance page" caption="An example of the previous/next links in use on a NICE guidance page" />
+
+### Simple pagination
+
+Simple pagination adds numbered pages to previous and next links.
+
+It's primarily used for large lists of information that are split into pages and are sorted by relevancy. For example search results.
+
+Information sorted by relevancy means users are unlikely to need to skip more than 1 or 2 pages up in the list. We only need to add simple options for moving up and down between the different pages. We've seen this on the search results pages where data shows users rarely move past the first page.
+
+Using numbered pages to split up large lists of content gives users a reference point to refer back to if needed. For example: users can see that a piece of information is on page 3 of results. This allows users to locate an item/record within a large set of results.
+
+<Screenshot image="pagination-2.png" alt="Screenshot of simple pagination links within CKS" caption="An example of simple pagination in use in CKS search results" />
+
+### Enhanced pagination
+
+Enhanced pagination adds extra options for skipping between pages. Users can skip to the first or last page and can move up and down by 2 pages instead of 1. This allows people to move more quickly through large lists of information that have been split up into multiple pages.
+
+It is most useful for moving through pages of content or lists of information that are:
+
+-   Large - users need options to navigate through a large set of information.
+-   All equally relevant. The item at the end of the list is as relevant as the item at the start of the list. A user is likely to want to skip up through the list or to the end of the list to find information.
+-   Not sequential - the information isn't intended to be read in a sequential manner so users might skip around between pages.
+
+<Screenshot image="pagination-3.png" alt="Screenshot of enhanced pagination links in the NICE guidance list" caption="Enhanced pagination used on the NICE guidance list. The list can contain hundreds of records. Showing these all on one page would make it harder to process and harder to locate and refence items in the list." />
+
+As with simple pagination, using numbered pages to split up large lists of content gives users a reference point to refer back to if needed.
+
+## When not to use
+
+### Previous and next links
+
+Don't use previous and next links on numbered pages of results, lists or data tables. Use complex or simple pagination for this instead. Previous and Next links show the name of the page, if the page is numbered then Previous and Next links likely aren't the right choice.
+
+### Enhanced vs simple pagination
+
+Simple pagination works better for information that is:
+
+-   Sorted by relevance - the information gets less relevant to users as they move through. For example a search results page. In this instance users are unlikely to need to navigate through more than one or 2 pages of information and adding the extra functionality of the enhanced pagination is unnecessary.
+
+## How to use
+
+### Positioning
+
+Pagination links are placed at the bottom of the page content, where users would logically finish reading the content and need to move on to another page. This has the benefit of keeping a navigation option visible when a side menu or primary horizontal menu might be off screen.
+
+### Previous and next links
+
+<Example>
+<h4>Example: previous/next links</h4>
+<DefaultPrevNext />
+
+<CH.Code>
+```js React
+<PrevNext
+	previousPageLink={{ text: "Overview", destination: "#" }}
+	nextPageLink={{
+		text: "The condition, current treatments and procedure",
+		destination: "#"
+	}}
+/>
+```
+```html HTML
+<div class="prev-next" data-component="prev-next">
+  <nav aria-label="Previous and next pages">
+    <a class="prev-next__link" href="#"
+      ><span class="prev-next__link-intro">Next page</span
+      ><span class="prev-next__link-text"
+        >The condition, current treatments and procedure</span
+      ></a
+    ><a class="prev-next__link" href="#"
+      ><span class="prev-next__link-intro">Previous page</span
+      ><span class="prev-next__link-text">Overview</span></a
+    >
+  </nav>
+</div>
+```
+</CH.Code>
+</Example>
+
+-   Links should include the page title underneath the Previous or Next link. This gives context about where the user will navigate to.
+-   All elements are clickable - Previous/Next wording, Page title.
+-   Clicking the Next or Previous link will send users to that page.
+-   Links stack on top of each other - this helps users who are zoomed into the page see both links.
+-   Click target/area spans right across width of content area/container even if links don't span that far. Increases click target size.
+
+### Simple pagination
+
+<Example>
+<h4>Example: simple pagination</h4>
+<DefaultSimple />
+
+<CH.Code>
+```js React
+<SimplePagination
+	totalPages={7}
+	currentPage={2}
+	nextPageLink={{ destination: "#", elementType: "a" }}
+	previousPageLink={{ destination: "#", elementType: "a" }}
+/>
+```
+```html HTML
+<div class="simple-pagination" data-component="simple-pagination">
+  <p>
+    Page <b>2</b> of <b>7</b>
+  </p>
+  <nav aria-label="Pagination">
+    <span class="simple-pagination__link-wrapper"
+      ><a class="simple-pagination__link" href="#">Next page</a> </span
+    ><span class="simple-pagination__link-wrapper"
+      ><a class="simple-pagination__link" href="#">Previous page</a>
+    </span>
+  </nav>
+</div>
+```
+</CH.Code>
+</Example>
+
+-   Large clickable hit areas. Hover and clickable area is larger than the text link to help users click.
+-   Current page is clearly identified and total number of pages for context - Page 1 of 10
+-   Provide 'Previous page' and 'Next page' text links, don't use icons.
+-   The specific number of results and the context should also be shown on the page. This usually appears at the top of the page. For example: 1 - 15 results of 322 for Falls.
+-   Text and links are stacked vertically, aligned to the left hand side of the page. This helps users who are zoomed in to the page to see all the info. The source order also makes sense to screen readers.
+
+### Enhanced pagination
+
+<Example>
+<h4>Example: enhanced pagination</h4>
+<DefaultEnhanced />
+
+<CH.Code>
+```js React
+<EnhancedPagination
+	currentPage={2}
+	mapPageNumberToHref={(pageNumber) => `#${pageNumber}`}
+	totalPages={7}
+/>
+```
+```html HTML
+<nav
+  role="navigation"
+  aria-label="Pagination"
+  class="pagination"
+  data-component="pagination"
+>
+  <ol class="pagination__list">
+    <li class="pagination__item pagination__item--bookend">
+      <a class="pagination__link" href="#">Previous page</a>
+    </li>
+    <li class="pagination__item">
+      <a aria-label="Go to page 1" class="pagination__link" href="#">1</a>
+    </li>
+    <li class="pagination__item pagination__item--current" aria-current="true">
+      <span class="pagination__inactive"
+        ><span class="visually-hidden">Current page </span>2</span
+      >
+    </li>
+    <li class="pagination__item">
+      <a aria-label="Go to page 3" class="pagination__link" href="#">3</a>
+    </li>
+    <li class="pagination__item">
+      <a aria-label="Go to page 4" class="pagination__link" href="#">4</a>
+    </li>
+    <li class="pagination__item">
+      <span class="pagination__inactive">…</span>
+    </li>
+    <li class="pagination__item">
+      <a aria-label="Go to page 7" class="pagination__link" href="#">7</a>
+    </li>
+    <li class="pagination__item pagination__item--count">
+      <span>Page <strong>2</strong> of <strong>7</strong></span>
+    </li>
+    <li class="pagination__item pagination__item--bookend">
+      <a class="pagination__link" href="#">Next page</a>
+    </li>
+  </ol>
+</nav>
+```
+</CH.Code>
+</Example>
+
+All elements are clickable - Previous/Next wording, page numbers.
+
+-   Clicking the Page number, Next or Previous link will send users to that page.
+-   Max of 6 pages. If less than five just show that number.
+-   Don't show 'Previous' link on the first page (not usable)
+-   Don't show 'Next' link on the last page (not useable)
+-   Up to 2 pages immediately above, 2 immediately below the current page.
+-   The first and last page should be visible.
+
+#### Examples
+
+| Scenario | Example screenshot |
+| -- | -- |
+| First page, up to 6 pages | <Screenshot image="pagination-4.png" alt="Screenshot of enhanced pagination showing first page, up to 6 pages" /> |
+| Last page, up to 6 pages | <Screenshot image="pagination-5.png" alt="Screenshot of enhanced pagination showing last page, up to 6 pages" /> |
+| First page, more than 6 pages | <Screenshot image="pagination-6.png" alt="Screenshot of enhanced pagination showing first page, more than 6 pages" /> |
+| Middle page, more than 6 pages | <Screenshot image="pagination-7.png" alt="Screenshot of enhanced pagination showing middle page, more than 6 pages" /> |
+| Last page, more than 6 pages | <Screenshot image="pagination-8.png" alt="Screenshot of enhanced pagination showing last page, more than 6 pages" /> |
+-----------
+
+## Accessibility
+
+Component meets WCAG AA guidelines for accessibility on:
+
+- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
+- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
+- The component uses existing link styles which have been used on the site so we are not expecting any difficulties with the component.
+
+## Research/evidence
+
+We looked at analytics and heatmap data for pagination components on the website.
+
+For pagination on the [Guidance and advice list](https://www.nice.org.uk/guidance/published?ndt=Guidance&ndt=Quality%20standard) and Research recommendations pages we found that:
+
+-   Pagination is well used.
+-   Disabled buttons get clicked (we've changed the design to remove these so users don't try to click them).
+-   Users use a range of page links (move up and down pages)
+-   Both the Previous/Next text buttons and the Previous/Next numbered links get used. We have kept both despite these having duplicate functionality.
+
+For pagination on the search results pages we found that:
+
+-   Users rarely move past the first page of results (91% of search pageviews are on the first page).
+-   98% of page views on search are of the first three pages of results.
+-   97% of clicks on search are in the first 15 results.
+
+export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;
