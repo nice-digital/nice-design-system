@@ -1,16 +1,137 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
-import { PageHeader } from "@nice-digital/nds-page-header";
+import { Example } from "components/examples/Example";
+import { DefaultHeader, PreHeader, LeadHeader, MetadataHeader, CTAHeader } from "components/examples/PageHeader";
 
 export const meta = {
 	title: "Page Header",
+	description: "Give a clear introduction and explain the content of a page.",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-page-header",
-	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-page-header"
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-page-header",
+	component: DefaultHeader
 };
 
-# {meta.title}
+## When to use
 
-*** Placeholder component page ***
+Use the page header component to give a clear introduction to a page and explain the content of a page.
 
+## When not use
+
+Don't use multiple page headers on one page or place a page header at the top of a smaller container like a panel, body copy, or accordion.
+
+## How to use
+
+Use underneath the breadcrumb inside a container and above the main content. Use a clear, short title and a concise intro to the page's contents.
+
+## Page header variants
+
+### Heading
+
+<Example>
+<DefaultHeader />
+
+<CH.Code>
+```js React
 <PageHeader heading="Welcome to the page" />
+```
+```html HTML
+<div class="page-header" data-component="page-header">
+  <h1 class="page-header__heading">Welcome to the page</h1>
+</div>
+```
+</CH.Code>
+</Example>
+
+### Pre-heading
+
+<Example>
+<PreHeader />
+
+<CH.Code>
+```js React
+<PageHeader heading="Welcome to the page" preheading="Here's a pre-heading" />
+```
+```html HTML
+<div class="page-header" data-component="page-header">
+  <h1 class="page-header__heading">Welcome to the page</h1>
+</div>
+```
+</CH.Code>
+</Example>
+
+### Lead
+
+<Example>
+<LeadHeader />
+
+<CH.Code>
+```js React
+<PageHeader heading="Welcome to the page" lead="This is the lead" />
+```
+```html HTML
+<div class="page-header" data-component="page-header">
+  <h1 class="page-header__heading">Welcome to the page</h1>
+  <p class="page-header__lead">This is the lead</p>
+</div>
+```
+</CH.Code>
+</Example>
+
+### Metadata
+
+<Example>
+<MetadataHeader />
+
+<CH.Code>
+```js React
+<PageHeader heading="Welcome to the page" metadata={["Item 1", "Item 2"]} />
+```
+```html HTML
+<div class="page-header" data-component="page-header">
+  <h1 class="page-header__heading">Welcome to the page</h1>
+  <ul class="page-header__metadata">
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ul>
+</div>
+```
+</CH.Code>
+</Example>
+
+### Call-to-action
+
+<Example>
+<CTAHeader />
+
+<CH.Code>
+```js React
+<PageHeader
+	heading="Welcome to the page"
+	cta={<Button>Do something</Button>}
+/>
+```
+```html HTML
+<div class="page-header" data-component="page-header">
+  <h1 class="page-header__heading">Welcome to the page</h1>
+  <p class="page-header__cta">
+    <button type="button" class="btn" data-component="button--primary">
+      Do something
+    </button>
+  </p>
+</div>
+```
+</CH.Code>
+</Example>
+
+## Accessibility
+
+Component meets WCAG AA guidelines for accessibility on:
+
+- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 1.4.3).
+- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
+- Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+
+## Research and evidence
+
+No research done on the component at this time
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;
