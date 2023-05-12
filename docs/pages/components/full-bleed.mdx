@@ -1,13 +1,312 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
+import { Screenshot } from "components/core/Screenshot/Screenshot";
 
 export const meta = {
 	title: "Full Bleed",
+	description: "A component that makes the content within span the full width of the page.",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-full-bleed",
 	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-full-bleed"
 };
 
-# {meta.title}
+## Overview
 
-*** Placeholder component page ***
+This component can be used as a major separator or header to create impact.
+
+It expands out of any container to span the full width of the screen, and is typically used with a background image or colour.
+
+<Screenshot image="full-bleed-1.png" alt="A screenshot of a full bleed component with a background image." caption="A full bleed component with a background image." />
+
+## When to use
+
+Full bleed components draw attention to the elements inside, use them for promotional or marketing style content that require extra interest or visual impact.
+
+Nielsen/Norman talk about the pros and cons of using large background images in their article: Image - [Focused Design: Is Bigger Better?](https://www.nngroup.com/articles/image-focused-design/ "https://www.nngroup.com/articles/image-focused-design/")
+
+> “Compelling images have a unique ability to inspire and engage your audience. In his book, [_Emotional Design_](http://www.nngroup.com/books/emotional-design/ "http://www.nngroup.com/books/emotional-design/"), Don Norman described the powerful, visceral responses people can have to visual appearance. Websites can elicit positive visceral responses from people by displaying aesthetically pleasing images.”
+>
+> But visceral appeal is not the only requirement for a good user experience. Websites also need to deliver content and functionality to users.
+>
+> Deciding which approach is best for your website is a matter of [prioritization](http://www.nngroup.com/articles/responsive-design-intranets/ "http://www.nngroup.com/articles/responsive-design-intranets/"). In most cases a webpage has multiple goals and multiple audiences. Getting people's attention with attractive images certainly has value, but comes at the price of making other elements harder to see and use.”
+
+## When not to use
+
+There's a risk that background images and colours can distract from content placed above it. They shouldn't be used for content that users need to read through in detail or clinically important content such as guidance information.
+
+## How to use
+
+### Default
+
+The basic settings make the Div span the full page width:
+
+<CH.Code>
+```js React
+<FullBleed>
+	<p>Content here</p>
+</FullBleed>
+```
+```html HTML
+<div data-component="full-bleed" class="full-bleed full-bleed--padding-small">
+  <p>Content here</p>
+</div>
+```
+</CH.Code>
+
+### Centre content inside
+
+Use with a container [link to container docs] element to ensure that any content inside the full bleed component aligns with other content on the page.
+
+The container adds side margin that centres the content:
+
+<CH.Code>
+```js React
+<FullBleed>
+	<Container>
+		<p>Content here</p>
+	</Container>
+</FullBleed>
+```
+```html HTML
+<div data-component="full-bleed" class="full-bleed full-bleed--padding-small">
+  <div class="container" data-component="container"><p>Content here</p></div>
+</div>
+```
+</CH.Code>
+
+<Screenshot image="full-bleed-2.png" alt="A screenshot of a full bleed component without a container." caption="Full bleed without a container: the full bleed component overrides existing margin and width settings." />
+<Screenshot image="full-bleed-3.png" alt="A screenshot of a full bleed component with a container." caption="Adding a container inside wraps the content and makes it align with the rest of the content on the page. The orange colour shows the margin that has been added." />
+
+### Other spacing options
+
+If you don't want to use the container for centering the content, you could use spacing classes to manually add padding to a div element.
+
+For example adding `class=”ph--g”` will add 4rems of padding to the side of a `<div>`
+
+```html HTML
+<div data-g="12 md:8" class="ph--g">
+	<h2 style="color: #fff;">What we do</h2>
+	<p class="lead" style="color: #fff;">We offer tailored support to industry during product development.</p>
+	<p style="color: #fff;">Our expertise can help you build the evidence needed to achieve market access. We can advise you about evaluation programmes and facilitate conversations with stakeholders. Our aim is to improve patient access to the best health and care innovations.</p>
+</div>
+```
+<Screenshot image="full-bleed-4.png" alt="A screenshot of a full bleed component containing padded content." caption="Content not in a container - with padding added to the Div element manually via the padding modifier class." />
+
+### Background colour
+
+#### Default
+
+<Screenshot image="full-bleed-5.png" alt="A screenshot of the default full bleed variant" />
+
+By default the component has a teal background (#228096) with white text (#fff).
+
+<CH.Code>
+```js React
+<FullBleed>
+	<p>Content here</p>
+</FullBleed>
+```
+```html HTML
+<div data-component="full-bleed" class="full-bleed full-bleed--padding-small">
+  <p>Content here</p>
+</div>
+```
+</CH.Code>
+
+#### Light
+
+<Screenshot image="full-bleed-6.png" alt="A screenshot of the light full bleed variant" />
+
+The light variant will change the background colour to `#E6E0D7` and text to black (#0e0e0e) if no background image is present:
+
+<CH.Code>
+```js React
+<FullBleed variant={fullBleedVariants.light}>
+	<p>Content here</p>
+</FullBleed>
+```
+```html HTML
+<div data-component="full-bleed--light" class="full-bleed full-bleed--light full-bleed--padding-small">
+  <p>Content here</p>
+</div>
+```
+</CH.Code>
+
+#### Dark
+
+<Screenshot image="full-bleed-7.png" alt="A screenshot of the dark full bleed variant" />
+
+The dark variant will change the background colour to `#00436C` and the text to #fff if no background image is present:
+
+<CH.Code>
+```js React
+<FullBleed variant={fullBleedVariants.dark}>
+	<p>Content here</p>
+</FullBleed>
+```
+```html HTML
+<div data-component="full-bleed--dark" class="full-bleed full-bleed--dark full-bleed--padding-small">
+  <p>Content here</p>
+</div>
+```
+</CH.Code>
+
+#### Transparent
+
+<Screenshot image="full-bleed-8.png" alt="A screenshot of the transparent full bleed variant" />
+
+The transparent variant will remove the background colour and change the text colour to black (#0e0e0e) if no background image is present:
+
+<CH.Code>
+```js React
+<FullBleed variant={fullBleedVariants.transparent}>
+	<p>Content here</p>
+</FullBleed>
+```
+```html HTML
+<div data-component="full-bleed--transparent" class="full-bleed full-bleed--transparent full-bleed--padding-small">
+  <p>Content here</p>
+</div>
+```
+</CH.Code>
+
+### With background image
+
+<Screenshot image="full-bleed-9.png" alt="A screenshot of the full bleed component with a background image" />
+
+#### Dark background image
+
+The dark background image variant will add a dark overlay on the background image and change the text colour to white (#fff):
+
+<CH.Code>
+```js React
+<FullBleed
+	variant={fullBleedVariants.imageDark}
+	backgroundImage="https://picsum.photos/1000/500"
+>
+	<p>Content here</p>
+</FullBleed>
+```
+```html HTML
+<div
+  data-component="full-bleed--imageDark"
+  style="background-image: url('https://picsum.photos/1000/500')"
+  class="full-bleed full-bleed--imageDark full-bleed--padding-small"
+>
+  <p>Content here</p>
+</div>
+```
+</CH.Code>
+
+#### Light background image
+
+The light background image variant will add a light overlay on the background image and change the text colour to black (#0e0e0e):
+
+<CH.Code>
+```js React
+<FullBleed
+	variant={fullBleedVariants.imageLight}
+	backgroundImage="https://picsum.photos/1000/500"
+>
+	<p>Content here</p>
+</FullBleed>
+```
+```html HTML
+<div
+  data-component="full-bleed--imageLight"
+  style="background-image: url('https://picsum.photos/1000/500')"
+  class="full-bleed full-bleed--imageLight full-bleed--padding-small"
+>
+  <p>Content here</p>
+</div>
+```
+</CH.Code>
+
+#### Using background images
+
+Background images should not contain text. Text should be added as HTML inside the full bleed container.
+
+Make sure any text used over the top of the background image can be read: [https://www.nngroup.com/articles/text-over-images/](https://www.nngroup.com/articles/text-over-images/) . This might involve editing the image before adding to the page.
+
+[Check text and image contrast levels](https://www.brandwood.com/a11y/ "https://www.brandwood.com/a11y/")
+
+Background images re-size on different devices and screen sizes - you can't guarantee what parts of the image will be visible at any given time so keep this in mind.
+
+## Optimizing images
+
+It's important to optimise images for the web before they are used.
+
+### Resizing
+
+Resize the image so that it is no bigger than the largest size at which it will be displayed in the browser. This can be found by inspecting the width of the image's container - make the width of the image the same value, while keeping the aspect ratio intact.
+
+### Compression
+
+Images should also be compressed. We need to use formats that have widespread browser support, which means exporting images as JPEGs or PNGs.
+
+PNGs are well suited to small images with very few colours (logos and icons, for example).
+
+JPEGs are better for almost everything else and are the most likely to be used with the full bleed component.
+
+Use a tool such as [Squoosh](https://squoosh.app/ "https://squoosh.app/") to resize images and experiment with different compression settings in order to reduce the file size as much as possible. While compressing a JPEG image in Squoosh, try moving the Quality slider around and observe the results - we're aiming for the lowest possible quality value that still produces an acceptably clear output.
+
+## Padding settings
+
+You can change the amount of padding on the top and bottom of the element using the following options:
+
+### Small (default - padding is 2rem)
+
+<CH.Code>
+```js React
+<FullBleed padding="small">
+	<p>Content here</p>
+</FullBleed>
+```
+```html HTML
+<div data-component="full-bleed" class="full-bleed full-bleed--padding-small">
+  <p>Content here</p>
+</div>
+```
+</CH.Code>
+
+### Medium (padding is 6 rem)
+
+<CH.Code>
+```js React
+<FullBleed padding="medium">
+	<p>Content here</p>
+</FullBleed>
+```
+```html HTML
+<div data-component="full-bleed" class="full-bleed full-bleed--padding-medium">
+  <p>Content here</p>
+</div>
+```
+</CH.Code>
+
+### Large (padding is 12rem)
+
+<CH.Code>
+```js React
+<FullBleed padding="large">
+	<p>Content here</p>
+</FullBleed>
+```
+```html HTML
+<div data-component="full-bleed" class="full-bleed full-bleed--padding-large">
+  <p>Content here</p>
+</div>
+```
+</CH.Code>
+## Accessibility
+
+Images should contain appropriate alt text.
+
+For background images use contrast checkers to ensure that text above images meets WCAG AA guidelines for accessibility on:
+
+- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
+
+## Research and evidence
+
+No research conducted on the component at this time.
+
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;
