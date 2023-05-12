@@ -1,21 +1,84 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
-import { Input } from "@nice-digital/nds-input";
+import { Example } from "components/examples/Example";
+import { DefaultInput, ErrorInput, HintInput } from "components/examples/Input";
 
 export const meta = {
 	title: "Input",
+	description: "The input element is a common form field that allows users to enter information",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-input",
 	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-input"
 };
 
-# {meta.title}
+<Example>
+<h2>Example: standard input</h2>
+<DefaultInput />
 
-*** Placeholder component page ***
+<CH.Code>
+```js React
+<Input label="First name" name="firstname" />
+```
+```html HTML
+<div class="input" data-component="input">
+  <label class="input__label" for="firstname">First name</label
+  ><input
+    name="firstname"
+    class="input__input"
+    id="firstname"
+    type="text"
+    value=""
+  />
+</div>
+```
+</CH.Code>
+</Example>
 
+<Example>
+<h2>Example: input with error</h2>
+<ErrorInput />
+
+<CH.Code>
+```js React
 <Input
-    label="Surname"
-    name="surname"
-    error={true}
-    errorMessage="This field is required"
+	label="Surname"
+	name="surname"
+	error
+	required
+	errorMessage="Please enter your surname"
 />
+```
+```html HTML
+<div class="input input--error" data-component="input">
+  <label class="input__label" for="surname">Surname</label>
+  <p class="input__error">Please enter your surname</p>
+  <input
+    name="surname"
+    class="input__input"
+    id="surname"
+    type="text"
+    required=""
+    value=""
+  />
+</div>
+```
+</CH.Code>
+</Example>
+
+<Example>
+<h2>Example: input with a hint</h2>
+<HintInput />
+
+<CH.Code>
+```js React
+<Input label="Age" name="age" hint="Please enter in years" />
+```
+```html HTML
+<div class="input" data-component="input">
+  <label class="input__label" for="age">Age</label>
+  <p class="input__hint">Please enter in years</p>
+  <input name="age" class="input__input" id="age" type="text" value="" />
+</div>
+```
+</CH.Code>
+</Example>
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;
