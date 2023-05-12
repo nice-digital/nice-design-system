@@ -1,16 +1,182 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
-import { Hero } from "@nice-digital/nds-hero";
+import { Screenshot } from "components/core/Screenshot/Screenshot";
 
 export const meta = {
 	title: "Hero",
+	description: "Hero components introduce a site with impact and give the user a clear indication of where to go next.",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-hero",
 	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-hero"
 };
 
-# {meta.title}
+<Screenshot image="hero-1.jpg" alt="Screenshot of the hero component" />
 
-*** Placeholder component page ***
+## When to use
 
-<Hero title="This is the page title"></Hero>
+Use it as the first thing on a page to introduce a site or section of a site.
+
+## When not to use
+
+Don't use it for landing pages with many navigation routes of equal importance. The role of a hero is to emphasise one or two elements.
+
+## How to use
+
+They are predominantly used for website page banners, separate landing page sections, or temporary promotional content.
+
+The hero component is flexible combining images, colours, text, links and calls to action.
+
+## Hero variants
+
+### Title only
+
+<Screenshot image="hero-1.jpg" alt="Screenshot of the hero component with a title only" />
+
+<CH.Code>
+```js React
+<Hero title="Hello!" />
+```
+```html HTML
+<div class="hero" data-component="hero">
+  <div class="hero__container">
+    <div class="hero__body">
+      <div class="hero__copy"><h1 class="hero__title">Hello!</h1></div>
+    </div>
+  </div>
+</div>
+```
+</CH.Code>
+
+### Title and introduction
+
+<Screenshot image="hero-2.jpg" alt="Screenshot of the hero component with a title and introduction" />
+
+<CH.Code>
+```js React
+<Hero title="Hello!" intro="Here's an intro" />
+```
+```html HTML
+<div class="hero" data-component="hero">
+  <div class="hero__container">
+    <div class="hero__body">
+      <div class="hero__copy">
+        <h1 class="hero__title">Hello!</h1>
+        <p class="hero__intro">Here's an intro</p>
+      </div>
+    </div>
+  </div>
+</div>
+```
+</CH.Code>
+
+### With actions
+
+<Screenshot image="hero-3.jpg" alt="Screenshot of the hero component with actions" />
+
+<CH.Code>
+```js React
+<Hero title="Hello!" actions={<Button>Do something</Button>} />
+```
+```html HTML
+<div class="hero" data-component="hero">
+  <div class="hero__container">
+    <div class="hero__body">
+      <div class="hero__copy">
+        <h1 class="hero__title">Hello!</h1>
+        <div class="hero__actions">
+          <button type="button" class="btn" data-component="button--primary">
+            Do something
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+</CH.Code>
+
+### With extra detail/links
+
+<Screenshot image="hero-4.jpg" alt="Screenshot of the hero component with extra detail and links" />
+
+<CH.Code>
+```js React
+<Hero title="Hello!">
+	<ul>
+		<li>
+			<a href="#">Page One</a>
+		</li>
+		<li>
+			<a href="#">Page Two</a>
+		</li>
+	</ul>
+</Hero>
+```
+```html HTML
+<div class="hero" data-component="hero">
+  <div class="hero__container">
+    <div class="hero__body">
+      <div class="hero__copy"><h1 class="hero__title">Hello!</h1></div>
+      <div class="hero__extra">
+        <ul>
+          <li><a href="#">Page One</a></li>
+          <li><a href="#">Page Two</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+```
+</CH.Code>
+
+### With footer
+
+<Screenshot image="hero-5.jpg" alt="Screenshot of the hero component with a footer" />
+
+<CH.Code>
+```js React
+<Hero title="Hello!" footer={<p>Here is a footer</p>} />
+```
+```html HTML
+<div class="hero" data-component="hero">
+  <div class="hero__container">
+    <div class="hero__body">
+      <div class="hero__copy"><h1 class="hero__title">Hello!</h1></div>
+    </div>
+    <div class="hero__footer"><p>Here is a footer</p></div>
+  </div>
+</div>
+```
+</CH.Code>
+
+### With header
+
+<Screenshot image="hero-6.jpg" alt="Screenshot of the hero component with a header" />
+
+<CH.Code>
+```js React
+<Hero title="Hello!" header={<p>Here is a header</p>} />
+```
+```html HTML
+<div class="hero" data-component="hero">
+  <div class="hero__container">
+    <p>Here is a header</p>
+    <div class="hero__body">
+      <div class="hero__copy"><h1 class="hero__title">Hello!</h1></div>
+    </div>
+  </div>
+</div>
+```
+</CH.Code>
+
+## Accessibility
+
+Component meets WCAG AA guidelines for accessibility on:
+
+- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
+- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
+- Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+
+## Research and evidence
+
+No research done on the component at this time.
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;

@@ -1,6 +1,8 @@
 import Head from "next/head";
 
 import { FullBleed, fullBleedVariants } from "@nice-digital/nds-full-bleed";
+import { Hero } from "@nice-digital/nds-hero";
+import { Button } from "@nice-digital/nds-button";
 import { Container } from "@nice-digital/nds-container";
 
 export default function Test() {
@@ -85,6 +87,9 @@ export default function Test() {
 					id massa pellentesque, bibendum risus in, interdum nibh.
 				</p>
 			</FullBleed>
+
+			<h2>Hero</h2>
+			<Hero title="Hello!" header={<p>Here is a header</p>} />
 		</>
 	);
 }
