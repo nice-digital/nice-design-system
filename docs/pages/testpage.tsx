@@ -2,7 +2,7 @@ import Head from "next/head";
 
 import { FullBleed, fullBleedVariants } from "@nice-digital/nds-full-bleed";
 import { Hero } from "@nice-digital/nds-hero";
-import { Button } from "@nice-digital/nds-button";
+import { InPageNav } from "@nice-digital/nds-in-page-nav";
 import { Container } from "@nice-digital/nds-container";
 
 export default function Test() {
@@ -90,6 +90,9 @@ export default function Test() {
 
 			<h2>Hero</h2>
 			<Hero title="Hello!" header={<p>Here is a header</p>} />
+
+			<h2>In-page nav</h2>
+			<InPageNav />
 		</>
 	);
 }
