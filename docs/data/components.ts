@@ -121,7 +121,7 @@ export const components: PageData[] = [
 	{
 		title: "Panel",
 		slug: "panel",
-		description: "Blocks to highlight or separate content"
+		description: "Use a panel to highlight or separate content"
 	},
 	{
 		title: "Phase Banner",
