@@ -1,6 +1,6 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
 import { Screenshot } from "components/core/Screenshot/Screenshot";
-import { AZList, AZListItem } from "@nice-digital/nds-a-z-list";
+import { Example } from "components/examples/Example";
 import { DefaultAZList } from "components/examples/AZList";
 
 export const meta = {
@@ -14,7 +14,7 @@ export const meta = {
 ## Overview
 
 A to Z lists panels group together links associated with a letter of the alphabet. For example, all links starting with the letter A.
-They work alongside the alphabet component [link to component] to create A to Z navigation pages [link to pattern]. These pages present a number of links in an alphabetical list so users can find and navigate to the content they need.
+They work alongside the [alphabet component](/components/alphabet) to create A to Z navigation pages. These pages present a number of links in an alphabetical list so users can find and navigate to the content they need.
 
 ## When to use
 
@@ -29,9 +29,39 @@ We currently use the A to Z pattern in these areas of the NICE website:
 ## When not to use
 
 Do not use the A to Z list panels for links or groups of links that are not split up by letters in alphabetical order.
-The column list [link to component] can be used as a generic container for grouping links on a navigation page. It has similar styling to the A to Z list panel but without the letter heading at the top of the container.
+The [column list](/components/column-list) can be used as a generic container for grouping links on a navigation page. It has similar styling to the A to Z list panel but without the letter heading at the top of the container.
 
 ## How to use
+
+<Example>
+<DefaultAZList />
+
+<CH.Code>
+```js React
+<AZList alphabet={AlphabetComponent}>
+	<AZListItem title="A">
+		<p className="test-class">A: lorem ipsum dolor sit amet</p>
+	</AZListItem>
+	<AZListItem title="B">
+		<p className="test-class">B: lorem ipsum dolor sit amet</p>
+	</AZListItem>
+</AZList>
+```
+```html HTML
+<!-- Alphabet component goes here... -->
+<ol class="a-z-list" data-component="a-z-list">
+  <li class="a-z-list__item">
+    <h2 class="a-z-list__item-heading" id="a">A</h2>
+    <p class="test-class">A: lorem ipsum dolor sit amet</p>
+  </li>
+  <li class="a-z-list__item">
+    <h2 class="a-z-list__item-heading" id="b">B</h2>
+    <p class="test-class">B: lorem ipsum dolor sit amet</p>
+  </li>
+</ol>
+```
+</CH.Code>
+</Example>
 
 The panels should sit below the alphabet component.
 
