@@ -1,16 +1,126 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
-import { Textarea } from "@nice-digital/nds-textarea";
+import { Example } from "components/examples/Example";
+import { DefaultTextarea, HintTextarea, ErrorTextarea } from "components/examples/Textarea";
 
 export const meta = {
 	title: "Textarea",
+	description: "Use a textarea to let users enter more than one line of text",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-textarea",
-	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-textarea"
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-textarea",
+	component: DefaultTextarea
 };
 
-# {meta.title}
+Use a textarea to let users enter more than one line of text, providing a text area appropriate for the amount of information someone needs to enter.
 
-*** Placeholder component page ***
+## When to use
 
-<Textarea label="Your address" name="address" />
+Use the textarea component when you need to let users enter an amount of text longer than a single line.
+
+## When not to use
+
+Do not use the textarea component if you need to let users enter shorter answers no longer than a single line, such as a phone number or name. In this case, you should use the text input component.
+
+## How to use
+
+You must label textareas. Placeholder text is not a suitable substitute for a label, as it disappears when users click inside the textarea.
+
+Labels must be aligned above the textarea they refer to. They should be short, direct and written in sentence case. Do not use colons at the end of labels.
+
+<Example>
+<DefaultTextarea />
+
+<CH.Code>
+```js React
+<Textarea label="Your address" name="address"></Textarea>
+```
+```html HTML
+<div class="textarea" data-component="textarea">
+  <label class="textarea__label" for="address">Your address</label
+  ><textarea class="textarea__textarea" id="address" name="address"></textarea>
+</div>
+```
+</CH.Code>
+</Example>
+
+## Using hint text
+
+Use hint text to give users help in context; for example, enter your full address, including postcode.
+
+<Example>
+<HintTextarea />
+
+<CH.Code>
+```js React
+<Textarea
+	label="Your address"
+	name="addresshint"
+	hint="Enter your full address including postcode"
+></Textarea>
+```
+```html HTML
+<div class="textarea" data-component="textarea">
+  <label class="textarea__label" for="addresshint">Your address</label>
+  <p class="textarea__hint">Enter your full address including postcode</p>
+  <textarea
+    class="textarea__textarea"
+    id="addresshint"
+    name="addresshint"
+  ></textarea>
+</div>
+```
+</CH.Code>
+</Example>
+
+## Do not disable copy and paste
+
+Users will often need to copy and paste information into a textarea, so do not stop them from doing this.
+
+## Error messages
+
+Error messages should be styled like this:
+
+<Example>
+<ErrorTextarea />
+
+<CH.Code>
+```js React
+<Textarea
+	label="Your address"
+	name="addresshint"
+	error={true}
+	errorMessage="Please enter your full address"
+></Textarea>
+```
+```html HTML
+<div class="textarea textarea--error" data-component="textarea">
+  <label class="textarea__label" for="addresshint">Your address</label>
+  <p class="textarea__error">Please enter your full address</p>
+  <textarea
+    class="textarea__textarea"
+    id="addresshint"
+    name="addresshint"
+  ></textarea>
+</div>
+```
+</CH.Code>
+</Example>
+
+## When to use an error message
+
+Show an error message using the hint text when there is a validation error.
+
+Use standard messages for different components.
+
+## Accessibility
+
+Component meets WCAG AA guidelines for accessibility on:
+
+- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
+- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
+- Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+
+## Research/evidence
+
+We tested the textarea component on a "Identity and Access Management" prototype in April 2019. Users understood the purpose of the textarea and were able to use it.
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;
