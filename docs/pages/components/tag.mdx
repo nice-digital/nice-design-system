@@ -1,17 +1,152 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
-import { Tag } from "@nice-digital/nds-tag";
+import { Example } from "components/examples/Example";
+import { DemoTags, StandardTag, PhaseTags, GuidanceTags, ImpactTag, FlushTag, OutlineTag } from "components/examples/Tag";
 
 export const meta = {
 	title: "Tag",
+	description: "Tags provide a visual way to identify, label or highlight an item.",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-tag",
-	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-tag"
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-tag",
+	component: DemoTags
 };
 
-# {meta.title}
+Tags provide a visual way to identify, label or highlight an item. For example, to highlight a new or updated piece of guidance with a list. They may also be removeable, for example when showing applied filters above a filtered list.
 
-*** Placeholder component page ***
+## When to use
 
-<Tag success>Tag content</Tag>
-<Tag info flush>More tag content</Tag>
+Tags should be used for categorical information, such as publication status when there are few different categories.
+
+Use removeable tags when users need to be able to remove or dismiss a tag. Use with outline tags at the top of filtered lists to show the currently applied selections.
+
+## When not to use
+
+Tag content should not be long than 2 to 3 words. Use impact tags sparingly, e.g. within phase banners.
+
+## How to use
+
+Use within a card component or alpha/beta banner component, or within a list to label items.
+
+## Variants
+
+## Standard
+
+<Example>
+<StandardTag />
+
+<CH.Code>
+```js React
+<Tag>Tag</Tag>
+```
+```html HTML
+<span class="tag" data-component="tag">Tag</span>
+```
+</CH.Code>
+</Example>
+
+## Phase
+
+See also [phase banners](/components/phase-banner/).
+
+<Example>
+<PhaseTags />
+
+<CH.Code>
+```js React
+<>
+	<Tag alpha>Alpha</Tag> <Tag beta>Beta</Tag> <Tag live>Live</Tag>
+</>
+```
+```html HTML
+<span class="tag tag--alpha" data-component="tag">Alpha</span>
+<span class="tag tag--beta" data-component="tag">Beta</span>
+<span class="tag" data-component="tag">Live</span>
+```
+</CH.Code>
+</Example>
+
+## Guidance
+
+Use tags to denote the status of guidance in lists etc. Usually used within a card component.
+
+<Example>
+<GuidanceTags />
+
+<CH.Code>
+```js React
+<>
+	<Tag new>New</Tag> <Tag updated>Updated</Tag>{" "}
+	<Tag consultation>Consultation</Tag>
+</>
+```
+```html HTML
+<span class="tag" data-component="tag">New</span>
+<span class="tag tag--updated" data-component="tag">Updated</span>
+<span class="tag tag--consultation" data-component="tag">Consultation</span>
+```
+</CH.Code>
+</Example>
+
+## Impact
+
+Use impact tags sparingly, e.g. within phase banners.
+
+<Example>
+<ImpactTag />
+
+<CH.Code>
+```js React
+<Tag impact>Tag</Tag>
+```
+```html HTML
+<span class="tag tag--impact" data-component="tag">Tag</span>
+```
+</CH.Code>
+</Example>
+
+## Flush
+
+Tags have a small margin by default. Use the flush variant to remove the margin:
+
+<Example>
+<FlushTag />
+
+<CH.Code>
+```js React
+<Tag flush>Tag</Tag>
+```
+```html HTML
+<span class="tag tag--flush" data-component="tag">Tag</span>
+```
+</CH.Code>
+</Example>
+
+## Outline
+
+Use the outline variant for a tag with a border. Use outline tags with filtered lists to show the currently applied filters.
+
+<Example>
+<OutlineTag />
+
+<CH.Code>
+```js React
+<Tag outline>Tag</Tag>
+```
+```html HTML
+<span class="tag tag--outline" data-component="tag">Tag</span>
+```
+</CH.Code>
+</Example>
+
+## Accessibility
+
+Component meets WCAG AA guidelines for accessibility on:
+
+- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
+- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
+- Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+
+## Research/evidence
+
+Research on button styling highlighted the need for tag styling to be clearly distinct from button styles so that users do not expect tags to be clickable elements.
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;

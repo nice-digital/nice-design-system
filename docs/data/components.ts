@@ -155,7 +155,8 @@ export const components: PageData[] = [
 	{
 		title: "Tag",
 		slug: "tag",
-		description: "Tag component used for labelling items in a list"
+		description:
+			"Tags provide a visual way to identify, label or highlight an item"
 	},
 	{
 		title: "Textarea",
