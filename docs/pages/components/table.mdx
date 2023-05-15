@@ -1,16 +1,123 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
-import { Table } from "@nice-digital/nds-table";
+import { Example } from "components/examples/Example";
+import { DefaultTable, CaptionedTable } from "components/examples/Table";
+import { Screenshot } from "components/core/Screenshot/Screenshot";
 
 export const meta = {
 	title: "Table",
+	description: "Use a table to make it easier for users to compare and scan information.",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-table",
-	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-table"
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-table",
+	component: DefaultTable
 };
 
-# {meta.title}
+## When to use
 
-*** Placeholder component page ***
+Use tables to let people quickly scan and compare information or for the presentation of complex data sets.
 
-<Table><tr><td>Data!</td></tr></Table>
+Use the table component to organize data that is too detailed or complicated to be described adequately in text, allowing the reader to see the results quickly.
+
+## When not to use
+
+Don't use tables for layout purposes. Use the layout grid to lay out information on a page.
+
+Consider if a table is the best way to present your content. For example, simple tables might be better as a list or series of lists with headings.
+
+Don't use tables instead of a graph to display data visually. Graphs work when you need to show the overall shape of your data. Use graphs instead of tables when:
+
+-   The message is contained in the shape of the values (e.g. patterns, trends, exceptions).
+-   you need to reveal relationships among whole sets of values.
+
+## How to use
+
+### Table captions
+
+Use the `<caption>` element to describe a table in the same way you would use a heading. A caption helps users find, navigate and understand tables.
+
+> The advantage of a caption over a heading is that it is read out when a screen reader user encounters the table directly, using the T shortcut key. [https://inclusive-components.design/data-tables/](https://inclusive-components.design/data-tables/)
+
+Where there is already a requirement for a heading in the page content, and you want to eliminate repetition and redundancy, you can place the header _inside_ the `<caption>` element.
+
+<Example>
+<CaptionedTable />
+
+<CH.Code>
+```js React
+<Table>
+	<caption>Here is a caption!</caption>
+	<tr>
+		<th>Ref</th>
+		<th>Title</th>
+		<th>Date</th>
+	</tr>
+	<tr>
+		<td>ABC1</td>
+		<td>Lorem ipsum dolor sit amet</td>
+		<td>27/08/2022</td>
+	</tr>
+	<tr>
+		<td>XYZ2</td>
+		<td>Aliquam consectetur posuere nibh dapibus consequat</td>
+		<td>25/12/2023</td>
+	</tr>
+</Table>
+```
+```html HTML
+<table class="table" data-component="table">
+  <caption>
+    Here is a caption!
+  </caption>
+  <tr>
+    <th>Ref</th>
+    <th>Title</th>
+    <th>Date</th>
+  </tr>
+  <tr>
+    <td>ABC1</td>
+    <td>Lorem ipsum dolor sit amet</td>
+    <td>27/08/2022</td>
+  </tr>
+  <tr>
+    <td>XYZ2</td>
+    <td>Aliquam consectetur posuere nibh dapibus consequat</td>
+    <td>25/12/2023</td>
+  </tr>
+</table>
+```
+</CH.Code>
+</Example>
+
+### Alignment
+
+Right align numerical data that needs comparing - for example, prices and weights. This allows people to scan larger values more efficiently.
+
+You don't need to right-align data that isn't used for comparison, for example dates.
+
+Table headers should be aligned to the data.
+
+<Screenshot image="table-1.png" alt="Screenshot of a table with right-aligned data" caption="Right-aligning numerical data makes it easier to compare" />
+
+### Table headers
+
+Use table headers `<th>` to tell users what the rows and columns represent.
+
+Use the scope attribute to help users understand row and column headers.
+
+See [WebAIM guidance on table headers](https://webaim.org/techniques/tables/data#headers) for more information.
+
+## Accessibility
+
+Follow [WebAIM's guidance for tables](https://webaim.org/techniques/tables/data):
+
+-   give tables captions
+-   use the scope attribute to associate data cells with the appropriate headers.
+
+### Contrast
+
+Table dividing lines and zebra striping meet accessibility contrast ratios for Graphical Objects and User Interface Components ( 3:1 ratio).
+
+## Research and evidence
+
+No research done on the table component at this time.
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;
