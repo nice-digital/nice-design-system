@@ -1,26 +1,176 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
-import { Tabs, Tab } from "@nice-digital/nds-tabs";
+import { Example } from "components/examples/Example";
+import { DefaultTabs } from "components/examples/Tabs";
 
 export const meta = {
 	title: "Tabs",
+	description: "Tabs separate content into different panes, with only one pane viewable at a time.",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-tabs",
-	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-tabs"
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-tabs",
+	component: DefaultTabs
 };
 
-# {meta.title}
+## When to use
 
-*** Placeholder component page ***
+Tabs are used to split related content. Use them to allow users to alternate between views within the same context.
 
+Use them when:
+
+-   your content can be split out into clearly labelled sections
+-   the first section is the most relevant section for most users
+-   users will not need to view all the sections at once.
+
+The content in tabs needs to be closely related. If tab content is too dissimilar users might mistake them for site navigation.
+
+If the content makes sense on it's own without the content from the other tabs consider splitting it out to a separate page.
+
+## When not use
+
+Tabs shouldn't be used as a way of navigating to different pages of content. Use other navigation methods such as the stacked nav or horizontal navigation instead.
+
+Tabs hide content from view. Don't use tabs if people need to compare content, see all the content at once or use on page searching (for example using Ctrl+F to find keywords).
+
+Consider other options such as:
+
+-   keeping the content on a single page, separated by headings
+-   using a table of contents or on page navigation to let users navigate quickly to specific sections of content.
+
+## How to use
+
+<Example>
+<h4>Example: tabs</h4>
+<DefaultTabs />
+
+<CH.Code>
+```js React
 <Tabs>
-<Tab title="Tab 1">
-<p>Here is some content for the first tab</p>
-</Tab>
-<Tab title="Tab 2">
-<p>Here is some content for the second tab</p>
-</Tab>
-<Tab title="Tab 3">
-<p>Here is some content for the third tab</p>
-</Tab>
+	<Tab title="Tab 1">
+		<p>Here is some content for the first tab</p>
+	</Tab>
+	<Tab title="Tab 2">
+		<p>Here is some content for the second tab</p>
+	</Tab>
+	<Tab title="Tab 3">
+		<p>Here is some content for the third tab</p>
+	</Tab>
 </Tabs>
+```
+```html HTML
+<div class="tabs js" data-component="tabs">
+  <ul class="tabs__list" role="tablist">
+    <li class="tabs__tab" role="presentation">
+      <button
+        class="tabs__tab-btn"
+        data-component="tabs--button"
+        type="button"
+        role="tab"
+        data-hash="tab-1"
+        id="tab-button-tab-1"
+        aria-controls="tab-pane-tab-1"
+        aria-selected="true"
+      >
+        Tab 1
+      </button>
+    </li>
+    <li class="tabs__tab" role="presentation">
+      <button
+        class="tabs__tab-btn"
+        data-component="tabs--button"
+        type="button"
+        role="tab"
+        data-hash="tab-2"
+        id="tab-button-tab-2"
+        aria-controls="tab-pane-tab-2"
+        aria-selected="false"
+      >
+        Tab 2
+      </button>
+    </li>
+    <li class="tabs__tab" role="presentation">
+      <button
+        class="tabs__tab-btn"
+        data-component="tabs--button"
+        type="button"
+        role="tab"
+        data-hash="tab-3"
+        id="tab-button-tab-3"
+        aria-controls="tab-pane-tab-3"
+        aria-selected="false"
+      >
+        Tab 3
+      </button>
+    </li>
+  </ul>
+  <div class="tabs__content">
+    <div
+      class="tabs__pane"
+      data-component="tabs--pane"
+      role="tabpanel"
+      id="tab-pane-tab-1"
+      aria-labelledby="tab-button-tab-1"
+      aria-hidden="false"
+    >
+      <p>Here is some content for the first tab</p>
+    </div>
+    <div
+      class="tabs__pane"
+      data-component="tabs--pane"
+      role="tabpanel"
+      id="tab-pane-tab-2"
+      aria-labelledby="tab-button-tab-2"
+      aria-hidden="true"
+    >
+      <p>Here is some content for the second tab</p>
+    </div>
+    <div
+      class="tabs__pane"
+      data-component="tabs--pane"
+      role="tabpanel"
+      id="tab-pane-tab-3"
+      aria-labelledby="tab-button-tab-3"
+      aria-hidden="true"
+    >
+      <p>Here is some content for the third tab</p>
+    </div>
+  </div>
+</div>
+```
+</CH.Code>
+</Example>
+
+Don't put tabs inside tabs.
+
+Keep the number of tabs low. 5 is the limit. Tabs shouldn't span more than one row as this can cause issues with navigation and is a sign that the content needs simplifying.
+
+Arrange tabs in an order which makes sense to users from most to least relevant.
+
+### Content guidelines
+
+Tab labels should be short (1-2 words), clear and descriptive. Words used should relate to the content within each tab.
+
+Do not use all caps for labels.
+
+### Technical
+
+ARIA attributes are applied via Javascript.
+
+Keyboard controls are enabled: Left/up and down/right changes the selected tab. Home/end moves to first/last tab.
+
+The container should have the data attribute `data-tabs`. The direct children of this element will become the content of the three tabs, and the said children `data-tab-title` attribute will be the name of the tab. The first tab will be the active tab on load.
+
+## Accessibility
+
+Component meets WCAG AA guidelines for accessibility on:
+
+- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
+- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
+- Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+
+## Research and evidence
+
+The design, code and guidance here are based on recommendations from [Inclusive Components](https://inclusive-components.design/tabbed-interfaces/) and the [Nielsen Norman Group](https://www.nngroup.com/articles/tabs-used-right/)
+
+Tabs have been tested as part of wider research on guidance journeys and found to work fine.
+
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;
