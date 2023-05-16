@@ -76,12 +76,6 @@ export const components: PageData[] = [
 			"A component that makes the content within span the full width of the page"
 	},
 	{
-		title: "Grid",
-		slug: "grid",
-		description:
-			"TODO: Consolidate this page with the foundations 'Grid and layout' page"
-	},
-	{
 		title: "Hero",
 		slug: "hero",
 		description: "Introduce a site or sub-site with impact"
@@ -102,11 +96,6 @@ export const components: PageData[] = [
 		title: "Input",
 		slug: "input",
 		description: "Allow the user to enter text as part of a form"
-	},
-	{
-		title: "Maintain Ratio",
-		slug: "maintain-ratio",
-		description: "Embed media and maintain an aspect ratio across devices"
 	},
 	{
 		title: "Page Header",
