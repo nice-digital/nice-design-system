@@ -93,11 +93,6 @@ export const components: PageData[] = [
 			"Allows users to navigate to specific sections, within long pages of content, across any screen size"
 	},
 	{
-		title: "Input",
-		slug: "input",
-		description: "Allow the user to enter text as part of a form"
-	},
-	{
 		title: "Page Header",
 		slug: "page-header",
 		description: "Main heading and intro copy to introduce a page"
@@ -146,6 +141,11 @@ export const components: PageData[] = [
 		slug: "tag",
 		description:
 			"Tags provide a visual way to identify, label or highlight an item"
+	},
+	{
+		title: "Text input",
+		slug: "text-input",
+		description: "Allow the user to enter text as part of a form"
 	},
 	{
 		title: "Textarea",
