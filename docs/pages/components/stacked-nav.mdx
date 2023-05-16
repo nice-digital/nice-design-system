@@ -1,13 +1,116 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
+import { Example } from "components/examples/Example";
+import { DefaultStackedNav } from "components/examples/StackedNav";
+
 
 export const meta = {
 	title: "Stacked nav",
+	description: "A way for users to navigate between sub-pages within guidance, a topic or section of content.",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-stacked-nav",
-	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-stacked-nav"
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-stacked-nav",
+	component: DefaultStackedNav
 };
 
-# {meta.title}
+## Overview
 
-*** Placeholder component page ***
+Use stacked navigation to allow users to navigate through pages within a section, topic or product.
+
+For example - moving between pages in a guidance product, or moving between pages in a Clinical Knowledge Summaries topic.
+
+The stacked navigation connects sub-pages, allowing users to move to any sub-page from any other sub-page.
+
+## When to use
+
+Use when there are multiple pages on the same content level underneath a higher topic or product. A good example is a Clinical Knowledge Summaries topic. Each topic has different pages (diagnosis, management, prescribing) that people need to move between.
+
+## When not to use
+
+Don't use the stacked navigation for jumping users down a page - use On page navigation for this.
+
+Don't use as a high level menu to select a product, topic or guidance. Use the A-Z list, column list or grid list for this.
+
+## How to use
+
+<Example>
+<h3>Example stacked nav</h3>
+<DefaultStackedNav />
+
+<CH.Code>
+```js React
+<StackedNav label="Stacked nav label" elementType="h2">
+	<StackedNavLink destination="/">Home</StackedNavLink>
+	<StackedNavLink
+		destination="/about"
+		nested={
+			<StackedNavLink destination="/about/test">Nested page</StackedNavLink>
+		}
+	>
+		About
+	</StackedNavLink>
+</StackedNav>
+```
+```html HTML
+<nav class="stacked-nav" data-component="stacked-nav">
+  <h2 class="stacked-nav__root stacked-nav__root--no-link">
+    Stacked nav label
+  </h2>
+  <ul class="stacked-nav__list">
+    <li class="stacked-nav__list-item">
+      <a aria-current="false" href="/"
+        ><span class="stacked-nav__content-wrapper">Home</span></a
+      >
+    </li>
+    <li class="stacked-nav__list-item">
+      <a aria-current="false" href="/about"
+        ><span class="stacked-nav__content-wrapper">About</span></a
+      >
+      <ul class="stacked-nav__nested">
+        <li class="stacked-nav__list-item">
+          <a aria-current="false" href="/about/test"
+            ><span class="stacked-nav__content-wrapper">Nested page</span></a
+          >
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+```
+</CH.Code>
+</Example>
+
+Use in combination with breadcrumbs.
+
+Always position to the left of the interface to maintain consistency.
+
+Try to keep navigational links short.
+
+Links should match the name of the page they link to.
+
+Always use an active link to display what page the user is on.
+
+Use `aria-current="page"` to highlight the current page.
+
+Use `aria-label="navigation name"` or `aria-labelledby="id-here"` on the root `nav` element.
+
+Stacked nav expands to fill the available space, so usually wrap in a grid.
+
+## Sub navigation
+
+The menu supports an additional level of navigation underneath the pages in the menu. The second level navigation is indented to show it sits underneath a page:
+
+Example of stacked navigation on CKS with additional level of navigation on the Diagnosis section.
+
+## Accessibility
+
+Component meets WCAG AA guidelines for accessibility on:
+
+- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
+- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
+- Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+
+## Research and evidence
+
+No research done on the component at this time.
+
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;
