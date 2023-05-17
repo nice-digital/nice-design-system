@@ -1,11 +1,167 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
+import { Example } from "components/examples/Example";
+import { Floats, CenterBlock, TextAlignment, TextWrapping, TextTransformation, MaintainRatio169, MaintainRatio43 } from "components/examples/Helpers";
 
 export const meta = {
 	title: "Helpers"
 };
 
-# {meta.title}
+## Floats
 
-*** Placeholder foundation page ***
+Quickly float elements with `.left` or `.right`. Clear floats on a parent element with the `.clearfix` class.
+
+<Example>
+<h3>Example: floats</h3>
+<Floats />
+
+```html
+<div class="clearfix">
+  <div class="left">Floated left</div>
+  <div class="right">Floated right</div>
+</div>
+```
+</Example>
+
+There is also a `clearfix()` SASS mixin for use with custom components:
+
+```scss
+.example {
+	@include clearfix;
+}
+```
+
+## Center block
+
+Set an element to `display: block` and center via `margin: auto`. Available as a mixin (`@include center-block;`) and class (`.center-block`).
+
+<Example>
+<h3>Example: center block</h3>
+<CenterBlock />
+
+```html
+<div
+  class="center-block text-center"
+  style="background: #eee; width: 200px"
+>
+  Center block
+</div>
+```
+</Example>
+
+## Text alignment
+
+Change the text alignment of an element by adding `.text-left`, `.text-right`, `.text-center` or `.text-justify` to an element.
+
+<Example>
+<h3>Example: text alignment</h3>
+<TextAlignment />
+
+```html
+<p class="text-left">This is some left-aligned text</p>
+<p class="text-right">This is some right-aligned text</p>
+<p class="text-center">This is some center-aligned text</p>
+<p class="text-justify">This is some justified text</p>
+```
+</Example>
+
+## Text wrapping
+
+Use `.text-nowrap` to keep text on one line and stop it from wrapping, and use `.text-truncate` to add an an ellipsis to text that overflows its container.
+
+<Example>
+<h3>Example: text wrapping</h3>
+<TextWrapping />
+
+```html
+<div style="background: #eee; width: 80px">
+  <p class="text-nowrap">This is some text that doesn't wrap</p>
+  <p class="text-truncate">This is some truncated text</p>
+</div>
+```
+</Example>
+
+## Text transformation
+
+Transform the casing of text by adding `.text-lowercase`, `.text-uppercase`, or `.text-capitalize` to an element.
+
+<Example>
+<h3>Example: text transformation</h3>
+<TextTransformation />
+
+```html
+<p class="text-lowercase">Lowercased text</p>
+<p class="text-uppercase">Uppercased text</p>
+<p class="text-capitalize">Capitalized text</p>
+```
+</Example>
+
+## Maintain ratio
+
+Use for enforcing an aspect ratio for iframes, videos and other embedded media, for example YouTube videos. Maintains a specific aspect ratio across a responsive site.
+
+### 16 to 9 ratio
+
+<Example>
+<MaintainRatio169 />
+
+<CH.Code>
+```js React
+<MaintainRatio ratio="16:9">
+	<iframe
+		src="https://www.youtube.com/embed/h7FP4FEDWrA"
+		height="500px"
+		width="100%"
+		title="YouTube video player"
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+	></iframe>
+</MaintainRatio>
+```
+```html HTML
+<div
+  class="maintain-ratio maintain-ratio--16-9"
+  data-component="maintain-ratio"
+>
+  <iframe
+    src="https://www.youtube.com/embed/h7FP4FEDWrA"
+    height="500px"
+    width="100%"
+    title="YouTube video player"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  ></iframe>
+</div>
+```
+</CH.Code>
+</Example>
+
+### 4 to 3 ratio
+
+<Example>
+<MaintainRatio43 />
+
+<CH.Code>
+```js React
+<MaintainRatio ratio="4:3">
+	<iframe
+		width="100%"
+		height="700px"
+		src="https://www.youtube.com/embed/h7FP4FEDWrA"
+		title="YouTube video player"
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+	></iframe>
+</MaintainRatio>
+```
+```html HTML
+<div class="maintain-ratio maintain-ratio--4-3" data-component="maintain-ratio">
+  <iframe
+    width="100%"
+    height="700px"
+    src="https://www.youtube.com/embed/h7FP4FEDWrA"
+    title="YouTube video player"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  ></iframe>
+</div>
+```
+</CH.Code>
+</Example>
 
 export default ({ children }) => <ComponentLayout meta={meta} type="foundations">{children}</ComponentLayout>;
