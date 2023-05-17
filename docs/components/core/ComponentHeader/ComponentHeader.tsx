@@ -1,5 +1,6 @@
 import { type PageMeta } from "types/PageMeta";
 import { Example } from "components/examples/Example";
+import { ExternalLinkList } from "components/core/ExternalLinkList/ExternalLinkList";
 
 import styles from "./ComponentHeader.module.scss";
 
@@ -20,18 +21,7 @@ export const ComponentHeader = ({
 			<h1>{title}</h1>
 			{description && <p className="lead">{description}</p>}
 			{shouldShowExternalLinks && (
-				<ul className={styles.externalLinkList}>
-					{gitHubUrl && (
-						<li>
-							<a href={gitHubUrl}>View on GitHub</a>
-						</li>
-					)}
-					{npmUrl && (
-						<li>
-							<a href={npmUrl}>View on NPM</a>
-						</li>
-					)}
-				</ul>
+				<ExternalLinkList gitHubUrl={gitHubUrl} npmUrl={npmUrl} />
 			)}
 			{Component && (
 				<Example>
