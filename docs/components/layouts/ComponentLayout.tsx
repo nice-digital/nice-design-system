@@ -54,7 +54,7 @@ export const ComponentLayout: React.FC<ComponentLayoutProps> = ({
 					</ul>
 					<h2>Need help?</h2>
 					<p>
-						If you’ve got a question about the NICE Design System, contact the
+						If you've got a question about the NICE Design System, contact the
 						team.
 					</p>
 					<ul>

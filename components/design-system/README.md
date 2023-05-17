@@ -73,7 +73,7 @@ You can then start using the SCSS from the NICE Design System, for example:
 The [@nice-digital/design-system](https://www.npmjs.com/package/@nice-digital/design-system) npm package includes a dist folder with pre-compiled assets (CSS and JS). These are useful for quick prototypes, but aren't recommended for production because:
 
 - it uses compiled CSS so you lose the benefit of all the SCSS mixins, function and variables
-- you get everything: you can’t pick and choose just what you need.
+- you get everything: you can't pick and choose just what you need.
 
 Use the dist folder as a static directory with [Express](https://expressjs.com/) to serve these precompiled files:
 

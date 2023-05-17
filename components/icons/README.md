@@ -54,10 +54,10 @@ NICE Icons is a replacement for [NICE.Glyphs](http://nhsevidence.github.io/NICE.
 
 ### Guidance
 
-Avoid unnecessary decoration - only use icons if there’s a real user need:
+Avoid unnecessary decoration - only use icons if there's a real user need:
 
 - if icons are needed ensure they are clear, simple and accompanied by relevant text
-- don’t hide functionality under icons
+- don't hide functionality under icons
 - icons should be easily recognizable
 - keep icon designs simple and schematic.
 
