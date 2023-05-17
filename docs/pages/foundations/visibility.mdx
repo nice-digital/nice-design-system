@@ -1,11 +1,118 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
+import { Example } from "components/examples/Example";
+import { Orientation, HideByScreenWidth, ShowByScreenWidth } from "components/examples/Visibility";
 
 export const meta = {
-	title: "Visibility"
+	title: "Visibility",
+	description: "Show and hide elements across breakpoints for print, device orientations and screen readers."
 };
 
-# {meta.title}
+## Showing and hiding
 
-*** Placeholder foundation page ***
+Use the following selectors for visibility:
+
+-   `.show` and `.hide` to toggle between `display:block` and `display:none`
+-   or `.show--i` or `.show--ib` for inline/inline-block respectively
+-   use `.invisible` and `.visible` to toggle between visibility hidden/visible
+
+Also, see the accessibility section for showing/hiding content for screenreaders
+
+## Orientation
+
+Use the following classes for visibility on different orientations:
+
+-   `.show-landscape`
+-   `.hide-landscape`
+-   `.show-portrait`
+-   `.hide-portrait`
+
+<Example>
+<h3>Example: orientation</h3>
+<Orientation />
+
+```html
+<p class="show-landscape">This is visible only on landscape orientations</p>
+<p class="show-portrait">This is visible only on portrait orientations</p>
+```
+</Example>
+
+## Responsive helpers
+
+Use the following classes to manage visibility across breakpoints. If you're writing a custom component, consider using media queries to achieve this rather than using these classes.
+
+## Hiding by screen width
+
+-   `.hide-only-*` - hides an element for the specified breakpoint only
+-   `.hide-from-*` - hides for the specified breakpoint and above
+-   `.hide-until-*` - hides from 0px wide up until the breakpoint, and displays it as `block` above
+-   `.hide-until-*--i` - hides from 0px wide up until the breakpoint, and displays it as `inline` above
+-   `.hide-until-*--ib` - hides from 0px wide up until the breakpoint, and displays it as `inline-block`> above
+
+<Example>
+<h3>Example: hiding by screen width</h3>
+<HideByScreenWidth />
+
+```html
+<p class="hide-until-md">This is hidden until the md breakpoint and up</p>
+<p class="hide-from-md">This is hidden from the md breakpoint and up</p>
+<p class="hide-only-md">This is hidden only in the md breakpoint</p>
+```
+</Example>
+
+## Showing by screen width
+
+-   `.show-only-*` - hides an element by default, then displays it as `block` only for the specififed breakpoint
+-   `.show-only-*--i` - hides an element by default, then displays it as `inline` only for the specififed breakpoint
+-   `.show-only-*--ib` - hides an element by default, then displays it as `inline-block` only for the specififed breakpoint
+-   `.show-from-*` - hides on element by defaults, then displays it as `block` from the specified breakpoint and up
+-   `.show-from-*--i` - hides on element by defaults, then displays it as `inline` from the specified breakpoint and up
+-   `.show-from-*--ib` - hides on element by defaults, then displays it as `inline-block` from the specified breakpoint and up
+-   `.show-until-*` - hides an element above the specified breakpoint
+
+<Example>
+<h3>Example: showing by screen width</h3>
+<ShowByScreenWidth />
+
+```html
+<p class="show-until-md">This is visible until the md breakpoint</p>
+<p class="show-from-md">This is visible from the md breakpoint and up</p>
+<p class="show-only-md">This is visible only in the md breakpoint</p>
+```
+</Example>
+
+## Hide visually
+
+Use `.visually-hidden` to show for screenreaders, but hide visually. Useful for extra explanations to screenreaders to give context.
+
+## Hide from screenreaders
+
+Use `aria-hidden="true"` to hide content from screenreaders but show it visually. Useful for purely visual elements (e.g. icons) that don’t have any meaningful, semantic content.
+
+## Show on focus
+
+Use `.show-on-focus` to create elements that appear visually only when focussed. Useful for skiplinks.
+
+## Print
+
+Use the following classes to show things only for print:
+
+-   `.show-print`
+-   `.show-print--i`
+-   `.show-print--ib`
+
+
+Or alternatively use `.hide-print` to hide elements from displaying on print.
+
+## Accessibility
+
+Component meets WCAG AA guidelines for accessibility on:
+
+- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
+- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
+- Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+
+## Research and evidence
+
+No research done on the component at this time.
 
 export default ({ children }) => <ComponentLayout meta={meta} type="foundations">{children}</ComponentLayout>;
