@@ -31,22 +31,6 @@ export default function Home() {
 				}
 			/>
 
-			<h2 className="mt--0">How to use the NICE design system</h2>
-			<Grid>
-				<GridItem sm={6}>
-					<h3>In code</h3>
-					<p>Import components and styles directly into your project.</p>
-					<a href="#development">Read more about development</a>
-				</GridItem>
-				<GridItem sm={6}>
-					<h3>In design prototypes</h3>
-					<p>Use our Figma files to build prototypes.</p>
-					<a href="#prototyping">Read more about prototyping</a>
-				</GridItem>
-			</Grid>
-
-			<hr />
-
 			<h2>Foundations</h2>
 			<p className="lead">
 				Our foundations are the design basics that we build our services on.
@@ -125,16 +109,6 @@ export default function Home() {
 
 			<hr />
 
-			<h2>Patterns</h2>
-			<p>TODO: Add patterns content</p>
-
-			<hr />
-
-			<h2 id="prototyping">Prototyping</h2>
-			<p>TODO: Add prototyping content</p>
-
-			<hr />
-
 			<h2>Contact the team</h2>
 			<ul>
 				<li>
@@ -149,7 +123,6 @@ export default function Home() {
 						Github discussions
 					</a>
 				</li>
-				<li>TODO: Add process map</li>
 			</ul>
 		</>
 	);
