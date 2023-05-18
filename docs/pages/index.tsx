@@ -56,7 +56,7 @@ export default function Home() {
 			<h2>Components</h2>
 			<p className="lead">
 				Components are individual design building blocks. They can be combined
-				to create larger patters and pages.
+				to create larger patterns and pages.
 			</p>
 
 			<Grid>
