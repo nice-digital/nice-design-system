@@ -28,7 +28,7 @@ export const ComponentLayout: React.FC<ComponentLayoutProps> = ({
 			</Head>
 			<Breadcrumbs>
 				<Breadcrumb to="/">NICE Design System</Breadcrumb>
-				<Breadcrumb to={`/${type}`}>{capitalise(type)}</Breadcrumb>
+				<Breadcrumb>{capitalise(type)}</Breadcrumb>
 				<Breadcrumb>{meta.title}</Breadcrumb>
 			</Breadcrumbs>
 			<Grid>
