@@ -11,8 +11,8 @@ export interface RootLayoutProps {
 export function RootLayout({ children }: RootLayoutProps) {
 	return (
 		<>
-			<Container>
-				<header className={styles.header}>
+			<header className={styles.header}>
+				<Container>
 					<Link href="/">
 						<Image
 							src="/images/ds-logo-teal.svg"
@@ -22,8 +22,9 @@ export function RootLayout({ children }: RootLayoutProps) {
 							height={52}
 						/>
 					</Link>
-				</header>
-
+				</Container>
+			</header>
+			<Container>
 				<main>{children}</main>
 			</Container>
 			<Footer />
