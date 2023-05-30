@@ -18,8 +18,6 @@
     "docs:build": "lerna run --stream --no-prefix --scope=@nice-digital/design-system-docs build",
     "// LERNA": "",
     "lerna": "lerna",
-    "bootstrap": "lerna bootstrap",
-    "bootstrap:prod": "lerna bootstrap --no-ci",
     "lerna:clean": "lerna clean -y",
     "release:alpha": "npm run clean:ts && npm run build:ts && lerna publish --dist-tag alpha",
     "release:latest": "npm run clean:ts && npm run build:ts && lerna publish --dist-tag latest",
