@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-action-banner",
-	"version": "4.0.4",
+	"version": "4.0.5",
 	"description": "Action banner component for the NICE Design System",
 	"keywords": [
 		"banner"
@@ -31,8 +31,8 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
-		"@nice-digital/icons": "^6.0.0",
-		"@nice-digital/nds-core": "^4.0.4",
+		"@nice-digital/icons": "^6.0.1",
+		"@nice-digital/nds-core": "^4.0.5",
 		"classnames": "^2.3.1"
 	},
 	"peerDependencies": {

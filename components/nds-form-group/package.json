@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-form-group",
-	"version": "4.0.4",
+	"version": "4.0.5",
 	"description": "Form group component for the NICE Design System",
 	"author": "Warren Keith <warren.keith@nice.org.uk>",
 	"homepage": "https://github.com/nice-digital/nice-design-system#readme",
@@ -39,7 +39,7 @@
 		"typescript": "^4.8.4"
 	},
 	"dependencies": {
-		"@nice-digital/nds-core": "^4.0.4",
+		"@nice-digital/nds-core": "^4.0.5",
 		"classnames": "^2.2.6"
 	},
 	"peerDependencies": {

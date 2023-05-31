@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-enhanced-pagination",
-	"version": "4.0.4",
+	"version": "4.0.5",
 	"description": "Enhanced pagination component for the NICE Design System",
 	"author": "Warren Keith <w@rren.dev>",
 	"keywords": [
@@ -34,7 +34,7 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
-		"@nice-digital/nds-core": "^4.0.4",
+		"@nice-digital/nds-core": "^4.0.5",
 		"classnames": "^2.2.6"
 	},
 	"peerDependencies": {
