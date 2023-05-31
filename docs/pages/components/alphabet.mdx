@@ -1,22 +1,139 @@
-import { ComponentLayout } from "components/layouts/ComponentLayout";
 import { Alphabet, Letter } from "@nice-digital/nds-alphabet";
+import { ComponentLayout } from "components/layouts/ComponentLayout";
+import { Example } from "components/examples/Example";
+import { DefaultAlphabet, ChunkyAlphabet } from "components/examples/Alphabet";
+import { Screenshot } from "components/core/Screenshot/Screenshot";
 
 export const meta = {
 	title: "Alphabet",
+	description: "Display a horizontal A-Z list with optional links",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-alphabet",
-	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-alphabet"
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-alphabet",
+	component: DefaultAlphabet
 };
 
-# {meta.title}
+The alphabet component is a horizontal list of letters (A-Z) that jumps users to a container with links associated with that letter.
 
-*** Placeholder component page ***
+It usually works alongside A to Z list panels that contain the links to different pages grouped by letter.
 
-<Alphabet>
-	{["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"].map(letter => (
-		<Letter key={letter} to={`#${letter}`} label={`Letter ${letter}`}>
-			{letter.toUpperCase()}
-		</Letter>
-	))}
-</Alphabet>
+We currently use the A to Z pattern in these areas of the NICE website:
+
+- [CKS topic A-Z](https://cks.nice.org.uk/topics/#a)
+- [BNF drugs A-Z](https://bnf.nice.org.uk/drugs/)
+- [BNF Interactions A-Z](https://bnf.nice.org.uk/interactions/)
+- [BNF Treatment summaries A-Z](https://bnf.nice.org.uk/treatment-summaries/)
+
+
+## When to use
+
+The alphabet component is used:
+
+- at the top of [A to Z list](/components/a-z-list) pages. These pages present a number of links in an alphabetical list so users can find and navigate to the content they need.
+- as a way of navigating into A to Z list pages from elsewhere, for example on the [BNF homepage](https://bnf.nice.org.uk/).
+
+
+## When not to use
+
+Do not use with other types of links or lists of links, the alphabet should only be used for links for letters of the alphabet.
+
+## How to use
+
+On A-Z list page the alphabet component should be placed at the top of the page above the A to Z list panels.
+
+<Screenshot image="alphabet-1.png" alt="Screenshot of the alphabet component listing health topics" caption="The alphabet component sits above the A-Z list panels." />
+
+The component can also be used on its own as a navigation route into A to Z list pages, for example in the BNF mega menu:
+
+<Screenshot image="alphabet-2.png" alt="Screenshot of the alphabet component in the BNF mega menu" />
+
+### Basic variant
+
+<Example>
+<h4>Example: default alphabet</h4>
+<DefaultAlphabet />
+
+<CH.Code>
+```js React
+const allLetters = "abcdefghijklmnopqrstuvwxyz".split("");
+
+return (
+	<Alphabet>
+		{allLetters.map((letter) => (
+			<Letter
+				key={letter}
+				to={`#${letter}`}
+				label={`Letter ${letter.toUpperCase()}`}
+			>
+				{letter.toUpperCase()}
+			</Letter>
+		))}
+	</Alphabet>
+);
+```
+```html HTML
+<ol class="alphabet">
+	<li class="alphabet__letter" data-component="alphabet-letter">
+		<a href="#a" aria-label="Letter A">A</a>
+	</li>
+	<li class="alphabet__letter " data-component="alphabet-letter">
+		<a href="#b" aria-label="Letter B">B</a>
+	</li>
+	...
+</ol>
+```
+</CH.Code>
+</Example>
+
+### Chunky variant
+
+The chunky variant of the alphabet uses a slightly larger font size and more padding for when the alphabet should carry more visual weight.
+
+<Example>
+<h4>Example: chunky alphabet</h4>
+<ChunkyAlphabet />
+
+<CH.Code>
+```js React
+const allLetters = "abcdefghijklmnopqrstuvwxyz".split("");
+
+return (
+	<Alphabet chunky>
+		{allLetters.map((letter) => (
+			<Letter
+				key={letter}
+				to={`#${letter}`}
+				label={`Letter ${letter.toUpperCase()}`}
+			>
+				{letter.toUpperCase()}
+			</Letter>
+		))}
+	</Alphabet>
+);
+```
+```html HTML
+<ol class="alphabet alphabet--chunky">
+	<li class="alphabet__letter" data-component="alphabet-letter">
+		<a href="#a" aria-label="Letter A">A</a>
+	</li>
+	<li class="alphabet__letter " data-component="alphabet-letter">
+		<a href="#b" aria-label="Letter B">B</a>
+	</li>
+	...
+</ol>
+```
+</CH.Code>
+</Example>
+
+## Accessibility
+
+Component meets WCAG AA guidelines for accessibility on:
+
+- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
+- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
+- Accessible use of color - Color is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+
+## Research/evidence
+
+No research done on the component at this time
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;

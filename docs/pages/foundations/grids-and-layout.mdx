@@ -1,11 +1,554 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
+import { Example } from "components/examples/Example";
+import {
+	Whole,
+	Halves,
+	Thirds,
+	Quarters,
+	Nested,
+	Responsive,
+	Reversed,
+	Gutterless,
+	Compact,
+	Loose,
+	Right,
+	Center,
+	PushPull,
+	VerticalMiddle,
+	VerticalBottom,
+	Debug,
+	Semantic
+} from "components/examples/Grid";
 
 export const meta = {
-	title: "Grids and layout"
+	title: "Grids and layout",
+	description: "Use containers, grids and whitespace to build a structure and hierarchy on the page.",
+	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-grid",
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-grid"
 };
 
-# {meta.title}
+## When to use
 
-*** Placeholder foundation page ***
+Use the layout and grid system when building digital services. The grid helps to keep designs consistent, well structured and neatly aligned.
+
+## When not to use
+
+The layout and grid system is for designing digital services across devices. If you are designing for social media or print follow the grid and layout advice in the [brand guidelines](https://indepth.nice.org.uk/grids-and-margins/index.html).
+
+## How to use
+
+### Page width
+
+The default maximum page width is 1170px (73.125rem), but go wider if the content requires it.
+
+Use a grid to lay out your content.
+
+Text has a maximum character limit of 66 characters to prevent long lines of text. Text will wrap regardless of the grid span it sits in.
+
+### Screen size
+
+Design for small screens first using a single column layout.
+
+Optimise for different screen sizes, but don't make assumptions about specific devices.
+
+See our [responsive guidelines](/foundations/responsive/) for further content on building mobile first responsive layouts.
+
+### Layout considerations
+
+-   Know and understand how the information on the page will be used
+-   organise content in terms of priority and group related content together
+-   always consider how your layout will be shown on small screen devices
+-   only exceed the maximum container width when your content requires it
+-   keep the layout consistent when developing similar pages.
+
+### Containers
+
+See the [container documentation](/components/container/) for guidance on using containers as part of the grid system.
+
+### Grid system
+
+We use a grid to structure our designs. Our grid is a mobile-first, responsive, fluid system based on a 12 column layout:
+
+-   wrap grids in a `.container` to take care of maximum width and fluidity
+-   grids fill the available space within their parent container
+-   the grid is based on a fluid, responsive 12 column grid
+-   grid items sit directly within grids
+-   use `.grid` for grids and `data-g` for grid items. If you're using the design system's React components, use the `Grid` component for grids and the `GridItem` component for each grid item.
+-   grids can be nested within infinitely nested
+-   use mixins for generating layouts or components with semantic class names.
+
+### Grid items
+
+Use the `data-g` attribute to create grid items:
+
+-   specify how many of the 12 columns to span, e.g. `data-g="3"` or `data-g="one-quarter"` for spanning three of the twelve columns
+-   there are also more human readable names like _one-half_, _two-thirds_, _three-quarters_ etc, eg. `data-g="two-thirds"`
+-   use `breakpoint:columns` to override the column width from a breakpoint e.g. `data-g="6 md:3"` or `data-g="12 md:one-third"`
+-   If you're using the React `Griditem` component, specify the number of columns for each breakpoint by passing them as props to the component. e.g. `<GridItem cols={12} md={8} lg={9}>...content...</GridItem>`
+-   grid item widths are mobile-first
+-   if there are more than 12 items within a grid, the items simply wrap onto the next line.
+
+### Whole
+
+<Example>
+<Whole />
+
+<CH.Code>
+```js React
+<Grid>
+	<GridItem>Whole</GridItem>
+</Grid>
+```
+```html HTML
+<div class="grid"><div data-g="12" data-component="grid-item">Whole</div></div>
+```
+</CH.Code>
+</Example>
+
+### Halves
+
+<Example>
+<Halves />
+
+<CH.Code>
+```js React
+<Grid>
+	<GridItem cols={6}>1/2</GridItem>
+	<GridItem cols={6}>1/2</GridItem>
+</Grid>
+```
+```html HTML
+<div class="grid">
+  <div data-g="6" data-component="grid-item">1/2</div>
+  <div data-g="6" data-component="grid-item">1/2</div>
+</div>
+```
+</CH.Code>
+</Example>
+
+### Thirds
+
+<Example>
+<Thirds />
+
+<CH.Code>
+```js React
+<Grid>
+	<GridItem cols={4}>1/3</GridItem>
+	<GridItem cols={8}>2/3</GridItem>
+</Grid>
+```
+```html HTML
+<div class="grid">
+  <div data-g="4" data-component="grid-item">1/3</div>
+  <div data-g="8" data-component="grid-item">2/3</div>
+</div>
+```
+</CH.Code>
+</Example>
+
+### Quarters
+
+<Example>
+<Quarters />
+
+<CH.Code>
+```js React
+<Grid>
+	<GridItem cols={3}>1/4</GridItem>
+	<GridItem cols={3}>1/4</GridItem>
+	<GridItem cols={3}>1/4</GridItem>
+	<GridItem cols={3}>1/4</GridItem>
+</Grid>
+```
+```html HTML
+<div class="grid">
+  <div data-g="3" data-component="grid-item">1/4</div>
+  <div data-g="3" data-component="grid-item">1/4</div>
+  <div data-g="3" data-component="grid-item">1/4</div>
+  <div data-g="3" data-component="grid-item">1/4</div>
+</div>
+```
+</CH.Code>
+</Example>
+
+### Nested grids
+
+Grids can be nested infinitely
+
+<Example>
+<Nested />
+
+<CH.Code>
+```js React
+<Grid>
+	<GridItem cols={8}>
+		<Grid>
+			<GridItem cols={4}>Nested 1/3</GridItem>
+			<GridItem cols={8}>Nested 2/3</GridItem>
+		</Grid>
+	</GridItem>
+	<GridItem cols={4}>1/3</GridItem>
+</Grid>
+```
+```html HTML
+<div class="grid">
+  <div data-g="8" data-component="grid-item">
+    <div class="grid">
+      <div data-g="4" data-component="grid-item">Nested 1/3</div>
+      <div data-g="8" data-component="grid-item">Nested 2/3</div>
+    </div>
+  </div>
+  <div data-g="4" data-component="grid-item">1/3</div>
+</div>
+```
+</CH.Code>
+</Example>
+
+### Responsive grids
+
+-   grids are mobile first
+-   use xs:, sm:, md:, lg: and xl: for different screen size
+-   use our [breakpoints](/foundations/responsive/).
+
+<Example>
+<Responsive />
+
+<CH.Code>
+```js React
+<Grid>
+	<GridItem cols={12} sm={{ cols: 4 }}>
+		12 cols on mobile, 4 cols on sm
+	</GridItem>
+	<GridItem cols={12} sm={{ cols: 8 }}>
+		12 cols on mobile, 8 cols on sm
+	</GridItem>
+</Grid>
+```
+```html HTML
+<div class="grid">
+  <div data-g="12 sm:4" data-component="grid-item">
+    12 cols on mobile, 4 cols on sm
+  </div>
+  <div data-g="12 sm:8" data-component="grid-item">
+    12 cols on mobile, 8 cols on sm
+  </div>
+</div>
+```
+</CH.Code>
+</Example>
+
+#### Reversed
+
+The `.grid--rev` modifier renders the grid it in the opposite order to the source order. This is useful for stacking things in the correct order on mobile devices.
+
+<Example>
+<Reversed />
+
+<CH.Code>
+```js React
+<Grid reverse>
+	<GridItem cols={12} sm={{ cols: 4 }}>
+		12 cols on mobile, 4 cols on sm
+	</GridItem>
+	<GridItem cols={12} sm={{ cols: 8 }}>
+		12 cols on mobile, 8 cols on sm
+	</GridItem>
+</Grid>
+```
+```html HTML
+<div class="grid grid--rev">
+  <div data-g="12 sm:4" data-component="grid-item">
+    12 cols on mobile, 4 cols on sm
+  </div>
+  <div data-g="12 sm:8" data-component="grid-item">
+    12 cols on mobile, 8 cols on sm
+  </div>
+</div>
+```
+</CH.Code>
+</Example>
+
+#### Gutterlesss
+
+Remove the gutter between grid items with the `.grid--gutterless` modifier. Generally used for small components nested within other grids, or when you need to closely relate two pieces of information.
+
+<Example>
+<Gutterless />
+
+<CH.Code>
+```js React
+<Grid gutter="none">
+	<GridItem cols={6}>1/2</GridItem>
+	<GridItem cols={6}>1/2</GridItem>
+</Grid>
+```
+```html HTML
+<div class="grid grid--gutterless">
+  <div data-g="6" data-component="grid-item">1/2</div>
+  <div data-g="6" data-component="grid-item">1/2</div>
+</div>
+```
+</CH.Code>
+</Example>
+
+#### Compact
+
+Use smaller gutters between grid items with the `.grid--compact` modifier.
+
+<Example>
+<Compact />
+
+<CH.Code>
+```js React
+<Grid gutter="compact">
+	<GridItem cols={6}>1/2</GridItem>
+	<GridItem cols={6}>1/2</GridItem>
+</Grid>
+```
+```html HTML
+<div class="grid grid--compact">
+  <div data-g="6" data-component="grid-item">1/2</div>
+  <div data-g="6" data-component="grid-item">1/2</div>
+</div>
+```
+</CH.Code>
+</Example>
+
+#### Loose
+
+Use larger gutters between grid items with the `.grid--loose` modifier. A loose grid is generally used for layouts and container components.
+
+<Example>
+<Loose />
+
+<CH.Code>
+```js React
+<Grid gutter="loose">
+	<GridItem cols={6}>1/2</GridItem>
+	<GridItem cols={6}>1/2</GridItem>
+</Grid>
+```
+```html HTML
+<div class="grid grid--loose">
+  <div data-g="6" data-component="grid-item">1/2</div>
+  <div data-g="6" data-component="grid-item">1/2</div>
+</div>
+```
+</CH.Code>
+</Example>
+
+#### Right
+
+Right aligned grids with the `.grid--right` modifier.
+
+<Example>
+<Right />
+
+<CH.Code>
+```js React
+<Grid horizontalAlignment="right">
+	<GridItem cols={4}>1/3</GridItem>
+	<GridItem cols={4}>1/3</GridItem>
+</Grid>
+```
+```html HTML
+<div class="grid grid--right">
+  <div data-g="4" data-component="grid-item">1/3</div>
+  <div data-g="4" data-component="grid-item">1/3</div>
+</div>
+```
+</CH.Code>
+</Example>
+
+#### Centered
+
+Centrally aligned grids with the `.grid--center` modifier.
+
+<Example>
+<Center />
+
+<CH.Code>
+```js React
+<Grid horizontalAlignment="center">
+	<GridItem cols={4}>1/3</GridItem>
+	<GridItem cols={4}>1/3</GridItem>
+</Grid>
+```
+```html HTML
+<div class="grid grid--center">
+  <div data-g="4" data-component="grid-item">1/3</div>
+  <div data-g="4" data-component="grid-item">1/3</div>
+</div>
+```
+</CH.Code>
+</Example>
+
+#### Push/pull
+
+Pull grid items left with `pull:X` or push them right with `push:X`.
+
+The push/pull behaviour can be set for specific screen sizes.
+
+<Example>
+<PushPull />
+
+<CH.Code>
+```js React
+<Grid horizontalAlignment="center">
+	<GridItem cols={12} sm={{ cols: 3, pull: 2 }}>
+		3 cols, pull 2 on sm
+	</GridItem>
+	<GridItem cols={12} sm={{ cols: 3, push: 1 }}>
+		3 cols, push 1 on sm
+	</GridItem>
+</Grid>
+```
+```html HTML
+<div class="grid grid--center">
+  <div data-g="12 sm:3 sm:pull:2" data-component="grid-item">
+    3 cols, pull 2 on sm
+  </div>
+  <div data-g="12 sm:3 sm:push:1" data-component="grid-item">
+    3 cols, push 1 on sm
+  </div>
+</div>
+```
+</CH.Code>
+</Example>
+
+#### Middle
+
+Vertically align grid items to the middle with the `.grid--middle` modifier.
+
+<Example>
+<VerticalMiddle />
+
+<CH.Code>
+```js React
+<Grid verticalAlignment="middle">
+	<GridItem cols={6}>
+		Large
+		<br />
+		grid
+		<br />
+		item
+	</GridItem>
+	<GridItem cols={6}>Small item</GridItem>
+</Grid>
+```
+```html HTML
+<div class="grid grid--middle">
+  <div data-g="6" data-component="grid-item">Large<br />grid<br />item</div>
+  <div data-g="6" data-component="grid-item">Small item</div>
+</div>
+```
+</CH.Code>
+</Example>
+
+#### Bottom
+
+Vertically align grid items to the bottom with the `.grid--bottom` modifier.
+
+<Example>
+<VerticalBottom />
+
+<CH.Code>
+```js React
+<Grid verticalAlignment="bottom">
+	<GridItem cols={6}>
+		Large
+		<br />
+		grid
+		<br />
+		item
+	</GridItem>
+	<GridItem cols={6}>Small item</GridItem>
+</Grid>
+```
+```html HTML
+<div class="grid grid--bottom">
+  <div data-g="6" data-component="grid-item">Large<br />grid<br />item</div>
+  <div data-g="6" data-component="grid-item">Small item</div>
+</div>
+```
+</CH.Code>
+</Example>
+
+#### Debug
+
+Debug grids in development with an outline with the `.grid--debug` modifier.
+
+<Example>
+<Debug />
+
+<CH.Code>
+```js React
+<Grid debug horizontalAlignment="center">
+	<GridItem cols={12} sm={{ cols: 3, pull: 1 }}>
+		12 cols on mobile, 4 cols on sm
+	</GridItem>
+	<GridItem cols={12} sm={{ cols: 3, push: 1 }}>
+		12 cols on mobile, 8 cols on sm
+	</GridItem>
+</Grid>
+```
+```html HTML
+<div class="grid grid--center grid--debug">
+  <div data-g="12 sm:3 sm:pull:1" data-component="grid-item">
+    12 cols on mobile, 4 cols on sm
+  </div>
+  <div data-g="12 sm:3 sm:push:1" data-component="grid-item">
+    12 cols on mobile, 8 cols on sm
+  </div>
+</div>
+```
+</CH.Code>
+</Example>
+
+Or debug all grids in an ancestor with the `.debug-grid` class (apply to the body to debug all grids):
+
+### Semantic
+
+You can specify custom tags for your grid/grid items, if a semantic tag would be more appropriate than a generic div.
+
+<Example>
+<Semantic />
+
+<CH.Code>
+```js React
+<Grid elementType="ul">
+	<GridItem elementType="li" cols={6}>
+		1/2
+	</GridItem>
+	<GridItem elementType="li" cols={6}>
+		1/2
+	</GridItem>
+</Grid>
+```
+```html HTML
+<ul class="grid">
+  <li data-g="6" data-component="grid-item">1/2</li>
+  <li data-g="6" data-component="grid-item">1/2</li>
+</ul>
+```
+</CH.Code>
+</Example>
+
+### Media queries
+
+Use [media queries](/foundations/responsive/) to build custom responsive layouts.
+
+## Accessibility
+
+Component meets WCAG AA guidelines for accessibility on:
+
+- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
+- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
+- Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+
+## Research and evidence
+
+No research done on the component at this time.
 
 export default ({ children }) => <ComponentLayout meta={meta} type="foundations">{children}</ComponentLayout>;

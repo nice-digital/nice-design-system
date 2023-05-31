@@ -1,6 +1,9 @@
 import Head from "next/head";
 
 import { FullBleed, fullBleedVariants } from "@nice-digital/nds-full-bleed";
+import { Hero } from "@nice-digital/nds-hero";
+import { InPageNav } from "@nice-digital/nds-in-page-nav";
+import { Container } from "@nice-digital/nds-container";
 
 export default function Test() {
 	return (
@@ -25,6 +28,13 @@ export default function Test() {
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
 					id massa pellentesque, bibendum risus in, interdum nibh.
 				</p>
+			</FullBleed>
+
+			<h2>Full bleed (with container)</h2>
+			<FullBleed>
+				<Container>
+					<p>Content here</p>
+				</Container>
 			</FullBleed>
 
 			<h2>Full bleed (dark)</h2>
@@ -77,6 +87,12 @@ export default function Test() {
 					id massa pellentesque, bibendum risus in, interdum nibh.
 				</p>
 			</FullBleed>
+
+			<h2>Hero</h2>
+			<Hero title="Hello!" header={<p>Here is a header</p>} />
+
+			<h2>In-page nav</h2>
+			<InPageNav />
 		</>
 	);
 }

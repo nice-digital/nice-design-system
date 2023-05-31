@@ -1,11 +1,102 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
+import { Example } from "components/examples/Example";
+import { LinksExample } from "components/examples/Links";
+import { Screenshot } from "components/core/Screenshot/Screenshot";
 
 export const meta = {
-	title: "Links"
+	title: "Links",
+	description: "Links are used to navigate to another part of the website",
 };
 
-# {meta.title}
+<Example>
+<h4>Example: links</h4>
+<LinksExample />
 
-*** Placeholder foundation page ***
+<CH.Code>
+```js React
+<h2>
+	<a href="/">A link within a heading</a>
+</h2>
+<p>
+	<a href="/">This is a body copy link</a> lorem ipsum dolor sit amet.
+</p>
+```
+```html HTML
+<h2><a href="/">A link within a heading</a></h2>
+<p><a href="/">This is a body copy link</a> lorem ipsum dolor sit amet.</p>
+```
+</CH.Code>
+</Example>
+
+## When to use
+
+Their primary usage is to link to other pages or content.
+
+## When not to use
+
+Don't use links instead of buttons. Buttons should be the default component for triggering an action.
+
+## How to use
+
+### Basics
+
+Links are blue and underlined by default.
+
+-   links should follow the same sizing as containing copy
+-   use rel="noopener external", rel="noopener", rel="next" and rel="prev" and [other link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types) where applicable
+-   use `@include links-default` in SASS to force link styles
+
+### Content guidelines
+
+Links without surrounding text should not have a full stop at the end.
+
+If your link is at the end of a sentence, make sure that the linked text does not include the full stop.
+
+The wording of links is important. Make links contextual and meaningful. Screen readers read out links as a list, so link text needs to be descriptive.
+
+#### Do:
+
+-   Write link text that makes the destination and purpose of the link clear.
+-   Write out email and phone links.
+-   Avoid making links too long.
+
+#### Don't:
+
+-   use the same link text for different URLs on the same page.
+-   write vague link text such as 'click here' and 'Read more' which don't tell the user where the link will take them/what it will do.
+
+### Links on dark backgrounds
+
+Use inverse links when they sit on a dark background. Components with dark background have inverse links built in, for example [inverse panels](https://nice-digital.github.io/nice-design-system/components/panel/#inverse-dark-panel).
+
+-   Use `.link--inverse` on an individual link
+-   or use `.inverse-links` on a containing element
+-   use `@include links-inverse` in SASS on custom dark background components.
+
+### Opening links in a new tab
+
+Avoid opening links in a new tab or window. It can be disorienting - and can cause [accessibility problems for people who cannot visually perceive that the new tab has opened](https://www.w3.org/TR/WCAG20-TECHS/G200.html).
+
+### Links without underlines
+
+If the context tells the user that the text is a link, even without the underline then you can leave them off.
+
+For example, links in side navigation don't need underlines. Users will understand that they're links because of where they are, at the same place, across different pages.
+
+<Screenshot image="links-1.png" alt="Screenshot of the links within the stacked nav component" caption="Example of stacked navigation component - no underlines on links." />
+
+## Accessibility
+
+Ensure links are written so they can be understood by users of assistive technologies such as screen readers.
+
+Component meets WCAG AA guidelines for accessibility on:
+
+- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
+- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
+- Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+
+## Research/evidence
+
+No research done on the table component at this time.
 
 export default ({ children }) => <ComponentLayout meta={meta} type="foundations">{children}</ComponentLayout>;

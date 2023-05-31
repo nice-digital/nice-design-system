@@ -1,173 +1,116 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
-import { Swatch } from "components/Swatch/Swatch";
+import { Swatch } from "components/core/Swatch/Swatch";
 
 export const meta = {
 	title: "Colour"
 };
 
-# {meta.title}
+We use *design tokens* to organise our colours.
 
-Colours are split into two groups:
+## What are design tokens?
 
-- The NICE palette ([\_settings-colours-nice.scss](https://github.com/nice-digital/nice-design-system/blob/main/components/nds-core/scss/settings/_settings-colours-nice.scss))
-- Semantic colours ([\_settings-colours-semantic.scss](https://github.com/nice-digital/nice-design-system/blob/main/components/nds-core/scss/settings/_settings-colours-semantic.scss))
+In short, design tokens are variable names for colours. They allow us to make sure that:
 
-The NICE palette is grouped into primary, secondary and tertiary palettes.
+- colours are used consistently
+- the palette doesn't grow arbitrarily
+- design changes can be implemented without causing random knock-on effects
 
-The semantic colours take these colours and apply them to specific scenarios, e.g. link colour, border colours etc.
+Here's [a useful video that goes into more detail about why tokens are a good idea](https://www.youtube.com/watch?v=wtTstdiBuUk).
 
-## The NICE palette
+## How are the tokens organised?
+
+There are two types of token:
+
+- [Global tokens](https://github.com/nice-digital/nice-design-system/blob/main/components/nds-core/scss/colours/tokens/_global.scss), which specify the colours themselves. The global tokens include our corporate palette and other complementary colours.
+- [Alias tokens](https://github.com/nice-digital/nice-design-system/blob/main/components/nds-core/scss/colours/tokens/_alias.scss), which give semantic meaning to the global tokens.
+
+In code, you should **always use alias tokens**.
+
+## Global tokens
 
 ### Primary palette
 
 | Name | Value | Swatch |
 | ---- | ----- | ------ |
-| $colour-nice-black | #222  | <Swatch colour="#222222" /> |
-| $colour-nice-white | #fff  | <Swatch colour="#ffffff" /> |
-| $colour-nice-teal | #004650  | <Swatch colour="#004650" /> |
+| $nice-teal | #228096 | <Swatch colour="#228096" /> |
+| $nice-cream | #f7f4f1 | <Swatch colour="#f7f4f1" /> |
+| $nice-blue | #00436c | <Swatch colour="#00436c" /> |
+| $white: | #fff | <Swatch colour="#fff" /> |
+| $black: | #000 | <Swatch colour="#000" /> |
+| $nice-black | #0e0e0e | <Swatch colour="#0e0e0e" /> |
 
 ### Secondary palette
 
 | Name | Value | Swatch |
 | ---- | ----- | ------ |
-| $colour-nice-purple | #451551 | <Swatch colour="#451551" /> |
-| $colour-nice-cool-teal | #00506a | <Swatch colour="#00506a" /> |
-| $colour-nice-rich-black | #0e0e0e | <Swatch colour="#0e0e0e" /> |
-| $colour-nice-dark-grey | #393939 | <Swatch colour="#393939" /> |
-| $colour-nice-grey-1 | #adadad | <Swatch colour="#adadad" /> |
-| $colour-nice-grey-2 | #d6d6d6 | <Swatch colour="#d6d6d6" /> |
-| $colour-nice-grey-3 | #e9e9e9 | <Swatch colour="#e9e9e9" /> |
+| $yellow | #ead054 | <Swatch colour="#ead054" /> |
 
 ### Tertiary palette
 
 | Name | Value | Swatch |
 | ---- | ----- | ------ |
-| $colour-nice-blue-1 | #233746 | <Swatch colour="#233746" /> |
-| $colour-nice-blue-2 | #314c60 | <Swatch colour="#314c60" /> |
-| $colour-nice-blue-3 | #517489 | <Swatch colour="#517489" /> |
-| $colour-nice-ice-teal | #a2bdc1 | <Swatch colour="#a2bdc1" /> |
-| $colour-nice-teal-1 | #4f7d83 | <Swatch colour="#4f7d83" /> |
-| $colour-nice-teal-2 | #18646e | <Swatch colour="#18646e" /> |
-| $colour-nice-teal-3 | #15434a | <Swatch colour="#15434a" /> |
-
-## Semantic colours
-
-### True black/white
-
-| Name | Palette colour | Value | Swatch | Notes |
-| ---- | -------------- | ----- | ------ | ----- |
-| $colour-true-black | - | #000 | <Swatch colour="#000" /> | Used for print styles |
-| $colour-true-white | - | #fff | <Swatch colour="#fff" /> | Used for print styles |
-
-### Global
-
-| Name | Palette colour | Value | Swatch | Notes |
-| ---- | -------------- | ----- | ------ | ----- |
-| $colour-body | - | #f4f4f4 | <Swatch colour="#f4f4f4" /> | Off-white page background colour |
-| $colour-text | $colour-nice-black | #222 | <Swatch colour="#222" /> | Off-black body text colour |
-| $colour-text-subtle | $colour-nice-grey-1 | #adadad | <Swatch colour="#adadad" /> | Subtle text colour |
-| $colour-text-inverse | $colour-nice-white | #fff | <Swatch colour="#fff" /> | Inverse body text colour for use on dark background |
-| $colour-icons | $colour-nice-teal | #004650 | <Swatch colour="#004650" /> | Icons colour |
-
-### Links
-
-| Name | Palette colour | Value | Swatch | Notes |
-| ---- | -------------- | ----- | ------ | ----- |
-| $colour-link | - | #005ea5 | <Swatch colour="#005ea5" /> | Link text colour |
-| $colour-link-hover | - | #2e8aca | <Swatch colour="#2e8aca" /> | Link hover colour |
-| $colour-link-visited | - | #4c2c92 | <Swatch colour="#4c2c92" /> | Link visited colour |
-| $colour-link-active | $colour-nice-black | #222 | <Swatch colour="#222" /> | Link active colour |
-| $colour-link-focus-text | - | #005ea5 | <Swatch colour="#005ea5" /> | Link focus text colour |
-
-### Inverse links
-
-| Name | Palette colour | Value | Swatch | Notes |
-| ---- | -------------- | ----- | ------ | ----- |
-| $colour-link-inverse | $colour-nice-white | #fff | <Swatch colour="#fff" /> | Inverse link text colour |
-| $colour-link-inverse-hover | $colour-nice-grey-2 | #d6d6d6 | <Swatch colour="#d6d6d6" /> | Inverse link hover text colour |
-| $colour-link-inverse-visited | $colour-nice-white | #fff | <Swatch colour="#fff" /> | Inverse link visited text colour |
-| $colour-link-inverse-active | $colour-nice-grey-2 | #d6d6d6 | <Swatch colour="#d6d6d6" /> | Inverse link active text colour |
-| $colour-link-inverse-focus-text | $colour-nice-white | #fff | <Swatch colour="#fff" /> | Inverse link focus text colour |
-
-### Focus
-
-| Name | Palette colour | Value | Swatch | Notes |
-| ---- | -------------- | ----- | ------ | ----- |
-| $colour-focus | - | #0092a6 | <Swatch colour="#0092a6" /> | Focus colour |
-| $colour-focus-inverse | $colour-nice-white | #fff | <Swatch colour="#fff" /> | Inverse focus colour |
-
-### CTA buttons
-
-| Name | Palette colour | Value | Swatch | Notes |
-| ---- | -------------- | ----- | ------ | ----- |
-| $colour-btn-cta | $colour-nice-purple | #451551 | <Swatch colour="#451551" /> | CTA button background colour |
-| $colour-btn-cta-hover | - | #260b2d | <Swatch colour="#260b2d" /> | CTA button hover colour |
-| $colour-btn-cta-text | $colour-nice-white | #fff | <Swatch colour="#fff" /> | CTA button text colour |
+| $nice-teal-tint-1 | #59a0b0 | <Swatch colour="#59a0b0" /> |
+| $nice-teal-tint-2 | #91c0cb | <Swatch colour="#91c0cb" /> |
+| $nice-teal-tint-3 | #c8e0e6 | <Swatch colour="#c8e0e6" /> |
+| $nice-blue-tint-1 | #407291 | <Swatch colour="#407291" /> |
+| $nice-blue-tint-2 | #80a1b5 | <Swatch colour="#80a1b5" /> |
+| $nice-blue-tint-3 | #bfd0da | <Swatch colour="#bfd0da" /> |
+| $nice-blue-tint-4 | #023452 | <Swatch colour="#023452" /> |
+| $nice-cream-1 | #ded5ca | <Swatch colour="#ded5ca" /> |
+| $nice-cream-2 | #e6e0d7 | <Swatch colour="#e6e0d7" /> |
+| $nice-cream-3 | #eeeae4 | <Swatch colour="#eeeae4" /> |
+| $nice-cream-tint-1 | #fbfaf8 | <Swatch colour="#fbfaf8" /> |
+| $black-tint-1 | #404040 | <Swatch colour="#404040" /> |
+| $black-tint-2 | #808080 | <Swatch colour="#808080" /> |
+| $black-tint-3 | #bfbfbf | <Swatch colour="#bfbfbf" /> |
 
 
-### Primary buttons
+### Custom palette
 
-| Name | Palette colour | Value | Swatch | Notes |
-| ---- | -------------- | ----- | ------ | ----- |
-| $colour-btn-primary | $colour-nice-dark-grey | #393939 | <Swatch colour="#393939" /> | Primary button background colour |
-| $colour-btn-primary-hover | $colour-nice-rich-black | #0e0e0e | <Swatch colour="#0e0e0e" /> | Primary button hover colour |
-| $colour-btn-primary-text | $colour-nice-white | #fff | <Swatch colour="#fff" /> | Primary button text colour |
+| Name | Value | Swatch |
+| ---- | ----- | ------ |
+| $custom-grey-1 | #adadad | <Swatch colour="#adadad" /> |
+| $custom-grey-2 | #d6d6d6 | <Swatch colour="#d6d6d6" /> |
+| $custom-grey-3 | #666 | <Swatch colour="#666" /> |
+| $custom-grey-4 | #e9e9e9 | <Swatch colour="#e9e9e9" /> |
+| $custom-blue-1 | #005ea5 | <Swatch colour="#005ea5" /> |
+| $custom-blue-2 | #003761 | <Swatch colour="#003761" /> |
+| $custom-blue-3 | #3479d0 | <Swatch colour="#3479d0" /> |
+| $custom-blue-3-tint | #eff4fc | <Swatch colour="#eff4fc" /> |
+| $custom-purple-1 | #4c2c92 | <Swatch colour="#4c2c92" /> |
+| $custom-red-1 | #b50f23 | <Swatch colour="#b50f23" /> |
+| $custom-red-1-tint | #f9eced | <Swatch colour="#f9eced" /> |
+| $custom-orange-1 | #dc8a07 | <Swatch colour="#dc8a07" /> |
+| $custom-orange-1-tint | #fbf7f1 | <Swatch colour="#fbf7f1" /> |
+| $custom-orange-2 | #bd5826 | <Swatch colour="#bd5826" /> |
+| $custom-green-1 | #68c103 | <Swatch colour="#68c103" /> |
+| $custom-green-1-tint | #f3faeb | <Swatch colour="#f3faeb" /> |
+| $custom-yellow-shade | #d6ba32 | <Swatch colour="#d6ba32" /> |
+| $custom-yellow-highlight | #fff999 | <Swatch colour="#fff999" /> |
+| $custom-teal | #0092a6 | <Swatch colour="#0092a6" /> |
+| $custom-pink | #d5367f | <Swatch colour="#d5367f" /> |
 
-### Secondary buttons
+## Alias tokens
 
-| Name | Palette colour | Value | Swatch | Notes |
-| ---- | -------------- | ----- | ------ | ----- |
-| $colour-btn-secondary | - | #666 | <Swatch colour="#666" /> | Secondary button background colour |
-| $colour-btn-secondary-hover | - | #333 | <Swatch colour="#333" /> | Secondary button hover colour |
-| $colour-btn-secondary-text | $colour-nice-white | #fff | <Swatch colour="#fff" /> | Primary button text colour |
+Alias tokens are too numerous to document here; instead, try looking at the
+[alias token SCSS file](https://github.com/nice-digital/nice-design-system/blob/main/components/nds-core/scss/colours/tokens/_alias.scss).
 
-### Light buttons
+The idea is to tie a global token to a particular semantic meaning. For example,
+the default text colour is given the alias token of `$text`, which in turn is assigned
+the global token of `$nice-black`.
 
-| Name | Palette colour | Value | Swatch | Notes |
-| ---- | -------------- | ----- | ------ | ----- |
-| $colour-btn-inverse | $colour-nice-white | #fff | <Swatch colour="#fff" /> | Inverse (light) button background colour |
-| $colour-btn-inverse-hover | $colour-nice-grey-3 | #e9e9e9 | <Swatch colour="#e9e9e9" /> | Inverse (light) button hover colour |
-| $colour-btn-inverse-text | $colour-nice-rich-black | #0e0e0e | <Swatch colour="#0e0e0e" /> | Inverse (light) button text colour |
+This isn't the only place that `$nice-black` is referenced; for example, it's also
+used in the `$link-active` alias token (i.e. the colour of active links) and the
+`$btn-cta-text` alias token (i.e. the text colour of CTA buttons).
 
-### Backgrounds/borders
+This gives us two advantages:
 
-| Name | Palette colour | Value | Swatch | Notes |
-| ---- | -------------- | ----- | ------ | ----- |
-| $colour-border | $colour-nice-grey-1 | #adadad | <Swatch colour="#adadad" /> | Borders, separators, rules, keylines etc. |
-| $colour-border-focus | $colour-nice-blue-3 | #517489 | <Swatch colour="#517489" /> | Focused borders, separators, rules, keylines etc. |
-
-### Notifications/banners
-
-| Name | Palette colour | Value | Swatch | Notes |
-| ---- | -------------- | ----- | ------ | ----- |
-| $colour-agile-phase | - | #009ae9 | <Swatch colour="#009ae9" /> | Agile lifecycle phase banner |
-| $colour-discovery | - | #b8008e | <Swatch colour="#b8008e" /> | Discovery agile lifecycle phase *(deprecated)* |
-| $colour-alpha | - | #d5367f | <Swatch colour="#d5367f" /> | Alpha badges and banners *(deprecated)* |
-| $colour-beta | - | #bd5826 | <Swatch colour="#bd5826" /> | Beta badges and banners *(deprecated)* |
-| $colour-live | - | #578137 | <Swatch colour="#578137" /> | Live badges and banners *(deprecated)* |
-| $colour-error | - | #b50f23 | <Swatch colour="#b50f23" /> | Error text and border colour |
-| $colour-error-background | - | #f9eced | <Swatch colour="#f9eced" /> | Error background colour |
-| $colour-caution | - | #dc8a07 | <Swatch colour="#dc8a07" /> | Caution text and border colour |
-| $colour-caution-background | - | #fbf7f1 | <Swatch colour="#fbf7f1" /> | Caution background colour |
-| $colour-info | - | #3479d0 | <Swatch colour="#3479d0" /> | Info text and border colour |
-| $colour-info-background | - | #eff4fc | <Swatch colour="#eff4fc" /> | Info background colour |
-| $colour-success | - | #68c103 | <Swatch colour="#68c103" /> | Success text and border colour |
-| $colour-success-background | - | #f3faeb | <Swatch colour="#f3faeb" /> | Success background colour |
-| $colour-mark | - | #fff999 | <Swatch colour="#fff999" /> | mark tag highlighter colour |
-
-### Guidance types
-
-| Name | Palette colour | Value | Swatch | Notes |
-| ---- | -------------- | ----- | ------ | ----- |
-| $colour-guidance-new | $colour-nice-purple | #451551 | <Swatch colour="#451551" /> | New guidance colour |
-| $colour-guidance-updated | $colour-nice-blue-3 | #517489 | <Swatch colour="#517489" /> | Updated guidance colour |
-| $colour-guidance-consultation | - | #557021 | <Swatch colour="#557021" /> | In consultation guidance colour |
-
-### Hero
-
-| Name | Palette colour | Value | Swatch | Notes |
-| ---- | -------------- | ----- | ------ | ----- |
-| $colour-hero-background | $colour-nice-teal-2 | #18646e | <Swatch colour="#18646e" /> | Background colour for the hero component |
-| $colour-hero-border | $colour-nice-teal-3 | #15434a | <Swatch colour="#15434a" /> | Colour for the border in the hero component |
+- We can update any element's colour (e.g. text, links, hero background etc.) and
+be confident that there won't be any horrible knock-on effects. For example,
+if we wanted text to be dark grey instead of black, we can update the text token
+without affecting other tokens that we want to remain black.
+- We can still change the underlying colour if we do want to make global changes. For
+example, if NICE black were to change from `#0e0e0e` to `#0d0d0d`, we can make
+that change in one place and have it cascade to all relevant alias tokens.
 
 export default ({ children }) => <ComponentLayout meta={meta} type="foundations">{children}</ComponentLayout>;

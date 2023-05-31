@@ -1,93 +1,62 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
 import { Example } from "components/examples/Example";
 import { FilterPanel, FilterGroup, FilterOption, FilterSummary, FilterByInput } from "@nice-digital/nds-filters";
+import { DefaultFilterSummary, DefaultFilterPanel, DefaultFilterByInput, DefaultMultipleFilters } from "components/examples/Filters";
 
 export const meta = {
 	title: "Filters",
+	description: "Help users narrow down long lists of information by letting them filter out items that don't meet their chosen criteria.",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-filters",
 	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-filters"
 };
 
-# {meta.title}
-
-Help users narrow down long lists of information by letting them filter out items that don’t meet their chosen criteria.
-
 ## Overview
 
-A summary of the filtered results on a page, which update as you apply filters from the filter panel.
-
-It shows how many results have been returned in total and on that page and allows you to remove filters and sort the returned data.
-
-There are four variations of the alert component:
+There are four variations of the filter component:
 
 ### Filter summary
 
+A summary of the filtered results on a page, which update as you apply filters from the filter panel. It shows how many results have been returned in total and on that page and allows you to remove filters and sort the returned data.
+
 <Example>
-<h2>Example: filter summary</h2>
-<FilterSummary activeFilters={[
-		{
-			label: "Guidance"
-		},
-		{
-			label: "Pathway"
-		}
-	]}>
-	Showing results 1 to 10 of 1209
-</FilterSummary>
+<h4>Example: filter summary</h4>
+<DefaultFilterSummary />
 </Example>
 
 ### Filter panel with filter group
 
-<Example>
 A filter panel can contain a filter group with filter options to select
-<FilterPanel heading="A filter panel">
-	<FilterGroup heading="Type">
-		<FilterOption isSelected={true} value="This is an example" onChanged={()=>console.log("bleugh")}>
-			This is an example
-		</FilterOption>
-		<FilterOption isSelected={false} value="Another example" onChanged={()=>console.log("bleugh")}>
-			Another example
-		</FilterOption>
-	</FilterGroup>
-</FilterPanel>
+
+<Example>
+<h4>Example: filter panel with filter group</h4>
+<DefaultFilterPanel />
 </Example>
 
 ### Filter panel with filter by input
 
-<Example>
 A filter panel can contain a filter group with a filter by input
-<FilterPanel heading="A filter panel">
-	<FilterByInput label="test" name="test">
-	</FilterByInput>
-</FilterPanel>
+
+<Example>
+<h4>Example: filter panel with filter by input</h4>
+<DefaultFilterByInput />
 </Example>
 
 ### Filter panel with multiple filters
 
-<Example>
-// A filter panel can contain a filter group with filter options to select, and/or a filter by input
-<FilterPanel heading="A filter panel">
-	<FilterGroup heading="Type">
-		<FilterOption isSelected={true} value="This is an example" onChanged={()=>console.log("bleugh")}>
-			This is an example
-		</FilterOption>
-		<FilterOption isSelected={false} value="Another example" onChanged={()=>console.log("bleugh")}>
-			Another example
-		</FilterOption>
-	</FilterGroup>
-	<FilterByInput label="test" name="test">
-	</FilterByInput>
-</FilterPanel>
-</Example>
+A filter panel can contain a filter group with filter options to select, and/or a filter by input
 
+<Example>
+<h4>Example: filter panl with multiple filters</h4>
+<DefaultMultipleFilters />
+</Example>
 
 ## When to use filters
 
-Use filters when providing a long list of results which introduces search filter complexity.
+Use filters on long lists of item or results which introduce complexity. For example search results and the guidance list page.
 
 ## When not use filters
 
-When it isn't appropriate to present content with filters, they are not required.
+Don't use filters on content pages, if these pages are complex or contain a lot of information, simplify the content or split up across pages.
 
 ## How to use
 
@@ -95,9 +64,165 @@ When it isn't appropriate to present content with filters, they are not required
 
 This component should be positioned directly above the results.
 
+<Example>
+<DefaultFilterSummary />
+
+<CH.Code>
+```js React
+<FilterSummary
+	activeFilters={[
+		{
+			label: "Guidance"
+		},
+		{
+			label: "Pathway"
+		}
+	]}
+>
+	Showing results 1 to 10 of 1209
+</FilterSummary>
+```
+```html HTML
+<div class="filter-summary" data-component="filter-summary">
+  <div class="filter-summary__count">
+    <h2 class="h5 mv--0">Showing results 1 to 10 of 1209</h2>
+  </div>
+  <ul class="filter-summary__filters hide-print" aria-label="Active filters">
+    <li class="filter-summary__filter">
+      <span class="tag tag--outline" data-component="tag"
+        >Guidance<a class="tag__remove"
+          ><span class="visually-hidden">Remove Guidance filter</span></a
+        ></span
+      >
+    </li>
+    <li class="filter-summary__filter">
+      <span class="tag tag--outline" data-component="tag"
+        >Pathway<a class="tag__remove"
+          ><span class="visually-hidden">Remove Pathway filter</span></a
+        ></span
+      >
+    </li>
+  </ul>
+</div>
+```
+</CH.Code>
+</Example>
+
 ### Filter panel with a filter group
 
 For the filter group, you can indicate the selected filters.
+
+<Example>
+<DefaultFilterPanel />
+
+<CH.Code>
+```js React
+<FilterPanel heading="A filter panel">
+	<FilterGroup heading="Type">
+		<FilterOption
+			isSelected={true}
+			value="This is an example"
+			onChanged={() => console.log("Changed!")}
+		>
+			This is an example
+		</FilterOption>
+		<FilterOption
+			isSelected={false}
+			value="Another example"
+			onChanged={() => console.log("Changed!")}
+		>
+			Another example
+		</FilterOption>
+	</FilterGroup>
+</FilterPanel>
+```
+```html HTML
+<form>
+  <div class="filter-panel" data-component="filter-panel">
+    <h2 class="filter-panel__heading">
+      <button
+        aria-expanded="true"
+        aria-controls="filter-panel-body"
+        type="button"
+      >
+        <svg
+          width="1em"
+          height="1em"
+          viewBox="0 0 512 512"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="filter-panel__heading-icon filter-panel__heading-icon--expanded"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path
+            d="M478.152 174c0 10.091-3.525 18.661-10.576 25.712l-186 186c-7.243 7.243-15.909 10.864-26 10.864-10.283 0-18.853-3.621-25.712-10.864l-186-186C36.621 192.853 33 184.283 33 174c0-10.091 3.621-18.757 10.864-26L65 126.576C72.424 119.525 81.09 116 91 116c10.091 0 18.661 3.525 25.712 10.576L255.576 265.44 394.44 126.576c7.051-7.051 15.621-10.576 25.712-10.576 9.909 0 18.576 3.525 26 10.576L467.576 148c7.051 7.424 10.576 16.091 10.576 26Z"
+            fill="currentColor"
+          ></path>
+		</svg>
+		A filter panel
+      </button>
+    </h2>
+    <div id="filter-panel-body" class="filter-panel__body" aria-hidden="false">
+      <div class="filter-group">
+        <h3 class="filter-group__heading">
+          <button type="button" aria-expanded="true" aria-controls="group-type">
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 512 512"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="filter-group__heading-icon filter-group__heading-icon--expanded"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M478.152 174c0 10.091-3.525 18.661-10.576 25.712l-186 186c-7.243 7.243-15.909 10.864-26 10.864-10.283 0-18.853-3.621-25.712-10.864l-186-186C36.621 192.853 33 184.283 33 174c0-10.091 3.621-18.757 10.864-26L65 126.576C72.424 119.525 81.09 116 91 116c10.091 0 18.661 3.525 25.712 10.576L255.576 265.44 394.44 126.576c7.051-7.051 15.621-10.576 25.712-10.576 9.909 0 18.576 3.525 26 10.576L467.576 148c7.051 7.424 10.576 16.091 10.576 26Z"
+                fill="currentColor"
+              ></path>
+			</svg>
+			<span id="group-heading-type">Type </span>
+          </button>
+        </h3>
+        <fieldset
+          id="group-type"
+          aria-hidden="false"
+          class="filter-group__options"
+        >
+          <legend>Type</legend>
+          <label
+            for="filter_type_this-is-an-example"
+            class="filter-option"
+            data-component="filter-option"
+            ><input
+              id="filter_type_this-is-an-example"
+              type="checkbox"
+              name="type"
+              title="Type - This is an example"
+              value="This is an example"
+              checked=""
+            /><span class="filter-option__text">This is an example</span></label
+          ><label
+            for="filter_type_another-example"
+            class="filter-option"
+            data-component="filter-option"
+            ><input
+              id="filter_type_another-example"
+              type="checkbox"
+              name="type"
+              title="Type - Another example"
+              value="Another example"
+            /><span class="filter-option__text">Another example</span></label
+          >
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</form>
+```
+</CH.Code>
+</Example>
 
 ### Filter panel with filter by input
 
@@ -105,7 +230,100 @@ You can use any standard input; it will default to a text input.
 
 You can use variants on our input components, such as an error message or hint text.
 
-### Filter panel with multiple filters
+<Example>
+<DefaultFilterByInput />
+
+<CH.Code>
+```js React
+<FilterPanel heading="A filter panel">
+	<FilterByInput label="test" name="test"></FilterByInput>
+</FilterPanel>
+```
+```html HTML
+<form>
+  <div class="filter-panel" data-component="filter-panel">
+    <h2 class="filter-panel__heading">
+      <button
+        aria-expanded="true"
+        aria-controls="filter-panel-body"
+        type="button"
+      >
+        <svg
+          width="1em"
+          height="1em"
+          viewBox="0 0 512 512"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="filter-panel__heading-icon filter-panel__heading-icon--expanded"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path
+            d="M478.152 174c0 10.091-3.525 18.661-10.576 25.712l-186 186c-7.243 7.243-15.909 10.864-26 10.864-10.283 0-18.853-3.621-25.712-10.864l-186-186C36.621 192.853 33 184.283 33 174c0-10.091 3.621-18.757 10.864-26L65 126.576C72.424 119.525 81.09 116 91 116c10.091 0 18.661 3.525 25.712 10.576L255.576 265.44 394.44 126.576c7.051-7.051 15.621-10.576 25.712-10.576 9.909 0 18.576 3.525 26 10.576L467.576 148c7.051 7.424 10.576 16.091 10.576 26Z"
+            fill="currentColor"
+          ></path>
+		</svg>
+		A filter panel
+      </button>
+    </h2>
+    <div id="filter-panel-body" class="filter-panel__body" aria-hidden="false">
+      <div class="inputFilterBox" data-component="input-filter">
+        <h3 class="inputFilterBox__heading">
+          <button
+            type="button"
+            aria-expanded="true"
+            aria-controls="inputFilter-test"
+          >
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 512 512"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="filter-group__heading-icon filter-group__heading-icon--expanded"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M478.152 174c0 10.091-3.525 18.661-10.576 25.712l-186 186c-7.243 7.243-15.909 10.864-26 10.864-10.283 0-18.853-3.621-25.712-10.864l-186-186C36.621 192.853 33 184.283 33 174c0-10.091 3.621-18.757 10.864-26L65 126.576C72.424 119.525 81.09 116 91 116c10.091 0 18.661 3.525 25.712 10.576L255.576 265.44 394.44 126.576c7.051-7.051 15.621-10.576 25.712-10.576 9.909 0 18.576 3.525 26 10.576L467.576 148c7.051 7.424 10.576 16.091 10.576 26Z"
+                fill="currentColor"
+              ></path>
+			</svg>
+			test
+          </button>
+        </h3>
+        <div
+          id="inputFilter-test"
+          aria-hidden="false"
+          class="inputFilterBox__controls"
+        >
+          <div class="input" data-component="input">
+            <label class="input__label" for="test">test</label
+            ><input
+              name="test"
+              class="input__input"
+              id="test"
+              type="text"
+              value=""
+            />
+          </div>
+          <button
+            type="submit"
+            class="btn ml--0 mb--0"
+            data-component="button--primary"
+          >
+            Filter
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+```
+</CH.Code>
+</Example>
+
+### Content
 
 Avoid lengthy text for the filter options. Option text should be as simple as possible, one or two words.
 
@@ -115,29 +333,13 @@ If you change the text on the filter by the input button, ensure it is clear wha
 
 Component meets WCAG AA guidelines for accessibility on:
 
-Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
-
-UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
-
-Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
+- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
+- Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+- Tap target meets minimum size requirements (44 x 44 pixels).
 
 ## Research and evidence
 
-No research done on the component at this time
-
-## Help improve this page
-
-To help make sure that this page is useful, relevant and up to date, you can:
-
--   [Share your research or feedback on GitHub](https://github.com/nice-digital/nice-design-system/discussions "https://github.com/nice-digital/nice-design-system/discussions")
-
--   [Propose a change](https://github.com/nice-digital/nice-design-system/discussions/categories/ideas "https://github.com/nice-digital/nice-design-system/discussions/categories/ideas")
-
-
-## Need help
-
-If you’ve got a question about the NICE Design System, contact the team. (Link TBC)
-
-*** Placeholder component page ***
+No research done on the component at this time.
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;

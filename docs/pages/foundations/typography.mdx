@@ -1,151 +1,417 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
 import { Example } from "components/examples/Example";
+import {
+	AllHeadings,
+	BodyText,
+	LeadText,
+	SmallText,
+	BoldText,
+	ItalicText,
+	StrikethroughText,
+	Quote,
+	BulletedList,
+	NumberedList,
+	UnstyledList,
+	PipedList,
+	DefaultList,
+	LooseList,
+	TightList
+} from "components/examples/Typography";
 
 export const meta = {
 	title: "Typography"
 };
 
-# {meta.title}
+Typography covers the settings for type that we use across our services. This covers headings, paragraphs, quotations, lists and other text settings.
 
-Within NDS Core's SCSS folder, typography settings and functions can be found in:
-- [settings/_settings-typography.scss](https://github.com/nice-digital/nice-design-system/blob/main/components/nds-core/scss/settings/_settings-typography.scss)
-- [typography/_typography-headings.scss](https://github.com/nice-digital/nice-design-system/blob/main/components/nds-core/scss/typography/_typography-headings.scss)
-- [typography/_typography-helpers.scss](https://github.com/nice-digital/nice-design-system/blob/main/components/nds-core/scss/typography/_typography-helpers.scss)
-- [typography/_typography-links.scss](https://github.com/nice-digital/nice-design-system/blob/main/components/nds-core/scss/typography/_typography-links.scss)
+## When to use
 
-## Headings
+Use our typography settings across all our digital services.
 
-### Heading 1 (2.75rem)
+## When not to use
 
-<Example>
-	<h1>Heading 1</h1>
-</Example>
+Check our [brand guidelines for print typography](https://indepth.nice.org.uk/typography/index.html) for use in print media.
 
-#### Usage:
+## How to use
 
-- Use an `h1` element, or
-- Apply a class of `h1`, or
-- Use the `nds-h1` SASS mixin
+### Headings
 
-### Heading 2 (2.25rem)
+Use heading tags, such as `<h1>` `<h2>` and so on, to tag the headings on a page.
+
+Don't skip heading levels. If needed headings can be styled differently from the underlying HTML using override classes. For example, adding .h4 to a h3 will apply the styling of the h4 to the h3. Make sure that it's appropriate - there should be a good reason to change the default styles within the context of the page, as we want heading styles to stay consistent wherever possible.
+
+By default Headings levels 1-4 are in the font Lora Semibold (Weight 600), Heading levels 5-6 use the font Inter Semibold (Weight 600).
 
 <Example>
-	<h2>Heading 2</h2>
+<h4>Example: all headings</h4>
+<AllHeadings />
+
+```html
+<h1>Heading 1</h1>
+<h1 class="h1-alt">Heading 1 alt</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+```
 </Example>
 
-#### Usage:
+#### Alternative Heading 1
 
-- Use an `h2` element, or
-- Apply a class of `h2`, or
-- Use the `nds-h2` SASS mixin
-
-### Heading 3 (1.75rem)
+A smaller size for our heading level 1 for use on pages that have long titles such as our guidance pages.
 
 <Example>
-	<h3>Heading 3</h3>
+<h5>Example: alternative heading 1</h5>
+<h1 className="h1-alt">Alternative heading 1</h1>
+
+```html
+<h1 class="h1-alt">Alternative heading 1</h1>
+```
 </Example>
 
-#### Usage:
+#### Split headings
 
-- Use an `h3` element, or
-- Apply a class of `h3`, or
-- Use the `nds-h3` SASS mixin
+Sometimes you may need to make it clear that a page is part of a larger section or group.
+To do this, you can use the pre-heading wihin the [page header component](/components/page-header/).
 
-### Heading 4 (1.25rem)
+#### Content guidelines for headings
+
+Use sentence case for headings - only capitalise the first letter. For example ‘Asthma management' not 'Asthma Management'.
+
+Do not put a full stop at the end of a heading.
+
+### Paragraphs
+
+Our paragraph text uses the typeface Inter.
+
+Our text has a 66 character limit per line. Text will wrap to a new line after this point. This is in line with the optimal line-length range for text. Reference: [http://webtypography.net/2.1.2](http://webtypography.net/2.1.2)
+
+#### Body text
+
+The default paragraph font size is 1rem/18px on large screens and 15px on small screens.
 
 <Example>
-	<h4>Heading 4</h4>
+<h5>Example: body text</h5>
+<BodyText />
+
+```html
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed gravida augue, ut semper nunc. Praesent ultrices at turpis fringilla congue. Proin iaculis dolor non nibh pellentesque scelerisque.</p>
+```
 </Example>
 
-#### Usage:
+#### Lead paragraph
 
-- Use an `h4` element, or
-- Apply a class of `h4`, or
-- Use the `nds-h4` SASS mixin
+A lead paragraph is an introductory paragraph that you can use at the top of a page to summarise the content and add emphasis to the introduction.
 
-### Heading 5 (1.125rem)
+Use .lead for lead text.
 
 <Example>
-	<h5>Heading 5</h5>
+<h5>Example: lead paragraph</h5>
+<LeadText />
+
+```html
+<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed gravida augue, ut semper nunc.</p>
+```
 </Example>
 
-#### Usage:
+#### Small paragraph
 
-- Use an `h5` element, or
-- Apply a class of `h5`, or
-- Use the `nds-h5` SASS mixin
+For de-emphasizing text use the `<small>` tag or .small.
 
-### Heading 6 (1rem)
+Use small text sparingly.
 
 <Example>
-	<h6>Heading 6</h6>
+<h5>Example: small text</h5>
+<SmallText />
+
+```html
+<small>This is smaller text.</small>
+```
 </Example>
 
-#### Usage:
+#### Bold
 
-- Use an `h6` element, or
-- Apply a class of `h6`, or
-- Use the `nds-h6` SASS mixin
-
-## Paragraphs
-
-### Standard paragraphs
+To emphasize a snippet of text with a heavier font-weight use the `<strong>` tag.
 
 <Example>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum nibh pellentesque, blandit nunc vitae, semper ipsum.</p>
-	<p>In libero nisi, laoreet vel lacinia vel, malesuada id eros. Pellentesque tempor interdum tortor non malesuada. Curabitur nec consequat ex, rhoncus dictum sapien. In varius nisl metus. Curabitur sollicitudin venenatis elit, a feugiat nulla. Vivamus luctus in dui ut maximus. Morbi quis nisl est. Ut a ex lectus. Etiam interdum malesuada felis, vitae malesuada felis sagittis a.</p>
+<h5>Example: bold text</h5>
+<BoldText />
+
+```html
+<strong>This is strong text.</strong>
+```
 </Example>
 
-##### Usage:
+#### Italics
 
-- Use a `p` element, or
-- Apply a class of `p`, or
-- Use the `nds-p` SASS mixin
-
-### Lead paragraphs
+To emphasize a snippet of text with italics `<em>` tag.
 
 <Example>
-	<p className="lead">In libero nisi, laoreet vel lacinia vel, malesuada id eros. Pellentesque tempor interdum tortor non malesuada. Curabitur nec consequat ex, rhoncus dictum sapien. In varius nisl metus. Curabitur sollicitudin venenatis elit, a feugiat nulla. Vivamus luctus in dui ut maximus. Morbi quis nisl est. Ut a ex lectus. Etiam interdum malesuada felis, vitae malesuada felis sagittis a.</p>
+<h5>Example: italic text</h5>
+<ItalicText />
+
+```html
+<em>This is italicized text.</em>
+```
 </Example>
 
-##### Usage:
+#### Strikethrough text
 
-- Apply a class of `lead` to a `p` element, or
-- Use the `nds-lead` SASS mixin
-
-## Small text
+For indicating blocks of text that are no longer relevant use the `<s>` tag.
 
 <Example>
-	<small>In libero nisi, laoreet vel lacinia vel, malesuada id eros. Pellentesque tempor interdum tortor non malesuada. Curabitur nec consequat ex, rhoncus dictum sapien. In varius nisl metus. Curabitur sollicitudin venenatis elit, a feugiat nulla. Vivamus luctus in dui ut maximus. Morbi quis nisl est. Ut a ex lectus. Etiam interdum malesuada felis, vitae malesuada felis sagittis a.</small>
+<h5>Example: strikethrough text</h5>
+<StrikethroughText />
+
+```html
+<s>This text should be treated as no longer accurate.</s>
+```
 </Example>
 
-##### Usage:
+### Quotes
 
-- Use a `small` element, or
-- Apply a class of `small`
-
-## Links
-
-### Default link style
+Use when you want to emphasize excerpts of text. Use a citation where possible.
 
 <Example>
-	<p><a href="https://www.nice.org.uk">Here is a link to NICE!</a></p>
+<h4>Example: quote</h4>
+<Quote />
+
+```html
+<blockquote class="quote">
+	<p>
+		We do the right work in the right way at NICE. We mix content, dev, design
+		and research at the start to solve user problems. We produce things
+		quickly, get data and refine.
+	</p>
+	<footer>
+		<cite>
+			<strong>Dafydd - Content Team</strong>
+		</cite>
+	</footer>
+</blockquote>
+```
 </Example>
 
-### Inverse link style
+### Heading and text size reference
 
-##### Usage:
+| Font Size            | Scale | Font size (rems) | Font size small screen (px@15) | Font size (px@16) | Font size large screen (px@18) | Line height |
+| -------------------- | ----- | ---------------- | ------------------------------ | ----------------- | ------------------------------ | ----------- |
+| Heading 1            | 6     | 2.75             | 41.25                          | 44                | 49.5                           | 1.2         |
+| Heading 1 (ALT)      | 5     | 2.375            | 35.625                         | 38                | 42.75                          | 1.2         |
+| Heading 2            | 4     | 2.125            | 31.875                         | 34                | 38.25                          | 1.2         |
+| Heading 3            | 3     | 1.75             | 26.25                          | 28                | 31.5                           | 1.25        |
+| Heading 4/lead/Quote | 2     | 1.375            | 20.625                         | 22                | 24.75                          | 1.3         |
+| Heading 5            | 1     | 1.125            | 16.875                         | 18                | 20.25                          | 1.4         |
+| Body/Heading 6       | 0     | 1                | 15                             | 16                | 18                             | 1.6         |
+| Small                | \-1   | 0.9375           | 14                             | 15                | 16.875                         | 1.6         |
 
-- Default style for all links (i.e. `a` elements)
-- use the `nds-link-default` mixin
+### Text colour
+
+Only use the following colour values for our typography:
+
+| Name                 | Colour  | Use case                                                                                                      |
+| -------------------- | ------- | ------------------------------------------------------------------------------------------------------------- |
+| Default type colour  | #0e0e0e | Default colour for most type including headings and body text.                                                |
+| Inverse text colour  | #fff    | For use on dark backgrounds where the default type colour would not meet accessibility contrast requirements. |
+| Standard link colour | #005ea5 | To represent links in type. Applies to headings and body text.                                                |
+| Inverse link colour  | #fff    | For use on dark backgrounds where the default link colour would not meet accessibility contrast requirements. |
+
+### Lists
+
+Use lists to make blocks of text easier to read, and to break information into manageable chunks.
+
+Lists are series of items. All lists have a 'lead-in' (a phrase or sentence) or heading to introduce the list.
+
+Use lists to:
+
+- help users skim information
+- group related information
+- help users understand how items relate to each other
+- show an order of steps
+- arrange information by importance.
+
+Follow the style guide for the best way to format lists: [https://www.nice.org.uk/corporate/ecd1/chapter/punctuation-formatting-and-bullet-points#bullet-points](https://www.nice.org.uk/corporate/ecd1/chapter/punctuation-formatting-and-bullet-points#bullet-points)
+
+#### Bulleted
+
+Use a list to display a set of terms, phrases, or statements clearly.
 
 <Example>
-	<p style={{background: "#333", padding: "10px"}}><a className="link--inverse" href="https://www.nice.org.uk">Here is an inverted link to NICE!</a></p>
+<h5>Example: bulleted list</h5>
+<BulletedList />
+
+```html
+<ul>
+	<li>
+		<a href="#">list item</a>
+	</li>
+	<li>
+		<a href="#">list item</a>
+	</li>
+</ul>
+```
 </Example>
 
-##### Usage:
+#### Numbered
 
-- use the `link--inverse` class
-- use the `typography.link-inverse` mixin
+Use numbered lists instead of bulleted lists when the order of the items is relevant.
+
+<Example>
+<h5>Example: numbered list</h5>
+<NumberedList />
+
+```html
+<ol>
+	<li>
+		<a href="#">list item</a>
+	</li>
+	<li>
+		<a href="#">list item</a>
+	</li>
+</ol>
+```
+</Example>
+
+#### Unstyled
+
+Unstyled lists don't have bullets and can be uses for lists of links.
+
+<Example>
+<h5>Example: unstyled list</h5>
+<UnstyledList />
+
+```html
+<ul class="list list--unstyled">
+	<li>
+		<a href="#">list item</a>
+	</li>
+	<li>
+		<a href="#">list item</a>
+	</li>
+</ul>
+```
+</Example>
+
+#### Piped
+
+Use piped lists as an alternative to unstyled lists. Use them to display a finite number of links horizontally, for example guidance statuses. Use a maximum of 4 links.
+
+<Example>
+<h5>Example: piped list</h5>
+<PipedList />
+
+```html
+<ul class="list list--piped">
+	<li>
+		<a href="#">Published</a>
+	</li>
+	<li>
+		<a href="#">In consultation</a>
+	</li>
+	<li>
+		<a href="#">In development</a>
+	</li>
+	<li>
+		<a href="#">Proposed</a>
+	</li>
+</ul>
+```
+</Example>
+
+#### List spacing settings
+
+Lists have 3 spacing settings to choose from:
+
+##### Default
+
+Standard spacing applied by default.
+
+<Example>
+<h5>Example: default list spacing</h5>
+<DefaultList />
+
+```html
+<ul>
+	<li>list item 1</li>
+	<li>list item 2</li>
+	<li>list item 3</li>
+</ul>
+```
+</Example>
+
+##### Loose
+
+Use `.list--loose` to apply more spacing between list items.
+
+<Example>
+<h5>Example: loose list spacing</h5>
+<LooseList />
+
+```html
+<ul class="list--loose">
+	<li>list item 1</li>
+	<li>list item 2</li>
+	<li>list item 3</li>
+</ul>
+```
+</Example>
+
+##### Tight
+
+Use `.list--tight` to apply less spacing between list items.
+
+<Example>
+<h5>Example: tight list spacing</h5>
+<TightList />
+
+```html
+<ul class="list--tight">
+	<li>list item 1</li>
+	<li>list item 2</li>
+	<li>list item 3</li>
+</ul>
+```
+</Example>
+
+### Override classes
+
+Some type settings can be overridden using CSS classes.
+
+#### Font
+
+Change the font to either a Serif font (Lora), sans-serif font (Inter) or monospace font. Only use in edge cases. If you think the font for a design component doesn't work contact the Design System team to discuss.
+
+- To change to sans-serif use: `.font-family-sans`
+- To change to serif use: `.font-family-serif`
+- To change to monospace use: `.font-family-mono`
+
+#### Heading size
+
+Change the visual appearance of a heading while keeping the page structure in tact. For example a heading level 3 (H3) might be too large for a certain layout, you can style as a heading level 4 (h4) instead to reduce the size.
+
+Use classes like `.h2` or `.h3` to apply. For example:
+
+```html
+<h2 class="h3"> A h2 styled to look like a h3 </h2>
+```
+
+### Components
+
+Headings for design components are customised for each component and so might not match the standard heading choices.
+
+For example Accordions use Inter for headings H3 or H4 instead of Lora. However, sizes will always match the sizing scale [link].
+
+## Accessibility
+
+Component meets WCAG AA guidelines for accessibility on:
+
+- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
+- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
+- Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+
+## Research and evidence
+
+No research done on the component at this time.
 
 export default ({ children }) => <ComponentLayout meta={meta} type="foundations">{children}</ComponentLayout>;

@@ -36,17 +36,14 @@ We recommend using vscode as the IDE when developing with the NICE Design System
     TL;DR:
     	1. `volta install node`
     	2. `npm i`
-		3. `npm run bootstrap`
-    	4. `npm start`
-    	5. http://localhost:3000/
+    	3. `npm start`
+    	4. http://localhost:3000/
 
 ### Slow start
 
 To run the design system site and tests locally, first install [Node](https://nodejs.org/en/download/). We use [Volta](https://volta.sh/) to manage Node versions; you may need to [install that first](https://docs.volta.sh/guide/getting-started).
 
 Then before you can run any tasks, run `npm i` from the command line to install dependencies from npm. This will also link local packages together and install remaining package dependencies.
-
-> This runs `lerna bootstrap` under the hood as a `postinstall` command - see [the lerna bootstrap docs](https://github.com/lerna/lerna/tree/master/commands/bootstrap#readme) for more info.
 
 Next, run `npm start` from the command line to run a server for local development, and view http://localhost:3000/ in a browser.
 
@@ -79,9 +76,9 @@ Run `npm start` and `test:unit:watch` for development. However, there are other 
 | Task                         | Description                                                                   |
 | ---------------------------- | ------------------------------------------------------------------------------|
 | `npm start`                  | Runs a server for local development and watches for changes                   |
-| `npm run bootstrap`          | Runs `lerna bootstrap` under the hood                                         |
 | `npm run lerna`              | Runs `lerna` under the hood                                                   |
-| `npm run release`            | Runs `lerna publish` under the hood                                           |
+| `npm run release:alpha`      | Runs `lerna publish` under the hood for an alpha release                      |
+| `npm run release:latest`     | Runs `lerna publish` under the hood for the latest full release               |
 | `npm test`                   | Lints JS and SCSS and runs JS unit tests                                      |
 | `npm run test:unit`          | Runs JS unit tests                                                            |
 | `npm run test:unit:watch`    | Runs JS test tests and watches for changes to re-run tests                    |

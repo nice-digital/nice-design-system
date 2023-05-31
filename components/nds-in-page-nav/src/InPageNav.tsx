@@ -14,6 +14,7 @@ export interface InPageNavProps {
 	headingsContainerSelector?: string;
 	headingsSelector?: string;
 	headingsExcludeSelector?: string;
+	headingsExcludeContainer?: string;
 	scrollTolerance?: number;
 }
 
@@ -21,7 +22,8 @@ export const InPageNav = ({
 	className,
 	headingsContainerSelector = "main",
 	headingsSelector = "h2, h3",
-	headingsExcludeSelector = "",
+	headingsExcludeSelector = "", // Exclude any matched elements
+	headingsExcludeContainer = "", // Exclude all headings within this container
 	scrollTolerance = 50, // In pixels
 	...rest
 }: InPageNavProps) => {
@@ -40,6 +42,21 @@ export const InPageNav = ({
 						headingsContainerElement.querySelectorAll(headingsExcludeSelector)
 				  )
 				: [];
+
+			// If we've specified a whole container to exclude,
+			// search for any headings within each matched container
+			if (headingsExcludeContainer) {
+				const excludedElements = document.querySelectorAll(
+					headingsExcludeContainer
+				);
+				if (excludedElements.length) {
+					excludedElements.forEach((element) => {
+						const headingsWithinExcludedContainer =
+							element.querySelectorAll(headingsSelector);
+						headingstoExclude.push(...headingsWithinExcludedContainer);
+					});
+				}
+			}
 
 			const headingsToUse = Array.prototype.slice
 				.call(headingsContainerElement.querySelectorAll(headingsSelector))

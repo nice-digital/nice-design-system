@@ -13,14 +13,15 @@ const allNDSComponents = glob.sync("@nice-digital/*", {
 });
 
 const nextConfig = {
-	transpilePackages: [...allNDSComponents, "@nice-digital/global-nav"],
-	reactStrictMode: true,
-	swcMinify: true,
-	pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
 	images: {
 		unoptimized: true
 	},
-	trailingSlash: true
+	pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+	reactStrictMode: true,
+	redirects: () => redirects,
+	swcMinify: true,
+	trailingSlash: true,
+	transpilePackages: [...allNDSComponents, "@nice-digital/global-nav"]
 };
 
 const withMDX = createMDX({
@@ -29,11 +30,27 @@ const withMDX = createMDX({
 		// If you use remark-gfm, you'll need to use next.config.mjs
 		// as the package is ESM only
 		// https://github.com/remarkjs/remark-gfm#install
-		remarkPlugins: [remarkGfm, [remarkCodeHike, { theme, lineNumbers: true }]],
+		remarkPlugins: [
+			remarkGfm,
+			[remarkCodeHike, { theme, lineNumbers: true, showCopyButton: true }]
+		],
 		rehypePlugins: []
 		// If you use `MDXProvider`, uncomment the following line.
 		// providerImportSource: "@mdx-js/react",
 	}
 });
+
+const redirects = [
+	{
+		source: "/components",
+		destination: "/",
+		permanent: true
+	},
+	{
+		source: "/foundations",
+		destination: "/",
+		permanent: true
+	}
+];
 
 export default withMDX(nextConfig);

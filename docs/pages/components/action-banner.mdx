@@ -1,42 +1,31 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
+import { Screenshot } from "components/core/Screenshot/Screenshot";
 import { Example } from "components/examples/Example";
+import { DefaultBanner } from "components/examples/ActionBanner";
 import { ActionBanner } from "@nice-digital/nds-action-banner";
 import { Button } from "@nice-digital/nds-button";
 
 export const meta = {
 	title: "Action Banner",
+	description: "A banner for highlighting, and giving context to, a call-to-action.",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-action-banner",
-	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-action-banner"
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-action-banner",
+	component: DefaultBanner
 };
-
-# {meta.title}
-
-A banner for highlighting, and giving context to, a call-to-action.
-
-<Example>
-<h2>Example: action banner</h2>
-<ActionBanner
-	title="Sign up for NICE News"
-	cta={<Button variant="cta">Sign up</Button>}
->
-	Our monthly newsletter, keeping you up to date with{" "}
-	<a href="#">important developments at NICE</a>
-</ActionBanner>
-</Example>
 
 ## When to use
 
 Use action banners to provide a call to action with context, particularly when drawing attention to the key call to action on the page. They can also be used to break up a page layout and give visual interest.
 
-The action banner highlights a key action users can take. The colour adds contrast and breaks up the page.
+<Screenshot image="action-banner.png" alt="Screenshot of the action banner component" caption="The action banner highlights a key action users can take. The colour adds contrast and breaks up the page." />
 
-## When not use
+## When not to use
 
 Don't use for large blocks of content. An action banner is designed as a short interruption on the page to call attention to a key action or goal. There should be a short heading and one or two sentences of content maximum.
 
 An example of the banner to call attention to registering as a stakeholder. There is a short heading and just one sentence of supporting text.
 
-If you need to highlight or emphasise larger blocks of content use the panel component [link to Panel].
+If you need to highlight or emphasise larger blocks of content use the [panel component](/components/panel).
 
 For warning, error or caution messages use the [alert component](/components/alert).
 
@@ -46,7 +35,7 @@ Use sparingly, with a maximum of 1 per page.
 
 Don't use within a container component. Action banners fill the available horizontal space and have their own built-in container. They usually live outside of any .container to fill the screen width.
 
-The action should be a button: choose the right type of button (primary, secondary etc) to match the call to action importance. Follow the rules for buttons [link to buttons].
+The action should be a button: choose the right type of button (primary, secondary etc) to match the call to action importance. Follow the rules for [buttons](/components/button).
 
 ### Default action banner
 
@@ -58,7 +47,6 @@ The action should be a button: choose the right type of button (primary, seconda
 >
 	This is some content with <a href="#">a link</a>
 </ActionBanner>
-
 
 <CH.Code>
 ```js React
@@ -103,7 +91,6 @@ The default variant is strong and grabs users' attention. Use sparingly for impo
 	This is <a href="#">some content with a link</a>
 </ActionBanner>
 
-
 <CH.Code>
 ```js React
 <ActionBanner
@@ -147,16 +134,5 @@ Component meets WCAG AA guidelines for accessibility on:
 ## Research/evidence
 
 No research done on the component at this time
-
-## Help improve this page
-
-To help make sure that this page is useful, relevant and up to date, you can:
-
-- Share your research or feedback on GitHub
-- Propose a change
-
-## Need help
-
-If you've got a question about the NICE Design System, contact the team. (Link TBC)
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;

@@ -1,20 +1,155 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
 import { ColumnList } from "@nice-digital/nds-column-list";
+import { Example } from "components/examples/Example";
+import { DefaultColumnList, TwoColumnColumnList, PlainColumnList } from "components/examples/ColumnList";
 
 export const meta = {
 	title: "Column List",
+	description: "The column list component shows a list of items in a condensed format.",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-column-list",
-	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-column-list"
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-column-list",
+	component: DefaultColumnList
 };
 
-# {meta.title}
+## Overview
 
-*** Placeholder component page ***
+Column lists save space by breaking lists into 2 or 3 columns, depending on its configuration.
 
+## When to use
+
+Use them to display a number of links horizontally.
+
+For example:
+
+-   Showing at a glance what drug class the drug is in.
+-   Showing related drugs that people could use as an alternative.
+
+
+## When not use
+
+Don't use it to jump down a page on long pages of content, use the In-Page navigation component.
+
+## How to use
+
+Column lists fill the available horizontal space wherever they are show. They render an `<ol>` element containing any number of child items.
+
+The list will show in a single column on mobile, with the number of columns used increasing as the viewport width increases, up to a maximum of 3 columns.
+
+-   The child elements passed into the column list must contain at least one `<li>` element - no other elements are permitted.
+-   The list items may contain links or plain text.
+-   The standard variant of the column list uses three columns at the largest breakpoint and a boxed layout.
+-   You can change the boxed layout to a plain layout.
+-   You can limit the maximum number of columns to 2 instead of 3
+-   The list can optionally be described with a heading, marked up using an aria-labelled by an attribute on the column list component corresponding to the heading's ID.
+
+## Column list variants
+
+You can choose from the default column list and one other variation:
+
+### Default
+
+<Example>
+<h4>Example: default column list</h4>
+<DefaultColumnList />
+
+<CH.Code>
+```js React
 <ColumnList>
-	<li>Item one</li>
-	<li>Item two</li>
-	<li>Item three</li>
+	<li>One</li>
+	<li>Two</li>
+	<li>Three</li>
+	<li>Four</li>
+	<li>Five</li>
+	<li>Six</li>
 </ColumnList>
+```
+```html HTML
+<ol class="column-list column-list--boxed" data-component="column-list--boxed">
+	<li>One</li>
+	<li>Two</li>
+	<li>Three</li>
+	<li>Four</li>
+	<li>Five</li>
+	<li>Six</li>
+</ol>
+```
+</CH.Code>
+</Example>
+
+The standard variant: 3 columns at the largest breakpoint, with a boxed layout.
+
+### Two columns
+
+<Example>
+<h4>Example: column list with two columns</h4>
+<TwoColumnColumnList />
+
+<CH.Code>
+```js React
+<ColumnList columns={2}>
+	<li>One</li>
+	<li>Two</li>
+	<li>Three</li>
+	<li>Four</li>
+	<li>Five</li>
+	<li>Six</li>
+</ColumnList>
+```
+```html HTML
+<ol class="column-list column-list--boxed column-list--two-columns" data-component="column-list--boxed">
+	<li>One</li>
+	<li>Two</li>
+	<li>Three</li>
+	<li>Four</li>
+	<li>Five</li>
+	<li>Six</li>
+</ol>
+```
+</CH.Code>
+</Example>
+
+### Plain
+
+<Example>
+<h4>Example: plain column list</h4>
+<PlainColumnList />
+
+<CH.Code>
+```js React
+<ColumnList plain>
+	<li>One</li>
+	<li>Two</li>
+	<li>Three</li>
+	<li>Four</li>
+	<li>Five</li>
+	<li>Six</li>
+</ColumnList>
+```
+```html HTML
+<ol class="column-list column-list--plain" data-component="column-list--plain">
+	<li>One</li>
+	<li>Two</li>
+	<li>Three</li>
+	<li>Four</li>
+	<li>Five</li>
+	<li>Six</li>
+</ol>
+```
+</CH.Code>
+</Example>
+
+## Accessibility
+
+Component meets WCAG AA guidelines for accessibility on:
+
+Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
+
+UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
+
+Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+
+## Research and evidence
+
+No research done on the component at this time.
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;

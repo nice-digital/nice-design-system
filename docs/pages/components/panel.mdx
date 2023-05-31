@@ -1,19 +1,103 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
-import { Panel } from "@nice-digital/nds-panel";
+import { Example } from "components/examples/Example";
+import { DefaultPanel, PrimaryPanel, ImpactPanel } from "components/examples/Panel";
+import { Screenshot } from "components/core/Screenshot/Screenshot";
 
 export const meta = {
 	title: "Panel",
+	description: "Use a panel to highlight or separate content",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-panel",
-	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-panel"
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-panel",
+	component: DefaultPanel
 };
 
-# {meta.title}
+The panel component is a visible container to give users a summary of content or a task, often with a link to more detail. For example, you can display a panel to group related content or visually break up a page layout.
 
-*** Placeholder component page ***
+## When to use
 
-<Panel variant="impact">
-<h2>Impact panel</h2>
-<p>Any body copy</p>
+Use the panel component to display important information in the side panel as an aside from the main content or to group related content.
+
+## When not use
+
+Never use the panel component to highlight important information within the body content - use the alert component instead.
+
+## How to use
+
+Panels have a default padding and remove the margin-top/bottom from the first/last children to maintain consistent padding. Panels have a margin above and below by default to separate them from the surrounding content.
+
+## Panel variants
+
+You can choose from the default panel and three additional variations:
+
+### Default
+
+<Example>
+<DefaultPanel />
+
+<CH.Code>
+```js React
+<Panel>
+	<h2>Panel heading</h2>
 </Panel>
+```
+```html HTML
+<div class="panel" data-component="panel"><h2>Panel heading</h2></div>
+```
+</CH.Code>
+</Example>
+
+### Primary
+
+<Example>
+<PrimaryPanel />
+
+<CH.Code>
+```js React
+<Panel variant="primary">
+	<h2>Panel heading</h2>
+</Panel>
+```
+```html HTML
+<div class="panel panel--primary" data-component="panel--primary">
+  <h2>Panel heading</h2>
+</div>
+```
+</CH.Code>
+</Example>
+
+### Impact
+
+<Example>
+<ImpactPanel />
+
+<CH.Code>
+```js React
+<Panel variant="impact">
+	<h2>Panel heading</h2>
+</Panel>
+```
+```html HTML
+<div class="panel panel--impact" data-component="panel--impact">
+  <h2>Panel heading</h2>
+</div>
+```
+</CH.Code>
+</Example>
+
+### In a grid
+
+<Screenshot image="panel-1.jpg" alt="Screenshot of the panel component used within a grid" caption="Screenshot of the panel component used within a grid" />
+
+## Accessibility
+
+Component meets WCAG AA guidelines for accessibility on:
+
+- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
+- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
+- Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+
+## Research and evidence
+
+No research done on the component at this time.
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;

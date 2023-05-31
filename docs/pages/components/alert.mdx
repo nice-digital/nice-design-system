@@ -1,19 +1,141 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
+import { InfoAlert, SuccessAlert, CautionAlert, ErrorAlert } from "components/examples/Alert";
+import { Example } from "components/examples/Example";
 import { Alert } from "@nice-digital/nds-alert";
 
 export const meta = {
 	title: "Alert",
+	description: "Use alert components to notify users of important information or changes on a page.",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-alert",
-	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-alert"
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-alert",
+	component: InfoAlert
 };
 
-# {meta.title}
+## Overview
 
-*** Placeholder component page ***
+Page alerts are used to notify users of important information or changes on a page in a way that attracts the user's attention without interrupting the user's task. Typically they appear at the top of a page following a submit action.
 
-<Alert type="caution">
-	<h3>Important Notice</h3>
-	<p>Please read the below for more information.</p>
+There are four variations of the alert component:
+
+### Info
+
+<Example>
+<h4>Example: info alert</h4>
+<InfoAlert />
+
+<CH.Code>
+```js React
+<Alert type="info">
+	<h3>Info alert</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 </Alert>
+```
+```html HTML
+<div class="alert alert--info" data-component="alert--info">
+	<h3>Info alert</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div>
+```
+</CH.Code>
+</Example>
+
+### Success
+
+<Example>
+<h4>Example: success alert</h4>
+<SuccessAlert />
+
+<CH.Code>
+```js React
+<Alert type="success">
+	<h3>Success alert</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</Alert>
+```
+```html HTML
+<div class="alert alert--success" data-component="alert--success">
+	<h3>Success alert</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div>
+```
+</CH.Code>
+</Example>
+
+### Error
+
+<Example>
+<h4>Example: error alert</h4>
+<ErrorAlert />
+
+<CH.Code>
+```js React
+<Alert type="error">
+	<h3>Error alert</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</Alert>
+```
+```html HTML
+<div class="alert alert--error" data-component="alert--error">
+	<h3>Error alert</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div>
+```
+</CH.Code>
+</Example>
+
+### Caution
+
+<Example>
+<h4>Example: caution alert</h4>
+<CautionAlert />
+
+<CH.Code>
+```js React
+<Alert type="caution">
+	<h3>Caution alert</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</Alert>
+```
+```html HTML
+<div class="alert alert--caution" data-component="alert--caution">
+	<h3>Caution alert</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div>
+```
+</CH.Code>
+</Example>
+
+## When to use alerts
+
+Use an alert to give the user something they need to know in the context of the page they are viewing.
+
+-   Info alerts are for essential information only.
+-   Success alerts are essential for notifying the user that a task is complete.
+-   Use error alerts with form validation or other errors that block the user from completing their task.
+-   Use caution page alerts to tell the user something to be aware of; only use a caution alert if the information will help the user avoid a problem.
+
+## When not to use alerts
+
+-   Use alerts sparingly; there's evidence that people often miss them, and using them too often is likely to worsen this problem.
+-   Do not use alerts if the information is directly relevant in context to what the user is doing on the page.
+
+
+## How to use
+
+-   Position an alert immediately before the page header. The alert should be the same width as the page content.
+-   Avoid showing more than one alert on the same page. Instead, combine the messages in a single alert. If the messages are too different to connect, only show the highest priority alert type.
+
+
+## Accessibility
+
+Component meets WCAG AA guidelines for accessibility on:
+
+- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
+- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
+- Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+
+## Research and evidence
+
+We tested all variations of the alert component on an "In consultation Comment Collection" prototype in 2021. Users understood the purpose of the alerts and were able to use them.
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;

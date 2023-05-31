@@ -5,10 +5,6 @@ import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
 import { Grid, GridItem } from "@nice-digital/nds-grid";
 import { Card } from "@nice-digital/nds-card";
 
-import { type PageData } from "types/PageData";
-import { components } from "../data/components";
-import { foundations } from "../data/foundations";
-
 export default function Home() {
 	return (
 		<>
@@ -31,63 +27,41 @@ export default function Home() {
 				}
 			/>
 
-			<h2 className="mt--0">How to use the NICE design system</h2>
-			<Grid>
-				<GridItem sm={6}>
-					<h3>In code</h3>
-					<p>Import components and styles directly into your project.</p>
-					<a href="#development">Read more about development</a>
-				</GridItem>
-				<GridItem sm={6}>
-					<h3>In design prototypes</h3>
-					<p>Use our Figma files to build prototypes.</p>
-					<a href="#prototyping">Read more about prototyping</a>
-				</GridItem>
-			</Grid>
-
-			<hr />
-
-			<h2>Foundations</h2>
+			<h2>Design Library</h2>
 			<p className="lead">
-				Our foundations are the design basics that we build our services on.
+				A reference for all of the design elements used to build digital
+				services at NICE.
 			</p>
 
 			<Grid>
-				{foundations.map(
-					({ slug, title, description }: PageData, index: number) => (
-						<GridItem key={index} sm={4}>
-							<Card
-								headingText={title}
-								link={{ destination: `/foundations/${slug}` }}
-							>
-								{description && <p>{description}</p>}
-							</Card>
-						</GridItem>
-					)
-				)}
-			</Grid>
-
-			<hr />
-
-			<h2>Components</h2>
-			<p className="lead">
-				Components are individual design building blocks. They can be combined
-				to create larger patters and pages.
-			</p>
-
-			<Grid>
-				{components.map(
-					({ slug, title, description }: PageData, index: number) => (
-						<GridItem key={index} sm={4}>
-							<Card
-								headingText={title}
-								link={{ destination: `/components/${slug}` }}
-							>
-								{description && <p>{description}</p>}
-							</Card>
-						</GridItem>
-					)
-				)}
+				<GridItem sm={4}>
+					<Card
+						headingText="All elements"
+						link={{ destination: "/design-library" }}
+					>
+						Not sure where to start? View the whole library and find the
+						elements you need.
+					</Card>
+				</GridItem>
+				<GridItem sm={4}>
+					<Card
+						headingText="Foundations"
+						link={{ destination: "/design-library/#foundations" }}
+					>
+						Foundations are the design basics that we build our services on,
+						including layout, typography and colour.
+					</Card>
+				</GridItem>
+				<GridItem sm={4}>
+					<Card
+						headingText="Components"
+						link={{ destination: "/design-library/#components" }}
+					>
+						Components are individual design building blocks such as forms,
+						filters and menus. They can be combined to build larger patterns and
+						pages.
+					</Card>
+				</GridItem>
 			</Grid>
 
 			<hr />
@@ -125,31 +99,20 @@ export default function Home() {
 
 			<hr />
 
-			<h2>Patterns</h2>
-			<p>TODO: Add patterns content</p>
-
-			<hr />
-
-			<h2 id="prototyping">Prototyping</h2>
-			<p>TODO: Add prototyping content</p>
-
-			<hr />
-
 			<h2>Contact the team</h2>
 			<ul>
+				<li>
+					For questions or help, contact the design system team at{" "}
+					<a href="mailto:NICE_Service_Manual@nice.org.uk">
+						NICE_Service_Manual@nice.org.uk
+					</a>
+				</li>
 				<li>
 					If you work for NICE,{" "}
 					<a href="https://teams.microsoft.com/l/team/19%3aj3x65ql6djS-Ro2mM8yQIRzK_QHOk1S3Jl75got7hwk1%40thread.tacv2/conversations?groupId=10c92ff2-b41f-42d1-abef-f34f5bfe1202&tenantId=6030f479-b342-472d-a5dd-740ff7538de9">
 						ask us a question in our Teams channel
 					</a>
-				</li>{" "}
-				<li>
-					If you work outside of NICE, you can get in touch via{" "}
-					<a href="https://github.com/nice-digital/nice-design-system/discussions">
-						Github discussions
-					</a>
 				</li>
-				<li>TODO: Add process map</li>
 			</ul>
 		</>
 	);

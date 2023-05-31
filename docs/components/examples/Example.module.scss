@@ -6,6 +6,7 @@
 .example {
   background: transparent;
   border: 1px solid colours.$border;
+  margin: 0 0 utils.rem(spacing.$medium);
   padding: utils.rem(spacing.$medium);
 
   & > h2,
@@ -15,5 +16,11 @@
   & > h6 {
     @include typography.h6;
     margin-top: 0;
+  }
+
+  /* Just some custom styles for grid items within examples, to make them a little clearer */
+  [data-g] {
+    background: colours.$table-row-even;
+    text-align: center;
   }
 }

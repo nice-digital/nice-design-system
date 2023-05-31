@@ -14,13 +14,12 @@ import {
 
 export const meta = {
 	title: "Card",
+	description: "A navigation component, used as an overview and entry point to access more detailed information on a topic.",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-card",
 	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-card"
 };
 
-# {meta.title}
-
-A card is a navigation component used as an overview and entry point to access more detailed information on a topic.
+## Overview
 
 There are two types:
 
@@ -141,7 +140,7 @@ Callout cards will take the height of the tallest card in a row - this helps to 
 
 ### Clickable card
 
-The click area for card grids wraps the entire card. This creates a larger click area that’s easier for users to recognise and click.
+The click area for card grids wraps the entire card. This creates a larger click area that's easier for users to recognise and click.
 
 We avoid wrapping an entire card in an anchor tag as this can be a difficult experience for screen reader users.
 
@@ -274,16 +273,5 @@ Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and a
 ## Research/evidence
 
 Card lists were tested as part of research on how people use search on the website. There we no observed issues with the component when searching.
-
-## Help improve this page
-
-To help make sure that this page is useful, relevant and up to date, you can:
-
-- Share your research or feedback on GitHub
-- Propose a change
-
-## Need help?
-
-If you’ve got a question about the NICE Design System, contact the team. (Link TBC)
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;

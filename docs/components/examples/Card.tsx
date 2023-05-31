@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import { Example } from "./Example";
 import { Card } from "@nice-digital/nds-card";
 import { Grid, GridItem } from "@nice-digital/nds-grid";
 import { Tag } from "@nice-digital/nds-tag";

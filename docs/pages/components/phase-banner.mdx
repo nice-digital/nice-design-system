@@ -1,16 +1,90 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
-import { PhaseBanner } from "@nice-digital/nds-phase-banner";
+import { Example } from "components/examples/Example";
+import { AlphaBanner, BetaBanner } from "components/examples/PhaseBanner";
 
 export const meta = {
 	title: "Phase Banner",
+	description: "Use the phase banner component to show users your service is still in development.",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-phase-banner",
-	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-phase-banner"
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-phase-banner",
+	component: AlphaBanner
 };
 
-# {meta.title}
+## When to use this component
 
-*** Placeholder component page ***
+Services hosted on a NICE subdomain must use the phase banner until they pass a live assessment.
+Use an alpha banner when your service is in alpha and a beta banner if your service is in a private or public beta.
 
-<PhaseBanner alpha>This is a new service - your <a href='#'>feedback</a> will help us to improve it.</PhaseBanner>
+## How to use
+
+Your banner must sit below the NICE global navigation and above the page breadcrumb. You should use a ‘feedback' link to collect feedback about your service. Ensure the user can return to their previous point on the page, having opened a dedicated page or form.
+
+## Variants
+
+### Alpha
+
+<Example>
+<AlphaBanner />
+
+<CH.Code>
+```js React
+<PhaseBanner alpha>
+	This is a new service - your <a href="#">feedback</a> will help us to
+	improve it.
+</PhaseBanner>
+```
+```html HTML
+<p class="phase-banner" data-component="phase-banner">
+  <span class="phase-banner__tag"
+    ><span class="tag tag--alpha tag--impact" data-component="tag"
+      >Alpha</span
+    ></span
+  ><span class="phase-banner__label"
+    >This is a new service - your <a href="#">feedback</a> will help us to
+    improve it.</span
+  >
+</p>
+```
+</CH.Code>
+</Example>
+
+### Beta
+
+<Example>
+<BetaBanner />
+
+<CH.Code>
+```js React
+<PhaseBanner beta>
+	This is a new service - your <a href="#">feedback</a> will help us to
+	improve it.
+</PhaseBanner>
+```
+```html HTML
+<p class="phase-banner" data-component="phase-banner">
+  <span class="phase-banner__tag"
+    ><span class="tag tag--beta tag--impact" data-component="tag"
+      >Beta</span
+    ></span
+  ><span class="phase-banner__label"
+    >This is a new service - your <a href="#">feedback</a> will help us to
+    improve it.</span
+  >
+</p>
+```
+</CH.Code>
+</Example>
+
+## Accessibility
+
+Component meets WCAG AA guidelines for accessibility on:
+
+- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
+- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
+- Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+
+## Research and evidence
+
+No research done on the component at this time.
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;

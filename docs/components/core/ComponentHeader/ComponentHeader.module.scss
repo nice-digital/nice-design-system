@@ -1,0 +1,12 @@
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/utils';
+@use '@nice-digital/nds-core/scss/colours';
+
+.header {
+  margin-bottom: utils.rem(spacing.$large);
+  padding-bottom: utils.rem(spacing.$medium);
+}
+
+.headerNoComponent {
+  border-bottom: 1px solid colours.$border;
+}

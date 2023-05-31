@@ -1,20 +1,65 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
-import { Breadcrumbs, Breadcrumb } from "@nice-digital/nds-breadcrumbs";
+import { Screenshot } from "components/core/Screenshot/Screenshot";
+import { Example } from "components/examples/Example";
+import { DefaultBreadcrumbs } from "components/examples/Breadcrumbs";
 
 export const meta = {
 	title: "Breadcrumbs",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-breadcrumbs",
-	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-breadcrumbs"
+	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-breadcrumbs",
+	component: DefaultBreadcrumbs
 };
 
-# {meta.title}
+## When to use breadcrumbs
 
-*** Placeholder component page ***
+Use the breadcrumbs component when you need to help users understand and move between the multiple levels of a website. Levels are created when pages sit underneath other pages in the site structure. For example Homepage > About > Who we are.
 
-***TODO: Figure out why MDX doesn't like any more than one breadcrumb***
+## When not to use breadcrumbs
 
+Do not use the breadcrumbs component on websites with a flat structure - no pages sit underneath other pages - or to show progress through a linear journey or transaction.
+
+If using other navigational elements on the page, such as a sidebar, consider whether your users need the additional support of breadcrumbs.
+
+## How to use breadcrumbs
+
+<Example>
+<h4>Example: breadcrumbs</h4>
+<DefaultBreadcrumbs />
+
+<CH.Code>
+```js React
 <Breadcrumbs>
-	<Breadcrumb to="/">CKS</Breadcrumb>
+	<Breadcrumb to="https://www.nice.org.uk/">Home</Breadcrumb>
+	<Breadcrumb to="https://www.nice.org.uk/guidance">NICE guidance</Breadcrumb>
+	<Breadcrumb to="/">Published</Breadcrumb>
 </Breadcrumbs>
+```
+```html HTML
+<nav aria-label="Breadcrumbs" role="navigation" data-component="breadcrumbs">
+	<ol class="breadcrumbs">
+		<li class="breadcrumbs__crumb">
+			<a href="https://www.nice.org.uk/">Home</a>
+		</li>
+		<li class="breadcrumbs__crumb">
+			<a href="https://www.nice.org.uk/guidance">NICE guidance</a>
+		</li>
+		<li class="breadcrumbs__crumb"><span>Published</span></li>
+	</ol>
+</nav>
+```
+</CH.Code>
+</Example>
+
+The breadcrumb should start with your 'home' page and end with the parent section of the current page. You don't need to show the current page in the breadcrumb because this information is in the main page heading (H1).
+
+Always place breadcrumbs at the top of a page.
+
+If the entire breadcrumb trail doesn't fit the screen size, it can wrap onto two lines.
+
+-   Use a `nav` element
+-   use an `aria-label` attribute to describe the breadcrumbs
+-   use `.visually-hidden` to only show the 'you are here' label to screen readers.
+-   use [schema.org microdata](http://schema.org/BreadcrumbList) for _BreadcrumbList_ and _ListItem_.
+
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;
