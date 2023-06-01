@@ -20,6 +20,7 @@ export default function Home() {
 			<Hero
 				title="Design and build digital services at NICE"
 				intro="Guides, resources and assets to build accessible, usable, on-brand services at NICE."
+				image="https://placekitten.com/g/800/800"
 				header={
 					<Breadcrumbs>
 						<Breadcrumb to="/">NICE Design System</Breadcrumb>

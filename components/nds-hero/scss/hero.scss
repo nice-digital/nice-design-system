@@ -26,6 +26,11 @@
   right: calc(50%);
   width: 100vw;
 
+  & > * {
+    position: relative;
+    z-index: 2;
+  }
+
   .breadcrumbs {
     @include typography.links-inverse;
   }
@@ -65,6 +70,41 @@
     ul {
       margin: 0;
       max-width: 100%;
+    }
+  }
+
+  &__image-container {
+    background-position: center center;
+    background-size: cover;
+    bottom: 0;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40%;
+    z-index: 0;
+
+    @include media-queries.mq($from: md) {
+      width: 33%;
+    }
+
+    &::before {
+      background: colours.$hero-background;
+      content: '';
+      flex: 0 0 200px;
+      position: relative;
+      transform: rotate(-10deg) scale(1.5) translateX(-60%);
+      z-index: 1;
+    }
+
+    &::after {
+      background: colours.$hero-image-wash;
+      content: '';
+      inset: 0;
+      opacity: 0.7;
+      position: absolute;
+      z-index: 0;
     }
   }
 
