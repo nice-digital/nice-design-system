@@ -20,7 +20,7 @@ export default function Home() {
 			<Hero
 				title="Design and build digital services at NICE"
 				intro="Guides, resources and assets to build accessible, usable, on-brand services at NICE."
-				image="https://placekitten.com/g/800/800"
+				image="/images/hero-bg.jpg"
 				actions={
 					<Link className="btn btn--cta" href="/get-started">
 						Get started
