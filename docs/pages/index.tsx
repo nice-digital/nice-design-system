@@ -118,8 +118,8 @@ export default function Home() {
 						</li>
 						<li>
 							by email at{" "}
-							<a href="mailto:NICE_Service_Manual@nice.org.uk">
-								NICE_Service_Manual@nice.org.uk
+							<a href="mailto:designsystem@nice.org.uk">
+								designsystem@nice.org.uk
 							</a>
 						</li>
 					</ul>
