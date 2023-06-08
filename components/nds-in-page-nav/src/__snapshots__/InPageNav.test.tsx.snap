@@ -5,14 +5,14 @@ exports[`InPageNav should match snapshot 1`] = `
   "asFragment": [Function],
   "baseElement": <div>
     <nav
-      aria-labelledby="inpagenav-title"
-      class="in-page-nav "
+      aria-labelledby=":r0:"
+      class="in-page-nav"
       data-component="in-page-nav"
       data-track="false"
     >
       <h2
         class="in-page-nav__title"
-        id="inpagenav-title"
+        id=":r0:"
       >
         On this page
       </h2>
@@ -52,14 +52,14 @@ exports[`InPageNav should match snapshot 1`] = `
   </div>,
   "container": <div>
     <nav
-      aria-labelledby="inpagenav-title"
-      class="in-page-nav "
+      aria-labelledby=":r0:"
+      class="in-page-nav"
       data-component="in-page-nav"
       data-track="false"
     >
       <h2
         class="in-page-nav__title"
-        id="inpagenav-title"
+        id=":r0:"
       >
         On this page
       </h2>
