@@ -10,6 +10,7 @@ export interface HeroProps {
 	header?: React.ReactNode;
 	intro?: React.ReactNode;
 	title: React.ReactNode;
+	image?: string;
 	className?: string;
 	children?: React.ReactNode;
 }
@@ -22,6 +23,7 @@ export const Hero: React.FC<HeroProps> = (props: HeroProps) => {
 		header,
 		intro,
 		title,
+		image,
 		className,
 		...rest
 	} = props;
@@ -43,6 +45,12 @@ export const Hero: React.FC<HeroProps> = (props: HeroProps) => {
 				</div>
 				{footer && <div className="hero__footer">{footer}</div>}
 			</div>
+			{image && (
+				<div
+					className="hero__image-container"
+					style={{ backgroundImage: `url(${image})` }}
+				></div>
+			)}
 		</div>
 	);
 };
