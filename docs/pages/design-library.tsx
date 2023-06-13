@@ -8,7 +8,7 @@ import { type PageData } from "types/PageData";
 import { components } from "../data/components";
 import { foundations } from "../data/foundations";
 
-export default function Test() {
+export default function DesignLibrary() {
 	return (
 		<>
 			<Head>

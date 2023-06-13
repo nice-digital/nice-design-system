@@ -20,6 +20,12 @@ export default function Home() {
 			<Hero
 				title="Design and build digital services at NICE"
 				intro="Guides, resources and assets to build accessible, usable, on-brand services at NICE."
+				image="/images/hero-bg.jpg"
+				actions={
+					<Link className="btn btn--cta" href="/get-started">
+						Get started
+					</Link>
+				}
 				header={
 					<Breadcrumbs>
 						<Breadcrumb to="/">NICE Design System</Breadcrumb>
@@ -99,21 +105,37 @@ export default function Home() {
 
 			<hr />
 
-			<h2>Contact the team</h2>
-			<ul>
-				<li>
-					For questions or help, contact the design system team at{" "}
-					<a href="mailto:NICE_Service_Manual@nice.org.uk">
-						NICE_Service_Manual@nice.org.uk
-					</a>
-				</li>
-				<li>
-					If you work for NICE,{" "}
-					<a href="https://teams.microsoft.com/l/team/19%3aj3x65ql6djS-Ro2mM8yQIRzK_QHOk1S3Jl75got7hwk1%40thread.tacv2/conversations?groupId=10c92ff2-b41f-42d1-abef-f34f5bfe1202&tenantId=6030f479-b342-472d-a5dd-740ff7538de9">
-						ask us a question in our Teams channel
-					</a>
-				</li>
-			</ul>
+			<Grid>
+				<GridItem sm={6}>
+					<h2>Contact the team</h2>
+					<p>For questions or support with the design system contact us:</p>
+					<ul>
+						<li>
+							<a href="https://teams.microsoft.com/l/team/19%3aj3x65ql6djS-Ro2mM8yQIRzK_QHOk1S3Jl75got7hwk1%40thread.tacv2/conversations?groupId=10c92ff2-b41f-42d1-abef-f34f5bfe1202&tenantId=6030f479-b342-472d-a5dd-740ff7538de9">
+								in our Teams channel
+							</a>{" "}
+							(NICE staff only)
+						</li>
+						<li>
+							by email at{" "}
+							<a href="mailto:designsystem@nice.org.uk">
+								designsystem@nice.org.uk
+							</a>
+						</li>
+					</ul>
+				</GridItem>
+				<GridItem sm={6}>
+					<h2>Prototyping</h2>
+					<p>
+						Our design components and settings are available as Adobe XD and
+						Axure RP files.
+					</p>
+					<p>
+						Our <Link href="/prototyping">prototyping page</Link> has
+						information on how and when to create prototypes.
+					</p>
+				</GridItem>
+			</Grid>
 		</>
 	);
 }
