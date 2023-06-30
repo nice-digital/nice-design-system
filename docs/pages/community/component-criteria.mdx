@@ -1,0 +1,49 @@
+import { StackedNavLayout } from "components/layouts/StackedNavLayout";
+import { CommunityMenu } from "components/menus/CommunityMenu";
+
+export const meta = {
+	title: "Component criteria",
+	menu: CommunityMenu
+};
+
+To ensure that the contents in the NICE design system are of high quality they need to meet a certain standard.
+
+## What we look for in a proposal
+
+The design system team will review whether a proposal is unique and useful.
+
+### Unique
+
+The component/pattern/other does not already exist in the NICE Design System.
+
+If the proposal is a change to an existing component or pattern, then it should be an improvement on what we currently have.
+
+### Useful
+
+There is evidence the component or pattern meets user or business needs.
+
+## Developing a component or pattern
+
+During development, a component or pattern will be assessed against these criteria to ensure it is suitable to be published into the NICE design system.
+
+### Usable
+
+User research shows the component/pattern is easy to use or solves a usability issue(s).
+
+### Impactful
+
+The component or pattern can add value to the organisation.
+
+### Versatile
+
+The component or pattern can be used for multiple NICE services and products.
+
+### Consistent
+
+Existing styles/foundations can be used to design and develop the component or pattern.
+
+### Feasible
+
+It is technically feasible for the component to be developed in an accessible way to ensure we develop components everybody can use.
+
+export default ({ children }) => <StackedNavLayout meta={meta}>{children}</StackedNavLayout>;
