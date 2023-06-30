@@ -7,6 +7,7 @@ interface linkType {
 	destination: string;
 }
 
+// Build links that will make up the menu
 const links: linkType[] = [
 	{
 		name: "Community",
