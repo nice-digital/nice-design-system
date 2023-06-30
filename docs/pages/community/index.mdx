@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { StackedNavLayout } from "components/layouts/StackedNavLayout";
 import { CommunityMenu } from "components/menus/CommunityMenu";
 
@@ -24,6 +25,6 @@ For questions or support with the Design System contact us:
 
 ## How we work
 
-Read our component criteria [link to component criteria page] to see how we assess new components.
+<Link href="/community/component-criteria/">Read our component criteria</Link> to see how we assess new components.
 
 export default ({ children }) => <StackedNavLayout meta={meta}>{children}</StackedNavLayout>;
