@@ -50,11 +50,20 @@
       position: sticky;
       top: 0;
 
+      &--no-scroll {
+        max-height: none;
+        position: relative;
+      }
+
       &__list {
         flex-grow: 1;
         overflow: auto;
         padding-top: utils.rem(spacing.$x-small);
         scrollbar-width: thin;
+
+        .in-page-nav--two-columns & {
+          columns: 2;
+        }
 
         .in-page-nav__list {
           height: 0;

@@ -21,7 +21,18 @@ export default function Test() {
 				sometimes be hard to debug components using MDX alone.
 			</p>
 
-			<h2>Full bleed (default)</h2>
+			<h2>In-page nav (no scroll)</h2>
+
+			<InPageNav noScroll />
+
+			<h2>In-page nav (no scroll, two cols)</h2>
+
+			<InPageNav noScroll twoColumns />
+
+			<h2>
+				Full bleed (default) with a really massive title that should hopefully
+				run onto the next line and maybe beyond
+			</h2>
 			<FullBleed>
 				<h3>Full bleed heading</h3>
 				<p>
@@ -90,9 +101,6 @@ export default function Test() {
 
 			<h2>Hero</h2>
 			<Hero title="Hello!" header={<p>Here is a header</p>} />
-
-			<h2>In-page nav</h2>
-			<InPageNav />
 		</>
 	);
 }

@@ -1,6 +1,6 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 /* eslint-disable indent */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useId } from "react";
 import throttle from "lodash.throttle";
 
 import { buildLinkTree, getActiveHeadingId, type LinkTreeItem } from "./utils";
@@ -16,6 +16,8 @@ export interface InPageNavProps {
 	headingsExcludeSelector?: string;
 	headingsExcludeContainer?: string;
 	scrollTolerance?: number;
+	noScroll?: boolean;
+	twoColumns?: boolean;
 }
 
 export const InPageNav = ({
@@ -25,12 +27,15 @@ export const InPageNav = ({
 	headingsExcludeSelector = "", // Exclude any matched elements
 	headingsExcludeContainer = "", // Exclude all headings within this container
 	scrollTolerance = 50, // In pixels
+	noScroll = false,
+	twoColumns = false,
 	...rest
 }: InPageNavProps) => {
 	const [activeHeadingId, setActiveHeadingId] = useState<null | string>(null);
 	const [linkTree, setlinkTree] = useState<LinkTreeItem[]>([]);
+	const titleId = useId();
 
-	// Build the tree if links to use in the nav, from the headings found on the page
+	// Build the tree of links from the headings on the page
 	useEffect(() => {
 		const headingsContainerElement = document.querySelector(
 			headingsContainerSelector
@@ -72,6 +77,8 @@ export const InPageNav = ({
 
 	// Now that we've built the tree of links, work out which is active based on scroll position
 	useEffect(() => {
+		if (noScroll) return; // No point highlighting links in the no scroll variant
+
 		const scrollHandler = throttle(() => {
 			setActiveHeadingId(getActiveHeadingId(linkTree, scrollTolerance));
 		}, 100);
@@ -87,14 +94,27 @@ export const InPageNav = ({
 
 	if (linkTree.length === 0) return null;
 
+	const classNames = ["in-page-nav"];
+	if (className) {
+		classNames.push(className);
+	}
+	if (noScroll) {
+		classNames.push("in-page-nav--no-scroll");
+
+		// We're only allowing two columns within the noScroll variant
+		if (twoColumns) {
+			classNames.push("in-page-nav--two-columns");
+		}
+	}
+
 	return (
 		<nav
-			className={["in-page-nav", className].join(" ")}
-			aria-labelledby="inpagenav-title"
+			className={classNames.join(" ")}
+			aria-labelledby={titleId}
 			data-component="in-page-nav"
 			{...rest}
 		>
-			<h2 id="inpagenav-title" className="in-page-nav__title">
+			<h2 id={titleId} className="in-page-nav__title">
 				On this page
 			</h2>
 			<ol
