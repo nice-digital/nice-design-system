@@ -1,0 +1,26 @@
+import { StackedNavLayout } from "components/layouts/StackedNavLayout";
+import { CommunityMenu } from "components/menus/CommunityMenu";
+
+export const meta = {
+	title: "Requesting a component or pattern",
+	menu: CommunityMenu
+};
+
+Send proposals to: [design-system@nice.org.uk](mailto:design-system@nice.org.uk)
+
+Please answer the following in your email:
+
+- Does the component or pattern already exist? (If yes please tell us the name).
+- Briefly describe the problem you are trying to solve with this new proposal.
+- Briefly describe any user needs or business needs you have identified and how you went about identifying them.
+- Why would it be valuable to make this change on the NICE website?
+
+Attach any relevant files to your email that could support your proposal.
+
+You can use our [component criteria](/community/component-criteria) as a guide to help you think about the things we will consider when reviewing your proposal.
+
+Our [How to propose a component or pattern page](/community/proposing-a-component) details the process used.
+
+The design system team will respond as soon as possible.
+
+export default ({ children }) => <StackedNavLayout meta={meta}>{children}</StackedNavLayout>;

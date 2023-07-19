@@ -4,4 +4,5 @@ export interface PageMeta {
 	npmUrl: string;
 	gitHubUrl: string;
 	component?: React.FC;
+	menu?: React.FC;
 }

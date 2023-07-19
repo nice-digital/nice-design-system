@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import { ActionBanner } from "@nice-digital/nds-action-banner";
 import { Hero } from "@nice-digital/nds-hero";
 import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
 import { Grid, GridItem } from "@nice-digital/nds-grid";
@@ -105,6 +106,49 @@ export default function Home() {
 
 			<hr />
 
+			<Grid className="mb--e">
+				<GridItem sm={6}>
+					<h2>Community</h2>
+					<p>
+						The Design System is for everyone. We need people to provide
+						feedback, offer suggestions, and help refine the system to ensure it
+						meets the needs of our users.
+					</p>
+					<p>
+						Visit our <Link href="/community">community page</Link> to see how
+						you can contribute and understand how we work.
+					</p>
+				</GridItem>
+				<GridItem sm={6}>
+					<h2>Prototyping</h2>
+					<p>
+						Our design components and settings are available as Adobe XD and
+						Axure RP files.
+					</p>
+					<p>
+						Our <Link href="/prototyping">prototyping page</Link> has
+						information on how and when to create prototypes.
+					</p>
+				</GridItem>
+			</Grid>
+
+			<ActionBanner
+				title="Propose a new component"
+				cta={
+					<Link
+						className="btn btn--inverse"
+						href="/community/proposing-a-component"
+					>
+						Propose a component
+					</Link>
+				}
+			>
+				Submit a proposal for a new component or request a change to an existing
+				component.
+			</ActionBanner>
+
+			<hr />
+
 			<Grid>
 				<GridItem sm={6}>
 					<h2>Contact the team</h2>
@@ -123,17 +167,6 @@ export default function Home() {
 							</a>
 						</li>
 					</ul>
-				</GridItem>
-				<GridItem sm={6}>
-					<h2>Prototyping</h2>
-					<p>
-						Our design components and settings are available as Adobe XD and
-						Axure RP files.
-					</p>
-					<p>
-						Our <Link href="/prototyping">prototyping page</Link> has
-						information on how and when to create prototypes.
-					</p>
 				</GridItem>
 			</Grid>
 		</>

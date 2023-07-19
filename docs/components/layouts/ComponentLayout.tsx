@@ -6,7 +6,7 @@ import { InPageNav } from "@nice-digital/nds-in-page-nav";
 import { Grid, GridItem } from "@nice-digital/nds-grid";
 
 import { type PageMeta } from "types/PageMeta";
-import { SidebarMenu } from "components/menus/SidebarMenu";
+import { ComponentMenu } from "components/menus/ComponentMenu";
 import { ComponentHeader } from "components/core/ComponentHeader/ComponentHeader";
 import { capitalise } from "utils/utils";
 
@@ -80,7 +80,7 @@ export const ComponentLayout: React.FC<ComponentLayoutProps> = ({
 					/>
 				</GridItem>
 				<GridItem cols={12} md={{ cols: 2, pull: 10 }}>
-					<SidebarMenu type={type}></SidebarMenu>
+					<ComponentMenu type={type}></ComponentMenu>
 				</GridItem>
 			</Grid>
 		</>

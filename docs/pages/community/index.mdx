@@ -1,0 +1,30 @@
+import Link from "next/link";
+import { StackedNavLayout } from "components/layouts/StackedNavLayout";
+import { CommunityMenu } from "components/menus/CommunityMenu";
+
+export const meta = {
+	title: "Community",
+	menu: CommunityMenu
+};
+
+The Design System is for everyone. We need people to provide feedback, offer suggestions, and help refine the system to make sure it meets the needs of our users.
+
+## Contact the team
+
+For questions or support with the Design System contact us:
+
+- [In our Teams channel](https://teams.microsoft.com/l/team/19%3aj3x65ql6djS-Ro2mM8yQIRzK_QHOk1S3Jl75got7hwk1%40thread.tacv2/conversations?groupId=10c92ff2-b41f-42d1-abef-f34f5bfe1202&tenantId=6030f479-b342-472d-a5dd-740ff7538de9) - NICE staff only.
+- by email at: [designsystem@nice.org.uk](mailto:designsystem@nice.org.uk)
+
+## Get involved
+
+- [Propose a new component or pattern](/community/proposing-a-component)
+- [Submit a pull request](https://github.com/nice-digital/nice-design-system)
+- [Take part in discussions on GitHub](https://github.com/nice-digital/nice-design-system/discussions)
+- [Raise an issue](https://github.com/nice-digital/nice-design-system/issues)
+
+## How we work
+
+<Link href="/community/component-criteria/">Read our component criteria</Link> to see how we assess new components.
+
+export default ({ children }) => <StackedNavLayout meta={meta}>{children}</StackedNavLayout>;

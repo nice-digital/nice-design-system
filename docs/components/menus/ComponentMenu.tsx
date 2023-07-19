@@ -6,11 +6,11 @@ import { foundations } from "../../data/foundations";
 import { type PageData } from "types/PageData";
 import { capitalise } from "utils/utils";
 
-export interface SidebarMenuProps {
+export interface ComponentMenuProps {
 	type: "components" | "foundations";
 }
 
-export function SidebarMenu({ type }: SidebarMenuProps) {
+export function ComponentMenu({ type }: ComponentMenuProps) {
 	const { asPath } = useRouter(),
 		urlArray = asPath.split("/"),
 		pageSlug = urlArray[urlArray.length - 2]; // Infer slug from part of URL preceding final slash
