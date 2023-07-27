@@ -51,6 +51,7 @@
       top: 0;
 
       &--no-scroll {
+        margin: utils.rem(0 0 spacing.$large);
         max-height: none;
         position: relative;
       }
@@ -63,6 +64,7 @@
 
         .in-page-nav--two-columns & {
           columns: 2;
+          column-gap: utils.rem(spacing.$xx-large);
         }
 
         .in-page-nav__list {
