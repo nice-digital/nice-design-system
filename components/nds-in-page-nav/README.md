@@ -11,7 +11,10 @@
 			- [headingsContainerSelector](#headingscontainerselector)
 			- [headingsSelector](#headingsselector)
 			- [headingsExcludeSelector](#headingsexcludeselector)
+			- [headingsExcludeContainer](#headingsexcludecontainer)
 			- [scrollTolerance](#scrolltolerance)
+			- [noScroll](#noScroll)
+			- [twoColumns](#twoColumns)
 			- [Other props](#other-props)
 		- [SCSS](#scss)
 		- [HTML](#html)
@@ -68,7 +71,16 @@ A selector for headings to use for the navigation.
 - Type: `string`
 - Default: `""`
 
-A selector for any headigns to exclude from the navigation.
+A selector for any headings to exclude from the navigation.
+
+#### headingsExcludeContainer
+
+- Type: `string`
+- Default: `""`
+
+A selector for a container that will be completely ignored, i.e. all headings
+within that container will be excluded. Useful in cases where it's not easy
+to exclude or select individual headings.
 
 #### scrollTolerance
 
@@ -76,6 +88,20 @@ A selector for any headigns to exclude from the navigation.
 - Default: `50`
 
 The number of pixels from the top of the screen that's used to determine if a heading is considered to current/active.
+
+#### noScroll
+
+- Type: `boolean`
+- Default: `false`
+
+If true, the in-page-nav will no longer scroll along with the user's current position (i.e. it won't be sticky).
+
+#### twoColumns
+
+- Type: `boolean`
+- Default: `false`
+
+If true, the in-page-nav will render as two columns instead of just one. This will only work if `noScroll` is set to `true`.
 
 #### Other props
 

@@ -1,6 +1,6 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 /* eslint-disable indent */
-import React, { useEffect, useState, useId } from "react";
+import React, { useEffect, useState } from "react";
 import throttle from "lodash.throttle";
 
 import { buildLinkTree, getActiveHeadingId, type LinkTreeItem } from "./utils";
@@ -33,7 +33,7 @@ export const InPageNav = ({
 }: InPageNavProps) => {
 	const [activeHeadingId, setActiveHeadingId] = useState<null | string>(null);
 	const [linkTree, setlinkTree] = useState<LinkTreeItem[]>([]);
-	const titleId = useId();
+	const titleId = "inpagenav-title";
 
 	// Build the tree of links from the headings on the page
 	useEffect(() => {

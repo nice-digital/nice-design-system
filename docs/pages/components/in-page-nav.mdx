@@ -64,11 +64,17 @@ If you're using the React component, the "On this page" heading will be added fo
 
 ### Positioning
 
-The in-page navigation sits on the right-hand side of the page on large screen sizes.
-
-It stacks below the main page title and above the main page content on mobile devices and small screens.
+The in-page navigation sits on the right-hand side of the page on large screen sizes. It stacks below the main page title and above the main page content on mobile devices and small screens.
 
 The menu should sit outside other content, such as hero elements, panels, full bleed and alerts.
+
+#### No-scroll variant
+
+If you don't want the menu to be sticky (i.e. scroll along with the page), you can use its `noScroll` variant. This is useful if you want a list of links to sit directly above other content, for example in the main body of the page.
+
+#### Two columns
+
+If you're using the no-scroll variant, you can also choose to render the menu in two columns instead of one.
 
 ### Content
 
@@ -103,7 +109,10 @@ The basic version of the in-page-nav only requires the below data attribute to i
 | Headings container selector| `data-in-page-nav-headings-container-selector` | This is a CSS-style selector for the scope of the page that you want the in-page-nav to use as its context.| `main`| `<div data-in-page-nav data-in-page-nav-headings-container-selector='.my-container'></div>`|
 | Headings to include| `data-in-page-nav-headings-selector` | Control for which headings you'd like to be included in the navigation. Defaults to `h2` and `h3`. | `h2, h3` | `<div data-in-page-nav data-in-page-nav-headings-selector='h4, h5'></div>`|
 | Headings to exclude| `data-in-page-nav-headings-exclude-selector` | Any CSS-style selectors you'd like to exclude. | none | `<div data-in-page-nav data-in-page-nav-headings-exclude-selector='.exclude-me-from-nav'></div>`|
+| Container to exclude| `data-in-page-nav-headings-exclude-container` | A CSS-style selector that will exclude any headings contained within it. | none | `<div data-in-page-nav data-in-page-nav-headings-exclude-container='.exclude-everything-in-me-from-nav'></div>`|
 | Scroll tolerance| `data-in-page-nav-scroll-tolerance` | This is a pixel value to determine how close to the top of the viewport a heading has to be in order to be considered "active" and therefore highlighted. | `50` | `<div data-in-page-nav data-in-page-nav-scroll-tolerance='100'></div>`|
+| No scroll | `data-in-page-nav-no-scroll` | A boolean (i.e. true/false) value that will determine whether to show the no-scroll variant | `false` | `<div data-in-page-nav data-in-page-nav-no-scroll='true'></div>`|
+| Two columns | `data-in-page-nav-two-columns` | A boolean (i.e. true/false) value that will determine whether to show the two columns variant | `false` | `<div data-in-page-nav data-in-page-nav-two-columns='true'></div>`|
 -----------
 
 
