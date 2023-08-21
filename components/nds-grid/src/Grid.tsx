@@ -5,7 +5,7 @@ import { GridItem } from "./GridItem";
 import "../scss/grid.scss";
 export { GridItem };
 
-type ValidGridItemProps =
+export type ValidGridItemProps =
 	| React.ReactElement<typeof GridItem>
 	| boolean
 	| null
