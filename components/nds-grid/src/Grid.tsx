@@ -1,9 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
-import { GridItem } from "./GridItem";
+import {
+	GridItem,
+	type Columns,
+	type PullOrPush,
+	type BreakPointGridDefinition
+} from "./GridItem";
 import "../scss/grid.scss";
-export { GridItem };
+export { GridItem, Columns, PullOrPush, BreakPointGridDefinition };
 
 export type ValidGridItemProps =
 	| React.ReactElement<typeof GridItem>
