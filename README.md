@@ -101,7 +101,7 @@ First, make sure you're logged in to npm on the command line by running `npm who
 
 > Please make sure 2FA is enabled on your account for at least auth, and preferably writes as well.
 
-Next, check you have access to the @nice-digital org on npm by running `npm org ls nice-digital USERNAME`. It should list your username and role. You should have at least the *developers* role, which wiLl give you write access.
+Next, check you have access to the @nice-digital org on npm by running `npm org ls nice-digital USERNAME`. It should list your username and role. You should have at least the *developers* role, which will give you write access.
 
 Then run `npm run release` to publish to npm. This runs `lerna publish` under the hood, which means you can pass in [additional command arguments](https://github.com/lerna/lerna/tree/master/commands/publish#readme). For example to release to npm with an alpha [dist tag](https://docs.npmjs.com/cli/dist-tag), run the following:
 
