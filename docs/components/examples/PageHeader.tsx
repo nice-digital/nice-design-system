@@ -21,3 +21,7 @@ export const CTAHeader = () => (
 		cta={<Button>Do something</Button>}
 	/>
 );
+
+export const FullWidthHeader = () => (
+	<PageHeader heading="I am a full width header!" isFullWidth={true} />
+);

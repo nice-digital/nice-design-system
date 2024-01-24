@@ -4,6 +4,7 @@
 
 @use '@nice-digital/nds-core/scss/colours';
 @use '@nice-digital/nds-core/scss/glyphs';
+@use '@nice-digital/nds-core/scss/layout';
 @use '@nice-digital/nds-core/scss/media-queries';
 @use '@nice-digital/nds-core/scss/spacing';
 @use '@nice-digital/nds-core/scss/typography';
@@ -30,6 +31,11 @@
 /// @since 0.4.0
 .page-header {
   margin: utils.rem(0 0 spacing.$x-large 0);
+
+  &--full-width {
+    @include layout.fullWidth();
+    background: colours.$page-header-full-width-background;
+  }
 
   &__pre-heading {
     @include typography.font-size(h5);

@@ -4,6 +4,7 @@ import { FullBleed, fullBleedVariants } from "@nice-digital/nds-full-bleed";
 import { Hero } from "@nice-digital/nds-hero";
 import { InPageNav } from "@nice-digital/nds-in-page-nav";
 import { Container } from "@nice-digital/nds-container";
+import { PageHeader } from "@nice-digital/nds-page-header";
 
 export default function Test() {
 	return (
@@ -20,6 +21,15 @@ export default function Test() {
 				MDX files don&apos;t have great Typescript integration, so it can
 				sometimes be hard to debug components using MDX alone.
 			</p>
+
+			<h2>Full width page header</h2>
+
+			<PageHeader
+				isFullWidth={true}
+				heading="WOW!!!!!!!!"
+				breadcrumbs={<div data-this="that">Breadcrumbs here</div>}
+				description={<div className="test">I am a description!!!!!!!!</div>}
+			/>
 
 			<h2>In-page nav (no scroll)</h2>
 
