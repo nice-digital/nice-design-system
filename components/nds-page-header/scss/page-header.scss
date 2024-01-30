@@ -31,10 +31,31 @@
 /// @since 0.4.0
 .page-header {
   margin: utils.rem(0 0 spacing.$x-large 0);
+  padding: utils.rem(spacing.$large) 0 utils.rem(spacing.$x-large);
 
-  &--full-width {
+  &--full-width-light {
     @include layout.fullWidth();
-    background: colours.$page-header-full-width-background;
+    background: colours.$page-header-full-width-light-background;
+  }
+
+  &--full-width-dark {
+    @include layout.fullWidth();
+    background: colours.$page-header-full-width-dark-background;
+
+    & * {
+      color: colours.$page-header-full-width-dark-background-text-colour;
+    }
+
+    & .breadcrumbs a {
+      &:link,
+      &:visited,
+      &:hover,
+      &:active,
+      &:focus {
+        color: colours.$page-header-full-width-dark-background-text-colour;
+        outline-color: colours.$page-header-full-width-dark-background-text-colour;
+      }
+    }
   }
 
   &__pre-heading {

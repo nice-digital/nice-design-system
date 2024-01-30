@@ -5,7 +5,6 @@ import "../scss/page-header.scss";
 export interface PageHeaderProps {
 	[prop: string]: unknown;
 	useAltHeading?: boolean;
-	isFullWidth?: boolean;
 	preheading?: React.ReactNode;
 	breadcrumbs?: React.ReactNode;
 	heading: React.ReactNode;
@@ -13,6 +12,7 @@ export interface PageHeaderProps {
 	lead?: React.ReactNode;
 	description?: React.ReactNode;
 	cta?: React.ReactNode;
+	variant?: "normal" | "fullWidthDark" | "fullWidthLight";
 }
 
 export const PageHeader: React.FC<PageHeaderProps> = (
@@ -20,7 +20,6 @@ export const PageHeader: React.FC<PageHeaderProps> = (
 ) => {
 	const {
 		useAltHeading = false,
-		isFullWidth = false,
 		preheading,
 		breadcrumbs,
 		heading,
@@ -28,8 +27,21 @@ export const PageHeader: React.FC<PageHeaderProps> = (
 		lead,
 		description,
 		cta,
+		variant = "normal",
 		...rest
 	} = props;
+
+	// Figure out variant
+	const isFullWidth = variant == "fullWidthDark" || variant == "fullWidthLight";
+	let variantClassname = "";
+	switch (variant) {
+		case "fullWidthDark":
+			variantClassname = "page-header--full-width-dark";
+			break;
+		case "fullWidthLight":
+			variantClassname = "page-header--full-width-light";
+			break;
+	}
 
 	// TODO: Refactor this into some sort of conditional component
 	// e.g. https://dev.to/dailydevtips1/conditional-wrapping-in-react-46o5
@@ -69,7 +81,7 @@ export const PageHeader: React.FC<PageHeaderProps> = (
 
 	return (
 		<div
-			className={`page-header ${isFullWidth ? "page-header--full-width" : ""}`}
+			className={`page-header ${variantClassname}`}
 			data-component="page-header"
 			{...rest}
 		>

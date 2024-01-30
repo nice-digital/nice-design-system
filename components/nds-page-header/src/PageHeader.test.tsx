@@ -2,12 +2,24 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { PageHeader, PageHeaderProps } from "./PageHeader";
+import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
+
+const breadcrumbs: React.ReactNode = (
+	<Breadcrumbs>
+		<Breadcrumb to="https://www.nice.org.uk/">Home</Breadcrumb>
+		<Breadcrumb to="https://www.nice.org.uk/guidance">NICE guidance</Breadcrumb>
+		<Breadcrumb>Published</Breadcrumb>
+	</Breadcrumbs>
+);
 
 const props: PageHeaderProps = {
 	heading: "Products",
 	cta: "See more below",
 	preheading: "Systemic lupus erythematosus",
-	lead: "A list of all our products on systemic lupus erythematosus"
+	lead: "A list of all our products on systemic lupus erythematosus",
+	description: "A description of whatever is on the page",
+	breadcrumbs,
+	variant: "fullWidthDark"
 };
 
 describe("PageHeader", () => {

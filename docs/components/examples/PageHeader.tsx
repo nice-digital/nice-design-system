@@ -1,5 +1,6 @@
 import { PageHeader } from "@nice-digital/nds-page-header";
 import { Button } from "@nice-digital/nds-button";
+import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
 
 export const DefaultHeader = () => <PageHeader heading="Welcome to the page" />;
 
@@ -22,6 +23,38 @@ export const CTAHeader = () => (
 	/>
 );
 
-export const FullWidthHeader = () => (
-	<PageHeader heading="I am a full width header!" isFullWidth={true} />
+export const HeaderWithDescription = () => (
+	<PageHeader
+		heading="Header with description"
+		description="I am a description"
+	/>
+);
+
+export const HeaderWithBreadcrumbs = () => (
+	<PageHeader
+		heading="Header with breadcrumbs"
+		breadcrumbs={
+			<Breadcrumbs>
+				<Breadcrumb to="https://www.nice.org.uk/">Home</Breadcrumb>
+				<Breadcrumb to="https://www.nice.org.uk/guidance">
+					NICE guidance
+				</Breadcrumb>
+				<Breadcrumb>Published</Breadcrumb>
+			</Breadcrumbs>
+		}
+	/>
+);
+
+export const FullWidthLightHeader = () => (
+	<PageHeader
+		heading="I am a full width light header!"
+		variant="fullWidthLight"
+	/>
+);
+
+export const FullWidthDarkHeader = () => (
+	<PageHeader
+		heading="I am a full width dark header!"
+		variant="fullWidthDark"
+	/>
 );

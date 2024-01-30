@@ -6,7 +6,7 @@ exports[`PageHeader should allow a component to be passed as a prop 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="page-header"
+        class="page-header "
         data-component="page-header"
       >
         <h1
@@ -26,7 +26,7 @@ exports[`PageHeader should allow a component to be passed as a prop 1`] = `
   </body>,
   "container": <div>
     <div
-      class="page-header"
+      class="page-header "
       data-component="page-header"
     >
       <h1
@@ -103,9 +103,193 @@ exports[`PageHeader should match the snapshot with all props supplied 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="page-header"
+        class="page-header page-header--full-width-dark"
         data-component="page-header"
       >
+        <div
+          class="container"
+        >
+          <div
+            class="page-header__breadcrumbs"
+          >
+            <nav
+              aria-label="Breadcrumbs"
+              data-component="breadcrumbs"
+              role="navigation"
+            >
+              <ol
+                class="breadcrumbs"
+              >
+                <li
+                  class="breadcrumbs__crumb"
+                >
+                  <a
+                    href="https://www.nice.org.uk/"
+                  >
+                    Home
+                  </a>
+                </li>
+                <li
+                  class="breadcrumbs__crumb"
+                >
+                  <a
+                    href="https://www.nice.org.uk/guidance"
+                  >
+                    NICE guidance
+                  </a>
+                </li>
+                <li
+                  class="breadcrumbs__crumb"
+                >
+                  <span>
+                    Published
+                  </span>
+                </li>
+              </ol>
+            </nav>
+            <script
+              type="application/ld+json"
+            >
+              {
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@id": "https://www.nice.org.uk/",
+        "name": "Home"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@id": "https://www.nice.org.uk/guidance",
+        "name": "NICE guidance"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "name": "Published"
+      }
+    }
+  ]
+}
+            </script>
+          </div>
+          <h1
+            class="page-header__heading "
+          >
+            <span
+              class="page-header__pre-heading"
+            >
+              Systemic lupus erythematosus
+            </span>
+            Products
+          </h1>
+          <p
+            class="page-header__lead"
+          >
+            A list of all our products on systemic lupus erythematosus
+          </p>
+          <div
+            class="page-header__description"
+          >
+            A description of whatever is on the page
+          </div>
+          <p
+            class="page-header__cta"
+          >
+            See more below
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="page-header page-header--full-width-dark"
+      data-component="page-header"
+    >
+      <div
+        class="container"
+      >
+        <div
+          class="page-header__breadcrumbs"
+        >
+          <nav
+            aria-label="Breadcrumbs"
+            data-component="breadcrumbs"
+            role="navigation"
+          >
+            <ol
+              class="breadcrumbs"
+            >
+              <li
+                class="breadcrumbs__crumb"
+              >
+                <a
+                  href="https://www.nice.org.uk/"
+                >
+                  Home
+                </a>
+              </li>
+              <li
+                class="breadcrumbs__crumb"
+              >
+                <a
+                  href="https://www.nice.org.uk/guidance"
+                >
+                  NICE guidance
+                </a>
+              </li>
+              <li
+                class="breadcrumbs__crumb"
+              >
+                <span>
+                  Published
+                </span>
+              </li>
+            </ol>
+          </nav>
+          <script
+            type="application/ld+json"
+          >
+            {
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@id": "https://www.nice.org.uk/",
+        "name": "Home"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@id": "https://www.nice.org.uk/guidance",
+        "name": "NICE guidance"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "name": "Published"
+      }
+    }
+  ]
+}
+          </script>
+        </div>
         <h1
           class="page-header__heading "
         >
@@ -121,39 +305,17 @@ exports[`PageHeader should match the snapshot with all props supplied 1`] = `
         >
           A list of all our products on systemic lupus erythematosus
         </p>
+        <div
+          class="page-header__description"
+        >
+          A description of whatever is on the page
+        </div>
         <p
           class="page-header__cta"
         >
           See more below
         </p>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="page-header"
-      data-component="page-header"
-    >
-      <h1
-        class="page-header__heading "
-      >
-        <span
-          class="page-header__pre-heading"
-        >
-          Systemic lupus erythematosus
-        </span>
-        Products
-      </h1>
-      <p
-        class="page-header__lead"
-      >
-        A list of all our products on systemic lupus erythematosus
-      </p>
-      <p
-        class="page-header__cta"
-      >
-        See more below
-      </p>
     </div>
   </div>,
   "debug": [Function],
@@ -216,7 +378,7 @@ exports[`PageHeader should match the snapshot with only required heading prop su
   "baseElement": <body>
     <div>
       <div
-        class="page-header"
+        class="page-header "
         data-component="page-header"
       >
         <h1
@@ -229,7 +391,7 @@ exports[`PageHeader should match the snapshot with only required heading prop su
   </body>,
   "container": <div>
     <div
-      class="page-header"
+      class="page-header "
       data-component="page-header"
     >
       <h1

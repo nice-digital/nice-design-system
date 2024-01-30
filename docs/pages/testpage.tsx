@@ -5,6 +5,7 @@ import { Hero } from "@nice-digital/nds-hero";
 import { InPageNav } from "@nice-digital/nds-in-page-nav";
 import { Container } from "@nice-digital/nds-container";
 import { PageHeader } from "@nice-digital/nds-page-header";
+import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
 
 export default function Test() {
 	return (
@@ -22,12 +23,42 @@ export default function Test() {
 				sometimes be hard to debug components using MDX alone.
 			</p>
 
-			<h2>Full width page header</h2>
-
+			<h2>Standard page header</h2>
 			<PageHeader
-				isFullWidth={true}
-				heading="WOW!!!!!!!!"
+				heading="Standard"
 				breadcrumbs={<div data-this="that">Breadcrumbs here</div>}
+				description={<div className="test">I am a description!!!!!!!!</div>}
+			/>
+
+			<h2>Full width dark page header</h2>
+			<PageHeader
+				heading="Full width dark"
+				variant="fullWidthDark"
+				breadcrumbs={
+					<Breadcrumbs>
+						<Breadcrumb to="https://www.nice.org.uk/">Home</Breadcrumb>
+						<Breadcrumb to="https://www.nice.org.uk/guidance">
+							NICE guidance
+						</Breadcrumb>
+						<Breadcrumb>Published</Breadcrumb>
+					</Breadcrumbs>
+				}
+				description={<div className="test">I am a description!!!!!!!!</div>}
+			/>
+
+			<h2>Full width light page header</h2>
+			<PageHeader
+				heading="Full width light"
+				variant="fullWidthLight"
+				breadcrumbs={
+					<Breadcrumbs>
+						<Breadcrumb to="https://www.nice.org.uk/">Home</Breadcrumb>
+						<Breadcrumb to="https://www.nice.org.uk/guidance">
+							NICE guidance
+						</Breadcrumb>
+						<Breadcrumb>Published</Breadcrumb>
+					</Breadcrumbs>
+				}
 				description={<div className="test">I am a description!!!!!!!!</div>}
 			/>
 
