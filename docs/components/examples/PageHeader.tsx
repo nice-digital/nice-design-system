@@ -58,3 +58,20 @@ export const FullWidthDarkHeader = () => (
 		variant="fullWidthDark"
 	/>
 );
+
+export const HeaderWithSecondSection = () => (
+	<PageHeader
+		heading="There's a second section here!"
+		variant="fullWidthLight"
+		secondSection={
+			<aside>
+				<h3>I am a second section</h3>
+				<ol>
+					<li>One</li>
+					<li>Two</li>
+					<li>Three</li>
+				</ol>
+			</aside>
+		}
+	/>
+);

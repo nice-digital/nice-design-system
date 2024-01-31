@@ -12,6 +12,17 @@ const breadcrumbs: React.ReactNode = (
 	</Breadcrumbs>
 );
 
+const secondSection: React.ReactNode = (
+	<aside>
+		<h3>I am a second section</h3>
+		<ol>
+			<li>One</li>
+			<li>Two</li>
+			<li>Three</li>
+		</ol>
+	</aside>
+);
+
 const props: PageHeaderProps = {
 	heading: "Products",
 	cta: "See more below",
@@ -19,7 +30,8 @@ const props: PageHeaderProps = {
 	lead: "A list of all our products on systemic lupus erythematosus",
 	description: "A description of whatever is on the page",
 	breadcrumbs,
-	variant: "fullWidthDark"
+	variant: "fullWidthDark",
+	secondSection
 };
 
 describe("PageHeader", () => {
