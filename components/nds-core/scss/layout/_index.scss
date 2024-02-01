@@ -36,6 +36,14 @@ $readable-width: 66ch;
   }
 }
 
+/// Break an element out of its container
+@mixin fullWidth {
+  left: 50%;
+  margin-left: -50vw;
+  position: relative;
+  width: 100vw;
+}
+
 /// Placeholder for clearfix
 /// @since 0.1.0
 %clearfix {

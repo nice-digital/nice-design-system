@@ -1,6 +1,6 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
 import { Example } from "components/examples/Example";
-import { DefaultHeader, PreHeader, LeadHeader, MetadataHeader, CTAHeader } from "components/examples/PageHeader";
+import { DefaultHeader, PreHeader, LeadHeader, MetadataHeader, CTAHeader, FullWidthLightHeader, FullWidthDarkHeader, HeaderWithBreadcrumbs, HeaderWithDescription, HeaderWithSecondSection } from "components/examples/PageHeader";
 
 export const meta = {
 	title: "Page Header",
@@ -117,6 +117,156 @@ Use underneath the breadcrumb inside a container and above the main content. Use
       Do something
     </button>
   </p>
+</div>
+```
+</CH.Code>
+</Example>
+
+### Header with description
+
+<Example>
+<HeaderWithDescription />
+
+<CH.Code>
+```js React
+<PageHeader
+	heading="Header with description"
+	description="I am a description"
+/>
+```
+```html HTML
+<div class="page-header" data-component="page-header">
+  <h1 class="page-header__heading">Header with description</h1>
+  <div class="page-header__description">I am a description</div>
+</div>
+```
+</CH.Code>
+</Example>
+
+### Header with breadcrumbs
+
+<Example>
+<HeaderWithBreadcrumbs />
+
+<CH.Code>
+```js React
+<PageHeader
+	heading="Header with breadcrumbs"
+	breadcrumbs={addBreadcrumbsComponentHere}
+/>
+```
+```html HTML
+<div class="page-header" data-component="page-header">
+  <div class="page-header__breadcrumbs">
+    <nav
+      aria-label="Breadcrumbs"
+      role="navigation"
+      data-component="breadcrumbs"
+    >
+      <ol class="breadcrumbs">
+        <li class="breadcrumbs__crumb">
+          <a href="https://www.nice.org.uk/">Home</a>
+        </li>
+        <li class="breadcrumbs__crumb">
+          <a href="https://www.nice.org.uk/guidance">NICE guidance</a>
+        </li>
+        <li class="breadcrumbs__crumb"><span>Published</span></li>
+      </ol>
+    </nav>
+  </div>
+  <h1 class="page-header__heading">Header with breadcrumbs</h1>
+</div>
+```
+</CH.Code>
+</Example>
+
+### Full width light variant
+
+
+<Example>
+<FullWidthLightHeader />
+<CH.Code>
+```js React
+<PageHeader
+	heading="I am a full width light header!"
+	variant="fullWidthLight"
+/>
+```
+```html HTML
+<div
+  class="page-header page-header--full-width-light"
+  data-component="page-header"
+>
+  <div class="container">
+    <h1 class="page-header__heading">I am a full width light header!</h1>
+  </div>
+</div>
+```
+</CH.Code>
+</Example>
+
+### Full width dark variant
+
+<Example>
+<FullWidthDarkHeader />
+<CH.Code>
+```js React
+<PageHeader
+	heading="I am a full width dark header!"
+	variant="fullWidthDark"
+/>
+```
+```html HTML
+<div
+  class="page-header page-header--full-width-dark"
+  data-component="page-header"
+>
+  <div class="container">
+    <h1 class="page-header__heading">I am a full width dark header!</h1>
+  </div>
+</div>
+```
+</CH.Code>
+</Example>
+
+### Header with second section
+
+<Example>
+<HeaderWithSecondSection />
+<CH.Code>
+```js React
+<PageHeader
+	heading="There's a second section here!"
+	variant="fullWidthLight"
+	secondSection={secondSectionComponent}
+/>
+```
+```html HTML
+<div
+  class="page-header page-header--full-width-light"
+  data-component="page-header"
+>
+  <div class="container">
+    <div class="grid">
+      <div data-g="12 md:9" data-component="grid-item">
+        <h1 class="page-header__heading">There's a second section here!</h1>
+      </div>
+      <div
+        data-g="12 md:3"
+        data-component="grid-item"
+        class="page-header__second-section"
+      >
+        <aside>
+          <h3>I am a second section</h3>
+          <ol>
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+          </ol>
+        </aside>
+      </div>
+    </div>
+  </div>
 </div>
 ```
 </CH.Code>

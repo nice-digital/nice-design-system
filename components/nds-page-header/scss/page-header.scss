@@ -4,6 +4,7 @@
 
 @use '@nice-digital/nds-core/scss/colours';
 @use '@nice-digital/nds-core/scss/glyphs';
+@use '@nice-digital/nds-core/scss/layout';
 @use '@nice-digital/nds-core/scss/media-queries';
 @use '@nice-digital/nds-core/scss/spacing';
 @use '@nice-digital/nds-core/scss/typography';
@@ -30,6 +31,32 @@
 /// @since 0.4.0
 .page-header {
   margin: utils.rem(0 0 spacing.$x-large 0);
+  padding: utils.rem(spacing.$large) 0 utils.rem(spacing.$x-large);
+
+  &--full-width-light {
+    @include layout.fullWidth();
+    background: colours.$page-header-full-width-light-background;
+  }
+
+  &--full-width-dark {
+    @include layout.fullWidth();
+    background: colours.$page-header-full-width-dark-background;
+
+    & * {
+      color: colours.$page-header-full-width-dark-background-text-colour;
+    }
+
+    & .breadcrumbs a {
+      &:link,
+      &:visited,
+      &:hover,
+      &:active,
+      &:focus {
+        color: colours.$page-header-full-width-dark-background-text-colour;
+        outline-color: colours.$page-header-full-width-dark-background-text-colour;
+      }
+    }
+  }
 
   &__pre-heading {
     @include typography.font-size(h5);
@@ -87,5 +114,12 @@
     @include typography.font-size(p);
     display: block;
     margin: 0;
+  }
+
+  &__second-section {
+    @include media-queries.mq($from: md) {
+      border-left: 2px solid colours.$page-header-second-section-border-colour;
+      padding-left: utils.rem(spacing.$medium);
+    }
   }
 }

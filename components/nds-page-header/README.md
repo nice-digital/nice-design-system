@@ -33,7 +33,7 @@ import { PageHeader } from "@nice-digital/nds-page-header";
 
 ##### heading
 
-- Type: `React.node` (required)
+- Type: `React.ReactNode` (required)
 
 The main title that is rendered into a H1 with H1 styling.
 
@@ -53,7 +53,7 @@ Whether to use the `h1-alt` alternative (smaller) heading 1 style.
 
 ##### preheading
 
-- Type: `React.node`
+- Type: `React.ReactNode`
 
 For occasions when the main title might be too long, a smaller H3 styled `span` that is rendered just above the main title.
 
@@ -63,7 +63,7 @@ For occasions when the main title might be too long, a smaller H3 styled `span` 
 
 ##### lead
 
-- Type: `React.node`
+- Type: `React.ReactNode`
 
 Lead text serves as a short introduction to the page, rendered as a paragraph.
 
@@ -76,7 +76,7 @@ Lead text serves as a short introduction to the page, rendered as a paragraph.
 
 ##### metadata
 
-- Type: `Array<React.node>`
+- Type: `Array<React.ReactNode>`
 
 ```jsx
 <PageHeader
@@ -92,7 +92,7 @@ Lead text serves as a short introduction to the page, rendered as a paragraph.
 
 ##### cta
 
-- Type: `React.node`
+- Type: `React.ReactNode`
 
 Room for a button or other call-to-action.
 
@@ -103,6 +103,62 @@ const CtaButton = <button onclick={()=>false}>
 
 <PageHeader heading="Products" cta={CtaButton} />
 ```
+
+#### breadcrumbs
+
+- Type: `React.ReactNode`
+
+Add breadcrumbs here, using the NDS breadcrumb component.
+
+```jsx
+<PageHeader
+	heading="Header with breadcrumbs"
+	breadcrumbs={
+		<Breadcrumbs>
+			<Breadcrumb to="https://www.nice.org.uk/">Home</Breadcrumb>
+			<Breadcrumb to="https://www.nice.org.uk/guidance">
+				NICE guidance
+			</Breadcrumb>
+			<Breadcrumb>Published</Breadcrumb>
+		</Breadcrumbs>
+	}
+/>
+```
+
+#### description
+
+- Type: `React.ReactNode`
+
+Add an optional description, which will be displayed below the lead text.
+
+```jsx
+<PageHeader
+	heading="Header with description"
+	description="I am a description"
+/>
+```
+
+
+#### variant
+
+- Type: "normal" | "fullWidthDark" | "fullWidthLight";
+
+The normal variant is the default and can be omitted.
+
+The two full width variants span the full width of the page, breaking out of any containers. There is a light and a dark version.
+
+```jsx
+<PageHeader
+	heading="I am a full width light header!"
+	variant="fullWidthLight"
+/>
+```
+
+```jsx
+<PageHeader
+	heading="I am a full width dark header!"
+	variant="fullWidthDark"
+/>
 
 ### SCSS
 
