@@ -12,29 +12,6 @@ const actions = (
 
 const header = <p>Header content</p>;
 
-const footer = <p>Footer content</p>;
-
-const extras = (
-	<>
-		<h2>Quick links</h2>
-		<ul>
-			<li>
-				<a href="page-one">Go to page one</a>
-			</li>
-			<li>
-				<ul>
-					<li>
-						<a href="page-two">Go to page two</a>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<a href="page-three">Go to page three</a>
-			</li>
-		</ul>
-	</>
-);
-
 describe("Hero", () => {
 	it("should match the snapshot with props", () => {
 		const wrapper = render(
@@ -43,11 +20,19 @@ describe("Hero", () => {
 				intro="Introduction text"
 				actions={actions}
 				header={header}
-				footer={footer}
-			>
-				{extras}
-			</Hero>
-		);
+			/>
+		expect(wrapper).toMatchSnapshot();
+	});
+
+	it("should match the dark variant snapshot with props", () => {
+		const wrapper = render(
+			<Hero
+				title="Welcoming title"
+				intro="Introduction text"
+				actions={actions}
+				header={header}
+				isDark={true}
+			/>
 		expect(wrapper).toMatchSnapshot();
 	});
 
@@ -59,9 +44,7 @@ describe("Hero", () => {
 				actions={actions}
 				data-track={false}
 				className="mt--0"
-			>
-				{extras}
-			</Hero>
+			/>
 		);
 		const anchors = wrapper.getAllByRole("link", { name: "Go to page two" });
 		expect(anchors.length).toBe(2);
