@@ -10,6 +10,8 @@ const actions = (
 	</>
 );
 
+const imageUrl = "https://placekitten.com/200/140";
+
 const header = <p>Header content</p>;
 
 describe("Hero", () => {
@@ -20,7 +22,9 @@ describe("Hero", () => {
 				intro="Introduction text"
 				actions={actions}
 				header={header}
+				image={imageUrl}
 			/>
+		);
 		expect(wrapper).toMatchSnapshot();
 	});
 
@@ -31,8 +35,10 @@ describe("Hero", () => {
 				intro="Introduction text"
 				actions={actions}
 				header={header}
+				image={imageUrl}
 				isDark={true}
 			/>
+		);
 		expect(wrapper).toMatchSnapshot();
 	});
 
@@ -43,10 +49,11 @@ describe("Hero", () => {
 				intro="Introduction text"
 				actions={actions}
 				data-track={false}
+				image={imageUrl}
 				className="mt--0"
 			/>
 		);
-		const anchors = wrapper.getAllByRole("link", { name: "Go to page two" });
+		const anchors = wrapper.getAllByRole("link");
 		expect(anchors.length).toBe(2);
 		expect(anchors[anchors.length - 1].textContent).toBe("Go to page two");
 		expect(
