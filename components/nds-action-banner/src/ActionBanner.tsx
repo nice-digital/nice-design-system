@@ -13,7 +13,9 @@ interface ActionBannerProps {
 	className?: string;
 }
 
-export const ActionBanner: React.FC<ActionBannerProps> = (props) => {
+export const ActionBanner: React.FC<ActionBannerProps> = (
+	props
+): JSX.Element | null => {
 	const { variant, onClosing, title, children, cta, className, ...rest } =
 		props;
 
