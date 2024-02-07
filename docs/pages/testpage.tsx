@@ -6,6 +6,8 @@ import { InPageNav } from "@nice-digital/nds-in-page-nav";
 import { Container } from "@nice-digital/nds-container";
 import { PageHeader } from "@nice-digital/nds-page-header";
 import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
+import { ActionBanner } from "@nice-digital/nds-action-banner";
+import { Button } from "@nice-digital/nds-button";
 
 export default function Test() {
 	return (
@@ -22,6 +24,15 @@ export default function Test() {
 				MDX files don&apos;t have great Typescript integration, so it can
 				sometimes be hard to debug components using MDX alone.
 			</p>
+			<h2>Action banner</h2>
+			<h2>Action banner subtle variant</h2>
+			<ActionBanner
+				title="A title"
+				cta={<Button variant="primary">A call to action</Button>}
+				variant="subtle"
+				children={<p>some content</p>}
+				onClosing={() => alert("some callback function onClosing")}
+			/>
 
 			<h2>Standard page header</h2>
 			<PageHeader
