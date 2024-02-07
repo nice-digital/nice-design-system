@@ -25,7 +25,14 @@ export default function Test() {
 				sometimes be hard to debug components using MDX alone.
 			</p>
 			<h2>Action banner</h2>
-			<h2>Action banner subtle variant</h2>
+			<h2>Action banner default variant</h2>
+			<ActionBanner
+				title="A title"
+				cta={<Button variant="primary">A call to action</Button>}
+				children={<p>some content</p>}
+			/>
+
+			<h2>Action banner subtle variant (with close)</h2>
 			<ActionBanner
 				title="A title"
 				cta={<Button variant="primary">A call to action</Button>}
@@ -33,6 +40,19 @@ export default function Test() {
 				children={<p>some content</p>}
 				onClosing={() => alert("some callback function onClosing")}
 			/>
+
+			<h2>Action banner full width variant with image</h2>
+			<ActionBanner
+				title="A title"
+				cta={<Button variant="inverse">A call to action</Button>}
+				variant="fullWidth"
+				children={<p>some content</p>}
+				image="https://img.freepik.com/premium-photo/financial-market-magnifying-glass-with-business-display_845712-269.jpg?w=2000"
+			/>
+			<br />
+			<br />
+			<br />
+			<br />
 
 			<h2>Standard page header</h2>
 			<PageHeader

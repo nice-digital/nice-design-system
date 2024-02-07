@@ -102,6 +102,56 @@
     }
   }
 
+  &--full-width {
+    @include layout.fullWidth();
+    @include typography.links-default;
+    background: colours.$action-banner-full-width-background;
+    border: 1px solid colours.$action-banner-full-width-border;
+    color: colours.$text-inverse;
+
+    .action-banner__title {
+      color: colours.$text-inverse;
+    }
+
+    .action-banner__actions {
+      margin-top: utils.rem(spacing.$x-large);
+      text-align: left;
+      position: relative;
+      left: 0;
+    }
+
+    .action-banner__actions > .btn.btn--inverse {
+      @include focus.default-button-focus;
+    }
+
+    &__image-container {
+      background-position: center center;
+      background-size: cover;
+      bottom: 0;
+      display: none;
+      overflow: hidden;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 0;
+
+      @include media-queries.mq($from: md) {
+        display: flex;
+        width: 34%;
+      }
+
+      &::before {
+        background: colours.$action-banner-full-width-background;
+        content: '';
+        flex: 0 0 200px;
+        pointer-events: none;
+        position: relative;
+        transform: rotate(-15deg) scale(1.2) translateX(-60%);
+        z-index: 1;
+      }
+    }
+  }
+
   @include media-queries.mq($from: md) {
     @include layout.clearfix;
 
