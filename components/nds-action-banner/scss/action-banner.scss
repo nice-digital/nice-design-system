@@ -2,8 +2,9 @@
 /// @group components
 ////
 
+@use 'sass:math';
 @use '@nice-digital/nds-core/scss/colours';
-@use '@nice-digital/nds-core/scss/glyphs';
+@use '@nice-digital/nds-core/scss/focus';
 @use '@nice-digital/nds-core/scss/layout';
 @use '@nice-digital/nds-core/scss/media-queries';
 @use '@nice-digital/nds-core/scss/spacing';
@@ -15,168 +16,117 @@
 /// and give context to a call-to-action.
 /// Modifiers:
 /// - subtle
-/// - full-width
-/// - full-width-subtle
 ///
-/// @example html
-/// TODO
-/// @since 0.4.0
+/// @since 0.3.1
 .action-banner {
-  margin: utils.rem(0 0 spacing.$x-large 0);
-  padding: utils.rem(spacing.$large) 0 utils.rem(spacing.$x-large);
+  @include visibility.hide-print;
+  @include typography.links-inverse;
+  background: colours.$action-banner-default-background;
+  border: 1px solid colours.$action-banner-default-border;
+  color: colours.$text-inverse;
+  margin: utils.rem(0 0 spacing.$large);
+  padding: utils.rem(spacing.$medium 0);
+  position: relative;
 
-  &--full-width {
-    @include layout.fullWidth();
-    background: colours.$action-banner-default-background;
+  &__container {
+    @include layout.container;
   }
 
-  &--full-width-subtle {
-    @include layout.fullWidth();
-    background: colours.$action-banner-full-width-subtle-background;
+  &__text {
+    margin-bottom: utils.rem(spacing.$medium);
   }
 
-  &__heading {
-    @include typography.font-size(h1);
-    margin: utils.rem(0 0 spacing.$small 0);
+  &__title {
+    @include typography.font-size(3);
+    color: colours.$text-inverse;
+    margin: utils.rem(0 0 spacing.$x-small);
   }
 
-  &__cta {
-    @include visibility.hide-print;
-    @include typography.font-size(p);
-    display: block;
+  &__intro {
     margin: 0;
   }
+
+  &__actions {
+    @include focus.inverse-button-focus;
+
+    .btn {
+      margin: 0;
+    }
+  }
+
+  &__close {
+    @include focus.inverse-button-focus;
+    appearance: none;
+    background: 0;
+    border: 0;
+    color: colours.$text-inverse;
+    cursor: pointer;
+    line-height: 1;
+    padding: utils.rem(spacing.$small);
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+
+    &:hover {
+      background: rgb(0 0 0 / 20%);
+    }
+
+    &:focus {
+      @include focus.inverse-focus-style;
+    }
+  }
+
+  &--subtle {
+    @include typography.links-default;
+    background: colours.$action-banner-subtle-background;
+    border: 1px solid colours.$action-banner-subtle-border;
+    color: colours.$text;
+
+    .action-banner__title {
+      color: colours.$text;
+    }
+
+    .action-banner__close {
+      color: colours.$text;
+    }
+
+    .action-banner__actions {
+      @include focus.default-button-focus;
+    }
+  }
+
+  &--closeable {
+    .action-banner__title {
+      padding-right: utils.rem(spacing.$large); // Make room for close button
+    }
+  }
+
+  @include media-queries.mq($from: md) {
+    @include layout.clearfix;
+
+    &__text {
+      margin-bottom: 0;
+      width: math.percentage(3 * 0.25);
+    }
+
+    &__actions {
+      position: absolute;
+      right: utils.rem(spacing.$medium);
+      text-align: right;
+      top: 50%;
+      transform: translateY(-50%);
+      width: math.percentage(1 * 0.25);
+    }
+
+    &--closeable {
+      .action-banner__title {
+        padding-right: 0;
+      }
+
+      .action-banner__actions {
+        right: utils.rem(spacing.$x-large);
+      }
+    }
+  }
 }
-
-// ////
-// /// @group components
-// ////
-
-// @use 'sass:math';
-// @use '@nice-digital/nds-core/scss/colours';
-// @use '@nice-digital/nds-core/scss/focus';
-// @use '@nice-digital/nds-core/scss/layout';
-// @use '@nice-digital/nds-core/scss/media-queries';
-// @use '@nice-digital/nds-core/scss/spacing';
-// @use '@nice-digital/nds-core/scss/typography';
-// @use '@nice-digital/nds-core/scss/utils';
-// @use '@nice-digital/nds-core/scss/visibility';
-
-// /// Action banner component. Used to highlight
-// /// and give context to a call-to-action.
-// /// Modifiers:
-// /// - subtle
-// ///
-// /// @since 0.3.1
-// .action-banner {
-//   @include visibility.hide-print;
-//   @include typography.links-inverse;
-//   background: colours.$action-banner-default-background;
-//   border: 1px solid colours.$action-banner-default-border;
-//   color: colours.$text-inverse;
-//   margin: utils.rem(0 0 spacing.$large);
-//   padding: utils.rem(spacing.$medium 0);
-//   position: relative;
-
-//   &__container {
-//     @include layout.container;
-//   }
-
-//   &__text {
-//     margin-bottom: utils.rem(spacing.$medium);
-//   }
-
-//   &__title {
-//     @include typography.font-size(3);
-//     color: colours.$text-inverse;
-//     margin: utils.rem(0 0 spacing.$x-small);
-//   }
-
-//   &__intro {
-//     margin: 0;
-//   }
-
-//   &__actions {
-//     @include focus.inverse-button-focus;
-
-//     .btn {
-//       margin: 0;
-//     }
-//   }
-
-//   &__close {
-//     @include focus.inverse-button-focus;
-//     appearance: none;
-//     background: 0;
-//     border: 0;
-//     color: colours.$text-inverse;
-//     cursor: pointer;
-//     line-height: 1;
-//     padding: utils.rem(spacing.$small);
-//     position: absolute;
-//     right: 0;
-//     top: 0;
-//     z-index: 1;
-
-//     &:hover {
-//       background: rgb(0 0 0 / 20%);
-//     }
-
-//     &:focus {
-//       @include focus.inverse-focus-style;
-//     }
-//   }
-
-//   &--subtle {
-//     @include typography.links-default;
-//     background: colours.$action-banner-subtle-background;
-//     border: 1px solid colours.$action-banner-subtle-border;
-//     color: colours.$text;
-
-//     .action-banner__title {
-//       color: colours.$text;
-//     }
-
-//     .action-banner__close {
-//       color: colours.$text;
-//     }
-
-//     .action-banner__actions {
-//       @include focus.default-button-focus;
-//     }
-//   }
-
-//   &--closeable {
-//     .action-banner__title {
-//       padding-right: utils.rem(spacing.$large); // Make room for close button
-//     }
-//   }
-
-//   @include media-queries.mq($from: md) {
-//     @include layout.clearfix;
-
-//     &__text {
-//       margin-bottom: 0;
-//       width: math.percentage(3 * 0.25);
-//     }
-
-//     &__actions {
-//       position: absolute;
-//       right: utils.rem(spacing.$medium);
-//       text-align: right;
-//       top: 50%;
-//       transform: translateY(-50%);
-//       width: math.percentage(1 * 0.25);
-//     }
-
-//     &--closeable {
-//       .action-banner__title {
-//         padding-right: 0;
-//       }
-
-//       .action-banner__actions {
-//         right: utils.rem(spacing.$x-large);
-//       }
-//     }
-//   }
-// }
