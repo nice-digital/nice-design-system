@@ -25,14 +25,48 @@ export default function Test() {
 				sometimes be hard to debug components using MDX alone.
 			</p>
 			<h2>Action banner</h2>
-			<h2>Action banner subtle variant</h2>
+			<h2>Action banner default</h2>
 			<ActionBanner
-				title="A title"
-				cta={<Button variant="primary">A call to action</Button>}
+				heading="A heading"
+				description="I am a description!!!!!!!! This could extend over a few lines to test how it looks."
+				cta={<Button variant="inverse">A call to action</Button>}
+				children={<p>some content</p>}
+			/>
+
+			<h2>Action banner subtle variant (with closing)</h2>
+			<ActionBanner
+				heading="A heading"
+				description="I am a description!!!!!!!! This could extend over a few lines to test how it looks."
+				cta={<Button variant="inverse">A call to action</Button>}
 				variant="subtle"
 				children={<p>some content</p>}
 				onClosing={() => alert("some callback function onClosing")}
 			/>
+
+			<h2>Action banner full width variant</h2>
+			<ActionBanner
+				heading="A heading"
+				description="I am a description!!!!!!!! This could extend over a few lines to test how it looks."
+				cta={<Button variant="inverse">A call to action</Button>}
+				variant="fullWidth"
+				children={<p>some content</p>}
+			/>
+
+			<h2>Action banner full width subtle variant</h2>
+			<ActionBanner
+				heading="A heading"
+				description="I am a description!!!!!!!! This could extend over a few lines to test how it looks."
+				cta={<Button variant="inverse">A call to action</Button>}
+				variant="fullWidthSubtle"
+				children={<p>some content</p>}
+			/>
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
 
 			<h2>Standard page header</h2>
 			<PageHeader
