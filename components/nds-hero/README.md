@@ -83,54 +83,24 @@ const myCallsToAction = (
 <Hero title="Page title" actions={myCallsToAction} />;
 ```
 
-##### children
+###### image
 
-- Type: `React.ReactNode`
+- Type: `string`
 
-If you supply child markup it will render in the extra space on the right-hand side of the component.
+The URL to an image that will be displayed on the right hand side on desktop resolutions.
 
-```js
-<Hero title="Page title">
-	<ul>
-		<li>
-			<a href="#">Page One</a>
-		</li>
-		<li>
-			<a href="#">Page Two</a>
-		</li>
-		<li>
-			<a href="#">Page Three</a>
-		</li>
-		<li>
-			<a href="#">Page Four</a>
-		</li>
-		<li>
-			<a href="#">Page Five</a>
-		</li>
-		<li>
-			<a href="#">Page Six</a>
-		</li>
-	</ul>
-</Hero>
-```
+###### isDark
 
-##### footer
+- Type: `boolean`
 
-- Type: `React.ReactNode`
-
-Content for the footer. Accepts any valid react node.
-
-```js
-const myFooter = <p>Here is some footer content</p>;
-
-<Hero title="The title" footer={myFooter}>
-```
+If set to true, the hero will have a dark background and text within the hero will be light.
 
 ###### className
 
 - Type: `string`
 
 Any additional className will be merged on to the container.
+
 
 ### SCSS
 

@@ -27,11 +27,7 @@ export default function Home() {
 						Get started
 					</Link>
 				}
-				header={
-					<Breadcrumbs>
-						<Breadcrumb to="/">NICE Design System</Breadcrumb>
-					</Breadcrumbs>
-				}
+				isDark={true}
 			/>
 
 			<h2>Design Library</h2>

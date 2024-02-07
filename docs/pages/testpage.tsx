@@ -23,6 +23,20 @@ export default function Test() {
 				sometimes be hard to debug components using MDX alone.
 			</p>
 
+			<h2>Hero</h2>
+			<Hero title="Hello!" header={<p>Bread</p>} />
+
+			<Hero
+				title="Should have minimum height"
+				image="/images/hero-bg.jpg"
+				header={<p>Breadcrumbs here</p>}
+				intro={<p>Lots of summary text here</p>}
+				actions={<a className="btn btn--cta">I am a button</a>}
+				isDark={true}
+			/>
+
+			<Hero title="No minimum height here" />
+
 			<h2>Standard page header</h2>
 			<PageHeader
 				heading="Standard"
@@ -155,9 +169,6 @@ export default function Test() {
 					id massa pellentesque, bibendum risus in, interdum nibh.
 				</p>
 			</FullBleed>
-
-			<h2>Hero</h2>
-			<Hero title="Hello!" header={<p>Here is a header</p>} />
 		</>
 	);
 }
