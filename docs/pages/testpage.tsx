@@ -41,9 +41,23 @@ export default function Test() {
 				onClosing={() => alert("some callback function onClosing")}
 			/>
 
+			<h2>Action banner full width variant</h2>
+			<ActionBanner
+				title="Full width action banner"
+				cta={
+					<>
+						<Button variant="cta">A call to action</Button>
+						<Button variant="primary">A call to action</Button>
+						<Button variant="secondary">A call to action</Button>
+					</>
+				}
+				variant="fullWidth"
+				children={<p>some content</p>}
+			/>
+
 			<h2>Action banner full width variant with image</h2>
 			<ActionBanner
-				title="A title"
+				title="Full width action banner with image"
 				cta={<Button variant="inverse">A call to action</Button>}
 				variant="fullWidth"
 				children={<p>some content</p>}

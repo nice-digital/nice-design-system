@@ -108,6 +108,7 @@
     background: colours.$action-banner-full-width-background;
     border: 1px solid colours.$action-banner-full-width-border;
     color: colours.$text-inverse;
+    padding: utils.rem(spacing.$x-large 0 spacing.$x-large 0);
 
     .action-banner__title {
       color: colours.$text-inverse;
