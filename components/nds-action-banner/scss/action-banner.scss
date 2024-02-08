@@ -108,7 +108,12 @@
     background: colours.$action-banner-full-width-background;
     border: 1px solid colours.$action-banner-full-width-border;
     color: colours.$text-inverse;
-    padding: utils.rem(spacing.$x-large 0 spacing.$x-large 0);
+    padding: 0;
+
+    .action-banner__container {
+      padding-top: utils.rem(spacing.$x-large);
+      padding-bottom: utils.rem(spacing.$x-large);
+    }
 
     .action-banner__title {
       color: colours.$text-inverse;
@@ -126,35 +131,46 @@
     }
 
     &__image-container {
+      display: block;
+      min-height: 200px;
       background-position: center center;
-      background-size: cover;
-      bottom: 0;
-      display: none;
-      overflow: hidden;
-      position: absolute;
-      right: 0;
-      top: 0;
-      z-index: 0;
-
-      @include media-queries.mq($from: md) {
-        display: flex;
-        width: 34%;
-      }
-
-      &::before {
-        background: colours.$action-banner-full-width-background;
-        content: '';
-        flex: 0 0 200px;
-        pointer-events: none;
-        position: relative;
-        transform: rotate(-15deg) scale(1.2) translateX(-60%);
-        z-index: 1;
-      }
+      aspect-ratio: 16 / 9;
     }
   }
 
   @include media-queries.mq($from: md) {
     @include layout.clearfix;
+
+    &--full-width {
+      &__image-container {
+        aspect-ratio: unset;
+        background-position: center center;
+        background-size: cover;
+        bottom: 0;
+        display: none;
+        min-height: unset;
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 0;
+
+        @include media-queries.mq($from: md) {
+          display: flex;
+          width: 34%;
+        }
+
+        &::before {
+          background: colours.$action-banner-full-width-background;
+          content: '';
+          flex: 0 0 200px;
+          pointer-events: none;
+          position: relative;
+          transform: rotate(-15deg) scale(1.2) translateX(-60%);
+          z-index: 1;
+        }
+      }
+    }
 
     &__text {
       margin-bottom: 0;

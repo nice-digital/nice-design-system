@@ -44,13 +44,7 @@ export default function Test() {
 			<h2>Action banner full width variant</h2>
 			<ActionBanner
 				title="Full width action banner"
-				cta={
-					<>
-						<Button variant="cta">A call to action</Button>
-						<Button variant="primary">A call to action</Button>
-						<Button variant="secondary">A call to action</Button>
-					</>
-				}
+				cta={<Button variant="cta">A call to action</Button>}
 				variant="fullWidth"
 				children={<p>some content</p>}
 			/>

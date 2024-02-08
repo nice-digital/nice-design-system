@@ -56,6 +56,14 @@ export const ActionBanner: React.FC<ActionBannerProps> = (
 			data-component={`action-banner${variant ? `--${variant}` : ""}`}
 			{...rest}
 		>
+			{image && variant === "fullWidth" ? (
+				<div
+					className="action-banner--full-width__image-container"
+					style={{ backgroundImage: `url(${image})` }}
+				>
+					IMAGE-CONTAINER
+				</div>
+			) : null}
 			<div className="action-banner__container">
 				<div className="action-banner__inner">
 					<div className="action-banner__text">
@@ -75,12 +83,6 @@ export const ActionBanner: React.FC<ActionBannerProps> = (
 					)}
 				</div>
 			</div>
-			{image && variant === "fullWidth" ? (
-				<div
-					className="action-banner--full-width__image-container"
-					style={{ backgroundImage: `url(${image})` }}
-				></div>
-			) : null}
 		</section>
 	);
 };
