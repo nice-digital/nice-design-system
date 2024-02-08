@@ -60,9 +60,7 @@ export const ActionBanner: React.FC<ActionBannerProps> = (
 				<div
 					className="action-banner--full-width__image-container"
 					style={{ backgroundImage: `url(${image})` }}
-				>
-					IMAGE-CONTAINER
-				</div>
+				></div>
 			) : null}
 			<div className="action-banner__container">
 				<div className="action-banner__inner">
