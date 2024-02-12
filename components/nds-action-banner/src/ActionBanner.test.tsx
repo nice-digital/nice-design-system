@@ -1,6 +1,7 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import { ActionBanner } from "./ActionBanner";
 import userEvent from "@testing-library/user-event";
+import React from "react";
 
 describe("ActionBanner", () => {
 	it("should render child text", () => {
@@ -96,6 +97,178 @@ describe("ActionBanner", () => {
 
 		await waitFor(() => {
 			expect(onClosing).toHaveBeenCalledTimes(1);
+		});
+	});
+
+	describe("css class names", () => {
+		it("should add a kebab class that matches the supplied variant", () => {
+			const { container } = render(
+				<ActionBanner
+					variant="fullWidthSubtle"
+					title="Some title"
+					cta={<a href="/test">Some CTA</a>}
+				>
+					Some body
+				</ActionBanner>
+			);
+
+			const expectedClassName =
+				"action-banner action-banner--full-width-subtle";
+
+			expect(container.firstChild).toHaveClass(expectedClassName);
+		});
+
+		it("should have default 'action-banner' class when variant is undefined", () => {
+			const { container } = render(
+				<ActionBanner title="Some title" cta={<a href="/test">Some CTA</a>}>
+					Some body
+				</ActionBanner>
+			);
+
+			const expectedClassName = "action-banner";
+
+			expect(container.firstChild).toHaveClass(expectedClassName);
+		});
+
+		it("should have default 'action-banner' class when variant is 'default'", () => {
+			const { container } = render(
+				<ActionBanner
+					variant="default"
+					title="Some title"
+					cta={<a href="/test">Some CTA</a>}
+				>
+					Some body
+				</ActionBanner>
+			);
+
+			const expectedClassName = "action-banner";
+
+			expect(container.firstChild).toHaveClass(expectedClassName);
+		});
+	});
+
+	describe("tracking", () => {
+		const variants = [
+			["default", "action-banner--default"],
+			["subtle", "action-banner--subtle"],
+			["fullWidth", "action-banner--fullWidth"],
+			["fullWidthSubtle", "action-banner--fullWidthSubtle"],
+			[undefined, "action-banner"]
+		];
+
+		it.each(variants)(
+			"Should have correct data-component attribute for variant %s",
+			(variant, expectedClass) => {
+				const { container } = render(
+					<ActionBanner
+						variant={
+							variant as
+								| "default"
+								| "subtle"
+								| "fullWidth"
+								| "fullWidthSubtle"
+								| undefined
+						}
+						title="Some title"
+						cta={<a href="/test">Some CTA</a>}
+					>
+						Some body
+					</ActionBanner>
+				);
+
+				const element = container.querySelector("[data-component]");
+
+				expect(element).toBeInTheDocument();
+				expect(element?.getAttribute("data-component")).toBe(expectedClass);
+			}
+		);
+	});
+
+	it("should render all props", () => {
+		const { container } = render(
+			<ActionBanner
+				title="Test Title"
+				variant="fullWidth"
+				cta={<a href="/test">Some CTA</a>}
+				onClosing={jest.fn()}
+				className="test-class"
+				image="test-image.jpg"
+			>
+				<p>Test Children</p>
+			</ActionBanner>
+		);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	describe("image", () => {
+		it("renders image when image prop is provided and variant is fullWidth", () => {
+			const imageUrl = "test-image.jpg";
+			const { container } = render(
+				<ActionBanner
+					variant="fullWidth"
+					title="Test Title"
+					children="Test Children"
+					image={imageUrl}
+				/>
+			);
+
+			const imageElement = container.querySelector(
+				".action-banner--full-width__image-container"
+			);
+
+			expect(imageElement).toBeInTheDocument();
+			expect(imageElement).toHaveStyle({ backgroundImage: `url(${imageUrl})` });
+		});
+
+		it("does not render image when image prop is provided and variant is not fullWidth", () => {
+			const { container } = render(
+				<ActionBanner
+					title="Test Title"
+					children="Test Children"
+					image="test-image.jpg"
+				/>
+			);
+
+			const imageElement = container.querySelector(
+				".action-banner--full-width__image-container"
+			);
+
+			expect(imageElement).not.toBeInTheDocument();
+		});
+	});
+
+	describe("closing", () => {
+		it("renders close button when onClosing prop is provided", () => {
+			const { container } = render(
+				<ActionBanner
+					title="Test Title"
+					children="Test Children"
+					onClosing={() => {}}
+				/>
+			);
+
+			const closeButton = container.querySelector(".action-banner__close");
+
+			expect(closeButton).toBeInTheDocument();
+		});
+
+		it("calls onClosing function when close button is clicked", async () => {
+			const onClosing = jest.fn();
+			const { container } = render(
+				<ActionBanner
+					title="Test Title"
+					children="Test Children"
+					onClosing={onClosing}
+				/>
+			);
+
+			const closeButton = container.querySelector(".action-banner__close");
+			await userEvent.click(closeButton!);
+
+			await waitFor(() => {
+				expect(onClosing).toHaveBeenCalled();
+			});
 		});
 	});
 });

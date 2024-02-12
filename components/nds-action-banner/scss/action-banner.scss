@@ -140,10 +140,10 @@
     }
 
     &__image-container {
+      aspect-ratio: 16 / 9;
+      background-position: center center;
       display: block;
       min-height: 200px;
-      background-position: center center;
-      aspect-ratio: 16 / 9;
     }
   }
 
