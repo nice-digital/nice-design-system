@@ -65,41 +65,6 @@ describe("ActionBanner", () => {
 		expect(container.querySelector(".action-banner__actions")).toBe(null);
 	});
 
-	it("should hide banner after clicking close button", async () => {
-		const { container } = render(
-			<ActionBanner title="Title" onClosing={jest.fn()}>
-				Body
-			</ActionBanner>
-		);
-
-		// First, check for the banner's existence
-		expect(container.querySelector("section")).toBeInTheDocument();
-
-		const button = screen.getByRole("button");
-		userEvent.click(button);
-
-		// Next, check that the banner has gone
-		await waitFor(() => {
-			expect(container.querySelector("section")).toBe(null);
-		});
-	});
-
-	it("should call onClosing prop with component instance on close button click", async () => {
-		const onClosing = jest.fn();
-		const { container } = render(
-			<ActionBanner title="Title" onClosing={onClosing}>
-				Body
-			</ActionBanner>
-		);
-
-		const button = screen.getByRole("button");
-		userEvent.click(button);
-
-		await waitFor(() => {
-			expect(onClosing).toHaveBeenCalledTimes(1);
-		});
-	});
-
 	describe("css class names", () => {
 		it("should add a kebab class that matches the supplied variant", () => {
 			const { container } = render(
@@ -253,21 +218,38 @@ describe("ActionBanner", () => {
 			expect(closeButton).toBeInTheDocument();
 		});
 
-		it("calls onClosing function when close button is clicked", async () => {
-			const onClosing = jest.fn();
+		it("should hide banner after clicking close button", async () => {
 			const { container } = render(
-				<ActionBanner
-					title="Test Title"
-					children="Test Children"
-					onClosing={onClosing}
-				/>
+				<ActionBanner title="Title" onClosing={jest.fn()}>
+					Body
+				</ActionBanner>
 			);
 
-			const closeButton = container.querySelector(".action-banner__close");
-			await userEvent.click(closeButton!);
+			// First, check for the banner's existence
+			expect(container.querySelector("section")).toBeInTheDocument();
+
+			const button = screen.getByRole("button");
+			userEvent.click(button);
+
+			// Next, check that the banner has gone
+			await waitFor(() => {
+				expect(container.querySelector("section")).toBe(null);
+			});
+		});
+
+		it("should call onClosing prop with component instance on close button click", async () => {
+			const onClosing = jest.fn();
+			const { container } = render(
+				<ActionBanner title="Title" onClosing={onClosing}>
+					Body
+				</ActionBanner>
+			);
+
+			const button = screen.getByRole("button");
+			userEvent.click(button);
 
 			await waitFor(() => {
-				expect(onClosing).toHaveBeenCalled();
+				expect(onClosing).toHaveBeenCalledTimes(1);
 			});
 		});
 	});
