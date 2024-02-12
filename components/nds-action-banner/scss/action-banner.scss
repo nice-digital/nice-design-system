@@ -111,7 +111,9 @@
     padding: 0;
 
     .action-banner__intro * {
-      font-size: 1.3rem; /* equates to 24px from xd */
+      @include typography.lead();
+      margin-top: utils.rem(spacing.$medium);
+      margin-bottom: utils.rem(spacing.$large);
     }
 
     .action-banner__container {
@@ -120,8 +122,9 @@
     }
 
     .action-banner__title {
+      @include typography.h2();
       color: colours.$text-inverse;
-      font-size: 2.2rem; /* equates to 39px from xd */
+      margin: 0;
     }
 
     .action-banner__actions {
