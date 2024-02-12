@@ -36,15 +36,14 @@ export const ActionBanner: React.FC<ActionBannerProps> = (
 		else throw new Error("The onClosing prop should be a function");
 	};
 
-	// kebab case the camel case variant to match the css class
-	const variantClassName = variant
+	const kebabCaseVariantClassName = variant
 		? `${variant.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase()}`
 		: "";
 
 	const classes = {
 		"action-banner": true,
 		"action-banner--closeable": onClosing,
-		[`action-banner--${variantClassName}`]: variant,
+		[`action-banner--${kebabCaseVariantClassName}`]: variant,
 		[`${className}`]: className
 	};
 
