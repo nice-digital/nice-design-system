@@ -110,6 +110,10 @@
     color: colours.$text-inverse;
     padding: 0;
 
+    .action-banner__intro * {
+      font-size: 1.3rem; /* equates to 24px from xd */
+    }
+
     .action-banner__container {
       padding-top: utils.rem(spacing.$x-large);
       padding-bottom: utils.rem(spacing.$x-large);
@@ -117,6 +121,7 @@
 
     .action-banner__title {
       color: colours.$text-inverse;
+      font-size: 2.2rem; /* equates to 39px from xd */
     }
 
     .action-banner__actions {
@@ -136,6 +141,22 @@
       min-height: 200px;
       background-position: center center;
       aspect-ratio: 16 / 9;
+    }
+  }
+
+  &--full-width-subtle {
+    @extend .action-banner--full-width;
+
+    background: colours.$action-banner-full-width-subtle-background;
+    border: 1px solid colours.$action-banner-full-width-subtle-border;
+    color: colours.$text;
+
+    .action-banner__title {
+      color: colours.$text;
+    }
+
+    .action-banner__actions {
+      @include focus.default-button-focus;
     }
   }
 

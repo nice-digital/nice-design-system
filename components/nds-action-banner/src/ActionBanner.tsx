@@ -6,7 +6,7 @@ import "../scss/action-banner.scss";
 
 interface ActionBannerProps {
 	title: string;
-	variant?: "default" | "subtle" | "fullWidth";
+	variant?: "default" | "subtle" | "fullWidth" | "fullWidthSubtle";
 	children: ReactNode[] | ReactNode;
 	cta?: ReactNode;
 	onClosing?: Function;
