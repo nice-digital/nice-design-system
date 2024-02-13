@@ -32,14 +32,10 @@ export const ActionBanner: React.FC<ActionBannerProps> = (
 
 	const closeClickHandler = () => {
 		setIsClosed(true);
-		try {
-			if (typeof onClosing === "function") {
-				onClosing();
-			} else {
-				throw new Error("The onClosing prop should be a function");
-			}
-		} catch (error) {
-			console.error(error);
+		if (typeof onClosing === "function") {
+			onClosing();
+		} else {
+			throw new Error("The onClosing prop should be a function");
 		}
 	};
 

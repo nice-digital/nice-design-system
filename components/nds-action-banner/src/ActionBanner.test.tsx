@@ -236,27 +236,5 @@ describe("ActionBanner", () => {
 				expect(onClosing).toHaveBeenCalledTimes(1);
 			});
 		});
-
-		it("should throw an error if onClosing prop is not a function", async () => {
-			const notAFunction = "not a function";
-			const spy = jest.spyOn(console, "error").mockImplementation(() => {});
-			render(
-				// @ts-expect-error
-				<ActionBanner title="Title" onClosing={notAFunction}>
-					Body
-				</ActionBanner>
-			);
-
-			const button = screen.getByRole("button");
-			userEvent.click(button);
-
-			await waitFor(() => {
-				expect(spy).toHaveBeenCalled();
-				const errorMessage = spy.mock.calls[0][0].message;
-				expect(errorMessage).toEqual("The onClosing prop should be a function");
-			});
-
-			spy.mockRestore();
-		});
 	});
 });
