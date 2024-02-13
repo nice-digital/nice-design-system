@@ -1,5 +1,5 @@
-import { render, screen, waitFor } from "@testing-library/react";
-import { ActionBanner } from "./ActionBanner";
+import { act, render, screen, waitFor } from "@testing-library/react";
+import { ActionBanner, ActionBannerProps } from "./ActionBanner";
 import userEvent from "@testing-library/user-event";
 import React from "react";
 
@@ -66,42 +66,33 @@ describe("ActionBanner", () => {
 	});
 
 	describe("css class names", () => {
-		it("should add a kebab class that matches the supplied variant", () => {
-			const { container } = render(
-				<ActionBanner
-					variant="fullWidthSubtle"
-					title="Some title"
-					cta={<a href="/test">Some CTA</a>}
-				>
-					Some body
-				</ActionBanner>
-			);
+		const variants = [
+			["default", "action-banner--default"],
+			["subtle", "action-banner--subtle"],
+			["fullWidth", "action-banner--full-width"],
+			["fullWidthSubtle", "action-banner--full-width-subtle"]
+		];
 
-			const expectedClassName =
-				"action-banner action-banner--full-width-subtle";
+		it.each(variants)(
+			"Should have correct css class for variant %s",
+			(variant, expectedClass) => {
+				const { container } = render(
+					<ActionBanner
+						variant={variant as ActionBannerProps["variant"] | undefined}
+						title="Some title"
+						cta={<a href="/test">Some CTA</a>}
+					>
+						Some body
+					</ActionBanner>
+				);
 
-			expect(container.firstChild).toHaveClass(expectedClassName);
-		});
+				expect(container.firstChild).toHaveClass(expectedClass);
+			}
+		);
 
 		it("should have default 'action-banner' class when variant is undefined", () => {
 			const { container } = render(
 				<ActionBanner title="Some title" cta={<a href="/test">Some CTA</a>}>
-					Some body
-				</ActionBanner>
-			);
-
-			const expectedClassName = "action-banner";
-
-			expect(container.firstChild).toHaveClass(expectedClassName);
-		});
-
-		it("should have default 'action-banner' class when variant is 'default'", () => {
-			const { container } = render(
-				<ActionBanner
-					variant="default"
-					title="Some title"
-					cta={<a href="/test">Some CTA</a>}
-				>
 					Some body
 				</ActionBanner>
 			);
@@ -123,17 +114,10 @@ describe("ActionBanner", () => {
 
 		it.each(variants)(
 			"Should have correct data-component attribute for variant %s",
-			(variant, expectedClass) => {
+			(variant, expectedValue) => {
 				const { container } = render(
 					<ActionBanner
-						variant={
-							variant as
-								| "default"
-								| "subtle"
-								| "fullWidth"
-								| "fullWidthSubtle"
-								| undefined
-						}
+						variant={variant as ActionBannerProps["variant"] | undefined}
 						title="Some title"
 						cta={<a href="/test">Some CTA</a>}
 					>
@@ -144,7 +128,7 @@ describe("ActionBanner", () => {
 				const element = container.querySelector("[data-component]");
 
 				expect(element).toBeInTheDocument();
-				expect(element?.getAttribute("data-component")).toBe(expectedClass);
+				expect(element?.getAttribute("data-component")).toBe(expectedValue);
 			}
 		);
 	});
@@ -251,6 +235,28 @@ describe("ActionBanner", () => {
 			await waitFor(() => {
 				expect(onClosing).toHaveBeenCalledTimes(1);
 			});
+		});
+
+		it("should throw an error if onClosing prop is not a function", async () => {
+			const notAFunction = "not a function";
+			const spy = jest.spyOn(console, "error").mockImplementation(() => {});
+			render(
+				// @ts-expect-error
+				<ActionBanner title="Title" onClosing={notAFunction}>
+					Body
+				</ActionBanner>
+			);
+
+			const button = screen.getByRole("button");
+			userEvent.click(button);
+
+			await waitFor(() => {
+				expect(spy).toHaveBeenCalled();
+				const errorMessage = spy.mock.calls[0][0].message;
+				expect(errorMessage).toEqual("The onClosing prop should be a function");
+			});
+
+			spy.mockRestore();
 		});
 	});
 });

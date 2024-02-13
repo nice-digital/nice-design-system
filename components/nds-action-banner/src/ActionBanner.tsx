@@ -4,7 +4,7 @@ import RemoveIcon from "@nice-digital/icons/lib/Remove";
 
 import "../scss/action-banner.scss";
 
-interface ActionBannerProps {
+export interface ActionBannerProps {
 	title: string;
 	variant?: "default" | "subtle" | "fullWidth" | "fullWidthSubtle";
 	children: ReactNode[] | ReactNode;
@@ -32,8 +32,15 @@ export const ActionBanner: React.FC<ActionBannerProps> = (
 
 	const closeClickHandler = () => {
 		setIsClosed(true);
-		if (typeof onClosing === "function") onClosing();
-		else throw new Error("The onClosing prop should be a function");
+		try {
+			if (typeof onClosing === "function") {
+				onClosing();
+			} else {
+				throw new Error("The onClosing prop should be a function");
+			}
+		} catch (error) {
+			console.error(error);
+		}
 	};
 
 	const kebabCaseVariantClassName = variant
