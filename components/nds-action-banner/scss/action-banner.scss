@@ -145,6 +145,17 @@
       display: block;
       min-height: 200px;
     }
+
+    & a {
+      &:link,
+      &:visited,
+      &:hover,
+      &:active,
+      &:focus {
+        color: colours.$action-banner-full-width-dark-background-text-colour;
+        outline-color: colours.$focus-inverse;
+      }
+    }
   }
 
   &--full-width-subtle {
@@ -160,6 +171,17 @@
 
     .action-banner__actions {
       @include focus.default-button-focus;
+    }
+
+    & a {
+      &:link,
+      &:visited,
+      &:hover,
+      &:active,
+      &:focus {
+        color: colours.$action-banner-full-width-light-background-text-colour;
+        outline-color: colours.$focus;
+      }
     }
   }
 

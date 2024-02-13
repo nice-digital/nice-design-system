@@ -7,7 +7,19 @@
   background: transparent;
   border: 1px solid colours.$border;
   margin: 0 0 utils.rem(spacing.$medium);
+  overflow-x: hidden;
   padding: utils.rem(spacing.$medium);
+  position: relative;
+
+  &.expanded {
+    background-color: #fff;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+  }
 
   & > h2,
   & > h3,

@@ -123,8 +123,8 @@ The default variant is strong and grabs users' attention. Use sparingly for impo
 
 Use the subtle variant when you need a call to action with context, but don't want to distract users. For example giving feedback on a page. Use with a primary .btn.btn--primaryor secondary - .btn.btn--secondary button.
 
-
-<Example>
+### Full width action banner
+<Example fullWidth>
 <h4>Example: full width action banner</h4>
 <ActionBanner
 	variant="fullWidth"
@@ -165,13 +165,22 @@ Use the subtle variant when you need a call to action with context, but don't wa
 </CH.Code>
 </Example>
 
-Some text about the full width variant
+The full-bleed action banner spans the full width of the browser window and adds an image to the side of the content.  
+
+It can be used to break up a page layout - breaking out of the standard page container or to complement other full-width elements such as the full-bleed panels that are used on the homepage.  
+
+The full width banner contains:
+
+- a short heading (H2) 
+- descriptive text for extra context (lead text) 
+- an image  
+- a button
 
 
 
-<Example>
+
+<Example fullWidth>
 <h4>Example: full width action banner (with image)</h4>
-<button id="expandButton">Expand</button>
 <ActionBanner
 	variant="fullWidth"
 	title="Full width action banner with image"
@@ -214,11 +223,17 @@ Some text about the full width variant
 </CH.Code>
 </Example>
 
-Some text about the full width variant with optional image
+## Images
+Images should follow the brand guidelines for photography and illustration.  
+
+Use appropriate alt text to describe the image. 
+
+## Mobile 
+
+Images will stack above the content in the banner on mobile devices. 
 
 
-
-<Example>
+<Example fullWidth>
 <h4>Example: full width action banner</h4>
 <ActionBanner
 	variant="fullWidthSubtle"
@@ -257,8 +272,6 @@ Some text about the full width variant with optional image
 ```
 </CH.Code>
 </Example>
-
-Some text about the full width subtle variant
 
 ## Accessibility
 
