@@ -123,6 +123,143 @@ The default variant is strong and grabs users' attention. Use sparingly for impo
 
 Use the subtle variant when you need a call to action with context, but don't want to distract users. For example giving feedback on a page. Use with a primary .btn.btn--primaryor secondary - .btn.btn--secondary button.
 
+
+<Example>
+<h4>Example: full width action banner</h4>
+<ActionBanner
+	variant="fullWidth"
+	title="Full width action banner"
+	cta={<Button>A button</Button>}
+>
+	This is <a href="#">some content with a link</a>
+</ActionBanner>
+
+<CH.Code>
+```js React
+<ActionBanner
+	variant="fullWidth"
+	title="Full width action banner"
+	cta={<Button>A button</Button>}
+>
+	This is <a href="#">some content with a link</a>
+</ActionBanner>
+```
+```html HTML
+<section class="action-banner action-banner--full-width" data-component="action-banner--fullWidth">
+  <div class="action-banner__container">
+    <div class="action-banner__inner">
+      <div class="action-banner__text">
+        <h2 class="action-banner__title">Full width action banner</h2>
+        <div class="action-banner__intro">
+          <p>This is <a href="#">some content with a link</a></p>
+        </div>
+      </div>
+      <div class="action-banner__actions">
+        <button type="button" class="btn" data-component="button--primary">A button</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+```
+</CH.Code>
+</Example>
+
+Some text about the full width variant
+
+
+
+<Example>
+<h4>Example: full width action banner (with image)</h4>
+<button id="expandButton">Expand</button>
+<ActionBanner
+	variant="fullWidth"
+	title="Full width action banner with image"
+	cta={<Button>A button</Button>}
+	image="http://placekitten.com/g/800/1200"
+>
+	This is <a href="#">some content with a link</a>
+</ActionBanner>
+
+<CH.Code>
+```js React
+<ActionBanner
+	variant="fullWidth"
+	title="Full width action banner with image"
+	cta={<Button>A button</Button>}
+	image="http://placekitten.com/g/800/1200"
+>
+	This is <a href="#">some content with a link</a>
+</ActionBanner>
+```
+```html HTML
+<section class="action-banner action-banner--full-width" data-component="action-banner--fullWidth">
+  <div class="action-banner--full-width__image-container" style="background-image:url(http://placekitten.com/g/800/1200)"></div>
+  <div class="action-banner__container">
+    <div class="action-banner__inner">
+      <div class="action-banner__text">
+        <h2 class="action-banner__title">Full width action banner with image</h2>
+        <div class="action-banner__intro">
+          <p>This is <a href="#">some content with a link</a></p>
+        </div>
+      </div>
+      <div class="action-banner__actions">
+        <button type="button" class="btn" data-component="button--primary">A button</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+```
+</CH.Code>
+</Example>
+
+Some text about the full width variant with optional image
+
+
+
+<Example>
+<h4>Example: full width action banner</h4>
+<ActionBanner
+	variant="fullWidthSubtle"
+	title="Full width subtle action banner"
+	cta={<Button>A button</Button>}
+>
+	This is <a href="#">some content with a link</a>
+</ActionBanner>
+
+<CH.Code>
+```js React
+<ActionBanner
+	variant="fullWidthSubtle"
+	title="Full width subtle action banner"
+	cta={<Button>A button</Button>}
+>
+	This is <a href="#">some content with a link</a>
+</ActionBanner>
+```
+```html HTML
+<section class="action-banner action-banner--full-width-subtle" data-component="action-banner--fullWidthSubtle">
+  <div class="action-banner__container">
+    <div class="action-banner__inner">
+      <div class="action-banner__text">
+        <h2 class="action-banner__title">Full width subtle action banner</h2>
+        <div class="action-banner__intro">
+          <p>This is <a href="#">some content with a link</a></p>
+        </div>
+      </div>
+      <div class="action-banner__actions">
+        <button type="button" class="btn" data-component="button--primary">A button</button>
+      </div>
+    </div>
+  </div>
+</section>
+```
+</CH.Code>
+</Example>
+
+Some text about the full width subtle variant
+
 ## Accessibility
 
 Component meets WCAG AA guidelines for accessibility on:
