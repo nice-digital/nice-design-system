@@ -46,7 +46,11 @@ export default function Test() {
 				title="Full width action banner"
 				cta={<Button variant="cta">A call to action</Button>}
 				variant="fullWidth"
-				children={<p>some content</p>}
+				children={
+					<p>
+						This is <a href="#">some content with a link</a>
+					</p>
+				}
 			/>
 
 			<h2>Action banner full width subtle variant </h2>
@@ -54,7 +58,11 @@ export default function Test() {
 				title="Full width subtle action banner"
 				cta={<Button variant="inverse">A call to action</Button>}
 				variant="fullWidthSubtle"
-				children={<p>some content</p>}
+				children={
+					<p>
+						This is <a href="#">some content with a link</a>
+					</p>
+				}
 			/>
 
 			<h2>Action banner full width variant with image</h2>
@@ -62,7 +70,11 @@ export default function Test() {
 				title="Full width action banner with image"
 				cta={<Button variant="inverse">A call to action</Button>}
 				variant="fullWidth"
-				children={<p>some content</p>}
+				children={
+					<p>
+						This is <a href="#">some content with a link</a>
+					</p>
+				}
 				image="http://placekitten.com/g/800/1200"
 			/>
 			<br />

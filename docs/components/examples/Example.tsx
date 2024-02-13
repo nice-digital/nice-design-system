@@ -1,33 +1,10 @@
-import React, { ReactNode, useState } from "react";
-import { Button } from "@nice-digital/nds-button";
+import React, { ReactNode } from "react";
 import styles from "./Example.module.scss";
 
 interface ExampleProps {
-	fullWidth?: boolean;
 	children?: ReactNode;
 }
 
-export const Example = ({ children, fullWidth }: ExampleProps) => {
-	const [expanded, setExpanded] = useState(false);
-
-	const toggleExpand = () => {
-		setExpanded(!expanded);
-	};
-
-	return (
-		<div
-			className={`${styles.example} ${
-				expanded ? styles.expanded : ""
-			} exclude-container`}
-		>
-			{fullWidth && (
-				<Button variant="inverse" onClick={toggleExpand}>
-					{expanded
-						? "Collapse full width example"
-						: "Expand full width example"}
-				</Button>
-			)}
-			{children}
-		</div>
-	);
-};
+export const Example = ({ children }: ExampleProps) => (
+	<div className={`${styles.example} exclude-container`}>{children}</div>
+);
