@@ -32,13 +32,12 @@ export default function Test() {
 				children={<p>some content</p>}
 			/>
 
-			<h2>Action banner subtle variant (with close)</h2>
+			<h2>Action banner subtle variant</h2>
 			<ActionBanner
 				title="A title"
 				cta={<Button variant="primary">A call to action</Button>}
 				variant="subtle"
 				children={<p>some content</p>}
-				onClosing={() => alert("some callback function onClosing")}
 			/>
 
 			<h2>Action banner full width variant</h2>
