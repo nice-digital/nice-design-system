@@ -172,8 +172,43 @@ The full width banner contains:
 - a button
 
 <Example>
+<h4>Example: full width action banner subtle variant</h4>
+<Screenshot image="action-banner-2.jpg" alt="Screenshot of the action-banner component with subtle background colour" />
+
+
+<CH.Code>
+```js React
+<ActionBanner
+	variant="fullWidthSubtle"
+	title="Full width subtle action banner"
+	cta={<Button>A button</Button>}
+>
+	This is <a href="#">some content with a link</a>
+</ActionBanner>
+```
+```html HTML
+<section class="action-banner action-banner--full-width-subtle" data-component="action-banner--fullWidthSubtle">
+  <div class="action-banner__container">
+    <div class="action-banner__inner">
+      <div class="action-banner__text">
+        <h2 class="action-banner__title">Full width subtle action banner</h2>
+        <div class="action-banner__intro">
+          <p>This is <a href="#">some content with a link</a></p>
+        </div>
+      </div>
+      <div class="action-banner__actions">
+        <button type="button" class="btn" data-component="button--primary">A button</button>
+      </div>
+    </div>
+  </div>
+</section>
+```
+</CH.Code>
+</Example>
+
+<Example>
 <h4>Example: full width action banner (with image)</h4>
-<Screenshot image="action-banner-2.jpg" alt="Screenshot of the action-banner component with image" />
+<Screenshot image="action-banner-3.jpg" alt="Screenshot of the action-banner component with image" />
 
 
 <CH.Code>
@@ -217,41 +252,6 @@ Use appropriate alt text to describe the image.
 ## Mobile 
 
 Images will stack above the content in the banner on mobile devices. 
-
-<Example>
-<h4>Example: full width action banner</h4>
-<Screenshot image="action-banner-3.jpg" alt="Screenshot of the action-banner component with subtle background colour" />
-
-
-<CH.Code>
-```js React
-<ActionBanner
-	variant="fullWidthSubtle"
-	title="Full width subtle action banner"
-	cta={<Button>A button</Button>}
->
-	This is <a href="#">some content with a link</a>
-</ActionBanner>
-```
-```html HTML
-<section class="action-banner action-banner--full-width-subtle" data-component="action-banner--fullWidthSubtle">
-  <div class="action-banner__container">
-    <div class="action-banner__inner">
-      <div class="action-banner__text">
-        <h2 class="action-banner__title">Full width subtle action banner</h2>
-        <div class="action-banner__intro">
-          <p>This is <a href="#">some content with a link</a></p>
-        </div>
-      </div>
-      <div class="action-banner__actions">
-        <button type="button" class="btn" data-component="button--primary">A button</button>
-      </div>
-    </div>
-  </div>
-</section>
-```
-</CH.Code>
-</Example>
 
 ## Accessibility
 
