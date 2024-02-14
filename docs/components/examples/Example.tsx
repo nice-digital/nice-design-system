@@ -14,7 +14,6 @@ export const Example = ({ children, fullWidth }: ExampleProps) => {
 		setExpanded(!expanded);
 	};
 
-	// Split the children into multiple items
 	const childItems = React.Children.toArray(children);
 
 	return (
@@ -23,7 +22,6 @@ export const Example = ({ children, fullWidth }: ExampleProps) => {
 				expanded ? styles.expanded : ""
 			} exclude-container`}
 		>
-			{/* Render the child items in a specific order */}
 			{childItems.map((child, index) => (
 				<div key={index}>
 					{index === 1 && fullWidth ? (
