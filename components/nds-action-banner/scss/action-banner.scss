@@ -117,6 +117,7 @@
     }
 
     .action-banner__container {
+      min-height: 300px;
       padding-top: utils.rem(spacing.$x-large);
       padding-bottom: utils.rem(spacing.$x-large);
     }
@@ -142,6 +143,7 @@
     &__image-container {
       aspect-ratio: 16 / 9;
       background-position: center center;
+      background-size: cover;
       display: block;
       min-height: 200px;
     }

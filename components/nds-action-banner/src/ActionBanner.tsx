@@ -8,7 +8,7 @@ export interface ActionBannerProps {
 	title: string;
 	variant?: "default" | "subtle" | "fullWidth" | "fullWidthSubtle";
 	children: ReactNode[] | ReactNode;
-	cta?: ReactNode;
+	cta: ReactNode;
 	onClosing?: Function;
 	className?: string;
 	image?: string;
