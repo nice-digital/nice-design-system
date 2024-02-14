@@ -54,29 +54,6 @@
     }
   }
 
-  &__close {
-    @include focus.inverse-button-focus;
-    appearance: none;
-    background: 0;
-    border: 0;
-    color: colours.$text-inverse;
-    cursor: pointer;
-    line-height: 1;
-    padding: utils.rem(spacing.$small);
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 1;
-
-    &:hover {
-      background: rgb(0 0 0 / 20%);
-    }
-
-    &:focus {
-      @include focus.inverse-focus-style;
-    }
-  }
-
   &--subtle {
     @include typography.links-default;
     background: colours.$action-banner-subtle-background;
@@ -87,18 +64,8 @@
       color: colours.$text;
     }
 
-    .action-banner__close {
-      color: colours.$text;
-    }
-
     .action-banner__actions {
       @include focus.default-button-focus;
-    }
-  }
-
-  &--closeable {
-    .action-banner__title {
-      padding-right: utils.rem(spacing.$large); // Make room for close button
     }
   }
 
@@ -233,16 +200,6 @@
       top: 50%;
       transform: translateY(-50%);
       width: math.percentage(1 * 0.25);
-    }
-
-    &--closeable {
-      .action-banner__title {
-        padding-right: 0;
-      }
-
-      .action-banner__actions {
-        right: utils.rem(spacing.$x-large);
-      }
     }
   }
 }

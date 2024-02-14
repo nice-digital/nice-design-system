@@ -1,31 +1,53 @@
-import { act, render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { ActionBanner, ActionBannerProps } from "./ActionBanner";
-import userEvent from "@testing-library/user-event";
+import { Button } from "./../../nds-button/src/Button";
+
 import React from "react";
 
 describe("ActionBanner", () => {
 	it("should render child text", () => {
 		const sampleText = "Some sample text";
-		render(<ActionBanner title="Title">{sampleText}</ActionBanner>);
+		render(
+			<ActionBanner
+				title="Title"
+				cta={
+					<Button to="/test" variant="primary">
+						Some CTA
+					</Button>
+				}
+			>
+				{sampleText}
+			</ActionBanner>
+		);
 		expect(screen.getByText(sampleText)).toBeInTheDocument();
 	});
 
 	it("should match snapshot for default action banner", () => {
 		const { container } = render(
-			<ActionBanner title="Some title" cta={<a href="/test">Some CTA</a>}>
+			<ActionBanner
+				title="Some title"
+				cta={
+					<Button to="/test" variant="primary">
+						Some CTA
+					</Button>
+				}
+			>
 				Some body
 			</ActionBanner>
 		);
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should match snapshot for closeable subtle action banner", () => {
+	it("should match snapshot for subtle action banner", () => {
 		const { container } = render(
 			<ActionBanner
 				variant="subtle"
 				title="Some title"
-				cta={<a href="/test">Some CTA</a>}
-				onClosing={jest.fn()}
+				cta={
+					<Button to="/test" variant="primary">
+						Some CTA
+					</Button>
+				}
 			>
 				Some body
 			</ActionBanner>
@@ -37,7 +59,11 @@ describe("ActionBanner", () => {
 		const { container } = render(
 			<ActionBanner
 				title="Some title"
-				cta={<a href="/test">Some CTA</a>}
+				cta={
+					<Button to="/test" variant="primary">
+						Some CTA
+					</Button>
+				}
 				data-track="test"
 			>
 				Some body
@@ -51,7 +77,15 @@ describe("ActionBanner", () => {
 
 	it("should merge additional classes into the existing classes", () => {
 		const { container } = render(
-			<ActionBanner title="Some title" className="mt--0">
+			<ActionBanner
+				title="Some title"
+				cta={
+					<Button to="/test" variant="primary">
+						Some CTA
+					</Button>
+				}
+				className="mt--0"
+			>
 				Some body
 			</ActionBanner>
 		);
@@ -60,7 +94,9 @@ describe("ActionBanner", () => {
 
 	it("should not render an empty CTA", () => {
 		const { container } = render(
-			<ActionBanner title="Title">Body</ActionBanner>
+			<ActionBanner title="Title" cta="">
+				Body
+			</ActionBanner>
 		);
 		expect(container.querySelector(".action-banner__actions")).toBe(null);
 	});
@@ -80,7 +116,11 @@ describe("ActionBanner", () => {
 					<ActionBanner
 						variant={variant as ActionBannerProps["variant"] | undefined}
 						title="Some title"
-						cta={<a href="/test">Some CTA</a>}
+						cta={
+							<Button to="/test" variant="primary">
+								Some CTA
+							</Button>
+						}
 					>
 						Some body
 					</ActionBanner>
@@ -92,7 +132,14 @@ describe("ActionBanner", () => {
 
 		it("should have default 'action-banner' class when variant is undefined", () => {
 			const { container } = render(
-				<ActionBanner title="Some title" cta={<a href="/test">Some CTA</a>}>
+				<ActionBanner
+					title="Some title"
+					cta={
+						<Button to="/test" variant="primary">
+							Some CTA
+						</Button>
+					}
+				>
 					Some body
 				</ActionBanner>
 			);
@@ -119,7 +166,11 @@ describe("ActionBanner", () => {
 					<ActionBanner
 						variant={variant as ActionBannerProps["variant"] | undefined}
 						title="Some title"
-						cta={<a href="/test">Some CTA</a>}
+						cta={
+							<Button to="/test" variant="primary">
+								Some CTA
+							</Button>
+						}
 					>
 						Some body
 					</ActionBanner>
@@ -138,8 +189,11 @@ describe("ActionBanner", () => {
 			<ActionBanner
 				title="Test Title"
 				variant="fullWidth"
-				cta={<a href="/test">Some CTA</a>}
-				onClosing={jest.fn()}
+				cta={
+					<Button to="/test" variant="primary">
+						Some CTA
+					</Button>
+				}
 				className="test-class"
 				image="test-image.jpg"
 			>
@@ -158,6 +212,11 @@ describe("ActionBanner", () => {
 					variant="fullWidth"
 					title="Test Title"
 					children="Test Children"
+					cta={
+						<Button to="/test" variant="primary">
+							Some CTA
+						</Button>
+					}
 					image={imageUrl}
 				/>
 			);
@@ -176,6 +235,11 @@ describe("ActionBanner", () => {
 					title="Test Title"
 					children="Test Children"
 					image="test-image.jpg"
+					cta={
+						<Button to="/test" variant="primary">
+							Some CTA
+						</Button>
+					}
 				/>
 			);
 
@@ -184,57 +248,6 @@ describe("ActionBanner", () => {
 			);
 
 			expect(imageElement).not.toBeInTheDocument();
-		});
-	});
-
-	describe("closing", () => {
-		it("renders close button when onClosing prop is provided", () => {
-			const { container } = render(
-				<ActionBanner
-					title="Test Title"
-					children="Test Children"
-					onClosing={() => {}}
-				/>
-			);
-
-			const closeButton = container.querySelector(".action-banner__close");
-
-			expect(closeButton).toBeInTheDocument();
-		});
-
-		it("should hide banner after clicking close button", async () => {
-			const { container } = render(
-				<ActionBanner title="Title" onClosing={jest.fn()}>
-					Body
-				</ActionBanner>
-			);
-
-			// First, check for the banner's existence
-			expect(container.querySelector("section")).toBeInTheDocument();
-
-			const button = screen.getByRole("button");
-			userEvent.click(button);
-
-			// Next, check that the banner has gone
-			await waitFor(() => {
-				expect(container.querySelector("section")).toBe(null);
-			});
-		});
-
-		it("should call onClosing prop with component instance on close button click", async () => {
-			const onClosing = jest.fn();
-			const { container } = render(
-				<ActionBanner title="Title" onClosing={onClosing}>
-					Body
-				</ActionBanner>
-			);
-
-			const button = screen.getByRole("button");
-			userEvent.click(button);
-
-			await waitFor(() => {
-				expect(onClosing).toHaveBeenCalledTimes(1);
-			});
 		});
 	});
 });

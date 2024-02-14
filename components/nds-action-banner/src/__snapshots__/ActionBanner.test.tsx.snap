@@ -1,72 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ActionBanner should match snapshot for closeable subtle action banner 1`] = `
-<div>
-  <section
-    class="action-banner action-banner--closeable action-banner--subtle"
-    data-component="action-banner--subtle"
-  >
-    <div
-      class="action-banner__container"
-    >
-      <div
-        class="action-banner__inner"
-      >
-        <div
-          class="action-banner__text"
-        >
-          <h2
-            class="action-banner__title"
-          >
-            Some title
-          </h2>
-          <div
-            class="action-banner__intro"
-          >
-            Some body
-          </div>
-        </div>
-        <div
-          class="action-banner__actions"
-        >
-          <a
-            href="/test"
-          >
-            Some CTA
-          </a>
-        </div>
-        <button
-          class="action-banner__close"
-          type="button"
-        >
-          <svg
-            aria-hidden="true"
-            class="icon"
-            fill="none"
-            focusable="false"
-            height="1em"
-            viewBox="0 0 512 512"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M480 392.508c0 10.052-3.52 18.598-10.559 25.637l-51.296 51.296C411.106 476.48 402.56 480 392.508 480c-10.053 0-18.598-3.52-25.638-10.559L256 358.571l-110.87 110.87C138.09 476.48 129.545 480 119.492 480c-10.052 0-18.598-3.52-25.637-10.559l-51.296-51.296C35.52 411.106 32 402.56 32 392.508c0-10.053 3.52-18.598 10.56-25.638L153.428 256 42.559 145.13C35.52 138.09 32 129.545 32 119.492c0-10.052 3.52-18.598 10.56-25.637l51.295-51.296C100.894 35.52 109.44 32 119.492 32c10.053 0 18.598 3.52 25.638 10.56L256 153.428l110.87-110.87C373.91 35.52 382.455 32 392.508 32c10.052 0 18.598 3.52 25.637 10.56l51.296 51.295C476.48 100.894 480 109.44 480 119.492c0 10.053-3.52 18.598-10.559 25.638L358.571 256l110.87 110.87C476.48 373.91 480 382.455 480 392.508Z"
-              fill="currentColor"
-            />
-          </svg>
-          <span
-            class="visually-hidden"
-          >
-            Close 
-            Some title
-          </span>
-        </button>
-      </div>
-    </div>
-  </section>
-</div>
-`;
-
 exports[`ActionBanner should match snapshot for default action banner 1`] = `
 <div>
   <section
@@ -97,6 +30,51 @@ exports[`ActionBanner should match snapshot for default action banner 1`] = `
           class="action-banner__actions"
         >
           <a
+            class="btn"
+            data-component="button--primary"
+            href="/test"
+          >
+            Some CTA
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`ActionBanner should match snapshot for subtle action banner 1`] = `
+<div>
+  <section
+    class="action-banner action-banner--subtle"
+    data-component="action-banner--subtle"
+  >
+    <div
+      class="action-banner__container"
+    >
+      <div
+        class="action-banner__inner"
+      >
+        <div
+          class="action-banner__text"
+        >
+          <h2
+            class="action-banner__title"
+          >
+            Some title
+          </h2>
+          <div
+            class="action-banner__intro"
+          >
+            Some body
+          </div>
+        </div>
+        <div
+          class="action-banner__actions"
+        >
+          <a
+            class="btn"
+            data-component="button--primary"
             href="/test"
           >
             Some CTA
@@ -111,7 +89,7 @@ exports[`ActionBanner should match snapshot for default action banner 1`] = `
 exports[`ActionBanner should render all props 1`] = `
 <div>
   <section
-    class="action-banner action-banner--closeable action-banner--full-width test-class"
+    class="action-banner action-banner--full-width test-class"
     data-component="action-banner--fullWidth"
   >
     <div
@@ -144,37 +122,13 @@ exports[`ActionBanner should render all props 1`] = `
           class="action-banner__actions"
         >
           <a
+            class="btn"
+            data-component="button--primary"
             href="/test"
           >
             Some CTA
           </a>
         </div>
-        <button
-          class="action-banner__close"
-          type="button"
-        >
-          <svg
-            aria-hidden="true"
-            class="icon"
-            fill="none"
-            focusable="false"
-            height="1em"
-            viewBox="0 0 512 512"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M480 392.508c0 10.052-3.52 18.598-10.559 25.637l-51.296 51.296C411.106 476.48 402.56 480 392.508 480c-10.053 0-18.598-3.52-25.638-10.559L256 358.571l-110.87 110.87C138.09 476.48 129.545 480 119.492 480c-10.052 0-18.598-3.52-25.637-10.559l-51.296-51.296C35.52 411.106 32 402.56 32 392.508c0-10.053 3.52-18.598 10.56-25.638L153.428 256 42.559 145.13C35.52 138.09 32 129.545 32 119.492c0-10.052 3.52-18.598 10.56-25.637l51.295-51.296C100.894 35.52 109.44 32 119.492 32c10.053 0 18.598 3.52 25.638 10.56L256 153.428l110.87-110.87C373.91 35.52 382.455 32 392.508 32c10.052 0 18.598 3.52 25.637 10.56l51.296 51.295C476.48 100.894 480 109.44 480 119.492c0 10.053-3.52 18.598-10.559 25.638L358.571 256l110.87 110.87C476.48 373.91 480 382.455 480 392.508Z"
-              fill="currentColor"
-            />
-          </svg>
-          <span
-            class="visually-hidden"
-          >
-            Close 
-            Test Title
-          </span>
-        </button>
       </div>
     </div>
   </section>

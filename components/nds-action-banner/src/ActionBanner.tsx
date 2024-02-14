@@ -1,6 +1,5 @@
 import React, { ReactNode, useState } from "react";
 import classnames from "classnames";
-import RemoveIcon from "@nice-digital/icons/lib/Remove";
 
 import "../scss/action-banner.scss";
 
@@ -9,7 +8,6 @@ export interface ActionBannerProps {
 	variant?: "default" | "subtle" | "fullWidth" | "fullWidthSubtle";
 	children: ReactNode[] | ReactNode;
 	cta: ReactNode;
-	onClosing?: Function;
 	className?: string;
 	image?: string;
 }
@@ -17,27 +15,7 @@ export interface ActionBannerProps {
 export const ActionBanner: React.FC<ActionBannerProps> = (
 	props
 ): JSX.Element | null => {
-	const {
-		variant,
-		onClosing,
-		title,
-		children,
-		cta,
-		className,
-		image,
-		...rest
-	} = props;
-
-	const [isClosed, setIsClosed] = useState(false);
-
-	const closeClickHandler = () => {
-		setIsClosed(true);
-		if (typeof onClosing === "function") {
-			onClosing();
-		} else {
-			throw new Error("The onClosing prop should be a function");
-		}
-	};
+	const { variant, title, children, cta, className, image, ...rest } = props;
 
 	const kebabCaseVariantClassName = variant
 		? `${variant.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase()}`
@@ -45,12 +23,9 @@ export const ActionBanner: React.FC<ActionBannerProps> = (
 
 	const classes = {
 		"action-banner": true,
-		"action-banner--closeable": onClosing,
 		[`action-banner--${kebabCaseVariantClassName}`]: variant,
 		[`${className}`]: className
 	};
-
-	if (isClosed) return null;
 
 	return (
 		<section
@@ -71,16 +46,6 @@ export const ActionBanner: React.FC<ActionBannerProps> = (
 						{children && <div className="action-banner__intro">{children}</div>}
 					</div>
 					{cta && <div className="action-banner__actions">{cta}</div>}
-					{onClosing && (
-						<button
-							type="button"
-							className="action-banner__close"
-							onClick={closeClickHandler}
-						>
-							<RemoveIcon />
-							<span className="visually-hidden">Close {title}</span>
-						</button>
-					)}
 				</div>
 			</div>
 		</section>
