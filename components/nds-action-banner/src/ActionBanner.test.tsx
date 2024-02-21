@@ -211,14 +211,15 @@ describe("ActionBanner", () => {
 				<ActionBanner
 					variant="fullWidth"
 					title="Test Title"
-					children="Test Children"
 					cta={
 						<Button to="/test" variant="primary">
 							Some CTA
 						</Button>
 					}
 					image={imageUrl}
-				/>
+				>
+					<p>Test children</p>
+				</ActionBanner>
 			);
 
 			const imageElement = container.querySelector(
@@ -233,14 +234,15 @@ describe("ActionBanner", () => {
 			const { container } = render(
 				<ActionBanner
 					title="Test Title"
-					children="Test Children"
 					image="test-image.jpg"
 					cta={
 						<Button to="/test" variant="primary">
 							Some CTA
 						</Button>
 					}
-				/>
+				>
+					<p>Test children</p>
+				</ActionBanner>
 			);
 
 			const imageElement = container.querySelector(

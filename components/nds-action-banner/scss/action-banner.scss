@@ -112,7 +112,7 @@
       background-position: center center;
       background-size: cover;
       display: block;
-      min-height: 200px;
+      height: 100%;
     }
 
     & a {
@@ -154,17 +154,21 @@
     }
   }
 
+  @include media-queries.mq($from: sm) {
+    &--full-width {
+      &__image-container {
+        aspect-ratio: 21 / 9;
+      }
+    }
+  }
+
   @include media-queries.mq($from: md) {
     @include layout.clearfix;
 
     &--full-width {
       &__image-container {
         aspect-ratio: unset;
-        background-position: center center;
-        background-size: cover;
         bottom: 0;
-        display: none;
-        min-height: unset;
         overflow: hidden;
         position: absolute;
         right: 0;
