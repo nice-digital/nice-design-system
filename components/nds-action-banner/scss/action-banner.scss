@@ -54,29 +54,6 @@
     }
   }
 
-  &__close {
-    @include focus.inverse-button-focus;
-    appearance: none;
-    background: 0;
-    border: 0;
-    color: colours.$text-inverse;
-    cursor: pointer;
-    line-height: 1;
-    padding: utils.rem(spacing.$small);
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 1;
-
-    &:hover {
-      background: rgb(0 0 0 / 20%);
-    }
-
-    &:focus {
-      @include focus.inverse-focus-style;
-    }
-  }
-
   &--subtle {
     @include typography.links-default;
     background: colours.$action-banner-subtle-background;
@@ -87,23 +64,133 @@
       color: colours.$text;
     }
 
-    .action-banner__close {
+    .action-banner__actions {
+      @include focus.default-button-focus;
+    }
+  }
+
+  &--full-width {
+    @include layout.fullWidth();
+    @include typography.links-default;
+    background: colours.$action-banner-full-width-background;
+    border: 1px solid colours.$action-banner-full-width-border;
+    color: colours.$text-inverse;
+    padding: 0;
+
+    .action-banner__intro * {
+      @include typography.lead();
+      margin-top: utils.rem(spacing.$medium);
+      margin-bottom: utils.rem(spacing.$large);
+    }
+
+    .action-banner__container {
+      min-height: 300px;
+      padding-top: utils.rem(spacing.$x-large);
+      padding-bottom: utils.rem(spacing.$x-large);
+    }
+
+    .action-banner__title {
+      @include typography.h2();
+      color: colours.$text-inverse;
+      margin: 0;
+    }
+
+    .action-banner__actions {
+      text-align: left;
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: unset;
+    }
+
+    .action-banner__actions > .btn.btn--inverse {
+      @include focus.default-button-focus;
+    }
+
+    &__image-container {
+      aspect-ratio: 16 / 9;
+      background-position: center center;
+      background-size: cover;
+      display: block;
+      height: 100%;
+    }
+
+    & a {
+      &:link,
+      &:visited,
+      &:hover,
+      &:active,
+      &:focus {
+        color: colours.$action-banner-full-width-dark-background-text-colour;
+        outline-color: colours.$focus-inverse;
+      }
+    }
+  }
+
+  &--full-width-subtle {
+    @extend .action-banner--full-width;
+
+    background: colours.$action-banner-full-width-subtle-background;
+    border: 1px solid colours.$action-banner-full-width-subtle-border;
+    color: colours.$text;
+
+    .action-banner__title {
       color: colours.$text;
     }
 
     .action-banner__actions {
       @include focus.default-button-focus;
     }
+
+    & a {
+      &:link,
+      &:visited,
+      &:hover,
+      &:active,
+      &:focus {
+        color: colours.$action-banner-full-width-light-background-text-colour;
+        outline-color: colours.$focus;
+      }
+    }
   }
 
-  &--closeable {
-    .action-banner__title {
-      padding-right: utils.rem(spacing.$large); // Make room for close button
+  @include media-queries.mq($from: sm) {
+    &--full-width {
+      &__image-container {
+        aspect-ratio: 21 / 9;
+      }
     }
   }
 
   @include media-queries.mq($from: md) {
     @include layout.clearfix;
+
+    &--full-width {
+      &__image-container {
+        aspect-ratio: unset;
+        bottom: 0;
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 0;
+
+        @include media-queries.mq($from: md) {
+          display: flex;
+          width: 34%;
+        }
+
+        &::before {
+          background: colours.$action-banner-full-width-background;
+          content: '';
+          flex: 0 0 200px;
+          pointer-events: none;
+          position: relative;
+          transform: rotate(-15deg) scale(1.2) translateX(-60%);
+          z-index: 1;
+        }
+      }
+    }
 
     &__text {
       margin-bottom: 0;
@@ -117,16 +204,6 @@
       top: 50%;
       transform: translateY(-50%);
       width: math.percentage(1 * 0.25);
-    }
-
-    &--closeable {
-      .action-banner__title {
-        padding-right: 0;
-      }
-
-      .action-banner__actions {
-        right: utils.rem(spacing.$x-large);
-      }
     }
   }
 }
