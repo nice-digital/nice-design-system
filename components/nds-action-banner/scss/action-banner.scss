@@ -38,7 +38,6 @@
 
   &__title {
     @include typography.font-size(3);
-    color: colours.$text-inverse;
     margin: utils.rem(0 0 spacing.$x-small);
   }
 
@@ -57,12 +56,7 @@
   &--subtle {
     @include typography.links-default;
     background: colours.$action-banner-subtle-background;
-    border: 1px solid colours.$action-banner-subtle-border;
     color: colours.$text;
-
-    .action-banner__title {
-      color: colours.$text;
-    }
 
     .action-banner__actions {
       @include focus.default-button-focus;
@@ -91,7 +85,6 @@
 
     .action-banner__title {
       @include typography.h2();
-      color: colours.$text-inverse;
       margin: 0;
     }
 
@@ -133,10 +126,6 @@
     background: colours.$action-banner-full-width-subtle-background;
     border: 1px solid colours.$action-banner-full-width-subtle-border;
     color: colours.$text;
-
-    .action-banner__title {
-      color: colours.$text;
-    }
 
     .action-banner__actions {
       @include focus.default-button-focus;
