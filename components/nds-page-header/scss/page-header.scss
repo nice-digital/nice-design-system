@@ -115,11 +115,4 @@
     display: block;
     margin: 0;
   }
-
-  &__second-section {
-    @include media-queries.mq($from: md) {
-      border-left: 2px solid colours.$page-header-second-section-border-colour;
-      padding-left: utils.rem(spacing.$medium);
-    }
-  }
 }
