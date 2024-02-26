@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Hero should match the snapshot with props 1`] = `
+exports[`Hero should match the dark variant snapshot with props 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <div
-        class="hero"
+        class="hero hero--dark"
         data-component="hero"
       >
         <div
@@ -17,97 +17,6 @@ exports[`Hero should match the snapshot with props 1`] = `
           </p>
           <div
             class="hero__body"
-          >
-            <div
-              class="hero__copy"
-            >
-              <h1
-                class="hero__title"
-              >
-                Welcoming title
-              </h1>
-              <p
-                class="hero__intro"
-              >
-                Introduction text
-              </p>
-              <div
-                class="hero__actions"
-              >
-                <a
-                  href="page-one"
-                >
-                  Go to page one
-                </a>
-                <a
-                  href="page-two"
-                >
-                  Go to page two
-                </a>
-              </div>
-            </div>
-            <div
-              class="hero__extra"
-            >
-              <h2>
-                Quick links
-              </h2>
-              <ul>
-                <li>
-                  <a
-                    href="page-one"
-                  >
-                    Go to page one
-                  </a>
-                </li>
-                <li>
-                  <ul>
-                    <li>
-                      <a
-                        href="page-two"
-                      >
-                        Go to page two
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a
-                    href="page-three"
-                  >
-                    Go to page three
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div
-            class="hero__footer"
-          >
-            <p>
-              Footer content
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="hero"
-      data-component="hero"
-    >
-      <div
-        class="hero__container"
-      >
-        <p>
-          Header content
-        </p>
-        <div
-          class="hero__body"
-        >
-          <div
-            class="hero__copy"
           >
             <h1
               class="hero__title"
@@ -134,49 +43,209 @@ exports[`Hero should match the snapshot with props 1`] = `
               </a>
             </div>
           </div>
-          <div
-            class="hero__extra"
+        </div>
+        <div
+          class="hero__image-container"
+          style="background-image: url(https://placekitten.com/200/140);"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="hero hero--dark"
+      data-component="hero"
+    >
+      <div
+        class="hero__container"
+      >
+        <p>
+          Header content
+        </p>
+        <div
+          class="hero__body"
+        >
+          <h1
+            class="hero__title"
           >
-            <h2>
-              Quick links
-            </h2>
-            <ul>
-              <li>
-                <a
-                  href="page-one"
-                >
-                  Go to page one
-                </a>
-              </li>
-              <li>
-                <ul>
-                  <li>
-                    <a
-                      href="page-two"
-                    >
-                      Go to page two
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a
-                  href="page-three"
-                >
-                  Go to page three
-                </a>
-              </li>
-            </ul>
+            Welcoming title
+          </h1>
+          <p
+            class="hero__intro"
+          >
+            Introduction text
+          </p>
+          <div
+            class="hero__actions"
+          >
+            <a
+              href="page-one"
+            >
+              Go to page one
+            </a>
+            <a
+              href="page-two"
+            >
+              Go to page two
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="hero__image-container"
+        style="background-image: url(https://placekitten.com/200/140);"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Hero should match the snapshot with props 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="hero"
+        data-component="hero"
+      >
+        <div
+          class="hero__container"
+        >
+          <p>
+            Header content
+          </p>
+          <div
+            class="hero__body"
+          >
+            <h1
+              class="hero__title"
+            >
+              Welcoming title
+            </h1>
+            <p
+              class="hero__intro"
+            >
+              Introduction text
+            </p>
+            <div
+              class="hero__actions"
+            >
+              <a
+                href="page-one"
+              >
+                Go to page one
+              </a>
+              <a
+                href="page-two"
+              >
+                Go to page two
+              </a>
+            </div>
           </div>
         </div>
         <div
-          class="hero__footer"
+          class="hero__image-container"
+          style="background-image: url(https://placekitten.com/200/140);"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="hero"
+      data-component="hero"
+    >
+      <div
+        class="hero__container"
+      >
+        <p>
+          Header content
+        </p>
+        <div
+          class="hero__body"
         >
-          <p>
-            Footer content
+          <h1
+            class="hero__title"
+          >
+            Welcoming title
+          </h1>
+          <p
+            class="hero__intro"
+          >
+            Introduction text
           </p>
+          <div
+            class="hero__actions"
+          >
+            <a
+              href="page-one"
+            >
+              Go to page one
+            </a>
+            <a
+              href="page-two"
+            >
+              Go to page two
+            </a>
+          </div>
         </div>
       </div>
+      <div
+        class="hero__image-container"
+        style="background-image: url(https://placekitten.com/200/140);"
+      />
     </div>
   </div>,
   "debug": [Function],

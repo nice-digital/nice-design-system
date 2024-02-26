@@ -18,8 +18,14 @@ $readable-width: 66ch;
 @mixin container {
   margin: auto;
   max-width: utils.rem($container-max-width);
-  width: 96%; // IE11 support for calc not consistent https://caniuse.com/calc (See "Known issues")
   width: calc(100% - #{utils.rem($container-gutter * 2)});
+}
+
+/// A container within a full bleed/full width component. Need a narrower width to offset the negative margins
+@mixin fullWidthContainer {
+  margin: auto;
+  max-width: utils.rem($container-max-width);
+  width: calc(100% - #{utils.rem($container-gutter * 3)});
 }
 
 /// Make an element adapt its height to fit floated children, and clear floats in both directions.

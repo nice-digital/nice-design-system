@@ -3,180 +3,119 @@ import { Screenshot } from "components/core/Screenshot/Screenshot";
 
 export const meta = {
 	title: "Hero",
-	description: "Hero components introduce a site with impact and give the user a clear indication of where to go next.",
+	description: "Hero components introduce a site or page with impact. They inform people where they are and how we can help them.",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-hero",
 	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-hero"
 };
 
-<Screenshot image="hero-1.jpg" alt="Screenshot of the hero component" />
+<Screenshot image="hero-1.png" alt="Screenshot of the hero component" />
 
 ## When to use
 
-Use it as the first thing on a page to introduce a site or section of a site.
+Use it as the first thing on a page to introduce a site or section of a site. Hero components use images to add visual interest and emphasise and reinforce brand values.
+
+Check there is a need to use a Hero image to introduce the page. There are pros and cons to this approach. Nielsen/Norman talk about the pros and cons of using large background images in their article: [Image-focused Design: Is Bigger Better?](https://www.nngroup.com/articles/image-focused-design/)
+
+> “Compelling images have a unique ability to inspire and engage your audience. In his book,[ Emotional Design](https://www.nngroup.com/books/emotional-design/), Don Norman described the powerful, visceral responses people can have to visual appearance. Websites can elicit positive visceral responses from people by displaying aesthetically pleasing images.”
+>
+> But visceral appeal is not the only requirement for a good user experience. Websites also need to deliver content and functionality to users. Getting people's attention with attractive images certainly has value, but comes at the price of making other elements harder to see and use.”
 
 ## When not to use
 
-Don't use it for landing pages with many navigation routes of equal importance. The role of a hero is to emphasise one or two elements.
+Don’t use a hero unless there is a need to add extra visual interest or emphasis. There's a risk that images can distract from content placed above or alongside it. They shouldn't be used for content that users need to read through in detail or clinically important content such as guidance information.
+
+Use the page header [link to page header] as a simplified way to introduce pages without images.
+
+Don’t use the hero outside of the top of the page. Use the action banner, alerts or panels to highlight or promote content outside of the top of the page.
 
 ## How to use
 
-They are predominantly used for website page banners, separate landing page sections, or temporary promotional content.
+The hero component is flexible, combining images, colours, text and calls to action.
 
-The hero component is flexible combining images, colours, text, links and calls to action.
+### Default
 
-## Hero variants
+The hero will always contain a title, description, and image.
 
-### Title only
+<Screenshot image="hero-2.png" alt="Screenshot of the default hero component" />
 
-<Screenshot image="hero-1.jpg" alt="Screenshot of the hero component with a title only" />
+### Call to action button (optional)
 
-<CH.Code>
-```js React
-<Hero title="Hello!" />
-```
-```html HTML
-<div class="hero" data-component="hero">
-  <div class="hero__container">
-    <div class="hero__body">
-      <div class="hero__copy"><h1 class="hero__title">Hello!</h1></div>
-    </div>
-  </div>
-</div>
-```
-</CH.Code>
+A call to action button is recommended as a way to direct people to important information but not mandatory.
 
-### Title and introduction
+<Screenshot image="hero-3.png" alt="Screenshot of the hero component with a CTA" />
 
-<Screenshot image="hero-2.jpg" alt="Screenshot of the hero component with a title and introduction" />
+### Breadcrumb (optional)
 
-<CH.Code>
-```js React
-<Hero title="Hello!" intro="Here's an intro" />
-```
-```html HTML
-<div class="hero" data-component="hero">
-  <div class="hero__container">
-    <div class="hero__body">
-      <div class="hero__copy">
-        <h1 class="hero__title">Hello!</h1>
-        <p class="hero__intro">Here's an intro</p>
-      </div>
-    </div>
-  </div>
-</div>
-```
-</CH.Code>
+The breadcrumb should be used unless on the homepages or bespoke landing page where a breadcrumb isn’t suitable.
 
-### With actions
+### Brand image
 
-<Screenshot image="hero-3.jpg" alt="Screenshot of the hero component with actions" />
+<Screenshot image="hero-4.png" alt="Screenshot of the hero component with a brand image" />
 
-<CH.Code>
-```js React
-<Hero title="Hello!" actions={<Button>Do something</Button>} />
-```
-```html HTML
-<div class="hero" data-component="hero">
-  <div class="hero__container">
-    <div class="hero__body">
-      <div class="hero__copy">
-        <h1 class="hero__title">Hello!</h1>
-        <div class="hero__actions">
-          <button type="button" class="btn" data-component="button--primary">
-            Do something
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-```
-</CH.Code>
+- Images appear on the right-hand third in the NICE brand ‘slash’.
+- Images are removed on mobile and tablet views.
+- Images should follow the brand guidelines for [photography](https://indepth.nice.org.uk/photography/index.html) and [illustration](https://indepth.nice.org.uk/illustration/index.html).
+- Images should be cropped and compressed.
+- Use appropriate alt text to describe the image.
 
-### With extra detail/links
+### Minimum height
 
-<Screenshot image="hero-4.jpg" alt="Screenshot of the hero component with extra detail and links" />
+The hero has a minimum height of 300px on desktop devices to ensure the image is usable.
 
-<CH.Code>
-```js React
-<Hero title="Hello!">
-	<ul>
-		<li>
-			<a href="#">Page One</a>
-		</li>
-		<li>
-			<a href="#">Page Two</a>
-		</li>
-	</ul>
-</Hero>
-```
-```html HTML
-<div class="hero" data-component="hero">
-  <div class="hero__container">
-    <div class="hero__body">
-      <div class="hero__copy"><h1 class="hero__title">Hello!</h1></div>
-      <div class="hero__extra">
-        <ul>
-          <li><a href="#">Page One</a></li>
-          <li><a href="#">Page Two</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-```
-</CH.Code>
+### Mobile image variant
 
-### With footer
+Images are removed on mobile and tablet views.
 
-<Screenshot image="hero-5.jpg" alt="Screenshot of the hero component with a footer" />
+<Screenshot image="hero-5.png" alt="Screenshot of the hero component on mobile" />
 
-<CH.Code>
-```js React
-<Hero title="Hello!" footer={<p>Here is a footer</p>} />
-```
-```html HTML
-<div class="hero" data-component="hero">
-  <div class="hero__container">
-    <div class="hero__body">
-      <div class="hero__copy"><h1 class="hero__title">Hello!</h1></div>
-    </div>
-    <div class="hero__footer"><p>Here is a footer</p></div>
-  </div>
-</div>
-```
-</CH.Code>
+### Colour variations
 
-### With header
+#### Subtle (default)
 
-<Screenshot image="hero-6.jpg" alt="Screenshot of the hero component with a header" />
+Background colour: #EEEAE4, text colour: #0e0e0e
 
-<CH.Code>
-```js React
-<Hero title="Hello!" header={<p>Here is a header</p>} />
-```
-```html HTML
-<div class="hero" data-component="hero">
-  <div class="hero__container">
-    <p>Here is a header</p>
-    <div class="hero__body">
-      <div class="hero__copy"><h1 class="hero__title">Hello!</h1></div>
-    </div>
-  </div>
-</div>
-```
-</CH.Code>
+<Screenshot image="hero-6.png" alt="Screenshot of the hero component using the subtle colour variation" />
+
+#### Bold
+
+Background colour: #00436C, text colour: #ffffff
+
+<Screenshot image="hero-6.png" alt="Screenshot of the hero component using the bold colour variation" />
+
+## Optimizing images
+
+It's important to optimise images for the web before they are used.
+
+### Resizing
+
+Resize the image so that it is no bigger than the largest size at which it will be displayed in the browser. This can be found by inspecting the width of the image's container - make the width of the image the same value, while keeping the aspect ratio intact.
+
+### Compression
+
+Images should also be compressed. We need to use formats that have widespread browser support, which means exporting images as JPEGs or PNGs.
+
+PNGs are well suited to small images with very few colours (logos and icons, for example).
+
+JPEGs are better for almost everything else and are the most likely to be used with the full-bleed variant.
+
+Use a tool such as Squoosh to resize images and experiment with different compression settings in order to reduce the file size as much as possible. While compressing a JPEG image in Squoosh, try moving the Quality slider around and observe the results - we're aiming for the lowest possible quality value that still produces an acceptably clear output.
 
 ## Accessibility
 
 Component meets WCAG AA guidelines for accessibility on:
 
-- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
-- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
-- Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
 
-## Research and evidence
+UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
 
-No research done on the component at this time.
+Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+
+Any images should contain appropriate alt text.
+
+## Examples
+
+With brand image on category landing page:
+
+<Screenshot image="hero-7.png" alt="Screenshot of the hero component using a brand image on the category landing page" />
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;
