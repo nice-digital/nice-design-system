@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-core",
-	"version": "4.0.9",
+	"version": "4.0.10",
 	"description": "Core code for the NICE Design System",
 	"author": "Ian Routledge <ian.routledge@nice.org.uk>",
 	"contributors": [
