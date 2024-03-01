@@ -1,4 +1,5 @@
 import Head from "next/head";
+import React from "react";
 
 import { FullBleed, fullBleedVariants } from "@nice-digital/nds-full-bleed";
 import { Hero } from "@nice-digital/nds-hero";
@@ -8,6 +9,12 @@ import { PageHeader } from "@nice-digital/nds-page-header";
 import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
 
 export default function Test() {
+	const testPageHeaderRef = React.useRef<HTMLDivElement>(null);
+	React.useEffect(() => {
+		if (testPageHeaderRef.current) {
+			testPageHeaderRef.current.style.paddingBottom = "200px";
+		}
+	});
 	return (
 		<>
 			<Head>
@@ -81,8 +88,10 @@ export default function Test() {
 				heading="There's a second section here!"
 				variant="fullWidthLight"
 				secondSection={
-					<aside>
-						<h3>I am a second section</h3>
+					<aside
+						style={{ borderLeft: "2px solid gray", padding: "0 0 2rem 1rem" }}
+					>
+						<h3 style={{ marginTop: 0 }}>I am a second section</h3>
 						<ol>
 							<li>One</li>
 							<li>Two</li>
@@ -90,6 +99,25 @@ export default function Test() {
 						</ol>
 					</aside>
 				}
+			/>
+
+			<h2>Page header with ref</h2>
+			<PageHeader
+				heading="There's a second section here!"
+				variant="fullWidthLight"
+				secondSection={
+					<aside
+						style={{ borderLeft: "2px solid gray", padding: "0 0 2rem 1rem" }}
+					>
+						<h3 style={{ marginTop: 0 }}>I am a second section</h3>
+						<ol>
+							<li>One</li>
+							<li>Two</li>
+							<li>Three</li>
+						</ol>
+					</aside>
+				}
+				ref={testPageHeaderRef}
 			/>
 
 			<h2>In-page nav (no scroll)</h2>
