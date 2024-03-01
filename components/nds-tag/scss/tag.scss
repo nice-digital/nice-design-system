@@ -106,7 +106,7 @@ $tag-border-radius: utils.rem(spacing.$xx-small);
   &--outline {
     @include typography.font-size(-1);
     background: colours.$tag-outline-background;
-    border: 1px solid colours.$border;
+    border: 1px solid colours.$tag-outline-border;
     color: colours.$tag-outline-text;
     position: relative;
   }
