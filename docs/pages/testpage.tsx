@@ -24,7 +24,7 @@ export default function Test() {
 				MDX files don&apos;t have great Typescript integration, so it can
 				sometimes be hard to debug components using MDX alone.
 			</p>
-			<h2>Action banner</h2>
+
 			<h2>Action banner default variant</h2>
 			<ActionBanner
 				title="A title"
@@ -75,10 +75,6 @@ export default function Test() {
 					This is <a href="#">some content with a link</a>
 				</p>
 			</ActionBanner>
-			<br />
-			<br />
-			<br />
-			<br />
 
 			<h2>Hero</h2>
 			<Hero title="Hello!" header={<p>Bread</p>} />
@@ -117,10 +113,13 @@ export default function Test() {
 				description={<div className="test">I am a description!!!!!!!!</div>}
 			/>
 
-			<h2>Full width light page header</h2>
+			<h2>Full width light page header, kitchen sink</h2>
 			<PageHeader
 				heading="Full width light"
+				lead="Lead paragraph right here"
+				description="I am a description, let's go onto multiple lines so we can properly test how things wrap; furthermore, I am a description, let's go onto multiple lines so we can properly test how things wrap."
 				variant="fullWidthLight"
+				cta={<a className="btn btn--cta">CTA!</a>}
 				breadcrumbs={
 					<Breadcrumbs>
 						<Breadcrumb to="https://www.nice.org.uk/">Home</Breadcrumb>
@@ -130,7 +129,6 @@ export default function Test() {
 						<Breadcrumb>Published</Breadcrumb>
 					</Breadcrumbs>
 				}
-				description={<div className="test">I am a description!!!!!!!!</div>}
 			/>
 
 			<h2>Second section page header</h2>
