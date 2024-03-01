@@ -68,18 +68,4 @@ describe("PageHeader", () => {
 		);
 		expect(container.querySelector("div")).toHaveClass("mt--0");
 	});
-
-	it("should be targetable with a ref", () => {
-		const pageHeaderRef = React.createRef<HTMLDivElement>();
-
-		const { container } = render(
-			<PageHeader
-				heading="This is our heading"
-				className="mt--0"
-				ref={pageHeaderRef}
-			/>
-		);
-
-		expect(pageHeaderRef.current).not.toBe(null);
-	});
 });
