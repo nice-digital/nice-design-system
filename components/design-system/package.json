@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/design-system",
-	"version": "5.0.17",
+	"version": "5.0.18-alpha.0",
 	"description": "Your source for quickly creating consistent on-brand NICE digital services",
 	"author": "Ian Routledge <ian.routledge@nice.org.uk>",
 	"homepage": "https://design-system.nice.org.uk/",
@@ -54,7 +54,7 @@
 		"@nice-digital/nds-in-page-nav": "^4.0.9",
 		"@nice-digital/nds-input": "^4.0.8",
 		"@nice-digital/nds-maintain-ratio": "^4.0.8",
-		"@nice-digital/nds-page-header": "^4.0.8",
+		"@nice-digital/nds-page-header": "^4.0.9-alpha.0",
 		"@nice-digital/nds-panel": "^4.0.8",
 		"@nice-digital/nds-phase-banner": "^4.0.8",
 		"@nice-digital/nds-prev-next": "^4.0.8",

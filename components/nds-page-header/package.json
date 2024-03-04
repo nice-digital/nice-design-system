@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-page-header",
-	"version": "4.0.8",
+	"version": "4.0.9-alpha.0",
 	"description": "Page header component for the NICE Design System",
 	"keywords": [
 		"header"
