@@ -83,7 +83,7 @@ export default function Test() {
 				variant="fullWidthLight"
 				secondSection={
 					<aside
-						style={{ borderLeft: "2px solid gray", padding: "0 0 3rem rem" }}
+						style={{ borderLeft: "2px solid gray", padding: "0 1rem 2rem" }}
 					>
 						<h3>I am a second section</h3>
 						<ol>
