@@ -4,10 +4,15 @@ import styles from "./Example.module.scss";
 
 interface ExampleProps {
 	fullWidth?: boolean;
+	fullWidthChildIndex: number;
 	children?: ReactNode;
 }
 
-export const Example = ({ children, fullWidth }: ExampleProps) => {
+export const Example = ({
+	children,
+	fullWidth,
+	fullWidthChildIndex = 1
+}: ExampleProps) => {
 	const [expanded, setExpanded] = useState(false);
 
 	const toggleExpand = () => {
@@ -24,7 +29,7 @@ export const Example = ({ children, fullWidth }: ExampleProps) => {
 		>
 			{childItems.map((child, index) => (
 				<div key={index}>
-					{index === 1 && fullWidth ? (
+					{index === fullWidthChildIndex && fullWidth ? (
 						<>
 							<Button
 								variant="inverse"
