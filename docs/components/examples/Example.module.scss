@@ -34,6 +34,12 @@
     margin-top: 0;
   }
 
+  .fullWidthWrapper > :first-child {
+    max-width: 100%;
+    left: unset;
+    margin: unset;
+  }
+
   // TODO: apply these styles specifically to the grid example page
   /* Just some custom styles for grid items within examples, to make them a little clearer */
   // [data-g] {

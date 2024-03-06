@@ -25,17 +25,23 @@ export const Example = ({ children, fullWidth }: ExampleProps) => {
 			{childItems.map((child, index) => (
 				<div key={index}>
 					{index === 1 && fullWidth ? (
-						<Button
-							variant="inverse"
-							onClick={toggleExpand}
-							className={styles.expandButton}
-						>
-							{expanded
-								? "Collapse full width example"
-								: "Expand full width example"}
-						</Button>
-					) : null}
-					{child}
+						<>
+							<Button
+								variant="inverse"
+								onClick={toggleExpand}
+								className={styles.expandButton}
+							>
+								{expanded
+									? "Collapse full width example"
+									: "Expand full width example"}
+							</Button>
+							<div className={`${!expanded ? styles.fullWidthWrapper : ""}`}>
+								{child}
+							</div>
+						</>
+					) : (
+						child
+					)}
 				</div>
 			))}
 		</div>
