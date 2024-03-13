@@ -78,6 +78,7 @@
     }
 
     .action-banner__container {
+      @include layout.fullWidthContainer();
       min-height: 300px;
       padding-top: utils.rem(spacing.$x-large);
       padding-bottom: utils.rem(spacing.$x-large);
