@@ -47,6 +47,7 @@ export default function Test() {
 				title="Full width action banner"
 				cta={<Button variant="cta">A call to action</Button>}
 				variant="fullWidth"
+				image="https://placebacon.net/600/400"
 			>
 				<p>
 					This is <a href="#">some content with a link</a>
