@@ -67,7 +67,7 @@
     @include layout.fullWidth();
     @include typography.links-default;
     background: colours.$action-banner-full-width-background;
-    border: 1px solid colours.$action-banner-full-width-border;
+    border: 0;
     color: colours.$text-inverse;
     padding: 0;
 
@@ -101,9 +101,15 @@
       @include focus.default-button-focus;
     }
 
+    .action-banner__text {
+      position: relative;
+      width: 66%;
+      z-index: 1;
+    }
+
     &__image-container {
       aspect-ratio: 16 / 9;
-      background-position: center center;
+      background-position: center;
       background-size: cover;
       display: block;
       height: 100%;
