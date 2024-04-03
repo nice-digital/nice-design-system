@@ -103,7 +103,6 @@
 
     .action-banner__text {
       position: relative;
-      width: 66%;
       z-index: 1;
     }
 
@@ -183,6 +182,12 @@
           position: relative;
           transform: rotate(-15deg) scale(1.2) translateX(-60%);
           z-index: 1;
+        }
+      }
+
+      @include media-queries.mq($from: md) {
+        .action-banner__text {
+          width: 66%;
         }
       }
     }
