@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/design-system",
-	"version": "5.0.24-alpha.0",
+	"version": "5.0.24",
 	"description": "Your source for quickly creating consistent on-brand NICE digital services",
 	"author": "Ian Routledge <ian.routledge@nice.org.uk>",
 	"homepage": "https://design-system.nice.org.uk/",
@@ -34,7 +34,7 @@
 	"dependencies": {
 		"@nice-digital/icons": "^6.0.1",
 		"@nice-digital/nds-a-z-list": "^4.0.13",
-		"@nice-digital/nds-action-banner": "^4.0.15-alpha.0",
+		"@nice-digital/nds-action-banner": "^4.0.15",
 		"@nice-digital/nds-alert": "^4.0.12",
 		"@nice-digital/nds-alphabet": "^3.0.12",
 		"@nice-digital/nds-breadcrumbs": "^4.0.12",
