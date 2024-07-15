@@ -8,6 +8,9 @@
 	"main": "es/Accordion.js",
 	"types": "es/Accordion.d.ts",
 	"style": "scss/accordion.scss",
+  "directories": {
+		"lib": "es"
+	},
 	"files": [
 		"es",
 		"scss",

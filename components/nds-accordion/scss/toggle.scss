@@ -1,0 +1,23 @@
+@use '@nice-digital/nds-core/scss/colours' as core-colours;
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
+
+.label {
+  @include typography.link-default;
+  align-items: center;
+  color: core-colours.$link;
+  display: flex;
+  flex-wrap: nowrap;
+  text-decoration: underline;
+}
+
+.icon {
+  display: block;
+  margin-right: utils.rem(spacing.$small);
+  transition: all 0.25s ease;
+
+  &.open {
+    transform: rotate(-180deg);
+  }
+}
