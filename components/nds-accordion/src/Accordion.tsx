@@ -42,7 +42,7 @@ export const Accordion: FC<AccordionProps> = ({
 	children
 }) => {
 	const [isOpen, setIsOpen] = useState(open),
-		themeClass = theme === AccordionTheme.Warning ? "TODO" : "",
+		themeClass = theme === AccordionTheme.Warning ? "TODO THEME" : "",
 		{ isGroupOpen } = useAccordionGroup(),
 		summaryClickHandler = () => {
 			// Fallback for IE11/other browsers not supporting details/summary natively
@@ -61,7 +61,7 @@ export const Accordion: FC<AccordionProps> = ({
 
 	return (
 		<details
-			className={["TODO DETAILS", className, themeClass].join(" ")}
+			className={["accordion__details", className, themeClass].join(" ")}
 			onToggle={(e: SyntheticEvent<HTMLDetailsElement>) => {
 				e.stopPropagation(); // Ensure event isn't passed to parent accordions
 				setIsOpen(e.currentTarget.open);
@@ -69,11 +69,11 @@ export const Accordion: FC<AccordionProps> = ({
 			open={isOpen}
 		>
 			<summary
-				className={"TODO SUMMARY"}
+				className={"accordion__summary"}
 				onClick={summaryClickHandler}
 				data-tracking={isOpen ? hideLabel : showLabel}
 			>
-				<Toggle isOpen={isOpen} className={"TODO TOGGLELABEL"}>
+				<Toggle isOpen={isOpen} className={"accordion__toggleLabel"}>
 					{isOpen ? hideLabel : showLabel}
 				</Toggle>{" "}
 				{typeof title === "string" || typeof title === "number" ? (

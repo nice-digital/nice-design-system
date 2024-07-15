@@ -1,87 +1,66 @@
-@use '@nice-digital/nds-core/scss/colours' as core-colours;
+@use '@nice-digital/nds-core/scss/colours';
 @use '@nice-digital/nds-core/scss/focus';
 @use '@nice-digital/nds-core/scss/spacing';
 @use '@nice-digital/nds-core/scss/typography';
 @use '@nice-digital/nds-core/scss/utils';
 
-.details {
-  background: none;
-  // border: 1px solid colours.$accordion-details-border;
-  margin: utils.rem(spacing.$medium 0);
-  padding: utils.rem(spacing.$medium);
+.accordion {
+  &__details {
+    background: none;
+    border: 1px solid colours.$accordion-details-border;
+    margin: utils.rem(spacing.$medium 0);
+    padding: utils.rem(spacing.$medium);
 
-  > :last-child {
-    margin-bottom: 0;
-  }
-}
-
-.summary {
-  cursor: pointer;
-  display: flex;
-  flex-direction: column-reverse;
-  list-style: none;
-
-  &::marker,
-  &::-webkit-details-marker {
-    display: none;
+    > :last-child {
+      margin-bottom: 0;
+    }
   }
 
-  &:hover,
-  &:hover * {
-    color: #006bbd; // Specific to BNF accordions for now - Nick may move this into the design system later
-  }
-
-  // Could be h3/h4 here so use * to cover all bases
-  > * {
-    font-family: typography.get-font-family(sans);
-  }
-
-  > :last-child {
-    margin: 0;
-  }
-
-  [open] > & {
-    margin-bottom: utils.rem(spacing.$medium);
-  }
-
-  /* stylelint-disable selector-max-compound-selectors */
-  :not([open]) > & ~ * {
-    // Hacky fallbacks for browsers that don't support details/summary natively eg IE11
-    display: none;
-  }
-
-  // Hack for IE11 whilst we still support it: https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/
-  @supports not (-ms-ime-align: auto) {
+  &__summary {
     cursor: pointer;
+    display: flex;
+    flex-direction: column-reverse;
+    list-style: none;
 
-    &:focus {
-      @include focus.default-focus-style;
+    &::marker,
+    &::-webkit-details-marker {
+      display: none;
     }
 
-    &:focus:not(:focus-visible) {
-      outline: none;
+    &:hover,
+    &:hover * {
+      color: #006bbd; // Specific to BNF accordions for now - Nick may move this into the design system later
     }
 
-    &:focus-visible {
-      @include focus.default-focus-style;
+    // Could be h3/h4 here so use * to cover all bases
+    > * {
+      font-family: typography.get-font-family(sans);
     }
+
+    > :last-child {
+      margin: 0;
+    }
+
+    [open] > & {
+      margin-bottom: utils.rem(spacing.$medium);
+    }
+  }
+
+  &__toggleLabel {
+    margin-top: utils.rem(spacing.$x-small);
   }
 }
 
-.toggleLabel {
-  margin-top: utils.rem(spacing.$x-small);
-}
+// .warningTheme {
+//   background: colours.$caution-background;
+//   border: 1px solid colours.$caution;
 
-.warningTheme {
-  background: core-colours.$caution-background;
-  border: 1px solid core-colours.$caution;
+//   .toggleLabel {
+//     color: colours.$accordion-toggle-warning-label;
+//   }
 
-  .toggleLabel {
-    // color: colours.$accordion-toggle-warning-label;
-  }
-
-  .summary:hover,
-  .summary:hover * {
-    // color: colours.$accordion-summary-hover;
-  }
-}
+//   .summary:hover,
+//   .summary:hover * {
+//     color: colours.$accordion-summary-hover;
+//   }
+// }

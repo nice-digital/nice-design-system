@@ -12,9 +12,9 @@ export interface ToggleProps {
 }
 
 export const Toggle: FC<ToggleProps> = ({ children, isOpen, className }) => (
-	<span className={classNames(className, "TODO .label")}>
+	<span className={classNames(className, "toggle__label")}>
 		<ChevronDownIcon
-			className={classNames("TODO .icon", { ["TODO .open"]: isOpen })}
+			className={classNames("toggle__icon", { ["toggle__icon--open"]: isOpen })}
 		/>
 		{children}
 	</span>
