@@ -25,6 +25,7 @@
 		{ "path": "./components/nds-input" },
 		{ "path": "./components/nds-tag" },
 		{ "path": "./components/nds-a-z-list" },
+		{ "path": "./components/nds-accordion" },
 		{ "path": "./components/nds-action-banner" },
 		{ "path": "./components/nds-alert" },
 		{ "path": "./components/nds-alphabet" },
