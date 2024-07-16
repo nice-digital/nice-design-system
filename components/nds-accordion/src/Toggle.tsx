@@ -3,7 +3,7 @@ import { ReactNode, type FC } from "react";
 
 import ChevronDownIcon from "@nice-digital/icons/lib/ChevronDown";
 
-import "./../scss/toggle.scss";
+import "../scss/toggle.scss";
 
 export interface ToggleProps {
 	isOpen: boolean;
