@@ -17,6 +17,7 @@
     display: block;
     margin-right: utils.rem(spacing.$small);
     transition: all 0.25s ease;
+
     &--open {
       transform: rotate(-180deg);
     }
