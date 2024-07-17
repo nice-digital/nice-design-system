@@ -76,11 +76,13 @@ export const Accordion: FC<AccordionProps> = ({
 				<Toggle isOpen={isOpen} className={"accordion__toggleLabel"}>
 					{isOpen ? hideLabel : showLabel}
 				</Toggle>{" "}
-				{typeof title === "string" || typeof title === "number" ? (
-					<span>{title}</span>
-				) : (
-					title
-				)}
+				<div className="accordion__title">
+					{typeof title === "string" || typeof title === "number" ? (
+						<span>{title}</span>
+					) : (
+						title
+					)}
+				</div>
 			</summary>
 			{/* Avoid accordion groups opening nested accordions */}
 			<AccordionGroupProvider isGroupOpen={false}>
