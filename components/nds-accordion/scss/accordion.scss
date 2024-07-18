@@ -7,15 +7,18 @@
 .accordion {
   &__details {
     background: none;
-    border: 1px solid colours.$accordion-details-border;
+    // border: 1px solid colours.$accordion-details-border;
     margin: utils.rem(spacing.$medium 0);
 
     > :last-child {
       margin-bottom: 0;
     }
+
+    @include focus.default-accordion-focus;
   }
 
   &__summary {
+    border: 1px solid colours.$accordion-details-border;
     cursor: pointer;
     display: flex;
     flex-direction: column-reverse;
@@ -35,22 +38,20 @@
       }
     }
 
-    &:focus {
-      outline: 4px solid colours.$accordion-summary-focus;
-      outline-offset: -3px;
-    }
-
     > :last-child {
       margin: 0;
     }
 
     [open] > & {
-      border-bottom: 1px solid colours.$accordion-details-border;
-      border-block-end: 1px solid colours.$accordion-details-border;
+      border-bottom-color: transparent;
     }
   }
 
   &__title {
+    align-items: center;
+    display: flex;
+    gap: utils.rem(spacing.$small);
+
     > * {
       font-family: typography.get-font-family(sans);
       @include typography.font-size(2);
@@ -65,6 +66,7 @@
   }
 
   &__content {
+    border: 1px solid colours.$accordion-details-border;
     padding: utils.rem(spacing.$medium);
 
     > :first-child {

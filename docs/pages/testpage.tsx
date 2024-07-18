@@ -18,15 +18,16 @@ export default function Test() {
 			</p>
 
 			<h2>Accordion default variant</h2>
-			{/* <Accordion title={<h3>Some title</h3>}>
-				<p>Body content</p>
-			</Accordion> */}
 
 			<Accordion title={<h3>Some title</h3>}>
 				<p>test para</p>
 			</Accordion>
 
 			<Accordion title={"string title"}>
+				<p>test para</p>
+			</Accordion>
+
+			<Accordion title={"Caution title"} isCaution={true}>
 				<p>test para</p>
 			</Accordion>
 		</>

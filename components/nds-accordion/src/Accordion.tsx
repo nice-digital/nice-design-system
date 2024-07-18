@@ -12,15 +12,13 @@ import {
 } from "./AccordionGroupContext";
 import { Toggle } from "./Toggle";
 
+import WarningIcon from "@nice-digital/icons/lib/Warning";
+
 import "../scss/accordion.scss";
 
 const supportsDetailsElement =
 	typeof document === "undefined" ||
 	"open" in document.createElement("details");
-
-export enum AccordionTheme {
-	Warning
-}
 
 export interface AccordionProps {
 	title: ReactNode;
@@ -28,7 +26,7 @@ export interface AccordionProps {
 	showLabel?: string;
 	hideLabel?: ReactNode;
 	className?: string;
-	theme?: AccordionTheme;
+	isCaution?: boolean;
 	children: ReactNode;
 }
 
@@ -38,16 +36,15 @@ export const Accordion: FC<AccordionProps> = ({
 	showLabel = "Show",
 	hideLabel = "Hide",
 	className,
-	theme,
+	isCaution,
 	children
 }) => {
-	const [isOpen, setIsOpen] = useState(open),
-		themeClass = theme === AccordionTheme.Warning ? "TODO THEME" : "",
-		{ isGroupOpen } = useAccordionGroup(),
-		summaryClickHandler = () => {
-			// Fallback for IE11/other browsers not supporting details/summary natively
-			if (!supportsDetailsElement) setIsOpen((wasOpen) => !wasOpen);
-		};
+	const [isOpen, setIsOpen] = useState(open);
+	const { isGroupOpen } = useAccordionGroup();
+	const summaryClickHandler = () => {
+		// Fallback for IE11/other browsers not supporting details/summary natively
+		if (!supportsDetailsElement) setIsOpen((wasOpen) => !wasOpen);
+	};
 
 	// Handle the group being expanded/collapsed
 	useEffect(() => {
@@ -61,7 +58,7 @@ export const Accordion: FC<AccordionProps> = ({
 
 	return (
 		<details
-			className={["accordion__details", className, themeClass].join(" ")}
+			className={["accordion__details", className].join(" ")}
 			onToggle={(e: SyntheticEvent<HTMLDetailsElement>) => {
 				e.stopPropagation(); // Ensure event isn't passed to parent accordions
 				setIsOpen(e.currentTarget.open);
@@ -77,6 +74,7 @@ export const Accordion: FC<AccordionProps> = ({
 					{isOpen ? hideLabel : showLabel}
 				</Toggle>{" "}
 				<div className="accordion__title">
+					{isCaution && <WarningIcon />}
 					{typeof title === "string" || typeof title === "number" ? (
 						<span>{title}</span>
 					) : (
