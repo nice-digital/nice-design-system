@@ -86,7 +86,7 @@ export const Accordion: FC<AccordionProps> = ({
 			</summary>
 			{/* Avoid accordion groups opening nested accordions */}
 			<AccordionGroupProvider isGroupOpen={false}>
-				{children}
+				<div className="accordion__content">{children}</div>
 			</AccordionGroupProvider>
 		</details>
 	);

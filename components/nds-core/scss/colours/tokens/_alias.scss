@@ -65,9 +65,12 @@ $radio-hint: global.$black-tint-1;
 $a-z-list-heading-background: global.$white;
 
 // Accordion
-$accordion-details-border: global.$custom-grey-3;
+$accordion-details-border: global.$black;
 $accordion-toggle-warning-label: global.$nice-black;
-$accordion-summary-hover: global.$nice-blue-tint-1;
+$accordion-summary-hover: global.$nice-teal-tint-3;
+$accordion-summary-focus: global.$nice-teal;
+$accrordion-label-text: global.$custom-blue-1;
+$accrordion-label-text-hover: global.$nice-blue-tint-4;
 
 // Action banner
 $action-banner-default-background: global.$nice-blue;

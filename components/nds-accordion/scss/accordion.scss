@@ -9,7 +9,6 @@
     background: none;
     border: 1px solid colours.$accordion-details-border;
     margin: utils.rem(spacing.$medium 0);
-    padding: utils.rem(spacing.$medium);
 
     > :last-child {
       margin-bottom: 0;
@@ -21,15 +20,24 @@
     display: flex;
     flex-direction: column-reverse;
     list-style: none;
+    padding: utils.rem(spacing.$medium);
 
-    &::marker,
     &::-webkit-details-marker {
       display: none;
     }
 
     &:hover,
     &:hover * {
-      color: #006bbd; // Specific to BNF accordions for now - Nick may move this into the design system later
+      background-color: colours.$accordion-summary-hover;
+
+      .accordion__toggleLabel {
+        color: colours.$accrordion-label-text-hover;
+      }
+    }
+
+    &:focus {
+      outline: 4px solid colours.$accordion-summary-focus;
+      outline-offset: -3px;
     }
 
     > :last-child {
@@ -37,7 +45,8 @@
     }
 
     [open] > & {
-      margin-bottom: utils.rem(spacing.$medium);
+      border-bottom: 1px solid colours.$accordion-details-border;
+      border-block-end: 1px solid colours.$accordion-details-border;
     }
   }
 
@@ -45,12 +54,22 @@
     > * {
       font-family: typography.get-font-family(sans);
       @include typography.font-size(2);
+      font-weight: bold;
       margin: 0;
     }
   }
 
   &__toggleLabel {
+    color: colours.$accrordion-label-text;
     margin-top: utils.rem(spacing.$x-small);
+  }
+
+  &__content {
+    padding: utils.rem(spacing.$medium);
+
+    > :first-child {
+      margin-top: 0;
+    }
   }
 }
 
