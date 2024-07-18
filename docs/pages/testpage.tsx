@@ -23,7 +23,11 @@ export default function Test() {
 				<p>test para</p>
 			</Accordion>
 
-			<Accordion title={"string title"}>
+			<Accordion title={"Accordion title"}>
+				<p>test para</p>
+			</Accordion>
+
+			<Accordion title={"Accordion title"}>
 				<p>test para</p>
 			</Accordion>
 
