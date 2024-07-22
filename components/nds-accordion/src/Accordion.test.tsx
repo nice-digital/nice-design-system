@@ -58,7 +58,7 @@ describe("Accordion", () => {
 			</Accordion>
 		);
 
-		expect(screen.getByRole("group")).toHaveClass("details");
+		expect(screen.getByRole("group")).toHaveClass("accordion__details");
 	});
 
 	it("should add class for styling summary", () => {
@@ -72,7 +72,7 @@ describe("Accordion", () => {
 			screen.getByText(
 				(_content, element) => element?.textContent === "Show Test"
 			)
-		).toHaveClass("summary");
+		).toHaveClass("accordion__summary");
 	});
 
 	it("should wrap string title in span", () => {
@@ -180,7 +180,7 @@ describe("Accordion", () => {
 		);
 
 		const summaryElement = screen.getByText(
-			(_, node) => node?.className === "summary"
+			(_, node) => node?.className === "accordion__summary"
 		);
 
 		expect(summaryElement).toHaveAttribute("data-tracking", "Show");
