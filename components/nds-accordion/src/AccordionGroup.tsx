@@ -46,7 +46,7 @@ export const AccordionGroup: FC<AccordionGroupProps> = ({
 				<button
 					type="button"
 					aria-expanded={isGroupOpen}
-					className={"TODO toggleButton"}
+					className={"accordionGroup__toggleButton"}
 					data-tracking={
 						isGroupOpen ? "Hide all sections" : "Show all sections"
 					}

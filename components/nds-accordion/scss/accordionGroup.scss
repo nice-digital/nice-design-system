@@ -3,31 +3,33 @@
 @use '@nice-digital/nds-core/scss/typography';
 @use '@nice-digital/nds-core/scss/utils';
 
-.toggleButton {
-  @include typography.link-default;
-  align-items: center;
-  appearance: none;
-  background: none;
-  border: 0;
-  cursor: pointer;
-  display: flex;
-  flex-wrap: nowrap;
-  margin: utils.rem(spacing.$medium 0);
-  padding: 0;
+.accordionGroup {
+  &__toggleButton {
+    @include typography.link-default;
+    align-items: center;
+    appearance: none;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: nowrap;
+    margin: utils.rem(spacing.$medium 0);
+    padding: 0;
 
-  &:focus {
-    @include focus.default-focus-style;
-  }
+    &:focus {
+      @include focus.default-focus-style;
+    }
 
-  &:focus:not(:focus-visible) {
-    outline: none;
-  }
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
 
-  &:focus-visible {
-    @include focus.default-focus-style;
-  }
+    &:focus-visible {
+      @include focus.default-focus-style;
+    }
 
-  @media print {
-    display: none;
+    @media print {
+      display: none;
+    }
   }
 }

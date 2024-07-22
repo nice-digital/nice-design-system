@@ -43,6 +43,7 @@
 		"@testing-library/user-event": "^14.4.3",
 		"@types/jest": "^29.2.2",
 		"@types/node": "^18.11.9",
+		"jest-extended": "^4.0.2",
 		"typescript": "^4.8.4"
 	},
 	"gitHead": "e75957040c9acfbd7eeb164cad724e3b48760679"

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Accordion } from "@nice-digital/nds-accordion";
+import { Accordion, AccordionGroup } from "@nice-digital/nds-accordion";
 
 export default function Test() {
 	return (
@@ -19,14 +19,6 @@ export default function Test() {
 
 			<h2>Accordion default variant</h2>
 
-			<Accordion title={<h3>Some title</h3>}>
-				<p>test para</p>
-			</Accordion>
-
-			<Accordion title={"Accordion title"}>
-				<p>test para</p>
-			</Accordion>
-
 			<Accordion title={"Accordion title"}>
 				<p>test para</p>
 			</Accordion>
@@ -34,6 +26,15 @@ export default function Test() {
 			<Accordion title={"Caution title"} isCaution={true}>
 				<p>test para</p>
 			</Accordion>
+
+			<AccordionGroup>
+				<Accordion key="1" title="Accordion 1">
+					Accordion 1 body
+				</Accordion>
+				<Accordion key="2" title="Accordion 2">
+					Accordion 2 body
+				</Accordion>
+			</AccordionGroup>
 		</>
 	);
 }

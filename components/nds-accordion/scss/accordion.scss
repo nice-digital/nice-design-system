@@ -7,7 +7,6 @@
 .accordion {
   &__details {
     background: none;
-    // border: 1px solid colours.$accordion-details-border;
     margin: utils.rem(spacing.$medium 0);
 
     > :last-child {

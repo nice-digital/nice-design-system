@@ -6,7 +6,7 @@ const config: Config = {
 	moduleNameMapper: {
 		"^.+\\.(css|less|scss)$": "identity-obj-proxy"
 	},
-	setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
+	setupFilesAfterEnv: ["<rootDir>/jest.setup.ts", "jest-extended/all"],
 	testEnvironment: "jsdom",
 	testMatch: ["<rootDir>/components/**/src/**/*.test.tsx"],
 	testPathIgnorePatterns: [
