@@ -8,22 +8,54 @@ import { Button } from "@nice-digital/nds-button";
 
 export const meta = {
 	title: "Accordion",
-	description: "TODO: Description of the accordion component ",
+	description: "The accordion component lets users show and hide related content sections on a page.  ",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-accordion",
 	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-accordion",
 	component: DefaultAccordion
 };
 
 ## When to use
-TODO
+Only use an accordion if there’s evidence it’s helpful for the user to:
+
+- see an overview of multiple related sections of content.
+
+- choose to show and hide sections that are relevant to them.
+
+- look across information that might otherwise be on different pages.
+
+For example, an accordion can work well if the user needs to reveal and compare information that’s relevant to them.
+
+Accordions can also work well for people who use a service regularly. 
+
+Test with users to decide if using an accordion outweighs the potential problems with hiding content.
 
 <Screenshot image="accordion-1.png" alt="Screenshot of the accordion component with closed and open states shown" />
 
 ## When not to use
-TODO
+Accordions are often overly used within content, seen as an easy way to organise content. However, accordions hide content from the user; not everyone will notice or understand how they work.
+
+- Do not use an accordion for content that all users need to see.
+
+- Only use an accordion if there's evidence it's helpful for the user.
+
+- On pages where users find the amount of information overwhelming 
+
+- Breaks down information into bite-size pieces which the user can "Show all" when they're ready to do so.
+
+- When you do not see a clear user need for them
 
 ## How to use
-TODO
+Write the heading like any other button text. Use sentence case, describe the content that will show, and keep it short.
+
+Users of screen readers might find it challenging to navigate the accordion if the button text is too long.
+
+Organise accordion sections that make sense to users based on their needs.
+
+## Accordion variants
+
+You can choose from the default single accordion or the multi accordion variant.
+
+**TODO: Placeholder image - live preview to be used on Design system site.**
 
 ### Default accordion
 
@@ -135,10 +167,18 @@ TODO -
 
 ## Accessibility
 
-TODO
+Component meets WCAG AA guidelines for accessibility on:
+
+Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
+
+UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
+
+**Accessible use of colour:** Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+
+**TODO: Add more accessibility information here specific to accoridions and details/summary elements.**
 
 ## Research/evidence
 
-TODO: No research done on the component at this time
+No research done on the component at this time
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;
