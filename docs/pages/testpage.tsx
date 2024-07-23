@@ -34,6 +34,9 @@ export default function Test() {
 				<Accordion key="2" title="Accordion 2">
 					Accordion 2 body
 				</Accordion>
+				<Accordion key="3" title="Accordion 3">
+					Accordion 3 body
+				</Accordion>
 			</AccordionGroup>
 		</>
 	);
