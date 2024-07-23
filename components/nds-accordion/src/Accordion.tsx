@@ -71,7 +71,7 @@ export const Accordion: FC<AccordionProps> = ({
 	}, [isOpen, id, setAccordions]);
 
 	useEffect(() => {
-		console.log("accordions updated", accordions);
+		// console.log("accordions updated", accordions);
 	}, [accordions]);
 
 	console.log("are all open?", areAllOpen(accordions));

@@ -34,9 +34,14 @@ export const AccordionGroup: FC<AccordionGroupProps> = ({
 }) => {
 	const [isGroupOpen, setIsGroupOpen] = useState(false);
 	const isClient = useIsClient();
-	const { accordions, areAllOpen } = useAccordionGroup();
+	const { accordions, areAllOpen, setAccordions } = useAccordionGroup();
 	const toggleClickHandler = () => {
+		console.log("toggleClickHandler accs", accordions);
 		setIsGroupOpen((isGroupOpen) => !isGroupOpen);
+		// setAccordions((prevAccordions) => ({
+		// 	...prevAccordions,
+		// 	[id]: !isGroupOpen
+		// }));
 	};
 
 	useEffect(() => {
@@ -50,12 +55,34 @@ export const AccordionGroup: FC<AccordionGroupProps> = ({
 					return (
 						<>
 							{/* {isGroupOpen ? "true" : "false"} */}
-							{areAllOpen(accordions) ? "all are open" : "all are not open"}
+							{/* {areAllOpen(accordions) ? "all are open" : "all are not open"}
+							 */}
+
+							{isClient ? (
+								<button
+									type="button"
+									aria-expanded={areAllOpen(accordions)}
+									className={"accordionGroup__toggleButton"}
+									data-tracking={
+										areAllOpen(accordions)
+											? "Hide all sections"
+											: "Show all sections"
+									}
+									onClick={toggleClickHandler}
+									// onClick={() => {
+									// 	setIsGroupOpen((isGroupOpen) => !isGroupOpen);
+									// }}
+								>
+									<Toggle isOpen={areAllOpen(accordions)}>
+										{toggleText(areAllOpen(accordions))}
+									</Toggle>
+								</button>
+							) : null}
 						</>
 					);
 				}}
 			</AccordionGroupContext.Consumer>
-			{isClient ? (
+			{/* {isClient ? (
 				<button
 					type="button"
 					aria-expanded={isGroupOpen}
@@ -67,7 +94,7 @@ export const AccordionGroup: FC<AccordionGroupProps> = ({
 				>
 					<Toggle isOpen={isGroupOpen}>{toggleText(isGroupOpen)}</Toggle>
 				</button>
-			) : null}
+			) : null} */}
 			<>{children}</>
 		</AccordionGroupProvider>
 	);
