@@ -1,9 +1,8 @@
 import { useEffect, useState, type FC, type ReactNode } from "react";
-
 import { AccordionGroupProvider } from "./AccordionGroupContext";
+import { AccordionToggleProvider } from "./ToggleContext";
 import { Toggle } from "./Toggle";
 
-// import styles from "./AccordionGroup.module.scss";
 import "./../scss/accordionGroup.scss";
 
 export const useIsClient = (): boolean => {
@@ -41,21 +40,23 @@ export const AccordionGroup: FC<AccordionGroupProps> = ({
 	}, [onToggle, isGroupOpen]);
 
 	return (
-		<AccordionGroupProvider isGroupOpen={isGroupOpen}>
-			{isClient ? (
-				<button
-					type="button"
-					aria-expanded={isGroupOpen}
-					className={"accordionGroup__toggleButton"}
-					data-tracking={
-						isGroupOpen ? "Hide all sections" : "Show all sections"
-					}
-					onClick={toggleClickHandler}
-				>
-					<Toggle isOpen={isGroupOpen}>{toggleText(isGroupOpen)}</Toggle>
-				</button>
-			) : null}
-			{children}
-		</AccordionGroupProvider>
+		<AccordionToggleProvider>
+			<AccordionGroupProvider isGroupOpen={isGroupOpen}>
+				{isClient ? (
+					<button
+						type="button"
+						aria-expanded={isGroupOpen}
+						className={"accordionGroup__toggleButton"}
+						data-tracking={
+							isGroupOpen ? "Hide all sections" : "Show all sections"
+						}
+						onClick={toggleClickHandler}
+					>
+						<Toggle isOpen={isGroupOpen}>{toggleText(isGroupOpen)}</Toggle>
+					</button>
+				) : null}
+				{children}
+			</AccordionGroupProvider>
+		</AccordionToggleProvider>
 	);
 };

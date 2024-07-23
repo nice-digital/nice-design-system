@@ -1,6 +1,7 @@
 import {
 	SyntheticEvent,
 	useEffect,
+	useId,
 	useState,
 	type FC,
 	type ReactNode
@@ -10,6 +11,7 @@ import {
 	useAccordionGroup,
 	AccordionGroupProvider
 } from "./AccordionGroupContext";
+import { useAccordionToggle } from "./ToggleContext";
 import { Toggle } from "./Toggle";
 
 import WarningIcon from "@nice-digital/icons/lib/Warning";
@@ -28,6 +30,7 @@ export interface AccordionProps {
 	className?: string;
 	isCaution?: boolean;
 	children: ReactNode;
+	id?: string;
 }
 
 export const Accordion: FC<AccordionProps> = ({
@@ -37,10 +40,14 @@ export const Accordion: FC<AccordionProps> = ({
 	hideLabel = "Hide",
 	className,
 	isCaution,
-	children
+	children,
+	id: propId
 }) => {
+	const generatedId = `accordion-${useId()}`;
+	const id = propId || generatedId;
 	const [isOpen, setIsOpen] = useState(open);
 	const { isGroupOpen } = useAccordionGroup();
+	const { accordions, setAccordions } = useAccordionToggle();
 	const summaryClickHandler = () => {
 		// Fallback for IE11/other browsers not supporting details/summary natively
 		if (!supportsDetailsElement) setIsOpen((wasOpen) => !wasOpen);
@@ -56,6 +63,17 @@ export const Accordion: FC<AccordionProps> = ({
 		setIsOpen(open);
 	}, [open]);
 
+	useEffect(() => {
+		setAccordions((prevAccordions) => ({
+			...prevAccordions,
+			[id]: isOpen
+		}));
+	}, [isOpen, id, setAccordions]);
+
+	useEffect(() => {
+		console.log("accordions updated", accordions);
+	}, [accordions]);
+
 	return (
 		<details
 			className={["accordion__details", className].join(" ")}
@@ -64,6 +82,7 @@ export const Accordion: FC<AccordionProps> = ({
 				setIsOpen(e.currentTarget.open);
 			}}
 			open={isOpen}
+			id={id}
 		>
 			<summary
 				className={"accordion__summary"}
