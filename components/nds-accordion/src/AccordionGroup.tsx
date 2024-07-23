@@ -1,5 +1,6 @@
 import { useEffect, useState, type FC, type ReactNode } from "react";
 import {
+	AccordionGroupContext,
 	AccordionGroupProvider,
 	useAccordionGroup
 } from "./AccordionGroupContext";
@@ -33,7 +34,7 @@ export const AccordionGroup: FC<AccordionGroupProps> = ({
 }) => {
 	const [isGroupOpen, setIsGroupOpen] = useState(false);
 	const isClient = useIsClient();
-	const { accordions } = useAccordionGroup();
+	const { accordions, areAllOpen } = useAccordionGroup();
 	const toggleClickHandler = () => {
 		setIsGroupOpen((isGroupOpen) => !isGroupOpen);
 	};
@@ -42,16 +43,18 @@ export const AccordionGroup: FC<AccordionGroupProps> = ({
 		if (onToggle) onToggle(isGroupOpen);
 	}, [onToggle, isGroupOpen]);
 
-	// useEffect(() => {
-	// console.log("useEffect triggered by accordions changing");
-	// Check if any accordion is open
-	// const anyOpen = Object.values(accordions).some((isOpen) => isOpen);
-	// Set the group toggle text based on the open state of any accordion
-	// setIsGroupOpen(anyOpen);
-	// }, [accordions]);
-
 	return (
 		<AccordionGroupProvider isGroupOpen={isGroupOpen}>
+			<AccordionGroupContext.Consumer>
+				{({ isGroupOpen, areAllOpen, accordions }) => {
+					return (
+						<>
+							{/* {isGroupOpen ? "true" : "false"} */}
+							{areAllOpen(accordions) ? "all are open" : "all are not open"}
+						</>
+					);
+				}}
+			</AccordionGroupContext.Consumer>
 			{isClient ? (
 				<button
 					type="button"
@@ -62,9 +65,7 @@ export const AccordionGroup: FC<AccordionGroupProps> = ({
 					}
 					onClick={toggleClickHandler}
 				>
-					<Toggle isOpen={isGroupOpen}>
-						{toggleText(isGroupOpen)} BUTTON!!!
-					</Toggle>
+					<Toggle isOpen={isGroupOpen}>{toggleText(isGroupOpen)}</Toggle>
 				</button>
 			) : null}
 			<>{children}</>
