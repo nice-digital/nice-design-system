@@ -25,7 +25,7 @@ export interface AccordionGroupProps {
 }
 
 const defaultToggleTextFn = (isOpen: boolean) =>
-	`${isOpen ? "Hide" : "Show"} all sections`;
+	`${isOpen ? "Hide!" : "Show!!"} all sections`;
 
 export const AccordionGroup: FC<AccordionGroupProps> = ({
 	children,
@@ -34,14 +34,9 @@ export const AccordionGroup: FC<AccordionGroupProps> = ({
 }) => {
 	const [isGroupOpen, setIsGroupOpen] = useState(false);
 	const isClient = useIsClient();
-	const { accordions, areAllOpen, setAccordions } = useAccordionGroup();
+	const { accordions, setAccordions, allOpen, anyOpen } = useAccordionGroup();
 	const toggleClickHandler = () => {
-		console.log("toggleClickHandler accs", accordions);
 		setIsGroupOpen((isGroupOpen) => !isGroupOpen);
-		// setAccordions((prevAccordions) => ({
-		// 	...prevAccordions,
-		// 	[id]: !isGroupOpen
-		// }));
 	};
 
 	useEffect(() => {
@@ -51,31 +46,33 @@ export const AccordionGroup: FC<AccordionGroupProps> = ({
 	return (
 		<AccordionGroupProvider isGroupOpen={isGroupOpen}>
 			<AccordionGroupContext.Consumer>
-				{({ isGroupOpen, areAllOpen, accordions }) => {
+				{({ isGroupOpen, allOpen, anyOpen, accordions }) => {
 					return (
 						<>
 							{/* {isGroupOpen ? "true" : "false"} */}
 							{/* {areAllOpen(accordions) ? "all are open" : "all are not open"}
 							 */}
 
+							{allOpen ? " - all are open - " : " - all are not open - "}
+							{anyOpen ? " - some are open - " : " - none are open -"}
+							{isGroupOpen ? " - group is open - " : " - group is closed - "}
+
 							{isClient ? (
 								<button
 									type="button"
-									aria-expanded={areAllOpen(accordions)}
+									// aria-expanded={areAllOpen(accordions)}
+									aria-expanded={anyOpen}
 									className={"accordionGroup__toggleButton"}
 									data-tracking={
-										areAllOpen(accordions)
-											? "Hide all sections"
-											: "Show all sections"
+										// areAllOpen(accordions)
+										anyOpen ? "Hide all sections" : "Show all sections"
 									}
 									onClick={toggleClickHandler}
 									// onClick={() => {
 									// 	setIsGroupOpen((isGroupOpen) => !isGroupOpen);
 									// }}
 								>
-									<Toggle isOpen={areAllOpen(accordions)}>
-										{toggleText(areAllOpen(accordions))}
-									</Toggle>
+									<Toggle isOpen={anyOpen}>{toggleText(anyOpen)}</Toggle>
 								</button>
 							) : null}
 						</>

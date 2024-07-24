@@ -1,17 +1,26 @@
-import { createContext, useContext, type FC, ReactNode, useState } from "react";
+import {
+	createContext,
+	useContext,
+	type FC,
+	ReactNode,
+	useState,
+	useEffect
+} from "react";
 
 export interface AccordionGroupContextType {
 	isGroupOpen: boolean;
 	accordions: Record<string, boolean>;
 	setAccordions: React.Dispatch<React.SetStateAction<Record<string, boolean>>>;
-	areAllOpen: (accordions: Record<string, boolean>) => boolean;
+	allOpen: boolean;
+	anyOpen: boolean;
 }
 
 export const AccordionGroupContext = createContext<AccordionGroupContextType>({
 	isGroupOpen: false,
 	accordions: {},
 	setAccordions: () => {},
-	areAllOpen: () => false
+	allOpen: false,
+	anyOpen: false
 });
 
 export interface AccordionGroupProviderProps {
@@ -19,26 +28,24 @@ export interface AccordionGroupProviderProps {
 	children: ReactNode;
 }
 
-// useEffect(() => {
-// console.log("useEffect triggered by accordions changing");
-// Check if any accordion is open
-// const anyOpen = Object.values(accordions).some((isOpen) => isOpen);
-// Set the group toggle text based on the open state of any accordion
-// setIsGroupOpen(anyOpen);
-// }, [accordions]);
-
-export const areAllOpen = (accordions: Record<string, boolean>): boolean => {
-	return Object.values(accordions).every((isOpen) => isOpen);
-};
-
 export const AccordionGroupProvider: FC<AccordionGroupProviderProps> = ({
 	children,
 	isGroupOpen
 }) => {
 	const [accordions, setAccordions] = useState<Record<string, boolean>>({});
+	const [anyOpen, setAnyOpen] = useState(false);
+	const [allOpen, setAllOpen] = useState(false);
+
+	useEffect(() => {
+		const anyOpen = Object.values(accordions).some((isOpen) => isOpen);
+		isGroupOpen = anyOpen;
+		const allOpen = Object.values(accordions).every((isOpen) => isOpen);
+		setAnyOpen(anyOpen);
+		setAllOpen(allOpen);
+	}, [accordions]);
 	return (
 		<AccordionGroupContext.Provider
-			value={{ isGroupOpen, accordions, setAccordions, areAllOpen }}
+			value={{ isGroupOpen, accordions, setAccordions, allOpen, anyOpen }}
 		>
 			{children}
 		</AccordionGroupContext.Provider>

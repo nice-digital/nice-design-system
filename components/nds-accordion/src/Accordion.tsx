@@ -9,8 +9,7 @@ import {
 
 import {
 	useAccordionGroup,
-	AccordionGroupProvider,
-	areAllOpen
+	AccordionGroupProvider
 } from "./AccordionGroupContext";
 import { Toggle } from "./Toggle";
 
@@ -73,8 +72,6 @@ export const Accordion: FC<AccordionProps> = ({
 	useEffect(() => {
 		// console.log("accordions updated", accordions);
 	}, [accordions]);
-
-	console.log("are all open?", areAllOpen(accordions));
 
 	return (
 		<details
