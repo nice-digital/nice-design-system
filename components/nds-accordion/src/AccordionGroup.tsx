@@ -34,7 +34,6 @@ export const AccordionGroup: FC<AccordionGroupProps> = ({
 }) => {
 	const [isGroupOpen, setIsGroupOpen] = useState(false);
 	const isClient = useIsClient();
-	const { accordions, setAccordions, allOpen, anyOpen } = useAccordionGroup();
 	const toggleClickHandler = () => {
 		setIsGroupOpen((isGroupOpen) => !isGroupOpen);
 	};
@@ -60,19 +59,14 @@ export const AccordionGroup: FC<AccordionGroupProps> = ({
 							{isClient ? (
 								<button
 									type="button"
-									// aria-expanded={areAllOpen(accordions)}
 									aria-expanded={anyOpen}
 									className={"accordionGroup__toggleButton"}
 									data-tracking={
-										// areAllOpen(accordions)
 										anyOpen ? "Hide all sections" : "Show all sections"
 									}
 									onClick={toggleClickHandler}
-									// onClick={() => {
-									// 	setIsGroupOpen((isGroupOpen) => !isGroupOpen);
-									// }}
 								>
-									<Toggle isOpen={anyOpen}>{toggleText(anyOpen)}</Toggle>
+									<Toggle isOpen={anyOpen}>{toggleText(isGroupOpen)}</Toggle>
 								</button>
 							) : null}
 						</>

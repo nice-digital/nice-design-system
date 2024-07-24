@@ -69,10 +69,6 @@ export const Accordion: FC<AccordionProps> = ({
 		}));
 	}, [isOpen, id, setAccordions]);
 
-	useEffect(() => {
-		// console.log("accordions updated", accordions);
-	}, [accordions]);
-
 	return (
 		<details
 			className={["accordion__details", className].join(" ")}
