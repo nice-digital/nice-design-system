@@ -23,7 +23,7 @@ export default function Test() {
 				<p>test para</p>
 			</Accordion>
 
-			<Accordion title={"Caution title"} isCaution={true}>
+			<Accordion title={"Caution title"} variant="caution">
 				<p>test para</p>
 			</Accordion>
 			<div>

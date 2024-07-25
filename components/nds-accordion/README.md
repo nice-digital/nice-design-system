@@ -6,12 +6,12 @@ Accordion component for the NICE Design System
 - [Usage](#usage)
 	- [React](#react)
 		- [Props](#props)
+			- [title](#title)
+			- [open](#open)
+			- [showLabel](#showlabel)
+			- [hideLabel](#hidelabel)
 			- [children](#children)
 			- [variant](#variant)
-			- [buttonType](#buttontype)
-			- [to](#to)
-			- [elementType](#elementtype)
-			- [method](#method)
 			- [className](#classname)
 	- [SCSS](#scss)
 	- [HTML](#html)
@@ -38,7 +38,7 @@ import { Accordion, AccordionGroup } from "@nice-digital/nds-accordion";
 	<p>Accordion content </p>
 </Accordion>
 
-<Accordion title="Accordion caution title" isCaution={true}>
+<Accordion title="Accordion caution title" variant="caution">
 	<p>Caution accordion content</p>
 </Accordion>
 
@@ -86,7 +86,7 @@ The label of the accordion toggle label when the is accordion open
 
 The body of the accordion
 
-##### isCaution
+##### variant
 
 The variant of the accordion. Leave blank for the default variant.
 

@@ -20,13 +20,18 @@ const supportsDetailsElement =
 	typeof document === "undefined" ||
 	"open" in document.createElement("details");
 
+export const accordionVariants = {
+	default: "default",
+	caution: "caution"
+} as const;
+
 export interface AccordionProps {
 	title: ReactNode;
 	open?: boolean;
 	showLabel?: string;
 	hideLabel?: ReactNode;
 	className?: string;
-	isCaution?: boolean;
+	variant?: keyof typeof accordionVariants;
 	children: ReactNode;
 }
 
@@ -36,7 +41,7 @@ export const Accordion: FC<AccordionProps> = ({
 	showLabel = "Show",
 	hideLabel = "Hide",
 	className,
-	isCaution,
+	variant = "default",
 	children
 }) => {
 	const [isOpen, setIsOpen] = useState(open);
@@ -56,6 +61,15 @@ export const Accordion: FC<AccordionProps> = ({
 		setIsOpen(open);
 	}, [open]);
 
+	const possibleVariants = Object.keys(accordionVariants);
+	if (variant && !possibleVariants.some((m) => m === variant)) {
+		throw new Error(
+			`Expected variant to be one of '${possibleVariants.join(
+				"', '"
+			)}' but found '${variant}'`
+		);
+	}
+
 	return (
 		<details
 			className={["accordion__details", className].join(" ")}
@@ -74,7 +88,7 @@ export const Accordion: FC<AccordionProps> = ({
 					{isOpen ? hideLabel : showLabel}
 				</Toggle>{" "}
 				<div className="accordion__title">
-					{isCaution && <WarningIcon />}
+					{variant === "caution" ? <WarningIcon /> : null}
 					{typeof title === "string" || typeof title === "number" ? (
 						<span>{title}</span>
 					) : (
