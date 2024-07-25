@@ -89,6 +89,8 @@ The body of the accordion
 ##### variant
 
 The variant of the accordion. Leave blank for the default variant.
+- Type: `"caution"` | `"default"`
+- Default: `""`
 
 
 ##### className
