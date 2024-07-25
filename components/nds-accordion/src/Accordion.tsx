@@ -6,15 +6,12 @@ import {
 	type FC,
 	type ReactNode
 } from "react";
-
 import {
-	useAccordionGroup,
+	useAccordionGroupContext,
 	AccordionGroupProvider
 } from "./AccordionGroupContext";
 import { Toggle } from "./Toggle";
-
 import WarningIcon from "@nice-digital/icons/lib/Warning";
-
 import "../scss/accordion.scss";
 
 const supportsDetailsElement =
@@ -45,29 +42,38 @@ export const Accordion: FC<AccordionProps> = ({
 	const generatedId = `accordion-${useId()}`;
 	const id = propId || generatedId;
 	const [isOpen, setIsOpen] = useState(open);
-	const { isGroupOpen } = useAccordionGroup();
-	const { accordions, setAccordions } = useAccordionGroup();
+	const {
+		isGroupOpen,
+		registerAccordion,
+		unregisterAccordion,
+		setAccordionState
+	} = useAccordionGroupContext();
+
 	const summaryClickHandler = () => {
 		// Fallback for IE11/other browsers not supporting details/summary natively
 		if (!supportsDetailsElement) setIsOpen((wasOpen) => !wasOpen);
 	};
 
-	// Handle the group being expanded/collapsed
+	// Register this accordion in the group on mount, and unregister on unmount
+	useEffect(() => {
+		registerAccordion(id, isOpen);
+		return () => unregisterAccordion(id);
+	}, [id, isOpen, registerAccordion, unregisterAccordion]);
+
+	// Sync with group open state
 	useEffect(() => {
 		setIsOpen(isGroupOpen);
 	}, [isGroupOpen]);
 
-	// Handle the prop changing
+	// Sync prop open state
 	useEffect(() => {
 		setIsOpen(open);
 	}, [open]);
 
+	// Update the group context state when isOpen changes
 	useEffect(() => {
-		setAccordions((prevAccordions) => ({
-			...prevAccordions,
-			[id]: isOpen
-		}));
-	}, [isOpen, id, setAccordions]);
+		setAccordionState(id, isOpen);
+	}, [isOpen, id, setAccordionState]);
 
 	return (
 		<details
@@ -96,7 +102,6 @@ export const Accordion: FC<AccordionProps> = ({
 					)}
 				</div>
 			</summary>
-			{/* Avoid accordion groups opening nested accordions */}
 			<AccordionGroupProvider isGroupOpen={false}>
 				<div className="accordion__content">{children}</div>
 			</AccordionGroupProvider>

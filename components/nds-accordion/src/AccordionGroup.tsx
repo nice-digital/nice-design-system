@@ -1,20 +1,23 @@
-import { useEffect, useState, type FC, type ReactNode } from "react";
 import {
-	AccordionGroupContext,
+	useEffect,
+	useState,
+	type FC,
+	type ReactNode,
+	useCallback,
+	useMemo
+} from "react";
+import {
 	AccordionGroupProvider,
-	useAccordionGroup
+	useAccordionGroupContext
 } from "./AccordionGroupContext";
 import { Toggle } from "./Toggle";
-
 import "./../scss/accordionGroup.scss";
 
 export const useIsClient = (): boolean => {
 	const [isClient, setClient] = useState(false);
-
 	useEffect(() => {
 		setClient(true);
 	}, []);
-
 	return isClient;
 };
 
@@ -24,7 +27,7 @@ export interface AccordionGroupProps {
 	onToggle?: (isOpen: boolean) => void;
 }
 
-const defaultToggleTextFn = (isOpen: boolean) =>
+const defaultToggleTextFn = (isOpen: boolean): string =>
 	`${isOpen ? "Hide" : "Show"} all sections`;
 
 export const AccordionGroup: FC<AccordionGroupProps> = ({
@@ -33,62 +36,43 @@ export const AccordionGroup: FC<AccordionGroupProps> = ({
 	onToggle
 }) => {
 	const [isGroupOpen, setIsGroupOpen] = useState(false);
-	const isClient = useIsClient();
-	const toggleClickHandler = () => {
-		setIsGroupOpen((isGroupOpen) => !isGroupOpen);
-	};
+	const { allOpen, anyOpen, toggleAllAccordions } = useAccordionGroupContext();
 
 	useEffect(() => {
-		if (onToggle) onToggle(isGroupOpen);
+		if (allOpen) {
+			setIsGroupOpen(true);
+		} else if (!anyOpen) {
+			setIsGroupOpen(false);
+		}
+	}, [allOpen, anyOpen]);
+
+	const toggleClickHandler = useCallback(() => {
+		const newIsGroupOpen = !isGroupOpen;
+		setIsGroupOpen(newIsGroupOpen);
+		toggleAllAccordions(newIsGroupOpen);
+	}, [isGroupOpen, toggleAllAccordions]);
+
+	useEffect(() => {
+		onToggle?.(isGroupOpen);
 	}, [onToggle, isGroupOpen]);
+
+	const memoizedToggleText = useMemo(
+		() => toggleText(isGroupOpen),
+		[toggleText, isGroupOpen]
+	);
 
 	return (
 		<AccordionGroupProvider isGroupOpen={isGroupOpen}>
-			<AccordionGroupContext.Consumer>
-				{({ isGroupOpen, allOpen, anyOpen, accordions }) => {
-					return (
-						<>
-							{/* {isGroupOpen ? "true" : "false"} */}
-							{/* {areAllOpen(accordions) ? "all are open" : "all are not open"}
-							 */}
-
-							{allOpen ? " - all are open - " : " - all are not open - "}
-							{anyOpen ? " - some are open - " : " - none are open -"}
-							{isGroupOpen ? " - group is open - " : " - group is closed - "}
-
-							{isClient ? (
-								<button
-									type="button"
-									aria-expanded={anyOpen}
-									className={"accordionGroup__toggleButton"}
-									data-tracking={
-										anyOpen ? "Hide all sections" : "Show all sections"
-									}
-									onClick={toggleClickHandler}
-								>
-									<Toggle isOpen={isGroupOpen}>
-										{toggleText(isGroupOpen)}
-									</Toggle>
-								</button>
-							) : null}
-						</>
-					);
-				}}
-			</AccordionGroupContext.Consumer>
-			{/* {isClient ? (
-				<button
-					type="button"
-					aria-expanded={isGroupOpen}
-					className={"accordionGroup__toggleButton"}
-					data-tracking={
-						isGroupOpen ? "Hide all sections" : "Show all sections"
-					}
-					onClick={toggleClickHandler}
-				>
-					<Toggle isOpen={isGroupOpen}>{toggleText(isGroupOpen)}</Toggle>
-				</button>
-			) : null} */}
-			<>{children}</>
+			<button
+				type="button"
+				aria-expanded={isGroupOpen}
+				className="accordionGroup__toggleButton"
+				data-tracking={isGroupOpen ? "Hide all sections" : "Show all sections"}
+				onClick={toggleClickHandler}
+			>
+				<Toggle isOpen={isGroupOpen}>{memoizedToggleText}</Toggle>
+			</button>
+			{children}
 		</AccordionGroupProvider>
 	);
 };
