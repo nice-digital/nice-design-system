@@ -3,7 +3,7 @@ import { ComponentLayout } from "components/layouts/ComponentLayout";
 import { Screenshot } from "components/core/Screenshot/Screenshot";
 import { Example } from "components/examples/Example";
 import { DefaultAccordion, CautionAccordion } from "components/examples/Accordion";
-import { Accordion } from "@nice-digital/nds-accordion";
+import { Accordion, AccordionGroup } from "@nice-digital/nds-accordion";
 import { Button } from "@nice-digital/nds-button";
 
 export const meta = {
@@ -29,7 +29,7 @@ Accordions can also work well for people who use a service regularly. 
 
 Test with users to decide if using an accordion outweighs the potential problems with hiding content.
 
-<Screenshot image="accordion-1.png" alt="Screenshot of the accordion component with closed and open states shown" />
+<Screenshot image="accordion-single.jpg" alt="Screenshot of the single accordion components on page" />
 
 ## When not to use
 Accordions are often overly used within content, seen as an easy way to organise content. However, accordions hide content from the user; not everyone will notice or understand how they work.
@@ -51,11 +51,8 @@ Users of screen readers might find it challenging to navigate the accordion if t
 
 Organise accordion sections that make sense to users based on their needs.
 
-## Accordion variants
+You can choose from the default single accordion, a caution accordion or grouped accordions.
 
-You can choose from the default single accordion or the multi accordion variant.
-
-**TODO: Placeholder image - live preview to be used on Design system site.**
 
 ### Default accordion
 
@@ -72,7 +69,7 @@ You can choose from the default single accordion or the multi accordion variant.
 <Accordion
 	title="Default accordion"
 >
-	This is some content with <a href="#">a link</a>
+	<p>This is some content with <a href="#">a link</a></p>
 </Accordion>
 ```
 ```html HTML
@@ -89,15 +86,13 @@ You can choose from the default single accordion or the multi accordion variant.
 		</div>
 	</summary>
 	<div class="accordion__content">
-		Our monthly newsletter, keeping you up to date with<!-- -->
-		<a href="#">important developments at NICE</a>
+		<p>This is some content with <a href="#">a link</a></p>
 	</div>
 </details>
 ```
 </CH.Code>
 </Example>
 
-The default variant is strong and grabs users' attention. Use sparingly for important calls of action on a page that need extra context. Can be used with an inverse button - .btn.btn--inverse or with a call to action button - .btn.btn--cta for extra impact.
 
 ### Caution accordion
 
@@ -137,33 +132,87 @@ The default variant is strong and grabs users' attention. Use sparingly for impo
 </CH.Code>
 </Example>
 
-TODO: Use accordion caution docs here.
 
 ### Accordion Group
 <Example>
 <h4>Example: Accordion group</h4>
-<Screenshot image="accordion-1.png" alt="Screenshot of the accordion group component" />
-
+<AccordionGroup>
+	<Accordion key="1" title="Accordion 1">
+		Accordion 1 body
+	</Accordion>
+	<Accordion key="2" title="Accordion 2">
+		Accordion 2 body
+	</Accordion>
+</AccordionGroup>
 
 <CH.Code>
 ```js React
- React component example here.
+<AccordionGroup>
+	<Accordion key="1" title="Accordion 1">
+		<p>Accordion 1 body</p>
+	</Accordion>
+	<Accordion key="2" title="Accordion 2">
+		<p>Accordion 2 body</p>
+	</Accordion>
+</AccordionGroup>
 ```
 ```html HTML
-markup here
+<details class="accordion__details ">
+	<summary class="accordion__summary" data-tracking="Show">
+		<span class="accordion__toggleLabel toggle__label">
+			<svg
+				width="1em"
+				height="1em"
+				viewBox="0 0 512 512"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+				class="toggle__icon"
+				aria-hidden="true"
+				focusable="false"
+			>
+				<path
+					d="M478.152 174c0 10.091-3.525 18.661-10.576 25.712l-186 186c-7.243 7.243-15.909 10.864-26 10.864-10.283 0-18.853-3.621-25.712-10.864l-186-186C36.621 192.853 33 184.283 33 174c0-10.091 3.621-18.757 10.864-26L65 126.576C72.424 119.525 81.09 116 91 116c10.091 0 18.661 3.525 25.712 10.576L255.576 265.44 394.44 126.576c7.051-7.051 15.621-10.576 25.712-10.576 9.909 0 18.576 3.525 26 10.576L467.576 148c7.051 7.424 10.576 16.091 10.576 26Z"
+					fill="currentColor"
+				></path>
+			</svg>
+			Show
+		</span>{" "}
+		<div class="accordion__title">
+			<span>Accordion 1</span>
+		</div>
+	</summary>
+	<div class="accordion__content"><p>Accordion 1 body</p></div>
+</details>
+<details class="accordion__details ">
+	<summary class="accordion__summary" data-tracking="Show">
+		<span class="accordion__toggleLabel toggle__label">
+			<svg
+				width="1em"
+				height="1em"
+				viewBox="0 0 512 512"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+				class="toggle__icon"
+				aria-hidden="true"
+				focusable="false"
+			>
+				<path
+					d="M478.152 174c0 10.091-3.525 18.661-10.576 25.712l-186 186c-7.243 7.243-15.909 10.864-26 10.864-10.283 0-18.853-3.621-25.712-10.864l-186-186C36.621 192.853 33 184.283 33 174c0-10.091 3.621-18.757 10.864-26L65 126.576C72.424 119.525 81.09 116 91 116c10.091 0 18.661 3.525 25.712 10.576L255.576 265.44 394.44 126.576c7.051-7.051 15.621-10.576 25.712-10.576 9.909 0 18.576 3.525 26 10.576L467.576 148c7.051 7.424 10.576 16.091 10.576 26Z"
+					fill="currentColor"
+				></path>
+			</svg>
+			Show
+		</span>{" "}
+		<div class="accordion__title">
+			<span>Accordion 2</span>
+		</div>
+	</summary>
+	<div class="accordion__content"><p>Accordion 2 body</p></div>
+</details>
 ```
 </CH.Code>
 </Example>
-
-TODO: Accordion group docs here .
-
-## Images
-TODO: No images at this time
-
-
-## Mobile
-
-TODO -
+<Screenshot image="accordion-group.jpg" alt="Screenshot of the accordion group on page" />
 
 ## Accessibility
 

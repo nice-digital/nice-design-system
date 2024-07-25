@@ -26,15 +26,16 @@ export default function Test() {
 			<Accordion title={"Caution title"} isCaution={true}>
 				<p>test para</p>
 			</Accordion>
-
-			<AccordionGroup>
-				<Accordion key="1" title="Accordion 1">
-					Accordion 1 body
-				</Accordion>
-				<Accordion key="2" title="Accordion 2">
-					Accordion 2 body
-				</Accordion>
-			</AccordionGroup>
+			<div>
+				<AccordionGroup>
+					<Accordion key="1" title="Accordion 1">
+						Accordion 1 body
+					</Accordion>
+					<Accordion key="2" title="Accordion 2">
+						Accordion 2 body
+					</Accordion>
+				</AccordionGroup>
+			</div>
 		</>
 	);
 }

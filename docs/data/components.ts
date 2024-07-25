@@ -8,6 +8,12 @@ export const components: PageData[] = [
 			"A to Z is a way of presenting a number of pages in an alphabetical list so users can find and navigate to the content they need."
 	},
 	{
+		title: "Accordion",
+		slug: "accordion",
+		description:
+			"The accordion component lets users show and hide related content sections on a page."
+	},
+	{
 		title: "Action Banner",
 		slug: "action-banner",
 		description:
