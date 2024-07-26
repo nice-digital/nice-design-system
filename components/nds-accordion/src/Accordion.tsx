@@ -26,7 +26,7 @@ export const accordionVariants = {
 } as const;
 
 export interface AccordionProps {
-	title: ReactNode;
+	title: string | number;
 	open?: boolean;
 	showLabel?: string;
 	hideLabel?: ReactNode;
@@ -87,14 +87,12 @@ export const Accordion: FC<AccordionProps> = ({
 				<Toggle isOpen={isOpen} className={"accordion__toggleLabel"}>
 					{isOpen ? hideLabel : showLabel}
 				</Toggle>{" "}
-				<div className="accordion__title">
-					{variant === "caution" ? <WarningIcon /> : null}
-					{typeof title === "string" || typeof title === "number" ? (
-						<span>{title}</span>
-					) : (
-						title
-					)}
-				</div>
+				<span className="accordion__title">
+					{variant === "caution" ? (
+						<WarningIcon className="accordion__icon--caution" />
+					) : null}
+					<span>{title}</span>
+				</span>
 			</summary>
 			{/* Avoid accordion groups opening nested accordions */}
 			<AccordionGroupProvider isGroupOpen={false}>
