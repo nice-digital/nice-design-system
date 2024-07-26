@@ -1,13 +1,15 @@
 import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
+// import "@testing-library/jest-dom/extend-expect"; // for the 'toBeInTheDocument' matcher
+
 import userEvent from "@testing-library/user-event";
 
-import { Accordion } from "./Accordion";
+import { Accordion, accordionVariants } from "./Accordion";
 
-describe("Accordion", () => {
+describe.only("Accordion", () => {
 	it("should match snapshot", () => {
 		render(
-			<Accordion title={<h3>Some title</h3>}>
+			<Accordion title="Some title">
 				<p>test para</p>
 			</Accordion>
 		);
@@ -21,13 +23,13 @@ describe("Accordion", () => {
 		["closed", "Show", false, undefined],
 		["closed", "Expand", false, "Expand"],
 		["open", "Hide", true, undefined],
-		["open", "Collase", true, "Collase"]
+		["open", "Collapse", true, "Collapse"]
 	])(
 		"should render %s accordion with label of %s",
 		(_expectedState, expectedLabel, defaultOpen, actualLabel) => {
 			render(
 				<Accordion
-					title={<h3>Some title</h3>}
+					title="Some title"
 					open={defaultOpen}
 					showLabel={defaultOpen ? undefined : actualLabel}
 					hideLabel={defaultOpen ? actualLabel : undefined}
@@ -190,5 +192,47 @@ describe("Accordion", () => {
 		await waitFor(() => {
 			expect(summaryElement).toHaveAttribute("data-tracking", "Hide");
 		});
+	});
+
+	it("should throw error when variant is not valid", () => {
+		expect(() =>
+			render(
+				<Accordion
+					title="Test"
+					variant={"invalid" as unknown as "default" | "caution"}
+				>
+					<p>Body content</p>
+				</Accordion>
+			)
+		).toThrowError(
+			"Expected variant to be one of 'default', 'caution' but found 'invalid'"
+		);
+	});
+
+	it.each(Object.keys(accordionVariants))(
+		"should render without error for the valid variant %s",
+		(variant) => {
+			const { container } = render(
+				<Accordion
+					title="Test"
+					variant={variant as keyof typeof accordionVariants}
+				>
+					<p>Body content</p>
+				</Accordion>
+			);
+
+			expect(container).toBeInTheDocument();
+		}
+	);
+
+	it("should add a WarningIcon when variant is caution", () => {
+		render(
+			<Accordion title="Test" variant="caution">
+				<p>Body content</p>
+			</Accordion>
+		);
+
+		const cautionIcon = document.querySelector(".accordion__icon--caution");
+		expect(cautionIcon).toBeInTheDocument();
 	});
 });
