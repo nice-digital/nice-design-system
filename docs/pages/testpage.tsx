@@ -19,19 +19,38 @@ export default function Test() {
 
 			<h2>Accordion default variant</h2>
 
-			<Accordion title={"Accordion title"}>
+			<Accordion
+				title={"Accordion title"}
+				headingLevel={1}
+				displayTitleAsHeading={false}
+			>
 				<p>test para</p>
 			</Accordion>
 
-			<Accordion title={"Caution title"} variant="caution">
+			<Accordion
+				title={"Caution title"}
+				variant="caution"
+				headingLevel={3}
+				displayTitleAsHeading={true}
+			>
 				<p>test para</p>
 			</Accordion>
 			<div>
 				<AccordionGroup>
-					<Accordion key="1" title="Accordion 1">
+					<Accordion
+						key="1"
+						title="Accordion 1"
+						headingLevel={3}
+						displayTitleAsHeading={true}
+					>
 						Accordion 1 body
 					</Accordion>
-					<Accordion key="2" title="Accordion 2">
+					<Accordion
+						key="2"
+						title="Accordion 2"
+						headingLevel={6}
+						displayTitleAsHeading={true}
+					>
 						Accordion 2 body
 					</Accordion>
 				</AccordionGroup>

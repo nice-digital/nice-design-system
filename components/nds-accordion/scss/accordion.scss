@@ -38,10 +38,15 @@
     }
 
     > :last-child {
+      font-family: typography.get-font-family(sans);
+      @include typography.font-size(2);
+      font-weight: bold;
       margin: 0;
+      display: flex;
+      align-items: center;
     }
 
-    [open] > & {
+    [data-is-open='true'] > & {
       border-bottom-color: transparent;
     }
   }
@@ -50,12 +55,18 @@
     align-items: center;
     display: flex;
     gap: utils.rem(spacing.$small);
+    margin-bottom: 0;
 
     > * {
-      font-family: typography.get-font-family(sans);
-      @include typography.font-size(2);
-      font-weight: bold;
-      margin: 0;
+      // font-family: typography.get-font-family(sans);
+      // @include typography.font-size(2);
+      // font-weight: bold;
+      // margin: 0;
+      flex-grow: 1;
+    }
+
+    .warning-icon {
+      margin-right: utils.rem(spacing.$small);
     }
   }
 
