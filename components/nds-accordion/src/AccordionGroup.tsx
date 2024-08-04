@@ -30,11 +30,13 @@ export const AccordionGroup: FC<AccordionGroupProps> = ({
 	toggleText = defaultToggleTextFn,
 	onToggle
 }) => {
-	const [isGroupOpen, setIsGroupOpen] = useState(false),
-		isClient = useIsClient(),
-		toggleClickHandler = () => {
-			setIsGroupOpen((isGroupOpen) => !isGroupOpen);
-		};
+	const [isGroupOpen, setIsGroupOpen] = useState(false);
+
+	const isClient = useIsClient();
+
+	const toggleClickHandler = () => {
+		setIsGroupOpen((isGroupOpen) => !isGroupOpen);
+	};
 
 	useEffect(() => {
 		if (onToggle) onToggle(isGroupOpen);
