@@ -8,6 +8,7 @@
   &__details {
     background: none;
     margin: utils.rem(spacing.$medium 0);
+    @include focus.default-accordion-focus;
 
     > :last-child {
       margin-bottom: 0;
@@ -17,6 +18,7 @@
   &__heading {
     display: flex;
     margin: 0;
+    max-width: 100%;
   }
 
   &__summary {
@@ -42,8 +44,6 @@
         color: colours.$accrordion-label-text-hover;
       }
     }
-
-    @include focus.default-accordion-focus;
 
     > :last-child {
       @include typography.font-size(2);
