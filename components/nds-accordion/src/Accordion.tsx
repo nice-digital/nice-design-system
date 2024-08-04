@@ -11,6 +11,7 @@ import {
 	useAccordionGroup,
 	AccordionGroupProvider
 } from "./AccordionGroupContext";
+import { AccordionButton } from "./AccordionButton";
 import { Toggle } from "./Toggle";
 
 import WarningIcon from "@nice-digital/icons/lib/Warning";
@@ -71,53 +72,70 @@ export const Accordion: FC<AccordionProps> = ({
 	const toggleAccordion = () => {
 		setIsOpen(!isOpen);
 	};
+	// 	/* TODO: we could abstract this component into it's own file and pass relevant props
+	// 		We also be able to use the Toggle component here
+	// 		What props would we need?:
+	// 		- isOpen
+	// 		- onClick
+	// 		- className
+	// 		- showLabel
+	// 		- hideLabel
+	// 		- title
+	// 		- variant
+	// 	*/
+	// 	/*NOTE: We get an axe related error here, but it's a false positive.
+	// 		currently we are using axe-core but isn't compatable with React
+	// 		There is axe-core/react but it doesn't support React 18
+	// 	*/
 
-	const AccordionButton = () => {
-		/* TODO: we could abstract this component into it's own file and pass relevant props
-			We also be able to use the Toggle component here
-			What props would we need?:
-			- isOpen
-			- onClick
-			- className
-			- showLabel
-			- hideLabel
-			- title
-			- variant
-		*/
-		/*NOTE: We get an axe related error here, but it's a false positive.
-			currently we are using axe-core but isn't compatable with React
-			There is axe-core/react but it doesn't support React 18
-		*/
-		return (
-			<button
-				aria-expanded={isOpen}
-				aria-controls={generatedId}
-				onClick={toggleAccordion}
-				data-tracking={isOpen ? hideLabel : showLabel}
-				className="accordion__summary"
-				type="button"
-			>
-				<Toggle isOpen={isOpen} className={"accordion__toggleLabel"}>
-					{isOpen ? hideLabel : showLabel}
-				</Toggle>
-				<span className="accordion__title">
-					{variant === "caution" && <WarningIcon className="warning-icon" />}
-					{title}
-				</span>
-			</button>
-		);
-	};
+	// 	return (
+	// 		<button
+	// 			aria-expanded={isOpen}
+	// 			aria-controls={generatedId}
+	// 			onClick={toggleAccordion}
+	// 			data-tracking={isOpen ? hideLabel : showLabel}
+	// 			className="accordion__summary"
+	// 			type="button"
+	// 		>
+	// 			<Toggle isOpen={isOpen} className={"accordion__toggleLabel"}>
+	// 				{isOpen ? hideLabel : showLabel}
+	// 			</Toggle>
+	// 			<span className="accordion__title">
+	// 				{variant === "caution" && <WarningIcon className="warning-icon" />}
+	// 				{title}
+	// 			</span>
+	// 		</button>
+	// 	);
+	// };
 
 	const renderTitle = () => {
 		if (headingLevel) {
 			const Tag = `h${headingLevel}` as keyof JSX.IntrinsicElements;
 			return (
 				<Tag className="accordion__heading">
-					<AccordionButton />
+					<AccordionButton
+						isOpen={isOpen}
+						toggleAccordion={toggleAccordion}
+						generatedId={generatedId}
+						showLabel={showLabel}
+						hideLabel={hideLabel}
+						title={title}
+						variant={variant}
+					/>
 				</Tag>
 			);
 		} else {
-			return <AccordionButton />;
+			return (
+				<AccordionButton
+					isOpen={isOpen}
+					toggleAccordion={toggleAccordion}
+					generatedId={generatedId}
+					showLabel={showLabel}
+					hideLabel={hideLabel}
+					title={title}
+					variant={variant}
+				/>
+			);
 		}
 	};
 
