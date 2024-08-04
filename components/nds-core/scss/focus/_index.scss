@@ -48,7 +48,7 @@
 
 @mixin default-accordion-focus {
   .accordion__summary,
-  button.accordion__summary,
+  button,
   summary {
     &:focus {
       @include default-focus-style;
