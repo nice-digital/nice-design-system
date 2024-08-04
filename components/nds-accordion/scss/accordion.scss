@@ -12,15 +12,21 @@
     > :last-child {
       margin-bottom: 0;
     }
+  }
 
-    @include focus.default-accordion-focus;
+  &__heading {
+    display: flex;
+    margin: 0;
   }
 
   &__summary {
+    background-color: colours.$accordion-default-background;
     border: 1px solid colours.$accordion-details-border;
     cursor: pointer;
     display: flex;
     flex-direction: column-reverse;
+    flex: 1;
+    font-family: typography.get-font-family(sans);
     list-style: none;
     padding: utils.rem(spacing.$medium);
 
@@ -37,17 +43,14 @@
       }
     }
 
+    @include focus.default-accordion-focus;
+
     > :last-child {
-      font-family: typography.get-font-family(sans);
       @include typography.font-size(2);
       font-weight: bold;
       margin: 0;
       display: flex;
       align-items: center;
-    }
-
-    [data-is-open='true'] > & {
-      border-bottom-color: transparent;
     }
   }
 
@@ -62,12 +65,12 @@
       // @include typography.font-size(2);
       // font-weight: bold;
       // margin: 0;
-      flex-grow: 1;
+      // flex-grow: 1;
     }
 
-    .warning-icon {
-      margin-right: utils.rem(spacing.$small);
-    }
+    // .warning-icon {
+    //   margin-right: utils.rem(spacing.$small);
+    // }
   }
 
   &__toggleLabel {
@@ -77,6 +80,7 @@
 
   &__content {
     border: 1px solid colours.$accordion-details-border;
+    border-top: none;
     padding: utils.rem(spacing.$medium);
 
     > :first-child {

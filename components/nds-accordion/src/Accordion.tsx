@@ -2,6 +2,7 @@ import React, {
 	SyntheticEvent,
 	useEffect,
 	useState,
+	useId,
 	type FC,
 	type ReactNode
 } from "react";
@@ -29,8 +30,7 @@ export interface AccordionProps {
 	className?: string;
 	variant?: keyof typeof accordionVariants;
 	children: ReactNode;
-	displayTitleAsHeading?: boolean;
-	headingLevel?: number;
+	headingLevel?: 2 | 3 | 4 | 5 | 6;
 }
 
 export const Accordion: FC<AccordionProps> = ({
@@ -41,9 +41,11 @@ export const Accordion: FC<AccordionProps> = ({
 	className,
 	variant = "default",
 	children,
-	displayTitleAsHeading = false,
 	headingLevel
 }) => {
+	//TODO: useID to generate unique ID for aria-controls
+	const id = useId();
+	const generatedId = `accordion-content-${id}`;
 	const [isOpen, setIsOpen] = useState(open);
 	const { isGroupOpen } = useAccordionGroup();
 
@@ -70,58 +72,61 @@ export const Accordion: FC<AccordionProps> = ({
 		setIsOpen(!isOpen);
 	};
 
-	const Heading = ({
-		displayTitleAsHeading,
-		headingLevel,
-		variant,
-		title
-	}: {
-		displayTitleAsHeading: boolean;
-		headingLevel: number | undefined;
-		variant: keyof typeof accordionVariants;
-		title: ReactNode;
-	}) => {
-		const HeadingTag =
-			displayTitleAsHeading && headingLevel ? `h${headingLevel}` : "p";
-
-		return React.createElement(
-			HeadingTag,
-			null,
-			<>
-				{variant === "caution" && <WarningIcon className="warning-icon" />}
-				{title}
-			</>
+	const AccordionButton = () => {
+		/* TODO: we could abstract this component into it's own file and pass relevant props
+			We also be able to use the Toggle component here
+			What props would we need?:
+			- isOpen
+			- onClick
+			- className
+			- showLabel
+			- hideLabel
+			- title
+			- variant
+		*/
+		/*NOTE: We get an axe related error here, but it's a false positive.
+			currently we are using axe-core but isn't compatable with React
+			There is axe-core/react but it doesn't support React 18
+		*/
+		return (
+			<button
+				aria-expanded={isOpen}
+				aria-controls={generatedId}
+				onClick={toggleAccordion}
+				data-tracking={isOpen ? hideLabel : showLabel}
+				className="accordion__summary"
+				type="button"
+			>
+				<Toggle isOpen={isOpen} className={"accordion__toggleLabel"}>
+					{isOpen ? hideLabel : showLabel}
+				</Toggle>
+				<span className="accordion__title">
+					{variant === "caution" && <WarningIcon className="warning-icon" />}
+					{title}
+				</span>
+			</button>
 		);
+	};
+
+	const renderTitle = () => {
+		if (headingLevel) {
+			const Tag = `h${headingLevel}` as keyof JSX.IntrinsicElements;
+			return (
+				<Tag className="accordion__heading">
+					<AccordionButton />
+				</Tag>
+			);
+		} else {
+			return <AccordionButton />;
+		}
 	};
 
 	return (
 		<div className={["accordion__details", className].join(" ")}>
-			<div className="accordion__title">
-				<button
-					aria-expanded={isOpen}
-					aria-controls="accordion-content"
-					onClick={toggleAccordion}
-					data-tracking={isOpen ? hideLabel : showLabel}
-					className="accordion__summary"
-				>
-					<Toggle isOpen={isOpen} className={"accordion__toggleLabel"}>
-						{isOpen ? hideLabel : showLabel}
-					</Toggle>
-					<Heading
-						displayTitleAsHeading={displayTitleAsHeading}
-						headingLevel={headingLevel}
-						variant={variant}
-						title={title}
-					/>
-				</button>
-			</div>
+			{renderTitle()}
 			{/* Avoid accordion groups opening nested accordions */}
 			<AccordionGroupProvider isGroupOpen={false}>
-				<div
-					id="accordion-content"
-					className="accordion__content"
-					hidden={!isOpen}
-				>
+				<div id={generatedId} className="accordion__content" hidden={!isOpen}>
 					{children}
 				</div>
 			</AccordionGroupProvider>
