@@ -26,6 +26,28 @@ export default function Test() {
 			<Accordion title={"Caution title"} variant="caution" headingLevel={3}>
 				<p>test para</p>
 			</Accordion>
+			<Accordion title={"Hello title"} variant="caution" headingLevel={2}>
+				<div>
+					<h3>Test heading in content</h3>
+					<p>Some test paragraph</p>
+				</div>
+			</Accordion>
+			<Accordion title={"Test nested accordion"} headingLevel={2}>
+				<div>
+					<h3>Test heading in content</h3>
+					<p>Some test paragraph</p>
+				</div>
+				<Accordion
+					title={"Hello nested accordion"}
+					variant="caution"
+					headingLevel={3}
+				>
+					<div>
+						<h3>Test heading in content in nested accordion</h3>
+						<p>Some test paragraph</p>
+					</div>
+				</Accordion>
+			</Accordion>
 			<div>
 				<AccordionGroup>
 					<Accordion key="1" title="Accordion 1" headingLevel={3}>
@@ -33,6 +55,22 @@ export default function Test() {
 					</Accordion>
 					<Accordion key="2" title="Accordion 2" headingLevel={6}>
 						Accordion 2 body
+					</Accordion>
+					<Accordion title={"Test nested accordion in group"} headingLevel={2}>
+						<div>
+							<h3>Test heading in content</h3>
+							<p>Some test paragraph</p>
+						</div>
+						<Accordion
+							title={"Hello nested accordion in group"}
+							variant="caution"
+							headingLevel={3}
+						>
+							<div>
+								<h3>Test heading in content in nested accordion</h3>
+								<p>Some test paragraph</p>
+							</div>
+						</Accordion>
 					</Accordion>
 				</AccordionGroup>
 			</div>
