@@ -5,16 +5,19 @@
 @use '@nice-digital/nds-core/scss/utils';
 
 .accordion {
-  &__details {
-    background: none;
-    margin: utils.rem(spacing.$medium 0);
-    @include focus.default-accordion-focus;
+  background: colours.$accordion-default-background;
+  display: flex;
+  flex-direction: column;
+  margin: utils.rem(spacing.$medium 0);
 
-    > :last-child {
-      margin-bottom: 0;
-    }
-  }
+  @include focus.default-accordion-focus;
 
+  // > :last-child {
+  //   margin-bottom: 0;
+  // }
+
+  /* add max-width to heading to override
+     the max-width from typography styles */
   &__heading {
     display: flex;
     margin: 0;
