@@ -1,20 +1,11 @@
 import { useEffect, useState, type FC, type ReactNode } from "react";
 
 import { AccordionGroupProvider } from "./AccordionGroupContext";
+import { useIsClient } from "./useIsClient";
 import { Toggle } from "./Toggle";
 
 // import styles from "./AccordionGroup.module.scss";
 import "./../scss/accordionGroup.scss";
-
-export const useIsClient = (): boolean => {
-	const [isClient, setClient] = useState(false);
-
-	useEffect(() => {
-		setClient(true);
-	}, []);
-
-	return isClient;
-};
 
 export interface AccordionGroupProps {
 	children?: ReactNode;

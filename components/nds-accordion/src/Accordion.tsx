@@ -11,10 +11,9 @@ import {
 	useAccordionGroup,
 	AccordionGroupProvider
 } from "./AccordionGroupContext";
-import { AccordionButton } from "./AccordionButton";
-import { Toggle } from "./Toggle";
 
-import WarningIcon from "@nice-digital/icons/lib/Warning";
+import { useIsClient } from "./useIsClient";
+import { AccordionButton } from "./AccordionButton";
 
 import "../scss/accordion.scss";
 
@@ -49,6 +48,8 @@ export const Accordion: FC<AccordionProps> = ({
 	const generatedId = `accordion-content-${id}`;
 	const [isOpen, setIsOpen] = useState(open);
 	const { isGroupOpen } = useAccordionGroup();
+
+	const isClient = useIsClient();
 
 	// Handle the group being expanded/collapsed
 	useEffect(() => {
@@ -105,11 +106,15 @@ export const Accordion: FC<AccordionProps> = ({
 	};
 
 	return (
-		<div className={["accordion__details", className].join(" ")}>
+		<div className={["accordion", className].join(" ")}>
 			{renderTitle()}
 			{/* Avoid accordion groups opening nested accordions */}
 			<AccordionGroupProvider isGroupOpen={false}>
-				<div id={generatedId} className="accordion__content" hidden={!isOpen}>
+				<div
+					id={generatedId}
+					className="accordion__content"
+					hidden={isClient && !isOpen}
+				>
 					{children}
 				</div>
 			</AccordionGroupProvider>
