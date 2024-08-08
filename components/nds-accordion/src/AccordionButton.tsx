@@ -22,6 +22,10 @@ export const AccordionButton: FC<AccordionButtonProps> = ({
 	title,
 	variant = "default"
 }) => {
+	/*NOTE: We get an axe related error here, but it's a false positive.
+ 		currently we are using axe-core but isn't compatable with React
+ 		There is axe-core/react but it doesn't support React 18
+ 	*/
 	return (
 		<button
 			aria-expanded={isOpen}
