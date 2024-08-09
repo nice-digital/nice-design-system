@@ -1,18 +1,9 @@
 import React from "react";
 import { render, screen, waitFor, renderHook } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-// import { renderToString } from "react-dom/server";
 
 import { Accordion } from "./Accordion";
-
-import { AccordionGroup, useIsClient } from "./AccordionGroup";
-
-describe("useIsClient hook", () => {
-	it("should return true after initial render", () => {
-		const { result } = renderHook(() => useIsClient());
-		expect(result.current).toBe(true);
-	});
-});
+import { AccordionGroup } from "./AccordionGroup";
 
 describe("AccordionGroup", () => {
 	const accordions = [

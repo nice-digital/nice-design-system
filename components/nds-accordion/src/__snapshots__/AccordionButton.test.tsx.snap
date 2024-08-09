@@ -28,6 +28,7 @@ exports[`AccordionButton should render correctly when accordion is closed 1`] = 
     </svg>
     Show
   </span>
+   
   <span
     class="accordion__title"
   >
@@ -64,6 +65,7 @@ exports[`AccordionButton should render correctly when accordion is open 1`] = `
     </svg>
     Hide
   </span>
+   
   <span
     class="accordion__title"
   >
@@ -100,6 +102,7 @@ exports[`AccordionButton should render correctly when variant is caution 1`] = `
     </svg>
     Hide
   </span>
+   
   <span
     class="accordion__title"
   >
