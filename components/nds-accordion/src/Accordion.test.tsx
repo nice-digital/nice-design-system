@@ -3,16 +3,49 @@ import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import { Accordion } from "./Accordion";
+import { renderToString } from "react-dom/server";
 
 describe("Accordion", () => {
-	xit("should match snapshot", () => {
+	it("should match snapshot", () => {
 		render(
-			<Accordion title={<h3>Some title</h3>}>
+			<Accordion title="Some title">
 				<p>test para</p>
 			</Accordion>
 		);
 
-		expect(screen.getByRole("group")).toMatchSnapshot();
+		expect(screen.getByRole("button").parentElement).toMatchSnapshot();
+	});
+
+	it("should render the Accordion as open if rendered from server and JS is disabled", () => {
+		//mimic server side rendering and JS disabled
+		const accordion = renderToString(
+			<Accordion title="Server rendered accordion with JS disabled">
+				<h3>Accordion body heading</h3>
+				<p>Accordion body content</p>
+			</Accordion>
+		);
+
+		const { getByText } = render(accordion);
+		const accordionText = screen.getByText(/Accordion body content/);
+		expect(accordionText).toBeVisible();
+	});
+
+	it("should render the Accordion as closed if JS is enabled", () => {
+		const accordion = render(
+			<Accordion title="Server rendered accordion with JS enabled">
+				<h3>Accordion body heading</h3>
+				<p>Accordion body content</p>
+			</Accordion>
+		);
+
+		const accordionHeadingText = screen.getByText(
+			/Server rendered accordion with JS enabled/
+		);
+		expect(accordionHeadingText).toBeVisible();
+
+		const accordionContentText = screen.getByText(/Accordion body content/);
+		expect(accordionContentText).toBeInTheDocument();
+		expect(accordionContentText).not.toBeVisible();
 	});
 
 	it.each([
@@ -27,7 +60,7 @@ describe("Accordion", () => {
 		(_expectedState, expectedLabel, defaultOpen, actualLabel) => {
 			render(
 				<Accordion
-					title={<h3>Some title</h3>}
+					title="Some title"
 					open={defaultOpen}
 					showLabel={defaultOpen ? undefined : actualLabel}
 					hideLabel={defaultOpen ? actualLabel : undefined}
@@ -178,6 +211,8 @@ describe("Accordion", () => {
 			}
 		);
 
+		expect(button).toHaveAttribute("aria-expanded", "true");
+
 		rerender(
 			<Accordion title="Test" open={false}>
 				<p>Body content</p>
@@ -210,5 +245,27 @@ describe("Accordion", () => {
 		await waitFor(() => {
 			expect(buttonElement).toHaveAttribute("data-tracking", "Hide");
 		});
+	});
+
+	it("should allow the passing of custom classes through className", () => {
+		render(
+			<Accordion title="test title" className="custom-class-name">
+				test content
+			</Accordion>
+		);
+
+		const accordion = screen.getByRole("button").parentElement;
+		expect(accordion).toHaveClass("custom-class-name");
+	});
+
+	it("should allow the passing of caution variant", () => {
+		render(
+			<Accordion title="test title" variant="caution">
+				test content
+			</Accordion>
+		);
+
+		const accordion = screen.getByRole("button").parentElement;
+		expect(accordion).toMatchSnapshot();
 	});
 });

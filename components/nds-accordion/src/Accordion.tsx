@@ -23,7 +23,7 @@ export const accordionVariants = {
 } as const;
 
 export interface AccordionProps {
-	title: ReactNode;
+	title: string | number;
 	open?: boolean;
 	showLabel?: string;
 	hideLabel?: ReactNode;
