@@ -1,5 +1,6 @@
 import React from "react";
-import { render, screen, waitFor, renderHook } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
+import { renderToString } from "react-dom/server";
 import userEvent from "@testing-library/user-event";
 
 import { Accordion } from "./Accordion";
@@ -18,16 +19,18 @@ describe("AccordionGroup", () => {
 		</Accordion>
 	];
 
-	// xit("should not render toggle button server side", () => {
-	// 	expect(
-	// 		renderToString(<AccordionGroup>{accordions}</AccordionGroup>)
-	// 	).not.toContain("<button");
-	// });
+	it("should not render toggle button server side", () => {
+		renderToString(<AccordionGroup>{accordions}</AccordionGroup>);
+
+		expect(
+			renderToString(<AccordionGroup>{accordions}</AccordionGroup>)
+		).not.toContain("Show all sections");
+	});
 
 	it("should render toggle button client side", () => {
 		render(<AccordionGroup>{accordions}</AccordionGroup>);
-
-		expect(screen.getAllByRole("button")[0]).toBeInTheDocument();
+		const toggleButton = screen.getAllByRole("button")[0];
+		expect(toggleButton).toHaveTextContent("Show all sections");
 	});
 
 	it("should be collapsed by default", () => {
@@ -126,7 +129,6 @@ describe("AccordionGroup", () => {
 
 		user.click(screen.getAllByRole("button")[0]);
 
-		console.log(accordionElements);
 		waitFor(() => {
 			accordionElements.forEach((a) => {
 				expect(a).toHaveProperty("aria-expanded", true);

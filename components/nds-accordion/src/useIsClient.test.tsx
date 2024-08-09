@@ -1,15 +1,5 @@
 // useIsClient.test.tsx
 
-/* NOTE: import and global setup for TextEncoder/TextDecoder
-	workaround for error: ReferenceError: TextEncoder is not defined
-	https://github.com/testing-library/dom-testing-library/issues/1245
-	https://github.com/jsdom/jsdom/issues/2524#issuecomment-897707183
-*/
-
-const { TextEncoder, TextDecoder } = require("util");
-global.TextEncoder = TextEncoder;
-global.TextDecoder = TextDecoder;
-
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { useIsClient } from "./useIsClient";
