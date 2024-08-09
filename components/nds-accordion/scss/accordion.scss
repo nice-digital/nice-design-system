@@ -9,12 +9,9 @@
   display: flex;
   flex-direction: column;
   margin: utils.rem(spacing.$medium 0);
+  max-width: 40rem;
 
   @include focus.default-accordion-focus;
-
-  // > :last-child {
-  //   margin-bottom: 0;
-  // }
 
   /* add max-width to heading to override
      the max-width from typography styles */
@@ -34,6 +31,7 @@
     font-family: typography.get-font-family(sans);
     list-style: none;
     padding: utils.rem(spacing.$medium);
+    text-align: left;
 
     &::-webkit-details-marker {
       display: none;
@@ -62,18 +60,6 @@
     display: flex;
     gap: utils.rem(spacing.$small);
     margin-bottom: 0;
-
-    > * {
-      // font-family: typography.get-font-family(sans);
-      // @include typography.font-size(2);
-      // font-weight: bold;
-      // margin: 0;
-      // flex-grow: 1;
-    }
-
-    // .warning-icon {
-    //   margin-right: utils.rem(spacing.$small);
-    // }
   }
 
   &__toggleLabel {
@@ -89,19 +75,9 @@
     > :first-child {
       margin-top: 0;
     }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
   }
 }
-
-// .warningTheme {
-//   background: colours.$caution-background;
-//   border: 1px solid colours.$caution;
-
-//   .toggleLabel {
-//     color: colours.$accordion-toggle-warning-label;
-//   }
-
-//   .summary:hover,
-//   .summary:hover * {
-//     color: colours.$accordion-summary-hover;
-//   }
-// }
