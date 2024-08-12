@@ -5,9 +5,10 @@
 @use '@nice-digital/nds-core/scss/utils';
 
 .accordion {
-  background: colours.$accordion-default-background;
+  background-color: colours.$accordion-default-background;
   display: flex;
   flex-direction: column;
+  font-family: typography.get-font-family(sans);
   margin: utils.rem(spacing.$medium 0);
   max-width: 40rem;
 
@@ -17,6 +18,7 @@
      the max-width from typography styles */
   &__heading {
     display: flex;
+    font-family: inherit;
     margin: 0;
     max-width: 100%;
   }
@@ -26,45 +28,34 @@
     border: 1px solid colours.$accordion-details-border;
     cursor: pointer;
     display: flex;
-    flex-direction: column-reverse;
     flex: 1;
-    font-family: typography.get-font-family(sans);
-    list-style: none;
+    flex-direction: column-reverse;
+    gap: utils.rem(spacing.$x-small);
     padding: utils.rem(spacing.$medium);
     text-align: left;
+    transition: background-color 0.25s ease;
 
-    &::-webkit-details-marker {
-      display: none;
-    }
-
-    &:hover,
-    &:hover * {
+    &:hover {
       background-color: colours.$accordion-summary-hover;
 
       .accordion__toggleLabel {
         color: colours.$accrordion-label-text-hover;
       }
     }
-
-    > :last-child {
-      @include typography.font-size(2);
-      font-weight: bold;
-      margin: 0;
-      display: flex;
-      align-items: center;
-    }
   }
 
   &__title {
+    @include typography.font-size(2);
     align-items: center;
     display: flex;
+    font-weight: bold;
     gap: utils.rem(spacing.$small);
-    margin-bottom: 0;
-  }
+    margin: 0;
 
-  &__toggleLabel {
-    color: colours.$accrordion-label-text;
-    margin-top: utils.rem(spacing.$x-small);
+    > svg {
+      display: block;
+      min-width: 1em;
+    }
   }
 
   &__content {
@@ -74,6 +65,12 @@
 
     > :first-child {
       margin-top: 0;
+
+      // in circumstances where the first child is a heading of a nested container
+      // e.g. .accordion__content > div > heading
+      > :first-child:is(h2, h3, h4, h5, h6) {
+        margin-top: 0;
+      }
     }
 
     > :last-child {

@@ -39,7 +39,7 @@ export const AccordionButton: FC<AccordionButtonProps> = ({
 				{isOpen ? hideLabel : showLabel}
 			</Toggle>{" "}
 			<span className="accordion__title">
-				{variant === "caution" && <WarningIcon className="warning-icon" />}
+				{variant === "caution" && <WarningIcon className="accordion__icon" />}
 				{title}
 			</span>
 		</button>
