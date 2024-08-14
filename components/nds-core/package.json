@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-core",
-	"version": "4.0.13-alpha.0",
+	"version": "4.0.13",
 	"description": "Core code for the NICE Design System",
 	"author": "Ian Routledge <ian.routledge@nice.org.uk>",
 	"contributors": [
@@ -32,7 +32,7 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
-		"@nice-digital/icons": "^6.1.4-alpha.0",
+		"@nice-digital/icons": "^6.1.4",
 		"sass-mq": "^6.0.0"
 	},
 	"peerDependencies": {
