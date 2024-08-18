@@ -7,8 +7,14 @@ export const DefaultAccordion = () => (
 	</Accordion>
 );
 
+export const AccordionWithHeading = () => (
+	<Accordion title="Accordion with heading title" headingLevel={2}>
+		<p>Inner content of accordion</p>
+	</Accordion>
+);
+
 export const CautionAccordion = () => (
-	<Accordion title="Caution accordion title" isCaution={true}>
+	<Accordion title="Caution accordion title" variant="caution">
 		Our monthly newsletter, keeping you up to date with{" "}
 		<a href="#">important developments at NICE</a>
 	</Accordion>
@@ -27,12 +33,12 @@ export const AccordionGroupExample = () => (
 
 export const AccordionGroupWithCautionExample = () => (
 	<AccordionGroup>
-		<Accordion key="1" title="Accordion 1" isCaution={true}>
+		<Accordion key="1" title="Accordion 1" variant="caution">
 			Caution Accordion 1 body
 		</Accordion>
 		<Accordion key="2" title="Accordion 2">
 			Accordion 2 body
-			<Accordion key="2" title="Nested Accordion 1">
+			<Accordion key="3" title="Nested Accordion 1">
 				Nested Accordion 1 body
 			</Accordion>
 		</Accordion>
@@ -46,7 +52,7 @@ export const AccordionGroupNestedAccordionExample = () => (
 		</Accordion>
 		<Accordion key="2" title="Accordion 2">
 			Accordion 2 body
-			<Accordion key="2" title="Nested Accordion 1">
+			<Accordion key="3" title="Nested Accordion 1">
 				Nested Accordion 1 body
 			</Accordion>
 		</Accordion>
