@@ -25,7 +25,8 @@
 		"url": "git+https://github.com/nice-digital/nice-design-system.git"
 	},
 	"scripts": {
-		"test": "echo \"Error: run tests from root\" && exit 1"
+		"test": "echo \"Error: run tests from root\" && exit 1",
+    "readme": "doctoc ./README.md"
 	},
 	"bugs": {
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
