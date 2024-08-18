@@ -14,3 +14,8 @@ import "jest-extended";
 import { TextEncoder, TextDecoder as NodeTextDecoder } from "util";
 global.TextEncoder = TextEncoder;
 global.TextDecoder = NodeTextDecoder as typeof TextDecoder;
+
+jest.mock("react", () => ({
+	...jest.requireActual("react"),
+	useId: () => "r:id"
+}));

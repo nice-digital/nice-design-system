@@ -77,16 +77,6 @@ describe("Accordion", () => {
 		}
 	);
 
-	xit("should add class for styling details", () => {
-		render(
-			<Accordion title="Test">
-				<p>Body content</p>
-			</Accordion>
-		);
-
-		expect(screen.getByRole("group")).toHaveClass("accordion__details");
-	});
-
 	it.each([
 		[2, "heading2"],
 		[3, "heading3"],
@@ -113,20 +103,6 @@ describe("Accordion", () => {
 			expect(screen.getByRole("heading")).toHaveTextContent(headingText);
 		}
 	);
-
-	it("should add class for styling summary", () => {
-		render(
-			<Accordion title="Test">
-				<p>Body content</p>
-			</Accordion>
-		);
-
-		expect(
-			screen.getByText(
-				(_content, element) => element?.textContent === "Show Test"
-			)
-		).toHaveClass("accordion__summary");
-	});
 
 	it("should wrap string title in span", () => {
 		render(
@@ -254,7 +230,8 @@ describe("Accordion", () => {
 			</Accordion>
 		);
 
-		const accordion = screen.getByRole("button").parentElement;
+		const accordionHeader = screen.getByRole("button").parentElement;
+		const accordion = accordionHeader?.parentElement;
 		expect(accordion).toHaveClass("custom-class-name");
 	});
 
@@ -265,7 +242,8 @@ describe("Accordion", () => {
 			</Accordion>
 		);
 
-		const accordion = screen.getByRole("button").parentElement;
+		const accordionHeader = screen.getByRole("button").parentElement;
+		const accordion = accordionHeader?.parentElement;
 		expect(accordion).toMatchSnapshot();
 	});
 });
