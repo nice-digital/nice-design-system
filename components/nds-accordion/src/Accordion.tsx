@@ -76,70 +76,33 @@ export const Accordion: FC<AccordionProps> = ({
 		setIsOpen(!isOpen);
 	};
 
-	const renderButton = () => {
-		return (
-			<button
-				aria-expanded={isOpen}
-				aria-controls={generatedId}
-				onClick={toggleAccordion}
-				data-tracking={isOpen ? hideLabel : showLabel}
-				className="accordion__summary"
-				type="button"
-			>
-				<Toggle isOpen={isOpen} className={"accordion__toggleLabel"}>
-					{isOpen ? hideLabel : showLabel}
-				</Toggle>{" "}
-				<span className="accordion__title">
-					{variant === "caution" && <WarningIcon className="accordion__icon" />}
-					{title}
-				</span>
-			</button>
-		);
-	};
-
-	const renderTitle = () => {
-		const HeadingTag = headingLevel
-			? (`h${headingLevel}` as keyof JSX.IntrinsicElements)
-			: "div";
-		return (
-			<HeadingTag className="accordion__heading">{renderButton()}</HeadingTag>
-		);
-	};
-
-	// const renderTitle = () => {
-	// 	if (headingLevel) {
-	// 		const Tag = `h${headingLevel}` as keyof JSX.IntrinsicElements;
-	// 		return (
-	// 			<Tag className="accordion__heading">
-	// 				<AccordionButton
-	// 					isOpen={isOpen}
-	// 					toggleAccordion={toggleAccordion}
-	// 					generatedId={generatedId}
-	// 					showLabel={showLabel}
-	// 					hideLabel={hideLabel}
-	// 					title={title}
-	// 					variant={variant}
-	// 				/>
-	// 			</Tag>
-	// 		);
-	// 	} else {
-	// 		return (
-	// 			<AccordionButton
-	// 				isOpen={isOpen}
-	// 				toggleAccordion={toggleAccordion}
-	// 				generatedId={generatedId}
-	// 				showLabel={showLabel}
-	// 				hideLabel={hideLabel}
-	// 				title={title}
-	// 				variant={variant}
-	// 			/>
-	// 		);
-	// 	}
-	// };
+	const HeadingTag = headingLevel
+		? (`h${headingLevel}` as keyof JSX.IntrinsicElements)
+		: "div";
 
 	return (
 		<div className={["accordion", className].join(" ")}>
-			{renderTitle()}
+			{/* {renderTitle()} */}
+			<HeadingTag className="accordion__heading">
+				<button
+					aria-expanded={isOpen}
+					aria-controls={generatedId}
+					onClick={toggleAccordion}
+					data-tracking={isOpen ? hideLabel : showLabel}
+					className="accordion__summary"
+					type="button"
+				>
+					<Toggle isOpen={isOpen} className={"accordion__toggleLabel"}>
+						{isOpen ? hideLabel : showLabel}
+					</Toggle>{" "}
+					<span className="accordion__title">
+						{variant === "caution" && (
+							<WarningIcon className="accordion__icon" />
+						)}
+						{title}
+					</span>
+				</button>
+			</HeadingTag>
 			{/* Avoid accordion groups opening nested accordions */}
 			<AccordionGroupProvider isGroupOpen={false}>
 				<div
