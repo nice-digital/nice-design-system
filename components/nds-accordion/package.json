@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-accordion",
-	"version": "0.2.5-alpha.0",
+	"version": "0.2.6-alpha.0",
 	"description": "Accordion component for the NICE Design System",
 	"author": "John Davey <john.davey@nice.org.uk>",
 	"homepage": "https://design-system.nice.org.uk/",
@@ -26,7 +26,7 @@
 	},
 	"scripts": {
 		"test": "echo \"Error: run tests from root\" && exit 1",
-    "readme": "doctoc ./README.md"
+		"readme": "doctoc ./README.md"
 	},
 	"bugs": {
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
