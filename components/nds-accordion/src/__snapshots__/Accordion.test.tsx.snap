@@ -60,6 +60,7 @@ exports[`Accordion should allow the passing of caution variant 1`] = `
     </button>
   </div>
   <div
+    aria-labelledby="accordion-heading-r:id"
     class="accordion__content"
     hidden=""
     id="accordion-content-r:id"

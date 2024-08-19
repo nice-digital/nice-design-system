@@ -78,7 +78,8 @@ The `Accordion` can be used as a standalone component or within an AccordionGrou
 
 ##### title
 
-- Type: `string`
+- Type: `string | number`
+- Required: Yes
 
 The title of the accordion.  This is nested text within the accordions button.
 
@@ -91,12 +92,14 @@ The title of the accordion.  This is nested text within the accordions button.
 ##### open
 
 - Type: `boolean`
+- Required: No
 
-The default state of the details element and whether the accordion is open and closed.
+The default state of the the accordion being open or closed.
 
 ##### showLabel
 
 - Type: `string`
+- Required: No
 
 The label of the accordion toggle label when the is accordion closed.
 
@@ -109,6 +112,7 @@ The label of the accordion toggle label when the is accordion closed.
 ##### hideLabel
 
 - Type: `string`
+- Required: No
 
 The label of the accordion toggle label when the is accordion open.
 
@@ -121,8 +125,9 @@ The label of the accordion toggle label when the is accordion open.
 ##### children
 
 - Type: `React.ReactNode`
+- Required: Yes
 
-The body of the `Accordion` component hidden content.
+The body of the `Accordion` component, which is hidden by default.
 
 ```js
 <Accordion title="An accordion title" hideLabel="Hide the content">
@@ -133,6 +138,7 @@ The body of the `Accordion` component hidden content.
 ##### variant
 
 - Type: `"caution"` | `"default"`
+- Required: No
 - Default: `"default"`
 
 The variant of the accordion. Leave blank for the default variant. 
@@ -147,6 +153,7 @@ When caution is provided it displays a `WarningIcon` that preceeds the accordion
 ##### className
 
 - Type: `string`
+- Required: No
 - Default: `""`
 
 Any additional classes that you would like applied to the `<Accordion>` component, or to target it's hidden content children.
@@ -157,19 +164,54 @@ Any additional classes that you would like applied to the `<Accordion>` componen
 </Accordion>
 ```
 
+##### displayTitleAsHeading
+
+- Type: `boolean`
+- Required: No
+- Default: `false`
+
+If `true` the title will be wrapped in a heading element (`h2`,`h3`,`h4`,`h5`, or `h6`), as specified by the `headingLevel` prop.  
+If `false` the title is wrapped in a `div` element 
+
 ##### headingLevel (optional)
 
-- Type: `2 | 3 | 4 | 5 | 6`  
+- Type: `2 | 3 | 4 | 5 | 6`
+- Required: Only if the `displayTitleAsHeading` is `true`
 
-This is an optional field, that sets a wrapping heading level element around the accordions button. The nested button contains the title prop text.
-
-As this is an optional field, it carries no default value. If no headingLevel is provided, it defaults to a button which contains the title prop text.
+Specifies the heading level level to be used around the accordions button. This prop is only applicable when `displayTitleAsHeading` is true.
 
 No cascade for accordion hidden content headings is currently available in this component. This is due to the dynamic nature of the accordions hidden content and where that content could be generated.  It is currently up to editors to decide on correct, cascading heading levels for the accordions hidden content.
 
 ```js
 <Accordion title="An accordion title" headingLevel={2}>
   <p>This is the accordions hidden content. Hidden by default.</p>
+</Accordion>
+```
+
+#### Prop Type Combinations
+
+The Accordion component uses a union type to ensure that the `displayTitleAsHeading` and `headingLevel` props are mutually exclusive in the following way:
+
+- When `displayTitleAsHeading` is `true`:
+
+- -The `headingLevel` prop is required and determines the level of the heading (e.g., h2, h3, h4, h5, h6).
+- - The title will be wrapped in the specified heading element.
+
+- When `displayTitleAsHeading` is `false` or not provided:
+- - The `headingLevel` prop must be omitted or set to `undefined`.
+- - The title will be wrapped in a div element instead of a heading.
+
+This setup should prevent invalid combinations of props at compile time.
+
+```js
+// Example of using displayTitleAsHeading with headingLevel
+<Accordion title="Section 1" displayTitleAsHeading={true} headingLevel={2}>
+  <p>This content is hidden by default and shown when the accordion is expanded.</p>
+</Accordion>
+
+// Example of omitting headingLevel
+<Accordion title="Section 2" displayTitleAsHeading={false}>
+  <p>This content is hidden by default and shown when the accordion is expanded.</p>
 </Accordion>
 ```
 
@@ -183,21 +225,21 @@ Represents a group of `Accordions` with state to control toggling of all grouped
 ##### children
 
 - Type: `React.ReactNode`
+- Required: Yes
 
 The child `Accordion` components to be rendered inside the `AccordionGroup`
 
 ##### toggleText
 
 - Type: `function`
+- Required: No
 
-Is a prop for an optional function that takes a boolean `isOpen` parmameter and returns a `ReactNode`.  
-
-It allows us to update the wording of the `AccordionGroup` toggle button text based on the `isOpen` state.
-
+A function that returns the text for the group's toggle button based on whether the group is open or closed. 
 Defaults to a`defaultToggleTextFn` function that returns "Show all sections" or "Hide all sections" based on the `isOpen` state.
 
 ##### onToggle
 
 - Type: `function`
+- Required: No
 
 Is and optional prop that provides a callback function to be called whenever the `AccordionGroup` toggle button is clicked.

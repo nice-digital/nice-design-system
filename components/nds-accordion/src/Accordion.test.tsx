@@ -84,11 +84,12 @@ describe("Accordion", () => {
 		[5, "heading5"],
 		[6, "heading6"]
 	])(
-		"should show a heading element if one is passed ",
+		"should show a heading element if one is passed and displayTitleAsHeading is true",
 		(heading, headingText) => {
 			render(
 				<Accordion
 					title={headingText}
+					displayTitleAsHeading={true}
 					headingLevel={heading as 2 | 3 | 4 | 5 | 6}
 				>
 					<p>Body content</p>

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Accordion, AccordionGroup } from "@nice-digital/nds-accordion";
-
+import { Accordion as TestAccordion } from "../../components/nds-accordion/src/Accordion";
 export default function Test() {
 	return (
 		<>
@@ -19,20 +19,47 @@ export default function Test() {
 
 			<h2>Accordion default variant</h2>
 
-			<Accordion title={"Accordion title"} headingLevel={2}>
+			<Accordion
+				title={"Accordion with headingLevel and displayTitleAsHeading true"}
+				displayTitleAsHeading={true}
+				headingLevel={2}
+			>
 				<p>test para</p>
 			</Accordion>
 
-			<Accordion title={"Caution title"} variant="caution" headingLevel={3}>
+			<Accordion
+				title={"Accordion title"}
+				displayTitleAsHeading={true}
+				headingLevel={2}
+			>
 				<p>test para</p>
 			</Accordion>
-			<Accordion title={"Hello title"} variant="caution" headingLevel={2}>
+
+			<Accordion
+				title={"Caution title"}
+				displayTitleAsHeading={true}
+				variant="caution"
+				headingLevel={3}
+			>
+				<p>test para</p>
+			</Accordion>
+
+			<Accordion
+				title={"Hello title"}
+				variant="caution"
+				displayTitleAsHeading={true}
+				headingLevel={2}
+			>
 				<div>
 					<h3>Test heading in content</h3>
 					<p>Some test paragraph</p>
 				</div>
 			</Accordion>
-			<Accordion title={"Test nested accordion"} headingLevel={2}>
+			<Accordion
+				title={"Test nested accordion"}
+				displayTitleAsHeading={true}
+				headingLevel={2}
+			>
 				<div>
 					<h3>Test heading in content</h3>
 					<p>Some test paragraph</p>
@@ -40,6 +67,7 @@ export default function Test() {
 				<Accordion
 					title={"Hello nested accordion"}
 					variant="caution"
+					displayTitleAsHeading={true}
 					headingLevel={3}
 				>
 					<div>
@@ -50,13 +78,27 @@ export default function Test() {
 			</Accordion>
 			<div>
 				<AccordionGroup>
-					<Accordion key="1" title="Accordion 1" headingLevel={3}>
+					<Accordion
+						key="1"
+						title="Accordion 1"
+						displayTitleAsHeading={true}
+						headingLevel={3}
+					>
 						Accordion 1 body
 					</Accordion>
-					<Accordion key="2" title="Accordion 2" headingLevel={6}>
+					<Accordion
+						key="2"
+						title="Accordion 2"
+						displayTitleAsHeading={true}
+						headingLevel={6}
+					>
 						Accordion 2 body
 					</Accordion>
-					<Accordion title={"Test nested accordion in group"} headingLevel={2}>
+					<Accordion
+						title={"Test nested accordion in group"}
+						displayTitleAsHeading={true}
+						headingLevel={2}
+					>
 						<div>
 							<h3>Test heading in content</h3>
 							<p>Some test paragraph</p>
@@ -64,6 +106,7 @@ export default function Test() {
 						<Accordion
 							title={"Hello nested accordion in group"}
 							variant="caution"
+							displayTitleAsHeading={true}
 							headingLevel={3}
 						>
 							<div>

@@ -8,7 +8,11 @@ export const DefaultAccordion = () => (
 );
 
 export const AccordionWithHeading = () => (
-	<Accordion title="Accordion with heading title" headingLevel={2}>
+	<Accordion
+		title="Accordion with heading title"
+		displayTitleAsHeading={true}
+		headingLevel={2}
+	>
 		<p>Inner content of accordion</p>
 	</Accordion>
 );
@@ -52,9 +56,6 @@ export const AccordionGroupNestedAccordionExample = () => (
 		</Accordion>
 		<Accordion key="2" title="Accordion 2">
 			Accordion 2 body
-			<Accordion key="3" title="Nested Accordion 1">
-				Nested Accordion 1 body
-			</Accordion>
 		</Accordion>
 	</AccordionGroup>
 );
