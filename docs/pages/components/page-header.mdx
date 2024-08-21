@@ -1,6 +1,6 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
 import { Example } from "components/examples/Example";
-import { DefaultHeader, PreHeader, LeadHeader, MetadataHeader, CTAHeader, FullWidthLightHeader, FullWidthDarkHeader, HeaderWithBreadcrumbs, HeaderWithDescription, HeaderWithSecondSection } from "components/examples/PageHeader";
+import { DefaultHeader, PreHeader, LeadHeader, MetadataHeader, CTAHeader, FullWidthLightHeader, FullWidthDarkHeader, HeaderWithBreadcrumbs, HeaderWithDescription, HeaderWithSecondSection, WithVerticalPadding } from "components/examples/PageHeader";
 
 export const meta = {
 	title: "Page Header",
@@ -228,6 +228,31 @@ Use underneath the breadcrumb inside a container and above the main content. Use
 ```
 </CH.Code>
 </Example>
+
+### verticalPadding
+
+<Example>
+<WithVerticalPadding />
+<CH.Code>
+```js React
+<PageHeader
+	heading="I have vertical padding!"
+	verticalPadding="loose"
+/>
+```
+```html HTML
+<div
+  class="page-header page-header--vertical-padding-loose"
+  data-component="page-header"
+>
+  <div class="container">
+    <h1 class="page-header__heading">I have vertical padding!</h1>
+  </div>
+</div>
+```
+</CH.Code>
+</Example>
+
 
 ### Header with second section
 

@@ -14,6 +14,7 @@ export interface PageHeaderProps {
 	description?: React.ReactNode;
 	cta?: React.ReactNode;
 	secondSection?: React.ReactNode;
+	verticalPadding?: "loose";
 	variant?: "normal" | "fullWidthDark" | "fullWidthLight";
 }
 
@@ -30,6 +31,7 @@ export const PageHeader: React.FC<PageHeaderProps> = (
 		description,
 		cta,
 		secondSection,
+		verticalPadding,
 		variant = "normal",
 		...rest
 	} = props;
@@ -45,6 +47,11 @@ export const PageHeader: React.FC<PageHeaderProps> = (
 		case "fullWidthLight":
 			variantClassname = "page-header--full-width-light";
 			break;
+	}
+
+	// Figure out vertical padding
+	if (verticalPadding === "loose") {
+		variantClassname += " page-header--vertical-padding-loose";
 	}
 
 	// Figure out grid

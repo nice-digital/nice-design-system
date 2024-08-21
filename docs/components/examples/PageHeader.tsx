@@ -59,6 +59,10 @@ export const FullWidthDarkHeader = () => (
 	/>
 );
 
+export const WithVerticalPadding = () => (
+	<PageHeader heading="I have vertical padding" verticalPadding="loose" />
+);
+
 export const HeaderWithSecondSection = () => (
 	<PageHeader
 		heading="There's a second section here!"

@@ -159,6 +159,24 @@ The two full width variants span the full width of the page, breaking out of any
 	heading="I am a full width dark header!"
 	variant="fullWidthDark"
 />
+```
+
+#### verticalPadding
+
+- Type: "loose";
+- Default: null;
+
+The normal variant is the default and can be omitted.
+
+The verticalPadding `loose` value updates the top and bottom padding of the `PageHeader` container.
+
+```jsx
+<PageHeader
+	heading="I am a full width light header!"
+	veritalPadding="loose"
+/>
+```
+
 
 ### SCSS
 
