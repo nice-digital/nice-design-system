@@ -105,6 +105,16 @@ describe("Accordion", () => {
 		}
 	);
 
+	it("should not show a heading element if displayTitleAsHeading is false", () => {
+		render(
+			<Accordion title="Some title">
+				<p>Body content</p>
+			</Accordion>
+		);
+
+		expect(screen.queryByRole("heading")).not.toBeInTheDocument();
+	});
+
 	it("should wrap string title in span", () => {
 		render(
 			<Accordion title="Test">

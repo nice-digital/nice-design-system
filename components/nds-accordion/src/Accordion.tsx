@@ -23,26 +23,17 @@ export const accordionVariants = {
 	caution: "caution"
 } as const;
 
-export interface BaseAccordionProps {
+export interface AccordionProps {
 	children: ReactNode;
 	className?: string;
+	displayTitleAsHeading?: boolean;
+	headingLevel?: number | string;
 	hideLabel?: ReactNode;
 	open?: boolean;
 	showLabel?: string;
 	title: string | number;
 	variant?: keyof typeof accordionVariants;
 }
-export interface HeadingAccordionProps extends BaseAccordionProps {
-	displayTitleAsHeading: true;
-	headingLevel: 2 | 3 | 4 | 5 | 6;
-}
-
-export interface NonHeadingAccordionProps extends BaseAccordionProps {
-	displayTitleAsHeading?: false;
-	headingLevel?: never;
-}
-
-export type AccordionProps = HeadingAccordionProps | NonHeadingAccordionProps;
 
 export const Accordion: FC<AccordionProps> = ({
 	children,
@@ -86,8 +77,16 @@ export const Accordion: FC<AccordionProps> = ({
 		setIsOpen(!isOpen);
 	};
 
+	let validHeadingLevel = 2;
+	if (headingLevel !== undefined) {
+		const headingLevelAsNumber = Number(headingLevel);
+		if (headingLevelAsNumber >= 2 && headingLevelAsNumber <= 6) {
+			validHeadingLevel = headingLevelAsNumber;
+		}
+	}
+
 	const HeadingTag = displayTitleAsHeading
-		? (`h${headingLevel}` as keyof JSX.IntrinsicElements)
+		? (`h${validHeadingLevel}` as keyof JSX.IntrinsicElements)
 		: "div";
 
 	return (
