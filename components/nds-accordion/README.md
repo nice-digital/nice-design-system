@@ -180,38 +180,9 @@ If `false` the title is wrapped in a `div` element
 
 Specifies the heading level level to be used around the accordions button. This prop is only applicable when `displayTitleAsHeading` is true.
 
-No cascade for accordion hidden content headings is currently available in this component. This is due to the dynamic nature of the accordions hidden content and where that content could be generated.  It is currently up to editors to decide on correct, cascading heading levels for the accordions hidden content.
-
 ```js
 <Accordion title="An accordion title" headingLevel={2}>
   <p>This is the accordions hidden content. Hidden by default.</p>
-</Accordion>
-```
-
-#### Prop Type Combinations
-
-The Accordion component uses a union type to ensure that the `displayTitleAsHeading` and `headingLevel` props are mutually exclusive in the following way:
-
-- When `displayTitleAsHeading` is `true`:
-
-- -The `headingLevel` prop is required and determines the level of the heading (e.g., h2, h3, h4, h5, h6).
-- - The title will be wrapped in the specified heading element.
-
-- When `displayTitleAsHeading` is `false` or not provided:
-- - The `headingLevel` prop must be omitted or set to `undefined`.
-- - The title will be wrapped in a div element instead of a heading.
-
-This setup should prevent invalid combinations of props at compile time.
-
-```js
-// Example of using displayTitleAsHeading with headingLevel
-<Accordion title="Section 1" displayTitleAsHeading={true} headingLevel={2}>
-  <p>This content is hidden by default and shown when the accordion is expanded.</p>
-</Accordion>
-
-// Example of omitting headingLevel
-<Accordion title="Section 2" displayTitleAsHeading={false}>
-  <p>This content is hidden by default and shown when the accordion is expanded.</p>
 </Accordion>
 ```
 
