@@ -100,7 +100,7 @@ export const PageHeader: React.FC<PageHeaderProps> = (
 			{...rest}
 		>
 			{isFullWidth ? (
-				<div className="container">
+				<div className="page-header__full-width-container">
 					<PageHeaderContent />
 				</div>
 			) : (

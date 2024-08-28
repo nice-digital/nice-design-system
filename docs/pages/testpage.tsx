@@ -70,6 +70,72 @@ export default function Test() {
 			<br />
 			<br />
 
+			<h2>Action banner default variant</h2>
+			<ActionBanner
+				title="A title"
+				cta={<Button variant="primary">A call to action</Button>}
+			>
+				<p>some content</p>
+			</ActionBanner>
+
+			<h2>Action banner subtle variant</h2>
+			<ActionBanner
+				title="A title"
+				cta={<Button variant="primary">A call to action</Button>}
+				variant="subtle"
+			>
+				<p>some content</p>
+			</ActionBanner>
+
+			<h2>Action banner full width variant</h2>
+			<ActionBanner
+				title="Full width action banner"
+				cta={<Button variant="cta">A call to action</Button>}
+				variant="fullWidth"
+				image="https://placebacon.net/600/400"
+			>
+				<p>
+					This is <a href="#">some content with a link</a>
+				</p>
+			</ActionBanner>
+
+			<h2>Action banner full width subtle variant </h2>
+			<ActionBanner
+				title="Full width subtle action banner"
+				cta={<Button variant="inverse">A call to action</Button>}
+				variant="fullWidthSubtle"
+			>
+				<p>
+					This is <a href="#">some content with a link</a>
+				</p>
+			</ActionBanner>
+
+			<h2>Action banner full width variant with image</h2>
+			<ActionBanner
+				title="Full width action banner with image"
+				cta={<Button variant="inverse">A call to action</Button>}
+				variant="fullWidth"
+				image="http://placekitten.com/g/800/1200"
+			>
+				<p>
+					This is <a href="#">some content with a link</a>
+				</p>
+			</ActionBanner>
+
+			<h2>Hero</h2>
+			<Hero title="Hello!" header={<p>Bread</p>} />
+
+			<Hero
+				title="Should have minimum height"
+				image="/images/hero-bg.jpg"
+				header={<p>Breadcrumbs here</p>}
+				intro={<p>Lots of summary text here</p>}
+				actions={<a className="btn btn--cta">I am a button</a>}
+				isDark={true}
+			/>
+
+			<Hero title="No minimum height here" />
+
 			<h2>Standard page header</h2>
 			<PageHeader
 				heading="Standard"
@@ -93,10 +159,13 @@ export default function Test() {
 				description={<div className="test">I am a description!!!!!!!!</div>}
 			/>
 
-			<h2>Full width light page header</h2>
+			<h2>Full width light page header, kitchen sink</h2>
 			<PageHeader
 				heading="Full width light"
+				lead="Lead paragraph right here"
+				description="I am a description, let's go onto multiple lines so we can properly test how things wrap; furthermore, I am a description, let's go onto multiple lines so we can properly test how things wrap."
 				variant="fullWidthLight"
+				cta={<a className="btn btn--cta">CTA!</a>}
 				breadcrumbs={
 					<Breadcrumbs>
 						<Breadcrumb to="https://www.nice.org.uk/">Home</Breadcrumb>
@@ -106,7 +175,6 @@ export default function Test() {
 						<Breadcrumb>Published</Breadcrumb>
 					</Breadcrumbs>
 				}
-				description={<div className="test">I am a description!!!!!!!!</div>}
 			/>
 
 			<h2>Second section page header</h2>
@@ -202,9 +270,6 @@ export default function Test() {
 					id massa pellentesque, bibendum risus in, interdum nibh.
 				</p>
 			</FullBleed>
-
-			<h2>Hero</h2>
-			<Hero title="Hello!" header={<p>Here is a header</p>} />
 		</>
 	);
 }

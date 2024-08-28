@@ -72,7 +72,6 @@ $action-banner-subtle-border: global.$nice-cream;
 $action-banner-full-width-background: global.$nice-teal;
 $action-banner-full-width-border: global.$nice-teal;
 $action-banner-full-width-subtle-background: global.$nice-cream-3;
-$action-banner-full-width-subtle-border: global.$nice-cream-3;
 $action-banner-full-width-dark-background-text-colour: global.$white;
 $action-banner-full-width-light-background-text-colour: global.$custom-blue-1;
 
@@ -124,9 +123,10 @@ $full-bleed-text-image-dark: global.$white;
 $full-bleed-text-image-light: global.$nice-black;
 
 // Hero
-$hero-background: global.$nice-blue-tint-1;
-$hero-border: global.$nice-blue-tint-2;
-$hero-image-wash: global.$nice-black;
+$hero-background-default: global.$nice-cream-3;
+$hero-background-dark: global.$nice-blue;
+$hero-text-default: global.$nice-black;
+$hero-text-dark: global.$white;
 
 // Horizontal nav
 $horizontal-nav-list-border: global.$nice-black;
@@ -182,9 +182,8 @@ $tag-background: global.$black-tint-1;
 $tag-remove: global.$nice-teal;
 $tag-remove-hover-after: global.$nice-black;
 $tag-print-text: global.$black;
+
 // Tag colours
-$tag-outline-text: global.$black-tint-1;
-$tag-outline-background: global.$custom-grey-4;
 $tag-alpha-background: global.$custom-pink;
 $tag-alpha-text: global.$white;
 $tag-beta-background: global.$custom-orange-2;
@@ -197,6 +196,9 @@ $tag-error-background: global.$custom-red-1;
 $tag-error-text: global.$custom-red-1-tint;
 $tag-info-background: global.$custom-blue-3;
 $tag-info-text: global.$black;
+$tag-outline-background: global.$white;
+$tag-outline-border: global.$black-tint-1;
+$tag-outline-text: global.$black-tint-1;
 $tag-new-background: global.$yellow;
 $tag-new-text: global.$black;
 $tag-success-background: global.$custom-green-1;

@@ -13,41 +13,38 @@
 /// Hero banner component.
 /// @since 0.2.0
 .hero {
-  @include typography.links-inverse;
+  @include layout.fullWidth;
   @include focus.inverse-button-focus;
-  background: colours.$hero-background;
-  color: colours.$text-inverse;
-  left: calc(50%);
+  background: colours.$hero-background-default;
+  color: colours.$hero-text-default;
   margin-bottom: utils.rem(spacing.$large);
-  margin-left: -50vw;
-  margin-right: -50vw;
   overflow: hidden;
+  padding: utils.rem(spacing.$large) 0 utils.rem(spacing.$x-large);
   position: relative;
-  right: calc(50%);
-  width: 100vw;
 
-  & > * {
-    position: relative;
-    z-index: 2;
+  &--dark {
+    background: colours.$hero-background-dark;
+    color: colours.$hero-text-dark;
+
+    .breadcrumbs {
+      @include typography.links-inverse;
+    }
   }
 
-  .breadcrumbs {
-    @include typography.links-inverse;
+  &:has(.hero__image-container) {
+    @include media-queries.mq($from: md) {
+      min-height: 300px;
+    }
   }
 
   &__container {
-    @include layout.container;
+    @include layout.fullWidthContainer;
   }
 
   &__body {
-    @include layout.clearfix;
-    margin-top: utils.rem(spacing.$large);
-    padding: utils.rem(0 0 spacing.$large);
-  }
-
-  // Container for title, lead and actions
-  &__copy {
-    margin-bottom: utils.rem(spacing.$large);
+    @include media-queries.mq($from: md) {
+      width: 66%;
+    }
   }
 
   &__title {
@@ -56,68 +53,37 @@
 
   &__intro {
     @include typography.lead;
-  }
-
-  // Optional footer
-  &__footer {
-    align-items: center;
-    border-top: utils.rem(spacing.$xx-small) solid colours.$hero-border;
-    display: flex;
-    flex-flow: row wrap;
-    padding: utils.rem(spacing.$medium 0);
-
-    p,
-    ul {
-      margin: 0;
-      max-width: 100%;
-    }
+    margin-bottom: utils.rem(spacing.$large);
   }
 
   &__image-container {
     background-position: center center;
     background-size: cover;
     bottom: 0;
-    display: flex;
+    display: none;
     overflow: hidden;
     position: absolute;
     right: 0;
     top: 0;
-    width: 40%;
     z-index: 0;
 
     @include media-queries.mq($from: md) {
-      width: 33%;
+      display: flex;
+      width: 34%;
     }
 
     &::before {
-      background: colours.$hero-background;
+      background: colours.$hero-background-default;
       content: '';
       flex: 0 0 200px;
+      pointer-events: none;
       position: relative;
       transform: rotate(-15deg) scale(1.2) translateX(-60%);
       z-index: 1;
-    }
 
-    &::after {
-      background: colours.$hero-image-wash;
-      content: '';
-      inset: 0;
-      opacity: 0.6;
-      position: absolute;
-      z-index: 0;
-    }
-  }
-
-  @include media-queries.mq($from: md) {
-    &__copy {
-      float: left;
-      margin-bottom: 0;
-      width: 55%;
-    }
-
-    &__extra {
-      float: right;
-      width: 35%;
+      .hero--dark & {
+        background: colours.$hero-background-dark;
+      }
     }
   }
 }

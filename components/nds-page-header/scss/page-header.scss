@@ -71,11 +71,25 @@
     &--alt {
       @include typography.font-size(h1-alt);
     }
+
+    .page-header--full-width-light &,
+    .page-header--full-width-dark & {
+      margin-bottom: utils.rem(spacing.$large);
+    }
+  }
+
+  &__description {
+    @include typography.p();
   }
 
   &__lead {
     @include typography.font-size(lead);
     margin: utils.rem(0 0 spacing.$small 0);
+
+    .page-header--full-width-light &,
+    .page-header--full-width-dark & {
+      margin-bottom: utils.rem(spacing.$medium);
+    }
   }
 
   &__metadata {
@@ -116,10 +130,7 @@
     margin: 0;
   }
 
-  &__second-section {
-    @include media-queries.mq($from: md) {
-      border-left: 2px solid colours.$page-header-second-section-border-colour;
-      padding-left: utils.rem(spacing.$medium);
-    }
+  &__full-width-container {
+    @include layout.fullWidthContainer();
   }
 }

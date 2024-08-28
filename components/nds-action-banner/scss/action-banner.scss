@@ -38,7 +38,6 @@
 
   &__title {
     @include typography.font-size(3);
-    color: colours.$text-inverse;
     margin: utils.rem(0 0 spacing.$x-small);
   }
 
@@ -54,51 +53,106 @@
     }
   }
 
-  &__close {
-    @include focus.inverse-button-focus;
-    appearance: none;
-    background: 0;
-    border: 0;
-    color: colours.$text-inverse;
-    cursor: pointer;
-    line-height: 1;
-    padding: utils.rem(spacing.$small);
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 1;
-
-    &:hover {
-      background: rgb(0 0 0 / 20%);
-    }
-
-    &:focus {
-      @include focus.inverse-focus-style;
-    }
-  }
-
   &--subtle {
     @include typography.links-default;
     background: colours.$action-banner-subtle-background;
-    border: 1px solid colours.$action-banner-subtle-border;
     color: colours.$text;
-
-    .action-banner__title {
-      color: colours.$text;
-    }
-
-    .action-banner__close {
-      color: colours.$text;
-    }
 
     .action-banner__actions {
       @include focus.default-button-focus;
     }
   }
 
-  &--closeable {
+  &--full-width {
+    @include layout.fullWidth();
+    @include typography.links-default;
+    background: colours.$action-banner-full-width-background;
+    border: 0;
+    color: colours.$text-inverse;
+    padding: 0;
+
+    .action-banner__intro * {
+      @include typography.lead();
+      margin-top: utils.rem(spacing.$medium);
+      margin-bottom: utils.rem(spacing.$large);
+    }
+
+    .action-banner__container {
+      @include layout.fullWidthContainer();
+      min-height: 300px;
+      padding-top: utils.rem(spacing.$x-large);
+      padding-bottom: utils.rem(spacing.$x-large);
+    }
+
     .action-banner__title {
-      padding-right: utils.rem(spacing.$large); // Make room for close button
+      @include typography.h2();
+      margin: 0;
+    }
+
+    .action-banner__actions {
+      text-align: left;
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: unset;
+    }
+
+    .action-banner__actions > .btn.btn--inverse {
+      @include focus.default-button-focus;
+    }
+
+    .action-banner__text {
+      position: relative;
+      z-index: 1;
+    }
+
+    &__image-container {
+      aspect-ratio: 16 / 9;
+      background-position: center;
+      background-size: cover;
+      display: block;
+      height: 100%;
+    }
+
+    & a {
+      &:link,
+      &:visited,
+      &:hover,
+      &:active,
+      &:focus {
+        color: colours.$action-banner-full-width-dark-background-text-colour;
+        outline-color: colours.$focus-inverse;
+      }
+    }
+  }
+
+  &--full-width-subtle {
+    @extend .action-banner--full-width;
+
+    background: colours.$action-banner-full-width-subtle-background;
+    color: colours.$text;
+
+    .action-banner__actions {
+      @include focus.default-button-focus;
+    }
+
+    & a {
+      &:link,
+      &:visited,
+      &:hover,
+      &:active,
+      &:focus {
+        color: colours.$action-banner-full-width-light-background-text-colour;
+        outline-color: colours.$focus;
+      }
+    }
+  }
+
+  @include media-queries.mq($from: sm) {
+    &--full-width {
+      &__image-container {
+        aspect-ratio: 21 / 9;
+      }
     }
   }
 
@@ -191,11 +245,7 @@
     &--full-width {
       &__image-container {
         aspect-ratio: unset;
-        background-position: center center;
-        background-size: cover;
         bottom: 0;
-        display: none;
-        min-height: unset;
         overflow: hidden;
         position: absolute;
         right: 0;
@@ -217,6 +267,12 @@
           z-index: 1;
         }
       }
+
+      @include media-queries.mq($from: md) {
+        .action-banner__text {
+          width: 66%;
+        }
+      }
     }
 
     &__text {
@@ -231,16 +287,6 @@
       top: 50%;
       transform: translateY(-50%);
       width: math.percentage(1 * 0.25);
-    }
-
-    &--closeable {
-      .action-banner__title {
-        padding-right: 0;
-      }
-
-      .action-banner__actions {
-        right: utils.rem(spacing.$x-large);
-      }
     }
   }
 }
