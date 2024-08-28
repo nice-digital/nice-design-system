@@ -23,11 +23,12 @@ export const accordionVariants = {
 	caution: "caution"
 } as const;
 
+type HeadingLevel = number | string | undefined;
 export interface AccordionProps {
 	children: ReactNode;
 	className?: string;
 	displayTitleAsHeading?: boolean;
-	headingLevel?: number | string;
+	headingLevel?: HeadingLevel;
 	hideLabel?: ReactNode;
 	open?: boolean;
 	showLabel?: string;
@@ -47,7 +48,7 @@ export const Accordion: FC<AccordionProps> = ({
 	variant = "default"
 }) => {
 	const id = useId();
-	const titleId = `accordion-title-${id}`;
+	const buttonId = `accordion-button-${id}`;
 	const contentId = `accordion-content-${id}`;
 	const [isOpen, setIsOpen] = useState(open);
 	const { isGroupOpen } = useAccordionGroup();
@@ -77,22 +78,21 @@ export const Accordion: FC<AccordionProps> = ({
 		setIsOpen(!isOpen);
 	};
 
-	let validHeadingLevel = 2;
-	if (headingLevel !== undefined) {
-		const headingLevelAsNumber = Number(headingLevel);
-		if (headingLevelAsNumber >= 2 && headingLevelAsNumber <= 6) {
-			validHeadingLevel = headingLevelAsNumber;
-		}
-	}
+	const isValidValidLevel = (level: HeadingLevel): boolean => {
+		const levelAsNumber = Number(level);
+		return levelAsNumber >= 2 && levelAsNumber <= 6;
+	};
 
-	const HeadingTag = displayTitleAsHeading
-		? (`h${validHeadingLevel}` as keyof JSX.IntrinsicElements)
-		: "div";
+	const HeadingTag =
+		displayTitleAsHeading && isValidValidLevel(headingLevel)
+			? (`h${headingLevel}` as keyof JSX.IntrinsicElements)
+			: "div";
 
 	return (
 		<div className={["accordion", className].join(" ")}>
 			<HeadingTag className="accordion__heading">
 				<button
+					id={buttonId}
 					aria-expanded={isOpen}
 					aria-controls={contentId}
 					onClick={toggleAccordion}
@@ -105,7 +105,7 @@ export const Accordion: FC<AccordionProps> = ({
 					</Toggle>{" "}
 					<span className="accordion__title">
 						{variant === "caution" && (
-							<WarningIcon className="accordion__icon" />
+							<WarningIcon className="accordion__icon" aria-hidden="true" />
 						)}
 						{title}
 					</span>
@@ -117,7 +117,7 @@ export const Accordion: FC<AccordionProps> = ({
 					id={contentId}
 					className="accordion__content"
 					hidden={isClient && !isOpen}
-					aria-labelledby={titleId}
+					aria-labelledby={buttonId}
 				>
 					{children}
 				</div>

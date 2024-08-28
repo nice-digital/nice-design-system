@@ -4,7 +4,7 @@ exports[`Accordion should allow the passing of caution variant 1`] = `
 <div
   class="accordion "
 >
-  <div
+  <h2
     class="accordion__heading"
   >
     <button
@@ -12,6 +12,7 @@ exports[`Accordion should allow the passing of caution variant 1`] = `
       aria-expanded="false"
       class="accordion__summary"
       data-tracking="Show"
+      id="accordion-button-r:id"
       type="button"
     >
       <span
@@ -58,9 +59,9 @@ exports[`Accordion should allow the passing of caution variant 1`] = `
         test title
       </span>
     </button>
-  </div>
+  </h2>
   <div
-    aria-labelledby="accordion-title-r:id"
+    aria-labelledby="accordion-button-r:id"
     class="accordion__content"
     hidden=""
     id="accordion-content-r:id"
@@ -79,6 +80,7 @@ exports[`Accordion should match snapshot 1`] = `
     aria-expanded="false"
     class="accordion__summary"
     data-tracking="Show"
+    id="accordion-button-r:id"
     type="button"
   >
     <span
