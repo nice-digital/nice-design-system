@@ -180,55 +180,6 @@ Use underneath the breadcrumb inside a container and above the main content. Use
 </CH.Code>
 </Example>
 
-### Full width light variant
-
-
-<Example>
-<FullWidthLightHeader />
-<CH.Code>
-```js React
-<PageHeader
-	heading="I am a full width light header!"
-	variant="fullWidthLight"
-/>
-```
-```html HTML
-<div
-  class="page-header page-header--full-width-light"
-  data-component="page-header"
->
-  <div class="container">
-    <h1 class="page-header__heading">I am a full width light header!</h1>
-  </div>
-</div>
-```
-</CH.Code>
-</Example>
-
-### Full width dark variant
-
-<Example>
-<FullWidthDarkHeader />
-<CH.Code>
-```js React
-<PageHeader
-	heading="I am a full width dark header!"
-	variant="fullWidthDark"
-/>
-```
-```html HTML
-<div
-  class="page-header page-header--full-width-dark"
-  data-component="page-header"
->
-  <div class="container">
-    <h1 class="page-header__heading">I am a full width dark header!</h1>
-  </div>
-</div>
-```
-</CH.Code>
-</Example>
-
 ### verticalPadding
 
 <Example>
@@ -253,6 +204,57 @@ Use underneath the breadcrumb inside a container and above the main content. Use
 </CH.Code>
 </Example>
 
+### Full width light variant
+
+
+<Example>
+<FullWidthLightHeader />
+<CH.Code>
+```js React
+<PageHeader
+	heading="I am a full width light header!"
+	variant="fullWidthLight"
+	verticalPadding="loose"
+/>
+```
+```html HTML
+<div
+  class="page-header page-header--full-width-light page-header--vertical-padding-loose"
+  data-component="page-header"
+>
+  <div class="container">
+    <h1 class="page-header__heading">I am a full width light header!</h1>
+  </div>
+</div>
+```
+</CH.Code>
+</Example>
+
+### Full width dark variant
+
+<Example>
+<FullWidthDarkHeader />
+<CH.Code>
+```js React
+<PageHeader
+	heading="I am a full width dark header!"
+	variant="fullWidthDark"
+	verticalPadding="loose"
+/>
+```
+```html HTML
+<div
+  class="page-header page-header--full-width-dark page-header--vertical-padding-loose"
+  data-component="page-header"
+>
+  <div class="container">
+    <h1 class="page-header__heading">I am a full width dark header!</h1>
+  </div>
+</div>
+```
+</CH.Code>
+</Example>
+
 
 ### Header with second section
 
@@ -263,12 +265,13 @@ Use underneath the breadcrumb inside a container and above the main content. Use
 <PageHeader
 	heading="There's a second section here!"
 	variant="fullWidthLight"
+	verticalPadding="loose"
 	secondSection={secondSectionComponent}
 />
 ```
 ```html HTML
 <div
-  class="page-header page-header--full-width-light"
+  class="page-header page-header--full-width-light page-header--vertical-padding-loose"
   data-component="page-header"
 >
   <div class="container">
