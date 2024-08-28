@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode } from "react";
 import classnames from "classnames";
 
 import "../scss/action-banner.scss";
