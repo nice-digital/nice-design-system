@@ -20,6 +20,13 @@ export default function Test() {
 			<h2>Accordion default variant</h2>
 
 			<Accordion
+				title={"Accordion title"}
+				displayTitleAsHeading={true}
+				headingLevel={""}
+			>
+				<p>test para</p>
+			</Accordion>
+			<Accordion
 				title={"Accordion with headingLevel and displayTitleAsHeading true"}
 				displayTitleAsHeading={true}
 				headingLevel={2}
