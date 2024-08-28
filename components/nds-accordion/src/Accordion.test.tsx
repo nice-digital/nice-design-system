@@ -1,9 +1,9 @@
 import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
+import { renderToString } from "react-dom/server";
 import userEvent from "@testing-library/user-event";
 
 import { Accordion } from "./Accordion";
-import { renderToString } from "react-dom/server";
 
 describe("Accordion", () => {
 	it("should match snapshot", () => {
@@ -16,23 +16,41 @@ describe("Accordion", () => {
 		expect(screen.getByRole("button").parentElement).toMatchSnapshot();
 	});
 
-	it("should render the Accordion as open if rendered from server and JS is disabled", () => {
+	it("should render the Accordion as open if rendered from server (mimic server side render)", () => {
 		//mimic server side rendering and JS disabled
-		const accordion = renderToString(
-			<Accordion title="Server rendered accordion with JS disabled">
+		const accordionHtml = renderToString(
+			<Accordion
+				title="Server rendered accordion"
+				displayTitleAsHeading={true}
+				headingLevel={2}
+			>
 				<h3>Accordion body heading</h3>
 				<p>Accordion body content</p>
 			</Accordion>
 		);
 
-		const { getByText } = render(accordion);
-		const accordionText = screen.getByText(/Accordion body content/);
-		expect(accordionText).toBeVisible();
+		const container = document.createElement("div");
+		container.innerHTML = accordionHtml;
+		document.body.appendChild(container);
+
+		const button = screen.getByRole("button");
+		const contentDiv = screen.getByLabelText(/Server rendered accordion/i);
+
+		expect(button).toHaveAttribute("aria-expanded", "false");
+		expect(contentDiv).toBeVisible();
+		expect(contentDiv).not.toHaveAttribute("hidden");
+
+		// Clean up
+		document.body.removeChild(container);
 	});
 
 	it("should render the Accordion as closed if JS is enabled", () => {
 		const accordion = render(
-			<Accordion title="Server rendered accordion with JS enabled">
+			<Accordion
+				title="Server rendered accordion with JS enabled"
+				displayTitleAsHeading={true}
+				headingLevel={2}
+			>
 				<h3>Accordion body heading</h3>
 				<p>Accordion body content</p>
 			</Accordion>
@@ -90,7 +108,7 @@ describe("Accordion", () => {
 				<Accordion
 					title={headingText}
 					displayTitleAsHeading={true}
-					headingLevel={heading as 2 | 3 | 4 | 5 | 6}
+					headingLevel={heading}
 				>
 					<p>Body content</p>
 				</Accordion>
@@ -107,7 +125,7 @@ describe("Accordion", () => {
 
 	it("should not show a heading element if displayTitleAsHeading is false", () => {
 		render(
-			<Accordion title="Some title">
+			<Accordion title="Some title" headingLevel={2}>
 				<p>Body content</p>
 			</Accordion>
 		);
@@ -248,7 +266,12 @@ describe("Accordion", () => {
 
 	it("should allow the passing of caution variant", () => {
 		render(
-			<Accordion title="test title" variant="caution">
+			<Accordion
+				title="test title"
+				variant="caution"
+				displayTitleAsHeading={true}
+				headingLevel={2}
+			>
 				test content
 			</Accordion>
 		);
