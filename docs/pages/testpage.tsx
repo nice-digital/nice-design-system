@@ -24,51 +24,6 @@ export default function Test() {
 				MDX files don&apos;t have great Typescript integration, so it can
 				sometimes be hard to debug components using MDX alone.
 			</p>
-			<h2>Action banner</h2>
-			<h2>Action banner default variant</h2>
-			<ActionBanner
-				title="A title"
-				cta={<Button variant="primary">A call to action</Button>}
-				children={<p>some content</p>}
-			/>
-
-			<h2>Action banner subtle variant (with close)</h2>
-			<ActionBanner
-				title="A title"
-				cta={<Button variant="primary">A call to action</Button>}
-				variant="subtle"
-				children={<p>some content</p>}
-				onClosing={() => alert("some callback function onClosing")}
-			/>
-
-			<h2>Action banner full width variant</h2>
-			<ActionBanner
-				title="Full width action banner"
-				cta={<Button variant="cta">A call to action</Button>}
-				variant="fullWidth"
-				children={<p>some content</p>}
-			/>
-
-			<h2>Action banner full width subtle variant </h2>
-			<ActionBanner
-				title="Full width subtle action banner"
-				cta={<Button variant="inverse">A call to action</Button>}
-				variant="fullWidthSubtle"
-				children={<p>some content</p>}
-			/>
-
-			<h2>Action banner full width variant with image</h2>
-			<ActionBanner
-				title="Full width action banner with image"
-				cta={<Button variant="inverse">A call to action</Button>}
-				variant="fullWidth"
-				children={<p>some content</p>}
-				image="http://placekitten.com/g/800/1200"
-			/>
-			<br />
-			<br />
-			<br />
-			<br />
 
 			<h2>Action banner default variant</h2>
 			<ActionBanner
