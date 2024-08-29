@@ -105,7 +105,7 @@ export const Accordion: FC<AccordionProps> = ({
 					</Toggle>{" "}
 					<span className="accordion__title">
 						{variant === "caution" && (
-							<WarningIcon className="accordion__icon" aria-hidden="true" />
+							<WarningIcon className="accordion__icon" />
 						)}
 						{title}
 					</span>
