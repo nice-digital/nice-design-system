@@ -53,6 +53,15 @@ describe("PageHeader", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
+	it("should add the vertical padding class when the prop is passed", () => {
+		const { container } = render(
+			<PageHeader heading="This is our heading" verticalPadding="loose" />
+		);
+		expect(container.querySelector("div")).toHaveClass(
+			"page-header--vertical-padding-loose"
+		);
+	});
+
 	it("should pass additional props to the container", () => {
 		const { container } = render(
 			<PageHeader heading="This is our heading" data-track={false} />

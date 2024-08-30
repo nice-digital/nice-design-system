@@ -7,7 +7,23 @@
   background: transparent;
   border: 1px solid colours.$border;
   margin: 0 0 utils.rem(spacing.$medium);
+  overflow-x: hidden;
   padding: utils.rem(spacing.$medium);
+  position: relative;
+
+  &.expanded {
+    background-color: #fff;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+  }
+
+  & .expandButton {
+    margin-bottom: 2rem;
+  }
 
   & > h2,
   & > h3,
@@ -16,6 +32,12 @@
   & > h6 {
     @include typography.h6;
     margin-top: 0;
+  }
+
+  .fullWidthWrapper > :first-child {
+    max-width: 100%;
+    left: unset;
+    margin: unset;
   }
 
   // TODO: apply these styles specifically to the grid example page

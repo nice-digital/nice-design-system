@@ -1,6 +1,7 @@
 import { PageHeader } from "@nice-digital/nds-page-header";
 import { Button } from "@nice-digital/nds-button";
 import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
+import styles from "./PageHeaderExample.module.scss";
 
 export const DefaultHeader = () => <PageHeader heading="Welcome to the page" />;
 
@@ -49,6 +50,7 @@ export const FullWidthLightHeader = () => (
 	<PageHeader
 		heading="I am a full width light header!"
 		variant="fullWidthLight"
+		verticalPadding="loose"
 	/>
 );
 
@@ -56,16 +58,22 @@ export const FullWidthDarkHeader = () => (
 	<PageHeader
 		heading="I am a full width dark header!"
 		variant="fullWidthDark"
+		verticalPadding="loose"
 	/>
+);
+
+export const WithVerticalPadding = () => (
+	<PageHeader heading="I have vertical padding" verticalPadding="loose" />
 );
 
 export const HeaderWithSecondSection = () => (
 	<PageHeader
 		heading="There's a second section here!"
 		variant="fullWidthLight"
+		verticalPadding="loose"
 		secondSection={
 			<aside>
-				<h3>I am a second section</h3>
+				<h3 className={styles.secondSectionHeading}>I am a second section</h3>
 				<ol>
 					<li>One</li>
 					<li>Two</li>

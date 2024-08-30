@@ -14,6 +14,7 @@ export interface PageHeaderProps {
 	description?: React.ReactNode;
 	cta?: React.ReactNode;
 	secondSection?: React.ReactNode;
+	verticalPadding?: "loose";
 	variant?: "normal" | "fullWidthDark" | "fullWidthLight";
 }
 
@@ -30,6 +31,7 @@ export const PageHeader: React.FC<PageHeaderProps> = (
 		description,
 		cta,
 		secondSection,
+		verticalPadding,
 		variant = "normal",
 		...rest
 	} = props;
@@ -47,14 +49,19 @@ export const PageHeader: React.FC<PageHeaderProps> = (
 			break;
 	}
 
+	// Figure out vertical padding
+	if (verticalPadding === "loose") {
+		variantClassname += " page-header--vertical-padding-loose";
+	}
+
 	// Figure out grid
 	const mainSectionColumns = secondSection ? 9 : 12;
 
 	// TODO: Refactor this into some sort of conditional component
 	// e.g. https://dev.to/dailydevtips1/conditional-wrapping-in-react-46o5
-	const PageHeaderContent: React.FC = () => (
-		<Grid>
-			<GridItem md={{ cols: mainSectionColumns }}>
+	const PageHeaderContent: React.FC = () => {
+		const mainContent = (
+			<>
 				{breadcrumbs && (
 					<div className="page-header__breadcrumbs">{breadcrumbs}</div>
 				)}
@@ -68,13 +75,10 @@ export const PageHeader: React.FC<PageHeaderProps> = (
 					)}
 					{heading}
 				</h1>
-
 				{lead && <p className="page-header__lead">{lead}</p>}
-
 				{description && (
 					<div className="page-header__description">{description}</div>
 				)}
-
 				{metadata && (
 					<ul className="page-header__metadata">
 						{metadata.map((metadatum, i) => (
@@ -82,16 +86,23 @@ export const PageHeader: React.FC<PageHeaderProps> = (
 						))}
 					</ul>
 				)}
-
 				{cta && <p className="page-header__cta">{cta}</p>}
-			</GridItem>
-			{secondSection ? (
-				<GridItem md={{ cols: 3 }} className="page-header__second-section">
-					{secondSection}
-				</GridItem>
-			) : null}
-		</Grid>
-	);
+			</>
+		);
+
+		if (secondSection) {
+			return (
+				<Grid>
+					<GridItem md={{ cols: mainSectionColumns }}>{mainContent}</GridItem>
+					<GridItem md={{ cols: 3 }} className="page-header__second-section">
+						{secondSection}
+					</GridItem>
+				</Grid>
+			);
+		}
+
+		return <>{mainContent}</>;
+	};
 
 	return (
 		<div
