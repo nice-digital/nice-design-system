@@ -31,7 +31,6 @@
 /// @since 0.4.0
 .page-header {
   margin: utils.rem(0 0 spacing.$x-large 0);
-  padding: utils.rem(spacing.$large) 0 utils.rem(spacing.$x-large);
 
   &--full-width-light {
     @include layout.fullWidth();
@@ -56,6 +55,10 @@
         outline-color: colours.$page-header-full-width-dark-background-text-colour;
       }
     }
+  }
+
+  &--vertical-padding-loose {
+    padding: utils.rem(spacing.$large) 0 utils.rem(spacing.$x-large);
   }
 
   &__pre-heading {

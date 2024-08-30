@@ -355,6 +355,7 @@ Icon | Name | Unicode | HTML | SCSS
 <img src="src/twitter-square.svg" alt="twitter-square" height="50"> | twitter-square | f081 | `<span class="icon icon--twitter-square" aria-hidden="true"></span>` | `@include nice-icon(twitter-square);` 
 <img src="src/user.svg" alt="user" height="50"> | user | e01f | `<span class="icon icon--user" aria-hidden="true"></span>` | `@include nice-icon(user);` 
 <img src="src/warning.svg" alt="warning" height="50"> | warning | e04b | `<span class="icon icon--warning" aria-hidden="true"></span>` | `@include nice-icon(warning);` 
+<img src="src/x-logo.svg" alt="x-logo" height="50"> | x-logo | f104 | `<span class="icon icon--x-logo" aria-hidden="true"></span>` | `@include nice-icon(x-logo);` 
 <img src="src/youtube-play.svg" alt="youtube-play" height="50"> | youtube-play | f16a | `<span class="icon icon--youtube-play" aria-hidden="true"></span>` | `@include nice-icon(youtube-play);` 
 <img src="src/youtube-square.svg" alt="youtube-square" height="50"> | youtube-square | f166 | `<span class="icon icon--youtube-square" aria-hidden="true"></span>` | `@include nice-icon(youtube-square);` 
 

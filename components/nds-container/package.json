@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-container",
-	"version": "4.1.2-alpha.0",
+	"version": "4.0.13",
 	"description": "Container component for the NICE Design System",
 	"keywords": [
 		"container"
@@ -34,7 +34,7 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
-		"@nice-digital/nds-core": "^4.1.2-alpha.0",
+		"@nice-digital/nds-core": "^4.0.13",
 		"classnames": "^2.2.6"
 	},
 	"peerDependencies": {

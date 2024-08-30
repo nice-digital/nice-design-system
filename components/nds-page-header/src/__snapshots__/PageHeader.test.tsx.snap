@@ -9,27 +9,18 @@ exports[`PageHeader should allow a component to be passed as a prop 1`] = `
         class="page-header "
         data-component="page-header"
       >
-        <div
-          class="grid"
+        <h1
+          class="page-header__heading "
         >
-          <div
-            data-component="grid-item"
-            data-g="12 md:12"
-          >
-            <h1
-              class="page-header__heading "
-            >
-              This is our heading
-            </h1>
-            <p
-              class="page-header__cta"
-            >
-              <button>
-                Click Me
-              </button>
-            </p>
-          </div>
-        </div>
+          This is our heading
+        </h1>
+        <p
+          class="page-header__cta"
+        >
+          <button>
+            Click Me
+          </button>
+        </p>
       </div>
     </div>
   </body>,
@@ -38,27 +29,18 @@ exports[`PageHeader should allow a component to be passed as a prop 1`] = `
       class="page-header "
       data-component="page-header"
     >
-      <div
-        class="grid"
+      <h1
+        class="page-header__heading "
       >
-        <div
-          data-component="grid-item"
-          data-g="12 md:12"
-        >
-          <h1
-            class="page-header__heading "
-          >
-            This is our heading
-          </h1>
-          <p
-            class="page-header__cta"
-          >
-            <button>
-              Click Me
-            </button>
-          </p>
-        </div>
-      </div>
+        This is our heading
+      </h1>
+      <p
+        class="page-header__cta"
+      >
+        <button>
+          Click Me
+        </button>
+      </p>
     </div>
   </div>,
   "debug": [Function],
@@ -461,20 +443,11 @@ exports[`PageHeader should match the snapshot with only required heading prop su
         class="page-header "
         data-component="page-header"
       >
-        <div
-          class="grid"
+        <h1
+          class="page-header__heading "
         >
-          <div
-            data-component="grid-item"
-            data-g="12 md:12"
-          >
-            <h1
-              class="page-header__heading "
-            >
-              This is our heading
-            </h1>
-          </div>
-        </div>
+          This is our heading
+        </h1>
       </div>
     </div>
   </body>,
@@ -483,20 +456,11 @@ exports[`PageHeader should match the snapshot with only required heading prop su
       class="page-header "
       data-component="page-header"
     >
-      <div
-        class="grid"
+      <h1
+        class="page-header__heading "
       >
-        <div
-          data-component="grid-item"
-          data-g="12 md:12"
-        >
-          <h1
-            class="page-header__heading "
-          >
-            This is our heading
-          </h1>
-        </div>
-      </div>
+        This is our heading
+      </h1>
     </div>
   </div>,
   "debug": [Function],
