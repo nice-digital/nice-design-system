@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/design-system-docs",
-	"version": "1.0.30-alpha.0",
+	"version": "1.0.30",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",

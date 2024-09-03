@@ -4,7 +4,7 @@ import styles from "./Example.module.scss";
 
 interface ExampleProps {
 	fullWidth?: boolean;
-	fullWidthChildIndex: number;
+	fullWidthChildIndex?: number;
 	children?: ReactNode;
 }
 
