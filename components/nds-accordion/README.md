@@ -14,6 +14,7 @@ Accordion component for the NICE Design System
       - [children](#children)
       - [variant](#variant)
       - [className](#classname)
+      - [displayTitleAsHeading](#displaytitleasheading)
       - [headingLevel (optional)](#headinglevel-optional)
   - [`AccordionGroup`](#accordiongroup)
     - [`AccordionGroup` Props](#accordiongroup-props)
@@ -22,7 +23,6 @@ Accordion component for the NICE Design System
       - [onToggle](#ontoggle)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-Accordion component for the NICE Design System
 
 ## Installation
 
@@ -34,9 +34,9 @@ npm i @nice-digital/nds-accordion --save
 
 ## Usage
 
-This is a React controlled component, therefore we will not be providing snippets for html, scss or JavaScript.  If a non-React component is required for your project, please contact the design system project team through necessary channels for guidance.
+This component is not intended for non-React environments.  Please contact the design system project team through necessary channels for guidance under these circumstances. We will not be providing snippets for html, SCSSor JavaScript for this reason.
 
-If you're using a controlled group of Accordions. Import both the `Accordion` and `AccordionGroup` components from the package and use within TSX:
+If you're using a controlled group of Accordions. Import both the `Accordion` and `AccordionGroup` components from the package and use within the TSX as below:
 
 ```jsx
 import React from "react";
@@ -52,7 +52,7 @@ import { Accordion, AccordionGroup } from "@nice-digital/nds-accordion";
 </AccordionGroup>
 ```
 
-If you're using a single accordion, import the `Accordion` component and use within the TSX.
+If you're using a single accordion, import the `Accordion` component and use within the TSX, as below.
 
 ```jsx
 import React from "react";
@@ -61,6 +61,10 @@ import { Accordion } from "@nice-digital/nds-accordion";
 <Accordion title="Accordion title">
   <p>Accordion content </p>
 </Accordion>
+
+/**
+ * ...more content between Accordions
+*/
 
 <Accordion title="Accordion caution title" variant="caution">
   <p>Caution accordion content</p>
@@ -130,7 +134,7 @@ The label of the accordion toggle label when the is accordion open.
 The body of the `Accordion` component, which is hidden by default.
 
 ```js
-<Accordion title="An accordion title" hideLabel="Hide the content">
+<Accordion title="An accordion title">
   <p>This is the accordions child content. Hidden by default.</p>
 </Accordion>
 ```
@@ -157,6 +161,7 @@ When caution is provided it displays a `WarningIcon` that preceeds the accordion
 - Default: `""`
 
 Any additional classes that you would like applied to the `<Accordion>` component, or to target it's hidden content children.
+Test custom styles thoroughly to ensure they don't override critical component styles inadvertently.
 
 ```js
 <Accordion title="An accordion title" className={style.StoryAccordion}>
@@ -171,18 +176,43 @@ Any additional classes that you would like applied to the `<Accordion>` componen
 - Default: `false`
 
 If `true` the title will be wrapped in a heading element (`h2`,`h3`,`h4`,`h5`, or `h6`), as specified by the `headingLevel` prop.  
-If `false` the title is wrapped in a `div` element 
+If `false` the title is wrapped in a `div` element.
+If `true` and a `headingLevel` is not supplied, the title will be wrapped with a `div` by default.
+
+For headings to wrap the title, both `displayTitleAsHeading` and `headingLevel` props need to be provided
 
 ##### headingLevel (optional)
 
-- Type: `2 | 3 | 4 | 5 | 6`
+- Type: `number | string | undefined`
 - Required: Only if the `displayTitleAsHeading` is `true`
 
 Specifies the heading level level to be used around the accordions button. This prop is only applicable when `displayTitleAsHeading` is true.
+If `displayTitleAsHeading` is set to `false` and a `headingLevel` is supplied, the title will be wrapped with a `div` by default.
+If a value other than `2, 3, 4, 5, 6` or `"2", "3", "4", "5", "6"` is provided, the title will be wrapped with a `div` by default.
+If a value other than `2, 3, 4, 5, 6` or `"2", "3", "4", "5", "6"` is provided, the title will be wrapped with a `div` by default.
 
 ```js
-<Accordion title="An accordion title" headingLevel={2}>
+// Correct
+<Accordion title="An accordion title" displayTitleAsHeading={true} headingLevel={2}>
   <p>This is the accordions hidden content. Hidden by default.</p>
+</Accordion>
+
+// Incorrect
+<Accordion title="An accordion title" displayTitleAsHeading={false} headingLevel={2}>
+  <p>This is the accordions hidden content. Hidden by default.</p>
+</Accordion>
+```
+
+
+```js
+// Correct
+<Accordion title="My Accordion" displayTitleAsHeading={true} headingLevel={3}>
+  <p>Content goes here</p>
+</Accordion>
+
+// Incorrect
+<Accordion title="My Accordion" displayTitleAsHeading={true} headingLevel={7}>
+  <p>Content goes here</p>
 </Accordion>
 ```
 
