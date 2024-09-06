@@ -2,7 +2,7 @@
 
 exports[`Accordion should allow the passing of caution variant 1`] = `
 <div
-  class="accordion "
+  class="accordion accordion--caution"
 >
   <h2
     class="accordion__heading"

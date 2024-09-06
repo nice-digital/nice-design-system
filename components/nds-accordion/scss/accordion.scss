@@ -4,11 +4,14 @@
 @use '@nice-digital/nds-core/scss/typography';
 @use '@nice-digital/nds-core/scss/utils';
 
+$border-colour-default: colours.$accordion-details-border;
+$border-colour-caution: colours.$caution;
+
 .accordion {
-  background-color: colours.$accordion-default-background;
+  border: 1px solid $border-colour-default;
   font-family: typography.get-font-family(sans);
   margin: utils.rem(spacing.$medium 0);
-  max-width: 40rem;
+  max-width: 66ch;
 
   @include focus.default-accordion-focus;
 
@@ -22,9 +25,10 @@
   }
 
   &__summary {
-    background-color: colours.$accordion-default-background;
-    border: 1px solid colours.$accordion-details-border;
+    background: inherit;
+    border: none;
     cursor: pointer;
+
     display: flex;
     flex: 1;
     flex-direction: column-reverse;
@@ -58,8 +62,7 @@
   }
 
   &__content {
-    border: 1px solid colours.$accordion-details-border;
-    border-top: none;
+    border-top: 1px solid $border-colour-default;
     padding: utils.rem(spacing.$medium);
 
     > :first-child {
@@ -74,6 +77,19 @@
 
     > :last-child {
       margin-bottom: 0;
+    }
+  }
+
+  //modifier styles
+  &--callout {
+    background-color: colours.$accordion-default-background;
+  }
+
+  &--caution {
+    background-color: colours.$caution-background;
+    border-color: $border-colour-caution;
+    .accordion__content {
+      border-color: $border-colour-caution;
     }
   }
 }

@@ -1,7 +1,21 @@
 import { Accordion, AccordionGroup } from "@nice-digital/nds-accordion";
 
 export const DefaultAccordion = () => (
-	<Accordion title="Accordion title">
+	<Accordion title="Accordion title subtle variant (default)">
+		Our monthly newsletter, keeping you up to date with{" "}
+		<a href="#">important developments at NICE</a>
+	</Accordion>
+);
+
+export const CalloutAccordion = () => (
+	<Accordion title="Accordion title callout variant" variant="callout">
+		Our monthly newsletter, keeping you up to date with{" "}
+		<a href="#">important developments at NICE</a>
+	</Accordion>
+);
+
+export const CautionAccordion = () => (
+	<Accordion title="Caution accordion title" variant="caution">
 		Our monthly newsletter, keeping you up to date with{" "}
 		<a href="#">important developments at NICE</a>
 	</Accordion>
@@ -14,13 +28,6 @@ export const AccordionWithHeading = () => (
 		headingLevel={2}
 	>
 		<p>Inner content of accordion</p>
-	</Accordion>
-);
-
-export const CautionAccordion = () => (
-	<Accordion title="Caution accordion title" variant="caution">
-		Our monthly newsletter, keeping you up to date with{" "}
-		<a href="#">important developments at NICE</a>
 	</Accordion>
 );
 

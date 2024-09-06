@@ -3,7 +3,7 @@ import { Accordion, AccordionGroup } from "@nice-digital/nds-accordion";
 import { Accordion as TestAccordion } from "../../components/nds-accordion/src/Accordion";
 export default function Test() {
 	return (
-		<>
+		<div>
 			<Head>
 				<title>NDS Test page!</title>
 			</Head>
@@ -19,13 +19,18 @@ export default function Test() {
 
 			<h2>Accordion default variant</h2>
 
-			<Accordion
-				title={"Accordion title"}
-				displayTitleAsHeading={true}
-				headingLevel={""}
-			>
-				<p>test para</p>
+			<Accordion title={"Accordion title"}>
+				<p>test para subtle variant by default</p>
 			</Accordion>
+
+			<Accordion title={"Accordion title"} variant="callout">
+				<p>test para callout variant</p>
+			</Accordion>
+
+			<Accordion title={"Accordion title"} variant="caution">
+				<p>test para caution variant</p>
+			</Accordion>
+
 			<Accordion
 				title={"Accordion with headingLevel and displayTitleAsHeading true"}
 				displayTitleAsHeading={true}
@@ -124,6 +129,6 @@ export default function Test() {
 					</Accordion>
 				</AccordionGroup>
 			</div>
-		</>
+		</div>
 	);
 }

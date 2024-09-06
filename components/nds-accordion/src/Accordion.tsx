@@ -7,6 +7,8 @@ import React, {
 	type ReactNode
 } from "react";
 
+import classNames from "classnames";
+
 import {
 	useAccordionGroup,
 	AccordionGroupProvider
@@ -19,7 +21,8 @@ import { Toggle } from "./Toggle";
 import WarningIcon from "@nice-digital/icons/lib/Warning";
 
 export const accordionVariants = {
-	default: "default",
+	subtle: "subtle",
+	callout: "callout",
 	caution: "caution"
 } as const;
 
@@ -45,7 +48,7 @@ export const Accordion: FC<AccordionProps> = ({
 	open = false,
 	showLabel = "Show",
 	title,
-	variant = "default"
+	variant = "subtle"
 }) => {
 	const id = useId();
 	const buttonId = `accordion-button-${id}`;
@@ -88,8 +91,16 @@ export const Accordion: FC<AccordionProps> = ({
 			? (`h${headingLevel}` as keyof JSX.IntrinsicElements)
 			: "div";
 
+	const accordionClasses = classNames({
+		accordion: true,
+		[`accordion--${variant}`]: true,
+		[className || ""]: true
+	});
+
+	// ["accordion", `accordion--${variant}`];
+
 	return (
-		<div className={["accordion", className].join(" ")}>
+		<div className={accordionClasses}>
 			<HeadingTag className="accordion__heading">
 				<button
 					id={buttonId}
