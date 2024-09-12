@@ -45,3 +45,14 @@
     }
   }
 }
+
+@mixin default-accordion-focus {
+  .accordion__summary,
+  button,
+  summary {
+    &:focus {
+      @include default-focus-style;
+      outline-offset: calc(-#{utils.rem(spacing.$x-small)} + 1px);
+    }
+  }
+}

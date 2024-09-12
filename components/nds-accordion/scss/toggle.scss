@@ -1,0 +1,25 @@
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
+
+.toggle {
+  &__label {
+    @include typography.font-size(0);
+    align-items: center;
+    color: colours.$accrordion-label-text;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: utils.rem(spacing.$small);
+    text-decoration: underline;
+  }
+
+  &__icon {
+    display: block;
+    pointer-events: none;
+    transition: transform 0.25s ease;
+    &--open {
+      transform: rotate(-180deg);
+    }
+  }
+}

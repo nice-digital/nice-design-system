@@ -1,0 +1,130 @@
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/focus';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
+
+$border-colour-default: colours.$accordion-details-border;
+$border-colour-caution: colours.$caution;
+
+.accordion {
+  border: 1px solid $border-colour-default;
+  font-family: typography.get-font-family(sans);
+  margin: utils.rem(spacing.$medium 0);
+  max-width: 66ch;
+
+  @include focus.default-accordion-focus;
+
+  /* add max-width to heading to override
+     the max-width from typography styles */
+  &__heading {
+    display: flex;
+    font-family: inherit;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  &__summary {
+    background: inherit;
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    flex: 1;
+    flex-direction: column-reverse;
+    gap: utils.rem(spacing.$x-small);
+    padding: utils.rem(spacing.$medium);
+    text-align: left;
+    transition: background-color 0.25s ease;
+
+    &:hover {
+      background-color: colours.$accordion-summary-hover;
+
+      .accordion__toggleLabel {
+        color: colours.$accrordion-label-text-hover;
+      }
+    }
+  }
+
+  &__title {
+    @include typography.font-size(2);
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+    gap: utils.rem(spacing.$small);
+    margin: 0;
+    text-wrap: pretty;
+
+    > svg {
+      display: block;
+      min-width: 1em;
+    }
+  }
+
+  &__content {
+    border-top: 1px solid $border-colour-default;
+    padding: utils.rem(spacing.$medium);
+
+    > :first-child {
+      margin-top: 0;
+
+      // in circumstances where the first child is a heading of a nested container
+      // e.g. .accordion__content > div > heading
+      > :first-child:is(h2, h3, h4, h5, h6) {
+        margin-top: 0;
+      }
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  //modifier styles
+  &--callout {
+    background-color: colours.$accordion-default-background;
+  }
+
+  &--caution {
+    background-color: colours.$caution-background;
+    border-color: $border-colour-caution;
+    .accordion__content {
+      border-color: $border-colour-caution;
+    }
+  }
+}
+
+@media print {
+  .accordion {
+    background-color: transparent;
+    border: none;
+    max-width: none;
+
+    + .accordion {
+      margin-top: utils.rem(spacing.$large);
+    }
+
+    &__summary {
+      background-color: transparent;
+    }
+
+    &__content,
+    &__content[hidden] {
+      display: block;
+
+      > .accordion {
+        margin: utils.rem(spacing.$large);
+      }
+    }
+
+    &__toggleLabel {
+      display: none;
+    }
+  }
+
+  .toggle__label {
+    display: none;
+    height: 0;
+    visibility: hidden;
+  }
+}
