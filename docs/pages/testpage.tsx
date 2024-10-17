@@ -4,6 +4,13 @@ import { Accordion as TestAccordion } from "../../components/nds-accordion/src/A
 import { Hero } from "../../components/nds-hero/src/Hero";
 import { Button } from "../../components/nds-button/src/Button";
 export default function Test() {
+	const breadcrumb = (
+		<div style={{ marginBottom: "2rem" }}>
+			<a href="page-one">Home</a>
+			<span> &gt; </span>
+			<a href="page-two">Go to page two</a>
+		</div>
+	);
 	return (
 		<div>
 			<Head>
@@ -20,7 +27,7 @@ export default function Test() {
 			</p>
 
 			<Hero
-				header="Breadcrumb"
+				header={breadcrumb}
 				title="This is a hero title"
 				intro="This is a hero intro"
 				description="This is a hero description"
@@ -32,7 +39,7 @@ export default function Test() {
 			/>
 
 			<Hero
-				header="Breadcrumb cta title description. no intro"
+				header={breadcrumb}
 				title="Hero title"
 				intro=""
 				description="This is a hero description"
@@ -44,7 +51,7 @@ export default function Test() {
 			/>
 
 			<Hero
-				header="Breadcrumb title intro and cta"
+				header={breadcrumb}
 				title="This is a hero title"
 				intro="This is a hero intro"
 				actions={
@@ -55,7 +62,7 @@ export default function Test() {
 			/>
 
 			<Hero
-				header="Breadcrumb no title. cta intro description"
+				header={breadcrumb}
 				title=""
 				intro="This is a hero intro"
 				description="This is a hero description"
@@ -67,7 +74,7 @@ export default function Test() {
 			/>
 
 			<Hero
-				header="Breadcrumb cta no intro no description"
+				header={breadcrumb}
 				title="Hero title"
 				intro=""
 				actions={
@@ -77,7 +84,7 @@ export default function Test() {
 				}
 			/>
 
-			<Hero header="Breadcrumb no cta" title="Hero title" intro="Hero intro" />
+			<Hero header={breadcrumb} title="Hero title" intro="Hero intro" />
 
 			<h2>Accordion default variant</h2>
 
