@@ -28,6 +28,11 @@ exports[`Hero should match the dark variant snapshot with props 1`] = `
             >
               Introduction text
             </p>
+            <p
+              class="hero__description"
+            >
+              Description text
+            </p>
             <div
               class="hero__actions"
             >
@@ -74,6 +79,11 @@ exports[`Hero should match the dark variant snapshot with props 1`] = `
             class="hero__intro"
           >
             Introduction text
+          </p>
+          <p
+            class="hero__description"
+          >
+            Description text
           </p>
           <div
             class="hero__actions"
@@ -179,6 +189,11 @@ exports[`Hero should match the snapshot with props 1`] = `
             >
               Introduction text
             </p>
+            <p
+              class="hero__description"
+            >
+              Description text
+            </p>
             <div
               class="hero__actions"
             >
@@ -225,6 +240,11 @@ exports[`Hero should match the snapshot with props 1`] = `
             class="hero__intro"
           >
             Introduction text
+          </p>
+          <p
+            class="hero__description"
+          >
+            Description text
           </p>
           <div
             class="hero__actions"

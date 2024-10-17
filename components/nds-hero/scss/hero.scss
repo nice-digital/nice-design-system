@@ -49,11 +49,16 @@
 
   &__title {
     @include typography.h1;
+    margin-bottom: utils.rem(spacing.$large);
   }
 
   &__intro {
     @include typography.lead;
-    margin-bottom: utils.rem(spacing.$large);
+    margin-block: utils.rem(spacing.$medium);
+  }
+
+  &__actions {
+    margin-top: utils.rem(spacing.$large);
   }
 
   &__image-container {

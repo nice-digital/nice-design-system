@@ -20,6 +20,7 @@ describe("Hero", () => {
 			<Hero
 				title="Welcoming title"
 				intro="Introduction text"
+				description="Description text"
 				actions={actions}
 				header={header}
 				image={imageUrl}
@@ -33,6 +34,7 @@ describe("Hero", () => {
 			<Hero
 				title="Welcoming title"
 				intro="Introduction text"
+				description="Description text"
 				actions={actions}
 				header={header}
 				image={imageUrl}
@@ -47,6 +49,7 @@ describe("Hero", () => {
 			<Hero
 				title="Welcoming title"
 				intro="Introduction text"
+				description="Description text"
 				actions={actions}
 				data-track={false}
 				image={imageUrl}
