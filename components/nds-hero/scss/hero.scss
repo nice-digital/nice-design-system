@@ -49,11 +49,25 @@
 
   &__title {
     @include typography.h1;
+    margin-bottom: utils.rem(spacing.$medium);
+
+    @include media-queries.mq($from: md) {
+      margin-bottom: utils.rem(spacing.$large);
+    }
   }
 
   &__intro {
     @include typography.lead;
-    margin-bottom: utils.rem(spacing.$large);
+
+    margin-block: utils.rem(spacing.$medium);
+
+    @include media-queries.mq($from: md) {
+      margin-bottom: utils.rem(spacing.$large);
+    }
+  }
+
+  &__actions {
+    margin-top: utils.rem(spacing.$large);
   }
 
   &__image-container {

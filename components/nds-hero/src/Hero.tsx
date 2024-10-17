@@ -7,6 +7,7 @@ export interface HeroProps {
 	header?: React.ReactNode;
 	title: React.ReactNode;
 	intro?: React.ReactNode;
+	description?: React.ReactNode;
 	actions?: React.ReactNode;
 	image?: string;
 	isDark?: boolean;
@@ -18,6 +19,7 @@ export const Hero: React.FC<HeroProps> = (props: HeroProps) => {
 		actions,
 		header,
 		intro,
+		description,
 		title,
 		image,
 		isDark = false,
@@ -35,6 +37,7 @@ export const Hero: React.FC<HeroProps> = (props: HeroProps) => {
 				<div className="hero__body">
 					<h1 className="hero__title">{title}</h1>
 					{intro && <p className="hero__intro">{intro}</p>}
+					{description && <p className="hero__description">{description}</p>}
 					{actions && <div className="hero__actions">{actions}</div>}
 				</div>
 			</div>

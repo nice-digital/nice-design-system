@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { Accordion, AccordionGroup } from "@nice-digital/nds-accordion";
 import { Accordion as TestAccordion } from "../../components/nds-accordion/src/Accordion";
+import { Hero } from "../../components/nds-hero/src/Hero";
+import { Button } from "../../components/nds-button/src/Button";
 export default function Test() {
 	return (
 		<div>
@@ -16,6 +18,66 @@ export default function Test() {
 				MDX files don&apos;t have great Typescript integration, so it can
 				sometimes be hard to debug components using MDX alone.
 			</p>
+
+			<Hero
+				header="Breadcrumb"
+				title="This is a hero title"
+				intro="This is a hero intro"
+				description="This is a hero description"
+				actions={
+					<Button href="/" variant="primary">
+						Some CTA
+					</Button>
+				}
+			/>
+
+			<Hero
+				header="Breadcrumb cta title description. no intro"
+				title="Hero title"
+				intro=""
+				description="This is a hero description"
+				actions={
+					<Button href="/" variant="primary">
+						Some CTA
+					</Button>
+				}
+			/>
+
+			<Hero
+				header="Breadcrumb title intro and cta"
+				title="This is a hero title"
+				intro="This is a hero intro"
+				actions={
+					<Button href="/" variant="primary">
+						Some CTA
+					</Button>
+				}
+			/>
+
+			<Hero
+				header="Breadcrumb no title. cta intro description"
+				title=""
+				intro="This is a hero intro"
+				description="This is a hero description"
+				actions={
+					<Button href="/" variant="primary">
+						Some CTA
+					</Button>
+				}
+			/>
+
+			<Hero
+				header="Breadcrumb cta no intro no description"
+				title="Hero title"
+				intro=""
+				actions={
+					<Button href="/" variant="primary">
+						Some CTA
+					</Button>
+				}
+			/>
+
+			<Hero header="Breadcrumb no cta" title="Hero title" intro="Hero intro" />
 
 			<h2>Accordion default variant</h2>
 
