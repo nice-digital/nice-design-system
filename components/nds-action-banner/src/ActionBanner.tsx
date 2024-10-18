@@ -10,12 +10,22 @@ export interface ActionBannerProps {
 	cta: ReactNode;
 	className?: string;
 	image?: string;
+	headingLevel?: number | string;
 }
 
 export const ActionBanner: React.FC<ActionBannerProps> = (
 	props
 ): JSX.Element | null => {
-	const { variant, title, children, cta, className, image, ...rest } = props;
+	const {
+		variant,
+		title,
+		children,
+		cta,
+		className,
+		image,
+		headingLevel = 2,
+		...rest
+	} = props;
 
 	const kebabCaseVariantClassName = variant
 		? `${variant.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase()}`
@@ -26,6 +36,16 @@ export const ActionBanner: React.FC<ActionBannerProps> = (
 		[`action-banner--${kebabCaseVariantClassName}`]: variant,
 		[`${className}`]: className
 	};
+
+	const parsedHeadingLevel =
+		typeof headingLevel === "string"
+			? parseInt(headingLevel, 10)
+			: headingLevel;
+
+	const validHeadingLevel =
+		parsedHeadingLevel >= 2 && parsedHeadingLevel <= 6 ? parsedHeadingLevel : 2;
+
+	const HeadingLevel = `h${validHeadingLevel}` as keyof JSX.IntrinsicElements;
 
 	return (
 		<section
@@ -42,7 +62,9 @@ export const ActionBanner: React.FC<ActionBannerProps> = (
 			<div className="action-banner__container">
 				<div className="action-banner__inner">
 					<div className="action-banner__text">
-						<h2 className="action-banner__title">{title}</h2>
+						<HeadingLevel className="action-banner__title">
+							{title}
+						</HeadingLevel>
 						{children && <div className="action-banner__intro">{children}</div>}
 					</div>
 					{cta && <div className="action-banner__actions">{cta}</div>}

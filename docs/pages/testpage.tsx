@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Accordion, AccordionGroup } from "@nice-digital/nds-accordion";
 import { Accordion as TestAccordion } from "../../components/nds-accordion/src/Accordion";
 import { Hero } from "../../components/nds-hero/src/Hero";
+import { ActionBanner } from "../../components/nds-action-banner/src/ActionBanner";
 import { Button } from "../../components/nds-button/src/Button";
 export default function Test() {
 	const breadcrumb = (
@@ -26,7 +27,76 @@ export default function Test() {
 				sometimes be hard to debug components using MDX alone.
 			</p>
 
-			<Hero
+			<ActionBanner
+				title="This is an action banner"
+				variant="fullWidth"
+				cta={<Button href="/">Some CTA</Button>}
+			>
+				<p>This is the intro</p>
+			</ActionBanner>
+
+			<ActionBanner
+				title="This is an action banner"
+				variant="fullWidthSubtle"
+				cta={
+					<Button href="/" variant="primary">
+						Some CTA
+					</Button>
+				}
+				headingLevel={1}
+			>
+				<p>This is the intro</p>
+			</ActionBanner>
+
+			<ActionBanner
+				title="This is an action banner"
+				variant="fullWidthSubtle"
+				cta={
+					<Button href="/" variant="primary">
+						Some CTA
+					</Button>
+				}
+				headingLevel={3}
+			>
+				<p>This is the intro</p>
+			</ActionBanner>
+			<ActionBanner
+				title="This is an action banner"
+				variant="fullWidthSubtle"
+				cta={
+					<Button href="/" variant="primary">
+						Some CTA
+					</Button>
+				}
+				headingLevel={4}
+			>
+				<p>This is the intro</p>
+			</ActionBanner>
+			<ActionBanner
+				title="This is an action banner"
+				variant="fullWidthSubtle"
+				cta={
+					<Button href="/" variant="primary">
+						Some CTA
+					</Button>
+				}
+				headingLevel={5}
+			>
+				<p>This is the intro</p>
+			</ActionBanner>
+			<ActionBanner
+				title="This is an action banner"
+				variant="fullWidthSubtle"
+				cta={
+					<Button href="/" variant="primary">
+						Some CTA
+					</Button>
+				}
+				headingLevel={6}
+			>
+				<p>This is the intro</p>
+			</ActionBanner>
+			{/* <Hero
 				header={breadcrumb}
 				title="This is a hero title"
 				intro="This is a hero intro"
@@ -85,7 +155,7 @@ export default function Test() {
 			/>
 
 			<Hero header={breadcrumb} title="Hero title" intro="Hero intro" />
-
+ */}
 			<h2>Accordion default variant</h2>
 
 			<Accordion title={"Accordion title"}>

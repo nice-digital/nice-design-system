@@ -150,6 +150,45 @@ describe("ActionBanner", () => {
 		});
 	});
 
+	describe("headingLevel", () => {
+		const headingLevels = [
+			[1, "h2", "H2"],
+			[2, "h2", "H2"],
+			[3, "h3", "H3"],
+			[4, "h4", "H4"],
+			[5, "h5", "H5"],
+			[6, "h6", "H6"],
+			[7, "h2", "H2"],
+			[0, "h2", "H2"]
+		];
+
+		it.each(headingLevels)(
+			"Should render headingLevel %s as %s with tagName %s",
+			(level, expected, tag) => {
+				const { container } = render(
+					<ActionBanner
+						title="Some title"
+						cta={
+							<Button to="/test" variant="primary">
+								Some CTA
+							</Button>
+						}
+						headingLevel={level}
+					>
+						Some body
+					</ActionBanner>
+				);
+				console.log(tag);
+
+				const headingElement = container.querySelector(expected as string);
+				expect(headingElement).toBeInTheDocument;
+				if (headingElement) {
+					expect(headingElement.tagName).toBe(tag);
+				}
+			}
+		);
+	});
+
 	describe("tracking", () => {
 		const variants = [
 			["default", "action-banner--default"],
