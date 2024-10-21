@@ -152,19 +152,35 @@ describe("ActionBanner", () => {
 
 	describe("headingLevel", () => {
 		const headingLevels = [
-			[1, "h2", "H2"],
-			[2, "h2", "H2"],
-			[3, "h3", "H3"],
-			[4, "h4", "H4"],
-			[5, "h5", "H5"],
-			[6, "h6", "H6"],
-			[7, "h2", "H2"],
-			[0, "h2", "H2"]
-		];
+			[1, "H2"],
+			[2, "H2"],
+			[3, "H3"],
+			[4, "H4"],
+			[5, "H5"],
+			[6, "H6"],
+			[7, "H2"],
+			[0, "H2"],
+			["1", "H2"],
+			["2", "H2"],
+			["3", "H3"],
+			["4", "H4"],
+			["5", "H5"],
+			["6", "H6"],
+			["7", "H2"],
+			["0", "H2"],
+			["somerandomstring", "H2"],
+			[undefined, "H2"],
+			[null, "H2"],
+			[true, "H2"],
+			[false, "H2"],
+			[{}, "H2"],
+			[[], "H2"],
+			[() => {}, "H2"]
+		] as unknown as [number | string | undefined, string, string][];
 
 		it.each(headingLevels)(
-			"Should render headingLevel %s as %s with tagName %s",
-			(level, expected, tag) => {
+			"Should render headingLevel %s as a %s tag",
+			(level, expectedTag) => {
 				const { container } = render(
 					<ActionBanner
 						title="Some title"
@@ -178,13 +194,11 @@ describe("ActionBanner", () => {
 						Some body
 					</ActionBanner>
 				);
-				console.log(tag);
 
-				const headingElement = container.querySelector(expected as string);
-				expect(headingElement).toBeInTheDocument;
-				if (headingElement) {
-					expect(headingElement.tagName).toBe(tag);
-				}
+				const headingtext = screen.getByText("Some title");
+				const tagName = headingtext.tagName;
+				expect(headingtext).toBeInTheDocument();
+				expect(tagName).toBe(expectedTag);
 			}
 		);
 	});
