@@ -150,6 +150,59 @@ describe("ActionBanner", () => {
 		});
 	});
 
+	describe("headingLevel", () => {
+		const headingLevels = [
+			[1, "H2"],
+			[2, "H2"],
+			[3, "H3"],
+			[4, "H4"],
+			[5, "H5"],
+			[6, "H6"],
+			[7, "H2"],
+			[0, "H2"],
+			["1", "H2"],
+			["2", "H2"],
+			["3", "H3"],
+			["4", "H4"],
+			["5", "H5"],
+			["6", "H6"],
+			["7", "H2"],
+			["0", "H2"],
+			["somerandomstring", "H2"],
+			[undefined, "H2"],
+			[null, "H2"],
+			[true, "H2"],
+			[false, "H2"],
+			[{}, "H2"],
+			[[], "H2"],
+			[() => {}, "H2"]
+		] as unknown as [number | string | undefined, string, string][];
+
+		it.each(headingLevels)(
+			"Should render headingLevel %s as a %s tag",
+			(level, expectedTag) => {
+				const { container } = render(
+					<ActionBanner
+						title="Some title"
+						cta={
+							<Button to="/test" variant="primary">
+								Some CTA
+							</Button>
+						}
+						headingLevel={level}
+					>
+						Some body
+					</ActionBanner>
+				);
+
+				const headingtext = screen.getByText("Some title");
+				const tagName = headingtext.tagName;
+				expect(headingtext).toBeInTheDocument();
+				expect(tagName).toBe(expectedTag);
+			}
+		);
+	});
+
 	describe("tracking", () => {
 		const variants = [
 			["default", "action-banner--default"],
