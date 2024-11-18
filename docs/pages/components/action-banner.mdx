@@ -192,7 +192,7 @@ Images will stack above the content in the banner on mobile devices.
 	variant="fullWidth"
 	title="Full width action banner with image"
 	cta={<Button>A button</Button>}
-	image="http://placekitten.com/g/800/1200"
+	image="https://placehold.co/800x1200"
 >
 	This is <a href="#">some content with a link</a>
 </ActionBanner>
@@ -203,7 +203,7 @@ Images will stack above the content in the banner on mobile devices.
 	variant="fullWidth"
 	title="Full width action banner with image"
 	cta={<Button>A button</Button>}
-	image="http://placekitten.com/g/800/1200"
+	image="https://placehold.co/800x1200"
 >
 	This is <a href="#">some content with a link</a>
 </ActionBanner>
@@ -226,6 +226,49 @@ Images will stack above the content in the banner on mobile devices.
   </div>
 </section>
 
+```
+</CH.Code>
+</Example>
+
+<Example fullWidth>
+<h4>Example: full width subtle action banner (with image)</h4>
+<ActionBanner
+	variant="fullWidthSubtle"
+	title="Full width subtle action banner"
+	cta={<Button>A button</Button>}
+	image="https://placehold.co/800x1200"
+>
+	This is <a href="#">some content with a link</a>
+</ActionBanner>
+
+<CH.Code>
+```js React
+<ActionBanner
+	variant="fullWidthSubtle"
+	title="Full width subtle action banner with image"
+	cta={<Button>A button</Button>}
+	image="https://placehold.co/800x1200"
+>
+	This is <a href="#">some content with a link</a>
+</ActionBanner>
+```
+```html HTML
+<section class="action-banner action-banner--full-width-subtle" data-component="action-banner--fullWidthSubtle">
+	<div class="action-banner--full-width-subtle__image-container" style="background-image:url(https://placehold.co/800x1200)"></div>
+	<div class="action-banner__container">
+		<div class="action-banner__inner">
+		<div class="action-banner__text">
+			<h2 class="action-banner__title">Full width subtle action banner with image</h2>
+			<div class="action-banner__intro">
+			<p>This is <a href="#">some content with a link</a></p>
+			</div>
+		</div>
+		<div class="action-banner__actions">
+			<button type="button" class="btn" data-component="button--primary">A button</button>
+		</div>
+		</div>
+  </div>
+</section>
 ```
 </CH.Code>
 </Example>
