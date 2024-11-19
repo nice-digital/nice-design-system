@@ -67,7 +67,7 @@ export default function Test() {
 			<br />
 			<br />
 
-			<ActionBanner
+			{/* <ActionBanner
 				title="This is an action banner"
 				variant="fullWidth"
 				cta={<Button href="/">Some CTA</Button>}
@@ -135,7 +135,7 @@ export default function Test() {
 				headingLevel={6}
 			>
 				<p>This is the intro</p>
-			</ActionBanner>
+			</ActionBanner> */}
 
 			<h4>NDS-444 Example: full width subtle action banner (with image)</h4>
 			<ActionBanner
