@@ -10,6 +10,14 @@ export default function Test() {
 			<a href="page-one">Home</a>
 			<span> &gt; </span>
 			<a href="page-two">Go to page two</a>
+			<span> &gt; </span>
+			<a href="page-three">Go to page three</a>
+			<span> &gt; </span>
+			<a href="page-four">Go to page four</a>
+			<span> &gt; </span>
+			<a href="page-five">
+				Go to page five with a really really long breadcrumb
+			</a>
 		</div>
 	);
 	return (
@@ -26,6 +34,38 @@ export default function Test() {
 				MDX files don&apos;t have great Typescript integration, so it can
 				sometimes be hard to debug components using MDX alone.
 			</p>
+			<Hero
+				header={breadcrumb}
+				title="This is a hero title"
+				intro="This is a hero intro"
+				description="This is a hero description"
+				actions={
+					<Button href="/" variant="primary">
+						Some CTA
+					</Button>
+				}
+				isDark={true}
+			/>
+			<Hero
+				header={breadcrumb}
+				title="This is a hero title"
+				intro="This is a hero intro"
+				description="This is a hero description"
+				actions={
+					<Button href="/" variant="primary">
+						Some CTA
+					</Button>
+				}
+				image="/images/hero-bg.jpg"
+			/>
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
 
 			<ActionBanner
 				title="This is an action banner"
@@ -96,7 +136,31 @@ export default function Test() {
 			>
 				<p>This is the intro</p>
 			</ActionBanner>
-			{/* <Hero
+
+			<h4>NDS-444 Example: full width subtle action banner (with image)</h4>
+			<ActionBanner
+				variant="fullWidthSubtle"
+				title="Full width subtle action banner with image"
+				cta={<Button>A button</Button>}
+				image="https://placehold.co/800x1200"
+			>
+				<p>
+					This is the intro.This is <a href="#">some content with a link</a>
+				</p>
+			</ActionBanner>
+
+			<h4>NDS-444 Example: full width action banner (with image)</h4>
+			<ActionBanner
+				variant="fullWidth"
+				title="Full width action banner with image"
+				cta={<Button>A button</Button>}
+				image="https://placehold.co/800x1200"
+			>
+				<p>
+					This is the intro.This is <a href="#">some content with a link</a>
+				</p>
+			</ActionBanner>
+			{/*<Hero
 				header={breadcrumb}
 				title="This is a hero title"
 				intro="This is a hero intro"
