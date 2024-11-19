@@ -14,6 +14,7 @@
 
 /// Action banner component. Used to highlight
 /// and give context to a call-to-action.
+///
 /// Modifiers:
 /// - subtle
 ///
@@ -63,7 +64,8 @@
     }
   }
 
-  &--full-width {
+  &--full-width,
+  &--full-width-subtle {
     @include layout.fullWidth();
     @include typography.links-default;
     background: colours.$action-banner-full-width-background;
@@ -149,7 +151,8 @@
   }
 
   @include media-queries.mq($from: sm) {
-    &--full-width {
+    &--full-width,
+    &--full-width-subtle {
       &__image-container {
         aspect-ratio: 21 / 9;
       }
@@ -159,7 +162,8 @@
   @include media-queries.mq($from: md) {
     @include layout.clearfix;
 
-    &--full-width {
+    &--full-width,
+    &--full-width-subtle {
       &__image-container {
         aspect-ratio: unset;
         bottom: 0;
@@ -175,7 +179,6 @@
         }
 
         &::before {
-          background: colours.$action-banner-full-width-background;
           content: '';
           flex: 0 0 200px;
           pointer-events: none;
@@ -188,6 +191,22 @@
       @include media-queries.mq($from: md) {
         .action-banner__text {
           width: 66%;
+        }
+      }
+    }
+
+    &--full-width {
+      &__image-container {
+        &::before {
+          background: colours.$action-banner-full-width-background;
+        }
+      }
+    }
+
+    &--full-width-subtle {
+      &__image-container {
+        &::before {
+          background: colours.$action-banner-full-width-subtle-background;
         }
       }
     }
