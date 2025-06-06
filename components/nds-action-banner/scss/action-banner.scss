@@ -11,7 +11,6 @@
 @use '@nice-digital/nds-core/scss/typography';
 @use '@nice-digital/nds-core/scss/utils';
 @use '@nice-digital/nds-core/scss/visibility';
-
 /// Action banner component. Used to highlight
 /// and give context to a call-to-action.
 ///
@@ -161,6 +160,25 @@
 
   @include media-queries.mq($from: md) {
     @include layout.clearfix;
+    &__inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__text {
+      flex: 1 1 70%;
+      margin-bottom: utils.rem(spacing.$small);
+    }
+
+    &__actions {
+      flex: 0 1 auto;
+      margin-top: utils.rem(spacing.$small);
+      position: static;
+      transform: none;
+      text-align: right;
+    }
 
     &--full-width,
     &--full-width-subtle {
@@ -211,18 +229,7 @@
       }
     }
 
-    &__text {
-      margin-bottom: 0;
-      width: math.percentage(3 * 0.25);
-    }
-
-    &__actions {
-      position: absolute;
-      right: utils.rem(spacing.$medium);
-      text-align: right;
-      top: 50%;
-      transform: translateY(-50%);
-      width: math.percentage(1 * 0.25);
-    }
+    // Removed absolute positioning from actions here
+    // (replaced above in .action-banner__actions)
   }
 }
