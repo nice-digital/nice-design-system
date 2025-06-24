@@ -41,9 +41,12 @@ import { MySuperComponent } from "./components/MySuperComponent";
 			value: <MySuperComponent />
 		}
 	]
->
-    <p>Card children</p>
-</Card>
+	children={
+		<>
+			Card children
+		</>
+	}
+/>
 
 <Card
 	headingText="Card title"
@@ -52,6 +55,7 @@ import { MySuperComponent } from "./components/MySuperComponent";
 		destination: "/destination",
 		elementType: "a"
 	}
+	summary="Card summary"
 />
 
 // The mimimum to be supplied is headingText

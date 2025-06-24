@@ -6,12 +6,14 @@ import { Tag } from "@nice-digital/nds-tag";
 export const ExampleCardList = () => (
 	<ul className="list--unstyled">
 		<li>
-			<Card headingText="Card title 1" link={{ destination: "/test" }}>
-				Card text 1
-			</Card>
+			<Card
+				headingText="Card title 1"
+				link={{ destination: "/test" }}
+				summary="Card text 1"
+			/>
 		</li>
 		<li>
-			<Card headingText="Card title 2">Card text 2</Card>
+			<Card headingText="Card title 2" summary="Card text 2" />
 		</li>
 	</ul>
 );
@@ -35,9 +37,8 @@ export const ExampleCardGrid = () => (
 				link={{
 					destination: "https://www.example.com"
 				}}
-			>
-				Card text
-			</Card>
+				summary="Card text"
+			/>
 		</GridItem>
 		<GridItem cols={12} sm={{ cols: 4 }}>
 			<Card
@@ -45,10 +46,9 @@ export const ExampleCardGrid = () => (
 				link={{
 					destination: "https://www.example.com"
 				}}
-			>
-				Nulla risus erat, maximus id semper ut, vulputate non nisl. Pellentesque
-				sed luctus enim.
-			</Card>
+				summary="Nulla risus erat, maximus id semper ut, vulputate non nisl. Pellentesque
+				sed luctus enim."
+			/>
 		</GridItem>
 		<GridItem cols={12} sm={{ cols: 4 }}>
 			<Card
@@ -56,9 +56,8 @@ export const ExampleCardGrid = () => (
 				link={{
 					destination: "https://www.example.com"
 				}}
-			>
-				Card text
-			</Card>
+				summary="Card text"
+			/>
 		</GridItem>
 	</Grid>
 );
@@ -72,10 +71,9 @@ export const ExampleCardGridWithImages = () => (
 				link={{
 					destination: "https://www.example.com"
 				}}
+				summary="Card text"
 				callout
-			>
-				Card text
-			</Card>
+			/>
 		</GridItem>
 		<GridItem cols={12} sm={{ cols: 4 }}>
 			<Card
@@ -84,11 +82,10 @@ export const ExampleCardGridWithImages = () => (
 				link={{
 					destination: "https://www.example.com"
 				}}
+				summary="Nulla risus erat, maximus id semper ut, vulputate non nisl. Pellentesque
+				sed luctus enim."
 				callout
-			>
-				Nulla risus erat, maximus id semper ut, vulputate non nisl. Pellentesque
-				sed luctus enim.
-			</Card>
+			/>
 		</GridItem>
 		<GridItem cols={12} sm={{ cols: 4 }}>
 			<Card
@@ -97,10 +94,9 @@ export const ExampleCardGridWithImages = () => (
 				link={{
 					destination: "https://www.example.com"
 				}}
+				summary="Card text"
 				callout
-			>
-				Card text
-			</Card>
+			/>
 		</GridItem>
 	</Grid>
 );
@@ -111,44 +107,49 @@ export const ExampleGuidanceList = () => (
 			<Card
 				headingText="Improving outcomes in breast cancer (CSG1)"
 				link={{ destination: "/test" }}
-			>
-				<Tag consultation>In consultation</Tag> In development
-			</Card>
+				summary={
+					<>
+						<Tag consultation>In consultation</Tag> In development
+					</>
+				}
+			/>
 		</li>
 		<li>
 			<Card
 				headingText="Suspected cancer (QS124)"
 				link={{ destination: "/test" }}
-			>
-				Published: <time>31st December 2022</time>
-			</Card>
+				summary={
+					<>
+						Published: <time>31st December 2022</time>
+					</>
+				}
+			/>
 		</li>
 	</ul>
 );
 
 export const ExampleCard = () => (
-	<Card headingText="Card title 1">Card text 1</Card>
+	<Card headingText="Card title 1" summary="Card text 1" />
 );
 
 export const ExampleCardWithImage = () => (
 	<Card
 		headingText="Card title 1"
 		image={<img src="https://picsum.photos/id/272/300/200" alt="" />}
-	>
-		Card text 1
-	</Card>
+		summary="Card text 1"
+	/>
 );
 
 export const ExampleCalloutCard = () => (
-	<Card headingText="Card title 1" callout>
-		Card text 1
-	</Card>
+	<Card headingText="Card title 1" summary="Card text 1" callout />
 );
 
 export const ExampleClickableCard = () => (
-	<Card headingText="Card title 1" link={{ destination: "/test" }}>
-		Card text 1
-	</Card>
+	<Card
+		headingText="Card title 1"
+		link={{ destination: "/test" }}
+		summary="Card text 1"
+	/>
 );
 
 export const ExampleCardWithMetadata = () => (
