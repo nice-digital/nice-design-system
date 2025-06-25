@@ -66,7 +66,15 @@ const CardBody = (props: CardBodyProps) => {
 			<header className="card__header">
 				<CardHeader {...headerProps} />
 			</header>
-			{summary && <p className="card__summary">{summary}</p>}
+			{summary && (
+				<p
+					className={classNames("card__summary", {
+						"card__summary--card-has-children": !!children
+					})}
+				>
+					{summary}
+				</p>
+			)}
 
 			{children && children}
 
