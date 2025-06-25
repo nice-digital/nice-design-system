@@ -120,15 +120,16 @@ A callout card adds a white container to the card grid component. Use this for c
 
 <CH.Code>
 ```js React
-<Card headingText="Card title 1" callout>
-	Card text 1
-</Card>
+<Card headingText="Card title 1" summary="Card text 1" callout />
 ```
 ```html HTML
 <article class="card card--callout">
 	<header class="card__header">
 		<p class="card__heading">Card title 1</p>
-	</header>Card text 1
+	</header>
+	<p class="card__summary">
+		Card text 1
+	</p>
 </article>
 ```
 </CH.Code>
@@ -150,9 +151,7 @@ We avoid wrapping an entire card in an anchor tag as this can be a difficult exp
 
 <CH.Code>
 ```js React
-<Card headingText="Card title 1" link={{ destination: "/test" }}>
-	Card text 1
-</Card>
+<Card headingText="Card title 1" link={{ destination: "/test" }} summary="Card text 1" />
 ```
 ```html HTML
 <article class="card">
@@ -161,7 +160,9 @@ We avoid wrapping an entire card in an anchor tag as this can be a difficult exp
 			<a href="/test">Card title 1</a>
 		</p>
 	</header>
-	Card text 1
+	<p class="card__summary">
+		Card text 1
+	</p>
 </article>
 ```
 </CH.Code>
@@ -172,6 +173,8 @@ We avoid wrapping an entire card in an anchor tag as this can be a difficult exp
 Cards will always have a heading.
 
 Keep headings succinct and make it clear what the user will find on the page that the card links to.
+
+Headings should be added using the `headingText` property.
 
 Headings can be linked:
 
@@ -193,24 +196,31 @@ Alongside headings, cards can have a combination of the following:
 
 #### Paragraph text
 
-If you need to include supporting information in the card, you can use a paragraph.
+If you need to include supporting information in the card, this should be added using the `summary` property.
 
-The paragraph sits below the heading for both card lists and card grids.
+This adds a paragraph below the heading for all types of card.
 
 <CH.Code>
 ```js React
-<Card headingText="Card title 1">
-	Card text 1
-</Card>
+<Card headingText="Card title 1" summary="Card text 1" />
 ```
 ```html HTML
 <article class="card">
 	<header class="card__header">
 		<p class="card__heading">Card title 1</p>
-	</header>Card text 1
+	</header>
+	<p class="card__summary">
+		Card text 1
+	</p>
 </article>
 ```
 </CH.Code>
+
+You can also add HTML to the summary - such as the tags used for News or Guidance listings.
+<Example>
+	<h5>Example: Card summary with html</h5>
+	<ExampleGuidanceList />
+</Example>
 
 #### Card images
 
@@ -263,6 +273,7 @@ Metadata is used for adding secondary information such as categories or labels t
 ```
 </CH.Code>
 </Example>
+
 
 ## Accessibility
 
