@@ -46,8 +46,7 @@ export const ExampleCardGrid = () => (
 				link={{
 					destination: "https://www.example.com"
 				}}
-				summary="Nulla risus erat, maximus id semper ut, vulputate non nisl. Pellentesque
-				sed luctus enim."
+				summary="Nulla risus erat, maximus id semper ut, vulputate non nisl. Pellentesque sed luctus enim."
 			/>
 		</GridItem>
 		<GridItem cols={12} sm={{ cols: 4 }}>
@@ -82,8 +81,7 @@ export const ExampleCardGridWithImages = () => (
 				link={{
 					destination: "https://www.example.com"
 				}}
-				summary="Nulla risus erat, maximus id semper ut, vulputate non nisl. Pellentesque
-				sed luctus enim."
+				summary="Nulla risus erat, maximus id semper ut, vulputate non nisl. Pellentesque sed luctus enim."
 				callout
 			/>
 		</GridItem>

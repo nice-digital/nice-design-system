@@ -43,7 +43,7 @@ import { MySuperComponent } from "./components/MySuperComponent";
 	]
 	children={
 		<>
-			Card children
+			<p>Card children</p>
 		</>
 	}
 />
