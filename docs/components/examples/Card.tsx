@@ -9,11 +9,14 @@ export const ExampleCardList = () => (
 			<Card
 				headingText="Card title 1"
 				link={{ destination: "/test" }}
-				summary="Card text 1"
+				summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc."
 			/>
 		</li>
 		<li>
-			<Card headingText="Card title 2" summary="Card text 2" />
+			<Card
+				headingText="Card title 2"
+				summary="In rhoncus, urna sollicitudin blandit interdum, risus mauris malesuada magna, vitae maximus mauris leo ut elit. Integer maximus, nisi at congue volutpat, arcu diam finibus eros, quis tincidunt massa lacus nec ante."
+			/>
 		</li>
 	</ul>
 );
@@ -37,7 +40,7 @@ export const ExampleCardGrid = () => (
 				link={{
 					destination: "https://www.example.com"
 				}}
-				summary="Card text"
+				summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc."
 			/>
 		</GridItem>
 		<GridItem cols={12} sm={{ cols: 4 }}>
@@ -55,7 +58,7 @@ export const ExampleCardGrid = () => (
 				link={{
 					destination: "https://www.example.com"
 				}}
-				summary="Card text"
+				summary="Integer maximus, nisi at congue volutpat, arcu diam finibus eros, quis tincidunt massa lacus nec ante."
 			/>
 		</GridItem>
 	</Grid>
@@ -63,18 +66,18 @@ export const ExampleCardGrid = () => (
 
 export const ExampleCardGridWithImages = () => (
 	<Grid equalHeight>
-		<GridItem cols={12} sm={{ cols: 4 }}>
+		<GridItem cols={12} md={{ cols: 4 }}>
 			<Card
 				headingText="Card title 1"
 				image={<img src="https://picsum.photos/id/272/300/200" alt="" />}
 				link={{
 					destination: "https://www.example.com"
 				}}
-				summary="Card text"
+				summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc."
 				callout
 			/>
 		</GridItem>
-		<GridItem cols={12} sm={{ cols: 4 }}>
+		<GridItem cols={12} md={{ cols: 4 }}>
 			<Card
 				headingText="Card title 2"
 				image={<img src="https://picsum.photos/id/272/300/200" alt="" />}
@@ -85,14 +88,14 @@ export const ExampleCardGridWithImages = () => (
 				callout
 			/>
 		</GridItem>
-		<GridItem cols={12} sm={{ cols: 4 }}>
+		<GridItem cols={12} md={{ cols: 4 }}>
 			<Card
 				headingText="Card title 3"
 				image={<img src="https://picsum.photos/id/272/300/200" alt="" />}
 				link={{
 					destination: "https://www.example.com"
 				}}
-				summary="Card text"
+				summary="Integer maximus, nisi at congue volutpat, arcu diam finibus eros, quis tincidunt massa lacus nec ante."
 				callout
 			/>
 		</GridItem>
@@ -127,26 +130,33 @@ export const ExampleGuidanceList = () => (
 );
 
 export const ExampleCard = () => (
-	<Card headingText="Card title 1" summary="Card text 1" />
+	<Card
+		headingText="Card title 1"
+		summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc."
+	/>
 );
 
 export const ExampleCardWithImage = () => (
 	<Card
 		headingText="Card title 1"
 		image={<img src="https://picsum.photos/id/272/300/200" alt="" />}
-		summary="Card text 1"
+		summary="Integer maximus, nisi at congue volutpat, arcu diam finibus eros, quis tincidunt massa lacus nec ante."
 	/>
 );
 
 export const ExampleCalloutCard = () => (
-	<Card headingText="Card title 1" summary="Card text 1" callout />
+	<Card
+		headingText="Card title 1"
+		summary="Nulla risus erat, maximus id semper ut, vulputate non nisl. Pellentesque sed luctus enim."
+		callout
+	/>
 );
 
 export const ExampleClickableCard = () => (
 	<Card
 		headingText="Card title 1"
 		link={{ destination: "/test" }}
-		summary="Card text 1"
+		summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc."
 	/>
 );
 
