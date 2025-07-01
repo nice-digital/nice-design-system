@@ -26,7 +26,7 @@ export default function DesignLibrary() {
 
 			<h2 id="foundations">Foundations</h2>
 			<p className="lead">
-				Our foundations are the design basics that we build our services on.{" "}
+				Our foundations are the design basics that we build our services on.
 			</p>
 
 			<Grid>
