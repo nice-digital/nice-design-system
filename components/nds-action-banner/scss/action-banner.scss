@@ -28,9 +28,7 @@
   margin: utils.rem(0 0 spacing.$large);
   padding: utils.rem(spacing.$medium 0);
   position: relative;
-  // Enable container queries
-  container-name: actionBanner;
-  container-type: inline-size;
+
   &__container {
     @include layout.container;
   }
@@ -39,10 +37,9 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: utils.rem(spacing.$small);
   }
   &__text {
-    margin-bottom: utils.rem(spacing.$medium);
+    margin-right: utils.rem(spacing.$medium);
     flex: 1 1 70%;
   }
 
@@ -85,7 +82,6 @@
     .action-banner__intro * {
       @include typography.lead();
       margin-top: utils.rem(spacing.$medium);
-      margin-bottom: utils.rem(spacing.$large);
     }
 
     .action-banner__container {
@@ -231,16 +227,13 @@
       white-space: normal;
       word-break: break-word;
       inline-size: 100%;
+      margin-bottom: 0;
     }
   }
   @include media-queries.mq($until: sm) {
     .action-banner__inner {
       flex-direction: column;
       align-items: flex-start;
-    }
-
-    .action-banner__actions {
-      margin-top: utils.rem(spacing.$small);
     }
   }
 }
