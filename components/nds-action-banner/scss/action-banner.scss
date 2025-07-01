@@ -28,7 +28,9 @@
   margin: utils.rem(0 0 spacing.$large);
   padding: utils.rem(spacing.$medium 0);
   position: relative;
-
+  // Enable container queries
+  container-name: actionBanner;
+  container-type: inline-size;
   &__container {
     @include layout.container;
   }
@@ -210,7 +212,8 @@
         }
       }
     }
-
+  }
+  @container actionBanner (min-width: 900px) {
     &__text {
       margin-bottom: 0;
       width: math.percentage(3 * 0.25);
