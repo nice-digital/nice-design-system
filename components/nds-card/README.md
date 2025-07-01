@@ -147,7 +147,7 @@ The method of activating the link. By default a link is an anchor with `href` at
 
 - Type: `Metadata`, `Array<Metadata>`
 
-The indvidual metadata items that are listed underneath the card heading text.
+The individual metadata items that are listed underneath the card heading text.
 
 ##### Metadata
 
