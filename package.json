@@ -19,7 +19,7 @@
     "// LERNA": "",
     "lerna": "lerna",
     "lerna:clean": "lerna clean -y",
-    "release:alpha": "npm run clean:ts && npm run build:ts && lerna publish --canary --preid alpha --dist-tag alpha",
+    "release:alpha": "npm run clean:ts && npm run build:ts && lerna publish --canary --preid alpha --dist-tag alpha --git-tag-version",
     "release:latest": "npm run clean:ts && npm run build:ts && lerna publish --dist-tag latest",
     "// TESTS": "",
     "test": "cross-env CI=true npm run test:unit && npm run lint",
