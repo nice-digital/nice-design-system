@@ -229,11 +229,12 @@
       inline-size: 100%;
       margin-bottom: 0;
     }
-  }
-  @include media-queries.mq($until: sm) {
     .action-banner__inner {
       flex-direction: column;
       align-items: flex-start;
+    }
+    .action-banner__intro {
+      margin-bottom: utils.rem(spacing.$medium);
     }
   }
 }
