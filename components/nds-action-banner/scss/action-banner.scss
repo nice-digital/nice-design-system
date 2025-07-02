@@ -49,7 +49,7 @@
   }
 
   &__intro {
-    margin: 0;
+    margin: utils.rem(0 0 spacing.$medium 0);
   }
 
   &__actions {
