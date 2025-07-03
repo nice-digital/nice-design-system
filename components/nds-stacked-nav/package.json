@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-stacked-nav",
-	"version": "4.0.14",
+	"version": "4.0.15-alpha.0",
 	"description": "Stacked navigation component for the NICE Design System",
 	"keywords": [
 		"navigation"
