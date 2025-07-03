@@ -83,6 +83,9 @@
       @include typography.lead();
       margin-top: utils.rem(spacing.$medium);
     }
+    .action-banner__inner {
+      display: unset;
+    }
 
     .action-banner__container {
       @include layout.fullWidthContainer();
