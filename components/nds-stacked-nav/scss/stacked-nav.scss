@@ -18,7 +18,7 @@
   background: colours.$stacked-nav-background;
   border: 1px solid colours.$border;
   margin: utils.rem(0 0 spacing.$large);
-
+  word-wrap: break-word;
   // The title nav link
   &__root {
     @include typography.font-size(h6);
@@ -29,7 +29,6 @@
     max-width: none;
     position: relative;
     text-decoration: none;
-
     a {
       color: colours.$text;
     }
@@ -62,7 +61,6 @@
 
   &__content-wrapper {
     display: block;
-    word-wrap: break-word;
   }
 
   a {
