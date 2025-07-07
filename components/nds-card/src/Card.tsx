@@ -137,8 +137,7 @@ export const Card = (props: CardProps) => {
 		headingText,
 		headingElementType,
 		link,
-		summary,
-		children
+		summary
 	};
 
 	const classes = classNames([
@@ -153,11 +152,11 @@ export const Card = (props: CardProps) => {
 				<>
 					<div className="card__image">{image}</div>
 					<div className="card__text">
-						<CardBody {...cardBodyProps} />
+						<CardBody {...cardBodyProps}>{children}</CardBody>
 					</div>
 				</>
 			) : (
-				<CardBody {...cardBodyProps} />
+				<CardBody {...cardBodyProps}>{children}</CardBody>
 			)}
 		</ContainerType>
 	);

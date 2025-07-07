@@ -166,3 +166,13 @@ export const ExampleCardWithMetadata = () => (
 		metadata={[{ label: "label", value: "value" }, { value: "Another value" }]}
 	/>
 );
+
+export const ExampleCardWithChildren = () => (
+	<Card
+		headingText="Improving outcomes in breast cancer (CSG1)"
+		link={{ destination: "#" }}
+		summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc."
+	>
+		<Tag consultation>In consultation</Tag> In development
+	</Card>
+);

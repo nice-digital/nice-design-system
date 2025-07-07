@@ -9,7 +9,8 @@ import {
 	ExampleCalloutCard,
 	ExampleClickableCard,
 	ExampleCardListWithImages,
-	ExampleCardWithMetadata
+	ExampleCardWithMetadata,
+	ExampleCardWithChildren
 	} from "components/examples/Card";
 
 export const meta = {
@@ -26,15 +27,15 @@ There are two types:
 **Card lists** stack vertically to show a clear hierarchy or order. They are typically used when people are searching for specific items in a list or when there are lots of list items - example search results.
 
 <Example>
-<h3>Example: card list</h3>
-<ExampleCardList />
+	<h3>Example: card list</h3>
+	<ExampleCardList />
 </Example>
 
 **Card grids** appear side by side using the grid system. They typically support people browsing for information or when there are fewer items to display - example NICE and BNF homepage.
 
 <Example>
-<h3>Example: card grid</h3>
-<ExampleCardGrid />
+	<h3>Example: card grid</h3>
+	<ExampleCardGrid />
 </Example>
 
 ## When to use
@@ -48,8 +49,8 @@ Cards are intended as an outline used to entice users to click through to furthe
 Card lists are a flexible component for displaying an item within a list. They're used for items like guidance, news and search results to give an easily scannable list. Results lists stack underneath each other to make the ordering/hierarchy of items more obvious.
 
 <Example>
-<h4>Example: card list</h4>
-<ExampleCardList />
+	<h4>Example: card list</h4>
+	<ExampleCardList />
 </Example>
 
 ### Card grids
@@ -59,8 +60,8 @@ Card grids are used for displaying options side by side in rows of a grid. They 
 The callout variant has a white container which helps to group several different (but related) pieces of information into one unit.
 
 <Example>
-<h4>Example: card grid</h4>
-<ExampleCardGrid />
+	<h4>Example: card grid</h4>
+	<ExampleCardGrid />
 </Example>
 
 ### Card lists vs card grids
@@ -98,8 +99,8 @@ Use a card list for displaying things like guidance, advice, quality standards a
 - use a time tag with the correct datetime attribute to display dates.
 
 <Example>
-<h4>Example: guidance list</h4>
-<ExampleGuidanceList />
+	<h4>Example: guidance list</h4>
+	<ExampleGuidanceList />
 </Example>
 
 ### Card grid
@@ -115,24 +116,24 @@ They will always have a heading. They can have a combination of other elements a
 A callout card adds a white container to the card grid component. Use this for content than needs extra emphasis or content where an additional container will help to group the content inside the card.
 
 <Example>
-<h4>Example: callout card</h4>
-<ExampleCalloutCard />
+	<h4>Example: callout card</h4>
+	<ExampleCalloutCard />
 
-<CH.Code>
-```js React
-<Card headingText="Card title 1" summary="Nulla risus erat, maximus id semper ut, vulputate non nisl. Pellentesque sed luctus enim." callout />
-```
-```html HTML
-<article class="card card--callout">
-	<header class="card__header">
-		<p class="card__heading">Card title 1</p>
-	</header>
-	<p class="card__summary">
-		Nulla risus erat, maximus id semper ut, vulputate non nisl. Pellentesque sed luctus enim.
-	</p>
-</article>
-```
-</CH.Code>
+	<CH.Code>
+	```js React
+	<Card headingText="Card title 1" summary="Nulla risus erat, maximus id semper ut, vulputate non nisl. Pellentesque sed luctus enim." callout />
+	```
+	```html HTML
+	<article class="card card--callout">
+		<header class="card__header">
+			<p class="card__heading">Card title 1</p>
+		</header>
+		<p class="card__summary">
+			Nulla risus erat, maximus id semper ut, vulputate non nisl. Pellentesque sed luctus enim.
+		</p>
+	</article>
+	```
+	</CH.Code>
 </Example>
 
 #### Equal height
@@ -146,26 +147,26 @@ The click area for card grids wraps the entire card. This creates a larger click
 We avoid wrapping an entire card in an anchor tag as this can be a difficult experience for screen reader users.
 
 <Example>
-<h4>Example: clickable card</h4>
-<ExampleClickableCard />
+	<h4>Example: clickable card</h4>
+	<ExampleClickableCard />
 
-<CH.Code>
-```js React
-<Card headingText="Card title 1" link={{ destination: "/test" }} summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc." />
-```
-```html HTML
-<article class="card">
-	<header class="card__header">
-		<p class="card__heading">
-			<a href="/test">Card title 1</a>
+	<CH.Code>
+	```js React
+	<Card headingText="Card title 1" link={{ destination: "/test" }} summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc." />
+	```
+	```html HTML
+	<article class="card">
+		<header class="card__header">
+			<p class="card__heading">
+				<a href="/test">Card title 1</a>
+			</p>
+		</header>
+		<p class="card__summary">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc.
 		</p>
-	</header>
-	<p class="card__summary">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc.
-	</p>
-</article>
-```
-</CH.Code>
+	</article>
+	```
+	</CH.Code>
 </Example>
 
 ### Card headings
@@ -179,15 +180,15 @@ Headings should be added using the `headingText` property.
 Headings can be linked:
 
 <Example>
-<h4>Example: linked heading</h4>
-<ExampleClickableCard />
+	<h4>Example: linked heading</h4>
+	<ExampleClickableCard />
 </Example>
 
  or not linked:
 
 <Example>
-<h4>Example: plain heading</h4>
-<ExampleCard />
+	<h4>Example: plain heading</h4>
+	<ExampleCard />
 </Example>
 
 ### Card options
@@ -199,27 +200,55 @@ Alongside headings, cards can have a combination of the following:
 If you need to include supporting information in the card, this should be added using the `summary` property.
 
 This adds a paragraph below the heading for all types of card.
+<Example>
+	<h5>Example: Card summary with text</h5>
+	<ExampleCard />
 
-<CH.Code>
-```js React
-<Card headingText="Card title 1" summary="Card text 1" />
-```
-```html HTML
-<article class="card">
-	<header class="card__header">
-		<p class="card__heading">Card title 1</p>
-	</header>
-	<p class="card__summary">
-		Card text 1
-	</p>
-</article>
-```
-</CH.Code>
+	<CH.Code>
+		```js React
+		<Card headingText="Card title 1" summary="Card text 1" />
+		```
+		```html HTML
+		<article class="card">
+			<header class="card__header">
+				<p class="card__heading">Card title 1</p>
+			</header>
+			<p class="card__summary">
+				Card text 1
+			</p>
+		</article>
+		```
+	</CH.Code>
+</Example>
 
 You can also add HTML to the summary - such as the tags used for News or Guidance listings.
 <Example>
 	<h5>Example: Card summary with html</h5>
 	<ExampleGuidanceList />
+
+	<CH.Code>
+		```js React
+		<Card
+			headingText="Improving outcomes in breast cancer (CSG1)"
+			link={{ destination: "/test" }}
+			summary={
+				<>
+					<Tag consultation>In consultation</Tag> In development
+				</>
+			}
+		/>
+		```
+		```html HTML
+		<article class="card" data-component="card">
+			<header class="card__header">
+				<p class="card__heading"><a href="/test">Improving outcomes in breast cancer (CSG1)</a></p>
+			</header>
+			<p class="card__summary">
+				<span class="tag tag--consultation" data-component="tag">In consultation</span> In development
+			</p>
+		</article>
+		```
+	</CH.Code>
 </Example>
 
 #### Card images
@@ -229,49 +258,77 @@ The image must relate to the content. It must have an alt tag that describes the
 Images appear to the side by default:
 
 <Example>
-<h5>Example: card list with images</h5>
-<ExampleCardListWithImages />
+	<h5>Example: card list with images</h5>
+	<ExampleCardListWithImages />
 </Example>
 
 Images in callout cards appear on top and the image will always be clipped at 16:9 ratio:
 
 <Example>
-<h5>Example: callout card grid with images</h5>
-<ExampleCardGridWithImages />
+	<h5>Example: callout card grid with images</h5>
+	<ExampleCardGridWithImages />
 </Example>
+
+#### Additional content (children)
+You might need some summary text and some additional content, such as a tag like we have on Guidance lists. In this case,  you can add 'child' content within the body of the card.
+<Example>
+	<ExampleCardWithChildren />
+	<CH.Code>
+	```js React
+	<Card
+		headingText="Improving outcomes in breast cancer (CSG1)"
+		link={{ destination: "#" }}
+		summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc."
+	>
+		<Tag consultation>In consultation</Tag> In development
+	</Card>
+	```
+	```html HTML
+	<article class="card" data-component="card">
+		<header class="card__header">
+			<p class="card__heading"><a href="#">Improving outcomes in breast cancer (CSG1)</a></p>
+		</header>
+		<p class="card__summary card__summary--card-has-children">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc.</p><span
+			class="tag tag--consultation" data-component="tag">In consultation</span> In development
+	</article>
+	```
+	</CH.Code>
+</Example>
+
 
 #### Metadata
 
 Metadata is used for adding secondary information such as categories or labels to the content. For example a guidance type or published date.
 
 <Example>
-<h5>Example: card with metadata</h5>
-<ExampleCardWithMetadata />
-<h5>Code</h5>
-<CH.Code>
-```js React
-<Card
-	headingText="Card with metadata"
-	metadata={[{ label: "label", value: "value" }, { value: "Another value" }]}
-/>
-```
-```html HTML
-<article class="card">
-	<header class="card__header">
-		<p class="card__heading">Card with metadata</p>
-	</header>
-	<dl class="card__metadata">
-		<div class="card__metadatum">
-			<dt class="visually-hidden">label</dt>
-			<dd>value</dd>
-		</div>
-		<div class="card__metadatum">
-			<dd>Another value</dd>
-		</div>
-	</dl>
-</article>
-```
-</CH.Code>
+	<h5>Example: card with metadata</h5>
+	<ExampleCardWithMetadata />
+	<h5>Code</h5>
+	<CH.Code>
+		```js React
+		<Card
+			headingText="Card with metadata"
+			metadata={[{ label: "label", value: "value" }, { value: "Another value" }]}
+		/>
+		```
+		```html HTML
+		<article class="card">
+			<header class="card__header">
+				<p class="card__heading">Card with metadata</p>
+			</header>
+			<dl class="card__metadata">
+				<div class="card__metadatum">
+					<dt class="visually-hidden">label</dt>
+					<dd>value</dd>
+				</div>
+				<div class="card__metadatum">
+					<dd>Another value</dd>
+				</div>
+			</dl>
+		</article>
+		```
+	</CH.Code>
 </Example>
 
 
