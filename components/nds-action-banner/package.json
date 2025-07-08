@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-action-banner",
-	"version": "4.3.0",
+	"version": "4.3.1",
 	"description": "Action banner component for the NICE Design System",
 	"keywords": [
 		"banner"
@@ -47,5 +47,5 @@
 		"@types/node": "^18.11.9",
 		"typescript": "^4.8.4"
 	},
-	"gitHead": "e75957040c9acfbd7eeb164cad724e3b48760679"
+	"gitHead": "dd76d13a75f00a0261df82e055d2525ba6c3189d"
 }
