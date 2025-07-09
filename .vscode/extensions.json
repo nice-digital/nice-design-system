@@ -1,14 +1,13 @@
 {
-	"recommendations": [
-		"editorconfig.editorconfig",
-		"dbaeumer.vscode-eslint",
-		"andys8.jest-snippets",
-		"eg2.vscode-npm-script",
-		"christian-kohler.npm-intellisense",
-		"christian-kohler.path-intellisense",
-		"esbenp.prettier-vscode",
-		"silvenon.mdx",
-		"stylelint.vscode-stylelint",
-		"mrmlnc.vscode-scss"
-	]
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "andys8.jest-snippets",
+    "christian-kohler.npm-intellisense",
+    "christian-kohler.path-intellisense",
+    "esbenp.prettier-vscode",
+    "unifiedjs.vscode-mdx",
+    "stylelint.vscode-stylelint",
+    "mrmlnc.vscode-scss"
+  ]
 }

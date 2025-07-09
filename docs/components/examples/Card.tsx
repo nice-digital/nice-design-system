@@ -6,12 +6,17 @@ import { Tag } from "@nice-digital/nds-tag";
 export const ExampleCardList = () => (
 	<ul className="list--unstyled">
 		<li>
-			<Card headingText="Card title 1" link={{ destination: "/test" }}>
-				Card text 1
-			</Card>
+			<Card
+				headingText="Card title 1"
+				link={{ destination: "/test" }}
+				summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc."
+			/>
 		</li>
 		<li>
-			<Card headingText="Card title 2">Card text 2</Card>
+			<Card
+				headingText="Card title 2"
+				summary="In rhoncus, urna sollicitudin blandit interdum, risus mauris malesuada magna, vitae maximus mauris leo ut elit. Integer maximus, nisi at congue volutpat, arcu diam finibus eros, quis tincidunt massa lacus nec ante."
+			/>
 		</li>
 	</ul>
 );
@@ -35,9 +40,8 @@ export const ExampleCardGrid = () => (
 				link={{
 					destination: "https://www.example.com"
 				}}
-			>
-				Card text
-			</Card>
+				summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc."
+			/>
 		</GridItem>
 		<GridItem cols={12} sm={{ cols: 4 }}>
 			<Card
@@ -45,10 +49,8 @@ export const ExampleCardGrid = () => (
 				link={{
 					destination: "https://www.example.com"
 				}}
-			>
-				Nulla risus erat, maximus id semper ut, vulputate non nisl. Pellentesque
-				sed luctus enim.
-			</Card>
+				summary="Nulla risus erat, maximus id semper ut, vulputate non nisl. Pellentesque sed luctus enim."
+			/>
 		</GridItem>
 		<GridItem cols={12} sm={{ cols: 4 }}>
 			<Card
@@ -56,51 +58,46 @@ export const ExampleCardGrid = () => (
 				link={{
 					destination: "https://www.example.com"
 				}}
-			>
-				Card text
-			</Card>
+				summary="Integer maximus, nisi at congue volutpat, arcu diam finibus eros, quis tincidunt massa lacus nec ante."
+			/>
 		</GridItem>
 	</Grid>
 );
 
 export const ExampleCardGridWithImages = () => (
 	<Grid equalHeight>
-		<GridItem cols={12} sm={{ cols: 4 }}>
+		<GridItem cols={12} md={{ cols: 4 }}>
 			<Card
 				headingText="Card title 1"
 				image={<img src="https://picsum.photos/id/272/300/200" alt="" />}
 				link={{
 					destination: "https://www.example.com"
 				}}
+				summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc."
 				callout
-			>
-				Card text
-			</Card>
+			/>
 		</GridItem>
-		<GridItem cols={12} sm={{ cols: 4 }}>
+		<GridItem cols={12} md={{ cols: 4 }}>
 			<Card
 				headingText="Card title 2"
 				image={<img src="https://picsum.photos/id/272/300/200" alt="" />}
 				link={{
 					destination: "https://www.example.com"
 				}}
+				summary="Nulla risus erat, maximus id semper ut, vulputate non nisl. Pellentesque sed luctus enim."
 				callout
-			>
-				Nulla risus erat, maximus id semper ut, vulputate non nisl. Pellentesque
-				sed luctus enim.
-			</Card>
+			/>
 		</GridItem>
-		<GridItem cols={12} sm={{ cols: 4 }}>
+		<GridItem cols={12} md={{ cols: 4 }}>
 			<Card
 				headingText="Card title 3"
 				image={<img src="https://picsum.photos/id/272/300/200" alt="" />}
 				link={{
 					destination: "https://www.example.com"
 				}}
+				summary="Integer maximus, nisi at congue volutpat, arcu diam finibus eros, quis tincidunt massa lacus nec ante."
 				callout
-			>
-				Card text
-			</Card>
+			/>
 		</GridItem>
 	</Grid>
 );
@@ -111,44 +108,56 @@ export const ExampleGuidanceList = () => (
 			<Card
 				headingText="Improving outcomes in breast cancer (CSG1)"
 				link={{ destination: "/test" }}
-			>
-				<Tag consultation>In consultation</Tag> In development
-			</Card>
+				summary={
+					<>
+						<Tag consultation>In consultation</Tag> In development
+					</>
+				}
+			/>
 		</li>
 		<li>
 			<Card
 				headingText="Suspected cancer (QS124)"
 				link={{ destination: "/test" }}
-			>
-				Published: <time>31st December 2022</time>
-			</Card>
+				summary={
+					<>
+						Published: <time>31st December 2022</time>
+					</>
+				}
+			/>
 		</li>
 	</ul>
 );
 
 export const ExampleCard = () => (
-	<Card headingText="Card title 1">Card text 1</Card>
+	<Card
+		headingText="Card title 1"
+		summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc."
+	/>
 );
 
 export const ExampleCardWithImage = () => (
 	<Card
 		headingText="Card title 1"
 		image={<img src="https://picsum.photos/id/272/300/200" alt="" />}
-	>
-		Card text 1
-	</Card>
+		summary="Integer maximus, nisi at congue volutpat, arcu diam finibus eros, quis tincidunt massa lacus nec ante."
+	/>
 );
 
 export const ExampleCalloutCard = () => (
-	<Card headingText="Card title 1" callout>
-		Card text 1
-	</Card>
+	<Card
+		headingText="Card title 1"
+		summary="Nulla risus erat, maximus id semper ut, vulputate non nisl. Pellentesque sed luctus enim."
+		callout
+	/>
 );
 
 export const ExampleClickableCard = () => (
-	<Card headingText="Card title 1" link={{ destination: "/test" }}>
-		Card text 1
-	</Card>
+	<Card
+		headingText="Card title 1"
+		link={{ destination: "/test" }}
+		summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc."
+	/>
 );
 
 export const ExampleCardWithMetadata = () => (
@@ -156,4 +165,14 @@ export const ExampleCardWithMetadata = () => (
 		headingText="Card with metadata"
 		metadata={[{ label: "label", value: "value" }, { value: "Another value" }]}
 	/>
+);
+
+export const ExampleCardWithChildren = () => (
+	<Card
+		headingText="Improving outcomes in breast cancer (CSG1)"
+		link={{ destination: "#" }}
+		summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc."
+	>
+		<Tag consultation>In consultation</Tag> In development
+	</Card>
 );
