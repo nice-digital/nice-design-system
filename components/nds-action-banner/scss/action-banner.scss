@@ -219,12 +219,10 @@
       }
     }
   }
-
   @include media-queries.mq($until: sm) {
     .action-banner__actions .btn {
       white-space: normal;
       word-break: break-word;
-      inline-size: 100%;
     }
     .action-banner__text {
       white-space: normal;
