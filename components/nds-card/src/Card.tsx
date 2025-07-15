@@ -66,7 +66,15 @@ const CardBody = (props: CardBodyProps) => {
 			<header className="card__header">
 				<CardHeader {...headerProps} />
 			</header>
-			{summary && <p className="card__summary">{summary}</p>}
+			{summary && (
+				<p
+					className={classNames("card__summary", {
+						"card__summary--card-has-children": !!children
+					})}
+				>
+					{summary}
+				</p>
+			)}
 
 			{children && children}
 
@@ -129,8 +137,7 @@ export const Card = (props: CardProps) => {
 		headingText,
 		headingElementType,
 		link,
-		summary,
-		children
+		summary
 	};
 
 	const classes = classNames([
@@ -145,11 +152,11 @@ export const Card = (props: CardProps) => {
 				<>
 					<div className="card__image">{image}</div>
 					<div className="card__text">
-						<CardBody {...cardBodyProps} />
+						<CardBody {...cardBodyProps}>{children}</CardBody>
 					</div>
 				</>
 			) : (
-				<CardBody {...cardBodyProps} />
+				<CardBody {...cardBodyProps}>{children}</CardBody>
 			)}
 		</ContainerType>
 	);

@@ -41,9 +41,12 @@ import { MySuperComponent } from "./components/MySuperComponent";
 			value: <MySuperComponent />
 		}
 	]
->
-    <p>Card children</p>
-</Card>
+	children={
+		<>
+			<p>Card children</p>
+		</>
+	}
+/>
 
 <Card
 	headingText="Card title"
@@ -52,6 +55,7 @@ import { MySuperComponent } from "./components/MySuperComponent";
 		destination: "/destination",
 		elementType: "a"
 	}
+	summary="Card summary"
 />
 
 // The mimimum to be supplied is headingText
@@ -143,7 +147,7 @@ The method of activating the link. By default a link is an anchor with `href` at
 
 - Type: `Metadata`, `Array<Metadata>`
 
-The indvidual metadata items that are listed underneath the card heading text.
+The individual metadata items that are listed underneath the card heading text.
 
 ##### Metadata
 
