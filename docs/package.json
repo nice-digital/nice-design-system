@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/design-system-docs",
-	"version": "1.6.2",
+	"version": "1.6.3",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
@@ -13,7 +13,7 @@
 		"@mdx-js/loader": "^2.1.5",
 		"@mdx-js/react": "^2.1.5",
 		"@next/mdx": "^13.0.1",
-		"@nice-digital/design-system": "^5.5.2",
+		"@nice-digital/design-system": "^5.5.3",
 		"@nice-digital/global-nav": "^5.0.916",
 		"glob": "^8.0.3",
 		"next": "^13.2.4",
