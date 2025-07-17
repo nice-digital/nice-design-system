@@ -55,8 +55,11 @@
   &__actions {
     @include focus.inverse-button-focus;
     flex: 0 0 auto;
+    max-width: 100%;
     .btn {
       margin: 0;
+      white-space: normal;
+      word-break: break-word;
     }
   }
 
@@ -219,12 +222,10 @@
       }
     }
   }
-
   @include media-queries.mq($until: sm) {
     .action-banner__actions .btn {
       white-space: normal;
       word-break: break-word;
-      inline-size: 100%;
     }
     .action-banner__text {
       white-space: normal;
