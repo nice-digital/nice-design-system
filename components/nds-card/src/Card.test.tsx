@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 import { Card, CardProps, CardHeadingLinkProps } from "./Card";
 
@@ -151,4 +151,48 @@ describe("Card", () => {
 		const childElement = container.querySelector("#child");
 		expect(childElement?.textContent).toBe("Render child");
 	});
+
+	it.each([
+		[2, "heading2"],
+		[3, "heading3"],
+		[4, "heading4"],
+		[5, "heading5"],
+		[6, "heading6"]
+	])(
+		"should show a heading element if one is passed",
+		(heading, headingText) => {
+			render(
+				<Card headingText={headingText} headingLevel={heading}>
+					<p>Body content</p>
+				</Card>
+			);
+
+			expect(screen.getByRole("heading")).toHaveClass("card__heading");
+			expect(screen.getByRole("heading")).toHaveProperty(
+				"tagName",
+				`H${heading}`
+			);
+			expect(screen.getByRole("heading")).toHaveTextContent(headingText);
+		}
+	);
+
+	it.each([
+		[undefined, "undefined headingLevel"],
+		[1, "level one heading"],
+		[7, "invalid heading level"]
+	])(
+		"should render a p element if null or an invalid heading level is passed",
+		(heading, headingText) => {
+			render(
+				<Card headingText={headingText} headingLevel={heading}>
+					<p>Body content</p>
+				</Card>
+			);
+
+			const cardHeading = screen.getByText(headingText);
+			expect(cardHeading).toHaveClass("card__heading");
+			expect(cardHeading.tagName).toBe("P");
+			expect(cardHeading).toHaveTextContent(headingText);
+		}
+	);
 });

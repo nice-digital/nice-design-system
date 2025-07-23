@@ -10,7 +10,8 @@ import {
 	ExampleClickableCard,
 	ExampleCardListWithImages,
 	ExampleCardWithMetadata,
-	ExampleCardWithChildren
+	ExampleCardWithChildren,
+	ExampleCardWithHeadingLevel
 	} from "components/examples/Card";
 
 export const meta = {
@@ -176,6 +177,23 @@ Cards will always have a heading.
 Keep headings succinct and make it clear what the user will find on the page that the card links to.
 
 Headings should be added using the `headingText` property.
+
+Heading level can be set using the optional `headingLevel` property. If not provided, the content will default to a paragraph tag:
+
+<Example>
+	<h4>Example: Card with heading level</h4>
+	<ExampleCardWithHeadingLevel />
+
+	<CH.Code>
+		```js React
+		<Card headingText="Card title 1" headingLevel="6" summary="Card text 1" />
+	```
+
+	```html HTML
+	<article class="card" data-component="card"><header class="card__header"><h6 class="card__heading"><a href="https://www.example.com">Card with heading level 6</a></h6></header><p class="card__summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc.</p></article>
+	```
+	</CH.Code>
+</Example>
 
 Headings can be linked:
 
