@@ -136,6 +136,14 @@ export const ExampleCard = () => (
 	/>
 );
 
+export const ExampleCardWithHeadingLevel = () => (
+	<Card
+		headingText="Card with heading level 5"
+		headingLevel="5"
+		summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc."
+	/>
+);
+
 export const ExampleCardWithImage = () => (
 	<Card
 		headingText="Card title 1"

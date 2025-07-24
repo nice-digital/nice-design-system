@@ -4,6 +4,7 @@ import { Accordion as TestAccordion } from "../../components/nds-accordion/src/A
 import { Hero } from "../../components/nds-hero/src/Hero";
 import { ActionBanner } from "../../components/nds-action-banner/src/ActionBanner";
 import { Button } from "../../components/nds-button/src/Button";
+import { Card } from "@nice-digital/nds-card";
 export default function Test() {
 	const breadcrumb = (
 		<div style={{ marginBottom: "2rem" }}>
@@ -34,6 +35,37 @@ export default function Test() {
 				MDX files don&apos;t have great Typescript integration, so it can
 				sometimes be hard to debug components using MDX alone.
 			</p>
+
+			<Card
+				headingText="Card with heading level 6"
+				headingLevel={6}
+				link={{
+					destination: "https://www.example.com"
+				}}
+				summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc."
+			/>
+			<Card
+				headingText="Card with heading level 2"
+				headingLevel={2}
+				link={{
+					destination: "https://www.example.com"
+				}}
+				summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc."
+			/>
+
+			<Card
+				headingText="Card with no heading level set"
+				link={{
+					destination: "https://www.example.com"
+				}}
+				summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc."
+			/>
+
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
 			<Hero
 				header={breadcrumb}
 				title="This is a hero title"
