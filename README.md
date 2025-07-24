@@ -10,17 +10,15 @@
 <details>
 <summary><strong>Table of contents</strong></summary>
 
-- [:art: NICE Design System](#art-nice-design-system)
-	- [What is it?](#what-is-it)
-	- [Development](#development)
-		- [Quick start](#quick-start)
-		- [Slow start](#slow-start)
-		- [Storybook](#storybook)
-		- [Tests](#tests)
-		- [Documentation](#documentation)
-		- [Commands](#commands)
-			- [Publishing to npm](#publishing-to-npm)
-	- [Upgrading to 1.x from 0.x](#upgrading-to-1x-from-0x)
+- [What is it?](#what-is-it)
+- [Development](#development)
+	- [Quick start](#quick-start)
+	- [Slow start](#slow-start)
+	- [Help! I'm getting complaints about icons!](#help-im-getting-complaints-about-icons)
+	- [NextJS](#nextjs)
+	- [Tests](#tests)
+	- [Commands](#commands)
+		- [Publishing to npm](#publishing-to-npm)
 </details>
 
 ## What is it?
@@ -94,6 +92,14 @@ Run `npm start` and `test:unit:watch` for development. However, there are other 
 Check [package.json](package.json) for a complete list of scripts.
 
 > Note: because lerna is installed locally, you can use `npm run lerna -- ` to run lerna commands, for example `npm run lerna -- add @nice-digital/icons --scope=@nice-digital/nds-filters`
+>
+> ### Alpha release detects no changes?
+
+if you run npm run release:alpha and it detects no changes, try running this command beforehand to manually bump version numbers (this won't push changes to git - '--no-push'):
+
+```sh
+npx lerna version prerelease --preid alpha --no-push --no-git-tag-version
+```
 
 #### Publishing to npm
 
