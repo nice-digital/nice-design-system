@@ -95,7 +95,7 @@ Check [package.json](package.json) for a complete list of scripts.
 >
 > ### Alpha release detects no changes?
 
-if you run npm run release:alpha and it detects no changes, try running this command beforehand to manually bump version numbers (this won't push changes to git - '--no-push'):
+If you make changes, do npm start to rebuild the project and have lerna update version numbers. If you run npm run release:alpha and it detects no changes, as a last resort, try running this command beforehand to manually bump version numbers (this won't push changes to git - '--no-push'):
 
 ```sh
 npx lerna version prerelease --preid alpha --no-push --no-git-tag-version
