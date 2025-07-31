@@ -23,8 +23,8 @@
 /// @since 0.3.1
 .card {
   @include layout.clearfix;
-  margin: 0;
-  position: relative;
+  // margin: 0;
+  // position: relative;
 
   &--flush {
     margin-bottom: 0;
