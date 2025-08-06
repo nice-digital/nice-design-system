@@ -48,7 +48,7 @@ export const AccordionGroup: FC<AccordionGroupProps> = ({
 					<Toggle isOpen={isGroupOpen}>{toggleText(isGroupOpen)}</Toggle>
 				</button>
 			) : null}
-			{children}
+			<div data-id="accordion-group">{children}</div>
 		</AccordionGroupProvider>
 	);
 };
