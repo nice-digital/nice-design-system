@@ -22,7 +22,8 @@ const CardHeader = (props: CardHeaderProps) => {
 		const levelAsNumber = Number(level);
 		return levelAsNumber >= 2 && levelAsNumber <= 6;
 	};
-
+	console.log("headingLevel", props.headingLevel);
+	console.log("isValidLevel", isValidLevel(props.headingLevel));
 	const {
 		headingLevel,
 		headingText,
@@ -31,7 +32,7 @@ const CardHeader = (props: CardHeaderProps) => {
 			: "p",
 		link
 	} = props;
-
+	console.log(headingLevel, HeadingTag, headingText);
 	let linkProps = {};
 
 	if (link) {
