@@ -52,3 +52,4 @@ export const AccordionGroup: FC<AccordionGroupProps> = ({
 		</AccordionGroupProvider>
 	);
 };
+
