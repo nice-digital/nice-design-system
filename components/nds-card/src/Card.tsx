@@ -10,13 +10,28 @@ export interface CardHeadingLinkProps {
 
 interface CardHeaderProps {
 	headingElementType?: React.ElementType;
+	headingLevel?: HeadingLevel;
 	headingText: React.ReactNode;
 	link: CardHeadingLinkProps;
 }
 
-const CardHeader = (props: CardHeaderProps) => {
-	const { headingText, headingElementType: HeadingTag = "p", link } = props;
+type HeadingLevel = string | number | undefined;
 
+const CardHeader = (props: CardHeaderProps) => {
+	const isValidLevel = (level: HeadingLevel): boolean => {
+		const levelAsNumber = Number(level);
+		return levelAsNumber >= 2 && levelAsNumber <= 6;
+	};
+
+	const {
+		headingLevel,
+		headingText,
+		headingElementType: HeadingTag = isValidLevel(headingLevel)
+			? (`h${headingLevel}` as keyof JSX.IntrinsicElements)
+			: "p",
+		link
+	} = props;
+	console.log(headingLevel, HeadingTag, headingText);
 	let linkProps = {};
 
 	if (link) {
@@ -41,6 +56,7 @@ export interface CardBodyProps {
 	children?: React.ReactNode;
 	summary?: React.ReactNode;
 	headingElementType?: React.ElementType;
+	headingLevel?: HeadingLevel;
 	headingText: React.ReactNode;
 	link?: CardHeadingLinkProps;
 	metadata?: CardMetaDataProps[];
@@ -54,9 +70,17 @@ export interface CardMetaDataProps {
 }
 
 const CardBody = (props: CardBodyProps) => {
-	const { metadata, headingText, headingElementType, link, summary, children } =
-		props;
+	const {
+		metadata,
+		headingLevel,
+		headingText,
+		headingElementType,
+		link,
+		summary,
+		children
+	} = props;
 	const headerProps = {
+		headingLevel,
 		headingText,
 		headingElementType: headingElementType as React.ElementType,
 		link: link as CardHeadingLinkProps
@@ -108,6 +132,7 @@ export interface CardProps {
 	children?: React.ReactNode;
 	summary?: React.ReactNode;
 	elementType?: React.ElementType;
+	headingLevel?: HeadingLevel;
 	headingElementType?: React.ElementType;
 	headingText: React.ReactNode;
 	image?: React.ReactNode;
@@ -121,6 +146,7 @@ export const Card = (props: CardProps) => {
 	const {
 		className,
 		metadata,
+		headingLevel,
 		headingText,
 		headingElementType,
 		link,
@@ -134,6 +160,7 @@ export const Card = (props: CardProps) => {
 
 	const cardBodyProps = {
 		metadata,
+		headingLevel,
 		headingText,
 		headingElementType,
 		link,
