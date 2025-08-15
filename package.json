@@ -1,7 +1,7 @@
 {
   "name": "nice-design-system",
   "private": true,
-  "version": "5.0.0",
+  "version": "5.0.1-alpha.0",
   "description": "Monorepo for the NICE Design System",
   "scripts": {
     "start": "npm run dev",
@@ -19,7 +19,7 @@
     "// LERNA": "",
     "lerna": "lerna",
     "lerna:clean": "lerna clean -y",
-    "release:alpha": "npm run clean:ts && npm run build:ts && lerna publish --canary --preid alpha --dist-tag alpha --git-tag-version",
+    "release:alpha": "git fetch --tags && npm run clean:ts && npm run build:ts && lerna publish --canary --preid alpha --dist-tag alpha --git-tag-version",
     "release:latest": "npm run clean:ts && npm run build:ts && lerna publish --dist-tag latest",
     "// TESTS": "",
     "test": "cross-env CI=true npm run test:unit && npm run lint",
