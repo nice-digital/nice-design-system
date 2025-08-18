@@ -31,7 +31,6 @@ const CardHeader = (props: CardHeaderProps) => {
 			: "p",
 		link
 	} = props;
-	console.log(headingLevel, HeadingTag, headingText);
 	let linkProps = {};
 
 	if (link) {
