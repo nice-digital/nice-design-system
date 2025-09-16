@@ -18,8 +18,8 @@
 		"glob": "^8.0.3",
 		"next": "^13.2.4",
 		"next-transpile-modules": "^9.1.0",
-		"react": "18.2.0",
-		"react-dom": "18.2.0",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
 		"remark-gfm": "^3.0.1"
 	},
 	"devDependencies": {
@@ -27,8 +27,8 @@
 		"@testing-library/user-event": "^14.4.3",
 		"@types/jest": "^29.2.2",
 		"@types/node": "^18.11.9",
-		"@types/react": "18.0.24",
-		"@types/react-dom": "18.0.8",
+		"@types/react": "^18.3.24",
+		"@types/react-dom": "^18.3.1",
 		"eslint": "8.26.0",
 		"eslint-config-next": "13.0.0",
 		"sass": "^1.55.0",
