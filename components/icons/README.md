@@ -241,7 +241,7 @@ There are SASS constructs for advanced usage:
 ### Dependencies
 
 	TL;DR:
-		1. `npm i`
+		1. `npm ci`
 		2. `npm start`
 
 To build the icon font on your local machine, first install:
@@ -249,7 +249,7 @@ To build the icon font on your local machine, first install:
 - [Node 14](https://nodejs.org/en/download/)
 - [npm 6.8+](https://www.npmjs.com/)
 
-Then before you can run any tasks, run the following from the command line to install dependencies `npm i`
+Then before you can run any tasks, run the following from the command line to install dependencies `npm ci`
 
 ### Commands
 
