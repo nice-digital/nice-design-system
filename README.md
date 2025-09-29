@@ -33,7 +33,7 @@ We recommend using vscode as the IDE when developing with the NICE Design System
 
     TL;DR:
     	1. `volta install node`
-    	2. `npm i`
+    	2. `npm ci`
     	3. `npm start`
     	4. http://localhost:3000/
 
@@ -41,14 +41,14 @@ We recommend using vscode as the IDE when developing with the NICE Design System
 
 To run the design system site and tests locally, first install [Node](https://nodejs.org/en/download/). We use [Volta](https://volta.sh/) to manage Node versions; you may need to [install that first](https://docs.volta.sh/guide/getting-started).
 
-Then before you can run any tasks, run `npm i` from the command line to install dependencies from npm. This will also link local packages together and install remaining package dependencies.
+Then before you can run any tasks, run `npm ci` from the command line to install dependencies from npm. This will also link local packages together and install remaining package dependencies.
 
 Next, run `npm start` from the command line to run a server for local development, and view http://localhost:3000/ in a browser.
 
 ### Help! I'm getting complaints about icons!
 
 You may need to generate the icon packages first. Change to the components/icons
-folder, run `npm i` and then `npm start`. You should then be able to return to
+folder, run `npm ci` and then `npm start`. You should then be able to return to
 the root folder and run `npm start` again without any issues.
 
 ### NextJS

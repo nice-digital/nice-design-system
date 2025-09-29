@@ -4,6 +4,6 @@ This is a simple example of using an express app to serve the font files. It bui
 
 ### Usage
 
-1. `npm i`
+1. `npm ci`
 2. `npm start`
 3. Open [http://localhost:3000/](http://localhost:3000/)
