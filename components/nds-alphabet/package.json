@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-alphabet",
-	"version": "3.0.14",
+	"version": "3.0.15",
 	"description": "Alphabet component for the NICE Design System",
 	"main": "es/Alphabet.js",
 	"types": "es/Alphabet.d.ts",
@@ -32,7 +32,7 @@
 	"homepage": "https://design-system.nice.org.uk/",
 	"license": "MIT",
 	"dependencies": {
-		"@nice-digital/nds-core": "^4.0.14"
+		"@nice-digital/nds-core": "^4.0.15"
 	},
 	"devDependencies": {
 		"@testing-library/jest-dom": "^5.16.5",
