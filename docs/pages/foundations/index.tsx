@@ -1,12 +1,13 @@
 import { useEffect } from "react";
-import { useRouter } from "next/router";
 
 export default function FoundationsRedirect() {
-	const router = useRouter();
-
 	useEffect(() => {
-		router.replace("/");
-	}, [router]);
+		window.location.replace("/");
+	}, []);
 
-	return null;
+	return (
+		<noscript>
+			<meta httpEquiv="refresh" content="0;url=/" />
+		</noscript>
+	);
 }
