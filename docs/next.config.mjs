@@ -19,7 +19,6 @@ const nextConfig = {
 	},
 	pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
 	reactStrictMode: true,
-	redirects: () => redirects,
 	swcMinify: true,
 	trailingSlash: true,
 	transpilePackages: [...allNDSComponents, "@nice-digital/global-nav"]
