@@ -13,6 +13,7 @@ const allNDSComponents = glob.sync("@nice-digital/*", {
 });
 
 const nextConfig = {
+	output: "export",
 	images: {
 		unoptimized: true
 	},
@@ -39,18 +40,4 @@ const withMDX = createMDX({
 		// providerImportSource: "@mdx-js/react",
 	}
 });
-
-const redirects = [
-	{
-		source: "/components",
-		destination: "/",
-		permanent: true
-	},
-	{
-		source: "/foundations",
-		destination: "/",
-		permanent: true
-	}
-];
-
 export default withMDX(nextConfig);
