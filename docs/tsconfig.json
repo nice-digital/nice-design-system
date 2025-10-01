@@ -13,8 +13,8 @@
 		"moduleResolution": "node",
 		"resolveJsonModule": true,
 		"isolatedModules": true,
-		"jsx": "preserve",
-		"types": ["react", "node", "styled-jsx"],
+		"jsx": "react-jsx",
+		"types": ["react", "react-dom", "node", "styled-jsx"],
 		"incremental": true
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
