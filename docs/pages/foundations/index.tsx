@@ -5,12 +5,12 @@ export default function ComponentsRedirect() {
 	const { replace } = useRouter();
 
 	useEffect(() => {
-		replace("/design-library/foundations");
+		replace("/design-library/#foundations");
 	}, [replace]);
 
 	return (
 		<noscript>
-			<meta httpEquiv="refresh" content="0;url=/design-library/foundations" />
+			<meta httpEquiv="refresh" content="0;url=/design-library/#foundations" />
 		</noscript>
 	);
 }
