@@ -2,6 +2,7 @@
 # See http://eslint.org/docs/user-guide/configuring#ignoring-files-and-directories
 
 node_modules
+.next
 dist/*
 !.grunt-tasks*
 dev-app
