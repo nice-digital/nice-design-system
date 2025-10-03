@@ -15,7 +15,7 @@
     "icons:readme": "npm run icons -- readme",
     "// DOCUMENTATION": "",
     "docs:dev": "lerna run --stream --no-prefix --scope=@nice-digital/design-system-docs dev",
-    "docs:build": "rimraf docs/.next && lerna run --stream --no-prefix --scope=@nice-digital/design-system-docs build",
+    "docs:build": "lerna run --stream --no-prefix --scope=@nice-digital/design-system-docs build",
     "// LERNA": "",
     "lerna": "lerna",
     "lerna:clean": "lerna clean -y",
