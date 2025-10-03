@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
-export default function ComponentsRedirect() {
+export default function FoundationsRedirect() {
 	const { replace } = useRouter();
 
 	useEffect(() => {
