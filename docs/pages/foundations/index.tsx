@@ -1,16 +1,5 @@
-import { useEffect } from "react";
-import { useRouter } from "next/router";
+import { Redirect } from "../../utils/redirect";
 
-export default function FoundationsRedirect() {
-	const { replace } = useRouter();
-
-	useEffect(() => {
-		replace("/design-library/#foundations");
-	}, [replace]);
-
-	return (
-		<noscript>
-			<meta httpEquiv="refresh" content="0;url=/design-library/#foundations" />
-		</noscript>
-	);
+export default function FoundationsRedirectPage() {
+	return <Redirect to="/design-library/#foundations" />;
 }
