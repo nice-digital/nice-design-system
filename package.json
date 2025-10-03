@@ -48,8 +48,8 @@
   ],
   "license": "MIT",
   "engines": {
-    "node": ">= 16.18.1"
-  },
+  "node": ">=18.18.0"
+},
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@types/node": "^18.11.9",
