@@ -48,9 +48,10 @@
   ],
   "license": "MIT",
   "engines": {
-  "node": ">=18.18.0"
-},
+    "node": ">=18.18.0"
+  },
   "devDependencies": {
+    "@mdx-js/loader": "^2.3.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.45.1",
