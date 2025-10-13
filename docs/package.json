@@ -1,37 +1,37 @@
 {
-	"name": "@nice-digital/design-system-docs",
-	"version": "1.6.7",
-	"private": true,
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build && next export",
-		"start": "next start",
-		"lint": "next lint"
-	},
-	"dependencies": {
-		"@code-hike/mdx": "^0.8.3",
-		"@mdx-js/loader": "^2.1.5",
-		"@mdx-js/react": "^2.1.5",
-		"@next/mdx": "^13.0.1",
-		"@nice-digital/design-system": "^5.5.7",
-		"@nice-digital/global-nav": "^5.0.916",
-		"glob": "^8.0.3",
-		"next": "^13.2.4",
-		"next-transpile-modules": "^9.1.0",
-		"react": "^18.3.1",
-		"react-dom": "^18.3.1",
-		"remark-gfm": "^3.0.1"
-	},
-	"devDependencies": {
-		"@testing-library/jest-dom": "^5.16.5",
-		"@testing-library/user-event": "^14.4.3",
-		"@types/jest": "^29.2.2",
-		"@types/node": "^18.11.9",
-		"@types/react": "^18.3.24",
-		"@types/react-dom": "^18.3.1",
-		"eslint": "8.26.0",
-		"eslint-config-next": "13.0.0",
-		"sass": "^1.55.0",
-		"typescript": "4.8.4"
-	}
+  "name": "@nice-digital/design-system-docs",
+  "version": "1.6.7",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@code-hike/mdx": "^0.8.3",
+    "@mdx-js/react": "2.1.5",
+    "@next/mdx": "^15.5.4",
+    "@nice-digital/design-system": "^5.5.7",
+    "@nice-digital/global-nav": "^5.0.916",
+    "glob": "^8.0.3",
+    "next": "^15.5.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remark-gfm": "^3.0.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^29.2.2",
+    "@types/node": "^18.19.0",
+    "@types/react": "^18.3.25",
+    "@types/react-dom": "^18.3.1",
+    "@types/styled-jsx": "^3.4.4",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^15.5.4",
+    "sass": "^1.55.0",
+    "typescript": "^5.9.2"
+  }
 }

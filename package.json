@@ -27,11 +27,11 @@
     "test:unit:watch": "jest --watch",
     "// LINTING": "",
     "lint": "npm run prettier && npm run lint:js && npm run lint:scss",
-    "lint:js": "eslint ./{packages,components}/**/*.js",
+    "lint:js": "eslint ./components/**/*.js",
     "lint:js:fix": "npm run lint:js -- --fix",
-    "lint:scss": "stylelint ./{packages,components}/**/*.scss",
+    "lint:scss": "stylelint ./components/**/*.scss",
     "lint:scss:fix": "npm run lint:scss -- --fix",
-    "prettier": "prettier --check components/*/{src,scss,__{tests,mocks}__}/**/*.{scss,js,json} packages/**/*.{scss,js,json}",
+    "prettier": "prettier --check components/*/{src,scss,__{tests,mocks}__}/**/*.{ts,tsx,js,json,scss}",
     "prettier:fix": "npm run prettier -- --write",
     "// COMPILE TYPESCRIPT": "",
     "clean:ts": "tsc --build --clean",
@@ -48,9 +48,10 @@
   ],
   "license": "MIT",
   "engines": {
-    "node": ">= 16.18.1"
+    "node": ">=18.18.0"
   },
   "devDependencies": {
+    "@mdx-js/loader": "^2.3.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.45.1",
