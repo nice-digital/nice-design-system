@@ -34,21 +34,23 @@ export const AccordionGroup: FC<AccordionGroupProps> = ({
 	}, [onToggle, isGroupOpen]);
 
 	return (
-		<AccordionGroupProvider isGroupOpen={isGroupOpen}>
-			{isClient ? (
-				<button
-					type="button"
-					aria-expanded={isGroupOpen}
-					className={"accordionGroup__toggleButton"}
-					data-tracking={
-						isGroupOpen ? "Hide all sections" : "Show all sections"
-					}
-					onClick={toggleClickHandler}
-				>
-					<Toggle isOpen={isGroupOpen}>{toggleText(isGroupOpen)}</Toggle>
-				</button>
-			) : null}
-			<div className="accordionGroup__content">{children}</div>
-		</AccordionGroupProvider>
+		<div className="accordionGroup">
+			<AccordionGroupProvider isGroupOpen={isGroupOpen}>
+				{isClient ? (
+					<button
+						type="button"
+						aria-expanded={isGroupOpen}
+						className={"accordionGroup__toggleButton"}
+						data-tracking={
+							isGroupOpen ? "Hide all sections" : "Show all sections"
+						}
+						onClick={toggleClickHandler}
+					>
+						<Toggle isOpen={isGroupOpen}>{toggleText(isGroupOpen)}</Toggle>
+					</button>
+				) : null}
+				<div className="accordionGroup__content">{children}</div>
+			</AccordionGroupProvider>
+		</div>
 	);
 };
