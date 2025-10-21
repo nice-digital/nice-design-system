@@ -1,0 +1,57 @@
+@use '@nice-digital/nds-core/scss/colours';
+// @use '@nice-digital/nds-core/scss/focus';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
+// @use '../../components/nds-core/scss/focus/index.scss';
+
+//TEST checkbox config
+$focus-outline-color: colours.$focus;
+$focus-outline-width: utils.rem(spacing.$x-small);
+$focus-outline-offset: 3px;
+$hover-stroke-width: utils.rem(spacing.$xx-small);
+$hover-color: colours.$text;
+$hover-transition-duration: 0.3s;
+$hover-transition-easing: ease-in-out;
+
+///TEST CHECKBOX States/
+@mixin default-checkbox-focus() {
+  outline: $focus-outline-width solid $focus-outline-color;
+  outline-offset: $focus-outline-offset;
+}
+
+@mixin default-checkbox-hover {
+}
+
+.test-page {
+  .checkbox__input {
+    &:focus + .checkbox__label:before {
+      @include default-checkbox-focus;
+
+      //transition effects
+      // transition: outline-width var($hover-transition-duration)
+      //     var(--hover-transition-easing),
+      //   outline-offset var($hover-transition-duration)
+      //     var($hover-transition-easing);
+    }
+  }
+  //test focus and hover state combined
+  .checkbox__label:before {
+    // transition effects
+    // outline-width: 0;
+    // outline-offset: 0;
+
+    // transition: box-shadow var($hover-transition-duration)
+    //   var($hover-transition-easing);
+  }
+
+  // TODO: use those to override colors when checkbox has .checkbox--error
+  .checkbox:hover .checkbox__label:before,
+  .checkbox:has(.checkbox__input:focus):hover .checkbox__label:before {
+    box-shadow: 0 0 0 $hover-stroke-width $hover-color;
+  }
+
+  .checkbox-error {
+    $focus-outline-color: colours.$error;
+  }
+}

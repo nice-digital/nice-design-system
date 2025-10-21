@@ -1,10 +1,29 @@
 import Head from "next/head";
+import { RootLayout } from "components/layouts/RootLayout";
 import { Accordion, AccordionGroup } from "@nice-digital/nds-accordion";
 import { Accordion as TestAccordion } from "../../components/nds-accordion/src/Accordion";
 import { Hero } from "../../components/nds-hero/src/Hero";
 import { ActionBanner } from "../../components/nds-action-banner/src/ActionBanner";
 import { Button } from "../../components/nds-button/src/Button";
 import { Card } from "@nice-digital/nds-card";
+
+import {
+	FormGroup,
+	FormGroupProps
+} from "../../components/nds-form-group/src/FormGroup";
+import {
+	Checkbox,
+	CheckboxProps
+} from "../../components/nds-checkbox/src/Checkbox";
+import {
+	DefaultCheckbox,
+	DefaultExampleCheckbox,
+	InlineCheckbox,
+	HintCheckbox,
+	ErrorCheckbox,
+	DisabledCheckbox
+} from "../components/examples/Checkbox";
+
 export default function Test() {
 	const breadcrumb = (
 		<div style={{ marginBottom: "2rem" }}>
@@ -22,11 +41,21 @@ export default function Test() {
 		</div>
 	);
 	return (
-		<div>
+		<div className="test-page">
 			<Head>
 				<title>NDS Test page!</title>
+				<link rel="stylesheet" href="../styles/testpage.scss" />
 			</Head>
+
 			<h1>Test page!</h1>
+
+			<DefaultExampleCheckbox />
+			<DefaultCheckbox />
+			<InlineCheckbox />
+			<HintCheckbox />
+			<ErrorCheckbox />
+			<DisabledCheckbox />
+
 			<p>
 				We can use this page as a scratch pad for developing/testing components
 				outside of the docs.
