@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-accordion",
-	"version": "0.3.2-alpha.0",
+	"version": "0.3.2",
 	"description": "Accordion component for the NICE Design System",
 	"author": "John Davey <john.davey@nice.org.uk>",
 	"homepage": "https://design-system.nice.org.uk/",
