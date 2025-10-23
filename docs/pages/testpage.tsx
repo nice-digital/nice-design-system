@@ -24,6 +24,13 @@ import {
 	DisabledCheckbox
 } from "../components/examples/Checkbox";
 
+import {
+	DefaultFilterSummary,
+	DefaultFilterPanel,
+	DefaultFilterByInput,
+	DefaultMultipleFilters
+} from "components/examples/Filters";
+
 export default function Test() {
 	const breadcrumb = (
 		<div style={{ marginBottom: "2rem" }}>
@@ -49,12 +56,23 @@ export default function Test() {
 
 			<h1>Test page!</h1>
 
-			<DefaultExampleCheckbox />
-			<DefaultCheckbox />
-			<InlineCheckbox />
-			<HintCheckbox />
-			<ErrorCheckbox />
-			<DisabledCheckbox />
+			<div className="test-section-one">
+				<h2>test checkbox section 1</h2>
+				<DefaultExampleCheckbox />
+				<DefaultCheckbox />
+				<InlineCheckbox />
+				<HintCheckbox />
+				<ErrorCheckbox />
+				<DisabledCheckbox />
+			</div>
+
+			<br />
+			<br />
+
+			<DefaultFilterSummary />
+			<DefaultFilterPanel />
+			<DefaultFilterByInput />
+			<DefaultMultipleFilters />
 
 			<p>
 				We can use this page as a scratch pad for developing/testing components

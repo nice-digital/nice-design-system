@@ -8,7 +8,7 @@
 //TEST checkbox config
 $focus-outline-color: colours.$focus;
 $focus-outline-width: utils.rem(spacing.$x-small);
-$focus-outline-offset: 3px;
+$focus-outline-offset: utils.rem(spacing.$xx-small);
 $hover-stroke-width: utils.rem(spacing.$xx-small);
 $hover-color: colours.$text;
 $hover-transition-duration: 0.3s;
@@ -17,7 +17,7 @@ $hover-transition-easing: ease-in-out;
 ///TEST CHECKBOX States/
 @mixin default-checkbox-focus() {
   outline: $focus-outline-width solid $focus-outline-color;
-  outline-offset: $focus-outline-offset;
+  // outline-offset: $focus-outline-offset;
 }
 
 @mixin default-checkbox-hover {
@@ -25,30 +25,30 @@ $hover-transition-easing: ease-in-out;
 
 .test-page {
   .checkbox__input {
-    &:focus + .checkbox__label:before {
+    &:focus + .checkbox__label:before,
+    &:active + .checkbox__label:before {
       @include default-checkbox-focus;
 
       //transition effects
-      // transition: outline-width var($hover-transition-duration)
-      //     var(--hover-transition-easing),
-      //   outline-offset var($hover-transition-duration)
-      //     var($hover-transition-easing);
+      // transition: outline-width $hover-transition-duration
+      //     $hover-transition-easing,
+      //   outline-offset $hover-transition-duration $hover-transition-easing;
     }
   }
   //test focus and hover state combined
   .checkbox__label:before {
     // transition effects
-    // outline-width: 0;
-    // outline-offset: 0;
+    outline-width: 0;
+    outline-offset: 0;
 
-    // transition: box-shadow var($hover-transition-duration)
-    //   var($hover-transition-easing);
+    // transition: box-shadow $hover-transition-duration $hover-transition-easing;
   }
 
   // TODO: use those to override colors when checkbox has .checkbox--error
   .checkbox:hover .checkbox__label:before,
   .checkbox:has(.checkbox__input:focus):hover .checkbox__label:before {
     box-shadow: 0 0 0 $hover-stroke-width $hover-color;
+    outline-offset: $focus-outline-offset;
   }
 
   .checkbox-error {
