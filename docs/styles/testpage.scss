@@ -54,4 +54,11 @@ $hover-transition-easing: ease-in-out;
   .checkbox-error {
     $focus-outline-color: colours.$error;
   }
+
+  .checkbox:hover {
+    .checkbox__input:disabled + .checkbox__label::before {
+      box-shadow: none;
+      outline: none;
+    }
+  }
 }
