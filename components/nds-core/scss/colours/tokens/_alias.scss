@@ -37,6 +37,8 @@ $btn-inverse-text: global.$nice-black;
 // Borders
 $border: global.$custom-grey-1;
 $border-selected: global.$nice-teal;
+// accessibility fix for input and textarea borders
+$border-dark: global.$nice-black;
 
 // Status
 $error: global.$custom-red-1;

@@ -27,7 +27,7 @@
   }
 
   &__textarea {
-    border: utils.rem(spacing.$xx-small) solid colours.$border;
+    border: utils.rem(spacing.$xx-small) solid colours.$border-dark;
     height: 8em; // default textarea 8 characters tall
     padding: utils.rem(spacing.$small);
     width: 100%;
