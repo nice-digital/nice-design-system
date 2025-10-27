@@ -47,7 +47,7 @@ $hover-transition-easing: ease-in-out;
   // TODO: use those to override colors when checkbox has .checkbox--error
   .checkbox:hover .checkbox__label:before,
   .checkbox:has(.checkbox__input:focus):hover .checkbox__label:before {
-    box-shadow: 0 0 0 $hover-stroke-width $hover-color;
+    box-shadow: 0 0 0.1px $hover-stroke-width $hover-color;
     outline-offset: $focus-outline-offset;
   }
 
