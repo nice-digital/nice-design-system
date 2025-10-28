@@ -15,23 +15,25 @@ export const meta = {
 
 Page alerts are used to notify users of important information or changes on a page in a way that attracts the user's attention without interrupting the user's task. Typically they appear at the top of a page following a submit action.
 
-There are four variations of the alert component:
+By default, alerts have an aria role of 'alert' to enable assistive technology to notify the user of the content as it is displayed. This can be overwritten with an aria-live value of 'polite' for alerts which are less time-critical or do not require the user's immediate attention.
+
+There are four variations of the alert component, all of which can be set to 'nonIntrusive' if required:
 
 ### Info
 
 <Example>
-<h4>Example: info alert</h4>
+<h4>Example: info alert (non-intrusive)</h4>
 <InfoAlert />
 
 <CH.Code>
 ```js React
-<Alert type="info">
+<Alert type="info" nonIntrusive>
 	<h3>Info alert</h3>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 </Alert>
 ```
 ```html HTML
-<div class="alert alert--info" data-component="alert--info">
+<div class="alert alert--info" data-component="alert--info" aria-live="polite">
 	<h3>Info alert</h3>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 </div>
@@ -53,7 +55,7 @@ There are four variations of the alert component:
 </Alert>
 ```
 ```html HTML
-<div class="alert alert--success" data-component="alert--success">
+<div class="alert alert--success" data-component="alert--success" role="alert">
 	<h3>Success alert</h3>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 </div>
@@ -75,7 +77,7 @@ There are four variations of the alert component:
 </Alert>
 ```
 ```html HTML
-<div class="alert alert--error" data-component="alert--error">
+<div class="alert alert--error" data-component="alert--error" role="alert">
 	<h3>Error alert</h3>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 </div>
@@ -97,7 +99,7 @@ There are four variations of the alert component:
 </Alert>
 ```
 ```html HTML
-<div class="alert alert--caution" data-component="alert--caution">
+<div class="alert alert--caution" data-component="alert--caution" role="alert">
 	<h3>Caution alert</h3>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 </div>
