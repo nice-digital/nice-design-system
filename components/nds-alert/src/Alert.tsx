@@ -24,6 +24,7 @@ export const Alert: React.FC<AlertProps> = ({
 		<div
 			className={classNames}
 			data-component={`alert${type ? `--${type}` : ""}`}
+			role="alert"
 			{...rest}
 		>
 			{children}
