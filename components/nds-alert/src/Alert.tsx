@@ -23,7 +23,7 @@ export const Alert: React.FC<AlertProps> = ({
 		[`alert--${type}`]: true
 	});
 	const ariaBehaviour = nonIntrusive
-		? { "aria-live": "polite" as "polite" }
+		? { "aria-live": "polite" as "polite", "aria-atomic": true }
 		: { role: "alert" };
 	return (
 		<div

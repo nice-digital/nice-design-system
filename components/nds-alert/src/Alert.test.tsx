@@ -21,10 +21,13 @@ describe("Alert", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it("should contain 'polite' aria-live attribute if nonIntrusive alert", () => {
+	it("should contain appropriate aria-live and aria-atomic attributes if nonIntrusive alert", () => {
 		const { container } = render(<Alert nonIntrusive>{content}</Alert>);
 		expect(container.querySelector(".alert")?.getAttribute("aria-live")).toBe(
 			"polite"
+		);
+		expect(container.querySelector(".alert")?.getAttribute("aria-atomic")).toBe(
+			"true"
 		);
 	});
 
