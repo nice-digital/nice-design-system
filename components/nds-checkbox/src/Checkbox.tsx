@@ -3,9 +3,11 @@ import classnames from "classnames";
 
 import "../scss/checkbox.scss";
 
-export interface CheckboxProps {
+export interface CheckboxGroupProps {
 	/** Allow any additional props to be passed and applied to the checkbox */
 	[prop: string]: unknown;
+	/** The legend for the checkbox fieldset */
+	legend?: string;
 	/** The name attribute for the checkbox */
 	name: string;
 	/** The label for the checkbox. If none supplied will use the value */
@@ -18,40 +20,100 @@ export interface CheckboxProps {
 	error?: boolean | string;
 	/** Add hint text for extra context to the checkbox */
 	hint?: string;
+	/** The values for the checkbox group */
+	options: CheckboxOption[];
+
+	legendIsHeading?: boolean;
+}
+export interface CheckboxOption {
+	/** Label for the checkbox */
+	label: React.ReactNode;
+	/** Value for the checkbox */
+	value: string;
+	/** Optional hint text under the checkbox label */
+	hint?: string;
 }
 
-export const Checkbox: React.FC<CheckboxProps> = (props: CheckboxProps) => {
-	const { error, inline, name, label, value, hint, ...rest } = props;
-	if (!value) return null;
-	const unique = name + "_" + value;
-	const classNames = classnames({
-		checkbox: true,
-		"checkbox--inline": inline,
-		"checkbox--error": error
+export const CheckboxGroup: React.FC<CheckboxGroupProps> = (props) => {
+	const {
+		legend,
+		legendIsHeading = false,
+		name,
+		options,
+		inline,
+		hint,
+		error,
+		values = [],
+		onChange,
+		...rest
+	} = props;
+	console.log("CheckboxGroup props", props.error);
+	const hasError = Boolean(
+		error && error !== true && error.toString().trim().length > 0
+	);
+	// const optionsArray = Array.isArray(options) ? options : [];
+	if (options?.length === 0) return null;
+	console.log("CheckboxGroup render", options);
+
+	const hintId = `${name}-hint`;
+	const errorId = `${name}-error`;
+	const describedBy =
+		[hint ? hintId : null, error ? errorId : null].filter(Boolean).join(" ") ||
+		undefined;
+	const classes = classnames({
+		"checkbox-group": true,
+		"checkbox-group--inline": inline,
+		"checkbox-group--error": hasError
 	});
+	console.log("checkbox-group class:", classes);
 	return (
-		<>
-			{error && error.toString().length && (
-				<p className="checkbox__error-message">{error}</p>
-			)}
-			<div className={classNames} data-component="checkbox">
-				<div>
-					<input
-						type="checkbox"
-						className="checkbox__input"
-						id={unique}
-						name={name}
-						value={value}
-						{...rest}
-					/>
-					<label className="checkbox__label" htmlFor={unique}>
-						{label ? label : value}
-					</label>
-					{hint && <span className="checkbox__hint">{hint}</span>}
+		<div className="form-group">
+			<fieldset className="fieldset" aria-describedby={describedBy}>
+				{legend && (
+					<legend className="fieldset__legend">
+						{legendIsHeading ? <h1>{legend}</h1> : legend}
+					</legend>
+				)}
+				{hint && (
+					<p id={hintId} className="fieldset__hint">
+						{hint}
+					</p>
+				)}
+				{error && error.toString().length && (
+					<p className="fieldset__error-message">{error}</p>
+				)}
+				<div data-component="checkbox-group" className={classes} role="group">
+					{Array.isArray(options) &&
+						options.map((option: CheckboxOption) => {
+							const unique = `${name}_${option.value}`;
+
+							return (
+								<div key={option.value} className="checkbox-group__item">
+									<input
+										type="checkbox"
+										className="checkbox-group__item__input"
+										id={unique}
+										name={name}
+										aria-describedby={describedBy}
+										{...rest}
+										value={option.value}
+									/>
+									<label
+										className="checkbox-group__item__label"
+										htmlFor={unique}
+									>
+										{option.label}
+									</label>
+									{!inline && option.hint && (
+										<span className="checkbox-group__hint">{option.hint}</span>
+									)}
+								</div>
+							);
+						})}
 				</div>
-			</div>
-		</>
+			</fieldset>
+		</div>
 	);
 };
 
-export default Checkbox;
+export default CheckboxGroup;

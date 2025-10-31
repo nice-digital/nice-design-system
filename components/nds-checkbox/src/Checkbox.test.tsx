@@ -1,40 +1,43 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import { Checkbox, CheckboxProps } from "./../src/Checkbox";
-
-const props: CheckboxProps = {
-	name: "contact-preference",
-	label: "Email",
-	value: "email",
-	disabled: false,
-	error: false
+import CheckboxGroup, { CheckboxGroupProps } from "./../src/Checkbox";
+const props: CheckboxGroupProps = {
+	name: "test",
+	value: "test",
+	label: "Test Checkbox",
+	legendIsHeading: true,
+	legend: "Select an option from the following options",
+	options: [
+		{ label: "example checkbox1", value: "test1", hint: "test hint1" },
+		{ label: "example checkbox2", value: "test2", hint: "test hint2" },
+		{ label: "example checkbox3", value: "test3", hint: "test hint3" }
+	]
 };
-
 describe("Checkbox", () => {
 	it("should match snapshot with some default attributes", () => {
-		const wrapper = render(<Checkbox {...props} />);
+		const wrapper = render(<CheckboxGroup {...props} />);
 		expect(wrapper).toMatchSnapshot();
 	});
 
 	it("should match snapshot with hint text supplied", () => {
 		const wrapper = render(
-			<Checkbox {...props} hint="This is a hint to appear." />
+			<CheckboxGroup {...props} hint="This is a hint to appear." />
 		);
 		expect(wrapper).toMatchSnapshot();
 	});
 
 	it("should not render a checkbox control if it doesn't have a value", () => {
 		const localProps = Object.assign({}, props);
-		localProps.value = "";
-		const wrapper = render(<Checkbox {...localProps} />);
-		expect(wrapper.queryByRole("checkbox")).toBe(null);
+		localProps.options = [];
+		const wrapper = render(<CheckboxGroup {...localProps} />);
+		expect(wrapper.queryAllByRole("checkbox")).toHaveLength(0);
 	});
 
 	it("should prevent actions if the button is disabled", () => {
 		const localProps = Object.assign({}, props);
 		localProps.disabled = true;
-		const wrapper = render(<Checkbox {...localProps} />);
+		const wrapper = render(<CheckboxGroup {...localProps} />);
 		const input: HTMLInputElement = wrapper.getByRole(
 			"checkbox"
 		) as HTMLInputElement;
@@ -44,7 +47,7 @@ describe("Checkbox", () => {
 	it("should add an error class to the parent if the error prop is true", () => {
 		const localProps = Object.assign({}, props);
 		localProps.error = true;
-		const { container } = render(<Checkbox {...localProps} />);
+		const { container } = render(<CheckboxGroup {...localProps} />);
 		const parent = container.querySelector("div.checkbox--error");
 		expect(parent).toBeInTheDocument();
 	});
@@ -52,7 +55,7 @@ describe("Checkbox", () => {
 	it("should add display error text above the control if an error string is supplied", () => {
 		const localProps = Object.assign({}, props);
 		localProps.error = "Error message here.";
-		const { container } = render(<Checkbox {...localProps} />);
+		const { container } = render(<CheckboxGroup {...localProps} />);
 		const parent = container.querySelector("p.checkbox__error-message");
 		expect(parent?.textContent).toBe("Error message here.");
 	});
@@ -61,7 +64,7 @@ describe("Checkbox", () => {
 		const localProps = Object.assign({}, props);
 		localProps.defaultChecked = true;
 		localProps["data-something"] = "test";
-		const wrapper = render(<Checkbox {...localProps} />);
+		const wrapper = render(<CheckboxGroup {...localProps} />);
 		const checked: HTMLInputElement = wrapper.getByRole(
 			"checkbox"
 		) as HTMLInputElement;
