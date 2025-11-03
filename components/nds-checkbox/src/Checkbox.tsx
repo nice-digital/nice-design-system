@@ -10,10 +10,6 @@ export interface CheckboxGroupProps {
 	legend?: string;
 	/** The name attribute for the checkbox */
 	name: string;
-	/** The label for the checkbox. If none supplied will use the value */
-	label?: React.ReactNode;
-	/** The value for the checkbox */
-	value: string;
 	/** Add to checkboxes that you would like to display inline, left to right */
 	inline?: boolean;
 	/** Option for putting the checkbox into a visual error state. Set to true for error styling or supply a string for error styling and addional error text*/
@@ -26,6 +22,8 @@ export interface CheckboxGroupProps {
 	legendIsHeading?: boolean;
 }
 export interface CheckboxOption {
+	/** Name for the checkbox */
+	name: string;
 	/** Label for the checkbox */
 	label: React.ReactNode;
 	/** Value for the checkbox */
@@ -43,8 +41,6 @@ export const CheckboxGroup: React.FC<CheckboxGroupProps> = (props) => {
 		inline,
 		hint,
 		error,
-		values = [],
-		onChange,
 		...rest
 	} = props;
 	console.log("CheckboxGroup props", props.error);
