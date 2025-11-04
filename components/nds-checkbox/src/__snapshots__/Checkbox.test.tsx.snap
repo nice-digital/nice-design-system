@@ -6,57 +6,167 @@ exports[`Checkbox should match snapshot with hint text supplied 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="checkbox"
-        data-component="checkbox"
+        class="form-group"
       >
-        <div>
-          <input
-            class="checkbox__input"
-            id="contact-preference_email"
-            name="contact-preference"
-            type="checkbox"
-            value="email"
-          />
-          <label
-            class="checkbox__label"
-            for="contact-preference_email"
+        <fieldset
+          aria-describedby="contact-methods-hint"
+          class="fieldset"
+        >
+          <legend
+            class="fieldset__legend"
           >
-            Email
-          </label>
-          <span
-            class="checkbox__hint"
+            How would you like to be contacted?
+          </legend>
+          <p
+            class="fieldset__hint"
+            id="contact-methods-hint"
           >
             This is a hint to appear.
-          </span>
-        </div>
+          </p>
+          <div
+            class="checkbox-group"
+            data-component="checkbox-group"
+            role="group"
+          >
+            <div
+              class="checkbox-group__item"
+            >
+              <input
+                aria-describedby="contact-methods-hint"
+                class="checkbox-group__item__input"
+                id="contact-methods_email"
+                name="contact-methods"
+                type="checkbox"
+                value="email"
+              />
+              <label
+                class="checkbox-group__item__label"
+                for="contact-methods_email"
+              >
+                Email
+              </label>
+            </div>
+            <div
+              class="checkbox-group__item"
+            >
+              <input
+                aria-describedby="contact-methods-hint"
+                class="checkbox-group__item__input"
+                id="contact-methods_telephone"
+                name="contact-methods"
+                type="checkbox"
+                value="telephone"
+              />
+              <label
+                class="checkbox-group__item__label"
+                for="contact-methods_telephone"
+              >
+                Telephone
+              </label>
+            </div>
+            <div
+              class="checkbox-group__item"
+            >
+              <input
+                aria-describedby="contact-methods-hint"
+                class="checkbox-group__item__input"
+                id="contact-methods_text-message"
+                name="contact-methods"
+                type="checkbox"
+                value="text-message"
+              />
+              <label
+                class="checkbox-group__item__label"
+                for="contact-methods_text-message"
+              >
+                Text message
+              </label>
+            </div>
+          </div>
+        </fieldset>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="checkbox"
-      data-component="checkbox"
+      class="form-group"
     >
-      <div>
-        <input
-          class="checkbox__input"
-          id="contact-preference_email"
-          name="contact-preference"
-          type="checkbox"
-          value="email"
-        />
-        <label
-          class="checkbox__label"
-          for="contact-preference_email"
+      <fieldset
+        aria-describedby="contact-methods-hint"
+        class="fieldset"
+      >
+        <legend
+          class="fieldset__legend"
         >
-          Email
-        </label>
-        <span
-          class="checkbox__hint"
+          How would you like to be contacted?
+        </legend>
+        <p
+          class="fieldset__hint"
+          id="contact-methods-hint"
         >
           This is a hint to appear.
-        </span>
-      </div>
+        </p>
+        <div
+          class="checkbox-group"
+          data-component="checkbox-group"
+          role="group"
+        >
+          <div
+            class="checkbox-group__item"
+          >
+            <input
+              aria-describedby="contact-methods-hint"
+              class="checkbox-group__item__input"
+              id="contact-methods_email"
+              name="contact-methods"
+              type="checkbox"
+              value="email"
+            />
+            <label
+              class="checkbox-group__item__label"
+              for="contact-methods_email"
+            >
+              Email
+            </label>
+          </div>
+          <div
+            class="checkbox-group__item"
+          >
+            <input
+              aria-describedby="contact-methods-hint"
+              class="checkbox-group__item__input"
+              id="contact-methods_telephone"
+              name="contact-methods"
+              type="checkbox"
+              value="telephone"
+            />
+            <label
+              class="checkbox-group__item__label"
+              for="contact-methods_telephone"
+            >
+              Telephone
+            </label>
+          </div>
+          <div
+            class="checkbox-group__item"
+          >
+            <input
+              aria-describedby="contact-methods-hint"
+              class="checkbox-group__item__input"
+              id="contact-methods_text-message"
+              name="contact-methods"
+              type="checkbox"
+              value="text-message"
+            />
+            <label
+              class="checkbox-group__item__label"
+              for="contact-methods_text-message"
+            >
+              Text message
+            </label>
+          </div>
+        </div>
+      </fieldset>
     </div>
   </div>,
   "debug": [Function],
@@ -119,47 +229,147 @@ exports[`Checkbox should match snapshot with some default attributes 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="checkbox"
-        data-component="checkbox"
+        class="form-group"
       >
-        <div>
-          <input
-            class="checkbox__input"
-            id="contact-preference_email"
-            name="contact-preference"
-            type="checkbox"
-            value="email"
-          />
-          <label
-            class="checkbox__label"
-            for="contact-preference_email"
+        <fieldset
+          class="fieldset"
+        >
+          <legend
+            class="fieldset__legend"
           >
-            Email
-          </label>
-        </div>
+            How would you like to be contacted?
+          </legend>
+          <div
+            class="checkbox-group"
+            data-component="checkbox-group"
+            role="group"
+          >
+            <div
+              class="checkbox-group__item"
+            >
+              <input
+                class="checkbox-group__item__input"
+                id="contact-methods_email"
+                name="contact-methods"
+                type="checkbox"
+                value="email"
+              />
+              <label
+                class="checkbox-group__item__label"
+                for="contact-methods_email"
+              >
+                Email
+              </label>
+            </div>
+            <div
+              class="checkbox-group__item"
+            >
+              <input
+                class="checkbox-group__item__input"
+                id="contact-methods_telephone"
+                name="contact-methods"
+                type="checkbox"
+                value="telephone"
+              />
+              <label
+                class="checkbox-group__item__label"
+                for="contact-methods_telephone"
+              >
+                Telephone
+              </label>
+            </div>
+            <div
+              class="checkbox-group__item"
+            >
+              <input
+                class="checkbox-group__item__input"
+                id="contact-methods_text-message"
+                name="contact-methods"
+                type="checkbox"
+                value="text-message"
+              />
+              <label
+                class="checkbox-group__item__label"
+                for="contact-methods_text-message"
+              >
+                Text message
+              </label>
+            </div>
+          </div>
+        </fieldset>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="checkbox"
-      data-component="checkbox"
+      class="form-group"
     >
-      <div>
-        <input
-          class="checkbox__input"
-          id="contact-preference_email"
-          name="contact-preference"
-          type="checkbox"
-          value="email"
-        />
-        <label
-          class="checkbox__label"
-          for="contact-preference_email"
+      <fieldset
+        class="fieldset"
+      >
+        <legend
+          class="fieldset__legend"
         >
-          Email
-        </label>
-      </div>
+          How would you like to be contacted?
+        </legend>
+        <div
+          class="checkbox-group"
+          data-component="checkbox-group"
+          role="group"
+        >
+          <div
+            class="checkbox-group__item"
+          >
+            <input
+              class="checkbox-group__item__input"
+              id="contact-methods_email"
+              name="contact-methods"
+              type="checkbox"
+              value="email"
+            />
+            <label
+              class="checkbox-group__item__label"
+              for="contact-methods_email"
+            >
+              Email
+            </label>
+          </div>
+          <div
+            class="checkbox-group__item"
+          >
+            <input
+              class="checkbox-group__item__input"
+              id="contact-methods_telephone"
+              name="contact-methods"
+              type="checkbox"
+              value="telephone"
+            />
+            <label
+              class="checkbox-group__item__label"
+              for="contact-methods_telephone"
+            >
+              Telephone
+            </label>
+          </div>
+          <div
+            class="checkbox-group__item"
+          >
+            <input
+              class="checkbox-group__item__input"
+              id="contact-methods_text-message"
+              name="contact-methods"
+              type="checkbox"
+              value="text-message"
+            />
+            <label
+              class="checkbox-group__item__label"
+              for="contact-methods_text-message"
+            >
+              Text message
+            </label>
+          </div>
+        </div>
+      </fieldset>
     </div>
   </div>,
   "debug": [Function],

@@ -32,7 +32,7 @@ export interface CheckboxOption {
 	hint?: string;
 }
 
-export const CheckboxGroup: React.FC<CheckboxGroupProps> = (props) => {
+export const Checkbox: React.FC<CheckboxGroupProps> = (props) => {
 	const {
 		legend,
 		legendIsHeading = false,
@@ -112,4 +112,4 @@ export const CheckboxGroup: React.FC<CheckboxGroupProps> = (props) => {
 	);
 };
 
-export default CheckboxGroup;
+export default Checkbox;
