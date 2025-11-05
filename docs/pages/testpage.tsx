@@ -62,7 +62,46 @@ export default function Test() {
 					Using box-sizing:border-box, so the border insets rather than outset
 					(which can cause )
 				</p>
-				<Checkbox value="test" name="a-test-checkbox-test" />
+				{/* <Checkbox value="test" name="a-test-checkbox-test" /> */}
+				<>
+					<Checkbox value="Email" name="contact-email-test-1" />
+					<Checkbox value="Telephone" name="contact-phone-test-1" />
+					<Checkbox value="Text Message" name="contact-text-test-1" />
+				</>
+
+				<>
+					<Checkbox value="Email" name="contact-email-example-test-1" />
+					<Checkbox value="Telephone" name="contact-phone-example-test-1" />
+					<Checkbox value="Text Message" name="contact-text-example-test-1" />
+				</>
+
+				<>
+					<Checkbox inline value="Email" name="contact-email-inline-test-1" />
+					<Checkbox
+						inline
+						value="Telephone"
+						name="contact-phone-inline-test-1"
+					/>
+					<Checkbox
+						inline
+						value="Text Message"
+						name="contact-text-inline-test-1"
+					/>
+				</>
+
+				<Checkbox
+					hint="You can unsubscribe at any time"
+					value="Email"
+					name="contact-email-hint-test-1"
+				/>
+
+				<Checkbox
+					error="This is an error message"
+					value="Email"
+					name="contact-email-error-test-1"
+				/>
+
+				<Checkbox disabled value="Email" name="contact-email-disabled-test-1" />
 			</div>
 
 			<div className="test-examples-section-one">

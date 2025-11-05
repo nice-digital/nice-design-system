@@ -47,7 +47,7 @@ $hover-transition-easing: ease-in-out;
 
 .test-examples-section-one {
   .checkbox__input {
-    &:focus + .checkbox__label:before,
+    &:focus-visible + .checkbox__label:before,
     &:active + .checkbox__label:before {
       //transition effects
       // transition: box-shadow $hover-transition-duration $hover-transition-easing,
@@ -65,7 +65,7 @@ $hover-transition-easing: ease-in-out;
 
   // TODO: use those to override colors when checkbox has .checkbox--error
   .checkbox:hover .checkbox__label:before,
-  .checkbox:has(.checkbox__input:focus):hover .checkbox__label:before {
+  .checkbox:has(.checkbox__input:focus-visible):hover .checkbox__label:before {
     box-shadow: 0 0 0 $hover-stroke-width $hover-color;
     outline-offset: $focus-outline-offset;
   }
@@ -84,7 +84,7 @@ $hover-transition-easing: ease-in-out;
 
 .test-examples-section-two {
   .checkbox__input {
-    &:focus + .checkbox__label:before,
+    &:focus-visible + .checkbox__label:before,
     &:active + .checkbox__label:before {
       @include default-checkbox-focus;
 
@@ -107,7 +107,7 @@ $hover-transition-easing: ease-in-out;
 
   // TODO: use those to override colors when checkbox has .checkbox--error
   .checkbox:hover .checkbox__label:before,
-  .checkbox:has(.checkbox__input:focus):hover .checkbox__label:before {
+  .checkbox:has(.checkbox__input:focus-visible):hover .checkbox__label:before {
     box-shadow: 0 0 0 $hover-stroke-width $hover-color;
     outline-offset: $focus-outline-offset;
   }
