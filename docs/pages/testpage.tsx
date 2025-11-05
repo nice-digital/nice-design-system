@@ -56,8 +56,32 @@ export default function Test() {
 
 			<h1>Test page!</h1>
 
-			<div className="test-section-one">
-				<h2>test checkbox section 1</h2>
+			<div className="test-checkbox-directly">
+				<h2>Example one </h2>
+				<p>
+					Using box-sizing:border-box, so the border insets rather than outset
+					(which can cause )
+				</p>
+				<Checkbox value="test" name="a-test-checkbox-test" />
+			</div>
+
+			<div className="test-examples-section-one">
+				<h2>Example two</h2>
+				<p>
+					We apply an offset to the outline by default. The hover state grows
+					into the offset whitespace when both states are present.
+				</p>
+				<DefaultExampleCheckbox />
+				<DefaultCheckbox />
+				<InlineCheckbox />
+				<HintCheckbox />
+				<ErrorCheckbox />
+				<DisabledCheckbox />
+			</div>
+
+			<div className="test-examples-section-two">
+				<h2>checkbox section 2</h2>
+				<p>Offset the outline when focus & hover are both present</p>
 				<DefaultExampleCheckbox />
 				<DefaultCheckbox />
 				<InlineCheckbox />
