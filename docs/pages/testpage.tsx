@@ -80,23 +80,48 @@ export default function Test() {
 			</div>
 
 			<div className="test-examples-section-two">
-				<h2>checkbox section 2</h2>
+				<h2>Example 3</h2>
+
 				<p>Offset the outline when focus & hover are both present</p>
-				<DefaultExampleCheckbox />
-				<DefaultCheckbox />
-				<InlineCheckbox />
-				<HintCheckbox />
-				<ErrorCheckbox />
-				<DisabledCheckbox />
+				<>
+					<Checkbox value="Email" name="contact-email-test" />
+					<Checkbox value="Telephone" name="contact-phone-test" />
+					<Checkbox value="Text Message" name="contact-text-test" />
+				</>
+
+				<>
+					<Checkbox value="Email" name="contact-email-example-test" />
+					<Checkbox value="Telephone" name="contact-phone-example-test" />
+					<Checkbox value="Text Message" name="contact-text-example-test" />
+				</>
+
+				<>
+					<Checkbox inline value="Email" name="contact-email-inline-test" />
+					<Checkbox inline value="Telephone" name="contact-phone-inline-test" />
+					<Checkbox
+						inline
+						value="Text Message"
+						name="contact-text-inline-test"
+					/>
+				</>
+
+				<Checkbox
+					hint="You can unsubscribe at any time"
+					value="Email"
+					name="contact-email-hint-test"
+				/>
+
+				<Checkbox
+					error="This is an error message"
+					value="Email"
+					name="contact-email-error-test"
+				/>
+
+				<Checkbox disabled value="Email" name="contact-email-disabled-test" />
 			</div>
 
 			<br />
 			<br />
-
-			<DefaultFilterSummary />
-			<DefaultFilterPanel />
-			<DefaultFilterByInput />
-			<DefaultMultipleFilters />
 
 			<p>
 				We can use this page as a scratch pad for developing/testing components
