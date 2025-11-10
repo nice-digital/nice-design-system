@@ -1,7 +1,7 @@
 import { Alert } from "@nice-digital/nds-alert";
 
 export const InfoAlert = () => (
-	<Alert type="info">
+	<Alert type="info" nonIntrusive>
 		<h3>Info alert</h3>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 	</Alert>
