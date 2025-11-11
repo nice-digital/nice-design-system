@@ -1,10 +1,36 @@
 import Head from "next/head";
+import { RootLayout } from "components/layouts/RootLayout";
 import { Accordion, AccordionGroup } from "@nice-digital/nds-accordion";
 import { Accordion as TestAccordion } from "../../components/nds-accordion/src/Accordion";
 import { Hero } from "../../components/nds-hero/src/Hero";
 import { ActionBanner } from "../../components/nds-action-banner/src/ActionBanner";
 import { Button } from "../../components/nds-button/src/Button";
 import { Card } from "@nice-digital/nds-card";
+
+import {
+	FormGroup,
+	FormGroupProps
+} from "../../components/nds-form-group/src/FormGroup";
+import {
+	Checkbox,
+	CheckboxProps
+} from "../../components/nds-checkbox/src/Checkbox";
+import {
+	DefaultCheckbox,
+	DefaultExampleCheckbox,
+	InlineCheckbox,
+	HintCheckbox,
+	ErrorCheckbox,
+	DisabledCheckbox
+} from "../components/examples/Checkbox";
+
+import {
+	DefaultFilterSummary,
+	DefaultFilterPanel,
+	DefaultFilterByInput,
+	DefaultMultipleFilters
+} from "components/examples/Filters";
+
 export default function Test() {
 	const breadcrumb = (
 		<div style={{ marginBottom: "2rem" }}>
@@ -22,11 +48,120 @@ export default function Test() {
 		</div>
 	);
 	return (
-		<div>
+		<div className="test-page">
 			<Head>
 				<title>NDS Test page!</title>
+				<link rel="stylesheet" href="../styles/testpage.scss" />
 			</Head>
+
 			<h1>Test page!</h1>
+
+			<div className="test-checkbox-directly">
+				<h2>Example one </h2>
+				<p>
+					Using box-sizing:border-box, so the border insets rather than outset
+					(which can cause )
+				</p>
+				{/* <Checkbox value="test" name="a-test-checkbox-test" /> */}
+				<>
+					<Checkbox value="Email" name="contact-email-test-1" />
+					<Checkbox value="Telephone" name="contact-phone-test-1" />
+					<Checkbox value="Text Message" name="contact-text-test-1" />
+				</>
+
+				<>
+					<Checkbox value="Email" name="contact-email-example-test-1" />
+					<Checkbox value="Telephone" name="contact-phone-example-test-1" />
+					<Checkbox value="Text Message" name="contact-text-example-test-1" />
+				</>
+
+				<>
+					<Checkbox inline value="Email" name="contact-email-inline-test-1" />
+					<Checkbox
+						inline
+						value="Telephone"
+						name="contact-phone-inline-test-1"
+					/>
+					<Checkbox
+						inline
+						value="Text Message"
+						name="contact-text-inline-test-1"
+					/>
+				</>
+
+				<Checkbox
+					hint="You can unsubscribe at any time"
+					value="Email"
+					name="contact-email-hint-test-1"
+				/>
+
+				<Checkbox
+					error="This is an error message"
+					value="Email"
+					name="contact-email-error-test-1"
+				/>
+
+				<Checkbox disabled value="Email" name="contact-email-disabled-test-1" />
+			</div>
+
+			<div className="test-examples-section-one">
+				<h2>Example two</h2>
+				<p>
+					We apply an offset to the outline by default. The hover state grows
+					into the offset whitespace when both states are present.
+				</p>
+				<DefaultExampleCheckbox />
+				<DefaultCheckbox />
+				<InlineCheckbox />
+				<HintCheckbox />
+				<ErrorCheckbox />
+				<DisabledCheckbox />
+			</div>
+
+			<div className="test-examples-section-two">
+				<h2>Example 3</h2>
+
+				<p>Offset the outline when focus & hover are both present</p>
+				<>
+					<Checkbox value="Email" name="contact-email-test" />
+					<Checkbox value="Telephone" name="contact-phone-test" />
+					<Checkbox value="Text Message" name="contact-text-test" />
+				</>
+
+				<>
+					<Checkbox value="Email" name="contact-email-example-test" />
+					<Checkbox value="Telephone" name="contact-phone-example-test" />
+					<Checkbox value="Text Message" name="contact-text-example-test" />
+				</>
+
+				<>
+					<Checkbox inline value="Email" name="contact-email-inline-test" />
+					<Checkbox inline value="Telephone" name="contact-phone-inline-test" />
+					<Checkbox
+						inline
+						value="Text Message"
+						name="contact-text-inline-test"
+					/>
+				</>
+
+				<Checkbox
+					hint="You can unsubscribe at any time"
+					value="Email"
+					name="contact-email-hint-test"
+				/>
+
+				<Checkbox
+					error="This is an error message"
+					value="Email"
+					name="contact-email-error-test"
+				/>
+
+				<Checkbox disabled value="Email" name="contact-email-disabled-test" />
+			</div>
+
+			<br />
+			<br />
+
 			<p>
 				We can use this page as a scratch pad for developing/testing components
 				outside of the docs.
