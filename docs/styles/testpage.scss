@@ -42,6 +42,15 @@ $hover-transition-easing: ease-in-out;
 
   //.checkbox__label::before = where border and outlines are handled
   .checkbox__label::before {
+    border: 0.125rem solid #0e0e0e;
+  }
+
+  .checkbox:hover {
+    .checkbox__input:disabled + .checkbox__label::before {
+      box-shadow: none;
+      outline: none;
+      border: 0.125rem solid #0e0e0e;
+    }
   }
 }
 
@@ -78,6 +87,7 @@ $hover-transition-easing: ease-in-out;
     .checkbox__input:disabled + .checkbox__label::before {
       box-shadow: none;
       outline: none;
+      border: 0.125rem solid #0e0e0e;
     }
   }
 }
