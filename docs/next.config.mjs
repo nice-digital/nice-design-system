@@ -1,7 +1,13 @@
 /** @type {import('next').NextConfig} */
 
 import glob from "glob";
-import theme from "shiki/themes/nord.json" assert { type: "json" };
+
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+
+const theme = require("shiki/themes/nord.json");
+
+// import theme from "shiki/themes/nord.json" with { type: "json" };
 import { remarkCodeHike } from "@code-hike/mdx";
 import remarkGfm from "remark-gfm";
 import createMDX from "@next/mdx";
