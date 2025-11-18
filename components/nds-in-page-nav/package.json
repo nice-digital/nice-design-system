@@ -46,7 +46,7 @@
 		"@types/jest": "^29.2.2",
 		"@types/lodash.throttle": "^4.1.7",
 		"@types/node": "^18.11.9",
-		"typescript": "^4.8.4"
+		"typescript": "^5.9.3"
 	},
 	"gitHead": "e75957040c9acfbd7eeb164cad724e3b48760679"
 }

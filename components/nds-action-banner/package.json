@@ -45,7 +45,7 @@
 		"@testing-library/user-event": "^14.4.3",
 		"@types/jest": "^29.2.2",
 		"@types/node": "^18.11.9",
-		"typescript": "^4.8.4"
+		"typescript": "^5.9.3"
 	},
 	"gitHead": "dd76d13a75f00a0261df82e055d2525ba6c3189d"
 }

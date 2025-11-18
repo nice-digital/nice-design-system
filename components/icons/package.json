@@ -64,6 +64,6 @@
 		"@types/node": "^18.11.9",
 		"doctoc": "^2.2.1",
 		"fantasticon": "^1.2.3",
-		"typescript": "^4.8.4"
+		"typescript": "^5.9.3"
 	}
 }

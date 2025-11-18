@@ -46,7 +46,7 @@
 		"@types/jest": "^29.2.2",
 		"@types/node": "^18.11.9",
 		"jest-extended": "^4.0.2",
-		"typescript": "^4.8.4"
+		"typescript": "^5.9.3"
 	},
 	"gitHead": "463269d9aad4bad626f6798a5a145f41e73badb7"
 }
