@@ -43,7 +43,7 @@
 		"@testing-library/react": "^13.4.0",
 		"@testing-library/user-event": "^14.4.3",
 		"@types/jest": "^29.2.2",
-		"@types/node": "^18.11.9",
+		"@types/node": "22.19.0",
 		"typescript": "^5.9.3"
 	},
 	"gitHead": "e75957040c9acfbd7eeb164cad724e3b48760679"
