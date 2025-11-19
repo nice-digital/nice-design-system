@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@code-hike/mdx": "^0.8.3",
+    "@code-hike/mdx": "^0.9.0",
     "@mdx-js/react": "2.1.5",
     "@next/mdx": "^15.5.4",
     "@nice-digital/design-system": "^5.5.9",
