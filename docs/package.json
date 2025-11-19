@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@code-hike/mdx": "^0.9.0",
-    "@mdx-js/react": "2.1.5",
+    "@mdx-js/react": "^3.1.1",
     "@next/mdx": "^15.5.4",
     "@nice-digital/design-system": "^5.5.9",
     "@nice-digital/global-nav": "^5.0.916",
@@ -19,7 +19,7 @@
     "next": "^15.5.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "remark-gfm": "^3.0.1"
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
