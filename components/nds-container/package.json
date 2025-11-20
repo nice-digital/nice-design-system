@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-container",
-	"version": "4.0.16",
+	"version": "4.0.17-alpha-node-update.0",
 	"description": "Container component for the NICE Design System",
 	"keywords": [
 		"container"
@@ -34,7 +34,7 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
-		"@nice-digital/nds-core": "^4.0.16",
+		"@nice-digital/nds-core": "^4.0.17-alpha-node-update.0",
 		"classnames": "^2.2.6"
 	},
 	"peerDependencies": {
@@ -46,7 +46,7 @@
 		"@testing-library/react": "^13.4.0",
 		"@testing-library/user-event": "^14.4.3",
 		"@types/jest": "^29.2.2",
-		"@types/node": "^18.11.9",
-		"typescript": "^4.8.4"
+		"@types/node": "22.19.0",
+		"typescript": "^5.9.3"
 	}
 }
