@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-prev-next",
-	"version": "4.0.16",
+	"version": "4.0.17-alpha-node-update.0",
 	"description": "Previous and next navigation component for the NICE Design System",
 	"author": "Warren Keith <w@rren.dev>",
 	"keywords": [
@@ -35,7 +35,7 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
-		"@nice-digital/nds-core": "^4.0.16",
+		"@nice-digital/nds-core": "^4.0.17-alpha-node-update.0",
 		"classnames": "^2.2.6"
 	},
 	"peerDependencies": {
