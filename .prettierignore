@@ -15,3 +15,5 @@ packages/docs/.netlify/state.json
 
 # Generated icons SCSS
 components/icons/scss/nice-icons.scss
+components/icons/ts/*.ts
+components/icons/ts/*.js
