@@ -29,7 +29,6 @@ export const TextAlignment = () => (
 export const TextWrapping = () => (
 	<div style={{ background: "#eee", width: "80px" }}>
 		<p className="text-nowrap">This is some text that doesn&apos;t wrap</p>
-		<p className="text-truncate">This is some truncated text</p>
 	</div>
 );
 

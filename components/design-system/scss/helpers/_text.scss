@@ -21,13 +21,6 @@ $output-text-classes: true !default;
     white-space: nowrap !important;
   }
 
-  /// Truncate text with an ellipsis.
-  /// Requires inline-block or block for proper styling
-  /// @since 0.1.0
-  .text-truncate {
-    @include typography.text-truncate;
-  }
-
   /// Align text left
   /// @since 0.1.0
   .text-left {
