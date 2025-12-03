@@ -33,6 +33,7 @@ import {
 } from "components/examples/Filters";
 import { Input } from "@nice-digital/nds-input";
 import { Radio } from "@nice-digital/nds-radio";
+import { Textarea } from "@nice-digital/nds-textarea";
 
 export default function Test() {
 	const breadcrumb = (
@@ -68,6 +69,7 @@ export default function Test() {
 					>
 						<Input label="First name" name="firstname1" />
 						<Input label="Last name" name="lastname1" />
+						<Input label="Email" name="email1" type="email" />
 					</FormGroup>
 
 					{/* How did you hear about us (radios)
@@ -108,7 +110,7 @@ export default function Test() {
 					</FormGroup>
 
 					{/* Your feedback (textbox) */}
-
+					<Textarea label="Your feedback" name="feedback1"></Textarea>
 					{/* submit */}
 				</form>
 			</div>
@@ -123,6 +125,7 @@ export default function Test() {
 					<FormGroup legend="Your personal details" name="personal-inforamtion">
 						<Input label="First name" name="firstname" />
 						<Input label="Last name" name="lastname" />
+						<Input label="Email" name="email" type="email" />
 					</FormGroup>
 
 					{/* How did you hear about us (radios)
@@ -163,7 +166,7 @@ export default function Test() {
 					</FormGroup>
 
 					{/* Your feedback (textbox) */}
-
+					<Textarea label="Your feedback" name="feedback"></Textarea>
 					{/* submit */}
 				</form>
 			</div>
