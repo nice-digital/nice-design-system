@@ -30,6 +30,8 @@ import {
 	DefaultFilterByInput,
 	DefaultMultipleFilters
 } from "components/examples/Filters";
+import { Input } from "@nice-digital/nds-input";
+import { Radio } from "@nice-digital/nds-radio";
 
 export default function Test() {
 	const breadcrumb = (
@@ -55,109 +57,47 @@ export default function Test() {
 			</Head>
 
 			<h1>Test page!</h1>
+<div className="test-examples-section-two">
+			<form>
+				{/* Your name */}
+				<FormGroup legend="Your personal details"
+							name="personal-inforamtion">
+					<Input label="First name" name="firstname" />
+					<Input label="Last name" name="lastname" />
+				</FormGroup>
 
-			<div className="test-checkbox-directly">
-				<h2>Example one </h2>
-				<p>
-					Using box-sizing:border-box, so the border insets rather than outset
-					(which can cause )
-				</p>
-				{/* <Checkbox value="test" name="a-test-checkbox-test" /> */}
-				<>
-					<Checkbox value="Email" name="contact-email-test-1" />
-					<Checkbox value="Telephone" name="contact-phone-test-1" />
-					<Checkbox value="Text Message" name="contact-text-test-1" />
-				</>
+				{/* How did you hear about us (radios)
+					Social media
+					Word of mouth
+					Email
+					Advertisement
+				*/}
+				<FormGroup legend="How did you hear about us" name="hear-about-us">
+					<Radio label="Social media" value="social" name="hearaboutradioexample" />
+					<Radio label="Word of mouth" value="wom" name="hearaboutradioexample" />
+					<Radio label="Email" value="email" name="hearaboutradioexample" />
+					<Radio label="Advertisement" value="advert" name="hearaboutradioexample" />
+				</FormGroup>
 
-				<>
-					<Checkbox value="Email" name="contact-email-example-test-1" />
-					<Checkbox value="Telephone" name="contact-phone-example-test-1" />
-					<Checkbox value="Text Message" name="contact-text-example-test-1" />
-				</>
+				{/* Which services did you use (checkboxes)
+					Design
+					Development
+					Testing
+					Analysis */}
+				<FormGroup legend="Which servives did you use" name="services-used">
+					<Checkbox value="Design" name="services-used-example" />
+					<Checkbox value="Development" name="services-used-example" />
+					<Checkbox value="Testing" name="services-used-example" />
+					<Checkbox value="Analysis" name="services-used-example" />
+				</FormGroup>
 
-				<>
-					<Checkbox inline value="Email" name="contact-email-inline-test-1" />
-					<Checkbox
-						inline
-						value="Telephone"
-						name="contact-phone-inline-test-1"
-					/>
-					<Checkbox
-						inline
-						value="Text Message"
-						name="contact-text-inline-test-1"
-					/>
-				</>
+				{/* Your feedback (textbox) */}
 
-				<Checkbox
-					hint="You can unsubscribe at any time"
-					value="Email"
-					name="contact-email-hint-test-1"
-				/>
+				{/* submit */}
+			</form>
+</div>
 
-				<Checkbox
-					error="This is an error message"
-					value="Email"
-					name="contact-email-error-test-1"
-				/>
 
-				<Checkbox disabled value="Email" name="contact-email-disabled-test-1" />
-			</div>
-
-			<div className="test-examples-section-one">
-				<h2>Example two</h2>
-				<p>
-					We apply an offset to the outline by default. The hover state grows
-					into the offset whitespace when both states are present.
-				</p>
-				<DefaultExampleCheckbox />
-				<DefaultCheckbox />
-				<InlineCheckbox />
-				<HintCheckbox />
-				<ErrorCheckbox />
-				<DisabledCheckbox />
-			</div>
-
-			<div className="test-examples-section-two">
-				<h2>Example 3</h2>
-
-				<p>Offset the outline when focus & hover are both present</p>
-				<>
-					<Checkbox value="Email" name="contact-email-test" />
-					<Checkbox value="Telephone" name="contact-phone-test" />
-					<Checkbox value="Text Message" name="contact-text-test" />
-				</>
-
-				<>
-					<Checkbox value="Email" name="contact-email-example-test" />
-					<Checkbox value="Telephone" name="contact-phone-example-test" />
-					<Checkbox value="Text Message" name="contact-text-example-test" />
-				</>
-
-				<>
-					<Checkbox inline value="Email" name="contact-email-inline-test" />
-					<Checkbox inline value="Telephone" name="contact-phone-inline-test" />
-					<Checkbox
-						inline
-						value="Text Message"
-						name="contact-text-inline-test"
-					/>
-				</>
-
-				<Checkbox
-					hint="You can unsubscribe at any time"
-					value="Email"
-					name="contact-email-hint-test"
-				/>
-
-				<Checkbox
-					error="This is an error message"
-					value="Email"
-					name="contact-email-error-test"
-				/>
-
-				<Checkbox disabled value="Email" name="contact-email-disabled-test" />
-			</div>
 
 			<br />
 			<br />
