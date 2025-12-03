@@ -1,10 +1,40 @@
+/* eslint-disable @next/next/no-css-tags */
 import Head from "next/head";
+import { RootLayout } from "components/layouts/RootLayout";
 import { Accordion, AccordionGroup } from "@nice-digital/nds-accordion";
 import { Accordion as TestAccordion } from "../../components/nds-accordion/src/Accordion";
 import { Hero } from "../../components/nds-hero/src/Hero";
 import { ActionBanner } from "../../components/nds-action-banner/src/ActionBanner";
 import { Button } from "../../components/nds-button/src/Button";
 import { Card } from "@nice-digital/nds-card";
+
+import {
+	FormGroup,
+	FormGroupProps
+} from "../../components/nds-form-group/src/FormGroup";
+import {
+	Checkbox,
+	CheckboxProps
+} from "../../components/nds-checkbox/src/Checkbox";
+import {
+	DefaultCheckbox,
+	DefaultExampleCheckbox,
+	InlineCheckbox,
+	HintCheckbox,
+	ErrorCheckbox,
+	DisabledCheckbox
+} from "../components/examples/Checkbox";
+
+import {
+	DefaultFilterSummary,
+	DefaultFilterPanel,
+	DefaultFilterByInput,
+	DefaultMultipleFilters
+} from "components/examples/Filters";
+import { Input } from "@nice-digital/nds-input";
+import { Radio } from "@nice-digital/nds-radio";
+import { Textarea } from "@nice-digital/nds-textarea";
+
 export default function Test() {
 	const breadcrumb = (
 		<div style={{ marginBottom: "2rem" }}>
@@ -22,11 +52,128 @@ export default function Test() {
 		</div>
 	);
 	return (
-		<div>
+		<div className="test-page">
 			<Head>
 				<title>NDS Test page!</title>
+				<link rel="stylesheet" href="../styles/testpage.scss" />
 			</Head>
+
 			<h1>Test page!</h1>
+			<h2>Test form for example 1 prototypes </h2>
+			<div className="test-checkbox-directly">
+				<form>
+					{/* Your name */}
+					<FormGroup
+						legend="Your personal details"
+						name="personal-information1"
+					>
+						<Input label="First name" name="firstname1" />
+						<Input label="Last name" name="lastname1" />
+						<Input label="Email" name="email1" type="email" />
+					</FormGroup>
+
+					{/* How did you hear about us (radios)
+						Social media
+						Word of mouth
+						Email
+						Advertisement
+					*/}
+					<FormGroup legend="How did you hear about us" name="hear-about-us1">
+						<Radio
+							label="Social media"
+							value="social1"
+							name="hearaboutradioexample1"
+						/>
+						<Radio
+							label="Word of mouth"
+							value="wom1"
+							name="hearaboutradioexample1"
+						/>
+						<Radio label="Email" value="email" name="hearaboutradioexample1" />
+						<Radio
+							label="Advertisement"
+							value="advert1"
+							name="hearaboutradioexample1"
+						/>
+					</FormGroup>
+
+					{/* Which services did you use (checkboxes)
+						Design
+						Development
+						Testing
+						Analysis */}
+					<FormGroup legend="Which services did you use" name="services-used1">
+						<Checkbox value="Design" name="services-used-example1" />
+						<Checkbox value="Development" name="services-used-example1" />
+						<Checkbox value="Testing" name="services-used-example1" />
+						<Checkbox value="Analysis" name="services-used-example1" />
+					</FormGroup>
+
+					{/* Your feedback (textbox) */}
+					<Textarea label="Your feedback" name="feedback1"></Textarea>
+					{/* submit */}
+				</form>
+			</div>
+			<br />
+			<br />
+			<br />
+
+			<h2>Test form for example 3 prototypes </h2>
+			<div className="test-examples-section-two">
+				<form>
+					{/* Your name */}
+					<FormGroup legend="Your personal details" name="personal-inforamtion">
+						<Input label="First name" name="firstname" />
+						<Input label="Last name" name="lastname" />
+						<Input label="Email" name="email" type="email" />
+					</FormGroup>
+
+					{/* How did you hear about us (radios)
+						Social media
+						Word of mouth
+						Email
+						Advertisement
+					*/}
+					<FormGroup legend="How did you hear about us" name="hear-about-us">
+						<Radio
+							label="Social media"
+							value="social"
+							name="hearaboutradioexample"
+						/>
+						<Radio
+							label="Word of mouth"
+							value="wom"
+							name="hearaboutradioexample"
+						/>
+						<Radio label="Email" value="email" name="hearaboutradioexample" />
+						<Radio
+							label="Advertisement"
+							value="advert"
+							name="hearaboutradioexample"
+						/>
+					</FormGroup>
+
+					{/* Which services did you use (checkboxes)
+						Design
+						Development
+						Testing
+						Analysis */}
+					<FormGroup legend="Which services did you use" name="services-used">
+						<Checkbox value="Design" name="services-used-example" />
+						<Checkbox value="Development" name="services-used-example" />
+						<Checkbox value="Testing" name="services-used-example" />
+						<Checkbox value="Analysis" name="services-used-example" />
+					</FormGroup>
+
+					{/* Your feedback (textbox) */}
+					<Textarea label="Your feedback" name="feedback"></Textarea>
+					{/* submit */}
+				</form>
+			</div>
+
+			<br />
+			<br />
+
 			<p>
 				We can use this page as a scratch pad for developing/testing components
 				outside of the docs.
