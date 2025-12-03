@@ -60,55 +60,11 @@ $hover-transition-easing: ease-in-out;
 
 
 .test-examples-section-two {
-  .checkbox__input {
-    &:focus-visible + .checkbox__label::before,
-    &:active + .checkbox__label::before {
-      @include default-checkbox-focus;
-
-      //transition effects
-      // transition: outline-width $hover-transition-duration
-      //     $hover-transition-easing,
-      //   outline-offset $hover-transition-duration $hover-transition-easing;
-    }
-  }
-  //test focus and hover state combined
-  .checkbox__label::before {
-    // transition effects
-    outline-width: 0;
-    outline-offset: 0;
-
-    transition: box-shadow 0.1s $hover-transition-easing,
-      outline-width $hover-transition-duration $hover-transition-easing,
-      outline-offset $hover-transition-duration $hover-transition-easing;
-  }
-
-  // TODO: use those to override colors when checkbox has .checkbox--error
-  .checkbox:hover .checkbox__label::before,
-  .checkbox:has(.checkbox__input:focus-visible):hover .checkbox__label:before {
-    box-shadow: 0 0 0 $hover-stroke-width $hover-color;
-    outline-offset: $focus-outline-offset;
-    color: red;
-  }
-
-  .checkbox-error {
-    $focus-outline-color: colours.$error;
-  }
-
-  .checkbox:hover {
-    .checkbox__input:disabled + .checkbox__label::before {
-      box-shadow: none;
-      outline: none;
-    }
-  }
-
-
-
- .radio__input {
-  z-index: 1;
- }
-// separate styles to debug click/focus and hover on radio - behaves differently to checkbox
+  .checkbox__input,
   .radio__input {
+    &:focus-visible + .checkbox__label::before,
     &:focus-visible + .radio__label::before,
+    &:active + .checkbox__label::before,
     &:active + .radio__label::before {
       @include default-checkbox-focus;
 
@@ -119,6 +75,7 @@ $hover-transition-easing: ease-in-out;
     }
   }
   //test focus and hover state combined
+  .checkbox__label::before,
   .radio__label::before {
     // transition effects
     outline-width: 0;
@@ -130,17 +87,34 @@ $hover-transition-easing: ease-in-out;
   }
 
   // TODO: use those to override colors when checkbox has .checkbox--error
+  .checkbox:hover .checkbox__label::before,
   .radio:hover .radio__label::before,
-  .radio:has(.radio__input:focus-visible):hover .radio__label::before {
+  .checkbox:has(.checkbox__input:focus-visible):hover .checkbox__label:before,
+  .radio:has(.radio__input:focus-visible):hover .radio__label:before {
     box-shadow: 0 0 0 $hover-stroke-width $hover-color;
     outline-offset: $focus-outline-offset;
     color: red;
   }
 
+  .checkbox-error,
+  .radio-error {
+    $focus-outline-color: colours.$error;
+  }
+
+  .checkbox:hover,
   .radio:hover {
-    .radio__input:disabled + .radio__label::before {
+    .checkbox__input:disabled + .checkbox__label::before,
+    .radio__input:disabled + .radio__label::before  {
       box-shadow: none;
       outline: none;
     }
   }
+
+
+
+ .radio__input {
+  z-index: 1;
+ }
+// separate styles to debug click/focus and hover on radio - behaves differently to checkbox
+
 }
