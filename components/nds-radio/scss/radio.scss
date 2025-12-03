@@ -34,8 +34,8 @@ $radio-base-size: utils.rem(spacing.$large);
       opacity: 1;
     }
 
-    &:focus  + label:before {
-        @include focus.default-focus-style;
+    &:focus + label:before {
+      @include focus.default-focus-style;
     }
 
   }

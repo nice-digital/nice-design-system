@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-css-tags */
 import Head from "next/head";
 import { RootLayout } from "components/layouts/RootLayout";
 import { Accordion, AccordionGroup } from "@nice-digital/nds-accordion";
@@ -57,47 +58,56 @@ export default function Test() {
 			</Head>
 
 			<h1>Test page!</h1>
-<div className="test-examples-section-two">
-			<form>
-				{/* Your name */}
-				<FormGroup legend="Your personal details"
-							name="personal-inforamtion">
-					<Input label="First name" name="firstname" />
-					<Input label="Last name" name="lastname" />
-				</FormGroup>
+			<div className="test-examples-section-two">
+				<form>
+					{/* Your name */}
+					<FormGroup legend="Your personal details" name="personal-inforamtion">
+						<Input label="First name" name="firstname" />
+						<Input label="Last name" name="lastname" />
+					</FormGroup>
 
-				{/* How did you hear about us (radios)
-					Social media
-					Word of mouth
-					Email
-					Advertisement
-				*/}
-				<FormGroup legend="How did you hear about us" name="hear-about-us">
-					<Radio label="Social media" value="social" name="hearaboutradioexample" />
-					<Radio label="Word of mouth" value="wom" name="hearaboutradioexample" />
-					<Radio label="Email" value="email" name="hearaboutradioexample" />
-					<Radio label="Advertisement" value="advert" name="hearaboutradioexample" />
-				</FormGroup>
+					{/* How did you hear about us (radios)
+						Social media
+						Word of mouth
+						Email
+						Advertisement
+					*/}
+					<FormGroup legend="How did you hear about us" name="hear-about-us">
+						<Radio
+							label="Social media"
+							value="social"
+							name="hearaboutradioexample"
+						/>
+						<Radio
+							label="Word of mouth"
+							value="wom"
+							name="hearaboutradioexample"
+						/>
+						<Radio label="Email" value="email" name="hearaboutradioexample" />
+						<Radio
+							label="Advertisement"
+							value="advert"
+							name="hearaboutradioexample"
+						/>
+					</FormGroup>
 
-				{/* Which services did you use (checkboxes)
-					Design
-					Development
-					Testing
-					Analysis */}
-				<FormGroup legend="Which servives did you use" name="services-used">
-					<Checkbox value="Design" name="services-used-example" />
-					<Checkbox value="Development" name="services-used-example" />
-					<Checkbox value="Testing" name="services-used-example" />
-					<Checkbox value="Analysis" name="services-used-example" />
-				</FormGroup>
+					{/* Which services did you use (checkboxes)
+						Design
+						Development
+						Testing
+						Analysis */}
+					<FormGroup legend="Which servives did you use" name="services-used">
+						<Checkbox value="Design" name="services-used-example" />
+						<Checkbox value="Development" name="services-used-example" />
+						<Checkbox value="Testing" name="services-used-example" />
+						<Checkbox value="Analysis" name="services-used-example" />
+					</FormGroup>
 
-				{/* Your feedback (textbox) */}
+					{/* Your feedback (textbox) */}
 
-				{/* submit */}
-			</form>
-</div>
-
-
+					{/* submit */}
+				</form>
+			</div>
 
 			<br />
 			<br />
