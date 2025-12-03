@@ -34,11 +34,10 @@ $radio-base-size: utils.rem(spacing.$large);
       opacity: 1;
     }
 
-    &:focus {
-      & + label:before {
-        @include focus.default-focus-style(true);
-      }
+    &:focus  + label:before {
+        @include focus.default-focus-style;
     }
+
   }
 
   &__label {
