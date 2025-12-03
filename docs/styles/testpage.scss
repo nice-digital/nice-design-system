@@ -25,6 +25,40 @@ $hover-transition-easing: ease-in-out;
 @mixin default-checkbox-hover {
 }
 
+
+
+.test-checkbox-directly {
+  //checkbox wrapper - wraps label and input
+  .checkbox {
+  }
+
+  .checkbox:hover,
+  .radio:hover {
+    .checkbox__label::before,
+    .radio__label::before {
+      border: 3px solid $hover-color;
+    }
+  }
+
+  //.checkbox__label::before = where border and outlines are handled
+  .checkbox__label::before,
+  .radio__label::before {
+    border: 0.125rem solid #0e0e0e;
+  }
+
+  .checkbox:hover,
+  .radio:hover  {
+    .checkbox__input:disabled + .checkbox__label::before,
+    .radio__input:disabled + .radio__label::before {
+      box-shadow: none;
+      outline: none;
+      border: 0.125rem solid #0e0e0e;
+    }
+  }
+}
+
+
+
 .test-examples-section-two {
   .checkbox__input {
     &:focus-visible + .checkbox__label::before,

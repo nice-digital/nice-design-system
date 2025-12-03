@@ -58,6 +58,67 @@ export default function Test() {
 			</Head>
 
 			<h1>Test page!</h1>
+			<h2>Test form for example 1 prototypes </h2>
+			<div className="test-checkbox-directly">
+				<form>
+					{/* Your name */}
+					<FormGroup
+						legend="Your personal details"
+						name="personal-information1"
+					>
+						<Input label="First name" name="firstname1" />
+						<Input label="Last name" name="lastname1" />
+					</FormGroup>
+
+					{/* How did you hear about us (radios)
+						Social media
+						Word of mouth
+						Email
+						Advertisement
+					*/}
+					<FormGroup legend="How did you hear about us" name="hear-about-us1">
+						<Radio
+							label="Social media"
+							value="social1"
+							name="hearaboutradioexample1"
+						/>
+						<Radio
+							label="Word of mouth"
+							value="wom1"
+							name="hearaboutradioexample1"
+						/>
+						<Radio label="Email" value="email" name="hearaboutradioexample1" />
+						<Radio
+							label="Advertisement"
+							value="advert1"
+							name="hearaboutradioexample1"
+						/>
+					</FormGroup>
+
+					{/* Which services did you use (checkboxes)
+						Design
+						Development
+						Testing
+						Analysis */}
+					<FormGroup legend="Which services did you use" name="services-used1">
+						<Checkbox value="Design" name="services-used-example1" />
+						<Checkbox value="Development" name="services-used-example1" />
+						<Checkbox value="Testing" name="services-used-example1" />
+						<Checkbox value="Analysis" name="services-used-example1" />
+					</FormGroup>
+
+					{/* Your feedback (textbox) */}
+
+					{/* submit */}
+				</form>
+			</div>
+
+
+			<br />
+			<br />
+			<br />
+
+			<h2>Test form for example 3 prototypes </h2>
 			<div className="test-examples-section-two">
 				<form>
 					{/* Your name */}
@@ -96,7 +157,7 @@ export default function Test() {
 						Development
 						Testing
 						Analysis */}
-					<FormGroup legend="Which servives did you use" name="services-used">
+					<FormGroup legend="Which services did you use" name="services-used">
 						<Checkbox value="Design" name="services-used-example" />
 						<Checkbox value="Development" name="services-used-example" />
 						<Checkbox value="Testing" name="services-used-example" />
