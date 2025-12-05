@@ -15,11 +15,12 @@ export const meta = {
 
 Alerts are used to notify users of important information or changes on a page. Typically, they appear at the top of a page following a submit action. 
 
-By default, alerts are set to interrupt the user’s activity but can be set to ‘polite’ so the alert is announced without interrupting the user. 
+By default, alerts are set to interrupt the user’s activity but can be set to ‘polite’ so the alert is announced without interrupting the user.[Non-intrusive alert option](#non-intrusive-alert-option)
+
 
 There are four variations of the alert component: information, success, error and caution.
 
-### Information Alert
+## Information Alert
 
 <Example>
 <h4>Example: info alert</h4>
@@ -41,19 +42,19 @@ There are four variations of the alert component: information, success, error an
 </CH.Code>
 </Example>
 
-Information alerts are for essential information only – they draw attention to something important about a page or service. 
+Information alerts are for essential information only – they draw attention to something important about a page or service.  
 
-The information alert can tell a user about things such as: 
+The information alert can tell a user about things such as:  
 
- - unfinished tasks, linking to where to complete them 
- - a major change to a service 
- - service downtime. 
+ - unfinished tasks, linking to where to complete them  
+ - a major change to a service  
+ - service downtime.  
 
-#### When not to use 
+### When not to use 
 
 Do not use for a serious issue or error – use the error alert for this. Don’t use when trying to prevent something going wrong - use the caution alert for this. 
 
-### Success alert
+## Success alert
 
 <Example>
 <h4>Example: success alert</h4>
@@ -75,18 +76,18 @@ Do not use for a serious issue or error – use the error alert for this. Don’
 </CH.Code>
 </Example>
 
-Success alerts are used for notifying the user that a task, step or process is complete. 
+Success alerts are used for notifying the user that a task, step or process is complete.  
 
-The success alert can be used to show that something has been: 
-- unfinished tasks, linking to where to complete them
-- uploaded or added, such as a file or record 
-- cancelled, deleted or another type of destructive (negative) action. 
+The success alert can be used to show that something has been:  
+- successfully submitted – such as an online form 
+- uploaded or added, such as a file or record  
+- cancelled, deleted or another type of destructive (negative) action.  
 
-#### When not to use 
+### When not to use 
 
 Don’t use the success alert for small or micro actions like using a filter. Don’t use if something else confirms success, for example progressing to another page. 
 
-### Error alert
+## Error alert
 
 <Example>
 <h4>Example: error alert</h4>
@@ -110,11 +111,11 @@ Don’t use the success alert for small or micro actions like using a filter. Do
 
 Use error alerts to show that something has gone wrong. For example form validation or other errors that block the user from completing their task. 
 
-#### When not to use 
+### When not to use 
 
 Do not use as a warning or caution – use the caution alert instead. Error alerts should be used to highlight something that has gone wrong.  
 
-### Caution alert
+## Caution alert
 
 <Example>
 <h4>Example: caution alert</h4>
@@ -138,24 +139,24 @@ Do not use as a warning or caution – use the caution alert instead. Error aler
 
 Use caution alerts to tell the user something to be aware of, to prevent something going wrong. Only use a caution alert if the information will help the user avoid a problem.  
 
-Caution alerts can be used for things like:  
+Caution alerts can be used for things like:   
 
-- Raising awareness of a potential problem – for example on the BNF interactions page to show that combination products don’t appear in the list.  
+- Raising awareness of a potential problem – for example on the BNF interactions page to show that combination products don’t appear in the list.   
 - Highlighting content that has not been updated recently but may still be of use 
 - Highlighting when something has become more urgent or important, for example because a deadline is approaching. 
 
-#### When not to use
+### When not to use
 
-Do not use the caution alert if the information is about something other than a warning. Use the information alert for important information and the error alert for things that have gone wrong.  
+Do not use the caution alert if the information is about something other than a warning. Use the information alert for important information and the error alert for things that have gone wrong.   
 
 ## How to use
 
 -   Use alerts sparingly; there's evidence that people often miss them, and using them too often is likely to worsen this problem. 
 -   Do not use alerts if the information is directly relevant in context to what the user is doing on the page. 
--   Alerts are usually displayed at the top of the page. The alert should be the same width as the page content.
--   An alert needs a title, which does not need to be displayed as a heading. The title gives each alert a unique label and helps screen readers to identify the alert. It does not have to be read out.  
+-   Alerts are usually displayed at the top of the page. The alert should be the same width as the page content. 
+-   An alert needs a title, which does not need to be displayed as a heading. The title gives each alert a unique label and helps screen readers to identify the alert. It does not have to be read out. 
 
-### Non-intrusive alert option 
+## Non-intrusive alert option 
 
 <Example>
 <h4>Example: info alert (non-intrusive)</h4>
@@ -181,10 +182,16 @@ Use the non-intrusive option (uses aria-live="polite") for alerts which don't re
 
 By default, alerts use role="alert" so assistive technologies announce them immediately. Switch to aria-live="polite" when the message is informational rather than urgent. 
 
+Example of polite alerts are non-critical status updates, such as: 
+
+- “Your settings have been saved.” 
+- “Profile updated successfully.” 
+- “New items are available in the feed” 
+
 ## Accessibility
 
 Component meets WCAG AA guidelines for accessibility on: 
-- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3). 
+- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 1.4.3). 
 - UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11). 
 - Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
 
