@@ -137,15 +137,6 @@
   padding: 0;
 }
 
-/// Text truncate
-/// Requires inline-block or block for proper styling
-/// @since 0.1.0
-@mixin text-truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 /// Set and element to display as block and align
 /// centrally via auto left/right margins
 /// @since 0.1.0
