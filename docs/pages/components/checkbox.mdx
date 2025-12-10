@@ -1,50 +1,74 @@
 import { Checkbox } from "@nice-digital/nds-checkbox";
 import { ComponentLayout } from "components/layouts/ComponentLayout";
 import { Example } from "components/examples/Example";
-import { DefaultCheckbox, DefaultExampleCheckbox, InlineCheckbox, HintCheckbox, ErrorCheckbox, DisabledCheckbox } from "components/examples/Checkbox";
+import { DefaultCheckbox, DefaultExampleCheckbox, InlineCheckbox, HintCheckbox, ErrorCheckbox } from "components/examples/Checkbox";
 
 export const meta = {
 	title: "Checkbox",
-	description: "Let users select one or more options by using the checkboxes component.",
+	description: "Use checkboxes to let users pick one or more options.",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-checkbox",
 	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-checkbox",
 	component: DefaultCheckbox
 };
 
-Checkboxes are an easily understandable way to indicate that users can select one or more answers to a question or items from a list. They're always followed by a label or instructions clearly showing what checking the box represents.
-
-Each checkbox has two states: selected or unselected, similar to an on and off switch. For example, if a checkbox label says “Yes, send me an email,” it's clear what checking that box (or not checking it) will accomplish.
-
-Checkboxes also visibly show users what has been selected and makes it easy for them to “uncheck” an option, which can be difficult with other selection methods on a form (such as radio buttons or select menus). It's common to include “check all that apply” instructions with checkboxes to let users know it's okay to select more than one option at a time.
+Checkboxes are a clear and simple way for users to choose answers or items from a list. Each checkbox has two states: selected or unselected, similar to an on and off switch.
 
 ## When to use
 
 Use the checkboxes component when you need to help users:
-
 -   select multiple options from a list
 -   toggle a single option on or off
 
 ## When not use
 
--   Do not use the checkboxes component if users can only choose one option from a selection.
--   In this case, use the radio component.
+-   Do not use the checkboxes component if users can only choose one option from a selection. In this case, use the [radio component](/components/radio/).
 
 ## How to use
 
 Always position checkboxes to the left of their labels; this makes them easier to find, especially for users of screen magnifiers.
 
-Unlike with radios, users can select multiple options from a list of checkboxes. Do not assume that users will know how many selections they can choose based on the visual difference between radios and checkboxes alone.
-
-If needed, add a hint explaining this, for example, 'Select all that apply.
+It's common to include "check all that apply" instructions with checkboxes to let users know it's okay to select more than one option at a time.
 
 Do not pre-select checkbox options as this makes it more likely that users will:
 
 -   not realise they've missed a question
 -   submit the wrong answer
 
-Order checkbox options alphabetically by default.
+Order checkbox options alphabetically by default. In some cases it can be useful to order them from most-to-least common so the most common options are presented first. However you should do this with caution as it can reinforce bias in your service. If in doubt, order alphabetically.
 
-Group checkboxes together in a `<fieldset>` with a `<legend>` that describes them. You can see an example at the top of this page. The legend is usually a question, like "How would you like to be contacted?".
+## Single checkboxes
+
+Single checkboxes allow a user to select something on or off.
+
+[add demo of single checkbox]
+
+## Grouped checkboxes
+
+[Grouped checkbox example]
+
+Multiple related checkboxes will always be used with our [Form Group component](/components/form-group).
+
+The form group:
+- wraps the checkboxes in a `<fieldset>` with a `<legend>` that describes the group.
+- allows you to add hint text that applies to the entire group.
+
+The legend is usually a question, like "How would you like to be contacted?".
+
+Unlike radios, users can select more than one option from a list of checkboxes. Do not assume that users will know how many selections they can choose based on the visual difference between radios and checkboxes alone.
+
+Add hint text explaining this, for example, "Select all that apply".
+
+### Add an option for "none"
+
+[Add option for "none" checkbox example]
+
+When "none" would be a valid answer, give users the option to check a box to say none of the other options apply to them. Without this option, users would have to leave all of the boxes unchecked. Giving users this option also makes sure they do not skip the question by accident.
+
+Show the "none" option last.
+
+Write a label that repeats the key part of the question.
+
+For example, for the question "Will you be travelling to any of these countries?", say "No, I will not be travelling to any of these countries".
 
 ### If you're asking one question on the page
 
@@ -52,41 +76,9 @@ If you're asking just [one question per page](https://design-system.service.gov.
 
 Read more on the [GOV.UK](http://GOV.UK) Design System about [why and how to set legends as headings](https://design-system.service.gov.uk/get-started/labels-legends-headings/).
 
-## Default checkboxes
-
-<Example>
-<DefaultExampleCheckbox />
-
-<CH.Code>
-```js React
-<Checkbox value="Email" name="contact-email" />
-<Checkbox value="Telephone" name="contact-phone" />
-<Checkbox value="Text Message" name="contact-text" />
-```
-```html HTML
-<div class="checkbox" data-component="checkbox">
-	<div>
-		<input type="checkbox" class="checkbox__input" id="contact-email_Email" name="contact-email" value="Email">
-		<label class="checkbox__label" for="contact-email_Email">Email</label>
-	</div>
-</div>
-<div class="checkbox" data-component="checkbox">
-	<div>
-		<input type="checkbox" class="checkbox__input" id="contact-phone_Telephone" name="contact-phone" value="Telephone">
-		<label class="checkbox__label" for="contact-phone_Telephone">Telephone</label>
-	</div>
-</div>
-<div class="checkbox" data-component="checkbox">
-	<div>
-		<input type="checkbox" class="checkbox__input" id="contact-text_Text Message" name="contact-text" value="Text Message">
-		<label class="checkbox__label" for="contact-text_Text Message">Text Message</label>
-	</div>
-</div>
-```
-</CH.Code>
-</Example>
-
 ## Inline checkboxes
+
+Inline checkboxes don't support hint text for individual checkboxes. You can still add hint text to the group of inputs to explain what the checkboxes are about.
 
 <Example>
 <InlineCheckbox />
@@ -120,7 +112,19 @@ Read more on the [GOV.UK](http://GOV.UK) Design System about [why and how to set
 </CH.Code>
 </Example>
 
-## Checkbox items with hints
+## Checkbox hint text
+
+Keep hint text short and simple.
+
+Do not use links in hint text. While screen readers will read out the link text when describing the item, they usually do not tell users the text is a link.
+
+Hint text can be added to both:
+- An individual checkbox.
+- The overall group of checkboxes in the form group.
+
+### Individual checkbox hint text
+
+Add hint text to individual checkboxes to provide additional context or help.
 
 <Example>
 <HintCheckbox />
@@ -144,15 +148,28 @@ Read more on the [GOV.UK](http://GOV.UK) Design System about [why and how to set
 </CH.Code>
 </Example>
 
-You can add hints to checkbox items to provide additional information about the options.
+### Grouped checkboxes hint text
 
-Unlike radios, users can select more than one option from a list of checkboxes. Do not assume that users will know how many options they can choose.
+Add hint text to the group of checkboxes to provide context or help for the overall group.
 
-Use hint text to give users help in context. For example, say, "You can unsubscribe at any time".
+[Form group with a hint Live demo]
 
-Placeholder image - live preview to be used on Design system site.
+### Asking complex questions
 
-## Error messages
+If you're asking a question that needs a detailed explanation, don't use hint text, instead use:
+- a heading that's a statement (for example, "Interview needs") rather than a question
+- whatever mix of text, paragraphs, lists and examples best explains your question to users
+- a label, above the form input, that asks users a specific question - for example, "Do you have any interview needs?".
+
+## Errors
+
+Display an error message when:
+- A user hasn't selected a checkbox when one is required.
+{/* - A user has selected two contradictory options. For example if they selected 'none' and 'Spain' in 'Have you travelled to any of these countries recently?'  */}
+
+### How to use error messages
+
+Error messages are displayed like this:
 
 <Example>
 <ErrorCheckbox />
@@ -177,38 +194,30 @@ Placeholder image - live preview to be used on Design system site.
 </CH.Code>
 </Example>
 
-## Disabled checkboxes
+The error message text appears in red after the question text and any hint text.
 
-<Example>
-<DisabledCheckbox />
+Do not clear any form fields when showing the error message. Keep both passing and failing answers.
 
-<CH.Code>
-```js React
-<Checkbox disabled value="Email" name="contact-email" />
-```
-```html HTML
-<p class="checkbox__error-message">This is an error message</p>
-<div class="checkbox checkbox--error" data-component="checkbox">
-	<div>
-		<input type="checkbox" class="checkbox__input" id="contact-email-error_Email" name="contact-email-error" value="Email">
-		<label class="checkbox__label" for="contact-email-error_Email">Email</label>
-	</div>
-</div>
-```
-</CH.Code>
-</Example>
+Keeping information that caused errors helps users to:
+- see what went wrong
+- edit their previous answer
+- avoid re-entering information.
 
-Disabled checkbox inputs can be used to indicate inputs that are no longer valid or expired.
+### When not use to use error messages
+
+Only display an error when someone tries to move to the next part of the form or service.
+
+Do not show error messages:
+- when users select or tab to a field
+- when they move away from a field.
 
 ## Accessibility
 
 Component meets WCAG AA guidelines for accessibility on:
 
-Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
-
-UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
-
-Accessible use of color - Color is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 - 1.4.3).
+UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.2 - 1.4.11).
+Accessible use of color - Color is not used as the only visual means of conveying information (WCAG 2.2 - 1.4.1).
 
 ## Research/evidence
 
@@ -217,3 +226,7 @@ We tested the checkbox component on a "In consultation Comment Collection" proto
 Our checkboxes are based on the [GOV.UK](http://GOV.UK) Design System. Read more about [how GOV.UK developed and tested them](https://designnotes.blog.gov.uk/2016/11/30/weve-updated-the-radios-and-checkboxes-on-gov-uk/).
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;
+
+
+
+
