@@ -1,48 +1,51 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
 import { Example } from "components/examples/Example";
-import { DefaultRadio, DefaultRadioExample, InlineRadio, HintRadio, ErrorRadio, ErrorHintRadio, DisabledRadio } from "components/examples/Radio";
+import { DefaultRadio, DefaultRadioExample, InlineRadio, HintRadio,GroupHintRadio, ErrorRadio, ErrorHintRadio} from "components/examples/Radio";
 
 export const meta = {
 	title: "Radio",
-	description: "Use the radio component when users can only select one option from a list.",
+	description: "Radio buttons let users select a single option from a list.",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-radio",
 	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-radio",
 	component: DefaultRadio
 };
 
-Radio buttons are a common way to allow users to make a single selection from a list of options. Since only one radio button can be selected at a time (within the same group), each available choice must be its own item and label.
-
 ## When to use
 
-Use the radios component when users can only select one option from a list.
+Use the radios component when users can only select one option from a list. 
 
 ## When not to use
 
-If users need to be able to pick more than one option from a list, use the checkboxes component instead.
+If users need to be able to pick more than one option from a list, use the [checkboxes](/components/checkbox) component instead. 
 
 ## How to use
 
-Always position radios to the left of their labels. This makes them easier to find, especially for users of screen magnifiers.
+Always use radios with our [Form group](/components/form-group) component. This adds a `fieldset`  with a `legend`  that describes the radios (example  'Where do you live?') 
 
-Unlike with checkboxes, users can only select one option from a list of radios. Do not assume that users will know how many options they can select based on the visual difference between radios and checkboxes alone.
+Always position radios to the left of their labels. This makes them easier to find, especially for users of screen magnifiers. 
 
-If needed, add a hint explaining this, for example, 'Select one option'.
+Do not pre-select radio options as this makes it more likely that users will: 
 
-Do not pre-select radio options as this makes it more likely that users will:
+-   not realise they've missed a question 
+-   submit the wrong answer. 
 
--   not realise they've missed a question
--   submit the wrong answer
+Order radio options alphabetically by default. In some cases, it can be helpful to order them from most-to-least common options. For example, you could order options for ‘Where do you live?’ based on population size. 
 
+However you should do this with caution as it can reinforce bias in your service. If in doubt, order alphabetically. 
 
-Order radio options alphabetically by default.
+### Be clear about one option 
 
-Group radios together in a `fieldset` with a `legend` that describes them, as shown in the examples on this page. This is usually a question, like 'Where do you live?'
+Unlike with checkboxes, users can only select one option from a list of radios. Do not assume that users will know how many options they can select based on the visual difference between radios and checkboxes alone. 
 
-### If you're asking one question on the page
+Add a hint explaining this, for example, 'Select one option'. 
 
-If you are asking just [one question per page](https://design-system.service.gov.uk/patterns/question-pages/#start-by-asking-one-question-per-page) as recommended, you can set the contents of the `<legend>` as the page heading. This is good practice as it means that users of screen readers will only hear the contents once.
+### Include a ‘none’ or don’t know option 
 
-Read more on the [gov.uk](http://gov.uk) Design System about [why and how to set legends as headings](https://design-system.service.gov.uk/get-started/labels-legends-headings/).
+Users cannot go back to having no option selected once they have selected an option. You should include "None of these" or "I do not know" if they make sense. See the GDS guidance on [avoiding binary choices](https://service-manual.nhs.uk/content/how-to-write-good-questions-for-forms/use-filter-questions-to-route-users#beware-binary-choices). 
+
+If you are asking just  [one question per page](https://design-system.service.gov.uk/patterns/question-pages/#start-by-asking-one-question-per-page)  as recommended, you can set the contents of the `legend`  as the page heading. This is good practice as it means that users of screen readers will only hear the contents once. 
+
+Read more on the gov.uk Design System about  [why and how to set legends as headings](https://design-system.service.gov.uk/get-started/labels-legends-headings/). 
 
 ## Default radios
 
@@ -51,114 +54,236 @@ Read more on the [gov.uk](http://gov.uk) Design System about [why and how to set
 
 <CH.Code>
 ```js React
-<>
-	<Radio label="Yes" value="Yes" name="defaultradioexample" />
-	<Radio label="No" value="No" name="defaultradioexample" />
-</>
+<FormGroup
+		legend="Are you happy for us to contact you in the future?"
+		name="contact-preference"
+	>
+		<Radio label="Yes" value="Yes" name="defaultradio" />
+		<Radio label="No" value="No" name="defaultradio" />
+	</FormGroup>
 	```
 ```html HTML
-<div class="radio" data-component="radio">
-  <input
-    class="radio__input"
-    name="defaultradioexample"
-    type="radio"
-    id="defaultradioexample_Yes"
-  /><label class="radio__label" for="defaultradioexample_Yes">Yes</label>
-</div>
-<div class="radio" data-component="radio">
-  <input
-    class="radio__input"
-    name="defaultradioexample"
-    type="radio"
-    id="defaultradioexample_No"
-  /><label class="radio__label" for="defaultradioexample_No">No</label>
-</div>
+<fieldset class="form-group" data-component="form-group">
+  <legend class="form-group__legend">
+    Are you happy for us to contact you in the future?
+  </legend>
+
+  <div class="radio" data-component="radio">
+    <input
+      class="radio__input"
+      name="contact-preference"
+      type="radio"
+      id="contact-preferencee_yes"
+      value="yes"
+    />
+    <label class="radio__label" for="contact-preference_yes">
+      Yes
+    </label>
+  </div>
+
+  <div class="radio" data-component="radio">
+    <input
+      class="radio__input"
+      name="contact-preference"
+      type="radio"
+      id="contact-preference_no"
+      value="no"
+    />
+    <label class="radio__label" for="contact-preference_no">
+      No
+    </label>
+  </div>
+</fieldset>
+
 ```
 </CH.Code>
 </Example>
 
 ## Inline radios
 
-In some cases, you can display radios 'inline' beside one another (horizontally).
+In some cases, you can display radios 'inline' beside one another (horizontally). 
 
-Only use inline radios when:
+Only use inline radios when: 
 
--   the question only has two options
--   both options are short
+-   the question only has two options 
+-   both options are short. 
 
-Remember that on small screens such as mobile devices, the radios will still be 'stacked' on top of one another (vertically).
+Remember that on small screens such as mobile devices, the radios will still be 'stacked' on top of one another (vertically). 
+
+You can’t use individual hint text with inline radios. 
 
 <Example>
 <InlineRadio />
 
 <CH.Code>
 ```js React
-<>
-	<Radio inline label="Yes" value="Yes" name="inlineradio" />
-	<Radio inline label="No" value="No" name="inlineradio" />
-</>
+<FormGroup
+		legend="Are you happy for us to contact you in the future?"
+		name="contact-preference-inline"
+		inline
+	>
+		<Radio inline label="Yes" value="Yes" name="inlineradio" />
+		<Radio inline label="No" value="No" name="inlineradio" />
+	</FormGroup>
 	```
 ```html HTML
-<div class="radio radio--inline" data-component="radio--inline">
-  <input
-    class="radio__input"
-    name="inlineradio"
-    type="radio"
-    id="inlineradio_Yes"
-  /><label class="radio__label" for="inlineradio_Yes">Yes</label>
-</div>
-<div class="radio radio--inline" data-component="radio--inline">
-  <input
-    class="radio__input"
-    name="inlineradio"
-    type="radio"
-    id="inlineradio_No"
-  /><label class="radio__label" for="inlineradio_No">No</label>
-</div>
+<fieldset class="form-group" data-component="form-group">
+  <legend class="form-group__legend">
+    Are you happy for us to contact you in the future?
+  </legend>
+
+  <div class="radio radio--inline" data-component="radio--inline">
+    <input
+      class="radio__input"
+      name="inlineradio"
+      type="radio"
+      id="inlineradio_Yes"
+      value="yes"
+    />
+    <label class="radio__label" for="inlineradio_Yes">Yes</label>
+  </div>
+
+  <div class="radio radio--inline" data-component="radio--inline">
+    <input
+      class="radio__input"
+      name="inlineradio"
+      type="radio"
+      id="inlineradio_No"
+      value="no"
+    />
+    <label class="radio__label" for="inlineradio_No">No</label>
+  </div>
+</fieldset>
+
 ```
 </CH.Code>
 </Example>
 
-## Radios with hints
+## Using hint text 
 
-You can add hints to radio items to provide additional information about the options.
+Keep hint text short and simple.  
+
+Do not use links in hint text. While screen readers will read out the link text when describing the item, they usually do not tell users the text is a link. 
+
+Hint text can be added to both: 
+
+-   An individual radio 
+-   The overall group of radios 
+
+### Individual radio hint text 
+
+Add hint text to individual radio buttons to provide additional information about the options. 
 
 <Example>
 <HintRadio />
 
 <CH.Code>
 ```js React
-<>
-	<Radio
-		hint="Some helpful hint text"
-		label="Yes"
-		value="Yes"
-		name="hintradio"
-	/>
-	<Radio label="No" value="No" name="hintradio" />
-</>
+<FormGroup
+		legend="Are you happy for us to contact you in the future?"
+		name="contact-preference"
+	>
+		<Radio
+			hint="Some helpful hint text"
+			label="Yes"
+			value="Yes"
+			name="hintradio"
+		/>
+		<Radio label="No" value="No" name="hintradio" />
+	</FormGroup>
 	```
 ```html HTML
-<div class="radio" data-component="radio">
-  <input
-    class="radio__input"
-    name="hintradio"
-    type="radio"
-    id="hintradio_Yes"
-  /><label class="radio__label" for="hintradio_Yes">Yes</label
-  ><span class="checkbox__hint">Some helpful hint text</span>
-</div>
-<div class="radio" data-component="radio">
-  <input
-    class="radio__input"
-    name="hintradio"
-    type="radio"
-    id="hintradio_No"
-  /><label class="radio__label" for="hintradio_No">No</label>
-</div>
+<fieldset class="form-group" data-component="form-group--inline">
+  <legend class="form-group__legend">
+    Are you happy for us to contact you in the future?
+  </legend>
+
+  <div class="radio radio--inline" data-component="radio--inline">
+    <input
+      class="radio__input"
+      name="contact-preference-inline"
+      type="radio"
+      id="contact-preference-inline_Yes"
+      value="yes"
+    />
+    <label class="radio__label" for="contact-preference-inline_Yes">Yes</label>
+  </div>
+
+  <div class="radio radio--inline" data-component="radio--inline">
+    <input
+      class="radio__input"
+      name="contact-preference-inline"
+      type="radio"
+      id="contact-preference-inline_No"
+      value="no"
+    />
+    <label class="radio__label" for="contact-preference-inline_No">No</label>
+  </div>
+</fieldset>
 ```
 </CH.Code>
 </Example>
+
+### Group hint text 
+
+Add hint text to the whole group to provide additional context or help about the entire group. 
+
+<Example>
+<GroupHintRadio/>
+
+<CH.Code>
+```js React
+<FormGroup
+		legend="Are you happy for us to contact you in the future?"
+		hint="Some helpful hint text"
+		name="contact-preference"
+	>
+		<Radio label="Yes" value="Yes" name="hintradio" />
+		<Radio label="No" value="No" name="hintradio" />
+	</FormGroup>
+	```
+```html HTML
+<fieldset class="form-group" data-component="form-group">
+  <legend class="form-group__legend">
+    Are you happy for us to contact you in the future?
+  </legend>
+
+  <p class="form-group__hint">
+    Some helpful hint text
+  </p>
+
+  <div class="radio" data-component="radio">
+    <input
+      class="radio__input"
+      name="contact-preference"
+      type="radio"
+      id="contact-preference_Yes"
+      value="yes"
+    />
+    <label class="radio__label" for="contact-preference_Yes">Yes</label>
+  </div>
+
+  <div class="radio" data-component="radio">
+    <input
+      class="radio__input"
+      name="contact-preference"
+      type="radio"
+      id="contact-preference_No"
+      value="no"
+    />
+    <label class="radio__label" for="contact-preference_No">No</label>
+  </div>
+</fieldset>
+```
+</CH.Code>
+</Example>
+
+### Asking complex questions 
+
+If you’re asking a question that needs a detailed explanation, don’t use hint text, instead use: 
+-   a heading that’s a statement (for example, ‘Interview needs’) rather than a question 
+-   whatever mix of text, paragraphs, lists and examples best explains your question to users 
+-   a label, above the form input, that asks users a specific question – for example, ‘Do you have any interview needs?’ 
 
 ## Errors
 
@@ -167,28 +292,44 @@ You can add hints to radio items to provide additional information about the opt
 
 <CH.Code>
 ```js React
-<>
-	<Radio error={true} label="Yes" value="Yes" name="errorradio" />
-	<Radio label="No" value="No" name="errorradio" />
-</>
+<FormGroup
+		legend="Are you happy for us to contact you in the future?"
+		name="contact-preference"
+	>
+		<Radio error={true} label="Yes" value="Yes" name="errorradio" />
+		<Radio label="No" value="No" name="errorradio" />
+	</FormGroup>
 ```
 ```html HTML
-<div class="radio radio--error" data-component="radio">
-  <input
-    class="radio__input"
-    name="errorradio"
-    type="radio"
-    id="errorradio_Yes"
-  /><label class="radio__label" for="errorradio_Yes">Yes</label>
-</div>
-<div class="radio" data-component="radio">
-  <input
-    class="radio__input"
-    name="errorradio"
-    type="radio"
-    id="errorradio_No"
-  /><label class="radio__label" for="errorradio_No">No</label>
-</div>
+<fieldset class="form-group" data-component="form-group">
+  <legend class="form-group__legend">
+    Are you happy for us to contact you in the future?
+  </legend>
+
+  <p class="radio__error-message"></p>
+
+  <div class="radio radio--error" data-component="radio">
+    <input
+      class="radio__input"
+      name="contact-preference"
+      type="radio"
+      id="contact-preference_Yes"
+      value="yes"
+    />
+    <label class="radio__label" for="contact-preference_Yes">Yes</label>
+  </div>
+
+  <div class="radio" data-component="radio">
+    <input
+      class="radio__input"
+      name="contact-preference"
+      type="radio"
+      id="contact-preference_No"
+      value="no"
+    />
+    <label class="radio__label" for="contact-preference_No">No</label>
+  </div>
+</fieldset>
 ```
 </CH.Code>
 </Example>
@@ -200,83 +341,74 @@ You can add hints to radio items to provide additional information about the opt
 
 <CH.Code>
 ```js React
-<>
-	<Radio
-		error="Error message"
-		label="Yes"
-		value="Yes"
-		name="errorhintradio"
-	/>
-	<Radio label="No" value="No" name="errorhintradio" />
-</>
+<FormGroup
+		legend="Are you happy for us to contact you in the future?"
+		name="contact-preference"
+	>
+		<Radio
+			error="Error message"
+			label="Yes"
+			value="Yes"
+			name="errorhintradio"
+		/>
+		<Radio label="No" value="No" name="errorhintradio" />
+	</FormGroup>
 ```
 ```html HTML
-<p class="radio__error-message">Error message</p>
-<div class="radio radio--error" data-component="radio">
-  <input
-    class="radio__input"
-    name="errorhintradio"
-    type="radio"
-    id="errorhintradio_Yes"
-  /><label class="radio__label" for="errorhintradio_Yes">Yes</label>
-</div>
-<div class="radio" data-component="radio">
-  <input
-    class="radio__input"
-    name="errorhintradio"
-    type="radio"
-    id="errorhintradio_No"
-  /><label class="radio__label" for="errorhintradio_No">No</label>
-</div>
+<fieldset class="form-group" data-component="form-group">
+  <legend class="form-group__legend">
+    Are you happy for us to contact you in the future?
+  </legend>
+
+  <p class="radio__error-message">
+    Error message
+  </p>
+
+  <div class="radio radio--error" data-component="radio">
+    <input
+      class="radio__input"
+      name="contact-preference"
+      type="radio"
+      id="contact-preference_Yes"
+      value="yes"
+      aria-describedby="contact-preference-error"
+    />
+    <label class="radio__label" for="contact-preference_Yes">Yes</label>
+  </div>
+
+  <div class="radio" data-component="radio">
+    <input
+      class="radio__input"
+      name="contact-preference"
+      type="radio"
+      id="contact-preference_No"
+      value="no"
+      aria-describedby="contact-preference-error"
+    />
+    <label class="radio__label" for="contact-preference_No">No</label>
+  </div>
+</fieldset>
 ```
 </CH.Code>
 </Example>
 
-## Disabled radios
+## When not use to use error messages 
 
-Disabled radio inputs can be used to indicate inputs that are no longer valid or expired.
+Only display an error when someone tries to move to the next part of the form or service. 
 
-<Example>
-<DisabledRadio />
+Do not trigger error messages: 
 
-<CH.Code>
-```js React
-<>
-	<Radio disabled label="Yes" value="Yes" name="disabledradio" />
-	<Radio disabled label="No" value="No" name="disabledradio" />
-</>
-```
-```html HTML
-<div class="radio" data-component="radio">
-  <input
-    disabled=""
-    class="radio__input"
-    name="disabledradio"
-    type="radio"
-    id="disabledradio_Yes"
-  /><label class="radio__label" for="disabledradio_Yes">Yes</label>
-</div>
-<div class="radio" data-component="radio">
-  <input
-    disabled=""
-    class="radio__input"
-    name="disabledradio"
-    type="radio"
-    id="disabledradio_No"
-  /><label class="radio__label" for="disabledradio_No">No</label>
-</div>
-```
-</CH.Code>
-</Example>
+-   when users select or tab to a field 
+-   when they move away from a field. 
 
 ## Accessibility
 
-We use a custom style for radio buttons, so they're more prominent and easier to use than the standard radio buttons defined by the user's browser. We also use a custom style to clarify their focused and selected states.
+We use a custom style for radio buttons, so they're more prominent and easier to use than the standard radio buttons defined by the user's browser. We also use a custom style to clarify their focused and selected states. 
 
-Component meets WCAG AA guidelines for accessibility on:
+Component meets WCAG AA guidelines for accessibility on: 
 
-- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
-- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
+- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.2 1.4.3).
+- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1(WCAG 2.1 1.4.11).
 - Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
 
 ## Research/evidence
