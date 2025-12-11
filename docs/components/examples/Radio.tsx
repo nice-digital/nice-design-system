@@ -6,18 +6,18 @@ export const DefaultRadio = () => (
 		legend="Are you happy for us to contact you in the future?"
 		name="contact-preference"
 	>
-		<Radio label="Yes" value="Yes" name="defaultradio" />
-		<Radio label="No" value="No" name="defaultradio" />
+		<Radio label="Yes" value="yes" name="defaultradio" />
+		<Radio label="No" value="no" name="defaultradio" />
 	</FormGroup>
 );
 
 export const DefaultRadioExample = () => (
 	<FormGroup
 		legend="Are you happy for us to contact you in the future?"
-		name="contact-preference"
+		name="contact-preference-default"
 	>
-		<Radio label="Yes" value="Yes" name="defaultradioexample" />
-		<Radio label="No" value="No" name="defaultradioexample" />
+		<Radio label="Yes" value="yes" name="defaultradioexample" />
+		<Radio label="No" value="no" name="defaultradioexample" />
 	</FormGroup>
 );
 
@@ -27,23 +27,23 @@ export const InlineRadio = () => (
 		name="contact-preference-inline"
 		inline
 	>
-		<Radio inline label="Yes" value="Yes" name="inlineradio" />
-		<Radio inline label="No" value="No" name="inlineradio" />
+		<Radio inline label="Yes" value="yes" name="inlineradio" />
+		<Radio inline label="No" value="no" name="inlineradio" />
 	</FormGroup>
 );
 
 export const HintRadio = () => (
 	<FormGroup
 		legend="Are you happy for us to contact you in the future?"
-		name="contact-preference"
+		name="contact-preference-hint"
 	>
 		<Radio
 			hint="Some helpful hint text"
 			label="Yes"
-			value="Yes"
+			value="yes"
 			name="hintradio"
 		/>
-		<Radio label="No" value="No" name="hintradio" />
+		<Radio label="No" value="no" name="hintradio" />
 	</FormGroup>
 );
 
@@ -51,34 +51,24 @@ export const GroupHintRadio = () => (
 	<FormGroup
 		legend="Are you happy for us to contact you in the future?"
 		hint="Some helpful hint text"
-		name="contact-preference"
+		name="contact-preference-hint-group"
 	>
-		<Radio label="Yes" value="Yes" name="hintradio" />
-		<Radio label="No" value="No" name="hintradio" />
-	</FormGroup>
-);
-
-export const ErrorRadio = () => (
-	<FormGroup
-		legend="Are you happy for us to contact you in the future?"
-		name="contact-preference"
-	>
-		<Radio error={true} label="Yes" value="Yes" name="errorradio" />
-		<Radio label="No" value="No" name="errorradio" />
+		<Radio label="Yes" value="yes" name="hintradio" />
+		<Radio label="No" value="no" name="hintradio" />
 	</FormGroup>
 );
 
 export const ErrorHintRadio = () => (
 	<FormGroup
 		legend="Are you happy for us to contact you in the future?"
-		name="contact-preference"
+		name="contact-preference-error-hint"
 	>
 		<Radio
 			error="Error message"
 			label="Yes"
-			value="Yes"
+			value="yes"
 			name="errorhintradio"
 		/>
-		<Radio label="No" value="No" name="errorhintradio" />
+		<Radio label="No" value="no" name="errorhintradio" />
 	</FormGroup>
 );
