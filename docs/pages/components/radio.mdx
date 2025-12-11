@@ -54,46 +54,38 @@ Read more on the gov.uk Design System about  [why and how to set legends a
 
 <CH.Code>
 ```js React
-<FormGroup legend="Are you happy for us to contact you in the future?">
-  <Radio
-    label="Yes"
-    value="yes"
-    name="defaultradioexample"
-  />
-  <Radio
-    label="No"
-    value="no"
-    name="defaultradioexample"
-  />
+<FormGroup
+  legend="Are you happy for us to contact you in the future?"
+  name="contact-preference-default-example"
+>
+  <Radio label="Yes" value="yes" />
+  <Radio label="No" value="no" />
 </FormGroup>
+
 	```
 ```html HTML
 <fieldset class="form-group" data-component="form-group">
-  <legend class="form-group__legend">
-    Are you happy for us to contact you in the future?
-  </legend>
+	<legend class="form-group__legend">Are you happy for us to contact you in the future?</legend>
 
-  <div class="radio" data-component="radio">
-    <input
-      class="radio__input"
-      name="defaultradioexample"
-      type="radio"
-      id="defaultradioexample_yes"
-      value="yes"
-    />
-    <label class="radio__label" for="defaultradioexample_yes">Yes</label>
-  </div>
+	<div class="radio" data-component="radio">
+		<input
+			class="radio__input"
+			name="contact-preference-default-example"
+			type="radio"
+			id="contact-preference-default-example_yes"
+		/>
+		<label class="radio__label" for="contact-preference-default-example_yes">Yes</label>
+	</div>
 
-  <div class="radio" data-component="radio">
-    <input
-      class="radio__input"
-      name="defaultradioexample"
-      type="radio"
-      id="defaultradioexample_no"
-      value="no"
-    />
-    <label class="radio__label" for="defaultradioexample_no">No</label>
-  </div>
+	<div class="radio" data-component="radio">
+		<input
+			class="radio__input"
+			name="contact-preference-default-example"
+			type="radio"
+			id="contact-preference-default-example_no"
+		/>
+		<label class="radio__label" for="contact-preference-default-example_no">No</label>
+	</div>
 </fieldset>
 
 ```
@@ -118,48 +110,46 @@ You can’t use individual hint text with inline radios.
 
 <CH.Code>
 ```js React
-<FormGroup legend="Are you happy for us to contact you in the future?" inline>
-  <Radio
-    inline
-    label="Yes"
-    value="yes"
-    name="inlineradio"
-  />
-  <Radio
-    inline
-    label="No"
-    value="no"
-    name="inlineradio"
-  />
+<FormGroup
+	legend="Are you happy for us to contact you in the future?"
+	name="contact-preference-inline"
+	inline
+>
+	<Radio
+		label="Yes"
+		value="yes"
+	/>
+	<Radio
+		label="No"
+		value="no"
+	/>
 </FormGroup>
 	```
 ```html HTML
 <fieldset class="form-group" data-component="form-group--inline">
-  <legend class="form-group__legend">
-    Are you happy for us to contact you in the future?
-  </legend>
+	<legend class="form-group__legend">
+		Are you happy for us to contact you in the future?
+	</legend>
 
-  <div class="radio radio--inline" data-component="radio--inline">
-    <input
-      class="radio__input"
-      name="inlineradio"
-      type="radio"
-      id="inlineradio_yes"
-      value="yes"
-    />
-    <label class="radio__label" for="inlineradio_yes">Yes</label>
-  </div>
+	<div class="radio radio--inline" data-component="radio--inline">
+		<input
+			class="radio__input"
+			name="contact-preference-inline"
+			type="radio"
+			id="contact-preference-inline_yes"
+		/>
+		<label class="radio__label" for="contact-preference-inline_yes">Yes</label>
+	</div>
 
-  <div class="radio radio--inline" data-component="radio--inline">
-    <input
-      class="radio__input"
-      name="inlineradio"
-      type="radio"
-      id="inlineradio_no"
-      value="no"
-    />
-    <label class="radio__label" for="inlineradio_no">No</label>
-  </div>
+	<div class="radio radio--inline" data-component="radio--inline">
+		<input
+			class="radio__input"
+			name="contact-preference-inline"
+			type="radio"
+			id="contact-preference-inline_no"
+		/>
+		<label class="radio__label" for="contact-preference-inline_no">No</label>
+	</div>
 </fieldset>
 
 ```
@@ -186,52 +176,51 @@ Add hint text to individual radio buttons to provide additional information abou
 
 <CH.Code>
 ```js React
-<FormGroup legend="Are you happy for us to contact you in the future?">
-  <Radio
-    hint="Some helpful hint text"
-    label="Yes"
-    value="yes"
-    name="hintradio"
-  />
-  <Radio
-    label="No"
-    value="no"
-    name="hintradio"
-  />
+<FormGroup
+	legend="Are you happy for us to contact you in the future?"
+	name="contact-preference-hint"
+>
+	<Radio
+		label="Yes"
+		value="yes"
+		hint="Some helpful hint text"
+	/>
+	<Radio
+		label="No"
+		value="no"
+	/>
 </FormGroup>
+
 	```
 ```html HTML
 <fieldset class="form-group" data-component="form-group">
-  <legend class="form-group__legend">
-    Are you happy for us to contact you in the future?
-  </legend>
+	<legend class="form-group__legend">
+		Are you happy for us to contact you in the future?
+	</legend>
 
-  <p class="form-group__hint">
-    Some helpful hint text
-  </p>
+	<div class="radio" data-component="radio">
+		<input
+			class="radio__input"
+			name="contact-preference-hint"
+			type="radio"
+			id="contact-preference-hint_yes"
+		/>
+		<label class="radio__label" for="contact-preference-hint_yes">Yes</label>
+		<span class="checkbox__hint">Some helpful hint text</span>
+	</div>
 
-  <div class="radio" data-component="radio">
-    <input
-      class="radio__input"
-      name="hintradio"
-      type="radio"
-      id="hintradio_yes"
-      value="yes"
-    />
-    <label class="radio__label" for="hintradio_yes">Yes</label>
-  </div>
-
-  <div class="radio" data-component="radio">
-    <input
-      class="radio__input"
-      name="hintradio"
-      type="radio"
-      id="hintradio_no"
-      value="no"
-    />
-    <label class="radio__label" for="hintradio_no">No</label>
-  </div>
+	<div class="radio" data-component="radio">
+		<input
+			class="radio__input"
+			name="contact-preference-hint"
+			type="radio"
+			id="contact-preference-hint_no"
+		/>
+		<label class="radio__label" for="contact-preference-hint_no">No</label>
+	</div>
 </fieldset>
+
+
 ```
 </CH.Code>
 </Example>
@@ -246,53 +235,52 @@ Add hint text to the whole group to provide additional context or help about the
 <CH.Code>
 ```js React
 <FormGroup
-  legend="Are you happy for us to contact you in the future?"
-  hint="Some helpful hint text"
+	legend="Are you happy for us to contact you in the future?"
+	hint="Some helpful hint text"
+	name="contact-preference-grouphint"
 >
-  <Radio
-    label="Yes"
-    value="yes"
-    name="grouphintradio"
-  />
-  <Radio
-    label="No"
-    value="no"
-    name="grouphintradio"
-  />
+	<Radio
+		label="Yes"
+		value="yes"
+	/>
+	<Radio
+		label="No"
+		value="no"
+	/>
 </FormGroup>
+
 	```
 ```html HTML
 <fieldset class="form-group" data-component="form-group">
-  <legend class="form-group__legend">
-    Are you happy for us to contact you in the future?
-  </legend>
+	<legend class="form-group__legend">
+		Are you happy for us to contact you in the future?
+	</legend>
 
-  <p class="form-group__hint">
-    Some helpful hint text
-  </p>
+	<p class="form-group__hint">
+		Some helpful hint text
+	</p>
 
-  <div class="radio" data-component="radio">
-    <input
-      class="radio__input"
-      name="grouphintradio"
-      type="radio"
-      id="grouphintradio_yes"
-      value="yes"
-    />
-    <label class="radio__label" for="grouphintradio_yes">Yes</label>
-  </div>
+	<div class="radio" data-component="radio">
+		<input
+			class="radio__input"
+			name="contact-preference-grouphint"
+			type="radio"
+			id="contact-preference-grouphint_yes"
+		/>
+		<label class="radio__label" for="contact-preference-grouphint_yes">Yes</label>
+	</div>
 
-  <div class="radio" data-component="radio">
-    <input
-      class="radio__input"
-      name="grouphintradio"
-      type="radio"
-      id="grouphintradio_no"
-      value="no"
-    />
-    <label class="radio__label" for="grouphintradio_no">No</label>
-  </div>
+	<div class="radio" data-component="radio">
+		<input
+			class="radio__input"
+			name="contact-preference-grouphint"
+			type="radio"
+			id="contact-preference-grouphint_no"
+		/>
+		<label class="radio__label" for="contact-preference-grouphint_no">No</label>
+	</div>
 </fieldset>
+
 
 ```
 </CH.Code>
@@ -320,53 +308,52 @@ Error messages are styled like this:
 
 <CH.Code>
 ```js React
-<FormGroup legend="Are you happy for us to contact you in the future?">
-  <Radio
-    error="Error message"
-    label="Yes"
-    value="yes"
-    name="errorhintradio"
-  />
-  <Radio
-    label="No"
-    value="no"
-    name="errorhintradio"
-  />
+<FormGroup
+	legend="Are you happy for us to contact you in the future?"
+	name="contact-preference-errorhint"
+>
+	<Radio
+		label="Yes"
+		value="yes"
+		error="Error message"
+	/>
+	<Radio
+		label="No"
+		value="no"
+	/>
 </FormGroup>
 ```
 ```html HTML
 <fieldset class="form-group" data-component="form-group">
-  <legend class="form-group__legend">
-    Are you happy for us to contact you in the future?
-  </legend>
+	<legend class="form-group__legend">
+		Are you happy for us to contact you in the future?
+	</legend>
 
-  <p class="radio__error-message" id="errorhintradio-error">
-    Error message
-  </p>
+	<p class="radio__error-message" id="contact-preference-errorhint-error">
+		Error message
+	</p>
 
-  <div class="radio radio--error" data-component="radio">
-    <input
-      class="radio__input"
-      name="errorhintradio"
-      type="radio"
-      id="errorhintradio_yes"
-      value="yes"
-      aria-describedby="errorhintradio-error"
-    />
-    <label class="radio__label" for="errorhintradio_yes">Yes</label>
-  </div>
+	<div class="radio radio--error" data-component="radio">
+		<input
+			class="radio__input"
+			name="contact-preference-errorhint"
+			type="radio"
+			id="contact-preference-errorhint_yes"
+			aria-describedby="contact-preference-errorhint-error"
+		/>
+		<label class="radio__label" for="contact-preference-errorhint_yes">Yes</label>
+	</div>
 
-  <div class="radio" data-component="radio">
-    <input
-      class="radio__input"
-      name="errorhintradio"
-      type="radio"
-      id="errorhintradio_no"
-      value="no"
-      aria-describedby="errorhintradio-error"
-    />
-    <label class="radio__label" for="errorhintradio_no">No</label>
-  </div>
+	<div class="radio" data-component="radio">
+		<input
+			class="radio__input"
+			name="contact-preference-errorhint"
+			type="radio"
+			id="contact-preference-errorhint_no"
+			aria-describedby="contact-preference-errorhint-error"
+		/>
+		<label class="radio__label" for="contact-preference-errorhint_no">No</label>
+	</div>
 </fieldset>
 
 ```
