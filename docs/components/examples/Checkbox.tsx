@@ -47,9 +47,17 @@ export const GroupedCheckboxHint = () => (
 export const GroupedCheckboxInline = () => (
 	<>
 		<FormGroup inline legend="How would you like us to contact you?">
-			<Checkbox name="contact-inline" value="email" label="Email" />
-			<Checkbox name="contact-inline" value="telephone" label="Telephone" />
-			<Checkbox name="contact-inline" value="sms" label="Text message" />
+			<Checkbox name="contact-grouped-inline" value="email" label="Email" />
+			<Checkbox
+				name="contact-grouped-inline"
+				value="telephone"
+				label="Telephone"
+			/>
+			<Checkbox
+				name="contact-grouped-inline"
+				value="sms"
+				label="Text message"
+			/>
 		</FormGroup>
 	</>
 );
@@ -57,16 +65,16 @@ export const GroupedCheckboxInline = () => (
 export const GroupedCheckboxNone = () => (
 	<>
 		<FormGroup legend="How would you like us to contact you?">
-			<Checkbox name="contact-none-example" value="email" label="Email" />
+			<Checkbox name="contact-grouped-none" value="email" label="Email" />
 			<Checkbox
-				name="contact-none-example"
+				name="contact-grouped-none"
 				value="telephone"
 				label="Telephone"
 			/>
-			<Checkbox name="contact-none-example" value="sms" label="Text message" />
+			<Checkbox name="contact-grouped-none" value="sms" label="Text message" />
 			<Checkbox
+				name="contact-grouped-none"
 				value="none"
-				name="contact-none-example"
 				label="I do not wish to be contacted"
 			/>
 		</FormGroup>
