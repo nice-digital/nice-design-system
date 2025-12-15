@@ -1,45 +1,100 @@
 import { Checkbox } from "@nice-digital/nds-checkbox";
+import { FormGroup } from "@nice-digital/nds-form-group";
 
-export const DefaultCheckbox = () => (
+export const DefaultCheckboxExample = () => (
 	<>
-		<Checkbox value="Email" name="contact-email" />
-		<Checkbox value="Telephone" name="contact-phone" />
-		<Checkbox value="Text Message" name="contact-text" />
+		<FormGroup
+			legend="How would you like us to contact you?"
+			hint="Please select all that apply."
+		>
+			<Checkbox name="contact-example" value="email" label="Email" />
+			<Checkbox name="contact-example" value="telephone" label="Telephone" />
+			<Checkbox name="contact-example" value="sms" label="Text message" />
+		</FormGroup>
 	</>
 );
 
-export const DefaultExampleCheckbox = () => (
+export const GroupedCheckbox = () => (
 	<>
-		<Checkbox value="Email" name="contact-email-example" />
-		<Checkbox value="Telephone" name="contact-phone-example" />
-		<Checkbox value="Text Message" name="contact-text-example" />
+		<FormGroup
+			legend="How would you like us to contact you?"
+			hint="Please select all that apply."
+		>
+			<Checkbox name="contact-grouped" value="email" label="Email" />
+			<Checkbox name="contact-grouped" value="telephone" label="Telephone" />
+			<Checkbox name="contact-grouped" value="sms" label="Text message" />
+		</FormGroup>
 	</>
 );
 
-export const InlineCheckbox = () => (
+export const GroupedCheckboxHint = () => (
 	<>
-		<Checkbox inline value="Email" name="contact-email-inline" />
-		<Checkbox inline value="Telephone" name="contact-phone-inline" />
-		<Checkbox inline value="Text Message" name="contact-text-inline" />
+		<FormGroup
+			legend="How would you like us to contact you?"
+			hint="Please select all that apply."
+		>
+			<Checkbox name="contact-grouped-hint" value="email" label="Email" />
+			<Checkbox
+				name="contact-grouped-hint"
+				value="telephone"
+				label="Telephone"
+			/>
+			<Checkbox name="contact-grouped-hint" value="sms" label="Text message" />
+		</FormGroup>
 	</>
 );
 
-export const HintCheckbox = () => (
+export const GroupedCheckboxInline = () => (
+	<>
+		<FormGroup inline legend="How would you like us to contact you?">
+			<Checkbox name="contact-inline" value="email" label="Email" />
+			<Checkbox name="contact-inline" value="telephone" label="Telephone" />
+			<Checkbox name="contact-inline" value="sms" label="Text message" />
+		</FormGroup>
+	</>
+);
+
+export const GroupedCheckboxNone = () => (
+	<>
+		<FormGroup legend="How would you like us to contact you?">
+			<Checkbox name="contact-none-example" value="email" label="Email" />
+			<Checkbox
+				name="contact-none-example"
+				value="telephone"
+				label="Telephone"
+			/>
+			<Checkbox name="contact-none-example" value="sms" label="Text message" />
+			<Checkbox
+				value="none"
+				name="contact-none-example"
+				label="I do not wish to be contacted"
+			/>
+		</FormGroup>
+	</>
+);
+
+export const SingleCheckbox = () => (
 	<Checkbox
-		hint="You can unsubscribe at any time"
-		value="Email"
-		name="contact-email-hint"
+		name="terms-and-conditions"
+		value="agree"
+		label="I agree to the terms and conditions"
 	/>
 );
 
-export const ErrorCheckbox = () => (
+export const SingleCheckboxError = () => (
 	<Checkbox
-		error="This is an error message"
-		value="Email"
-		name="contact-email-error"
+		name="terms-and-conditions"
+		value="agree"
+		label="I agree to the terms and conditions"
+		error="You must agree to the terms and conditions."
 	/>
 );
 
-export const DisabledCheckbox = () => (
-	<Checkbox disabled value="Email" name="contact-email-disabled" />
+export const SingleCheckboxHint = () => (
+	<Checkbox
+		name="newsletter-subscribe"
+		value="agree"
+		label="Yes, sign me up to the newsletter"
+		hint="You can unsubscribe at any time."
+	/>
 );

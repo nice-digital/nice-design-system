@@ -1,14 +1,14 @@
 import { Checkbox } from "@nice-digital/nds-checkbox";
 import { ComponentLayout } from "components/layouts/ComponentLayout";
 import { Example } from "components/examples/Example";
-import { DefaultCheckbox, DefaultExampleCheckbox, InlineCheckbox, HintCheckbox, ErrorCheckbox } from "components/examples/Checkbox";
+import { DefaultCheckboxExample, GroupedCheckbox, GroupedCheckboxNone, GroupedCheckboxHint, GroupedCheckboxInline, SingleCheckbox, SingleCheckboxHint, SingleCheckboxError } from "components/examples/Checkbox";
 
 export const meta = {
 	title: "Checkbox",
 	description: "Use checkboxes to let users pick one or more options.",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-checkbox",
 	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-checkbox",
-	component: DefaultCheckbox
+	component: DefaultCheckboxExample
 };
 
 Checkboxes are a clear and simple way for users to choose answers or items from a list. Each checkbox has two states: selected or unselected, similar to an on and off switch.
@@ -27,7 +27,7 @@ Use the checkboxes component when you need to help users:
 
 Always position checkboxes to the left of their labels; this makes them easier to find, especially for users of screen magnifiers.
 
-It's common to include "check all that apply" instructions with checkboxes to let users know it's okay to select more than one option at a time.
+It's common to include "check all that apply." instructions with checkboxes to let users know it's okay to select more than one option at a time.
 
 Do not pre-select checkbox options as this makes it more likely that users will:
 
@@ -40,13 +40,72 @@ Order checkbox options alphabetically by default. In some cases it can be useful
 
 Single checkboxes allow a user to select something on or off.
 
-[add demo of single checkbox]
+<Example>
+	<SingleCheckbox />
+
+	<CH.Code>
+		```js React
+		<Checkbox
+			name="terms-and-conditions"
+			value="agree"
+			label="I agree to the terms and conditions"
+		/>
+		```
+		```html HTML
+		<div class="checkbox" data-component="checkbox">
+			<div>
+				<input type="checkbox" class="checkbox__input" id="terms-and-conditions_agree" name="terms-and-conditions" value="agree">
+				<label class="checkbox__label" for="terms-and-conditions_agree">I agree to the terms and conditions</label>
+			</div>
+		</div>
+		```
+	</CH.Code>
+</Example>
 
 ## Grouped checkboxes
 
-[Grouped checkbox example]
-
 Multiple related checkboxes will always be used with our [Form Group component](/components/form-group).
+
+<Example>
+	<GroupedCheckbox />
+
+	<CH.Code>
+		```js React
+		<FormGroup
+			legend="How would you like us to contact you?"
+			hint="Please select all that apply."
+		>
+			<Checkbox name="contact-grouped" value="email" label="Email" />
+			<Checkbox name="contact-grouped" value="telephone" label="Telephone" />
+			<Checkbox name="contact-grouped" value="sms" label="Text message" />
+		</FormGroup>
+		```
+		```html HTML
+		<fieldset class="form-group" data-component="form-group">
+			<legend class="form-group__legend">How would you like us to contact you?</legend>
+			<p class="form-group__hint">Please select all that apply.</p>
+			<div class="checkbox" data-component="checkbox">
+				<div>
+					<input type="checkbox" class="checkbox__input" id="contact-grouped_email" name="contact-grouped" value="email">
+					<label class="checkbox__label" for="contact-grouped_email">Email</label>
+				</div>
+			</div>
+			<div class="checkbox" data-component="checkbox">
+				<div>
+					<input type="checkbox" class="checkbox__input" id="contact-grouped_telephone" name="contact-grouped" value="telephone">
+					<label class="checkbox__label" for="contact-grouped_telephone">Telephone</label>
+				</div>
+			</div>
+			<div class="checkbox" data-component="checkbox">
+				<div>
+					<input type="checkbox" class="checkbox__input" id="contact-grouped_sms" name="contact-grouped" value="sms">
+					<label class="checkbox__label" for="contact-grouped_sms">Text message</label>
+				</div>
+			</div>
+		</fieldset>
+		```
+	</CH.Code>
+</Example>
 
 The form group:
 - wraps the checkboxes in a `<fieldset>` with a `<legend>` that describes the group.
@@ -56,11 +115,61 @@ The legend is usually a question, like "How would you like to be contacted?".
 
 Unlike radios, users can select more than one option from a list of checkboxes. Do not assume that users will know how many selections they can choose based on the visual difference between radios and checkboxes alone.
 
-Add hint text explaining this, for example, "Select all that apply".
+Add hint text explaining this, for example, "Select all that apply.".
 
 ### Add an option for "none"
 
-[Add option for "none" checkbox example]
+<Example>
+	<GroupedCheckboxNone />
+
+	<CH.Code>
+		```js React
+		<FormGroup legend="How would you like us to contact you?">
+			<Checkbox name="contact-none-example" value="email" label="Email" />
+			<Checkbox
+				name="contact-none-example"
+				value="telephone"
+				label="Telephone"
+			/>
+			<Checkbox name="contact-none-example" value="sms" label="Text message" />
+			<Checkbox
+				value="none"
+				name="contact-none-example"
+				label="I do not wish to be contacted"
+			/>
+		</FormGroup>
+		```
+		```html HTML
+		<fieldset class="form-group" data-component="form-group">
+			<legend class="form-group__legend">How would you like us to contact you?</legend>
+			<div class="checkbox" data-component="checkbox">
+				<div>
+					<input type="checkbox" class="checkbox__input" id="contact-none-example_email" name="contact-none-example" value="email">
+					<label class="checkbox__label" for="contact-none-example_email">Email</label>
+				</div>
+			</div>
+			<div class="checkbox" data-component="checkbox">
+				<div>
+					<input type="checkbox" class="checkbox__input" id="contact-none-example_telephone" name="contact-none-example" value="telephone">
+					<label class="checkbox__label" for="contact-none-example_telephone">Telephone</label>
+				</div>
+			</div>
+			<div class="checkbox" data-component="checkbox">
+				<div>
+					<input type="checkbox" class="checkbox__input" id="contact-none-example_sms" name="contact-none-example" value="sms">
+					<label class="checkbox__label" for="contact-none-example_sms">Text message</label>
+				</div>
+			</div>
+			<div class="checkbox" data-component="checkbox">
+				<div>
+					<input type="checkbox" class="checkbox__input" id="contact-none-example_none" name="contact-none-example" value="none">
+					<label class="checkbox__label" for="contact-none-example_none">I do not wish to be contacted</label>
+				</div>
+			</div>
+		</fieldset>
+		```
+	</CH.Code>
+</Example>
 
 When "none" would be a valid answer, give users the option to check a box to say none of the other options apply to them. Without this option, users would have to leave all of the boxes unchecked. Giving users this option also makes sure they do not skip the question by accident.
 
@@ -76,41 +185,48 @@ If you're asking just [one question per page](https://design-system.service.gov.
 
 Read more on the [GOV.UK](http://GOV.UK) Design System about [why and how to set legends as headings](https://design-system.service.gov.uk/get-started/labels-legends-headings/).
 
+
 ## Inline checkboxes
 
 Inline checkboxes don't support hint text for individual checkboxes. You can still add hint text to the group of inputs to explain what the checkboxes are about.
 
 <Example>
-<InlineCheckbox />
+	<GroupedCheckboxInline />
 
-<CH.Code>
-```js React
-<Checkbox inline value="Email" name="contact-email" />
-<Checkbox inline value="Telephone" name="contact-phone" />
-<Checkbox inline value="Text Message" name="contact-text" />
-```
-```html HTML
-<div class="checkbox checkbox--inline" data-component="checkbox">
-	<div>
-		<input type="checkbox" class="checkbox__input" id="contact-email_Email" name="contact-email" value="Email">
-		<label class="checkbox__label" for="contact-email_Email">Email</label>
-	</div>
-</div>
-<div class="checkbox checkbox--inline" data-component="checkbox">
-	<div>
-		<input type="checkbox" class="checkbox__input" id="contact-phone_Telephone" name="contact-phone" value="Telephone">
-		<label class="checkbox__label" for="contact-phone_Telephone">Telephone</label>
-	</div>
-</div>
-<div class="checkbox checkbox--inline" data-component="checkbox">
-	<div>
-		<input type="checkbox" class="checkbox__input" id="contact-text_Text Message" name="contact-text" value="Text Message">
-		<label class="checkbox__label" for="contact-text_Text Message">Text Message</label>
-	</div>
-</div>
-```
-</CH.Code>
+	<CH.Code>
+		```js React
+		<FormGroup inline legend="How would you like us to contact you?">
+			<Checkbox name="contact-inline" value="email" label="Email" />
+			<Checkbox name="contact-inline" value="telephone" label="Telephone" />
+			<Checkbox name="contact-inline" value="sms" label="Text message" />
+		</FormGroup>
+		```
+		```html HTML
+		<fieldset class="form-group" data-component="form-group--inline">
+			<legend class="form-group__legend">How would you like us to contact you?</legend>
+			<div class="checkbox checkbox--inline" data-component="checkbox">
+				<div>
+					<input type="checkbox" class="checkbox__input" id="contact-inline_email" name="contact-inline" value="email">
+					<label class="checkbox__label" for="contact-inline_email">Email</label>
+				</div>
+			</div>
+			<div class="checkbox checkbox--inline" data-component="checkbox">
+				<div>
+					<input type="checkbox" class="checkbox__input" id="contact-inline_telephone" name="contact-inline" value="telephone">
+					<label class="checkbox__label" for="contact-inline_telephone">Telephone</label>
+				</div>
+			</div>
+			<div class="checkbox checkbox--inline" data-component="checkbox">
+				<div>
+					<input type="checkbox" class="checkbox__input" id="contact-inline_sms" name="contact-inline" value="sms">
+					<label class="checkbox__label" for="contact-inline_sms">Text message</label>
+				</div>
+			</div>
+		</fieldset>
+		```
+	</CH.Code>
 </Example>
+
 
 ## Checkbox hint text
 
@@ -127,32 +243,77 @@ Hint text can be added to both:
 Add hint text to individual checkboxes to provide additional context or help.
 
 <Example>
-<HintCheckbox />
+	<SingleCheckboxHint />
 
-<CH.Code>
-```js React
-<Checkbox
-	hint="You can unsubscribe at any time"
-	value="Email"
-	name="contact-email-hint"
-/>
-```
-```html HTML
-<div class="checkbox" data-component="checkbox">
-	<div>
-		<input type="checkbox" class="checkbox__input" id="contact-email-hint_Email" name="contact-email-hint" value="Email"><label class="checkbox__label" for="contact-email-hint_Email">Email</label>
-		<span class="checkbox__hint">You can unsubscribe at any time</span>
-	</div>
-</div>
-```
-</CH.Code>
+	<CH.Code>
+		```js React
+		<Checkbox
+			name="newsletter-subscribe"
+			value="agree"
+			label="Yes, sign me up to the newsletter"
+			hint="You can unsubscribe at any time."
+		/>
+		```
+		```html HTML
+		<div class="checkbox" data-component="checkbox">
+			<div>
+				<input type="checkbox" class="checkbox__input" id="newsletter-subscribe_agree" name="newsletter-subscribe" value="agree">
+				<label class="checkbox__label" for="newsletter-subscribe_agree">Yes, sign me up to the newsletter</label>
+				<span class="checkbox__hint">You can unsubscribe at any time.</span>
+			</div>
+		</div>
+		```
+	</CH.Code>
 </Example>
 
 ### Grouped checkboxes hint text
 
 Add hint text to the group of checkboxes to provide context or help for the overall group.
 
-[Form group with a hint Live demo]
+<Example>
+	<GroupedCheckboxHint />
+
+	<CH.Code>
+		```js React
+		<FormGroup
+			legend="How would you like us to contact you?"
+			hint="Please select all that apply."
+		>
+			<Checkbox name="contact-grouped-hint" value="email" label="Email" />
+			<Checkbox
+				name="contact-grouped-hint"
+				value="telephone"
+				label="Telephone"
+			/>
+			<Checkbox name="contact-grouped-hint" value="sms" label="Text message" />
+		</FormGroup>
+		```
+		```html HTML
+		<fieldset class="form-group" data-component="form-group">
+			<legend class="form-group__legend">How would you like us to contact you?</legend>
+			<p class="form-group__hint">Please select all that apply.</p>
+			<div class="checkbox" data-component="checkbox">
+				<div>
+					<input type="checkbox" class="checkbox__input" id="contact-grouped-hint_email" name="contact-grouped-hint" value="email">
+					<label class="checkbox__label" for="contact-grouped-hint_email">Email</label>
+				</div>
+			</div>
+			<div class="checkbox" data-component="checkbox">
+				<div>
+					<input type="checkbox" class="checkbox__input" id="contact-grouped-hint_telephone" name="contact-grouped-hint" value="telephone">
+					<label class="checkbox__label" for="contact-grouped-hint_telephone">Telephone</label>
+				</div>
+			</div>
+			<div class="checkbox" data-component="checkbox">
+				<div>
+					<input type="checkbox" class="checkbox__input" id="contact-grouped-hint_sms" name="contact-grouped-hint" value="sms">
+					<label class="checkbox__label" for="contact-grouped-hint_sms">Text message</label>
+				</div>
+			</div>
+		</fieldset>
+		```
+	</CH.Code>
+</Example>
 
 ### Asking complex questions
 
@@ -161,40 +322,44 @@ If you're asking a question that needs a detailed explanation, don't use hint te
 - whatever mix of text, paragraphs, lists and examples best explains your question to users
 - a label, above the form input, that asks users a specific question - for example, "Do you have any interview needs?".
 
+
 ## Errors
 
 Display an error message when:
 - A user hasn't selected a checkbox when one is required.
-{/* - A user has selected two contradictory options. For example if they selected 'none' and 'Spain' in 'Have you travelled to any of these countries recently?'  */}
+{/* TODO: add this logic and uncomment - A user has selected two contradictory options. For example if they selected 'none' and 'Spain' in 'Have you travelled to any of these countries recently?' */}
 
 ### How to use error messages
 
 Error messages are displayed like this:
 
 <Example>
-<ErrorCheckbox />
+	<SingleCheckboxError />
 
-<CH.Code>
-```js React
-<Checkbox
-	error="This is an error message"
-	value="Email"
-	name="contact-email-error"
-/>
-```
-```html HTML
-<p class="checkbox__error-message">This is an error message</p>
-<div class="checkbox checkbox--error" data-component="checkbox">
-	<div>
-		<input type="checkbox" class="checkbox__input" id="contact-email-error_Email" name="contact-email-error" value="Email">
-		<label class="checkbox__label" for="contact-email-error_Email">Email</label>
-	</div>
-</div>
-```
-</CH.Code>
+	<CH.Code>
+		```js React
+		<Checkbox
+			name="terms-and-conditions"
+			value="agree"
+			label="I agree to the terms and conditions"
+			error="You must agree to the terms and conditions."
+		/>
+		```
+		```html HTML
+		<div>
+			<p class="checkbox__error-message">You must agree to the terms and conditions.</p>
+			<div class="checkbox checkbox--error" data-component="checkbox">
+				<div>
+					<input type="checkbox" class="checkbox__input" id="terms-and-conditions_agree" name="terms-and-conditions" value="agree">
+					<label class="checkbox__label" for="terms-and-conditions_agree">I agree to the terms and conditions</label>
+				</div>
+			</div>
+		</div>
+		```
+	</CH.Code>
 </Example>
 
-The error message text appears in red after the question text and any hint text.
+The error message text appears in red above the question text and any hint text.
 
 Do not clear any form fields when showing the error message. Keep both passing and failing answers.
 
@@ -210,6 +375,7 @@ Only display an error when someone tries to move to the next part of the form or
 Do not show error messages:
 - when users select or tab to a field
 - when they move away from a field.
+
 
 ## Accessibility
 
