@@ -1,6 +1,6 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
 import { Example } from "components/examples/Example";
-import { DefaultInput, ErrorInput, HintInput } from "components/examples/Input";
+import { DefaultInput, ErrorInput, HintInput, GroupedInputs, GroupedInputHints } from "components/examples/Input";
 
 export const meta = {
 	title: "Text input",
@@ -62,21 +62,44 @@ The form group:
 -  wraps the inputs in a `<fieldset>` with a `<legend>` that describes the group
 -  allows you to add hint etxt that applies to the entire group.
 
-{/* TODO: Add examples of fieldset input / formgroup */}
 <Example>
 <h2>Example: grouped text inputs</h2>
-{/* <HintInput /> */}
+<GroupedInputs/>
 
 <CH.Code>
 ```js React
-{/* <Input label="Age" name="age" hint="Please enter in years" /> */}
+<FormGroup legend="What is your address">
+	<Input label="Address line 1" name="addressLine1" />
+	<Input label="Address line 1" name="addressLine2" />
+	<Input label="Town or city" name="address-town" />
+	<Input label="County" name="address-county" />
+	<Input label="Postcode" name="address-postcode" />
+</FormGroup>
 ```
 ```html HTML
-{/* <div class="input" data-component="input">
-  <label class="input__label" for="age">Age</label>
-  <p class="input__hint">Please enter in years</p>
-  <input name="age" class="input__input" id="age" type="text" value="" />
-</div> */}
+<fieldset class="form-group" data-component="form-group">
+	<legend class="form-group__legend">What is your address</legend>
+	<div class="input" data-component="input">
+		<label class="input__label">Address line 1</label>
+		<input class="input__input" type="text" value="">
+	</div>
+	<div class="input" data-component="input">
+		<label class="input__label">Address line 1</label>
+		<input class="input__input" type="text" value="">
+	</div>
+	<div class="input" data-component="input">
+		<label class="input__label">Town or city</label>
+		<input class="input__input" type="text" value="">
+	</div>
+	<div class="input" data-component="input">
+		<label class="input__label">County</label>
+		<input class="input__input" type="text" value="">
+	</div>
+	<div class="input" data-component="input">
+		<label class="input__label">Postcode</label>
+		<input class="input__input" type="text" value="">
+	</div>
+</fieldset>
 ```
 </CH.Code>
 </Example>
@@ -97,7 +120,6 @@ Hint text can be added to both:
 ### Individual input hint text
 
 Add hint text to individual text inputs to provide additional context or help.
-{/* TODO: check existing example is still relevant in updated docs  */}
 <Example>
 <h2>Example: input with a hint</h2>
 <HintInput />
@@ -116,10 +138,52 @@ Add hint text to individual text inputs to provide additional context or help.
 </CH.Code>
 </Example>
 
+
 ### Grouped inputs hint text
 
 Add hint text to the group of text inputs to give context or help about the overall group.
-{/* TODO: GROUPED HINT EXAMPLE: Add grouped text input example with hints*/}
+<Example>
+<h2>Example: Grouped inputs with a hint</h2>
+<GroupedInputHints />
+
+<CH.Code>
+```js React
+<FormGroup legend="What is your address" hint="This should be a UK address">
+	<Input label="Address line 1" name="addressLine1" />
+	<Input label="Address line 2" name="addressLine2" />
+	<Input label="Town or city" name="address-town" />
+	<Input label="County" name="address-county" />
+	<Input label="Postcode" name="address-postcode" />
+</FormGroup>
+```
+```html HTML
+<fieldset class="form-group" data-component="form-group">
+  <legend class="form-group__legend">What is your address</legend>
+  <p class="form-group__hint">This should be a UK address</p>
+	<div class="input" data-component="input">
+		<label class="input__label">Address line 1</label>
+		<input class="input__input" type="text" value="">
+	</div>
+	<div class="input" data-component="input">
+		<label class="input__label">Address line 1</label>
+		<input class="input__input" type="text" value="">
+	</div>
+	<div class="input" data-component="input">
+		<label class="input__label">Town or city</label>
+		<input class="input__input" type="text" value="">
+	</div>
+	<div class="input" data-component="input">
+		<label class="input__label">County</label>
+		<input class="input__input" type="text" value="">
+	</div>
+	<div class="input" data-component="input">
+		<label class="input__label">Postcode</label>
+		<input class="input__input" type="text" value="">
+	</div>
+</fieldset>
+```
+</CH.Code>
+</Example>
 
 
 ## Asking complex questions
@@ -127,8 +191,8 @@ Add hint text to the group of text inputs to give context or help about the over
 If you're asking complex questions that needs a detailed explanation, don't use hint text, instead use:
 - A heading that's a statement (for example, "Interview needs") rather than a question.
 - whatever mix of text, paragraphs, lists and examples best explains your question to the user.
-- a label, above the form input, tahts asks users a specific question - for example, 'Do you have any interview needs?'
-{/* TODO: check above for special chars for em dashes and quotation marks, sungle and double. Add them where necessary */}
+- a label, above the form input, tahts asks users a specific question &ndash; for example, &apos;Do you have any interview needs?&apos;
+
 
 ## Error messages
 
@@ -177,13 +241,12 @@ Keeping information thats caused the errors helps users to:
 - avoid re-entering information
 
 
-## Errors in grouped inputs
-Text inputs in a group use the same error state - individual input questions are highlighted. For example, an address fieldset with multiple inputs with error states will look like this:
-{/* TODO: Grouped input with error states example to be created */}
+{/* TODO: add grouped error state content and examples once added to DS.
+### Errors in grouped inputs
+Text inputs in a group use the same error state - individual input questions are highlighted. For example, an address fieldset with multiple inputs with error states will look like this: */}
 
-
-## When not to use
-Only display an error when someone tries to move to the next part of the form or service.
+### When not to use
+An error message should only display when someone tries to move to the next part of the form or service.
 
 Do not show error messages:
 - when users select or tab to a field
@@ -191,24 +254,18 @@ Do not show error messages:
 - when they move away from a field
 
 
-{/* ## When to use an error message
-
-Show an error message using the hint text when there is a validation error.
-
-Use standard messages for different components. */}
-
 ## Accessibility
 
 Component meets WCAG AA guidelines for accessibility on:
 
-- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
-- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
-- Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
+- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.2 )1.4.3).
+- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.2 1.4.11).
+- Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.2 1.4.1).
+
 
 ## Research/evidence
 
 We tested the text input component on a "Identity and Access Management" prototype in April 2019. Users understood the purpose of the text input and were able to use it.
-
 
 ## Help improve this page
 
