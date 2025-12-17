@@ -1,7 +1,12 @@
 import { Input } from "@nice-digital/nds-input";
 import { FormGroup } from "@nice-digital/nds-form-group";
 
+export const DefaultInputExample = () => (
+	<Input label="First name" name="firstname-example" />
+);
+
 export const DefaultInput = () => <Input label="First name" name="firstname" />;
+
 export const ErrorInput = () => (
 	<Input
 		label="Surname"
