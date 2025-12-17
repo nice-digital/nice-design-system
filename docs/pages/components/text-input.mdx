@@ -16,7 +16,7 @@ Use a text input when you need users to enter text that's no longer than a singl
 
 ## When not use
 
-Do not use a text input if you need users to enter longer answers that might span several lines. In this case, use a textarea.
+Do not use a text input if you need users to enter longer answers that might span several lines. In this case, use a [textarea](/components/textarea).
 
 ## How to use
 
@@ -45,16 +45,59 @@ Do not use a text input if you need users to enter longer answers that might spa
 
 Give text input a visible label.
 
-Do not use placeholder text for a label, as it vanishes when users click on the text input.
+Do not use placeholder text for a label, it vanishes when users click on the text input and not all screen readers read it out.
 
 Align labels above the text inputs they refer to on screen. Labels should be short, direct and written using sentence case. Do not use colons at the end of labels.
 
-If you are asking just 1 question per page, as we recommend, you can set the contents of the `label` as the page heading. It is good practice as it means that screen reader users will only hear the contents once.
+If you are asking just [one question per page](https://design-system.service.gov.uk/patterns/question-pages/#start-by-asking-one-question-per-page), as we recommend, you can set the contents of the `label` as the page heading. It is good practice as it means that screen reader users will only hear the contents once.
+
+## Do not disable copy and paste
+
+Users often need to copy and paste information into a text input, so do not stop them from doing this.
+
+## Grouped text inputs
+
+Multiple related text inputs will use the [Form group component](/components/form-group).
+The form group:
+-  wraps the inputs in a `<fieldset>` with a `<legend>` that describes the group
+-  allows you to add hint etxt that applies to the entire group.
+
+{/* TODO: Add examples of fieldset input / formgroup */}
+<Example>
+<h2>Example: grouped text inputs</h2>
+{/* <HintInput /> */}
+
+<CH.Code>
+```js React
+{/* <Input label="Age" name="age" hint="Please enter in years" /> */}
+```
+```html HTML
+{/* <div class="input" data-component="input">
+  <label class="input__label" for="age">Age</label>
+  <p class="input__hint">Please enter in years</p>
+  <input name="age" class="input__input" id="age" type="text" value="" />
+</div> */}
+```
+</CH.Code>
+</Example>
+
 
 ## Using hint text
 
-Use hint text to give users help in context; for example, only enter your first name.
+Use hint text to give users help in context; for example, enter your full address, including postcode.
 
+Keep hint text short and simple.
+
+Do not use links in the hint text.  While screen readers will read out the link text when describing the item, they usually do not tell users the text is a link.
+
+Hint text can be added to both:
+- An individual text input.
+- The overall group of inputs in the form group.
+
+### Individual input hint text
+
+Add hint text to individual text inputs to provide additional context or help.
+{/* TODO: check existing example is still relevant in updated docs  */}
 <Example>
 <h2>Example: input with a hint</h2>
 <HintInput />
@@ -73,7 +116,23 @@ Use hint text to give users help in context; for example, only enter your first 
 </CH.Code>
 </Example>
 
+### Grouped inputs hint text
+
+Add hint text to the group of text inputs to give context or help about the overall group.
+{/* TODO: GROUPED HINT EXAMPLE: Add grouped text input example with hints*/}
+
+
+## Asking complex questions
+
+If you're asking complex questions that needs a detailed explanation, don't use hint text, instead use:
+- A heading that's a statement (for example, "Interview needs") rather than a question.
+- whatever mix of text, paragraphs, lists and examples best explains your question to the user.
+- a label, above the form input, tahts asks users a specific question - for example, 'Do you have any interview needs?'
+{/* TODO: check above for special chars for em dashes and quotation marks, sungle and double. Add them where necessary */}
+
 ## Error messages
+
+Error messages are displayed like this:
 
 <Example>
 <h2>Example: input with error</h2>
@@ -106,11 +165,37 @@ Use hint text to give users help in context; for example, only enter your first 
 </CH.Code>
 </Example>
 
-## When to use an error message
+We use a red border to visually connext the text input, error message and question it belongs to.
+
+The error message appears in red after the question text and any hint text.
+
+Do not clear any form fields when showing the error message. Keep both passing and failing answers.
+
+Keeping information thats caused the errors helps users to:
+- see what went wrong
+- edit their previous answer
+- avoid re-entering information
+
+
+## Errors in grouped inputs
+Text inputs in a group use the same error state - individual input questions are highlighted. For example, an address fieldset with multiple inputs with error states will look like this:
+{/* TODO: Grouped input with error states example to be created */}
+
+
+## When not to use
+Only display an error when someone tries to move to the next part of the form or service.
+
+Do not show error messages:
+- when users select or tab to a field
+- when users type into a field
+- when they move away from a field
+
+
+{/* ## When to use an error message
 
 Show an error message using the hint text when there is a validation error.
 
-Use standard messages for different components.
+Use standard messages for different components. */}
 
 ## Accessibility
 
@@ -122,7 +207,19 @@ Component meets WCAG AA guidelines for accessibility on:
 
 ## Research/evidence
 
-We tested the textarea component on a "Identity and Access Management" prototype in April 2019. Users understood the purpose of the textarea and were able to use it.
+We tested the text input component on a "Identity and Access Management" prototype in April 2019. Users understood the purpose of the text input and were able to use it.
 
+
+## Help improve this page
+
+To help make sure that this page is useful, relevant and up to date, you can:
+- [Share your research or feedback on Github](https://github.com/nice-digital/nice-design-system/discussions)
+- [Propose a change](https://github.com/nice-digital/nice-design-system/discussions/categories/ideas)
+
+
+## Need help?
+If you've got a question aboyut the NICE Design System, content the team.
+- If you work for NICE [ask us a question in out Teams channel](https://teams.microsoft.com/l/team/19%3aj3x65ql6djS-Ro2mM8yQIRzK_QHOk1S3Jl75got7hwk1%40thread.tacv2/conversations?groupId=10c92ff2-b41f-42d1-abef-f34f5bfe1202&tenantId=6030f479-b342-472d-a5dd-740ff7538de9)
+- If you work outside of NICE, you can [get in touch with us via Github discussions](https://github.com/nice-digital/nice-design-system/discussions)
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;
