@@ -5,12 +5,11 @@
 @use './filter-group';
 
 .inputFilterBox {
+  border: 1px solid colours.$filter-group-border;
   margin-top: utils.rem(spacing.$medium);
 
   // Wrapper for the input and button
   &__controls {
-    border: utils.rem(spacing.$x-small) solid
-      colours.$filter-input-controls-border;
     padding: utils.rem(spacing.$small);
 
     label {
