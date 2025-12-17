@@ -12,7 +12,7 @@
 @mixin -filter-group-heading-button {
   appearance: none;
   background: colours.$filter-group-heading-button-background;
-  border: 0;
+  border: unset;
   color: colours.$text;
   cursor: pointer;
   display: block;
@@ -39,6 +39,7 @@
 /// Used to filter searches or lists of content.
 /// @since 0.5.0
 .filter-group {
+  border: 1px solid colours.$filter-group-border;
   margin-top: utils.rem(spacing.$medium);
 
   legend {
@@ -56,8 +57,7 @@
 
   // Wrapper for the options when filter is a list of checboxes
   &__options {
-    border: utils.rem(spacing.$x-small) solid colours.$filter-option-border;
-
+    border: unset;
     &[aria-hidden='true'] {
       display: none;
     }
