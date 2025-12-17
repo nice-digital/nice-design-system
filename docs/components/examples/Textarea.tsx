@@ -39,8 +39,11 @@ export const GroupedHintTextarea = () => (
 	>
 		<Textarea
 			label="What could be improved?"
-			name="improvement_feedback"
+			name="improvement_feedback_hint"
 		></Textarea>
-		<Textarea label="Additional Comments" name="additional_comments"></Textarea>
+		<Textarea
+			label="Additional Comments"
+			name="additional_comments_hint"
+		></Textarea>
 	</FormGroup>
 );
