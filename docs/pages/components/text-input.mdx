@@ -69,8 +69,8 @@ The form group:
 <CH.Code>
 ```js React
 <FormGroup legend="What is your address">
-	<Input label="Address line 1" name="addressLine1" />
-	<Input label="Address line 1" name="addressLine2" />
+	<Input label="Address line 1" name="address-line-1" />
+	<Input label="Address line 2" name="address-line-2" />
 	<Input label="Town or city" name="address-town" />
 	<Input label="County" name="address-county" />
 	<Input label="Postcode" name="address-postcode" />
@@ -149,36 +149,36 @@ Add hint text to the group of text inputs to give context or help about the over
 <CH.Code>
 ```js React
 <FormGroup legend="What is your address" hint="This should be a UK address">
-	<Input label="Address line 1" name="addressLine1" />
-	<Input label="Address line 2" name="addressLine2" />
-	<Input label="Town or city" name="address-town" />
-	<Input label="County" name="address-county" />
-	<Input label="Postcode" name="address-postcode" />
+	<Input label="Address line 1" name="address-line-1-hint" />
+	<Input label="Address line 2" name="address-line-2-hint" />
+	<Input label="Town or city" name="address-town-hint" />
+	<Input label="County" name="address-county-hint" />
+	<Input label="Postcode" name="address-postcode-hint" />
 </FormGroup>
 ```
 ```html HTML
 <fieldset class="form-group" data-component="form-group">
 	<legend class="form-group__legend">What is your address</legend>
-  	<p class="form-group__hint">This should be a UK address</p>
+	<p class="form-group__hint">This should be a UK address</p>
 	<div class="input" data-component="input">
-		<label class="input__label" for="address-line-1">Address line 1</label>
-		<input name="address-line-1" class="input__input" id="address-line-1" type="text" value="" />
+		<label class="input__label" for="address-line-1-hint">Address line 1</label>
+		<input name="address-line-1-hint" class="input__input" id="address-line-1-hint" type="text" value="">
 	</div>
 	<div class="input" data-component="input">
-		<label class="input__label" for="address-line-2">Address line 2</label>
-		<input name="address-line-2" class="input__input" id="address-line-2" type="text" value="" />
+		<label class="input__label" for="address-line-2-hint">Address line 2</label>
+		<input name="address-line-2-hint" class="input__input" id="address-line-2-hint" type="text" value="">
 	</div>
 	<div class="input" data-component="input">
-		<label class="input__label" for="address-town">Town or city</label>
-		<input name="address-town" class="input__input" id="address-town" type="text" value="" />
+		<label class="input__label" for="address-town-hint">Town or city</label>
+		<input name="address-town-hint" class="input__input" id="address-town-hint" type="text" value="">
 	</div>
 	<div class="input" data-component="input">
-		<label class="input__label" for="address-county">County</label>
-		<input name="address-county" class="input__input" id="address-county" type="text" value="" />
+		<label class="input__label" for="address-county-hint">County</label>
+		<input name="address-county-hint" class="input__input" id="address-county-hint" type="text" value="">
 	</div>
 	<div class="input" data-component="input">
-		<label class="input__label" for="address-postcode">Postcode</label>
-		<input name="address-postcode" class="input__input" id="address-postcode" type="text" value="" />
+		<label class="input__label" for="address-postcode-hint">Postcode</label>
+		<input name="address-postcode-hint" class="input__input" id="address-postcode-hint" type="text" value="">
 	</div>
 </fieldset>
 ```
