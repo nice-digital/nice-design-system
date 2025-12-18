@@ -1,5 +1,5 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
-import { InfoAlert, SuccessAlert, CautionAlert, ErrorAlert } from "components/examples/Alert";
+import { InfoAlert, SuccessAlert, CautionAlert, ErrorAlert,InfoAlertNonIntrusive } from "components/examples/Alert";
 import { Example } from "components/examples/Example";
 import { Alert } from "@nice-digital/nds-alert";
 
@@ -13,27 +13,28 @@ export const meta = {
 
 ## Overview
 
-Page alerts are used to notify users of important information or changes on a page in a way that attracts the user's attention without interrupting the user's task. Typically they appear at the top of a page following a submit action.
+Alerts are used to notify users of important information or changes on a page. Typically, they appear at the top of a page following a submit action. 
 
-By default, alerts have an aria role of 'alert' to enable assistive technology to notify the user of the content as it is displayed. This can be overwritten with an aria-live value of 'polite' for alerts which are less time-critical or do not require the user's immediate attention.
+By default, alerts are set to interrupt the user’s activity but [can be set to ‘polite’](#non-intrusive-alert-option) so the alert is announced without interrupting the user.
 
-There are four variations of the alert component, all of which can be set to 'nonIntrusive' if appropriate:
 
-### Info
+There are four variations of the alert component: information, success, error and caution.
+
+## Information Alert
 
 <Example>
-<h4>Example: info alert (non-intrusive)</h4>
+<h4>Example: info alert</h4>
 <InfoAlert />
 
 <CH.Code>
 ```js React
-<Alert type="info" nonIntrusive>
+<Alert type="info">
 	<h3>Info alert</h3>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 </Alert>
 ```
 ```html HTML
-<div class="alert alert--info" data-component="alert--info" aria-live="polite" aria-atomic="true">
+<div class="alert alert--info" data-component="alert--info" role="alert">
 	<h3>Info alert</h3>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 </div>
@@ -41,7 +42,19 @@ There are four variations of the alert component, all of which can be set to 'no
 </CH.Code>
 </Example>
 
-### Success
+Information alerts are for essential information only – they draw attention to something important about a page or service.  
+
+The information alert can tell a user about things such as:  
+
+ - unfinished tasks, linking to where to complete them  
+ - a major change to a service  
+ - service downtime.  
+
+### When not to use 
+
+Do not use for a serious issue or error – use the error alert for this. Don’t use when trying to prevent something going wrong - use the caution alert for this. 
+
+## Success alert
 
 <Example>
 <h4>Example: success alert</h4>
@@ -63,7 +76,18 @@ There are four variations of the alert component, all of which can be set to 'no
 </CH.Code>
 </Example>
 
-### Error
+Success alerts are used for notifying the user that a task, step or process is complete.  
+
+The success alert can be used to show that something has been:  
+- successfully submitted – such as an online form 
+- uploaded or added, such as a file or record  
+- cancelled, deleted or another type of destructive (negative) action.  
+
+### When not to use 
+
+Don’t use the success alert for small or micro actions like using a filter. Don’t use if something else confirms success, for example progressing to another page. 
+
+## Error alert
 
 <Example>
 <h4>Example: error alert</h4>
@@ -85,7 +109,13 @@ There are four variations of the alert component, all of which can be set to 'no
 </CH.Code>
 </Example>
 
-### Caution
+Use error alerts to show that something has gone wrong. For example form validation or other errors that block the user from completing their task. 
+
+### When not to use 
+
+Do not use as a warning or caution – use the caution alert instead. Error alerts should be used to highlight something that has gone wrong.  
+
+## Caution alert
 
 <Example>
 <h4>Example: caution alert</h4>
@@ -107,38 +137,66 @@ There are four variations of the alert component, all of which can be set to 'no
 </CH.Code>
 </Example>
 
-## When to use alerts
+Use caution alerts to tell the user something to be aware of, to prevent something going wrong. Only use a caution alert if the information will help the user avoid a problem.  
 
-Use an alert to give the user something they need to know in the context of the page they are viewing.
+Caution alerts can be used for things like:   
 
--   Info alerts are for essential information only.
--   Success alerts are essential for notifying the user that a task is complete.
--   Use error alerts with form validation or other errors that block the user from completing their task.
--   Use caution page alerts to tell the user something to be aware of; only use a caution alert if the information will help the user avoid a problem.
--	Use the 'non-intrusive' option for alerts which don't require the user's immediate attention, and instead can be presented at the next opportunity without interrupting.
+- Raising awareness of a potential problem – for example on the BNF interactions page to show that combination products don’t appear in the list.   
+- Highlighting content that has not been updated recently but may still be of use 
+- Highlighting when something has become more urgent or important, for example because a deadline is approaching. 
 
-## When not to use alerts
+### When not to use
 
--   Use alerts sparingly; there's evidence that people often miss them, and using them too often is likely to worsen this problem.
--   Do not use alerts if the information is directly relevant in context to what the user is doing on the page.
-
+Do not use the caution alert if the information is about something other than a warning. Use the information alert for important information and the error alert for things that have gone wrong.   
 
 ## How to use
 
--   Position an alert immediately before the page header. The alert should be the same width as the page content.
--   Avoid showing more than one alert on the same page. Instead, combine the messages in a single alert. If the messages are too different to connect, only show the highest priority alert type.
+-   Use alerts sparingly; there's evidence that people often miss them, and using them too often is likely to worsen this problem. 
+-   Do not use alerts if the information is directly relevant in context to what the user is doing on the page. 
+-   Alerts are usually displayed at the top of the page. The alert should be the same width as the page content. 
+-   An alert needs a title, which does not need to be displayed as a heading. The title gives each alert a unique label and helps screen readers to identify the alert. It does not have to be read out. 
 
+## Non-intrusive alert option 
+
+<Example>
+<h4>Example: info alert (non-intrusive)</h4>
+<InfoAlertNonIntrusive/>
+
+<CH.Code>
+```js React
+<Alert type="info" nonIntrusive>
+	<h3>Info alert</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</Alert>
+```
+```html HTML
+<div class="alert alert--info" data-component="alert--info" aria-live="polite" aria-atomic="true">
+	<h3>Info alert</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div>
+```
+</CH.Code>
+</Example>
+
+Use the non-intrusive option (uses aria-live="polite") for alerts which don't require the user's immediate attention. These alerts can be announced at the next available opportunity without interrupting the user’s current task. 
+
+By default, alerts use role="alert" so assistive technologies announce them immediately. Switch to aria-live="polite" when the message is informational rather than urgent. 
+
+Example of polite alerts are non-critical status updates, such as: 
+
+- “Your settings have been saved.” 
+- “Profile updated successfully.” 
+- “New items are available in the feed” 
 
 ## Accessibility
 
-Component meets WCAG AA guidelines for accessibility on:
-
-- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.0 )1.4.3).
-- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11).
+Component meets WCAG AA guidelines for accessibility on: 
+- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.2 - 1.4.3). 
+- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.1 1.4.11). 
 - Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.0 1.4.1).
 
 ## Research and evidence
 
-We tested all variations of the alert component on an "In consultation Comment Collection" prototype in 2021. Users understood the purpose of the alerts and were able to use them.
+We tested all variations of the alert component on an "In consultation Comment Collection" prototype in 2021. Users understood the purpose of the alerts and were able to use them. 
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;
