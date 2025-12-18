@@ -37,7 +37,12 @@
 }
 
 .filter-panel {
+  border: 1px solid colours.$filter-group-border;
   margin: utils.rem(0 0 spacing.$medium 0);
+
+  @include media-queries.mq($from: sm) {
+    border: 0;
+  }
 
   // Heading can be one of:
   // - heading for server side rendering for non-js
