@@ -12,7 +12,7 @@
 @mixin -filter-group-heading-button {
   appearance: none;
   background: colours.$filter-group-heading-button-background;
-  border: unset;
+  border: 0;
   color: colours.$text;
   cursor: pointer;
   display: block;
@@ -57,7 +57,8 @@
 
   // Wrapper for the options when filter is a list of checboxes
   &__options {
-    border: unset;
+    border: 0;
+
     &[aria-hidden='true'] {
       display: none;
     }
