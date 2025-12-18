@@ -20,9 +20,11 @@
   line-height: 1.6;
   max-width: 100%;
   padding: utils.rem(spacing.$small);
+  position: relative;
   text-align: left;
   text-decoration: none;
   width: 100%;
+  z-index: 1;
 
   &:hover {
     background: colours.$filter-group-heading-button-background-hover;
