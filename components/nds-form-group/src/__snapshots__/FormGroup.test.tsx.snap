@@ -12,7 +12,9 @@ exports[`FormGroup should match the snapshot when all possible props are passed 
         <legend
           class="form-group__legend"
         >
-          This is the legend text
+          <legend>
+            This is the legend text
+          </legend>
         </legend>
         <p
           class="form-group__error-message"
@@ -40,7 +42,9 @@ exports[`FormGroup should match the snapshot when all possible props are passed 
       <legend
         class="form-group__legend"
       >
-        This is the legend text
+        <legend>
+          This is the legend text
+        </legend>
       </legend>
       <p
         class="form-group__error-message"
