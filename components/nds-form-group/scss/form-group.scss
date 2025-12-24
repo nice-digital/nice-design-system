@@ -4,7 +4,7 @@
 @use '@nice-digital/nds-core/scss/utils';
 
 .form-group {
-  border: utils.rem(1px) solid colours.$border;
+  border: 0;
   margin-bottom: utils.rem(spacing.$medium);
   padding: utils.rem(spacing.$small);
 
