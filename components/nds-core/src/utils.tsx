@@ -144,10 +144,15 @@ export const camelCase = function (str: string) {
 		.replace(/\s+/g, "");
 };
 
+export const isValidHeadingLevel = (level: number) => {
+	return Number.isInteger(level) && level >= 1 && level <= 6;
+};
+
 export default {
 	throttle,
 	debounce,
 	slugify,
 	nextUniqueId,
-	camelCase
+	camelCase,
+	isValidHeadingLevel
 };
