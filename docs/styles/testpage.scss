@@ -1,0 +1,120 @@
+@use '@nice-digital/nds-core/scss/colours';
+// @use '@nice-digital/nds-core/scss/focus';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
+// @use '../../components/nds-core/scss/focus/index.scss';
+
+//TEST checkbox config
+$focus-outline-color: colours.$focus;
+$focus-outline-width: utils.rem(spacing.$x-small);
+// $focus-outline-offset: utils.rem(spacing.$xx-small);
+$focus-outline-offset: 2px;
+// $hover-stroke-width: utils.rem(spacing.$xx-small);
+$hover-stroke-width: 2px;
+$hover-color: colours.$text;
+$hover-transition-duration: 0.1s;
+$hover-transition-easing: ease-in-out;
+
+///TEST CHECKBOX States/
+@mixin default-checkbox-focus() {
+  outline: $focus-outline-width solid $focus-outline-color;
+  // outline-offset: $focus-outline-offset;
+}
+
+@mixin default-checkbox-hover {
+}
+
+
+
+.test-checkbox-directly {
+  //checkbox wrapper - wraps label and input
+  .checkbox {
+  }
+
+  .checkbox:hover,
+  .radio:hover {
+    .checkbox__label::before,
+    .radio__label::before {
+      border: 3px solid $hover-color;
+    }
+  }
+
+  //.checkbox__label::before = where border and outlines are handled
+  .checkbox__label::before,
+  .radio__label::before {
+    border: 0.125rem solid #0e0e0e;
+  }
+
+  .checkbox:hover,
+  .radio:hover  {
+    .checkbox__input:disabled + .checkbox__label::before,
+    .radio__input:disabled + .radio__label::before {
+      box-shadow: none;
+      outline: none;
+      border: 0.125rem solid #0e0e0e;
+    }
+  }
+}
+
+
+
+.test-examples-section-two {
+  .checkbox__input,
+  .radio__input {
+    &:focus-visible + .checkbox__label::before,
+    &:focus-visible + .radio__label::before,
+    &:active + .checkbox__label::before,
+    &:active + .radio__label::before {
+      @include default-checkbox-focus;
+
+      //transition effects
+      // transition: outline-width $hover-transition-duration
+      //     $hover-transition-easing,
+      //   outline-offset $hover-transition-duration $hover-transition-easing;
+    }
+  }
+  //test focus and hover state combined
+  .checkbox__label::before,
+  .radio__label::before {
+    // transition effects
+    outline-width: 0;
+    outline-offset: 0;
+
+    transition: box-shadow 0.1s $hover-transition-easing,
+      outline-width $hover-transition-duration $hover-transition-easing,
+      outline-offset $hover-transition-duration $hover-transition-easing;
+  }
+
+  // TODO: use those to override colors when checkbox has .checkbox--error
+  .checkbox:hover .checkbox__label::before,
+  .radio:hover .radio__label::before,
+  .checkbox:has(.checkbox__input:focus-visible):hover .checkbox__label:before,
+  .radio:has(.radio__input:focus-visible):hover .radio__label:before {
+    box-shadow: 0 0 0 $hover-stroke-width $hover-color;
+    outline-offset: $focus-outline-offset;
+    color: red;
+  }
+
+  .checkbox-error,
+  .radio-error {
+    $focus-outline-color: colours.$error;
+  }
+
+  .checkbox:hover,
+  .radio:hover {
+    .checkbox__input:disabled + .checkbox__label::before,
+    .radio__input:disabled + .radio__label::before  {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+
+
+ .radio__input {
+  z-index: 1;
+ }
+// separate styles to debug click/focus and hover on radio - behaves differently to checkbox
+
+}
