@@ -30,4 +30,7 @@
     font-weight: bold;
     margin-top: utils.rem(spacing.$x-small);
   }
+  &__heading {
+    font-family: typography.get-font-family(sans);
+  }
 }

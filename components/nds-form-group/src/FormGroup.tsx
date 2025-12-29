@@ -28,7 +28,7 @@ export const FormGroup: React.FC<FormGroupProps> = (props: FormGroupProps) => {
 	const HeadingTag =
 		headingLevel && isValidHeadingLevel(headingLevel)
 			? (`h${headingLevel}` as keyof JSX.IntrinsicElements)
-			: "legend";
+			: undefined;
 	const clonedChildren = React.Children.map(children, (child) => {
 		return React.cloneElement(child as React.ReactElement, {
 			inline,
@@ -49,7 +49,11 @@ export const FormGroup: React.FC<FormGroupProps> = (props: FormGroupProps) => {
 		>
 			{legend && (
 				<legend className="form-group__legend">
-					<HeadingTag>{legend}</HeadingTag>
+					{headingLevel && HeadingTag ? (
+						<HeadingTag className="form-group__heading">{legend}</HeadingTag>
+					) : (
+						legend
+					)}
 				</legend>
 			)}
 			{groupError && <p className="form-group__error-message">{groupError}</p>}
