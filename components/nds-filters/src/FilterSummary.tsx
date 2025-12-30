@@ -124,7 +124,14 @@ function ResultsFilters({ filters }: { filters: FilterType[] }) {
 							<Tag
 								outline
 								remove={
-									<ElementType {...props}>Remove {label} filter</ElementType>
+									<button
+										type="button"
+										className={className}
+										onClick={onClick}
+										aria-label={`Remove ${label} filter`}
+									>
+										×
+									</button>
 								}
 							>
 								{label}
