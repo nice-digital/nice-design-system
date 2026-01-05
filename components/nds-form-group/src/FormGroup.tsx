@@ -49,7 +49,7 @@ export const FormGroup: React.FC<FormGroupProps> = (props: FormGroupProps) => {
 		>
 			{legend && (
 				<legend className="form-group__legend">
-					{headingLevel && HeadingTag ? (
+					{HeadingTag ? (
 						<HeadingTag className="form-group__heading">{legend}</HeadingTag>
 					) : (
 						legend
