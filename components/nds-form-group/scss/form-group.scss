@@ -6,7 +6,7 @@
 .form-group {
   border: 0;
   margin-bottom: utils.rem(spacing.$medium);
-  padding: utils.rem(spacing.$small);
+  padding: 0;
 
   &--no-legend {
     border: none;
@@ -15,9 +15,6 @@
   &__legend {
     @include typography.font-size(p);
     font-weight: bold;
-    margin-left: utils.rem(-(spacing.$x-small));
-    padding-left: utils.rem(spacing.$x-small);
-    padding-right: utils.rem(spacing.$x-small);
   }
 
   &__hint {
@@ -29,8 +26,5 @@
     color: colours.$error;
     font-weight: bold;
     margin-top: utils.rem(spacing.$x-small);
-  }
-  &__heading {
-    font-family: typography.get-font-family(sans);
   }
 }
