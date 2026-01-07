@@ -12,11 +12,11 @@ export const meta = {
 
 ## When to use
 
-Use the textarea component when you need to let users enter an amount of text longer than a single line. 
+Use the textarea component when you need to let users enter an amount of text longer than a single line.
 
 ## When not to use
 
-Do not use the textarea component if you need to let users enter shorter answers no longer than a single line, such as a phone number or name. In this case, you should use the text input component. 
+Do not use the textarea component if you need to let users enter shorter answers no longer than a single line, such as a phone number or name. In this case, you should use the [text input component](/components/text-input).
 
 ## How to use
 
@@ -35,22 +35,22 @@ Do not use the textarea component if you need to let users enter shorter answers
 ```
 </CH.Code>
 </Example>
- 
-You must label textareas. Placeholder text is not a suitable substitute for a label, as it disappears when users click inside the textarea. 
 
-Labels must be aligned above the textarea they refer to. They should be short, direct and written in sentence case. Do not use colons at the end of labels. 
+You must label textareas. Placeholder text is not a suitable substitute for a label, as it disappears when users click inside the textarea.
 
-### Use appropriately-sized textareas 
+Labels must be aligned above the textarea they refer to. They should be short, direct and written in sentence case. Do not use colons at the end of labels.
 
-Make the height of a textarea proportional to the amount of text you expect users to enter.  
+### Use appropriately-sized textareas
 
-You can set the height of the textarea by specifying the [rows](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/textarea#rows) attribute in HTML or the rows prop in our react component. 
+Make the height of a textarea proportional to the amount of text you expect users to enter.
 
-### Do not disable copy and paste 
+You can set the height of the textarea by specifying the [rows](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/textarea#rows) attribute in HTML or the rows prop in our react component.
 
-Users will often need to copy and paste information into a textarea, so do not stop them from doing this. 
+### Do not disable copy and paste
 
-## Grouped textareas 
+Users will often need to copy and paste information into a textarea, so do not stop them from doing this.
+
+## Grouped textareas
 
 <Example>
 <GroupedTextarea />
@@ -84,27 +84,27 @@ Users will often need to copy and paste information into a textarea, so do not s
 </CH.Code>
 </Example>
 
-Multiple related textarea fields should be grouped with our [Form group component](/components/form-group).  
+Multiple related textarea fields should be grouped with our [Form group component](/components/form-group).
 
-The form group: 
+The form group:
 
-- wraps the inputs in a `fieldset` with a `legend` that describes the group  
-- allows you to add hint text that applies to the entire group.    
+- wraps the inputs in a `fieldset` with a `legend` that describes the group
+- allows you to add hint text that applies to the entire group.
 
 ## Using hint text
 
-Use hint text to give users help in context. Keep hint text short and simple.  
+Use hint text to give users help in context. Keep hint text short and simple.
 
-Do not use links in hint text. While screen readers will read out the link text when describing the item, they usually do not tell users the text is a link. 
+Do not use links in hint text. While screen readers will read out the link text when describing the item, they usually do not tell users the text is a link.
 
-Hint text can be added to both:  
+Hint text can be added to both:
 
-- An individual textarea field 
-- The overall group of textarea inputs when used together in a form group. 
+- An individual textarea field
+- The overall group of textarea inputs when used together in a form group.
 
-### Individual input hint text 
+### Individual input hint text
 
-Add hint text to individual text inputs to provide additional context or help. 
+Add hint text to individual text inputs to provide additional context or help.
 
 <Example>
 <SingleHintTextarea />
@@ -131,10 +131,10 @@ Add hint text to individual text inputs to provide additional context or help.
 </CH.Code>
 </Example>
 
-### Grouped inputs hint text 
+### Grouped inputs hint text
 
-Add hint text to the group of textarea fields to give context or help about the overall group. 
- 
+Add hint text to the group of textarea fields to give context or help about the overall group.
+
 <Example>
 <GroupedHintTextarea />
 
@@ -173,13 +173,13 @@ Add hint text to the group of textarea fields to give context or help about the 
 </CH.Code>
 </Example>
 
-## Asking complex questions 
+## Asking complex questions
 
-If you’re asking a question that needs a detailed explanation, don’t use hint text, instead use: 
+If you’re asking a question that needs a detailed explanation, don’t use hint text, instead use:
 
-- a heading that’s a statement (for example, ‘Interview needs’) rather than a question 
-- whatever mix of text, paragraphs, lists and examples best explains your question to users 
-- a label, above the form input, that asks users a specific question – for example, ‘Do you have any interview needs?’ 
+- a heading that’s a statement (for example, ‘Interview needs’) rather than a question
+- whatever mix of text, paragraphs, lists and examples best explains your question to users
+- a label, above the form input, that asks users a specific question – for example, ‘Do you have any interview needs?’
 
 ## Error messages
 
@@ -213,24 +213,24 @@ Error messages should be styled like this:
 
 ## When to use an error message
 
-Only display an error when someone tries to move to the next part of the form or service. 
+Only display an error when someone tries to move to the next part of the form or service.
 
-Do not show error messages: 
+Do not show error messages:
 
-- when users select or tab to a field 
-- when users type into a field 
-- when they move away from a field. 
+- when users select or tab to a field
+- when users type into a field
+- when they move away from a field.
 
 ## Accessibility
 
-Component meets WCAG AA guidelines for accessibility on: 
+Component meets WCAG AA guidelines for accessibility on:
 
-- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.2 -  1.4.3). 
-- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.2 - 1.4.11). 
-- Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.2 - 1.4.1). 
+- Text contrast - Text has a contrast ratio of at least 4.5:1 for small text and at least 3:1 for large text (WCAG 2.2 -  1.4.3).
+- UI contrast - Visual information required to identify components and states (except inactive components) has a contrast ratio of at least 3:1 (WCAG 2.2 - 1.4.11).
+- Accessible use of colour - Colour is not used as the only visual means of conveying information (WCAG 2.2 - 1.4.1).
 
 ## Research/evidence
 
-We tested the textarea component on a "Identity and Access Management" prototype in April 2019. Users understood the purpose of the textarea and were able to use it. 
+We tested the textarea component on a "Identity and Access Management" prototype in April 2019. Users understood the purpose of the textarea and were able to use it.
 
 export default ({ children }) => <ComponentLayout meta={meta}>{children}</ComponentLayout>;
