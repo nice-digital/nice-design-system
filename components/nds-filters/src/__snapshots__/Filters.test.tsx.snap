@@ -53,7 +53,9 @@ exports[`@nice-digital/nds-filters Crash test should match snapshot 1`] = `
             >
               Another filter
               <button
+                aria-label="Remove Another filter filter"
                 class="tag__remove"
+                type="button"
               >
                 <span
                   class="visually-hidden"
@@ -285,7 +287,9 @@ exports[`@nice-digital/nds-filters Crash test should match snapshot 1`] = `
           >
             Another filter
             <button
+              aria-label="Remove Another filter filter"
               class="tag__remove"
+              type="button"
             >
               <span
                 class="visually-hidden"
