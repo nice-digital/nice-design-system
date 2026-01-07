@@ -130,7 +130,7 @@ function ResultsFilters({ filters }: { filters: FilterType[] }) {
 										onClick={onClick}
 										aria-label={`Remove ${label} filter`}
 									>
-										×
+										Remove {label} filter
 									</button>
 								}
 							>
