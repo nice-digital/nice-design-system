@@ -1,24 +1,34 @@
 import { FormGroup } from "@nice-digital/nds-form-group";
 import { Textarea } from "@nice-digital/nds-textarea";
 
+export const DefaultTextarea = () => (
+	<Textarea
+		label="Tell us more about your request or issue."
+		name="issue_description"
+	></Textarea>
+);
+
 export const DefaultTextareaExample = () => (
-	<Textarea label="Your address" name="address"></Textarea>
+	<Textarea
+		label="Tell us more about your request or issue."
+		name="issue_description_example"
+	></Textarea>
 );
 
 export const SingleHintTextarea = () => (
 	<Textarea
-		label="Your address"
-		name="addresshint"
-		hint="Enter your full address including postcode"
+		label="Tell us more about your request or issue."
+		name="issue_description_hint"
+		hint="Please describe the issue in detail, including any error messages you have received."
 	></Textarea>
 );
 
 export const SingleErrorTextarea = () => (
 	<Textarea
-		label="Your address"
-		name="addresshint"
+		label="Tell us more about your request or issue."
+		name="issue_description_error"
 		error={true}
-		errorMessage="Please enter your full address"
+		errorMessage="Please describe your request or issue."
 	></Textarea>
 );
 

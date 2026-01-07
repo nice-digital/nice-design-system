@@ -1,13 +1,13 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
 import { Example } from "components/examples/Example";
-import { DefaultTextareaExample, SingleHintTextarea, SingleErrorTextarea, GroupedTextarea, GroupedHintTextarea } from "components/examples/Textarea";
+import { DefaultTextarea, DefaultTextareaExample, SingleHintTextarea, SingleErrorTextarea, GroupedTextarea, GroupedHintTextarea } from "components/examples/Textarea";
 
 export const meta = {
 	title: "Textarea",
 	description: "Use a textarea to let users enter more than one line of text",
 	npmUrl: "https://www.npmjs.com/package/@nice-digital/nds-textarea",
 	gitHubUrl: "https://github.com/nice-digital/nice-design-system/blob/main/components/nds-textarea",
-	component: DefaultTextareaExample
+	component: DefaultTextarea
 };
 
 ## When to use
@@ -25,12 +25,15 @@ Do not use the textarea component if you need to let users enter shorter answers
 
 <CH.Code>
 ```js React
-<Textarea label="Your address" name="address"></Textarea>
+<Textarea
+		label="Tell us more about your request or issue."
+		name="issue_description">
+</Textarea>
 ```
 ```html HTML
 <div class="textarea" data-component="textarea">
-  <label class="textarea__label" for="address">Your address</label
-  ><textarea class="textarea__textarea" id="address" name="address"></textarea>
+    <label class="textarea__label" for="issue_description">Tell us more about your request or issue.</label>
+    <textarea class="textarea__textarea" id="issue_description" name="issue_description"></textarea>
 </div>
 ```
 </CH.Code>
@@ -112,21 +115,18 @@ Add hint text to individual text inputs to provide additional context or help.
 <CH.Code>
 ```js React
 <Textarea
-	label="Your address"
-	name="addresshint"
-	hint="Enter your full address including postcode"
-></Textarea>
+		label="Tell us more about your request or issue."
+		name="issue_description_hint"
+		hint="Please describe the issue in detail, including any error messages you have received."
+	></Textarea>
 ```
 ```html HTML
 <div class="textarea" data-component="textarea">
-  <label class="textarea__label" for="addresshint">Your address</label>
-  <p class="textarea__hint">Enter your full address including postcode</p>
-  <textarea
-    class="textarea__textarea"
-    id="addresshint"
-    name="addresshint"
-  ></textarea>
+    <label class="textarea__label" for="issue_description_hint">Tell us more about your request or issue.</label>
+    <p class="textarea__hint">Please describe the issue in detail, including any error messages you have received.</p>
+    <textarea class="textarea__textarea" id="issue_description_hint" name="issue_description_hint"></textarea>
 </div>
+
 ```
 </CH.Code>
 </Example>
@@ -191,22 +191,19 @@ Error messages should be styled like this:
 <CH.Code>
 ```js React
 <Textarea
-	label="Your address"
-	name="addresshint"
-	error={true}
-	errorMessage="Please enter your full address"
-></Textarea>
+		label="Tell us more about your request or issue."
+		name="issue_description_error"
+		error={true}
+		errorMessage="Please describe your request or issue."
+	></Textarea>
 ```
 ```html HTML
 <div class="textarea textarea--error" data-component="textarea">
-  <label class="textarea__label" for="addresshint">Your address</label>
-  <p class="textarea__error">Please enter your full address</p>
-  <textarea
-    class="textarea__textarea"
-    id="addresshint"
-    name="addresshint"
-  ></textarea>
+    <label class="textarea__label" for="issue_description_error">Tell us more about your request or issue.</label>
+    <p class="textarea__error">Please describe your request or issue.</p>
+    <textarea class="textarea__textarea" id="issue_description_error" name="issue_description_error"></textarea>
 </div>
+
 ```
 </CH.Code>
 </Example>
