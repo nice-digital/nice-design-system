@@ -16,7 +16,7 @@ $base-line-height: 1.6;
 
 /// Default text decoration thickness for link hover
 /// @since 3.0.0
-$link-hover-text-decoration-thickness: 0.1rem;
+$link-hover-text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
 
 /// The font families in use across NICE.
 /// @prop {Font stack} sans [Inter, Helvetica Neue, Helvetica, Arial, sans-serif] The sans-serif font stack
