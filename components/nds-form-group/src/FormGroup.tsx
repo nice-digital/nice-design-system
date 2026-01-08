@@ -17,9 +17,9 @@ export const FormGroup: React.FC<FormGroupProps> = (props: FormGroupProps) => {
 
 	const clonedChildren = React.Children.map(children, (child) => {
 		return React.cloneElement(child as React.ReactElement, {
-			name,
 			inline,
-			...rest
+			...rest,
+			...(name ? { name } : {})
 		});
 	});
 

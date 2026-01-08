@@ -9,7 +9,7 @@ $link-visited: global.$custom-purple-1;
 $link-active: global.$nice-black;
 $link-focus: global.$custom-blue-1;
 $link-inverse: global.$white;
-$link-inverse-hover: global.$custom-blue-3-tint;
+$link-inverse-hover: global.$white;
 $link-inverse-visited: global.$white;
 $link-inverse-active: global.$custom-blue-3-tint;
 $link-inverse-focus: global.$white;
@@ -78,8 +78,8 @@ $accrordion-label-text-hover: global.$nice-blue-tint-4;
 // Action banner
 $action-banner-default-background: global.$nice-blue;
 $action-banner-default-border: global.$nice-black;
-$action-banner-subtle-background: global.$nice-cream;
-$action-banner-subtle-border: global.$nice-cream;
+$action-banner-subtle-background: global.$nice-cream-1;
+$action-banner-subtle-border: global.$nice-cream-1;
 $action-banner-full-width-background: global.$nice-teal;
 $action-banner-full-width-border: global.$nice-teal;
 $action-banner-full-width-subtle-background: global.$nice-cream-3;
@@ -109,6 +109,7 @@ $enhanced-pagination-link-hover-background: global.$white;
 // Filters
 $filter-panel-background: global.$custom-grey-4;
 $filter-panel-heading-button-background: global.$custom-grey-2;
+$filter-group-border: global.$black-tint-2;
 $filter-group-heading-background: global.$custom-grey-2;
 $filter-group-heading-button-background: global.$custom-grey-2;
 $filter-group-heading-button-background-hover: global.$custom-grey-1;
@@ -157,7 +158,7 @@ $page-header-full-width-dark-background-text-colour: global.$white;
 $page-header-second-section-border-colour: global.$black-tint-2;
 
 // Panels
-$panel-default-background: global.$nice-cream;
+$panel-default-background: global.$nice-cream-3;
 $panel-default-border: global.$custom-grey-2;
 $panel-impact-background: global.$nice-blue;
 $panel-impact-border: global.$nice-blue;
