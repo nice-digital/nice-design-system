@@ -33,5 +33,9 @@
     "eslint-config-next": "^15.5.4",
     "sass": "^1.55.0",
     "typescript": "^5.9.2"
+  },
+  "volta": {
+    "node": "22.19.0",
+    "npm": ">=10.9.3"
   }
 }

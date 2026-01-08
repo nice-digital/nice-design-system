@@ -72,7 +72,8 @@
     "typescript": "^5.9.3"
   },
   "volta": {
-    "node": "22.19.0"
+    "node": "22.19.0",
+    "npm": ">=10.9.3"
   },
   "workspaces": [
     "./components/*",
