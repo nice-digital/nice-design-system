@@ -5,6 +5,10 @@ import { Hero } from "../../components/nds-hero/src/Hero";
 import { ActionBanner } from "../../components/nds-action-banner/src/ActionBanner";
 import { Button } from "../../components/nds-button/src/Button";
 import { Card } from "@nice-digital/nds-card";
+import { FormGroup } from "@nice-digital/nds-form-group";
+import { Radio } from "@nice-digital/nds-radio";
+import Checkbox from "@nice-digital/nds-checkbox";
+import { Input } from "@nice-digital/nds-input";
 export default function Test() {
 	const breadcrumb = (
 		<div style={{ marginBottom: "2rem" }}>
@@ -35,7 +39,6 @@ export default function Test() {
 				MDX files don&apos;t have great Typescript integration, so it can
 				sometimes be hard to debug components using MDX alone.
 			</p>
-
 			<Card
 				headingText="Card with heading level 6"
 				headingLevel={6}
@@ -52,7 +55,6 @@ export default function Test() {
 				}}
 				summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc."
 			/>
-
 			<Card
 				headingText="Card with no heading level set"
 				link={{
@@ -60,7 +62,82 @@ export default function Test() {
 				}}
 				summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed nisi enim. In nec lorem ac est cursus sollicitudin molestie vel nunc."
 			/>
-
+			<br />
+			NDS-511 Change Styling on form group component
+			<br />
+			<br />
+			<FormGroup
+				legend="Are you happy for us to contact you in the future?"
+				name="contact-preference"
+			>
+				<Radio label="Yes" value="yes" />
+				<Radio label="No" value="no" />
+			</FormGroup>
+			<FormGroup
+				legend="Are you happy for us to contact you in the future?"
+				name="contact-preference-inline"
+				inline
+			>
+				<Radio label="Yes" value="yes" />
+				<Radio label="No" value="no" />
+			</FormGroup>
+			<FormGroup
+				legend="How would you like us to contact you?"
+				hint="We promise not to contact you too often"
+			>
+				<Checkbox label="Email" value="email" name="contact-preference-hints" />
+				<Checkbox
+					label="Telephone"
+					value="phone"
+					name="contact-preference-hints"
+				/>
+			</FormGroup>
+			<FormGroup
+				legend="How would you like us to contact you?"
+				groupError="Please choose at least one contact method!"
+			>
+				<Checkbox label="Email" value="email" name="contact-preference-error" />
+				<Checkbox
+					label="Telephone"
+					value="phone"
+					name="contact-preference-error"
+				/>
+			</FormGroup>
+			Heading level 1
+			<FormGroup legend="Personal information" headingLevel={1}>
+				<Input label="First name" name="firstname-heading-level" />
+				<Input label="Surname" name="surname-heading-level" />
+			</FormGroup>
+			Heading level 2
+			<FormGroup legend="Personal information" headingLevel={2}>
+				<Input label="First name" name="firstname-heading-level" />
+				<Input label="Surname" name="surname-heading-level" />
+			</FormGroup>
+			Heading level 3
+			<FormGroup legend="Personal information" headingLevel={3}>
+				<Input label="First name" name="firstname-heading-level" />
+				<Input label="Surname" name="surname-heading-level" />
+			</FormGroup>
+			Heading level 4
+			<FormGroup legend="Personal information" headingLevel={4}>
+				<Input label="First name" name="firstname-heading-level" />
+				<Input label="Surname" name="surname-heading-level" />
+			</FormGroup>
+			Heading level 5
+			<FormGroup legend="Personal information" headingLevel={5}>
+				<Input label="First name" name="firstname-heading-level" />
+				<Input label="Surname" name="surname-heading-level" />
+			</FormGroup>
+			Heading level 6
+			<FormGroup legend="Personal information" headingLevel={6}>
+				<Input label="First name" name="firstname-heading-level" />
+				<Input label="Surname" name="surname-heading-level" />
+			</FormGroup>
+			No Heading
+			<FormGroup legend="Personal information">
+				<Input label="First name" name="firstname-heading-level" />
+				<Input label="Surname" name="surname-heading-level" />
+			</FormGroup>
 			<br />
 			<br />
 			<br />
@@ -98,7 +175,6 @@ export default function Test() {
 			<br />
 			<br />
 			<br />
-
 			{/* <ActionBanner
 				title="This is an action banner"
 				variant="fullWidth"
@@ -168,7 +244,6 @@ export default function Test() {
 			>
 				<p>This is the intro</p>
 			</ActionBanner> */}
-
 			<h4>NDS-444 Example: full width subtle action banner (with image)</h4>
 			<ActionBanner
 				variant="fullWidthSubtle"
@@ -180,7 +255,6 @@ export default function Test() {
 					This is the intro.This is <a href="#">some content with a link</a>
 				</p>
 			</ActionBanner>
-
 			<h4>NDS-444 Example: full width action banner (with image)</h4>
 			<ActionBanner
 				variant="fullWidth"
@@ -253,19 +327,15 @@ export default function Test() {
 			<Hero header={breadcrumb} title="Hero title" intro="Hero intro" />
  */}
 			<h2>Accordion default variant</h2>
-
 			<Accordion title={"Accordion title"}>
 				<p>test para subtle variant by default</p>
 			</Accordion>
-
 			<Accordion title={"Accordion title"} variant="callout">
 				<p>test para callout variant</p>
 			</Accordion>
-
 			<Accordion title={"Accordion title"} variant="caution">
 				<p>test para caution variant</p>
 			</Accordion>
-
 			<Accordion
 				title={"Accordion with headingLevel and displayTitleAsHeading true"}
 				displayTitleAsHeading={true}
@@ -273,7 +343,6 @@ export default function Test() {
 			>
 				<p>test para</p>
 			</Accordion>
-
 			<Accordion
 				title={"Accordion title"}
 				displayTitleAsHeading={true}
@@ -281,7 +350,6 @@ export default function Test() {
 			>
 				<p>test para</p>
 			</Accordion>
-
 			<Accordion
 				title={"Caution title"}
 				displayTitleAsHeading={true}
@@ -290,7 +358,6 @@ export default function Test() {
 			>
 				<p>test para</p>
 			</Accordion>
-
 			<Accordion
 				title={"Hello title"}
 				variant="caution"

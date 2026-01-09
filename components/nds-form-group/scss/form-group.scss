@@ -15,16 +15,21 @@
   &__legend {
     @include typography.font-size(p);
     font-weight: bold;
+    margin-bottom: utils.rem(spacing.$medium);
+  }
+
+  &__legend--with-heading {
+    margin-bottom: 0;
   }
 
   &__hint {
     color: colours.$form-group-hint;
-    margin-top: utils.rem(spacing.$x-small);
+    margin-top: 0;
   }
 
   &__error-message {
     color: colours.$error;
     font-weight: bold;
-    margin-top: utils.rem(spacing.$x-small);
+    margin-top: 0;
   }
 }

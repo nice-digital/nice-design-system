@@ -41,6 +41,9 @@ export const FormGroup: React.FC<FormGroupProps> = (props: FormGroupProps) => {
 		"form-group": true,
 		"form-group--no-legend": legend ? false : true
 	});
+	const legendClass = HeadingTag
+		? "form-group__legend form-group__legend--with-heading"
+		: "form-group__legend";
 
 	return (
 		<fieldset
@@ -48,7 +51,7 @@ export const FormGroup: React.FC<FormGroupProps> = (props: FormGroupProps) => {
 			data-component={`form-group${inline ? "--inline" : ""}`}
 		>
 			{legend && (
-				<legend className="form-group__legend">
+				<legend className={legendClass}>
 					{HeadingTag ? <HeadingTag>{legend}</HeadingTag> : legend}
 				</legend>
 			)}
