@@ -50,3 +50,10 @@ export const ErrorGroup = () => (
 		<Checkbox label="Telephone" value="phone" name="contact-preference-error" />
 	</FormGroup>
 );
+
+export const HeadingLevelGroup = () => (
+	<FormGroup legend="Personal information" headingLevel={3}>
+		<Input label="First name" name="firstname-heading-level" />
+		<Input label="Surname" name="surname-heading-level" />
+	</FormGroup>
+);
