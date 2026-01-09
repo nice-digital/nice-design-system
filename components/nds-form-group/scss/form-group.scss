@@ -5,7 +5,7 @@
 
 .form-group {
   border: 0;
-  margin-bottom: utils.rem(spacing.$medium);
+  margin: 0 0 utils.rem(spacing.$medium) 0;
   padding: 0;
 
   &--no-legend {
