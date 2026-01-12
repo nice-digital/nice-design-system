@@ -1,6 +1,6 @@
 import { ComponentLayout } from "components/layouts/ComponentLayout";
 import { Example } from "components/examples/Example";
-import { ExampleGroup, DefaultGroup, InlineGroup, HintsGroup, ErrorGroup } from "components/examples/FormGroup";
+import { ExampleGroup, DefaultGroup, InlineGroup, HintsGroup, ErrorGroup, HeadingLevelGroup } from "components/examples/FormGroup";
 
 export const meta = {
 	title: "Form Group",
@@ -221,6 +221,59 @@ Form group error messages should be styled like this:
 ```
 </CH.Code>
 </Example>
+
+## Form group with heading level
+
+You can add `heading` markup to the legend by defining a `headingLevel` value. The value can be set from 1 to 6, corresponding to heading levels h1 through h6.
+
+If no `headingLevel` is provided, no heading markup will be applied.
+
+<Example>
+<HeadingLevelGroup/>
+
+<CH.Code>
+```js React
+<FormGroup legend="Personal information" headingLevel={3}>
+		<Input label="First name" name="firstname-heading-level" />
+		<Input label="Surname" name="surname-heading-level" />
+</FormGroup>
+```
+```html HTML
+<fieldset class="form-group" data-component="form-group">
+  <legend class="form-group__legend">
+    <h3 class="form-group__heading">Personal information</h3>
+  </legend>
+
+  <div class="input" data-component="input">
+    <label class="input__label" for="firstname-heading-level">
+      First name
+    </label>
+    <input
+      id="firstname-heading-level"
+      name="firstname-heading-level"
+      class="input__input"
+      type="text"
+      value=""
+    />
+  </div>
+
+  <div class="input" data-component="input">
+    <label class="input__label" for="surname-heading-level">
+      Surname
+    </label>
+    <input
+      id="surname-heading-level"
+      name="surname-heading-level"
+      class="input__input"
+      type="text"
+      value=""
+    />
+  </div>
+</fieldset>
+```
+</CH.Code>
+</Example>
+
 
 ## Accessibility
 
