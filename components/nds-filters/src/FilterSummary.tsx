@@ -65,13 +65,12 @@ export const FilterSummary: React.FC<FilterSummaryProps> = ({
 
 const populateMethodProperty = (
 	onClick: React.EventHandler<any> | undefined,
-	method: string,
+	method: string | undefined,
 	elementType: React.ElementType
 ) => {
-	let defaultMethod = method || (elementType === "a" && "href") || "to";
 	if (onClick) return "onClick";
-	if (elementType === undefined) defaultMethod = "noelementtypeprovided";
-	return defaultMethod;
+	if (elementType === "a") return method || "href";
+	return method || "to";
 };
 
 const defineElementType = (
@@ -91,6 +90,7 @@ const validateElementProps = (element: React.ReactElement) => {
 };
 
 function ResultsFilters({ filters }: { filters: FilterType[] }) {
+	const defaultAnchorHref = "#";
 	if (!filters) return null;
 	return (
 		<ul
@@ -110,13 +110,27 @@ function ResultsFilters({ filters }: { filters: FilterType[] }) {
 						onClick,
 						elementType as React.ElementType
 					);
+					const propName = populateMethodProperty(
+						onClick,
+						method as string,
+						ElementType as React.ElementType
+					);
+					const propValue = onClick
+						? onClick
+						: ElementType === "a"
+						? destination ?? defaultAnchorHref
+						: destination;
 					const props = {
 						className,
-						[populateMethodProperty(
-							onClick,
-							method as string,
-							ElementType as React.ElementType
-						)]: onClick ? onClick : destination
+						[propName]: propValue,
+						...(ElementType === "a" && {
+							onKeyDown: (e: React.KeyboardEvent<HTMLAnchorElement>) => {
+								if (e.key === " ") {
+									e.preventDefault();
+									e.currentTarget.click();
+								}
+							}
+						})
 					};
 					return (
 						<li key={label} className="filter-summary__filter">
@@ -124,14 +138,9 @@ function ResultsFilters({ filters }: { filters: FilterType[] }) {
 							<Tag
 								outline
 								remove={
-									<button
-										type="button"
-										className={className}
-										onClick={onClick}
-										aria-label={`Remove ${label} filter`}
-									>
-										Remove {label} filter
-									</button>
+									<ElementType {...props} aria-label={`Remove ${label} filter`}>
+										<span aria-hidden="true">×</span>
+									</ElementType>
 								}
 							>
 								{label}
