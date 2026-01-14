@@ -139,7 +139,7 @@ function ResultsFilters({ filters }: { filters: FilterType[] }) {
 								outline
 								remove={
 									<ElementType {...props} aria-label={`Remove ${label} filter`}>
-										<span aria-hidden="true">×</span>
+										x
 									</ElementType>
 								}
 							>
