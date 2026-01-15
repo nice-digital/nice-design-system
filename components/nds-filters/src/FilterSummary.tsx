@@ -65,12 +65,13 @@ export const FilterSummary: React.FC<FilterSummaryProps> = ({
 
 const populateMethodProperty = (
 	onClick: React.EventHandler<any> | undefined,
-	method: string | undefined,
+	method: string,
 	elementType: React.ElementType
 ) => {
+	let defaultMethod = method || (elementType === "a" && "href") || "to";
 	if (onClick) return "onClick";
-	if (elementType === "a") return method || "href";
-	return method || "to";
+	if (elementType === undefined) defaultMethod = "noelementtypeprovided";
+	return defaultMethod;
 };
 
 const defineElementType = (
@@ -110,27 +111,13 @@ function ResultsFilters({ filters }: { filters: FilterType[] }) {
 						onClick,
 						elementType as React.ElementType
 					);
-					const propName = populateMethodProperty(
-						onClick,
-						method as string,
-						ElementType as React.ElementType
-					);
-					const propValue = onClick
-						? onClick
-						: ElementType === "a"
-						? destination ?? defaultAnchorHref
-						: destination;
 					const props = {
 						className,
-						[propName]: propValue,
-						...(ElementType === "a" && {
-							onKeyDown: (e: React.KeyboardEvent<HTMLAnchorElement>) => {
-								if (e.key === " ") {
-									e.preventDefault();
-									e.currentTarget.click();
-								}
-							}
-						})
+						[populateMethodProperty(
+							onClick,
+							method as string,
+							ElementType as React.ElementType
+						)]: onClick ? onClick : destination
 					};
 					return (
 						<li key={label} className="filter-summary__filter">
