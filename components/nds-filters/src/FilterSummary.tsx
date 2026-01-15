@@ -92,6 +92,7 @@ const validateElementProps = (element: React.ReactElement) => {
 
 function ResultsFilters({ filters }: { filters: FilterType[] }) {
 	const defaultAnchorHref = "#";
+
 	if (!filters) return null;
 	return (
 		<ul
@@ -111,13 +112,29 @@ function ResultsFilters({ filters }: { filters: FilterType[] }) {
 						onClick,
 						elementType as React.ElementType
 					);
+					const propName = populateMethodProperty(
+						onClick,
+						method as string,
+						ElementType as React.ElementType
+					);
+
+					const propValue = onClick
+						? onClick
+						: ElementType === "a"
+						? destination ?? defaultAnchorHref
+						: destination;
+
 					const props = {
 						className,
-						[populateMethodProperty(
-							onClick,
-							method as string,
-							ElementType as React.ElementType
-						)]: onClick ? onClick : destination
+						[propName]: propValue,
+						...(ElementType === "a" && {
+							onKeyDown: (e: React.KeyboardEvent<HTMLAnchorElement>) => {
+								if (e.key === " ") {
+									e.preventDefault();
+									e.currentTarget.click();
+								}
+							}
+						})
 					};
 					return (
 						<li key={label} className="filter-summary__filter">
