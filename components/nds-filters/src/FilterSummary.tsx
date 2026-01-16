@@ -126,16 +126,9 @@ function ResultsFilters({ filters }: { filters: FilterType[] }) {
 
 					const props = {
 						className,
-						[propName]: propValue,
-						...(ElementType === "a" && {
-							onKeyDown: (e: React.KeyboardEvent<HTMLAnchorElement>) => {
-								if (e.key === " ") {
-									e.preventDefault();
-									e.currentTarget.click();
-								}
-							}
-						})
+						[propName]: propValue
 					};
+
 					return (
 						<li key={label} className="filter-summary__filter">
 							{validateElementProps(<ElementType {...props} />)}
@@ -143,7 +136,7 @@ function ResultsFilters({ filters }: { filters: FilterType[] }) {
 								outline
 								remove={
 									<ElementType {...props} aria-label={`Remove ${label} filter`}>
-										x
+										`Remove ${label} filter`
 									</ElementType>
 								}
 							>
