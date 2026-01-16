@@ -59,7 +59,9 @@ exports[`@nice-digital/nds-filters Crash test should match snapshot 1`] = `
                 <span
                   class="visually-hidden"
                 >
-                  x
+                  \`Remove $
+                  Another filter
+                   filter\`
                 </span>
               </button>
             </span>
@@ -290,7 +292,9 @@ exports[`@nice-digital/nds-filters Crash test should match snapshot 1`] = `
               <span
                 class="visually-hidden"
               >
-                x
+                \`Remove $
+                Another filter
+                 filter\`
               </span>
             </button>
           </span>
