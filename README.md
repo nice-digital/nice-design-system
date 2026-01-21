@@ -99,10 +99,11 @@ Run `npm start` and `test:unit:watch` for development. However, there are other 
 | `npm run docs:dev`           | Starts the Next.js documentation site in development mode                     |
 | `npm run docs:build`         | Builds the Next.js documentation site for production                          |
 
+> **Note:** `npm run lint:scss` requires Stylelint as a project dependency. Stylelint is not yet installed; this will be added in an upcoming update.
+
 Check [package.json](package.json) for a complete list of scripts.
 
-> Note: because lerna is installed locally, you can use `npm run lerna -- ` to run lerna commands.
-
+> **Note:** because lerna is installed locally, you can use `npm run lerna -- ` to run lerna commands.
 
 > ### Alpha release detects no changes?
 
@@ -130,7 +131,6 @@ npm run release:alpha
 
 Since Lerna v6+, several legacy package management commands have been deprecated and removed.  
 Lerna now relies on npm and npm workspaces for dependency management.
-
 
 For the Design System monorepo, **use npm workspaces for all package installation tasks**, and use Lerna for orchestration tasks such as versioning and publishing.
 
@@ -180,8 +180,8 @@ npm install <dependency> --save-dev -w <workspace-package-name>
 ```sh
 npm install eslint --save-dev -w @nice-digital/nds-filters
 
-## alternative shortkey
-npm install eslint -D -w @nice-digital/nds-filters
+## alternative shorthand
+npm install -D eslint -w @nice-digital/nds-filters
 ```
 
 **Install dependencies for all workspace packages**
