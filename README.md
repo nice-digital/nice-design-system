@@ -91,8 +91,9 @@ Run `npm start` and `test:unit:watch` for development. However, there are other 
 
 Check [package.json](package.json) for a complete list of scripts.
 
-> Note: because lerna is installed locally, you can use `npm run lerna -- ` to run lerna commands, for example `npm run lerna -- add @nice-digital/icons --scope=@nice-digital/nds-filters`
->
+> Note: because lerna is installed locally, you can use `npm run lerna -- ` to run lerna commands.
+
+
 > ### Alpha release detects no changes?
 
 If you make changes, do npm start to rebuild the project and have lerna update version numbers. If you run npm run release:alpha and it detects no changes, as a last resort, try running this command beforehand to manually bump version numbers (this won't push changes to git - '--no-push'):
@@ -114,3 +115,91 @@ Then run `npm run release` to publish to npm. This runs `lerna publish` under th
 ```sh
 npm run release:alpha
 ```
+
+### npm workspaces and Lerna
+
+Since Lerna v6, several legacy package management commands have been deprecated and removed.  
+Lerna now relies on npm and npm workspaces for dependency management.
+
+
+For the Design System monorepo, **npm workspaces should be used for all package installation and linking tasks**, with Lerna focused on orchestration tasks such as versioning and publishing.
+
+The following Lerna commands are no longer available in version 7:
+- `lerna bootstrap`
+- `lerna add`
+- `lerna link`
+
+More information is avaiable in [Lerna's Legacy Package Management documentation](https://lerna.js.org/docs/legacy-package-management)
+
+#### Example: Adding dependencies
+Previously, to add a dependency to a specific Design System package, we used:
+
+```sh
+npm run lerna -- add @nice-digital/icons --scope=@nice-digital/nds-filters
+```
+ 
+As `lerna add` has been removed, **dependencies must now be added using the npm workspace commands**.
+```sh
+npm install @nice-digital/icons -w @nice-digital/nds-filters
+```
+This ensures that dependencies are installed and linked correctly within the workspace.
+
+
+#### Common workspace commands
+
+All commands should be run from the repository root.
+
+**Install a dependency into a specific workspace package**
+Adds a dependency to a specific workspace package, identified by the name field in its package.json.
+
+```sh
+npm install <dependency> -w <workspace-package-name>
+```
+
+**Example:**
+```sh
+npm install @nice-digital/icons -w @nice-digital/nds-filters
+```
+
+**Add a dev dependency to a specific workspace package**
+```sh
+npm install <dependency> --save-dev -w <workspace-package-name>
+```
+
+**Example:**
+```sh
+npm install eslint --save-dev -w @nice-digital/nds-filters
+
+## alternative shortkey
+npm install eslint -D -w @nice-digital/nds-filters
+```
+
+**Install dependencies for all workspace packages**
+Installs dependencies for the entire monorepo and sets up workspace linking.
+
+```sh
+npm install
+```
+
+**Run a script in a specific workspace package**
+Runs a script defined in the target package’s package.json.
+
+```sh
+npm run <script> -w <workspace-package-name>
+```
+
+**Example:**
+```sh
+npm run build -w @nice-digital/nds-filters
+```
+
+
+**Run a script across all workspace packages**
+Runs the specified script in every workspace package where it exists.
+
+```sh
+npm run <script> --workspaces
+```
+
+**Note:** For simple scripts in a single workspace package, use npm workspace commands.  
+> For more complex scenarios, such as running tasks across multiple packages while respecting dependency order or caching use [`lerna run`](https://lerna.js.org/docs/features/run-tasks.
