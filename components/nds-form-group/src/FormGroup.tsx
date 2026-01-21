@@ -1,6 +1,7 @@
 import React from "react";
 import classnames from "classnames";
 import "./../scss/form-group.scss";
+import { isValidHeadingLevel } from "@nice-digital/nds-core";
 
 export interface FormGroupProps {
 	[prop: string]: unknown;
@@ -8,13 +9,26 @@ export interface FormGroupProps {
 	name?: string;
 	hint?: React.ReactNode;
 	legend?: string;
+	headingLevel?: number;
 	children: React.ReactNode;
 	groupError?: string | boolean;
 }
 
 export const FormGroup: React.FC<FormGroupProps> = (props: FormGroupProps) => {
-	const { groupError, inline, legend, children, hint, name, ...rest } = props;
-
+	const {
+		groupError,
+		inline,
+		legend,
+		children,
+		hint,
+		name,
+		headingLevel,
+		...rest
+	} = props;
+	const HeadingTag =
+		headingLevel && isValidHeadingLevel(headingLevel)
+			? (`h${headingLevel}` as keyof JSX.IntrinsicElements)
+			: undefined;
 	const clonedChildren = React.Children.map(children, (child) => {
 		return React.cloneElement(child as React.ReactElement, {
 			inline,
@@ -27,13 +41,20 @@ export const FormGroup: React.FC<FormGroupProps> = (props: FormGroupProps) => {
 		"form-group": true,
 		"form-group--no-legend": legend ? false : true
 	});
+	const legendClass = HeadingTag
+		? "form-group__legend form-group__legend--with-heading"
+		: "form-group__legend";
 
 	return (
 		<fieldset
 			className={classes}
 			data-component={`form-group${inline ? "--inline" : ""}`}
 		>
-			{legend && <legend className="form-group__legend">{legend}</legend>}
+			{legend && (
+				<legend className={legendClass}>
+					{HeadingTag ? <HeadingTag>{legend}</HeadingTag> : legend}
+				</legend>
+			)}
 			{groupError && <p className="form-group__error-message">{groupError}</p>}
 			{hint && <p className="form-group__hint">{hint}</p>}
 			{clonedChildren}

@@ -53,14 +53,15 @@ exports[`@nice-digital/nds-filters Crash test should match snapshot 1`] = `
             >
               Another filter
               <button
+                aria-label="Remove Another filter filter"
                 class="tag__remove"
               >
                 <span
                   class="visually-hidden"
                 >
-                  Remove 
+                  \`Remove $
                   Another filter
-                   filter
+                   filter\`
                 </span>
               </button>
             </span>
@@ -285,14 +286,15 @@ exports[`@nice-digital/nds-filters Crash test should match snapshot 1`] = `
           >
             Another filter
             <button
+              aria-label="Remove Another filter filter"
               class="tag__remove"
             >
               <span
                 class="visually-hidden"
               >
-                Remove 
+                \`Remove $
                 Another filter
-                 filter
+                 filter\`
               </span>
             </button>
           </span>
