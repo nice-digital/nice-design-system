@@ -29,6 +29,16 @@ The NICE Design System (NDS) is a pattern library, front-end toolkit and set of 
 
 We recommend using vscode as the IDE when developing with the NICE Design System. We have a set of [recommended extensions](.vscode/extensions.json) you should install to make development easier. You should be prompted to install these when opening the folder in vscode.
 
+
+### Requirements
+
+The Design System now requires the following runtime versions:
+
+- **Node:** 22.19.0  
+- **npm:** 10.9.3  
+
+We recommend using Volta to manage versions.
+
 ### Quick start
 
     TL;DR:
@@ -118,13 +128,13 @@ npm run release:alpha
 
 ### npm workspaces and Lerna
 
-Since Lerna v6, several legacy package management commands have been deprecated and removed.  
+Since Lerna v6+, several legacy package management commands have been deprecated and removed.  
 Lerna now relies on npm and npm workspaces for dependency management.
 
 
-For the Design System monorepo, **npm workspaces should be used for all package installation and linking tasks**, with Lerna focused on orchestration tasks such as versioning and publishing.
+For the Design System monorepo, **use npm workspaces for all package installation tasks**, and use Lerna for orchestration tasks such as versioning and publishing.
 
-The following Lerna commands are no longer available in version 7:
+The following Lerna commands are no longer available:
 - `lerna bootstrap`
 - `lerna add`
 - `lerna link`
