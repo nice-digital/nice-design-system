@@ -81,23 +81,26 @@ npm run test:unit:watch -- breadcrumbs
 
 Run `npm start` and `test:unit:watch` for development. However, there are other npm scripts available to be run for other tasks - here are some useful ones:
 
-| Task                         | Description                                                                   |
-| ---------------------------- | ------------------------------------------------------------------------------|
-| `npm start`                  | Runs a server for local development and watches for changes                   |
-| `npm run lerna`              | Runs `lerna` under the hood                                                   |
-| `npm run release:alpha`      | Runs `lerna publish` under the hood for an alpha release                      |
-| `npm run release:latest`     | Runs `lerna publish` under the hood for the latest full release               |
-| `npm test`                   | Lints JS and SCSS and runs JS unit tests                                      |
-| `npm run test:unit`          | Runs JS unit tests                                                            |
-| `npm run test:unit:watch`    | Runs JS test tests and watches for changes to re-run tests                    |
-| `npm run test:unit:coverage` | Runs JS test tests and generates a coverage report                            |
-| `npm run lint`               | Lints both JS and SCSS                                                        |
-| `npm run lint:js`            | Lints just JS                                                                 |
-| `npm run lint:scss`          | Lints just SCSS                                                               |
-| `npm run clean:ts`           | Cleans the Typescript output                                                  |
-| `npm run build:ts`           | Compiles all Typescript components                                            |
-| `npm run docs:dev`           | Starts the Next.js documentation site in development mode                     |
-| `npm run docs:build`         | Builds the Next.js documentation site for production                          |
+| Task                            | Description                                                                   |
+| ------------------------------- | ------------------------------------------------------------------------------|
+| `npm start`                     | Runs a server for local development and watches for changes                   |
+| `npm run lerna`                 | Runs `lerna` under the hood                                                   |
+| `npm run lerna:clean`           | Runs `lerna clean` under the hood for removing package node_modules           |
+| `npm run lerna:changed`         | Runs `lerna changed` for checking changed packages since the last release     |
+| `npm run release:alpha`         | Runs `lerna publish` under the hood for an alpha release                      |
+| `npm run release:latest`        | Runs `lerna publish` under the hood for the latest full release               |
+| `npm run version:alpha-preview` | Runs `lerna version` under the hood as a dry run to check expected versioning |
+| `npm test`                      | Lints JS and SCSS and runs JS unit tests                                      |
+| `npm run test:unit`             | Runs JS unit tests                                                            |
+| `npm run test:unit:watch`       | Runs JS test tests and watches for changes to re-run tests                    |
+| `npm run test:unit:coverage`    | Runs JS test tests and generates a coverage report                            |
+| `npm run lint`                  | Lints both JS and SCSS                                                        |
+| `npm run lint:js`               | Lints just JS                                                                 |
+| `npm run lint:scss`             | Lints just SCSS                                                               |
+| `npm run clean:ts`              | Cleans the Typescript output                                                  |
+| `npm run build:ts`              | Compiles all Typescript components                                            |
+| `npm run docs:dev`              | Starts the Next.js documentation site in development mode                     |
+| `npm run docs:build`            | Builds the Next.js documentation site for production                          |
 
 > **Note:** `npm run lint:scss` requires Stylelint as a project dependency. Stylelint is not yet installed; this will be added in an upcoming update.
 
