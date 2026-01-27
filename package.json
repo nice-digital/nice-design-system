@@ -78,5 +78,8 @@
   "workspaces": [
     "./components/*",
     "./docs"
-  ]
+  ],
+  "overrides": {
+    "tar":"7.5.6"
+  }
 }
