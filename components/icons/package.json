@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/icons",
-	"version": "6.1.6",
+	"version": "6.1.7-alpha-node-update.0",
 	"description": "Icons for use in NICE Digital Services",
 	"scripts": {
 		"start": "npm run webfont && npm run svgr && npm run esify",
@@ -61,9 +61,9 @@
 		"@testing-library/react": "^13.4.0",
 		"@testing-library/user-event": "^14.4.3",
 		"@types/jest": "^29.2.2",
-		"@types/node": "^18.11.9",
+		"@types/node": "22.19.0",
 		"doctoc": "^2.2.1",
 		"fantasticon": "^1.2.3",
-		"typescript": "^4.8.4"
+		"typescript": "^5.9.3"
 	}
 }

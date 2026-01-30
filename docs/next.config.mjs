@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 import glob from "glob";
-import theme from "shiki/themes/nord.json" assert { type: "json" };
+
 import { remarkCodeHike } from "@code-hike/mdx";
 import remarkGfm from "remark-gfm";
 import createMDX from "@next/mdx";
@@ -31,7 +31,10 @@ const withMDX = createMDX({
 		// https://github.com/remarkjs/remark-gfm#install
 		remarkPlugins: [
 			remarkGfm,
-			[remarkCodeHike, { theme, lineNumbers: true, showCopyButton: true }]
+			[
+				remarkCodeHike,
+				{ theme: "nord", lineNumbers: true, showCopyButton: true }
+			]
 		],
 		rehypePlugins: []
 		// If you use `MDXProvider`, uncomment the following line.
