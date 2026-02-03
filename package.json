@@ -19,6 +19,7 @@
     "// LERNA": "",
     "lerna": "lerna",
     "lerna:clean": "lerna clean -y",
+    "lerna:changed": "lerna changed",
     "release:alpha": "npm run clean:ts && npm run build:ts && lerna publish --dist-tag alpha",
     "release:latest": "npm run clean:ts && npm run build:ts && lerna publish --dist-tag latest",
     "// TESTS": "",
@@ -78,8 +79,5 @@
   "workspaces": [
     "./components/*",
     "./docs"
-  ],
-  "overrides": {
-    "tar":"^7.5.7"
-  }
+  ]
 }
