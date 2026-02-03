@@ -17,7 +17,7 @@
 
 ## Required software
 
-Install [Node](https://nodejs.org/en/download/) >= 6.9.0 and npm >= 5. Choose LTS from the Node download page.
+Install [Node](https://nodejs.org/en/download/) >= 22.19.0 and npm >= 10.9.3 Choose LTS from the Node download page.
 
 ## Installation
 

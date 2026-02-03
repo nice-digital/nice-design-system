@@ -12,9 +12,7 @@
 		"preesify": "rimraf es && rimraf lib",
 		"esify": "tsc -p tsconfig.es5.json && tsc -p tsconfig.es6.json",
 		"test": "echo \"No tests :)\" && exit 0",
-		"readme": "doctoc ./README.md && node ./scripts/readme-replacer.js",
-		"// Lifecycle hooks": "",
-		"prepublishOnly": "npm start"
+		"readme": "doctoc ./README.md && node ./scripts/readme-replacer.js"
 	},
 	"repository": {
 		"type": "git",
