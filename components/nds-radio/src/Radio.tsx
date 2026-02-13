@@ -37,6 +37,7 @@ export const Radio: React.FC<RadioProps> = (props: RadioProps) => {
 					className="radio__input"
 					name={name}
 					type="radio"
+					value={value}
 					id={unique}
 					{...rest}
 				/>
