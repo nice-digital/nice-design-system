@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 import { Radio, RadioProps } from "./Radio";
 
@@ -68,5 +68,20 @@ describe("Radio", () => {
 		) as HTMLInputElement;
 		expect(checked.checked).toBe(true);
 		expect(checked.getAttribute("data-something")).toBe("test");
+	});
+
+	it("should render radios with correct values", () => {
+		render(
+			<>
+				<Radio {...props} value="yes" label="Yes" />
+				<Radio {...props} value="no" label="No" />
+			</>
+		);
+
+		const yesRadio = screen.getByDisplayValue("yes");
+		const noRadio = screen.getByDisplayValue("no");
+
+		expect(yesRadio).toBeInTheDocument();
+		expect(noRadio).toBeInTheDocument();
 	});
 });
