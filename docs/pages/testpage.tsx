@@ -73,36 +73,14 @@ export default function Test() {
 				<Radio label="Yes" value="yes" />
 				<Radio label="No" value="no" />
 			</FormGroup>
-			<form
-				onSubmit={(e) => {
-					e.preventDefault();
-					console.log("Form submitted!");
-					console.log(
-						"Selected value:",
-						(
-							e.currentTarget.elements.namedItem(
-								"contact-preference-inline"
-							) as HTMLInputElement
-						)?.value
-					);
-				}}
+			<FormGroup
+				legend="Are you happy for us to contact you in the future?"
+				name="contact-preference-inline"
+				inline
 			>
-				<FormGroup
-					legend="Are you happy for us to contact you in the future?"
-					name="contact-preference-inline"
-					inline
-				>
-					<Radio label="Yes" value="yes" />
-					<Radio label="No" value="no" />
-					<Button
-						variant="secondary"
-						style={{ marginLeft: "1rem" }}
-						buttonType="submit"
-					>
-						Submit
-					</Button>
-				</FormGroup>
-			</form>
+				<Radio label="Yes" value="yes" />
+				<Radio label="No" value="no" />
+			</FormGroup>
 			<FormGroup
 				legend="How would you like us to contact you?"
 				hint="We promise not to contact you too often"
