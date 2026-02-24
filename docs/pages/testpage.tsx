@@ -75,11 +75,15 @@ export default function Test() {
 			</FormGroup>
 			<form
 				onSubmit={(e) => {
-					e.preventDefault(); // optional, if you don't want a page reload
+					e.preventDefault();
 					console.log("Form submitted!");
 					console.log(
 						"Selected value:",
-						e.currentTarget.elements["contact-preference-inline"].value
+						(
+							e.currentTarget.elements.namedItem(
+								"contact-preference-inline"
+							) as HTMLInputElement
+						)?.value
 					);
 				}}
 			>
