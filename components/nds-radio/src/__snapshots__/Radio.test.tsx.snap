@@ -14,6 +14,7 @@ exports[`Radio should match snapshot with hint text supplied 1`] = `
           id="radio-group_yes"
           name="radio-group"
           type="radio"
+          value="yes"
         />
         <label
           class="radio__label"
@@ -39,6 +40,7 @@ exports[`Radio should match snapshot with hint text supplied 1`] = `
         id="radio-group_yes"
         name="radio-group"
         type="radio"
+        value="yes"
       />
       <label
         class="radio__label"
@@ -121,6 +123,7 @@ exports[`Radio should match snapshot with some default attributes 1`] = `
           id="radio-group_yes"
           name="radio-group"
           type="radio"
+          value="yes"
         />
         <label
           class="radio__label"
@@ -141,6 +144,7 @@ exports[`Radio should match snapshot with some default attributes 1`] = `
         id="radio-group_yes"
         name="radio-group"
         type="radio"
+        value="yes"
       />
       <label
         class="radio__label"
