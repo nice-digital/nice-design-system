@@ -4,9 +4,9 @@
 @use '@nice-digital/nds-core/scss/utils';
 
 .form-group {
-  border: utils.rem(1px) solid colours.$border;
-  margin-bottom: utils.rem(spacing.$medium);
-  padding: utils.rem(spacing.$small);
+  border: 0;
+  margin: 0 0 utils.rem(spacing.$medium) 0;
+  padding: 0;
 
   &--no-legend {
     border: none;
@@ -15,19 +15,21 @@
   &__legend {
     @include typography.font-size(p);
     font-weight: bold;
-    margin-left: utils.rem(-(spacing.$x-small));
-    padding-left: utils.rem(spacing.$x-small);
-    padding-right: utils.rem(spacing.$x-small);
+    margin-bottom: utils.rem(spacing.$medium);
+  }
+
+  &__legend--with-heading {
+    margin-bottom: 0;
   }
 
   &__hint {
     color: colours.$form-group-hint;
-    margin-top: utils.rem(spacing.$x-small);
+    margin-top: 0;
   }
 
   &__error-message {
     color: colours.$error;
     font-weight: bold;
-    margin-top: utils.rem(spacing.$x-small);
+    margin-top: 0;
   }
 }

@@ -27,3 +27,10 @@ export const CautionAlert = () => (
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 	</Alert>
 );
+
+export const InfoAlertNonIntrusive = () => (
+	<Alert type="info" nonIntrusive>
+		<h3>Info alert</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	</Alert>
+);

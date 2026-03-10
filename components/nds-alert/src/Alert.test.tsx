@@ -21,6 +21,16 @@ describe("Alert", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
+	it("should contain appropriate aria-live and aria-atomic attributes if nonIntrusive alert", () => {
+		const { container } = render(<Alert nonIntrusive>{content}</Alert>);
+		expect(container.querySelector(".alert")?.getAttribute("aria-live")).toBe(
+			"polite"
+		);
+		expect(container.querySelector(".alert")?.getAttribute("aria-atomic")).toBe(
+			"true"
+		);
+	});
+
 	it("should cascade any additional attributes to the container", () => {
 		const { container } = render(<Alert data-hidden={false}>{content}</Alert>);
 		expect(container.querySelector(".alert")?.getAttribute("data-hidden")).toBe(

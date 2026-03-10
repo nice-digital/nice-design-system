@@ -1,60 +1,64 @@
+import { FormGroup } from "@nice-digital/nds-form-group";
 import { Radio } from "@nice-digital/nds-radio";
 
 export const DefaultRadio = () => (
-	<>
-		<Radio label="Yes" value="Yes" name="defaultradio" />
-		<Radio label="No" value="No" name="defaultradio" />
-	</>
+	<FormGroup
+		legend="Are you happy for us to contact you in the future?"
+		name="contact-preference-default"
+	>
+		<Radio label="Yes" value="yes" />
+		<Radio label="No" value="no" />
+	</FormGroup>
 );
 
 export const DefaultRadioExample = () => (
-	<>
-		<Radio label="Yes" value="Yes" name="defaultradioexample" />
-		<Radio label="No" value="No" name="defaultradioexample" />
-	</>
+	<FormGroup
+		legend="Are you happy for us to contact you in the future?"
+		name="contact-preference-default-example"
+	>
+		<Radio label="Yes" value="yes" />
+		<Radio label="No" value="no" />
+	</FormGroup>
 );
 
 export const InlineRadio = () => (
-	<>
-		<Radio inline label="Yes" value="Yes" name="inlineradio" />
-		<Radio inline label="No" value="No" name="inlineradio" />
-	</>
+	<FormGroup
+		legend="Are you happy for us to contact you in the future?"
+		inline
+		name="contact-preference-inline"
+	>
+		<Radio label="Yes" value="yes" />
+		<Radio label="No" value="no" />
+	</FormGroup>
 );
 
 export const HintRadio = () => (
-	<>
-		<Radio
-			hint="Some helpful hint text"
-			label="Yes"
-			value="Yes"
-			name="hintradio"
-		/>
-		<Radio label="No" value="No" name="hintradio" />
-	</>
+	<FormGroup
+		legend="Are you happy for us to contact you in the future?"
+		name="contact-preference-hint"
+	>
+		<Radio label="Yes" value="yes" hint="Some helpful hint text" />
+		<Radio label="No" value="no" />
+	</FormGroup>
 );
 
-export const ErrorRadio = () => (
-	<>
-		<Radio error={true} label="Yes" value="Yes" name="errorradio" />
-		<Radio label="No" value="No" name="errorradio" />
-	</>
+export const GroupHintRadio = () => (
+	<FormGroup
+		legend="Are you happy for us to contact you in the future?"
+		hint="Some helpful hint text"
+		name="contact-preference-grouphint"
+	>
+		<Radio label="Yes" value="yes" />
+		<Radio label="No" value="no" />
+	</FormGroup>
 );
 
 export const ErrorHintRadio = () => (
-	<>
-		<Radio
-			error="Error message"
-			label="Yes"
-			value="Yes"
-			name="errorhintradio"
-		/>
-		<Radio label="No" value="No" name="errorhintradio" />
-	</>
-);
-
-export const DisabledRadio = () => (
-	<>
-		<Radio disabled label="Yes" value="Yes" name="disabledradio" />
-		<Radio disabled label="No" value="No" name="disabledradio" />
-	</>
+	<FormGroup
+		legend="Are you happy for us to contact you in the future?"
+		name="contact-preference-errorhint"
+	>
+		<Radio label="Yes" value="yes" error="Error message" />
+		<Radio label="No" value="no" />
+	</FormGroup>
 );

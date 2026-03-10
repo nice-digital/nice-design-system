@@ -66,6 +66,7 @@
   &--subtle {
     @include typography.links-default;
     background: colours.$action-banner-subtle-background;
+    border: 0;
     color: colours.$text;
 
     .action-banner__actions {

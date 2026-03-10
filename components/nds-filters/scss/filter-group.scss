@@ -20,9 +20,11 @@
   line-height: 1.6;
   max-width: 100%;
   padding: utils.rem(spacing.$small);
+  position: relative;
   text-align: left;
   text-decoration: none;
   width: 100%;
+  z-index: 1;
 
   &:hover {
     background: colours.$filter-group-heading-button-background-hover;
@@ -39,6 +41,7 @@
 /// Used to filter searches or lists of content.
 /// @since 0.5.0
 .filter-group {
+  border: 1px solid colours.$filter-group-border;
   margin-top: utils.rem(spacing.$medium);
 
   legend {
@@ -56,7 +59,7 @@
 
   // Wrapper for the options when filter is a list of checboxes
   &__options {
-    border: utils.rem(spacing.$x-small) solid colours.$filter-option-border;
+    border: 0;
 
     &[aria-hidden='true'] {
       display: none;
