@@ -16,7 +16,7 @@
     "@nice-digital/design-system": "^5.6.1",
     "@nice-digital/global-nav": "^7.1.1114",
     "glob": "^8.0.3",
-    "next": "^15.5.11",
+    "next": "^15.5.27",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "remark-gfm": "^4.0.1"
@@ -35,7 +35,7 @@
     "typescript": "^5.9.2"
   },
   "volta": {
-    "node": "22.19.0",
-    "npm": "10.9.3"
+    "node": "24.18.1",
+    "npm": "11.16.0"
   }
 }

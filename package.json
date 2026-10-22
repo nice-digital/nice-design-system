@@ -20,8 +20,8 @@
     "lerna": "lerna",
     "lerna:clean": "lerna clean -y",
     "lerna:changed": "lerna changed",
-    "release:alpha": "npm run clean:ts && npm run build:ts && lerna publish --dist-tag alpha",
-    "release:latest": "npm run clean:ts && npm run build:ts && lerna publish --dist-tag latest",
+    "release:alpha": "npm run clean:ts && npm run build:ts && npm run icons:start && lerna publish --dist-tag alpha",
+    "release:latest": "npm run clean:ts && npm run build:ts && npm run icons:start && lerna publish --dist-tag latest",
     "// TESTS": "",
     "test": "cross-env CI=true npm run test:unit && npm run lint",
     "test:unit": "jest",
@@ -36,9 +36,8 @@
     "prettier:fix": "npm run prettier -- --write",
     "// COMPILE TYPESCRIPT": "",
     "clean:ts": "tsc --build --clean",
-    "build:ts": "tsc --build",
+    "build:ts": "lerna exec rimraf es && tsc --build",
     "build:ts:watch": "tsc --build --watch",
-    "prebuild:ts": "lerna exec rimraf es",
     "// BUILD CSS": "",
     "build:css": "lerna run --scope=@nice-digital/design-system build-css"
   },
@@ -49,12 +48,12 @@
   ],
   "license": "MIT",
   "engines": {
-    "node": ">=22.19.0",
-    "npm": ">=10.9.3"
+    "node": ">=24.18.1",
+    "npm": ">=11.16.0"
   },
   "volta": {
-    "node": "22.19.0",
-    "npm": "10.9.3"
+    "node": "24.18.1",
+    "npm": "11.16.0"
   },
   "devDependencies": {
     "@mdx-js/loader": "^3.1.1",

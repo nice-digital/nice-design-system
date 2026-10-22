@@ -80,3 +80,6 @@ packages/docs/netlify.toml
 
 # TS artefacts
 *.tsbuildinfo
+
+# CodeArtifact npmrc written by TeamCity "Generate local npmrc" (contains a live auth token)
+.npmrc
