@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/nds-tag",
-	"version": "4.1.1-alpha-nds-548.1",
+	"version": "4.1.1",
 	"description": "Tag component for the NICE Design System",
 	"keywords": [
 		"tag"
@@ -32,7 +32,7 @@
 		"url": "https://github.com/nice-digital/nice-design-system/issues"
 	},
 	"dependencies": {
-		"@nice-digital/nds-core": "^4.1.1-alpha-nds-548.1",
+		"@nice-digital/nds-core": "^4.1.1",
 		"classnames": "^2.2.6"
 	},
 	"peerDependencies": {
