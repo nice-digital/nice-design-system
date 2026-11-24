@@ -19,6 +19,8 @@
 	- [Tests](#tests)
 	- [Commands](#commands)
 		- [Publishing to npm](#publishing-to-npm)
+		- [Alpha releases](#alpha-releases)
+		- [If a publish fails part way](#if-a-publish-fails-part-way)
 </details>
 
 ## What is it?
@@ -87,7 +89,7 @@ Run `npm start` and `test:unit:watch` for development. However, there are other 
 | `npm run lerna`                 | Runs `lerna` under the hood                                                   |
 | `npm run lerna:clean`           | Runs `lerna clean` under the hood for removing package node_modules           |
 | `npm run lerna:changed`         | Runs `lerna changed` for checking changed packages since the last release     |
-| `npm run release:alpha`         | Runs `lerna publish` under the hood for an alpha release                      |
+| `npm run release:alpha`         | Builds, then publishes an alpha with a branch-specific preid ([see below](#alpha-releases)) |
 | `npm run release:latest`        | Runs `lerna publish` under the hood for the latest full release               |
 | `npm test`                      | Lints JS and SCSS and runs JS unit tests                                      |
 | `npm run test:unit`             | Runs JS unit tests                                                            |
@@ -107,26 +109,88 @@ Check [package.json](package.json) for a complete list of scripts.
 
 > **Note:** because lerna is installed locally, you can use `npm run lerna -- ` to run lerna commands.
 
-> ### Alpha release detects no changes?
-
-If you make changes, do npm start to rebuild the project and have lerna update version numbers. If you run npm run release:alpha and it detects no changes, as a last resort, try running this command beforehand to manually bump version numbers (this won't push changes to git - '--no-push'):
-
-```sh
-npx lerna version prerelease --preid alpha --no-push --no-git-tag-version
-```
-
 #### Publishing to npm
 
-First, make sure you're logged in to npm on the command line by running `npm whoami`.
+Packages are **installed** from our private CodeArtifact registry, but **published** to the public npm registry (https://registry.npmjs.org/). Every publishable package sets `publishConfig.registry` to npmjs, so publishing never goes to CodeArtifact. `npm run release:alpha` also passes `--registry https://registry.npmjs.org/` to lerna.
+
+Because your default registry is CodeArtifact, plain `npm whoami` / `npm login` talk to CodeArtifact, not npmjs. Point them at npmjs explicitly:
+
+```sh
+npm login --registry https://registry.npmjs.org/
+npm whoami --registry https://registry.npmjs.org/
+```
 
 > Please make sure 2FA is enabled on your account for at least auth, and preferably writes as well.
 
-Next, check you have access to the @nice-digital org on npm by running `npm org ls nice-digital USERNAME`. It should list your username and role. You should have at least the *developers* role, which wiLl give you write access.
+Next, check you have access to the @nice-digital org on npm by running `npm org ls nice-digital USERNAME --registry https://registry.npmjs.org/`. It should list your username and role. You should have at least the *developers* role, which will give you write access.
 
-Then run `npm run release` to publish to npm. This runs `lerna publish` under the hood, which means you can pass in [additional command arguments](https://github.com/lerna/lerna/tree/master/commands/publish#readme). For example to release to npm with an alpha [dist tag](https://docs.npmjs.com/cli/dist-tag), run the following:
+> **Don't put `registry=https://registry.npmjs.org/` in a project or user `.npmrc`.** That would also send `npm install` to npmjs and bypass CodeArtifact. Use `--registry` per command instead.
+
+#### Alpha releases
+
+> **Why alphas need a branch-specific preid**
+>
+> Alpha releases used to use a plain `alpha` preid (`x.y.z-alpha.N`). When several developers published alphas from parallel branches, lerna on each branch calculated the same "next" version independently, because tagging wasn't robust enough for parallel development. For example, the NDS-426 accordion branches published `4.1.1-alpha.0` and `4.1.2-alpha.0` for almost every component in 2024 and were never merged to `main`.
+>
+> Those versions are now permanently taken: they're tagged in git **and** published on npm, and npm never allows a version to be reused. So any branch that releases with plain `--preid alpha` from `4.1.0` fails with `fatal: tag '@nice-digital/nds-a-z-list@4.1.1-alpha.0' already exists` (or, if the tag is deleted, "cannot publish over the previously published version"). Deleting tags doesn't fix it.
+
+To avoid this, every alpha uses a preid that's unique to the ticket, e.g. `4.1.1-alpha-nds-548.0`. `npm run release:alpha` works this out from the branch name:
+
+| Branch                                  | Preid           | Example version          |
+| --------------------------------------- | --------------- | ------------------------ |
+| `NDS-548-publish-nice-logo`             | `alpha-nds-548` | `6.1.8-alpha-nds-548.0`  |
+| `PARS-9-migrate-to-codeartifact`        | `alpha-pars-9`  | `4.1.1-alpha-pars-9.0`   |
+
+Releasing again from the same branch bumps the last number (`…-alpha-nds-548.1`), and the versions are still published under the `alpha` [dist tag](https://docs.npmjs.com/cli/dist-tag).
 
 ```sh
+# Preid from the branch name (branch must start with a ticket, e.g. NDS-548-)
 npm run release:alpha
+
+# Check the preid and lerna command without building or publishing
+npm run release:alpha -- --dry-run
+
+# Explicit preid, e.g. if the branch has no ticket prefix
+npm run release:alpha -- --preid alpha-nds-548
+
+# Other args are passed through to lerna publish, e.g. a 2FA one-time password
+npm run release:alpha -- --otp 123456
+```
+
+The script ([scripts/release-alpha.js](scripts/release-alpha.js)) refuses to run on `main`/`master` without an explicit preid, rejects plain `alpha`, then runs `clean:ts`, `build:ts` and `icons:start` before `lerna publish prerelease --preid <preid> --dist-tag alpha --registry https://registry.npmjs.org/`. As with any lerna publish, you can pass other [lerna publish arguments](https://github.com/lerna/lerna/tree/main/libs/commands/publish#readme).
+
+> **Note:** lerna won't publish with uncommitted changes. If the build changes tracked files (for example `npm run icons:start` regenerates the icons README), commit those changes before releasing.
+
+#### If a publish fails part way
+
+Lerna versions, commits, tags and pushes **before** it publishes to npm. So if the npm step fails (e.g. you weren't logged in to npmjs), the version bump commit and tags already exist. **Don't release again from scratch**, because that bumps versions a second time. Instead:
+
+1. Discard the `gitHead` fields lerna temporarily added to each `package.json`. Don't commit them:
+   ```sh
+   git restore -- "components/*/package.json" docs/package.json
+   ```
+2. Fix the problem (e.g. `npm login --registry https://registry.npmjs.org/`).
+3. Publish the versions that are already committed. This skips anything already on npm, so it's safe to re-run:
+   ```sh
+   npm run build:ts && npm run icons:start
+   npx lerna publish from-package --dist-tag alpha --registry https://registry.npmjs.org/
+   ```
+   If the build changed tracked files, `git restore` them first so the working tree is clean.
+
+#### Latest releases
+
+Full releases are done from `main` after merging:
+
+```sh
+npm run release:latest
+```
+
+#### Alpha release detects no changes?
+
+If you make changes, run `npm start` to rebuild the project and let lerna update version numbers. If `npm run release:alpha` still detects no changes, as a last resort, run this beforehand to bump version numbers manually. It won't commit, tag or push. Use your ticket preid, not plain `alpha`:
+
+```sh
+npx lerna version prerelease --preid alpha-nds-548 --no-push --no-git-tag-version
 ```
 
 ### npm workspaces and Lerna
