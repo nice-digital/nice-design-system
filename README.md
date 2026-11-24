@@ -151,7 +151,10 @@ If `lerna changed` lists fewer packages than expected (for example only `icons`,
 
 #### Publishing to npm
 
-Packages are **installed** from our private CodeArtifact registry, but **published** to the public npm registry (https://registry.npmjs.org/). Every publishable package sets `publishConfig.registry` to npmjs, so publishing never goes to CodeArtifact. `npm run release:alpha` also passes `--registry https://registry.npmjs.org/` to lerna.
+Packages are **installed** from our private CodeArtifact registry, but **published** to the public npm registry (https://registry.npmjs.org/). This is set in two places, and neither affects `npm install`:
+
+- `lerna.json` sets `command.publish.registry` to npmjs. So every `lerna publish` (`release:alpha`, `release:latest`, and recovery commands like `from-package`) publishes to npmjs and checks against npmjs which versions already exist.
+- Every publishable package sets `publishConfig.registry` to npmjs, which also covers a plain `npm publish` inside a package folder.
 
 Because your default registry is CodeArtifact, plain `npm whoami` / `npm login` talk to CodeArtifact, not npmjs. Point them at npmjs explicitly:
 
