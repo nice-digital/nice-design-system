@@ -18,9 +18,11 @@
 	- [NextJS](#nextjs)
 	- [Tests](#tests)
 	- [Commands](#commands)
+		- [Release TL;DR](#release-tldr)
 		- [Publishing to npm](#publishing-to-npm)
 		- [Alpha releases](#alpha-releases)
 		- [If a publish fails part way](#if-a-publish-fails-part-way)
+		- [Latest releases](#latest-releases)
 </details>
 
 ## What is it?
@@ -109,6 +111,44 @@ Check [package.json](package.json) for a complete list of scripts.
 
 > **Note:** because lerna is installed locally, you can use `npm run lerna -- ` to run lerna commands.
 
+#### Release TL;DR
+
+We don't release often, so here's the short version. Details are in the sections below.
+
+**Before any release**
+
+```sh
+npm login --registry https://registry.npmjs.org/     # we install from CodeArtifact but publish to npmjs
+npm whoami --registry https://registry.npmjs.org/    # check it worked
+git status                                           # working tree must be clean
+```
+
+**Alpha (from your ticket branch, e.g. `NDS-548-my-change`)**
+
+```sh
+npm run release:alpha -- --dry-run   # check the preid, e.g. alpha-nds-548
+npm run release:alpha                # build, version x.y.z-alpha-nds-548.N, tag, push, publish with dist-tag 'alpha'
+```
+
+Never use plain `--preid alpha`. Old `x.y.z-alpha.N` versions are already taken ([why](#alpha-releases)).
+
+**Latest (from `main`, after the ticket's PR is squash-merged)**
+
+```sh
+git checkout main && git pull
+npx lerna changed                    # should list every package your ticket changed or alpha-released
+npm run release:latest               # choose "Patch" (or Minor/Major) at the prompt, never a prerelease
+```
+
+If `lerna changed` lists fewer packages than expected (for example only `icons`, while others are still on `-alpha-…` versions), run `npx lerna publish patch --dist-tag latest --registry https://registry.npmjs.org/` instead. An explicit bump also releases packages that are still on a prerelease version.
+
+**Afterwards**
+
+- Check it's on npm, e.g. `npm view @nice-digital/design-system dist-tags --registry https://registry.npmjs.org/`.
+- CodeArtifact syncs from npmjs with a delay, so consuming apps may not see the new version for a while. To test straight away, install from npmjs without saving: `npm i @nice-digital/icons@<version> --no-save --registry https://registry.npmjs.org/`.
+
+**If it fails part way:** don't run the release again. Follow [If a publish fails part way](#if-a-publish-fails-part-way).
+
 #### Publishing to npm
 
 Packages are **installed** from our private CodeArtifact registry, but **published** to the public npm registry (https://registry.npmjs.org/). Every publishable package sets `publishConfig.registry` to npmjs, so publishing never goes to CodeArtifact. `npm run release:alpha` also passes `--registry https://registry.npmjs.org/` to lerna.
@@ -175,15 +215,27 @@ Lerna versions, commits, tags and pushes **before** it publishes to npm. So if t
    npm run build:ts && npm run icons:start
    npx lerna publish from-package --dist-tag alpha --registry https://registry.npmjs.org/
    ```
-   If the build changed tracked files, `git restore` them first so the working tree is clean.
+   For a failed latest release, use `--dist-tag latest` instead. If the build changed tracked files, `git restore` them first so the working tree is clean.
 
 #### Latest releases
 
-Full releases are done from `main` after merging:
+Full releases are done from `main`. Tickets are squash-merged into `main` via their PR, and then someone runs the release on `main`. That creates a `Publish` commit and tags directly on `main`.
 
 ```sh
+git checkout main && git pull
+npx lerna changed
 npm run release:latest
 ```
+
+At lerna's version prompt, choose **Patch**, **Minor** or **Major**. Don't choose a prerelease option for a latest release. A package on an alpha such as `4.1.1-alpha-nds-548.0` graduates to `4.1.1` with Patch.
+
+> **Why check `lerna changed` first?** With lerna's interactive prompt, a package is only released if its files changed since its last tag. Squash-merging normally makes this work, because the alpha tags stay on the ticket branch and lerna compares against the last full release. But if alpha tags do end up on `main` (for example after a normal merge commit), packages that were only version-bumped by the alpha aren't seen as changed. They'd be left on `-alpha-…` versions. Passing an explicit bump fixes that, because lerna then also includes every package currently on a prerelease:
+>
+> ```sh
+> npx lerna publish patch --dist-tag latest --registry https://registry.npmjs.org/
+> ```
+
+If the npm step fails after lerna has versioned and pushed, follow [If a publish fails part way](#if-a-publish-fails-part-way) and use `--dist-tag latest` instead of `alpha`.
 
 #### Alpha release detects no changes?
 
