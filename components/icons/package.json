@@ -1,6 +1,6 @@
 {
 	"name": "@nice-digital/icons",
-	"version": "6.1.7",
+	"version": "6.1.8-alpha-nds-548.1",
 	"description": "Icons for use in NICE Digital Services",
 	"scripts": {
 		"start": "npm run webfont && npm run svgr && npm run esify",
@@ -42,7 +42,8 @@
 		"src"
 	],
 	"publishConfig": {
-		"access": "public"
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
 	},
 	"peerDependencies": {
 		"react": ">=15"
