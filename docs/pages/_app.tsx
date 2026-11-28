@@ -1,4 +1,5 @@
 import "../styles/globals.scss";
+import "../styles/testpage.scss";
 import "@code-hike/mdx/dist/index.css";
 import type { AppProps } from "next/app";
 import { Inter, Lora } from "next/font/google";
